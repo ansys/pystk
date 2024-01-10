@@ -38,6 +38,7 @@ def _raise_uninitialized_error(*args):
 
 class LOG_MSG_TYPE(IntEnum):
     """Log message types."""
+   
     DEBUG = 0
     """Debugging message."""
     INFO = 1
@@ -59,6 +60,7 @@ agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
 
 class LOG_MSG_DISP_ID(IntEnum):
     """Log message destination options."""
+   
     ALL = -1
     """STK displays the message in all the log destination."""
     DEFAULT = 0
@@ -76,7 +78,8 @@ LOG_MSG_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar
 agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
 
 class LINE_STYLE(IntEnum):
-    """Line Style"""
+    """Line Style."""
+   
     SOLID = 0
     """Specify a solid line."""
     DASHED = 1
@@ -137,6 +140,7 @@ agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
 class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
+   
     CONTINUE_ON_ERROR = 0
     """Continue executing the remaining commands in the command batch."""
     STOP_ON_ERROR = 1
@@ -155,6 +159,7 @@ agcls.AgTypeNameMap["EXEC_MULTI_CMD_RESULT_ACTION"] = EXEC_MULTI_CMD_RESULT_ACTI
 
 class SHIFT_VALUES(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
+   
     PRESSED = 1
     """The Shift key was pressed."""
     CTRL_PRESSED = 2
@@ -170,6 +175,7 @@ agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
 
 class BUTTON_VALUES(IntEnum):
     """Numeric value of the mouse button pressed."""
+   
     LEFT_PRESSED = 1
     """The left button is pressed."""
     RIGHT_PRESSED = 2
@@ -185,6 +191,7 @@ agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
 
 class OLE_DROP_MODE(IntEnum):
     """Specifies how to handle OLE drop operations."""
+   
     NONE = 0
     """None. The control does not accept OLE drops and displays the No Drop cursor."""
     MANUAL = 1
@@ -200,6 +207,7 @@ agcls.AgTypeNameMap["OLE_DROP_MODE"] = OLE_DROP_MODE
 
 class MOUSE_MODE(IntEnum):
     """Mouse modes."""
+   
     AUTOMATIC = 0
     """Automatic. The control handles the mouse events and then fires the events to the container for additional processing."""
     MANUAL = 1
@@ -212,6 +220,7 @@ agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
 
 class LOGGING_MODE(IntEnum):
     """Specifies the state of the log file."""
+   
     INACTIVE = 0
     """The log file is not created."""
     ACTIVE = 1
@@ -227,6 +236,7 @@ agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
 class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
     """Specifies the mode of Gfx Analysis Control."""
+   
     SOLAR_PANEL_TOOL = 1
     """The Solar Panel Tool mode."""
     AREA_TOOL = 2
@@ -245,6 +255,7 @@ agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
 
 class GRAPHICS_2D_DRAW_COORDS(IntEnum):
     """Specifies the draw coordinates for Map Control."""
+   
     PIXEL_DRAW_COORDS = 1
     """The draw coordinates values in pixels."""
     SCREEN_DRAW_COORDS = 2
@@ -257,6 +268,7 @@ agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDS"] = GRAPHICS_2D_DRAW_COORDS
 
 class SHOW_PROGRESS_IMAGE(IntEnum):
     """Specifies to show progress image."""
+   
     NONE = 1
     """Do not show any progress Image."""
     DEFAULT = 2
@@ -272,6 +284,7 @@ agcls.AgTypeNameMap["SHOW_PROGRESS_IMAGE"] = SHOW_PROGRESS_IMAGE
 
 class FEATURE_CODES(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
+   
     ENGINE_RUNTIME = 1
     """The enumeration is used to check whether the engine runtime is available."""
     GLOBE_CONTROL = 2
@@ -284,6 +297,7 @@ agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
 
 class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
     """Specifies to align progress image X origin."""
+   
     LEFT = 1
     """Align progress Image from X left."""
     RIGHT = 2
@@ -299,6 +313,7 @@ agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
 
 class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
     """Specifies to align progress image Y origin."""
+   
     TOP = 1
     """Align progress Image from Y top."""
     BOTTOM = 2
@@ -315,6 +330,7 @@ agcls.AgTypeNameMap["PROGRESS_IMAGE_Y_ORIGIN"] = PROGRESS_IMAGE_Y_ORIGIN
 
 class ISTKXSSLCertificateErrorEventArgs(object):
     """Provide information about an SSL certificate that is expired or invalid."""
+
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -445,6 +461,7 @@ agcls.AgTypeNameMap["ISTKXSSLCertificateErrorEventArgs"] = ISTKXSSLCertificateEr
 
 class ISTKXConControlQuitReceivedEventArgs(object):
     """Arguments for the OnConControlQuitReceived event."""
+
     _num_methods = 2
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -487,6 +504,7 @@ agcls.AgTypeNameMap["ISTKXConControlQuitReceivedEventArgs"] = ISTKXConControlQui
 
 class IPickInfoData(object):
     """Mouse pick details."""
+
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -565,6 +583,7 @@ agcls.AgTypeNameMap["IPickInfoData"] = IPickInfoData
 
 class IRubberBandPickInfoData(object):
     """Rubber-band mouse pick result."""
+
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -598,6 +617,7 @@ agcls.AgTypeNameMap["IRubberBandPickInfoData"] = IRubberBandPickInfoData
 
 class ISTKXApplication(object):
     """STK X Application object."""
+
     _num_methods = 28
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -870,6 +890,7 @@ agcls.AgTypeNameMap["ISTKXApplication"] = ISTKXApplication
 
 class IDataObject(object):
     """DataObject is used for OLE drag and drop operations"""
+
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -903,6 +924,7 @@ agcls.AgTypeNameMap["IDataObject"] = IDataObject
 
 class IObjPathCollection(object):
     """Collection of object paths."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -976,6 +998,7 @@ agcls.AgTypeNameMap["IObjPathCollection"] = IObjPathCollection
 
 class IDrawElem(object):
     """Draw element."""
+
     _num_methods = 2
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1017,6 +1040,7 @@ agcls.AgTypeNameMap["IDrawElem"] = IDrawElem
 
 class IDrawElemRect(IDrawElem):
     """Define a rectangle in control coordinates."""
+
     _num_methods = 11
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     _metadata = {
@@ -1137,6 +1161,7 @@ agcls.AgTypeNameMap["IDrawElemRect"] = IDrawElemRect
 
 class IDrawElemCollection(object):
     """Collection of elements to draw on the control."""
+
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1243,6 +1268,7 @@ agcls.AgTypeNameMap["IDrawElemCollection"] = IDrawElemCollection
 
 class IWinProjectionPosition(object):
     """Projected window position detail."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1294,6 +1320,7 @@ agcls.AgTypeNameMap["IWinProjectionPosition"] = IWinProjectionPosition
 
 class IDrawElemLine(IDrawElem):
     """Define a line in control coordinates."""
+
     _num_methods = 11
     _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
     _metadata = {
@@ -1414,6 +1441,7 @@ agcls.AgTypeNameMap["IDrawElemLine"] = IDrawElemLine
 
 class IExecCmdResult(object):
     """Collection of strings returned by the ExecuteCommand."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1496,6 +1524,7 @@ agcls.AgTypeNameMap["IExecCmdResult"] = IExecCmdResult
 
 class IExecMultiCmdResult(object):
     """Collection of objects returned by the ExecuteMultipleCommands."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1561,6 +1590,7 @@ agcls.AgTypeNameMap["IExecMultiCmdResult"] = IExecMultiCmdResult
 
 class IUiAxGraphics3DCntrl(object):
     """AGI Globe control."""
+
     _num_methods = 48
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1993,6 +2023,7 @@ agcls.AgTypeNameMap["IUiAxGraphics3DCntrl"] = IUiAxGraphics3DCntrl
 
 class IUiAx2DCntrl(object):
     """AGI Map control."""
+
     _num_methods = 45
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -2399,6 +2430,7 @@ agcls.AgTypeNameMap["IUiAx2DCntrl"] = IUiAx2DCntrl
 
 class ISTKXApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
+
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -2431,6 +2463,7 @@ agcls.AgTypeNameMap["ISTKXApplicationPartnerAccess"] = ISTKXApplicationPartnerAc
 
 class IDataObjectFiles(object):
     """Collection of file names."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -2496,6 +2529,7 @@ agcls.AgTypeNameMap["IDataObjectFiles"] = IDataObjectFiles
 
 class IUiAxGraphics2DAnalysisCntrl(object):
     """AGI Gfx Analysis control."""
+
     _num_methods = 17
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -2667,6 +2701,7 @@ agcls.AgTypeNameMap["IUiAxGraphics2DAnalysisCntrl"] = IUiAxGraphics2DAnalysisCnt
 
 class ExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
+
     def __init__(self, sourceObject=None):
         IExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2683,6 +2718,7 @@ agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
 class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
+
     def __init__(self, sourceObject=None):
         IExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2699,6 +2735,7 @@ agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
 class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
     """AGI Globe control."""
+
     def __init__(self, sourceObject=None):
         IUiAxGraphics3DCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2715,6 +2752,7 @@ agcls.AgTypeNameMap["UiAxGraphics3DCntrl"] = UiAxGraphics3DCntrl
 
 class UiAx2DCntrl(IUiAx2DCntrl):
     """AGI Map control."""
+
     def __init__(self, sourceObject=None):
         IUiAx2DCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2731,6 +2769,7 @@ agcls.AgTypeNameMap["UiAx2DCntrl"] = UiAx2DCntrl
 
 class PickInfoData(IPickInfoData):
     """Single mouse pick result."""
+
     def __init__(self, sourceObject=None):
         IPickInfoData.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2747,6 +2786,7 @@ agcls.AgTypeNameMap["PickInfoData"] = PickInfoData
 
 class STKXApplication(ISTKXApplication):
     """STK X Application object."""
+
     def __init__(self, sourceObject=None):
         ISTKXApplication.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2763,6 +2803,7 @@ agcls.AgTypeNameMap["STKXApplication"] = STKXApplication
 
 class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
     """STK X Application Partner Access object."""
+
     def __init__(self, sourceObject=None):
         ISTKXApplicationPartnerAccess.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2779,6 +2820,7 @@ agcls.AgTypeNameMap["STKXApplicationPartnerAccess"] = STKXApplicationPartnerAcce
 
 class DataObject(IDataObject):
     """Data Object for OLE drag & drop operations."""
+
     def __init__(self, sourceObject=None):
         IDataObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2795,6 +2837,7 @@ agcls.AgTypeNameMap["DataObject"] = DataObject
 
 class DataObjectFiles(IDataObjectFiles):
     """Collection of files for OLE drag & drop operations."""
+
     def __init__(self, sourceObject=None):
         IDataObjectFiles.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2811,6 +2854,7 @@ agcls.AgTypeNameMap["DataObjectFiles"] = DataObjectFiles
 
 class RubberBandPickInfoData(IRubberBandPickInfoData):
     """Rubber-band mouse pick result."""
+
     def __init__(self, sourceObject=None):
         IRubberBandPickInfoData.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2827,6 +2871,7 @@ agcls.AgTypeNameMap["RubberBandPickInfoData"] = RubberBandPickInfoData
 
 class ObjPathCollection(IObjPathCollection):
     """Collection of object paths."""
+
     def __init__(self, sourceObject=None):
         IObjPathCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2843,6 +2888,7 @@ agcls.AgTypeNameMap["ObjPathCollection"] = ObjPathCollection
 
 class DrawElemRect(IDrawElemRect):
     """Define a rectangle in window coordinates."""
+
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2859,6 +2905,7 @@ agcls.AgTypeNameMap["DrawElemRect"] = DrawElemRect
 
 class DrawElemCollection(IDrawElemCollection):
     """Collection of elements to draw on the control."""
+
     def __init__(self, sourceObject=None):
         IDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2875,6 +2922,7 @@ agcls.AgTypeNameMap["DrawElemCollection"] = DrawElemCollection
 
 class Draw2DElemRect(IDrawElemRect):
     """Define a rectangle in window coordinates for map control."""
+
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2891,6 +2939,7 @@ agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
 
 class Draw2DElemCollection(IDrawElemCollection):
     """Collection of elements to draw on map control."""
+
     def __init__(self, sourceObject=None):
         IDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2907,6 +2956,7 @@ agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
 class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
     """AGI Graphics Analysis Control"""
+
     def __init__(self, sourceObject=None):
         IUiAxGraphics2DAnalysisCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2923,6 +2973,7 @@ agcls.AgTypeNameMap["UiAxGraphics2DAnalysisCntrl"] = UiAxGraphics2DAnalysisCntrl
 
 class WinProjectionPosition(IWinProjectionPosition):
     """Projected window position result."""
+
     def __init__(self, sourceObject=None):
         IWinProjectionPosition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2939,6 +2990,7 @@ agcls.AgTypeNameMap["WinProjectionPosition"] = WinProjectionPosition
 
 class DrawElemLine(IDrawElemLine):
     """Define a line in window coordinates."""
+
     def __init__(self, sourceObject=None):
         IDrawElemLine.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2955,6 +3007,7 @@ agcls.AgTypeNameMap["DrawElemLine"] = DrawElemLine
 
 class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
     """Provide information about an SSL certificate that is expired or invalid."""
+
     def __init__(self, sourceObject=None):
         ISTKXSSLCertificateErrorEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -2971,6 +3024,7 @@ agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"] = STKXSSLCertificateErro
 
 class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
     """Arguments for the OnConControlQuitReceived event."""
+
     def __init__(self, sourceObject=None):
         ISTKXConControlQuitReceivedEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

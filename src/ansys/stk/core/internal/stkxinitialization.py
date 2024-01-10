@@ -21,6 +21,7 @@ def _raise_uninitialized_error(*args):
 
 class ISTKXInitialize(object):
     """STK X Advanced Initialization Options."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -71,6 +72,7 @@ agcls.AgTypeNameMap["ISTKXInitialize"] = ISTKXInitialize
 
 class STKXInitialize(ISTKXInitialize):
     """STK X Initialize object."""
+
     def __init__(self, sourceObject=None):
         ISTKXInitialize.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

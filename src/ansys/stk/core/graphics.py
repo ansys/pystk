@@ -128,6 +128,7 @@ def _raise_uninitialized_error(*args):
 
 class CYLINDER_FILL(IntFlag):
     """Cylinder faces that can be filled."""
+   
     WALL = 1
     """Fill the cylinder's wall."""
     BOTTOM_CAP = 2
@@ -146,6 +147,7 @@ agcls.AgTypeNameMap["CYLINDER_FILL"] = CYLINDER_FILL
 
 class WINDING_ORDER(IntEnum):
     """Specifies the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
+   
     COUNTER_CLOCKWISE = 0
     """Positions or triangles are defined in counter-clockwise order."""
     CLOCKWISE = 1
@@ -161,36 +163,39 @@ agcls.AgTypeNameMap["WINDING_ORDER"] = WINDING_ORDER
 
 class CAMERA_SNAPSHOT_FILE_FORMAT(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
+   
     BMP = 0
-    """BMP file format"""
+    """BMP file format."""
     TIFF = 2
-    """TIFF file format"""
+    """TIFF file format."""
     JPEG = 3
-    """JPEG file format"""
+    """JPEG file format."""
     PNG = 4
-    """PNG file format"""
+    """PNG file format."""
 
-CAMERA_SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format"
-CAMERA_SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format"
-CAMERA_SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format"
-CAMERA_SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format"
+CAMERA_SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format."
+CAMERA_SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format."
+CAMERA_SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format."
+CAMERA_SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format."
 
 agcls.AgTypeNameMap["CAMERA_SNAPSHOT_FILE_FORMAT"] = CAMERA_SNAPSHOT_FILE_FORMAT
 
 class CAMERA_VIDEO_FORMAT(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
+   
     H264 = 0
-    """H.264 file format"""
+    """H.264 file format."""
     WMV = 1
-    """Windows Media Video (WMV) file format"""
+    """Windows Media Video (WMV) file format."""
 
-CAMERA_VIDEO_FORMAT.H264.__doc__ = "H.264 file format"
-CAMERA_VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format"
+CAMERA_VIDEO_FORMAT.H264.__doc__ = "H.264 file format."
+CAMERA_VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format."
 
 agcls.AgTypeNameMap["CAMERA_VIDEO_FORMAT"] = CAMERA_VIDEO_FORMAT
 
 class CONSTRAINED_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
+   
     X = 0
     """The X axis is constrained."""
     Y = 1
@@ -218,6 +223,7 @@ agcls.AgTypeNameMap["CONSTRAINED_UP_AXIS"] = CONSTRAINED_UP_AXIS
 
 class GLOBE_OVERLAY_ROLE(IntEnum):
     """The role of a globe overlay."""
+   
     BASE = 0
     """The globe overlay is a base image."""
     NIGHT = 1
@@ -239,6 +245,7 @@ agcls.AgTypeNameMap["GLOBE_OVERLAY_ROLE"] = GLOBE_OVERLAY_ROLE
 
 class INDICES_ORDER_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
+   
     NOT_SORTED = 0
     """The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."""
     SORTED_ASCENDING = 1
@@ -251,6 +258,7 @@ agcls.AgTypeNameMap["INDICES_ORDER_HINT"] = INDICES_ORDER_HINT
 
 class MAINTAIN_ASPECT_RATIO(IntEnum):
     """Specifies whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
+   
     NONE = 0
     """The aspect ratio of the texture is not maintained during sizing of the screen overlay."""
     WIDTH = 1
@@ -266,18 +274,20 @@ agcls.AgTypeNameMap["MAINTAIN_ASPECT_RATIO"] = MAINTAIN_ASPECT_RATIO
 
 class MAP_PROJECTION(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
+   
     MERCATOR = 0
-    """Mercator projection"""
+    """Mercator projection."""
     EQUIDISTANT_CYLINDRICAL = 1
-    """Equidistant Cylindrical projection"""
+    """Equidistant Cylindrical projection."""
 
-MAP_PROJECTION.MERCATOR.__doc__ = "Mercator projection"
-MAP_PROJECTION.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection"
+MAP_PROJECTION.MERCATOR.__doc__ = "Mercator projection."
+MAP_PROJECTION.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection."
 
 agcls.AgTypeNameMap["MAP_PROJECTION"] = MAP_PROJECTION
 
 class MARKER_BATCH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
+   
     GEOMETRY_SHADER = 0
     """Render the marker batch using a geometry shader."""
     VERTEX_SHADER = 1
@@ -296,6 +306,7 @@ agcls.AgTypeNameMap["MARKER_BATCH_RENDERING_METHOD"] = MARKER_BATCH_RENDERING_ME
 
 class MARKER_BATCH_RENDER_PASS(IntEnum):
     """The pass during which the marker batch is rendered."""
+   
     OPAQUE = 0
     """The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."""
     TRANSLUCENT = 1
@@ -311,6 +322,7 @@ agcls.AgTypeNameMap["MARKER_BATCH_RENDER_PASS"] = MARKER_BATCH_RENDER_PASS
 
 class MARKER_BATCH_SIZE_SOURCE(IntEnum):
     """Determines which marker batch property is used to size each marker in a marker batch."""
+   
     FROM_TEXTURE = 0
     """The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."""
     USER_DEFINED = 1
@@ -323,6 +335,7 @@ agcls.AgTypeNameMap["MARKER_BATCH_SIZE_SOURCE"] = MARKER_BATCH_SIZE_SOURCE
 
 class MARKER_BATCH_SORT_ORDER(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
+   
     BACK_TO_FRONT = 0
     """The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."""
     FRONT_TO_BACK = 1
@@ -338,6 +351,7 @@ agcls.AgTypeNameMap["MARKER_BATCH_SORT_ORDER"] = MARKER_BATCH_SORT_ORDER
 
 class MARKER_BATCH_UNIT(IntEnum):
     """The unit for marker sizes in a marker batch."""
+   
     PIXELS = 0
     """The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."""
     METERS = 1
@@ -350,6 +364,7 @@ agcls.AgTypeNameMap["MARKER_BATCH_UNIT"] = MARKER_BATCH_UNIT
 
 class MODEL_TRANSFORMATION_TYPE(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
+   
     TRANSLATE_X = 0
     """Translate the geometry along the X axis."""
     TRANSLATE_Y = 1
@@ -425,6 +440,7 @@ agcls.AgTypeNameMap["MODEL_TRANSFORMATION_TYPE"] = MODEL_TRANSFORMATION_TYPE
 
 class ORIGIN(IntEnum):
     """Vertical and horizontal origin."""
+   
     BOTTOM_LEFT = 0
     """The object's origin is its bottom, left corner."""
     BOTTOM_CENTER = 1
@@ -458,6 +474,7 @@ agcls.AgTypeNameMap["ORIGIN"] = ORIGIN
 
 class PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
     """Represents the location of a point to be removed."""
+   
     REMOVE_LOCATION_FRONT = 0
     """Remove from the front of the line."""
     REMOVE_LOCATION_BACK = 1
@@ -470,6 +487,7 @@ agcls.AgTypeNameMap["PATH_PRIMITIVE_REMOVE_LOCATION"] = PATH_PRIMITIVE_REMOVE_LO
 
 class PRIMITIVES_SORT_ORDER(IntEnum):
     """The order in which primitives are sorted before rendering."""
+   
     BY_STATE = 0
     """Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."""
     BACK_TO_FRONT = 1
@@ -482,6 +500,7 @@ agcls.AgTypeNameMap["PRIMITIVES_SORT_ORDER"] = PRIMITIVES_SORT_ORDER
 
 class REFRESH_RATE(IntEnum):
     """The rate at which animation frames will occur."""
+   
     FASTEST = 0
     """The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."""
     TARGETED_FRAMES_PER_SECOND = 1
@@ -494,6 +513,7 @@ agcls.AgTypeNameMap["REFRESH_RATE"] = REFRESH_RATE
 
 class RENDER_PASS(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
+   
     OPAQUE = 1
     """Render during the opaque rendering pass."""
     TRANSLUCENT = 2
@@ -518,6 +538,7 @@ agcls.AgTypeNameMap["RENDER_PASS"] = RENDER_PASS
 
 class RENDER_PASS_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
+   
     OPAQUE = 0
     """The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."""
     TRANSLUCENT = 1
@@ -533,6 +554,7 @@ agcls.AgTypeNameMap["RENDER_PASS_HINT"] = RENDER_PASS_HINT
 
 class SCREEN_OVERLAY_ORIGIN(IntEnum):
     """Specifies the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
+   
     BOTTOM_LEFT = 0
     """When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
@@ -566,6 +588,7 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_ORIGIN"] = SCREEN_OVERLAY_ORIGIN
 
 class SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
     """Specifies the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
+   
     BOTTOM_LEFT = 0
     """When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."""
     BOTTOM_CENTER = 1
@@ -602,6 +625,7 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_PINNING_ORIGIN"] = SCREEN_OVERLAY_PINNING_OR
 
 class SCREEN_OVERLAY_UNIT(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
+   
     PIXELS = 0
     """The value is specified in pixels."""
     FRACTION = 1
@@ -614,6 +638,7 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_UNIT"] = SCREEN_OVERLAY_UNIT
 
 class SURFACE_MESH_RENDERING_METHOD(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
+   
     GEOMETRY_SHADER = 0
     """Render the surface mesh using a geometry shader."""
     VERTEX_SHADER = 1
@@ -629,6 +654,7 @@ agcls.AgTypeNameMap["SURFACE_MESH_RENDERING_METHOD"] = SURFACE_MESH_RENDERING_ME
 
 class VISIBILITY(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
+   
     NONE = 0
     """The object is not visible."""
     PARTIAL = 1
@@ -644,36 +670,38 @@ agcls.AgTypeNameMap["VISIBILITY"] = VISIBILITY
 
 class ANTI_ALIASING(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
+   
     OFF = 0
-    """No anti-aliasing"""
+    """No anti-aliasing."""
     FXAA = 1
-    """Fast Approximate Anti aliasing"""
+    """Fast Approximate Anti aliasing."""
     TWO_X = 2
-    """Anti-aliasing at 2x"""
+    """Anti-aliasing at 2x."""
     FOUR_X = 4
-    """Anti-aliasing at 4x"""
+    """Anti-aliasing at 4x."""
     EIGHT_X = 8
-    """Anti-aliasing at 8x"""
+    """Anti-aliasing at 8x."""
     SIXTEEN_X = 16
-    """Anti-aliasing at 16x"""
+    """Anti-aliasing at 16x."""
     THIRTY_TWO_X = 32
-    """Anti-aliasing at 32x"""
+    """Anti-aliasing at 32x."""
     SIXTY_FOUR_X = 64
-    """Anti-aliasing at 64x"""
+    """Anti-aliasing at 64x."""
 
-ANTI_ALIASING.OFF.__doc__ = "No anti-aliasing"
-ANTI_ALIASING.FXAA.__doc__ = "Fast Approximate Anti aliasing"
-ANTI_ALIASING.TWO_X.__doc__ = "Anti-aliasing at 2x"
-ANTI_ALIASING.FOUR_X.__doc__ = "Anti-aliasing at 4x"
-ANTI_ALIASING.EIGHT_X.__doc__ = "Anti-aliasing at 8x"
-ANTI_ALIASING.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x"
-ANTI_ALIASING.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x"
-ANTI_ALIASING.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x"
+ANTI_ALIASING.OFF.__doc__ = "No anti-aliasing."
+ANTI_ALIASING.FXAA.__doc__ = "Fast Approximate Anti aliasing."
+ANTI_ALIASING.TWO_X.__doc__ = "Anti-aliasing at 2x."
+ANTI_ALIASING.FOUR_X.__doc__ = "Anti-aliasing at 4x."
+ANTI_ALIASING.EIGHT_X.__doc__ = "Anti-aliasing at 8x."
+ANTI_ALIASING.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x."
+ANTI_ALIASING.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x."
+ANTI_ALIASING.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x."
 
 agcls.AgTypeNameMap["ANTI_ALIASING"] = ANTI_ALIASING
 
 class BINARY_LOGIC_OPERATION(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
+   
     AND = 0
     """Logically and together display conditions in the composite."""
     OR = 1
@@ -686,6 +714,7 @@ agcls.AgTypeNameMap["BINARY_LOGIC_OPERATION"] = BINARY_LOGIC_OPERATION
 
 class BLUR_METHOD(IntEnum):
     """The method used to blur or smooth a raster."""
+   
     MEAN = 0
     """Provide smoothing and noise reduction through mean filtering."""
     BASIC = 1
@@ -698,6 +727,7 @@ agcls.AgTypeNameMap["BLUR_METHOD"] = BLUR_METHOD
 
 class EDGE_DETECT_METHOD(IntEnum):
     """The method used to detect edges in a raster."""
+   
     VERTICAL = 0
     """Detects vertical edges."""
     HORIZONTAL = 1
@@ -728,6 +758,7 @@ agcls.AgTypeNameMap["EDGE_DETECT_METHOD"] = EDGE_DETECT_METHOD
 
 class FLIP_AXIS(IntEnum):
     """The axis on which a raster will be flipped."""
+   
     HORIZONTAL = 0
     """The horizontal axis."""
     VERTICAL = 1
@@ -740,6 +771,7 @@ agcls.AgTypeNameMap["FLIP_AXIS"] = FLIP_AXIS
 
 class GRADIENT_DETECT_METHOD(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
+   
     EAST = 0
     """Detects east gradients."""
     NORTH = 1
@@ -770,6 +802,7 @@ agcls.AgTypeNameMap["GRADIENT_DETECT_METHOD"] = GRADIENT_DETECT_METHOD
 
 class JPEG2000_COMPRESSION_PROFILE(IntEnum):
     """Defines the profile used when encoding a JPEG 2000 file."""
+   
     DEFAULT = 0
     """This is the default profile, which is recommended for those unfamiliar with the others."""
     NITF_BIIF_NPJE = 1
@@ -785,6 +818,7 @@ agcls.AgTypeNameMap["JPEG2000_COMPRESSION_PROFILE"] = JPEG2000_COMPRESSION_PROFI
 
 class RASTER_BAND(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
+   
     RED = 0
     """A band containing red values."""
     GREEN = 1
@@ -806,6 +840,7 @@ agcls.AgTypeNameMap["RASTER_BAND"] = RASTER_BAND
 
 class RASTER_FORMAT(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
+   
     RED = 0
     """The format of the raster is a single band consisting of red values."""
     GREEN = 1
@@ -842,6 +877,7 @@ agcls.AgTypeNameMap["RASTER_FORMAT"] = RASTER_FORMAT
 
 class RASTER_ORIENTATION(IntEnum):
     """The vertical orientation of the raster."""
+   
     TOP_TO_BOTTOM = 0
     """The raster has a top to bottom orientation."""
     BOTTOM_TO_TOP = 1
@@ -854,6 +890,7 @@ agcls.AgTypeNameMap["RASTER_ORIENTATION"] = RASTER_ORIENTATION
 
 class RASTER_TYPE(IntEnum):
     """The type of data contained within each band of a raster dataset."""
+   
     UNSIGNED_BYTE = 0
     """Each value contained within a band can be represented with an unsigned byte."""
     BYTE = 1
@@ -884,6 +921,7 @@ agcls.AgTypeNameMap["RASTER_TYPE"] = RASTER_TYPE
 
 class SHARPEN_METHOD(IntEnum):
     """The method used to sharpen a raster."""
+   
     MEAN_REMOVAL = 0
     """Provide sharpening through mean removal."""
     BASIC = 1
@@ -896,6 +934,7 @@ agcls.AgTypeNameMap["SHARPEN_METHOD"] = SHARPEN_METHOD
 
 class VIDEO_PLAYBACK(IntEnum):
     """Specifies how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
+   
     REAL_TIME = 0
     """The video will playback in realtime."""
     TIME_INTERVAL = 1
@@ -908,6 +947,7 @@ agcls.AgTypeNameMap["VIDEO_PLAYBACK"] = VIDEO_PLAYBACK
 
 class KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's RefreshMode property."""
+   
     ON_CHANGE = 0
     """Refresh when the document is loaded and whenever the Link parameters change (the default)."""
     ON_INTERVAL = 1
@@ -923,6 +963,7 @@ agcls.AgTypeNameMap["KML_NETWORK_LINK_REFRESH_MODE"] = KML_NETWORK_LINK_REFRESH_
 
 class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
     """Defines the options available for a KmlNetworkLink's ViewRefreshMode property."""
+   
     NEVER = 0
     """Do not refresh the network link when the camera's view changes."""
     ON_REQUEST = 1
@@ -941,6 +982,7 @@ agcls.AgTypeNameMap["KML_NETWORK_LINK_VIEW_REFRESH_MODE"] = KML_NETWORK_LINK_VIE
 
 class MODEL_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
+   
     X = 0
     """The positive X axis."""
     Y = 1
@@ -965,6 +1007,7 @@ agcls.AgTypeNameMap["MODEL_UP_AXIS"] = MODEL_UP_AXIS
 
 class OUTLINE_APPEARANCE(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
+   
     FRONT_AND_BACK_LINES = 0
     """Both the front and back lines are displayed."""
     FRONT_LINES_ONLY = 1
@@ -980,6 +1023,7 @@ agcls.AgTypeNameMap["OUTLINE_APPEARANCE"] = OUTLINE_APPEARANCE
 
 class POLYLINE_TYPE(IntEnum):
     """Describes how to interpret positions defining a polyline."""
+   
     LINES = 0
     """Every two positions define a line segment. Line segments are not required to be connected to each other."""
     LINE_STRIP = 1
@@ -995,6 +1039,7 @@ agcls.AgTypeNameMap["POLYLINE_TYPE"] = POLYLINE_TYPE
 
 class CULL_FACE(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
+   
     E_CULL_FACE_FRONT = 0
     """Front-facing triangles are culled."""
     E_CULL_FACE_BACK = 1
@@ -1013,6 +1058,7 @@ agcls.AgTypeNameMap["CULL_FACE"] = CULL_FACE
 
 class INTERNAL_TEXTURE_FORMAT(IntEnum):
     """The format of individual texels in a texture."""
+   
     ALPHA4 = 0
     """Each texel is an 4-bit alpha component."""
     ALPHA8 = 1
@@ -1127,6 +1173,7 @@ agcls.AgTypeNameMap["INTERNAL_TEXTURE_FORMAT"] = INTERNAL_TEXTURE_FORMAT
 
 class MAGNIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
+   
     NEAREST = 0
     """Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."""
     LINEAR = 1
@@ -1139,6 +1186,7 @@ agcls.AgTypeNameMap["MAGNIFICATION_FILTER"] = MAGNIFICATION_FILTER
 
 class MINIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
+   
     NEAREST = 0
     """Use the texel that is closest to the center of the pixel being textured."""
     LINEAR = 1
@@ -1163,6 +1211,7 @@ agcls.AgTypeNameMap["MINIFICATION_FILTER"] = MINIFICATION_FILTER
 
 class RENDERER_SHADE_MODEL(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
+   
     FLAT = 0
     """Flat shading renders the primitive with one color across all of the vertices."""
     GOURAUD = 1
@@ -1175,6 +1224,7 @@ agcls.AgTypeNameMap["RENDERER_SHADE_MODEL"] = RENDERER_SHADE_MODEL
 
 class TEXTURE_WRAP(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
+   
     CLAMP = 0
     """Clamp the texture coordinate to the range [0, 1]."""
     CLAMP_TO_BORDER = 1
@@ -1196,6 +1246,7 @@ agcls.AgTypeNameMap["TEXTURE_WRAP"] = TEXTURE_WRAP
 
 class SET_HINT(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
+   
     INFREQUENT = 0
     """Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."""
     PARTIAL = 1
@@ -1211,6 +1262,7 @@ agcls.AgTypeNameMap["SET_HINT"] = SET_HINT
 
 class STEREO_PROJECTION_MODE(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
+   
     PARALLEL = 0
     """Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."""
     FIXED_DISTANCE = 1
@@ -1226,30 +1278,32 @@ agcls.AgTypeNameMap["STEREO_PROJECTION_MODE"] = STEREO_PROJECTION_MODE
 
 class STEREOSCOPIC_DISPLAY_MODE(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+   
     OFF = 0
-    """No stereoscopic"""
+    """No stereoscopic."""
     QUAD_BUFFER = 1
-    """OpenGL Quad-buffer stereoscopic"""
+    """OpenGL Quad-buffer stereoscopic."""
     ANAGLYPH = 2
-    """Anaglyph or two-color stereoscopic"""
+    """Anaglyph or two-color stereoscopic."""
     LEFT_EYE = 3
-    """Left eye view of the stereoscopic scene"""
+    """Left eye view of the stereoscopic scene."""
     RIGHT_EYE = 4
-    """Right eye view of the stereoscopic scene"""
+    """Right eye view of the stereoscopic scene."""
     SIDE_BY_SIDE = 5
     """Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."""
 
-STEREOSCOPIC_DISPLAY_MODE.OFF.__doc__ = "No stereoscopic"
-STEREOSCOPIC_DISPLAY_MODE.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic"
-STEREOSCOPIC_DISPLAY_MODE.ANAGLYPH.__doc__ = "Anaglyph or two-color stereoscopic"
-STEREOSCOPIC_DISPLAY_MODE.LEFT_EYE.__doc__ = "Left eye view of the stereoscopic scene"
-STEREOSCOPIC_DISPLAY_MODE.RIGHT_EYE.__doc__ = "Right eye view of the stereoscopic scene"
+STEREOSCOPIC_DISPLAY_MODE.OFF.__doc__ = "No stereoscopic."
+STEREOSCOPIC_DISPLAY_MODE.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic."
+STEREOSCOPIC_DISPLAY_MODE.ANAGLYPH.__doc__ = "Anaglyph or two-color stereoscopic."
+STEREOSCOPIC_DISPLAY_MODE.LEFT_EYE.__doc__ = "Left eye view of the stereoscopic scene."
+STEREOSCOPIC_DISPLAY_MODE.RIGHT_EYE.__doc__ = "Right eye view of the stereoscopic scene."
 STEREOSCOPIC_DISPLAY_MODE.SIDE_BY_SIDE.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
 
 agcls.AgTypeNameMap["STEREOSCOPIC_DISPLAY_MODE"] = STEREOSCOPIC_DISPLAY_MODE
 
 class FONT_STYLE(IntEnum):
     """Font styles."""
+   
     REGULAR = 0x0
     """Regular font."""
     BOLD = 0x1
@@ -1272,6 +1326,7 @@ agcls.AgTypeNameMap["FONT_STYLE"] = FONT_STYLE
 
 class IPathPoint(object):
     """A path point used with the Path Primitive."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1399,6 +1454,7 @@ agcls.AgTypeNameMap["IPathPoint"] = IPathPoint
 
 class IPathPointFactory(object):
     """Create Path Primitive's path points."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1463,6 +1519,7 @@ agcls.AgTypeNameMap["IPathPointFactory"] = IPathPointFactory
 
 class IBoundingSphere(object):
     """A sphere that encapsulates an object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1505,6 +1562,7 @@ agcls.AgTypeNameMap["IBoundingSphere"] = IBoundingSphere
 
 class IBoundingSphereFactory(object):
     """Create instances of the bounding sphere type."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1546,6 +1604,7 @@ agcls.AgTypeNameMap["IBoundingSphereFactory"] = IBoundingSphereFactory
 
 class ITextureFilter2D(object):
     """A texture filter."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1609,7 +1668,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_clamp_to_edge(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_nearest_clamp_to_edge_metadata)
 
     _get_nearest_repeat_metadata = { "name" : "nearest_repeat",
@@ -1617,7 +1676,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_repeat(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_nearest_repeat_metadata)
 
     _get_linear_clamp_to_edge_metadata = { "name" : "linear_clamp_to_edge",
@@ -1625,7 +1684,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_clamp_to_edge(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_linear_clamp_to_edge_metadata)
 
     _get_linear_repeat_metadata = { "name" : "linear_repeat",
@@ -1633,7 +1692,7 @@ class ITextureFilter2D(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_repeat(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat."""
         return self._intf.get_property(ITextureFilter2D._metadata, ITextureFilter2D._get_linear_repeat_metadata)
 
 
@@ -1642,6 +1701,7 @@ agcls.AgTypeNameMap["ITextureFilter2D"] = ITextureFilter2D
 
 class ITextureFilter2DFactory(object):
     """Create texture filters."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1672,7 +1732,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_clamp_to_edge(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: ClampToEdge, WrapT: ClampToEdge."""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_nearest_clamp_to_edge_metadata)
 
     _get_nearest_repeat_metadata = { "name" : "nearest_repeat",
@@ -1680,7 +1740,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def nearest_repeat(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Nearest, MagnificationFilter: Nearest, WrapS: Repeat, WrapT: Repeat."""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_nearest_repeat_metadata)
 
     _get_linear_clamp_to_edge_metadata = { "name" : "linear_clamp_to_edge",
@@ -1688,7 +1748,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_clamp_to_edge(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: ClampToEdge, WrapT: ClampToEdge."""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_linear_clamp_to_edge_metadata)
 
     _get_linear_repeat_metadata = { "name" : "linear_repeat",
@@ -1696,7 +1756,7 @@ class ITextureFilter2DFactory(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def linear_repeat(self) -> "TextureFilter2D":
-        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat"""
+        """Get a texture filter with the following properties: MinificationFilter: Linear, MagnificationFilter: Linear, WrapS: Repeat, WrapT: Repeat."""
         return self._intf.get_property(ITextureFilter2DFactory._metadata, ITextureFilter2DFactory._get_linear_repeat_metadata)
 
     _initialize_metadata = { "name" : "initialize",
@@ -1726,6 +1786,7 @@ agcls.AgTypeNameMap["ITextureFilter2DFactory"] = ITextureFilter2DFactory
 
 class IRendererTexture2D(object):
     """A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1759,6 +1820,7 @@ agcls.AgTypeNameMap["IRendererTexture2D"] = IRendererTexture2D
 
 class IRendererTextureTemplate2D(object):
     """Template object containing attributes required to create a 2D texture."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1810,6 +1872,7 @@ agcls.AgTypeNameMap["IRendererTextureTemplate2D"] = IRendererTextureTemplate2D
 
 class IPathPointCollection(object):
     """A collection of path points."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1874,6 +1937,7 @@ agcls.AgTypeNameMap["IPathPointCollection"] = IPathPointCollection
 
 class IObjectCollection(object):
     """A collection of objects."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1938,6 +2002,7 @@ agcls.AgTypeNameMap["IObjectCollection"] = IObjectCollection
 
 class ISceneCollection(object):
     """A collection of scenes."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2002,6 +2067,7 @@ agcls.AgTypeNameMap["ISceneCollection"] = ISceneCollection
 
 class IScreenOverlayContainer(object):
     """The interface for screen overlays that contain a collection of other overlays. This interface is implemented by ScreenOverlayManager and ScreenOverlay."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2069,6 +2135,7 @@ agcls.AgTypeNameMap["IScreenOverlayContainer"] = IScreenOverlayContainer
 
 class IScreenOverlayPickResultCollection(object):
     """A collection of pick results."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2133,6 +2200,7 @@ agcls.AgTypeNameMap["IScreenOverlayPickResultCollection"] = IScreenOverlayPickRe
 
 class IGlobeImageOverlayAddCompleteEventArgs(object):
     """The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2166,6 +2234,7 @@ agcls.AgTypeNameMap["IGlobeImageOverlayAddCompleteEventArgs"] = IGlobeImageOverl
 
 class ITerrainOverlayAddCompleteEventArgs(object):
     """The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2199,6 +2268,7 @@ agcls.AgTypeNameMap["ITerrainOverlayAddCompleteEventArgs"] = ITerrainOverlayAddC
 
 class IPickResultCollection(object):
     """A collection of picked objects."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2263,6 +2333,7 @@ agcls.AgTypeNameMap["IPickResultCollection"] = IPickResultCollection
 
 class IRenderingEventArgs(object):
     """The event is raised when the scene is rendered."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2305,6 +2376,7 @@ agcls.AgTypeNameMap["IRenderingEventArgs"] = IRenderingEventArgs
 
 class IBatchPrimitiveIndex(object):
     """Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2347,6 +2419,7 @@ agcls.AgTypeNameMap["IBatchPrimitiveIndex"] = IBatchPrimitiveIndex
 
 class IKmlDocumentCollection(object):
     """A collection of KML documents."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2411,6 +2484,7 @@ agcls.AgTypeNameMap["IKmlDocumentCollection"] = IKmlDocumentCollection
 
 class IKmlFeatureCollection(object):
     """A collection of KML features."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2475,6 +2549,7 @@ agcls.AgTypeNameMap["IKmlFeatureCollection"] = IKmlFeatureCollection
 
 class IKmlDocumentLoadedEventArgs(object):
     """The event is raised when a KML document has been loaded."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2517,6 +2592,7 @@ agcls.AgTypeNameMap["IKmlDocumentLoadedEventArgs"] = IKmlDocumentLoadedEventArgs
 
 class IFactoryAndInitializers(object):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
+
     _num_methods = 83
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2623,7 +2699,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def box_triangulator(self) -> "BoxTriangulatorInitializer":
-        """Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_box_triangulator_metadata)
 
     _get_cylinder_triangulator_metadata = { "name" : "cylinder_triangulator",
@@ -2631,7 +2707,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def cylinder_triangulator(self) -> "CylinderTriangulatorInitializer":
-        """Access global methods and properties of CylinderTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of CylinderTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_cylinder_triangulator_metadata)
 
     _get_ellipsoid_triangulator_metadata = { "name" : "ellipsoid_triangulator",
@@ -2639,7 +2715,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def ellipsoid_triangulator(self) -> "EllipsoidTriangulatorInitializer":
-        """Access global methods and properties of EllipsoidTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of EllipsoidTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_ellipsoid_triangulator_metadata)
 
     _get_extruded_polyline_triangulator_metadata = { "name" : "extruded_polyline_triangulator",
@@ -2647,7 +2723,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def extruded_polyline_triangulator(self) -> "ExtrudedPolylineTriangulatorInitializer":
-        """Access global methods and properties of ExtrudedPolylineTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ExtrudedPolylineTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_extruded_polyline_triangulator_metadata)
 
     _get_surface_extent_triangulator_metadata = { "name" : "surface_extent_triangulator",
@@ -2655,7 +2731,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def surface_extent_triangulator(self) -> "SurfaceExtentTriangulatorInitializer":
-        """Access global methods and properties of SurfaceExtentTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SurfaceExtentTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_surface_extent_triangulator_metadata)
 
     _get_surface_polygon_triangulator_metadata = { "name" : "surface_polygon_triangulator",
@@ -2663,7 +2739,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def surface_polygon_triangulator(self) -> "SurfacePolygonTriangulatorInitializer":
-        """Access global methods and properties of SurfacePolygonTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SurfacePolygonTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_surface_polygon_triangulator_metadata)
 
     _get_surface_shapes_metadata = { "name" : "surface_shapes",
@@ -2671,7 +2747,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def surface_shapes(self) -> "SurfaceShapesInitializer":
-        """Access global methods and properties of SurfaceShapes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SurfaceShapes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_surface_shapes_metadata)
 
     _get_agi_processed_image_globe_overlay_metadata = { "name" : "agi_processed_image_globe_overlay",
@@ -2679,7 +2755,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def agi_processed_image_globe_overlay(self) -> "AGIProcessedImageGlobeOverlayFactory":
-        """Access global methods and properties of AGIProcessedImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AGIProcessedImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_agi_processed_image_globe_overlay_metadata)
 
     _get_agi_processed_terrain_overlay_metadata = { "name" : "agi_processed_terrain_overlay",
@@ -2687,7 +2763,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def agi_processed_terrain_overlay(self) -> "AGIProcessedTerrainOverlayFactory":
-        """Access global methods and properties of AGIProcessedTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AGIProcessedTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_agi_processed_terrain_overlay_metadata)
 
     _get_agi_roam_image_globe_overlay_metadata = { "name" : "agi_roam_image_globe_overlay",
@@ -2695,7 +2771,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def agi_roam_image_globe_overlay(self) -> "AGIRoamImageGlobeOverlayFactory":
-        """Access global methods and properties of AGIRoamImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AGIRoamImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_agi_roam_image_globe_overlay_metadata)
 
     _get_custom_image_globe_overlay_plugin_activator_metadata = { "name" : "custom_image_globe_overlay_plugin_activator",
@@ -2703,7 +2779,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def custom_image_globe_overlay_plugin_activator(self) -> "CustomImageGlobeOverlayPluginActivatorFactory":
-        """Access global methods and properties of CustomImageGlobeOverlayPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of CustomImageGlobeOverlayPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_custom_image_globe_overlay_plugin_activator_metadata)
 
     _get_geospatial_image_globe_overlay_metadata = { "name" : "geospatial_image_globe_overlay",
@@ -2711,7 +2787,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def geospatial_image_globe_overlay(self) -> "GeospatialImageGlobeOverlayFactory":
-        """Access global methods and properties of GeospatialImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GeospatialImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_geospatial_image_globe_overlay_metadata)
 
     _get_projected_raster_overlay_metadata = { "name" : "projected_raster_overlay",
@@ -2719,7 +2795,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def projected_raster_overlay(self) -> "ProjectedRasterOverlayFactory":
-        """Access global methods and properties of ProjectedRasterOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ProjectedRasterOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_projected_raster_overlay_metadata)
 
     _get_projection_metadata = { "name" : "projection",
@@ -2727,7 +2803,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def projection(self) -> "ProjectionFactory":
-        """Access global methods and properties of Projection (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of Projection (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_projection_metadata)
 
     _get_altitude_display_condition_metadata = { "name" : "altitude_display_condition",
@@ -2735,7 +2811,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def altitude_display_condition(self) -> "AltitudeDisplayConditionFactory":
-        """Access global methods and properties of AltitudeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AltitudeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_altitude_display_condition_metadata)
 
     _get_composite_display_condition_metadata = { "name" : "composite_display_condition",
@@ -2743,7 +2819,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def composite_display_condition(self) -> "CompositeDisplayConditionFactory":
-        """Access global methods and properties of CompositeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of CompositeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_composite_display_condition_metadata)
 
     _get_composite_primitive_metadata = { "name" : "composite_primitive",
@@ -2751,7 +2827,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def composite_primitive(self) -> "CompositePrimitiveFactory":
-        """Access global methods and properties of CompositePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of CompositePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_composite_primitive_metadata)
 
     _get_constant_display_condition_metadata = { "name" : "constant_display_condition",
@@ -2759,7 +2835,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def constant_display_condition(self) -> "ConstantDisplayConditionFactory":
-        """Access global methods and properties of ConstantDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ConstantDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_constant_display_condition_metadata)
 
     _get_distance_display_condition_metadata = { "name" : "distance_display_condition",
@@ -2767,7 +2843,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_display_condition(self) -> "DistanceDisplayConditionFactory":
-        """Access global methods and properties of DistanceDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of DistanceDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_distance_display_condition_metadata)
 
     _get_distance_to_globe_overlay_display_condition_metadata = { "name" : "distance_to_globe_overlay_display_condition",
@@ -2775,7 +2851,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_to_globe_overlay_display_condition(self) -> "DistanceToGlobeOverlayDisplayConditionFactory":
-        """Access global methods and properties of DistanceToGlobeOverlayDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of DistanceToGlobeOverlayDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_distance_to_globe_overlay_display_condition_metadata)
 
     _get_distance_to_position_display_condition_metadata = { "name" : "distance_to_position_display_condition",
@@ -2783,7 +2859,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_to_position_display_condition(self) -> "DistanceToPositionDisplayConditionFactory":
-        """Access global methods and properties of DistanceToPositionDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of DistanceToPositionDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_distance_to_position_display_condition_metadata)
 
     _get_distance_to_primitive_display_condition_metadata = { "name" : "distance_to_primitive_display_condition",
@@ -2791,7 +2867,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def distance_to_primitive_display_condition(self) -> "DistanceToPrimitiveDisplayConditionFactory":
-        """Access global methods and properties of DistanceToPrimitiveDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of DistanceToPrimitiveDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_distance_to_primitive_display_condition_metadata)
 
     _get_duration_path_primitive_update_policy_metadata = { "name" : "duration_path_primitive_update_policy",
@@ -2799,7 +2875,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def duration_path_primitive_update_policy(self) -> "DurationPathPrimitiveUpdatePolicyFactory":
-        """Access global methods and properties of DurationPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of DurationPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_duration_path_primitive_update_policy_metadata)
 
     _get_globe_image_overlay_metadata = { "name" : "globe_image_overlay",
@@ -2807,7 +2883,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def globe_image_overlay(self) -> "GlobeImageOverlayInitializer":
-        """Access global methods and properties of GlobeImageOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GlobeImageOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_globe_image_overlay_metadata)
 
     _get_graphics_font_metadata = { "name" : "graphics_font",
@@ -2815,7 +2891,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def graphics_font(self) -> "GraphicsFontFactory":
-        """Access global methods and properties of GraphicsFont (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GraphicsFont (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_graphics_font_metadata)
 
     _get_great_arc_interpolator_metadata = { "name" : "great_arc_interpolator",
@@ -2823,7 +2899,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def great_arc_interpolator(self) -> "GreatArcInterpolatorFactory":
-        """Access global methods and properties of GreatArcInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GreatArcInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_great_arc_interpolator_metadata)
 
     _get_alpha_from_luminance_filter_metadata = { "name" : "alpha_from_luminance_filter",
@@ -2831,7 +2907,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def alpha_from_luminance_filter(self) -> "AlphaFromLuminanceFilterFactory":
-        """Access global methods and properties of AlphaFromLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AlphaFromLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_alpha_from_luminance_filter_metadata)
 
     _get_alpha_from_pixel_filter_metadata = { "name" : "alpha_from_pixel_filter",
@@ -2839,7 +2915,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def alpha_from_pixel_filter(self) -> "AlphaFromPixelFilterFactory":
-        """Access global methods and properties of AlphaFromPixelFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AlphaFromPixelFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_alpha_from_pixel_filter_metadata)
 
     _get_alpha_from_raster_filter_metadata = { "name" : "alpha_from_raster_filter",
@@ -2847,7 +2923,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def alpha_from_raster_filter(self) -> "AlphaFromRasterFilterFactory":
-        """Access global methods and properties of AlphaFromRasterFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AlphaFromRasterFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_alpha_from_raster_filter_metadata)
 
     _get_band_extract_filter_metadata = { "name" : "band_extract_filter",
@@ -2855,7 +2931,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def band_extract_filter(self) -> "BandExtractFilterFactory":
-        """Access global methods and properties of BandExtractFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of BandExtractFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_band_extract_filter_metadata)
 
     _get_band_order_filter_metadata = { "name" : "band_order_filter",
@@ -2863,7 +2939,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def band_order_filter(self) -> "BandOrderFilterFactory":
-        """Access global methods and properties of BandOrderFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of BandOrderFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_band_order_filter_metadata)
 
     _get_blur_filter_metadata = { "name" : "blur_filter",
@@ -2871,7 +2947,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def blur_filter(self) -> "BlurFilterFactory":
-        """Access global methods and properties of BlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of BlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_blur_filter_metadata)
 
     _get_brightness_filter_metadata = { "name" : "brightness_filter",
@@ -2879,7 +2955,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def brightness_filter(self) -> "BrightnessFilterFactory":
-        """Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_brightness_filter_metadata)
 
     _get_color_to_luminance_filter_metadata = { "name" : "color_to_luminance_filter",
@@ -2887,7 +2963,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def color_to_luminance_filter(self) -> "ColorToLuminanceFilterFactory":
-        """Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_color_to_luminance_filter_metadata)
 
     _get_contrast_filter_metadata = { "name" : "contrast_filter",
@@ -2895,7 +2971,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def contrast_filter(self) -> "ContrastFilterFactory":
-        """Access global methods and properties of ContrastFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ContrastFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_contrast_filter_metadata)
 
     _get_convolution_filter_metadata = { "name" : "convolution_filter",
@@ -2903,7 +2979,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def convolution_filter(self) -> "ConvolutionFilterFactory":
-        """Access global methods and properties of ConvolutionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ConvolutionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_convolution_filter_metadata)
 
     _get_edge_detect_filter_metadata = { "name" : "edge_detect_filter",
@@ -2911,7 +2987,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def edge_detect_filter(self) -> "EdgeDetectFilterFactory":
-        """Access global methods and properties of EdgeDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of EdgeDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_edge_detect_filter_metadata)
 
     _get_filtering_raster_stream_metadata = { "name" : "filtering_raster_stream",
@@ -2919,7 +2995,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def filtering_raster_stream(self) -> "FilteringRasterStreamFactory":
-        """Access global methods and properties of FilteringRasterStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of FilteringRasterStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_filtering_raster_stream_metadata)
 
     _get_flip_filter_metadata = { "name" : "flip_filter",
@@ -2927,7 +3003,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def flip_filter(self) -> "FlipFilterFactory":
-        """Access global methods and properties of FlipFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of FlipFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_flip_filter_metadata)
 
     _get_gamma_correction_filter_metadata = { "name" : "gamma_correction_filter",
@@ -2935,7 +3011,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def gamma_correction_filter(self) -> "GammaCorrectionFilterFactory":
-        """Access global methods and properties of GammaCorrectionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GammaCorrectionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_gamma_correction_filter_metadata)
 
     _get_gaussian_blur_filter_metadata = { "name" : "gaussian_blur_filter",
@@ -2943,7 +3019,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def gaussian_blur_filter(self) -> "GaussianBlurFilterFactory":
-        """Access global methods and properties of GaussianBlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GaussianBlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_gaussian_blur_filter_metadata)
 
     _get_gradient_detect_filter_metadata = { "name" : "gradient_detect_filter",
@@ -2951,7 +3027,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def gradient_detect_filter(self) -> "GradientDetectFilterFactory":
-        """Access global methods and properties of GradientDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of GradientDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_gradient_detect_filter_metadata)
 
     _get_jpeg2000_writer_metadata = { "name" : "jpeg2000_writer",
@@ -2959,7 +3035,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def jpeg2000_writer(self) -> "Jpeg2000WriterInitializer":
-        """Access global methods and properties of Jpeg2000Writer (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of Jpeg2000Writer (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_jpeg2000_writer_metadata)
 
     _get_levels_filter_metadata = { "name" : "levels_filter",
@@ -2967,7 +3043,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def levels_filter(self) -> "LevelsFilterFactory":
-        """Access global methods and properties of LevelsFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of LevelsFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_levels_filter_metadata)
 
     _get_projection_raster_stream_plugin_activator_metadata = { "name" : "projection_raster_stream_plugin_activator",
@@ -2975,7 +3051,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def projection_raster_stream_plugin_activator(self) -> "ProjectionRasterStreamPluginActivatorFactory":
-        """Access global methods and properties of ProjectionRasterStreamPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ProjectionRasterStreamPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_projection_raster_stream_plugin_activator_metadata)
 
     _get_raster_metadata = { "name" : "raster",
@@ -2983,7 +3059,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster(self) -> "RasterFactory":
-        """Access global methods and properties of Raster (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of Raster (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_raster_metadata)
 
     _get_raster_attributes_metadata = { "name" : "raster_attributes",
@@ -2991,7 +3067,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster_attributes(self) -> "RasterAttributesFactory":
-        """Access global methods and properties of RasterAttributes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of RasterAttributes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_raster_attributes_metadata)
 
     _get_rotate_filter_metadata = { "name" : "rotate_filter",
@@ -2999,7 +3075,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def rotate_filter(self) -> "RotateFilterFactory":
-        """Access global methods and properties of RotateFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of RotateFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_rotate_filter_metadata)
 
     _get_sequence_filter_metadata = { "name" : "sequence_filter",
@@ -3007,7 +3083,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def sequence_filter(self) -> "SequenceFilterFactory":
-        """Access global methods and properties of SequenceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SequenceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_sequence_filter_metadata)
 
     _get_sharpen_filter_metadata = { "name" : "sharpen_filter",
@@ -3015,7 +3091,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def sharpen_filter(self) -> "SharpenFilterFactory":
-        """Access global methods and properties of SharpenFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SharpenFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_sharpen_filter_metadata)
 
     _get_video_stream_metadata = { "name" : "video_stream",
@@ -3023,7 +3099,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def video_stream(self) -> "VideoStreamFactory":
-        """Access global methods and properties of VideoStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of VideoStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_video_stream_metadata)
 
     _get_marker_batch_primitive_metadata = { "name" : "marker_batch_primitive",
@@ -3031,7 +3107,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def marker_batch_primitive(self) -> "MarkerBatchPrimitiveFactory":
-        """Access global methods and properties of MarkerBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of MarkerBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_marker_batch_primitive_metadata)
 
     _get_marker_batch_primitive_optional_parameters_metadata = { "name" : "marker_batch_primitive_optional_parameters",
@@ -3039,7 +3115,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def marker_batch_primitive_optional_parameters(self) -> "MarkerBatchPrimitiveOptionalParametersFactory":
-        """Access global methods and properties of MarkerBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of MarkerBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_marker_batch_primitive_optional_parameters_metadata)
 
     _get_maximum_count_path_primitive_update_policy_metadata = { "name" : "maximum_count_path_primitive_update_policy",
@@ -3047,7 +3123,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def maximum_count_path_primitive_update_policy(self) -> "MaximumCountPathPrimitiveUpdatePolicyFactory":
-        """Access global methods and properties of MaximumCountPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of MaximumCountPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_maximum_count_path_primitive_update_policy_metadata)
 
     _get_model_primitive_metadata = { "name" : "model_primitive",
@@ -3055,7 +3131,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def model_primitive(self) -> "ModelPrimitiveFactory":
-        """Access global methods and properties of ModelPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ModelPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_model_primitive_metadata)
 
     _get_path_primitive_metadata = { "name" : "path_primitive",
@@ -3063,7 +3139,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def path_primitive(self) -> "PathPrimitiveFactory":
-        """Access global methods and properties of PathPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PathPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_path_primitive_metadata)
 
     _get_pixel_size_display_condition_metadata = { "name" : "pixel_size_display_condition",
@@ -3071,7 +3147,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def pixel_size_display_condition(self) -> "PixelSizeDisplayConditionFactory":
-        """Access global methods and properties of PixelSizeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PixelSizeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_pixel_size_display_condition_metadata)
 
     _get_point_batch_primitive_metadata = { "name" : "point_batch_primitive",
@@ -3079,7 +3155,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def point_batch_primitive(self) -> "PointBatchPrimitiveFactory":
-        """Access global methods and properties of PointBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PointBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_point_batch_primitive_metadata)
 
     _get_polyline_primitive_metadata = { "name" : "polyline_primitive",
@@ -3087,7 +3163,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def polyline_primitive(self) -> "PolylinePrimitiveFactory":
-        """Access global methods and properties of PolylinePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PolylinePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_polyline_primitive_metadata)
 
     _get_raster_image_globe_overlay_metadata = { "name" : "raster_image_globe_overlay",
@@ -3095,7 +3171,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def raster_image_globe_overlay(self) -> "RasterImageGlobeOverlayFactory":
-        """Access global methods and properties of RasterImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of RasterImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_raster_image_globe_overlay_metadata)
 
     _get_rhumb_line_interpolator_metadata = { "name" : "rhumb_line_interpolator",
@@ -3103,7 +3179,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def rhumb_line_interpolator(self) -> "RhumbLineInterpolatorFactory":
-        """Access global methods and properties of RhumbLineInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of RhumbLineInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_rhumb_line_interpolator_metadata)
 
     _get_scene_display_condition_metadata = { "name" : "scene_display_condition",
@@ -3111,7 +3187,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scene_display_condition(self) -> "SceneDisplayConditionFactory":
-        """Access global methods and properties of SceneDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SceneDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_scene_display_condition_metadata)
 
     _get_scene_manager_metadata = { "name" : "scene_manager",
@@ -3119,7 +3195,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def scene_manager(self) -> "SceneManagerInitializer":
-        """Access global methods and properties of SceneManager (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SceneManager (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_scene_manager_metadata)
 
     _get_screen_overlay_metadata = { "name" : "screen_overlay",
@@ -3127,7 +3203,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def screen_overlay(self) -> "ScreenOverlayFactory":
-        """Access global methods and properties of ScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of ScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_screen_overlay_metadata)
 
     _get_solid_primitive_metadata = { "name" : "solid_primitive",
@@ -3135,7 +3211,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def solid_primitive(self) -> "SolidPrimitiveFactory":
-        """Access global methods and properties of SolidPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SolidPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_solid_primitive_metadata)
 
     _get_surface_mesh_primitive_metadata = { "name" : "surface_mesh_primitive",
@@ -3143,7 +3219,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def surface_mesh_primitive(self) -> "SurfaceMeshPrimitiveFactory":
-        """Access global methods and properties of SurfaceMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of SurfaceMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_surface_mesh_primitive_metadata)
 
     _get_terrain_overlay_metadata = { "name" : "terrain_overlay",
@@ -3151,7 +3227,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def terrain_overlay(self) -> "TerrainOverlayInitializer":
-        """Access global methods and properties of TerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_terrain_overlay_metadata)
 
     _get_text_batch_primitive_metadata = { "name" : "text_batch_primitive",
@@ -3159,7 +3235,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def text_batch_primitive(self) -> "TextBatchPrimitiveFactory":
-        """Access global methods and properties of TextBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TextBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_text_batch_primitive_metadata)
 
     _get_text_batch_primitive_optional_parameters_metadata = { "name" : "text_batch_primitive_optional_parameters",
@@ -3167,7 +3243,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def text_batch_primitive_optional_parameters(self) -> "TextBatchPrimitiveOptionalParametersFactory":
-        """Access global methods and properties of TextBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TextBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_text_batch_primitive_optional_parameters_metadata)
 
     _get_texture_matrix_metadata = { "name" : "texture_matrix",
@@ -3175,7 +3251,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_matrix(self) -> "TextureMatrixFactory":
-        """Access global methods and properties of TextureMatrix (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TextureMatrix (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_texture_matrix_metadata)
 
     _get_texture_screen_overlay_metadata = { "name" : "texture_screen_overlay",
@@ -3183,7 +3259,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def texture_screen_overlay(self) -> "TextureScreenOverlayFactory":
-        """Access global methods and properties of TextureScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TextureScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_texture_screen_overlay_metadata)
 
     _get_time_interval_display_condition_metadata = { "name" : "time_interval_display_condition",
@@ -3191,7 +3267,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def time_interval_display_condition(self) -> "TimeIntervalDisplayConditionFactory":
-        """Access global methods and properties of TimeIntervalDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TimeIntervalDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_time_interval_display_condition_metadata)
 
     _get_triangle_mesh_primitive_metadata = { "name" : "triangle_mesh_primitive",
@@ -3199,7 +3275,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def triangle_mesh_primitive(self) -> "TriangleMeshPrimitiveFactory":
-        """Access global methods and properties of TriangleMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TriangleMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_triangle_mesh_primitive_metadata)
 
     _get_triangle_mesh_primitive_optional_parameters_metadata = { "name" : "triangle_mesh_primitive_optional_parameters",
@@ -3207,7 +3283,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def triangle_mesh_primitive_optional_parameters(self) -> "TriangleMeshPrimitiveOptionalParametersFactory":
-        """Access global methods and properties of TriangleMeshPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TriangleMeshPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_triangle_mesh_primitive_optional_parameters_metadata)
 
     _get_texture_filter_2d_metadata = { "name" : "texture_filter_2d",
@@ -3239,7 +3315,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def text_overlay(self) -> "TextOverlayFactory":
-        """Access global methods and properties of TextOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of TextOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_text_overlay_metadata)
 
     _get_agi_custom_terrain_overlay_metadata = { "name" : "agi_custom_terrain_overlay",
@@ -3247,7 +3323,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def agi_custom_terrain_overlay(self) -> "AGICustomTerrainOverlayFactory":
-        """Access global methods and properties of AGICustomTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AGICustomTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_agi_custom_terrain_overlay_metadata)
 
     _get_axes_primitive_metadata = { "name" : "axes_primitive",
@@ -3255,7 +3331,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def axes_primitive(self) -> "AxesPrimitiveFactory":
-        """Access global methods and properties of AxesPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of AxesPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_axes_primitive_metadata)
 
     _get_vector_primitive_metadata = { "name" : "vector_primitive",
@@ -3263,7 +3339,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def vector_primitive(self) -> "VectorPrimitiveFactory":
-        """Access global methods and properties of VectorPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of VectorPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_vector_primitive_metadata)
 
     _get_polyline_primitive_optional_parameters_metadata = { "name" : "polyline_primitive_optional_parameters",
@@ -3271,7 +3347,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def polyline_primitive_optional_parameters(self) -> "PolylinePrimitiveOptionalParametersFactory":
-        """Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_polyline_primitive_optional_parameters_metadata)
 
     _get_point_batch_primitive_optional_parameters_metadata = { "name" : "point_batch_primitive_optional_parameters",
@@ -3279,7 +3355,7 @@ class IFactoryAndInitializers(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def point_batch_primitive_optional_parameters(self) -> "PointBatchPrimitiveOptionalParametersFactory":
-        """Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)"""
+        """Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.)."""
         return self._intf.get_property(IFactoryAndInitializers._metadata, IFactoryAndInitializers._get_point_batch_primitive_optional_parameters_metadata)
 
 
@@ -3288,6 +3364,7 @@ agcls.AgTypeNameMap["IFactoryAndInitializers"] = IFactoryAndInitializers
 
 class IExtrudedPolylineTriangulatorResult(object):
     """The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3339,6 +3416,7 @@ agcls.AgTypeNameMap["IExtrudedPolylineTriangulatorResult"] = IExtrudedPolylineTr
 
 class ISolidTriangulatorResult(object):
     """The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3399,6 +3477,7 @@ agcls.AgTypeNameMap["ISolidTriangulatorResult"] = ISolidTriangulatorResult
 
 class ISurfaceShapesResult(object):
     """Represents the boundary positions of a shape on the surface computed from by a surface shapes method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3450,6 +3529,7 @@ agcls.AgTypeNameMap["ISurfaceShapesResult"] = ISurfaceShapesResult
 
 class ISurfaceTriangulatorResult(object):
     """The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh..."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3519,6 +3599,7 @@ agcls.AgTypeNameMap["ISurfaceTriangulatorResult"] = ISurfaceTriangulatorResult
 
 class ITriangulatorResult(object):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3588,6 +3669,7 @@ agcls.AgTypeNameMap["ITriangulatorResult"] = ITriangulatorResult
 
 class IAGICustomTerrainOverlay(object):
     """A terrain overlay for handling AGI Cesium Terrain."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3613,6 +3695,7 @@ agcls.AgTypeNameMap["IAGICustomTerrainOverlay"] = IAGICustomTerrainOverlay
 
 class IAGIProcessedImageGlobeOverlay(object):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3638,6 +3721,7 @@ agcls.AgTypeNameMap["IAGIProcessedImageGlobeOverlay"] = IAGIProcessedImageGlobeO
 
 class IAGIProcessedTerrainOverlay(object):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3663,6 +3747,7 @@ agcls.AgTypeNameMap["IAGIProcessedTerrainOverlay"] = IAGIProcessedTerrainOverlay
 
 class IAGIRoamImageGlobeOverlay(object):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3688,6 +3773,7 @@ agcls.AgTypeNameMap["IAGIRoamImageGlobeOverlay"] = IAGIRoamImageGlobeOverlay
 
 class ICameraSnapshot(object):
     """Takes snapshots of the 3D window."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3752,6 +3838,7 @@ agcls.AgTypeNameMap["ICameraSnapshot"] = ICameraSnapshot
 
 class ICameraVideoRecording(object):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3817,6 +3904,7 @@ agcls.AgTypeNameMap["ICameraVideoRecording"] = ICameraVideoRecording
 
 class ICentralBodyGraphicsIndexer(object):
     """An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3887,6 +3975,7 @@ agcls.AgTypeNameMap["ICentralBodyGraphicsIndexer"] = ICentralBodyGraphicsIndexer
 
 class ICustomImageGlobeOverlay(object):
     """A globe image overlay that allows for a user defined image to be specified."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3978,6 +4067,7 @@ agcls.AgTypeNameMap["ICustomImageGlobeOverlay"] = ICustomImageGlobeOverlay
 
 class ICustomImageGlobeOverlayPluginActivator(object):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4018,6 +4108,7 @@ agcls.AgTypeNameMap["ICustomImageGlobeOverlayPluginActivator"] = ICustomImageGlo
 
 class ICustomImageGlobeOverlayPluginProxy(object):
     """A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4069,6 +4160,7 @@ agcls.AgTypeNameMap["ICustomImageGlobeOverlayPluginProxy"] = ICustomImageGlobeOv
 
 class IGeospatialImageGlobeOverlay(object):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4127,6 +4219,7 @@ agcls.AgTypeNameMap["IGeospatialImageGlobeOverlay"] = IGeospatialImageGlobeOverl
 
 class IGlobeOverlay(object):
     """The base class of all terrain overlay and globe image overlay objects."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4213,6 +4306,7 @@ agcls.AgTypeNameMap["IGlobeOverlay"] = IGlobeOverlay
 
 class IGlobeOverlaySettings(object):
     """Settings used by globe overlay objects. These setting affect all scenes."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4288,6 +4382,7 @@ agcls.AgTypeNameMap["IGlobeOverlaySettings"] = IGlobeOverlaySettings
 
 class ILighting(object):
     """Lighting in the 3D scene."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4380,6 +4475,7 @@ agcls.AgTypeNameMap["ILighting"] = ILighting
 
 class IPathPrimitiveUpdatePolicy(object):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4412,6 +4508,7 @@ agcls.AgTypeNameMap["IPathPrimitiveUpdatePolicy"] = IPathPrimitiveUpdatePolicy
 
 class IProjectedRasterOverlay(object):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
+
     _num_methods = 36
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4743,6 +4840,7 @@ agcls.AgTypeNameMap["IProjectedRasterOverlay"] = IProjectedRasterOverlay
 
 class IProjection(object):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4869,6 +4967,7 @@ agcls.AgTypeNameMap["IProjection"] = IProjection
 
 class IProjectionStream(object):
     """A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4918,6 +5017,7 @@ agcls.AgTypeNameMap["IProjectionStream"] = IProjectionStream
 
 class ISceneGlobeOverlaySettings(object):
     """Settings used by globe overlay objects. These settings only affect the scene."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5010,6 +5110,7 @@ agcls.AgTypeNameMap["ISceneGlobeOverlaySettings"] = ISceneGlobeOverlaySettings
 
 class IScreenOverlayCollectionBase(object):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5116,6 +5217,7 @@ agcls.AgTypeNameMap["IScreenOverlayCollectionBase"] = IScreenOverlayCollectionBa
 
 class ITexture2DFactory(object):
     """A factory for creating texture 2d objects from various sources."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5156,6 +5258,7 @@ agcls.AgTypeNameMap["ITexture2DFactory"] = ITexture2DFactory
 
 class IVisualEffects(object):
     """Control various post processing effects that can be applied to the scene."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5185,7 +5288,7 @@ class IVisualEffects(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def lens_flare_enabled(self) -> bool:
-        """Get or set whether or not the lens flare effect is enabled"""
+        """Get or set whether or not the lens flare effect is enabled."""
         return self._intf.get_property(IVisualEffects._metadata, IVisualEffects._get_lens_flare_enabled_metadata)
 
     _set_lens_flare_enabled_metadata = { "name" : "lens_flare_enabled",
@@ -5231,6 +5334,7 @@ agcls.AgTypeNameMap["IVisualEffects"] = IVisualEffects
 
 class IAltitudeDisplayCondition(object):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5306,6 +5410,7 @@ agcls.AgTypeNameMap["IAltitudeDisplayCondition"] = IAltitudeDisplayCondition
 
 class IAxesPrimitive(object):
     """Render an axes in the 3D scene."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5517,6 +5622,7 @@ agcls.AgTypeNameMap["IAxesPrimitive"] = IAxesPrimitive
 
 class ICamera(object):
     """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
+
     _num_methods = 50
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5962,6 +6068,7 @@ agcls.AgTypeNameMap["ICamera"] = ICamera
 
 class ICentralBodyGraphics(object):
     """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6183,6 +6290,7 @@ agcls.AgTypeNameMap["ICentralBodyGraphics"] = ICentralBodyGraphics
 
 class IClouds(object):
     """Load, show and hide clouds in the scene."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6284,6 +6392,7 @@ agcls.AgTypeNameMap["IClouds"] = IClouds
 
 class ICompositeDisplayCondition(object):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6471,6 +6580,7 @@ agcls.AgTypeNameMap["ICompositeDisplayCondition"] = ICompositeDisplayCondition
 
 class ICompositePrimitive(object):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6574,6 +6684,7 @@ agcls.AgTypeNameMap["ICompositePrimitive"] = ICompositePrimitive
 
 class IConstantDisplayCondition(object):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6615,6 +6726,7 @@ agcls.AgTypeNameMap["IConstantDisplayCondition"] = IConstantDisplayCondition
 
 class IDisplayCondition(object):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6640,6 +6752,7 @@ agcls.AgTypeNameMap["IDisplayCondition"] = IDisplayCondition
 
 class IDistanceDisplayCondition(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6716,6 +6829,7 @@ agcls.AgTypeNameMap["IDistanceDisplayCondition"] = IDistanceDisplayCondition
 
 class IDistanceToGlobeOverlayDisplayCondition(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6809,6 +6923,7 @@ agcls.AgTypeNameMap["IDistanceToGlobeOverlayDisplayCondition"] = IDistanceToGlob
 
 class IDistanceToPositionDisplayCondition(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6919,6 +7034,7 @@ agcls.AgTypeNameMap["IDistanceToPositionDisplayCondition"] = IDistanceToPosition
 
 class IDistanceToPrimitiveDisplayCondition(object):
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7012,6 +7128,7 @@ agcls.AgTypeNameMap["IDistanceToPrimitiveDisplayCondition"] = IDistanceToPrimiti
 
 class IDurationPathPrimitiveUpdatePolicy(object):
     """path primitive update policy that removes points from remove location after a given duration."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7070,6 +7187,7 @@ agcls.AgTypeNameMap["IDurationPathPrimitiveUpdatePolicy"] = IDurationPathPrimiti
 
 class IFrameRate(object):
     """Keeps track of how many times the scenes are rendered per second."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7128,6 +7246,7 @@ agcls.AgTypeNameMap["IFrameRate"] = IFrameRate
 
 class IGlobeImageOverlay(object):
     """A globe overlay that shows an image."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7263,6 +7382,7 @@ agcls.AgTypeNameMap["IGlobeImageOverlay"] = IGlobeImageOverlay
 
 class IGraphicsFont(object):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7368,6 +7488,7 @@ agcls.AgTypeNameMap["IGraphicsFont"] = IGraphicsFont
 
 class IGreatArcInterpolator(object):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7426,6 +7547,7 @@ agcls.AgTypeNameMap["IGreatArcInterpolator"] = IGreatArcInterpolator
 
 class IImageCollection(object):
     """A collection of globe image overlay objects."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7631,6 +7753,7 @@ agcls.AgTypeNameMap["IImageCollection"] = IImageCollection
 
 class IAlphaFromLuminanceFilter(object):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7656,6 +7779,7 @@ agcls.AgTypeNameMap["IAlphaFromLuminanceFilter"] = IAlphaFromLuminanceFilter
 
 class IAlphaFromPixelFilter(object):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7681,6 +7805,7 @@ agcls.AgTypeNameMap["IAlphaFromPixelFilter"] = IAlphaFromPixelFilter
 
 class IAlphaFromRasterFilter(object):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7722,6 +7847,7 @@ agcls.AgTypeNameMap["IAlphaFromRasterFilter"] = IAlphaFromRasterFilter
 
 class IBandExtractFilter(object):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7763,6 +7889,7 @@ agcls.AgTypeNameMap["IBandExtractFilter"] = IBandExtractFilter
 
 class IBandOrderFilter(object):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7821,6 +7948,7 @@ agcls.AgTypeNameMap["IBandOrderFilter"] = IBandOrderFilter
 
 class IBlurFilter(object):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7862,6 +7990,7 @@ agcls.AgTypeNameMap["IBlurFilter"] = IBlurFilter
 
 class IBrightnessFilter(object):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7903,6 +8032,7 @@ agcls.AgTypeNameMap["IBrightnessFilter"] = IBrightnessFilter
 
 class IColorToLuminanceFilter(object):
     """Extract a luminance band derived from the color bands of the source raster."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7928,6 +8058,7 @@ agcls.AgTypeNameMap["IColorToLuminanceFilter"] = IColorToLuminanceFilter
 
 class IContrastFilter(object):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7969,6 +8100,7 @@ agcls.AgTypeNameMap["IContrastFilter"] = IContrastFilter
 
 class IConvolutionFilter(object):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8044,6 +8176,7 @@ agcls.AgTypeNameMap["IConvolutionFilter"] = IConvolutionFilter
 
 class IEdgeDetectFilter(object):
     """Apply a convolution filter to detect edges in the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8085,6 +8218,7 @@ agcls.AgTypeNameMap["IEdgeDetectFilter"] = IEdgeDetectFilter
 
 class IFilteringRasterStream(object):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8127,6 +8261,7 @@ agcls.AgTypeNameMap["IFilteringRasterStream"] = IFilteringRasterStream
 
 class IFlipFilter(object):
     """Flips the source raster along the given flip axis."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8168,6 +8303,7 @@ agcls.AgTypeNameMap["IFlipFilter"] = IFlipFilter
 
 class IGammaCorrectionFilter(object):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8209,6 +8345,7 @@ agcls.AgTypeNameMap["IGammaCorrectionFilter"] = IGammaCorrectionFilter
 
 class IGaussianBlurFilter(object):
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8234,6 +8371,7 @@ agcls.AgTypeNameMap["IGaussianBlurFilter"] = IGaussianBlurFilter
 
 class IGradientDetectFilter(object):
     """Apply a convolution filter to detect gradients in the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8275,6 +8413,7 @@ agcls.AgTypeNameMap["IGradientDetectFilter"] = IGradientDetectFilter
 
 class ILevelsFilter(object):
     """Adjusts the band levels of the source raster linearly."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8315,6 +8454,7 @@ agcls.AgTypeNameMap["ILevelsFilter"] = ILevelsFilter
 
 class IProjectionRasterStreamPluginActivator(object):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8355,6 +8495,7 @@ agcls.AgTypeNameMap["IProjectionRasterStreamPluginActivator"] = IProjectionRaste
 
 class IProjectionRasterStreamPluginProxy(object):
     """A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8424,6 +8565,7 @@ agcls.AgTypeNameMap["IProjectionRasterStreamPluginProxy"] = IProjectionRasterStr
 
 class IRaster(object):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8531,6 +8673,7 @@ agcls.AgTypeNameMap["IRaster"] = IRaster
 
 class IRasterAttributes(object):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8653,6 +8796,7 @@ agcls.AgTypeNameMap["IRasterAttributes"] = IRasterAttributes
 
 class IRasterFilter(object):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8678,6 +8822,7 @@ agcls.AgTypeNameMap["IRasterFilter"] = IRasterFilter
 
 class IRasterStream(object):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8727,6 +8872,7 @@ agcls.AgTypeNameMap["IRasterStream"] = IRasterStream
 
 class IRotateFilter(object):
     """Rotate the source raster clockwise by the specified angle."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8768,6 +8914,7 @@ agcls.AgTypeNameMap["IRotateFilter"] = IRotateFilter
 
 class ISequenceFilter(object):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8850,6 +8997,7 @@ agcls.AgTypeNameMap["ISequenceFilter"] = ISequenceFilter
 
 class ISharpenFilter(object):
     """Apply a convolution filter to increase the sharpness of the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8891,6 +9039,7 @@ agcls.AgTypeNameMap["ISharpenFilter"] = ISharpenFilter
 
 class IVideoStream(object):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+
     _num_methods = 35
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9211,6 +9360,7 @@ agcls.AgTypeNameMap["IVideoStream"] = IVideoStream
 
 class IKmlContainer(object):
     """A KmlContainer contains a collection of children kml features."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9244,6 +9394,7 @@ agcls.AgTypeNameMap["IKmlContainer"] = IKmlContainer
 
 class IKmlDocument(object):
     """A KML document."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9277,6 +9428,7 @@ agcls.AgTypeNameMap["IKmlDocument"] = IKmlDocument
 
 class IKmlFeature(object):
     """A KML feature."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9380,6 +9532,7 @@ agcls.AgTypeNameMap["IKmlFeature"] = IKmlFeature
 
 class IKmlFolder(object):
     """A KML folder."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9405,6 +9558,7 @@ agcls.AgTypeNameMap["IKmlFolder"] = IKmlFolder
 
 class IKmlGraphics(object):
     """Provide loading and unloading of kml documents for a particular central body."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9505,6 +9659,7 @@ agcls.AgTypeNameMap["IKmlGraphics"] = IKmlGraphics
 
 class IKmlNetworkLink(object):
     """A KML network link."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9676,6 +9831,7 @@ agcls.AgTypeNameMap["IKmlNetworkLink"] = IKmlNetworkLink
 
 class IMarkerBatchPrimitive(object):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+
     _num_methods = 54
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10152,6 +10308,7 @@ agcls.AgTypeNameMap["IMarkerBatchPrimitive"] = IMarkerBatchPrimitive
 
 class IMarkerBatchPrimitiveOptionalParameters(object):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10256,6 +10413,7 @@ agcls.AgTypeNameMap["IMarkerBatchPrimitiveOptionalParameters"] = IMarkerBatchPri
 
 class IMaximumCountPathPrimitiveUpdatePolicy(object):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10314,6 +10472,7 @@ agcls.AgTypeNameMap["IMaximumCountPathPrimitiveUpdatePolicy"] = IMaximumCountPat
 
 class IModelArticulation(object):
     """A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10412,6 +10571,7 @@ agcls.AgTypeNameMap["IModelArticulation"] = IModelArticulation
 
 class IModelArticulationCollection(object):
     """A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10501,6 +10661,7 @@ agcls.AgTypeNameMap["IModelArticulationCollection"] = IModelArticulationCollecti
 
 class IModelPrimitive(object):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10618,6 +10779,7 @@ agcls.AgTypeNameMap["IModelPrimitive"] = IModelPrimitive
 
 class IModelTransformation(object):
     """A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10713,6 +10875,7 @@ agcls.AgTypeNameMap["IModelTransformation"] = IModelTransformation
 
 class IOverlay(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     _num_methods = 76
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11339,14 +11502,14 @@ class IOverlay(object):
             "arg_types" : (),
             "marshallers" : () }
     def bring_to_front(self) -> None:
-        """Brings the overlay to the front of the z-order, so it is on top of all other overlays with the same parent"""
+        """Brings the overlay to the front of the z-order, so it is on top of all other overlays with the same parent."""
         return self._intf.invoke(IOverlay._metadata, IOverlay._bring_to_front_metadata, )
 
     _send_to_back_metadata = { "name" : "send_to_back",
             "arg_types" : (),
             "marshallers" : () }
     def send_to_back(self) -> None:
-        """Send the overlay to the back of the z-order, so it is underneath all other overlays with the same parent"""
+        """Send the overlay to the back of the z-order, so it is underneath all other overlays with the same parent."""
         return self._intf.invoke(IOverlay._metadata, IOverlay._send_to_back_metadata, )
 
     _overlay_to_control_metadata = { "name" : "overlay_to_control",
@@ -11384,6 +11547,7 @@ agcls.AgTypeNameMap["IOverlay"] = IOverlay
 
 class IPathPrimitive(object):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11683,6 +11847,7 @@ agcls.AgTypeNameMap["IPathPrimitive"] = IPathPrimitive
 
 class IPickResult(object):
     """A single result from Pick."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11734,6 +11899,7 @@ agcls.AgTypeNameMap["IPickResult"] = IPickResult
 
 class IPixelSizeDisplayCondition(object):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11792,6 +11958,7 @@ agcls.AgTypeNameMap["IPixelSizeDisplayCondition"] = IPixelSizeDisplayCondition
 
 class IPointBatchPrimitive(object):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12047,28 +12214,28 @@ class IPointBatchPrimitive(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None:
-        """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_cartographic_metadata, centralBody, positions, indices)
 
     _set_partial_cartographic_with_indices_order_metadata = { "name" : "set_partial_cartographic_with_indices_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, indices, indicesOrderHint)
 
     _set_partial_cartographic_with_colors_metadata = { "name" : "set_partial_cartographic_with_colors",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_cartographic_with_colors(self, centralBody:str, positions:list, colors:list, indices:list) -> None:
-        """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_cartographic_with_colors_metadata, centralBody, positions, colors, indices)
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "name" : "set_partial_cartographic_with_colors_indices_order_and_render_pass",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPointBatchPrimitive._metadata, IPointBatchPrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, centralBody, positions, colors, indices, indicesOrderHint, renderPassHint)
 
     _get_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -12099,6 +12266,7 @@ agcls.AgTypeNameMap["IPointBatchPrimitive"] = IPointBatchPrimitive
 
 class IPointBatchPrimitiveOptionalParameters(object):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12131,6 +12299,7 @@ agcls.AgTypeNameMap["IPointBatchPrimitiveOptionalParameters"] = IPointBatchPrimi
 
 class IPolylinePrimitive(object):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+
     _num_methods = 42
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12430,28 +12599,28 @@ class IPolylinePrimitive(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_cartographic(self, centralBody:str, positions:list, indices:list) -> None:
-        """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_cartographic_metadata, centralBody, positions, indices)
 
     _set_partial_cartographic_with_indices_order_metadata = { "name" : "set_partial_cartographic_with_indices_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT),) }
     def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
-        """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, indices, indicesOrderHint)
 
     _set_partial_cartographic_with_colors_metadata = { "name" : "set_partial_cartographic_with_colors",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_cartographic_with_colors(self, centralBody:str, positions:list, colors:list, indices:list) -> None:
-        """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_cartographic_with_colors_metadata, centralBody, positions, colors, indices)
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "name" : "set_partial_cartographic_with_colors_indices_order_and_render_pass",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(INDICES_ORDER_HINT), agmarshall.AgEnum_arg(RENDER_PASS_HINT),) }
     def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
-        """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, centralBody, positions, colors, indices, indicesOrderHint, renderPassHint)
 
     _get_central_body_clipped_metadata = { "name" : "central_body_clipped",
@@ -12494,7 +12663,7 @@ class IPolylinePrimitive(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_in_arg("IPolylinePrimitiveOptionalParameters"), agmarshall.LPSAFEARRAY_arg,) }
     def set_partial_cartographic_with_optional_parameters(self, centralBody:str, positions:list, colors:list, optionalParameters:"IPolylinePrimitiveOptionalParameters", indices:list) -> None:
-        """For convenience. Updates a subset of positions, colors, and/or optional point properties in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial"""
+        """For convenience. Updates a subset of positions, colors, and/or optional point properties in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(IPolylinePrimitive._metadata, IPolylinePrimitive._set_partial_cartographic_with_optional_parameters_metadata, centralBody, positions, colors, optionalParameters, indices)
 
 
@@ -12503,6 +12672,7 @@ agcls.AgTypeNameMap["IPolylinePrimitive"] = IPolylinePrimitive
 
 class IPolylinePrimitiveOptionalParameters(object):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12526,7 +12696,7 @@ class IPolylinePrimitiveOptionalParameters(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def set_time_intervals(self, timeIntervals:list) -> None:
-        """Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline"""
+        """Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline."""
         return self._intf.invoke(IPolylinePrimitiveOptionalParameters._metadata, IPolylinePrimitiveOptionalParameters._set_time_intervals_metadata, timeIntervals)
 
 
@@ -12535,6 +12705,7 @@ agcls.AgTypeNameMap["IPolylinePrimitiveOptionalParameters"] = IPolylinePrimitive
 
 class IPositionInterpolator(object):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12560,7 +12731,7 @@ class IPositionInterpolator(object):
             "marshallers" : (agmarshall.AgEnum_arg(POLYLINE_TYPE),) }
     @property
     def polyline_type(self) -> "POLYLINE_TYPE":
-        """Get the polyline type of positions returned from interpolate"""
+        """Get the polyline type of positions returned from interpolate."""
         return self._intf.get_property(IPositionInterpolator._metadata, IPositionInterpolator._get_polyline_type_metadata)
 
     _interpolate_metadata = { "name" : "interpolate",
@@ -12576,6 +12747,7 @@ agcls.AgTypeNameMap["IPositionInterpolator"] = IPositionInterpolator
 
 class IPrimitive(object):
     """Primitives represent objects rendered in the 3D scene."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12736,6 +12908,7 @@ agcls.AgTypeNameMap["IPrimitive"] = IPrimitive
 
 class IPrimitiveManager(object):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12856,6 +13029,7 @@ agcls.AgTypeNameMap["IPrimitiveManager"] = IPrimitiveManager
 
 class IRasterImageGlobeOverlay(object):
     """A globe image overlay for handling rasters."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12914,6 +13088,7 @@ agcls.AgTypeNameMap["IRasterImageGlobeOverlay"] = IRasterImageGlobeOverlay
 
 class IRhumbLineInterpolator(object):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12972,6 +13147,7 @@ agcls.AgTypeNameMap["IRhumbLineInterpolator"] = IRhumbLineInterpolator
 
 class IScene(object):
     """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13196,6 +13372,7 @@ agcls.AgTypeNameMap["IScene"] = IScene
 
 class ISceneDisplayCondition(object):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13244,6 +13421,7 @@ agcls.AgTypeNameMap["ISceneDisplayCondition"] = ISceneDisplayCondition
 
 class ISceneManager(object):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13339,6 +13517,7 @@ agcls.AgTypeNameMap["ISceneManager"] = ISceneManager
 
 class IScreenOverlay(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13364,6 +13543,7 @@ agcls.AgTypeNameMap["IScreenOverlay"] = IScreenOverlay
 
 class IScreenOverlayCollection(object):
     """A collection of screen overlays."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13389,6 +13569,7 @@ agcls.AgTypeNameMap["IScreenOverlayCollection"] = IScreenOverlayCollection
 
 class IScreenOverlayManager(object):
     """The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13465,6 +13646,7 @@ agcls.AgTypeNameMap["IScreenOverlayManager"] = IScreenOverlayManager
 
 class IScreenOverlayPickResult(object):
     """Describes a picked screen overlay as a result of a call to pick screen overlays."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13516,6 +13698,7 @@ agcls.AgTypeNameMap["IScreenOverlayPickResult"] = IScreenOverlayPickResult
 
 class ISolidPrimitive(object):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+
     _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13872,6 +14055,7 @@ agcls.AgTypeNameMap["ISolidPrimitive"] = ISolidPrimitive
 
 class IStereoscopic(object):
     """Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13964,6 +14148,7 @@ agcls.AgTypeNameMap["IStereoscopic"] = IStereoscopic
 
 class ISurfaceMeshPrimitive(object):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14132,6 +14317,7 @@ agcls.AgTypeNameMap["ISurfaceMeshPrimitive"] = ISurfaceMeshPrimitive
 
 class ITerrainOverlayCollection(object):
     """A collection of terrain overlay objects."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14337,6 +14523,7 @@ agcls.AgTypeNameMap["ITerrainOverlayCollection"] = ITerrainOverlayCollection
 
 class ITerrainOverlay(object):
     """A globe overlay which shows terrain."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14403,7 +14590,8 @@ agcls.AgClassCatalog.add_catalog_entry("{dfe57e34-7b31-4360-a7a8-8db856882670}",
 agcls.AgTypeNameMap["ITerrainOverlay"] = ITerrainOverlay
 
 class ITextBatchPrimitive(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14694,6 +14882,7 @@ agcls.AgTypeNameMap["ITextBatchPrimitive"] = ITextBatchPrimitive
 
 class ITextBatchPrimitiveOptionalParameters(object):
     """Optional per-string and per-batch parameters for text batch primitive..."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14835,6 +15024,7 @@ agcls.AgTypeNameMap["ITextBatchPrimitiveOptionalParameters"] = ITextBatchPrimiti
 
 class ITextOverlay(object):
     """A rectangular overlay that contains text."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14910,6 +15100,7 @@ agcls.AgTypeNameMap["ITextOverlay"] = ITextOverlay
 
 class ITextureMatrix(object):
     """A 4 by 4 matrix applied to a texture coordinate."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15078,6 +15269,7 @@ agcls.AgTypeNameMap["ITextureMatrix"] = ITextureMatrix
 
 class ITextureScreenOverlay(object):
     """A rectangular overlay that can be assigned a texture."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15153,6 +15345,7 @@ agcls.AgTypeNameMap["ITextureScreenOverlay"] = ITextureScreenOverlay
 
 class ITimeIntervalDisplayCondition(object):
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15211,6 +15404,7 @@ agcls.AgTypeNameMap["ITimeIntervalDisplayCondition"] = ITimeIntervalDisplayCondi
 
 class ITriangleMeshPrimitive(object):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15421,6 +15615,7 @@ agcls.AgTypeNameMap["ITriangleMeshPrimitive"] = ITriangleMeshPrimitive
 
 class ITriangleMeshPrimitiveOptionalParameters(object):
     """Optional parameters for triangle mesh primitive..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15461,6 +15656,7 @@ agcls.AgTypeNameMap["ITriangleMeshPrimitiveOptionalParameters"] = ITriangleMeshP
 
 class IVectorPrimitive(object):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+
     _num_methods = 28
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15723,6 +15919,7 @@ agcls.AgTypeNameMap["IVectorPrimitive"] = IVectorPrimitive
 
 class IBoxTriangulatorInitializer(object):
     """Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15755,6 +15952,7 @@ agcls.AgTypeNameMap["IBoxTriangulatorInitializer"] = IBoxTriangulatorInitializer
 
 class ICylinderTriangulatorInitializer(object):
     """Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15795,6 +15993,7 @@ agcls.AgTypeNameMap["ICylinderTriangulatorInitializer"] = ICylinderTriangulatorI
 
 class IEllipsoidTriangulatorInitializer(object):
     """Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15835,6 +16034,7 @@ agcls.AgTypeNameMap["IEllipsoidTriangulatorInitializer"] = IEllipsoidTriangulato
 
 class IExtrudedPolylineTriangulatorInitializer(object):
     """Triangulates a polyline into an extrusion with bottom and top boundaries."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15883,14 +16083,14 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute_cartographic(self, centralBody:str, bottomPositions:list, topPositions:list) -> "ExtrudedPolylineTriangulatorResult":
-        """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute"""
+        """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_cartographic_metadata, centralBody, bottomPositions, topPositions, out_arg())
 
     _compute_cartographic_with_winding_order_metadata = { "name" : "compute_cartographic_with_winding_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_cartographic_with_winding_order(self, centralBody:str, bottomPositions:list, topPositions:list, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
-        """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute"""
+        """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_cartographic_with_winding_order_metadata, centralBody, bottomPositions, topPositions, positionsWindingOrder, out_arg())
 
     _compute_with_altitudes_metadata = { "name" : "compute_with_altitudes",
@@ -15911,14 +16111,14 @@ class IExtrudedPolylineTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_cartographic_with_altitudes(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float) -> "ExtrudedPolylineTriangulatorResult":
-        """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
+        """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_cartographic_with_altitudes_metadata, centralBody, positions, bottomAltitude, topAltitude, out_arg())
 
     _compute_cartographic_with_altitudes_and_winding_order_metadata = { "name" : "compute_cartographic_with_altitudes_and_winding_order",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_cartographic_with_altitudes_and_winding_order(self, centralBody:str, positions:list, bottomAltitude:float, topAltitude:float, positionsWindingOrder:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
-        """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
+        """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(IExtrudedPolylineTriangulatorInitializer._metadata, IExtrudedPolylineTriangulatorInitializer._compute_cartographic_with_altitudes_and_winding_order_metadata, centralBody, positions, bottomAltitude, topAltitude, positionsWindingOrder, out_arg())
 
     _compute_single_constant_altitude_metadata = { "name" : "compute_single_constant_altitude",
@@ -15955,6 +16155,7 @@ agcls.AgTypeNameMap["IExtrudedPolylineTriangulatorInitializer"] = IExtrudedPolyl
 
 class ISurfaceExtentTriangulatorInitializer(object):
     """Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15995,6 +16196,7 @@ agcls.AgTypeNameMap["ISurfaceExtentTriangulatorInitializer"] = ISurfaceExtentTri
 
 class ISurfacePolygonTriangulatorInitializer(object):
     """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16030,7 +16232,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.AgInterface_out_arg,) }
     def compute_cartographic(self, centralBody:str, positions:list) -> "SurfaceTriangulatorResult":
-        """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
+        """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_cartographic_metadata, centralBody, positions, out_arg())
 
     _compute_with_hole_metadata = { "name" : "compute_with_hole",
@@ -16058,7 +16260,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(WINDING_ORDER), agmarshall.AgInterface_out_arg,) }
     def compute_cartographic_with_altitude_and_granularity(self, centralBody:str, positions:list, altitude:float, granularity:float, positionsWindingOrder:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
-        """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute"""
+        """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(ISurfacePolygonTriangulatorInitializer._metadata, ISurfacePolygonTriangulatorInitializer._compute_cartographic_with_altitude_and_granularity_metadata, centralBody, positions, altitude, granularity, positionsWindingOrder, out_arg())
 
 
@@ -16067,6 +16269,7 @@ agcls.AgTypeNameMap["ISurfacePolygonTriangulatorInitializer"] = ISurfacePolygonT
 
 class ISurfaceShapesInitializer(object):
     """Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16115,14 +16318,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_circle_cartographic_with_granularity(self, centralBody:str, center:list, radius:float, granularity:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle"""
+        """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_circle_cartographic_with_granularity_metadata, centralBody, center, radius, granularity, out_arg())
 
     _compute_circle_cartographic_metadata = { "name" : "compute_circle_cartographic",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_circle_cartographic(self, centralBody:str, center:list, radius:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle"""
+        """For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_circle_cartographic_metadata, centralBody, center, radius, out_arg())
 
     _compute_ellipse_with_granularity_metadata = { "name" : "compute_ellipse_with_granularity",
@@ -16143,14 +16346,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_ellipse_cartographic_with_granularity(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float, granularity:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse"""
+        """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_ellipse_cartographic_with_granularity_metadata, centralBody, center, majorAxisRadius, minorAxisRadius, bearing, granularity, out_arg())
 
     _compute_ellipse_cartographic_metadata = { "name" : "compute_ellipse_cartographic",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_ellipse_cartographic(self, centralBody:str, center:list, majorAxisRadius:float, minorAxisRadius:float, bearing:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse"""
+        """For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_ellipse_cartographic_metadata, centralBody, center, majorAxisRadius, minorAxisRadius, bearing, out_arg())
 
     _compute_sector_with_granularity_metadata = { "name" : "compute_sector_with_granularity",
@@ -16171,14 +16374,14 @@ class ISurfaceShapesInitializer(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_sector_cartographic_with_granularity(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float, granularity:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector"""
+        """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_sector_cartographic_with_granularity_metadata, centralBody, center, innerRadius, outerRadius, startBearing, endBearing, granularity, out_arg())
 
     _compute_sector_cartographic_metadata = { "name" : "compute_sector_cartographic",
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.LPSAFEARRAY_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgInterface_out_arg,) }
     def compute_sector_cartographic(self, centralBody:str, center:list, innerRadius:float, outerRadius:float, startBearing:float, endBearing:float) -> "SurfaceShapesResult":
-        """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector"""
+        """For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector."""
         return self._intf.invoke(ISurfaceShapesInitializer._metadata, ISurfaceShapesInitializer._compute_sector_cartographic_metadata, centralBody, center, innerRadius, outerRadius, startBearing, endBearing, out_arg())
 
 
@@ -16187,6 +16390,7 @@ agcls.AgTypeNameMap["ISurfaceShapesInitializer"] = ISurfaceShapesInitializer
 
 class IAGICustomTerrainOverlayFactory(object):
     """A terrain overlay for handling AGI Cesium Terrain."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16219,6 +16423,7 @@ agcls.AgTypeNameMap["IAGICustomTerrainOverlayFactory"] = IAGICustomTerrainOverla
 
 class IAGIProcessedImageGlobeOverlayFactory(object):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16251,6 +16456,7 @@ agcls.AgTypeNameMap["IAGIProcessedImageGlobeOverlayFactory"] = IAGIProcessedImag
 
 class IAGIProcessedTerrainOverlayFactory(object):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16283,6 +16489,7 @@ agcls.AgTypeNameMap["IAGIProcessedTerrainOverlayFactory"] = IAGIProcessedTerrain
 
 class IAGIRoamImageGlobeOverlayFactory(object):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16315,6 +16522,7 @@ agcls.AgTypeNameMap["IAGIRoamImageGlobeOverlayFactory"] = IAGIRoamImageGlobeOver
 
 class ICustomImageGlobeOverlayPluginActivatorFactory(object):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16347,6 +16555,7 @@ agcls.AgTypeNameMap["ICustomImageGlobeOverlayPluginActivatorFactory"] = ICustomI
 
 class IGeospatialImageGlobeOverlayFactory(object):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16379,6 +16588,7 @@ agcls.AgTypeNameMap["IGeospatialImageGlobeOverlayFactory"] = IGeospatialImageGlo
 
 class IProjectedRasterOverlayFactory(object):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16420,6 +16630,7 @@ agcls.AgTypeNameMap["IProjectedRasterOverlayFactory"] = IProjectedRasterOverlayF
 
 class IProjectionFactory(object):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16468,6 +16679,7 @@ agcls.AgTypeNameMap["IProjectionFactory"] = IProjectionFactory
 
 class IAltitudeDisplayConditionFactory(object):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16516,6 +16728,7 @@ agcls.AgTypeNameMap["IAltitudeDisplayConditionFactory"] = IAltitudeDisplayCondit
 
 class IAxesPrimitiveFactory(object):
     """Render an axes in the 3D scene."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16548,6 +16761,7 @@ agcls.AgTypeNameMap["IAxesPrimitiveFactory"] = IAxesPrimitiveFactory
 
 class ICompositeDisplayConditionFactory(object):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16580,6 +16794,7 @@ agcls.AgTypeNameMap["ICompositeDisplayConditionFactory"] = ICompositeDisplayCond
 
 class ICompositePrimitiveFactory(object):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16612,6 +16827,7 @@ agcls.AgTypeNameMap["ICompositePrimitiveFactory"] = ICompositePrimitiveFactory
 
 class IConstantDisplayConditionFactory(object):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16652,6 +16868,7 @@ agcls.AgTypeNameMap["IConstantDisplayConditionFactory"] = IConstantDisplayCondit
 
 class IDistanceDisplayConditionFactory(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16692,6 +16909,7 @@ agcls.AgTypeNameMap["IDistanceDisplayConditionFactory"] = IDistanceDisplayCondit
 
 class IDistanceToGlobeOverlayDisplayConditionFactory(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16732,6 +16950,7 @@ agcls.AgTypeNameMap["IDistanceToGlobeOverlayDisplayConditionFactory"] = IDistanc
 
 class IDistanceToPositionDisplayConditionFactory(object):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16780,6 +16999,7 @@ agcls.AgTypeNameMap["IDistanceToPositionDisplayConditionFactory"] = IDistanceToP
 
 class IDistanceToPrimitiveDisplayConditionFactory(object):
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16820,6 +17040,7 @@ agcls.AgTypeNameMap["IDistanceToPrimitiveDisplayConditionFactory"] = IDistanceTo
 
 class IDurationPathPrimitiveUpdatePolicyFactory(object):
     """path primitive update policy that removes points from remove location after a given duration."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16860,6 +17081,7 @@ agcls.AgTypeNameMap["IDurationPathPrimitiveUpdatePolicyFactory"] = IDurationPath
 
 class IGlobeImageOverlayInitializer(object):
     """A globe overlay that shows an image."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16893,6 +17115,7 @@ agcls.AgTypeNameMap["IGlobeImageOverlayInitializer"] = IGlobeImageOverlayInitial
 
 class IGraphicsFontFactory(object):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16933,6 +17156,7 @@ agcls.AgTypeNameMap["IGraphicsFontFactory"] = IGraphicsFontFactory
 
 class IGreatArcInterpolatorFactory(object):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16981,6 +17205,7 @@ agcls.AgTypeNameMap["IGreatArcInterpolatorFactory"] = IGreatArcInterpolatorFacto
 
 class IAlphaFromLuminanceFilterFactory(object):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17013,6 +17238,7 @@ agcls.AgTypeNameMap["IAlphaFromLuminanceFilterFactory"] = IAlphaFromLuminanceFil
 
 class IAlphaFromPixelFilterFactory(object):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17045,6 +17271,7 @@ agcls.AgTypeNameMap["IAlphaFromPixelFilterFactory"] = IAlphaFromPixelFilterFacto
 
 class IAlphaFromRasterFilterFactory(object):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17085,6 +17312,7 @@ agcls.AgTypeNameMap["IAlphaFromRasterFilterFactory"] = IAlphaFromRasterFilterFac
 
 class IBandExtractFilterFactory(object):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17133,6 +17361,7 @@ agcls.AgTypeNameMap["IBandExtractFilterFactory"] = IBandExtractFilterFactory
 
 class IBandOrderFilterFactory(object):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17181,6 +17410,7 @@ agcls.AgTypeNameMap["IBandOrderFilterFactory"] = IBandOrderFilterFactory
 
 class IBlurFilterFactory(object):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17221,6 +17451,7 @@ agcls.AgTypeNameMap["IBlurFilterFactory"] = IBlurFilterFactory
 
 class IBrightnessFilterFactory(object):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17261,6 +17492,7 @@ agcls.AgTypeNameMap["IBrightnessFilterFactory"] = IBrightnessFilterFactory
 
 class IColorToLuminanceFilterFactory(object):
     """Extract a luminance band derived from the color bands of the source raster."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17293,6 +17525,7 @@ agcls.AgTypeNameMap["IColorToLuminanceFilterFactory"] = IColorToLuminanceFilterF
 
 class IContrastFilterFactory(object):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17333,6 +17566,7 @@ agcls.AgTypeNameMap["IContrastFilterFactory"] = IContrastFilterFactory
 
 class IConvolutionFilterFactory(object):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17389,6 +17623,7 @@ agcls.AgTypeNameMap["IConvolutionFilterFactory"] = IConvolutionFilterFactory
 
 class IEdgeDetectFilterFactory(object):
     """Apply a convolution filter to detect edges in the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17429,6 +17664,7 @@ agcls.AgTypeNameMap["IEdgeDetectFilterFactory"] = IEdgeDetectFilterFactory
 
 class IFilteringRasterStreamFactory(object):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17461,6 +17697,7 @@ agcls.AgTypeNameMap["IFilteringRasterStreamFactory"] = IFilteringRasterStreamFac
 
 class IFlipFilterFactory(object):
     """Flips the source raster along the given flip axis."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17501,6 +17738,7 @@ agcls.AgTypeNameMap["IFlipFilterFactory"] = IFlipFilterFactory
 
 class IGammaCorrectionFilterFactory(object):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17541,6 +17779,7 @@ agcls.AgTypeNameMap["IGammaCorrectionFilterFactory"] = IGammaCorrectionFilterFac
 
 class IGaussianBlurFilterFactory(object):
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17573,6 +17812,7 @@ agcls.AgTypeNameMap["IGaussianBlurFilterFactory"] = IGaussianBlurFilterFactory
 
 class IGradientDetectFilterFactory(object):
     """Apply a convolution filter to detect gradients in the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17613,6 +17853,7 @@ agcls.AgTypeNameMap["IGradientDetectFilterFactory"] = IGradientDetectFilterFacto
 
 class IJpeg2000WriterInitializer(object):
     """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17669,6 +17910,7 @@ agcls.AgTypeNameMap["IJpeg2000WriterInitializer"] = IJpeg2000WriterInitializer
 
 class ILevelsFilterFactory(object):
     """Adjusts the band levels of the source raster linearly."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17701,6 +17943,7 @@ agcls.AgTypeNameMap["ILevelsFilterFactory"] = ILevelsFilterFactory
 
 class IProjectionRasterStreamPluginActivatorFactory(object):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17733,6 +17976,7 @@ agcls.AgTypeNameMap["IProjectionRasterStreamPluginActivatorFactory"] = IProjecti
 
 class IRasterFactory(object):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17781,6 +18025,7 @@ agcls.AgTypeNameMap["IRasterFactory"] = IRasterFactory
 
 class IRasterAttributesFactory(object):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17844,7 +18089,7 @@ class IRasterAttributesFactory(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IRaster"), agmarshall.AgInterface_out_arg,) }
     def initialize_with_raster(self, raster:"IRaster") -> "RasterAttributes":
-        """Initialize a new instance with the attributes of the specified raster"""
+        """Initialize a new instance with the attributes of the specified raster."""
         return self._intf.invoke(IRasterAttributesFactory._metadata, IRasterAttributesFactory._initialize_with_raster_metadata, raster, out_arg())
 
 
@@ -17853,6 +18098,7 @@ agcls.AgTypeNameMap["IRasterAttributesFactory"] = IRasterAttributesFactory
 
 class IRotateFilterFactory(object):
     """Rotate the source raster clockwise by the specified angle."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17893,6 +18139,7 @@ agcls.AgTypeNameMap["IRotateFilterFactory"] = IRotateFilterFactory
 
 class ISequenceFilterFactory(object):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17925,6 +18172,7 @@ agcls.AgTypeNameMap["ISequenceFilterFactory"] = ISequenceFilterFactory
 
 class ISharpenFilterFactory(object):
     """Apply a convolution filter to increase the sharpness of the source raster."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17965,6 +18213,7 @@ agcls.AgTypeNameMap["ISharpenFilterFactory"] = ISharpenFilterFactory
 
 class IVideoStreamFactory(object):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18013,6 +18262,7 @@ agcls.AgTypeNameMap["IVideoStreamFactory"] = IVideoStreamFactory
 
 class IMarkerBatchPrimitiveFactory(object):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18093,6 +18343,7 @@ agcls.AgTypeNameMap["IMarkerBatchPrimitiveFactory"] = IMarkerBatchPrimitiveFacto
 
 class IMarkerBatchPrimitiveOptionalParametersFactory(object):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18125,6 +18376,7 @@ agcls.AgTypeNameMap["IMarkerBatchPrimitiveOptionalParametersFactory"] = IMarkerB
 
 class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18165,6 +18417,7 @@ agcls.AgTypeNameMap["IMaximumCountPathPrimitiveUpdatePolicyFactory"] = IMaximumC
 
 class IModelPrimitiveFactory(object):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18213,6 +18466,7 @@ agcls.AgTypeNameMap["IModelPrimitiveFactory"] = IModelPrimitiveFactory
 
 class IPathPrimitiveFactory(object):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18271,6 +18525,7 @@ agcls.AgTypeNameMap["IPathPrimitiveFactory"] = IPathPrimitiveFactory
 
 class IPixelSizeDisplayConditionFactory(object):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18311,6 +18566,7 @@ agcls.AgTypeNameMap["IPixelSizeDisplayConditionFactory"] = IPixelSizeDisplayCond
 
 class IPointBatchPrimitiveFactory(object):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18369,6 +18625,7 @@ agcls.AgTypeNameMap["IPointBatchPrimitiveFactory"] = IPointBatchPrimitiveFactory
 
 class IPointBatchPrimitiveOptionalParametersFactory(object):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18401,6 +18658,7 @@ agcls.AgTypeNameMap["IPointBatchPrimitiveOptionalParametersFactory"] = IPointBat
 
 class IPolylinePrimitiveFactory(object):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18491,6 +18749,7 @@ agcls.AgTypeNameMap["IPolylinePrimitiveFactory"] = IPolylinePrimitiveFactory
 
 class IPolylinePrimitiveOptionalParametersFactory(object):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18523,6 +18782,7 @@ agcls.AgTypeNameMap["IPolylinePrimitiveOptionalParametersFactory"] = IPolylinePr
 
 class IRasterImageGlobeOverlayFactory(object):
     """A globe image overlay for handling rasters."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18571,6 +18831,7 @@ agcls.AgTypeNameMap["IRasterImageGlobeOverlayFactory"] = IRasterImageGlobeOverla
 
 class IRhumbLineInterpolatorFactory(object):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18619,6 +18880,7 @@ agcls.AgTypeNameMap["IRhumbLineInterpolatorFactory"] = IRhumbLineInterpolatorFac
 
 class ISceneDisplayConditionFactory(object):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18651,6 +18913,7 @@ agcls.AgTypeNameMap["ISceneDisplayConditionFactory"] = ISceneDisplayConditionFac
 
 class ISceneManagerInitializer(object):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18737,6 +19000,7 @@ agcls.AgTypeNameMap["ISceneManagerInitializer"] = ISceneManagerInitializer
 
 class IScreenOverlayFactory(object):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18777,6 +19041,7 @@ agcls.AgTypeNameMap["IScreenOverlayFactory"] = IScreenOverlayFactory
 
 class ISolidPrimitiveFactory(object):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18835,6 +19100,7 @@ agcls.AgTypeNameMap["ISolidPrimitiveFactory"] = ISolidPrimitiveFactory
 
 class ISurfaceMeshPrimitiveFactory(object):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18899,6 +19165,7 @@ agcls.AgTypeNameMap["ISurfaceMeshPrimitiveFactory"] = ISurfaceMeshPrimitiveFacto
 
 class ITerrainOverlayInitializer(object):
     """A globe overlay which shows terrain."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18931,7 +19198,8 @@ agcls.AgClassCatalog.add_catalog_entry("{74c0acde-8d75-49df-87c1-2c39e3240283}",
 agcls.AgTypeNameMap["ITerrainOverlayInitializer"] = ITerrainOverlayInitializer
 
 class ITextBatchPrimitiveFactory(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18980,6 +19248,7 @@ agcls.AgTypeNameMap["ITextBatchPrimitiveFactory"] = ITextBatchPrimitiveFactory
 
 class ITextBatchPrimitiveOptionalParametersFactory(object):
     """Optional per-string and per-batch parameters for text batch primitive..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19012,6 +19281,7 @@ agcls.AgTypeNameMap["ITextBatchPrimitiveOptionalParametersFactory"] = ITextBatch
 
 class ITextOverlayFactory(object):
     """A rectangular overlay that contains text."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19068,6 +19338,7 @@ agcls.AgTypeNameMap["ITextOverlayFactory"] = ITextOverlayFactory
 
 class ITextureMatrixFactory(object):
     """A 4 by 4 matrix applied to a texture coordinate."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19124,6 +19395,7 @@ agcls.AgTypeNameMap["ITextureMatrixFactory"] = ITextureMatrixFactory
 
 class ITextureScreenOverlayFactory(object):
     """A rectangular overlay that can be assigned a texture."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19188,6 +19460,7 @@ agcls.AgTypeNameMap["ITextureScreenOverlayFactory"] = ITextureScreenOverlayFacto
 
 class ITimeIntervalDisplayConditionFactory(object):
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19236,6 +19509,7 @@ agcls.AgTypeNameMap["ITimeIntervalDisplayConditionFactory"] = ITimeIntervalDispl
 
 class ITriangleMeshPrimitiveFactory(object):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19276,6 +19550,7 @@ agcls.AgTypeNameMap["ITriangleMeshPrimitiveFactory"] = ITriangleMeshPrimitiveFac
 
 class ITriangleMeshPrimitiveOptionalParametersFactory(object):
     """Optional parameters for triangle mesh primitive..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19308,6 +19583,7 @@ agcls.AgTypeNameMap["ITriangleMeshPrimitiveOptionalParametersFactory"] = ITriang
 
 class IVectorPrimitiveFactory(object):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19342,6 +19618,7 @@ agcls.AgTypeNameMap["IVectorPrimitiveFactory"] = IVectorPrimitiveFactory
 
 class PathPoint(IPathPoint):
     """Represents a path point used in conjunction with the Path Primitive."""
+
     def __init__(self, sourceObject=None):
         IPathPoint.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19358,6 +19635,7 @@ agcls.AgTypeNameMap["PathPoint"] = PathPoint
 
 class PathPointFactory(IPathPointFactory):
     """Factory creates path points."""
+
     def __init__(self, sourceObject=None):
         IPathPointFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19374,6 +19652,7 @@ agcls.AgTypeNameMap["PathPointFactory"] = PathPointFactory
 
 class BoundingSphere(IBoundingSphere):
     """A sphere that encapsulates an object."""
+
     def __init__(self, sourceObject=None):
         IBoundingSphere.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19390,6 +19669,7 @@ agcls.AgTypeNameMap["BoundingSphere"] = BoundingSphere
 
 class BoundingSphereFactory(IBoundingSphereFactory):
     """Create bounding spheres."""
+
     def __init__(self, sourceObject=None):
         IBoundingSphereFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19406,6 +19686,7 @@ agcls.AgTypeNameMap["BoundingSphereFactory"] = BoundingSphereFactory
 
 class TextureFilter2D(ITextureFilter2D):
     """A texture filter."""
+
     def __init__(self, sourceObject=None):
         ITextureFilter2D.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19422,6 +19703,7 @@ agcls.AgTypeNameMap["TextureFilter2D"] = TextureFilter2D
 
 class TextureFilter2DFactory(ITextureFilter2DFactory):
     """Create texture filters."""
+
     def __init__(self, sourceObject=None):
         ITextureFilter2DFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19438,6 +19720,7 @@ agcls.AgTypeNameMap["TextureFilter2DFactory"] = TextureFilter2DFactory
 
 class RendererTexture2D(IRendererTexture2D):
     """A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory."""
+
     def __init__(self, sourceObject=None):
         IRendererTexture2D.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19454,6 +19737,7 @@ agcls.AgTypeNameMap["RendererTexture2D"] = RendererTexture2D
 
 class RendererTextureTemplate2D(IRendererTextureTemplate2D):
     """Template object containing attributes required to create a 2D texture."""
+
     def __init__(self, sourceObject=None):
         IRendererTextureTemplate2D.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19470,6 +19754,7 @@ agcls.AgTypeNameMap["RendererTextureTemplate2D"] = RendererTextureTemplate2D
 
 class PathPointCollection(IPathPointCollection):
     """A collection of path points."""
+
     def __init__(self, sourceObject=None):
         IPathPointCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19486,6 +19771,7 @@ agcls.AgTypeNameMap["PathPointCollection"] = PathPointCollection
 
 class ObjectCollection(IObjectCollection):
     """A collection of objects."""
+
     def __init__(self, sourceObject=None):
         IObjectCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19502,6 +19788,7 @@ agcls.AgTypeNameMap["ObjectCollection"] = ObjectCollection
 
 class SceneCollection(ISceneCollection):
     """A collection of scenes."""
+
     def __init__(self, sourceObject=None):
         ISceneCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19518,6 +19805,7 @@ agcls.AgTypeNameMap["SceneCollection"] = SceneCollection
 
 class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
     """A collection of pick results."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayPickResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19534,6 +19822,7 @@ agcls.AgTypeNameMap["ScreenOverlayPickResultCollection"] = ScreenOverlayPickResu
 
 class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventArgs):
     """The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync."""
+
     def __init__(self, sourceObject=None):
         IGlobeImageOverlayAddCompleteEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19550,6 +19839,7 @@ agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"] = GlobeImageOverlay
 
 class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
     """The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync."""
+
     def __init__(self, sourceObject=None):
         ITerrainOverlayAddCompleteEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19566,6 +19856,7 @@ agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"] = TerrainOverlayAddCom
 
 class PickResultCollection(IPickResultCollection):
     """A collection of picked objects."""
+
     def __init__(self, sourceObject=None):
         IPickResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19582,6 +19873,7 @@ agcls.AgTypeNameMap["PickResultCollection"] = PickResultCollection
 
 class RenderingEventArgs(IRenderingEventArgs):
     """The event is raised when the scene is rendered."""
+
     def __init__(self, sourceObject=None):
         IRenderingEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19598,6 +19890,7 @@ agcls.AgTypeNameMap["RenderingEventArgs"] = RenderingEventArgs
 
 class BatchPrimitiveIndex(IBatchPrimitiveIndex):
     """Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index..."""
+
     def __init__(self, sourceObject=None):
         IBatchPrimitiveIndex.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19614,6 +19907,7 @@ agcls.AgTypeNameMap["BatchPrimitiveIndex"] = BatchPrimitiveIndex
 
 class KmlDocumentCollection(IKmlDocumentCollection):
     """A collection of KML documents."""
+
     def __init__(self, sourceObject=None):
         IKmlDocumentCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19630,6 +19924,7 @@ agcls.AgTypeNameMap["KmlDocumentCollection"] = KmlDocumentCollection
 
 class KmlFeatureCollection(IKmlFeatureCollection):
     """A collection of KML features."""
+
     def __init__(self, sourceObject=None):
         IKmlFeatureCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19646,6 +19941,7 @@ agcls.AgTypeNameMap["KmlFeatureCollection"] = KmlFeatureCollection
 
 class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
     """The event is raised when a KML document has been loaded."""
+
     def __init__(self, sourceObject=None):
         IKmlDocumentLoadedEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19662,6 +19958,7 @@ agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"] = KmlDocumentLoadedEventArgs
 
 class FactoryAndInitializers(IFactoryAndInitializers):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
+
     def __init__(self, sourceObject=None):
         IFactoryAndInitializers.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19678,6 +19975,7 @@ agcls.AgTypeNameMap["FactoryAndInitializers"] = FactoryAndInitializers
 
 class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, ITriangulatorResult):
     """The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
+
     def __init__(self, sourceObject=None):
         IExtrudedPolylineTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
@@ -19696,6 +19994,7 @@ agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorResult"] = ExtrudedPolylineTria
 
 class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
     """The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive..."""
+
     def __init__(self, sourceObject=None):
         ISolidTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
@@ -19714,6 +20013,7 @@ agcls.AgTypeNameMap["SolidTriangulatorResult"] = SolidTriangulatorResult
 
 class SurfaceShapesResult(ISurfaceShapesResult):
     """Represents the boundary positions of a shape on the surface computed from by a surface shapes method."""
+
     def __init__(self, sourceObject=None):
         ISurfaceShapesResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19730,6 +20030,7 @@ agcls.AgTypeNameMap["SurfaceShapesResult"] = SurfaceShapesResult
 
 class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult):
     """The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh..."""
+
     def __init__(self, sourceObject=None):
         ISurfaceTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
@@ -19748,6 +20049,7 @@ agcls.AgTypeNameMap["SurfaceTriangulatorResult"] = SurfaceTriangulatorResult
 
 class TriangulatorResult(ITriangulatorResult):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
+
     def __init__(self, sourceObject=None):
         ITriangulatorResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19764,6 +20066,7 @@ agcls.AgTypeNameMap["TriangulatorResult"] = TriangulatorResult
 
 class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay):
     """A terrain overlay for handling AGI Cesium Terrain."""
+
     def __init__(self, sourceObject=None):
         IAGICustomTerrainOverlay.__init__(self, sourceObject)
         ITerrainOverlay.__init__(self, sourceObject)
@@ -19784,6 +20087,7 @@ agcls.AgTypeNameMap["AGICustomTerrainOverlay"] = AGICustomTerrainOverlay
 
 class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
+
     def __init__(self, sourceObject=None):
         IAGIProcessedImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -19804,6 +20108,7 @@ agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlay"] = AGIProcessedImageGlobeOve
 
 class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
+
     def __init__(self, sourceObject=None):
         IAGIProcessedTerrainOverlay.__init__(self, sourceObject)
         ITerrainOverlay.__init__(self, sourceObject)
@@ -19824,6 +20129,7 @@ agcls.AgTypeNameMap["AGIProcessedTerrainOverlay"] = AGIProcessedTerrainOverlay
 
 class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
+
     def __init__(self, sourceObject=None):
         IAGIRoamImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -19844,6 +20150,7 @@ agcls.AgTypeNameMap["AGIRoamImageGlobeOverlay"] = AGIRoamImageGlobeOverlay
 
 class CameraSnapshot(ICameraSnapshot):
     """Takes snapshots of the 3D window."""
+
     def __init__(self, sourceObject=None):
         ICameraSnapshot.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19860,6 +20167,7 @@ agcls.AgTypeNameMap["CameraSnapshot"] = CameraSnapshot
 
 class CameraVideoRecording(ICameraVideoRecording):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
+
     def __init__(self, sourceObject=None):
         ICameraVideoRecording.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19876,6 +20184,7 @@ agcls.AgTypeNameMap["CameraVideoRecording"] = CameraVideoRecording
 
 class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
     """An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyGraphicsIndexer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19892,6 +20201,7 @@ agcls.AgTypeNameMap["CentralBodyGraphicsIndexer"] = CentralBodyGraphicsIndexer
 
 class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay that allows for a user defined image to be specified."""
+
     def __init__(self, sourceObject=None):
         ICustomImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -19912,6 +20222,7 @@ agcls.AgTypeNameMap["CustomImageGlobeOverlay"] = CustomImageGlobeOverlay
 
 class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActivator):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
+
     def __init__(self, sourceObject=None):
         ICustomImageGlobeOverlayPluginActivator.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19928,6 +20239,7 @@ agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivator"] = CustomImageGlobe
 
 class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
     """A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator."""
+
     def __init__(self, sourceObject=None):
         ICustomImageGlobeOverlayPluginProxy.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19944,6 +20256,7 @@ agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginProxy"] = CustomImageGlobeOver
 
 class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+
     def __init__(self, sourceObject=None):
         IGeospatialImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -19964,6 +20277,7 @@ agcls.AgTypeNameMap["GeospatialImageGlobeOverlay"] = GeospatialImageGlobeOverlay
 
 class GlobeOverlay(IGlobeOverlay):
     """The base class of all terrain overlay and globe image overlay objects."""
+
     def __init__(self, sourceObject=None):
         IGlobeOverlay.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19980,6 +20294,7 @@ agcls.AgTypeNameMap["GlobeOverlay"] = GlobeOverlay
 
 class GlobeOverlaySettings(IGlobeOverlaySettings):
     """Settings used by globe overlay objects. These setting affect all scenes."""
+
     def __init__(self, sourceObject=None):
         IGlobeOverlaySettings.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -19996,6 +20311,7 @@ agcls.AgTypeNameMap["GlobeOverlaySettings"] = GlobeOverlaySettings
 
 class Lighting(ILighting):
     """Lighting in the 3D scene."""
+
     def __init__(self, sourceObject=None):
         ILighting.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20012,6 +20328,7 @@ agcls.AgTypeNameMap["Lighting"] = Lighting
 
 class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
+
     def __init__(self, sourceObject=None):
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20028,6 +20345,7 @@ agcls.AgTypeNameMap["PathPrimitiveUpdatePolicy"] = PathPrimitiveUpdatePolicy
 
 class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
+
     def __init__(self, sourceObject=None):
         IProjectedRasterOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -20048,6 +20366,7 @@ agcls.AgTypeNameMap["ProjectedRasterOverlay"] = ProjectedRasterOverlay
 
 class Projection(IProjection):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
+
     def __init__(self, sourceObject=None):
         IProjection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20064,6 +20383,7 @@ agcls.AgTypeNameMap["Projection"] = Projection
 
 class ProjectionStream(IProjectionStream, IProjection):
     """A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay..."""
+
     def __init__(self, sourceObject=None):
         IProjectionStream.__init__(self, sourceObject)
         IProjection.__init__(self, sourceObject)
@@ -20082,6 +20402,7 @@ agcls.AgTypeNameMap["ProjectionStream"] = ProjectionStream
 
 class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
     """Settings used by globe overlay objects. These settings only affect the scene."""
+
     def __init__(self, sourceObject=None):
         ISceneGlobeOverlaySettings.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20098,6 +20419,7 @@ agcls.AgTypeNameMap["SceneGlobeOverlaySettings"] = SceneGlobeOverlaySettings
 
 class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20114,6 +20436,7 @@ agcls.AgTypeNameMap["ScreenOverlayCollectionBase"] = ScreenOverlayCollectionBase
 
 class Texture2DFactory(ITexture2DFactory):
     """A factory for creating texture 2d objects from various sources."""
+
     def __init__(self, sourceObject=None):
         ITexture2DFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20130,6 +20453,7 @@ agcls.AgTypeNameMap["Texture2DFactory"] = Texture2DFactory
 
 class VisualEffects(IVisualEffects):
     """Control various post processing effects that can be applied to the scene."""
+
     def __init__(self, sourceObject=None):
         IVisualEffects.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20146,6 +20470,7 @@ agcls.AgTypeNameMap["VisualEffects"] = VisualEffects
 
 class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+
     def __init__(self, sourceObject=None):
         IAltitudeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20164,6 +20489,7 @@ agcls.AgTypeNameMap["AltitudeDisplayCondition"] = AltitudeDisplayCondition
 
 class AxesPrimitive(IAxesPrimitive, IPrimitive):
     """Render an axes in the 3D scene."""
+
     def __init__(self, sourceObject=None):
         IAxesPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -20182,6 +20508,7 @@ agcls.AgTypeNameMap["AxesPrimitive"] = AxesPrimitive
 
 class Camera(ICamera):
     """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
+
     def __init__(self, sourceObject=None):
         ICamera.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20198,6 +20525,7 @@ agcls.AgTypeNameMap["Camera"] = Camera
 
 class CentralBodyGraphics(ICentralBodyGraphics):
     """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyGraphics.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20214,6 +20542,7 @@ agcls.AgTypeNameMap["CentralBodyGraphics"] = CentralBodyGraphics
 
 class Clouds(IClouds):
     """Load, show and hide clouds in the scene."""
+
     def __init__(self, sourceObject=None):
         IClouds.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20230,6 +20559,7 @@ agcls.AgTypeNameMap["Clouds"] = Clouds
 
 class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
+
     def __init__(self, sourceObject=None):
         ICompositeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20248,6 +20578,7 @@ agcls.AgTypeNameMap["CompositeDisplayCondition"] = CompositeDisplayCondition
 
 class CompositePrimitive(ICompositePrimitive, IPrimitive):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+
     def __init__(self, sourceObject=None):
         ICompositePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -20266,6 +20597,7 @@ agcls.AgTypeNameMap["CompositePrimitive"] = CompositePrimitive
 
 class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
+
     def __init__(self, sourceObject=None):
         IConstantDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20284,6 +20616,7 @@ agcls.AgTypeNameMap["ConstantDisplayCondition"] = ConstantDisplayCondition
 
 class DisplayCondition(IDisplayCondition):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
+
     def __init__(self, sourceObject=None):
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20300,6 +20633,7 @@ agcls.AgTypeNameMap["DisplayCondition"] = DisplayCondition
 
 class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+
     def __init__(self, sourceObject=None):
         IDistanceDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20318,6 +20652,7 @@ agcls.AgTypeNameMap["DistanceDisplayCondition"] = DistanceDisplayCondition
 
 class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondition, IDisplayCondition):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+
     def __init__(self, sourceObject=None):
         IDistanceToGlobeOverlayDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20336,6 +20671,7 @@ agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayCondition"] = DistanceToGlobeO
 
 class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, IDisplayCondition):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+
     def __init__(self, sourceObject=None):
         IDistanceToPositionDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20354,6 +20690,7 @@ agcls.AgTypeNameMap["DistanceToPositionDisplayCondition"] = DistanceToPositionDi
 
 class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, IDisplayCondition):
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+
     def __init__(self, sourceObject=None):
         IDistanceToPrimitiveDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -20372,6 +20709,7 @@ agcls.AgTypeNameMap["DistanceToPrimitiveDisplayCondition"] = DistanceToPrimitive
 
 class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy):
     """path primitive update policy that removes points from remove location after a given duration."""
+
     def __init__(self, sourceObject=None):
         IDurationPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
@@ -20390,6 +20728,7 @@ agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicy"] = DurationPathPrimitive
 
 class FrameRate(IFrameRate):
     """Keeps track of how many times the scenes are rendered per second."""
+
     def __init__(self, sourceObject=None):
         IFrameRate.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20406,6 +20745,7 @@ agcls.AgTypeNameMap["FrameRate"] = FrameRate
 
 class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
     """A globe overlay that shows an image."""
+
     def __init__(self, sourceObject=None):
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20424,6 +20764,7 @@ agcls.AgTypeNameMap["GlobeImageOverlay"] = GlobeImageOverlay
 
 class GraphicsFont(IGraphicsFont):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
+
     def __init__(self, sourceObject=None):
         IGraphicsFont.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20440,6 +20781,7 @@ agcls.AgTypeNameMap["GraphicsFont"] = GraphicsFont
 
 class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
+
     def __init__(self, sourceObject=None):
         IGreatArcInterpolator.__init__(self, sourceObject)
         IPositionInterpolator.__init__(self, sourceObject)
@@ -20458,6 +20800,7 @@ agcls.AgTypeNameMap["GreatArcInterpolator"] = GreatArcInterpolator
 
 class ImageCollection(IImageCollection):
     """A collection of globe image overlay objects."""
+
     def __init__(self, sourceObject=None):
         IImageCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20474,6 +20817,7 @@ agcls.AgTypeNameMap["ImageCollection"] = ImageCollection
 
 class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20492,6 +20836,7 @@ agcls.AgTypeNameMap["AlphaFromLuminanceFilter"] = AlphaFromLuminanceFilter
 
 class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromPixelFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20510,6 +20855,7 @@ agcls.AgTypeNameMap["AlphaFromPixelFilter"] = AlphaFromPixelFilter
 
 class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromRasterFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20528,6 +20874,7 @@ agcls.AgTypeNameMap["AlphaFromRasterFilter"] = AlphaFromRasterFilter
 
 class BandExtractFilter(IBandExtractFilter, IRasterFilter):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+
     def __init__(self, sourceObject=None):
         IBandExtractFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20546,6 +20893,7 @@ agcls.AgTypeNameMap["BandExtractFilter"] = BandExtractFilter
 
 class BandOrderFilter(IBandOrderFilter, IRasterFilter):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
+
     def __init__(self, sourceObject=None):
         IBandOrderFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20564,6 +20912,7 @@ agcls.AgTypeNameMap["BandOrderFilter"] = BandOrderFilter
 
 class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+
     def __init__(self, sourceObject=None):
         IBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -20584,6 +20933,7 @@ agcls.AgTypeNameMap["BlurFilter"] = BlurFilter
 
 class BrightnessFilter(IBrightnessFilter, IRasterFilter):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
+
     def __init__(self, sourceObject=None):
         IBrightnessFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20602,6 +20952,7 @@ agcls.AgTypeNameMap["BrightnessFilter"] = BrightnessFilter
 
 class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
     """Extract a luminance band derived from the color bands of the source raster."""
+
     def __init__(self, sourceObject=None):
         IColorToLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20620,6 +20971,7 @@ agcls.AgTypeNameMap["ColorToLuminanceFilter"] = ColorToLuminanceFilter
 
 class ContrastFilter(IContrastFilter, IRasterFilter):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
+
     def __init__(self, sourceObject=None):
         IContrastFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20638,6 +20990,7 @@ agcls.AgTypeNameMap["ContrastFilter"] = ContrastFilter
 
 class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+
     def __init__(self, sourceObject=None):
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20656,6 +21009,7 @@ agcls.AgTypeNameMap["ConvolutionFilter"] = ConvolutionFilter
 
 class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to detect edges in the source raster."""
+
     def __init__(self, sourceObject=None):
         IEdgeDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -20676,6 +21030,7 @@ agcls.AgTypeNameMap["EdgeDetectFilter"] = EdgeDetectFilter
 
 class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
+
     def __init__(self, sourceObject=None):
         IFilteringRasterStream.__init__(self, sourceObject)
         IRasterStream.__init__(self, sourceObject)
@@ -20696,6 +21051,7 @@ agcls.AgTypeNameMap["FilteringRasterStream"] = FilteringRasterStream
 
 class FlipFilter(IFlipFilter, IRasterFilter):
     """Flips the source raster along the given flip axis."""
+
     def __init__(self, sourceObject=None):
         IFlipFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20714,6 +21070,7 @@ agcls.AgTypeNameMap["FlipFilter"] = FlipFilter
 
 class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+
     def __init__(self, sourceObject=None):
         IGammaCorrectionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20732,6 +21089,7 @@ agcls.AgTypeNameMap["GammaCorrectionFilter"] = GammaCorrectionFilter
 
 class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
+
     def __init__(self, sourceObject=None):
         IGaussianBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -20752,6 +21110,7 @@ agcls.AgTypeNameMap["GaussianBlurFilter"] = GaussianBlurFilter
 
 class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to detect gradients in the source raster."""
+
     def __init__(self, sourceObject=None):
         IGradientDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -20772,6 +21131,7 @@ agcls.AgTypeNameMap["GradientDetectFilter"] = GradientDetectFilter
 
 class LevelsFilter(ILevelsFilter, IRasterFilter):
     """Adjusts the band levels of the source raster linearly."""
+
     def __init__(self, sourceObject=None):
         ILevelsFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20790,6 +21150,7 @@ agcls.AgTypeNameMap["LevelsFilter"] = LevelsFilter
 
 class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivator):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
+
     def __init__(self, sourceObject=None):
         IProjectionRasterStreamPluginActivator.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20806,6 +21167,7 @@ agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivator"] = ProjectionRasterS
 
 class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
     """A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator."""
+
     def __init__(self, sourceObject=None):
         IProjectionRasterStreamPluginProxy.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20822,6 +21184,7 @@ agcls.AgTypeNameMap["ProjectionRasterStreamPluginProxy"] = ProjectionRasterStrea
 
 class Raster(IRaster):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
+
     def __init__(self, sourceObject=None):
         IRaster.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20838,6 +21201,7 @@ agcls.AgTypeNameMap["Raster"] = Raster
 
 class RasterAttributes(IRasterAttributes):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
+
     def __init__(self, sourceObject=None):
         IRasterAttributes.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20854,6 +21218,7 @@ agcls.AgTypeNameMap["RasterAttributes"] = RasterAttributes
 
 class RasterFilter(IRasterFilter):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
+
     def __init__(self, sourceObject=None):
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -20870,6 +21235,7 @@ agcls.AgTypeNameMap["RasterFilter"] = RasterFilter
 
 class RasterStream(IRasterStream, IRaster):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
+
     def __init__(self, sourceObject=None):
         IRasterStream.__init__(self, sourceObject)
         IRaster.__init__(self, sourceObject)
@@ -20888,6 +21254,7 @@ agcls.AgTypeNameMap["RasterStream"] = RasterStream
 
 class RotateFilter(IRotateFilter, IRasterFilter):
     """Rotate the source raster clockwise by the specified angle."""
+
     def __init__(self, sourceObject=None):
         IRotateFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20906,6 +21273,7 @@ agcls.AgTypeNameMap["RotateFilter"] = RotateFilter
 
 class SequenceFilter(ISequenceFilter, IRasterFilter):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+
     def __init__(self, sourceObject=None):
         ISequenceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20924,6 +21292,7 @@ agcls.AgTypeNameMap["SequenceFilter"] = SequenceFilter
 
 class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to increase the sharpness of the source raster."""
+
     def __init__(self, sourceObject=None):
         ISharpenFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
@@ -20944,6 +21313,7 @@ agcls.AgTypeNameMap["SharpenFilter"] = SharpenFilter
 
 class VideoStream(IVideoStream, IRasterStream, IRaster):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+
     def __init__(self, sourceObject=None):
         IVideoStream.__init__(self, sourceObject)
         IRasterStream.__init__(self, sourceObject)
@@ -20964,6 +21334,7 @@ agcls.AgTypeNameMap["VideoStream"] = VideoStream
 
 class KmlContainer(IKmlContainer, IKmlFeature):
     """A KmlContainer contains a collection of children kml features."""
+
     def __init__(self, sourceObject=None):
         IKmlContainer.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
@@ -20982,6 +21353,7 @@ agcls.AgTypeNameMap["KmlContainer"] = KmlContainer
 
 class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
     """A KML document."""
+
     def __init__(self, sourceObject=None):
         IKmlDocument.__init__(self, sourceObject)
         IKmlContainer.__init__(self, sourceObject)
@@ -21002,6 +21374,7 @@ agcls.AgTypeNameMap["KmlDocument"] = KmlDocument
 
 class KmlFeature(IKmlFeature):
     """A KML feature."""
+
     def __init__(self, sourceObject=None):
         IKmlFeature.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21018,6 +21391,7 @@ agcls.AgTypeNameMap["KmlFeature"] = KmlFeature
 
 class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
     """A KML folder."""
+
     def __init__(self, sourceObject=None):
         IKmlFolder.__init__(self, sourceObject)
         IKmlContainer.__init__(self, sourceObject)
@@ -21038,6 +21412,7 @@ agcls.AgTypeNameMap["KmlFolder"] = KmlFolder
 
 class KmlGraphics(IKmlGraphics):
     """Provide loading and unloading of kml documents for a particular central body."""
+
     def __init__(self, sourceObject=None):
         IKmlGraphics.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21054,6 +21429,7 @@ agcls.AgTypeNameMap["KmlGraphics"] = KmlGraphics
 
 class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
     """A KML network link."""
+
     def __init__(self, sourceObject=None):
         IKmlNetworkLink.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
@@ -21072,6 +21448,7 @@ agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21090,6 +21467,7 @@ agcls.AgTypeNameMap["MarkerBatchPrimitive"] = MarkerBatchPrimitive
 
 class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParameters):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
+
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21106,6 +21484,7 @@ agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParameters"] = MarkerBatchPrimi
 
 class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
+
     def __init__(self, sourceObject=None):
         IMaximumCountPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
@@ -21124,6 +21503,7 @@ agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicy"] = MaximumCountPathP
 
 class ModelArticulation(IModelArticulation):
     """A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
+
     def __init__(self, sourceObject=None):
         IModelArticulation.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21140,6 +21520,7 @@ agcls.AgTypeNameMap["ModelArticulation"] = ModelArticulation
 
 class ModelArticulationCollection(IModelArticulationCollection):
     """A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
+
     def __init__(self, sourceObject=None):
         IModelArticulationCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21156,6 +21537,7 @@ agcls.AgTypeNameMap["ModelArticulationCollection"] = ModelArticulationCollection
 
 class ModelPrimitive(IModelPrimitive, IPrimitive):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+
     def __init__(self, sourceObject=None):
         IModelPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21174,6 +21556,7 @@ agcls.AgTypeNameMap["ModelPrimitive"] = ModelPrimitive
 
 class ModelTransformation(IModelTransformation):
     """A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation..."""
+
     def __init__(self, sourceObject=None):
         IModelTransformation.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21190,6 +21573,7 @@ agcls.AgTypeNameMap["ModelTransformation"] = ModelTransformation
 
 class Overlay(IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     def __init__(self, sourceObject=None):
         IOverlay.__init__(self, sourceObject)
         IScreenOverlayContainer.__init__(self, sourceObject)
@@ -21208,6 +21592,7 @@ agcls.AgTypeNameMap["Overlay"] = Overlay
 
 class PathPrimitive(IPathPrimitive, IPrimitive):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+
     def __init__(self, sourceObject=None):
         IPathPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21226,6 +21611,7 @@ agcls.AgTypeNameMap["PathPrimitive"] = PathPrimitive
 
 class PickResult(IPickResult):
     """A single result from Pick."""
+
     def __init__(self, sourceObject=None):
         IPickResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21242,6 +21628,7 @@ agcls.AgTypeNameMap["PickResult"] = PickResult
 
 class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+
     def __init__(self, sourceObject=None):
         IPixelSizeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -21260,6 +21647,7 @@ agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+
     def __init__(self, sourceObject=None):
         IPointBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21278,6 +21666,7 @@ agcls.AgTypeNameMap["PointBatchPrimitive"] = PointBatchPrimitive
 
 class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParameters):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+
     def __init__(self, sourceObject=None):
         IPointBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21294,6 +21683,7 @@ agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParameters"] = PointBatchPrimiti
 
 class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+
     def __init__(self, sourceObject=None):
         IPolylinePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21312,6 +21702,7 @@ agcls.AgTypeNameMap["PolylinePrimitive"] = PolylinePrimitive
 
 class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
+
     def __init__(self, sourceObject=None):
         IPolylinePrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21328,6 +21719,7 @@ agcls.AgTypeNameMap["PolylinePrimitiveOptionalParameters"] = PolylinePrimitiveOp
 
 class PositionInterpolator(IPositionInterpolator):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
+
     def __init__(self, sourceObject=None):
         IPositionInterpolator.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21344,6 +21736,7 @@ agcls.AgTypeNameMap["PositionInterpolator"] = PositionInterpolator
 
 class Primitive(IPrimitive):
     """Primitives represent objects rendered in the 3D scene."""
+
     def __init__(self, sourceObject=None):
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21360,6 +21753,7 @@ agcls.AgTypeNameMap["Primitive"] = Primitive
 
 class PrimitiveManager(IPrimitiveManager):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
+
     def __init__(self, sourceObject=None):
         IPrimitiveManager.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21376,6 +21770,7 @@ agcls.AgTypeNameMap["PrimitiveManager"] = PrimitiveManager
 
 class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay):
     """A globe image overlay for handling rasters."""
+
     def __init__(self, sourceObject=None):
         IRasterImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
@@ -21396,6 +21791,7 @@ agcls.AgTypeNameMap["RasterImageGlobeOverlay"] = RasterImageGlobeOverlay
 
 class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
+
     def __init__(self, sourceObject=None):
         IRhumbLineInterpolator.__init__(self, sourceObject)
         IPositionInterpolator.__init__(self, sourceObject)
@@ -21414,6 +21810,7 @@ agcls.AgTypeNameMap["RhumbLineInterpolator"] = RhumbLineInterpolator
 
 class Scene(IScene):
     """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
+
     def __init__(self, sourceObject=None):
         IScene.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21430,6 +21827,7 @@ agcls.AgTypeNameMap["Scene"] = Scene
 
 class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
+
     def __init__(self, sourceObject=None):
         ISceneDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -21448,6 +21846,7 @@ agcls.AgTypeNameMap["SceneDisplayCondition"] = SceneDisplayCondition
 
 class SceneManager(ISceneManager):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
+
     def __init__(self, sourceObject=None):
         ISceneManager.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21464,6 +21863,7 @@ agcls.AgTypeNameMap["SceneManager"] = SceneManager
 
 class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlay.__init__(self, sourceObject)
         IOverlay.__init__(self, sourceObject)
@@ -21484,6 +21884,7 @@ agcls.AgTypeNameMap["ScreenOverlay"] = ScreenOverlay
 
 class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollectionBase):
     """A collection of screen overlays."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayCollection.__init__(self, sourceObject)
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
@@ -21502,6 +21903,7 @@ agcls.AgTypeNameMap["ScreenOverlayCollection"] = ScreenOverlayCollection
 
 class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer):
     """The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayManager.__init__(self, sourceObject)
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
@@ -21522,6 +21924,7 @@ agcls.AgTypeNameMap["ScreenOverlayManager"] = ScreenOverlayManager
 
 class ScreenOverlayPickResult(IScreenOverlayPickResult):
     """Describes a picked screen overlay as a result of a call to pick screen overlays."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayPickResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21538,6 +21941,7 @@ agcls.AgTypeNameMap["ScreenOverlayPickResult"] = ScreenOverlayPickResult
 
 class SolidPrimitive(ISolidPrimitive, IPrimitive):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+
     def __init__(self, sourceObject=None):
         ISolidPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21556,6 +21960,7 @@ agcls.AgTypeNameMap["SolidPrimitive"] = SolidPrimitive
 
 class Stereoscopic(IStereoscopic):
     """Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
+
     def __init__(self, sourceObject=None):
         IStereoscopic.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21572,6 +21977,7 @@ agcls.AgTypeNameMap["Stereoscopic"] = Stereoscopic
 
 class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
+
     def __init__(self, sourceObject=None):
         ISurfaceMeshPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21590,6 +21996,7 @@ agcls.AgTypeNameMap["SurfaceMeshPrimitive"] = SurfaceMeshPrimitive
 
 class TerrainOverlayCollection(ITerrainOverlayCollection):
     """A collection of terrain overlay objects."""
+
     def __init__(self, sourceObject=None):
         ITerrainOverlayCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21606,6 +22013,7 @@ agcls.AgTypeNameMap["TerrainOverlayCollection"] = TerrainOverlayCollection
 
 class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
     """A globe overlay which shows terrain."""
+
     def __init__(self, sourceObject=None):
         ITerrainOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -21623,7 +22031,8 @@ agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}",
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+
     def __init__(self, sourceObject=None):
         ITextBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21642,6 +22051,7 @@ agcls.AgTypeNameMap["TextBatchPrimitive"] = TextBatchPrimitive
 
 class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters):
     """Optional per-string and per-batch parameters for text batch primitive..."""
+
     def __init__(self, sourceObject=None):
         ITextBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21658,6 +22068,7 @@ agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParameters"] = TextBatchPrimitive
 
 class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A rectangular overlay that contains text."""
+
     def __init__(self, sourceObject=None):
         ITextOverlay.__init__(self, sourceObject)
         IScreenOverlay.__init__(self, sourceObject)
@@ -21680,6 +22091,7 @@ agcls.AgTypeNameMap["TextOverlay"] = TextOverlay
 
 class TextureMatrix(ITextureMatrix):
     """A 4 by 4 matrix applied to a texture coordinate."""
+
     def __init__(self, sourceObject=None):
         ITextureMatrix.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21696,6 +22108,7 @@ agcls.AgTypeNameMap["TextureMatrix"] = TextureMatrix
 
 class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A rectangular overlay that can be assigned a texture."""
+
     def __init__(self, sourceObject=None):
         ITextureScreenOverlay.__init__(self, sourceObject)
         IScreenOverlay.__init__(self, sourceObject)
@@ -21718,6 +22131,7 @@ agcls.AgTypeNameMap["TextureScreenOverlay"] = TextureScreenOverlay
 
 class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondition):
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+
     def __init__(self, sourceObject=None):
         ITimeIntervalDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
@@ -21736,6 +22150,7 @@ agcls.AgTypeNameMap["TimeIntervalDisplayCondition"] = TimeIntervalDisplayConditi
 
 class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21754,6 +22169,7 @@ agcls.AgTypeNameMap["TriangleMeshPrimitive"] = TriangleMeshPrimitive
 
 class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalParameters):
     """Optional parameters for triangle mesh primitive..."""
+
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21770,6 +22186,7 @@ agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParameters"] = TriangleMeshPri
 
 class VectorPrimitive(IVectorPrimitive, IPrimitive):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+
     def __init__(self, sourceObject=None):
         IVectorPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
@@ -21788,6 +22205,7 @@ agcls.AgTypeNameMap["VectorPrimitive"] = VectorPrimitive
 
 class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
     """Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     def __init__(self, sourceObject=None):
         IBoxTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21804,6 +22222,7 @@ agcls.AgTypeNameMap["BoxTriangulatorInitializer"] = BoxTriangulatorInitializer
 
 class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
     """Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     def __init__(self, sourceObject=None):
         ICylinderTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21820,6 +22239,7 @@ agcls.AgTypeNameMap["CylinderTriangulatorInitializer"] = CylinderTriangulatorIni
 
 class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
     """Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
+
     def __init__(self, sourceObject=None):
         IEllipsoidTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21836,6 +22256,7 @@ agcls.AgTypeNameMap["EllipsoidTriangulatorInitializer"] = EllipsoidTriangulatorI
 
 class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorInitializer):
     """Triangulates a polyline into an extrusion with bottom and top boundaries."""
+
     def __init__(self, sourceObject=None):
         IExtrudedPolylineTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21852,6 +22273,7 @@ agcls.AgTypeNameMap["ExtrudedPolylineTriangulatorInitializer"] = ExtrudedPolylin
 
 class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer):
     """Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive."""
+
     def __init__(self, sourceObject=None):
         ISurfaceExtentTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21868,6 +22290,7 @@ agcls.AgTypeNameMap["SurfaceExtentTriangulatorInitializer"] = SurfaceExtentTrian
 
 class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializer):
     """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
+
     def __init__(self, sourceObject=None):
         ISurfacePolygonTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21884,6 +22307,7 @@ agcls.AgTypeNameMap["SurfacePolygonTriangulatorInitializer"] = SurfacePolygonTri
 
 class SurfaceShapesInitializer(ISurfaceShapesInitializer):
     """Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
+
     def __init__(self, sourceObject=None):
         ISurfaceShapesInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21900,6 +22324,7 @@ agcls.AgTypeNameMap["SurfaceShapesInitializer"] = SurfaceShapesInitializer
 
 class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
     """A terrain overlay for handling AGI Cesium Terrain."""
+
     def __init__(self, sourceObject=None):
         IAGICustomTerrainOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21916,6 +22341,7 @@ agcls.AgTypeNameMap["AGICustomTerrainOverlayFactory"] = AGICustomTerrainOverlayF
 
 class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory):
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
+
     def __init__(self, sourceObject=None):
         IAGIProcessedImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21932,6 +22358,7 @@ agcls.AgTypeNameMap["AGIProcessedImageGlobeOverlayFactory"] = AGIProcessedImageG
 
 class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
+
     def __init__(self, sourceObject=None):
         IAGIProcessedTerrainOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21948,6 +22375,7 @@ agcls.AgTypeNameMap["AGIProcessedTerrainOverlayFactory"] = AGIProcessedTerrainOv
 
 class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
+
     def __init__(self, sourceObject=None):
         IAGIRoamImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21964,6 +22392,7 @@ agcls.AgTypeNameMap["AGIRoamImageGlobeOverlayFactory"] = AGIRoamImageGlobeOverla
 
 class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPluginActivatorFactory):
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
+
     def __init__(self, sourceObject=None):
         ICustomImageGlobeOverlayPluginActivatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21980,6 +22409,7 @@ agcls.AgTypeNameMap["CustomImageGlobeOverlayPluginActivatorFactory"] = CustomIma
 
 class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
+
     def __init__(self, sourceObject=None):
         IGeospatialImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -21996,6 +22426,7 @@ agcls.AgTypeNameMap["GeospatialImageGlobeOverlayFactory"] = GeospatialImageGlobe
 
 class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
+
     def __init__(self, sourceObject=None):
         IProjectedRasterOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22012,6 +22443,7 @@ agcls.AgTypeNameMap["ProjectedRasterOverlayFactory"] = ProjectedRasterOverlayFac
 
 class ProjectionFactory(IProjectionFactory):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
+
     def __init__(self, sourceObject=None):
         IProjectionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22028,6 +22460,7 @@ agcls.AgTypeNameMap["ProjectionFactory"] = ProjectionFactory
 
 class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
+
     def __init__(self, sourceObject=None):
         IAltitudeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22044,6 +22477,7 @@ agcls.AgTypeNameMap["AltitudeDisplayConditionFactory"] = AltitudeDisplayConditio
 
 class AxesPrimitiveFactory(IAxesPrimitiveFactory):
     """Render an axes in the 3D scene."""
+
     def __init__(self, sourceObject=None):
         IAxesPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22060,6 +22494,7 @@ agcls.AgTypeNameMap["AxesPrimitiveFactory"] = AxesPrimitiveFactory
 
 class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
+
     def __init__(self, sourceObject=None):
         ICompositeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22076,6 +22511,7 @@ agcls.AgTypeNameMap["CompositeDisplayConditionFactory"] = CompositeDisplayCondit
 
 class CompositePrimitiveFactory(ICompositePrimitiveFactory):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+
     def __init__(self, sourceObject=None):
         ICompositePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22092,6 +22528,7 @@ agcls.AgTypeNameMap["CompositePrimitiveFactory"] = CompositePrimitiveFactory
 
 class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
+
     def __init__(self, sourceObject=None):
         IConstantDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22108,6 +22545,7 @@ agcls.AgTypeNameMap["ConstantDisplayConditionFactory"] = ConstantDisplayConditio
 
 class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
+
     def __init__(self, sourceObject=None):
         IDistanceDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22124,6 +22562,7 @@ agcls.AgTypeNameMap["DistanceDisplayConditionFactory"] = DistanceDisplayConditio
 
 class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDisplayConditionFactory):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
+
     def __init__(self, sourceObject=None):
         IDistanceToGlobeOverlayDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22140,6 +22579,7 @@ agcls.AgTypeNameMap["DistanceToGlobeOverlayDisplayConditionFactory"] = DistanceT
 
 class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayConditionFactory):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
+
     def __init__(self, sourceObject=None):
         IDistanceToPositionDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22156,6 +22596,7 @@ agcls.AgTypeNameMap["DistanceToPositionDisplayConditionFactory"] = DistanceToPos
 
 class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayConditionFactory):
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
+
     def __init__(self, sourceObject=None):
         IDistanceToPrimitiveDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22172,6 +22613,7 @@ agcls.AgTypeNameMap["DistanceToPrimitiveDisplayConditionFactory"] = DistanceToPr
 
 class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolicyFactory):
     """path primitive update policy that removes points from remove location after a given duration."""
+
     def __init__(self, sourceObject=None):
         IDurationPathPrimitiveUpdatePolicyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22188,6 +22630,7 @@ agcls.AgTypeNameMap["DurationPathPrimitiveUpdatePolicyFactory"] = DurationPathPr
 
 class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
     """A globe overlay that shows an image."""
+
     def __init__(self, sourceObject=None):
         IGlobeImageOverlayInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22204,6 +22647,7 @@ agcls.AgTypeNameMap["GlobeImageOverlayInitializer"] = GlobeImageOverlayInitializ
 
 class GraphicsFontFactory(IGraphicsFontFactory):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
+
     def __init__(self, sourceObject=None):
         IGraphicsFontFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22220,6 +22664,7 @@ agcls.AgTypeNameMap["GraphicsFontFactory"] = GraphicsFontFactory
 
 class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
+
     def __init__(self, sourceObject=None):
         IGreatArcInterpolatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22236,6 +22681,7 @@ agcls.AgTypeNameMap["GreatArcInterpolatorFactory"] = GreatArcInterpolatorFactory
 
 class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22252,6 +22698,7 @@ agcls.AgTypeNameMap["AlphaFromLuminanceFilterFactory"] = AlphaFromLuminanceFilte
 
 class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromPixelFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22268,6 +22715,7 @@ agcls.AgTypeNameMap["AlphaFromPixelFilterFactory"] = AlphaFromPixelFilterFactory
 
 class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
+
     def __init__(self, sourceObject=None):
         IAlphaFromRasterFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22284,6 +22732,7 @@ agcls.AgTypeNameMap["AlphaFromRasterFilterFactory"] = AlphaFromRasterFilterFacto
 
 class BandExtractFilterFactory(IBandExtractFilterFactory):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
+
     def __init__(self, sourceObject=None):
         IBandExtractFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22300,6 +22749,7 @@ agcls.AgTypeNameMap["BandExtractFilterFactory"] = BandExtractFilterFactory
 
 class BandOrderFilterFactory(IBandOrderFilterFactory):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
+
     def __init__(self, sourceObject=None):
         IBandOrderFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22316,6 +22766,7 @@ agcls.AgTypeNameMap["BandOrderFilterFactory"] = BandOrderFilterFactory
 
 class BlurFilterFactory(IBlurFilterFactory):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
+
     def __init__(self, sourceObject=None):
         IBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22332,6 +22783,7 @@ agcls.AgTypeNameMap["BlurFilterFactory"] = BlurFilterFactory
 
 class BrightnessFilterFactory(IBrightnessFilterFactory):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
+
     def __init__(self, sourceObject=None):
         IBrightnessFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22348,6 +22800,7 @@ agcls.AgTypeNameMap["BrightnessFilterFactory"] = BrightnessFilterFactory
 
 class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
     """Extract a luminance band derived from the color bands of the source raster."""
+
     def __init__(self, sourceObject=None):
         IColorToLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22364,6 +22817,7 @@ agcls.AgTypeNameMap["ColorToLuminanceFilterFactory"] = ColorToLuminanceFilterFac
 
 class ContrastFilterFactory(IContrastFilterFactory):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
+
     def __init__(self, sourceObject=None):
         IContrastFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22380,6 +22834,7 @@ agcls.AgTypeNameMap["ContrastFilterFactory"] = ContrastFilterFactory
 
 class ConvolutionFilterFactory(IConvolutionFilterFactory):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
+
     def __init__(self, sourceObject=None):
         IConvolutionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22396,6 +22851,7 @@ agcls.AgTypeNameMap["ConvolutionFilterFactory"] = ConvolutionFilterFactory
 
 class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
     """Apply a convolution filter to detect edges in the source raster."""
+
     def __init__(self, sourceObject=None):
         IEdgeDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22412,6 +22868,7 @@ agcls.AgTypeNameMap["EdgeDetectFilterFactory"] = EdgeDetectFilterFactory
 
 class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
+
     def __init__(self, sourceObject=None):
         IFilteringRasterStreamFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22428,6 +22885,7 @@ agcls.AgTypeNameMap["FilteringRasterStreamFactory"] = FilteringRasterStreamFacto
 
 class FlipFilterFactory(IFlipFilterFactory):
     """Flips the source raster along the given flip axis."""
+
     def __init__(self, sourceObject=None):
         IFlipFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22444,6 +22902,7 @@ agcls.AgTypeNameMap["FlipFilterFactory"] = FlipFilterFactory
 
 class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
+
     def __init__(self, sourceObject=None):
         IGammaCorrectionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22460,6 +22919,7 @@ agcls.AgTypeNameMap["GammaCorrectionFilterFactory"] = GammaCorrectionFilterFacto
 
 class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
+
     def __init__(self, sourceObject=None):
         IGaussianBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22476,6 +22936,7 @@ agcls.AgTypeNameMap["GaussianBlurFilterFactory"] = GaussianBlurFilterFactory
 
 class GradientDetectFilterFactory(IGradientDetectFilterFactory):
     """Apply a convolution filter to detect gradients in the source raster."""
+
     def __init__(self, sourceObject=None):
         IGradientDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22492,6 +22953,7 @@ agcls.AgTypeNameMap["GradientDetectFilterFactory"] = GradientDetectFilterFactory
 
 class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
     """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
+
     def __init__(self, sourceObject=None):
         IJpeg2000WriterInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22508,6 +22970,7 @@ agcls.AgTypeNameMap["Jpeg2000WriterInitializer"] = Jpeg2000WriterInitializer
 
 class LevelsFilterFactory(ILevelsFilterFactory):
     """Adjusts the band levels of the source raster linearly."""
+
     def __init__(self, sourceObject=None):
         ILevelsFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22524,6 +22987,7 @@ agcls.AgTypeNameMap["LevelsFilterFactory"] = LevelsFilterFactory
 
 class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPluginActivatorFactory):
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
+
     def __init__(self, sourceObject=None):
         IProjectionRasterStreamPluginActivatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22540,6 +23004,7 @@ agcls.AgTypeNameMap["ProjectionRasterStreamPluginActivatorFactory"] = Projection
 
 class RasterFactory(IRasterFactory):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
+
     def __init__(self, sourceObject=None):
         IRasterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22556,6 +23021,7 @@ agcls.AgTypeNameMap["RasterFactory"] = RasterFactory
 
 class RasterAttributesFactory(IRasterAttributesFactory):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
+
     def __init__(self, sourceObject=None):
         IRasterAttributesFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22572,6 +23038,7 @@ agcls.AgTypeNameMap["RasterAttributesFactory"] = RasterAttributesFactory
 
 class RotateFilterFactory(IRotateFilterFactory):
     """Rotate the source raster clockwise by the specified angle."""
+
     def __init__(self, sourceObject=None):
         IRotateFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22588,6 +23055,7 @@ agcls.AgTypeNameMap["RotateFilterFactory"] = RotateFilterFactory
 
 class SequenceFilterFactory(ISequenceFilterFactory):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
+
     def __init__(self, sourceObject=None):
         ISequenceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22604,6 +23072,7 @@ agcls.AgTypeNameMap["SequenceFilterFactory"] = SequenceFilterFactory
 
 class SharpenFilterFactory(ISharpenFilterFactory):
     """Apply a convolution filter to increase the sharpness of the source raster."""
+
     def __init__(self, sourceObject=None):
         ISharpenFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22620,6 +23089,7 @@ agcls.AgTypeNameMap["SharpenFilterFactory"] = SharpenFilterFactory
 
 class VideoStreamFactory(IVideoStreamFactory):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
+
     def __init__(self, sourceObject=None):
         IVideoStreamFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22636,6 +23106,7 @@ agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
     """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22652,6 +23123,7 @@ agcls.AgTypeNameMap["MarkerBatchPrimitiveFactory"] = MarkerBatchPrimitiveFactory
 
 class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptionalParametersFactory):
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
+
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22668,6 +23140,7 @@ agcls.AgTypeNameMap["MarkerBatchPrimitiveOptionalParametersFactory"] = MarkerBat
 
 class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpdatePolicyFactory):
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
+
     def __init__(self, sourceObject=None):
         IMaximumCountPathPrimitiveUpdatePolicyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22684,6 +23157,7 @@ agcls.AgTypeNameMap["MaximumCountPathPrimitiveUpdatePolicyFactory"] = MaximumCou
 
 class ModelPrimitiveFactory(IModelPrimitiveFactory):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
+
     def __init__(self, sourceObject=None):
         IModelPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22700,6 +23174,7 @@ agcls.AgTypeNameMap["ModelPrimitiveFactory"] = ModelPrimitiveFactory
 
 class PathPrimitiveFactory(IPathPrimitiveFactory):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
+
     def __init__(self, sourceObject=None):
         IPathPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22716,6 +23191,7 @@ agcls.AgTypeNameMap["PathPrimitiveFactory"] = PathPrimitiveFactory
 
 class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
+
     def __init__(self, sourceObject=None):
         IPixelSizeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22732,6 +23208,7 @@ agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayCondit
 
 class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
     """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+
     def __init__(self, sourceObject=None):
         IPointBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22748,6 +23225,7 @@ agcls.AgTypeNameMap["PointBatchPrimitiveFactory"] = PointBatchPrimitiveFactory
 
 class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalParametersFactory):
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
+
     def __init__(self, sourceObject=None):
         IPointBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22764,6 +23242,7 @@ agcls.AgTypeNameMap["PointBatchPrimitiveOptionalParametersFactory"] = PointBatch
 
 class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
+
     def __init__(self, sourceObject=None):
         IPolylinePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22780,6 +23259,7 @@ agcls.AgTypeNameMap["PolylinePrimitiveFactory"] = PolylinePrimitiveFactory
 
 class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParametersFactory):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
+
     def __init__(self, sourceObject=None):
         IPolylinePrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22796,6 +23276,7 @@ agcls.AgTypeNameMap["PolylinePrimitiveOptionalParametersFactory"] = PolylinePrim
 
 class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
     """A globe image overlay for handling rasters."""
+
     def __init__(self, sourceObject=None):
         IRasterImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22812,6 +23293,7 @@ agcls.AgTypeNameMap["RasterImageGlobeOverlayFactory"] = RasterImageGlobeOverlayF
 
 class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
+
     def __init__(self, sourceObject=None):
         IRhumbLineInterpolatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22828,6 +23310,7 @@ agcls.AgTypeNameMap["RhumbLineInterpolatorFactory"] = RhumbLineInterpolatorFacto
 
 class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
+
     def __init__(self, sourceObject=None):
         ISceneDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22844,6 +23327,7 @@ agcls.AgTypeNameMap["SceneDisplayConditionFactory"] = SceneDisplayConditionFacto
 
 class SceneManagerInitializer(ISceneManagerInitializer):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
+
     def __init__(self, sourceObject=None):
         ISceneManagerInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22860,6 +23344,7 @@ agcls.AgTypeNameMap["SceneManagerInitializer"] = SceneManagerInitializer
 
 class ScreenOverlayFactory(IScreenOverlayFactory):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
+
     def __init__(self, sourceObject=None):
         IScreenOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22876,6 +23361,7 @@ agcls.AgTypeNameMap["ScreenOverlayFactory"] = ScreenOverlayFactory
 
 class SolidPrimitiveFactory(ISolidPrimitiveFactory):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+
     def __init__(self, sourceObject=None):
         ISolidPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22892,6 +23378,7 @@ agcls.AgTypeNameMap["SolidPrimitiveFactory"] = SolidPrimitiveFactory
 
 class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
+
     def __init__(self, sourceObject=None):
         ISurfaceMeshPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22908,6 +23395,7 @@ agcls.AgTypeNameMap["SurfaceMeshPrimitiveFactory"] = SurfaceMeshPrimitiveFactory
 
 class TerrainOverlayInitializer(ITerrainOverlayInitializer):
     """A globe overlay which shows terrain."""
+
     def __init__(self, sourceObject=None):
         ITerrainOverlayInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22923,7 +23411,8 @@ agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}",
 agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+
     def __init__(self, sourceObject=None):
         ITextBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22940,6 +23429,7 @@ agcls.AgTypeNameMap["TextBatchPrimitiveFactory"] = TextBatchPrimitiveFactory
 
 class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalParametersFactory):
     """Optional per-string and per-batch parameters for text batch primitive..."""
+
     def __init__(self, sourceObject=None):
         ITextBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22956,6 +23446,7 @@ agcls.AgTypeNameMap["TextBatchPrimitiveOptionalParametersFactory"] = TextBatchPr
 
 class TextOverlayFactory(ITextOverlayFactory):
     """A rectangular overlay that contains text."""
+
     def __init__(self, sourceObject=None):
         ITextOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22972,6 +23463,7 @@ agcls.AgTypeNameMap["TextOverlayFactory"] = TextOverlayFactory
 
 class TextureMatrixFactory(ITextureMatrixFactory):
     """A 4 by 4 matrix applied to a texture coordinate."""
+
     def __init__(self, sourceObject=None):
         ITextureMatrixFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -22988,6 +23480,7 @@ agcls.AgTypeNameMap["TextureMatrixFactory"] = TextureMatrixFactory
 
 class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
     """A rectangular overlay that can be assigned a texture."""
+
     def __init__(self, sourceObject=None):
         ITextureScreenOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23004,6 +23497,7 @@ agcls.AgTypeNameMap["TextureScreenOverlayFactory"] = TextureScreenOverlayFactory
 
 class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
+
     def __init__(self, sourceObject=None):
         ITimeIntervalDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23020,6 +23514,7 @@ agcls.AgTypeNameMap["TimeIntervalDisplayConditionFactory"] = TimeIntervalDisplay
 
 class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
+
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23036,6 +23531,7 @@ agcls.AgTypeNameMap["TriangleMeshPrimitiveFactory"] = TriangleMeshPrimitiveFacto
 
 class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptionalParametersFactory):
     """Optional parameters for triangle mesh primitive..."""
+
     def __init__(self, sourceObject=None):
         ITriangleMeshPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -23052,6 +23548,7 @@ agcls.AgTypeNameMap["TriangleMeshPrimitiveOptionalParametersFactory"] = Triangle
 
 class VectorPrimitiveFactory(IVectorPrimitiveFactory):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
+
     def __init__(self, sourceObject=None):
         IVectorPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

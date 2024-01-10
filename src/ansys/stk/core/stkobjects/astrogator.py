@@ -215,6 +215,7 @@ def _raise_uninitialized_error(*args):
 
 class GRAPH_OPTION(IntEnum):
     """Mode that the mcs will run in."""
+   
     NO_GRAPH = 0
     """Don't graph."""
     GRAPH_DIFFERENCE = 1
@@ -230,18 +231,20 @@ agcls.AgTypeNameMap["GRAPH_OPTION"] = GRAPH_OPTION
 
 class SMART_RUN_MODE(IntEnum):
     """Mode that the mcs will run in."""
+   
     ENTIRE_MISSION_CONTROL_SEQUENCE = 0
-    """Run Entire Mission Control Sequence"""
+    """Run Entire Mission Control Sequence."""
     ONLY_CHANGED = 1
-    """Run Only Changed Segments"""
+    """Run Only Changed Segments."""
 
-SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE.__doc__ = "Run Entire Mission Control Sequence"
-SMART_RUN_MODE.ONLY_CHANGED.__doc__ = "Run Only Changed Segments"
+SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE.__doc__ = "Run Entire Mission Control Sequence."
+SMART_RUN_MODE.ONLY_CHANGED.__doc__ = "Run Only Changed Segments."
 
 agcls.AgTypeNameMap["SMART_RUN_MODE"] = SMART_RUN_MODE
 
 class FORMULATION(IntEnum):
     """Equinoctial Formulation."""
+   
     POSIGRADE = 0
     """Posigrade."""
     RETROGRADE = 1
@@ -254,6 +257,7 @@ agcls.AgTypeNameMap["FORMULATION"] = FORMULATION
 
 class LIGHTING_CONDITION(IntEnum):
     """The criteria of a Lighting stopping condition."""
+   
     CRITERION_ENTER_DIRECT_SUN = 0
     """The Enter Direct Sun criterion."""
     CRITERION_EXIT_DIRECT_SUN = 1
@@ -272,6 +276,7 @@ agcls.AgTypeNameMap["LIGHTING_CONDITION"] = LIGHTING_CONDITION
 
 class PROFILE(IntEnum):
     """Type of profile."""
+   
     SEARCH_PLUGIN = 0
     """Plugin search profile."""
     DIFFERENTIAL_CORRECTOR = 2
@@ -329,6 +334,7 @@ agcls.AgTypeNameMap["PROFILE"] = PROFILE
 
 class ACCESS_CRITERION(IntEnum):
     """The criteria of an Access stopping condition."""
+   
     GAIN = 0
     """The Gain Access criterion."""
     LOSE = 1
@@ -344,6 +350,7 @@ agcls.AgTypeNameMap["ACCESS_CRITERION"] = ACCESS_CRITERION
 
 class ECLIPSING_BODIES_SOURCE(IntEnum):
     """The source types of the eclipsing bodies list."""
+   
     PROPAGATOR_CENTRAL_BODY = 0
     """The eclipsing bodies list of the propagator's central body."""
     USER_DEFINED = 1
@@ -362,6 +369,7 @@ agcls.AgTypeNameMap["ECLIPSING_BODIES_SOURCE"] = ECLIPSING_BODIES_SOURCE
 
 class CRITERION(IntEnum):
     """The stopping condition criterion types."""
+   
     CROSS_DECREASING = 0
     """The Cross Decreasing criterion - the stopping condition is satisfied when the parameter reaches a value equal to the trip value while decreasing."""
     CROSS_EITHER = 1
@@ -377,6 +385,7 @@ agcls.AgTypeNameMap["CRITERION"] = CRITERION
 
 class CALC_OBJECT_REFERENCE(IntEnum):
     """The calculation object Reference Selection types."""
+   
     BASIC = 0
     """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     SPECIFIED = 1
@@ -389,6 +398,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE"] = CALC_OBJECT_REFERENCE
 
 class CALC_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
     """The calculation object Central Body Reference Selection types."""
+   
     SPECIFIED = 0
     """The Use Basic Reference type - uses the current satellite as the reference vehicle."""
     PARENT = 1
@@ -401,6 +411,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_CENTRAL_BODY_REFERENCE"] = CALC_OBJECT_CENTRAL_
 
 class CALC_OBJECT_ELEM(IntEnum):
     """The calculation object Element Types."""
+   
     BROUWER_LYDDANE_MEAN_LONG = 0
     """Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."""
     BROUWER_LYDDANE_MEAN_SHORT = 1
@@ -419,6 +430,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_ELEM"] = CALC_OBJECT_ELEM
 
 class PROFILE_MODE(IntEnum):
     """The Target Sequence profile modes."""
+   
     ITERATE = 0
     """Iterate - the Target Sequence will run the profile as it is configured in an attempt to attain the desired solution."""
     NOT_ACTIVE = 1
@@ -437,6 +449,7 @@ agcls.AgTypeNameMap["PROFILE_MODE"] = PROFILE_MODE
 
 class CONTROL_STOPPING_CONDITION(IntEnum):
     """The stopping condition control types."""
+   
     TRIP_VALUE = 0
     """Trip - the value at which the stopping condition will be satisfied."""
 
@@ -446,6 +459,7 @@ agcls.AgTypeNameMap["CONTROL_STOPPING_CONDITION"] = CONTROL_STOPPING_CONDITION
 
 class STATE(IntEnum):
     """The Stop segment state types."""
+   
     ENABLED = 0
     """Enabled - the segment stops the run of the MCS."""
     DISABLED = 1
@@ -457,7 +471,8 @@ STATE.DISABLED.__doc__ = "Disabled - the MCS ignores this segment and continues 
 agcls.AgTypeNameMap["STATE"] = STATE
 
 class RETURN_CONTROL(IntEnum):
-    """The Return segment control types"""
+    """The Return segment control types."""
+   
     ENABLE = 0
     """Enable - returns control of the MCS run to the parent segment."""
     DISABLE = 1
@@ -473,6 +488,7 @@ agcls.AgTypeNameMap["RETURN_CONTROL"] = RETURN_CONTROL
 
 class DRAW_PERTURBATION(IntEnum):
     """The Draw Perturbation types for a Differential Corrector profile."""
+   
     SEGMENT_COLOR = 0
     """Segment Color - perturbations will be displayed in the trajectory color defined for the individual segments within the target sequence."""
     DONT_DRAW = 1
@@ -488,21 +504,23 @@ agcls.AgTypeNameMap["DRAW_PERTURBATION"] = DRAW_PERTURBATION
 
 class DERIVE_CALC_METHOD(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
+   
     FORWARD = 0
-    """Forward Difference - (f(x + delta) - f(x))/ delta"""
+    """Forward Difference - ((f(x + delta) - f(x))/ delta)."""
     CENTRAL = 1
-    """Central Difference - (f(x + delta) - f(x - delta)) / 2delta"""
+    """Central Difference - ((f(x + delta) - f(x - delta)) / 2delta)."""
     SIGNED = 2
     """Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."""
 
-DERIVE_CALC_METHOD.FORWARD.__doc__ = "Forward Difference - (f(x + delta) - f(x))/ delta"
-DERIVE_CALC_METHOD.CENTRAL.__doc__ = "Central Difference - (f(x + delta) - f(x - delta)) / 2delta"
+DERIVE_CALC_METHOD.FORWARD.__doc__ = "Forward Difference - ((f(x + delta) - f(x))/ delta)."
+DERIVE_CALC_METHOD.CENTRAL.__doc__ = "Central Difference - ((f(x + delta) - f(x - delta)) / 2delta)."
 DERIVE_CALC_METHOD.SIGNED.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
 
 agcls.AgTypeNameMap["DERIVE_CALC_METHOD"] = DERIVE_CALC_METHOD
 
 class CONVERGENCE_CRITERIA(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
+   
     EQUALITY_CONSTRAINT_WITHIN_TOLERANCE = 0
     """Equality Constraints Satisfied - the differences between the achieved and desired equality constraint values must be within the specified tolerances for convergence."""
     CONVERVENCE_CRITERIA_EITHER_EQUALITY_CONSTRAINTS_OR_CONTROL_PARAMS = 1
@@ -515,6 +533,7 @@ agcls.AgTypeNameMap["CONVERGENCE_CRITERIA"] = CONVERGENCE_CRITERIA
 
 class DIFFERENTIAL_CORRECTOR_SCALING_METHOD(IntEnum):
     """The Scaling Method types for a Differential Corrector profile."""
+   
     INITIAL_VALUE = 0
     """By initial value."""
     ONE_NO_SCALING = 1
@@ -533,6 +552,7 @@ agcls.AgTypeNameMap["DIFFERENTIAL_CORRECTOR_SCALING_METHOD"] = DIFFERENTIAL_CORR
 
 class CONTROL_UPDATE(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
+   
     CD_VAL = 100
     """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
     CR_VAL = 101
@@ -572,6 +592,7 @@ agcls.AgTypeNameMap["CONTROL_UPDATE"] = CONTROL_UPDATE
 
 class CONTROL_FOLLOW(IntEnum):
     """Follow segment properties that can be selected as control parameters for a Target Sequence."""
+   
     FUEL_MASS = 200
     """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CD = 201
@@ -632,6 +653,7 @@ agcls.AgTypeNameMap["CONTROL_FOLLOW"] = CONTROL_FOLLOW
 
 class CONTROL_INIT_STATE(IntEnum):
     """Initial State segment properties that can be selected as control parameters for a Target Sequence."""
+   
     FUEL_MASS = 300
     """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
     CARTESIAN_VX = 301
@@ -725,35 +747,35 @@ class CONTROL_INIT_STATE(IntEnum):
     TANK_VOLUME = 351
     """Tank Volume - the volume of the fuel tank."""
     DELAUNAY_G = 352
-    """G - Magnitude of orbital angular momentum, sqrt(GM * p)."""
+    """G - Magnitude of orbital angular momentum, (G: sqrt(GM * p))."""
     DELAUNAY_H = 353
-    """H - Z component of orbital angular momentum, G cos(inc)."""
+    """H - Z component of orbital angular momentum, (H: G cos(inc))."""
     DELAUNAY_INC = 354
     """Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."""
     DELAUNAY_L = 355
-    """L - Related to two-body orbital energy, sqrt(GM * a)"""
+    """L - Related to two-body orbital energy, (L: sqrt(GM * a))."""
     DELAUNAY_MEAN_ANOMALY = 356
     """Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."""
     DELAUNAY_RAAN = 357
     """Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."""
     DELAUNAY_SEMI_LATUS_RECTUM = 358
-    """Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"""
+    """Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees."""
     DELAUNAY_SMA = 359
     """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     DELAUNAY_W = 360
     """Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."""
     EQUINOCTIAL_H = 361
-    """H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"""
+    """H - With K, describe the shape and position of periapsis of the orbit, (H: ecc * sin(RAAN + w))."""
     EQUINOCTIAL_K = 362
-    """K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"""
+    """K - With H, describe the shape and position of periapsis of the orbit, (K: ecc * cos(RAAN + w))."""
     EQUINOCTIAL_MEAN_LONGITUDE = 363
-    """Mean Longitude - RAAN + w + M"""
+    """Mean Longitude - (RAAN + w + M)."""
     EQUINOCTIAL_MEAN_MOTION = 364
     """Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."""
     EQUINOCTIAL_P = 365
-    """P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"""
+    """P - With Q, describes the orientation of the orbit plane, (P: tan(inc/2) * sin(RAAN))."""
     EQUINOCTIAL_Q = 366
-    """Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"""
+    """Q - With P, describes the orientation of the orbit plane, (Q: tan(inc/2) * cos(RAAN))."""
     EQUINOCTIAL_SMA = 367
     """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     MIXED_SPHERICAL_ALTITUDE = 368
@@ -765,7 +787,7 @@ class CONTROL_INIT_STATE(IntEnum):
     MIXED_SPHERICAL_LATITUDE = 371
     """Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."""
     MIXED_SPHERICAL_LONGITUDE = 372
-    """Longitude"""
+    """Longitude."""
     MIXED_SPHERICAL_VERTICAL_FPA = 373
     """Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."""
     MIXED_SPHERICAL_V_MAGNITUDE = 374
@@ -851,27 +873,27 @@ CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS.__doc__ = "Radius of Periapsi
 CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
 CONTROL_INIT_STATE.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
 CONTROL_INIT_STATE.TANK_VOLUME.__doc__ = "Tank Volume - the volume of the fuel tank."
-CONTROL_INIT_STATE.DELAUNAY_G.__doc__ = "G - Magnitude of orbital angular momentum, sqrt(GM * p)."
-CONTROL_INIT_STATE.DELAUNAY_H.__doc__ = "H - Z component of orbital angular momentum, G cos(inc)."
+CONTROL_INIT_STATE.DELAUNAY_G.__doc__ = "G - Magnitude of orbital angular momentum, (G: sqrt(GM * p))."
+CONTROL_INIT_STATE.DELAUNAY_H.__doc__ = "H - Z component of orbital angular momentum, (H: G cos(inc))."
 CONTROL_INIT_STATE.DELAUNAY_INC.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
-CONTROL_INIT_STATE.DELAUNAY_L.__doc__ = "L - Related to two-body orbital energy, sqrt(GM * a)"
+CONTROL_INIT_STATE.DELAUNAY_L.__doc__ = "L - Related to two-body orbital energy, (L: sqrt(GM * a))."
 CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
 CONTROL_INIT_STATE.DELAUNAY_RAAN.__doc__ = "Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."
-CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees"
+CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees."
 CONTROL_INIT_STATE.DELAUNAY_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
 CONTROL_INIT_STATE.DELAUNAY_W.__doc__ = "Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."
-CONTROL_INIT_STATE.EQUINOCTIAL_H.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, ecc * sin(RAAN + w)"
-CONTROL_INIT_STATE.EQUINOCTIAL_K.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, ecc * cos(RAAN + w)"
-CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE.__doc__ = "Mean Longitude - RAAN + w + M"
+CONTROL_INIT_STATE.EQUINOCTIAL_H.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, (H: ecc * sin(RAAN + w))."
+CONTROL_INIT_STATE.EQUINOCTIAL_K.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, (K: ecc * cos(RAAN + w))."
+CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE.__doc__ = "Mean Longitude - (RAAN + w + M)."
 CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
-CONTROL_INIT_STATE.EQUINOCTIAL_P.__doc__ = "P - With Q, describes the orientation of the orbit plane, tan(inc/2) * sin(RAAN)"
-CONTROL_INIT_STATE.EQUINOCTIAL_Q.__doc__ = "Q - With P, describes the orientation of the orbit plane, tan(inc/2) * cos(RAAN)"
+CONTROL_INIT_STATE.EQUINOCTIAL_P.__doc__ = "P - With Q, describes the orientation of the orbit plane, (P: tan(inc/2) * sin(RAAN))."
+CONTROL_INIT_STATE.EQUINOCTIAL_Q.__doc__ = "Q - With P, describes the orientation of the orbit plane, (Q: tan(inc/2) * cos(RAAN))."
 CONTROL_INIT_STATE.EQUINOCTIAL_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE.__doc__ = "Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH.__doc__ = "Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE.__doc__ = "Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."
-CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE.__doc__ = "Longitude"
+CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE.__doc__ = "Longitude."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE.__doc__ = "Velocity Magnitude - The magnitude of the inertial velocity vector."
 CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
@@ -896,6 +918,7 @@ agcls.AgTypeNameMap["CONTROL_INIT_STATE"] = CONTROL_INIT_STATE
 
 class CONTROL_MANEUVER(IntEnum):
     """Maneuver segment properties that can be selected as control parameters for a Target Sequence."""
+   
     FINITE_CARTESIAN_X = 400
     """The Cartesian X component of the thrust vector."""
     FINITE_CARTESIAN_Y = 401
@@ -1007,6 +1030,7 @@ agcls.AgTypeNameMap["CONTROL_MANEUVER"] = CONTROL_MANEUVER
 
 class CONTROL_LAUNCH(IntEnum):
     """Launch segment properties that can be selected as control parameters for a Target Sequence."""
+   
     EPOCH = 500
     """The date and time of the launch."""
     GEODETIC_LAT = 501
@@ -1130,6 +1154,7 @@ agcls.AgTypeNameMap["CONTROL_LAUNCH"] = CONTROL_LAUNCH
 
 class CONTROL_ADVANCED(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
+   
     PROPAGATE_MAX_PROP_TIME = 600
     """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."""
     PROPAGATE_MIN_PROP_TIME = 601
@@ -1142,6 +1167,7 @@ agcls.AgTypeNameMap["CONTROL_ADVANCED"] = CONTROL_ADVANCED
 
 class TARGET_SEQ_ACTION(IntEnum):
     """Action options for Target Sequence profiles."""
+   
     RUN_NOMINAL_SEQ = 0
     """Run Nominal Sequence - runs the mission control sequence."""
     RUN_ACTIVE_PROFILES = 1
@@ -1157,6 +1183,7 @@ agcls.AgTypeNameMap["TARGET_SEQ_ACTION"] = TARGET_SEQ_ACTION
 
 class PROFILES_FINISH(IntEnum):
     """Action options for Target Sequence profiles convergence."""
+   
     RUN_TO_RETURN_AND_CONTINUE = 0
     """Run To Return And Continue - run to the first Return segment in the sequence, then pass control to the next segment after this target sequence. Often, the only Return is at the end of the target sequence."""
     RUN_TO_RETURN_AND_STOP = 1
@@ -1172,6 +1199,7 @@ agcls.AgTypeNameMap["PROFILES_FINISH"] = PROFILES_FINISH
 
 class UPDATE_PARAM(IntEnum):
     """Spacecraft parameters that can be modified by an Update segment."""
+   
     DRAG_AREA = 0
     """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."""
     SRP_AREA = 1
@@ -1211,6 +1239,7 @@ agcls.AgTypeNameMap["UPDATE_PARAM"] = UPDATE_PARAM
 
 class UPDATE_ACTION(IntEnum):
     """Actions for the Update segment."""
+   
     NO_CHANGE = 0
     """No change in value - leave the current value for this parameter unchanged (ignoring any quantity that may appear in the Value column)."""
     ADD_VALUE = 1
@@ -1229,6 +1258,7 @@ agcls.AgTypeNameMap["UPDATE_ACTION"] = UPDATE_ACTION
 
 class PRESSURE_MODE(IntEnum):
     """Pressure Mode options."""
+   
     BLOW_DOWN = 0
     """Blow-Down - pressure decreases as propellant is consumed and the volume occupied by the pressurant gas consequently increases. This is based on the ideal gas law."""
     PRESSURE_REGULATED = 1
@@ -1241,6 +1271,7 @@ agcls.AgTypeNameMap["PRESSURE_MODE"] = PRESSURE_MODE
 
 class THRUST_TYPE(IntEnum):
     """Thrust options."""
+   
     AFFECTS_ACCEL_AND_MASS_FLOW = 0
     """Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."""
     AFFECTS_ACCEL_ONLY = 1
@@ -1253,6 +1284,7 @@ agcls.AgTypeNameMap["THRUST_TYPE"] = THRUST_TYPE
 
 class ATTITUDE_UPDATE(IntEnum):
     """Attitude Update."""
+   
     DURING_BURN = 0
     """Update during burn - updated throughout the maneuver so as to maintain the required thrust direction. This forces the thrust vector to the specified direction at every instant throughout the burn."""
     INERTIAL_AT_IGNITION = 1
@@ -1268,6 +1300,7 @@ agcls.AgTypeNameMap["ATTITUDE_UPDATE"] = ATTITUDE_UPDATE
 
 class PROPULSION_METHOD(IntEnum):
     """Propulsion method options."""
+   
     ENGINE_MODEL = 0
     """Engine Model - can be used to quickly model the firing of a single engine."""
     THRUSTER_SET = 1
@@ -1280,6 +1313,7 @@ agcls.AgTypeNameMap["PROPULSION_METHOD"] = PROPULSION_METHOD
 
 class CUSTOM_FUNCTION(IntEnum):
     """Attitude definition options for other STK functions."""
+   
     ENABLE_PAGE_DEFINITION = 0
     """Use attitude page definition for other STK functions - the actual attitude during the maneuver is ignored and the satellite is considered to always be in the attitude specified by the page for all other calculations in STK."""
     ENABLE_MANEUVER_ATTITUDE = 1
@@ -1292,6 +1326,7 @@ agcls.AgTypeNameMap["CUSTOM_FUNCTION"] = CUSTOM_FUNCTION
 
 class BODY_AXIS(IntEnum):
     """Attitude body axis options."""
+   
     PLUS_X = 0
     """The positive X engine acceleration direction."""
     PLUS_Y = 1
@@ -1316,6 +1351,7 @@ agcls.AgTypeNameMap["BODY_AXIS"] = BODY_AXIS
 
 class CONSTRAINT_SIGN(IntEnum):
     """Constraint vector sign options."""
+   
     PLUS = 0
     """Positive."""
     MINUS = 1
@@ -1328,12 +1364,13 @@ agcls.AgTypeNameMap["CONSTRAINT_SIGN"] = CONSTRAINT_SIGN
 
 class ATTITUDE_CONTROL(IntEnum):
     """Attitude Control options."""
+   
     VELOCITY_VECTOR = 0
     """Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."""
     ANTI_VELOCITY_VECTOR = 1
     """Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."""
     ATTITUDE = 2
-    """Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. """
+    """Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion."""
     FILE = 3
     """File (impulsive/finite) - uses an attitude file to set the thrust vector direction."""
     THRUST_VECTOR = 4
@@ -1347,7 +1384,7 @@ class ATTITUDE_CONTROL(IntEnum):
 
 ATTITUDE_CONTROL.VELOCITY_VECTOR.__doc__ = "Along Velocity Vector (impulsive/finite) - the total thrust vector is aligned with the spacecraft's velocity vector."
 ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR.__doc__ = "Anti-Velocity Vector (impulsive/finite) - the total thrust vector is opposite to the spacecraft's velocity vector."
-ATTITUDE_CONTROL.ATTITUDE.__doc__ = "Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion. "
+ATTITUDE_CONTROL.ATTITUDE.__doc__ = "Attitude (impulsive/finite) - the thrust vector direction is defined using Euler Angles or a Quaternion."
 ATTITUDE_CONTROL.FILE.__doc__ = "File (impulsive/finite) - uses an attitude file to set the thrust vector direction."
 ATTITUDE_CONTROL.THRUST_VECTOR.__doc__ = "Thrust Vector (impulsive/finite) - the total thrust vector is explicitly specified in Cartesian or spherical form with respect to the thrust axes."
 ATTITUDE_CONTROL.PLUGIN.__doc__ = "Plugin (finite) - thrust vector direction is defined using a COM plugin."
@@ -1358,6 +1395,7 @@ agcls.AgTypeNameMap["ATTITUDE_CONTROL"] = ATTITUDE_CONTROL
 
 class FOLLOW_JOIN(IntEnum):
     """Joining options for the Follow segment."""
+   
     SPECIFY = 0
     """Specify Joining Conditions - specify joining conditions to define when the spacecraft will begin to follow the leader. Joining conditions will become apparent on a new tab - Joining."""
     AT_BEGINNING = 1
@@ -1376,6 +1414,7 @@ agcls.AgTypeNameMap["FOLLOW_JOIN"] = FOLLOW_JOIN
 
 class FOLLOW_SEPARATION(IntEnum):
     """Separation options for the Follow segment."""
+   
     SPECIFY = 0
     """Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."""
     AT_END_OF_LEADERS_EPHEM = 1
@@ -1388,6 +1427,7 @@ agcls.AgTypeNameMap["FOLLOW_SEPARATION"] = FOLLOW_SEPARATION
 
 class FOLLOW_SPACECRAFT_AND_FUEL_TANK(IntEnum):
     """Spacecraft parameter options for the Follow segment."""
+   
     SPECIFY = 0
     """Specify Spacecraft Configuration - manually define the spacecraft for this segment. Spacecraft physical parameters will become apparent on new tabs - Spacecraft Parameters and Fuel Tank."""
     INHERIT = 1
@@ -1403,6 +1443,7 @@ agcls.AgTypeNameMap["FOLLOW_SPACECRAFT_AND_FUEL_TANK"] = FOLLOW_SPACECRAFT_AND_F
 
 class BURNOUT_OPTIONS(IntEnum):
     """Burnout options for the Launch segment."""
+   
     FIXED_VELOCITY = 0
     """Use Fixed Velocity - the inclination of the final state of the launch segment is determined by the arc between the launch and insertion positions, and the horizontal flight path angle is set to zero."""
     INERTIAL_VELOCITY = 1
@@ -1415,6 +1456,7 @@ agcls.AgTypeNameMap["BURNOUT_OPTIONS"] = BURNOUT_OPTIONS
 
 class BURNOUT_TYPE(IntEnum):
     """Burnout point definition types for the Launch segment."""
+   
     GEOCENTRIC = 0
     """Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."""
     GEODETIC = 1
@@ -1436,6 +1478,7 @@ agcls.AgTypeNameMap["BURNOUT_TYPE"] = BURNOUT_TYPE
 
 class ASCENT_TYPE(IntEnum):
     """Ascent types for the Launch segment."""
+   
     ELLIPSE_CUBIC_MOTION = 0
     """Ellipse: Cubic Motion - the motion is computed on the basis of given positions and velocities."""
     ELLIPSE_QUARTIC_MOTION = 1
@@ -1448,6 +1491,7 @@ agcls.AgTypeNameMap["ASCENT_TYPE"] = ASCENT_TYPE
 
 class LAUNCH_DISPLAY_SYSTEM(IntEnum):
     """Launch location coordinate types for the Launch segment."""
+   
     DISPLAY_SYSTEM_GEODETIC = 0
     """Geocentric (Planetocentric) - the location is measured from the center of mass of the Earth or other central body."""
     DISPLAY_SYSTEM_GEOCENTRIC = 1
@@ -1460,6 +1504,7 @@ agcls.AgTypeNameMap["LAUNCH_DISPLAY_SYSTEM"] = LAUNCH_DISPLAY_SYSTEM
 
 class RUN_CODE(IntEnum):
     """The run code returned after the MCS is run."""
+   
     MARCHING = 0
     """Marching - a segment has run successfully."""
     PROFILE_FAILURE = 1
@@ -1487,6 +1532,7 @@ agcls.AgTypeNameMap["RUN_CODE"] = RUN_CODE
 
 class SEQUENCE_STATE_TO_PASS(IntEnum):
     """State To Pass options for the Sequence segment."""
+   
     INITIAL = 0
     """The initial state of the sequence."""
     FINAL = 1
@@ -1499,21 +1545,23 @@ agcls.AgTypeNameMap["SEQUENCE_STATE_TO_PASS"] = SEQUENCE_STATE_TO_PASS
 
 class MANEUVER_TYPE(IntEnum):
     """Maneuver types for the maneuver segment."""
+   
     IMPULSIVE = 0
     """Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."""
     FINITE = 1
     """Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."""
     OPTIMAL_FINITE = 2
-    """Optimal Finite"""
+    """Optimal Finite."""
 
 MANEUVER_TYPE.IMPULSIVE.__doc__ = "Impulsive - calculates a state by adding the defined delta-V vector to the velocity of the final state of the previous segment, adds this new state to the ephemeris, and passes it to the next segment."
 MANEUVER_TYPE.FINITE.__doc__ = "Finite - effectively a Propagate segment with thrust. Like Propagate segments, each point calculated by the propagator is added to the ephemeris, and propagation continues until a stopping condition is met."
-MANEUVER_TYPE.OPTIMAL_FINITE.__doc__ = "Optimal Finite"
+MANEUVER_TYPE.OPTIMAL_FINITE.__doc__ = "Optimal Finite."
 
 agcls.AgTypeNameMap["MANEUVER_TYPE"] = MANEUVER_TYPE
 
 class SEGMENT_TYPE(IntEnum):
     """Segment types."""
+   
     INITIAL_STATE = 0
     """Initial State - can be used to define the initial conditions of your MCS, or of a subsequence within the MCS."""
     LAUNCH = 1
@@ -1559,6 +1607,7 @@ agcls.AgTypeNameMap["SEGMENT_TYPE"] = SEGMENT_TYPE
 
 class ELEMENT_TYPE(IntEnum):
     """Types of orbit element sets."""
+   
     CARTESIAN = 0
     """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
@@ -1595,6 +1644,7 @@ agcls.AgTypeNameMap["ELEMENT_TYPE"] = ELEMENT_TYPE
 
 class LANGUAGE(IntEnum):
     """Scripting language types for the Scripting Tool."""
+   
     VB_SCRIPT = 0
     """VBScript."""
     J_SCRIPT = 1
@@ -1610,6 +1660,7 @@ agcls.AgTypeNameMap["LANGUAGE"] = LANGUAGE
 
 class STOPPING_CONDITION(IntEnum):
     """Type of stopping condition."""
+   
     BASIC = 0
     """Basic Stopping Condition."""
     BEFORE = 1
@@ -1628,6 +1679,7 @@ agcls.AgTypeNameMap["STOPPING_CONDITION"] = STOPPING_CONDITION
 
 class CLEAR_EPHEMERIS_DIRECTION(IntEnum):
     """Direction in which to clear ephemeris."""
+   
     BEFORE = -1
     """Clear ephemeris before selected time or state."""
     NO_CLEAR = 0
@@ -1643,6 +1695,7 @@ agcls.AgTypeNameMap["CLEAR_EPHEMERIS_DIRECTION"] = CLEAR_EPHEMERIS_DIRECTION
 
 class PROFILE_INSERT_DIRECTION(IntEnum):
     """Direction to insert profile."""
+   
     BEFORE = 0
     """Insert profile before reference profile."""
     AFTER = 1
@@ -1655,6 +1708,7 @@ agcls.AgTypeNameMap["PROFILE_INSERT_DIRECTION"] = PROFILE_INSERT_DIRECTION
 
 class ROOT_FINDING_ALGORITHM(IntEnum):
     """Root-finding algorithms."""
+   
     SECANT_METHOD = 0
     """Secant method."""
     NEWTON_RAPHSON_METHOD = 1
@@ -1667,6 +1721,7 @@ agcls.AgTypeNameMap["ROOT_FINDING_ALGORITHM"] = ROOT_FINDING_ALGORITHM
 
 class SCRIPTING_PARAMETER_TYPE(IntEnum):
     """Scripting Tool parameter type."""
+   
     DOUBLE = 0
     """Double."""
     QUANTITY = 1
@@ -1694,30 +1749,33 @@ agcls.AgTypeNameMap["SCRIPTING_PARAMETER_TYPE"] = SCRIPTING_PARAMETER_TYPE
 
 class SNOPT_GOAL(IntEnum):
     """The Goal types for a SNOPT profile."""
+   
     MINIMIZE = 0
-    """Minimize"""
+    """Minimize."""
     BOUND = 1
-    """Bound"""
+    """Bound."""
 
-SNOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
-SNOPT_GOAL.BOUND.__doc__ = "Bound"
+SNOPT_GOAL.MINIMIZE.__doc__ = "Minimize."
+SNOPT_GOAL.BOUND.__doc__ = "Bound."
 
 agcls.AgTypeNameMap["SNOPT_GOAL"] = SNOPT_GOAL
 
 class IPOPT_GOAL(IntEnum):
     """The Goal types for a IPOPT profile."""
+   
     MINIMIZE = 0
-    """Minimize"""
+    """Minimize."""
     BOUND = 1
-    """Bound"""
+    """Bound."""
 
-IPOPT_GOAL.MINIMIZE.__doc__ = "Minimize"
-IPOPT_GOAL.BOUND.__doc__ = "Bound"
+IPOPT_GOAL.MINIMIZE.__doc__ = "Minimize."
+IPOPT_GOAL.BOUND.__doc__ = "Bound."
 
 agcls.AgTypeNameMap["IPOPT_GOAL"] = IPOPT_GOAL
 
 class OPTIMAL_FINITE_SEED_METHOD(IntEnum):
     """Seed methods."""
+   
     INITIAL_GUESS_FILE = 0
     """Seed initial guess from file."""
     FINITE_MANEUVER = 1
@@ -1730,6 +1788,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SEED_METHOD"] = OPTIMAL_FINITE_SEED_METHOD
 
 class OPTIMAL_FINITE_RUN_MODE(IntEnum):
     """Run modes."""
+   
     RUN_CURRENT_NODES = 0
     """Run current nodes."""
     OPTIMIZE_VIA_DIRECT_TRANSCRIPTION = 1
@@ -1742,18 +1801,20 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_RUN_MODE"] = OPTIMAL_FINITE_RUN_MODE
 
 class OPTIMAL_FINITE_DISCRETIZATION_STRATEGY(IntEnum):
     """Discretization Strategy."""
+   
     LEGENDRE_GAUSS_LOBATTO = 0
-    """The Legendre-Gauss-Lobatto quadrature rule"""
+    """The Legendre-Gauss-Lobatto quadrature rule."""
     LEGENDRE_GAUSS_RADAU = 1
     """The Legendre-Gauss-Radau quadrature rule."""
 
-OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_LOBATTO.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule"
+OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_LOBATTO.__doc__ = "The Legendre-Gauss-Lobatto quadrature rule."
 OPTIMAL_FINITE_DISCRETIZATION_STRATEGY.LEGENDRE_GAUSS_RADAU.__doc__ = "The Legendre-Gauss-Radau quadrature rule."
 
 agcls.AgTypeNameMap["OPTIMAL_FINITE_DISCRETIZATION_STRATEGY"] = OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
 
 class OPTIMAL_FINITE_WORKING_VARIABLES(IntEnum):
     """Working Variables."""
+   
     EQUINOCTIAL = 0
     """Standard inertial equinoctial coordinates."""
     MODIFIED_EQUINOCTIAL = 1
@@ -1766,6 +1827,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_WORKING_VARIABLES"] = OPTIMAL_FINITE_WORKING
 
 class OPTIMAL_FINITE_SCALING_OPTIONS(IntEnum):
     """Scaling Options."""
+   
     NO_SCALING = 0
     """No scaling."""
     CANONICAL_UNITS = 1
@@ -1781,6 +1843,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SCALING_OPTIONS"] = OPTIMAL_FINITE_SCALING_O
 
 class OPTIMAL_FINITE_SNOPT_OBJECTIVE(IntEnum):
     """Optimal Finite SNOPT objective."""
+   
     MINIMIZE_TOF = 0
     """Minimize the total TOF along the collocation arc."""
     MAXIMIZE_FINAL_RAD = 1
@@ -1796,6 +1859,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SNOPT_OBJECTIVE"] = OPTIMAL_FINITE_SNOPT_OBJ
 
 class OPTIMAL_FINITE_SNOPT_SCALING(IntEnum):
     """Optimal Finite SNOPT scaling option."""
+   
     NONE = 0
     """No scaling."""
     LINEAR = 1
@@ -1811,6 +1875,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SNOPT_SCALING"] = OPTIMAL_FINITE_SNOPT_SCALI
 
 class OPTIMAL_FINITE_EXPORT_NODES_FORMAT(IntEnum):
     """Steering nodes export format."""
+   
     AZIMUTH_ELEVATION = 0
     """Export controls as Az/El = Ra/Dec angles."""
     UNIT_VECTOR = 1
@@ -1823,6 +1888,7 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_EXPORT_NODES_FORMAT"] = OPTIMAL_FINITE_EXPOR
 
 class OPTIMAL_FINITE_GUESS_METHOD(IntEnum):
     """Guess interpolation method."""
+   
     LAGRANGE_POLYNOMIAL = 0
     """Lagrange polynomial method."""
     PIECEWISE_LINEAR = 1
@@ -1834,7 +1900,8 @@ OPTIMAL_FINITE_GUESS_METHOD.PIECEWISE_LINEAR.__doc__ = "Piecewise linear method.
 agcls.AgTypeNameMap["OPTIMAL_FINITE_GUESS_METHOD"] = OPTIMAL_FINITE_GUESS_METHOD
 
 class IMP_DELTA_V_REP(IntEnum):
-    """Vector representations for impulsive DeltaV specification"""
+    """Vector representations for impulsive DeltaV specification."""
+   
     CARTESIAN_IMP_DELTA_V = 0
     """Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."""
     SPHERICAL_IMP_DELTA_V = 1
@@ -1847,6 +1914,7 @@ agcls.AgTypeNameMap["IMP_DELTA_V_REP"] = IMP_DELTA_V_REP
 
 class LAMBERT_TARGET_COORD_TYPE(IntEnum):
     """Lambert Target CoordType."""
+   
     CARTESIAN = 0
     """Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."""
     KEPLERIAN = 1
@@ -1859,6 +1927,7 @@ agcls.AgTypeNameMap["LAMBERT_TARGET_COORD_TYPE"] = LAMBERT_TARGET_COORD_TYPE
 
 class LAMBERT_SOLUTION_OPTION_TYPE(IntEnum):
     """Lambert Solution Option Type."""
+   
     FIXED_TIME = 0
     """Fixed time - The type of Lambert solution to calculate."""
     MIN_ECCENTRICITY = 1
@@ -1874,6 +1943,7 @@ agcls.AgTypeNameMap["LAMBERT_SOLUTION_OPTION_TYPE"] = LAMBERT_SOLUTION_OPTION_TY
 
 class LAMBERT_ORBITAL_ENERGY_TYPE(IntEnum):
     """Lambert Orbital Energy Type."""
+   
     LOW = 0
     """Low energy- This is the orbital energy for the Lambert solution that corresponds to the smaller semimajor axis solution."""
     HIGH = 1
@@ -1886,6 +1956,7 @@ agcls.AgTypeNameMap["LAMBERT_ORBITAL_ENERGY_TYPE"] = LAMBERT_ORBITAL_ENERGY_TYPE
 
 class LAMBERT_DIRECTION_OF_MOTION_TYPE(IntEnum):
     """Lambert Direction Of Motion Type."""
+   
     SHORT = 0
     """The short direction of motion for the Lambert solution."""
     LONG = 1
@@ -1898,30 +1969,33 @@ agcls.AgTypeNameMap["LAMBERT_DIRECTION_OF_MOTION_TYPE"] = LAMBERT_DIRECTION_OF_M
 
 class GOLDEN_SECTION_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of golden section profile."""
+   
     MINIMIZE_VALUE = 0
-    """Minimize value"""
+    """Minimize value."""
     MAXIMIZE_VALUE = 1
-    """Maximize value"""
+    """Maximize value."""
 
-GOLDEN_SECTION_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
-GOLDEN_SECTION_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
+GOLDEN_SECTION_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value."
+GOLDEN_SECTION_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value."
 
 agcls.AgTypeNameMap["GOLDEN_SECTION_DESIRED_OPERATION"] = GOLDEN_SECTION_DESIRED_OPERATION
 
 class GRID_SEARCH_DESIRED_OPERATION(IntEnum):
     """The types for Desired Operation/Objective of Grid Search profile."""
+   
     MINIMIZE_VALUE = 0
-    """Minimize value"""
+    """Minimize value."""
     MAXIMIZE_VALUE = 1
-    """Maximize value"""
+    """Maximize value."""
 
-GRID_SEARCH_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value"
-GRID_SEARCH_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value"
+GRID_SEARCH_DESIRED_OPERATION.MINIMIZE_VALUE.__doc__ = "Minimize value."
+GRID_SEARCH_DESIRED_OPERATION.MAXIMIZE_VALUE.__doc__ = "Maximize value."
 
 agcls.AgTypeNameMap["GRID_SEARCH_DESIRED_OPERATION"] = GRID_SEARCH_DESIRED_OPERATION
 
 class ELEMENT(IntEnum):
-    """Which type of elements (osculating or mean)"""
+    """Which type of elements (osculating or mean)."""
+   
     OSCULATING = 0
     """Osculating."""
     KOZAI_IZSAK_MEAN = 1
@@ -1940,6 +2014,7 @@ agcls.AgTypeNameMap["ELEMENT"] = ELEMENT
 
 class BASE_SELECTION(IntEnum):
     """Access base object selections types."""
+   
     SPECIFY = 0
     """An object in the current scenario."""
     CURRENT_SATELLITE = 1
@@ -1952,6 +2027,7 @@ agcls.AgTypeNameMap["BASE_SELECTION"] = BASE_SELECTION
 
 class CONTROL_ORBIT_STATE_VALUE(IntEnum):
     """Orbit State Value properties that can be selected as control parameters for a Target Sequence."""
+   
     VX = 0
     """The Vx velocity component of the orbit state."""
     VY = 1
@@ -1976,6 +2052,7 @@ agcls.AgTypeNameMap["CONTROL_ORBIT_STATE_VALUE"] = CONTROL_ORBIT_STATE_VALUE
 
 class SEGMENT_STATE(IntEnum):
     """Segment state to use types."""
+   
     INITIAL = 0
     """The segment initial state."""
     FINAL = 1
@@ -1988,6 +2065,7 @@ agcls.AgTypeNameMap["SEGMENT_STATE"] = SEGMENT_STATE
 
 class DIFFERENCE_ORDER(IntEnum):
     """The Difference order types."""
+   
     INITIAL_MINUS_CURRENT = 0
     """The initial minus current difference."""
     CURRENT_MINUS_INITIAL = 1
@@ -2000,6 +2078,7 @@ agcls.AgTypeNameMap["DIFFERENCE_ORDER"] = DIFFERENCE_ORDER
 
 class SEGMENT_DIFFERENCE_ORDER(IntEnum):
     """The Difference Across Segments order types."""
+   
     CURRENT_MINUS_SEGMENT = 0
     """The current minus segment difference."""
     SEGMENT_MINUS_CURRENT = 1
@@ -2012,6 +2091,7 @@ agcls.AgTypeNameMap["SEGMENT_DIFFERENCE_ORDER"] = SEGMENT_DIFFERENCE_ORDER
 
 class CONTROL_REPEATING_GROUND_TRACK_ERR(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
+   
     REFERENCE_LON = 0
     """The reference longitude."""
     REPEAT_COUNT = 1
@@ -2024,6 +2104,7 @@ agcls.AgTypeNameMap["CONTROL_REPEATING_GROUND_TRACK_ERR"] = CONTROL_REPEATING_GR
 
 class CALC_OBJECT_DIRECTION(IntEnum):
     """The direction to search for a desired value."""
+   
     NEXT = 0
     """Search in the direction of the next calculation object."""
     PREVIOUS = 1
@@ -2036,6 +2117,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_DIRECTION"] = CALC_OBJECT_DIRECTION
 
 class CALC_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
     """The calculation object orbit plane source Types."""
+   
     REFERENCE_SATELLITE = 0
     """Use the reference satellite to generate the orbit plane."""
     SATELLITE = 1
@@ -2048,6 +2130,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_ORBIT_PLANE_SOURCE"] = CALC_OBJECT_ORBIT_PLANE_
 
 class CALC_OBJECT_SUN_POSITION(IntEnum):
     """The calculation object sun location Types."""
+   
     APPARENT_FROM_SATELLITE = 0
     """Use the sun location apparent from satellite."""
     APPARENT_FROM_REFERENCE_SATELLITE = 1
@@ -2066,6 +2149,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_SUN_POSITION"] = CALC_OBJECT_SUN_POSITION
 
 class CALC_OBJECT_ANGLE_SIGN(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
+   
     POSITIVE = 0
     """Use the positive sign for the angle when the relative position has a positive component along the orbit normal."""
     NEGATIVE = 1
@@ -2078,6 +2162,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_ANGLE_SIGN"] = CALC_OBJECT_ANGLE_SIGN
 
 class CALC_OBJECT_REFERENCE_DIRECTION(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
+   
     REFERENCE_SATELLITE_POSITION = 0
     """Use the reference satellite position when projected into the orbit plane."""
     SATELLITE_POSITION = 1
@@ -2096,6 +2181,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_DIRECTION"] = CALC_OBJECT_REFERENCE_D
 
 class CALC_OBJECT_RELATIVE_POSITION(IntEnum):
     """The calculation object relative position Types."""
+   
     SATELLITE_TO_REFERENCE_SATELLITE = 0
     """Use the relative position satellite to reference satellite."""
     REFERENCE_SATELLITE_TO_SATELLITE = 1
@@ -2108,6 +2194,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_RELATIVE_POSITION"] = CALC_OBJECT_RELATIVE_POSI
 
 class CALC_OBJECT_REFERENCE_ELLIPSE(IntEnum):
     """The calculation object reference ellipse Types."""
+   
     REFERENCE_SAT_ORBIT = 0
     """Use the reference satellite orbit."""
     SATELLITE_ORBIT = 1
@@ -2120,6 +2207,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_ELLIPSE"] = CALC_OBJECT_REFERENCE_ELL
 
 class CALC_OBJECT_LOCATION_SOURCE(IntEnum):
     """The calculation object location source Types."""
+   
     REFERENCE_SAT = 0
     """Use the reference satellite."""
     SATELLITE = 1
@@ -2132,6 +2220,7 @@ agcls.AgTypeNameMap["CALC_OBJECT_LOCATION_SOURCE"] = CALC_OBJECT_LOCATION_SOURCE
 
 class GRAVITATIONAL_PARAMETER_SOURCE(IntEnum):
     """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
+   
     CENTRAL_BODY_FILE = 0
     """Cb File."""
     CENTRAL_BODY_FILE_SYSTEM = 1
@@ -2150,6 +2239,7 @@ agcls.AgTypeNameMap["GRAVITATIONAL_PARAMETER_SOURCE"] = GRAVITATIONAL_PARAMETER_
 
 class REFERENCE_RADIUS_SOURCE(IntEnum):
     """The source of the reference radius for a CStateCalcReferenceRadius calculation object."""
+   
     CENTRAL_BODY_FILE = 0
     """Cb File."""
     GRAVITY_FILE = 1
@@ -2162,6 +2252,7 @@ agcls.AgTypeNameMap["REFERENCE_RADIUS_SOURCE"] = REFERENCE_RADIUS_SOURCE
 
 class GRAV_COEFF_NORMALIZATION_TYPE(IntEnum):
     """The normalization type for the CStateCalcGravCoeff calculation object."""
+   
     NORMALIZED = 0
     """Normalized."""
     UNNORMALIZED = 1
@@ -2174,6 +2265,7 @@ agcls.AgTypeNameMap["GRAV_COEFF_NORMALIZATION_TYPE"] = GRAV_COEFF_NORMALIZATION_
 
 class GRAV_COEFF_COEFFICIENT_TYPE(IntEnum):
     """The coefficient type for the CStateCalcGravCoeff calculation object."""
+   
     ZONAL = 0
     """Zonal."""
     COSINE = 1
@@ -2189,6 +2281,7 @@ agcls.AgTypeNameMap["GRAV_COEFF_COEFFICIENT_TYPE"] = GRAV_COEFF_COEFFICIENT_TYPE
 
 class STM_PERT_VARIABLES(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
+   
     POSITION_X = 0
     """Designates the initial or final variation in the 'x' component of position."""
     POSITION_Y = 1
@@ -2213,6 +2306,7 @@ agcls.AgTypeNameMap["STM_PERT_VARIABLES"] = STM_PERT_VARIABLES
 
 class STM_EIGEN_NUMBER(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
+   
     NUMBER1 = 0
     """Designates the first Eigenvalue or Eigenvector."""
     NUMBER2 = 1
@@ -2237,6 +2331,7 @@ agcls.AgTypeNameMap["STM_EIGEN_NUMBER"] = STM_EIGEN_NUMBER
 
 class COMPLEX_NUMBER(IntEnum):
     """Whether a value represents the real or imaginary portion of a number."""
+   
     REAL = 0
     """Designates the value as the real part."""
     IMAGINARY = 1
@@ -2249,6 +2344,7 @@ agcls.AgTypeNameMap["COMPLEX_NUMBER"] = COMPLEX_NUMBER
 
 class SQUARED_TYPE(IntEnum):
     """Whether to calculate the value as the square of the sum of each component or the sum of the squares."""
+   
     SUM_OF_SQUARES = 0
     """Designates the calculation to be the sum of the squares."""
     OF_SUM = 1
@@ -2261,6 +2357,7 @@ agcls.AgTypeNameMap["SQUARED_TYPE"] = SQUARED_TYPE
 
 class GEO_STATIONARY_DRIFT_RATE_MODEL(IntEnum):
     """Gravity models used to compute geostationary drift rate."""
+   
     POINT_MASS = 0
     """Compute drift rate using two-body point mass gravity model."""
     POINT_MASS_PLUS_J2 = 1
@@ -2273,6 +2370,7 @@ agcls.AgTypeNameMap["GEO_STATIONARY_DRIFT_RATE_MODEL"] = GEO_STATIONARY_DRIFT_RA
 
 class GEO_STATIONARY_INCLINATION_MAGNITUDE(IntEnum):
     """Magnitude to use when computing the inclination vector."""
+   
     INCLINATION_ANGLE = 0
     """Compute inclination vector magnitude as the inclination angle itself (in radins)."""
     SIN_INCLINATION = 1
@@ -2297,6 +2395,7 @@ agcls.AgTypeNameMap["GEO_STATIONARY_INCLINATION_MAGNITUDE"] = GEO_STATIONARY_INC
 
 class CENTRAL_BODY_GRAVITY_MODEL(IntEnum):
     """The gravity model."""
+   
     ZONALS_TO_J4 = 0
     """ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."""
     EARTH_SIMPLE = 1
@@ -2344,19 +2443,19 @@ class CENTRAL_BODY_GRAVITY_MODEL(IntEnum):
     J_GEO_RES2001 = 22
     """JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."""
     GGM01C = 23
-    """GGM01C - (Earth)"""
+    """GGM01C - (Earth)."""
     GGM02C = 24
-    """GGM02C - (Earth)"""
+    """GGM02C - (Earth)."""
     WGS72_ZONALS_TO_J4 = 25
-    """WGS72 ZonalsToJ4 - (Earth)"""
+    """WGS72 ZonalsToJ4 - (Earth)."""
     LP100J = 26
-    """LP100J - (Moon)"""
+    """LP100J - (Moon)."""
     LP100K = 27
-    """LP100K - (Moon)"""
+    """LP100K - (Moon)."""
     LP150Q = 28
-    """LP150Q - (Moon)"""
+    """LP150Q - (Moon)."""
     LP75G = 29
-    """LP75G - (Moon)"""
+    """LP75G - (Moon)."""
 
 CENTRAL_BODY_GRAVITY_MODEL.ZONALS_TO_J4.__doc__ = "ZonalsToJ4 - (various) Gravity model for all central bodies except Sun, Earth and Moon."
 CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE.__doc__ = "Earth Simple gravity model."
@@ -2381,18 +2480,19 @@ CENTRAL_BODY_GRAVITY_MODEL.ICARUS2001.__doc__ = "Icarus2001 - (Callisto) GM = 7.
 CENTRAL_BODY_GRAVITY_MODEL.SCIENCE1998.__doc__ = "Science1998 - (Europa) GM =3.20272e+012, reference distance = 1,565,000 m."
 CENTRAL_BODY_GRAVITY_MODEL.NATURE1996.__doc__ = "Nature1996 - (Ganymede) GM = 9.8866e+12, reference distance = 2,634,000 m."
 CENTRAL_BODY_GRAVITY_MODEL.J_GEO_RES2001.__doc__ = "JGeoRes2001 - (Io) GM = 5.96e+12, reference distance = 1,821,600 m."
-CENTRAL_BODY_GRAVITY_MODEL.GGM01C.__doc__ = "GGM01C - (Earth)"
-CENTRAL_BODY_GRAVITY_MODEL.GGM02C.__doc__ = "GGM02C - (Earth)"
-CENTRAL_BODY_GRAVITY_MODEL.WGS72_ZONALS_TO_J4.__doc__ = "WGS72 ZonalsToJ4 - (Earth)"
-CENTRAL_BODY_GRAVITY_MODEL.LP100J.__doc__ = "LP100J - (Moon)"
-CENTRAL_BODY_GRAVITY_MODEL.LP100K.__doc__ = "LP100K - (Moon)"
-CENTRAL_BODY_GRAVITY_MODEL.LP150Q.__doc__ = "LP150Q - (Moon)"
-CENTRAL_BODY_GRAVITY_MODEL.LP75G.__doc__ = "LP75G - (Moon)"
+CENTRAL_BODY_GRAVITY_MODEL.GGM01C.__doc__ = "GGM01C - (Earth)."
+CENTRAL_BODY_GRAVITY_MODEL.GGM02C.__doc__ = "GGM02C - (Earth)."
+CENTRAL_BODY_GRAVITY_MODEL.WGS72_ZONALS_TO_J4.__doc__ = "WGS72 ZonalsToJ4 - (Earth)."
+CENTRAL_BODY_GRAVITY_MODEL.LP100J.__doc__ = "LP100J - (Moon)."
+CENTRAL_BODY_GRAVITY_MODEL.LP100K.__doc__ = "LP100K - (Moon)."
+CENTRAL_BODY_GRAVITY_MODEL.LP150Q.__doc__ = "LP150Q - (Moon)."
+CENTRAL_BODY_GRAVITY_MODEL.LP75G.__doc__ = "LP75G - (Moon)."
 
 agcls.AgTypeNameMap["CENTRAL_BODY_GRAVITY_MODEL"] = CENTRAL_BODY_GRAVITY_MODEL
 
 class CENTRAL_BODY_SHAPE(IntEnum):
     """The central body shape types."""
+   
     TRIAXIAL_ELLIPSOID = 0
     """A triaxial ellipsoid defined by a semi-major axis, semi-mid axis and semi-minor axis."""
     OBLATE_SPHEROID = 1
@@ -2408,6 +2508,7 @@ agcls.AgTypeNameMap["CENTRAL_BODY_SHAPE"] = CENTRAL_BODY_SHAPE
 
 class CENTRAL_BODY_ATTITUDE(IntEnum):
     """The central body attitude types."""
+   
     IAU1994 = 0
     """An IAU 1994 attitude definition."""
     ROTATION_COEFFICIENTS_FILE = 1
@@ -2420,6 +2521,7 @@ agcls.AgTypeNameMap["CENTRAL_BODY_ATTITUDE"] = CENTRAL_BODY_ATTITUDE
 
 class CENTRAL_BODY_EPHEMERIS(IntEnum):
     """The central body ephemeris types."""
+   
     ANALYTIC_ORBIT = 0
     """Specified values and rates of change for the classical orbital elements."""
     FILE = 1
@@ -2441,6 +2543,7 @@ agcls.AgTypeNameMap["CENTRAL_BODY_EPHEMERIS"] = CENTRAL_BODY_EPHEMERIS
 
 class CONTROL_POWER_INTERNAL(IntEnum):
     """Internal Power properties that can be selected as control parameters for a Target Sequence."""
+   
     GENERATED_POWER = 0
     """The power generated by the spacecraft from internal sources."""
     PERCENT_DEGRADATION = 1
@@ -2456,6 +2559,7 @@ agcls.AgTypeNameMap["CONTROL_POWER_INTERNAL"] = CONTROL_POWER_INTERNAL
 
 class CONTROL_POWER_PROCESSED(IntEnum):
     """Processed Power properties that can be selected as control parameters for a Target Sequence."""
+   
     EFFICIENCY = 0
     """The efficiency of the power processing unit(PPU)."""
     LOAD = 1
@@ -2468,6 +2572,7 @@ agcls.AgTypeNameMap["CONTROL_POWER_PROCESSED"] = CONTROL_POWER_PROCESSED
 
 class CONTROL_POWER_SOLAR_ARRAY(IntEnum):
     """Solar Array Power properties that can be selected as control parameters for a Target Sequence."""
+   
     C0 = 0
     """The ThermalModel.C0 coefficient."""
     C1 = 1
@@ -2510,18 +2615,20 @@ agcls.AgTypeNameMap["CONTROL_POWER_SOLAR_ARRAY"] = CONTROL_POWER_SOLAR_ARRAY
 
 class THIRD_BODY_MODE(IntEnum):
     """The third body gravity mode."""
+   
     GRAVITY_FIELD = 0
-    """Define the gravitational effect as a full Gravitational Force model"""
+    """Define the gravitational effect as a full Gravitational Force model."""
     POINT_MASS = 1
     """Define the gravitational effect as a third body point mass effect."""
 
-THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Define the gravitational effect as a full Gravitational Force model"
+THIRD_BODY_MODE.GRAVITY_FIELD.__doc__ = "Define the gravitational effect as a full Gravitational Force model."
 THIRD_BODY_MODE.POINT_MASS.__doc__ = "Define the gravitational effect as a third body point mass effect."
 
 agcls.AgTypeNameMap["THIRD_BODY_MODE"] = THIRD_BODY_MODE
 
 class GRAV_PARAM_SOURCE(IntEnum):
     """The gravity parameter source."""
+   
     CENTRAL_BODY_FILE = 0
     """The Cb file provided with STK; uses the default, body centered gravity source for the central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
@@ -2540,6 +2647,7 @@ agcls.AgTypeNameMap["GRAV_PARAM_SOURCE"] = GRAV_PARAM_SOURCE
 
 class EPHEM_SOURCE(IntEnum):
     """The ephemeris source type."""
+   
     CENTRAL_BODY_FILE = 0
     """The Cb file provided with STK; uses the default ephemeris source for that central body."""
     DESIGN_EXPLORER_OPTIMIZER_FILE = 1
@@ -2558,6 +2666,7 @@ agcls.AgTypeNameMap["EPHEM_SOURCE"] = EPHEM_SOURCE
 
 class SOLAR_FORCE_METHOD(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
+   
     LUMINOSITY = 0
     """Luminosity - used as the value for solar flux at 1 AU in the Solar Radiation computation."""
     MEAN_FLUX = 1
@@ -2570,6 +2679,7 @@ agcls.AgTypeNameMap["SOLAR_FORCE_METHOD"] = SOLAR_FORCE_METHOD
 
 class SHADOW_MODEL(IntEnum):
     """The shadow model type."""
+   
     CYLINDRICAL = 0
     """Cylindrical - assumes the Sun to be at infinite distance so that all light coming from the Sun moves in a direction parallel to the Sun to satellite vector."""
     DUAL_CONE = 1
@@ -2585,6 +2695,7 @@ agcls.AgTypeNameMap["SHADOW_MODEL"] = SHADOW_MODEL
 
 class SUN_POSITION(IntEnum):
     """The sun position type."""
+   
     APPARENT = 0
     """Apparent - takes into account the time required for light to travel from the sun to the position of the spacecraft."""
     APPARENT_TO_TRUE_CENTRAL_BODY = 1
@@ -2600,6 +2711,7 @@ agcls.AgTypeNameMap["SUN_POSITION"] = SUN_POSITION
 
 class ATMOS_DATA_SOURCE(IntEnum):
     """The Atmospheric data source type."""
+   
     CONSTANT = 0
     """Constant Atmospheric data source."""
     FILE = 1
@@ -2612,6 +2724,7 @@ agcls.AgTypeNameMap["ATMOS_DATA_SOURCE"] = ATMOS_DATA_SOURCE
 
 class GEO_MAGNETIC_FLUX_SOURCE(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
+   
     AP = 0
     """Read Ap from file."""
     KP = 1
@@ -2624,78 +2737,83 @@ agcls.AgTypeNameMap["GEO_MAGNETIC_FLUX_SOURCE"] = GEO_MAGNETIC_FLUX_SOURCE
 
 class GEO_MAGNETIC_FLUX_UPDATE_RATE(IntEnum):
     """Method for using geomagnetic flux values from the flux file."""
+   
     RATE3_HOURLY = 0
-    """Three hourly"""
+    """Three hourly."""
     RATE3_HOURLY_CUBIC_SPLINE = 1
-    """Three hourly cubic spline"""
+    """Three hourly cubic spline."""
     RATE3_HOURLY_INTERPOLATED = 2
-    """Three hourly interpolated"""
+    """Three hourly interpolated."""
     DAILY = 3
-    """Daily"""
+    """Daily."""
 
-GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY.__doc__ = "Three hourly"
-GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_CUBIC_SPLINE.__doc__ = "Three hourly cubic spline"
-GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_INTERPOLATED.__doc__ = "Three hourly interpolated"
-GEO_MAGNETIC_FLUX_UPDATE_RATE.DAILY.__doc__ = "Daily"
+GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY.__doc__ = "Three hourly."
+GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_CUBIC_SPLINE.__doc__ = "Three hourly cubic spline."
+GEO_MAGNETIC_FLUX_UPDATE_RATE.RATE3_HOURLY_INTERPOLATED.__doc__ = "Three hourly interpolated."
+GEO_MAGNETIC_FLUX_UPDATE_RATE.DAILY.__doc__ = "Daily."
 
 agcls.AgTypeNameMap["GEO_MAGNETIC_FLUX_UPDATE_RATE"] = GEO_MAGNETIC_FLUX_UPDATE_RATE
 
 class DRAG_MODEL_TYPE(IntEnum):
     """Type of Drag Model."""
+   
     SPHERICAL = 0
-    """Spherical"""
+    """Spherical."""
     PLUGIN = 1
-    """Plugin"""
+    """Plugin."""
     VARIABLE_AREA = 2
-    """Variable Area"""
+    """Variable Area."""
     N_PLATE = 3
-    """N-Plate"""
+    """N-Plate."""
 
-DRAG_MODEL_TYPE.SPHERICAL.__doc__ = "Spherical"
-DRAG_MODEL_TYPE.PLUGIN.__doc__ = "Plugin"
-DRAG_MODEL_TYPE.VARIABLE_AREA.__doc__ = "Variable Area"
-DRAG_MODEL_TYPE.N_PLATE.__doc__ = "N-Plate"
+DRAG_MODEL_TYPE.SPHERICAL.__doc__ = "Spherical."
+DRAG_MODEL_TYPE.PLUGIN.__doc__ = "Plugin."
+DRAG_MODEL_TYPE.VARIABLE_AREA.__doc__ = "Variable Area."
+DRAG_MODEL_TYPE.N_PLATE.__doc__ = "N-Plate."
 
 agcls.AgTypeNameMap["DRAG_MODEL_TYPE"] = DRAG_MODEL_TYPE
 
 class MARS_GRAM_DENSITY_TYPE(IntEnum):
-    """Density Type for MarsGRAM Density Models"""
+    """Density Type for MarsGRAM Density Models."""
+   
     LOW = 0
-    """Low density"""
+    """Low density."""
     MEAN = 1
-    """Mean density"""
+    """Mean density."""
     HIGH = 2
-    """High density"""
+    """High density."""
     RANDOMLY_PERTURBED = 3
-    """Randomly perturbed density"""
+    """Randomly perturbed density."""
 
-MARS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
-MARS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
-MARS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density"
-MARS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density"
+MARS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density."
+MARS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density."
+MARS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density."
+MARS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density."
 
 agcls.AgTypeNameMap["MARS_GRAM_DENSITY_TYPE"] = MARS_GRAM_DENSITY_TYPE
 
 class VENUS_GRAM_DENSITY_TYPE(IntEnum):
-    """Density Type for VenusGRAM Density Models"""
+    """Density Type for VenusGRAM Density Models."""
+   
     LOW = 0
-    """Low density"""
+    """Low density."""
     MEAN = 1
-    """Mean density"""
+    """Mean density."""
     HIGH = 2
-    """High density"""
+    """High density."""
     RANDOMLY_PERTURBED = 3
-    """Randomly perturbed density"""
+    """Randomly perturbed density."""
 
-VENUS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density"
-VENUS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density"
-VENUS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density"
-VENUS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density"
+VENUS_GRAM_DENSITY_TYPE.LOW.__doc__ = "Low density."
+VENUS_GRAM_DENSITY_TYPE.MEAN.__doc__ = "Mean density."
+VENUS_GRAM_DENSITY_TYPE.HIGH.__doc__ = "High density."
+VENUS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density."
 
 agcls.AgTypeNameMap["VENUS_GRAM_DENSITY_TYPE"] = VENUS_GRAM_DENSITY_TYPE
 
 class TAB_VEC_INTERP_METHOD(IntEnum):
     """The interpolation method for tabulated area vector file."""
+   
     CARTESIAN_INTERPOLATION = 0
     """Bilinear interpolation on the Cartesian grid."""
     MAGNITUDE_DIRECTION_INTERPOLATION = 1
@@ -2708,6 +2826,7 @@ agcls.AgTypeNameMap["TAB_VEC_INTERP_METHOD"] = TAB_VEC_INTERP_METHOD
 
 class CONTROL_ENGINE_CONST_ACC(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     GRAV = 0
     """The gravitational acceleration constant at sea level on the Earth."""
     ACCELERATION = 1
@@ -2723,6 +2842,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CONST_ACC"] = CONTROL_ENGINE_CONST_ACC
 
 class CONTROL_ENGINE_CONSTANT(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     GRAV = 0
     """The gravitational acceleration constant at sea level on the Earth."""
     THRUST = 1
@@ -2738,6 +2858,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CONSTANT"] = CONTROL_ENGINE_CONSTANT
 
 class CONTROL_ENGINE_CUSTOM(IntEnum):
     """Custom engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     GRAV = 0
     """Earth surface gravity acceleration for Isp conversions."""
 
@@ -2747,6 +2868,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_CUSTOM"] = CONTROL_ENGINE_CUSTOM
 
 class CONTROL_ENGINE_THROTTLE_TABLE(IntEnum):
     """Throttle table engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     GRAV = 0
     """Gravitational acceleration constant at sea level on the Earth."""
     PERCENT_DEGRADATION_PER_YEAR = 1
@@ -2762,6 +2884,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_THROTTLE_TABLE"] = CONTROL_ENGINE_THROTTLE_T
 
 class CONTROL_ENGINE_ION(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     FLOW_RATE_C0 = 0
     """FlowRateModel.C0 - the constant coefficient."""
     FLOW_RATE_C1 = 1
@@ -2789,7 +2912,7 @@ class CONTROL_ENGINE_ION(IntEnum):
     MASS_FLOW_EFFICIENCY_C3 = 12
     """MassFlowEfficiencyModel.C3 - the cubic coefficient."""
     MAX_INPUT_POWER = 13
-    """Minimum power required for the engine to produce thrust. """
+    """Minimum power required for the engine to produce thrust."""
     MIN_REQUIRED_POWER = 14
     """Maximum power that can be used by the engine to produce thrust."""
     PERCENT_DEGRADATION_PER_YEAR = 15
@@ -2820,7 +2943,7 @@ CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0.__doc__ = "MassFlowEfficiencyModel.C0
 CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
 CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
 CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
-CONTROL_ENGINE_ION.MAX_INPUT_POWER.__doc__ = "Minimum power required for the engine to produce thrust. "
+CONTROL_ENGINE_ION.MAX_INPUT_POWER.__doc__ = "Minimum power required for the engine to produce thrust."
 CONTROL_ENGINE_ION.MIN_REQUIRED_POWER.__doc__ = "Maximum power that can be used by the engine to produce thrust."
 CONTROL_ENGINE_ION.PERCENT_DEGRADATION_PER_YEAR.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
 CONTROL_ENGINE_ION.PERCENT_THROTTLE.__doc__ = "Percentage of available thrust to use (100 is full on, 0 is off)."
@@ -2834,6 +2957,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_ION"] = CONTROL_ENGINE_ION
 
 class CONTROL_ENGINE_MODEL_POLY(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
+   
     THRUST_C0 = 0
     """The thrust C0 coefficient."""
     THRUST_C1 = 1
@@ -2939,6 +3063,7 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_MODEL_POLY"] = CONTROL_ENGINE_MODEL_POLY
 
 class ENGINE_MODEL_FUNCTION(IntEnum):
     """The engine model function types."""
+   
     ISP = 0
     """Isp as an independent variable of an equation."""
     POWER = 1
@@ -2954,6 +3079,7 @@ agcls.AgTypeNameMap["ENGINE_MODEL_FUNCTION"] = ENGINE_MODEL_FUNCTION
 
 class THROTTLE_TABLE_OPERATION_MODE(IntEnum):
     """Engine operation mode."""
+   
     ENGINE_OPERATION_REG_POLY = 0
     """Interpolation of engine performance data based on a regression polynomial model."""
     ENGINE_OPERATION_PIECEWISE_LINEAR = 1
@@ -2969,6 +3095,7 @@ agcls.AgTypeNameMap["THROTTLE_TABLE_OPERATION_MODE"] = THROTTLE_TABLE_OPERATION_
 
 class IDEAL_ORBIT_RADIUS(IntEnum):
     """Ideal Orbit Radius."""
+   
     EPOCH_CENTERED_AVG_SOURCE_RADIUS = 0
     """Epoch centered average source radius."""
     INSTANT_CHAR_DISTANCE = 1
@@ -2981,6 +3108,7 @@ agcls.AgTypeNameMap["IDEAL_ORBIT_RADIUS"] = IDEAL_ORBIT_RADIUS
 
 class ROTATING_COORDINATE_SYSTEM(IntEnum):
     """Barycenter centered rotating system."""
+   
     BARYCENTER_CENTERED = 0
     """Barycenter centered rotating system."""
     PRIMARY_CENTERED = 1
@@ -3011,6 +3139,7 @@ agcls.AgTypeNameMap["ROTATING_COORDINATE_SYSTEM"] = ROTATING_COORDINATE_SYSTEM
 
 class CONTROL_THRUSTERS(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
+   
     EQUIV_ON_TIME = 0
     """The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."""
     THRUST_EFFICIENCY = 1
@@ -3038,6 +3167,7 @@ agcls.AgTypeNameMap["CONTROL_THRUSTERS"] = CONTROL_THRUSTERS
 
 class THRUSTER_DIRECTION(IntEnum):
     """The thruster direction type."""
+   
     ACCELERATION = 0
     """The direction that is opposite the direction of the exhaust."""
     EXHAUST = 1
@@ -3050,6 +3180,7 @@ agcls.AgTypeNameMap["THRUSTER_DIRECTION"] = THRUSTER_DIRECTION
 
 class CRITERIA(IntEnum):
     """The criteria type."""
+   
     EQUALS = 0
     """The test parameter must be equal (within the specified tolerance) to the specified value."""
     GREATER_THAN = 1
@@ -3074,6 +3205,7 @@ agcls.AgTypeNameMap["CRITERIA"] = CRITERIA
 
 class ERROR_CONTROL(IntEnum):
     """Error Control for the numerical integrator."""
+   
     ABSOLUTE = 0
     """The error estimate of each integrated component is compared to the absolute error tolerance. Error control with this method is based on absolute values, e.g. in meters for position, m/sec for velocity, etc."""
     RELATIVE_BY_COMPONENT = 1
@@ -3092,6 +3224,7 @@ agcls.AgTypeNameMap["ERROR_CONTROL"] = ERROR_CONTROL
 
 class PREDICTOR_CORRECTOR(IntEnum):
     """Predictor corrector scheme for the numerical integrator."""
+   
     FULL = 0
     """All force models are re-evaluated at each corrector step."""
     PSEUDO = 1
@@ -3104,6 +3237,7 @@ agcls.AgTypeNameMap["PREDICTOR_CORRECTOR"] = PREDICTOR_CORRECTOR
 
 class NUMERICAL_INTEGRATOR(IntEnum):
     """Numerical integrator type."""
+   
     RUNGE_KUTTA4_TH_ADAPT = 0
     """A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."""
     RUNGE_KUTTA_F_7TH_8TH = 1
@@ -3134,6 +3268,7 @@ agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
 class COEFF_RUNGE_KUTTA_V_8TH_9TH(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
+   
     COEFF_1978 = 0
     """SIAM 1978."""
     EFFICIENT = 1
@@ -3147,6 +3282,7 @@ agcls.AgTypeNameMap["COEFF_RUNGE_KUTTA_V_8TH_9TH"] = COEFF_RUNGE_KUTTA_V_8TH_9TH
 
 class IUserVariableDefinitionCollection(object):
     """The list of User Variables accessed through the Driver."""
+
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3252,6 +3388,7 @@ agcls.AgTypeNameMap["IUserVariableDefinitionCollection"] = IUserVariableDefiniti
 
 class IUserVariableCollection(object):
     """The list of User Variables accessed through a segment that sets initial conditions."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3332,7 +3469,8 @@ agcls.AgClassCatalog.add_catalog_entry("{1BB5F3BC-51E2-4F2D-93E2-61322E3F65BE}",
 agcls.AgTypeNameMap["IUserVariableCollection"] = IUserVariableCollection
 
 class IUserVariableUpdateCollection(object):
-    """The list of User Variables accessed through an Update segment"""
+    """The list of User Variables accessed through an Update segment."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3414,6 +3552,7 @@ agcls.AgTypeNameMap["IUserVariableUpdateCollection"] = IUserVariableUpdateCollec
 
 class ICalculationGraphCollection(object):
     """The list of Calculations Graphs to display."""
+
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3469,7 +3608,7 @@ class ICalculationGraphCollection(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def add(self, graphName:str) -> None:
-        """Add a calculation graph"""
+        """Add a calculation graph."""
         return self._intf.invoke(ICalculationGraphCollection._metadata, ICalculationGraphCollection._add_metadata, graphName)
 
     _remove_metadata = { "name" : "remove",
@@ -3503,6 +3642,7 @@ agcls.AgTypeNameMap["ICalculationGraphCollection"] = ICalculationGraphCollection
 
 class IConstraintCollection(object):
     """The list of constraints assigned to a stopping condition."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3624,6 +3764,7 @@ agcls.AgTypeNameMap["IConstraintCollection"] = IConstraintCollection
 
 class IPluginProperties(object):
     """Properties of a plugin attitude control."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3673,6 +3814,7 @@ agcls.AgTypeNameMap["IPluginProperties"] = IPluginProperties
 
 class ISNOPTControlCollection(object):
     """Properties for the list of SNOPT control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3746,6 +3888,7 @@ agcls.AgTypeNameMap["ISNOPTControlCollection"] = ISNOPTControlCollection
 
 class ISNOPTResultCollection(object):
     """SNOPT result collection."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3819,6 +3962,7 @@ agcls.AgTypeNameMap["ISNOPTResultCollection"] = ISNOPTResultCollection
 
 class IIPOPTControlCollection(object):
     """Properties for the list of IPOPT control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3892,6 +4036,7 @@ agcls.AgTypeNameMap["IIPOPTControlCollection"] = IIPOPTControlCollection
 
 class IIPOPTResultCollection(object):
     """IPOPT result collection."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3965,6 +4110,7 @@ agcls.AgTypeNameMap["IIPOPTResultCollection"] = IIPOPTResultCollection
 
 class IManeuverOptimalFiniteSNOPTOptimizer(object):
     """Properties of SNOPT Optimizer options for optimal finite maneuver."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4168,6 +4314,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteSNOPTOptimizer"] = IManeuverOptimalFi
 
 class IManeuverOptimalFiniteInitialBoundaryConditions(object):
     """Properties of initial boundary conditions for optimal finite maneuver."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4273,6 +4420,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteInitialBoundaryConditions"] = IManeuv
 
 class IManeuverOptimalFiniteFinalBoundaryConditions(object):
     """Properties of final boundary conditions for optimal finite maneuver."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4372,7 +4520,7 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def lower_delta_final_time(self) -> float:
-        """Lower delta for final time"""
+        """Lower delta for final time."""
         return self._intf.get_property(IManeuverOptimalFiniteFinalBoundaryConditions._metadata, IManeuverOptimalFiniteFinalBoundaryConditions._get_lower_delta_final_time_metadata)
 
     _set_lower_delta_final_time_metadata = { "name" : "lower_delta_final_time",
@@ -4387,7 +4535,7 @@ class IManeuverOptimalFiniteFinalBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def upper_delta_final_time(self) -> float:
-        """Upper delta for final time"""
+        """Upper delta for final time."""
         return self._intf.get_property(IManeuverOptimalFiniteFinalBoundaryConditions._metadata, IManeuverOptimalFiniteFinalBoundaryConditions._get_upper_delta_final_time_metadata)
 
     _set_upper_delta_final_time_metadata = { "name" : "upper_delta_final_time",
@@ -4411,6 +4559,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteFinalBoundaryConditions"] = IManeuver
 
 class IManeuverOptimalFinitePathBoundaryConditions(object):
     """Properties of path boundary conditions for optimal finite maneuver."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4514,7 +4663,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def lower_bound_azimuth(self) -> float:
-        """Thrust direction azimuth lower bound along the path"""
+        """Thrust direction azimuth lower bound along the path."""
         return self._intf.get_property(IManeuverOptimalFinitePathBoundaryConditions._metadata, IManeuverOptimalFinitePathBoundaryConditions._get_lower_bound_azimuth_metadata)
 
     _set_lower_bound_azimuth_metadata = { "name" : "lower_bound_azimuth",
@@ -4529,7 +4678,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def upper_bound_azimuth(self) -> float:
-        """Thrust direction azimuth upper bound along the path"""
+        """Thrust direction azimuth upper bound along the path."""
         return self._intf.get_property(IManeuverOptimalFinitePathBoundaryConditions._metadata, IManeuverOptimalFinitePathBoundaryConditions._get_upper_bound_azimuth_metadata)
 
     _set_upper_bound_azimuth_metadata = { "name" : "upper_bound_azimuth",
@@ -4544,7 +4693,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def lower_bound_elevation(self) -> float:
-        """Thrust direction elevation lower bound along the path"""
+        """Thrust direction elevation lower bound along the path."""
         return self._intf.get_property(IManeuverOptimalFinitePathBoundaryConditions._metadata, IManeuverOptimalFinitePathBoundaryConditions._get_lower_bound_elevation_metadata)
 
     _set_lower_bound_elevation_metadata = { "name" : "lower_bound_elevation",
@@ -4559,7 +4708,7 @@ class IManeuverOptimalFinitePathBoundaryConditions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def upper_bound_elevation(self) -> float:
-        """Thrust direction elevation upper bound along the path"""
+        """Thrust direction elevation upper bound along the path."""
         return self._intf.get_property(IManeuverOptimalFinitePathBoundaryConditions._metadata, IManeuverOptimalFinitePathBoundaryConditions._get_upper_bound_elevation_metadata)
 
     _set_upper_bound_elevation_metadata = { "name" : "upper_bound_elevation",
@@ -4583,6 +4732,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFinitePathBoundaryConditions"] = IManeuverO
 
 class IManeuverOptimalFiniteSteeringNodeCollection(object):
     """Steering/nodes collection."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4648,6 +4798,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteSteeringNodeCollection"] = IManeuverO
 
 class IManeuverOptimalFiniteBounds(object):
     """The bounds for boundary interfaces."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4706,6 +4857,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteBounds"] = IManeuverOptimalFiniteBoun
 
 class IGoldenSectionControlCollection(object):
     """Properties for the list of Golden Section control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4779,6 +4931,7 @@ agcls.AgTypeNameMap["IGoldenSectionControlCollection"] = IGoldenSectionControlCo
 
 class IGoldenSectionControl(object):
     """Properties for control parameters of a Golden Section profile."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4932,6 +5085,7 @@ agcls.AgTypeNameMap["IGoldenSectionControl"] = IGoldenSectionControl
 
 class IGoldenSectionResultCollection(object):
     """Properties for the list of Golden Section result parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -5005,6 +5159,7 @@ agcls.AgTypeNameMap["IGoldenSectionResultCollection"] = IGoldenSectionResultColl
 
 class IGoldenSectionResult(object):
     """Properties for result parameters of a Golden Section profile."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5124,6 +5279,7 @@ agcls.AgTypeNameMap["IGoldenSectionResult"] = IGoldenSectionResult
 
 class IGridSearchControlCollection(object):
     """Properties for the list of Grid Search control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -5197,6 +5353,7 @@ agcls.AgTypeNameMap["IGridSearchControlCollection"] = IGridSearchControlCollecti
 
 class IGridSearchControl(object):
     """Properties for control parameters of a Grid Search profile."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5350,6 +5507,7 @@ agcls.AgTypeNameMap["IGridSearchControl"] = IGridSearchControl
 
 class IGridSearchResultCollection(object):
     """Properties for the list of Grid Search result parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -5423,6 +5581,7 @@ agcls.AgTypeNameMap["IGridSearchResultCollection"] = IGridSearchResultCollection
 
 class IGridSearchResult(object):
     """Properties for result parameters of a Grid Search profile."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5542,6 +5701,7 @@ agcls.AgTypeNameMap["IGridSearchResult"] = IGridSearchResult
 
 class IBisectionControlCollection(object):
     """Properties for the list of Bisection control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -5615,6 +5775,7 @@ agcls.AgTypeNameMap["IBisectionControlCollection"] = IBisectionControlCollection
 
 class IBisectionResult(object):
     """Properties for result parameters of a Bisection profile."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5751,6 +5912,7 @@ agcls.AgTypeNameMap["IBisectionResult"] = IBisectionResult
 
 class IBisectionResultCollection(object):
     """Bisection result collection."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -5824,6 +5986,7 @@ agcls.AgTypeNameMap["IBisectionResultCollection"] = IBisectionResultCollection
 
 class IStoppingConditionElement(object):
     """The status of a stopping condition."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5868,21 +6031,21 @@ class IStoppingConditionElement(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_STOPPING_CONDITION),) }
     def enable_control_parameter(self, param:"CONTROL_STOPPING_CONDITION") -> None:
-        """Enable or disables the specified control parameter"""
+        """Enable or disables the specified control parameter."""
         return self._intf.invoke(IStoppingConditionElement._metadata, IStoppingConditionElement._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_STOPPING_CONDITION),) }
     def disable_control_parameter(self, param:"CONTROL_STOPPING_CONDITION") -> None:
-        """Disables the specified control parameter"""
+        """Disables the specified control parameter."""
         return self._intf.invoke(IStoppingConditionElement._metadata, IStoppingConditionElement._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "name" : "is_control_parameter_enabled",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_STOPPING_CONDITION), agmarshall.VARIANT_BOOL_arg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_STOPPING_CONDITION") -> bool:
-        """Sees if the specified control is enabled"""
+        """Sees if the specified control is enabled."""
         return self._intf.invoke(IStoppingConditionElement._metadata, IStoppingConditionElement._is_control_parameter_enabled_metadata, param, out_arg())
 
     _get_control_parameters_available_metadata = { "name" : "control_parameters_available",
@@ -5907,6 +6070,7 @@ agcls.AgTypeNameMap["IStoppingConditionElement"] = IStoppingConditionElement
 
 class IStoppingConditionCollection(object):
     """The list of Stopping Conditions."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6028,6 +6192,7 @@ agcls.AgTypeNameMap["IStoppingConditionCollection"] = IStoppingConditionCollecti
 
 class IMissionControlSequenceSegmentCollection(object):
     """Properties for a collection of segments."""
+
     _num_methods = 13
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6174,6 +6339,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceSegmentCollection"] = IMissionContro
 
 class IState(object):
     """Spacecraft Parameters properties for the spacecraft configuration."""
+
     _num_methods = 33
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6479,6 +6645,7 @@ agcls.AgTypeNameMap["IState"] = IState
 
 class IStoppingConditionComponent(object):
     """Properties for a stopping condition."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6512,6 +6679,7 @@ agcls.AgTypeNameMap["IStoppingConditionComponent"] = IStoppingConditionComponent
 
 class IAutomaticSequence(object):
     """Properties for automatic sequences."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6587,6 +6755,7 @@ agcls.AgTypeNameMap["IAutomaticSequence"] = IAutomaticSequence
 
 class IAutomaticSequenceCollection(object):
     """Properties for the Automatic Sequence Browser."""
+
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6684,6 +6853,7 @@ agcls.AgTypeNameMap["IAutomaticSequenceCollection"] = IAutomaticSequenceCollecti
 
 class IBPlaneCollection(object):
     """Properties for the collection of B-Planes."""
+
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6773,6 +6943,7 @@ agcls.AgTypeNameMap["IBPlaneCollection"] = IBPlaneCollection
 
 class ICalcObjectCollection(object):
     """Collection of calculation objects."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6894,6 +7065,7 @@ agcls.AgTypeNameMap["ICalcObjectCollection"] = ICalcObjectCollection
 
 class IManeuverFinitePropagator(object):
     """Properties for the propagation of a Finite Maneuver."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7097,6 +7269,7 @@ agcls.AgTypeNameMap["IManeuverFinitePropagator"] = IManeuverFinitePropagator
 
 class IBurnoutVelocity(object):
     """Properties for the burnout velocity of a Launch segment."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7206,6 +7379,7 @@ agcls.AgTypeNameMap["IBurnoutVelocity"] = IBurnoutVelocity
 
 class IAttitudeControl(object):
     """Properties for attitude options for a maneuver segment."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7331,7 +7505,8 @@ agcls.AgClassCatalog.add_catalog_entry("{FC43EF22-B727-4538-9E97-B3CD445436CD}",
 agcls.AgTypeNameMap["IAttitudeControl"] = IAttitudeControl
 
 class IAttitudeControlFinite(IAttitudeControl):
-    """The attitude control of a finite maneuver"""
+    """The attitude control of a finite maneuver."""
+
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
@@ -7358,6 +7533,7 @@ agcls.AgTypeNameMap["IAttitudeControlFinite"] = IAttitudeControlFinite
 
 class IAttitudeControlImpulsive(IAttitudeControl):
     """The attitude control of an impulsive maneuver."""
+
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
@@ -7383,7 +7559,8 @@ agcls.AgClassCatalog.add_catalog_entry("{0BD5E890-FBD8-415E-9E29-38731985F366}",
 agcls.AgTypeNameMap["IAttitudeControlImpulsive"] = IAttitudeControlImpulsive
 
 class IAttitudeControlOptimalFinite(IAttitudeControl):
-    """The attitude control of a optimal finite maneuver"""
+    """The attitude control of a optimal finite maneuver."""
+
     _num_methods = 0
     _vtable_offset = IAttitudeControl._vtable_offset + IAttitudeControl._num_methods
     _metadata = {
@@ -7410,6 +7587,7 @@ agcls.AgTypeNameMap["IAttitudeControlOptimalFinite"] = IAttitudeControlOptimalFi
 
 class IManeuver(object):
     """Properties of an Impulsive Maneuver Segment."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7486,6 +7664,7 @@ agcls.AgTypeNameMap["IManeuver"] = IManeuver
 
 class IDisplaySystem(object):
     """The launch coordinate system."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7511,6 +7690,7 @@ agcls.AgTypeNameMap["IDisplaySystem"] = IDisplaySystem
 
 class IBurnout(object):
     """The burnout point reference frame."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7536,6 +7716,7 @@ agcls.AgTypeNameMap["IBurnout"] = IBurnout
 
 class IScriptingSegment(object):
     """Object properties for scripting options."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7663,6 +7844,7 @@ agcls.AgTypeNameMap["IScriptingSegment"] = IScriptingSegment
 
 class IScriptingSegmentCollection(object):
     """The list of object properties that the script can interact with."""
+
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -7801,6 +7983,7 @@ agcls.AgTypeNameMap["IScriptingSegmentCollection"] = IScriptingSegmentCollection
 
 class IScriptingParameterEnumerationChoice(object):
     """Enumeration choice."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7828,7 +8011,7 @@ class IScriptingParameterEnumerationChoice(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def name(self) -> str:
-        """Name of the enumeration"""
+        """Name of the enumeration."""
         return self._intf.get_property(IScriptingParameterEnumerationChoice._metadata, IScriptingParameterEnumerationChoice._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -7843,7 +8026,7 @@ class IScriptingParameterEnumerationChoice(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def value(self) -> int:
-        """Integer value of the enumeration"""
+        """Integer value of the enumeration."""
         return self._intf.get_property(IScriptingParameterEnumerationChoice._metadata, IScriptingParameterEnumerationChoice._get_value_metadata)
 
     _set_value_metadata = { "name" : "value",
@@ -7859,6 +8042,7 @@ agcls.AgTypeNameMap["IScriptingParameterEnumerationChoice"] = IScriptingParamete
 
 class IScriptingParameterEnumerationChoiceCollection(object):
     """The list of enumeration choices available when parameter type is Enumeration."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -7989,6 +8173,7 @@ agcls.AgTypeNameMap["IScriptingParameterEnumerationChoiceCollection"] = IScripti
 
 class IScriptingParameter(object):
     """Parameter properties for scripting options."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8148,7 +8333,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_min_value(self) -> bool:
-        """If true, a minimum value will be enforced for the parameter value"""
+        """If true, a minimum value will be enforced for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_use_min_value_metadata)
 
     _set_use_min_value_metadata = { "name" : "use_min_value",
@@ -8163,7 +8348,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def min_value(self) -> typing.Any:
-        """The minimum value permitted for the parameter value"""
+        """The minimum value permitted for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_min_value_metadata)
 
     _set_min_value_metadata = { "name" : "min_value",
@@ -8178,7 +8363,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_max_value(self) -> bool:
-        """If true, a maximum value will be enforced for the parameter value"""
+        """If true, a maximum value will be enforced for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_use_max_value_metadata)
 
     _set_use_max_value_metadata = { "name" : "use_max_value",
@@ -8193,7 +8378,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @property
     def max_value(self) -> typing.Any:
-        """The maximum value permitted for the parameter value"""
+        """The maximum value permitted for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_max_value_metadata)
 
     _set_max_value_metadata = { "name" : "max_value",
@@ -8209,6 +8394,7 @@ agcls.AgTypeNameMap["IScriptingParameter"] = IScriptingParameter
 
 class IScriptingParameterCollection(object):
     """The list of parameters that the script can interact with."""
+
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -8347,6 +8533,7 @@ agcls.AgTypeNameMap["IScriptingParameterCollection"] = IScriptingParameterCollec
 
 class IScriptingCalcObject(object):
     """Calc Object properties for scripting options."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8455,6 +8642,7 @@ agcls.AgTypeNameMap["IScriptingCalcObject"] = IScriptingCalcObject
 
 class IScriptingCalcObjectCollection(object):
     """The list of calc objects that the script can interact with."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -8584,6 +8772,7 @@ agcls.AgTypeNameMap["IScriptingCalcObjectCollection"] = IScriptingCalcObjectColl
 
 class IScriptingTool(object):
     """Properties for the Scripting Tool."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8710,6 +8899,7 @@ agcls.AgTypeNameMap["IScriptingTool"] = IScriptingTool
 
 class IElement(object):
     """The elements of the selected coordinate type."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8735,6 +8925,7 @@ agcls.AgTypeNameMap["IElement"] = IElement
 
 class ISpacecraftParameters(object):
     """Properties for spacecraft configuration."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8912,6 +9103,7 @@ agcls.AgTypeNameMap["ISpacecraftParameters"] = ISpacecraftParameters
 
 class IFuelTank(object):
     """Properties for fuel tank configuration."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9038,6 +9230,7 @@ agcls.AgTypeNameMap["IFuelTank"] = IFuelTank
 
 class IMissionControlSequenceSegmentProperties(object):
     """The segment properties."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9139,6 +9332,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceSegmentProperties"] = IMissionContro
 
 class IMissionControlSequenceEnd(object):
     """Properties for an End segment."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9164,6 +9358,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceEnd"] = IMissionControlSequenceEnd
 
 class IMissionControlSequenceInitialState(object):
     """Properties for an Initial State segment."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9308,6 +9503,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceInitialState"] = IMissionControlSequ
 
 class IMissionControlSequenceSegment(object):
     """General properties for segments."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9402,6 +9598,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceSegment"] = IMissionControlSequenceS
 
 class IMissionControlSequenceOptions(object):
     """Properties for the MCS Options."""
+
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9742,6 +9939,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceOptions"] = IMissionControlSequenceO
 
 class IDriverMissionControlSequence(object):
     """Properties for the Mission Control Sequence."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9823,7 +10021,7 @@ class IDriverMissionControlSequence(object):
             "arg_types" : (),
             "marshallers" : () }
     def clear_dwc_graphics(self) -> None:
-        """Clear the draw while calculating graphics"""
+        """Clear the draw while calculating graphics."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._clear_dwc_graphics_metadata, )
 
     _reset_all_profiles_metadata = { "name" : "reset_all_profiles",
@@ -9844,7 +10042,7 @@ class IDriverMissionControlSequence(object):
             "arg_types" : (),
             "marshallers" : () }
     def append_run(self) -> None:
-        """Append the existing ephemeris with another individual segment mode run"""
+        """Append the existing ephemeris with another individual segment mode run."""
         return self._intf.invoke(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._append_run_metadata, )
 
     _append_run_from_time_metadata = { "name" : "append_run_from_time",
@@ -9882,6 +10080,7 @@ agcls.AgTypeNameMap["IDriverMissionControlSequence"] = IDriverMissionControlSequ
 
 class IElementCartesian(IElement):
     """Properties for Cartesian elements."""
+
     _num_methods = 12
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -10008,7 +10207,8 @@ agcls.AgClassCatalog.add_catalog_entry("{63C45864-E165-498E-A88E-8104FABF50B9}",
 agcls.AgTypeNameMap["IElementCartesian"] = IElementCartesian
 
 class IElementKeplerian(IElement):
-    """Properties for Keplerian elements"""
+    """Properties for Keplerian elements."""
+
     _num_methods = 46
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -10426,7 +10626,8 @@ agcls.AgClassCatalog.add_catalog_entry("{3550E5F6-FDEF-4325-BDBA-2BA984208ECB}",
 agcls.AgTypeNameMap["IElementKeplerian"] = IElementKeplerian
 
 class IElementDelaunay(IElement):
-    """Properties for Delaunay elements"""
+    """Properties for Delaunay elements."""
+
     _num_methods = 18
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -10604,7 +10805,8 @@ agcls.AgClassCatalog.add_catalog_entry("{2D09DD04-C97C-43DB-B01A-D78DDD52FE1F}",
 agcls.AgTypeNameMap["IElementDelaunay"] = IElementDelaunay
 
 class IElementEquinoctial(IElement):
-    """Properties for Equinoctial elements"""
+    """Properties for Equinoctial elements."""
+
     _num_methods = 16
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -10765,7 +10967,8 @@ agcls.AgClassCatalog.add_catalog_entry("{90FA8C03-AA29-446A-A23A-085B71502DAA}",
 agcls.AgTypeNameMap["IElementEquinoctial"] = IElementEquinoctial
 
 class IElementMixedSpherical(IElement):
-    """Properties for Mixed Spherical elements"""
+    """Properties for Mixed Spherical elements."""
+
     _num_methods = 14
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -10909,7 +11112,8 @@ agcls.AgClassCatalog.add_catalog_entry("{8A1D2A11-5A9D-49D8-9CE6-6435B1173292}",
 agcls.AgTypeNameMap["IElementMixedSpherical"] = IElementMixedSpherical
 
 class IElementSpherical(IElement):
-    """Properties for Spherical elements"""
+    """Properties for Spherical elements."""
+
     _num_methods = 14
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -11054,6 +11258,7 @@ agcls.AgTypeNameMap["IElementSpherical"] = IElementSpherical
 
 class IElementTargetVectorIncomingAsymptote(IElement):
     """Properties for Target Vector Incoming Asymptote elements."""
+
     _num_methods = 12
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -11181,6 +11386,7 @@ agcls.AgTypeNameMap["IElementTargetVectorIncomingAsymptote"] = IElementTargetVec
 
 class IElementTargetVectorOutgoingAsymptote(IElement):
     """Properties for Target Vector Outgoing Asymptote elements."""
+
     _num_methods = 12
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -11307,7 +11513,8 @@ agcls.AgClassCatalog.add_catalog_entry("{BE7E87B6-AC1F-4A19-A1C8-15272B707777}",
 agcls.AgTypeNameMap["IElementTargetVectorOutgoingAsymptote"] = IElementTargetVectorOutgoingAsymptote
 
 class IElementGeodetic(IElement):
-    """Properties for Geodetic elements"""
+    """Properties for Geodetic elements."""
+
     _num_methods = 16
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -11468,7 +11675,8 @@ agcls.AgClassCatalog.add_catalog_entry("{091F376E-6C32-4567-BE00-D1CE1857B50F}",
 agcls.AgTypeNameMap["IElementGeodetic"] = IElementGeodetic
 
 class IElementBPlane(IElement):
-    """Properties for BPlane elements"""
+    """Properties for BPlane elements."""
+
     _num_methods = 26
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
     _metadata = {
@@ -11715,6 +11923,7 @@ agcls.AgTypeNameMap["IElementBPlane"] = IElementBPlane
 
 class IStoppingCondition(IStoppingConditionComponent):
     """Basic properties for a stopping condition."""
+
     _num_methods = 30
     _vtable_offset = IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods
     _metadata = {
@@ -11997,6 +12206,7 @@ agcls.AgTypeNameMap["IStoppingCondition"] = IStoppingCondition
 
 class ILightingStoppingCondition(IStoppingConditionComponent):
     """Properties for a lighting stopping condition."""
+
     _num_methods = 18
     _vtable_offset = IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods
     _metadata = {
@@ -12176,6 +12386,7 @@ agcls.AgTypeNameMap["ILightingStoppingCondition"] = ILightingStoppingCondition
 
 class IAccessStoppingCondition(IStoppingConditionComponent):
     """Properties for an access stopping condition."""
+
     _num_methods = 28
     _vtable_offset = IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods
     _metadata = {
@@ -12348,7 +12559,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(BASE_SELECTION),) }
     def set_base_selection(self, selection:"BASE_SELECTION") -> None:
-        """BaseSelection"""
+        """BaseSelection."""
         return self._intf.invoke(IAccessStoppingCondition._metadata, IAccessStoppingCondition._set_base_selection_metadata, selection)
 
     _get_base_selection_type_metadata = { "name" : "base_selection_type",
@@ -12441,6 +12652,7 @@ agcls.AgTypeNameMap["IAccessStoppingCondition"] = IAccessStoppingCondition
 
 class IMissionControlSequencePropagate(object):
     """Properties for a Propagate segment."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12643,6 +12855,7 @@ agcls.AgTypeNameMap["IMissionControlSequencePropagate"] = IMissionControlSequenc
 
 class IMissionControlSequenceSequence(object):
     """Properties for a Sequence segment."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12744,6 +12957,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceSequence"] = IMissionControlSequence
 
 class IMissionControlSequenceBackwardSequence(IMissionControlSequenceSequence):
     """Properties for a Backward Sequence segment."""
+
     _num_methods = 0
     _vtable_offset = IMissionControlSequenceSequence._vtable_offset + IMissionControlSequenceSequence._num_methods
     _metadata = {
@@ -12770,6 +12984,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceBackwardSequence"] = IMissionControl
 
 class IMissionControlSequenceLaunch(object):
     """Properties for a Launch segment."""
+
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13068,6 +13283,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceLaunch"] = IMissionControlSequenceLa
 
 class IDisplaySystemGeodetic(IDisplaySystem):
     """Properties for a geodetic launch coordinate system."""
+
     _num_methods = 6
     _vtable_offset = IDisplaySystem._vtable_offset + IDisplaySystem._num_methods
     _metadata = {
@@ -13144,6 +13360,7 @@ agcls.AgTypeNameMap["IDisplaySystemGeodetic"] = IDisplaySystemGeodetic
 
 class IDisplaySystemGeocentric(IDisplaySystem):
     """Properties for a geocentric launch coordinate system."""
+
     _num_methods = 6
     _vtable_offset = IDisplaySystem._vtable_offset + IDisplaySystem._num_methods
     _metadata = {
@@ -13220,6 +13437,7 @@ agcls.AgTypeNameMap["IDisplaySystemGeocentric"] = IDisplaySystemGeocentric
 
 class IBurnoutCBFCartesian(IBurnout):
     """Properties for a Cartesian CBF burnout state definition."""
+
     _num_methods = 12
     _vtable_offset = IBurnout._vtable_offset + IBurnout._num_methods
     _metadata = {
@@ -13347,6 +13565,7 @@ agcls.AgTypeNameMap["IBurnoutCBFCartesian"] = IBurnoutCBFCartesian
 
 class IBurnoutGeodetic(IBurnout):
     """Properties for a geodetic burnout point definition."""
+
     _num_methods = 6
     _vtable_offset = IBurnout._vtable_offset + IBurnout._num_methods
     _metadata = {
@@ -13423,6 +13642,7 @@ agcls.AgTypeNameMap["IBurnoutGeodetic"] = IBurnoutGeodetic
 
 class IBurnoutGeocentric(IBurnout):
     """{Properties for a geocentric burnout point definition."""
+
     _num_methods = 6
     _vtable_offset = IBurnout._vtable_offset + IBurnout._num_methods
     _metadata = {
@@ -13499,6 +13719,7 @@ agcls.AgTypeNameMap["IBurnoutGeocentric"] = IBurnoutGeocentric
 
 class IBurnoutLaunchAzAltitude(IBurnout):
     """Properties for a launch azimuth / altitude burnout point definition."""
+
     _num_methods = 6
     _vtable_offset = IBurnout._vtable_offset + IBurnout._num_methods
     _metadata = {
@@ -13575,6 +13796,7 @@ agcls.AgTypeNameMap["IBurnoutLaunchAzAltitude"] = IBurnoutLaunchAzAltitude
 
 class IBurnoutLaunchAzRadius(IBurnout):
     """Properties for a launch azimuth / radius burnout point definition."""
+
     _num_methods = 6
     _vtable_offset = IBurnout._vtable_offset + IBurnout._num_methods
     _metadata = {
@@ -13651,6 +13873,7 @@ agcls.AgTypeNameMap["IBurnoutLaunchAzRadius"] = IBurnoutLaunchAzRadius
 
 class IMissionControlSequenceFollow(object):
     """Properties for a Follow segment."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13864,6 +14087,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceFollow"] = IMissionControlSequenceFo
 
 class IMissionControlSequenceManeuver(object):
     """General properties for a Maneuver segment."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13901,7 +14125,7 @@ class IMissionControlSequenceManeuver(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(MANEUVER_TYPE),) }
     def set_maneuver_type(self, maneuverType:"MANEUVER_TYPE") -> None:
-        """Set the maneuver type"""
+        """Set the maneuver type."""
         return self._intf.invoke(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._set_maneuver_type_metadata, maneuverType)
 
     _get_maneuver_metadata = { "name" : "maneuver",
@@ -13947,6 +14171,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceManeuver"] = IMissionControlSequence
 
 class IManeuverFinite(IManeuver):
     """Engine properties for a Finite Maneuver."""
+
     _num_methods = 7
     _vtable_offset = IManeuver._vtable_offset + IManeuver._num_methods
     _metadata = {
@@ -14032,6 +14257,7 @@ agcls.AgTypeNameMap["IManeuverFinite"] = IManeuverFinite
 
 class IManeuverImpulsive(IManeuver):
     """Properties for an Impulsive Maneuver."""
+
     _num_methods = 2
     _vtable_offset = IManeuver._vtable_offset + IManeuver._num_methods
     _metadata = {
@@ -14074,6 +14300,7 @@ agcls.AgTypeNameMap["IManeuverImpulsive"] = IManeuverImpulsive
 
 class IAttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive):
     """Properties for the Velocity Vector attitude control for an Impulsive Maneuver."""
+
     _num_methods = 3
     _vtable_offset = IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods
     _metadata = {
@@ -14125,6 +14352,7 @@ agcls.AgTypeNameMap["IAttitudeControlImpulsiveVelocityVector"] = IAttitudeContro
 
 class IAttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive):
     """Properties for the Anti-Velocity Vector attitude control for an Impulsive Maneuver."""
+
     _num_methods = 3
     _vtable_offset = IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods
     _metadata = {
@@ -14176,6 +14404,7 @@ agcls.AgTypeNameMap["IAttitudeControlImpulsiveAntiVelocityVector"] = IAttitudeCo
 
 class IAttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive):
     """Properties for the Attitude attitude control for an Impulsive Maneuver."""
+
     _num_methods = 5
     _vtable_offset = IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods
     _metadata = {
@@ -14244,6 +14473,7 @@ agcls.AgTypeNameMap["IAttitudeControlImpulsiveAttitude"] = IAttitudeControlImpul
 
 class IAttitudeControlImpulsiveFile(IAttitudeControlImpulsive):
     """Properties for the File attitude control for an Impulsive Maneuver."""
+
     _num_methods = 7
     _vtable_offset = IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods
     _metadata = {
@@ -14329,6 +14559,7 @@ agcls.AgTypeNameMap["IAttitudeControlImpulsiveFile"] = IAttitudeControlImpulsive
 
 class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
     """Properties for the Thrust Vector attitude control for an Impulsive Maneuver."""
+
     _num_methods = 23
     _vtable_offset = IAttitudeControlImpulsive._vtable_offset + IAttitudeControlImpulsive._num_methods
     _metadata = {
@@ -14518,28 +14749,28 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg,) }
     def assign_cartesian(self, xVal:float, yVal:float, zVal:float) -> None:
-        """Assign all three Cartesian components of the DeltaV vector (dimension: SmallDistance/Time)"""
+        """Assign all three Cartesian components of the DeltaV vector (dimension: SmallDistance/Time)."""
         return self._intf.invoke(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._assign_cartesian_metadata, xVal, yVal, zVal)
 
     _query_cartesian_metadata = { "name" : "query_cartesian",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def query_cartesian(self) -> list:
-        """Get all three Cartesian components of the DeltaV vector as an array (dimension: SmallDistance/Time)"""
+        """Get all three Cartesian components of the DeltaV vector as an array (dimension: SmallDistance/Time)."""
         return self._intf.invoke(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._query_cartesian_metadata, out_arg())
 
     _assign_spherical_metadata = { "name" : "assign_spherical",
             "arg_types" : (agcom.VARIANT, agcom.VARIANT, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VARIANT_arg, agmarshall.VARIANT_arg, agmarshall.DOUBLE_arg,) }
     def assign_spherical(self, azVal:typing.Any, elVal:typing.Any, magVal:float) -> None:
-        """Assign all three spherical components of the DeltaV vector (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time)"""
+        """Assign all three spherical components of the DeltaV vector (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time)."""
         return self._intf.invoke(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._assign_spherical_metadata, azVal, elVal, magVal)
 
     _query_spherical_metadata = { "name" : "query_spherical",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     def query_spherical(self) -> list:
-        """Get all three spherical components of the DeltaV vector as an array (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time)"""
+        """Get all three spherical components of the DeltaV vector as an array (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time)."""
         return self._intf.invoke(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._query_spherical_metadata, out_arg())
 
 
@@ -14548,6 +14779,7 @@ agcls.AgTypeNameMap["IAttitudeControlImpulsiveThrustVector"] = IAttitudeControlI
 
 class IAttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite):
     """Properties for the Anti-Velocity Vector attitude control for a Finite Maneuver."""
+
     _num_methods = 3
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -14599,6 +14831,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteAntiVelocityVector"] = IAttitudeContr
 
 class IAttitudeControlFiniteAttitude(IAttitudeControlFinite):
     """Properties for the Attitude attitude control for a Finite Maneuver."""
+
     _num_methods = 5
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -14667,6 +14900,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteAttitude"] = IAttitudeControlFiniteAt
 
 class IAttitudeControlFiniteFile(IAttitudeControlFinite):
     """Properties for the File attitude control for a Finite Maneuver."""
+
     _num_methods = 5
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -14735,6 +14969,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteFile"] = IAttitudeControlFiniteFile
 
 class IAttitudeControlFiniteThrustVector(IAttitudeControlFinite):
     """Properties for the Thrust Vector attitude control for a Finite Maneuver."""
+
     _num_methods = 6
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -14812,6 +15047,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteThrustVector"] = IAttitudeControlFini
 
 class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
     """Properties for the Time Varying attitude control for a Finite Maneuver."""
+
     _num_methods = 35
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -14894,7 +15130,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az0(self) -> float:
-        """Azimuth constant term (dimension: angle)"""
+        """Azimuth constant term (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az0_metadata)
 
     _set_az0_metadata = { "name" : "az0",
@@ -14909,7 +15145,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az1(self) -> float:
-        """Azimuth linear term (dimension: angle/time)"""
+        """Azimuth linear term (dimension: angle/time)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az1_metadata)
 
     _set_az1_metadata = { "name" : "az1",
@@ -14924,7 +15160,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az2(self) -> float:
-        """Azimuth quadratic term (dimension: angle/time^2)"""
+        """Azimuth quadratic term (dimension: angle/time^2)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az2_metadata)
 
     _set_az2_metadata = { "name" : "az2",
@@ -14939,7 +15175,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az3(self) -> float:
-        """Azimuth cubic term (dimension: angle/time^3)"""
+        """Azimuth cubic term (dimension: angle/time^3)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az3_metadata)
 
     _set_az3_metadata = { "name" : "az3",
@@ -14954,7 +15190,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az4(self) -> float:
-        """Azimuth quartic term (dimension: angle/time^4)"""
+        """Azimuth quartic term (dimension: angle/time^4)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az4_metadata)
 
     _set_az4_metadata = { "name" : "az4",
@@ -14969,7 +15205,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az_a(self) -> float:
-        """Azimuth sine term amplitude (dimension: angle)"""
+        """Azimuth sine term amplitude (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az_a_metadata)
 
     _set_az_a_metadata = { "name" : "az_a",
@@ -14984,7 +15220,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az_f(self) -> float:
-        """Azimuth sine term frequency (dimension: angle/time)"""
+        """Azimuth sine term frequency (dimension: angle/time)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az_f_metadata)
 
     _set_az_f_metadata = { "name" : "az_f",
@@ -14999,7 +15235,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def az_p(self) -> float:
-        """Azimuth sine term phase (dimension: angle)"""
+        """Azimuth sine term phase (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_az_p_metadata)
 
     _set_az_p_metadata = { "name" : "az_p",
@@ -15014,7 +15250,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el0(self) -> float:
-        """Elevation constant term (dimension: angle)"""
+        """Elevation constant term (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el0_metadata)
 
     _set_el0_metadata = { "name" : "el0",
@@ -15029,7 +15265,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el1(self) -> float:
-        """Elevation linear term (dimension: angle/time)"""
+        """Elevation linear term (dimension: angle/time)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el1_metadata)
 
     _set_el1_metadata = { "name" : "el1",
@@ -15044,7 +15280,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el2(self) -> float:
-        """Elevation quadratic term (dimension: angle/time^2)"""
+        """Elevation quadratic term (dimension: angle/time^2)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el2_metadata)
 
     _set_el2_metadata = { "name" : "el2",
@@ -15059,7 +15295,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el3(self) -> float:
-        """Elevation cubic term (dimension: angle/time^3)"""
+        """Elevation cubic term (dimension: angle/time^3)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el3_metadata)
 
     _set_el3_metadata = { "name" : "el3",
@@ -15074,7 +15310,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el4(self) -> float:
-        """Elevation quartic term (dimension: angle/time^4)"""
+        """Elevation quartic term (dimension: angle/time^4)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el4_metadata)
 
     _set_el4_metadata = { "name" : "el4",
@@ -15089,7 +15325,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el_a(self) -> float:
-        """Elevation sine term amplitude (dimension: angle)"""
+        """Elevation sine term amplitude (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el_a_metadata)
 
     _set_el_a_metadata = { "name" : "el_a",
@@ -15104,7 +15340,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el_f(self) -> float:
-        """Elevation sine term frequency (dimension: angle/time)"""
+        """Elevation sine term frequency (dimension: angle/time)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el_f_metadata)
 
     _set_el_f_metadata = { "name" : "el_f",
@@ -15119,7 +15355,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def el_p(self) -> float:
-        """Elevation sine term phase (dimension: angle)"""
+        """Elevation sine term phase (dimension: angle)."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_el_p_metadata)
 
     _set_el_p_metadata = { "name" : "el_p",
@@ -15135,6 +15371,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteTimeVarying"] = IAttitudeControlFinit
 
 class IAttitudeControlFiniteVelocityVector(IAttitudeControlFinite):
     """Properties for the Velocity Vector attitude control for a Finite Maneuver."""
+
     _num_methods = 3
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -15186,6 +15423,7 @@ agcls.AgTypeNameMap["IAttitudeControlFiniteVelocityVector"] = IAttitudeControlFi
 
 class IAttitudeControlFinitePlugin(IAttitudeControlFinite):
     """Properties for the Plugin attitude control for a Finite Maneuver."""
+
     _num_methods = 3
     _vtable_offset = IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods
     _metadata = {
@@ -15237,6 +15475,7 @@ agcls.AgTypeNameMap["IAttitudeControlFinitePlugin"] = IAttitudeControlFinitePlug
 
 class IAttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite):
     """Properties for the Lagrange Interpolation attitude control for a Optimal Finite Maneuver."""
+
     _num_methods = 1
     _vtable_offset = IAttitudeControlOptimalFinite._vtable_offset + IAttitudeControlOptimalFinite._num_methods
     _metadata = {
@@ -15271,6 +15510,7 @@ agcls.AgTypeNameMap["IAttitudeControlOptimalFiniteLagrange"] = IAttitudeControlO
 
 class IMissionControlSequenceHold(object):
     """Properties for a Hold segment."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15490,6 +15730,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceHold"] = IMissionControlSequenceHold
 
 class IMissionControlSequenceUpdate(object):
     """Properties for an Update segment."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15596,6 +15837,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceUpdate"] = IMissionControlSequenceUp
 
 class IMissionControlSequenceReturn(object):
     """Properties for a Return segment."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15637,6 +15879,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceReturn"] = IMissionControlSequenceRe
 
 class IMissionControlSequenceStop(object):
     """Properties for a Stop segment."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15678,6 +15921,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceStop"] = IMissionControlSequenceStop
 
 class IProfile(object):
     """General properties for target sequence profiles."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15779,6 +16023,7 @@ agcls.AgTypeNameMap["IProfile"] = IProfile
 
 class IProfileCollection(object):
     """Properties for a list of target sequence profiles."""
+
     _num_methods = 14
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -15934,6 +16179,7 @@ agcls.AgTypeNameMap["IProfileCollection"] = IProfileCollection
 
 class IMissionControlSequenceTargetSequence(object):
     """General properties of a TargetSequence segment."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16092,6 +16338,7 @@ agcls.AgTypeNameMap["IMissionControlSequenceTargetSequence"] = IMissionControlSe
 
 class IDifferentialCorrectorControl(object):
     """Properties for control parameters of a differential corrector profile."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16332,6 +16579,7 @@ agcls.AgTypeNameMap["IDifferentialCorrectorControl"] = IDifferentialCorrectorCon
 
 class IDifferentialCorrectorResult(object):
     """Properties for equality constraints of a differential corrector profile."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16546,6 +16794,7 @@ agcls.AgTypeNameMap["IDifferentialCorrectorResult"] = IDifferentialCorrectorResu
 
 class ISearchPluginControl(object):
     """Properties of search plugin control parameters."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16684,6 +16933,7 @@ agcls.AgTypeNameMap["ISearchPluginControl"] = ISearchPluginControl
 
 class ISearchPluginResult(object):
     """Properties of search plugin equality constraints."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16805,6 +17055,7 @@ agcls.AgTypeNameMap["ISearchPluginResult"] = ISearchPluginResult
 
 class ISearchPluginResultCollection(object):
     """Properties for the list of search plugin equality constraints."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -16851,7 +17102,7 @@ class ISearchPluginResultCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Function to enumerate through the collection"""
+        """Function to enumerate through the collection."""
         return self._intf.get_property(ISearchPluginResultCollection._metadata, ISearchPluginResultCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "name" : "count",
@@ -16859,7 +17110,7 @@ class ISearchPluginResultCollection(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def count(self) -> int:
-        """Size of the collection"""
+        """Size of the collection."""
         return self._intf.get_property(ISearchPluginResultCollection._metadata, ISearchPluginResultCollection._get_count_metadata)
 
     _get_result_by_paths_metadata = { "name" : "get_result_by_paths",
@@ -16878,6 +17129,7 @@ agcls.AgTypeNameMap["ISearchPluginResultCollection"] = ISearchPluginResultCollec
 
 class ISearchPluginControlCollection(object):
     """Properties for the list of search plugin control parameters."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -16951,6 +17203,7 @@ agcls.AgTypeNameMap["ISearchPluginControlCollection"] = ISearchPluginControlColl
 
 class IDifferentialCorrectorControlCollection(object):
     """Properties for the list of control parameters for a differential corrector profile."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -17033,6 +17286,7 @@ agcls.AgTypeNameMap["IDifferentialCorrectorControlCollection"] = IDifferentialCo
 
 class IDifferentialCorrectorResultCollection(object):
     """Differential Corrector result collection."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -17115,6 +17369,7 @@ agcls.AgTypeNameMap["IDifferentialCorrectorResultCollection"] = IDifferentialCor
 
 class ITargeterGraphActiveControl(object):
     """Properties for targeter graph active control."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17229,6 +17484,7 @@ agcls.AgTypeNameMap["ITargeterGraphActiveControl"] = ITargeterGraphActiveControl
 
 class ITargeterGraphResult(object):
     """Properties for targeter graph result."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17379,6 +17635,7 @@ agcls.AgTypeNameMap["ITargeterGraphResult"] = ITargeterGraphResult
 
 class ITargeterGraphActiveControlCollection(object):
     """Targeter graph active controls."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -17453,6 +17710,7 @@ agcls.AgTypeNameMap["ITargeterGraphActiveControlCollection"] = ITargeterGraphAct
 
 class ITargeterGraphResultCollection(object):
     """Targeter graph results."""
+
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -17527,6 +17785,7 @@ agcls.AgTypeNameMap["ITargeterGraphResultCollection"] = ITargeterGraphResultColl
 
 class ITargeterGraph(object):
     """Properties for a Targeter Graph."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17695,6 +17954,7 @@ agcls.AgTypeNameMap["ITargeterGraph"] = ITargeterGraph
 
 class ITargeterGraphCollection(object):
     """The list of User Variables accessed through the Driver."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -17825,6 +18085,7 @@ agcls.AgTypeNameMap["ITargeterGraphCollection"] = ITargeterGraphCollection
 
 class IProfileSearchPlugin(IProfile):
     """Properties of a plugin search profile."""
+
     _num_methods = 9
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -17913,7 +18174,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_targeter_graphs_metadata)
 
     _get_log_file_metadata = { "name" : "log_file",
@@ -17930,6 +18191,7 @@ agcls.AgTypeNameMap["IProfileSearchPlugin"] = IProfileSearchPlugin
 
 class IProfileDifferentialCorrector(IProfile):
     """Properties for a Differential Corrector profile."""
+
     _num_methods = 39
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18257,7 +18519,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def num_iterations(self) -> int:
-        """The number of iterations of the last run"""
+        """The number of iterations of the last run."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_num_iterations_metadata)
 
     _get_targeter_graphs_metadata = { "name" : "targeter_graphs",
@@ -18265,7 +18527,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_targeter_graphs_metadata)
 
     _get_stop_on_limit_cycle_detection_metadata = { "name" : "stop_on_limit_cycle_detection",
@@ -18289,6 +18551,7 @@ agcls.AgTypeNameMap["IProfileDifferentialCorrector"] = IProfileDifferentialCorre
 
 class IProfileChangeManeuverType(IProfile):
     """Properties for a Change Maneuver Type profile."""
+
     _num_methods = 4
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18348,6 +18611,7 @@ agcls.AgTypeNameMap["IProfileChangeManeuverType"] = IProfileChangeManeuverType
 
 class IProfileScriptingTool(IProfile):
     """Properties for a Scripting Tool profile."""
+
     _num_methods = 10
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18458,6 +18722,7 @@ agcls.AgTypeNameMap["IProfileScriptingTool"] = IProfileScriptingTool
 
 class IProfileChangeReturnSegment(IProfile):
     """Properties for a Change Return Segment profile."""
+
     _num_methods = 5
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18525,6 +18790,7 @@ agcls.AgTypeNameMap["IProfileChangeReturnSegment"] = IProfileChangeReturnSegment
 
 class IProfileChangePropagator(IProfile):
     """Properties for a Change Propagator profile."""
+
     _num_methods = 5
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18592,6 +18858,7 @@ agcls.AgTypeNameMap["IProfileChangePropagator"] = IProfileChangePropagator
 
 class IProfileChangeStopSegment(IProfile):
     """Properties for a Change Stop Segment profile."""
+
     _num_methods = 5
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18659,6 +18926,7 @@ agcls.AgTypeNameMap["IProfileChangeStopSegment"] = IProfileChangeStopSegment
 
 class IProfileChangeStoppingConditionState(IProfile):
     """Properties for a Change Stopping Condition State profile."""
+
     _num_methods = 8
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18751,6 +19019,7 @@ agcls.AgTypeNameMap["IProfileChangeStoppingConditionState"] = IProfileChangeStop
 
 class IProfileSeedFiniteManeuver(IProfile):
     """Properties for a Seed Finite Maneuver segment."""
+
     _num_methods = 5
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18818,6 +19087,7 @@ agcls.AgTypeNameMap["IProfileSeedFiniteManeuver"] = IProfileSeedFiniteManeuver
 
 class IProfileRunOnce(IProfile):
     """Properties for a Run Once profile."""
+
     _num_methods = 0
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -18844,6 +19114,7 @@ agcls.AgTypeNameMap["IProfileRunOnce"] = IProfileRunOnce
 
 class IUserVariableDefinition(object):
     """Properties for a User Variable definition."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18904,6 +19175,7 @@ agcls.AgTypeNameMap["IUserVariableDefinition"] = IUserVariableDefinition
 
 class IUserVariable(object):
     """The properties for a User Variable initial value."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18997,6 +19269,7 @@ agcls.AgTypeNameMap["IUserVariable"] = IUserVariable
 
 class IUserVariableUpdate(object):
     """Properties for a User Variable update."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19106,6 +19379,7 @@ agcls.AgTypeNameMap["IUserVariableUpdate"] = IUserVariableUpdate
 
 class IProfileSNOPTOptimizer(IProfile):
     """Properties of SNOPT Optimizer profile."""
+
     _num_methods = 22
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -19168,7 +19442,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_targeter_graphs_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -19320,6 +19594,7 @@ agcls.AgTypeNameMap["IProfileSNOPTOptimizer"] = IProfileSNOPTOptimizer
 
 class ISNOPTControl(object):
     """Properties for control parameters of a SNOPT profile."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19490,6 +19765,7 @@ agcls.AgTypeNameMap["ISNOPTControl"] = ISNOPTControl
 
 class ISNOPTResult(object):
     """Properties for objecvtive and constraints of a SNOPT profile."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19677,6 +19953,7 @@ agcls.AgTypeNameMap["ISNOPTResult"] = ISNOPTResult
 
 class IProfileIPOPTOptimizer(IProfile):
     """Properties of IPOPT Optimizer profile."""
+
     _num_methods = 18
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -19735,7 +20012,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_targeter_graphs_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -19857,6 +20134,7 @@ agcls.AgTypeNameMap["IProfileIPOPTOptimizer"] = IProfileIPOPTOptimizer
 
 class IIPOPTControl(object):
     """Properties for control parameters of a IPOPT profile."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20027,6 +20305,7 @@ agcls.AgTypeNameMap["IIPOPTControl"] = IIPOPTControl
 
 class IIPOPTResult(object):
     """Properties for objecvtive and constraints of a IPOPT profile."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20214,6 +20493,7 @@ agcls.AgTypeNameMap["IIPOPTResult"] = IIPOPTResult
 
 class IManeuverOptimalFinite(IManeuver):
     """Engine properties for a Optimal Finite Maneuver."""
+
     _num_methods = 40
     _vtable_offset = IManeuver._vtable_offset + IManeuver._num_methods
     _metadata = {
@@ -20474,7 +20754,7 @@ class IManeuverOptimalFinite(IManeuver):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def thrust_axes(self) -> str:
-        """Label reflecting coordinate axes for the thrust vector"""
+        """Label reflecting coordinate axes for the thrust vector."""
         return self._intf.get_property(IManeuverOptimalFinite._metadata, IManeuverOptimalFinite._get_thrust_axes_metadata)
 
     _get_snopt_optimizer_metadata = { "name" : "snopt_optimizer",
@@ -20583,6 +20863,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFinite"] = IManeuverOptimalFinite
 
 class IManeuverOptimalFiniteSteeringNodeElement(object):
     """The elements of the steering node."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20733,6 +21014,7 @@ agcls.AgTypeNameMap["IManeuverOptimalFiniteSteeringNodeElement"] = IManeuverOpti
 
 class IProfileLambertProfile(IProfile):
     """Properties for a Lambert profile."""
+
     _num_methods = 56
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -21234,6 +21516,7 @@ agcls.AgTypeNameMap["IProfileLambertProfile"] = IProfileLambertProfile
 
 class IProfileLambertSearchProfile(IProfile):
     """Properties for a Lambert Search Profile."""
+
     _num_methods = 64
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -21803,6 +22086,7 @@ agcls.AgTypeNameMap["IProfileLambertSearchProfile"] = IProfileLambertSearchProfi
 
 class IProfileGoldenSection(IProfile):
     """Properties for a Golden Section profile."""
+
     _num_methods = 9
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -21836,7 +22120,7 @@ class IProfileGoldenSection(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileGoldenSection._metadata, IProfileGoldenSection._get_targeter_graphs_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -21907,6 +22191,7 @@ agcls.AgTypeNameMap["IProfileGoldenSection"] = IProfileGoldenSection
 
 class IProfileGridSearch(IProfile):
     """Properties for a Grid Search profile."""
+
     _num_methods = 9
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -21940,7 +22225,7 @@ class IProfileGridSearch(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileGridSearch._metadata, IProfileGridSearch._get_targeter_graphs_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -22011,6 +22296,7 @@ agcls.AgTypeNameMap["IProfileGridSearch"] = IProfileGridSearch
 
 class ICalcObjectLinkEmbedControlCollection(object):
     """Collection of link/embed calculation objects."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -22132,6 +22418,7 @@ agcls.AgTypeNameMap["ICalcObjectLinkEmbedControlCollection"] = ICalcObjectLinkEm
 
 class IProfileBisection(IProfile):
     """Properties of Single Parameter Bisection profile."""
+
     _num_methods = 8
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _metadata = {
@@ -22180,7 +22467,7 @@ class IProfileBisection(IProfile):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def targeter_graphs(self) -> "TargeterGraphCollection":
-        """Graphs"""
+        """Graphs."""
         return self._intf.get_property(IProfileBisection._metadata, IProfileBisection._get_targeter_graphs_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -22227,6 +22514,7 @@ agcls.AgTypeNameMap["IProfileBisection"] = IProfileBisection
 
 class IBisectionControl(object):
     """Properties for control parameters of a Bisection Search profile."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22362,7 +22650,8 @@ agcls.AgClassCatalog.add_catalog_entry("{F60B718A-09E3-4C6B-A05D-3562CFB5EF4E}",
 agcls.AgTypeNameMap["IBisectionControl"] = IBisectionControl
 
 class IStateCalcHeightAboveTerrain(object):
-    """Interface for StateCalcHeightAboveTerrain"""
+    """Interface for StateCalcHeightAboveTerrain."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22388,7 +22677,7 @@ class IStateCalcHeightAboveTerrain(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.get_property(IStateCalcHeightAboveTerrain._metadata, IStateCalcHeightAboveTerrain._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -22396,7 +22685,7 @@ class IStateCalcHeightAboveTerrain(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.set_property(IStateCalcHeightAboveTerrain._metadata, IStateCalcHeightAboveTerrain._set_central_body_name_metadata, inVal)
 
 
@@ -22405,6 +22694,7 @@ agcls.AgTypeNameMap["IStateCalcHeightAboveTerrain"] = IStateCalcHeightAboveTerra
 
 class IStateCalcEpoch(object):
     """Properties for an Epoch calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22429,7 +22719,8 @@ agcls.AgClassCatalog.add_catalog_entry("{F23ADE47-91EF-41B9-9606-DA034C50F69D}",
 agcls.AgTypeNameMap["IStateCalcEpoch"] = IStateCalcEpoch
 
 class IStateCalcOrbitDelaunayG(object):
-    """Interface for AsStateCalcOrbitDelaunayG"""
+    """Interface for AsStateCalcOrbitDelaunayG."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22457,7 +22748,7 @@ class IStateCalcOrbitDelaunayG(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.get_property(IStateCalcOrbitDelaunayG._metadata, IStateCalcOrbitDelaunayG._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -22465,7 +22756,7 @@ class IStateCalcOrbitDelaunayG(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.set_property(IStateCalcOrbitDelaunayG._metadata, IStateCalcOrbitDelaunayG._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -22473,7 +22764,7 @@ class IStateCalcOrbitDelaunayG(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @property
     def element_type(self) -> "ELEMENT":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcOrbitDelaunayG._metadata, IStateCalcOrbitDelaunayG._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -22481,7 +22772,7 @@ class IStateCalcOrbitDelaunayG(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.set_property(IStateCalcOrbitDelaunayG._metadata, IStateCalcOrbitDelaunayG._set_element_type_metadata, inVal)
 
 
@@ -22489,7 +22780,8 @@ agcls.AgClassCatalog.add_catalog_entry("{8527A30E-E743-4040-8B0D-7AE1EB237279}",
 agcls.AgTypeNameMap["IStateCalcOrbitDelaunayG"] = IStateCalcOrbitDelaunayG
 
 class IStateCalcOrbitDelaunayH(object):
-    """Interface for AsStateCalcOrbitDelaunayH"""
+    """Interface for AsStateCalcOrbitDelaunayH."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22517,7 +22809,7 @@ class IStateCalcOrbitDelaunayH(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.get_property(IStateCalcOrbitDelaunayH._metadata, IStateCalcOrbitDelaunayH._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -22525,7 +22817,7 @@ class IStateCalcOrbitDelaunayH(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.set_property(IStateCalcOrbitDelaunayH._metadata, IStateCalcOrbitDelaunayH._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -22533,7 +22825,7 @@ class IStateCalcOrbitDelaunayH(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @property
     def element_type(self) -> "ELEMENT":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcOrbitDelaunayH._metadata, IStateCalcOrbitDelaunayH._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -22541,7 +22833,7 @@ class IStateCalcOrbitDelaunayH(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.set_property(IStateCalcOrbitDelaunayH._metadata, IStateCalcOrbitDelaunayH._set_element_type_metadata, inVal)
 
 
@@ -22549,7 +22841,8 @@ agcls.AgClassCatalog.add_catalog_entry("{01E122E4-2B6D-4301-81D2-B83B6C169CB5}",
 agcls.AgTypeNameMap["IStateCalcOrbitDelaunayH"] = IStateCalcOrbitDelaunayH
 
 class IStateCalcOrbitDelaunayL(object):
-    """Interface for AsStateCalcOrbitDelaunayL"""
+    """Interface for AsStateCalcOrbitDelaunayL."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22577,7 +22870,7 @@ class IStateCalcOrbitDelaunayL(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.get_property(IStateCalcOrbitDelaunayL._metadata, IStateCalcOrbitDelaunayL._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -22585,7 +22878,7 @@ class IStateCalcOrbitDelaunayL(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.set_property(IStateCalcOrbitDelaunayL._metadata, IStateCalcOrbitDelaunayL._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -22593,7 +22886,7 @@ class IStateCalcOrbitDelaunayL(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @property
     def element_type(self) -> "ELEMENT":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcOrbitDelaunayL._metadata, IStateCalcOrbitDelaunayL._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -22601,7 +22894,7 @@ class IStateCalcOrbitDelaunayL(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.set_property(IStateCalcOrbitDelaunayL._metadata, IStateCalcOrbitDelaunayL._set_element_type_metadata, inVal)
 
 
@@ -22609,7 +22902,8 @@ agcls.AgClassCatalog.add_catalog_entry("{10C517CA-1CF0-45FF-B36E-3E3181269745}",
 agcls.AgTypeNameMap["IStateCalcOrbitDelaunayL"] = IStateCalcOrbitDelaunayL
 
 class IStateCalcOrbitSemiLatusRectum(object):
-    """Interface for AsStateCalcOrbitSemiLatusRectum"""
+    """Interface for AsStateCalcOrbitSemiLatusRectum."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22637,7 +22931,7 @@ class IStateCalcOrbitSemiLatusRectum(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.get_property(IStateCalcOrbitSemiLatusRectum._metadata, IStateCalcOrbitSemiLatusRectum._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -22645,7 +22939,7 @@ class IStateCalcOrbitSemiLatusRectum(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        """Central Body used for calculation"""
+        """Central Body used for calculation."""
         return self._intf.set_property(IStateCalcOrbitSemiLatusRectum._metadata, IStateCalcOrbitSemiLatusRectum._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -22653,7 +22947,7 @@ class IStateCalcOrbitSemiLatusRectum(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @property
     def element_type(self) -> "ELEMENT":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcOrbitSemiLatusRectum._metadata, IStateCalcOrbitSemiLatusRectum._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -22661,7 +22955,7 @@ class IStateCalcOrbitSemiLatusRectum(object):
             "marshallers" : (agmarshall.AgEnum_arg(ELEMENT),) }
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.set_property(IStateCalcOrbitSemiLatusRectum._metadata, IStateCalcOrbitSemiLatusRectum._set_element_type_metadata, inVal)
 
 
@@ -22670,6 +22964,7 @@ agcls.AgTypeNameMap["IStateCalcOrbitSemiLatusRectum"] = IStateCalcOrbitSemiLatus
 
 class IStateCalcJacobiConstant(object):
     """Properties for a Jacobi Constant calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22695,6 +22990,7 @@ agcls.AgTypeNameMap["IStateCalcJacobiConstant"] = IStateCalcJacobiConstant
 
 class IStateCalcCartesianElem(object):
     """Properties for a Cartesian Element calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22736,6 +23032,7 @@ agcls.AgTypeNameMap["IStateCalcCartesianElem"] = IStateCalcCartesianElem
 
 class IStateCalcCartSTMElem(object):
     """Properties for a Cartesian STM Element calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22811,6 +23108,7 @@ agcls.AgTypeNameMap["IStateCalcCartSTMElem"] = IStateCalcCartSTMElem
 
 class IStateCalcSTMEigenval(object):
     """Properties for an STM Eigenvalue calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22886,6 +23184,7 @@ agcls.AgTypeNameMap["IStateCalcSTMEigenval"] = IStateCalcSTMEigenval
 
 class IStateCalcSTMEigenvecElem(object):
     """Properties for an STM Eigenvector element calculation object."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22978,6 +23277,7 @@ agcls.AgTypeNameMap["IStateCalcSTMEigenvecElem"] = IStateCalcSTMEigenvecElem
 
 class IStateCalcEnvironment(object):
     """Properties for an Environment calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23036,6 +23336,7 @@ agcls.AgTypeNameMap["IStateCalcEnvironment"] = IStateCalcEnvironment
 
 class IStateCalcEquinoctialElem(object):
     """Properties for an Equinoctial Element calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23093,7 +23394,8 @@ agcls.AgClassCatalog.add_catalog_entry("{A63BA51C-CE64-410D-832F-7BDCE13E5069}",
 agcls.AgTypeNameMap["IStateCalcEquinoctialElem"] = IStateCalcEquinoctialElem
 
 class IStateCalcDamageFlux(object):
-    """Interface for AgAsStateCalcDamageFlux"""
+    """Interface for AgAsStateCalcDamageFlux."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23118,7 +23420,8 @@ agcls.AgClassCatalog.add_catalog_entry("{5E7EBA7C-121F-4649-8599-A222F65BA10B}",
 agcls.AgTypeNameMap["IStateCalcDamageFlux"] = IStateCalcDamageFlux
 
 class IStateCalcDamageMassFlux(object):
-    """Interface for AgAsStateCalcDamageMassFlux"""
+    """Interface for AgAsStateCalcDamageMassFlux."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23143,7 +23446,8 @@ agcls.AgClassCatalog.add_catalog_entry("{CDA309A6-91BD-49DF-BE71-E3F194AB73AE}",
 agcls.AgTypeNameMap["IStateCalcDamageMassFlux"] = IStateCalcDamageMassFlux
 
 class IStateCalcMagnitudeFieldDipoleL(object):
-    """Interface for AgAsStateCalcMagFieldDipoleL"""
+    """Interface for AgAsStateCalcMagFieldDipoleL."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23169,6 +23473,7 @@ agcls.AgTypeNameMap["IStateCalcMagnitudeFieldDipoleL"] = IStateCalcMagnitudeFiel
 
 class IStateCalcSEETMagnitudeFieldFieldLineSepAngle(object):
     """Properties for a SEETMagFieldFieldLineSepAngle calculation object."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23201,7 +23506,8 @@ agcls.AgClassCatalog.add_catalog_entry("{FFCDD5EA-7808-4A0C-BDA5-5E4BC504F968}",
 agcls.AgTypeNameMap["IStateCalcSEETMagnitudeFieldFieldLineSepAngle"] = IStateCalcSEETMagnitudeFieldFieldLineSepAngle
 
 class IStateCalcImpactFlux(object):
-    """Interface for AgAsStateCalcImpactFlux"""
+    """Interface for AgAsStateCalcImpactFlux."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23226,7 +23532,8 @@ agcls.AgClassCatalog.add_catalog_entry("{70F6FCD6-139C-4166-B242-61652F690A89}",
 agcls.AgTypeNameMap["IStateCalcImpactFlux"] = IStateCalcImpactFlux
 
 class IStateCalcImpactMassFlux(object):
-    """Interface for AgAsStateCalcImpactMassFlux"""
+    """Interface for AgAsStateCalcImpactMassFlux."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23251,7 +23558,8 @@ agcls.AgClassCatalog.add_catalog_entry("{67D77299-1936-4E9A-A44F-C155686E4DB2}",
 agcls.AgTypeNameMap["IStateCalcImpactMassFlux"] = IStateCalcImpactMassFlux
 
 class IStateCalcSEETSAAFlux(object):
-    """Interface for AgAsStateCalcSEETSAAFlux"""
+    """Interface for AgAsStateCalcSEETSAAFlux."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23276,7 +23584,8 @@ agcls.AgClassCatalog.add_catalog_entry("{3C633703-2759-4894-96EA-F6E3C2F98AA1}",
 agcls.AgTypeNameMap["IStateCalcSEETSAAFlux"] = IStateCalcSEETSAAFlux
 
 class IStateCalcSEETVehTemp(object):
-    """Interface for AgAsStateCalcSEETVehTemp"""
+    """Interface for AgAsStateCalcSEETVehTemp."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23302,6 +23611,7 @@ agcls.AgTypeNameMap["IStateCalcSEETVehTemp"] = IStateCalcSEETVehTemp
 
 class IStateCalcCloseApproachBearing(object):
     """Properties for a CloseApproachBearing calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23369,6 +23679,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachBearing"] = IStateCalcCloseApproachB
 
 class IStateCalcCloseApproachMagnitude(object):
     """Properties for a CloseApproachMagnitude calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23436,6 +23747,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachMagnitude"] = IStateCalcCloseApproac
 
 class IStateCalcCloseApproachTheta(object):
     """Properties for a CloseApproachTheta calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23503,6 +23815,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachTheta"] = IStateCalcCloseApproachThe
 
 class IStateCalcCloseApproachX(object):
     """Properties for a CloseApproachX calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23570,6 +23883,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachX"] = IStateCalcCloseApproachX
 
 class IStateCalcCloseApproachY(object):
     """Properties for a CloseApproachY calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23637,6 +23951,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachY"] = IStateCalcCloseApproachY
 
 class IStateCalcCloseApproachCosBearing(object):
     """Properties for a CosineOfCloseApproachBearing calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23704,6 +24019,7 @@ agcls.AgTypeNameMap["IStateCalcCloseApproachCosBearing"] = IStateCalcCloseApproa
 
 class IStateCalcRelGroundTrackError(object):
     """Properties for a RelGroundTrackError calculation object."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23805,6 +24121,7 @@ agcls.AgTypeNameMap["IStateCalcRelGroundTrackError"] = IStateCalcRelGroundTrackE
 
 class IStateCalcRelAtAOLMaster(object):
     """Properties for a RelativeAtAOL calculation object."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23906,6 +24223,7 @@ agcls.AgTypeNameMap["IStateCalcRelAtAOLMaster"] = IStateCalcRelAtAOLMaster
 
 class IStateCalcDeltaFromMaster(object):
     """Properties for a Rel Mean Mean Anomaly calculation object."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23973,6 +24291,7 @@ agcls.AgTypeNameMap["IStateCalcDeltaFromMaster"] = IStateCalcDeltaFromMaster
 
 class IStateCalcLonDriftRate(object):
     """Properties for a Longitude Drift Rate calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24031,6 +24350,7 @@ agcls.AgTypeNameMap["IStateCalcLonDriftRate"] = IStateCalcLonDriftRate
 
 class IStateCalcMeanEarthLon(object):
     """Properties for a Mean Earth Longitude calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24072,6 +24392,7 @@ agcls.AgTypeNameMap["IStateCalcMeanEarthLon"] = IStateCalcMeanEarthLon
 
 class IStateCalcRectifiedLon(object):
     """Properties for a RectifiedLon calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24113,6 +24434,7 @@ agcls.AgTypeNameMap["IStateCalcRectifiedLon"] = IStateCalcRectifiedLon
 
 class IStateCalcTrueLongitude(object):
     """Properties for a TrueLongitude calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24154,6 +24476,7 @@ agcls.AgTypeNameMap["IStateCalcTrueLongitude"] = IStateCalcTrueLongitude
 
 class IStateCalcGeodeticTrueLongitude(object):
     """Properties for a GeodeticTrueLongitude calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24195,6 +24518,7 @@ agcls.AgTypeNameMap["IStateCalcGeodeticTrueLongitude"] = IStateCalcGeodeticTrueL
 
 class IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee(object):
     """Properties for a GeodeticTrueLongitudeAtTimeOfPerigee calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24236,6 +24560,7 @@ agcls.AgTypeNameMap["IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee"] = IStateCa
 
 class IStateCalcMeanRightAscension(object):
     """Properties for a MeanRightAscension calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24277,6 +24602,7 @@ agcls.AgTypeNameMap["IStateCalcMeanRightAscension"] = IStateCalcMeanRightAscensi
 
 class IStateCalcGeodeticMeanRightAscension(object):
     """Properties for a GeodeticMeanRightAscension calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24318,6 +24644,7 @@ agcls.AgTypeNameMap["IStateCalcGeodeticMeanRightAscension"] = IStateCalcGeodetic
 
 class IStateCalcTwoBodyDriftRate(object):
     """Properties for a TwoBodyDriftRate calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24359,6 +24686,7 @@ agcls.AgTypeNameMap["IStateCalcTwoBodyDriftRate"] = IStateCalcTwoBodyDriftRate
 
 class IStateCalcDriftRateFactor(object):
     """Properties for a DriftRateFactor calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24417,6 +24745,7 @@ agcls.AgTypeNameMap["IStateCalcDriftRateFactor"] = IStateCalcDriftRateFactor
 
 class IStateCalcEccentricityX(object):
     """Properties for a EccentricityX calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24458,6 +24787,7 @@ agcls.AgTypeNameMap["IStateCalcEccentricityX"] = IStateCalcEccentricityX
 
 class IStateCalcEccentricityY(object):
     """Properties for a EccentricityY calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24499,6 +24829,7 @@ agcls.AgTypeNameMap["IStateCalcEccentricityY"] = IStateCalcEccentricityY
 
 class IStateCalcInclinationX(object):
     """Properties for a InclinationX calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24557,6 +24888,7 @@ agcls.AgTypeNameMap["IStateCalcInclinationX"] = IStateCalcInclinationX
 
 class IStateCalcInclinationY(object):
     """Properties for a InclinationY calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24615,6 +24947,7 @@ agcls.AgTypeNameMap["IStateCalcInclinationY"] = IStateCalcInclinationY
 
 class IStateCalcUnitAngularMomentumX(object):
     """Properties for a UnitAngularMomentumX calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24656,6 +24989,7 @@ agcls.AgTypeNameMap["IStateCalcUnitAngularMomentumX"] = IStateCalcUnitAngularMom
 
 class IStateCalcUnitAngularMomentumY(object):
     """Properties for a UnitAngularMomentumY calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24697,6 +25031,7 @@ agcls.AgTypeNameMap["IStateCalcUnitAngularMomentumY"] = IStateCalcUnitAngularMom
 
 class IStateCalcUnitAngularMomentumZ(object):
     """Properties for a UnitAngularMomentumZ calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24738,6 +25073,7 @@ agcls.AgTypeNameMap["IStateCalcUnitAngularMomentumZ"] = IStateCalcUnitAngularMom
 
 class IStateCalcGeodeticElem(object):
     """Properties for a Geodetic Element calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24779,6 +25115,7 @@ agcls.AgTypeNameMap["IStateCalcGeodeticElem"] = IStateCalcGeodeticElem
 
 class IStateCalcRepeatingGroundTrackErr(object):
     """Properties for a RepeatingGroundTrackEquatorError calculation object."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24856,21 +25193,21 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_REPEATING_GROUND_TRACK_ERR),) }
     def enable_control_parameter(self, param:"CONTROL_REPEATING_GROUND_TRACK_ERR") -> None:
-        """Enable the specified control parameter"""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_REPEATING_GROUND_TRACK_ERR),) }
     def disable_control_parameter(self, param:"CONTROL_REPEATING_GROUND_TRACK_ERR") -> None:
-        """Disables the specified control parameter"""
+        """Disables the specified control parameter."""
         return self._intf.invoke(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "name" : "is_control_parameter_enabled",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_REPEATING_GROUND_TRACK_ERR), agmarshall.VARIANT_BOOL_arg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_REPEATING_GROUND_TRACK_ERR") -> bool:
-        """Sees if the specified control is enabled"""
+        """Sees if the specified control is enabled."""
         return self._intf.invoke(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._is_control_parameter_enabled_metadata, param, out_arg())
 
     _get_control_parameters_available_metadata = { "name" : "control_parameters_available",
@@ -24887,6 +25224,7 @@ agcls.AgTypeNameMap["IStateCalcRepeatingGroundTrackErr"] = IStateCalcRepeatingGr
 
 class IStateCalcAltitudeOfApoapsis(object):
     """Properties for an Altitude of Apoapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24945,6 +25283,7 @@ agcls.AgTypeNameMap["IStateCalcAltitudeOfApoapsis"] = IStateCalcAltitudeOfApoaps
 
 class IStateCalcAltitudeOfPeriapsis(object):
     """Properties for an Altitude Of Periapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25003,6 +25342,7 @@ agcls.AgTypeNameMap["IStateCalcAltitudeOfPeriapsis"] = IStateCalcAltitudeOfPeria
 
 class IStateCalcArgOfLat(object):
     """Properties for an Argument of Latitude calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25061,6 +25401,7 @@ agcls.AgTypeNameMap["IStateCalcArgOfLat"] = IStateCalcArgOfLat
 
 class IStateCalcArgOfPeriapsis(object):
     """Properties for an Argument of Periapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25119,6 +25460,7 @@ agcls.AgTypeNameMap["IStateCalcArgOfPeriapsis"] = IStateCalcArgOfPeriapsis
 
 class IStateCalcEccentricityAnomaly(object):
     """Properties for an Eccentric Anomaly calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25177,6 +25519,7 @@ agcls.AgTypeNameMap["IStateCalcEccentricityAnomaly"] = IStateCalcEccentricityAno
 
 class IStateCalcEccentricity(object):
     """Properties for an Eccentricity calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25235,6 +25578,7 @@ agcls.AgTypeNameMap["IStateCalcEccentricity"] = IStateCalcEccentricity
 
 class IStateCalcInclination(object):
     """Properties for an Inclination calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25293,6 +25637,7 @@ agcls.AgTypeNameMap["IStateCalcInclination"] = IStateCalcInclination
 
 class IStateCalcLonOfAscNode(object):
     """Properties for a Longitude of Ascending Node calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25351,6 +25696,7 @@ agcls.AgTypeNameMap["IStateCalcLonOfAscNode"] = IStateCalcLonOfAscNode
 
 class IStateCalcMeanAnomaly(object):
     """Properties for a MeanAnomaly calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25409,6 +25755,7 @@ agcls.AgTypeNameMap["IStateCalcMeanAnomaly"] = IStateCalcMeanAnomaly
 
 class IStateCalcMeanMotion(object):
     """Properties for a Mean Motion calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25467,6 +25814,7 @@ agcls.AgTypeNameMap["IStateCalcMeanMotion"] = IStateCalcMeanMotion
 
 class IStateCalcOrbitPeriod(object):
     """Properties for an Orbit Period calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25525,6 +25873,7 @@ agcls.AgTypeNameMap["IStateCalcOrbitPeriod"] = IStateCalcOrbitPeriod
 
 class IStateCalcNumRevs(object):
     """Properties for a Number of Revolutions calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25583,6 +25932,7 @@ agcls.AgTypeNameMap["IStateCalcNumRevs"] = IStateCalcNumRevs
 
 class IStateCalcRAAN(object):
     """Properties for a RAAN calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25641,6 +25991,7 @@ agcls.AgTypeNameMap["IStateCalcRAAN"] = IStateCalcRAAN
 
 class IStateCalcRadOfApoapsis(object):
     """Properties for a Radius Of Apoapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25699,6 +26050,7 @@ agcls.AgTypeNameMap["IStateCalcRadOfApoapsis"] = IStateCalcRadOfApoapsis
 
 class IStateCalcRadOfPeriapsis(object):
     """Properties for a Radius Of Periapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25757,6 +26109,7 @@ agcls.AgTypeNameMap["IStateCalcRadOfPeriapsis"] = IStateCalcRadOfPeriapsis
 
 class IStateCalcSemiMajorAxis(object):
     """Properties for a Semimajor Axis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25815,6 +26168,7 @@ agcls.AgTypeNameMap["IStateCalcSemiMajorAxis"] = IStateCalcSemiMajorAxis
 
 class IStateCalcTimePastAscNode(object):
     """Properties for a Time Past Ascending Node calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25873,6 +26227,7 @@ agcls.AgTypeNameMap["IStateCalcTimePastAscNode"] = IStateCalcTimePastAscNode
 
 class IStateCalcTimePastPeriapsis(object):
     """Properties for a Time Past Periapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25931,6 +26286,7 @@ agcls.AgTypeNameMap["IStateCalcTimePastPeriapsis"] = IStateCalcTimePastPeriapsis
 
 class IStateCalcDeltaV(object):
     """Properties for a DeltaV calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25956,6 +26312,7 @@ agcls.AgTypeNameMap["IStateCalcDeltaV"] = IStateCalcDeltaV
 
 class IStateCalcDeltaVSquared(object):
     """Properties for a DeltaV Squared calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25981,6 +26338,7 @@ agcls.AgTypeNameMap["IStateCalcDeltaVSquared"] = IStateCalcDeltaVSquared
 
 class IStateCalcMissionControlSequenceDeltaV(object):
     """Properties for a MCS DeltaV calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26006,6 +26364,7 @@ agcls.AgTypeNameMap["IStateCalcMissionControlSequenceDeltaV"] = IStateCalcMissio
 
 class IStateCalcMissionControlSequenceDeltaVSquared(object):
     """Properties for a MCS DeltaV Squared calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26048,6 +26407,7 @@ agcls.AgTypeNameMap["IStateCalcMissionControlSequenceDeltaVSquared"] = IStateCal
 
 class IStateCalcSequenceDeltaV(object):
     """Properties for a Sequence DeltaV calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26089,6 +26449,7 @@ agcls.AgTypeNameMap["IStateCalcSequenceDeltaV"] = IStateCalcSequenceDeltaV
 
 class IStateCalcSequenceDeltaVSquared(object):
     """Properties for a Sequence DeltaV Squared calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26148,6 +26509,7 @@ agcls.AgTypeNameMap["IStateCalcSequenceDeltaVSquared"] = IStateCalcSequenceDelta
 
 class IStateCalcFuelMass(object):
     """Properties for a FuelMass calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26173,6 +26535,7 @@ agcls.AgTypeNameMap["IStateCalcFuelMass"] = IStateCalcFuelMass
 
 class IStateCalcDensity(object):
     """Properties for a Fuel Density calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26198,6 +26561,7 @@ agcls.AgTypeNameMap["IStateCalcDensity"] = IStateCalcDensity
 
 class IStateCalcInertialDeltaVMagnitude(object):
     """Properties for an Inertial DeltaV Magnitude calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26223,6 +26587,7 @@ agcls.AgTypeNameMap["IStateCalcInertialDeltaVMagnitude"] = IStateCalcInertialDel
 
 class IStateCalcInertialDeltaVx(object):
     """Properties for an Inertial DeltaVx calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26264,6 +26629,7 @@ agcls.AgTypeNameMap["IStateCalcInertialDeltaVx"] = IStateCalcInertialDeltaVx
 
 class IStateCalcInertialDeltaVy(object):
     """Properties for an Inertial DeltaVy calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26305,6 +26671,7 @@ agcls.AgTypeNameMap["IStateCalcInertialDeltaVy"] = IStateCalcInertialDeltaVy
 
 class IStateCalcInertialDeltaVz(object):
     """Properties for an Inertial DeltaVz calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26346,6 +26713,7 @@ agcls.AgTypeNameMap["IStateCalcInertialDeltaVz"] = IStateCalcInertialDeltaVz
 
 class IStateCalcManeuverSpecificImpulse(object):
     """Properties for a Specific Impulse calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26371,6 +26739,7 @@ agcls.AgTypeNameMap["IStateCalcManeuverSpecificImpulse"] = IStateCalcManeuverSpe
 
 class IStateCalcPressure(object):
     """Properties for a Tank Pressure calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26396,6 +26765,7 @@ agcls.AgTypeNameMap["IStateCalcPressure"] = IStateCalcPressure
 
 class IStateCalcTemperature(object):
     """Properties for a Tank Temperature calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26421,6 +26791,7 @@ agcls.AgTypeNameMap["IStateCalcTemperature"] = IStateCalcTemperature
 
 class IStateCalcVectorX(object):
     """Properties for a Vector X calculation object."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26513,6 +26884,7 @@ agcls.AgTypeNameMap["IStateCalcVectorX"] = IStateCalcVectorX
 
 class IStateCalcVectorY(object):
     """Properties for a Vector Y calculation object."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26605,6 +26977,7 @@ agcls.AgTypeNameMap["IStateCalcVectorY"] = IStateCalcVectorY
 
 class IStateCalcVectorZ(object):
     """Properties for a Vector Z calculation object."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26697,6 +27070,7 @@ agcls.AgTypeNameMap["IStateCalcVectorZ"] = IStateCalcVectorZ
 
 class IStateCalcMass(object):
     """Properties for a Total Mass calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26722,6 +27096,7 @@ agcls.AgTypeNameMap["IStateCalcMass"] = IStateCalcMass
 
 class IStateCalcManeuverTotalMassFlowRate(object):
     """Properties for a Total Mass Flow Rate calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26747,6 +27122,7 @@ agcls.AgTypeNameMap["IStateCalcManeuverTotalMassFlowRate"] = IStateCalcManeuverT
 
 class IStateCalcAbsoluteValue(object):
     """Properties for an Absolute Value calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26788,6 +27164,7 @@ agcls.AgTypeNameMap["IStateCalcAbsoluteValue"] = IStateCalcAbsoluteValue
 
 class IStateCalcDifference(object):
     """Properties for a Difference calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26846,6 +27223,7 @@ agcls.AgTypeNameMap["IStateCalcDifference"] = IStateCalcDifference
 
 class IStateCalcDifferenceOtherSegment(object):
     """Properties for a Difference Across Segments calculation object."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26938,6 +27316,7 @@ agcls.AgTypeNameMap["IStateCalcDifferenceOtherSegment"] = IStateCalcDifferenceOt
 
 class IStateCalcPositionDifferenceOtherSegment(object):
     """Properties for a Position Difference Across Segments calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26996,6 +27375,7 @@ agcls.AgTypeNameMap["IStateCalcPositionDifferenceOtherSegment"] = IStateCalcPosi
 
 class IStateCalcVelDifferenceOtherSegment(object):
     """Properties for a Velocity Difference Across Segments calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27054,6 +27434,7 @@ agcls.AgTypeNameMap["IStateCalcVelDifferenceOtherSegment"] = IStateCalcVelDiffer
 
 class IStateCalcPositionVelDifferenceOtherSegment(object):
     """Properties for a Position and Velocity Difference Across Segments calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27112,6 +27493,7 @@ agcls.AgTypeNameMap["IStateCalcPositionVelDifferenceOtherSegment"] = IStateCalcP
 
 class IStateCalcValueAtSegment(object):
     """Properties for a Value At Segment calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27187,6 +27569,7 @@ agcls.AgTypeNameMap["IStateCalcValueAtSegment"] = IStateCalcValueAtSegment
 
 class IStateCalcMaxValue(object):
     """Properties for a Maximum Value calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27228,6 +27611,7 @@ agcls.AgTypeNameMap["IStateCalcMaxValue"] = IStateCalcMaxValue
 
 class IStateCalcMinValue(object):
     """Properties for a Minimum Value calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27269,6 +27653,7 @@ agcls.AgTypeNameMap["IStateCalcMinValue"] = IStateCalcMinValue
 
 class IStateCalcMeanValue(object):
     """Properties for a Mean Value calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27310,6 +27695,7 @@ agcls.AgTypeNameMap["IStateCalcMeanValue"] = IStateCalcMeanValue
 
 class IStateCalcMedianValue(object):
     """Properties for a Median Value calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27351,6 +27737,7 @@ agcls.AgTypeNameMap["IStateCalcMedianValue"] = IStateCalcMedianValue
 
 class IStateCalcStandardDeviation(object):
     """Properties for a Standard Deviation calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27392,6 +27779,7 @@ agcls.AgTypeNameMap["IStateCalcStandardDeviation"] = IStateCalcStandardDeviation
 
 class IStateCalcNegative(object):
     """Properties for a Negative calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27433,6 +27821,7 @@ agcls.AgTypeNameMap["IStateCalcNegative"] = IStateCalcNegative
 
 class IStateCalcTrueAnomaly(object):
     """Properties for a Mean True Anomaly calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27491,6 +27880,7 @@ agcls.AgTypeNameMap["IStateCalcTrueAnomaly"] = IStateCalcTrueAnomaly
 
 class IBDotRCalc(object):
     """Properties for a BDotR calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27549,6 +27939,7 @@ agcls.AgTypeNameMap["IBDotRCalc"] = IBDotRCalc
 
 class IBDotTCalc(object):
     """Properties for a BDotT calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27607,6 +27998,7 @@ agcls.AgTypeNameMap["IBDotTCalc"] = IBDotTCalc
 
 class IBMagnitudeCalc(object):
     """Properties for a BMagnitude calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27648,6 +28040,7 @@ agcls.AgTypeNameMap["IBMagnitudeCalc"] = IBMagnitudeCalc
 
 class IBThetaCalc(object):
     """Properties for a BTheta calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27706,6 +28099,7 @@ agcls.AgTypeNameMap["IBThetaCalc"] = IBThetaCalc
 
 class IStateCalcDeltaDec(object):
     """Properties for a Delta Declination calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27750,7 +28144,7 @@ class IStateCalcDeltaDec(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
     def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
-        """The central body's reference type"""
+        """The central body's reference type."""
         return self._intf.get_property(IStateCalcDeltaDec._metadata, IStateCalcDeltaDec._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "name" : "reference_type",
@@ -27781,6 +28175,7 @@ agcls.AgTypeNameMap["IStateCalcDeltaDec"] = IStateCalcDeltaDec
 
 class IStateCalcDeltaRA(object):
     """Properties for a Delta Right Asc calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27825,7 +28220,7 @@ class IStateCalcDeltaRA(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
     def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
-        """The central body's reference type"""
+        """The central body's reference type."""
         return self._intf.get_property(IStateCalcDeltaRA._metadata, IStateCalcDeltaRA._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "name" : "reference_type",
@@ -27856,6 +28251,7 @@ agcls.AgTypeNameMap["IStateCalcDeltaRA"] = IStateCalcDeltaRA
 
 class IStateCalcBetaAngle(object):
     """Properties for a Beta Angle calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27897,6 +28293,7 @@ agcls.AgTypeNameMap["IStateCalcBetaAngle"] = IStateCalcBetaAngle
 
 class IStateCalcLocalApparentSolarLon(object):
     """Properties for a Local Apparent Solar Longitude calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27938,6 +28335,7 @@ agcls.AgTypeNameMap["IStateCalcLocalApparentSolarLon"] = IStateCalcLocalApparent
 
 class IStateCalcLonOfPeriapsis(object):
     """Properties for a Longitude of Periapsis calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27996,6 +28394,7 @@ agcls.AgTypeNameMap["IStateCalcLonOfPeriapsis"] = IStateCalcLonOfPeriapsis
 
 class IStateCalcOrbitStateValue(object):
     """Properties for an Orbit State Value calculation object."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28158,21 +28557,21 @@ class IStateCalcOrbitStateValue(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ORBIT_STATE_VALUE),) }
     def enable_control_parameter(self, param:"CONTROL_ORBIT_STATE_VALUE") -> None:
-        """Enable the specified control parameter"""
+        """Enable the specified control parameter."""
         return self._intf.invoke(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "name" : "disable_control_parameter",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ORBIT_STATE_VALUE),) }
     def disable_control_parameter(self, param:"CONTROL_ORBIT_STATE_VALUE") -> None:
-        """Disables the specified control parameter"""
+        """Disables the specified control parameter."""
         return self._intf.invoke(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "name" : "is_control_parameter_enabled",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.AgEnum_arg(CONTROL_ORBIT_STATE_VALUE), agmarshall.VARIANT_BOOL_arg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_ORBIT_STATE_VALUE") -> bool:
-        """Sees if the specified control is enabled"""
+        """Sees if the specified control is enabled."""
         return self._intf.invoke(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._is_control_parameter_enabled_metadata, param, out_arg())
 
     _get_control_parameters_available_metadata = { "name" : "control_parameters_available",
@@ -28189,6 +28588,7 @@ agcls.AgTypeNameMap["IStateCalcOrbitStateValue"] = IStateCalcOrbitStateValue
 
 class IStateCalcSignedEccentricity(object):
     """Properties for a SignedEccentricity calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28247,6 +28647,7 @@ agcls.AgTypeNameMap["IStateCalcSignedEccentricity"] = IStateCalcSignedEccentrici
 
 class IStateCalcTrueLon(object):
     """Properties for a True Longitude calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28305,6 +28706,7 @@ agcls.AgTypeNameMap["IStateCalcTrueLon"] = IStateCalcTrueLon
 
 class IStateCalcPower(object):
     """Properties for a Power calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28346,6 +28748,7 @@ agcls.AgTypeNameMap["IStateCalcPower"] = IStateCalcPower
 
 class IStateCalcRelMotion(object):
     """Properties for a Relative Motion calculation object."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28430,6 +28833,7 @@ agcls.AgTypeNameMap["IStateCalcRelMotion"] = IStateCalcRelMotion
 
 class IStateCalcSolarBetaAngle(object):
     """Properties for a Solar Beta Angle calculation object."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28496,7 +28900,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28565,6 +28969,7 @@ agcls.AgTypeNameMap["IStateCalcSolarBetaAngle"] = IStateCalcSolarBetaAngle
 
 class IStateCalcSolarInPlaneAngle(object):
     """Properties for a Solar In Plane Angle calculation object."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28633,7 +29038,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28717,6 +29122,7 @@ agcls.AgTypeNameMap["IStateCalcSolarInPlaneAngle"] = IStateCalcSolarInPlaneAngle
 
 class IStateCalcRelPositionDecAngle(object):
     """Properties for a Relative Position Declination Angle calculation object."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28783,7 +29189,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28852,6 +29258,7 @@ agcls.AgTypeNameMap["IStateCalcRelPositionDecAngle"] = IStateCalcRelPositionDecA
 
 class IStateCalcRelPositionInPlaneAngle(object):
     """Properties for a Relative Position In Plane Angle calculation object."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28920,7 +29327,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -29004,6 +29411,7 @@ agcls.AgTypeNameMap["IStateCalcRelPositionInPlaneAngle"] = IStateCalcRelPosition
 
 class IStateCalcRelativeInclination(object):
     """Properties for a Relative Inclination Angle calculation object."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29066,7 +29474,7 @@ class IStateCalcRelativeInclination(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def reference_satellite_orbit_normal_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements for describing the orbit plane"""
+        """Choice of osculating or mean elements for describing the orbit plane."""
         return self._intf.get_property(IStateCalcRelativeInclination._metadata, IStateCalcRelativeInclination._get_reference_satellite_orbit_normal_type_metadata)
 
     _set_reference_satellite_orbit_normal_type_metadata = { "name" : "reference_satellite_orbit_normal_type",
@@ -29105,6 +29513,7 @@ agcls.AgTypeNameMap["IStateCalcRelativeInclination"] = IStateCalcRelativeInclina
 
 class IStateCalcCurvilinearRelMotion(object):
     """Properties for Curvilinear Relative Motion  calculation object."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29209,7 +29618,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.AgEnum_arg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """Choice of osculating or mean elements"""
+        """Choice of osculating or mean elements."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -29240,6 +29649,7 @@ agcls.AgTypeNameMap["IStateCalcCurvilinearRelMotion"] = IStateCalcCurvilinearRel
 
 class IStateCalcCustomFunction(object):
     """Properties for a Custom Function calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29315,6 +29725,7 @@ agcls.AgTypeNameMap["IStateCalcCustomFunction"] = IStateCalcCustomFunction
 
 class IStateCalcScript(object):
     """Properties for a Script calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29391,6 +29802,7 @@ agcls.AgTypeNameMap["IStateCalcScript"] = IStateCalcScript
 
 class IStateCalcCd(object):
     """Properties for a Cd calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29416,6 +29828,7 @@ agcls.AgTypeNameMap["IStateCalcCd"] = IStateCalcCd
 
 class IStateCalcCr(object):
     """Properties for a Cr calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29440,7 +29853,8 @@ agcls.AgClassCatalog.add_catalog_entry("{BC4AD651-BFCA-4E69-8409-54BB0880F9E6}",
 agcls.AgTypeNameMap["IStateCalcCr"] = IStateCalcCr
 
 class IStateCalcDragArea(object):
-    """Properties for a DragArea calculation object. CAgAsStateCalcDragArea"""
+    """Properties for a DragArea calculation object. CAgAsStateCalcDragArea."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29466,6 +29880,7 @@ agcls.AgTypeNameMap["IStateCalcDragArea"] = IStateCalcDragArea
 
 class IStateCalcRadiationPressureArea(object):
     """Properties for a RadPressureArea calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29491,6 +29906,7 @@ agcls.AgTypeNameMap["IStateCalcRadiationPressureArea"] = IStateCalcRadiationPres
 
 class IStateCalcRadiationPressureCoefficient(object):
     """Properties for a RadiationPressureCoefficient calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29516,6 +29932,7 @@ agcls.AgTypeNameMap["IStateCalcRadiationPressureCoefficient"] = IStateCalcRadiat
 
 class IStateCalcSRPArea(object):
     """Properties for an SRPArea calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29541,6 +29958,7 @@ agcls.AgTypeNameMap["IStateCalcSRPArea"] = IStateCalcSRPArea
 
 class IStateCalcCosOfVerticalFPA(object):
     """Properties for a Cosine of Vertical FPA calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29582,6 +30000,7 @@ agcls.AgTypeNameMap["IStateCalcCosOfVerticalFPA"] = IStateCalcCosOfVerticalFPA
 
 class IStateCalcDec(object):
     """Properties for a Declination calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29623,6 +30042,7 @@ agcls.AgTypeNameMap["IStateCalcDec"] = IStateCalcDec
 
 class IStateCalcFPA(object):
     """Properties for a Flight Path Angle calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29663,7 +30083,8 @@ agcls.AgClassCatalog.add_catalog_entry("{0A7406E7-049A-4054-A1FE-3E86D1998733}",
 agcls.AgTypeNameMap["IStateCalcFPA"] = IStateCalcFPA
 
 class IStateCalcRMagnitude(object):
-    """Properties for an R Mag calculation object. AsStateCalcRMag"""
+    """Properties for an R Mag calculation object. AsStateCalcRMag."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29705,6 +30126,7 @@ agcls.AgTypeNameMap["IStateCalcRMagnitude"] = IStateCalcRMagnitude
 
 class IStateCalcRA(object):
     """Properties for a Right Asc calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29746,6 +30168,7 @@ agcls.AgTypeNameMap["IStateCalcRA"] = IStateCalcRA
 
 class IStateCalcVMagnitude(object):
     """Properties for a V Mag calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29787,6 +30210,7 @@ agcls.AgTypeNameMap["IStateCalcVMagnitude"] = IStateCalcVMagnitude
 
 class IStateCalcVelAz(object):
     """Properties for a Velocity Azimuth calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29828,6 +30252,7 @@ agcls.AgTypeNameMap["IStateCalcVelAz"] = IStateCalcVelAz
 
 class IStateCalcC3Energy(object):
     """Properties for a C3 Energy calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29886,6 +30311,7 @@ agcls.AgTypeNameMap["IStateCalcC3Energy"] = IStateCalcC3Energy
 
 class IStateCalcInAsympDec(object):
     """Properties for an Incoming Asymptote Dec calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29927,6 +30353,7 @@ agcls.AgTypeNameMap["IStateCalcInAsympDec"] = IStateCalcInAsympDec
 
 class IStateCalcInAsympRA(object):
     """Properties for a Incoming Asymptote RA calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29968,6 +30395,7 @@ agcls.AgTypeNameMap["IStateCalcInAsympRA"] = IStateCalcInAsympRA
 
 class IStateCalcInVelAzAtPeriapsis(object):
     """Properties for an Incoming Vel Az at Periapsis calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30009,6 +30437,7 @@ agcls.AgTypeNameMap["IStateCalcInVelAzAtPeriapsis"] = IStateCalcInVelAzAtPeriaps
 
 class IStateCalcOutAsympDec(object):
     """Properties for a Outgoing Asymptote Dec calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30050,6 +30479,7 @@ agcls.AgTypeNameMap["IStateCalcOutAsympDec"] = IStateCalcOutAsympDec
 
 class IStateCalcOutAsympRA(object):
     """Properties for a Outgoing Asymptote RA calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30091,6 +30521,7 @@ agcls.AgTypeNameMap["IStateCalcOutAsympRA"] = IStateCalcOutAsympRA
 
 class IStateCalcOutVelAzAtPeriapsis(object):
     """Properties for a Outgoing Vel Az at Periapsis calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30132,6 +30563,7 @@ agcls.AgTypeNameMap["IStateCalcOutVelAzAtPeriapsis"] = IStateCalcOutVelAzAtPeria
 
 class IStateCalcDuration(object):
     """Properties for a Duration calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30156,7 +30588,8 @@ agcls.AgClassCatalog.add_catalog_entry("{429E860D-8706-4C30-9F40-B0113E00BAF8}",
 agcls.AgTypeNameMap["IStateCalcDuration"] = IStateCalcDuration
 
 class IStateCalcUserValue(object):
-    """Interface for CAgAsStateCalcUserValue"""
+    """Interface for CAgAsStateCalcUserValue."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30182,7 +30615,7 @@ class IStateCalcUserValue(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def variable_name(self) -> str:
-        """Name of the user variable"""
+        """Name of the user variable."""
         return self._intf.get_property(IStateCalcUserValue._metadata, IStateCalcUserValue._get_variable_name_metadata)
 
     _set_variable_name_metadata = { "name" : "variable_name",
@@ -30190,7 +30623,7 @@ class IStateCalcUserValue(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @variable_name.setter
     def variable_name(self, inVal:str) -> None:
-        """Name of the user variable"""
+        """Name of the user variable."""
         return self._intf.set_property(IStateCalcUserValue._metadata, IStateCalcUserValue._set_variable_name_metadata, inVal)
 
 
@@ -30199,6 +30632,7 @@ agcls.AgTypeNameMap["IStateCalcUserValue"] = IStateCalcUserValue
 
 class IStateCalcVectorGeometryToolAngle(object):
     """Properties for an Vector Geometry Tool Angle calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30240,6 +30674,7 @@ agcls.AgTypeNameMap["IStateCalcVectorGeometryToolAngle"] = IStateCalcVectorGeome
 
 class IStateCalcAngle(object):
     """Properties for an Angle Between Vectors calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30298,6 +30733,7 @@ agcls.AgTypeNameMap["IStateCalcAngle"] = IStateCalcAngle
 
 class IStateCalcDotProduct(object):
     """Properties for a Dot Product calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30356,6 +30792,7 @@ agcls.AgTypeNameMap["IStateCalcDotProduct"] = IStateCalcDotProduct
 
 class IStateCalcVectorDec(object):
     """Properties for a Vector Dec calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30414,6 +30851,7 @@ agcls.AgTypeNameMap["IStateCalcVectorDec"] = IStateCalcVectorDec
 
 class IStateCalcVectorMagnitude(object):
     """Properties for a Vector Mag calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30472,6 +30910,7 @@ agcls.AgTypeNameMap["IStateCalcVectorMagnitude"] = IStateCalcVectorMagnitude
 
 class IStateCalcVectorRA(object):
     """Properties for a Vector RA calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30530,6 +30969,7 @@ agcls.AgTypeNameMap["IStateCalcVectorRA"] = IStateCalcVectorRA
 
 class IStateCalcOnePointAccess(object):
     """Properties for an Access calculation object."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30581,7 +31021,7 @@ class IStateCalcOnePointAccess(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.AgEnum_arg(BASE_SELECTION),) }
     def set_base_selection(self, selection:"BASE_SELECTION") -> None:
-        """Base Selection"""
+        """Base Selection."""
         return self._intf.invoke(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._set_base_selection_metadata, selection)
 
     _get_base_selection_type_metadata = { "name" : "base_selection_type",
@@ -30674,6 +31114,7 @@ agcls.AgTypeNameMap["IStateCalcOnePointAccess"] = IStateCalcOnePointAccess
 
 class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
     """Properties for a Difference Across Segments Across Satellites calculation object."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30775,6 +31216,7 @@ agcls.AgTypeNameMap["IStateCalcDifferenceAcrossSegmentsOtherSat"] = IStateCalcDi
 
 class IStateCalcValueAtSegmentOtherSat(object):
     """Properties for a Value At Segment Across Satellites calculation object."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30858,7 +31300,8 @@ agcls.AgClassCatalog.add_catalog_entry("{1F7F3653-10FD-4377-B8FB-8C42DABDACC3}",
 agcls.AgTypeNameMap["IStateCalcValueAtSegmentOtherSat"] = IStateCalcValueAtSegmentOtherSat
 
 class IStateCalcRARate(object):
-    """Properties for a Right Ascension Rate calculation object"""
+    """Properties for a Right Ascension Rate calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30899,7 +31342,8 @@ agcls.AgClassCatalog.add_catalog_entry("{69DDD91C-168B-47BD-9977-EB8431B4C112}",
 agcls.AgTypeNameMap["IStateCalcRARate"] = IStateCalcRARate
 
 class IStateCalcDecRate(object):
-    """Properties for a Declination Rate calculation object"""
+    """Properties for a Declination Rate calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30941,6 +31385,7 @@ agcls.AgTypeNameMap["IStateCalcDecRate"] = IStateCalcDecRate
 
 class IStateCalcGravitationalParameter(object):
     """Properties for a Gravitational Parameter calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31016,6 +31461,7 @@ agcls.AgTypeNameMap["IStateCalcGravitationalParameter"] = IStateCalcGravitationa
 
 class IStateCalcReferenceRadius(object):
     """Properties for a Reference Radius calculation object."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31091,6 +31537,7 @@ agcls.AgTypeNameMap["IStateCalcReferenceRadius"] = IStateCalcReferenceRadius
 
 class IStateCalcGravCoeff(object):
     """Properties for a gravity coefficient calculation object."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31217,6 +31664,7 @@ agcls.AgTypeNameMap["IStateCalcGravCoeff"] = IStateCalcGravCoeff
 
 class IStateCalcSpeedOfLight(object):
     """Properties for a Speed of Light calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31242,6 +31690,7 @@ agcls.AgTypeNameMap["IStateCalcSpeedOfLight"] = IStateCalcSpeedOfLight
 
 class IStateCalcPi(object):
     """Properties for a Pi calculation object."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31267,6 +31716,7 @@ agcls.AgTypeNameMap["IStateCalcPi"] = IStateCalcPi
 
 class IStateCalcScalar(object):
     """Properties for a Scalar calculation object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31325,6 +31775,7 @@ agcls.AgTypeNameMap["IStateCalcScalar"] = IStateCalcScalar
 
 class IStateCalcApparentSolarTime(object):
     """Properties for an Apparent Solar Time calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31366,6 +31817,7 @@ agcls.AgTypeNameMap["IStateCalcApparentSolarTime"] = IStateCalcApparentSolarTime
 
 class IStateCalcEarthMeanSolarTime(object):
     """Properties for an Earth Mean Solar Time calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31407,6 +31859,7 @@ agcls.AgTypeNameMap["IStateCalcEarthMeanSolarTime"] = IStateCalcEarthMeanSolarTi
 
 class IStateCalcEarthMeanLocTimeAN(object):
     """Properties for an Earth Mean Local Time of Ascending Node calculation object."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31448,6 +31901,7 @@ agcls.AgTypeNameMap["IStateCalcEarthMeanLocTimeAN"] = IStateCalcEarthMeanLocTime
 
 class ICentralBodyCollection(object):
     """The list of central bodies."""
+
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -31553,6 +32007,7 @@ agcls.AgTypeNameMap["ICentralBodyCollection"] = ICentralBodyCollection
 
 class ICentralBodyEphemeris(object):
     """The central body ephemeris source."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31578,6 +32033,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemeris"] = ICentralBodyEphemeris
 
 class ICentralBodyGravityModel(object):
     """Properties for a central body gravity model."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31687,6 +32143,7 @@ agcls.AgTypeNameMap["ICentralBodyGravityModel"] = ICentralBodyGravityModel
 
 class ICentralBodyShape(object):
     """The central body shape."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31712,6 +32169,7 @@ agcls.AgTypeNameMap["ICentralBodyShape"] = ICentralBodyShape
 
 class ICentralBodyShapeSphere(ICentralBodyShape):
     """Properties for the central body sphere shape."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
     _metadata = {
@@ -31754,6 +32212,7 @@ agcls.AgTypeNameMap["ICentralBodyShapeSphere"] = ICentralBodyShapeSphere
 
 class ICentralBodyShapeOblateSpheroid(ICentralBodyShape):
     """Properties for the central body oblate spheroid shape."""
+
     _num_methods = 5
     _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
     _metadata = {
@@ -31822,6 +32281,7 @@ agcls.AgTypeNameMap["ICentralBodyShapeOblateSpheroid"] = ICentralBodyShapeOblate
 
 class ICentralBodyShapeTriaxialEllipsoid(ICentralBodyShape):
     """Properties for the central body triaxial ellipsoid shape."""
+
     _num_methods = 6
     _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
     _metadata = {
@@ -31898,6 +32358,7 @@ agcls.AgTypeNameMap["ICentralBodyShapeTriaxialEllipsoid"] = ICentralBodyShapeTri
 
 class ICentralBodyAttitude(object):
     """The central body attitude."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31923,6 +32384,7 @@ agcls.AgTypeNameMap["ICentralBodyAttitude"] = ICentralBodyAttitude
 
 class ICentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitude):
     """Properties for a rotation coefficients file attitude definition."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods
     _metadata = {
@@ -31965,6 +32427,7 @@ agcls.AgTypeNameMap["ICentralBodyAttitudeRotationCoefficientsFile"] = ICentralBo
 
 class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
     """Properties for an IAU1994 attitude definition."""
+
     _num_methods = 12
     _vtable_offset = ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods
     _metadata = {
@@ -32092,6 +32555,7 @@ agcls.AgTypeNameMap["ICentralBodyAttitudeIAU1994"] = ICentralBodyAttitudeIAU1994
 
 class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
     """Properties for the Analytic Orbit ephemeris source."""
+
     _num_methods = 26
     _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
     _metadata = {
@@ -32338,6 +32802,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemerisAnalyticOrbit"] = ICentralBodyEphemeri
 
 class ICentralBodyEphemerisJPLSpice(ICentralBodyEphemeris):
     """Properties for the JPL SPICE ephemeris source."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
     _metadata = {
@@ -32380,6 +32845,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemerisJPLSpice"] = ICentralBodyEphemerisJPLS
 
 class ICentralBodyEphemerisFile(ICentralBodyEphemeris):
     """Properties for the Ephemeris File ephemeris source."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
     _metadata = {
@@ -32422,6 +32888,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemerisFile"] = ICentralBodyEphemerisFile
 
 class ICentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemeris):
     """Properties for the JPL DE ephemeris source."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
     _metadata = {
@@ -32464,6 +32931,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemerisJPLDesignExplorerOptimizer"] = ICentra
 
 class ICentralBodyEphemerisPlanetary(ICentralBodyEphemeris):
     """Properties for the Planetary Ephemeris file ephemeris source."""
+
     _num_methods = 2
     _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
     _metadata = {
@@ -32506,6 +32974,7 @@ agcls.AgTypeNameMap["ICentralBodyEphemerisPlanetary"] = ICentralBodyEphemerisPla
 
 class IAstrogatorCentralBody(object):
     """General properties for a central body."""
+
     _num_methods = 41
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32615,7 +33084,7 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def set_default_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Select a gravity model"""
+        """Select a gravity model."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._set_default_gravity_model_by_name_metadata, gravityModelName)
 
     _get_default_gravity_model_data_metadata = { "name" : "default_gravity_model_data",
@@ -32755,7 +33224,7 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_gravity_model_by_name(self, gravityModelName:str) -> None:
-        """Copy a gravity model to the clipboard and removes it from the central body"""
+        """Copy a gravity model to the clipboard and removes it from the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_gravity_model_by_name_metadata, gravityModelName)
 
     _copy_gravity_model_by_name_metadata = { "name" : "copy_gravity_model_by_name",
@@ -32776,14 +33245,14 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyGravityModel"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_gravity_model(self, gravityModel:"ICentralBodyGravityModel") -> "CentralBodyGravityModel":
-        """Add the gravity model to the central body"""
+        """Add the gravity model to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_gravity_model_metadata, gravityModel, out_arg())
 
     _cut_shape_by_name_metadata = { "name" : "cut_shape_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_shape_by_name(self, shapeName:str) -> None:
-        """Copy a central body shape to the clipboard and removes it from the central body"""
+        """Copy a central body shape to the clipboard and removes it from the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_shape_by_name_metadata, shapeName)
 
     _copy_shape_by_name_metadata = { "name" : "copy_shape_by_name",
@@ -32804,14 +33273,14 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyShape"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_shape(self, shape:"ICentralBodyShape") -> "ICentralBodyShape":
-        """Add the central body shape to the central body"""
+        """Add the central body shape to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_shape_metadata, shape, out_arg())
 
     _cut_attitude_by_name_metadata = { "name" : "cut_attitude_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_attitude_by_name(self, attitudeName:str) -> None:
-        """Copy a central body attitude definition to the clipboard and removes it from the central body"""
+        """Copy a central body attitude definition to the clipboard and removes it from the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_attitude_by_name_metadata, attitudeName)
 
     _copy_attitude_by_name_metadata = { "name" : "copy_attitude_by_name",
@@ -32832,14 +33301,14 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyAttitude"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_attitude(self, attitude:"ICentralBodyAttitude") -> "ICentralBodyAttitude":
-        """Add the central body attitude definition to the central body"""
+        """Add the central body attitude definition to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_attitude_metadata, attitude, out_arg())
 
     _cut_ephemeris_by_name_metadata = { "name" : "cut_ephemeris_by_name",
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg,) }
     def cut_ephemeris_by_name(self, ephemerisName:str) -> None:
-        """Copy a central body ephemeris definition to the clipboard and removes it from the central body"""
+        """Copy a central body ephemeris definition to the clipboard and removes it from the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._cut_ephemeris_by_name_metadata, ephemerisName)
 
     _copy_ephemeris_by_name_metadata = { "name" : "copy_ephemeris_by_name",
@@ -32860,7 +33329,7 @@ class IAstrogatorCentralBody(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("ICentralBodyEphemeris"), agmarshall.AgInterface_out_arg,) }
     def add_copy_of_ephemeris(self, ephemeris:"ICentralBodyEphemeris") -> "ICentralBodyEphemeris":
-        """Add the central body ephemeris definition to the central body"""
+        """Add the central body ephemeris definition to the central body."""
         return self._intf.invoke(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._add_copy_of_ephemeris_metadata, ephemeris, out_arg())
 
 
@@ -32869,6 +33338,7 @@ agcls.AgTypeNameMap["IAstrogatorCentralBody"] = IAstrogatorCentralBody
 
 class IPowerInternal(object):
     """Properties for the Internal Power power source component."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32977,6 +33447,7 @@ agcls.AgTypeNameMap["IPowerInternal"] = IPowerInternal
 
 class IPowerProcessed(object):
     """Properties for the Processed Power power source component."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33085,6 +33556,7 @@ agcls.AgTypeNameMap["IPowerProcessed"] = IPowerProcessed
 
 class IPowerSolarArray(object):
     """Properties for the Solar Array Power power source component."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33355,6 +33827,7 @@ agcls.AgTypeNameMap["IPowerSolarArray"] = IPowerSolarArray
 
 class IGeneralRelativityFunction(object):
     """Properties for the General Relativity propagator function."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33380,6 +33853,7 @@ agcls.AgTypeNameMap["IGeneralRelativityFunction"] = IGeneralRelativityFunction
 
 class IStateTransformationFunction(object):
     """Properties for the State Transition propagator function."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33405,6 +33879,7 @@ agcls.AgTypeNameMap["IStateTransformationFunction"] = IStateTransformationFuncti
 
 class ICR3BPFunc(object):
     """Properties for the CR3BP propagator function."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33446,6 +33921,7 @@ agcls.AgTypeNameMap["ICR3BPFunc"] = ICR3BPFunc
 
 class IRadiationPressureFunction(object):
     """Properties for the Radiation Pressure propagator function."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33581,6 +34057,7 @@ agcls.AgTypeNameMap["IRadiationPressureFunction"] = IRadiationPressureFunction
 
 class IYarkovskyFunc(object):
     """Properties for the Yarkovsky Effect propagator function."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33741,6 +34218,7 @@ agcls.AgTypeNameMap["IYarkovskyFunc"] = IYarkovskyFunc
 
 class IBlendedDensity(object):
     """Properties for the blended atmospheric density propagator function."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33843,6 +34321,7 @@ agcls.AgTypeNameMap["IBlendedDensity"] = IBlendedDensity
 
 class IDragModelPlugin(object):
     """Properties for the Drag Model plugin."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33893,6 +34372,7 @@ agcls.AgTypeNameMap["IDragModelPlugin"] = IDragModelPlugin
 
 class ICira72Function(object):
     """Properties for the CIRA 72 atmospheric model."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34165,6 +34645,7 @@ agcls.AgTypeNameMap["ICira72Function"] = ICira72Function
 
 class IExponential(object):
     """Properties for the Exponential atmospheric model - a model that calculates atmospheric density using an equation involving a reference density, reference altitude, and scale altitude."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34334,6 +34815,7 @@ agcls.AgTypeNameMap["IExponential"] = IExponential
 
 class IHarrisPriester(object):
     """Properties for the Harris-Priester atmospheric model - a model that takes into account a 10.7 cm solar flux level and diurnal bulge."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34538,6 +35020,7 @@ agcls.AgTypeNameMap["IHarrisPriester"] = IHarrisPriester
 
 class IDensityModelPlugin(object):
     """Properties for the plugin atmospheric density model."""
+
     _num_methods = 51
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34998,6 +35481,7 @@ agcls.AgTypeNameMap["IDensityModelPlugin"] = IDensityModelPlugin
 
 class IJacchiaRoberts(object):
     """Properties for the Jacchia-Roberts atmospheric model - a model that is similar to Jacchia 1971 but uses analytical methods to improve performance."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -35270,6 +35754,7 @@ agcls.AgTypeNameMap["IJacchiaRoberts"] = IJacchiaRoberts
 
 class IJacchiaBowman2008(object):
     """Properties for the Jacchia Bowman 2008 atmospheric density model."""
+
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -35609,6 +36094,7 @@ agcls.AgTypeNameMap["IJacchiaBowman2008"] = IJacchiaBowman2008
 
 class IJacchia_1960(object):
     """Properties for the Jacchia 1960 atmospheric model - an outdated atmospheric model provided for making comparisons with other software."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -35762,6 +36248,7 @@ agcls.AgTypeNameMap["IJacchia_1960"] = IJacchia_1960
 
 class IJacchia_1970(object):
     """Properties for the Jacchia 1970 atmospheric model - a model that computes atmospheric density based on the composition of the atmosphere, which depends on altitude as well as seasonal variation. Valid range is 100-2500 km."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -35920,7 +36407,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.AgEnum_arg(GEO_MAGNETIC_FLUX_SOURCE),) }
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GEO_MAGNETIC_FLUX_SOURCE":
-        """Whether to use Kp or Ap data from the flux file"""
+        """Whether to use Kp or Ap data from the flux file."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "name" : "atmos_data_geo_magnetic_flux_source",
@@ -36034,6 +36521,7 @@ agcls.AgTypeNameMap["IJacchia_1970"] = IJacchia_1970
 
 class IJacchia_1971(object):
     """Properties for the Jacchia 1971 atmospheric model - a model that is similar to Jacchia 1970, with improved treatment of certain solar effects."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -36306,6 +36794,7 @@ agcls.AgTypeNameMap["IJacchia_1971"] = IJacchia_1971
 
 class IMSISE_1990(object):
     """Properties for the MSISE 1990 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -36578,6 +37067,7 @@ agcls.AgTypeNameMap["IMSISE_1990"] = IMSISE_1990
 
 class IMSIS_1986(object):
     """Properties for the MSIS 1986 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1986 version, valid range of 90-1000 km."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -36661,7 +37151,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.AgEnum_arg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation"""
+        """The sun position computation."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -36850,6 +37340,7 @@ agcls.AgTypeNameMap["IMSIS_1986"] = IMSIS_1986
 
 class INRLMSISE_2000(object):
     """Properties for the NRLMSISE 2000 atmospheric model."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -37122,6 +37613,7 @@ agcls.AgTypeNameMap["INRLMSISE_2000"] = INRLMSISE_2000
 
 class IUS_Standard_Atmosphere(object):
     """Properties for the US Standard Atmosphere atmospheric model."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -37258,6 +37750,7 @@ agcls.AgTypeNameMap["IUS_Standard_Atmosphere"] = IUS_Standard_Atmosphere
 
 class IMarsGRAM37(object):
     """Properties for the Mars-GRAM 3.7 atmospheric model."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -37513,6 +38006,7 @@ agcls.AgTypeNameMap["IMarsGRAM37"] = IMarsGRAM37
 
 class IMarsGRAM2005(object):
     """Properties for the Mars-GRAM 2005 atmospheric model."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -37768,6 +38262,7 @@ agcls.AgTypeNameMap["IMarsGRAM2005"] = IMarsGRAM2005
 
 class IVenusGRAM2005(object):
     """Properties for the Venus-GRAM 2005 atmospheric model."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -37955,6 +38450,7 @@ agcls.AgTypeNameMap["IVenusGRAM2005"] = IVenusGRAM2005
 
 class IMarsGRAM2010(object):
     """Properties for the Mars-GRAM 2010 atmospheric model."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -38210,6 +38706,7 @@ agcls.AgTypeNameMap["IMarsGRAM2010"] = IMarsGRAM2010
 
 class IMarsGRAM2001(object):
     """Properties for the Mars-GRAM 2001 atmospheric model."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -38465,6 +38962,7 @@ agcls.AgTypeNameMap["IMarsGRAM2001"] = IMarsGRAM2001
 
 class IMarsGRAM2000(object):
     """Properties for the Mars-GRAM 2000 atmospheric model."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -38720,6 +39218,7 @@ agcls.AgTypeNameMap["IMarsGRAM2000"] = IMarsGRAM2000
 
 class IDTM2012(object):
     """Properties for the DTM 2012 atmospheric model."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -38992,6 +39491,7 @@ agcls.AgTypeNameMap["IDTM2012"] = IDTM2012
 
 class IDTM2020(object):
     """Properties for the DTM 2020 atmospheric model."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39264,6 +39764,7 @@ agcls.AgTypeNameMap["IDTM2020"] = IDTM2020
 
 class IGravityFieldFunction(object):
     """Properties for the Gravitational Force gravity model - a complex gravitational force calculation, optionally including solid and ocean tide effects."""
+
     _num_methods = 35
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39413,7 +39914,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_ocean_tides(self) -> bool:
-        """True if using ocean tides/"""
+        """True if using ocean tides."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_use_ocean_tides_metadata)
 
     _set_use_ocean_tides_metadata = { "name" : "use_ocean_tides",
@@ -39458,7 +39959,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def central_body_name(self) -> str:
-        """The name of the central body"""
+        """The name of the central body."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_central_body_name_metadata)
 
     _get_ocean_tide_max_degree_metadata = { "name" : "ocean_tide_max_degree",
@@ -39588,6 +40089,7 @@ agcls.AgTypeNameMap["IGravityFieldFunction"] = IGravityFieldFunction
 
 class IPointMassFunction(object):
     """Properties for the Point Mass Function."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39646,6 +40148,7 @@ agcls.AgTypeNameMap["IPointMassFunction"] = IPointMassFunction
 
 class ITwoBodyFunction(object):
     """Properties for the Two Body gravity model - a standard point mass model."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39721,6 +40224,7 @@ agcls.AgTypeNameMap["ITwoBodyFunction"] = ITwoBodyFunction
 
 class IHPOPPluginFunction(object):
     """Properties for the HPOP Plugin propagator function."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39771,6 +40275,7 @@ agcls.AgTypeNameMap["IHPOPPluginFunction"] = IHPOPPluginFunction
 
 class IEOMFuncPluginFunction(object):
     """Properties for the EOM Function Plugin propagator function."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39821,6 +40326,7 @@ agcls.AgTypeNameMap["IEOMFuncPluginFunction"] = IEOMFuncPluginFunction
 
 class ISRPAeroT20(object):
     """Properties for the Aerospace T20 solar radiation pressure model for GPS block IIA."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -39956,6 +40462,7 @@ agcls.AgTypeNameMap["ISRPAeroT20"] = ISRPAeroT20
 
 class ISRPAeroT30(object):
     """Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40091,6 +40598,7 @@ agcls.AgTypeNameMap["ISRPAeroT30"] = ISRPAeroT30
 
 class ISRPGSPM04aIIA(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIA."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40226,6 +40734,7 @@ agcls.AgTypeNameMap["ISRPGSPM04aIIA"] = ISRPGSPM04aIIA
 
 class ISRPGSPM04aIIR(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIR."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40361,6 +40870,7 @@ agcls.AgTypeNameMap["ISRPGSPM04aIIR"] = ISRPGSPM04aIIR
 
 class ISRPGSPM04aeIIA(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIA."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40496,6 +41006,7 @@ agcls.AgTypeNameMap["ISRPGSPM04aeIIA"] = ISRPGSPM04aeIIA
 
 class ISRPGSPM04aeIIR(object):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04ae for block IIR."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40631,6 +41142,7 @@ agcls.AgTypeNameMap["ISRPGSPM04aeIIR"] = ISRPGSPM04aeIIR
 
 class ISRPSpherical(object):
     """Properties for the Spherical SRP model; assumes a spherical spacecraft. The equation used by STK is described in the Solar Radiation technical note."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40756,7 +41268,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.AgEnum_arg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method"""
+        """The solar force method."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -40817,6 +41329,7 @@ agcls.AgTypeNameMap["ISRPSpherical"] = ISRPSpherical
 
 class ISRPNPlate(object):
     """Properties for the N-plate SRP model."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -40944,7 +41457,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.AgEnum_arg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method"""
+        """The solar force method."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41020,6 +41533,7 @@ agcls.AgTypeNameMap["ISRPNPlate"] = ISRPNPlate
 
 class ISRPTabAreaVec(object):
     """Properties for the tabulated area vector SRP model."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -41149,7 +41663,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.AgEnum_arg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method"""
+        """The solar force method."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41240,6 +41754,7 @@ agcls.AgTypeNameMap["ISRPTabAreaVec"] = ISRPTabAreaVec
 
 class ISRPVariableArea(object):
     """Properties for the Variable Area SRP model."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -41367,7 +41882,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.AgEnum_arg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method"""
+        """The solar force method."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41443,6 +41958,7 @@ agcls.AgTypeNameMap["ISRPVariableArea"] = ISRPVariableArea
 
 class IThirdBodyFunction(object):
     """Properties for a Third Body propagator function. The IComponentInfo object returned by the mode property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -41489,7 +42005,7 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.AgEnum_arg(EPHEM_SOURCE),) }
     @property
     def ephem_source(self) -> "EPHEM_SOURCE":
-        """Source for the third body's ephemeris"""
+        """Source for the third body's ephemeris."""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_ephem_source_metadata)
 
     _set_ephem_source_metadata = { "name" : "ephem_source",
@@ -41527,7 +42043,7 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def ephemeris_source_warning(self) -> str:
-        """Return a warning message if the Ephemeris source and the gravity are not compatible"""
+        """Return a warning message if the Ephemeris source and the gravity are not compatible."""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_ephemeris_source_warning_metadata)
 
 
@@ -41536,6 +42052,7 @@ agcls.AgTypeNameMap["IThirdBodyFunction"] = IThirdBodyFunction
 
 class ISRPReflectionPlugin(object):
     """Properties for the plugin SRP Refelction."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -41697,6 +42214,7 @@ agcls.AgTypeNameMap["ISRPReflectionPlugin"] = ISRPReflectionPlugin
 
 class IEngineModelThrustCoefficients(object):
     """Thrust coefficient properties for engine definition."""
+
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -41993,6 +42511,7 @@ agcls.AgTypeNameMap["IEngineModelThrustCoefficients"] = IEngineModelThrustCoeffi
 
 class IEngineModelIspCoefficients(object):
     """Isp coefficient properties for engine definition."""
+
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -42289,6 +42808,7 @@ agcls.AgTypeNameMap["IEngineModelIspCoefficients"] = IEngineModelIspCoefficients
 
 class IEngineConstAcc(object):
     """Properties for a Constant Acceleration and Isp engine model."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -42397,6 +42917,7 @@ agcls.AgTypeNameMap["IEngineConstAcc"] = IEngineConstAcc
 
 class IEngineConstant(object):
     """Properties for a Constant Thrust and Isp engine model."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -42505,6 +43026,7 @@ agcls.AgTypeNameMap["IEngineConstant"] = IEngineConstant
 
 class IEngineDefinition(object):
     """Properties for engine definition for an Ion engine model."""
+
     _num_methods = 42
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -42879,7 +43401,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def input_power_source_name(self) -> str:
-        """Object that computes the power input to the engine"""
+        """Object that computes the power input to the engine."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_input_power_source_name_metadata)
 
 
@@ -42887,7 +43409,8 @@ agcls.AgClassCatalog.add_catalog_entry("{74BF5209-9E9B-45E3-8AE0-E68971558447}",
 agcls.AgTypeNameMap["IEngineDefinition"] = IEngineDefinition
 
 class IEngineThrottleTable(object):
-    """Properties for engine parameters for a Throttle Table engine model"""
+    """Properties for engine parameters for a Throttle Table engine model."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43004,7 +43527,7 @@ class IEngineThrottleTable(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def percent_degradation_per_year(self) -> float:
-        """The degradation factor is (1-x%/yr)^(timeSinceRefEpoch)"""
+        """The degradation factor is ((1-x%/yr)^(timeSinceRefEpoch))."""
         return self._intf.get_property(IEngineThrottleTable._metadata, IEngineThrottleTable._get_percent_degradation_per_year_metadata)
 
     _set_percent_degradation_per_year_metadata = { "name" : "percent_degradation_per_year",
@@ -43063,7 +43586,8 @@ agcls.AgClassCatalog.add_catalog_entry("{74EFDF26-3F92-4664-8CA1-47E86FCAB002}",
 agcls.AgTypeNameMap["IEngineThrottleTable"] = IEngineThrottleTable
 
 class IEngineIon(object):
-    """Properties for engine parameters for an Ion engine model"""
+    """Properties for engine parameters for an Ion engine model."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43166,7 +43690,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def percent_degradation_per_year(self) -> float:
-        """The degradation factor is (1-x%/yr)^(timeSinceRefEpoch)"""
+        """The degradation factor is ((1-x%/yr)^(timeSinceRefEpoch))."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_percent_degradation_per_year_metadata)
 
     _set_percent_degradation_per_year_metadata = { "name" : "percent_degradation_per_year",
@@ -43249,6 +43773,7 @@ agcls.AgTypeNameMap["IEngineIon"] = IEngineIon
 
 class IEngineCustom(object):
     """Properties for a Custom engine model."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43408,6 +43933,7 @@ agcls.AgTypeNameMap["IEngineCustom"] = IEngineCustom
 
 class IEnginePlugin(object):
     """Properties for a Plugin engine model."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43475,6 +44001,7 @@ agcls.AgTypeNameMap["IEnginePlugin"] = IEnginePlugin
 
 class IEngineModelPoly(object):
     """Properties for a Polynomial Thrust and Isp engine model."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43567,6 +44094,7 @@ agcls.AgTypeNameMap["IEngineModelPoly"] = IEngineModelPoly
 
 class IDesignCR3BPObjectCollection(object):
     """The list of associated CR3BP objects."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -43648,6 +44176,7 @@ agcls.AgTypeNameMap["IDesignCR3BPObjectCollection"] = IDesignCR3BPObjectCollecti
 
 class IDesignCR3BPSetup(object):
     """Properties for the CR3BP Setup Tool.."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43711,7 +44240,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def secondary_body_name(self) -> str:
-        """Secondary Body"""
+        """Secondary Body."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_secondary_body_name_metadata)
 
     _set_secondary_body_name_metadata = { "name" : "secondary_body_name",
@@ -43825,7 +44354,7 @@ class IDesignCR3BPSetup(object):
             "arg_types" : (),
             "marshallers" : () }
     def create_ideal_secondary_cb(self) -> None:
-        """Construct the idealized secondary for the three-body system"""
+        """Construct the idealized secondary for the three-body system."""
         return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._create_ideal_secondary_cb_metadata, )
 
     _reset_ideal_secondary_cb_metadata = { "name" : "reset_ideal_secondary_cb",
@@ -43884,6 +44413,7 @@ agcls.AgTypeNameMap["IDesignCR3BPSetup"] = IDesignCR3BPSetup
 
 class IDesignCR3BPObject(object):
     """Properties for individual associated CR3BP object."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -43935,6 +44465,7 @@ agcls.AgTypeNameMap["IDesignCR3BPObject"] = IDesignCR3BPObject
 
 class IThruster(object):
     """Properties for individual thrusters."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44094,6 +44625,7 @@ agcls.AgTypeNameMap["IThruster"] = IThruster
 
 class IThrusterSetCollection(object):
     """The list of thrusters in a thruster set."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -44223,6 +44755,7 @@ agcls.AgTypeNameMap["IThrusterSetCollection"] = IThrusterSetCollection
 
 class IThrusterSet(object):
     """The properties of a thruster set."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44273,6 +44806,7 @@ agcls.AgTypeNameMap["IThrusterSet"] = IThrusterSet
 
 class IAsTriggerCondition(object):
     """Properties for a constraint - an additional condition to be met to satisfy a stopping condition."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44415,6 +44949,7 @@ agcls.AgTypeNameMap["IAsTriggerCondition"] = IAsTriggerCondition
 
 class ICustomFunctionScriptEngine(object):
     """Properties for custom functions."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44473,6 +45008,7 @@ agcls.AgTypeNameMap["ICustomFunctionScriptEngine"] = ICustomFunctionScriptEngine
 
 class INumericalIntegrator(object):
     """The type of numerical integrator to be used by the propagator."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44498,6 +45034,7 @@ agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 class IPropagatorFunctionCollection(object):
     """The list of propagator functions - affecting forces that you want to model for orbit propagation."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -44627,6 +45164,7 @@ agcls.AgTypeNameMap["IPropagatorFunctionCollection"] = IPropagatorFunctionCollec
 
 class INumericalPropagatorWrapper(object):
     """General properties for propagators."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44771,6 +45309,7 @@ agcls.AgTypeNameMap["INumericalPropagatorWrapper"] = INumericalPropagatorWrapper
 
 class INumericalPropagatorWrapperCR3BP(object):
     """General properties for three-body problem propagators."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -44847,6 +45386,7 @@ agcls.AgTypeNameMap["INumericalPropagatorWrapperCR3BP"] = INumericalPropagatorWr
 
 class IBulirschStoerIntegrator(object):
     """Properties for the Bulirsch-Stoer numerical integrator."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45075,6 +45615,7 @@ agcls.AgTypeNameMap["IBulirschStoerIntegrator"] = IBulirschStoerIntegrator
 
 class IGaussJacksonIntegrator(object):
     """Properties for the Gauss-Jackson numerical integrator."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45193,6 +45734,7 @@ agcls.AgTypeNameMap["IGaussJacksonIntegrator"] = IGaussJacksonIntegrator
 
 class IRungeKutta2nd3rd(object):
     """Properties for the RK2nd3rd numerical integrator."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45421,6 +45963,7 @@ agcls.AgTypeNameMap["IRungeKutta2nd3rd"] = IRungeKutta2nd3rd
 
 class IRungeKutta4th(object):
     """Properties for the RK4th numerical integrator."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45462,6 +46005,7 @@ agcls.AgTypeNameMap["IRungeKutta4th"] = IRungeKutta4th
 
 class IRungeKutta4th5th(object):
     """Properties for the RK4th5th numerical integrator."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45690,6 +46234,7 @@ agcls.AgTypeNameMap["IRungeKutta4th5th"] = IRungeKutta4th5th
 
 class IRungeKutta4thAdapt(object):
     """Properties for the RK4thAdapt numerical integrator."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -45918,6 +46463,7 @@ agcls.AgTypeNameMap["IRungeKutta4thAdapt"] = IRungeKutta4thAdapt
 
 class IRungeKuttaF7th8th(object):
     """Properties for the RK7th8th numerical integrator."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -46146,6 +46692,7 @@ agcls.AgTypeNameMap["IRungeKuttaF7th8th"] = IRungeKuttaF7th8th
 
 class IRungeKuttaV8th9th(object):
     """Properties for the RK8th9th numerical integrator."""
+
     _num_methods = 26
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -46393,6 +46940,7 @@ agcls.AgTypeNameMap["IRungeKuttaV8th9th"] = IRungeKuttaV8th9th
 
 class DriverMissionControlSequence(IDriverMissionControlSequence, IVehiclePropagator):
     """Basic properties of an Astrogator satellite."""
+
     def __init__(self, sourceObject=None):
         IDriverMissionControlSequence.__init__(self, sourceObject)
         IVehiclePropagator.__init__(self, sourceObject)
@@ -46411,6 +46959,7 @@ agcls.AgTypeNameMap["DriverMissionControlSequence"] = DriverMissionControlSequen
 
 class MissionControlSequenceSegmentCollection(IMissionControlSequenceSegmentCollection, IRuntimeTypeInfoProvider):
     """The Mission Control Sequence."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegmentCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46429,6 +46978,7 @@ agcls.AgTypeNameMap["MissionControlSequenceSegmentCollection"] = MissionControlS
 
 class MissionControlSequenceEnd(IMissionControlSequenceEnd, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo):
     """The End segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceEnd.__init__(self, sourceObject)
         IMissionControlSequenceSegment.__init__(self, sourceObject)
@@ -46451,6 +47001,7 @@ agcls.AgTypeNameMap["MissionControlSequenceEnd"] = MissionControlSequenceEnd
 
 class MissionControlSequenceInitialState(IMissionControlSequenceInitialState, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable):
     """The Initial State segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceInitialState.__init__(self, sourceObject)
         IMissionControlSequenceSegment.__init__(self, sourceObject)
@@ -46475,6 +47026,7 @@ agcls.AgTypeNameMap["MissionControlSequenceInitialState"] = MissionControlSequen
 
 class SpacecraftParameters(ISpacecraftParameters, IRuntimeTypeInfoProvider):
     """Spacecraft parameters."""
+
     def __init__(self, sourceObject=None):
         ISpacecraftParameters.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46493,6 +47045,7 @@ agcls.AgTypeNameMap["SpacecraftParameters"] = SpacecraftParameters
 
 class FuelTank(IFuelTank, IRuntimeTypeInfoProvider):
     """Fuel Tank parameters."""
+
     def __init__(self, sourceObject=None):
         IFuelTank.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46511,6 +47064,7 @@ agcls.AgTypeNameMap["FuelTank"] = FuelTank
 
 class ElementCartesian(IElementCartesian, IElement, IRuntimeTypeInfoProvider):
     """Cartesian elements."""
+
     def __init__(self, sourceObject=None):
         IElementCartesian.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46531,6 +47085,7 @@ agcls.AgTypeNameMap["ElementCartesian"] = ElementCartesian
 
 class ElementKeplerian(IElementKeplerian, IElement):
     """Keplerian elements."""
+
     def __init__(self, sourceObject=None):
         IElementKeplerian.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46549,6 +47104,7 @@ agcls.AgTypeNameMap["ElementKeplerian"] = ElementKeplerian
 
 class ElementEquinoctial(IElementEquinoctial, IElement):
     """Equinoctial elements."""
+
     def __init__(self, sourceObject=None):
         IElementEquinoctial.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46567,6 +47123,7 @@ agcls.AgTypeNameMap["ElementEquinoctial"] = ElementEquinoctial
 
 class ElementDelaunay(IElementDelaunay, IElement):
     """Delaunay elements."""
+
     def __init__(self, sourceObject=None):
         IElementDelaunay.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46585,6 +47142,7 @@ agcls.AgTypeNameMap["ElementDelaunay"] = ElementDelaunay
 
 class ElementMixedSpherical(IElementMixedSpherical, IElement):
     """Mixed Spherical elements."""
+
     def __init__(self, sourceObject=None):
         IElementMixedSpherical.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46603,6 +47161,7 @@ agcls.AgTypeNameMap["ElementMixedSpherical"] = ElementMixedSpherical
 
 class ElementSpherical(IElementSpherical, IElement):
     """Spherical elements."""
+
     def __init__(self, sourceObject=None):
         IElementSpherical.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46621,6 +47180,7 @@ agcls.AgTypeNameMap["ElementSpherical"] = ElementSpherical
 
 class ElementTargetVectorIncomingAsymptote(IElementTargetVectorIncomingAsymptote, IElement):
     """Target Vector Incoming Asymptote elements."""
+
     def __init__(self, sourceObject=None):
         IElementTargetVectorIncomingAsymptote.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46639,6 +47199,7 @@ agcls.AgTypeNameMap["ElementTargetVectorIncomingAsymptote"] = ElementTargetVecto
 
 class ElementTargetVectorOutgoingAsymptote(IElementTargetVectorOutgoingAsymptote, IElement):
     """Target Vector Outgoing Asymptote elements."""
+
     def __init__(self, sourceObject=None):
         IElementTargetVectorOutgoingAsymptote.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46657,6 +47218,7 @@ agcls.AgTypeNameMap["ElementTargetVectorOutgoingAsymptote"] = ElementTargetVecto
 
 class ElementGeodetic(IElementGeodetic, IElement):
     """Geodetic elements."""
+
     def __init__(self, sourceObject=None):
         IElementGeodetic.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46675,6 +47237,7 @@ agcls.AgTypeNameMap["ElementGeodetic"] = ElementGeodetic
 
 class ElementBPlane(IElementBPlane, IElement):
     """Bplane elements."""
+
     def __init__(self, sourceObject=None):
         IElementBPlane.__init__(self, sourceObject)
         IElement.__init__(self, sourceObject)
@@ -46693,6 +47256,7 @@ agcls.AgTypeNameMap["ElementBPlane"] = ElementBPlane
 
 class MissionControlSequencePropagate(IMissionControlSequenceSegment, IMissionControlSequencePropagate, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider):
     """The Propagate segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IMissionControlSequencePropagate.__init__(self, sourceObject)
@@ -46717,6 +47281,7 @@ agcls.AgTypeNameMap["MissionControlSequencePropagate"] = MissionControlSequenceP
 
 class State(IState, IRuntimeTypeInfoProvider):
     """The orbit state."""
+
     def __init__(self, sourceObject=None):
         IState.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46735,6 +47300,7 @@ agcls.AgTypeNameMap["State"] = State
 
 class StoppingConditionCollection(IStoppingConditionCollection, IRuntimeTypeInfoProvider):
     """The stopping conditions collection."""
+
     def __init__(self, sourceObject=None):
         IStoppingConditionCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46753,6 +47319,7 @@ agcls.AgTypeNameMap["StoppingConditionCollection"] = StoppingConditionCollection
 
 class AccessStoppingCondition(IComponentInfo, ICloneable, IAccessStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """The Access stopping condition."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -46777,6 +47344,7 @@ agcls.AgTypeNameMap["AccessStoppingCondition"] = AccessStoppingCondition
 
 class LightingStoppingCondition(IComponentInfo, ICloneable, ILightingStoppingCondition, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """The Lighting stopping condition."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -46801,6 +47369,7 @@ agcls.AgTypeNameMap["LightingStoppingCondition"] = LightingStoppingCondition
 
 class StoppingCondition(IStoppingCondition, IComponentInfo, ICloneable, IStoppingConditionComponent, IRuntimeTypeInfoProvider):
     """A stopping condition."""
+
     def __init__(self, sourceObject=None):
         IStoppingCondition.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -46825,6 +47394,7 @@ agcls.AgTypeNameMap["StoppingCondition"] = StoppingCondition
 
 class StoppingConditionElement(IStoppingConditionElement, IComponentInfo, IRuntimeTypeInfoProvider):
     """A stopping condition."""
+
     def __init__(self, sourceObject=None):
         IStoppingConditionElement.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -46845,6 +47415,7 @@ agcls.AgTypeNameMap["StoppingConditionElement"] = StoppingConditionElement
 
 class MissionControlSequenceSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable):
     """The Sequence segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46869,6 +47440,7 @@ agcls.AgTypeNameMap["MissionControlSequenceSequence"] = MissionControlSequenceSe
 
 class MissionControlSequenceBackwardSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceBackwardSequence, IMissionControlSequenceSequence, IComponentInfo, ICloneable):
     """The Backward Sequence segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46895,6 +47467,7 @@ agcls.AgTypeNameMap["MissionControlSequenceBackwardSequence"] = MissionControlSe
 
 class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceLaunch, IComponentInfo, ICloneable):
     """The Launch segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -46919,6 +47492,7 @@ agcls.AgTypeNameMap["MissionControlSequenceLaunch"] = MissionControlSequenceLaun
 
 class DisplaySystemGeodetic(IDisplaySystemGeodetic, IDisplaySystem):
     """The geodetic launch location."""
+
     def __init__(self, sourceObject=None):
         IDisplaySystemGeodetic.__init__(self, sourceObject)
         IDisplaySystem.__init__(self, sourceObject)
@@ -46937,6 +47511,7 @@ agcls.AgTypeNameMap["DisplaySystemGeodetic"] = DisplaySystemGeodetic
 
 class DisplaySystemGeocentric(IDisplaySystemGeocentric, IDisplaySystem):
     """The geocentric launch location."""
+
     def __init__(self, sourceObject=None):
         IDisplaySystemGeocentric.__init__(self, sourceObject)
         IDisplaySystem.__init__(self, sourceObject)
@@ -46955,6 +47530,7 @@ agcls.AgTypeNameMap["DisplaySystemGeocentric"] = DisplaySystemGeocentric
 
 class BurnoutGeodetic(IBurnoutGeodetic, IBurnout):
     """The geodetic burnout point."""
+
     def __init__(self, sourceObject=None):
         IBurnoutGeodetic.__init__(self, sourceObject)
         IBurnout.__init__(self, sourceObject)
@@ -46973,6 +47549,7 @@ agcls.AgTypeNameMap["BurnoutGeodetic"] = BurnoutGeodetic
 
 class BurnoutCBFCartesian(IBurnoutCBFCartesian, IBurnout):
     """The burnout state in CBF Cartesian coordinates."""
+
     def __init__(self, sourceObject=None):
         IBurnoutCBFCartesian.__init__(self, sourceObject)
         IBurnout.__init__(self, sourceObject)
@@ -46991,6 +47568,7 @@ agcls.AgTypeNameMap["BurnoutCBFCartesian"] = BurnoutCBFCartesian
 
 class BurnoutGeocentric(IBurnoutGeocentric, IBurnout):
     """The geocentric burnout point."""
+
     def __init__(self, sourceObject=None):
         IBurnoutGeocentric.__init__(self, sourceObject)
         IBurnout.__init__(self, sourceObject)
@@ -47009,6 +47587,7 @@ agcls.AgTypeNameMap["BurnoutGeocentric"] = BurnoutGeocentric
 
 class BurnoutLaunchAzAltitude(IBurnoutLaunchAzAltitude, IBurnout):
     """The launch azimuth and altitude burnout point."""
+
     def __init__(self, sourceObject=None):
         IBurnoutLaunchAzAltitude.__init__(self, sourceObject)
         IBurnout.__init__(self, sourceObject)
@@ -47027,6 +47606,7 @@ agcls.AgTypeNameMap["BurnoutLaunchAzAltitude"] = BurnoutLaunchAzAltitude
 
 class BurnoutLaunchAzRadius(IBurnoutLaunchAzRadius, IBurnout):
     """The launch azimuth and radius burnout point."""
+
     def __init__(self, sourceObject=None):
         IBurnoutLaunchAzRadius.__init__(self, sourceObject)
         IBurnout.__init__(self, sourceObject)
@@ -47045,6 +47625,7 @@ agcls.AgTypeNameMap["BurnoutLaunchAzRadius"] = BurnoutLaunchAzRadius
 
 class BurnoutVelocity(IBurnoutVelocity):
     """The burnout velocity."""
+
     def __init__(self, sourceObject=None):
         IBurnoutVelocity.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47061,6 +47642,7 @@ agcls.AgTypeNameMap["BurnoutVelocity"] = BurnoutVelocity
 
 class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceFollow, IComponentInfo, ICloneable):
     """The Follow segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47085,6 +47667,7 @@ agcls.AgTypeNameMap["MissionControlSequenceFollow"] = MissionControlSequenceFoll
 
 class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceManeuver, IComponentInfo, ICloneable):
     """The Maneuver segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47109,6 +47692,7 @@ agcls.AgTypeNameMap["MissionControlSequenceManeuver"] = MissionControlSequenceMa
 
 class ManeuverFinite(IManeuverFinite, IManeuver, IRuntimeTypeInfoProvider):
     """The Finite Maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverFinite.__init__(self, sourceObject)
         IManeuver.__init__(self, sourceObject)
@@ -47129,6 +47713,7 @@ agcls.AgTypeNameMap["ManeuverFinite"] = ManeuverFinite
 
 class ManeuverImpulsive(IManeuverImpulsive, IManeuver, IRuntimeTypeInfoProvider):
     """The Impulsive Maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverImpulsive.__init__(self, sourceObject)
         IManeuver.__init__(self, sourceObject)
@@ -47149,6 +47734,7 @@ agcls.AgTypeNameMap["ManeuverImpulsive"] = ManeuverImpulsive
 
 class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsiveVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The velocity vector attitude control for an impulsive maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlImpulsiveVelocityVector.__init__(self, sourceObject)
         IAttitudeControlImpulsive.__init__(self, sourceObject)
@@ -47171,6 +47757,7 @@ agcls.AgTypeNameMap["AttitudeControlImpulsiveVelocityVector"] = AttitudeControlI
 
 class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsiveAntiVelocityVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The anti-velocity vector attitude control for an impulsive maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlImpulsiveAntiVelocityVector.__init__(self, sourceObject)
         IAttitudeControlImpulsive.__init__(self, sourceObject)
@@ -47193,6 +47780,7 @@ agcls.AgTypeNameMap["AttitudeControlImpulsiveAntiVelocityVector"] = AttitudeCont
 
 class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsiveAttitude, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The attitude attitude control for an impulsive maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlImpulsiveAttitude.__init__(self, sourceObject)
         IAttitudeControlImpulsive.__init__(self, sourceObject)
@@ -47215,6 +47803,7 @@ agcls.AgTypeNameMap["AttitudeControlImpulsiveAttitude"] = AttitudeControlImpulsi
 
 class AttitudeControlImpulsiveFile(IAttitudeControlImpulsiveFile, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The file attitude control for an impulsive maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlImpulsiveFile.__init__(self, sourceObject)
         IAttitudeControlImpulsive.__init__(self, sourceObject)
@@ -47237,6 +47826,7 @@ agcls.AgTypeNameMap["AttitudeControlImpulsiveFile"] = AttitudeControlImpulsiveFi
 
 class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsiveThrustVector, IAttitudeControlImpulsive, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The thrust vector attitude control for an impulsive maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlImpulsiveThrustVector.__init__(self, sourceObject)
         IAttitudeControlImpulsive.__init__(self, sourceObject)
@@ -47259,6 +47849,7 @@ agcls.AgTypeNameMap["AttitudeControlImpulsiveThrustVector"] = AttitudeControlImp
 
 class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFiniteAntiVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The anti-velocity vector attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteAntiVelocityVector.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47281,6 +47872,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteAntiVelocityVector"] = AttitudeControl
 
 class AttitudeControlFiniteAttitude(IAttitudeControlFiniteAttitude, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The attitude attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteAttitude.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47303,6 +47895,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteAttitude"] = AttitudeControlFiniteAtti
 
 class AttitudeControlFiniteFile(IAttitudeControlFiniteFile, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The file attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteFile.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47325,6 +47918,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteFile"] = AttitudeControlFiniteFile
 
 class AttitudeControlFiniteThrustVector(IAttitudeControlFiniteThrustVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The thrust vector attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteThrustVector.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47347,6 +47941,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteThrustVector"] = AttitudeControlFinite
 
 class AttitudeControlFiniteTimeVarying(IAttitudeControlFiniteTimeVarying, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The time varying attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteTimeVarying.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47369,6 +47964,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteTimeVarying"] = AttitudeControlFiniteT
 
 class AttitudeControlFiniteVelocityVector(IAttitudeControlFiniteVelocityVector, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The velocity vector attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFiniteVelocityVector.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47391,6 +47987,7 @@ agcls.AgTypeNameMap["AttitudeControlFiniteVelocityVector"] = AttitudeControlFini
 
 class AttitudeControlFinitePlugin(IAttitudeControlFinitePlugin, IAttitudeControlFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The plugin attitude control for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlFinitePlugin.__init__(self, sourceObject)
         IAttitudeControlFinite.__init__(self, sourceObject)
@@ -47413,6 +48010,7 @@ agcls.AgTypeNameMap["AttitudeControlFinitePlugin"] = AttitudeControlFinitePlugin
 
 class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFiniteLagrange, IAttitudeControlOptimalFinite, IAttitudeControl, IRuntimeTypeInfoProvider):
     """The Lagrange Interpolation attitude control for a optimal finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IAttitudeControlOptimalFiniteLagrange.__init__(self, sourceObject)
         IAttitudeControlOptimalFinite.__init__(self, sourceObject)
@@ -47435,6 +48033,7 @@ agcls.AgTypeNameMap["AttitudeControlOptimalFiniteLagrange"] = AttitudeControlOpt
 
 class ManeuverFinitePropagator(IManeuverFinitePropagator, IRuntimeTypeInfoProvider):
     """Propagation for a finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverFinitePropagator.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47453,6 +48052,7 @@ agcls.AgTypeNameMap["ManeuverFinitePropagator"] = ManeuverFinitePropagator
 
 class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceHold, IComponentInfo, ICloneable):
     """The Hold segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47477,6 +48077,7 @@ agcls.AgTypeNameMap["MissionControlSequenceHold"] = MissionControlSequenceHold
 
 class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceUpdate, IComponentInfo, ICloneable):
     """The Update segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47501,6 +48102,7 @@ agcls.AgTypeNameMap["MissionControlSequenceUpdate"] = MissionControlSequenceUpda
 
 class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceReturn, IComponentInfo, ICloneable):
     """The Return segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47525,6 +48127,7 @@ agcls.AgTypeNameMap["MissionControlSequenceReturn"] = MissionControlSequenceRetu
 
 class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceStop, IComponentInfo, ICloneable):
     """The Stop segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47549,6 +48152,7 @@ agcls.AgTypeNameMap["MissionControlSequenceStop"] = MissionControlSequenceStop
 
 class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceTargetSequence, IComponentInfo, ICloneable):
     """The Target Sequence segment."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47573,6 +48177,7 @@ agcls.AgTypeNameMap["MissionControlSequenceTargetSequence"] = MissionControlSequ
 
 class ProfileCollection(IProfileCollection, IRuntimeTypeInfoProvider):
     """The Profiles of a Target Sequence."""
+
     def __init__(self, sourceObject=None):
         IProfileCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47591,6 +48196,7 @@ agcls.AgTypeNameMap["ProfileCollection"] = ProfileCollection
 
 class MissionControlSequenceOptions(IMissionControlSequenceOptions):
     """The MCS Options."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47607,6 +48213,7 @@ agcls.AgTypeNameMap["MissionControlSequenceOptions"] = MissionControlSequenceOpt
 
 class CalcObjectCollection(ICalcObjectCollection):
     """The Calculation Object component folder."""
+
     def __init__(self, sourceObject=None):
         ICalcObjectCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47623,6 +48230,7 @@ agcls.AgTypeNameMap["CalcObjectCollection"] = CalcObjectCollection
 
 class ConstraintCollection(IConstraintCollection):
     """The Constraint component folder."""
+
     def __init__(self, sourceObject=None):
         IConstraintCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47639,6 +48247,7 @@ agcls.AgTypeNameMap["ConstraintCollection"] = ConstraintCollection
 
 class PluginProperties(IPluginProperties):
     """The plugin attitude control type."""
+
     def __init__(self, sourceObject=None):
         IPluginProperties.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47655,6 +48264,7 @@ agcls.AgTypeNameMap["PluginProperties"] = PluginProperties
 
 class ProfileSearchPlugin(IProfileSearchPlugin, IProfile, IRuntimeTypeInfoProvider):
     """The plugin search profile."""
+
     def __init__(self, sourceObject=None):
         IProfileSearchPlugin.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -47675,6 +48285,7 @@ agcls.AgTypeNameMap["ProfileSearchPlugin"] = ProfileSearchPlugin
 
 class TargeterGraph(ITargeterGraph, IRuntimeTypeInfoProvider):
     """Targeter Graph."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraph.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47693,6 +48304,7 @@ agcls.AgTypeNameMap["TargeterGraph"] = TargeterGraph
 
 class TargeterGraphCollection(ITargeterGraphCollection, IRuntimeTypeInfoProvider):
     """Targeter Graphs."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraphCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47711,6 +48323,7 @@ agcls.AgTypeNameMap["TargeterGraphCollection"] = TargeterGraphCollection
 
 class TargeterGraphResultCollection(ITargeterGraphResultCollection, IRuntimeTypeInfoProvider):
     """Targeter Graph Result Collection."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraphResultCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47729,6 +48342,7 @@ agcls.AgTypeNameMap["TargeterGraphResultCollection"] = TargeterGraphResultCollec
 
 class TargeterGraphActiveControlCollection(ITargeterGraphActiveControlCollection, IRuntimeTypeInfoProvider):
     """Targeter Graph Active Control Collection."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraphActiveControlCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47747,6 +48361,7 @@ agcls.AgTypeNameMap["TargeterGraphActiveControlCollection"] = TargeterGraphActiv
 
 class TargeterGraphActiveControl(ITargeterGraphActiveControl, IRuntimeTypeInfoProvider):
     """Targeter Graph Active Control."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraphActiveControl.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47765,6 +48380,7 @@ agcls.AgTypeNameMap["TargeterGraphActiveControl"] = TargeterGraphActiveControl
 
 class TargeterGraphResult(ITargeterGraphResult, IRuntimeTypeInfoProvider):
     """Targeter Graph Result."""
+
     def __init__(self, sourceObject=None):
         ITargeterGraphResult.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47783,6 +48399,7 @@ agcls.AgTypeNameMap["TargeterGraphResult"] = TargeterGraphResult
 
 class ProfileDifferentialCorrector(IProfileDifferentialCorrector, IProfile, IRuntimeTypeInfoProvider):
     """The Differential Corrector profile."""
+
     def __init__(self, sourceObject=None):
         IProfileDifferentialCorrector.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -47803,6 +48420,7 @@ agcls.AgTypeNameMap["ProfileDifferentialCorrector"] = ProfileDifferentialCorrect
 
 class ProfileScriptingTool(IProfileScriptingTool, IProfile, IRuntimeTypeInfoProvider):
     """The Scripting Tool profile."""
+
     def __init__(self, sourceObject=None):
         IProfileScriptingTool.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -47823,6 +48441,7 @@ agcls.AgTypeNameMap["ProfileScriptingTool"] = ProfileScriptingTool
 
 class DifferentialCorrectorControl(IDifferentialCorrectorControl, IRuntimeTypeInfoProvider):
     """Control Parameters for a Target Sequence."""
+
     def __init__(self, sourceObject=None):
         IDifferentialCorrectorControl.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47841,6 +48460,7 @@ agcls.AgTypeNameMap["DifferentialCorrectorControl"] = DifferentialCorrectorContr
 
 class DifferentialCorrectorResult(IDifferentialCorrectorResult, IRuntimeTypeInfoProvider):
     """Differential Corrector equality constraints."""
+
     def __init__(self, sourceObject=None):
         IDifferentialCorrectorResult.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47859,6 +48479,7 @@ agcls.AgTypeNameMap["DifferentialCorrectorResult"] = DifferentialCorrectorResult
 
 class DifferentialCorrectorControlCollection(IDifferentialCorrectorControlCollection, IRuntimeTypeInfoProvider):
     """The collection of Control Parameters for a differential corrector profile."""
+
     def __init__(self, sourceObject=None):
         IDifferentialCorrectorControlCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47877,6 +48498,7 @@ agcls.AgTypeNameMap["DifferentialCorrectorControlCollection"] = DifferentialCorr
 
 class DifferentialCorrectorResultCollection(IDifferentialCorrectorResultCollection, IRuntimeTypeInfoProvider):
     """The collection of results for a differential corrector."""
+
     def __init__(self, sourceObject=None):
         IDifferentialCorrectorResultCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -47895,6 +48517,7 @@ agcls.AgTypeNameMap["DifferentialCorrectorResultCollection"] = DifferentialCorre
 
 class SearchPluginControl(ISearchPluginControl):
     """Control parameters for a plugin search profile."""
+
     def __init__(self, sourceObject=None):
         ISearchPluginControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47910,7 +48533,8 @@ agcls.AgClassCatalog.add_catalog_entry("{C127E67D-2078-4605-BB16-BF4049CBDEF0}",
 agcls.AgTypeNameMap["SearchPluginControl"] = SearchPluginControl
 
 class SearchPluginControlCollection(ISearchPluginControlCollection):
-    """The list of search plugin control parameters"""
+    """The list of search plugin control parameters."""
+
     def __init__(self, sourceObject=None):
         ISearchPluginControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47927,6 +48551,7 @@ agcls.AgTypeNameMap["SearchPluginControlCollection"] = SearchPluginControlCollec
 
 class SearchPluginResult(ISearchPluginResult):
     """Equality constraints for a plugin search profile."""
+
     def __init__(self, sourceObject=None):
         ISearchPluginResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47943,6 +48568,7 @@ agcls.AgTypeNameMap["SearchPluginResult"] = SearchPluginResult
 
 class SearchPluginResultCollection(ISearchPluginResultCollection):
     """The list of search plugin equality constraints."""
+
     def __init__(self, sourceObject=None):
         ISearchPluginResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -47959,6 +48585,7 @@ agcls.AgTypeNameMap["SearchPluginResultCollection"] = SearchPluginResultCollecti
 
 class ProfileChangeManeuverType(IProfileChangeManeuverType, IProfile, IRuntimeTypeInfoProvider):
     """The Change Maneuver Type profile."""
+
     def __init__(self, sourceObject=None):
         IProfileChangeManeuverType.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -47979,6 +48606,7 @@ agcls.AgTypeNameMap["ProfileChangeManeuverType"] = ProfileChangeManeuverType
 
 class ProfileChangeReturnSegment(IProfileChangeReturnSegment, IProfile, IRuntimeTypeInfoProvider):
     """The Change Return Segment profile."""
+
     def __init__(self, sourceObject=None):
         IProfileChangeReturnSegment.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -47999,6 +48627,7 @@ agcls.AgTypeNameMap["ProfileChangeReturnSegment"] = ProfileChangeReturnSegment
 
 class ProfileChangePropagator(IProfileChangePropagator, IProfile, IRuntimeTypeInfoProvider):
     """The Change Propagator profile."""
+
     def __init__(self, sourceObject=None):
         IProfileChangePropagator.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -48019,6 +48648,7 @@ agcls.AgTypeNameMap["ProfileChangePropagator"] = ProfileChangePropagator
 
 class ProfileChangeStopSegment(IProfileChangeStopSegment, IProfile, IRuntimeTypeInfoProvider):
     """The Change Stop Segment profile."""
+
     def __init__(self, sourceObject=None):
         IProfileChangeStopSegment.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -48039,6 +48669,7 @@ agcls.AgTypeNameMap["ProfileChangeStopSegment"] = ProfileChangeStopSegment
 
 class ProfileChangeStoppingConditionState(IProfileChangeStoppingConditionState, IProfile, IRuntimeTypeInfoProvider):
     """The Change Stopping Condition State profile."""
+
     def __init__(self, sourceObject=None):
         IProfileChangeStoppingConditionState.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -48059,6 +48690,7 @@ agcls.AgTypeNameMap["ProfileChangeStoppingConditionState"] = ProfileChangeStoppi
 
 class ProfileSeedFiniteManeuver(IProfileSeedFiniteManeuver, IProfile, IRuntimeTypeInfoProvider):
     """The Seed Finite Maneuver profile."""
+
     def __init__(self, sourceObject=None):
         IProfileSeedFiniteManeuver.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -48079,6 +48711,7 @@ agcls.AgTypeNameMap["ProfileSeedFiniteManeuver"] = ProfileSeedFiniteManeuver
 
 class ProfileRunOnce(IProfileRunOnce, IProfile, IRuntimeTypeInfoProvider):
     """The Run Once profile."""
+
     def __init__(self, sourceObject=None):
         IProfileRunOnce.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -48099,6 +48732,7 @@ agcls.AgTypeNameMap["ProfileRunOnce"] = ProfileRunOnce
 
 class BPlaneCollection(IBPlaneCollection):
     """The collection of B-Planes."""
+
     def __init__(self, sourceObject=None):
         IBPlaneCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -48115,6 +48749,7 @@ agcls.AgTypeNameMap["BPlaneCollection"] = BPlaneCollection
 
 class StateCalcDamageFlux(IStateCalcDamageFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcDamageFlux."""
+
     def __init__(self, sourceObject=None):
         IStateCalcDamageFlux.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48135,6 +48770,7 @@ agcls.AgTypeNameMap["StateCalcDamageFlux"] = StateCalcDamageFlux
 
 class StateCalcDamageMassFlux(IStateCalcDamageMassFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcDamageMassFlux."""
+
     def __init__(self, sourceObject=None):
         IStateCalcDamageMassFlux.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48155,6 +48791,7 @@ agcls.AgTypeNameMap["StateCalcDamageMassFlux"] = StateCalcDamageMassFlux
 
 class StateCalcMagnitudeFieldDipoleL(IStateCalcMagnitudeFieldDipoleL, IComponentInfo, ICloneable):
     """CoClass StateCalcMagFieldDipoleL."""
+
     def __init__(self, sourceObject=None):
         IStateCalcMagnitudeFieldDipoleL.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48175,6 +48812,7 @@ agcls.AgTypeNameMap["StateCalcMagnitudeFieldDipoleL"] = StateCalcMagnitudeFieldD
 
 class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, IStateCalcSEETMagnitudeFieldFieldLineSepAngle):
     """SEETMagFieldFieldLineSepAngle Calc object."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48195,6 +48833,7 @@ agcls.AgTypeNameMap["StateCalcSEETMagnitudeFieldFieldLineSepAngle"] = StateCalcS
 
 class StateCalcImpactFlux(IStateCalcImpactFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcImpactFlux."""
+
     def __init__(self, sourceObject=None):
         IStateCalcImpactFlux.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48215,6 +48854,7 @@ agcls.AgTypeNameMap["StateCalcImpactFlux"] = StateCalcImpactFlux
 
 class StateCalcImpactMassFlux(IStateCalcImpactMassFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcImpactMassFlux."""
+
     def __init__(self, sourceObject=None):
         IStateCalcImpactMassFlux.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48235,6 +48875,7 @@ agcls.AgTypeNameMap["StateCalcImpactMassFlux"] = StateCalcImpactMassFlux
 
 class StateCalcSEETSAAFlux(IStateCalcSEETSAAFlux, IComponentInfo, ICloneable):
     """CoClass StateCalcSEETSAAFlux."""
+
     def __init__(self, sourceObject=None):
         IStateCalcSEETSAAFlux.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48255,6 +48896,7 @@ agcls.AgTypeNameMap["StateCalcSEETSAAFlux"] = StateCalcSEETSAAFlux
 
 class StateCalcSEETVehTemp(IStateCalcSEETVehTemp, IComponentInfo, ICloneable):
     """CoClass StateCalcSEETVehTemp."""
+
     def __init__(self, sourceObject=None):
         IStateCalcSEETVehTemp.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48275,6 +48917,7 @@ agcls.AgTypeNameMap["StateCalcSEETVehTemp"] = StateCalcSEETVehTemp
 
 class StateCalcEpoch(IComponentInfo, ICloneable, IStateCalcEpoch):
     """Epoch Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48295,6 +48938,7 @@ agcls.AgTypeNameMap["StateCalcEpoch"] = StateCalcEpoch
 
 class StateCalcJacobiConstant(IComponentInfo, ICloneable, IStateCalcJacobiConstant):
     """Jacobi Constant Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48315,6 +48959,7 @@ agcls.AgTypeNameMap["StateCalcJacobiConstant"] = StateCalcJacobiConstant
 
 class StateCalcCartesianElem(IComponentInfo, ICloneable, IStateCalcCartesianElem):
     """Cartesian Elements Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48335,6 +48980,7 @@ agcls.AgTypeNameMap["StateCalcCartesianElem"] = StateCalcCartesianElem
 
 class StateCalcCartSTMElem(IComponentInfo, ICloneable, IStateCalcCartSTMElem):
     """Cartesian STM Elements Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48355,6 +49001,7 @@ agcls.AgTypeNameMap["StateCalcCartSTMElem"] = StateCalcCartSTMElem
 
 class StateCalcSTMEigenval(IComponentInfo, ICloneable, IStateCalcSTMEigenval):
     """Cartesian STM Eigenvalues Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48375,6 +49022,7 @@ agcls.AgTypeNameMap["StateCalcSTMEigenval"] = StateCalcSTMEigenval
 
 class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, IStateCalcSTMEigenvecElem):
     """Cartesian STM Eigenvector Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48395,6 +49043,7 @@ agcls.AgTypeNameMap["StateCalcSTMEigenvecElem"] = StateCalcSTMEigenvecElem
 
 class StateCalcEnvironment(IComponentInfo, ICloneable, IStateCalcEnvironment):
     """Environment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48415,6 +49064,7 @@ agcls.AgTypeNameMap["StateCalcEnvironment"] = StateCalcEnvironment
 
 class StateCalcOrbitDelaunayG(IStateCalcOrbitDelaunayG, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayG."""
+
     def __init__(self, sourceObject=None):
         IStateCalcOrbitDelaunayG.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48435,6 +49085,7 @@ agcls.AgTypeNameMap["StateCalcOrbitDelaunayG"] = StateCalcOrbitDelaunayG
 
 class StateCalcOrbitDelaunayH(IStateCalcOrbitDelaunayH, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayH."""
+
     def __init__(self, sourceObject=None):
         IStateCalcOrbitDelaunayH.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48455,6 +49106,7 @@ agcls.AgTypeNameMap["StateCalcOrbitDelaunayH"] = StateCalcOrbitDelaunayH
 
 class StateCalcOrbitDelaunayL(IStateCalcOrbitDelaunayL, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitDelaunayL."""
+
     def __init__(self, sourceObject=None):
         IStateCalcOrbitDelaunayL.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48475,6 +49127,7 @@ agcls.AgTypeNameMap["StateCalcOrbitDelaunayL"] = StateCalcOrbitDelaunayL
 
 class StateCalcOrbitSemiLatusRectum(IStateCalcOrbitSemiLatusRectum, IComponentInfo, ICloneable):
     """CoClass AsStateCalcOrbitSemiLatusRectum."""
+
     def __init__(self, sourceObject=None):
         IStateCalcOrbitSemiLatusRectum.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -48495,6 +49148,7 @@ agcls.AgTypeNameMap["StateCalcOrbitSemiLatusRectum"] = StateCalcOrbitSemiLatusRe
 
 class StateCalcEquinoctialElem(IComponentInfo, ICloneable, IStateCalcEquinoctialElem):
     """Equinoctial Elements Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48515,6 +49169,7 @@ agcls.AgTypeNameMap["StateCalcEquinoctialElem"] = StateCalcEquinoctialElem
 
 class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, IStateCalcCloseApproachBearing):
     """CloseApproachBearing Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48535,6 +49190,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachBearing"] = StateCalcCloseApproachBea
 
 class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, IStateCalcCloseApproachMagnitude):
     """CloseApproachMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48555,6 +49211,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachMagnitude"] = StateCalcCloseApproachM
 
 class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, IStateCalcCloseApproachTheta):
     """CloseApproachTheta Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48575,6 +49232,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachTheta"] = StateCalcCloseApproachTheta
 
 class StateCalcCloseApproachX(IComponentInfo, ICloneable, IStateCalcCloseApproachX):
     """CloseApproachX Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48595,6 +49253,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachX"] = StateCalcCloseApproachX
 
 class StateCalcCloseApproachY(IComponentInfo, ICloneable, IStateCalcCloseApproachY):
     """CloseApproachY Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48615,6 +49274,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachY"] = StateCalcCloseApproachY
 
 class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, IStateCalcCloseApproachCosBearing):
     """CloseApproachCosBearing Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48635,6 +49295,7 @@ agcls.AgTypeNameMap["StateCalcCloseApproachCosBearing"] = StateCalcCloseApproach
 
 class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, IStateCalcRelGroundTrackError):
     """RelGroundTrackError Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48655,6 +49316,7 @@ agcls.AgTypeNameMap["StateCalcRelGroundTrackError"] = StateCalcRelGroundTrackErr
 
 class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, IStateCalcRelAtAOLMaster):
     """RelAOLMaster Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48675,6 +49337,7 @@ agcls.AgTypeNameMap["StateCalcRelAtAOLMaster"] = StateCalcRelAtAOLMaster
 
 class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, IStateCalcDeltaFromMaster):
     """DeltaFromMaster Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48695,6 +49358,7 @@ agcls.AgTypeNameMap["StateCalcDeltaFromMaster"] = StateCalcDeltaFromMaster
 
 class StateCalcLonDriftRate(IComponentInfo, ICloneable, IStateCalcLonDriftRate):
     """LongDriftRate Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48715,6 +49379,7 @@ agcls.AgTypeNameMap["StateCalcLonDriftRate"] = StateCalcLonDriftRate
 
 class StateCalcMeanEarthLon(IComponentInfo, ICloneable, IStateCalcMeanEarthLon):
     """MeanEarthLon Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48735,6 +49400,7 @@ agcls.AgTypeNameMap["StateCalcMeanEarthLon"] = StateCalcMeanEarthLon
 
 class StateCalcRectifiedLon(IComponentInfo, ICloneable, IStateCalcRectifiedLon):
     """RectifiedLongitude Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48755,6 +49421,7 @@ agcls.AgTypeNameMap["StateCalcRectifiedLon"] = StateCalcRectifiedLon
 
 class StateCalcTrueLongitude(IComponentInfo, ICloneable, IStateCalcTrueLongitude):
     """TrueLongitude Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48775,6 +49442,7 @@ agcls.AgTypeNameMap["StateCalcTrueLongitude"] = StateCalcTrueLongitude
 
 class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitude):
     """GeodeticTrueLongitude Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48795,6 +49463,7 @@ agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitude"] = StateCalcGeodeticTrueLon
 
 class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee):
     """GeodeticTrueLongitudeAtTimeOfPerigee Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48815,6 +49484,7 @@ agcls.AgTypeNameMap["StateCalcGeodeticTrueLongitudeAtTimeOfPerigee"] = StateCalc
 
 class StateCalcMeanRightAscension(IComponentInfo, ICloneable, IStateCalcMeanRightAscension):
     """MeanRightAscension Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48835,6 +49505,7 @@ agcls.AgTypeNameMap["StateCalcMeanRightAscension"] = StateCalcMeanRightAscension
 
 class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, IStateCalcGeodeticMeanRightAscension):
     """GeodeticMeanRightAscension Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48855,6 +49526,7 @@ agcls.AgTypeNameMap["StateCalcGeodeticMeanRightAscension"] = StateCalcGeodeticMe
 
 class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, IStateCalcTwoBodyDriftRate):
     """TwoBodyDriftRate Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48875,6 +49547,7 @@ agcls.AgTypeNameMap["StateCalcTwoBodyDriftRate"] = StateCalcTwoBodyDriftRate
 
 class StateCalcDriftRateFactor(IComponentInfo, ICloneable, IStateCalcDriftRateFactor):
     """DriftRateFactor Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48895,6 +49568,7 @@ agcls.AgTypeNameMap["StateCalcDriftRateFactor"] = StateCalcDriftRateFactor
 
 class StateCalcEccentricityX(IComponentInfo, ICloneable, IStateCalcEccentricityX):
     """EccentricityX Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48915,6 +49589,7 @@ agcls.AgTypeNameMap["StateCalcEccentricityX"] = StateCalcEccentricityX
 
 class StateCalcEccentricityY(IComponentInfo, ICloneable, IStateCalcEccentricityY):
     """EccentricityY Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48935,6 +49610,7 @@ agcls.AgTypeNameMap["StateCalcEccentricityY"] = StateCalcEccentricityY
 
 class StateCalcInclinationX(IComponentInfo, ICloneable, IStateCalcInclinationX):
     """InclinationX Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48955,6 +49631,7 @@ agcls.AgTypeNameMap["StateCalcInclinationX"] = StateCalcInclinationX
 
 class StateCalcInclinationY(IComponentInfo, ICloneable, IStateCalcInclinationY):
     """InclinationY Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48975,6 +49652,7 @@ agcls.AgTypeNameMap["StateCalcInclinationY"] = StateCalcInclinationY
 
 class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumX):
     """UnitAngularMomentumX Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -48995,6 +49673,7 @@ agcls.AgTypeNameMap["StateCalcUnitAngularMomentumX"] = StateCalcUnitAngularMomen
 
 class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumY):
     """UnitAngularMomentumY Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49015,6 +49694,7 @@ agcls.AgTypeNameMap["StateCalcUnitAngularMomentumY"] = StateCalcUnitAngularMomen
 
 class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumZ):
     """UnitAngularMomentumZ Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49035,6 +49715,7 @@ agcls.AgTypeNameMap["StateCalcUnitAngularMomentumZ"] = StateCalcUnitAngularMomen
 
 class StateCalcHeightAboveTerrain(IStateCalcHeightAboveTerrain, IComponentInfo, ICloneable):
     """CoClass AsStateCalcHeightAboveTerrain."""
+
     def __init__(self, sourceObject=None):
         IStateCalcHeightAboveTerrain.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -49055,6 +49736,7 @@ agcls.AgTypeNameMap["StateCalcHeightAboveTerrain"] = StateCalcHeightAboveTerrain
 
 class StateCalcGeodeticElem(IComponentInfo, ICloneable, IStateCalcGeodeticElem):
     """Geodetic Elements Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49075,6 +49757,7 @@ agcls.AgTypeNameMap["StateCalcGeodeticElem"] = StateCalcGeodeticElem
 
 class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, IStateCalcRepeatingGroundTrackErr):
     """RepeatingGrTrackErr Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49095,6 +49778,7 @@ agcls.AgTypeNameMap["StateCalcRepeatingGroundTrackErr"] = StateCalcRepeatingGrou
 
 class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, IStateCalcAltitudeOfApoapsis):
     """AltitudeOfApoapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49115,6 +49799,7 @@ agcls.AgTypeNameMap["StateCalcAltitudeOfApoapsis"] = StateCalcAltitudeOfApoapsis
 
 class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, IStateCalcAltitudeOfPeriapsis):
     """AltitudeOfPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49135,6 +49820,7 @@ agcls.AgTypeNameMap["StateCalcAltitudeOfPeriapsis"] = StateCalcAltitudeOfPeriaps
 
 class StateCalcArgOfLat(IComponentInfo, ICloneable, IStateCalcArgOfLat):
     """Argument of Latitude Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49155,6 +49841,7 @@ agcls.AgTypeNameMap["StateCalcArgOfLat"] = StateCalcArgOfLat
 
 class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, IStateCalcArgOfPeriapsis):
     """Argument of Periapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49175,6 +49862,7 @@ agcls.AgTypeNameMap["StateCalcArgOfPeriapsis"] = StateCalcArgOfPeriapsis
 
 class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, IStateCalcEccentricityAnomaly):
     """EccAnomaly Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49195,6 +49883,7 @@ agcls.AgTypeNameMap["StateCalcEccentricityAnomaly"] = StateCalcEccentricityAnoma
 
 class StateCalcLonOfAscNode(IComponentInfo, ICloneable, IStateCalcLonOfAscNode):
     """LongitudeOfAscendingNode Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49215,6 +49904,7 @@ agcls.AgTypeNameMap["StateCalcLonOfAscNode"] = StateCalcLonOfAscNode
 
 class StateCalcMeanMotion(IComponentInfo, ICloneable, IStateCalcMeanMotion):
     """MeanMotion Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49235,6 +49925,7 @@ agcls.AgTypeNameMap["StateCalcMeanMotion"] = StateCalcMeanMotion
 
 class StateCalcOrbitPeriod(IComponentInfo, ICloneable, IStateCalcOrbitPeriod):
     """OrbitPeriod Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49255,6 +49946,7 @@ agcls.AgTypeNameMap["StateCalcOrbitPeriod"] = StateCalcOrbitPeriod
 
 class StateCalcNumRevs(IComponentInfo, ICloneable, IStateCalcNumRevs):
     """NumRevs Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49275,6 +49967,7 @@ agcls.AgTypeNameMap["StateCalcNumRevs"] = StateCalcNumRevs
 
 class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, IStateCalcRadOfApoapsis):
     """RadiusOfApoapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49295,6 +49988,7 @@ agcls.AgTypeNameMap["StateCalcRadOfApoapsis"] = StateCalcRadOfApoapsis
 
 class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, IStateCalcRadOfPeriapsis):
     """RadiusOfPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49315,6 +50009,7 @@ agcls.AgTypeNameMap["StateCalcRadOfPeriapsis"] = StateCalcRadOfPeriapsis
 
 class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, IStateCalcSemiMajorAxis):
     """SemiMajorAxis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49335,6 +50030,7 @@ agcls.AgTypeNameMap["StateCalcSemiMajorAxis"] = StateCalcSemiMajorAxis
 
 class StateCalcTimePastAscNode(IComponentInfo, ICloneable, IStateCalcTimePastAscNode):
     """TimePastAscNode Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49355,6 +50051,7 @@ agcls.AgTypeNameMap["StateCalcTimePastAscNode"] = StateCalcTimePastAscNode
 
 class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, IStateCalcTimePastPeriapsis):
     """TimePastPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49375,6 +50072,7 @@ agcls.AgTypeNameMap["StateCalcTimePastPeriapsis"] = StateCalcTimePastPeriapsis
 
 class StateCalcTrueAnomaly(IComponentInfo, ICloneable, IStateCalcTrueAnomaly):
     """TrueAnomaly Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49395,6 +50093,7 @@ agcls.AgTypeNameMap["StateCalcTrueAnomaly"] = StateCalcTrueAnomaly
 
 class StateCalcDeltaV(IComponentInfo, ICloneable, IStateCalcDeltaV):
     """DeltaV Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49415,6 +50114,7 @@ agcls.AgTypeNameMap["StateCalcDeltaV"] = StateCalcDeltaV
 
 class StateCalcDeltaVSquared(IComponentInfo, ICloneable, IStateCalcDeltaVSquared):
     """DeltaV Squared Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49435,6 +50135,7 @@ agcls.AgTypeNameMap["StateCalcDeltaVSquared"] = StateCalcDeltaVSquared
 
 class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, IStateCalcMissionControlSequenceDeltaV):
     """MCS DeltaV Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49455,6 +50156,7 @@ agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaV"] = StateCalcMissionC
 
 class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, IStateCalcMissionControlSequenceDeltaVSquared):
     """MCS DeltaV Squared Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49475,6 +50177,7 @@ agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaVSquared"] = StateCalcM
 
 class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, IStateCalcSequenceDeltaV):
     """Sequence DeltaV Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49495,6 +50198,7 @@ agcls.AgTypeNameMap["StateCalcSequenceDeltaV"] = StateCalcSequenceDeltaV
 
 class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, IStateCalcSequenceDeltaVSquared):
     """Sequence DeltaV Squared Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49515,6 +50219,7 @@ agcls.AgTypeNameMap["StateCalcSequenceDeltaVSquared"] = StateCalcSequenceDeltaVS
 
 class StateCalcFuelMass(IComponentInfo, ICloneable, IStateCalcFuelMass):
     """FuelMass Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49535,6 +50240,7 @@ agcls.AgTypeNameMap["StateCalcFuelMass"] = StateCalcFuelMass
 
 class StateCalcDensity(IComponentInfo, ICloneable, IStateCalcDensity):
     """Density  Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49555,6 +50261,7 @@ agcls.AgTypeNameMap["StateCalcDensity"] = StateCalcDensity
 
 class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, IStateCalcInertialDeltaVMagnitude):
     """InertialDeltaVMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49575,6 +50282,7 @@ agcls.AgTypeNameMap["StateCalcInertialDeltaVMagnitude"] = StateCalcInertialDelta
 
 class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, IStateCalcInertialDeltaVx):
     """InertialDeltaVx Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49595,6 +50303,7 @@ agcls.AgTypeNameMap["StateCalcInertialDeltaVx"] = StateCalcInertialDeltaVx
 
 class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, IStateCalcInertialDeltaVy):
     """InertialDeltaVy Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49615,6 +50324,7 @@ agcls.AgTypeNameMap["StateCalcInertialDeltaVy"] = StateCalcInertialDeltaVy
 
 class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, IStateCalcInertialDeltaVz):
     """InertialDeltaVz Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49635,6 +50345,7 @@ agcls.AgTypeNameMap["StateCalcInertialDeltaVz"] = StateCalcInertialDeltaVz
 
 class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, IStateCalcManeuverSpecificImpulse):
     """ManeuverSpecificImpulse Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49655,6 +50366,7 @@ agcls.AgTypeNameMap["StateCalcManeuverSpecificImpulse"] = StateCalcManeuverSpeci
 
 class StateCalcPressure(IComponentInfo, ICloneable, IStateCalcPressure):
     """Pressure Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49675,6 +50387,7 @@ agcls.AgTypeNameMap["StateCalcPressure"] = StateCalcPressure
 
 class StateCalcTemperature(IComponentInfo, ICloneable, IStateCalcTemperature):
     """Temperature Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49695,6 +50408,7 @@ agcls.AgTypeNameMap["StateCalcTemperature"] = StateCalcTemperature
 
 class StateCalcVectorY(IComponentInfo, ICloneable, IStateCalcVectorY):
     """VectorY Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49715,6 +50429,7 @@ agcls.AgTypeNameMap["StateCalcVectorY"] = StateCalcVectorY
 
 class StateCalcVectorZ(IComponentInfo, ICloneable, IStateCalcVectorZ):
     """VectorZ Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49735,6 +50450,7 @@ agcls.AgTypeNameMap["StateCalcVectorZ"] = StateCalcVectorZ
 
 class StateCalcMass(IComponentInfo, ICloneable, IStateCalcMass):
     """Mass Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49755,6 +50471,7 @@ agcls.AgTypeNameMap["StateCalcMass"] = StateCalcMass
 
 class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, IStateCalcManeuverTotalMassFlowRate):
     """ManeuverTotalMassFlowRate Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49775,6 +50492,7 @@ agcls.AgTypeNameMap["StateCalcManeuverTotalMassFlowRate"] = StateCalcManeuverTot
 
 class StateCalcAbsoluteValue(IComponentInfo, ICloneable, IStateCalcAbsoluteValue):
     """AbsoluteValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49795,6 +50513,7 @@ agcls.AgTypeNameMap["StateCalcAbsoluteValue"] = StateCalcAbsoluteValue
 
 class StateCalcDifference(IComponentInfo, ICloneable, IStateCalcDifference):
     """Difference Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49815,6 +50534,7 @@ agcls.AgTypeNameMap["StateCalcDifference"] = StateCalcDifference
 
 class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcDifferenceOtherSegment):
     """DifferenceOtherSegment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49835,6 +50555,7 @@ agcls.AgTypeNameMap["StateCalcDifferenceOtherSegment"] = StateCalcDifferenceOthe
 
 class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcPositionDifferenceOtherSegment):
     """PosDifferenceOtherSegment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49855,6 +50576,7 @@ agcls.AgTypeNameMap["StateCalcPositionDifferenceOtherSegment"] = StateCalcPositi
 
 class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcVelDifferenceOtherSegment):
     """VelDifferenceOtherSegment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49875,6 +50597,7 @@ agcls.AgTypeNameMap["StateCalcVelDifferenceOtherSegment"] = StateCalcVelDifferen
 
 class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, IStateCalcPositionVelDifferenceOtherSegment):
     """PosVelDifferenceOtherSegment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49895,6 +50618,7 @@ agcls.AgTypeNameMap["StateCalcPositionVelDifferenceOtherSegment"] = StateCalcPos
 
 class StateCalcValueAtSegment(IComponentInfo, ICloneable, IStateCalcValueAtSegment):
     """ValueAtSegment Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49915,6 +50639,7 @@ agcls.AgTypeNameMap["StateCalcValueAtSegment"] = StateCalcValueAtSegment
 
 class StateCalcMaxValue(IComponentInfo, ICloneable, IStateCalcMaxValue):
     """MaximumValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49935,6 +50660,7 @@ agcls.AgTypeNameMap["StateCalcMaxValue"] = StateCalcMaxValue
 
 class StateCalcMinValue(IComponentInfo, ICloneable, IStateCalcMinValue):
     """MinimumValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49955,6 +50681,7 @@ agcls.AgTypeNameMap["StateCalcMinValue"] = StateCalcMinValue
 
 class StateCalcMeanValue(IComponentInfo, ICloneable, IStateCalcMeanValue):
     """MeanValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49975,6 +50702,7 @@ agcls.AgTypeNameMap["StateCalcMeanValue"] = StateCalcMeanValue
 
 class StateCalcMedianValue(IComponentInfo, ICloneable, IStateCalcMedianValue):
     """MedianValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -49995,6 +50723,7 @@ agcls.AgTypeNameMap["StateCalcMedianValue"] = StateCalcMedianValue
 
 class StateCalcStandardDeviation(IComponentInfo, ICloneable, IStateCalcStandardDeviation):
     """StandardDeviation Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50015,6 +50744,7 @@ agcls.AgTypeNameMap["StateCalcStandardDeviation"] = StateCalcStandardDeviation
 
 class StateCalcNegative(IComponentInfo, ICloneable, IStateCalcNegative):
     """Negative Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50035,6 +50765,7 @@ agcls.AgTypeNameMap["StateCalcNegative"] = StateCalcNegative
 
 class StateCalcEccentricity(IComponentInfo, ICloneable, IStateCalcEccentricity):
     """Eccentricity Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50055,6 +50786,7 @@ agcls.AgTypeNameMap["StateCalcEccentricity"] = StateCalcEccentricity
 
 class StateCalcMeanAnomaly(IComponentInfo, ICloneable, IStateCalcMeanAnomaly):
     """MeanAnomaly Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50075,6 +50807,7 @@ agcls.AgTypeNameMap["StateCalcMeanAnomaly"] = StateCalcMeanAnomaly
 
 class StateCalcRAAN(IComponentInfo, ICloneable, IStateCalcRAAN):
     """RAAN Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50095,6 +50828,7 @@ agcls.AgTypeNameMap["StateCalcRAAN"] = StateCalcRAAN
 
 class BDotRCalc(IComponentInfo, ICloneable, IBDotRCalc):
     """BDotR Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50115,6 +50849,7 @@ agcls.AgTypeNameMap["BDotRCalc"] = BDotRCalc
 
 class BDotTCalc(IComponentInfo, ICloneable, IBDotTCalc):
     """BDotT Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50135,6 +50870,7 @@ agcls.AgTypeNameMap["BDotTCalc"] = BDotTCalc
 
 class BMagnitudeCalc(IComponentInfo, ICloneable, IBMagnitudeCalc):
     """BMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50155,6 +50891,7 @@ agcls.AgTypeNameMap["BMagnitudeCalc"] = BMagnitudeCalc
 
 class BThetaCalc(IComponentInfo, ICloneable, IBThetaCalc):
     """BTheta Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50175,6 +50912,7 @@ agcls.AgTypeNameMap["BThetaCalc"] = BThetaCalc
 
 class StateCalcDeltaDec(IComponentInfo, ICloneable, IStateCalcDeltaDec):
     """DeltaDec Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50195,6 +50933,7 @@ agcls.AgTypeNameMap["StateCalcDeltaDec"] = StateCalcDeltaDec
 
 class StateCalcDeltaRA(IComponentInfo, ICloneable, IStateCalcDeltaRA):
     """DeltaRA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50215,6 +50954,7 @@ agcls.AgTypeNameMap["StateCalcDeltaRA"] = StateCalcDeltaRA
 
 class StateCalcBetaAngle(IComponentInfo, ICloneable, IStateCalcBetaAngle):
     """BetaAngle Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50235,6 +50975,7 @@ agcls.AgTypeNameMap["StateCalcBetaAngle"] = StateCalcBetaAngle
 
 class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, IStateCalcLocalApparentSolarLon):
     """LocalApparentSolarLon Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50255,6 +50996,7 @@ agcls.AgTypeNameMap["StateCalcLocalApparentSolarLon"] = StateCalcLocalApparentSo
 
 class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, IStateCalcLonOfPeriapsis):
     """LonOfPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50275,6 +51017,7 @@ agcls.AgTypeNameMap["StateCalcLonOfPeriapsis"] = StateCalcLonOfPeriapsis
 
 class StateCalcOrbitStateValue(IComponentInfo, ICloneable, IStateCalcOrbitStateValue):
     """OrbitStateValue Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50295,6 +51038,7 @@ agcls.AgTypeNameMap["StateCalcOrbitStateValue"] = StateCalcOrbitStateValue
 
 class StateCalcSignedEccentricity(IComponentInfo, ICloneable, IStateCalcSignedEccentricity):
     """SignedEccentricity Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50315,6 +51059,7 @@ agcls.AgTypeNameMap["StateCalcSignedEccentricity"] = StateCalcSignedEccentricity
 
 class StateCalcInclination(IComponentInfo, ICloneable, IStateCalcInclination):
     """Inclination Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50335,6 +51080,7 @@ agcls.AgTypeNameMap["StateCalcInclination"] = StateCalcInclination
 
 class StateCalcTrueLon(IComponentInfo, ICloneable, IStateCalcTrueLon):
     """TrueLong Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50355,6 +51101,7 @@ agcls.AgTypeNameMap["StateCalcTrueLon"] = StateCalcTrueLon
 
 class StateCalcPower(IComponentInfo, ICloneable, IStateCalcPower):
     """Power Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50375,6 +51122,7 @@ agcls.AgTypeNameMap["StateCalcPower"] = StateCalcPower
 
 class StateCalcRelMotion(IComponentInfo, ICloneable, IStateCalcRelMotion):
     """Relative Motion Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50395,6 +51143,7 @@ agcls.AgTypeNameMap["StateCalcRelMotion"] = StateCalcRelMotion
 
 class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, IStateCalcSolarBetaAngle):
     """Solar Beta Angle objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50415,6 +51164,7 @@ agcls.AgTypeNameMap["StateCalcSolarBetaAngle"] = StateCalcSolarBetaAngle
 
 class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, IStateCalcSolarInPlaneAngle):
     """Solar In Plane Angle objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50435,6 +51185,7 @@ agcls.AgTypeNameMap["StateCalcSolarInPlaneAngle"] = StateCalcSolarInPlaneAngle
 
 class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, IStateCalcRelPositionDecAngle):
     """Relative Position Declination Angle objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50455,6 +51206,7 @@ agcls.AgTypeNameMap["StateCalcRelPositionDecAngle"] = StateCalcRelPositionDecAng
 
 class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, IStateCalcRelPositionInPlaneAngle):
     """Relative Position Declination Angle objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50475,6 +51227,7 @@ agcls.AgTypeNameMap["StateCalcRelPositionInPlaneAngle"] = StateCalcRelPositionIn
 
 class StateCalcRelativeInclination(IComponentInfo, ICloneable, IStateCalcRelativeInclination):
     """Relative Inclination Angle objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50495,6 +51248,7 @@ agcls.AgTypeNameMap["StateCalcRelativeInclination"] = StateCalcRelativeInclinati
 
 class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, IStateCalcCurvilinearRelMotion):
     """Curvilinear Relative Motion objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50515,6 +51269,7 @@ agcls.AgTypeNameMap["StateCalcCurvilinearRelMotion"] = StateCalcCurvilinearRelMo
 
 class StateCalcCustomFunction(IComponentInfo, ICloneable, IStateCalcCustomFunction):
     """Custom Function Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50535,6 +51290,7 @@ agcls.AgTypeNameMap["StateCalcCustomFunction"] = StateCalcCustomFunction
 
 class StateCalcScript(IComponentInfo, ICloneable, IStateCalcScript):
     """Script Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50555,6 +51311,7 @@ agcls.AgTypeNameMap["StateCalcScript"] = StateCalcScript
 
 class StateCalcCd(IComponentInfo, ICloneable, IStateCalcCd):
     """Cd Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50575,6 +51332,7 @@ agcls.AgTypeNameMap["StateCalcCd"] = StateCalcCd
 
 class StateCalcCr(IComponentInfo, ICloneable, IStateCalcCr):
     """Cr Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50595,6 +51353,7 @@ agcls.AgTypeNameMap["StateCalcCr"] = StateCalcCr
 
 class StateCalcDragArea(IComponentInfo, ICloneable, IStateCalcDragArea):
     """DragArea Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50615,6 +51374,7 @@ agcls.AgTypeNameMap["StateCalcDragArea"] = StateCalcDragArea
 
 class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, IStateCalcRadiationPressureArea):
     """RadPressureArea Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50635,6 +51395,7 @@ agcls.AgTypeNameMap["StateCalcRadiationPressureArea"] = StateCalcRadiationPressu
 
 class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, IStateCalcRadiationPressureCoefficient):
     """RadiationPressureCoefficient Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50655,6 +51416,7 @@ agcls.AgTypeNameMap["StateCalcRadiationPressureCoefficient"] = StateCalcRadiatio
 
 class StateCalcSRPArea(IComponentInfo, ICloneable, IStateCalcSRPArea):
     """SRPArea Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50675,6 +51437,7 @@ agcls.AgTypeNameMap["StateCalcSRPArea"] = StateCalcSRPArea
 
 class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, IStateCalcCosOfVerticalFPA):
     """CosineOfVerticalFPA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50695,6 +51458,7 @@ agcls.AgTypeNameMap["StateCalcCosOfVerticalFPA"] = StateCalcCosOfVerticalFPA
 
 class StateCalcDec(IComponentInfo, ICloneable, IStateCalcDec):
     """Dec Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50715,6 +51479,7 @@ agcls.AgTypeNameMap["StateCalcDec"] = StateCalcDec
 
 class StateCalcFPA(IComponentInfo, ICloneable, IStateCalcFPA):
     """FPA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50735,6 +51500,7 @@ agcls.AgTypeNameMap["StateCalcFPA"] = StateCalcFPA
 
 class StateCalcRMagnitude(IComponentInfo, ICloneable, IStateCalcRMagnitude):
     """RMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50755,6 +51521,7 @@ agcls.AgTypeNameMap["StateCalcRMagnitude"] = StateCalcRMagnitude
 
 class StateCalcRA(IComponentInfo, ICloneable, IStateCalcRA):
     """RA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50775,6 +51542,7 @@ agcls.AgTypeNameMap["StateCalcRA"] = StateCalcRA
 
 class StateCalcVMagnitude(IComponentInfo, ICloneable, IStateCalcVMagnitude):
     """VMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50795,6 +51563,7 @@ agcls.AgTypeNameMap["StateCalcVMagnitude"] = StateCalcVMagnitude
 
 class StateCalcVelAz(IComponentInfo, ICloneable, IStateCalcVelAz):
     """Velocity Azimuth Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50815,6 +51584,7 @@ agcls.AgTypeNameMap["StateCalcVelAz"] = StateCalcVelAz
 
 class StateCalcC3Energy(IComponentInfo, ICloneable, IStateCalcC3Energy):
     """C3Energy Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50835,6 +51605,7 @@ agcls.AgTypeNameMap["StateCalcC3Energy"] = StateCalcC3Energy
 
 class StateCalcInAsympDec(IComponentInfo, ICloneable, IStateCalcInAsympDec):
     """InAsymptoteDec Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50855,6 +51626,7 @@ agcls.AgTypeNameMap["StateCalcInAsympDec"] = StateCalcInAsympDec
 
 class StateCalcInAsympRA(IComponentInfo, ICloneable, IStateCalcInAsympRA):
     """InAsymptoteRA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50875,6 +51647,7 @@ agcls.AgTypeNameMap["StateCalcInAsympRA"] = StateCalcInAsympRA
 
 class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcInVelAzAtPeriapsis):
     """InVelocityAzAtPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50895,6 +51668,7 @@ agcls.AgTypeNameMap["StateCalcInVelAzAtPeriapsis"] = StateCalcInVelAzAtPeriapsis
 
 class StateCalcOutAsympDec(IComponentInfo, ICloneable, IStateCalcOutAsympDec):
     """OutAsymptoteDec Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50915,6 +51689,7 @@ agcls.AgTypeNameMap["StateCalcOutAsympDec"] = StateCalcOutAsympDec
 
 class StateCalcOutAsympRA(IComponentInfo, ICloneable, IStateCalcOutAsympRA):
     """OutAsymptoteRA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50935,6 +51710,7 @@ agcls.AgTypeNameMap["StateCalcOutAsympRA"] = StateCalcOutAsympRA
 
 class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, IStateCalcOutVelAzAtPeriapsis):
     """OutVelocityAzAtPeriapsis Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50955,6 +51731,7 @@ agcls.AgTypeNameMap["StateCalcOutVelAzAtPeriapsis"] = StateCalcOutVelAzAtPeriaps
 
 class StateCalcDuration(IComponentInfo, ICloneable, IStateCalcDuration):
     """Duration Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -50975,6 +51752,7 @@ agcls.AgTypeNameMap["StateCalcDuration"] = StateCalcDuration
 
 class StateCalcUserValue(IStateCalcUserValue, IComponentInfo, ICloneable):
     """CoClass StateCalcUserValue."""
+
     def __init__(self, sourceObject=None):
         IStateCalcUserValue.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -50995,6 +51773,7 @@ agcls.AgTypeNameMap["StateCalcUserValue"] = StateCalcUserValue
 
 class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, IStateCalcVectorGeometryToolAngle):
     """Vector Geometry Tool Angle Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51015,6 +51794,7 @@ agcls.AgTypeNameMap["StateCalcVectorGeometryToolAngle"] = StateCalcVectorGeometr
 
 class StateCalcAngle(IComponentInfo, ICloneable, IStateCalcAngle):
     """Angle Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51035,6 +51815,7 @@ agcls.AgTypeNameMap["StateCalcAngle"] = StateCalcAngle
 
 class StateCalcDotProduct(IComponentInfo, ICloneable, IStateCalcDotProduct):
     """DotProduct Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51055,6 +51836,7 @@ agcls.AgTypeNameMap["StateCalcDotProduct"] = StateCalcDotProduct
 
 class StateCalcVectorDec(IComponentInfo, ICloneable, IStateCalcVectorDec):
     """VectorDec Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51075,6 +51857,7 @@ agcls.AgTypeNameMap["StateCalcVectorDec"] = StateCalcVectorDec
 
 class StateCalcVectorMagnitude(IComponentInfo, ICloneable, IStateCalcVectorMagnitude):
     """VectorMag Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51095,6 +51878,7 @@ agcls.AgTypeNameMap["StateCalcVectorMagnitude"] = StateCalcVectorMagnitude
 
 class StateCalcVectorRA(IComponentInfo, ICloneable, IStateCalcVectorRA):
     """VectorRA Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51115,6 +51899,7 @@ agcls.AgTypeNameMap["StateCalcVectorRA"] = StateCalcVectorRA
 
 class StateCalcVectorX(IComponentInfo, ICloneable, IStateCalcVectorX):
     """VectorX Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51135,6 +51920,7 @@ agcls.AgTypeNameMap["StateCalcVectorX"] = StateCalcVectorX
 
 class StateCalcOnePointAccess(IComponentInfo, ICloneable, IStateCalcOnePointAccess):
     """Access Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51155,6 +51941,7 @@ agcls.AgTypeNameMap["StateCalcOnePointAccess"] = StateCalcOnePointAccess
 
 class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, IStateCalcDifferenceAcrossSegmentsOtherSat):
     """DifferenceAcrossSegmentsOtherSat Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51175,6 +51962,7 @@ agcls.AgTypeNameMap["StateCalcDifferenceAcrossSegmentsOtherSat"] = StateCalcDiff
 
 class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, IStateCalcValueAtSegmentOtherSat):
     """ValueAtSegmentOtherSat Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51195,6 +51983,7 @@ agcls.AgTypeNameMap["StateCalcValueAtSegmentOtherSat"] = StateCalcValueAtSegment
 
 class StateCalcRARate(IStateCalcRARate, IComponentInfo, ICloneable):
     """RightAscensionRate Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcRARate.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51215,6 +52004,7 @@ agcls.AgTypeNameMap["StateCalcRARate"] = StateCalcRARate
 
 class StateCalcDecRate(IStateCalcDecRate, IComponentInfo, ICloneable):
     """DeclinationRate Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcDecRate.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51235,6 +52025,7 @@ agcls.AgTypeNameMap["StateCalcDecRate"] = StateCalcDecRate
 
 class StateCalcGravitationalParameter(IStateCalcGravitationalParameter, IComponentInfo, ICloneable):
     """GravitationalParameter Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcGravitationalParameter.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51255,6 +52046,7 @@ agcls.AgTypeNameMap["StateCalcGravitationalParameter"] = StateCalcGravitationalP
 
 class StateCalcReferenceRadius(IStateCalcReferenceRadius, IComponentInfo, ICloneable):
     """Reference Radius Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcReferenceRadius.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51275,6 +52067,7 @@ agcls.AgTypeNameMap["StateCalcReferenceRadius"] = StateCalcReferenceRadius
 
 class StateCalcGravCoeff(IStateCalcGravCoeff, IComponentInfo, ICloneable):
     """Gravity Coefficient Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcGravCoeff.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51295,6 +52088,7 @@ agcls.AgTypeNameMap["StateCalcGravCoeff"] = StateCalcGravCoeff
 
 class StateCalcSpeedOfLight(IStateCalcSpeedOfLight, IComponentInfo, ICloneable):
     """Speed Of Light Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcSpeedOfLight.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51315,6 +52109,7 @@ agcls.AgTypeNameMap["StateCalcSpeedOfLight"] = StateCalcSpeedOfLight
 
 class StateCalcPi(IStateCalcPi, IComponentInfo, ICloneable):
     """Pi Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcPi.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51335,6 +52130,7 @@ agcls.AgTypeNameMap["StateCalcPi"] = StateCalcPi
 
 class StateCalcScalar(IStateCalcScalar, IComponentInfo, ICloneable):
     """Scalar Calc objects."""
+
     def __init__(self, sourceObject=None):
         IStateCalcScalar.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51355,6 +52151,7 @@ agcls.AgTypeNameMap["StateCalcScalar"] = StateCalcScalar
 
 class StateCalcApparentSolarTime(IComponentInfo, ICloneable, IStateCalcApparentSolarTime):
     """Apparent Solar Time Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51375,6 +52172,7 @@ agcls.AgTypeNameMap["StateCalcApparentSolarTime"] = StateCalcApparentSolarTime
 
 class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, IStateCalcEarthMeanSolarTime):
     """EarthMeanSolarTime Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51395,6 +52193,7 @@ agcls.AgTypeNameMap["StateCalcEarthMeanSolarTime"] = StateCalcEarthMeanSolarTime
 
 class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, IStateCalcEarthMeanLocTimeAN):
     """EarthMeanLocTimeAN Calc objects."""
+
     def __init__(self, sourceObject=None):
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
@@ -51415,6 +52214,7 @@ agcls.AgTypeNameMap["StateCalcEarthMeanLocTimeAN"] = StateCalcEarthMeanLocTimeAN
 
 class AutomaticSequenceCollection(IAutomaticSequenceCollection):
     """Automatic Sequence Collection."""
+
     def __init__(self, sourceObject=None):
         IAutomaticSequenceCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -51431,6 +52231,7 @@ agcls.AgTypeNameMap["AutomaticSequenceCollection"] = AutomaticSequenceCollection
 
 class AutomaticSequence(IAutomaticSequence):
     """Automatic Sequence."""
+
     def __init__(self, sourceObject=None):
         IAutomaticSequence.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -51447,6 +52248,7 @@ agcls.AgTypeNameMap["AutomaticSequence"] = AutomaticSequence
 
 class CentralBodyCollection(ICentralBodyCollection):
     """Central Body Collection."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -51463,6 +52265,7 @@ agcls.AgTypeNameMap["CentralBodyCollection"] = CentralBodyCollection
 
 class AstrogatorCentralBody(IAstrogatorCentralBody, IComponentInfo, ICloneable):
     """Central Body."""
+
     def __init__(self, sourceObject=None):
         IAstrogatorCentralBody.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51483,6 +52286,7 @@ agcls.AgTypeNameMap["AstrogatorCentralBody"] = AstrogatorCentralBody
 
 class CentralBodyGravityModel(ICentralBodyGravityModel):
     """Central Body Gravity Model."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyGravityModel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -51499,6 +52303,7 @@ agcls.AgTypeNameMap["CentralBodyGravityModel"] = CentralBodyGravityModel
 
 class CentralBodyShapeSphere(ICentralBodyShapeSphere, ICentralBodyShape):
     """Central Body Shape - Sphere."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyShapeSphere.__init__(self, sourceObject)
         ICentralBodyShape.__init__(self, sourceObject)
@@ -51517,6 +52322,7 @@ agcls.AgTypeNameMap["CentralBodyShapeSphere"] = CentralBodyShapeSphere
 
 class CentralBodyShapeOblateSpheroid(ICentralBodyShapeOblateSpheroid, ICentralBodyShape):
     """Central Body Shape - Spheroid."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyShapeOblateSpheroid.__init__(self, sourceObject)
         ICentralBodyShape.__init__(self, sourceObject)
@@ -51535,6 +52341,7 @@ agcls.AgTypeNameMap["CentralBodyShapeOblateSpheroid"] = CentralBodyShapeOblateSp
 
 class CentralBodyShapeTriaxialEllipsoid(ICentralBodyShapeTriaxialEllipsoid, ICentralBodyShape):
     """Central Body Shape - Triaxial Ellipsoid."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyShapeTriaxialEllipsoid.__init__(self, sourceObject)
         ICentralBodyShape.__init__(self, sourceObject)
@@ -51553,6 +52360,7 @@ agcls.AgTypeNameMap["CentralBodyShapeTriaxialEllipsoid"] = CentralBodyShapeTriax
 
 class CentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitudeRotationCoefficientsFile, ICentralBodyAttitude):
     """Central Body Attitude - Rotation Coefficients File."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyAttitudeRotationCoefficientsFile.__init__(self, sourceObject)
         ICentralBodyAttitude.__init__(self, sourceObject)
@@ -51571,6 +52379,7 @@ agcls.AgTypeNameMap["CentralBodyAttitudeRotationCoefficientsFile"] = CentralBody
 
 class CentralBodyAttitudeIAU1994(ICentralBodyAttitudeIAU1994, ICentralBodyAttitude):
     """Central Body Attitude - IAU1994."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyAttitudeIAU1994.__init__(self, sourceObject)
         ICentralBodyAttitude.__init__(self, sourceObject)
@@ -51589,6 +52398,7 @@ agcls.AgTypeNameMap["CentralBodyAttitudeIAU1994"] = CentralBodyAttitudeIAU1994
 
 class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemerisAnalyticOrbit, ICentralBodyEphemeris):
     """Central Body Ephemeris - Analytic Orbit."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyEphemerisAnalyticOrbit.__init__(self, sourceObject)
         ICentralBodyEphemeris.__init__(self, sourceObject)
@@ -51607,6 +52417,7 @@ agcls.AgTypeNameMap["CentralBodyEphemerisAnalyticOrbit"] = CentralBodyEphemerisA
 
 class CentralBodyEphemerisJPLSpice(ICentralBodyEphemerisJPLSpice, ICentralBodyEphemeris):
     """Central Body Ephemeris - JPLSpice."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyEphemerisJPLSpice.__init__(self, sourceObject)
         ICentralBodyEphemeris.__init__(self, sourceObject)
@@ -51625,6 +52436,7 @@ agcls.AgTypeNameMap["CentralBodyEphemerisJPLSpice"] = CentralBodyEphemerisJPLSpi
 
 class CentralBodyEphemerisFile(ICentralBodyEphemerisFile, ICentralBodyEphemeris):
     """Central Body Ephemeris - File."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyEphemerisFile.__init__(self, sourceObject)
         ICentralBodyEphemeris.__init__(self, sourceObject)
@@ -51643,6 +52455,7 @@ agcls.AgTypeNameMap["CentralBodyEphemerisFile"] = CentralBodyEphemerisFile
 
 class CentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemerisJPLDesignExplorerOptimizer, ICentralBodyEphemeris):
     """Central Body Ephemeris - JPL DE."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyEphemerisJPLDesignExplorerOptimizer.__init__(self, sourceObject)
         ICentralBodyEphemeris.__init__(self, sourceObject)
@@ -51661,6 +52474,7 @@ agcls.AgTypeNameMap["CentralBodyEphemerisJPLDesignExplorerOptimizer"] = CentralB
 
 class CentralBodyEphemerisPlanetary(ICentralBodyEphemerisPlanetary, ICentralBodyEphemeris):
     """Central Body Ephemeris - Planetary."""
+
     def __init__(self, sourceObject=None):
         ICentralBodyEphemerisPlanetary.__init__(self, sourceObject)
         ICentralBodyEphemeris.__init__(self, sourceObject)
@@ -51679,6 +52493,7 @@ agcls.AgTypeNameMap["CentralBodyEphemerisPlanetary"] = CentralBodyEphemerisPlane
 
 class MissionControlSequenceSegmentProperties(IMissionControlSequenceSegmentProperties, IRuntimeTypeInfoProvider):
     """Segment Properties."""
+
     def __init__(self, sourceObject=None):
         IMissionControlSequenceSegmentProperties.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -51697,6 +52512,7 @@ agcls.AgTypeNameMap["MissionControlSequenceSegmentProperties"] = MissionControlS
 
 class PowerInternal(IPowerInternal, IComponentInfo, ICloneable):
     """Power - Internal."""
+
     def __init__(self, sourceObject=None):
         IPowerInternal.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51717,6 +52533,7 @@ agcls.AgTypeNameMap["PowerInternal"] = PowerInternal
 
 class PowerProcessed(IPowerProcessed, IComponentInfo, ICloneable):
     """Power - Processed Power Unit."""
+
     def __init__(self, sourceObject=None):
         IPowerProcessed.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51737,6 +52554,7 @@ agcls.AgTypeNameMap["PowerProcessed"] = PowerProcessed
 
 class PowerSolarArray(IPowerSolarArray, IComponentInfo, ICloneable):
     """Power - Solar Array."""
+
     def __init__(self, sourceObject=None):
         IPowerSolarArray.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51757,6 +52575,7 @@ agcls.AgTypeNameMap["PowerSolarArray"] = PowerSolarArray
 
 class GeneralRelativityFunction(IGeneralRelativityFunction, IComponentInfo, ICloneable):
     """General Relativity Propagator Function."""
+
     def __init__(self, sourceObject=None):
         IGeneralRelativityFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51777,6 +52596,7 @@ agcls.AgTypeNameMap["GeneralRelativityFunction"] = GeneralRelativityFunction
 
 class StateTransformationFunction(IStateTransformationFunction, IComponentInfo, ICloneable):
     """State Transition Propagator Function."""
+
     def __init__(self, sourceObject=None):
         IStateTransformationFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51797,6 +52617,7 @@ agcls.AgTypeNameMap["StateTransformationFunction"] = StateTransformationFunction
 
 class CR3BPFunc(ICR3BPFunc, IComponentInfo, ICloneable):
     """CR3BP Function."""
+
     def __init__(self, sourceObject=None):
         ICR3BPFunc.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51817,6 +52638,7 @@ agcls.AgTypeNameMap["CR3BPFunc"] = CR3BPFunc
 
 class RadiationPressureFunction(IRadiationPressureFunction, IComponentInfo, ICloneable):
     """Radiation Pressure Propagator Function."""
+
     def __init__(self, sourceObject=None):
         IRadiationPressureFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51837,6 +52659,7 @@ agcls.AgTypeNameMap["RadiationPressureFunction"] = RadiationPressureFunction
 
 class YarkovskyFunc(IYarkovskyFunc, IComponentInfo, ICloneable):
     """Yarkovsky Effect Propagator Function."""
+
     def __init__(self, sourceObject=None):
         IYarkovskyFunc.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51857,6 +52680,7 @@ agcls.AgTypeNameMap["YarkovskyFunc"] = YarkovskyFunc
 
 class BlendedDensity(IBlendedDensity, IComponentInfo, ICloneable):
     """Blended atmospheric density propagator function."""
+
     def __init__(self, sourceObject=None):
         IBlendedDensity.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51877,6 +52701,7 @@ agcls.AgTypeNameMap["BlendedDensity"] = BlendedDensity
 
 class Cira72Function(ICira72Function, IComponentInfo, ICloneable):
     """Cira72 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         ICira72Function.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51897,6 +52722,7 @@ agcls.AgTypeNameMap["Cira72Function"] = Cira72Function
 
 class Exponential(IExponential, IComponentInfo, ICloneable):
     """Exponential atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IExponential.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51917,6 +52743,7 @@ agcls.AgTypeNameMap["Exponential"] = Exponential
 
 class HarrisPriester(IHarrisPriester, IComponentInfo, ICloneable):
     """Harris-Priester atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IHarrisPriester.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51937,6 +52764,7 @@ agcls.AgTypeNameMap["HarrisPriester"] = HarrisPriester
 
 class DensityModelPlugin(IDensityModelPlugin, IComponentInfo, ICloneable):
     """Plugin atmospheric density propagator function."""
+
     def __init__(self, sourceObject=None):
         IDensityModelPlugin.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51957,6 +52785,7 @@ agcls.AgTypeNameMap["DensityModelPlugin"] = DensityModelPlugin
 
 class JacchiaRoberts(IJacchiaRoberts, IComponentInfo, ICloneable):
     """Jacchia Roberts atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IJacchiaRoberts.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51977,6 +52806,7 @@ agcls.AgTypeNameMap["JacchiaRoberts"] = JacchiaRoberts
 
 class JacchiaBowman2008(IJacchiaBowman2008, IComponentInfo, ICloneable):
     """Jacchia Bowman 2008 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IJacchiaBowman2008.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -51997,6 +52827,7 @@ agcls.AgTypeNameMap["JacchiaBowman2008"] = JacchiaBowman2008
 
 class Jacchia_1960(IJacchia_1960, IComponentInfo, ICloneable):
     """Jacchia_1960 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IJacchia_1960.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52017,6 +52848,7 @@ agcls.AgTypeNameMap["Jacchia_1960"] = Jacchia_1960
 
 class Jacchia_1970(IJacchia_1970, IComponentInfo, ICloneable):
     """Jacchia_1970 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IJacchia_1970.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52037,6 +52869,7 @@ agcls.AgTypeNameMap["Jacchia_1970"] = Jacchia_1970
 
 class Jacchia_1971(IJacchia_1971, IComponentInfo, ICloneable):
     """Jacchia_1971 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IJacchia_1971.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52057,6 +52890,7 @@ agcls.AgTypeNameMap["Jacchia_1971"] = Jacchia_1971
 
 class MSISE_1990(IMSISE_1990, IComponentInfo, ICloneable):
     """MSISE 1990 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMSISE_1990.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52077,6 +52911,7 @@ agcls.AgTypeNameMap["MSISE_1990"] = MSISE_1990
 
 class MSIS_1986(IMSIS_1986, IComponentInfo, ICloneable):
     """MSIS 1986 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMSIS_1986.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52097,6 +52932,7 @@ agcls.AgTypeNameMap["MSIS_1986"] = MSIS_1986
 
 class NRLMSISE_2000(INRLMSISE_2000, IComponentInfo, ICloneable):
     """NRLMSISE 2000 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         INRLMSISE_2000.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52117,6 +52953,7 @@ agcls.AgTypeNameMap["NRLMSISE_2000"] = NRLMSISE_2000
 
 class US_Standard_Atmosphere(IUS_Standard_Atmosphere, IComponentInfo, ICloneable):
     """US_Standard_Atmosphere atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IUS_Standard_Atmosphere.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52137,6 +52974,7 @@ agcls.AgTypeNameMap["US_Standard_Atmosphere"] = US_Standard_Atmosphere
 
 class MarsGRAM37(IMarsGRAM37, IComponentInfo, ICloneable):
     """Mars-GRAM 3.7 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMarsGRAM37.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52157,6 +52995,7 @@ agcls.AgTypeNameMap["MarsGRAM37"] = MarsGRAM37
 
 class MarsGRAM2000(IMarsGRAM2000, IComponentInfo, ICloneable):
     """Mars-GRAM 2000 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMarsGRAM2000.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52177,6 +53016,7 @@ agcls.AgTypeNameMap["MarsGRAM2000"] = MarsGRAM2000
 
 class MarsGRAM2001(IMarsGRAM2001, IComponentInfo, ICloneable):
     """Mars-GRAM 2001 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMarsGRAM2001.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52197,6 +53037,7 @@ agcls.AgTypeNameMap["MarsGRAM2001"] = MarsGRAM2001
 
 class MarsGRAM2005(IMarsGRAM2005, IComponentInfo, ICloneable):
     """Mars-GRAM 2005 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMarsGRAM2005.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52217,6 +53058,7 @@ agcls.AgTypeNameMap["MarsGRAM2005"] = MarsGRAM2005
 
 class MarsGRAM2010(IMarsGRAM2010, IComponentInfo, ICloneable):
     """Mars-GRAM 2010 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IMarsGRAM2010.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52237,6 +53079,7 @@ agcls.AgTypeNameMap["MarsGRAM2010"] = MarsGRAM2010
 
 class VenusGRAM2005(IVenusGRAM2005, IComponentInfo, ICloneable):
     """Venus-GRAM 2005 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IVenusGRAM2005.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52257,6 +53100,7 @@ agcls.AgTypeNameMap["VenusGRAM2005"] = VenusGRAM2005
 
 class DTM2012(IDTM2012, IComponentInfo, ICloneable):
     """DTM 2012 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IDTM2012.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52277,6 +53121,7 @@ agcls.AgTypeNameMap["DTM2012"] = DTM2012
 
 class DTM2020(IDTM2020, IComponentInfo, ICloneable):
     """DTM 2020 atmospheric propagator function."""
+
     def __init__(self, sourceObject=None):
         IDTM2020.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52297,6 +53142,7 @@ agcls.AgTypeNameMap["DTM2020"] = DTM2020
 
 class GravityFieldFunction(IGravityFieldFunction, IComponentInfo, ICloneable):
     """Gravity Field gravity propagator function."""
+
     def __init__(self, sourceObject=None):
         IGravityFieldFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52317,6 +53163,7 @@ agcls.AgTypeNameMap["GravityFieldFunction"] = GravityFieldFunction
 
 class PointMassFunction(IPointMassFunction, IComponentInfo, ICloneable):
     """Point Mass function."""
+
     def __init__(self, sourceObject=None):
         IPointMassFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52337,6 +53184,7 @@ agcls.AgTypeNameMap["PointMassFunction"] = PointMassFunction
 
 class TwoBodyFunction(ITwoBodyFunction, IComponentInfo, ICloneable):
     """Two Body gravity propagator function."""
+
     def __init__(self, sourceObject=None):
         ITwoBodyFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52357,6 +53205,7 @@ agcls.AgTypeNameMap["TwoBodyFunction"] = TwoBodyFunction
 
 class HPOPPluginFunction(IHPOPPluginFunction, IComponentInfo, ICloneable):
     """HPOP Plugin propagator function."""
+
     def __init__(self, sourceObject=None):
         IHPOPPluginFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52377,6 +53226,7 @@ agcls.AgTypeNameMap["HPOPPluginFunction"] = HPOPPluginFunction
 
 class EOMFuncPluginFunction(IEOMFuncPluginFunction, IComponentInfo, ICloneable):
     """EOM Function Plugin propagator function."""
+
     def __init__(self, sourceObject=None):
         IEOMFuncPluginFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52397,6 +53247,7 @@ agcls.AgTypeNameMap["EOMFuncPluginFunction"] = EOMFuncPluginFunction
 
 class SRPAeroT20(ISRPAeroT20, IComponentInfo, ICloneable):
     """AeroT20 SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPAeroT20.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52417,6 +53268,7 @@ agcls.AgTypeNameMap["SRPAeroT20"] = SRPAeroT20
 
 class SRPAeroT30(ISRPAeroT30, IComponentInfo, ICloneable):
     """AeroT30 SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPAeroT30.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52437,6 +53289,7 @@ agcls.AgTypeNameMap["SRPAeroT30"] = SRPAeroT30
 
 class SRPGSPM04aIIA(ISRPGSPM04aIIA, IComponentInfo, ICloneable):
     """GSPM04aIIA SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPGSPM04aIIA.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52457,6 +53310,7 @@ agcls.AgTypeNameMap["SRPGSPM04aIIA"] = SRPGSPM04aIIA
 
 class SRPGSPM04aIIR(ISRPGSPM04aIIR, IComponentInfo, ICloneable):
     """GSPM04aIIR SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPGSPM04aIIR.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52477,6 +53331,7 @@ agcls.AgTypeNameMap["SRPGSPM04aIIR"] = SRPGSPM04aIIR
 
 class SRPGSPM04aeIIA(ISRPGSPM04aeIIA, IComponentInfo, ICloneable):
     """GSPM04aeIIA SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPGSPM04aeIIA.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52497,6 +53352,7 @@ agcls.AgTypeNameMap["SRPGSPM04aeIIA"] = SRPGSPM04aeIIA
 
 class SRPGSPM04aeIIR(ISRPGSPM04aeIIR, IComponentInfo, ICloneable):
     """GSPM04aeIIR SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPGSPM04aeIIR.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52517,6 +53373,7 @@ agcls.AgTypeNameMap["SRPGSPM04aeIIR"] = SRPGSPM04aeIIR
 
 class SRPSpherical(ISRPSpherical, IComponentInfo, ICloneable):
     """Spherical SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPSpherical.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52537,6 +53394,7 @@ agcls.AgTypeNameMap["SRPSpherical"] = SRPSpherical
 
 class SRPNPlate(ISRPNPlate, IComponentInfo, ICloneable):
     """NPlate SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPNPlate.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52557,6 +53415,7 @@ agcls.AgTypeNameMap["SRPNPlate"] = SRPNPlate
 
 class SRPTabAreaVec(ISRPTabAreaVec, IComponentInfo, ICloneable):
     """Tabulated area vector SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPTabAreaVec.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52577,6 +53436,7 @@ agcls.AgTypeNameMap["SRPTabAreaVec"] = SRPTabAreaVec
 
 class SRPVariableArea(ISRPVariableArea, IComponentInfo, ICloneable):
     """Variable Area SRP propagator function."""
+
     def __init__(self, sourceObject=None):
         ISRPVariableArea.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52597,6 +53457,7 @@ agcls.AgTypeNameMap["SRPVariableArea"] = SRPVariableArea
 
 class ThirdBodyFunction(IThirdBodyFunction, IComponentInfo, ICloneable):
     """ThirdBody propagator function."""
+
     def __init__(self, sourceObject=None):
         IThirdBodyFunction.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52617,6 +53478,7 @@ agcls.AgTypeNameMap["ThirdBodyFunction"] = ThirdBodyFunction
 
 class DragModelPlugin(IDragModelPlugin, IComponentInfo, ICloneable):
     """Drag Model Plugin."""
+
     def __init__(self, sourceObject=None):
         IDragModelPlugin.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52637,6 +53499,7 @@ agcls.AgTypeNameMap["DragModelPlugin"] = DragModelPlugin
 
 class SRPReflectionPlugin(ISRPReflectionPlugin, IComponentInfo, ICloneable):
     """SRP Reflection Plugin."""
+
     def __init__(self, sourceObject=None):
         ISRPReflectionPlugin.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52657,6 +53520,7 @@ agcls.AgTypeNameMap["SRPReflectionPlugin"] = SRPReflectionPlugin
 
 class EngineConstAcc(IEngineConstAcc, IComponentInfo, ICloneable):
     """Constant Acceleration engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineConstAcc.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52677,6 +53541,7 @@ agcls.AgTypeNameMap["EngineConstAcc"] = EngineConstAcc
 
 class EngineConstant(IEngineConstant, IComponentInfo, ICloneable):
     """Constant Thrust engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineConstant.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52697,6 +53562,7 @@ agcls.AgTypeNameMap["EngineConstant"] = EngineConstant
 
 class EngineIon(IEngineIon, IComponentInfo, ICloneable):
     """Ion Engine engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineIon.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52717,6 +53583,7 @@ agcls.AgTypeNameMap["EngineIon"] = EngineIon
 
 class EngineThrottleTable(IEngineThrottleTable, IComponentInfo, ICloneable):
     """Throttle Table engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineThrottleTable.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52737,6 +53604,7 @@ agcls.AgTypeNameMap["EngineThrottleTable"] = EngineThrottleTable
 
 class EngineCustom(IEngineCustom, IComponentInfo, ICloneable):
     """Custom engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineCustom.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52757,6 +53625,7 @@ agcls.AgTypeNameMap["EngineCustom"] = EngineCustom
 
 class EnginePlugin(IEnginePlugin, IComponentInfo, ICloneable):
     """Plugin engine model."""
+
     def __init__(self, sourceObject=None):
         IEnginePlugin.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52777,6 +53646,7 @@ agcls.AgTypeNameMap["EnginePlugin"] = EnginePlugin
 
 class EngineModelPoly(IEngineModelPoly, IComponentInfo, ICloneable):
     """Polynomial Thrust and Isp engine model."""
+
     def __init__(self, sourceObject=None):
         IEngineModelPoly.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52797,6 +53667,7 @@ agcls.AgTypeNameMap["EngineModelPoly"] = EngineModelPoly
 
 class EngineModelThrustCoefficients(IEngineModelThrustCoefficients):
     """Engine Model Thrust Coefficients."""
+
     def __init__(self, sourceObject=None):
         IEngineModelThrustCoefficients.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52813,6 +53684,7 @@ agcls.AgTypeNameMap["EngineModelThrustCoefficients"] = EngineModelThrustCoeffici
 
 class EngineModelIspCoefficients(IEngineModelIspCoefficients):
     """Engine Model Isp Coefficients."""
+
     def __init__(self, sourceObject=None):
         IEngineModelIspCoefficients.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52829,6 +53701,7 @@ agcls.AgTypeNameMap["EngineModelIspCoefficients"] = EngineModelIspCoefficients
 
 class EngineDefinition(IEngineDefinition):
     """Engine definition."""
+
     def __init__(self, sourceObject=None):
         IEngineDefinition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52845,6 +53718,7 @@ agcls.AgTypeNameMap["EngineDefinition"] = EngineDefinition
 
 class DesignCR3BPSetup(IDesignCR3BPSetup, IComponentInfo, ICloneable):
     """CR3BP Setup Tool."""
+
     def __init__(self, sourceObject=None):
         IDesignCR3BPSetup.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52865,6 +53739,7 @@ agcls.AgTypeNameMap["DesignCR3BPSetup"] = DesignCR3BPSetup
 
 class DesignCR3BPObject(IDesignCR3BPObject):
     """CR3BP associated object definition."""
+
     def __init__(self, sourceObject=None):
         IDesignCR3BPObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52881,6 +53756,7 @@ agcls.AgTypeNameMap["DesignCR3BPObject"] = DesignCR3BPObject
 
 class DesignCR3BPObjectCollection(IDesignCR3BPObjectCollection):
     """CR3BP associated object Collection."""
+
     def __init__(self, sourceObject=None):
         IDesignCR3BPObjectCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52897,6 +53773,7 @@ agcls.AgTypeNameMap["DesignCR3BPObjectCollection"] = DesignCR3BPObjectCollection
 
 class Thruster(IThruster):
     """Thruster definition."""
+
     def __init__(self, sourceObject=None):
         IThruster.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52913,6 +53790,7 @@ agcls.AgTypeNameMap["Thruster"] = Thruster
 
 class ThrusterSetCollection(IThrusterSetCollection):
     """Thruster Set Collection."""
+
     def __init__(self, sourceObject=None):
         IThrusterSetCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -52929,6 +53807,7 @@ agcls.AgTypeNameMap["ThrusterSetCollection"] = ThrusterSetCollection
 
 class ThrusterSet(IThrusterSet, IComponentInfo, ICloneable):
     """Thruster Set."""
+
     def __init__(self, sourceObject=None):
         IThrusterSet.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52949,6 +53828,7 @@ agcls.AgTypeNameMap["ThrusterSet"] = ThrusterSet
 
 class AsTriggerCondition(IAsTriggerCondition, IComponentInfo, ICloneable):
     """Constraint."""
+
     def __init__(self, sourceObject=None):
         IAsTriggerCondition.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52969,6 +53849,7 @@ agcls.AgTypeNameMap["AsTriggerCondition"] = AsTriggerCondition
 
 class CustomFunctionScriptEngine(ICustomFunctionScriptEngine, IComponentInfo, ICloneable):
     """Custom Function Script Engine."""
+
     def __init__(self, sourceObject=None):
         ICustomFunctionScriptEngine.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -52989,6 +53870,7 @@ agcls.AgTypeNameMap["CustomFunctionScriptEngine"] = CustomFunctionScriptEngine
 
 class NumericalPropagatorWrapper(INumericalPropagatorWrapper, IComponentInfo, ICloneable):
     """Numerical Propagator."""
+
     def __init__(self, sourceObject=None):
         INumericalPropagatorWrapper.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -53009,6 +53891,7 @@ agcls.AgTypeNameMap["NumericalPropagatorWrapper"] = NumericalPropagatorWrapper
 
 class NumericalPropagatorWrapperCR3BP(INumericalPropagatorWrapperCR3BP, IComponentInfo, ICloneable):
     """Numerical CR3BP Propagator."""
+
     def __init__(self, sourceObject=None):
         INumericalPropagatorWrapperCR3BP.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
@@ -53029,6 +53912,7 @@ agcls.AgTypeNameMap["NumericalPropagatorWrapperCR3BP"] = NumericalPropagatorWrap
 
 class PropagatorFunctionCollection(IPropagatorFunctionCollection):
     """Propagator Function Collection."""
+
     def __init__(self, sourceObject=None):
         IPropagatorFunctionCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53045,6 +53929,7 @@ agcls.AgTypeNameMap["PropagatorFunctionCollection"] = PropagatorFunctionCollecti
 
 class BulirschStoerIntegrator(IBulirschStoerIntegrator, INumericalIntegrator):
     """Bulirsch-Stoer Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IBulirschStoerIntegrator.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53063,6 +53948,7 @@ agcls.AgTypeNameMap["BulirschStoerIntegrator"] = BulirschStoerIntegrator
 
 class GaussJacksonIntegrator(IGaussJacksonIntegrator, INumericalIntegrator):
     """Gauss-Jackson Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IGaussJacksonIntegrator.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53081,6 +53967,7 @@ agcls.AgTypeNameMap["GaussJacksonIntegrator"] = GaussJacksonIntegrator
 
 class RungeKutta2nd3rd(IRungeKutta2nd3rd, INumericalIntegrator):
     """RK2nd3rd Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKutta2nd3rd.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53099,6 +53986,7 @@ agcls.AgTypeNameMap["RungeKutta2nd3rd"] = RungeKutta2nd3rd
 
 class RungeKutta4th(IRungeKutta4th, INumericalIntegrator):
     """RK4th Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKutta4th.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53117,6 +54005,7 @@ agcls.AgTypeNameMap["RungeKutta4th"] = RungeKutta4th
 
 class RungeKutta4th5th(IRungeKutta4th5th, INumericalIntegrator):
     """RK4th5th Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKutta4th5th.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53135,6 +54024,7 @@ agcls.AgTypeNameMap["RungeKutta4th5th"] = RungeKutta4th5th
 
 class RungeKutta4thAdapt(IRungeKutta4thAdapt, INumericalIntegrator):
     """RK4thAdapt Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKutta4thAdapt.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53153,6 +54043,7 @@ agcls.AgTypeNameMap["RungeKutta4thAdapt"] = RungeKutta4thAdapt
 
 class RungeKuttaF7th8th(IRungeKuttaF7th8th, INumericalIntegrator):
     """RKF7th8th Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKuttaF7th8th.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53171,6 +54062,7 @@ agcls.AgTypeNameMap["RungeKuttaF7th8th"] = RungeKuttaF7th8th
 
 class RungeKuttaV8th9th(IRungeKuttaV8th9th, INumericalIntegrator):
     """RKV8th9th Numerical Integrator."""
+
     def __init__(self, sourceObject=None):
         IRungeKuttaV8th9th.__init__(self, sourceObject)
         INumericalIntegrator.__init__(self, sourceObject)
@@ -53189,6 +54081,7 @@ agcls.AgTypeNameMap["RungeKuttaV8th9th"] = RungeKuttaV8th9th
 
 class ScriptingTool(IScriptingTool, IRuntimeTypeInfoProvider):
     """Scripting Tool."""
+
     def __init__(self, sourceObject=None):
         IScriptingTool.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53207,6 +54100,7 @@ agcls.AgTypeNameMap["ScriptingTool"] = ScriptingTool
 
 class ScriptingSegmentCollection(IScriptingSegmentCollection, IRuntimeTypeInfoProvider):
     """Scripting Segment Collection."""
+
     def __init__(self, sourceObject=None):
         IScriptingSegmentCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53225,6 +54119,7 @@ agcls.AgTypeNameMap["ScriptingSegmentCollection"] = ScriptingSegmentCollection
 
 class ScriptingSegment(IScriptingSegment, IRuntimeTypeInfoProvider):
     """Scripting Segment."""
+
     def __init__(self, sourceObject=None):
         IScriptingSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53243,6 +54138,7 @@ agcls.AgTypeNameMap["ScriptingSegment"] = ScriptingSegment
 
 class ScriptingParameterCollection(IScriptingParameterCollection, IRuntimeTypeInfoProvider):
     """Scripting Parameter Collection."""
+
     def __init__(self, sourceObject=None):
         IScriptingParameterCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53261,6 +54157,7 @@ agcls.AgTypeNameMap["ScriptingParameterCollection"] = ScriptingParameterCollecti
 
 class ScriptingParameter(IScriptingParameter, IRuntimeTypeInfoProvider):
     """Scripting Parameter."""
+
     def __init__(self, sourceObject=None):
         IScriptingParameter.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53279,6 +54176,7 @@ agcls.AgTypeNameMap["ScriptingParameter"] = ScriptingParameter
 
 class ScriptingCalcObject(IScriptingCalcObject):
     """Calc Object."""
+
     def __init__(self, sourceObject=None):
         IScriptingCalcObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53295,6 +54193,7 @@ agcls.AgTypeNameMap["ScriptingCalcObject"] = ScriptingCalcObject
 
 class ScriptingCalcObjectCollection(IScriptingCalcObjectCollection):
     """Calc Object Collection."""
+
     def __init__(self, sourceObject=None):
         IScriptingCalcObjectCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53310,7 +54209,8 @@ agcls.AgClassCatalog.add_catalog_entry("{9FC08736-F254-451E-9292-C003D5601780}",
 agcls.AgTypeNameMap["ScriptingCalcObjectCollection"] = ScriptingCalcObjectCollection
 
 class UserVariableDefinition(IUserVariableDefinition):
-    """User Variable Definition"""
+    """User Variable Definition."""
+
     def __init__(self, sourceObject=None):
         IUserVariableDefinition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53326,7 +54226,8 @@ agcls.AgClassCatalog.add_catalog_entry("{659E4C4D-E224-47D7-A899-C9B5DCF7241F}",
 agcls.AgTypeNameMap["UserVariableDefinition"] = UserVariableDefinition
 
 class UserVariable(IUserVariable):
-    """User Variable"""
+    """User Variable."""
+
     def __init__(self, sourceObject=None):
         IUserVariable.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53342,7 +54243,8 @@ agcls.AgClassCatalog.add_catalog_entry("{437599F8-0E00-4984-81CA-B450200257BC}",
 agcls.AgTypeNameMap["UserVariable"] = UserVariable
 
 class UserVariableUpdate(IUserVariableUpdate):
-    """User Variable Update"""
+    """User Variable Update."""
+
     def __init__(self, sourceObject=None):
         IUserVariableUpdate.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53359,6 +54261,7 @@ agcls.AgTypeNameMap["UserVariableUpdate"] = UserVariableUpdate
 
 class UserVariableDefinitionCollection(IUserVariableDefinitionCollection):
     """User Variable Definition Collection."""
+
     def __init__(self, sourceObject=None):
         IUserVariableDefinitionCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53375,6 +54278,7 @@ agcls.AgTypeNameMap["UserVariableDefinitionCollection"] = UserVariableDefinition
 
 class UserVariableCollection(IUserVariableCollection):
     """User Variable Initial Value Collection."""
+
     def __init__(self, sourceObject=None):
         IUserVariableCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53390,7 +54294,8 @@ agcls.AgClassCatalog.add_catalog_entry("{801C61FA-C0FE-4BFD-8001-3335211F7328}",
 agcls.AgTypeNameMap["UserVariableCollection"] = UserVariableCollection
 
 class UserVariableUpdateCollection(IUserVariableUpdateCollection):
-    """User Variable Update Collection"""
+    """User Variable Update Collection."""
+
     def __init__(self, sourceObject=None):
         IUserVariableUpdateCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53407,6 +54312,7 @@ agcls.AgTypeNameMap["UserVariableUpdateCollection"] = UserVariableUpdateCollecti
 
 class CalculationGraphCollection(ICalculationGraphCollection):
     """Calculation Graph Collection."""
+
     def __init__(self, sourceObject=None):
         ICalculationGraphCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53423,6 +54329,7 @@ agcls.AgTypeNameMap["CalculationGraphCollection"] = CalculationGraphCollection
 
 class ScriptingParameterEnumerationChoice(IScriptingParameterEnumerationChoice, IRuntimeTypeInfoProvider):
     """Scripting Parameter Enumeration Choice."""
+
     def __init__(self, sourceObject=None):
         IScriptingParameterEnumerationChoice.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53440,7 +54347,8 @@ agcls.AgClassCatalog.add_catalog_entry("{82A982C2-A2AD-4FD8-AB46-A54866F56AEA}",
 agcls.AgTypeNameMap["ScriptingParameterEnumerationChoice"] = ScriptingParameterEnumerationChoice
 
 class ScriptingParameterEnumerationChoiceCollection(IScriptingParameterEnumerationChoiceCollection, IRuntimeTypeInfoProvider):
-    """Scripting Parameter Enumeration Choice Collection"""
+    """Scripting Parameter Enumeration Choice Collection."""
+
     def __init__(self, sourceObject=None):
         IScriptingParameterEnumerationChoiceCollection.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
@@ -53458,7 +54366,8 @@ agcls.AgClassCatalog.add_catalog_entry("{E4F13182-12CE-420B-AC3A-8530CC46BE35}",
 agcls.AgTypeNameMap["ScriptingParameterEnumerationChoiceCollection"] = ScriptingParameterEnumerationChoiceCollection
 
 class ProfileSNOPTOptimizer(IProfileSNOPTOptimizer, IProfile, IRuntimeTypeInfoProvider):
-    """SNOPT optimizer profile"""
+    """SNOPT optimizer profile."""
+
     def __init__(self, sourceObject=None):
         IProfileSNOPTOptimizer.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53478,7 +54387,8 @@ agcls.AgClassCatalog.add_catalog_entry("{6F7AFA8D-FC45-4955-BEFB-BDE94553C02E}",
 agcls.AgTypeNameMap["ProfileSNOPTOptimizer"] = ProfileSNOPTOptimizer
 
 class SNOPTControl(ISNOPTControl):
-    """Control parameters for SNOPT optimizer profile"""
+    """Control parameters for SNOPT optimizer profile."""
+
     def __init__(self, sourceObject=None):
         ISNOPTControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53495,6 +54405,7 @@ agcls.AgTypeNameMap["SNOPTControl"] = SNOPTControl
 
 class SNOPTResult(ISNOPTResult):
     """Properties for objecvtive and constraints of a SNOPT profile."""
+
     def __init__(self, sourceObject=None):
         ISNOPTResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53511,6 +54422,7 @@ agcls.AgTypeNameMap["SNOPTResult"] = SNOPTResult
 
 class SNOPTControlCollection(ISNOPTControlCollection):
     """SNOPT control collection."""
+
     def __init__(self, sourceObject=None):
         ISNOPTControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53527,6 +54439,7 @@ agcls.AgTypeNameMap["SNOPTControlCollection"] = SNOPTControlCollection
 
 class SNOPTResultCollection(ISNOPTResultCollection):
     """SNOPT result collection."""
+
     def __init__(self, sourceObject=None):
         ISNOPTResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53542,7 +54455,8 @@ agcls.AgClassCatalog.add_catalog_entry("{D27CBF33-3EC4-40A0-A138-5F41720B0B08}",
 agcls.AgTypeNameMap["SNOPTResultCollection"] = SNOPTResultCollection
 
 class ProfileIPOPTOptimizer(IProfileIPOPTOptimizer, IProfile, IRuntimeTypeInfoProvider):
-    """IPOPT optimizer profile"""
+    """IPOPT optimizer profile."""
+
     def __init__(self, sourceObject=None):
         IProfileIPOPTOptimizer.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53562,7 +54476,8 @@ agcls.AgClassCatalog.add_catalog_entry("{59AB8108-2D2E-4D46-8B96-F1F43175CC77}",
 agcls.AgTypeNameMap["ProfileIPOPTOptimizer"] = ProfileIPOPTOptimizer
 
 class IPOPTControl(IIPOPTControl):
-    """Control parameters for IPOPT optimizer profile"""
+    """Control parameters for IPOPT optimizer profile."""
+
     def __init__(self, sourceObject=None):
         IIPOPTControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53579,6 +54494,7 @@ agcls.AgTypeNameMap["IPOPTControl"] = IPOPTControl
 
 class IPOPTResult(IIPOPTResult):
     """Properties for objecvtive and constraints of a IPOPT profile."""
+
     def __init__(self, sourceObject=None):
         IIPOPTResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53595,6 +54511,7 @@ agcls.AgTypeNameMap["IPOPTResult"] = IPOPTResult
 
 class IPOPTControlCollection(IIPOPTControlCollection):
     """Properties for the list of IPOPT control parameters."""
+
     def __init__(self, sourceObject=None):
         IIPOPTControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53611,6 +54528,7 @@ agcls.AgTypeNameMap["IPOPTControlCollection"] = IPOPTControlCollection
 
 class IPOPTResultCollection(IIPOPTResultCollection):
     """IPOPT result collection."""
+
     def __init__(self, sourceObject=None):
         IIPOPTResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53627,6 +54545,7 @@ agcls.AgTypeNameMap["IPOPTResultCollection"] = IPOPTResultCollection
 
 class ManeuverOptimalFinite(IManeuverOptimalFinite, IManeuver, IRuntimeTypeInfoProvider):
     """The Optimal Finite Maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFinite.__init__(self, sourceObject)
         IManeuver.__init__(self, sourceObject)
@@ -53647,6 +54566,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFinite"] = ManeuverOptimalFinite
 
 class ManeuverOptimalFiniteSNOPTOptimizer(IManeuverOptimalFiniteSNOPTOptimizer):
     """Properties of SNOPT Optimizer options for optimal finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteSNOPTOptimizer.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53663,6 +54583,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteSNOPTOptimizer"] = ManeuverOptimalFini
 
 class ManeuverOptimalFiniteInitialBoundaryConditions(IManeuverOptimalFiniteInitialBoundaryConditions):
     """Properties of initial boundary conditions for optimal finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteInitialBoundaryConditions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53679,6 +54600,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteInitialBoundaryConditions"] = Maneuver
 
 class ManeuverOptimalFiniteFinalBoundaryConditions(IManeuverOptimalFiniteFinalBoundaryConditions):
     """Properties of final boundary conditions for optimal finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteFinalBoundaryConditions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53695,6 +54617,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteFinalBoundaryConditions"] = ManeuverOp
 
 class ManeuverOptimalFinitePathBoundaryConditions(IManeuverOptimalFinitePathBoundaryConditions):
     """Properties of path boundary conditions for optimal finite maneuver."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFinitePathBoundaryConditions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53711,6 +54634,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFinitePathBoundaryConditions"] = ManeuverOpt
 
 class ManeuverOptimalFiniteSteeringNodeElement(IManeuverOptimalFiniteSteeringNodeElement):
     """The elements of the steering node."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteSteeringNodeElement.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53727,6 +54651,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeElement"] = ManeuverOptima
 
 class ManeuverOptimalFiniteSteeringNodeCollection(IManeuverOptimalFiniteSteeringNodeCollection):
     """Steering/nodes collection."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteSteeringNodeCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53743,6 +54668,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteSteeringNodeCollection"] = ManeuverOpt
 
 class ManeuverOptimalFiniteBounds(IManeuverOptimalFiniteBounds):
     """The elements of the steering node."""
+
     def __init__(self, sourceObject=None):
         IManeuverOptimalFiniteBounds.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53759,6 +54685,7 @@ agcls.AgTypeNameMap["ManeuverOptimalFiniteBounds"] = ManeuverOptimalFiniteBounds
 
 class ProfileLambertProfile(IProfileLambertProfile, IProfile, IRuntimeTypeInfoProvider):
     """The Lambert profile."""
+
     def __init__(self, sourceObject=None):
         IProfileLambertProfile.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53779,6 +54706,7 @@ agcls.AgTypeNameMap["ProfileLambertProfile"] = ProfileLambertProfile
 
 class ProfileLambertSearchProfile(IProfileLambertSearchProfile, IProfile, IRuntimeTypeInfoProvider):
     """The Lambert profile."""
+
     def __init__(self, sourceObject=None):
         IProfileLambertSearchProfile.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53799,6 +54727,7 @@ agcls.AgTypeNameMap["ProfileLambertSearchProfile"] = ProfileLambertSearchProfile
 
 class ProfileGoldenSection(IProfileGoldenSection, IProfile, IRuntimeTypeInfoProvider):
     """The Golden Section profile."""
+
     def __init__(self, sourceObject=None):
         IProfileGoldenSection.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53819,6 +54748,7 @@ agcls.AgTypeNameMap["ProfileGoldenSection"] = ProfileGoldenSection
 
 class GoldenSectionControlCollection(IGoldenSectionControlCollection):
     """Properties for the list of Golden Section control parameters."""
+
     def __init__(self, sourceObject=None):
         IGoldenSectionControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53834,7 +54764,8 @@ agcls.AgClassCatalog.add_catalog_entry("{5E3FCD6D-E592-4610-9831-87D9ABD81889}",
 agcls.AgTypeNameMap["GoldenSectionControlCollection"] = GoldenSectionControlCollection
 
 class GoldenSectionControl(IGoldenSectionControl):
-    """Control parameters for Golden Section profile"""
+    """Control parameters for Golden Section profile."""
+
     def __init__(self, sourceObject=None):
         IGoldenSectionControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53851,6 +54782,7 @@ agcls.AgTypeNameMap["GoldenSectionControl"] = GoldenSectionControl
 
 class GoldenSectionResultCollection(IGoldenSectionResultCollection):
     """Properties for the list of Golden Section result parameters."""
+
     def __init__(self, sourceObject=None):
         IGoldenSectionResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53866,7 +54798,8 @@ agcls.AgClassCatalog.add_catalog_entry("{72ADF8B9-9BE8-4112-B295-30B86DAF11F3}",
 agcls.AgTypeNameMap["GoldenSectionResultCollection"] = GoldenSectionResultCollection
 
 class GoldenSectionResult(IGoldenSectionResult):
-    """Result parameters for Golden Section profile"""
+    """Result parameters for Golden Section profile."""
+
     def __init__(self, sourceObject=None):
         IGoldenSectionResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53883,6 +54816,7 @@ agcls.AgTypeNameMap["GoldenSectionResult"] = GoldenSectionResult
 
 class ProfileGridSearch(IProfileGridSearch, IProfile, IRuntimeTypeInfoProvider):
     """The Grid Search profile."""
+
     def __init__(self, sourceObject=None):
         IProfileGridSearch.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -53903,6 +54837,7 @@ agcls.AgTypeNameMap["ProfileGridSearch"] = ProfileGridSearch
 
 class GridSearchControlCollection(IGridSearchControlCollection):
     """Properties for the list of Grid Search control parameters."""
+
     def __init__(self, sourceObject=None):
         IGridSearchControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53918,7 +54853,8 @@ agcls.AgClassCatalog.add_catalog_entry("{0A1300B1-D35A-46C5-BE62-3AFB811157C5}",
 agcls.AgTypeNameMap["GridSearchControlCollection"] = GridSearchControlCollection
 
 class GridSearchControl(IGridSearchControl):
-    """Control parameters for Grid Search profile"""
+    """Control parameters for Grid Search profile."""
+
     def __init__(self, sourceObject=None):
         IGridSearchControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53935,6 +54871,7 @@ agcls.AgTypeNameMap["GridSearchControl"] = GridSearchControl
 
 class GridSearchResultCollection(IGridSearchResultCollection):
     """Properties for the list of Grid Search result parameters."""
+
     def __init__(self, sourceObject=None):
         IGridSearchResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53950,7 +54887,8 @@ agcls.AgClassCatalog.add_catalog_entry("{E189AD76-0BE9-4922-8D76-3E28FAE74507}",
 agcls.AgTypeNameMap["GridSearchResultCollection"] = GridSearchResultCollection
 
 class GridSearchResult(IGridSearchResult):
-    """Result parameters for Grid Search profile"""
+    """Result parameters for Grid Search profile."""
+
     def __init__(self, sourceObject=None):
         IGridSearchResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53967,6 +54905,7 @@ agcls.AgTypeNameMap["GridSearchResult"] = GridSearchResult
 
 class CalcObjectLinkEmbedControlCollection(ICalcObjectLinkEmbedControlCollection):
     """The Calculation Object link/embed component folder."""
+
     def __init__(self, sourceObject=None):
         ICalcObjectLinkEmbedControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -53982,7 +54921,8 @@ agcls.AgClassCatalog.add_catalog_entry("{8EFFF2BC-B4AA-4F5E-BDF2-7218EBBE10FF}",
 agcls.AgTypeNameMap["CalcObjectLinkEmbedControlCollection"] = CalcObjectLinkEmbedControlCollection
 
 class ProfileBisection(IProfileBisection, IProfile, IRuntimeTypeInfoProvider):
-    """Single Parameter Bisection profile"""
+    """Single Parameter Bisection profile."""
+
     def __init__(self, sourceObject=None):
         IProfileBisection.__init__(self, sourceObject)
         IProfile.__init__(self, sourceObject)
@@ -54002,7 +54942,8 @@ agcls.AgClassCatalog.add_catalog_entry("{4A29B6D5-AF0C-4516-B362-5D111388524F}",
 agcls.AgTypeNameMap["ProfileBisection"] = ProfileBisection
 
 class BisectionControl(IBisectionControl):
-    """Control parameters for  Bisection Seacrh Profile"""
+    """Control parameters for  Bisection Seacrh Profile."""
+
     def __init__(self, sourceObject=None):
         IBisectionControl.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -54019,6 +54960,7 @@ agcls.AgTypeNameMap["BisectionControl"] = BisectionControl
 
 class BisectionControlCollection(IBisectionControlCollection):
     """Bisection control collection."""
+
     def __init__(self, sourceObject=None):
         IBisectionControlCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -54035,6 +54977,7 @@ agcls.AgTypeNameMap["BisectionControlCollection"] = BisectionControlCollection
 
 class BisectionResult(IBisectionResult):
     """Result parameters for Bisection profile."""
+
     def __init__(self, sourceObject=None):
         IBisectionResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -54051,6 +54994,7 @@ agcls.AgTypeNameMap["BisectionResult"] = BisectionResult
 
 class BisectionResultCollection(IBisectionResultCollection):
     """Bisection result collection."""
+
     def __init__(self, sourceObject=None):
         IBisectionResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

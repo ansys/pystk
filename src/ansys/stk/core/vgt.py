@@ -208,8 +208,9 @@ def _raise_uninitialized_error(*args):
 
 class CRDN_CALC_SCALAR_TYPE(IntEnum):
     """Defines available calculation scalar types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported calculation scalar types"""
+    """Unknown or unsupported calculation scalar types."""
     ANGLE = 0
     """Scalar equal to angular displacement obtained from any angle in VGT."""
     FIXED_AT_TIME_INSTANT = 1
@@ -243,7 +244,7 @@ class CRDN_CALC_SCALAR_TYPE(IntEnum):
     VECTOR_COMPONENT = 15
     """Scalar equal to the specified component of a vector when resolved in the specified axes."""
 
-CRDN_CALC_SCALAR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types"
+CRDN_CALC_SCALAR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types."
 CRDN_CALC_SCALAR_TYPE.ANGLE.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
 CRDN_CALC_SCALAR_TYPE.FIXED_AT_TIME_INSTANT.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
 CRDN_CALC_SCALAR_TYPE.CONSTANT.__doc__ = "Constant scalar value of specified dimension."
@@ -265,6 +266,7 @@ agcls.AgTypeNameMap["CRDN_CALC_SCALAR_TYPE"] = CRDN_CALC_SCALAR_TYPE
 
 class CRDN_CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines scalar condition combined operation types."""
+   
     AND = 1
     """Scalar condition combined AND operation."""
     OR = 2
@@ -283,6 +285,7 @@ agcls.AgTypeNameMap["CRDN_CONDITION_COMBINED_OPERATION_TYPE"] = CRDN_CONDITION_C
 
 class CRDN_CONDITION_SET_TYPE(IntEnum):
     """Defines available condition set types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported condition set types."""
     SCALAR_THRESHOLDS = 0
@@ -294,27 +297,29 @@ CRDN_CONDITION_SET_TYPE.SCALAR_THRESHOLDS.__doc__ = "Condition set placing multi
 agcls.AgTypeNameMap["CRDN_CONDITION_SET_TYPE"] = CRDN_CONDITION_SET_TYPE
 
 class CRDN_CONDITION_THRESHOLD_OPTION(IntEnum):
-    """Operations for Scalar Bounds Condition"""
+    """Operations for Scalar Bounds Condition."""
+   
     ABOVE_MIN = 1
-    """Bound is above a minimum value"""
+    """Bound is above a minimum value."""
     BELOW_MAX = 2
-    """Bound is below a maximum value"""
+    """Bound is below a maximum value."""
     INSIDE_MIN_MAX = 3
-    """Bound is between a minimum and maximum value"""
+    """Bound is between a minimum and maximum value."""
     OUTSIDE_MIN_MAX = 4
-    """Bound is outside a minimum and maximum value"""
+    """Bound is outside a minimum and maximum value."""
 
-CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN.__doc__ = "Bound is above a minimum value"
-CRDN_CONDITION_THRESHOLD_OPTION.BELOW_MAX.__doc__ = "Bound is below a maximum value"
-CRDN_CONDITION_THRESHOLD_OPTION.INSIDE_MIN_MAX.__doc__ = "Bound is between a minimum and maximum value"
-CRDN_CONDITION_THRESHOLD_OPTION.OUTSIDE_MIN_MAX.__doc__ = "Bound is outside a minimum and maximum value"
+CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN.__doc__ = "Bound is above a minimum value."
+CRDN_CONDITION_THRESHOLD_OPTION.BELOW_MAX.__doc__ = "Bound is below a maximum value."
+CRDN_CONDITION_THRESHOLD_OPTION.INSIDE_MIN_MAX.__doc__ = "Bound is between a minimum and maximum value."
+CRDN_CONDITION_THRESHOLD_OPTION.OUTSIDE_MIN_MAX.__doc__ = "Bound is outside a minimum and maximum value."
 
 agcls.AgTypeNameMap["CRDN_CONDITION_THRESHOLD_OPTION"] = CRDN_CONDITION_THRESHOLD_OPTION
 
 class CRDN_CONDITION_TYPE(IntEnum):
     """Defines available condition types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported condition type"""
+    """Unknown or unsupported condition type."""
     SCALAR_BOUNDS = 0
     """Condition placing bounds on specified scalar."""
     COMBINED = 1
@@ -322,7 +327,7 @@ class CRDN_CONDITION_TYPE(IntEnum):
     POINT_IN_VOLUME = 2
     """Condition placing point in volume."""
 
-CRDN_CONDITION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition type"
+CRDN_CONDITION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition type."
 CRDN_CONDITION_TYPE.SCALAR_BOUNDS.__doc__ = "Condition placing bounds on specified scalar."
 CRDN_CONDITION_TYPE.COMBINED.__doc__ = "Multiple conditiones on specified scalar."
 CRDN_CONDITION_TYPE.POINT_IN_VOLUME.__doc__ = "Condition placing point in volume."
@@ -330,7 +335,8 @@ CRDN_CONDITION_TYPE.POINT_IN_VOLUME.__doc__ = "Condition placing point in volume
 agcls.AgTypeNameMap["CRDN_CONDITION_TYPE"] = CRDN_CONDITION_TYPE
 
 class CRDN_DIMENSION_INHERITANCE(IntEnum):
-    """Defines how dimension is inherited"""
+    """Defines how dimension is inherited."""
+   
     NONE = 0
     """Do not inherit dimension."""
     FROM_X = 1
@@ -346,23 +352,25 @@ agcls.AgTypeNameMap["CRDN_DIMENSION_INHERITANCE"] = CRDN_DIMENSION_INHERITANCE
 
 class CRDN_EVENT_ARRAY_FILTER_TYPE(IntEnum):
     """Event array filter types."""
+   
     SKIP_TIME_STEP = 0
-    """Skip time step"""
+    """Skip time step."""
     SKIP_COUNT = 1
-    """Skip count"""
+    """Skip count."""
     INTERVALS = 2
-    """Intervals"""
+    """Intervals."""
 
-CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP.__doc__ = "Skip time step"
-CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_COUNT.__doc__ = "Skip count"
-CRDN_EVENT_ARRAY_FILTER_TYPE.INTERVALS.__doc__ = "Intervals"
+CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP.__doc__ = "Skip time step."
+CRDN_EVENT_ARRAY_FILTER_TYPE.SKIP_COUNT.__doc__ = "Skip count."
+CRDN_EVENT_ARRAY_FILTER_TYPE.INTERVALS.__doc__ = "Intervals."
 
 agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_FILTER_TYPE"] = CRDN_EVENT_ARRAY_FILTER_TYPE
 
 class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     """Defines available time array types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported time array types"""
+    """Unknown or unsupported time array types."""
     EXTREMA = 0
     """Determine time of local minimum and/or maximum of specified scalar calculation."""
     START_STOP_TIMES = 1
@@ -380,7 +388,7 @@ class CRDN_EVENT_ARRAY_TYPE(IntEnum):
     FIXED_TIMES = 7
     """Time array containing specific times."""
 
-CRDN_EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types"
+CRDN_EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types."
 CRDN_EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determine time of local minimum and/or maximum of specified scalar calculation."
 CRDN_EVENT_ARRAY_TYPE.START_STOP_TIMES.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
 CRDN_EVENT_ARRAY_TYPE.MERGED.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
@@ -394,8 +402,9 @@ agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_TYPE"] = CRDN_EVENT_ARRAY_TYPE
 
 class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     """Defines available interval collection types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported interval collection types"""
+    """Unknown or unsupported interval collection types."""
     LIGHTING = 0
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
     SIGNALED = 1
@@ -403,7 +412,7 @@ class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     CONDITION = 2
     """Interval collection containing intervals during which condition set is satisfied."""
 
-CRDN_EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types"
+CRDN_EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types."
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.SIGNALED.__doc__ = "Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
 CRDN_EVENT_INTERVAL_COLLECTION_TYPE.CONDITION.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
@@ -412,8 +421,9 @@ agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_COLLECTION_TYPE"] = CRDN_EVENT_INTERVAL
 
 class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
     """Defines available interval list types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported interval list types"""
+    """Unknown or unsupported interval list types."""
     MERGED = 1
     """Interval list created by merging two constituent interval lists using specified logical operation."""
     FILTERED = 2
@@ -427,26 +437,27 @@ class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
     TIME_OFFSET = 6
     """Interval List defined by shifting specified reference interval list by fixed time offset."""
     FILE = 0
-    """Interval list loaded from specified interval file"""
+    """Interval list loaded from specified interval file."""
     FIXED = 7
     """Interval list with individual intervals defined between explicitly specified start and stop times."""
 
-CRDN_EVENT_INTERVAL_LIST_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval list types"
+CRDN_EVENT_INTERVAL_LIST_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval list types."
 CRDN_EVENT_INTERVAL_LIST_TYPE.MERGED.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
 CRDN_EVENT_INTERVAL_LIST_TYPE.FILTERED.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
 CRDN_EVENT_INTERVAL_LIST_TYPE.CONDITION.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
 CRDN_EVENT_INTERVAL_LIST_TYPE.SCALED.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
 CRDN_EVENT_INTERVAL_LIST_TYPE.SIGNALED.__doc__ = "Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
 CRDN_EVENT_INTERVAL_LIST_TYPE.TIME_OFFSET.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
-CRDN_EVENT_INTERVAL_LIST_TYPE.FILE.__doc__ = "Interval list loaded from specified interval file"
+CRDN_EVENT_INTERVAL_LIST_TYPE.FILE.__doc__ = "Interval list loaded from specified interval file."
 CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
 
 agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_LIST_TYPE"] = CRDN_EVENT_INTERVAL_LIST_TYPE
 
 class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
     """Defines available interval types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported interval types"""
+    """Unknown or unsupported interval types."""
     FIXED = 0
     """Interval defined between two explicitly specified start and stop times."""
     FIXED_DURATION = 1
@@ -464,7 +475,7 @@ class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
     SMART_INTERVAL = 7
     """A smart interval."""
 
-CRDN_EVENT_INTERVAL_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval types"
+CRDN_EVENT_INTERVAL_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval types."
 CRDN_EVENT_INTERVAL_TYPE.FIXED.__doc__ = "Interval defined between two explicitly specified start and stop times."
 CRDN_EVENT_INTERVAL_TYPE.FIXED_DURATION.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
 CRDN_EVENT_INTERVAL_TYPE.BETWEEN_TIME_INSTANTS.__doc__ = "Interval between specified start and stop time instants."
@@ -478,63 +489,67 @@ agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_TYPE"] = CRDN_EVENT_INTERVAL_TYPE
 
 class CRDN_EVENT_LIST_MERGE_OPERATION(IntEnum):
     """Defines merge operations for interval lists."""
+   
     AND = 0
-    """Intervals both in A and B"""
+    """Intervals both in A and B."""
     OR = 1
-    """Intervals in A or B"""
+    """Intervals in A or B."""
     XOR = 2
-    """Intervals in A or B but not in both"""
+    """Intervals in A or B but not in both."""
     MINUS = 3
-    """Intervals in A and not in B"""
+    """Intervals in A and not in B."""
 
-CRDN_EVENT_LIST_MERGE_OPERATION.AND.__doc__ = "Intervals both in A and B"
-CRDN_EVENT_LIST_MERGE_OPERATION.OR.__doc__ = "Intervals in A or B"
-CRDN_EVENT_LIST_MERGE_OPERATION.XOR.__doc__ = "Intervals in A or B but not in both"
-CRDN_EVENT_LIST_MERGE_OPERATION.MINUS.__doc__ = "Intervals in A and not in B"
+CRDN_EVENT_LIST_MERGE_OPERATION.AND.__doc__ = "Intervals both in A and B."
+CRDN_EVENT_LIST_MERGE_OPERATION.OR.__doc__ = "Intervals in A or B."
+CRDN_EVENT_LIST_MERGE_OPERATION.XOR.__doc__ = "Intervals in A or B but not in both."
+CRDN_EVENT_LIST_MERGE_OPERATION.MINUS.__doc__ = "Intervals in A and not in B."
 
 agcls.AgTypeNameMap["CRDN_EVENT_LIST_MERGE_OPERATION"] = CRDN_EVENT_LIST_MERGE_OPERATION
 
 class CRDN_EVENT_TYPE(IntEnum):
     """Defines available time instant types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported time instant types"""
+    """Unknown or unsupported time instant types."""
     EPOCH = 0
-    """Time instant set at specified date/time"""
+    """Time instant set at specified date/time."""
     EXTREMUM = 1
     """Determine time of global minimum or maximum of specified scalar calculation."""
     FROM_INTERVAL = 2
-    """Start or stop time of selected reference interval"""
+    """Start or stop time of selected reference interval."""
     SIGNALED = 3
     """Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."""
     TIME_OFFSET = 4
-    """Time instant at fixed offset from specified reference time instant"""
+    """Time instant at fixed offset from specified reference time instant."""
     SMART_EPOCH = 5
     """A smart epoch."""
 
-CRDN_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types"
-CRDN_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time"
+CRDN_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types."
+CRDN_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time."
 CRDN_EVENT_TYPE.EXTREMUM.__doc__ = "Determine time of global minimum or maximum of specified scalar calculation."
-CRDN_EVENT_TYPE.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval"
+CRDN_EVENT_TYPE.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval."
 CRDN_EVENT_TYPE.SIGNALED.__doc__ = "Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
-CRDN_EVENT_TYPE.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant"
+CRDN_EVENT_TYPE.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant."
 CRDN_EVENT_TYPE.SMART_EPOCH.__doc__ = "A smart epoch."
 
 agcls.AgTypeNameMap["CRDN_EVENT_TYPE"] = CRDN_EVENT_TYPE
 
 class CRDN_EXTREMUM_CONSTANTS(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
+   
     MINIMUM = 1
-    """Find the minimum value"""
+    """Find the minimum value."""
     MAXIMUM = 2
-    """Find the maximum value"""
+    """Find the maximum value."""
 
-CRDN_EXTREMUM_CONSTANTS.MINIMUM.__doc__ = "Find the minimum value"
-CRDN_EXTREMUM_CONSTANTS.MAXIMUM.__doc__ = "Find the maximum value"
+CRDN_EXTREMUM_CONSTANTS.MINIMUM.__doc__ = "Find the minimum value."
+CRDN_EXTREMUM_CONSTANTS.MAXIMUM.__doc__ = "Find the maximum value."
 
 agcls.AgTypeNameMap["CRDN_EXTREMUM_CONSTANTS"] = CRDN_EXTREMUM_CONSTANTS
 
 class CRDN_FILE_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
+   
     INVALID = -1
     """Unknown or invalid interpolator."""
     LAGRANGE = 1
@@ -559,21 +574,23 @@ agcls.AgTypeNameMap["CRDN_FILE_INTERPOLATOR_TYPE"] = CRDN_FILE_INTERPOLATOR_TYPE
 
 class CRDN_INTEGRAL_TYPE(IntEnum):
     """Integral types."""
+   
     FIXED_STEP_SIMPSON = 2
-    """Simpson integral method"""
+    """Simpson integral method."""
     FIXED_STEP_TRAPZ = 1
-    """Trapezoidal integral method"""
+    """Trapezoidal integral method."""
     ADAPTIVE_STEP = 3
-    """Adaptive Lobatto integral method"""
+    """Adaptive Lobatto integral method."""
 
-CRDN_INTEGRAL_TYPE.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method"
-CRDN_INTEGRAL_TYPE.FIXED_STEP_TRAPZ.__doc__ = "Trapezoidal integral method"
-CRDN_INTEGRAL_TYPE.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method"
+CRDN_INTEGRAL_TYPE.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method."
+CRDN_INTEGRAL_TYPE.FIXED_STEP_TRAPZ.__doc__ = "Trapezoidal integral method."
+CRDN_INTEGRAL_TYPE.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method."
 
 agcls.AgTypeNameMap["CRDN_INTEGRAL_TYPE"] = CRDN_INTEGRAL_TYPE
 
 class CRDN_INTEGRATION_WINDOW_TYPE(IntEnum):
     """Defines the interval of times during which an integral is evaluated."""
+   
     TOTAL = 0
     """Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
     CUMULATIVE_TO_CURRENT = 1
@@ -592,6 +609,7 @@ agcls.AgTypeNameMap["CRDN_INTEGRATION_WINDOW_TYPE"] = CRDN_INTEGRATION_WINDOW_TY
 
 class CRDN_INTERPOLATOR_TYPE(IntEnum):
     """Interpolator types."""
+   
     INVALID = -1
     """Unknown or invalid interpolator."""
     LAGRANGE = 1
@@ -606,48 +624,51 @@ CRDN_INTERPOLATOR_TYPE.HERMITE.__doc__ = "Hermite interpolation."
 agcls.AgTypeNameMap["CRDN_INTERPOLATOR_TYPE"] = CRDN_INTERPOLATOR_TYPE
 
 class CRDN_INTERVAL_DURATION_KIND(IntEnum):
-    """Duration for filtering intervals or gaps from interval lists or time arrays"""
+    """Duration for filtering intervals or gaps from interval lists or time arrays."""
+   
     AT_LEAST = 0
-    """Filter by at least a specified number of seconds"""
+    """Filter by at least a specified number of seconds."""
     AT_MOST = 1
-    """Filter by at most a specified number of seconds"""
+    """Filter by at most a specified number of seconds."""
 
-CRDN_INTERVAL_DURATION_KIND.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds"
-CRDN_INTERVAL_DURATION_KIND.AT_MOST.__doc__ = "Filter by at most a specified number of seconds"
+CRDN_INTERVAL_DURATION_KIND.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds."
+CRDN_INTERVAL_DURATION_KIND.AT_MOST.__doc__ = "Filter by at most a specified number of seconds."
 
 agcls.AgTypeNameMap["CRDN_INTERVAL_DURATION_KIND"] = CRDN_INTERVAL_DURATION_KIND
 
 class CRDN_INTERVAL_SELECTION(IntEnum):
-    """Select the method to choose an interval from an interval list"""
+    """Select the method to choose an interval from an interval list."""
+   
     FROM_START = 1
-    """Select an interval by counting a specified number from the first interval"""
+    """Select an interval by counting a specified number from the first interval."""
     FROM_END = 2
-    """Select an interval by counting a specified number back from the last interval"""
+    """Select an interval by counting a specified number back from the last interval."""
     MAX_DURATION = 4
-    """Select the interval with the largest duration"""
+    """Select the interval with the largest duration."""
     MIN_DURATION = 5
-    """Select the interval with the smallest duration"""
+    """Select the interval with the smallest duration."""
     MAX_GAP = 9
-    """Select the largest gap between intervals"""
+    """Select the largest gap between intervals."""
     MIN_GAP = 10
-    """Select the largest gap between intervals"""
+    """Select the largest gap between intervals."""
     SPAN = 100
-    """Select the interval that is the span of the interval list"""
+    """Select the interval that is the span of the interval list."""
 
-CRDN_INTERVAL_SELECTION.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval"
-CRDN_INTERVAL_SELECTION.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval"
-CRDN_INTERVAL_SELECTION.MAX_DURATION.__doc__ = "Select the interval with the largest duration"
-CRDN_INTERVAL_SELECTION.MIN_DURATION.__doc__ = "Select the interval with the smallest duration"
-CRDN_INTERVAL_SELECTION.MAX_GAP.__doc__ = "Select the largest gap between intervals"
-CRDN_INTERVAL_SELECTION.MIN_GAP.__doc__ = "Select the largest gap between intervals"
-CRDN_INTERVAL_SELECTION.SPAN.__doc__ = "Select the interval that is the span of the interval list"
+CRDN_INTERVAL_SELECTION.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval."
+CRDN_INTERVAL_SELECTION.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval."
+CRDN_INTERVAL_SELECTION.MAX_DURATION.__doc__ = "Select the interval with the largest duration."
+CRDN_INTERVAL_SELECTION.MIN_DURATION.__doc__ = "Select the interval with the smallest duration."
+CRDN_INTERVAL_SELECTION.MAX_GAP.__doc__ = "Select the largest gap between intervals."
+CRDN_INTERVAL_SELECTION.MIN_GAP.__doc__ = "Select the largest gap between intervals."
+CRDN_INTERVAL_SELECTION.SPAN.__doc__ = "Select the interval that is the span of the interval list."
 
 agcls.AgTypeNameMap["CRDN_INTERVAL_SELECTION"] = CRDN_INTERVAL_SELECTION
 
 class CRDN_PARAMETER_SET_TYPE(IntEnum):
     """Defines parameter set types."""
+   
     UNKNOWN = -1
-    """Unknown or unsupported parameter set"""
+    """Unknown or unsupported parameter set."""
     ATTITUDE = 0
     """A parameter set type is defined by identifying one set of axes in reference to another."""
     GROUND_TRAJECTORY = 1
@@ -659,7 +680,7 @@ class CRDN_PARAMETER_SET_TYPE(IntEnum):
     VECTOR = 4
     """A parameter set type is defined by identifying vector in reference axes."""
 
-CRDN_PARAMETER_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported parameter set"
+CRDN_PARAMETER_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported parameter set."
 CRDN_PARAMETER_SET_TYPE.ATTITUDE.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
 CRDN_PARAMETER_SET_TYPE.GROUND_TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference central body."
 CRDN_PARAMETER_SET_TYPE.TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
@@ -669,13 +690,14 @@ CRDN_PARAMETER_SET_TYPE.VECTOR.__doc__ = "A parameter set type is defined by ide
 agcls.AgTypeNameMap["CRDN_PARAMETER_SET_TYPE"] = CRDN_PARAMETER_SET_TYPE
 
 class CRDN_PRUNE_FILTER(IntEnum):
-    """Specify the filter for filtering interval lists or time arrays"""
+    """Specify the filter for filtering interval lists or time arrays."""
+   
     UNKNOWN = 0
-    """Unknown or unsupported prune filter"""
+    """Unknown or unsupported prune filter."""
     FIRST_INTERVALS = 1
-    """Select specified number of first intervals from original list"""
+    """Select specified number of first intervals from original list."""
     LAST_INTERVALS = 2
-    """Select specified number of last intervals from original list"""
+    """Select specified number of last intervals from original list."""
     INTERVALS = 3
     """Select intervals which satisfy additional duration condition."""
     GAPS = 4
@@ -685,9 +707,9 @@ class CRDN_PRUNE_FILTER(IntEnum):
     RELATIVE_SATISFACTION_INTERVALS = 6
     """Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
 
-CRDN_PRUNE_FILTER.UNKNOWN.__doc__ = "Unknown or unsupported prune filter"
-CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Select specified number of first intervals from original list"
-CRDN_PRUNE_FILTER.LAST_INTERVALS.__doc__ = "Select specified number of last intervals from original list"
+CRDN_PRUNE_FILTER.UNKNOWN.__doc__ = "Unknown or unsupported prune filter."
+CRDN_PRUNE_FILTER.FIRST_INTERVALS.__doc__ = "Select specified number of first intervals from original list."
+CRDN_PRUNE_FILTER.LAST_INTERVALS.__doc__ = "Select specified number of last intervals from original list."
 CRDN_PRUNE_FILTER.INTERVALS.__doc__ = "Select intervals which satisfy additional duration condition."
 CRDN_PRUNE_FILTER.GAPS.__doc__ = "Select gaps between intervals which satisfy additional duration condition."
 CRDN_PRUNE_FILTER.SATISFACTION_INTERVALS.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
@@ -697,60 +719,64 @@ agcls.AgTypeNameMap["CRDN_PRUNE_FILTER"] = CRDN_PRUNE_FILTER
 
 class CRDN_SAMPLED_REFERENCE_TIME(IntEnum):
     """Event array reference type."""
+   
     REFERENCE_EVENT = 0
-    """Use a Time Instant as the reference time"""
+    """Use a Time Instant as the reference time."""
     START_OF_EACH_INTERVAL = 1
-    """Use the start of each interval as the reference time"""
+    """Use the start of each interval as the reference time."""
     STOP_OF_EACH_INTERVAL = 2
-    """Use the stop of each interval as the reference time"""
+    """Use the stop of each interval as the reference time."""
     START_OF_INTERVAL_LIST = 3
-    """Use the start of each interval list as the reference time"""
+    """Use the start of each interval list as the reference time."""
     STOP_OF_INTERVAL_LIST = 4
-    """Use the stop of each interval list as the reference time"""
+    """Use the stop of each interval list as the reference time."""
 
-CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT.__doc__ = "Use a Time Instant as the reference time"
-CRDN_SAMPLED_REFERENCE_TIME.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time"
-CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_EACH_INTERVAL.__doc__ = "Use the stop of each interval as the reference time"
-CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST.__doc__ = "Use the start of each interval list as the reference time"
-CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of each interval list as the reference time"
+CRDN_SAMPLED_REFERENCE_TIME.REFERENCE_EVENT.__doc__ = "Use a Time Instant as the reference time."
+CRDN_SAMPLED_REFERENCE_TIME.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time."
+CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_EACH_INTERVAL.__doc__ = "Use the stop of each interval as the reference time."
+CRDN_SAMPLED_REFERENCE_TIME.START_OF_INTERVAL_LIST.__doc__ = "Use the start of each interval list as the reference time."
+CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of each interval list as the reference time."
 
 agcls.AgTypeNameMap["CRDN_SAMPLED_REFERENCE_TIME"] = CRDN_SAMPLED_REFERENCE_TIME
 
 class CRDN_SAMPLING_METHOD(IntEnum):
-    """Defines the Sampling Method"""
+    """Defines the Sampling Method."""
+   
     UNKNOWN = 0
-    """Unknown or unsupported sampling method"""
+    """Unknown or unsupported sampling method."""
     FIXED_STEP = 1
-    """Fixed step sampling method"""
+    """Fixed step sampling method."""
     RELATIVE_TOLERANCE = 2
     """Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."""
     CURVATURE_TOLERANCE = 3
-    """Curvature tolerance also uses changes in slope between samples"""
+    """Curvature tolerance also uses changes in slope between samples."""
 
-CRDN_SAMPLING_METHOD.UNKNOWN.__doc__ = "Unknown or unsupported sampling method"
-CRDN_SAMPLING_METHOD.FIXED_STEP.__doc__ = "Fixed step sampling method"
+CRDN_SAMPLING_METHOD.UNKNOWN.__doc__ = "Unknown or unsupported sampling method."
+CRDN_SAMPLING_METHOD.FIXED_STEP.__doc__ = "Fixed step sampling method."
 CRDN_SAMPLING_METHOD.RELATIVE_TOLERANCE.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
-CRDN_SAMPLING_METHOD.CURVATURE_TOLERANCE.__doc__ = "Curvature tolerance also uses changes in slope between samples"
+CRDN_SAMPLING_METHOD.CURVATURE_TOLERANCE.__doc__ = "Curvature tolerance also uses changes in slope between samples."
 
 agcls.AgTypeNameMap["CRDN_SAMPLING_METHOD"] = CRDN_SAMPLING_METHOD
 
 class CRDN_SATISFACTION_CROSSING(IntEnum):
     """Direction crossing flags."""
+   
     NONE = 0
-    """Use either off-to-on or on-to-off condition to determine satisfaction"""
+    """Use either off-to-on or on-to-off condition to determine satisfaction."""
     IN = 1
-    """Satisfaction occurs when crossing from off to on condition"""
+    """Satisfaction occurs when crossing from off to on condition."""
     OUT = 2
-    """Satisfaction occurs when crossing from on to off condition"""
+    """Satisfaction occurs when crossing from on to off condition."""
 
-CRDN_SATISFACTION_CROSSING.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction"
-CRDN_SATISFACTION_CROSSING.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition"
-CRDN_SATISFACTION_CROSSING.OUT.__doc__ = "Satisfaction occurs when crossing from on to off condition"
+CRDN_SATISFACTION_CROSSING.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction."
+CRDN_SATISFACTION_CROSSING.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition."
+CRDN_SATISFACTION_CROSSING.OUT.__doc__ = "Satisfaction occurs when crossing from on to off condition."
 
 agcls.AgTypeNameMap["CRDN_SATISFACTION_CROSSING"] = CRDN_SATISFACTION_CROSSING
 
 class CRDN_SAVE_DATA_OPTION(IntEnum):
-    """Method for saving computed data"""
+    """Method for saving computed data."""
+   
     APPLICATION_SETTINGS = -1
     """Use the application setting to determine whether computed data should be saved/loaded."""
     YES = 100
@@ -766,24 +792,26 @@ agcls.AgTypeNameMap["CRDN_SAVE_DATA_OPTION"] = CRDN_SAVE_DATA_OPTION
 
 class CRDN_SIGNAL_PATH_REFERENCE_SYSTEM(IntEnum):
     """Signal path reference system types."""
+   
     USE_ACCESS_DEFAULT = -1
-    """Use Access default system"""
+    """Use Access default system."""
     CENTRAL_BODY_INERTIAL = 0
-    """Use central body inertial system"""
+    """Use central body inertial system."""
     SOLAR_SYSTEM_BARYCENTER = 1
-    """Use solar system barycenter system"""
+    """Use solar system barycenter system."""
     CUSTOM = 2
-    """User will specify a system"""
+    """User will specify a system."""
 
-CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system"
-CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system"
-CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.SOLAR_SYSTEM_BARYCENTER.__doc__ = "Use solar system barycenter system"
-CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CUSTOM.__doc__ = "User will specify a system"
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system."
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system."
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.SOLAR_SYSTEM_BARYCENTER.__doc__ = "Use solar system barycenter system."
+CRDN_SIGNAL_PATH_REFERENCE_SYSTEM.CUSTOM.__doc__ = "User will specify a system."
 
 agcls.AgTypeNameMap["CRDN_SIGNAL_PATH_REFERENCE_SYSTEM"] = CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
 
 class CRDN_SMART_EPOCH_STATE(IntEnum):
     """Smart epoch states."""
+   
     EXPLICIT = 0
     """Smart epoch is specified explicitly using a time."""
     IMPLICIT = 3
@@ -796,6 +824,7 @@ agcls.AgTypeNameMap["CRDN_SMART_EPOCH_STATE"] = CRDN_SMART_EPOCH_STATE
 
 class CRDN_SMART_INTERVAL_STATE(IntEnum):
     """Smart interval states."""
+   
     EXPLICIT = 0
     """Smart interval is specified explicitly using start/stop times."""
     IMPLICIT = 1
@@ -817,6 +846,7 @@ agcls.AgTypeNameMap["CRDN_SMART_INTERVAL_STATE"] = CRDN_SMART_INTERVAL_STATE
 
 class CRDN_SPEED_OPTIONS(IntEnum):
     """Defines various speed options."""
+   
     LIGHT_TRANSMISSION_SPEED = 1
     """Light transmission speed."""
     CUSTOM_TRANSMISSION_SPEED = 2
@@ -829,21 +859,23 @@ agcls.AgTypeNameMap["CRDN_SPEED_OPTIONS"] = CRDN_SPEED_OPTIONS
 
 class CRDN_START_STOP_OPTION(IntEnum):
     """Start/stop options."""
+   
     COUNT_START_ONLY = 1
-    """Use the start time of the interval"""
+    """Use the start time of the interval."""
     COUNT_STOP_ONLY = 2
-    """Use the stop time of the interval"""
+    """Use the stop time of the interval."""
     COUNT_START_STOP = 3
-    """Use the start time and stop time of the interval"""
+    """Use the start time and stop time of the interval."""
 
-CRDN_START_STOP_OPTION.COUNT_START_ONLY.__doc__ = "Use the start time of the interval"
-CRDN_START_STOP_OPTION.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval"
-CRDN_START_STOP_OPTION.COUNT_START_STOP.__doc__ = "Use the start time and stop time of the interval"
+CRDN_START_STOP_OPTION.COUNT_START_ONLY.__doc__ = "Use the start time of the interval."
+CRDN_START_STOP_OPTION.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval."
+CRDN_START_STOP_OPTION.COUNT_START_STOP.__doc__ = "Use the start time and stop time of the interval."
 
 agcls.AgTypeNameMap["CRDN_START_STOP_OPTION"] = CRDN_START_STOP_OPTION
 
 class CRDN_THRESH_CONVERGE_SENSE(IntEnum):
     """Specifies the desired sense of the results from threshold crossing computations."""
+   
     SIMPLE = 0
     """Just converge within tolerance."""
     ABOVE = 1
@@ -859,6 +891,7 @@ agcls.AgTypeNameMap["CRDN_THRESH_CONVERGE_SENSE"] = CRDN_THRESH_CONVERGE_SENSE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE(IntEnum):
     """Defines component directions for a vector."""
+   
     X = 0
     """X component."""
     Y = 1
@@ -883,6 +916,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE"] = VECTOR_GEOME
 
 class CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE(IntEnum):
     """Defines volume calc altitude reference types."""
+   
     ELLIPSOID = 0
     """Volume calc altitude above reference ellipsoid."""
     TERRAIN = 1
@@ -898,6 +932,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE"] = CRDN_VOLUME_CA
 
 class CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE(IntEnum):
     """Defines volume calc angle off vector reference types."""
+   
     PLANE_SIGNED = 1
     """Volume calc angle off plane signed."""
     PLANE_UNSIGNED = 2
@@ -919,27 +954,29 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE"] = CRDN_VOLUME_CALC
 
 class CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE(IntEnum):
     """Defines volume calc range distance types."""
+   
     FROM_POINT = 0
     """Volume calc range distance type from point."""
     ALONG_VECTOR_SIGNED = 1
     """Volume calc range distance type from point."""
     ALONG_VECTOR_UNSIGNED = 2
-    """Volume calc range distance type along vector unsigned"""
+    """Volume calc range distance type along vector unsigned."""
     PLANE_SIGNED = 4
-    """Volume calc range distance type plane signed"""
+    """Volume calc range distance type plane signed."""
     PLANE_UNSIGNED = 8
-    """Volume calc range distance type plane signed"""
+    """Volume calc range distance type plane signed."""
 
 CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.FROM_POINT.__doc__ = "Volume calc range distance type from point."
 CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_SIGNED.__doc__ = "Volume calc range distance type from point."
-CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_UNSIGNED.__doc__ = "Volume calc range distance type along vector unsigned"
-CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_SIGNED.__doc__ = "Volume calc range distance type plane signed"
-CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc range distance type plane signed"
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.ALONG_VECTOR_UNSIGNED.__doc__ = "Volume calc range distance type along vector unsigned."
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_SIGNED.__doc__ = "Volume calc range distance type plane signed."
+CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc range distance type plane signed."
 
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE"] = CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
 
 class CRDN_VOLUME_CALC_RANGE_SPEED_TYPE(IntEnum):
     """Defines volume calc range distance types."""
+   
     LIGHT = 1
     """Volume calc range distance type from point."""
     CUSTOM = 2
@@ -952,6 +989,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_SPEED_TYPE"] = CRDN_VOLUME_CALC_RANG
 
 class CRDN_VOLUME_CALC_TYPE(IntEnum):
     """Defines volume calc types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported volume calc."""
     ALTITUDE = 0
@@ -985,6 +1023,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_TYPE"] = CRDN_VOLUME_CALC_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
     """Defines volume calc spatial condition accumulation types."""
+   
     UP_TO_CURRENT_TIME = -1
     """Volume calc spatial condition satisfaction accumulation type up to current time."""
     CURRENT_TIME = 0
@@ -1003,6 +1042,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE"] = 
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
     """Defines volume calc spatial condition duration types."""
+   
     MIN = -1
     """Volume calc spatial condition satisfaction duration type minimum."""
     SUM = 0
@@ -1018,6 +1058,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE"] = CRDN
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
     """Defines volume calc spatial condition filter types."""
+   
     FIRST_INTERVALS = -10
     """Volume calc spatial condition satisfaction filter type first intervals."""
     LAST_INTERVALS = -20
@@ -1039,6 +1080,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE"] = CRDN_V
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
     """Defines volume calc spatial condition satisfaction metric types."""
+   
     NUMBER_OF_GAPS = -2
     """Volume calc spatial condition satisfaction metric type number of gaps."""
     NUMBER_OF_INTERVALS = -1
@@ -1063,6 +1105,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE"] = CRDN_V
 
 class CRDN_VOLUME_GRID_TYPE(IntEnum):
     """Defines volume grid types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported volume grid."""
     CARTESIAN = 0
@@ -1090,27 +1133,29 @@ agcls.AgTypeNameMap["CRDN_VOLUME_GRID_TYPE"] = CRDN_VOLUME_GRID_TYPE
 
 class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
     """Defines volume result vector request types."""
+   
     POSITION = 1
-    """volume result vector request pos type"""
+    """volume result vector request pos type."""
     NATIVE_POSITION = 2
-    """volume result vector request native pos type"""
+    """volume result vector request native pos type."""
     METRIC = 16
-    """volume result vector request metric type"""
+    """volume result vector request metric type."""
     SATISFACTION = 32
-    """volume result vector request satisfaction type"""
+    """volume result vector request satisfaction type."""
     GRADIENT = 256
-    """volume result vector request gradient type"""
+    """volume result vector request gradient type."""
 
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.POSITION.__doc__ = "volume result vector request pos type"
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POSITION.__doc__ = "volume result vector request native pos type"
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.METRIC.__doc__ = "volume result vector request metric type"
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.SATISFACTION.__doc__ = "volume result vector request satisfaction type"
-CRDN_VOLUME_RESULT_VECTOR_REQUEST.GRADIENT.__doc__ = "volume result vector request gradient type"
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.POSITION.__doc__ = "volume result vector request pos type."
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.NATIVE_POSITION.__doc__ = "volume result vector request native pos type."
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.METRIC.__doc__ = "volume result vector request metric type."
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.SATISFACTION.__doc__ = "volume result vector request satisfaction type."
+CRDN_VOLUME_RESULT_VECTOR_REQUEST.GRADIENT.__doc__ = "volume result vector request gradient type."
 
 agcls.AgTypeNameMap["CRDN_VOLUME_RESULT_VECTOR_REQUEST"] = CRDN_VOLUME_RESULT_VECTOR_REQUEST
 
 class CRDN_VOLUME_TYPE(IntEnum):
     """Defines volume grid types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported volume."""
     COMBINED = 0
@@ -1144,6 +1189,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_TYPE"] = CRDN_VOLUME_TYPE
 
 class CRDN_VOLUME_ABERRATION_TYPE(IntEnum):
     """Defines the model of aberration to use."""
+   
     UNKNOWN = -1
     """Aberration type unknown."""
     TOTAL = 0
@@ -1162,14 +1208,15 @@ agcls.AgTypeNameMap["CRDN_VOLUME_ABERRATION_TYPE"] = CRDN_VOLUME_ABERRATION_TYPE
 
 class CRDN_VOLUME_CLOCK_HOST_TYPE(IntEnum):
     """Defines whether base or target of an Access instance holds the clock for Access times."""
+   
     UNKNOWN = -1
-    """Unknown"""
+    """Unknown."""
     BASE = 0
     """Base object holds time instance."""
     TARGET = 1
     """Target object holds time instance."""
 
-CRDN_VOLUME_CLOCK_HOST_TYPE.UNKNOWN.__doc__ = "Unknown"
+CRDN_VOLUME_CLOCK_HOST_TYPE.UNKNOWN.__doc__ = "Unknown."
 CRDN_VOLUME_CLOCK_HOST_TYPE.BASE.__doc__ = "Base object holds time instance."
 CRDN_VOLUME_CLOCK_HOST_TYPE.TARGET.__doc__ = "Target object holds time instance."
 
@@ -1177,6 +1224,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_CLOCK_HOST_TYPE"] = CRDN_VOLUME_CLOCK_HOST_TYPE
 
 class CRDN_VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
     """Defines spatial condition combined operation types."""
+   
     AND = 1
     """Spatial condition combined AND operation."""
     OR = 2
@@ -1195,6 +1243,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_COMBINED_OPERATION_TYPE"] = CRDN_VOLUME_COMBINE
 
 class CRDN_VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
     """Defines spatial condition from grid edge type."""
+   
     MASK_POINTS = 16
     """Spatial condition over time from grid edge type mask points."""
     MASK_VOXELS = 32
@@ -1207,6 +1256,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_FROM_GRID_EDGE_TYPE"] = CRDN_VOLUME_FROM_GRID_E
 
 class CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE(IntFlag):
     """Defines spatial condition lighting conditions types."""
+   
     TYPE_UNDEFINED = 0
     """Spatial condition lighting undefined."""
     TYPE_SUNLIGHT = 1
@@ -1225,6 +1275,7 @@ agcls.AgTypeNameMap["CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE"] = CRDN_VOLUME_LIGHTI
 
 class CRDN_VOLUME_OVER_TIME_DURATION_TYPE(IntEnum):
     """Defines spatial condition over time duration type."""
+   
     STATIC = 0
     """Spatial condition over time duration type Static."""
     CUMULATIVE_TO_CURRENT = 1
@@ -1243,21 +1294,23 @@ agcls.AgTypeNameMap["CRDN_VOLUME_OVER_TIME_DURATION_TYPE"] = CRDN_VOLUME_OVER_TI
 
 class CRDN_VOLUME_TIME_SENSE_TYPE(IntEnum):
     """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
+   
     UNKNOWN = -1
-    """Unklnown"""
+    """Unklnown."""
     TRANSMIT = 0
-    """Position is computed in Time Sense"""
+    """Position is computed in Time Sense."""
     RECEIVE = 1
-    """Position is computed in Receive Sense"""
+    """Position is computed in Receive Sense."""
 
-CRDN_VOLUME_TIME_SENSE_TYPE.UNKNOWN.__doc__ = "Unklnown"
-CRDN_VOLUME_TIME_SENSE_TYPE.TRANSMIT.__doc__ = "Position is computed in Time Sense"
-CRDN_VOLUME_TIME_SENSE_TYPE.RECEIVE.__doc__ = "Position is computed in Receive Sense"
+CRDN_VOLUME_TIME_SENSE_TYPE.UNKNOWN.__doc__ = "Unklnown."
+CRDN_VOLUME_TIME_SENSE_TYPE.TRANSMIT.__doc__ = "Position is computed in Time Sense."
+CRDN_VOLUME_TIME_SENSE_TYPE.RECEIVE.__doc__ = "Position is computed in Receive Sense."
 
 agcls.AgTypeNameMap["CRDN_VOLUME_TIME_SENSE_TYPE"] = CRDN_VOLUME_TIME_SENSE_TYPE
 
 class CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE(IntEnum):
     """Defines volumetric grid values method types."""
+   
     METHOD_UNKNOWN = -1
     """Unknown or unsupportedgrid values method."""
     METHOD_FIXED_NUM_STEPS = 0
@@ -1276,6 +1329,7 @@ agcls.AgTypeNameMap["CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE"] = CRDN_VOLUMETRIC
 
 class CRDN_KIND(IntEnum):
     """Represents kinds of vectory geometry components."""
+   
     UNKNOWN = -1
     """Unsupported component kind."""
     INVALID = 0
@@ -1342,6 +1396,7 @@ agcls.AgTypeNameMap["CRDN_KIND"] = CRDN_KIND
 
 class VECTOR_GEOMETRY_TOOL_ANGLE_TYPE(IntEnum):
     """Represents angle types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported type."""
     BETWEEN_VECTORS = 0
@@ -1369,6 +1424,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_ANGLE_TYPE"] = VECTOR_GEOMETRY_TOOL_AN
 
 class VECTOR_GEOMETRY_TOOL_AXES_TYPE(IntEnum):
     """Represents vector types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported type."""
     LAGRANGE_LIBRATION = 0
@@ -1423,6 +1479,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_AXES_TYPE"] = VECTOR_GEOMETRY_TOOL_AXE
 
 class VECTOR_GEOMETRY_TOOL_PLANE_TYPE(IntEnum):
     """Represents plane types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported type."""
     NORMAL = 0
@@ -1450,6 +1507,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_PLANE_TYPE"] = VECTOR_GEOMETRY_TOOL_PL
 
 class VECTOR_GEOMETRY_TOOL_POINT_TYPE(IntEnum):
     """Represents point types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported type."""
     B_PLANE = 0
@@ -1510,6 +1568,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_TYPE"] = VECTOR_GEOMETRY_TOOL_PO
 
 class CRDN_SYSTEM_TYPE(IntEnum):
     """Represents system types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported system type."""
     ASSEMBLED = 0
@@ -1528,6 +1587,7 @@ agcls.AgTypeNameMap["CRDN_SYSTEM_TYPE"] = CRDN_SYSTEM_TYPE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_TYPE(IntEnum):
     """Represents vector types."""
+   
     UNKNOWN = -1
     """Unknown or unsupported vector type."""
     DISPLACEMENT = 0
@@ -1630,6 +1690,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_TYPE"] = VECTOR_GEOMETRY_TOOL_V
 
 class CRDN_MEAN_ELEMENT_THEORY(IntEnum):
     """Mean element theory types for approximating motion."""
+   
     OSCULATING = 1
     """Osculating elements (six standard Keplerian orbital elements)."""
     KOZAI = 2
@@ -1648,6 +1709,7 @@ agcls.AgTypeNameMap["CRDN_MEAN_ELEMENT_THEORY"] = CRDN_MEAN_ELEMENT_THEORY
 
 class CRDN_DIRECTION_TYPE(IntEnum):
     """Direction options."""
+   
     INCOMING_ASYMPTOTE = 1
     """Incoming direction."""
     OUTGOING_ASYMPTOTE = 2
@@ -1660,6 +1722,7 @@ agcls.AgTypeNameMap["CRDN_DIRECTION_TYPE"] = CRDN_DIRECTION_TYPE
 
 class CRDN_LAGRANGE_LIBRATION_POINT_TYPE(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
+   
     L1 = 1
     """A point between the Sun and Earth."""
     L2 = 2
@@ -1680,7 +1743,8 @@ CRDN_LAGRANGE_LIBRATION_POINT_TYPE.L5.__doc__ = "The L4 and L5 points lie at 60 
 agcls.AgTypeNameMap["CRDN_LAGRANGE_LIBRATION_POINT_TYPE"] = CRDN_LAGRANGE_LIBRATION_POINT_TYPE
 
 class CRDN_QUADRANT_TYPE(IntEnum):
-    """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY),"""
+    """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY)."""
+   
     XY = 1
     """XY quadrant."""
     YX = 2
@@ -1705,6 +1769,7 @@ agcls.AgTypeNameMap["CRDN_QUADRANT_TYPE"] = CRDN_QUADRANT_TYPE
 
 class CRDN_TRAJECTORY_AXES_TYPE(IntEnum):
     """Trajectory axes coordinate types."""
+   
     ICR = 0
     """Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."""
     VNC = 1
@@ -1735,6 +1800,7 @@ agcls.AgTypeNameMap["CRDN_TRAJECTORY_AXES_TYPE"] = CRDN_TRAJECTORY_AXES_TYPE
 
 class CRDN_DISPLAY_AXIS_SELECTOR(IntEnum):
     """Rotation directions."""
+   
     X = 0
     """Rotate about Axis X."""
     Y = 1
@@ -1750,6 +1816,7 @@ agcls.AgTypeNameMap["CRDN_DISPLAY_AXIS_SELECTOR"] = CRDN_DISPLAY_AXIS_SELECTOR
 
 class CRDN_SIGNED_ANGLE_TYPE(IntEnum):
     """Defines options for computing an angle."""
+   
     NONE = 0
     """Choose the option to use unsigned angle."""
     POSITIVE = 1
@@ -1765,6 +1832,7 @@ agcls.AgTypeNameMap["CRDN_SIGNED_ANGLE_TYPE"] = CRDN_SIGNED_ANGLE_TYPE
 
 class VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE(IntEnum):
     """B-Plane point types."""
+   
     ASYMPTOTE = 1
     """Asymptote."""
     A_TWO_BODY = 2
@@ -1777,6 +1845,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE"] = VECTOR_GEOMETRY
 
 class CRDN_REFERENCE_SHAPE_TYPE(IntEnum):
     """Surface shape types."""
+   
     ELLIPSOID = 1
     """An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."""
     TERRAIN = 2
@@ -1792,6 +1861,7 @@ agcls.AgTypeNameMap["CRDN_REFERENCE_SHAPE_TYPE"] = CRDN_REFERENCE_SHAPE_TYPE
 
 class CRDN_SURFACE_TYPE(IntEnum):
     """Surface types."""
+   
     DETIC = 1
     """Detic surface model."""
     CENTRIC = 2
@@ -1804,6 +1874,7 @@ agcls.AgTypeNameMap["CRDN_SURFACE_TYPE"] = CRDN_SURFACE_TYPE
 
 class CRDN_SWEEP_MODE(IntEnum):
     """The rotation sweeping modes."""
+   
     BIDIRECTIONAL = 1
     """Bidirectional sweeping mode."""
     UNIDIRECTIONAL = 2
@@ -1816,6 +1887,7 @@ agcls.AgTypeNameMap["CRDN_SWEEP_MODE"] = CRDN_SWEEP_MODE
 
 class CRDN_SIGNAL_SENSE(IntEnum):
     """Signal sense transmission options."""
+   
     RECEIVE = 1
     """Signal receive."""
     TRANSMIT = 2
@@ -1828,6 +1900,7 @@ agcls.AgTypeNameMap["CRDN_SIGNAL_SENSE"] = CRDN_SIGNAL_SENSE
 
 class CRDN_INTERSECTION_SURFACE(IntEnum):
     """Intersection surface flags."""
+   
     AT_CENTRAL_BODY_ELLIPSOID = 0
     """Intersection with central body ellipsoid."""
     AT_ALTITUDE_ABOVE_ELLIPSOID = 1
@@ -1843,6 +1916,7 @@ agcls.AgTypeNameMap["CRDN_INTERSECTION_SURFACE"] = CRDN_INTERSECTION_SURFACE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
+   
     NONE = 0
     """Do not inherit dimension."""
     FROM_SCALAR = 1
@@ -1859,6 +1933,7 @@ agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE"] 
 
 class ITimeToolIntervalCollection(object):
     """The interface represents a collection of intervals."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -1912,7 +1987,7 @@ class ITimeToolIntervalCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Return a COM enumerator"""
+        """Return a COM enumerator."""
         return self._intf.get_property(ITimeToolIntervalCollection._metadata, ITimeToolIntervalCollection._get__NewEnum_metadata)
 
     __getitem__ = item
@@ -1924,6 +1999,7 @@ agcls.AgTypeNameMap["ITimeToolIntervalCollection"] = ITimeToolIntervalCollection
 
 class ITimeToolInterval(object):
     """The interface represents an interval."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -1966,6 +2042,7 @@ agcls.AgTypeNameMap["ITimeToolInterval"] = ITimeToolInterval
 
 class IVectorGeometryToolPoint(object):
     """The interface defines methods and properties common to all points."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2015,6 +2092,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPoint"] = IVectorGeometryToolPoint
 
 class IVectorGeometryToolVector(object):
     """The interface defines methods and properties common to all vectors."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2064,6 +2142,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVector"] = IVectorGeometryToolVector
 
 class IVectorGeometryToolSystem(object):
     """The interface contains methods and properties shared by all VGT systems."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2121,6 +2200,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystem"] = IVectorGeometryToolSystem
 
 class IVectorGeometryToolAxes(object):
     """The interface defines methods and properties common to all axes."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2222,6 +2302,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxes"] = IVectorGeometryToolAxes
 
 class IVectorGeometryToolAngle(object):
     """The interface defines methods and properties common to all angles."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2287,6 +2368,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngle"] = IVectorGeometryToolAngle
 
 class IVectorGeometryToolPlane(object):
     """The interface defines methods and properties common to all VGT planes."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2361,6 +2443,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlane"] = IVectorGeometryToolPlane
 
 class IAnalysisWorkbenchContext(object):
     """The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2394,6 +2477,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchContext"] = IAnalysisWorkbenchContext
 
 class IAnalysisWorkbenchComponent(object):
     """A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2583,6 +2667,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchComponent"] = IAnalysisWorkbenchComponent
 
 class ICalculationToolEvaluateResult(object):
     """Represents the results of evaluating a scalar component using ICalculationToolScalar.Evaluate method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2625,6 +2710,7 @@ agcls.AgTypeNameMap["ICalculationToolEvaluateResult"] = ICalculationToolEvaluate
 
 class ICalculationToolEvaluateWithRateResult(object):
     """Represents the results of evaluating a scalar component using ICalculationToolScalar.Evaluate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2676,6 +2762,7 @@ agcls.AgTypeNameMap["ICalculationToolEvaluateWithRateResult"] = ICalculationTool
 
 class ITimeToolEventIntervalResult(object):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2718,6 +2805,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalResult"] = ITimeToolEventIntervalResu
 
 class ITimeToolEventFindOccurrenceResult(object):
     """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2760,6 +2848,7 @@ agcls.AgTypeNameMap["ITimeToolEventFindOccurrenceResult"] = ITimeToolEventFindOc
 
 class ITimeToolFindTimesResult(object):
     """Return a collection of intervals and an array of times."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2829,6 +2918,7 @@ agcls.AgTypeNameMap["ITimeToolFindTimesResult"] = ITimeToolFindTimesResult
 
 class ITimeToolIntervalsVectorResult(object):
     """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2871,6 +2961,7 @@ agcls.AgTypeNameMap["ITimeToolIntervalsVectorResult"] = ITimeToolIntervalsVector
 
 class ITimeToolEventIntervalCollectionOccurredResult(object):
     """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2913,6 +3004,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionOccurredResult"] = ITimeToo
 
 class ITimeToolIntervalListResult(object):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2955,6 +3047,7 @@ agcls.AgTypeNameMap["ITimeToolIntervalListResult"] = ITimeToolIntervalListResult
 
 class ITimeToolIntervalVectorCollection(object):
     """A collection of interval collections."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3020,6 +3113,7 @@ agcls.AgTypeNameMap["ITimeToolIntervalVectorCollection"] = ITimeToolIntervalVect
 
 class ITimeToolEventGroup(object):
     """Access or create VGT events associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3135,6 +3229,7 @@ agcls.AgTypeNameMap["ITimeToolEventGroup"] = ITimeToolEventGroup
 
 class ITimeToolEventIntervalGroup(object):
     """Access or create VGT event intervals associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3250,6 +3345,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalGroup"] = ITimeToolEventIntervalGroup
 
 class ITimeToolEventIntervalListGroup(object):
     """Access or create VGT event interval lists associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3365,6 +3461,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListGroup"] = ITimeToolEventIntervalL
 
 class ITimeToolEventArrayGroup(object):
     """Access or create VGT event arrays associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3480,6 +3577,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayGroup"] = ITimeToolEventArrayGroup
 
 class ICalculationToolScalarGroup(object):
     """Access or create VGT calculation scalars associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3595,6 +3693,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarGroup"] = ICalculationToolScalarGroup
 
 class ITimeToolEventIntervalCollectionGroup(object):
     """Access or create VGT event interval collections associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3710,6 +3809,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionGroup"] = ITimeToolEventInt
 
 class ICalculationToolParameterSetGroup(object):
     """Access or create VGT parameter sets associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3825,6 +3925,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetGroup"] = ICalculationToolParam
 
 class ICalculationToolConditionGroup(object):
     """Access or create VGT conditions associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -3940,6 +4041,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionGroup"] = ICalculationToolConditio
 
 class ICalculationToolConditionSetGroup(object):
     """Allow accessing and creating condition set components."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4055,6 +4157,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSetGroup"] = ICalculationToolCondi
 
 class ICalculationToolConditionSetEvaluateResult(object):
     """Represents the results returned by ConditionSet.Evaluate."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4097,6 +4200,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSetEvaluateResult"] = ICalculation
 
 class ICalculationToolConditionSetEvaluateWithRateResult(object):
     """Represents the results returned by ConditionSet.EvaluateWithRate."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4148,6 +4252,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSetEvaluateWithRateResult"] = ICal
 
 class ISpatialAnalysisToolVolumeGridGroup(object):
     """Access or create VGT volume grids associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4263,6 +4368,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridGroup"] = ISpatialAnalysisToo
 
 class ISpatialAnalysisToolVolumeGroup(object):
     """Access or create spatial conditions associated with a volume grid."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4378,6 +4484,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGroup"] = ISpatialAnalysisToolVol
 
 class ISpatialAnalysisToolVolumeCalcGroup(object):
     """Access or create VGT volume calcs associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4493,6 +4600,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcGroup"] = ISpatialAnalysisToo
 
 class ICalculationToolScalar(object):
     """Any scalar calculation that is not constant by construction."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4607,6 +4715,7 @@ agcls.AgTypeNameMap["ICalculationToolScalar"] = ICalculationToolScalar
 
 class ICalculationToolScalarAngle(object):
     """Scalar equal to angular displacement obtained from any angle in VGT."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4648,6 +4757,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarAngle"] = ICalculationToolScalarAngle
 
 class ICalculationToolScalarConstant(object):
     """Constant scalar value of specified dimension."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4706,6 +4816,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarConstant"] = ICalculationToolScalarCo
 
 class ICalculationToolScalarCustom(object):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4772,6 +4883,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarCustom"] = ICalculationToolScalarCust
 
 class ICalculationToolScalarDataElement(object):
     """Any time-dependent data element from STK data providers available for parent STK object."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4908,7 +5020,7 @@ class ICalculationToolScalarDataElement(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def invalid_data_indicator(self) -> float:
-        """Set the value to display in a report or graph when the actual value is not a valid real number"""
+        """Set the value to display in a report or graph when the actual value is not a valid real number."""
         return self._intf.get_property(ICalculationToolScalarDataElement._metadata, ICalculationToolScalarDataElement._get_invalid_data_indicator_metadata)
 
     _set_invalid_data_indicator_metadata = { "name" : "invalid_data_indicator",
@@ -4924,6 +5036,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarDataElement"] = ICalculationToolScala
 
 class ICalculationToolScalarDerivative(object):
     """Derivative of an input scalar calculation."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4999,6 +5112,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarDerivative"] = ICalculationToolScalar
 
 class ICalculationToolScalarDotProduct(object):
     """Dot product between two vectors."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5108,6 +5222,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarDotProduct"] = ICalculationToolScalar
 
 class ICalculationToolScalarElapsedTime(object):
     """Time elapsed since the reference time instant. Negative if in the past."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5149,6 +5264,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarElapsedTime"] = ICalculationToolScala
 
 class ICalculationToolScalarFactory(object):
     """The factory creates scalar calculation components."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5334,6 +5450,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarFactory"] = ICalculationToolScalarFac
 
 class ICalculationToolScalarFile(object):
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5442,6 +5559,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarFile"] = ICalculationToolScalarFile
 
 class ICalculationToolScalarFixedAtTimeInstant(object):
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5500,6 +5618,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarFixedAtTimeInstant"] = ICalculationTo
 
 class ICalculationToolScalarFunction(object):
     """Defined by performing the specified function on the input scalar or time instant."""
+
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5788,6 +5907,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarFunction"] = ICalculationToolScalarFu
 
 class ICalculationToolScalarFunction2Var(object):
     """Defined by performing a function(x,y) on two scalar arguments."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6008,6 +6128,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarFunction2Var"] = ICalculationToolScal
 
 class ICalculationToolScalarIntegral(object):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6244,6 +6365,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarIntegral"] = ICalculationToolScalarIn
 
 class ICalculationToolScalarPlugin(object):
     """Use a scalar calculation plugin."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6319,6 +6441,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarPlugin"] = ICalculationToolScalarPlug
 
 class ICalculationToolScalarSurfaceDistanceBetweenPoints(object):
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6411,6 +6534,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarSurfaceDistanceBetweenPoints"] = ICal
 
 class ICalculationToolScalarVectorComponent(object):
     """The specified component of a vector when resolved in the specified axes."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6486,6 +6610,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarVectorComponent"] = ICalculationToolS
 
 class ICalculationToolScalarVectorMagnitude(object):
     """Scalar equal to the magnitude of a specified vector."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6527,6 +6652,7 @@ agcls.AgTypeNameMap["ICalculationToolScalarVectorMagnitude"] = ICalculationToolS
 
 class ICalculationToolCondition(object):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6576,6 +6702,7 @@ agcls.AgTypeNameMap["ICalculationToolCondition"] = ICalculationToolCondition
 
 class ICalculationToolConditionCombined(object):
     """Define a condition which combines multiple conditions."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6674,6 +6801,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionCombined"] = ICalculationToolCondi
 
 class ICalculationToolConditionFactory(object):
     """The factory creates condition components."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6737,7 +6865,8 @@ agcls.AgClassCatalog.add_catalog_entry("{F6A542D2-82B8-441D-8CA8-7823A01FF5BA}",
 agcls.AgTypeNameMap["ICalculationToolConditionFactory"] = ICalculationToolConditionFactory
 
 class ICalculationToolConditionPointInVolume(object):
-    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate"""
+    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6796,6 +6925,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionPointInVolume"] = ICalculationTool
 
 class ICalculationToolConditionScalarBounds(object):
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6934,6 +7064,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionScalarBounds"] = ICalculationToolC
 
 class ICalculationToolConditionSet(object):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6983,6 +7114,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSet"] = ICalculationToolConditionS
 
 class ICalculationToolConditionSetFactory(object):
     """The factory creates condition set components."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7031,6 +7163,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSetFactory"] = ICalculationToolCon
 
 class ICalculationToolConditionSetScalarThresholds(object):
     """Condition set based on single scalar calculation compared to set of threshold values."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7132,6 +7265,7 @@ agcls.AgTypeNameMap["ICalculationToolConditionSetScalarThresholds"] = ICalculati
 
 class IAnalysisWorkbenchConverge(object):
     """Represents a base class for convergence definitions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7157,6 +7291,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchConverge"] = IAnalysisWorkbenchConverge
 
 class ICalculationToolConvergeBasic(object):
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7249,6 +7384,7 @@ agcls.AgTypeNameMap["ICalculationToolConvergeBasic"] = ICalculationToolConvergeB
 
 class IAnalysisWorkbenchDerivative(object):
     """Represents a base class for derivative definitions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7274,6 +7410,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchDerivative"] = IAnalysisWorkbenchDerivati
 
 class ICalculationToolDerivativeBasic(object):
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7315,6 +7452,7 @@ agcls.AgTypeNameMap["ICalculationToolDerivativeBasic"] = ICalculationToolDerivat
 
 class ITimeToolEvent(object):
     """Define an event (time instant)."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7400,6 +7538,7 @@ agcls.AgTypeNameMap["ITimeToolEvent"] = ITimeToolEvent
 
 class ITimeToolEventArray(object):
     """An ordered array of times, which may or may not be evenly spaced."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7441,6 +7580,7 @@ agcls.AgTypeNameMap["ITimeToolEventArray"] = ITimeToolEventArray
 
 class ITimeToolEventArrayConditionCrossings(object):
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7584,6 +7724,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayConditionCrossings"] = ITimeToolEventArr
 
 class ITimeToolEventArrayExtrema(object):
     """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7744,6 +7885,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayExtrema"] = ITimeToolEventArrayExtrema
 
 class ITimeToolEventArrayFactory(object):
     """The factory creates event arrays."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7848,6 +7990,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayFactory"] = ITimeToolEventArrayFactory
 
 class ITimeToolEventArrayFiltered(object):
     """Defined by filtering times from original time array according to specified filtering method."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7974,6 +8117,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayFiltered"] = ITimeToolEventArrayFiltered
 
 class ITimeToolEventArrayFixedStep(object):
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8083,6 +8227,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayFixedStep"] = ITimeToolEventArrayFixedSt
 
 class ITimeToolEventArrayFixedTimes(object):
     """Array defined by time ordered instants each explicitly specified."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8124,6 +8269,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayFixedTimes"] = ITimeToolEventArrayFixedT
 
 class ITimeToolEventArrayMerged(object):
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8182,6 +8328,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayMerged"] = ITimeToolEventArrayMerged
 
 class ITimeToolEventArraySignaled(object):
     """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8291,6 +8438,7 @@ agcls.AgTypeNameMap["ITimeToolEventArraySignaled"] = ITimeToolEventArraySignaled
 
 class ITimeToolEventArrayStartStopTimes(object):
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8349,6 +8497,7 @@ agcls.AgTypeNameMap["ITimeToolEventArrayStartStopTimes"] = ITimeToolEventArraySt
 
 class ITimeToolEventEpoch(object):
     """Event set at specified date/time."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8390,6 +8539,7 @@ agcls.AgTypeNameMap["ITimeToolEventEpoch"] = ITimeToolEventEpoch
 
 class ITimeToolEventExtremum(object):
     """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8533,6 +8683,7 @@ agcls.AgTypeNameMap["ITimeToolEventExtremum"] = ITimeToolEventExtremum
 
 class ITimeToolEventFactory(object):
     """The factory creates events."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8647,6 +8798,7 @@ agcls.AgTypeNameMap["ITimeToolEventFactory"] = ITimeToolEventFactory
 
 class ITimeToolEventInterval(object):
     """A single time interval."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8732,6 +8884,7 @@ agcls.AgTypeNameMap["ITimeToolEventInterval"] = ITimeToolEventInterval
 
 class ITimeToolEventIntervalBetweenTimeInstants(object):
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8790,6 +8943,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalBetweenTimeInstants"] = ITimeToolEven
 
 class ITimeToolEventIntervalCollection(object):
     """A collection of related interval lists."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8848,6 +9002,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollection"] = ITimeToolEventInterval
 
 class ITimeToolEventIntervalCollectionCondition(object):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8974,6 +9129,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionCondition"] = ITimeToolEven
 
 class ITimeToolEventIntervalCollectionFactory(object):
     """The factory creates collections of event interval lists."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9038,6 +9194,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionFactory"] = ITimeToolEventI
 
 class ITimeToolEventIntervalCollectionLighting(object):
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9113,6 +9270,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionLighting"] = ITimeToolEvent
 
 class ITimeToolEventIntervalCollectionSignaled(object):
     """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9222,6 +9380,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalCollectionSignaled"] = ITimeToolEvent
 
 class ITimeToolEventIntervalFactory(object):
     """The factory creates event intervals."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9318,6 +9477,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalFactory"] = ITimeToolEventIntervalFac
 
 class ITimeToolEventIntervalFixed(object):
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9368,6 +9528,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalFixed"] = ITimeToolEventIntervalFixed
 
 class ITimeToolEventIntervalFixedDuration(object):
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9443,6 +9604,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalFixedDuration"] = ITimeToolEventInter
 
 class ITimeToolEventIntervalFromIntervalList(object):
     """Interval created from specified interval list by using one of several selection methods."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9502,7 +9664,7 @@ class ITimeToolEventIntervalFromIntervalList(object):
             "marshallers" : (agmarshall.INT_arg,) }
     @property
     def interval_number(self) -> int:
-        """An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd"""
+        """An interval number. Applicable only if IntervalSelection is IntervalSelectionFromStart or IntervalSelectionFromEnd."""
         return self._intf.get_property(ITimeToolEventIntervalFromIntervalList._metadata, ITimeToolEventIntervalFromIntervalList._get_interval_number_metadata)
 
     _set_interval_number_metadata = { "name" : "interval_number",
@@ -9518,6 +9680,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalFromIntervalList"] = ITimeToolEventIn
 
 class ITimeToolEventIntervalList(object):
     """An ordered list of time intervals."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9585,6 +9748,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalList"] = ITimeToolEventIntervalList
 
 class ITimeToolEventIntervalListCondition(object):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9711,6 +9875,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListCondition"] = ITimeToolEventInter
 
 class ITimeToolEventIntervalListFactory(object):
     """The factory creates event interval lists."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9815,6 +9980,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListFactory"] = ITimeToolEventInterva
 
 class ITimeToolEventIntervalListFile(object):
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9872,6 +10038,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListFile"] = ITimeToolEventIntervalLi
 
 class ITimeToolEventIntervalListFiltered(object):
     """Defined by filtering intervals from original interval list using specified filtering method."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9939,6 +10106,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListFiltered"] = ITimeToolEventInterv
 
 class ITimeToolEventIntervalListFixed(object):
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9979,6 +10147,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListFixed"] = ITimeToolEventIntervalL
 
 class ITimeToolEventIntervalListMerged(object):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10126,6 +10295,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListMerged"] = ITimeToolEventInterval
 
 class ITimeToolEventIntervalListScaled(object):
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10218,6 +10388,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListScaled"] = ITimeToolEventInterval
 
 class ITimeToolEventIntervalListSignaled(object):
     """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10327,6 +10498,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListSignaled"] = ITimeToolEventInterv
 
 class ITimeToolEventIntervalListTimeOffset(object):
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10385,6 +10557,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalListTimeOffset"] = ITimeToolEventInte
 
 class ITimeToolEventIntervalScaled(object):
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10477,6 +10650,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalScaled"] = ITimeToolEventIntervalScal
 
 class ITimeToolEventIntervalSignaled(object):
     """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10586,6 +10760,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalSignaled"] = ITimeToolEventIntervalSi
 
 class ITimeToolEventIntervalSmartInterval(object):
     """A smart interval."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10634,7 +10809,7 @@ class ITimeToolEventIntervalSmartInterval(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def duration_as_string(self) -> str:
-        """The duration of the interval"""
+        """The duration of the interval."""
         return self._intf.get_property(ITimeToolEventIntervalSmartInterval._metadata, ITimeToolEventIntervalSmartInterval._get_duration_as_string_metadata)
 
     _set_duration_as_string_metadata = { "name" : "duration_as_string",
@@ -10749,6 +10924,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalSmartInterval"] = ITimeToolEventInter
 
 class ITimeToolEventIntervalTimeOffset(object):
     """Interval defined by shifting specified reference interval by fixed time offset."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10807,6 +10983,7 @@ agcls.AgTypeNameMap["ITimeToolEventIntervalTimeOffset"] = ITimeToolEventInterval
 
 class ITimeToolEventSignaled(object):
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10916,6 +11093,7 @@ agcls.AgTypeNameMap["ITimeToolEventSignaled"] = ITimeToolEventSignaled
 
 class ITimeToolEventSmartEpoch(object):
     """A smart epoch."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10991,6 +11169,7 @@ agcls.AgTypeNameMap["ITimeToolEventSmartEpoch"] = ITimeToolEventSmartEpoch
 
 class ITimeToolEventStartStopTime(object):
     """Event is either start or stop time selected from a reference interval."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11049,6 +11228,7 @@ agcls.AgTypeNameMap["ITimeToolEventStartStopTime"] = ITimeToolEventStartStopTime
 
 class ITimeToolEventTimeOffset(object):
     """Event at fixed offset from specified reference event."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11107,6 +11287,7 @@ agcls.AgTypeNameMap["ITimeToolEventTimeOffset"] = ITimeToolEventTimeOffset
 
 class ITimeToolFirstIntervalsFilter(object):
     """The filter selects a portion of first intervals."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11148,6 +11329,7 @@ agcls.AgTypeNameMap["ITimeToolFirstIntervalsFilter"] = ITimeToolFirstIntervalsFi
 
 class ITimeToolGapsFilter(object):
     """The filter merges intervals unless they are separated by gaps of at least/most certain duration."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11206,6 +11388,7 @@ agcls.AgTypeNameMap["ITimeToolGapsFilter"] = ITimeToolGapsFilter
 
 class IAnalysisWorkbenchIntegral(object):
     """Represents a base class for integral definitions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11231,6 +11414,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchIntegral"] = IAnalysisWorkbenchIntegral
 
 class ICalculationToolIntegralBasic(object):
     """Integral definition determines how scalar calculation is numerically integrated."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11306,6 +11490,7 @@ agcls.AgTypeNameMap["ICalculationToolIntegralBasic"] = ICalculationToolIntegralB
 
 class IAnalysisWorkbenchInterp(object):
     """Represents a base class for interpolation definitions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11331,6 +11516,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchInterp"] = IAnalysisWorkbenchInterp
 
 class ICalculationToolInterpBasic(object):
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11389,6 +11575,7 @@ agcls.AgTypeNameMap["ICalculationToolInterpBasic"] = ICalculationToolInterpBasic
 
 class ITimeToolIntervalsFilter(object):
     """The filter selects intervals of at least/most certain duration."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11447,6 +11634,7 @@ agcls.AgTypeNameMap["ITimeToolIntervalsFilter"] = ITimeToolIntervalsFilter
 
 class ITimeToolLastIntervalsFilter(object):
     """The filter selects a portion of last intervals."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11488,6 +11676,7 @@ agcls.AgTypeNameMap["ITimeToolLastIntervalsFilter"] = ITimeToolLastIntervalsFilt
 
 class ICalculationToolParameterSet(object):
     """Parameter set contains various sets of scalar computations."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11564,6 +11753,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSet"] = ICalculationToolParameterS
 
 class ICalculationToolParameterSetAttitude(object):
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11622,6 +11812,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetAttitude"] = ICalculationToolPa
 
 class ICalculationToolParameterSetFactory(object):
     """The factory is used to create instances of available parameter set types."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11702,6 +11893,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetFactory"] = ICalculationToolPar
 
 class ICalculationToolParameterSetGroundTrajectory(object):
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11760,6 +11952,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetGroundTrajectory"] = ICalculati
 
 class ICalculationToolParameterSetOrbit(object):
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11886,6 +12079,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetOrbit"] = ICalculationToolParam
 
 class ICalculationToolParameterSetTrajectory(object):
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11944,6 +12138,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetTrajectory"] = ICalculationTool
 
 class ICalculationToolParameterSetVector(object):
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12002,6 +12197,7 @@ agcls.AgTypeNameMap["ICalculationToolParameterSetVector"] = ICalculationToolPara
 
 class ITimeToolPruneFilter(object):
     """A filter used with event interval list pruned class to prune interval lists..."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12035,6 +12231,7 @@ agcls.AgTypeNameMap["ITimeToolPruneFilter"] = ITimeToolPruneFilter
 
 class ITimeToolPruneFilterFactory(object):
     """The factory creates pruning filters."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12067,6 +12264,7 @@ agcls.AgTypeNameMap["ITimeToolPruneFilterFactory"] = ITimeToolPruneFilterFactory
 
 class ITimeToolRelativeSatisfactionConditionFilter(object):
     """The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12142,6 +12340,7 @@ agcls.AgTypeNameMap["ITimeToolRelativeSatisfactionConditionFilter"] = ITimeToolR
 
 class IAnalysisWorkbenchSampling(object):
     """Base sampling interface."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12167,6 +12366,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchSampling"] = IAnalysisWorkbenchSampling
 
 class ICalculationToolSamplingBasic(object):
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12217,6 +12417,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingBasic"] = ICalculationToolSamplingB
 
 class ICalculationToolSamplingCurvatureTolerance(object):
     """Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12297,7 +12498,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def relative_tolerance(self) -> float:
-        """Get the relative tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step relative to the sampled values"""
+        """Get the relative tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step relative to the sampled values."""
         return self._intf.get_property(ICalculationToolSamplingCurvatureTolerance._metadata, ICalculationToolSamplingCurvatureTolerance._get_relative_tolerance_metadata)
 
     _set_relative_tolerance_metadata = { "name" : "relative_tolerance",
@@ -12312,7 +12513,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def absolute_tolerance(self) -> float:
-        """Get the absolute tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step"""
+        """Get the absolute tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step."""
         return self._intf.get_property(ICalculationToolSamplingCurvatureTolerance._metadata, ICalculationToolSamplingCurvatureTolerance._get_absolute_tolerance_metadata)
 
     _set_absolute_tolerance_metadata = { "name" : "absolute_tolerance",
@@ -12327,7 +12528,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def curvature_tolerance(self) -> float:
-        """Get the curvature tolerance which determines acceptable angular difference between slopes over consecutive steps"""
+        """Get the curvature tolerance which determines acceptable angular difference between slopes over consecutive steps."""
         return self._intf.get_property(ICalculationToolSamplingCurvatureTolerance._metadata, ICalculationToolSamplingCurvatureTolerance._get_curvature_tolerance_metadata)
 
     _set_curvature_tolerance_metadata = { "name" : "curvature_tolerance",
@@ -12343,6 +12544,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingCurvatureTolerance"] = ICalculation
 
 class ICalculationToolSamplingFixedStep(object):
     """Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12384,6 +12586,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingFixedStep"] = ICalculationToolSampl
 
 class ICalculationToolSamplingMethod(object):
     """A sampling method."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12417,6 +12620,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingMethod"] = ICalculationToolSampling
 
 class ICalculationToolSamplingMethodFactory(object):
     """The factory creates sampling method components."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12465,6 +12669,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingMethodFactory"] = ICalculationToolS
 
 class ICalculationToolSamplingRelativeTolerance(object):
     """Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12543,7 +12748,7 @@ class ICalculationToolSamplingRelativeTolerance(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def relative_tolerance(self) -> float:
-        """Get the relative tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step relative to the sampled values"""
+        """Get the relative tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step relative to the sampled values."""
         return self._intf.get_property(ICalculationToolSamplingRelativeTolerance._metadata, ICalculationToolSamplingRelativeTolerance._get_relative_tolerance_metadata)
 
     _set_relative_tolerance_metadata = { "name" : "relative_tolerance",
@@ -12558,7 +12763,7 @@ class ICalculationToolSamplingRelativeTolerance(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def absolute_tolerance(self) -> float:
-        """Get the absolute tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step"""
+        """Get the absolute tolerance which determines acceptable difference between predicted and actual changes in values of sampled data over a step."""
         return self._intf.get_property(ICalculationToolSamplingRelativeTolerance._metadata, ICalculationToolSamplingRelativeTolerance._get_absolute_tolerance_metadata)
 
     _set_absolute_tolerance_metadata = { "name" : "absolute_tolerance",
@@ -12574,6 +12779,7 @@ agcls.AgTypeNameMap["ICalculationToolSamplingRelativeTolerance"] = ICalculationT
 
 class ITimeToolSatisfactionConditionFilter(object):
     """The filter selects intervals if certain side condition is satisfied at least/most certain duration."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12649,6 +12855,7 @@ agcls.AgTypeNameMap["ITimeToolSatisfactionConditionFilter"] = ITimeToolSatisfact
 
 class IAnalysisWorkbenchSignalDelay(object):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12674,6 +12881,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchSignalDelay"] = IAnalysisWorkbenchSignalD
 
 class ITimeToolSignalDelayBasic(object):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12783,6 +12991,7 @@ agcls.AgTypeNameMap["ITimeToolSignalDelayBasic"] = ITimeToolSignalDelayBasic
 
 class ISpatialAnalysisToolVolumeCalcFactory(object):
     """The factory is used to create instances of volume calcs."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12887,6 +13096,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcFactory"] = ISpatialAnalysisT
 
 class ISpatialAnalysisToolVolumeFactory(object):
     """The factory is used to create instances of volumes."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12991,6 +13201,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeFactory"] = ISpatialAnalysisToolV
 
 class ISpatialAnalysisToolVolumeGridFactory(object):
     """The factory is used to create instances of volume grids."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13079,6 +13290,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridFactory"] = ISpatialAnalysisT
 
 class ISpatialAnalysisToolGridCoordinateDefinition(object):
     """Define a set of coordinate values."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13144,7 +13356,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IQuantity"), agmarshall.AgInterface_in_arg("IQuantity"), agmarshall.INT_arg, agmarshall.AgInterface_out_arg,) }
     def set_grid_values_fixed_number_of_steps_ex(self, min:"IQuantity", max:"IQuantity", numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """Set grid values type to fixed number of steps with min and max as Quantity"""
+        """Set grid values type to fixed number of steps with min and max as Quantity."""
         return self._intf.invoke(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_ex_metadata, min, max, numSteps, out_arg())
 
 
@@ -13153,6 +13365,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolGridCoordinateDefinition"] = ISpatialAn
 
 class ISpatialAnalysisToolGridValuesCustom(object):
     """Fixed step grid values."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13194,6 +13407,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolGridValuesCustom"] = ISpatialAnalysisTo
 
 class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
     """Fixed step grid values."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13303,6 +13517,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolGridValuesFixedNumberOfSteps"] = ISpati
 
 class ISpatialAnalysisToolGridValuesFixedStep(object):
     """Fixed step grid values."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13412,6 +13627,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolGridValuesFixedStep"] = ISpatialAnalysi
 
 class ISpatialAnalysisToolGridValuesMethod(object):
     """A grid values method."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13445,6 +13661,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolGridValuesMethod"] = ISpatialAnalysisTo
 
 class ITimeToolLightTimeDelay(object):
     """Manage Light Time Delay options.."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13538,7 +13755,7 @@ class ITimeToolLightTimeDelay(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_VOLUME_TIME_SENSE_TYPE),) }
     @property
     def time_sense(self) -> "CRDN_VOLUME_TIME_SENSE_TYPE":
-        """Indicate whether apparent position is computed in a transmit or receive sense"""
+        """Indicate whether apparent position is computed in a transmit or receive sense."""
         return self._intf.get_property(ITimeToolLightTimeDelay._metadata, ITimeToolLightTimeDelay._get_time_sense_metadata)
 
     _set_time_sense_metadata = { "name" : "time_sense",
@@ -13554,6 +13771,7 @@ agcls.AgTypeNameMap["ITimeToolLightTimeDelay"] = ITimeToolLightTimeDelay
 
 class ISpatialAnalysisToolVolume(object):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13579,6 +13797,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolume"] = ISpatialAnalysisToolVolume
 
 class ISpatialAnalysisToolVolumeCalc(object):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13604,6 +13823,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalc"] = ISpatialAnalysisToolVolu
 
 class ISpatialAnalysisToolVolumeCalcAltitude(object):
     """A volume calc altitude interface."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13696,6 +13916,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcAltitude"] = ISpatialAnalysis
 
 class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
     """A volume calc angle off vector interface."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13805,6 +14026,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcAngleOffVector"] = ISpatialAn
 
 class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
     """A volume calc condition satisfaction interface."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13999,6 +14221,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcConditionSatMetric"] = ISpati
 
 class ISpatialAnalysisToolVolumeCalcDelayRange(object):
     """A volume calc propagation delay to location interface."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14109,7 +14332,7 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def speed(self) -> float:
-        """The Volume Calc range speed value"""
+        """The Volume Calc range speed value."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeCalcDelayRange._metadata, ISpatialAnalysisToolVolumeCalcDelayRange._get_speed_metadata)
 
     _set_speed_metadata = { "name" : "speed",
@@ -14125,6 +14348,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcDelayRange"] = ISpatialAnalys
 
 class ISpatialAnalysisToolVolumeCalcFile(object):
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14174,6 +14398,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcFile"] = ISpatialAnalysisTool
 
 class ISpatialAnalysisToolVolumeCalcFromScalar(object):
     """A volume calc scalar to location interface."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14215,6 +14440,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcFromScalar"] = ISpatialAnalys
 
 class ISpatialAnalysisToolVolumeCalcRange(object):
     """A volume calc distance to location interface."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14307,6 +14533,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcRange"] = ISpatialAnalysisToo
 
 class ISpatialAnalysisToolVolumeCalcSolarIntensity(object):
     """A volume calc solar intensityn interface."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14365,6 +14592,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCalcSolarIntensity"] = ISpatialAn
 
 class ISpatialAnalysisToolVolumeCombined(object):
     """A combined volume interface."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14455,6 +14683,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeCombined"] = ISpatialAnalysisTool
 
 class ISpatialAnalysisToolVolumeFromCalc(object):
     """An volume from calc volume interface."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14553,6 +14782,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeFromCalc"] = ISpatialAnalysisTool
 
 class ISpatialAnalysisToolVolumeFromCondition(object):
     """A volume from conditioninterface."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14662,6 +14892,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeFromCondition"] = ISpatialAnalysi
 
 class ISpatialAnalysisToolVolumeFromGrid(object):
     """An over time volume interface."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14720,6 +14951,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeFromGrid"] = ISpatialAnalysisTool
 
 class ISpatialAnalysisToolVolumeFromTimeSatisfaction(object):
     """An volume from time satisfaction volume interface."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14761,6 +14993,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeFromTimeSatisfaction"] = ISpatial
 
 class ISpatialAnalysisToolVolumeGrid(object):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14786,6 +15019,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGrid"] = ISpatialAnalysisToolVolu
 
 class ISpatialAnalysisToolVolumeGridBearingAlt(object):
     """A volume grid bearing alt (Surface Bearing) interface."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14889,7 +15123,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
             "marshallers" : (agmarshall.LPSAFEARRAY_arg,) }
     @property
     def reference_location(self) -> list:
-        """Get lat/lon for reference location"""
+        """Get lat/lon for reference location."""
         return self._intf.get_property(ISpatialAnalysisToolVolumeGridBearingAlt._metadata, ISpatialAnalysisToolVolumeGridBearingAlt._get_reference_location_metadata)
 
     _set_reference_location_metadata = { "name" : "reference_location",
@@ -14905,6 +15139,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridBearingAlt"] = ISpatialAnalys
 
 class ISpatialAnalysisToolVolumeGridCartesian(object):
     """A volume grid Cartesian interface."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14973,6 +15208,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridCartesian"] = ISpatialAnalysi
 
 class ISpatialAnalysisToolVolumeGridConstrained(object):
     """A volume grid constrained interface."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15031,6 +15267,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridConstrained"] = ISpatialAnaly
 
 class ISpatialAnalysisToolVolumeGridCylindrical(object):
     """A volume grid cylindrical interface."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15099,6 +15336,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridCylindrical"] = ISpatialAnaly
 
 class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
     """A volume grid lat lon alt (Cartogrographic) interface."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15184,6 +15422,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridLatLonAlt"] = ISpatialAnalysi
 
 class ISpatialAnalysisToolVolumeGridResult(object):
     """An interface that generates Volume Grid results."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15280,6 +15519,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridResult"] = ISpatialAnalysisTo
 
 class ISpatialAnalysisToolVolumeGridSpherical(object):
     """A volume grid spherical interface."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15348,6 +15588,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGridSpherical"] = ISpatialAnalysi
 
 class ISpatialAnalysisToolVolumeInview(object):
     """An Inview volume interface."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15398,6 +15639,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeInview"] = ISpatialAnalysisToolVo
 
 class ISpatialAnalysisToolVolumeLighting(object):
     """A lighting volume interface."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15473,6 +15715,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeLighting"] = ISpatialAnalysisTool
 
 class ISpatialAnalysisToolVolumeOverTime(object):
     """An over time volume interface."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15582,6 +15825,7 @@ agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeOverTime"] = ISpatialAnalysisTool
 
 class ITimeToolTimeProperties(object):
     """Define methods to compute time properties such as availability and special times."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15614,6 +15858,7 @@ agcls.AgTypeNameMap["ITimeToolTimeProperties"] = ITimeToolTimeProperties
 
 class IAnalysisWorkbenchTypeInfo(object):
     """Provide information about the type of VGT components."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15665,6 +15910,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchTypeInfo"] = IAnalysisWorkbenchTypeInfo
 
 class IAnalysisWorkbenchRefTo(object):
     """A base interface for all VGT component references."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15698,6 +15944,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchRefTo"] = IAnalysisWorkbenchRefTo
 
 class IAnalysisWorkbenchTemplate(object):
     """The AnalysisWorkbenchTemplate interface enables to obtain information about the STK class that owns the VGT component."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15731,6 +15978,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchTemplate"] = IAnalysisWorkbenchTemplate
 
 class IAnalysisWorkbenchInstance(object):
     """The AnalysisWorkbenchInstance interface enables to obtain information about the parent object that owns the VGT component."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15773,6 +16021,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchInstance"] = IAnalysisWorkbenchInstance
 
 class IVectorGeometryToolPointRefTo(object):
     """Represents a reference to a VGT point."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15829,6 +16078,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointRefTo"] = IVectorGeometryToolPointR
 
 class IVectorGeometryToolVectorRefTo(object):
     """Represents a reference to a VGT vector."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15885,6 +16135,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorRefTo"] = IVectorGeometryToolVecto
 
 class IVectorGeometryToolAxesRefTo(object):
     """Represents a reference to a VGT axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15941,6 +16192,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesRefTo"] = IVectorGeometryToolAxesRef
 
 class IVectorGeometryToolAngleRefTo(object):
     """Represents a reference to a VGT angle."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15997,6 +16249,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleRefTo"] = IVectorGeometryToolAngleR
 
 class IVectorGeometryToolSystemRefTo(object):
     """Represents a reference to a VGT system."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16053,6 +16306,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemRefTo"] = IVectorGeometryToolSyste
 
 class IVectorGeometryToolPlaneRefTo(object):
     """Represents a reference to a VGT plane."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16109,6 +16363,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneRefTo"] = IVectorGeometryToolPlaneR
 
 class IVectorGeometryToolAxesLabels(object):
     """Allow configuring the VGT axes labels."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16184,6 +16439,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesLabels"] = IVectorGeometryToolAxesLa
 
 class IVectorGeometryToolPlaneLabels(object):
     """Allow configuring the X and Y axes labels."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16242,6 +16498,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneLabels"] = IVectorGeometryToolPlane
 
 class IVectorGeometryToolAxesAlignedAndConstrained(object):
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16302,6 +16559,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesAlignedAndConstrained"] = IVectorGeo
 
 class IVectorGeometryToolAxesAngularOffset(object):
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16370,6 +16628,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesAngularOffset"] = IVectorGeometryToo
 
 class IVectorGeometryToolAxesFixedAtEpoch(object):
     """Axes based on another set fixed at a specified epoch."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16429,6 +16688,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesFixedAtEpoch"] = IVectorGeometryTool
 
 class IVectorGeometryToolAxesBPlane(object):
     """B-Plane axes using the selected target body and reference vector."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16497,6 +16757,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesBPlane"] = IVectorGeometryToolAxesBP
 
 class IVectorGeometryToolAxesCustomScript(object):
     """Customized axes offset with respect to a set of reference Axes."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16547,6 +16808,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesCustomScript"] = IVectorGeometryTool
 
 class IVectorGeometryToolAxesAttitudeFile(object):
     """Axes specified by data from a file."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16588,6 +16850,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesAttitudeFile"] = IVectorGeometryTool
 
 class IVectorGeometryToolAxesFixed(object):
     """Axes fixed in reference axes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16630,6 +16893,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesFixed"] = IVectorGeometryToolAxesFix
 
 class IVectorGeometryToolAxesModelAttach(object):
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16671,6 +16935,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesModelAttach"] = IVectorGeometryToolA
 
 class IVectorGeometryToolAxesSpinning(object):
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16764,6 +17029,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesSpinning"] = IVectorGeometryToolAxes
 
 class IVectorGeometryToolAxesOnSurface(object):
     """Topocentric axes located at the reference point's projection on the central body."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16823,6 +17089,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesOnSurface"] = IVectorGeometryToolAxe
 
 class IVectorGeometryToolAxesTrajectory(object):
     """Axes based on trajectory of the point relative to the reference coordinate system."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16882,6 +17149,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesTrajectory"] = IVectorGeometryToolAx
 
 class IVectorGeometryToolAxesLagrangeLibration(object):
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16917,7 +17185,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE),) }
     @property
     def point_type(self) -> "CRDN_LAGRANGE_LIBRATION_POINT_TYPE":
-        """Specify a lagrange point (L1, L2, etc.)"""
+        """Specify a lagrange point (L1, L2, etc.)."""
         return self._intf.get_property(IVectorGeometryToolAxesLagrangeLibration._metadata, IVectorGeometryToolAxesLagrangeLibration._get_point_type_metadata)
 
     _set_point_type_metadata = { "name" : "point_type",
@@ -16941,6 +17209,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesLagrangeLibration"] = IVectorGeometr
 
 class IVectorGeometryToolAxesCommonTasks(object):
     """Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16997,6 +17266,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesCommonTasks"] = IVectorGeometryToolA
 
 class IVectorGeometryToolAxesAtTimeInstant(object):
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17072,6 +17342,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesAtTimeInstant"] = IVectorGeometryToo
 
 class IVectorGeometryToolAxesPlugin(object):
     """A VGT axes plugin."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17147,6 +17418,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesPlugin"] = IVectorGeometryToolAxesPl
 
 class IVectorGeometryToolAngleBetweenVectors(object):
     """An angle between two vectors."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17189,6 +17461,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleBetweenVectors"] = IVectorGeometryT
 
 class IVectorGeometryToolAngleBetweenPlanes(object):
     """An angle between two planes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17231,6 +17504,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleBetweenPlanes"] = IVectorGeometryTo
 
 class IVectorGeometryToolAngleDihedral(object):
     """An angle between two vectors about an axis."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17316,6 +17590,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleDihedral"] = IVectorGeometryToolAng
 
 class IVectorGeometryToolAngleRotation(object):
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17375,6 +17650,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleRotation"] = IVectorGeometryToolAng
 
 class IVectorGeometryToolAngleToPlane(object):
     """An angle between a vector and a plane."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17434,6 +17710,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleToPlane"] = IVectorGeometryToolAngl
 
 class IVectorGeometryToolPlaneNormal(object):
     """A plane normal to a vector at a given point."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17485,6 +17762,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneNormal"] = IVectorGeometryToolPlane
 
 class IVectorGeometryToolPlaneQuadrant(object):
     """A plane based on a selected Quadrant of a reference system."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17535,6 +17813,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneQuadrant"] = IVectorGeometryToolPla
 
 class IVectorGeometryToolPlaneTrajectory(object):
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17594,6 +17873,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneTrajectory"] = IVectorGeometryToolP
 
 class IVectorGeometryToolPlaneTriad(object):
     """A Plane containing points A, B and ReferencePont with the first axis aligned with the direction from the ReferencePoint to point A and the second axis toward the direction from the ReferencePoint to point B."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17662,6 +17942,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneTriad"] = IVectorGeometryToolPlaneT
 
 class IVectorGeometryToolPlaneTwoVector(object):
     """A plane passing through point and containing two given vectors."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17713,6 +17994,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneTwoVector"] = IVectorGeometryToolPl
 
 class IVectorGeometryToolPointBPlane(object):
     """B-Plane point using the selected target body."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17789,6 +18071,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointBPlane"] = IVectorGeometryToolPoint
 
 class IVectorGeometryToolPointFile(object):
     """Point specified by data from a file."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17830,6 +18113,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointFile"] = IVectorGeometryToolPointFi
 
 class IVectorGeometryToolPointFixedInSystem(object):
     """Point fixed in a reference coordinate system using the selected coordinate type."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17872,6 +18156,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointFixedInSystem"] = IVectorGeometryTo
 
 class IVectorGeometryToolPointGrazing(object):
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17940,6 +18225,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointGrazing"] = IVectorGeometryToolPoin
 
 class IVectorGeometryToolPointGlint(object):
     """Point on central body surface that reflects from source to observer."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17991,6 +18277,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointGlint"] = IVectorGeometryToolPointG
 
 class IVectorGeometryToolPointCovarianceGrazing(object):
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18118,6 +18405,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointCovarianceGrazing"] = IVectorGeomet
 
 class IVectorGeometryToolPointPlaneIntersection(object):
     """Point on a plane located along a given direction looking from a given origin."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18169,6 +18457,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointPlaneIntersection"] = IVectorGeomet
 
 class IVectorGeometryToolPointOnSurface(object):
     """The detic subpoint of the reference point as projected onto the central body."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18245,6 +18534,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointOnSurface"] = IVectorGeometryToolPo
 
 class IVectorGeometryToolPointModelAttach(object):
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18303,6 +18593,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointModelAttach"] = IVectorGeometryTool
 
 class IVectorGeometryToolPointSatelliteCollectionEntry(object):
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18344,6 +18635,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointSatelliteCollectionEntry"] = IVecto
 
 class IVectorGeometryToolPointPlaneProjection(object):
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18386,6 +18678,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointPlaneProjection"] = IVectorGeometry
 
 class IVectorGeometryToolPointLagrangeLibration(object):
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18421,7 +18714,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
             "marshallers" : (agmarshall.AgEnum_arg(CRDN_LAGRANGE_LIBRATION_POINT_TYPE),) }
     @property
     def point_type(self) -> "CRDN_LAGRANGE_LIBRATION_POINT_TYPE":
-        """Specify a lagrange point (L1, L2, etc.)"""
+        """Specify a lagrange point (L1, L2, etc.)."""
         return self._intf.get_property(IVectorGeometryToolPointLagrangeLibration._metadata, IVectorGeometryToolPointLagrangeLibration._get_point_type_metadata)
 
     _set_point_type_metadata = { "name" : "point_type",
@@ -18445,6 +18738,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointLagrangeLibration"] = IVectorGeomet
 
 class IVectorGeometryToolPointCommonTasks(object):
     """Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18493,6 +18787,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointCommonTasks"] = IVectorGeometryTool
 
 class IVectorGeometryToolPointCentBodyIntersect(object):
     """Point on central body surface along direction vector originating at source point."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18712,6 +19007,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointCentBodyIntersect"] = IVectorGeomet
 
 class IVectorGeometryToolPointAtTimeInstant(object):
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18787,6 +19083,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointAtTimeInstant"] = IVectorGeometryTo
 
 class IVectorGeometryToolPointPlugin(object):
     """A VGT point plugin."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18862,6 +19159,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointPlugin"] = IVectorGeometryToolPoint
 
 class IVectorGeometryToolPointCBFixedOffset(object):
     """Point specified by fixed components with respect to central body."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18929,6 +19227,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointCBFixedOffset"] = IVectorGeometryTo
 
 class IVectorGeometryToolSystemAssembled(object):
     """A system assembled from an origin point and a set of reference axes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18971,6 +19270,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemAssembled"] = IVectorGeometryToolS
 
 class IVectorGeometryToolSystemOnSurface(object):
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19047,6 +19347,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemOnSurface"] = IVectorGeometryToolS
 
 class IAnalysisWorkbenchLLAPosition(object):
     """A position represented by the Latitude, longtitude and Latitude."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19122,6 +19423,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchLLAPosition"] = IAnalysisWorkbenchLLAPosi
 
 class IVectorGeometryToolSystemCommonTasks(object):
     """Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19162,6 +19464,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemCommonTasks"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorAngleRate(object):
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19212,6 +19515,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorAngleRate"] = IVectorGeometryToolV
 
 class IVectorGeometryToolVectorApoapsis(object):
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19271,6 +19575,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorApoapsis"] = IVectorGeometryToolVe
 
 class IVectorGeometryToolVectorFixedAtEpoch(object):
     """A vector based on another vector fixed at a specified epoch."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19330,6 +19635,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFixedAtEpoch"] = IVectorGeometryTo
 
 class IVectorGeometryToolVectorAngularVelocity(object):
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19389,6 +19695,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorAngularVelocity"] = IVectorGeometr
 
 class IVectorGeometryToolVectorConing(object):
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19516,6 +19823,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorConing"] = IVectorGeometryToolVect
 
 class IVectorGeometryToolVectorCross(object):
     """The vector cross product of two vectors."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19592,6 +19900,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorCross"] = IVectorGeometryToolVecto
 
 class IVectorGeometryToolVectorCustomScript(object):
     """Customized vector components defined with respect to reference axes."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19659,6 +19968,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorCustomScript"] = IVectorGeometryTo
 
 class IVectorGeometryToolVectorDerivative(object):
     """A vector derivative of a vector computed with respect to specified axes."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19735,6 +20045,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorDerivative"] = IVectorGeometryTool
 
 class IVectorGeometryToolVectorDisplacement(object):
     """Vector defined by its start and end points."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19837,6 +20148,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorDisplacement"] = IVectorGeometryTo
 
 class IVectorGeometryToolVectorTwoPlanesIntersection(object):
     """Defined along the intersection of two planes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19879,6 +20191,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorTwoPlanesIntersection"] = IVectorG
 
 class IVectorGeometryToolVectorModelAttach(object):
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19920,6 +20233,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorModelAttach"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorProjection(object):
     """A projection of a vector computed with respect to a reference plane."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19962,6 +20276,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorProjection"] = IVectorGeometryTool
 
 class IVectorGeometryToolVectorScaled(object):
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20029,6 +20344,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorScaled"] = IVectorGeometryToolVect
 
 class IVectorGeometryToolVectorEccentricity(object):
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20088,6 +20404,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorEccentricity"] = IVectorGeometryTo
 
 class IVectorGeometryToolVectorFixedInAxes(object):
     """Vector fixed in the reference axes using the selected coordinate type."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20130,6 +20447,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFixedInAxes"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorLineOfNodes(object):
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20172,6 +20490,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorLineOfNodes"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorOrbitAngularMomentum(object):
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20231,6 +20550,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorOrbitAngularMomentum"] = IVectorGe
 
 class IVectorGeometryToolVectorOrbitNormal(object):
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20290,6 +20610,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorOrbitNormal"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorPeriapsis(object):
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20349,6 +20670,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorPeriapsis"] = IVectorGeometryToolV
 
 class IVectorGeometryToolVectorReflection(object):
     """A vector (incident vector) reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20442,6 +20764,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorReflection"] = IVectorGeometryTool
 
 class IVectorGeometryToolVectorRotationVector(object):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20501,6 +20824,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorRotationVector"] = IVectorGeometry
 
 class IVectorGeometryToolVectorDirectionToStar(object):
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20542,6 +20866,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorDirectionToStar"] = IVectorGeometr
 
 class IVectorGeometryToolVectorFixedAtTimeInstant(object):
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20617,6 +20942,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFixedAtTimeInstant"] = IVectorGeom
 
 class IVectorGeometryToolVectorLinearCombination(object):
     """Linear combination of two input vectors."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20777,6 +21103,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorLinearCombination"] = IVectorGeome
 
 class IVectorGeometryToolVectorProjectAlongVector(object):
     """A projection of a source vector in the direction of another vector."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20835,6 +21162,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorProjectAlongVector"] = IVectorGeom
 
 class IVectorGeometryToolVectorScalarLinearCombination(object):
     """Linear combination of two input vectors using scalars."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21063,6 +21391,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorScalarLinearCombination"] = IVecto
 
 class IVectorGeometryToolVectorScalarScaled(object):
     """Scaled version of the input vector using scalar."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21189,6 +21518,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorScalarScaled"] = IVectorGeometryTo
 
 class IVectorGeometryToolVectorVelocityAcceleration(object):
     """Velocity vector of a point in a coordinate system."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21264,6 +21594,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorVelocityAcceleration"] = IVectorGe
 
 class IVectorGeometryToolVectorPlugin(object):
     """A VGT vector plugin."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21339,6 +21670,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorPlugin"] = IVectorGeometryToolVect
 
 class IVectorGeometryToolVectorDispSurface(object):
     """Displacement between origin and destination points using surface distance and altitude difference."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21431,6 +21763,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorDispSurface"] = IVectorGeometryToo
 
 class IVectorGeometryToolVectorFactory(object):
     """A Factory object to create vectors."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21488,7 +21821,7 @@ class IVectorGeometryToolVectorFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_vector_plugin_from_display_name(self, vectorName:str, description:str, displayName:str) -> "IVectorGeometryToolVector":
-        """Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see"""
+        """Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see."""
         return self._intf.invoke(IVectorGeometryToolVectorFactory._metadata, IVectorGeometryToolVectorFactory._create_vector_plugin_from_display_name_metadata, vectorName, description, displayName, out_arg())
 
     _create_cross_product_vector_metadata = { "name" : "create_cross_product_vector",
@@ -21504,6 +21837,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFactory"] = IVectorGeometryToolVec
 
 class IVectorGeometryToolAxesFactory(object):
     """A Factory object to create axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21552,7 +21886,7 @@ class IVectorGeometryToolAxesFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_axes_plugin_from_display_name(self, axesName:str, description:str, displayName:str) -> "IVectorGeometryToolAxes":
-        """Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see"""
+        """Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see."""
         return self._intf.invoke(IVectorGeometryToolAxesFactory._metadata, IVectorGeometryToolAxesFactory._create_axes_plugin_from_display_name_metadata, axesName, description, displayName, out_arg())
 
 
@@ -21561,6 +21895,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesFactory"] = IVectorGeometryToolAxesF
 
 class IVectorGeometryToolSystemFactory(object):
     """A Factory interface to create VGT systems."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21601,6 +21936,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemFactory"] = IVectorGeometryToolSys
 
 class IVectorGeometryToolPointFactory(object):
     """A Factory object to create points."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21650,7 +21986,7 @@ class IVectorGeometryToolPointFactory(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_point_plugin_from_display_name(self, pointName:str, description:str, displayName:str) -> "IVectorGeometryToolPoint":
-        """Create a point component based on a COM point plugin. For information how to implement and register VGT plugins, see"""
+        """Create a point component based on a COM point plugin. For information how to implement and register VGT plugins, see."""
         return self._intf.invoke(IVectorGeometryToolPointFactory._metadata, IVectorGeometryToolPointFactory._create_point_plugin_from_display_name_metadata, pointName, description, displayName, out_arg())
 
     _create_point_fixed_on_central_body_metadata = { "name" : "create_point_fixed_on_central_body",
@@ -21666,6 +22002,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointFactory"] = IVectorGeometryToolPoin
 
 class IVectorGeometryToolPlaneFactory(object):
     """A Factory object to create VGT planes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21706,6 +22043,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneFactory"] = IVectorGeometryToolPlan
 
 class IVectorGeometryToolAngleFactory(object):
     """A Factory object to create angles."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21746,6 +22084,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleFactory"] = IVectorGeometryToolAngl
 
 class IVectorGeometryToolVectorGroup(object):
     """Access or create VGT vectors associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -21861,6 +22200,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorGroup"] = IVectorGeometryToolVecto
 
 class IVectorGeometryToolPointGroup(object):
     """Access or create VGT points associated with an object or a central body."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -21985,6 +22325,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointGroup"] = IVectorGeometryToolPointG
 
 class IVectorGeometryToolAngleGroup(object):
     """Access or create VGT angles associated with an object or a central body."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -22100,6 +22441,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleGroup"] = IVectorGeometryToolAngleG
 
 class IVectorGeometryToolAxesGroup(object):
     """Access or create VGT axes associated with an object or a central body."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -22224,6 +22566,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesGroup"] = IVectorGeometryToolAxesGro
 
 class IVectorGeometryToolPlaneGroup(object):
     """Represents a single entry point to manipulate VGT Planes associated with an object."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -22339,6 +22682,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneGroup"] = IVectorGeometryToolPlaneG
 
 class IVectorGeometryToolSystemGroup(object):
     """Access or create VGT systems associated with an object or a central body."""
+
     _num_methods = 10
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -22463,6 +22807,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemGroup"] = IVectorGeometryToolSyste
 
 class IAnalysisWorkbenchProvider(object):
     """Allow accessing existing Vector Geometry Tool components."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22683,6 +23028,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchProvider"] = IAnalysisWorkbenchProvider
 
 class IAnalysisWorkbenchRoot(object):
     """Represents a VGT root object."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22709,14 +23055,14 @@ class IAnalysisWorkbenchRoot(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_template_provider(self, className:str) -> "AnalysisWorkbenchProvider":
-        """Return a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)"""
+        """Return a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)."""
         return self._intf.invoke(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_template_provider_metadata, className, out_arg())
 
     _get_provider_metadata = { "name" : "get_provider",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def get_provider(self, instPath:str) -> "AnalysisWorkbenchProvider":
-        """Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)"""
+        """Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)."""
         return self._intf.invoke(IAnalysisWorkbenchRoot._metadata, IAnalysisWorkbenchRoot._get_provider_metadata, instPath, out_arg())
 
     _get_well_known_systems_metadata = { "name" : "well_known_systems",
@@ -22741,6 +23087,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchRoot"] = IAnalysisWorkbenchRoot
 
 class IVectorGeometryToolWellKnownEarthSystems(object):
     """Well-known Earth's coordinate systems."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22792,6 +23139,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownEarthSystems"] = IVectorGeometr
 
 class IVectorGeometryToolWellKnownEarthAxes(object):
     """Well-known Earth's axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22852,6 +23200,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownEarthAxes"] = IVectorGeometryTo
 
 class IVectorGeometryToolWellKnownSunSystems(object):
     """The Sun's well-known coordinate reference systems."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22921,6 +23270,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownSunSystems"] = IVectorGeometryT
 
 class IVectorGeometryToolWellKnownSunAxes(object):
     """Well-known Sun's axes."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22981,6 +23331,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownSunAxes"] = IVectorGeometryTool
 
 class IVectorGeometryToolWellKnownSystems(object):
     """Well-known coordinate reference systems."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23023,6 +23374,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownSystems"] = IVectorGeometryTool
 
 class IVectorGeometryToolWellKnownAxes(object):
     """Well-known Axes."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23065,6 +23417,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolWellKnownAxes"] = IVectorGeometryToolWel
 
 class IVectorGeometryToolAngleFindAngleResult(object):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23107,6 +23460,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleFindAngleResult"] = IVectorGeometry
 
 class IVectorGeometryToolAngleFindAngleWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23158,6 +23512,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleFindAngleWithRateResult"] = IVector
 
 class IVectorGeometryToolAngleFindWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23236,6 +23591,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleFindWithRateResult"] = IVectorGeome
 
 class IVectorGeometryToolAngleFindResult(object):
     """Contains the results returned with IVectorGeometryToolAngle.FindCoordinates method."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23305,6 +23661,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAngleFindResult"] = IVectorGeometryToolA
 
 class IVectorGeometryToolAxesTransformResult(object):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23347,6 +23704,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesTransformResult"] = IVectorGeometryT
 
 class IVectorGeometryToolAxesTransformWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23398,6 +23756,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesTransformWithRateResult"] = IVectorG
 
 class IVectorGeometryToolPlaneFindInAxesResult(object):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23449,6 +23808,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInAxesResult"] = IVectorGeometr
 
 class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23518,6 +23878,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInAxesWithRateResult"] = IVecto
 
 class IVectorGeometryToolPlaneFindInSystemResult(object):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23578,6 +23939,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInSystemResult"] = IVectorGeome
 
 class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23665,6 +24027,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPlaneFindInSystemWithRateResult"] = IVec
 
 class IVectorGeometryToolAxesFindInAxesResult(object):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23707,6 +24070,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesFindInAxesResult"] = IVectorGeometry
 
 class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23758,6 +24122,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolAxesFindInAxesWithRateResult"] = IVector
 
 class IVectorGeometryToolPointLocateInSystemResult(object):
     """Contains the results returned with IVectorGeometryToolPoint.LocateInSystem method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23800,6 +24165,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointLocateInSystemResult"] = IVectorGeo
 
 class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23851,6 +24217,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolPointLocateInSystemWithRateResult"] = IV
 
 class IVectorGeometryToolSystemTransformResult(object):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23893,6 +24260,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemTransformResult"] = IVectorGeometr
 
 class IVectorGeometryToolSystemTransformWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23944,6 +24312,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemTransformWithRateResult"] = IVecto
 
 class IVectorGeometryToolSystemFindInSystemResult(object):
     """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24013,6 +24382,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolSystemFindInSystemResult"] = IVectorGeom
 
 class IVectorGeometryToolVectorFindInAxesResult(object):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24055,6 +24425,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFindInAxesResult"] = IVectorGeomet
 
 class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24106,6 +24477,7 @@ agcls.AgTypeNameMap["IVectorGeometryToolVectorFindInAxesWithRateResult"] = IVect
 
 class IAnalysisWorkbenchMethodCallResult(object):
     """Instances of the interface are used to return the result of a computation."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24139,6 +24511,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchMethodCallResult"] = IAnalysisWorkbenchMe
 
 class IAnalysisWorkbenchCentralBody(object):
     """The interface represents a central body."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24172,6 +24545,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchCentralBody"] = IAnalysisWorkbenchCentral
 
 class IAnalysisWorkbenchCentralBodyRefTo(object):
     """Represents a reference to a VGT CentralBody."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24220,6 +24594,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchCentralBodyRefTo"] = IAnalysisWorkbenchCe
 
 class IAnalysisWorkbenchCentralBodyCollection(object):
     """A collection of central body names."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -24275,7 +24650,7 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
             "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
     @property
     def _NewEnum(self) -> enumerator_proxy:
-        """Return a COM enumerator"""
+        """Return a COM enumerator."""
         return self._intf.get_property(IAnalysisWorkbenchCentralBodyCollection._metadata, IAnalysisWorkbenchCentralBodyCollection._get__NewEnum_metadata)
 
     _add_metadata = { "name" : "add",
@@ -24301,6 +24676,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchCentralBodyCollection"] = IAnalysisWorkbe
 
 class IAnalysisWorkbenchCollection(object):
     """A collection of VGT objects."""
+
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -24390,6 +24766,7 @@ agcls.AgTypeNameMap["IAnalysisWorkbenchCollection"] = IAnalysisWorkbenchCollecti
 
 class ITimeToolPointSamplingResult(object):
     """Contains tabulated positions and velocities of a point created by Sample method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24432,6 +24809,7 @@ agcls.AgTypeNameMap["ITimeToolPointSamplingResult"] = ITimeToolPointSamplingResu
 
 class ITimeToolPointSamplingInterval(object):
     """The interface represents an interval with the time, position and velocity arrays."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24501,6 +24879,7 @@ agcls.AgTypeNameMap["ITimeToolPointSamplingInterval"] = ITimeToolPointSamplingIn
 
 class ITimeToolPointSamplingIntervalCollection(object):
     """A collection of intervals where each interval contains the time, position and velocity arrays."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24566,6 +24945,7 @@ agcls.AgTypeNameMap["ITimeToolPointSamplingIntervalCollection"] = ITimeToolPoint
 
 class ITimeToolAxesSamplingResult(object):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24608,6 +24988,7 @@ agcls.AgTypeNameMap["ITimeToolAxesSamplingResult"] = ITimeToolAxesSamplingResult
 
 class ITimeToolAxesSamplingInterval(object):
     """The interface represents an interval with the time, orientation and velocity arrays."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24677,6 +25058,7 @@ agcls.AgTypeNameMap["ITimeToolAxesSamplingInterval"] = ITimeToolAxesSamplingInte
 
 class ITimeToolAxesSamplingIntervalCollection(object):
     """A collection of intervals where each interval contains the time, orientation and velocity arrays."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24744,6 +25126,7 @@ agcls.AgTypeNameMap["ITimeToolAxesSamplingIntervalCollection"] = ITimeToolAxesSa
 
 class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
     """Represents the results of evaluating a scalar component."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolEvaluateResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24760,6 +25143,7 @@ agcls.AgTypeNameMap["CalculationToolEvaluateResult"] = CalculationToolEvaluateRe
 
 class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResult):
     """Represents the results of evaluating a scalar component."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolEvaluateWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24776,6 +25160,7 @@ agcls.AgTypeNameMap["CalculationToolEvaluateWithRateResult"] = CalculationToolEv
 
 class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24792,6 +25177,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalResult"] = TimeToolEventIntervalResult
 
 class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
     """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventFindOccurrenceResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24808,6 +25194,7 @@ agcls.AgTypeNameMap["TimeToolEventFindOccurrenceResult"] = TimeToolEventFindOccu
 
 class TimeToolFindTimesResult(ITimeToolFindTimesResult):
     """Return a collection of intervals and an array of times."""
+
     def __init__(self, sourceObject=None):
         ITimeToolFindTimesResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24824,6 +25211,7 @@ agcls.AgTypeNameMap["TimeToolFindTimesResult"] = TimeToolFindTimesResult
 
 class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
     """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolIntervalsVectorResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24840,6 +25228,7 @@ agcls.AgTypeNameMap["TimeToolIntervalsVectorResult"] = TimeToolIntervalsVectorRe
 
 class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollectionOccurredResult):
     """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionOccurredResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24856,6 +25245,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionOccurredResult"] = TimeToolE
 
 class TimeToolIntervalListResult(ITimeToolIntervalListResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolIntervalListResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24872,6 +25262,7 @@ agcls.AgTypeNameMap["TimeToolIntervalListResult"] = TimeToolIntervalListResult
 
 class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
     """A collection of interval collections."""
+
     def __init__(self, sourceObject=None):
         ITimeToolIntervalVectorCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24888,6 +25279,7 @@ agcls.AgTypeNameMap["TimeToolIntervalVectorCollection"] = TimeToolIntervalVector
 
 class TimeToolEventGroup(ITimeToolEventGroup):
     """Access or create VGT events associated with an object."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24904,6 +25296,7 @@ agcls.AgTypeNameMap["TimeToolEventGroup"] = TimeToolEventGroup
 
 class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
     """Access or create VGT event intervals associated with an object."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24920,6 +25313,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalGroup"] = TimeToolEventIntervalGroup
 
 class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
     """Access or create VGT event interval lists associated with an object."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24936,6 +25330,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListGroup"] = TimeToolEventIntervalLis
 
 class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
     """Access or create VGT event arrays associated with an object."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24952,6 +25347,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayGroup"] = TimeToolEventArrayGroup
 
 class CalculationToolScalarGroup(ICalculationToolScalarGroup):
     """Access or create VGT calculation scalars associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24968,6 +25364,7 @@ agcls.AgTypeNameMap["CalculationToolScalarGroup"] = CalculationToolScalarGroup
 
 class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup):
     """Access or create VGT event interval collections associated with an object."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -24984,6 +25381,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionGroup"] = TimeToolEventInter
 
 class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
     """Access or create VGT parameter sets associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25000,6 +25398,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetGroup"] = CalculationToolParamet
 
 class CalculationToolConditionGroup(ICalculationToolConditionGroup):
     """Access or create VGT conditions associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25016,6 +25415,7 @@ agcls.AgTypeNameMap["CalculationToolConditionGroup"] = CalculationToolConditionG
 
 class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
     """Allow accessing and creating condition set components."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25032,6 +25432,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSetGroup"] = CalculationToolConditi
 
 class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEvaluateResult):
     """Represents the results returned by ConditionSet.Evaluate."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetEvaluateResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25048,6 +25449,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateResult"] = CalculationTo
 
 class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditionSetEvaluateWithRateResult):
     """Represents the results returned by ConditionSet.EvaluateWithRate."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetEvaluateWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25064,6 +25466,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSetEvaluateWithRateResult"] = Calcu
 
 class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
     """Access or create VGT volume grids associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25080,6 +25483,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridGroup"] = SpatialAnalysisToolV
 
 class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
     """Access or create spatial conditions associated with a volume grid."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25096,6 +25500,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGroup"] = SpatialAnalysisToolVolum
 
 class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
     """Access or create VGT volume calc associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25112,6 +25517,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcGroup"] = SpatialAnalysisToolV
 
 class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Any scalar calculation that is not constant by construction."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25130,6 +25536,7 @@ agcls.AgTypeNameMap["CalculationToolScalar"] = CalculationToolScalar
 
 class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Scalar equal to angular displacement obtained from any angle in VGT."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarAngle.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25150,6 +25557,7 @@ agcls.AgTypeNameMap["CalculationToolScalarAngle"] = CalculationToolScalarAngle
 
 class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Constant scalar value of specified dimension."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarConstant.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25170,6 +25578,7 @@ agcls.AgTypeNameMap["CalculationToolScalarConstant"] = CalculationToolScalarCons
 
 class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarCustom.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25190,6 +25599,7 @@ agcls.AgTypeNameMap["CalculationToolScalarCustom"] = CalculationToolScalarCustom
 
 class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Any time-dependent data element from STK data providers available for parent STK object."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarDataElement.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25210,6 +25620,7 @@ agcls.AgTypeNameMap["CalculationToolScalarDataElement"] = CalculationToolScalarD
 
 class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Derivative of an input scalar calculation."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarDerivative.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25230,6 +25641,7 @@ agcls.AgTypeNameMap["CalculationToolScalarDerivative"] = CalculationToolScalarDe
 
 class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Dot product between two vectors."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarDotProduct.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25250,6 +25662,7 @@ agcls.AgTypeNameMap["CalculationToolScalarDotProduct"] = CalculationToolScalarDo
 
 class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Time elapsed since the reference time instant. Negative if in the past."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarElapsedTime.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25270,6 +25683,7 @@ agcls.AgTypeNameMap["CalculationToolScalarElapsedTime"] = CalculationToolScalarE
 
 class CalculationToolScalarFactory(ICalculationToolScalarFactory):
     """The factory creates scalar calculation components."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25286,6 +25700,7 @@ agcls.AgTypeNameMap["CalculationToolScalarFactory"] = CalculationToolScalarFacto
 
 class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarFile.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25306,6 +25721,7 @@ agcls.AgTypeNameMap["CalculationToolScalarFile"] = CalculationToolScalarFile
 
 class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarFixedAtTimeInstant.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25326,6 +25742,7 @@ agcls.AgTypeNameMap["CalculationToolScalarFixedAtTimeInstant"] = CalculationTool
 
 class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Defined by performing the specified function on the input scalar or time instant."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarFunction.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25346,6 +25763,7 @@ agcls.AgTypeNameMap["CalculationToolScalarFunction"] = CalculationToolScalarFunc
 
 class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Defined by performing a function(x,y) on two scalar arguments."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarFunction2Var.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25366,6 +25784,7 @@ agcls.AgTypeNameMap["CalculationToolScalarFunction2Var"] = CalculationToolScalar
 
 class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarIntegral.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25386,6 +25805,7 @@ agcls.AgTypeNameMap["CalculationToolScalarIntegral"] = CalculationToolScalarInte
 
 class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Use a scalar calculation plugin."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarPlugin.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25406,6 +25826,7 @@ agcls.AgTypeNameMap["CalculationToolScalarPlugin"] = CalculationToolScalarPlugin
 
 class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarSurfaceDistanceBetweenPoints.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25426,6 +25847,7 @@ agcls.AgTypeNameMap["CalculationToolScalarSurfaceDistanceBetweenPoints"] = Calcu
 
 class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """The specified component of a vector when resolved in the specified axes."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarVectorComponent.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25446,6 +25868,7 @@ agcls.AgTypeNameMap["CalculationToolScalarVectorComponent"] = CalculationToolSca
 
 class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent):
     """Scalar equal to the magnitude of a specified vector."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolScalarVectorMagnitude.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
@@ -25466,6 +25889,7 @@ agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolSca
 
 class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolCondition.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25484,6 +25908,7 @@ agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
 
 class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Define a condition which combines multiple conditions."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionCombined.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
@@ -25504,6 +25929,7 @@ agcls.AgTypeNameMap["CalculationToolConditionCombined"] = CalculationToolConditi
 
 class CalculationToolConditionFactory(ICalculationToolConditionFactory):
     """The factory creates condition components."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25519,7 +25945,8 @@ agcls.AgClassCatalog.add_catalog_entry("{06C627F8-87EA-4552-86E8-7E5049914CDE}",
 agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
 
 class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent):
-    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate"""
+    """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionPointInVolume.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
@@ -25540,6 +25967,7 @@ agcls.AgTypeNameMap["CalculationToolConditionPointInVolume"] = CalculationToolCo
 
 class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent):
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionScalarBounds.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
@@ -25560,6 +25988,7 @@ agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolCon
 
 class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25578,6 +26007,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSet"] = CalculationToolConditionSet
 
 class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
     """The factory creates condition set components."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25594,6 +26024,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSetFactory"] = CalculationToolCondi
 
 class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent):
     """Condition set based on single scalar calculation compared to set of threshold values."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConditionSetScalarThresholds.__init__(self, sourceObject)
         ICalculationToolConditionSet.__init__(self, sourceObject)
@@ -25614,6 +26045,7 @@ agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = Calculation
 
 class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent):
     """Represents a base class for convergence definitions."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchConverge.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25632,6 +26064,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchConverge"] = AnalysisWorkbenchConverge
 
 class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent):
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolConvergeBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchConverge.__init__(self, sourceObject)
@@ -25652,6 +26085,7 @@ agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBas
 
 class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent):
     """Represents a base class for derivative definitions."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25670,6 +26104,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchDerivative"] = AnalysisWorkbenchDerivative
 
 class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent):
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolDerivativeBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
@@ -25690,6 +26125,7 @@ agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativ
 
 class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Define an event (time instant)."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25708,6 +26144,7 @@ agcls.AgTypeNameMap["TimeToolEvent"] = TimeToolEvent
 
 class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """An ordered array of times, which may or may not be evenly spaced."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25726,6 +26163,7 @@ agcls.AgTypeNameMap["TimeToolEventArray"] = TimeToolEventArray
 
 class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayConditionCrossings.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25746,6 +26184,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayConditionCrossings"] = TimeToolEventArray
 
 class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayExtrema.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25766,6 +26205,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayExtrema"] = TimeToolEventArrayExtrema
 
 class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
     """The factory creates event arrays."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25782,6 +26222,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayFactory"] = TimeToolEventArrayFactory
 
 class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by filtering times from original time array according to specified filtering method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayFiltered.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25802,6 +26243,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayFiltered"] = TimeToolEventArrayFiltered
 
 class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayFixedStep.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25822,6 +26264,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayFixedStep"] = TimeToolEventArrayFixedStep
 
 class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Array defined by time ordered instants each explicitly specified."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayFixedTimes.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25842,6 +26285,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayFixedTimes"] = TimeToolEventArrayFixedTim
 
 class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayMerged.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25862,6 +26306,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayMerged"] = TimeToolEventArrayMerged
 
 class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArraySignaled.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25882,6 +26327,7 @@ agcls.AgTypeNameMap["TimeToolEventArraySignaled"] = TimeToolEventArraySignaled
 
 class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventArrayStartStopTimes.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
@@ -25902,6 +26348,7 @@ agcls.AgTypeNameMap["TimeToolEventArrayStartStopTimes"] = TimeToolEventArrayStar
 
 class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event set at specified date/time."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventEpoch.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -25922,6 +26369,7 @@ agcls.AgTypeNameMap["TimeToolEventEpoch"] = TimeToolEventEpoch
 
 class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventExtremum.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -25942,6 +26390,7 @@ agcls.AgTypeNameMap["TimeToolEventExtremum"] = TimeToolEventExtremum
 
 class TimeToolEventFactory(ITimeToolEventFactory):
     """The factory creates events."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -25958,6 +26407,7 @@ agcls.AgTypeNameMap["TimeToolEventFactory"] = TimeToolEventFactory
 
 class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """A single time interval."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25976,6 +26426,7 @@ agcls.AgTypeNameMap["TimeToolEventInterval"] = TimeToolEventInterval
 
 class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalBetweenTimeInstants.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -25996,6 +26447,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalBetweenTimeInstants"] = TimeToolEventI
 
 class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """A collection of related interval lists."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26014,6 +26466,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollection"] = TimeToolEventIntervalCo
 
 class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionCondition.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
@@ -26034,6 +26487,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionCondition"] = TimeToolEventI
 
 class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFactory):
     """The factory creates collections of event interval lists."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26050,6 +26504,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionFactory"] = TimeToolEventInt
 
 class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLighting, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionLighting.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
@@ -26070,6 +26525,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionLighting"] = TimeToolEventIn
 
 class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent):
     """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalCollectionSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
@@ -26090,6 +26546,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalCollectionSignaled"] = TimeToolEventIn
 
 class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
     """The factory creates event intervals."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26106,6 +26563,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalFactory"] = TimeToolEventIntervalFacto
 
 class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalFixed.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26126,6 +26584,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalFixed"] = TimeToolEventIntervalFixed
 
 class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalFixedDuration.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26146,6 +26605,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalFixedDuration"] = TimeToolEventInterva
 
 class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval created from specified interval list by using one of several selection methods."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalFromIntervalList.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26166,6 +26626,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalFromIntervalList"] = TimeToolEventInte
 
 class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """An ordered list of time intervals."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26184,6 +26645,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalList"] = TimeToolEventIntervalList
 
 class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListCondition.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26204,6 +26666,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListCondition"] = TimeToolEventInterva
 
 class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
     """The factory creates event interval lists."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26220,6 +26683,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListFactory"] = TimeToolEventIntervalL
 
 class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListFile.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26240,6 +26704,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListFile"] = TimeToolEventIntervalList
 
 class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Defined by filtering intervals from original interval list using specified filtering method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListFiltered.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26260,6 +26725,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListFiltered"] = TimeToolEventInterval
 
 class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListFixed.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26280,6 +26746,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListFixed"] = TimeToolEventIntervalLis
 
 class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListMerged.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26300,6 +26767,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListMerged"] = TimeToolEventIntervalLi
 
 class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListScaled.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26320,6 +26788,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListScaled"] = TimeToolEventIntervalLi
 
 class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26340,6 +26809,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListSignaled"] = TimeToolEventInterval
 
 class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent):
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalListTimeOffset.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
@@ -26360,6 +26830,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalListTimeOffset"] = TimeToolEventInterv
 
 class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalScaled.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26380,6 +26851,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalScaled"] = TimeToolEventIntervalScaled
 
 class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalSignaled.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26400,6 +26872,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalSignaled"] = TimeToolEventIntervalSign
 
 class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """A smart interval."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalSmartInterval.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26420,6 +26893,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalSmartInterval"] = TimeToolEventInterva
 
 class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent):
     """Interval defined by shifting specified reference interval by fixed time offset."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventIntervalTimeOffset.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
@@ -26440,6 +26914,7 @@ agcls.AgTypeNameMap["TimeToolEventIntervalTimeOffset"] = TimeToolEventIntervalTi
 
 class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventSignaled.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -26460,6 +26935,7 @@ agcls.AgTypeNameMap["TimeToolEventSignaled"] = TimeToolEventSignaled
 
 class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """A smart epoch."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventSmartEpoch.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -26480,6 +26956,7 @@ agcls.AgTypeNameMap["TimeToolEventSmartEpoch"] = TimeToolEventSmartEpoch
 
 class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event is either start or stop time selected from a reference interval."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventStartStopTime.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -26500,6 +26977,7 @@ agcls.AgTypeNameMap["TimeToolEventStartStopTime"] = TimeToolEventStartStopTime
 
 class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Event at fixed offset from specified reference event."""
+
     def __init__(self, sourceObject=None):
         ITimeToolEventTimeOffset.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
@@ -26520,6 +26998,7 @@ agcls.AgTypeNameMap["TimeToolEventTimeOffset"] = TimeToolEventTimeOffset
 
 class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects a portion of first intervals."""
+
     def __init__(self, sourceObject=None):
         ITimeToolFirstIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26538,6 +27017,7 @@ agcls.AgTypeNameMap["TimeToolFirstIntervalsFilter"] = TimeToolFirstIntervalsFilt
 
 class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
     """The filter merges intervals unless they are separated by gaps of at least/most certain duration."""
+
     def __init__(self, sourceObject=None):
         ITimeToolGapsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26556,6 +27036,7 @@ agcls.AgTypeNameMap["TimeToolGapsFilter"] = TimeToolGapsFilter
 
 class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent):
     """Represents a base class for integral definitions."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26574,6 +27055,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchIntegral"] = AnalysisWorkbenchIntegral
 
 class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent):
     """Integral definition determines how scalar calculation is numerically integrated."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolIntegralBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
@@ -26594,6 +27076,7 @@ agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBas
 
 class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent):
     """Represents a base class for interpolation definitions."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchInterp.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26612,6 +27095,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchInterp"] = AnalysisWorkbenchInterp
 
 class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent):
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolInterpBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchInterp.__init__(self, sourceObject)
@@ -26632,6 +27116,7 @@ agcls.AgTypeNameMap["CalculationToolInterpBasic"] = CalculationToolInterpBasic
 
 class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects intervals of at least/most certain duration."""
+
     def __init__(self, sourceObject=None):
         ITimeToolIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26650,6 +27135,7 @@ agcls.AgTypeNameMap["TimeToolIntervalsFilter"] = TimeToolIntervalsFilter
 
 class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects a portion of last intervals."""
+
     def __init__(self, sourceObject=None):
         ITimeToolLastIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26668,6 +27154,7 @@ agcls.AgTypeNameMap["TimeToolLastIntervalsFilter"] = TimeToolLastIntervalsFilter
 
 class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Parameter set contains various sets of scalar computations."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26686,6 +27173,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSet"] = CalculationToolParameterSet
 
 class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetAttitude.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
@@ -26706,6 +27194,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetAttitude"] = CalculationToolPara
 
 class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
     """The factory is used to create instances of available parameter set types."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26722,6 +27211,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetFactory"] = CalculationToolParam
 
 class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetGroundTrajectory.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
@@ -26742,6 +27232,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetGroundTrajectory"] = Calculation
 
 class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetOrbit.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
@@ -26762,6 +27253,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetOrbit"] = CalculationToolParamet
 
 class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetTrajectory.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
@@ -26782,6 +27274,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetTrajectory"] = CalculationToolPa
 
 class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent):
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolParameterSetVector.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
@@ -26802,6 +27295,7 @@ agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParame
 
 class TimeToolPruneFilter(ITimeToolPruneFilter):
     """A filter used with event interval list pruned class to prune interval lists..."""
+
     def __init__(self, sourceObject=None):
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26818,6 +27312,7 @@ agcls.AgTypeNameMap["TimeToolPruneFilter"] = TimeToolPruneFilter
 
 class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
     """The factory creates pruning filters."""
+
     def __init__(self, sourceObject=None):
         ITimeToolPruneFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26834,6 +27329,7 @@ agcls.AgTypeNameMap["TimeToolPruneFilterFactory"] = TimeToolPruneFilterFactory
 
 class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter):
     """The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time."""
+
     def __init__(self, sourceObject=None):
         ITimeToolRelativeSatisfactionConditionFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26852,6 +27348,7 @@ agcls.AgTypeNameMap["TimeToolRelativeSatisfactionConditionFilter"] = TimeToolRel
 
 class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent):
     """Base sampling interface."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26870,6 +27367,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchSampling"] = AnalysisWorkbenchSampling
 
 class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent):
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
@@ -26890,6 +27388,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingBasic"] = CalculationToolSamplingBas
 
 class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod):
     """Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingCurvatureTolerance.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
@@ -26908,6 +27407,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingCurvatureTolerance"] = CalculationTo
 
 class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod):
     """Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingFixedStep.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
@@ -26926,6 +27426,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplin
 
 class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
     """A sampling method."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26942,6 +27443,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingMethod"] = CalculationToolSamplingMe
 
 class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory):
     """The factory creates sampling method components."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingMethodFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -26958,6 +27460,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingMethodFactory"] = CalculationToolSam
 
 class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod):
     """Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning."""
+
     def __init__(self, sourceObject=None):
         ICalculationToolSamplingRelativeTolerance.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
@@ -26976,6 +27479,7 @@ agcls.AgTypeNameMap["CalculationToolSamplingRelativeTolerance"] = CalculationToo
 
 class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter):
     """The filter selects intervals if certain side condition is satisfied at least/most certain duration."""
+
     def __init__(self, sourceObject=None):
         ITimeToolSatisfactionConditionFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
@@ -26994,6 +27498,7 @@ agcls.AgTypeNameMap["TimeToolSatisfactionConditionFilter"] = TimeToolSatisfactio
 
 class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27012,6 +27517,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchSignalDelay"] = AnalysisWorkbenchSignalDel
 
 class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
+
     def __init__(self, sourceObject=None):
         ITimeToolSignalDelayBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
@@ -27032,6 +27538,7 @@ agcls.AgTypeNameMap["TimeToolSignalDelayBasic"] = TimeToolSignalDelayBasic
 
 class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory):
     """The factory is used to create instances of volume calcs."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27048,6 +27555,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFactory"] = SpatialAnalysisToo
 
 class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
     """The factory is used to create instances of volumes."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27064,6 +27572,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFactory"] = SpatialAnalysisToolVol
 
 class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory):
     """The factory is used to create instances of volume grids."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27080,6 +27589,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridFactory"] = SpatialAnalysisToo
 
 class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordinateDefinition):
     """Define a set of coordinate values."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridCoordinateDefinition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27096,6 +27606,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridCoordinateDefinition"] = SpatialAnal
 
 class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridValuesCustom.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
@@ -27114,6 +27625,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesCustom"] = SpatialAnalysisTool
 
 class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridValuesFixedNumberOfSteps.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
@@ -27132,6 +27644,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedNumberOfSteps"] = Spatial
 
 class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod):
     """Fixed step grid values."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridValuesFixedStep.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
@@ -27150,6 +27663,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisT
 
 class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
     """A grid values method."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27166,6 +27680,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesMethod"] = SpatialAnalysisTool
 
 class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
     """Manage Light Time Delay options.."""
+
     def __init__(self, sourceObject=None):
         ITimeToolLightTimeDelay.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27182,6 +27697,7 @@ agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
 class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27200,6 +27716,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27218,6 +27735,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalc"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc altitude interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcAltitude.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27238,6 +27756,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAltitude"] = SpatialAnalysisTo
 
 class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc angle off vector interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcAngleOffVector.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27258,6 +27777,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcAngleOffVector"] = SpatialAnal
 
 class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc condition satisfaction interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcConditionSatMetric.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27278,6 +27798,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcConditionSatMetric"] = Spatial
 
 class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc propagation delay to location interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcDelayRange.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27298,6 +27819,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcDelayRange"] = SpatialAnalysis
 
 class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcFile.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27318,6 +27840,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFile"] = SpatialAnalysisToolVo
 
 class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc scalar to location interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcFromScalar.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27338,6 +27861,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcFromScalar"] = SpatialAnalysis
 
 class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc distance to location interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcRange.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27358,6 +27882,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcRange"] = SpatialAnalysisToolV
 
 class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent):
     """A volume calc solar intensityn interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCalcSolarIntensity.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
@@ -27378,6 +27903,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCalcSolarIntensity"] = SpatialAnal
 
 class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A combined volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeCombined.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27398,6 +27924,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeCombined"] = SpatialAnalysisToolVo
 
 class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An volume from calc volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeFromCalc.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27418,6 +27945,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCalc"] = SpatialAnalysisToolVo
 
 class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A volume from conditioninterface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeFromCondition.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27438,6 +27966,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromCondition"] = SpatialAnalysisT
 
 class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An over time volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeFromGrid.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27458,6 +27987,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromGrid"] = SpatialAnalysisToolVo
 
 class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An volume from time satisfaction volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeFromTimeSatisfaction.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27478,6 +28008,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeFromTimeSatisfaction"] = SpatialAn
 
 class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27496,6 +28027,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGrid"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid bearing alt (Surface Bearing) interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridBearingAlt.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27516,6 +28048,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridBearingAlt"] = SpatialAnalysis
 
 class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid Cartesian interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridCartesian.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27536,6 +28069,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCartesian"] = SpatialAnalysisT
 
 class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid constrained interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridConstrained.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27556,6 +28090,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridConstrained"] = SpatialAnalysi
 
 class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid cylindrical interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridCylindrical.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27576,6 +28111,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCylindrical"] = SpatialAnalysi
 
 class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid lat lon alt (Cartogrographic) interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridLatLonAlt.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27596,6 +28132,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridLatLonAlt"] = SpatialAnalysisT
 
 class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
     """An interface that generates Volume Grid results."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27612,6 +28149,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridResult"] = SpatialAnalysisTool
 
 class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent):
     """A volume grid spherical interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeGridSpherical.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
@@ -27632,6 +28170,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridSpherical"] = SpatialAnalysisT
 
 class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An Inview volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeInview.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27652,6 +28191,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeInview"] = SpatialAnalysisToolVolu
 
 class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """A lighting volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeLighting.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27672,6 +28212,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeLighting"] = SpatialAnalysisToolVo
 
 class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent):
     """An over time volume interface."""
+
     def __init__(self, sourceObject=None):
         ISpatialAnalysisToolVolumeOverTime.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
@@ -27692,6 +28233,7 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolumeOverTime"] = SpatialAnalysisToolVo
 
 class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
     """Generic VGT component."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27708,6 +28250,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchGeneric"] = AnalysisWorkbenchGeneric
 
 class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
     """VGT component info."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchTypeInfo.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27724,6 +28267,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchTypeInfo"] = AnalysisWorkbenchTypeInfo
 
 class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance):
     """Enable to obtain information about the parent object that owns the VGT component."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchInstance.__init__(self, sourceObject)
@@ -27742,6 +28286,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchInstance"] = AnalysisWorkbenchInstance
 
 class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate):
     """Enable to obtain information about the STK class that owns the VGT component."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchTemplate.__init__(self, sourceObject)
@@ -27760,6 +28305,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchTemplate"] = AnalysisWorkbenchTemplate
 
 class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27778,6 +28324,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointRefTo"] = VectorGeometryToolPointRef
 
 class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo):
     """Represents a vector reference."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27796,6 +28343,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorRefTo"] = VectorGeometryToolVectorR
 
 class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27814,6 +28362,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesRefTo"] = VectorGeometryToolAxesRefTo
 
 class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo):
     """Represents a reference to a VGT angle."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27832,6 +28381,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleRefTo"] = VectorGeometryToolAngleRef
 
 class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo):
     """Represents a System reference."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27850,6 +28400,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemRefTo"] = VectorGeometryToolSystemR
 
 class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo):
     """Represents a Plane reference."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -27868,6 +28419,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneRefTo"] = VectorGeometryToolPlaneRef
 
 class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic vector class."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -27888,6 +28440,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
 
 class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
     """Allow configuring the VGT axes labels."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesLabels.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -27904,6 +28457,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabe
 
 class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic axes class."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -27924,6 +28478,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
 class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A generic VGT point class."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -27944,6 +28499,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
 class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystem.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -27964,6 +28520,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
 class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -27984,6 +28541,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
 
 class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
     """Allow configuring the X and Y axes labels."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneLabels.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -28000,6 +28558,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLa
 
 class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Base class for VGT axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28020,6 +28579,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlane"] = VectorGeometryToolPlane
 
 class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesAlignedAndConstrained.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28042,6 +28602,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesAlignedAndConstrained"] = VectorGeome
 
 class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesAngularOffset.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28064,6 +28625,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesAngularOffset"] = VectorGeometryToolA
 
 class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes based on another set fixed at a specified epoch."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesFixedAtEpoch.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28086,6 +28648,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesFixedAtEpoch"] = VectorGeometryToolAx
 
 class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """B-Plane axes using the selected target body and reference vector."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesBPlane.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28108,6 +28671,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesBPlane"] = VectorGeometryToolAxesBPla
 
 class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Customized axes offset with respect to a set of reference Axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesCustomScript.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28130,6 +28694,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesCustomScript"] = VectorGeometryToolAx
 
 class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes specified by data from a file."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesAttitudeFile.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28152,6 +28717,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesAttitudeFile"] = VectorGeometryToolAx
 
 class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes fixed in reference axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesFixed.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28174,6 +28740,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesFixed"] = VectorGeometryToolAxesFixed
 
 class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28196,6 +28763,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesModelAttach"] = VectorGeometryToolAxe
 
 class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesSpinning.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28218,6 +28786,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesSpinning"] = VectorGeometryToolAxesSp
 
 class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Topocentric axes located at the reference point's projection on the central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28240,6 +28809,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesOnSurface"] = VectorGeometryToolAxesO
 
 class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Axes based on trajectory of the point relative to the reference coordinate system."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesTrajectory.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28262,6 +28832,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesTrajectory"] = VectorGeometryToolAxes
 
 class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesLagrangeLibration.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
@@ -28284,6 +28855,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryT
 
 class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
     """Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -28300,6 +28872,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesCommonTasks"] = VectorGeometryToolAxe
 
 class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes):
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28322,6 +28895,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesAtTimeInstant"] = VectorGeometryToolA
 
 class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes):
     """A VGT axes plugin."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28344,6 +28918,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesPlugin"] = VectorGeometryToolAxesPlug
 
 class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two vectors."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleBetweenVectors.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
@@ -28366,6 +28941,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenVectors"] = VectorGeometryToo
 
 class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two planes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleBetweenPlanes.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
@@ -28388,6 +28964,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenPlanes"] = VectorGeometryTool
 
 class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between two vectors about an axis."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleDihedral.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
@@ -28410,6 +28987,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleDihedral"] = VectorGeometryToolAngle
 
 class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleRotation.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
@@ -28432,6 +29010,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleRotation"] = VectorGeometryToolAngle
 
 class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """An angle between a vector and a plane."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleToPlane.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
@@ -28454,6 +29033,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleToPlane"] = VectorGeometryToolAngleT
 
 class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane normal to a vector at a given point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneNormal.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
@@ -28476,6 +29056,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneNormal"] = VectorGeometryToolPlaneNo
 
 class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane based on a selected Quadrant of a reference system."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneQuadrant.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
@@ -28498,6 +29079,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneQuadrant"] = VectorGeometryToolPlane
 
 class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneTrajectory.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
@@ -28520,6 +29102,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneTrajectory"] = VectorGeometryToolPla
 
 class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A Plane containing points PointA, PointB and ReferencePont with the first axis aligned with the direction from the ReferencePoint to PointA and the second axis toward the direction from the ReferencePoint to PointB."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneTriad.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
@@ -28542,6 +29125,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneTriad"] = VectorGeometryToolPlaneTri
 
 class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A plane normal to a vector at a given point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneTwoVector.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
@@ -28564,6 +29148,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneTwoVector"] = VectorGeometryToolPlan
 
 class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """B-Plane point using the selected target body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointBPlane.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28586,6 +29171,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointBPlane"] = VectorGeometryToolPointBP
 
 class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point specified by data from a file."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointFile.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28608,6 +29194,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointFile"] = VectorGeometryToolPointFile
 
 class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point fixed in a reference coordinate system using the selected coordinate type."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointFixedInSystem.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28630,6 +29217,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointFixedInSystem"] = VectorGeometryTool
 
 class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointGrazing.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28652,6 +29240,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointGrazing"] = VectorGeometryToolPointG
 
 class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point on central body surface that reflects from source to observer."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointGlint.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28674,6 +29263,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointGlint"] = VectorGeometryToolPointGli
 
 class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointCovarianceGrazing.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28696,6 +29286,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointCovarianceGrazing"] = VectorGeometry
 
 class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Point on a plane located along a given direction looking from a given origin."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointPlaneIntersection.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28718,6 +29309,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointPlaneIntersection"] = VectorGeometry
 
 class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The detic subpoint of the reference point as projected onto the central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28740,6 +29332,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointOnSurface"] = VectorGeometryToolPoin
 
 class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28762,6 +29355,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointModelAttach"] = VectorGeometryToolPo
 
 class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointSatelliteCollectionEntry.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28784,6 +29378,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointSatelliteCollectionEntry"] = VectorG
 
 class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointPlaneProjection.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28806,6 +29401,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointPlaneProjection"] = VectorGeometryTo
 
 class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointLagrangeLibration.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
@@ -28828,6 +29424,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometry
 
 class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
     """Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -28844,6 +29441,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointCommonTasks"] = VectorGeometryToolPo
 
 class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point on central body surface along direction vector originating at source point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointCentBodyIntersect.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28866,6 +29464,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointCentBodyIntersect"] = VectorGeometry
 
 class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28888,6 +29487,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointAtTimeInstant"] = VectorGeometryTool
 
 class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """A VGT point plugin."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28910,6 +29510,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointPlugin"] = VectorGeometryToolPointPl
 
 class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint):
     """Point specified by fixed components with respect to central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointCBFixedOffset.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28932,6 +29533,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointCBFixedOffset"] = VectorGeometryTool
 
 class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A system assembled from an origin point and a set of reference axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemAssembled.__init__(self, sourceObject)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
@@ -28954,6 +29556,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemAssembled"] = VectorGeometryToolSys
 
 class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
@@ -28976,6 +29579,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemOnSurface"] = VectorGeometryToolSys
 
 class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
     """A position represented by the Latitude, longtitude and Latitude."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchLLAPosition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -28992,6 +29596,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchLLAPosition"] = AnalysisWorkbenchLLAPositi
 
 class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
     """Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29008,6 +29613,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemCommonTasks"] = VectorGeometryToolS
 
 class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorAngleRate.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29030,6 +29636,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorAngleRate"] = VectorGeometryToolVec
 
 class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorApoapsis.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29052,6 +29659,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorApoapsis"] = VectorGeometryToolVect
 
 class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Based on another vector fixed at a specified epoch."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorFixedAtEpoch.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29074,6 +29682,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtEpoch"] = VectorGeometryTool
 
 class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorAngularVelocity.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29096,6 +29705,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorAngularVelocity"] = VectorGeometryT
 
 class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorConing.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29118,6 +29728,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorConing"] = VectorGeometryToolVector
 
 class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """The vector cross product of two vectors."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorCross.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29140,6 +29751,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorCross"] = VectorGeometryToolVectorC
 
 class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Customized vector components defined with respect to reference axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorCustomScript.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29162,6 +29774,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorCustomScript"] = VectorGeometryTool
 
 class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A vector derivative of a vector computed with respect to specified axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorDerivative.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29184,6 +29797,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorDerivative"] = VectorGeometryToolVe
 
 class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector defined by its start and end points."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorDisplacement.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29206,6 +29820,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorDisplacement"] = VectorGeometryTool
 
 class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Defined along the intersection of two planes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorTwoPlanesIntersection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29228,6 +29843,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorTwoPlanesIntersection"] = VectorGeo
 
 class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29250,6 +29866,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorModelAttach"] = VectorGeometryToolV
 
 class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A projection of a vector computed with respect to a reference plane."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorProjection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29272,6 +29889,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorProjection"] = VectorGeometryToolVe
 
 class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorScaled.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29294,6 +29912,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorScaled"] = VectorGeometryToolVector
 
 class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorEccentricity.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29316,6 +29935,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorEccentricity"] = VectorGeometryTool
 
 class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector fixed in reference axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorFixedInAxes.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29338,6 +29958,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorFixedInAxes"] = VectorGeometryToolV
 
 class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorLineOfNodes.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29360,6 +29981,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorLineOfNodes"] = VectorGeometryToolV
 
 class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorOrbitAngularMomentum.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29382,6 +30004,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitAngularMomentum"] = VectorGeom
 
 class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorOrbitNormal.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29404,6 +30027,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitNormal"] = VectorGeometryToolV
 
 class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorPeriapsis.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29426,6 +30050,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorPeriapsis"] = VectorGeometryToolVec
 
 class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorReflection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29448,6 +30073,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorReflection"] = VectorGeometryToolVe
 
 class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorRotationVector.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29470,6 +30096,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorRotationVector"] = VectorGeometryTo
 
 class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent):
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorDirectionToStar.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
@@ -29492,6 +30119,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorDirectionToStar"] = VectorGeometryT
 
 class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorFixedAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29514,6 +30142,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtTimeInstant"] = VectorGeomet
 
 class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Linear combination of two input vectors."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorLinearCombination.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29536,6 +30165,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorLinearCombination"] = VectorGeometr
 
 class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """A projection of a source vector in the direction of another vector."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorProjectAlongVector.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29558,6 +30188,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorProjectAlongVector"] = VectorGeomet
 
 class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Linear combination of two input vectors using scalars."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorScalarLinearCombination.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29580,6 +30211,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorScalarLinearCombination"] = VectorG
 
 class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Scaled version of the input vector using scalar."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorScalarScaled.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29602,6 +30234,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryTool
 
 class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Velocity vector of a point in a coordinate system."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorVelocityAcceleration.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29624,6 +30257,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorVelocityAcceleration"] = VectorGeom
 
 class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """A VGT vector plugin."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29646,6 +30280,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorPlugin"] = VectorGeometryToolVector
 
 class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector):
     """Displacement between origin and destination points using surface distance and altitude difference."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorDispSurface.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -29668,6 +30303,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorDispSurface"] = VectorGeometryToolV
 
 class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
     """A Factory object to create vectors."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29684,6 +30320,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorFactory"] = VectorGeometryToolVecto
 
 class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
     """A Factory object to create axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29700,6 +30337,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesFactory"] = VectorGeometryToolAxesFac
 
 class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
     """A Factory class to create VGT systems."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29716,6 +30354,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemFactory"] = VectorGeometryToolSyste
 
 class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
     """A Factory object to create points."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29732,6 +30371,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointFactory"] = VectorGeometryToolPointF
 
 class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
     """A Factory object to create VGT planes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29748,6 +30388,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneFactory"] = VectorGeometryToolPlaneF
 
 class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
     """A Factory object to create angles."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29764,6 +30405,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleFactory"] = VectorGeometryToolAngleF
 
 class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
     """Access or create VGT vectors associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolVectorGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29780,6 +30422,7 @@ agcls.AgTypeNameMap["VectorGeometryToolVectorGroup"] = VectorGeometryToolVectorG
 
 class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
     """Access or create VGT points associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPointGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29796,6 +30439,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPointGroup"] = VectorGeometryToolPointGro
 
 class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
     """Access or create VGT angles associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAngleGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29812,6 +30456,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAngleGroup"] = VectorGeometryToolAngleGro
 
 class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
     """Access or create VGT axes associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolAxesGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29828,6 +30473,7 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesGroup"] = VectorGeometryToolAxesGroup
 
 class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
     """Represents a VGT Plane component."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolPlaneGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29844,6 +30490,7 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneGroup"] = VectorGeometryToolPlaneGro
 
 class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
     """Access or create VGT systems associated with an object or a central body."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolSystemGroup.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29860,6 +30507,7 @@ agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemG
 
 class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
     """Allow accessing existing Vector Geometry Tool components."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchProvider.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29876,6 +30524,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchProvider"] = AnalysisWorkbenchProvider
 
 class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
     """Represents a VGT root."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchRoot.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29892,6 +30541,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchRoot"] = AnalysisWorkbenchRoot
 
 class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthSystems):
     """Well-known Earth's coordinate systems."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownEarthSystems.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29908,6 +30558,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthSystems"] = VectorGeometryT
 
 class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes):
     """Well-known Earth's axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownEarthAxes.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29924,6 +30575,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownEarthAxes"] = VectorGeometryTool
 
 class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSystems):
     """The Sun's well-known coordinate reference systems."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownSunSystems.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29940,6 +30592,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunSystems"] = VectorGeometryToo
 
 class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
     """Well-known Sun's axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownSunAxes.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29956,6 +30609,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownSunAxes"] = VectorGeometryToolWe
 
 class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
     """Well-known coordinate reference systems."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownSystems.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29972,6 +30626,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownSystems"] = VectorGeometryToolWe
 
 class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
     """Represents well-known VGT Axes."""
+
     def __init__(self, sourceObject=None):
         IVectorGeometryToolWellKnownAxes.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -29988,6 +30643,7 @@ agcls.AgTypeNameMap["VectorGeometryToolWellKnownAxes"] = VectorGeometryToolWellK
 
 class AnalysisWorkbenchMethodCallAngleFindResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindResult):
     """Represents result returned with IVectorGeometryToolAngle.FindCoordinates method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindResult.__init__(self, sourceObject)
@@ -30006,6 +30662,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindResult"] = AnalysisWork
 
 class AnalysisWorkbenchMethodCallAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindWithRateResult):
     """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindWithRateResult.__init__(self, sourceObject)
@@ -30024,6 +30681,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindWithRateResult"] = Anal
 
 class AnalysisWorkbenchMethodCallAxesTransformResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformResult):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesTransformResult.__init__(self, sourceObject)
@@ -30042,6 +30700,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesTransformResult"] = Analysis
 
 class AnalysisWorkbenchMethodCallAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformWithRateResult):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesTransformWithRateResult.__init__(self, sourceObject)
@@ -30060,6 +30719,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesTransformWithRateResult"] = 
 
 class AnalysisWorkbenchMethodCallAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesResult):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesFindInAxesResult.__init__(self, sourceObject)
@@ -30078,6 +30738,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesFindInAxesResult"] = Analysi
 
 class AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesWithRateResult):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesFindInAxesWithRateResult.__init__(self, sourceObject)
@@ -30096,6 +30757,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult"] =
 
 class AnalysisWorkbenchMethodCallPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesResult):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInAxesResult.__init__(self, sourceObject)
@@ -30114,6 +30776,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInAxesResult"] = Analys
 
 class AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesWithRateResult):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInAxesWithRateResult.__init__(self, sourceObject)
@@ -30132,6 +30795,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult"] 
 
 class AnalysisWorkbenchMethodCallPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemResult):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInSystemResult.__init__(self, sourceObject)
@@ -30150,6 +30814,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInSystemResult"] = Anal
 
 class AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemWithRateResult):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInSystemWithRateResult.__init__(self, sourceObject)
@@ -30168,6 +30833,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult"
 
 class AnalysisWorkbenchMethodCallPointLocateInSystemResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemResult):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPointLocateInSystemResult.__init__(self, sourceObject)
@@ -30186,6 +30852,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPointLocateInSystemResult"] = An
 
 class AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemWithRateResult):
     """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPointLocateInSystemWithRateResult.__init__(self, sourceObject)
@@ -30204,6 +30871,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResul
 
 class AnalysisWorkbenchMethodCallSystemTransformResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformResult):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemTransformResult.__init__(self, sourceObject)
@@ -30222,6 +30890,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemTransformResult"] = Analys
 
 class AnalysisWorkbenchMethodCallSystemTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformWithRateResult):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemTransformWithRateResult.__init__(self, sourceObject)
@@ -30240,6 +30909,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemTransformWithRateResult"] 
 
 class AnalysisWorkbenchMethodCallSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemFindInSystemResult):
     """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemFindInSystemResult.__init__(self, sourceObject)
@@ -30258,6 +30928,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallSystemFindInSystemResult"] = Ana
 
 class AnalysisWorkbenchMethodCallVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesResult):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolVectorFindInAxesResult.__init__(self, sourceObject)
@@ -30276,6 +30947,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallVectorFindInAxesResult"] = Analy
 
 class AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesWithRateResult):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolVectorFindInAxesWithRateResult.__init__(self, sourceObject)
@@ -30294,6 +30966,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult"]
 
 class AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleWithRateResult):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindAngleWithRateResult.__init__(self, sourceObject)
@@ -30312,6 +30985,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult"] =
 
 class AnalysisWorkbenchMethodCallAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleResult):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindAngleResult.__init__(self, sourceObject)
@@ -30330,6 +31004,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchMethodCallAngleFindAngleResult"] = Analysi
 
 class TimeToolInterval(ITimeToolInterval):
     """Represents an interval."""
+
     def __init__(self, sourceObject=None):
         ITimeToolInterval.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30346,6 +31021,7 @@ agcls.AgTypeNameMap["TimeToolInterval"] = TimeToolInterval
 
 class TimeToolIntervalCollection(ITimeToolIntervalCollection):
     """Represents a collection of intervals."""
+
     def __init__(self, sourceObject=None):
         ITimeToolIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30362,6 +31038,7 @@ agcls.AgTypeNameMap["TimeToolIntervalCollection"] = TimeToolIntervalCollection
 
 class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
     """Represents an central body."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchCentralBody.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30378,6 +31055,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchCentralBody"] = AnalysisWorkbenchCentralBo
 
 class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo):
     """Represents a central body reference."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchCentralBodyRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
@@ -30396,6 +31074,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyRefTo"] = AnalysisWorkbenchCent
 
 class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollection):
     """A collection of central body names."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchCentralBodyCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30412,6 +31091,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyCollection"] = AnalysisWorkbenc
 
 class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
     """A collection of VGT objects."""
+
     def __init__(self, sourceObject=None):
         IAnalysisWorkbenchCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30428,6 +31108,7 @@ agcls.AgTypeNameMap["AnalysisWorkbenchCollection"] = AnalysisWorkbenchCollection
 
 class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
     """Contains tabulated positions and velocities of a point created by Sample method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolPointSamplingResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30444,6 +31125,7 @@ agcls.AgTypeNameMap["TimeToolPointSamplingResult"] = TimeToolPointSamplingResult
 
 class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
     """The interface represents an interval with the time, position and velocity arrays."""
+
     def __init__(self, sourceObject=None):
         ITimeToolPointSamplingInterval.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30460,6 +31142,7 @@ agcls.AgTypeNameMap["TimeToolPointSamplingInterval"] = TimeToolPointSamplingInte
 
 class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalCollection):
     """A collection of intervals where each interval contains the time, position and velocity arrays."""
+
     def __init__(self, sourceObject=None):
         ITimeToolPointSamplingIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30476,6 +31159,7 @@ agcls.AgTypeNameMap["TimeToolPointSamplingIntervalCollection"] = TimeToolPointSa
 
 class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
+
     def __init__(self, sourceObject=None):
         ITimeToolAxesSamplingResult.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30492,6 +31176,7 @@ agcls.AgTypeNameMap["TimeToolAxesSamplingResult"] = TimeToolAxesSamplingResult
 
 class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
     """The interface represents an interval with the time, orientation and velocity arrays."""
+
     def __init__(self, sourceObject=None):
         ITimeToolAxesSamplingInterval.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -30508,6 +31193,7 @@ agcls.AgTypeNameMap["TimeToolAxesSamplingInterval"] = TimeToolAxesSamplingInterv
 
 class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollection):
     """A collection of intervals where each interval contains the time, orientation and velocity arrays."""
+
     def __init__(self, sourceObject=None):
         ITimeToolAxesSamplingIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

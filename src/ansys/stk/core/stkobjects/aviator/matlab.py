@@ -26,6 +26,7 @@ def _raise_uninitialized_error(*args):
 
 class IStrategyMATLABNav(object):
     """Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -112,6 +113,7 @@ agcls.AgTypeNameMap["IStrategyMATLABNav"] = IStrategyMATLABNav
 
 class IStrategyMATLABProfile(object):
     """Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -198,6 +200,7 @@ agcls.AgTypeNameMap["IStrategyMATLABProfile"] = IStrategyMATLABProfile
 
 class IStrategyMATLABFull3D(object):
     """Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -284,6 +287,7 @@ agcls.AgTypeNameMap["IStrategyMATLABFull3D"] = IStrategyMATLABFull3D
 
 class IStrategyMATLAB3DGuidance(object):
     """Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -567,6 +571,7 @@ agcls.AgTypeNameMap["IStrategyMATLAB3DGuidance"] = IStrategyMATLAB3DGuidance
 
 class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
     """Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IStrategyMATLABNav.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -585,6 +590,7 @@ agcls.AgTypeNameMap["StrategyMATLABNav"] = StrategyMATLABNav
 
 class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
     """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IStrategyMATLABProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -603,6 +609,7 @@ agcls.AgTypeNameMap["StrategyMATLABProfile"] = StrategyMATLABProfile
 
 class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
     """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IStrategyMATLABFull3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -621,6 +628,7 @@ agcls.AgTypeNameMap["StrategyMATLABFull3D"] = StrategyMATLABFull3D
 
 class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy):
     """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IStrategyMATLAB3DGuidance.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -639,6 +647,7 @@ agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
 
 class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
+
     def __init__(self, sourceObject=None):
         IAutomationStrategyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

@@ -143,6 +143,7 @@ def _raise_uninitialized_error(*args):
 
 class ERROR_CODES(IntEnum):
     """Error Codes."""
+   
     OBJECT_NOT_FOUND = (((1 << 31) | (4 << 16)) | (0x200 + 1))
     """Object not found."""
     INDEX_OUT_OF_RANGE = (((1 << 31) | (4 << 16)) | (0x200 + 2))
@@ -215,21 +216,23 @@ agcls.AgTypeNameMap["ERROR_CODES"] = ERROR_CODES
 
 class CLOSURE_VALUE(IntEnum):
     """The closure value."""
+   
     CLOSURE_MODE = 0
-    """The closure mode"""
+    """The closure mode."""
     MAX_ANGLE = 1
-    """The HOBS max angle offset"""
+    """The HOBS max angle offset."""
     ANGLE_TOL = 2
-    """The HOBS angle tolerance"""
+    """The HOBS angle tolerance."""
 
-CLOSURE_VALUE.CLOSURE_MODE.__doc__ = "The closure mode"
-CLOSURE_VALUE.MAX_ANGLE.__doc__ = "The HOBS max angle offset"
-CLOSURE_VALUE.ANGLE_TOL.__doc__ = "The HOBS angle tolerance"
+CLOSURE_VALUE.CLOSURE_MODE.__doc__ = "The closure mode."
+CLOSURE_VALUE.MAX_ANGLE.__doc__ = "The HOBS max angle offset."
+CLOSURE_VALUE.ANGLE_TOL.__doc__ = "The HOBS angle tolerance."
 
 agcls.AgTypeNameMap["CLOSURE_VALUE"] = CLOSURE_VALUE
 
 class PROCEDURE_TYPE(IntEnum):
     """Aviator procedure types."""
+   
     PROC_AIRWAY = 0
     """Airway procedure."""
     PROC_AIRWAY_ROUTER = 1
@@ -335,6 +338,7 @@ agcls.AgTypeNameMap["PROCEDURE_TYPE"] = PROCEDURE_TYPE
 
 class SITE_TYPE(IntEnum):
     """Aviator site types."""
+   
     SITE_AIRPORT_FROM_CATALOG = 0
     """Airport from Catalog site."""
     SITE_END_OF_PREV_PROCEDURE = 1
@@ -395,6 +399,7 @@ agcls.AgTypeNameMap["SITE_TYPE"] = SITE_TYPE
 
 class BASIC_MANEUVER_STRATEGY(IntEnum):
     """Basic maneuver strategy types."""
+   
     STRAIGHT_AHEAD = 0
     """Straight Ahead strategy."""
     WEAVE = 1
@@ -407,6 +412,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY"] = BASIC_MANEUVER_STRATEGY
 
 class STRAIGHT_AHEAD_REFERENCE_FRAME(IntEnum):
     """Straight Ahead basic maneuver Reference Frame."""
+   
     MAINTAIN_COURSE = 0
     """Maintain Course."""
     MAINTAIN_HEADING = 1
@@ -414,17 +420,18 @@ class STRAIGHT_AHEAD_REFERENCE_FRAME(IntEnum):
     NO_LATERAL_ACC = 2
     """No Lateral Accelerations."""
     COMPENSATE_CORIOLIS = 3
-    """Compensate For Coriolis"""
+    """Compensate For Coriolis."""
 
 STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_COURSE.__doc__ = "Maintain Course."
 STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_HEADING.__doc__ = "Maintain Heading."
 STRAIGHT_AHEAD_REFERENCE_FRAME.NO_LATERAL_ACC.__doc__ = "No Lateral Accelerations."
-STRAIGHT_AHEAD_REFERENCE_FRAME.COMPENSATE_CORIOLIS.__doc__ = "Compensate For Coriolis"
+STRAIGHT_AHEAD_REFERENCE_FRAME.COMPENSATE_CORIOLIS.__doc__ = "Compensate For Coriolis."
 
 agcls.AgTypeNameMap["STRAIGHT_AHEAD_REFERENCE_FRAME"] = STRAIGHT_AHEAD_REFERENCE_FRAME
 
 class AIRSPEED_TYPE(IntEnum):
     """Airspeed types."""
+   
     MACH = 0
     """Mach number."""
     EAS = 1
@@ -443,6 +450,7 @@ agcls.AgTypeNameMap["AIRSPEED_TYPE"] = AIRSPEED_TYPE
 
 class AERO_PROP_SIMPLE_MODE(IntEnum):
     """Aircraft operating mode for basic acceleration models with aerodynamics set to Simple."""
+   
     FIXED_WING = 0
     """Fixed wing operatiog mode."""
     HELICOPTER = 1
@@ -455,6 +463,7 @@ agcls.AgTypeNameMap["AERO_PROP_SIMPLE_MODE"] = AERO_PROP_SIMPLE_MODE
 
 class AERO_PROP_FLIGHT_MODE(IntEnum):
     """Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models."""
+   
     FLIGHT_PERF_FORWARD_FLIGHT = 0
     """Forward Flight mode."""
     FLIGHT_PERF_HOVER = 1
@@ -476,6 +485,7 @@ agcls.AgTypeNameMap["AERO_PROP_FLIGHT_MODE"] = AERO_PROP_FLIGHT_MODE
 
 class PHASE_OF_FLIGHT(IntEnum):
     """Flight mode for basic maneuver procedures."""
+   
     FLIGHT_PHASE_TAKEOFF = 1
     """Takeoff flight mode."""
     FLIGHT_PHASE_CLIMB = 2
@@ -487,19 +497,20 @@ class PHASE_OF_FLIGHT(IntEnum):
     FLIGHT_PHASE_LANDING = 5
     """Landing flight mode."""
     FLIGHT_PHASE_VTOL = 6
-    """Rotary wing / hover flight mode"""
+    """Rotary wing / hover flight mode."""
 
 PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF.__doc__ = "Takeoff flight mode."
 PHASE_OF_FLIGHT.FLIGHT_PHASE_CLIMB.__doc__ = "Forward flight climb flight mode."
 PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE.__doc__ = "Forward flight - cruise flight mode."
 PHASE_OF_FLIGHT.FLIGHT_PHASE_DESCEND.__doc__ = "Forward flight descend flight mode."
 PHASE_OF_FLIGHT.FLIGHT_PHASE_LANDING.__doc__ = "Landing flight mode."
-PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL.__doc__ = "Rotary wing / hover flight mode"
+PHASE_OF_FLIGHT.FLIGHT_PHASE_VTOL.__doc__ = "Rotary wing / hover flight mode."
 
 agcls.AgTypeNameMap["PHASE_OF_FLIGHT"] = PHASE_OF_FLIGHT
 
 class CRUISE_SPEED(IntEnum):
     """Cruise airspeed type for the procedure."""
+   
     MIN_AIRSPEED = 0
     """Minimum airspeed."""
     MAX_ENDURANCE_AIRSPEED = 1
@@ -524,6 +535,7 @@ agcls.AgTypeNameMap["CRUISE_SPEED"] = CRUISE_SPEED
 
 class TAKEOFF_MODE(IntEnum):
     """Takeoff procedure mode."""
+   
     TAKEOFF_NORMAL = 0
     """Normal takeoff mode."""
     TAKEOFF_FLY_TO_DEPARTURE_POINT = 1
@@ -539,6 +551,7 @@ agcls.AgTypeNameMap["TAKEOFF_MODE"] = TAKEOFF_MODE
 
 class APPROACH_MODE(IntEnum):
     """Landing procedure approach mode."""
+   
     STANDARD_INSTRUMENT_APPROACH = 0
     """Standard instrument approach mode."""
     INTERCEPT_GLIDESLOPE = 1
@@ -554,6 +567,7 @@ agcls.AgTypeNameMap["APPROACH_MODE"] = APPROACH_MODE
 
 class NAVIGATOR_TURN_DIRECTION(IntEnum):
     """Turn mode for procedures with Enroute Turn Direction options."""
+   
     NAVIGATOR_TURN_AUTO = 0
     """Automatic turn. Aviator will determine the direction of the turn."""
     NAVIGATOR_TURN_LEFT = 1
@@ -569,6 +583,7 @@ agcls.AgTypeNameMap["NAVIGATOR_TURN_DIRECTION"] = NAVIGATOR_TURN_DIRECTION
 
 class BASIC_MANEUVER_FUEL_FLOW_TYPE(IntEnum):
     """Fuel flow type for basic maneuver procedures."""
+   
     BASIC_MANEUVER_FUEL_FLOW_TAKEOFF = 0
     """Fuel flow defined for the current Takeoff performance model."""
     BASIC_MANEUVER_FUEL_FLOW_CRUISE = 1
@@ -596,6 +611,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_FUEL_FLOW_TYPE"] = BASIC_MANEUVER_FUEL_FLOW_
 
 class BASIC_MANEUVER_ALTITUDE_LIMIT(IntEnum):
     """The type of response Aviator will have if the maneuver attempts to exceed the altitude limit."""
+   
     BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR = 0
     """Error when altitude limit exceeded."""
     BASIC_MANEUVER_ALTITUDE_LIMIT_STOP = 1
@@ -611,6 +627,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_ALTITUDE_LIMIT"] = BASIC_MANEUVER_ALTITUDE_L
 
 class RUNWAY_HIGH_LOW_END(IntEnum):
     """Runway heading that the aircraft will use."""
+   
     HIGH_END = 0
     """High end."""
     LOW_END = 1
@@ -626,6 +643,7 @@ agcls.AgTypeNameMap["RUNWAY_HIGH_LOW_END"] = RUNWAY_HIGH_LOW_END
 
 class BASIC_MANEUVER_REFERENCE_FRAME(IntEnum):
     """Reference frame for the basic maneuver strategy."""
+   
     EARTH_FRAME = 0
     """Earth frame."""
     WIND_FRAME = 1
@@ -638,6 +656,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_REFERENCE_FRAME"] = BASIC_MANEUVER_REFERENCE
 
 class BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for the aircraft during the maneuver."""
+   
     NAV_USE_ACCEL_PERF_MODEL = 0
     """Use Accel Perf Model."""
     NAV_MIN_TURN_RADIUS = 1
@@ -656,6 +675,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"] = BASIC_MANEUVE
 
 class ACCEL_MANEUVER_MODE(IntEnum):
     """The mode that the aircraft will adhere to the specified acceleration parameters."""
+   
     ACCEL_MANEUVER_MODE_NORMAL = 0
     """Constant value (default)."""
     ACCEL_MANEUVER_MODE_DENSITY_SCALE = 1
@@ -671,6 +691,7 @@ agcls.AgTypeNameMap["ACCEL_MANEUVER_MODE"] = ACCEL_MANEUVER_MODE
 
 class AIRCRAFT_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
+   
     AIRCRAFT_AERO_SIMPLE = 0
     """Simple aerodynamics."""
     AIRCRAFT_AERO_EXTERNAL_FILE = 1
@@ -689,6 +710,7 @@ agcls.AgTypeNameMap["AIRCRAFT_AERO_STRATEGY"] = AIRCRAFT_AERO_STRATEGY
 
 class AIRCRAFT_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
+   
     AIRCRAFT_PROP_SIMPLE = 0
     """Simple propulsion."""
     AIRCRAFT_PROP_EXTERNAL_FILE = 1
@@ -713,18 +735,20 @@ agcls.AgTypeNameMap["AIRCRAFT_PROP_STRATEGY"] = AIRCRAFT_PROP_STRATEGY
 
 class AGL_MSL(IntEnum):
     """The altitude mode."""
+   
     ALTITUDE_AGL = 0
-    """AGl altitude. ALtitude above local terrain"""
+    """AGl altitude. ALtitude above local terrain."""
     ALTITUDE_MSL = 1
     """MSL altitude. Altitude above sea level."""
 
-AGL_MSL.ALTITUDE_AGL.__doc__ = "AGl altitude. ALtitude above local terrain"
+AGL_MSL.ALTITUDE_AGL.__doc__ = "AGl altitude. ALtitude above local terrain."
 AGL_MSL.ALTITUDE_MSL.__doc__ = "MSL altitude. Altitude above sea level."
 
 agcls.AgTypeNameMap["AGL_MSL"] = AGL_MSL
 
 class LANDING_APPROACH_FIX_RANGE_MODE(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
+   
     REL_TO_RUNWAY_CENTER = 0
     """Runway center."""
     REL_TO_RUNWAY_END = 1
@@ -737,6 +761,7 @@ agcls.AgTypeNameMap["LANDING_APPROACH_FIX_RANGE_MODE"] = LANDING_APPROACH_FIX_RA
 
 class ACCELERATION_ADV_ACCEL_MODE(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
+   
     ACCEL_MODE_MAX_ACCEL = 0
     """Max acceleration."""
     ACCEL_MODE_OVERRIDE_ACCEL = 1
@@ -749,18 +774,20 @@ agcls.AgTypeNameMap["ACCELERATION_ADV_ACCEL_MODE"] = ACCELERATION_ADV_ACCEL_MODE
 
 class ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
+   
     USE_THRUST_AND_LIFT_COEFFICIENT = 0
-    """Use Thrust and Lift Coefficient"""
+    """Use Thrust and Lift Coefficient."""
     USE_LIFT_COEFFICIENT_ONLY = 1
     """Use Lift Coefficient only."""
 
-ACCEL_MANEUVER_AERO_PROP_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient"
+ACCEL_MANEUVER_AERO_PROP_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient."
 ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY.__doc__ = "Use Lift Coefficient only."
 
 agcls.AgTypeNameMap["ACCEL_MANEUVER_AERO_PROP_MODE"] = ACCEL_MANEUVER_AERO_PROP_MODE
 
 class BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS(IntEnum):
     """The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit."""
+   
     CONSTRAIN_IF_VIOLATED = 0
     """Constrain the aircraft to not exceed the airspeed limit."""
     STOP_IF_VIOLATED = 1
@@ -779,6 +806,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS"] = BASIC_MANE
 
 class BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE(IntEnum):
     """Powered Cruise Options."""
+   
     GLIDE_SPECIFY_UN_POWERED_CRUISE = 0
     """The mode selected is unpowered options."""
     GLIDE_SPECIFY_THROTTLE = 1
@@ -794,6 +822,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE"] = BASIC_MANEU
 
 class TURN_MODE(IntEnum):
     """The mode to specify an aircraft's level turn performance for acceleration performance models."""
+   
     TURN_MODE_TURN_G = 0
     """Turn G. The standard G force of the aircraft in a turn."""
     TURN_MODE_BANK_ANGLE = 1
@@ -815,6 +844,7 @@ agcls.AgTypeNameMap["TURN_MODE"] = TURN_MODE
 
 class POINT_TO_POINT_MODE(IntEnum):
     """The heading or course of the aircraft at the beginning of the procedure."""
+   
     FLY_DIRECT = 0
     """Fly direct."""
     ARRIVE_ON_COURSE_FOR_NEXT = 1
@@ -836,6 +866,7 @@ agcls.AgTypeNameMap["POINT_TO_POINT_MODE"] = POINT_TO_POINT_MODE
 
 class ALTITUDE_CONSTRAINT_MANEUVER_MODE(IntEnum):
     """Turn mode for procedures that may require a level off maneuver."""
+   
     LEVEL_OFF_AUTOMATIC_MANEUVER = 0
     """Automatic turn.Aviator will determine the direction of the turn."""
     LEVEL_OFF_LEFT_TURN_MANEUVER = 1
@@ -854,6 +885,7 @@ agcls.AgTypeNameMap["ALTITUDE_CONSTRAINT_MANEUVER_MODE"] = ALTITUDE_CONSTRAINT_M
 
 class WIND_MODEL_TYPE(IntEnum):
     """The wind model type."""
+   
     CONSTANT_WIND = 0
     """Constant Wind/Speed."""
     ADDS = 1
@@ -869,6 +901,7 @@ agcls.AgTypeNameMap["WIND_MODEL_TYPE"] = WIND_MODEL_TYPE
 
 class WIND_ATMOS_MODEL_SOURCE(IntEnum):
     """The source for the wind or atmosphere model."""
+   
     SCENARIO_MODEL = 0
     """Scenario Model."""
     MISSION_MODEL = 1
@@ -884,6 +917,7 @@ agcls.AgTypeNameMap["WIND_ATMOS_MODEL_SOURCE"] = WIND_ATMOS_MODEL_SOURCE
 
 class ADDS_MSG_INTERP_TYPE(IntEnum):
     """The interpolation method for the wind conditions."""
+   
     INTERP_ONE_POINT = 0
     """One Point Interpolation."""
     INTERP_TWO_POINT = 1
@@ -896,6 +930,7 @@ agcls.AgTypeNameMap["ADDS_MSG_INTERP_TYPE"] = ADDS_MSG_INTERP_TYPE
 
 class ADDS_MISSING_MSG_TYPE(IntEnum):
     """The wind effect to apply if there is an interval gap between messages."""
+   
     MISSING_MSG_ZERO_WIND = 0
     """Zero Wind."""
     MISSING_MSG_INTERP_END_POINTS = 1
@@ -908,6 +943,7 @@ agcls.AgTypeNameMap["ADDS_MISSING_MSG_TYPE"] = ADDS_MISSING_MSG_TYPE
 
 class ADDS_MSG_EXTRAP_TYPE(IntEnum):
     """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
+   
     EXTRAP_MSG_ZERO_WIND = 0
     """Zero Wind."""
     EXTRAP_MSG_HOLD_END_POINTS = 1
@@ -920,387 +956,410 @@ agcls.AgTypeNameMap["ADDS_MSG_EXTRAP_TYPE"] = ADDS_MSG_EXTRAP_TYPE
 
 class ADDS_FORECAST_TYPE(IntEnum):
     """The forecast type for the NOAA ADDS message."""
+   
     HOUR_6 = 0
-    """6 hour forecast"""
+    """6 hour forecast."""
     HOUR_12 = 1
-    """12 hour forecast"""
+    """12 hour forecast."""
     HOUR_24 = 2
-    """24 hour forecast"""
+    """24 hour forecast."""
 
-ADDS_FORECAST_TYPE.HOUR_6.__doc__ = "6 hour forecast"
-ADDS_FORECAST_TYPE.HOUR_12.__doc__ = "12 hour forecast"
-ADDS_FORECAST_TYPE.HOUR_24.__doc__ = "24 hour forecast"
+ADDS_FORECAST_TYPE.HOUR_6.__doc__ = "6 hour forecast."
+ADDS_FORECAST_TYPE.HOUR_12.__doc__ = "12 hour forecast."
+ADDS_FORECAST_TYPE.HOUR_24.__doc__ = "24 hour forecast."
 
 agcls.AgTypeNameMap["ADDS_FORECAST_TYPE"] = ADDS_FORECAST_TYPE
 
 class ATMOSPHERE_MODEL(IntEnum):
     """The basic atmosphere model type."""
+   
     STANDARD1976 = 0
-    """1976 U.S. Standard Atmosphere"""
+    """1976 U.S. Standard Atmosphere."""
     MIL_HOT = 1
-    """U.S. MIL HDBK 310 - Hot"""
+    """U.S. MIL HDBK 310 - Hot."""
     MIL_COLD = 2
-    """U.S. MIL HDBK 310 - Cold"""
+    """U.S. MIL HDBK 310 - Cold."""
     MIL_LOW_DENSITY = 3
-    """U.S. MIL HDBK 310 - Low Density"""
+    """U.S. MIL HDBK 310 - Low Density."""
     MIL_HIGH_DENSITY = 4
-    """U.S. MIL HDBK 310 - High Density"""
+    """U.S. MIL HDBK 310 - High Density."""
     MIL_INTERPOLATE = 5
-    """Interpolate MIL HDBK 310 Data"""
+    """Interpolate MIL HDBK 310 Data."""
 
-ATMOSPHERE_MODEL.STANDARD1976.__doc__ = "1976 U.S. Standard Atmosphere"
-ATMOSPHERE_MODEL.MIL_HOT.__doc__ = "U.S. MIL HDBK 310 - Hot"
-ATMOSPHERE_MODEL.MIL_COLD.__doc__ = "U.S. MIL HDBK 310 - Cold"
-ATMOSPHERE_MODEL.MIL_LOW_DENSITY.__doc__ = "U.S. MIL HDBK 310 - Low Density"
-ATMOSPHERE_MODEL.MIL_HIGH_DENSITY.__doc__ = "U.S. MIL HDBK 310 - High Density"
-ATMOSPHERE_MODEL.MIL_INTERPOLATE.__doc__ = "Interpolate MIL HDBK 310 Data"
+ATMOSPHERE_MODEL.STANDARD1976.__doc__ = "1976 U.S. Standard Atmosphere."
+ATMOSPHERE_MODEL.MIL_HOT.__doc__ = "U.S. MIL HDBK 310 - Hot."
+ATMOSPHERE_MODEL.MIL_COLD.__doc__ = "U.S. MIL HDBK 310 - Cold."
+ATMOSPHERE_MODEL.MIL_LOW_DENSITY.__doc__ = "U.S. MIL HDBK 310 - Low Density."
+ATMOSPHERE_MODEL.MIL_HIGH_DENSITY.__doc__ = "U.S. MIL HDBK 310 - High Density."
+ATMOSPHERE_MODEL.MIL_INTERPOLATE.__doc__ = "Interpolate MIL HDBK 310 Data."
 
 agcls.AgTypeNameMap["ATMOSPHERE_MODEL"] = ATMOSPHERE_MODEL
 
 class SMOOTH_TURN_MODE(IntEnum):
     """The basic maneuver smooth turn mode."""
+   
     SMOOTH_TURN_LOAD_FACTOR = 0
-    """Specify the load factor of the smooth turn"""
+    """Specify the load factor of the smooth turn."""
     SMOOTH_TURN_ROLL_ANGLE = 1
-    """Specify the roll angle of the smooth turn"""
+    """Specify the roll angle of the smooth turn."""
 
-SMOOTH_TURN_MODE.SMOOTH_TURN_LOAD_FACTOR.__doc__ = "Specify the load factor of the smooth turn"
-SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE.__doc__ = "Specify the roll angle of the smooth turn"
+SMOOTH_TURN_MODE.SMOOTH_TURN_LOAD_FACTOR.__doc__ = "Specify the load factor of the smooth turn."
+SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE.__doc__ = "Specify the roll angle of the smooth turn."
 
 agcls.AgTypeNameMap["SMOOTH_TURN_MODE"] = SMOOTH_TURN_MODE
 
 class PERF_MODEL_OVERRIDE(IntEnum):
     """The performance model override mode."""
+   
     PERF_MODEL_VALUE = 0
-    """Use the performance model value"""
+    """Use the performance model value."""
     OVERRIDE = 1
-    """Override the performance model value"""
+    """Override the performance model value."""
 
-PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE.__doc__ = "Use the performance model value"
-PERF_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value"
+PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE.__doc__ = "Use the performance model value."
+PERF_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value."
 
 agcls.AgTypeNameMap["PERF_MODEL_OVERRIDE"] = PERF_MODEL_OVERRIDE
 
 class BASIC_MANEUVER_AIRSPEED_MODE(IntEnum):
     """The basic maneuver airspeed mode."""
+   
     MAINTAIN_CURRENT_AIRSPEED = 0
-    """Maintain the current airspeed"""
+    """Maintain the current airspeed."""
     MAINTAIN_SPECIFIED_AIRSPEED = 1
-    """Maintain the specified airspeed"""
+    """Maintain the specified airspeed."""
     MAINTAIN_MIN_AIRSPEED = 2
-    """Maintain the minimum airspeed for the aircraft"""
+    """Maintain the minimum airspeed for the aircraft."""
     MAINTAIN_MAX_ENDURANCE_AIRSPEED = 3
-    """Maintain the maximum endurance airspeed for the aircraft"""
+    """Maintain the maximum endurance airspeed for the aircraft."""
     MAINTAIN_MAX_RANGE_AIRSPEED = 4
-    """Maintain the maximum range airspeed for the aircraft"""
+    """Maintain the maximum range airspeed for the aircraft."""
     MAINTAIN_MAX_AIRSPEED = 5
-    """Maintain the maximum airspeed for the aircraft"""
+    """Maintain the maximum airspeed for the aircraft."""
     MAINTAIN_MAX_PERFORMANCE_AIRSPEED = 6
-    """Maintain the maximum performance airspeed for the aircraft"""
+    """Maintain the maximum performance airspeed for the aircraft."""
     ACCEL_AT_G = 7
-    """Accelerate at the specified rate"""
+    """Accelerate at the specified rate."""
     DECEL_AT_G = 8
-    """Decelerate at the specified rate"""
+    """Decelerate at the specified rate."""
     ACCEL_DECEL_UNDER_GRAVITY = 9
-    """Accel/Decel at the force of gravity (no drag, no thrust)"""
+    """Accel/Decel at the force of gravity (no drag, no thrust)."""
     ACCEL_DECEL_AERO_PROP = 10
-    """Accel/Decel using Aero/Propulsion with throttle setting"""
+    """Accel/Decel using Aero/Propulsion with throttle setting."""
     THRUST = 11
-    """Specify thrust (using drag from Aerodynamics model)"""
+    """Specify thrust (using drag from Aerodynamics model)."""
     INTERPOLATE_ACCEL_DECEL = 12
-    """Interpolate Accelerate/Decelerate over interval"""
+    """Interpolate Accelerate/Decelerate over interval."""
 
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED.__doc__ = "Maintain the current airspeed"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED.__doc__ = "Maintain the specified airspeed"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MIN_AIRSPEED.__doc__ = "Maintain the minimum airspeed for the aircraft"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED.__doc__ = "Maintain the maximum endurance airspeed for the aircraft"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_RANGE_AIRSPEED.__doc__ = "Maintain the maximum range airspeed for the aircraft"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_AIRSPEED.__doc__ = "Maintain the maximum airspeed for the aircraft"
-BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_PERFORMANCE_AIRSPEED.__doc__ = "Maintain the maximum performance airspeed for the aircraft"
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_AT_G.__doc__ = "Accelerate at the specified rate"
-BASIC_MANEUVER_AIRSPEED_MODE.DECEL_AT_G.__doc__ = "Decelerate at the specified rate"
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_UNDER_GRAVITY.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)"
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_AERO_PROP.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting"
-BASIC_MANEUVER_AIRSPEED_MODE.THRUST.__doc__ = "Specify thrust (using drag from Aerodynamics model)"
-BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCEL_DECEL.__doc__ = "Interpolate Accelerate/Decelerate over interval"
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED.__doc__ = "Maintain the current airspeed."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED.__doc__ = "Maintain the specified airspeed."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MIN_AIRSPEED.__doc__ = "Maintain the minimum airspeed for the aircraft."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED.__doc__ = "Maintain the maximum endurance airspeed for the aircraft."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_RANGE_AIRSPEED.__doc__ = "Maintain the maximum range airspeed for the aircraft."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_AIRSPEED.__doc__ = "Maintain the maximum airspeed for the aircraft."
+BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_PERFORMANCE_AIRSPEED.__doc__ = "Maintain the maximum performance airspeed for the aircraft."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_AT_G.__doc__ = "Accelerate at the specified rate."
+BASIC_MANEUVER_AIRSPEED_MODE.DECEL_AT_G.__doc__ = "Decelerate at the specified rate."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_UNDER_GRAVITY.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_AERO_PROP.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting."
+BASIC_MANEUVER_AIRSPEED_MODE.THRUST.__doc__ = "Specify thrust (using drag from Aerodynamics model)."
+BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCEL_DECEL.__doc__ = "Interpolate Accelerate/Decelerate over interval."
 
 agcls.AgTypeNameMap["BASIC_MANEUVER_AIRSPEED_MODE"] = BASIC_MANEUVER_AIRSPEED_MODE
 
 class AILERON_ROLL_FLIGHT_PATH(IntEnum):
     """The flight path option for an aileron roll strategy for a basic maneuver procedure."""
+   
     STRAIGHT_LINE_FLIGHT_PATH = 0
-    """Fly a straight line flight path"""
+    """Fly a straight line flight path."""
     ZERO_G_FLIGHT_PATH = 1
-    """Fly a zero G flight path"""
+    """Fly a zero G flight path."""
 
-AILERON_ROLL_FLIGHT_PATH.STRAIGHT_LINE_FLIGHT_PATH.__doc__ = "Fly a straight line flight path"
-AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH.__doc__ = "Fly a zero G flight path"
+AILERON_ROLL_FLIGHT_PATH.STRAIGHT_LINE_FLIGHT_PATH.__doc__ = "Fly a straight line flight path."
+AILERON_ROLL_FLIGHT_PATH.ZERO_G_FLIGHT_PATH.__doc__ = "Fly a zero G flight path."
 
 agcls.AgTypeNameMap["AILERON_ROLL_FLIGHT_PATH"] = AILERON_ROLL_FLIGHT_PATH
 
 class ROLL_LEFT_RIGHT(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
+   
     ROLL_LEFT = 0
-    """Roll left"""
+    """Roll left."""
     ROLL_RIGHT = 1
-    """Roll right"""
+    """Roll right."""
 
-ROLL_LEFT_RIGHT.ROLL_LEFT.__doc__ = "Roll left"
-ROLL_LEFT_RIGHT.ROLL_RIGHT.__doc__ = "Roll right"
+ROLL_LEFT_RIGHT.ROLL_LEFT.__doc__ = "Roll left."
+ROLL_LEFT_RIGHT.ROLL_RIGHT.__doc__ = "Roll right."
 
 agcls.AgTypeNameMap["ROLL_LEFT_RIGHT"] = ROLL_LEFT_RIGHT
 
 class ROLL_UPRIGHT_INVERTED(IntEnum):
     """The orientation for an aileron roll strategy for a basic maneuver procedure."""
+   
     ROLL_UPRIGHT = 0
-    """Upright roll"""
+    """Upright roll."""
     ROLL_INVERTED = 1
-    """Inverted roll"""
+    """Inverted roll."""
 
-ROLL_UPRIGHT_INVERTED.ROLL_UPRIGHT.__doc__ = "Upright roll"
-ROLL_UPRIGHT_INVERTED.ROLL_INVERTED.__doc__ = "Inverted roll"
+ROLL_UPRIGHT_INVERTED.ROLL_UPRIGHT.__doc__ = "Upright roll."
+ROLL_UPRIGHT_INVERTED.ROLL_INVERTED.__doc__ = "Inverted roll."
 
 agcls.AgTypeNameMap["ROLL_UPRIGHT_INVERTED"] = ROLL_UPRIGHT_INVERTED
 
 class AILERON_ROLL_MODE(IntEnum):
     """The roll mode aileron roll strategy for a basic maneuver procedure."""
+   
     ROLL_TO_ANGLE = 0
-    """Specify the angle to roll"""
+    """Specify the angle to roll."""
     ROLL_TO_ORIENTATION = 1
-    """Specify the orientation to roll to"""
+    """Specify the orientation to roll to."""
 
-AILERON_ROLL_MODE.ROLL_TO_ANGLE.__doc__ = "Specify the angle to roll"
-AILERON_ROLL_MODE.ROLL_TO_ORIENTATION.__doc__ = "Specify the orientation to roll to"
+AILERON_ROLL_MODE.ROLL_TO_ANGLE.__doc__ = "Specify the angle to roll."
+AILERON_ROLL_MODE.ROLL_TO_ORIENTATION.__doc__ = "Specify the orientation to roll to."
 
 agcls.AgTypeNameMap["AILERON_ROLL_MODE"] = AILERON_ROLL_MODE
 
 class FLY_AOA_LEFT_RIGHT(IntEnum):
     """The roll direction for a Fly AOA strategy for a basic maneuver procedure."""
+   
     FLY_AOA_LEFT = 0
-    """Roll left"""
+    """Roll left."""
     FLY_AOA_RIGHT = 1
-    """Roll right"""
+    """Roll right."""
     FLY_AOA_NO_ROLL = 2
-    """No roll"""
+    """No roll."""
 
-FLY_AOA_LEFT_RIGHT.FLY_AOA_LEFT.__doc__ = "Roll left"
-FLY_AOA_LEFT_RIGHT.FLY_AOA_RIGHT.__doc__ = "Roll right"
-FLY_AOA_LEFT_RIGHT.FLY_AOA_NO_ROLL.__doc__ = "No roll"
+FLY_AOA_LEFT_RIGHT.FLY_AOA_LEFT.__doc__ = "Roll left."
+FLY_AOA_LEFT_RIGHT.FLY_AOA_RIGHT.__doc__ = "Roll right."
+FLY_AOA_LEFT_RIGHT.FLY_AOA_NO_ROLL.__doc__ = "No roll."
 
 agcls.AgTypeNameMap["FLY_AOA_LEFT_RIGHT"] = FLY_AOA_LEFT_RIGHT
 
 class SMOOTH_ACCEL_LEFT_RIGHT(IntEnum):
     """The roll direction for a smooth acceleration strategy for a basic maneuver procedure."""
+   
     SMOOTH_ACCEL_LEFT = 0
-    """Roll left"""
+    """Roll left."""
     SMOOTH_ACCEL_RIGHT = 1
-    """Roll right"""
+    """Roll right."""
     SMOOTH_ACCEL_NO_ROLL = 2
-    """No roll"""
+    """No roll."""
 
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT.__doc__ = "Roll left"
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_RIGHT.__doc__ = "Roll right"
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_NO_ROLL.__doc__ = "No roll"
+SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT.__doc__ = "Roll left."
+SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_RIGHT.__doc__ = "Roll right."
+SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_NO_ROLL.__doc__ = "No roll."
 
 agcls.AgTypeNameMap["SMOOTH_ACCEL_LEFT_RIGHT"] = SMOOTH_ACCEL_LEFT_RIGHT
 
 class PULL_MODE(IntEnum):
     """The pull mode for a pull strategy of a basic maneuver procedure."""
+   
     PULL_TO_ANGLE = 0
-    """Pull to the specified angle"""
+    """Pull to the specified angle."""
     PULL_TO_HORIZON = 1
-    """Pull to the horizon plus the additional angle"""
+    """Pull to the horizon plus the additional angle."""
 
-PULL_MODE.PULL_TO_ANGLE.__doc__ = "Pull to the specified angle"
-PULL_MODE.PULL_TO_HORIZON.__doc__ = "Pull to the horizon plus the additional angle"
+PULL_MODE.PULL_TO_ANGLE.__doc__ = "Pull to the specified angle."
+PULL_MODE.PULL_TO_HORIZON.__doc__ = "Pull to the horizon plus the additional angle."
 
 agcls.AgTypeNameMap["PULL_MODE"] = PULL_MODE
 
 class ROLLING_PULL_MODE(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
+   
     ROLL_TO_ANGLE_MODE = 0
-    """Roll to the specified angle"""
+    """Roll to the specified angle."""
     ROLL_TO_ORIENTATION_MODE = 1
-    """Roll to the specified orientaiton plus additional angle"""
+    """Roll to the specified orientaiton plus additional angle."""
     PULL_TO_ANGLE_MODE = 2
-    """Pull to the specified angle"""
+    """Pull to the specified angle."""
     PULL_TO_HORIZON_MODE = 3
-    """Pull to the horizon plus the additional angle"""
+    """Pull to the horizon plus the additional angle."""
 
-ROLLING_PULL_MODE.ROLL_TO_ANGLE_MODE.__doc__ = "Roll to the specified angle"
-ROLLING_PULL_MODE.ROLL_TO_ORIENTATION_MODE.__doc__ = "Roll to the specified orientaiton plus additional angle"
-ROLLING_PULL_MODE.PULL_TO_ANGLE_MODE.__doc__ = "Pull to the specified angle"
-ROLLING_PULL_MODE.PULL_TO_HORIZON_MODE.__doc__ = "Pull to the horizon plus the additional angle"
+ROLLING_PULL_MODE.ROLL_TO_ANGLE_MODE.__doc__ = "Roll to the specified angle."
+ROLLING_PULL_MODE.ROLL_TO_ORIENTATION_MODE.__doc__ = "Roll to the specified orientaiton plus additional angle."
+ROLLING_PULL_MODE.PULL_TO_ANGLE_MODE.__doc__ = "Pull to the specified angle."
+ROLLING_PULL_MODE.PULL_TO_HORIZON_MODE.__doc__ = "Pull to the horizon plus the additional angle."
 
 agcls.AgTypeNameMap["ROLLING_PULL_MODE"] = ROLLING_PULL_MODE
 
 class SMOOTH_ACCEL_STOP_CONDITIONS(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
+   
     ROLL_RATE_AND_LOAD_FACTOR = 0
-    """Roll rate and load factor rate achieved"""
+    """Roll rate and load factor rate achieved."""
     ROLL_RATE_OR_LOAD_FACTOR = 1
-    """Roll rate or load factor rate achieved"""
+    """Roll rate or load factor rate achieved."""
     SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS = 2
-    """Basic stop conditions"""
+    """Basic stop conditions."""
 
-SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved"
-SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved"
-SMOOTH_ACCEL_STOP_CONDITIONS.SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS.__doc__ = "Basic stop conditions"
+SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved."
+SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved."
+SMOOTH_ACCEL_STOP_CONDITIONS.SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS.__doc__ = "Basic stop conditions."
 
 agcls.AgTypeNameMap["SMOOTH_ACCEL_STOP_CONDITIONS"] = SMOOTH_ACCEL_STOP_CONDITIONS
 
 class AUTOPILOT_HORIZ_PLANE_MODE(IntEnum):
     """The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure."""
+   
     AUTOPILOT_ABSOLUTE_HEADING = 0
-    """The absolute heading mode"""
+    """The absolute heading mode."""
     AUTOPILOT_ABSOLUTE_COURSE = 1
-    """The absolute course mode"""
+    """The absolute course mode."""
     AUTOPILOT_RELATIVE_HEADING = 2
-    """The relative heading change mode"""
+    """The relative heading change mode."""
     AUTOPILOT_RELATIVE_COURSE = 3
-    """The relative course change mode"""
+    """The relative course change mode."""
     AUTOPILOT_HEADING_RATE = 4
-    """The set heading rate mode"""
+    """The set heading rate mode."""
     AUTOPILOT_COURSE_RATE = 5
-    """The set course rate  mode"""
+    """The set course rate  mode."""
 
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode"
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode"
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_HEADING.__doc__ = "The relative heading change mode"
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_COURSE.__doc__ = "The relative course change mode"
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE.__doc__ = "The set heading rate mode"
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE.__doc__ = "The set course rate  mode"
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode."
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode."
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_HEADING.__doc__ = "The relative heading change mode."
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_COURSE.__doc__ = "The relative course change mode."
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE.__doc__ = "The set heading rate mode."
+AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE.__doc__ = "The set course rate  mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_HORIZ_PLANE_MODE"] = AUTOPILOT_HORIZ_PLANE_MODE
 
 class ANGLE_MODE(IntEnum):
     """The angle mode for a barrel roll strategy of a basic maneuver procedure."""
+   
     RELATIVE_ANGLE = 0
-    """The absolute angle option"""
+    """The absolute angle option."""
     ABSOLUTE_ANGLE = 1
-    """The relative angle option"""
+    """The relative angle option."""
 
-ANGLE_MODE.RELATIVE_ANGLE.__doc__ = "The absolute angle option"
-ANGLE_MODE.ABSOLUTE_ANGLE.__doc__ = "The relative angle option"
+ANGLE_MODE.RELATIVE_ANGLE.__doc__ = "The absolute angle option."
+ANGLE_MODE.ABSOLUTE_ANGLE.__doc__ = "The relative angle option."
 
 agcls.AgTypeNameMap["ANGLE_MODE"] = ANGLE_MODE
 
 class HOVER_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the lighter than air hover strategy of a basic maneuver procedure."""
+   
     HOVER_HOLD_INIT_ALTITUDE = 0
-    """The hold initial altitude mode"""
+    """The hold initial altitude mode."""
     HOVER_SPECIFY_ALTITUDE = 1
-    """The specify altitude mode"""
+    """The specify altitude mode."""
     HOVER_SPECIFY_ALTITUDE_CHANGE = 2
-    """The specify altitude change mode"""
+    """The specify altitude change mode."""
     HOVER_SPECIFY_ALTITUDE_RATE = 3
-    """The specify altitude rate mode"""
+    """The specify altitude rate mode."""
     HOVER_HOLD_INIT_ALTITUDE_RATE = 4
-    """The hold initial altitude rate mode"""
+    """The hold initial altitude rate mode."""
     HOVER_PARACHUTE = 5
-    """The parachute mode"""
+    """The parachute mode."""
 
-HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
-HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
-HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode"
-HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode"
-HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode"
-HOVER_ALTITUDE_MODE.HOVER_PARACHUTE.__doc__ = "The parachute mode"
+HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode."
+HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode."
+HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode."
+HOVER_ALTITUDE_MODE.HOVER_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode."
+HOVER_ALTITUDE_MODE.HOVER_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode."
+HOVER_ALTITUDE_MODE.HOVER_PARACHUTE.__doc__ = "The parachute mode."
 
 agcls.AgTypeNameMap["HOVER_ALTITUDE_MODE"] = HOVER_ALTITUDE_MODE
 
 class HOVER_HEADING_MODE(IntEnum):
     """The heading mode for the lighter than air hover strategy of a basic maneuver procedure."""
+   
     HOVER_RELATIVE = 0
-    """The relative to start heading mode"""
+    """The relative to start heading mode."""
     HOVER_ABSOLUTE = 1
-    """The absolute heading mode"""
+    """The absolute heading mode."""
     HOVER_INTO_WIND = 2
-    """The align into wind heading mode"""
+    """The align into wind heading mode."""
     HOVER_OPPOSITE_WIND = 3
-    """The align opposite wind heading mode"""
+    """The align opposite wind heading mode."""
 
-HOVER_HEADING_MODE.HOVER_RELATIVE.__doc__ = "The relative to start heading mode"
-HOVER_HEADING_MODE.HOVER_ABSOLUTE.__doc__ = "The absolute heading mode"
-HOVER_HEADING_MODE.HOVER_INTO_WIND.__doc__ = "The align into wind heading mode"
-HOVER_HEADING_MODE.HOVER_OPPOSITE_WIND.__doc__ = "The align opposite wind heading mode"
+HOVER_HEADING_MODE.HOVER_RELATIVE.__doc__ = "The relative to start heading mode."
+HOVER_HEADING_MODE.HOVER_ABSOLUTE.__doc__ = "The absolute heading mode."
+HOVER_HEADING_MODE.HOVER_INTO_WIND.__doc__ = "The align into wind heading mode."
+HOVER_HEADING_MODE.HOVER_OPPOSITE_WIND.__doc__ = "The align opposite wind heading mode."
 
 agcls.AgTypeNameMap["HOVER_HEADING_MODE"] = HOVER_HEADING_MODE
 
 class AUTOPILOT_ALTITUDE_MODE(IntEnum):
     """The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
+   
     AUTOPILOT_HOLD_INIT_ALTITUDE = 0
-    """The hold initial altitude mode"""
+    """The hold initial altitude mode."""
     AUTOPILOT_SPECIFY_ALTITUDE = 1
-    """The specify altitude mode"""
+    """The specify altitude mode."""
     AUTOPILOT_SPECIFY_ALTITUDE_CHANGE = 2
-    """The specify altitude change mode"""
+    """The specify altitude change mode."""
     AUTOPILOT_SPECIFY_ALTITUDE_RATE = 3
-    """The specify altitude rate mode"""
+    """The specify altitude rate mode."""
     AUTOPILOT_HOLD_INIT_ALTITUDE_RATE = 4
-    """The hold initial altitude rate mode"""
+    """The hold initial altitude rate mode."""
     AUTOPILOT_SPECIFY_FPA = 5
-    """The specify wind frame flight path angle mode"""
+    """The specify wind frame flight path angle mode."""
     AUTOPILOT_HOLD_INIT_FPA = 6
-    """The hold initial wind frame flight path angle mode"""
+    """The hold initial wind frame flight path angle mode."""
     AUTOPILOT_BALLISTIC = 7
-    """The ballistic flight path mode"""
+    """The ballistic flight path mode."""
 
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA.__doc__ = "The specify wind frame flight path angle mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FPA.__doc__ = "The hold initial wind frame flight path angle mode"
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC.__doc__ = "The ballistic flight path mode"
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE.__doc__ = "The hold initial altitude mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitude mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA.__doc__ = "The specify wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FPA.__doc__ = "The hold initial wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC.__doc__ = "The ballistic flight path mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_MODE"] = AUTOPILOT_ALTITUDE_MODE
 
 class AUTOPILOT_ALTITUDE_CONTROL_MODE(IntEnum):
     """The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure."""
+   
     AUTOPILOT_ALTITUDE_RATE = 0
-    """The control altitude rate mode"""
+    """The control altitude rate mode."""
     AUTOPILOT_FPA = 1
-    """The control flight path angle mode"""
+    """The control flight path angle mode."""
     AUTOPILOT_PERF_MODELS = 2
-    """The climb/descent performance models mode"""
+    """The climb/descent performance models mode."""
 
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode"
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode"
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERF_MODELS.__doc__ = "The climb/descent performance models mode"
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode."
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode."
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERF_MODELS.__doc__ = "The climb/descent performance models mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_CONTROL_MODE"] = AUTOPILOT_ALTITUDE_CONTROL_MODE
 
 class CLOSURE_MODE(IntEnum):
     """The closure mode for guidance strategies of the basic maneuver procedure."""
+   
     CLOSURE_NOT_SET = 0
-    """The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"""
+    """The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target."""
     CLOSURE_REQUIRED = 1
-    """The closure is required"""
+    """The closure is required."""
     HOBS = 2
-    """The high off boresight mode"""
+    """The high off boresight mode."""
 
-CLOSURE_MODE.CLOSURE_NOT_SET.__doc__ = "The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target"
-CLOSURE_MODE.CLOSURE_REQUIRED.__doc__ = "The closure is required"
-CLOSURE_MODE.HOBS.__doc__ = "The high off boresight mode"
+CLOSURE_MODE.CLOSURE_NOT_SET.__doc__ = "The closure is not set. The maneuver will continue whether or not the aircraft is closing with the target."
+CLOSURE_MODE.CLOSURE_REQUIRED.__doc__ = "The closure is required."
+CLOSURE_MODE.HOBS.__doc__ = "The high off boresight mode."
 
 agcls.AgTypeNameMap["CLOSURE_MODE"] = CLOSURE_MODE
 
 class INTERCEPT_MODE(IntEnum):
     """The intercept mode for the intercept strategy of the basic maneuver procedure."""
+   
     TARGET_ASPECT = 0
     """The target aspect mode. The aircraft will maintain an approach angle with the target."""
     LATERAL_SEPARATION = 1
-    """The lateral separation mode. The aircraft will guide to a specific distance from the target"""
+    """The lateral separation mode. The aircraft will guide to a specific distance from the target."""
 
 INTERCEPT_MODE.TARGET_ASPECT.__doc__ = "The target aspect mode. The aircraft will maintain an approach angle with the target."
-INTERCEPT_MODE.LATERAL_SEPARATION.__doc__ = "The lateral separation mode. The aircraft will guide to a specific distance from the target"
+INTERCEPT_MODE.LATERAL_SEPARATION.__doc__ = "The lateral separation mode. The aircraft will guide to a specific distance from the target."
 
 agcls.AgTypeNameMap["INTERCEPT_MODE"] = INTERCEPT_MODE
 
 class RENDEZVOUS_STOP_CONDITION(IntEnum):
     """The stop condition options for a rendezvous formation strategy of the basic maneuver procedure."""
+   
     STOP_NORMAL = 0
     """The basic stopping conditions will be used."""
     STOP_AFTER_TARGET_CURRENT_PROCEDURE = 1
@@ -1322,6 +1381,7 @@ agcls.AgTypeNameMap["RENDEZVOUS_STOP_CONDITION"] = RENDEZVOUS_STOP_CONDITION
 
 class FORMATION_FLYER_STOP_CONDITION(IntEnum):
     """The stop condition options for a Formation Flyer procedure."""
+   
     FORMATION_FLYER_STOP_AFTER_FULL_MISSION = 0
     """Stop After FullMission."""
     FORMATION_FLYER_STOP_AFTER_TIME = 1
@@ -1352,6 +1412,7 @@ agcls.AgTypeNameMap["FORMATION_FLYER_STOP_CONDITION"] = FORMATION_FLYER_STOP_CON
 
 class EXT_EPHEM_FLIGHT_MODE(IntEnum):
     """Flight mode enums for ExtEphem."""
+   
     EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB = 0
     """ForwardFlightClimb."""
     EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE = 1
@@ -1382,6 +1443,7 @@ agcls.AgTypeNameMap["EXT_EPHEM_FLIGHT_MODE"] = EXT_EPHEM_FLIGHT_MODE
 
 class ACCEL_PERF_MODEL_OVERRIDE(IntEnum):
     """The acceleration performance model override mode."""
+   
     ACCEL_PERF_MODEL_VALUE = 0
     """Use the acceleration performanc model value."""
     ACCEL_OVERRIDE = 1
@@ -1397,6 +1459,7 @@ agcls.AgTypeNameMap["ACCEL_PERF_MODEL_OVERRIDE"] = ACCEL_PERF_MODEL_OVERRIDE
 
 class STATIONKEEPING_STOP_CONDITION(IntEnum):
     """The stop condition options for a stationkeeping strategy."""
+   
     STOP_CONDITION_NOT_SET = 0
     """The basic stopping conditions will be used."""
     STOP_AFTER_TURN_COUNT = 1
@@ -1415,30 +1478,33 @@ agcls.AgTypeNameMap["STATIONKEEPING_STOP_CONDITION"] = STATIONKEEPING_STOP_CONDI
 
 class TURN_DIRECTION(IntEnum):
     """The roll direction for an aileron roll strategy for a basic maneuver procedure."""
+   
     TURN_LEFT = 0
-    """Turn left"""
+    """Turn left."""
     TURN_RIGHT = 2
-    """Turn right"""
+    """Turn right."""
 
-TURN_DIRECTION.TURN_LEFT.__doc__ = "Turn left"
-TURN_DIRECTION.TURN_RIGHT.__doc__ = "Turn right"
+TURN_DIRECTION.TURN_LEFT.__doc__ = "Turn left."
+TURN_DIRECTION.TURN_RIGHT.__doc__ = "Turn right."
 
 agcls.AgTypeNameMap["TURN_DIRECTION"] = TURN_DIRECTION
 
 class PROFILE_CONTROL_LIMIT(IntEnum):
     """Method to define the control limits for a profile strategy of a basic maneuver procedure."""
+   
     PROFILE_ACCEL_PERF_MODEL = 0
-    """Use Accel Perf Model"""
+    """Use Accel Perf Model."""
     PROFILE_PITCH_RATE = 1
-    """Specify the pitch rate"""
+    """Specify the pitch rate."""
 
-PROFILE_CONTROL_LIMIT.PROFILE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model"
-PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE.__doc__ = "Specify the pitch rate"
+PROFILE_CONTROL_LIMIT.PROFILE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model."
+PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE.__doc__ = "Specify the pitch rate."
 
 agcls.AgTypeNameMap["PROFILE_CONTROL_LIMIT"] = PROFILE_CONTROL_LIMIT
 
 class REL_SPEED_ALTITUDE_STOP_CONDITION(IntEnum):
     """The stop condition options for a relative speed/altitude strategy."""
+   
     REL_SPEED_ALTITUDE_STOP_NORMAL = 0
     """The basic stopping conditions will be used."""
     REL_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED = 1
@@ -1466,6 +1532,7 @@ agcls.AgTypeNameMap["REL_SPEED_ALTITUDE_STOP_CONDITION"] = REL_SPEED_ALTITUDE_ST
 
 class RELATIVE_ALTITUDE_MODE(IntEnum):
     """The relative altitude mode for a relative speed/altitude strategy."""
+   
     HOLD_OFFSET_ALTITUDE = 0
     """Maintain the specified altitude offset from the target."""
     HOLD_INIT_ALTITUDE_OFFSET = 1
@@ -1484,6 +1551,7 @@ agcls.AgTypeNameMap["RELATIVE_ALTITUDE_MODE"] = RELATIVE_ALTITUDE_MODE
 
 class FLY_TO_FLIGHT_PATH_ANGLE_MODE(IntEnum):
     """The flight path angle mode mode for a bezier profile strategy."""
+   
     FLY_TO_ALTITUDE_RATE = 0
     """Fly to a specified altitude rate."""
     FLY_TO_FLIGHT_PATH_ANGLE = 1
@@ -1496,6 +1564,7 @@ agcls.AgTypeNameMap["FLY_TO_FLIGHT_PATH_ANGLE_MODE"] = FLY_TO_FLIGHT_PATH_ANGLE_
 
 class PUSH_PULL(IntEnum):
     """The option to pull up or push over for a push/pull profile strategy."""
+   
     PULL_UP = 0
     """Pull up."""
     PUSH_OVER = 1
@@ -1508,6 +1577,7 @@ agcls.AgTypeNameMap["PUSH_PULL"] = PUSH_PULL
 
 class ACCEL_MODE(IntEnum):
     """The acceleration/decelation option for a push/pull profile strategy."""
+   
     ACCEL = 0
     """Accelerate at specified G."""
     DECEL = 1
@@ -1523,6 +1593,7 @@ agcls.AgTypeNameMap["ACCEL_MODE"] = ACCEL_MODE
 
 class DELAY_ALTITUDE_MODE(IntEnum):
     """The altitude options for a delay procedure."""
+   
     DELAY_LEVEL_OFF = 0
     """Use a level off maneuver to fly to the default altitude."""
     DELAY_DEFAULT_CRUISE_ALTITUDE = 1
@@ -1538,6 +1609,7 @@ agcls.AgTypeNameMap["DELAY_ALTITUDE_MODE"] = DELAY_ALTITUDE_MODE
 
 class JOIN_EXIT_ARC_METHOD(IntEnum):
     """The options to join or exit an arc."""
+   
     JOIN_EXIT_OUTBOUND = 0
     """The aircraft begins/ends the procedure on a course away from the site."""
     JOIN_EXIT_ON = 1
@@ -1553,6 +1625,7 @@ agcls.AgTypeNameMap["JOIN_EXIT_ARC_METHOD"] = JOIN_EXIT_ARC_METHOD
 
 class FLIGHT_LINE_PROC_TYPE(IntEnum):
     """The procedure methodology used to calculate the flight line."""
+   
     PROC_TYPE_ENROUTE = 0
     """An enroute procedure type."""
     PROC_TYPE_BASIC_POINT_TO_POINT = 1
@@ -1568,6 +1641,7 @@ agcls.AgTypeNameMap["FLIGHT_LINE_PROC_TYPE"] = FLIGHT_LINE_PROC_TYPE
 
 class TRANSITION_TO_HOVER_MODE(IntEnum):
     """The type of hover to transition to."""
+   
     FULL_STOP = 0
     """Transition to a full stop hover."""
     TRANSLATION_ONLY = 1
@@ -1583,6 +1657,7 @@ agcls.AgTypeNameMap["TRANSITION_TO_HOVER_MODE"] = TRANSITION_TO_HOVER_MODE
 
 class VTOL_RATE_MODE(IntEnum):
     """The rate mode for the VTOL procedure."""
+   
     HALT_AUTOMATIC = 0
     """The rate during the procedure will be maintained."""
     ALWAYS_STOP = 1
@@ -1595,21 +1670,23 @@ agcls.AgTypeNameMap["VTOL_RATE_MODE"] = VTOL_RATE_MODE
 
 class HOLDING_PROFILE_MODE(IntEnum):
     """How the aircraft will perform during the holding pattern with respect to airspeed and altitude."""
+   
     STK8_COMPATIBLE = 0
     """The aircraft will fly the pattern at the speed at which it arrived at the entry point."""
     LEVEL_OFF_CRUISE_SPEED = 1
-    """The aircraft will level off and fly at the cruise speed"""
+    """The aircraft will level off and fly at the cruise speed."""
     CLIMB_DESCENT_ON_STATION = 2
     """The aircraft will climb or descend to the specified altitude."""
 
 HOLDING_PROFILE_MODE.STK8_COMPATIBLE.__doc__ = "The aircraft will fly the pattern at the speed at which it arrived at the entry point."
-HOLDING_PROFILE_MODE.LEVEL_OFF_CRUISE_SPEED.__doc__ = "The aircraft will level off and fly at the cruise speed"
+HOLDING_PROFILE_MODE.LEVEL_OFF_CRUISE_SPEED.__doc__ = "The aircraft will level off and fly at the cruise speed."
 HOLDING_PROFILE_MODE.CLIMB_DESCENT_ON_STATION.__doc__ = "The aircraft will climb or descend to the specified altitude."
 
 agcls.AgTypeNameMap["HOLDING_PROFILE_MODE"] = HOLDING_PROFILE_MODE
 
 class HOLDING_DIRECTION(IntEnum):
     """The turn direction for the aircraft to enter the holding pattern."""
+   
     INBOUND_LEFT_TURN = 0
     """Turn left on the way inbound to the site."""
     INBOUND_RIGHT_TURN = 1
@@ -1628,6 +1705,7 @@ agcls.AgTypeNameMap["HOLDING_DIRECTION"] = HOLDING_DIRECTION
 
 class HOLD_REFUEL_DUMP_MODE(IntEnum):
     """Defines when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
+   
     FULL_NUMER_OF_TURNS = 0
     """Turn left on the way inbound to the site."""
     EXIT_AT_END_OF_TURN = 1
@@ -1643,21 +1721,23 @@ agcls.AgTypeNameMap["HOLD_REFUEL_DUMP_MODE"] = HOLD_REFUEL_DUMP_MODE
 
 class HOLDING_ENTRY_MANEUVER(IntEnum):
     """Defines how the aircraft will enter the holding pattern."""
+   
     HOLD_ENTRY_NO_MANEUVER = 0
     """The aircraft will enter the holding pattern at the normal holding point."""
     USE_STANDARD_ENTRY_TURNS = 1
-    """The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"""
+    """The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook."""
     USE_ALTERNATE_ENTRY_POINTS = 2
     """The aircraft will enter the holding pattern at an alternate entry point."""
 
 HOLDING_ENTRY_MANEUVER.HOLD_ENTRY_NO_MANEUVER.__doc__ = "The aircraft will enter the holding pattern at the normal holding point."
-HOLDING_ENTRY_MANEUVER.USE_STANDARD_ENTRY_TURNS.__doc__ = "The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook"
+HOLDING_ENTRY_MANEUVER.USE_STANDARD_ENTRY_TURNS.__doc__ = "The aircraft will enter the holding pattern using a standard entry maneuvers defined in the FAA Instrument Flying Handbook."
 HOLDING_ENTRY_MANEUVER.USE_ALTERNATE_ENTRY_POINTS.__doc__ = "The aircraft will enter the holding pattern at an alternate entry point."
 
 agcls.AgTypeNameMap["HOLDING_ENTRY_MANEUVER"] = HOLDING_ENTRY_MANEUVER
 
 class VTOL_TRANSITION_MODE(IntEnum):
     """The mode to specify the course of the transition maneuver."""
+   
     TRANSITION_RELATIVE_HDG = 0
     """Specify a heading relative to the previous procedure."""
     TRANSITION_ABSOLUTE_HDG = 1
@@ -1673,6 +1753,7 @@ agcls.AgTypeNameMap["VTOL_TRANSITION_MODE"] = VTOL_TRANSITION_MODE
 
 class VTOL_FINAL_HEADING_MODE(IntEnum):
     """The mode to specify the heading at the end of the maneuver."""
+   
     FINAL_HEADING_RELATIVE = 0
     """Specify a heading relative to the previous procedure."""
     FINAL_HEADING_ABSOLUTE = 1
@@ -1688,6 +1769,7 @@ agcls.AgTypeNameMap["VTOL_FINAL_HEADING_MODE"] = VTOL_FINAL_HEADING_MODE
 
 class VTOL_TRANSLATION_MODE(IntEnum):
     """The mode to specify the translation of the VTOL maneuver."""
+   
     SET_BEARING_AND_RANGE = 0
     """The aircraft will translate on a specific bearing and range."""
     COME_TO_STOP = 1
@@ -1703,6 +1785,7 @@ agcls.AgTypeNameMap["VTOL_TRANSLATION_MODE"] = VTOL_TRANSLATION_MODE
 
 class VTOL_TRANSLATION_FINAL_COURSE_MODE(IntEnum):
     """The mode to specify the final course of the VTOL maneuver."""
+   
     TRANSLATE_DIRECT = 0
     """The aircraft will translate directly along the specified bearing and range."""
     BISECT_INBOUND_OUTBOUND = 1
@@ -1718,6 +1801,7 @@ agcls.AgTypeNameMap["VTOL_TRANSLATION_FINAL_COURSE_MODE"] = VTOL_TRANSLATION_FIN
 
 class HOVER_MODE(IntEnum):
     """The hover mode."""
+   
     HOVER_MODE_FIXED_TIME = 0
     """Hover in place for a fixed time."""
     HOVER_MODE_MANEUVER = 1
@@ -1730,6 +1814,7 @@ agcls.AgTypeNameMap["HOVER_MODE"] = HOVER_MODE
 
 class VTOL_HEADING_MODE(IntEnum):
     """The heading mode for the hover maneuver."""
+   
     HEADING_INDEPENDENT = 0
     """The aircraft's heading is independent of its translation."""
     HEADING_ALIGN_TRANSLATION_COURSE = 1
@@ -1745,6 +1830,7 @@ agcls.AgTypeNameMap["VTOL_HEADING_MODE"] = VTOL_HEADING_MODE
 
 class VERT_LANDING_MODE(IntEnum):
     """The heading mode for a vertical landing maneuver."""
+   
     VERT_LANDING_INDEPENDENT = 0
     """The aircraft's heading is independent of its translation."""
     VERT_LANDING_ALIGN_TRANSLATION_COURSE = 1
@@ -1763,21 +1849,23 @@ agcls.AgTypeNameMap["VERT_LANDING_MODE"] = VERT_LANDING_MODE
 
 class LAUNCH_ATTITUDE_MODE(IntEnum):
     """The attitude mode for the launch procedure."""
+   
     LAUNCH_ALIGN_DIRECTION_VECTOR = 0
     """The aircraft's attitude is aligned with the specified direction vector."""
     LAUNCH_HOLD_PARENT_ATTITUDE = 1
     """The aircraft will maintain the parent vehicle's attiude at the time of launch."""
     LAUNCH_VTOL = 2
-    """The aircraft launches in level flight"""
+    """The aircraft launches in level flight."""
 
 LAUNCH_ATTITUDE_MODE.LAUNCH_ALIGN_DIRECTION_VECTOR.__doc__ = "The aircraft's attitude is aligned with the specified direction vector."
 LAUNCH_ATTITUDE_MODE.LAUNCH_HOLD_PARENT_ATTITUDE.__doc__ = "The aircraft will maintain the parent vehicle's attiude at the time of launch."
-LAUNCH_ATTITUDE_MODE.LAUNCH_VTOL.__doc__ = "The aircraft launches in level flight"
+LAUNCH_ATTITUDE_MODE.LAUNCH_VTOL.__doc__ = "The aircraft launches in level flight."
 
 agcls.AgTypeNameMap["LAUNCH_ATTITUDE_MODE"] = LAUNCH_ATTITUDE_MODE
 
 class FUEL_FLOW_TYPE(IntEnum):
     """The fuel flow type to use for the procedure."""
+   
     FUEL_FLOW_TAKEOFF = 0
     """Fuel flow defined for the current Takeoff performance model."""
     FUEL_FLOW_CRUISE = 1
@@ -1802,6 +1890,7 @@ agcls.AgTypeNameMap["FUEL_FLOW_TYPE"] = FUEL_FLOW_TYPE
 
 class LINE_ORIENTATION(IntEnum):
     """The orientation for a parallel flight line procedure."""
+   
     FLIGHT_LINE_TO_LEFT = 0
     """Left of the previous flight line."""
     FLIGHT_LINE_TO_RIGHT = 1
@@ -1814,6 +1903,7 @@ agcls.AgTypeNameMap["LINE_ORIENTATION"] = LINE_ORIENTATION
 
 class REL_ABS_BEARING(IntEnum):
     """The options for a bearing that can be relative or absolute."""
+   
     RELATIVE_BEARING = 0
     """A bearing relative to the previous course."""
     TRUE_BEARING = 1
@@ -1829,6 +1919,7 @@ agcls.AgTypeNameMap["REL_ABS_BEARING"] = REL_ABS_BEARING
 
 class BASIC_FIXED_WING_PROP_MODE(IntEnum):
     """The option to specify the thrust (jet engines) or power (propellers)."""
+   
     SPECIFY_THRUST = 0
     """Jet - Specify net thrust."""
     SPECIFY_POWER = 1
@@ -1841,6 +1932,7 @@ agcls.AgTypeNameMap["BASIC_FIXED_WING_PROP_MODE"] = BASIC_FIXED_WING_PROP_MODE
 
 class CLIMB_SPEED_TYPE(IntEnum):
     """The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model."""
+   
     CLIMB_SPEED_BEST_RATE = 0
     """The speed at which the aircraft's rate of climb is maximized."""
     CLIMB_SPEED_BEST_ANGLE = 1
@@ -1859,6 +1951,7 @@ agcls.AgTypeNameMap["CLIMB_SPEED_TYPE"] = CLIMB_SPEED_TYPE
 
 class CRUISE_MAX_PERF_SPEED_TYPE(IntEnum):
     """The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model."""
+   
     CORNER_SPEED = 0
     """The lowest speed at which the aircraft can generate lift while pulling maximum Gs."""
     MAX_PS_DRY_THRUST = 1
@@ -1880,6 +1973,7 @@ agcls.AgTypeNameMap["CRUISE_MAX_PERF_SPEED_TYPE"] = CRUISE_MAX_PERF_SPEED_TYPE
 
 class DESCENT_SPEED_TYPE(IntEnum):
     """The method for calculating the aircraft's airspeed while descending."""
+   
     DESCENT_MAX_RANGE_CRUISE = 0
     """A variable airspeed that maximizes the distance that the aircraft can fly."""
     DESCENT_MAX_GLIDE_RATIO = 1
@@ -1901,6 +1995,7 @@ agcls.AgTypeNameMap["DESCENT_SPEED_TYPE"] = DESCENT_SPEED_TYPE
 
 class TAKEOFF_LANDING_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's speed upon leaving the ground or at wheels down."""
+   
     TAKEOFF_LANDING_STALL_SPEED_RATIO = 0
     """A multiple of the aircraft's stall speed."""
     TAKEOFF_LANDING_ANGLE_OF_ATTACK = 1
@@ -1913,6 +2008,7 @@ agcls.AgTypeNameMap["TAKEOFF_LANDING_SPEED_MODE"] = TAKEOFF_LANDING_SPEED_MODE
 
 class DEPARTURE_SPEED_MODE(IntEnum):
     """The method for calculating the aircraft's airspeed upon leaving the ground."""
+   
     MAX_CLIMB_ANGLE = 0
     """The aircraft will fly at the max climb angle."""
     MAX_CLIMB_RATE = 1
@@ -1928,6 +2024,7 @@ agcls.AgTypeNameMap["DEPARTURE_SPEED_MODE"] = DEPARTURE_SPEED_MODE
 
 class ADV_FIXED_WING_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
+   
     EXTERNAL_AERO_FILE = 0
     """Define the aerodynamics using an external .aero file."""
     SUB_SUPER_HYPER_AERO = 1
@@ -1946,6 +2043,7 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_AERO_STRATEGY"] = ADV_FIXED_WING_AERO_STRATE
 
 class ADV_FIXED_WING_GEOMETRY(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
+   
     BASIC_GEOMETRY = 0
     """Define the static properties of an immovable wing."""
     VARIABLE_GEOMETRY = 1
@@ -1958,6 +2056,7 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_GEOMETRY"] = ADV_FIXED_WING_GEOMETRY
 
 class ADV_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     """The powerplant strategy for the Advanced Fixed Wing Tool."""
+   
     ELECTRIC_POWERPLANT = 0
     """An electric engine."""
     EXTERNAL_PROP_FILE = 1
@@ -2000,6 +2099,7 @@ agcls.AgTypeNameMap["ADV_FIXED_WING_POWERPLANT_STRATEGY"] = ADV_FIXED_WING_POWER
 
 class MISSILE_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
+   
     MISSILE_AERO_SIMPLE = 0
     """Simple aerodynamics."""
     MISSILE_AERO_EXTERNAL_FILE = 1
@@ -2015,6 +2115,7 @@ agcls.AgTypeNameMap["MISSILE_AERO_STRATEGY"] = MISSILE_AERO_STRATEGY
 
 class MISSILE_PROP_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
+   
     MISSILE_PROP_SIMPLE = 0
     """Simple propulsion."""
     MISSILE_PROP_EXTERNAL_FILE = 1
@@ -2036,6 +2137,7 @@ agcls.AgTypeNameMap["MISSILE_PROP_STRATEGY"] = MISSILE_PROP_STRATEGY
 
 class ROTORCRAFT_POWERPLANT_TYPE(IntEnum):
     """The powerplant type for a rotorcraft."""
+   
     ROTORCRAFT_ELECTRIC = 0
     """Electric propulsion."""
     ROTORCRAFT_TURBOSHAFT = 1
@@ -2051,6 +2153,7 @@ agcls.AgTypeNameMap["ROTORCRAFT_POWERPLANT_TYPE"] = ROTORCRAFT_POWERPLANT_TYPE
 
 class MINIMIZE_SITE_PROC_TIME_DIFF(IntEnum):
     """Options for minimizing the time difference between the procedure and site times."""
+   
     MINIMIZE_TIME_DIFFERENCE_OFF = 0
     """Do not converge the procedure and site times."""
     MINIMIZE_TIME_DIFFERENCE_ALWAYS = 1
@@ -2066,6 +2169,7 @@ agcls.AgTypeNameMap["MINIMIZE_SITE_PROC_TIME_DIFF"] = MINIMIZE_SITE_PROC_TIME_DI
 
 class STK_OBJECT_WAYPOINT_OFFSET_MODE(IntEnum):
     """The options to offset the site location relative to the STK Object."""
+   
     OFFSET_NONE = 0
     """No offset."""
     OFFSET_BEARING_RANGE = 1
@@ -2084,6 +2188,7 @@ agcls.AgTypeNameMap["STK_OBJECT_WAYPOINT_OFFSET_MODE"] = STK_OBJECT_WAYPOINT_OFF
 
 class SEARCH_PATTERN_COURSE_MODE(IntEnum):
     """The mode to determine the course of the search pattern."""
+   
     COURSE_MODE_LOW = 0
     """Automatically begin the search pattern within 0 - 180 degrees."""
     COURSE_MODE_HIGH = 1
@@ -2099,6 +2204,7 @@ agcls.AgTypeNameMap["SEARCH_PATTERN_COURSE_MODE"] = SEARCH_PATTERN_COURSE_MODE
 
 class DELAY_TURN_DIRECTION(IntEnum):
     """Turn mode for procedures with Delay options."""
+   
     DELAY_TURN_AUTO = 0
     """Automatic turn. Aviator will determine the direction of the turn."""
     DELAY_TURN_LEFT = 1
@@ -2114,6 +2220,7 @@ agcls.AgTypeNameMap["DELAY_TURN_DIRECTION"] = DELAY_TURN_DIRECTION
 
 class TRAJECTORY_BLEND_MODE(IntEnum):
     """The interpolation mode to determine the aircraft's position and velocity."""
+   
     BLEND_BODY_QUADRATIC = 0
     """Quadratic interpolation using the body frame."""
     BLEND_BODY_CUBIC = 1
@@ -2138,6 +2245,7 @@ agcls.AgTypeNameMap["TRAJECTORY_BLEND_MODE"] = TRAJECTORY_BLEND_MODE
 
 class REFERENCE_STATE_PERF_MODE(IntEnum):
     """The type of motion the aircraft is engaged in at the reference state."""
+   
     REFERENCE_STATE_CLIMB = 0
     """Forward Flight - Climb performance mode."""
     REFERENCE_STATE_CRUISE = 1
@@ -2151,9 +2259,9 @@ class REFERENCE_STATE_PERF_MODE(IntEnum):
     REFERENCE_STATE_TAKEOFF = 5
     """Takeoff performance mode."""
     REFERENCE_STATE_LANDING_ROLLOUT = 6
-    """Weight On Wheels - Landing Rollout performance mode"""
+    """Weight On Wheels - Landing Rollout performance mode."""
     REFERENCE_STATE_TAKEOFF_RUN = 7
-    """Weight On Wheels - Takeoff Run performance mode"""
+    """Weight On Wheels - Takeoff Run performance mode."""
 
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB.__doc__ = "Forward Flight - Climb performance mode."
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CRUISE.__doc__ = "Forward Flight - Cruise performance mode."
@@ -2161,13 +2269,14 @@ REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_DESCEND.__doc__ = "Forward Flight - De
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_HOVER.__doc__ = "Hover performance mode."
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING.__doc__ = "Landing performance mode."
 REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF.__doc__ = "Takeoff performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING_ROLLOUT.__doc__ = "Weight On Wheels - Landing Rollout performance mode"
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF_RUN.__doc__ = "Weight On Wheels - Takeoff Run performance mode"
+REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING_ROLLOUT.__doc__ = "Weight On Wheels - Landing Rollout performance mode."
+REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF_RUN.__doc__ = "Weight On Wheels - Takeoff Run performance mode."
 
 agcls.AgTypeNameMap["REFERENCE_STATE_PERF_MODE"] = REFERENCE_STATE_PERF_MODE
 
 class REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE(IntEnum):
     """The mode to specify the longitudinal acceleration of the aircraft."""
+   
     SPECIFY_TAS_DOT = 0
     """Specify the true airspeed acceleration."""
     SPECIFY_GROUND_SPEED_DOT = 1
@@ -2180,6 +2289,7 @@ agcls.AgTypeNameMap["REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE"] = REFERENCE_STATE
 
 class REFERENCE_STATE_LATERAL_ACCEL_MODE(IntEnum):
     """The mode to specify the lateral acceleration of the aircraft."""
+   
     SPECIFY_HEADING_DOT = 0
     """Specify the heading rate of change."""
     SPECIFY_COURSE_DOT = 1
@@ -2192,6 +2302,7 @@ agcls.AgTypeNameMap["REFERENCE_STATE_LATERAL_ACCEL_MODE"] = REFERENCE_STATE_LATE
 
 class REFERENCE_STATE_ATTITUDE_MODE(IntEnum):
     """The mode to specify the attitude rate of change."""
+   
     SPECIFY_PUSH_PULL_G = 0
     """Specify the push/pull G."""
     SPECIFY_PITCH_RATE = 1
@@ -2204,6 +2315,7 @@ agcls.AgTypeNameMap["REFERENCE_STATE_ATTITUDE_MODE"] = REFERENCE_STATE_ATTITUDE_
 
 class AND_OR(IntEnum):
     """The option to specify AND or OR."""
+   
     AND = 0
     """And option."""
     OR = 1
@@ -2216,6 +2328,7 @@ agcls.AgTypeNameMap["AND_OR"] = AND_OR
 
 class JET_ENGINE_TECHNOLOGY_LEVEL(IntEnum):
     """The technology level of the jet engine."""
+   
     IDEAL = 0
     """Ideal (perfect efficiencies)."""
     LEVEL1 = 1
@@ -2240,6 +2353,7 @@ agcls.AgTypeNameMap["JET_ENGINE_TECHNOLOGY_LEVEL"] = JET_ENGINE_TECHNOLOGY_LEVEL
 
 class JET_ENGINE_INTAKE_TYPE(IntEnum):
     """The intake type of the jet engine."""
+   
     SUBSONIC_NACELLES = 0
     """Subsonic nacelles."""
     SUBSONIC_EMBEDDED = 1
@@ -2255,6 +2369,7 @@ agcls.AgTypeNameMap["JET_ENGINE_INTAKE_TYPE"] = JET_ENGINE_INTAKE_TYPE
 
 class JET_ENGINE_TURBINE_TYPE(IntEnum):
     """The turbine type of the jet engine."""
+   
     UNCOOLED = 0
     """Uncooled turbine."""
     COOLED = 1
@@ -2267,6 +2382,7 @@ agcls.AgTypeNameMap["JET_ENGINE_TURBINE_TYPE"] = JET_ENGINE_TURBINE_TYPE
 
 class JET_ENGINE_EXHAUST_NOZZLE_TYPE(IntEnum):
     """The exhaust nozzle type of the jet engine."""
+   
     FIXED_AREA_CONVERGENT = 0
     """Fixed Area Convergent."""
     VARIABLE_AREA_CONVERGENT = 1
@@ -2282,6 +2398,7 @@ agcls.AgTypeNameMap["JET_ENGINE_EXHAUST_NOZZLE_TYPE"] = JET_ENGINE_EXHAUST_NOZZL
 
 class JET_FUEL_TYPE(IntEnum):
     """The jet fuel type."""
+   
     KEROSENE_AFPROP = 0
     """A kerosene fuel model based on AFPROP."""
     KEROSENE_CEA = 1
@@ -2297,6 +2414,7 @@ agcls.AgTypeNameMap["JET_FUEL_TYPE"] = JET_FUEL_TYPE
 
 class AFPROP_FUEL_TYPE(IntEnum):
     """The AFPROP fuel type."""
+   
     AFPROP_OVERRIDE = 0
     """Override the specific energy."""
     AFPROP_JET_A = 1
@@ -2318,6 +2436,7 @@ agcls.AgTypeNameMap["AFPROP_FUEL_TYPE"] = AFPROP_FUEL_TYPE
 
 class CEA_FUEL_TYPE(IntEnum):
     """The CEA fuel type."""
+   
     CEA_OVERRIDE = 0
     """Override the specific energy."""
     CEA_JET_A = 1
@@ -2339,6 +2458,7 @@ agcls.AgTypeNameMap["CEA_FUEL_TYPE"] = CEA_FUEL_TYPE
 
 class TURBINE_MODE(IntEnum):
     """The turbine mode for a Sub/Super/Hypersonic powerplant."""
+   
     TURBINE_MODE_DISABLED = 0
     """Disabled turbine mode."""
     TURBINE_MODE_TURBOJET_BASIC_AB = 1
@@ -2354,6 +2474,7 @@ agcls.AgTypeNameMap["TURBINE_MODE"] = TURBINE_MODE
 
 class RAMJET_MODE(IntEnum):
     """The ramjet mode for a Sub/Super/Hypersonic powerplant."""
+   
     RAMJET_MODE_DISABLED = 0
     """Disabled ramjet mode."""
     RAMJET_MODE_BASIC = 1
@@ -2366,6 +2487,7 @@ agcls.AgTypeNameMap["RAMJET_MODE"] = RAMJET_MODE
 
 class SCRAMJET_MODE(IntEnum):
     """The scramjet mode for a Sub/Super/Hypersonic powerplant."""
+   
     SCRAMJET_MODE_DISABLED = 0
     """Disabled scramjet mode."""
     SCRAMJET_MODE_BASIC = 1
@@ -2378,18 +2500,20 @@ agcls.AgTypeNameMap["SCRAMJET_MODE"] = SCRAMJET_MODE
 
 class NUMERICAL_INTEGRATOR(IntEnum):
     """The numerical integrator to be used for the procedure."""
+   
     RUNGE_KUTTA4 = 0
-    """Runge-Kutta 4th Order Fixed Time Step Integrator"""
+    """Runge-Kutta 4th Order Fixed Time Step Integrator."""
     RUNGE_KUTTA45 = 1
     """Runge-Kutta 4th Order Adaptive Time Step Integrator."""
 
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA4.__doc__ = "Runge-Kutta 4th Order Fixed Time Step Integrator"
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA4.__doc__ = "Runge-Kutta 4th Order Fixed Time Step Integrator."
 NUMERICAL_INTEGRATOR.RUNGE_KUTTA45.__doc__ = "Runge-Kutta 4th Order Adaptive Time Step Integrator."
 
 agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
 class BALLISTIC_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the ballistic 3D strategy of the basic maneuver procedure."""
+   
     BALLISTIC_3D_COMPENSATE_FOR_WIND = 0
     """The vehicle will compensate for the wind along its ballistic trajectory."""
     BALLISTIC_3D_WIND_PUSHES_VEHICLE = 1
@@ -2405,6 +2529,7 @@ agcls.AgTypeNameMap["BALLISTIC_3D_CONTROL_MODE"] = BALLISTIC_3D_CONTROL_MODE
 
 class LAUNCH_DYN_STATE_COORD_FRAME(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
+   
     LAUNCH_DYN_STATE_COORD_FRAME_BODY = 0
     """The object's body frame."""
     LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL = 1
@@ -2417,6 +2542,7 @@ agcls.AgTypeNameMap["LAUNCH_DYN_STATE_COORD_FRAME"] = LAUNCH_DYN_STATE_COORD_FRA
 
 class LAUNCH_DYN_STATE_BEARING_REFERENCE(IntEnum):
     """The vector used as a bearing reference for a LaunchDynState procedure."""
+   
     LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY = 0
     """The object's velocity vector."""
     LAUNCH_DYN_STATE_BEARING_REFERENCE_COORD_FRAME_X = 1
@@ -2432,6 +2558,7 @@ agcls.AgTypeNameMap["LAUNCH_DYN_STATE_BEARING_REFERENCE"] = LAUNCH_DYN_STATE_BEA
 
 class ALTITUDE_REFERENCE(IntEnum):
     """The altitude reference."""
+   
     ALTITUDE_REFERENCE_WGS84 = 0
     """Altitude above WGS84 ground reference."""
     ALTITUDE_REFERENCE_MSL = 1
@@ -2447,6 +2574,7 @@ agcls.AgTypeNameMap["ALTITUDE_REFERENCE"] = ALTITUDE_REFERENCE
 
 class SMOOTH_TURN_FPA_MODE(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
+   
     SMOOTH_TURN_FPA_HOLD_INITIAL = 0
     """Hold the initial flight path angle."""
     SMOOTH_TURN_FPA_LEVEL_OFF = 1
@@ -2459,6 +2587,7 @@ agcls.AgTypeNameMap["SMOOTH_TURN_FPA_MODE"] = SMOOTH_TURN_FPA_MODE
 
 class PITCH_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
+   
     PITCH_3D_COMPENSATE_FOR_WIND = 0
     """The vehicle will compensate for the wind along its trajectory."""
     PITCH_3D_WIND_PUSHES_VEHICLE = 1
@@ -2471,6 +2600,7 @@ agcls.AgTypeNameMap["PITCH_3D_CONTROL_MODE"] = PITCH_3D_CONTROL_MODE
 
 class REFUEL_DUMP_MODE(IntEnum):
     """The modes used to define procedure refuel/dump modes."""
+   
     REFUEL_DUMP_DISABLED = 0
     """RefuelDump Disabled."""
     REFUEL_TOP_OFF = 1
@@ -2501,6 +2631,7 @@ agcls.AgTypeNameMap["REFUEL_DUMP_MODE"] = REFUEL_DUMP_MODE
 
 class BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE(IntEnum):
     """The modes used to define basic maneuver glide speed control modes."""
+   
     GLIDE_SPEED_IMMEDIATE_CHANGE = 0
     """Immediate speed change."""
     GLIDE_SPEED_AT_ALTITUDE = 1
@@ -2513,6 +2644,7 @@ agcls.AgTypeNameMap["BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE"] = BASIC_MANEUVER_
 
 class TARGET_POSITION_VEL_TYPE(IntEnum):
     """The target pos/vel type."""
+   
     SURFACE = 0
     """Noisy Surface Target PosVel."""
     BEARING = 1
@@ -2528,7 +2660,8 @@ agcls.AgTypeNameMap["TARGET_POSITION_VEL_TYPE"] = TARGET_POSITION_VEL_TYPE
 
 
 class ISite(object):
-    """Interface to access Site options"""
+    """Interface to access Site options."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2571,6 +2704,7 @@ agcls.AgTypeNameMap["ISite"] = ISite
 
 class IWindModel(object):
     """Interface used to access the wind model for a mission, scenario, or procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2683,6 +2817,7 @@ agcls.AgTypeNameMap["IWindModel"] = IWindModel
 
 class IADDSMessage(object):
     """Interface used to access a message from the NOAA ADDS forecast."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2752,6 +2887,7 @@ agcls.AgTypeNameMap["IADDSMessage"] = IADDSMessage
 
 class IFuelTankInternal(object):
     """Interface used to set an aircraft's internal fuel tank."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -2883,6 +3019,7 @@ agcls.AgTypeNameMap["IFuelTankInternal"] = IFuelTankInternal
 
 class IFuelTankExternal(object):
     """Interface used to set an aircraft's external fuel tank."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3015,6 +3152,7 @@ agcls.AgTypeNameMap["IFuelTankExternal"] = IFuelTankExternal
 
 class IPayloadStation(object):
     """Interface used to set an aircraft's payload station."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3116,6 +3254,7 @@ agcls.AgTypeNameMap["IPayloadStation"] = IPayloadStation
 
 class IAircraftModel(object):
     """Interface used to access the aircraft options in the Aviator catalog."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3247,6 +3386,7 @@ agcls.AgTypeNameMap["IAircraftModel"] = IAircraftModel
 
 class IAircraftSimpleAero(object):
     """Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3343,6 +3483,7 @@ agcls.AgTypeNameMap["IAircraftSimpleAero"] = IAircraftSimpleAero
 
 class ILevelTurns(object):
     """Interface used to access the Level Turns Transitions options found in the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3456,6 +3597,7 @@ agcls.AgTypeNameMap["ILevelTurns"] = ILevelTurns
 
 class IAttitudeTransitions(object):
     """Interface used to access the Attitude Transitions options found in the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3534,6 +3676,7 @@ agcls.AgTypeNameMap["IAttitudeTransitions"] = IAttitudeTransitions
 
 class IClimbAndDescentTransitions(object):
     """Interface used to access the Climb and Descent Transitions options found in the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3639,6 +3782,7 @@ agcls.AgTypeNameMap["IClimbAndDescentTransitions"] = IClimbAndDescentTransitions
 
 class ICatalogItem(object):
     """Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3773,6 +3917,7 @@ agcls.AgTypeNameMap["ICatalogItem"] = ICatalogItem
 
 class IAircraftBasicClimbModel(object):
     """Interface used to access the basic climb model options for a climb model of an aircraft in the Aviator catalog."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -3957,6 +4102,7 @@ agcls.AgTypeNameMap["IAircraftBasicClimbModel"] = IAircraftBasicClimbModel
 
 class IAircraftBasicAccelerationModel(object):
     """Interface used to access the basic acceleration model options for an acceleration model of an aircraft in the Aviator catalog."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4034,6 +4180,7 @@ agcls.AgTypeNameMap["IAircraftBasicAccelerationModel"] = IAircraftBasicAccelerat
 
 class IAircraftCategory(object):
     """Interface used to access the Aircraft Category in the Aviator Catalog."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -4085,6 +4232,7 @@ agcls.AgTypeNameMap["IAircraftCategory"] = IAircraftCategory
 
 class IRunwayCategory(object):
     """Interface used to access runways in the Aviator catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4136,6 +4284,7 @@ agcls.AgTypeNameMap["IRunwayCategory"] = IRunwayCategory
 
 class IBasicManeuverStrategy(object):
     """Interface used to access options for a Basic Maneuver Strategy."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4161,6 +4310,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategy"] = IBasicManeuverStrategy
 
 class IAircraftVTOL(object):
     """Interface used to access the VTOL options for an aircraft in the Aviator catalog."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4201,6 +4351,7 @@ agcls.AgTypeNameMap["IAircraftVTOL"] = IAircraftVTOL
 
 class IAircraftExternalAero(object):
     """Interface used to access the External File Aerodynamics options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4347,6 +4498,7 @@ agcls.AgTypeNameMap["IAircraftExternalAero"] = IAircraftExternalAero
 
 class IAircraftSimpleProp(object):
     """Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4433,6 +4585,7 @@ agcls.AgTypeNameMap["IAircraftSimpleProp"] = IAircraftSimpleProp
 
 class IAircraftExternalProp(object):
     """Interface used to access the External File Propulsion options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4562,6 +4715,7 @@ agcls.AgTypeNameMap["IAircraftExternalProp"] = IAircraftExternalProp
 
 class IAircraftBasicFixedWingProp(object):
     """Interface used to access the Basic Fixed Wing Propulsion options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -4792,6 +4946,7 @@ agcls.AgTypeNameMap["IAircraftBasicFixedWingProp"] = IAircraftBasicFixedWingProp
 
 class IAircraftAdvClimbModel(object):
     """Interface used to access the advanced climb model options for a climb model of an aircraft in the Aviator catalog."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5001,6 +5156,7 @@ agcls.AgTypeNameMap["IAircraftAdvClimbModel"] = IAircraftAdvClimbModel
 
 class IAircraftBasicCruiseModel(object):
     """Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog."""
+
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5303,6 +5459,7 @@ agcls.AgTypeNameMap["IAircraftBasicCruiseModel"] = IAircraftBasicCruiseModel
 
 class IAircraftAdvCruiseModel(object):
     """Interface used to access the advanced cruise model options for a cruise model of an aircraft in the Aviator catalog."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5451,6 +5608,7 @@ agcls.AgTypeNameMap["IAircraftAdvCruiseModel"] = IAircraftAdvCruiseModel
 
 class IAircraftBasicDescentModel(object):
     """Interface used to access the basic descent model options for a descent model of an aircraft in the Aviator catalog."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5635,6 +5793,7 @@ agcls.AgTypeNameMap["IAircraftBasicDescentModel"] = IAircraftBasicDescentModel
 
 class IAircraftAdvDescentModel(object):
     """Interface used to access the advanced descent model options for a descent model of an aircraft in the Aviator catalog."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5827,6 +5986,7 @@ agcls.AgTypeNameMap["IAircraftAdvDescentModel"] = IAircraftAdvDescentModel
 
 class IAircraftBasicLandingModel(object):
     """Interface used to access the basic landing model options for a landing model of an aircraft in the Aviator catalog."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -5957,6 +6117,7 @@ agcls.AgTypeNameMap["IAircraftBasicLandingModel"] = IAircraftBasicLandingModel
 
 class IAircraftAdvLandingModel(object):
     """Interface used to access the advanced landing model options for a landing model of an aircraft in the Aviator catalog."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6031,7 +6192,7 @@ class IAircraftAdvLandingModel(object):
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def set_angle_of_attack(self, angleOfAttack:typing.Any) -> None:
-        """Set the landing speed mode to AngleOfAttack and specify the angle of attack"""
+        """Set the landing speed mode to AngleOfAttack and specify the angle of attack."""
         return self._intf.invoke(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_angle_of_attack_metadata, angleOfAttack)
 
     _get_flaps_metadata = { "name" : "flaps",
@@ -6095,6 +6256,7 @@ agcls.AgTypeNameMap["IAircraftAdvLandingModel"] = IAircraftAdvLandingModel
 
 class IAircraftBasicTakeoffModel(object):
     """Interface used to access the basic takeoff model options for a takeoff model of an aircraft in the Aviator catalog."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6269,6 +6431,7 @@ agcls.AgTypeNameMap["IAircraftBasicTakeoffModel"] = IAircraftBasicTakeoffModel
 
 class IAircraftAdvTakeoffModel(object):
     """Interface used to access the advanced takeoff model options for a takeoff model of an aircraft in the Aviator catalog."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6346,7 +6509,7 @@ class IAircraftAdvTakeoffModel(object):
             "arg_types" : (agcom.VARIANT,),
             "marshallers" : (agmarshall.VARIANT_arg,) }
     def set_angle_of_attack(self, angleOfAttack:typing.Any) -> None:
-        """Set the takeoff speed mode to AngleOfAttack and specify the angle of attack"""
+        """Set the takeoff speed mode to AngleOfAttack and specify the angle of attack."""
         return self._intf.invoke(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_angle_of_attack_metadata, angleOfAttack)
 
     _get_flaps_metadata = { "name" : "flaps",
@@ -6433,6 +6596,7 @@ agcls.AgTypeNameMap["IAircraftAdvTakeoffModel"] = IAircraftAdvTakeoffModel
 
 class IAircraftVTOLModel(object):
     """Interface used to access the options for a VTOL performance model of an aircraft."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6681,6 +6845,7 @@ agcls.AgTypeNameMap["IAircraftVTOLModel"] = IAircraftVTOLModel
 
 class IAircraftTerrainFollow(object):
     """Interface used to access the TerrainFollow options for an aircraft in the Aviator catalog."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -6721,6 +6886,7 @@ agcls.AgTypeNameMap["IAircraftTerrainFollow"] = IAircraftTerrainFollow
 
 class IPerformanceModelOptions(object):
     """Interface used to change the active performance model in a phase for a given model type."""
+
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -6812,6 +6978,7 @@ agcls.AgTypeNameMap["IPerformanceModelOptions"] = IPerformanceModelOptions
 
 class IAdvFixedWingTool(object):
     """Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft."""
+
     _num_methods = 41
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -7204,6 +7371,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTool"] = IAdvFixedWingTool
 
 class IAdvFixedWingExternalAero(object):
     """Interface used to access the options for an external file aerodynamic strategy in the advanced fixed wing tool."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7254,6 +7422,7 @@ agcls.AgTypeNameMap["IAdvFixedWingExternalAero"] = IAdvFixedWingExternalAero
 
 class IAdvFixedWingSubsonicAero(object):
     """Interface used to access the options for the subsonic aerodynamic strategy in the advanced fixed wing tool."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7386,6 +7555,7 @@ agcls.AgTypeNameMap["IAdvFixedWingSubsonicAero"] = IAdvFixedWingSubsonicAero
 
 class IAdvFixedWingSubSuperHypersonicAero(object):
     """Interface used to access the options for the Sub/Super/Hypersonic aerodynamic strategy in the advanced fixed wing tool."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7554,6 +7724,7 @@ agcls.AgTypeNameMap["IAdvFixedWingSubSuperHypersonicAero"] = IAdvFixedWingSubSup
 
 class IAdvFixedWingSubSuperHypersonicProp(object):
     """Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -7803,6 +7974,7 @@ agcls.AgTypeNameMap["IAdvFixedWingSubSuperHypersonicProp"] = IAdvFixedWingSubSup
 
 class IAdvFixedWingSupersonicAero(object):
     """Interface used to access the options for the supersonic aerodynamic strategy in the advanced fixed wing tool."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8007,6 +8179,7 @@ agcls.AgTypeNameMap["IAdvFixedWingSupersonicAero"] = IAdvFixedWingSupersonicAero
 
 class IAdvFixedWingGeometryBasic(object):
     """Interface used to access the options for a basic geometry wing in the advanced fixed wing tool."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8066,6 +8239,7 @@ agcls.AgTypeNameMap["IAdvFixedWingGeometryBasic"] = IAdvFixedWingGeometryBasic
 
 class IAdvFixedWingGeometryVariable(object):
     """Interface used to access the options for a variable geometry wing in the advanced fixed wing tool."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8179,6 +8353,7 @@ agcls.AgTypeNameMap["IAdvFixedWingGeometryVariable"] = IAdvFixedWingGeometryVari
 
 class IAdvFixedWingElectricPowerplant(object):
     """Interface used to access the options for the Electric powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8257,6 +8432,7 @@ agcls.AgTypeNameMap["IAdvFixedWingElectricPowerplant"] = IAdvFixedWingElectricPo
 
 class IAdvFixedWingExternalProp(object):
     """Interface used to access the options for the External Prop File powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8307,6 +8483,7 @@ agcls.AgTypeNameMap["IAdvFixedWingExternalProp"] = IAdvFixedWingExternalProp
 
 class IAdvFixedWingPistonPowerplant(object):
     """Interface used to access the options for the Piston powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8421,6 +8598,7 @@ agcls.AgTypeNameMap["IAdvFixedWingPistonPowerplant"] = IAdvFixedWingPistonPowerp
 
 class IAdvFixedWingTurbopropPowerplant(object):
     """Interface used to access the options for the Turboprop powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8517,6 +8695,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTurbopropPowerplant"] = IAdvFixedWingTurboprop
 
 class IAdvFixedWingEmpiricalJetEngine(object):
     """Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8613,6 +8792,7 @@ agcls.AgTypeNameMap["IAdvFixedWingEmpiricalJetEngine"] = IAdvFixedWingEmpiricalJ
 
 class IAdvFixedWingTurbojetBasicABProp(object):
     """Interface used to access the options for the Turbojet - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8725,7 +8905,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def afterburner_on(self) -> bool:
-        """Opt whether to specify the design point with the afterburner on. """
+        """Opt whether to specify the design point with the afterburner on."""
         return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
@@ -8862,6 +9042,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTurbojetBasicABProp"] = IAdvFixedWingTurbojetB
 
 class IAdvFixedWingTurbofanBasicABProp(object):
     """Interface used to access the options for the Turbofan - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -8976,7 +9157,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def afterburner_on(self) -> bool:
-        """Opt whether to specify the design point with the afterburner on. """
+        """Opt whether to specify the design point with the afterburner on."""
         return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
@@ -9129,6 +9310,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABProp"] = IAdvFixedWingTurbofanB
 
 class IAviatorVehicle(object):
     """Interface for a vehicle in Aviator."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9161,6 +9343,7 @@ agcls.AgTypeNameMap["IAviatorVehicle"] = IAviatorVehicle
 
 class IMissileModel(object):
     """Interface used to access the missile options in the Aviator catalog."""
+
     _num_methods = 47
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9604,6 +9787,7 @@ agcls.AgTypeNameMap["IMissileModel"] = IMissileModel
 
 class IMissileAero(object):
     """Interface used to access the aerodynamics options for a missile."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9673,6 +9857,7 @@ agcls.AgTypeNameMap["IMissileAero"] = IMissileAero
 
 class IMissileProp(object):
     """Interface used to access the Propulsion options for a missile."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9760,6 +9945,7 @@ agcls.AgTypeNameMap["IMissileProp"] = IMissileProp
 
 class IMissileSimpleAero(object):
     """Interface used to access the Simple aerodynamics options for a missile."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9864,6 +10050,7 @@ agcls.AgTypeNameMap["IMissileSimpleAero"] = IMissileSimpleAero
 
 class IMissileSimpleProp(object):
     """Interface used to access the Simple propulsion options for a missile."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -9942,6 +10129,7 @@ agcls.AgTypeNameMap["IMissileSimpleProp"] = IMissileSimpleProp
 
 class IMissileExternalAero(object):
     """Interface used to access the External aerodynamics options for a missile."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10027,6 +10215,7 @@ agcls.AgTypeNameMap["IMissileExternalAero"] = IMissileExternalAero
 
 class IMissileExternalProp(object):
     """Interface used to access the External Prop file options for a missile."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10103,6 +10292,7 @@ agcls.AgTypeNameMap["IMissileExternalProp"] = IMissileExternalProp
 
 class IMissileAdvancedAero(object):
     """Interface used to access the Advanced aerodynamics options for a missile."""
+
     _num_methods = 48
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10559,6 +10749,7 @@ agcls.AgTypeNameMap["IMissileAdvancedAero"] = IMissileAdvancedAero
 
 class IMissileRamjetProp(object):
     """Interface used to access the Ramjet propulsion options for a missile."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10781,6 +10972,7 @@ agcls.AgTypeNameMap["IMissileRamjetProp"] = IMissileRamjetProp
 
 class IMissileRocketProp(object):
     """Interface used to access the Rocket propulsion options for a missile."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -10967,6 +11159,7 @@ agcls.AgTypeNameMap["IMissileRocketProp"] = IMissileRocketProp
 
 class IMissileTurbojetProp(object):
     """Interface used to access the Turbojet propulsion options for a missile."""
+
     _num_methods = 30
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11261,6 +11454,7 @@ agcls.AgTypeNameMap["IMissileTurbojetProp"] = IMissileTurbojetProp
 
 class IRotorcraftModel(object):
     """Interface used to access the rotorcraft options in the Aviator catalog."""
+
     _num_methods = 44
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11678,6 +11872,7 @@ agcls.AgTypeNameMap["IRotorcraftModel"] = IRotorcraftModel
 
 class IRotorcraftAero(object):
     """Interface used to access the aerodynamics options for a rotorcraft."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11900,6 +12095,7 @@ agcls.AgTypeNameMap["IRotorcraftAero"] = IRotorcraftAero
 
 class IRotorcraftProp(object):
     """Interface used to access the Propulsion options for a rotorcraft."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -11978,6 +12174,7 @@ agcls.AgTypeNameMap["IRotorcraftProp"] = IRotorcraftProp
 
 class IUserRunwaySource(object):
     """Interface used to access the user runways in the Aviator catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12026,6 +12223,7 @@ agcls.AgTypeNameMap["IUserRunwaySource"] = IUserRunwaySource
 
 class IUserRunway(object):
     """Interface used to access a user runway in the Aviator catalog."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12129,7 +12327,7 @@ class IUserRunway(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def length(self) -> float:
-        """The length of the runway"""
+        """The length of the runway."""
         return self._intf.get_property(IUserRunway._metadata, IUserRunway._get_length_metadata)
 
     _set_length_metadata = { "name" : "length",
@@ -12137,7 +12335,7 @@ class IUserRunway(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @length.setter
     def length(self, newVal:float) -> None:
-        """The length of the runway"""
+        """The length of the runway."""
         return self._intf.set_property(IUserRunway._metadata, IUserRunway._set_length_metadata, newVal)
 
     _get_low_end_heading_metadata = { "name" : "low_end_heading",
@@ -12208,6 +12406,7 @@ agcls.AgTypeNameMap["IUserRunway"] = IUserRunway
 
 class IARINC424Item(object):
     """Interface used to access the options for an ARINC424 Item found in the Aviator catalog."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12272,6 +12471,7 @@ agcls.AgTypeNameMap["IARINC424Item"] = IARINC424Item
 
 class IARINC424Source(object):
     """Interface used to access the options for any ARINC424 source in the Aviator catalog."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12366,6 +12566,7 @@ agcls.AgTypeNameMap["IARINC424Source"] = IARINC424Source
 
 class IDAFIFSource(object):
     """Interface used to access the options for any DAFIF source in the Aviator catalog."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12451,6 +12652,7 @@ agcls.AgTypeNameMap["IDAFIFSource"] = IDAFIFSource
 
 class IUserVTOLPoint(object):
     """Interface used to access a user VTOL Point in the Aviator catalog."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12561,6 +12763,7 @@ agcls.AgTypeNameMap["IUserVTOLPoint"] = IUserVTOLPoint
 
 class IUserVTOLPointSource(object):
     """Interface used to access the user VTOL Points in the Aviator catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12609,6 +12812,7 @@ agcls.AgTypeNameMap["IUserVTOLPointSource"] = IUserVTOLPointSource
 
 class IUserWaypoint(object):
     """Interface used to access a user waypoint in the Aviator catalog."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12693,6 +12897,7 @@ agcls.AgTypeNameMap["IUserWaypoint"] = IUserWaypoint
 
 class IUserWaypointSource(object):
     """Interface used to access the user waypoints in the Aviator catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12741,6 +12946,7 @@ agcls.AgTypeNameMap["IUserWaypointSource"] = IUserWaypointSource
 
 class IPropulsionEfficiencies(object):
     """Interface used to access the options for the Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12837,6 +13043,7 @@ agcls.AgTypeNameMap["IPropulsionEfficiencies"] = IPropulsionEfficiencies
 
 class IFuelModelKeroseneAFPROP(object):
     """Interface used to access the options for Kerosense - CEA fuel for a thermodynamic a jet engine model."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12897,6 +13104,7 @@ agcls.AgTypeNameMap["IFuelModelKeroseneAFPROP"] = IFuelModelKeroseneAFPROP
 
 class IFuelModelKeroseneCEA(object):
     """Interface used to access the options for Kerosense - CEA fuel for a thermodynamic a jet engine model."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -12957,6 +13165,7 @@ agcls.AgTypeNameMap["IFuelModelKeroseneCEA"] = IFuelModelKeroseneCEA
 
 class IAdvFixedWingRamjetBasic(object):
     """Interface used to access the options for a basic Ramjet mode."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13116,6 +13325,7 @@ agcls.AgTypeNameMap["IAdvFixedWingRamjetBasic"] = IAdvFixedWingRamjetBasic
 
 class IAdvFixedWingScramjetBasic(object):
     """Interface used to access the options for a basic Scramjet mode."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13275,6 +13485,7 @@ agcls.AgTypeNameMap["IAdvFixedWingScramjetBasic"] = IAdvFixedWingScramjetBasic
 
 class IRefuelDumpProperties(object):
     """Interface used to access the refuel/dump properties for the current procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13308,7 +13519,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.AgEnum_arg(REFUEL_DUMP_MODE),) }
     @property
     def refuel_dump_mode(self) -> "REFUEL_DUMP_MODE":
-        """Get the RefuelDumpMode"""
+        """Get the RefuelDumpMode."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_refuel_dump_mode_metadata)
 
     _get_refuel_dump_mode_value_metadata = { "name" : "refuel_dump_mode_value",
@@ -13316,14 +13527,14 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def refuel_dump_mode_value(self) -> float:
-        """Get the RefuelDumpModeValue if applicable"""
+        """Get the RefuelDumpModeValue if applicable."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_refuel_dump_mode_value_metadata)
 
     _set_refuel_dump_mode_metadata = { "name" : "set_refuel_dump_mode",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.AgEnum_arg(REFUEL_DUMP_MODE), agmarshall.DOUBLE_arg,) }
     def set_refuel_dump_mode(self, mode:"REFUEL_DUMP_MODE", value:float) -> None:
-        """Set RefuelDumpMode and RefuelDumpModeValue if applicable"""
+        """Set RefuelDumpMode and RefuelDumpModeValue if applicable."""
         return self._intf.invoke(IRefuelDumpProperties._metadata, IRefuelDumpProperties._set_refuel_dump_mode_metadata, mode, value)
 
     _get_refuel_dump_rate_metadata = { "name" : "refuel_dump_rate",
@@ -13331,7 +13542,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def refuel_dump_rate(self) -> float:
-        """Get the RefuelDump rate"""
+        """Get the RefuelDump rate."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_refuel_dump_rate_metadata)
 
     _set_refuel_dump_rate_metadata = { "name" : "refuel_dump_rate",
@@ -13339,7 +13550,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @refuel_dump_rate.setter
     def refuel_dump_rate(self, newVal:float) -> None:
-        """Set the RefuelDump rate"""
+        """Set the RefuelDump rate."""
         return self._intf.set_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._set_refuel_dump_rate_metadata, newVal)
 
     _get_refuel_dump_time_offset_metadata = { "name" : "refuel_dump_time_offset",
@@ -13347,7 +13558,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def refuel_dump_time_offset(self) -> float:
-        """Get the RefuelDump time offset"""
+        """Get the RefuelDump time offset."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_refuel_dump_time_offset_metadata)
 
     _set_refuel_dump_time_offset_metadata = { "name" : "refuel_dump_time_offset",
@@ -13355,7 +13566,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @refuel_dump_time_offset.setter
     def refuel_dump_time_offset(self, newVal:float) -> None:
-        """Set the RefuelDump time offset"""
+        """Set the RefuelDump time offset."""
         return self._intf.set_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._set_refuel_dump_time_offset_metadata, newVal)
 
     _get_can_use_end_of_enroute_segment_as_epoch_metadata = { "name" : "can_use_end_of_enroute_segment_as_epoch",
@@ -13363,7 +13574,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def can_use_end_of_enroute_segment_as_epoch(self) -> bool:
-        """Can use end of enroute segment as the epoch"""
+        """Can use end of enroute segment as the epoch."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_can_use_end_of_enroute_segment_as_epoch_metadata)
 
     _get_use_end_of_enroute_segment_as_epoch_metadata = { "name" : "use_end_of_enroute_segment_as_epoch",
@@ -13371,7 +13582,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_end_of_enroute_segment_as_epoch(self) -> bool:
-        """Use end of enroute segment as the epoch"""
+        """Use end of enroute segment as the epoch."""
         return self._intf.get_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._get_use_end_of_enroute_segment_as_epoch_metadata)
 
     _set_use_end_of_enroute_segment_as_epoch_metadata = { "name" : "use_end_of_enroute_segment_as_epoch",
@@ -13379,7 +13590,7 @@ class IRefuelDumpProperties(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @use_end_of_enroute_segment_as_epoch.setter
     def use_end_of_enroute_segment_as_epoch(self, newVal:bool) -> None:
-        """Use end of enroute segment as the epoch"""
+        """Use end of enroute segment as the epoch."""
         return self._intf.set_property(IRefuelDumpProperties._metadata, IRefuelDumpProperties._set_use_end_of_enroute_segment_as_epoch_metadata, newVal)
 
 
@@ -13388,6 +13599,7 @@ agcls.AgTypeNameMap["IRefuelDumpProperties"] = IRefuelDumpProperties
 
 class IProcedureFastTimeOptions(object):
     """Interface used to access the fast time options (without error or constraint checks) for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13454,6 +13666,7 @@ agcls.AgTypeNameMap["IProcedureFastTimeOptions"] = IProcedureFastTimeOptions
 
 class IAtmosphereModelBasic(object):
     """Interface used to access the basic atmosphere model."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13577,6 +13790,7 @@ agcls.AgTypeNameMap["IAtmosphereModelBasic"] = IAtmosphereModelBasic
 
 class IAtmosphereModel(object):
     """Interface used to access the atmosphere model for a mission, scenario, or procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13662,6 +13876,7 @@ agcls.AgTypeNameMap["IAtmosphereModel"] = IAtmosphereModel
 
 class IADDSMessageCollection(object):
     """Interface used to access the collection of messages from the NOAA ADDS forecast."""
+
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -13743,6 +13958,7 @@ agcls.AgTypeNameMap["IADDSMessageCollection"] = IADDSMessageCollection
 
 class IWindModelADDS(object):
     """Interface used to access the options for a NOAA ADDS wind model."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13892,6 +14108,7 @@ agcls.AgTypeNameMap["IWindModelADDS"] = IWindModelADDS
 
 class IWindModelConstant(object):
     """Interface used to access the options for a Constant Bearing/Speed wind model."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -13988,6 +14205,7 @@ agcls.AgTypeNameMap["IWindModelConstant"] = IWindModelConstant
 
 class IStation(object):
     """Interface used to access a station for an Aviator aircraft."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14013,6 +14231,7 @@ agcls.AgTypeNameMap["IStation"] = IStation
 
 class IStationCollection(object):
     """Interface used to access the list of stations for an Aviator aircraft."""
+
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -14088,7 +14307,7 @@ class IStationCollection(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def add_internal_fuel_tank(self) -> "FuelTankInternal":
-        """Add an internal fuel tank"""
+        """Add an internal fuel tank."""
         return self._intf.invoke(IStationCollection._metadata, IStationCollection._add_internal_fuel_tank_metadata, out_arg())
 
     _get_payload_station_by_name_metadata = { "name" : "get_payload_station_by_name",
@@ -14102,7 +14321,7 @@ class IStationCollection(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     def add_payload_station(self) -> "PayloadStation":
-        """Add a payload station"""
+        """Add a payload station."""
         return self._intf.invoke(IStationCollection._metadata, IStationCollection._add_payload_station_metadata, out_arg())
 
     _contains_station_metadata = { "name" : "contains_station",
@@ -14143,6 +14362,7 @@ agcls.AgTypeNameMap["IStationCollection"] = IStationCollection
 
 class IConfiguration(object):
     """Interface used to change an aircraft's configuration for an Aviator mission."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14352,6 +14572,7 @@ agcls.AgTypeNameMap["IConfiguration"] = IConfiguration
 
 class ICatalogSource(object):
     """Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aircraft Models, ARINC424runways, User Runways, etc."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14409,6 +14630,7 @@ agcls.AgTypeNameMap["ICatalogSource"] = ICatalogSource
 
 class IAircraftModels(object):
     """Interface for the User Aircraft Models in the Aviator Catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14457,6 +14679,7 @@ agcls.AgTypeNameMap["IAircraftModels"] = IAircraftModels
 
 class IMissileModels(object):
     """Interface for the User Missile Models in the Aviator Catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14505,6 +14728,7 @@ agcls.AgTypeNameMap["IMissileModels"] = IMissileModels
 
 class IRotorcraftModels(object):
     """Interface for the User Rotorcraft Models in the Aviator Catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14553,6 +14777,7 @@ agcls.AgTypeNameMap["IRotorcraftModels"] = IRotorcraftModels
 
 class IBasicFixedWingLiftHelper(object):
     """Interface used to access Lift Coefficient Helper in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 0
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -14578,6 +14803,7 @@ agcls.AgTypeNameMap["IBasicFixedWingLiftHelper"] = IBasicFixedWingLiftHelper
 
 class IAircraftBasicFixedWingAero(object):
     """Interface used to access Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -14890,6 +15116,7 @@ agcls.AgTypeNameMap["IAircraftBasicFixedWingAero"] = IAircraftBasicFixedWingAero
 
 class IAircraftAero(object):
     """Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15004,6 +15231,7 @@ agcls.AgTypeNameMap["IAircraftAero"] = IAircraftAero
 
 class IAircraftProp(object):
     """Interface used to access the propulsion options for the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15136,6 +15364,7 @@ agcls.AgTypeNameMap["IAircraftProp"] = IAircraftProp
 
 class IAircraftAccelerationMode(object):
     """Interface used to set the Acceleration Mode for the Advanced Acceleration Model of an aircraft."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15196,6 +15425,7 @@ agcls.AgTypeNameMap["IAircraftAccelerationMode"] = IAircraftAccelerationMode
 
 class IAircraftAdvAccelerationModel(object):
     """Interface used to access the Advanced Acceleration Model options of an aircraft."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15264,6 +15494,7 @@ agcls.AgTypeNameMap["IAircraftAdvAccelerationModel"] = IAircraftAdvAccelerationM
 
 class IAeroPropManeuverModeHelper(object):
     """Interface used to access the The calculation mode for the Aero/Prop maneuver mode helper. Helper found in the Basic Acceleration Model of an aircraft."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15458,6 +15689,7 @@ agcls.AgTypeNameMap["IAeroPropManeuverModeHelper"] = IAeroPropManeuverModeHelper
 
 class ICatalogRunway(object):
     """Interface used to access a runway in the Aviator catalog."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15483,6 +15715,7 @@ agcls.AgTypeNameMap["ICatalogRunway"] = ICatalogRunway
 
 class ICatalogAirport(object):
     """Interface used to access a airport in the Aviator catalog."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15508,6 +15741,7 @@ agcls.AgTypeNameMap["ICatalogAirport"] = ICatalogAirport
 
 class ICatalogNavaid(object):
     """Interface used to access a navaid in the Aviator catalog."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15533,6 +15767,7 @@ agcls.AgTypeNameMap["ICatalogNavaid"] = ICatalogNavaid
 
 class ICatalogVTOLPoint(object):
     """Interface used to access a VTOL Point in the Aviator catalog."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15558,6 +15793,7 @@ agcls.AgTypeNameMap["ICatalogVTOLPoint"] = ICatalogVTOLPoint
 
 class ICatalogWaypoint(object):
     """Interface used to access a waypoint in the Aviator catalog."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15583,6 +15819,7 @@ agcls.AgTypeNameMap["ICatalogWaypoint"] = ICatalogWaypoint
 
 class IARINC424Airport(object):
     """This interface is deprecated. Use IARINC424Item instead."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15615,6 +15852,7 @@ agcls.AgTypeNameMap["IARINC424Airport"] = IARINC424Airport
 
 class IDAFIFItem(object):
     """Interface used to access the options for an DAFIF Item found in the Aviator catalog."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15679,6 +15917,7 @@ agcls.AgTypeNameMap["IDAFIFItem"] = IDAFIFItem
 
 class IARINC424Runway(object):
     """This interface is deprecated. Use IARINC424Item instead."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15711,6 +15950,7 @@ agcls.AgTypeNameMap["IARINC424Runway"] = IARINC424Runway
 
 class IAirportCategory(object):
     """Interface used to access the airports in the Aviator catalog."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15744,6 +15984,7 @@ agcls.AgTypeNameMap["IAirportCategory"] = IAirportCategory
 
 class INavaidCategory(object):
     """Interface used to access the navaids in the Aviator catalog."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15777,6 +16018,7 @@ agcls.AgTypeNameMap["INavaidCategory"] = INavaidCategory
 
 class IVTOLPointCategory(object):
     """Interface used to access the VTOL Points in the Aviator catalog."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15828,6 +16070,7 @@ agcls.AgTypeNameMap["IVTOLPointCategory"] = IVTOLPointCategory
 
 class IWaypointCategory(object):
     """Interface used to access the waypoints in the Aviator catalog."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -15951,6 +16194,7 @@ agcls.AgTypeNameMap["IWaypointCategory"] = IWaypointCategory
 
 class IAircraftClimb(object):
     """Interface used to access the climb options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16007,6 +16251,7 @@ agcls.AgTypeNameMap["IAircraftClimb"] = IAircraftClimb
 
 class IAircraftCruise(object):
     """Interface used to access the cruise options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16063,6 +16308,7 @@ agcls.AgTypeNameMap["IAircraftCruise"] = IAircraftCruise
 
 class IAircraftDescent(object):
     """Interface used to access the descent options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16119,6 +16365,7 @@ agcls.AgTypeNameMap["IAircraftDescent"] = IAircraftDescent
 
 class IAircraftLanding(object):
     """Interface used to access the landing options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16175,6 +16422,7 @@ agcls.AgTypeNameMap["IAircraftLanding"] = IAircraftLanding
 
 class IAircraftTakeoff(object):
     """Interface used to access the takeoff options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16231,6 +16479,7 @@ agcls.AgTypeNameMap["IAircraftTakeoff"] = IAircraftTakeoff
 
 class IAircraftAcceleration(object):
     """Interface used to access the acceleration options for an aircraft in the Aviator catalog."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16287,6 +16536,7 @@ agcls.AgTypeNameMap["IAircraftAcceleration"] = IAircraftAcceleration
 
 class ICatalog(object):
     """Interface used to access the Aviator catalog."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16365,6 +16615,7 @@ agcls.AgTypeNameMap["ICatalog"] = ICatalog
 
 class IProcedureTimeOptions(object):
     """Interface used to access the time options for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16521,6 +16772,7 @@ agcls.AgTypeNameMap["IProcedureTimeOptions"] = IProcedureTimeOptions
 
 class ICalculationOptions(object):
     """Interface used to access the calculation options for a procedure or phase."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16671,6 +16923,7 @@ agcls.AgTypeNameMap["ICalculationOptions"] = ICalculationOptions
 
 class INavigationOptions(object):
     """Interface used to access the navigation options for an Aviator procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16785,6 +17038,7 @@ agcls.AgTypeNameMap["INavigationOptions"] = INavigationOptions
 
 class IAltitudeMSLAndLevelOffOptions(object):
     """Interface used to access the altitude MSL and Level off options for an Aviator procedure."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16840,7 +17094,7 @@ class IAltitudeMSLAndLevelOffOptions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @msl_altitude.setter
     def msl_altitude(self, newVal:float) -> None:
-        """Set the MSLAltitude"""
+        """Set the MSLAltitude."""
         return self._intf.set_property(IAltitudeMSLAndLevelOffOptions._metadata, IAltitudeMSLAndLevelOffOptions._set_msl_altitude_metadata, newVal)
 
     _get_must_level_off_metadata = { "name" : "must_level_off",
@@ -16881,6 +17135,7 @@ agcls.AgTypeNameMap["IAltitudeMSLAndLevelOffOptions"] = IAltitudeMSLAndLevelOffO
 
 class IAltitudeMSLOptions(object):
     """Interface used to access the altitude MSL options for an Aviator procedure."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -16932,7 +17187,7 @@ class IAltitudeMSLOptions(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @msl_altitude.setter
     def msl_altitude(self, newVal:float) -> None:
-        """Set the MSLAltitude"""
+        """Set the MSLAltitude."""
         return self._intf.set_property(IAltitudeMSLOptions._metadata, IAltitudeMSLOptions._set_msl_altitude_metadata, newVal)
 
 
@@ -16941,6 +17196,7 @@ agcls.AgTypeNameMap["IAltitudeMSLOptions"] = IAltitudeMSLOptions
 
 class IAltitudeOptions(object):
     """Interface used to access the altitude options for an Aviator procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17019,6 +17275,7 @@ agcls.AgTypeNameMap["IAltitudeOptions"] = IAltitudeOptions
 
 class IHoverAltitudeOptions(object):
     """Interface used to access the altitude options for VTOL procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17097,6 +17354,7 @@ agcls.AgTypeNameMap["IHoverAltitudeOptions"] = IHoverAltitudeOptions
 
 class IArcAltitudeOptions(object):
     """Interface used to access the altitude options for an Arc procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17175,6 +17433,7 @@ agcls.AgTypeNameMap["IArcAltitudeOptions"] = IArcAltitudeOptions
 
 class IArcAltitudeAndDelayOptions(object):
     """Interface used to access the altitude options for an Arc procedure."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17271,6 +17530,7 @@ agcls.AgTypeNameMap["IArcAltitudeAndDelayOptions"] = IArcAltitudeAndDelayOptions
 
 class IArcOptions(object):
     """Interface used to access the arc options for a procedure."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17421,6 +17681,7 @@ agcls.AgTypeNameMap["IArcOptions"] = IArcOptions
 
 class IVerticalPlaneOptions(object):
     """Interface used to access the Vertical Plane options for an Aviator procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17499,6 +17760,7 @@ agcls.AgTypeNameMap["IVerticalPlaneOptions"] = IVerticalPlaneOptions
 
 class IVerticalPlaneAndFlightPathOptions(object):
     """Interface used to access the Vertical Plane and Final Flight Path Angle options for an Aviator procedure."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17595,6 +17857,7 @@ agcls.AgTypeNameMap["IVerticalPlaneAndFlightPathOptions"] = IVerticalPlaneAndFli
 
 class IArcVerticalPlaneOptions(object):
     """Interface used to access the Vertical Plane options for an arc procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17709,6 +17972,7 @@ agcls.AgTypeNameMap["IArcVerticalPlaneOptions"] = IArcVerticalPlaneOptions
 
 class IEnrouteOptions(object):
     """Interface used to access the Enroute options for an Aviator procedure."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17769,6 +18033,7 @@ agcls.AgTypeNameMap["IEnrouteOptions"] = IEnrouteOptions
 
 class IEnrouteAndDelayOptions(object):
     """Interface used to access the Enroute options for an Aviator procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17847,6 +18112,7 @@ agcls.AgTypeNameMap["IEnrouteAndDelayOptions"] = IEnrouteAndDelayOptions
 
 class IEnrouteTurnDirectionOptions(object):
     """Interface used to access the Enroute Turn Direction options for an Aviator procedure."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17907,6 +18173,7 @@ agcls.AgTypeNameMap["IEnrouteTurnDirectionOptions"] = IEnrouteTurnDirectionOptio
 
 class ICruiseAirspeedOptions(object):
     """Interface used to access the Cruise Airspeed options for an Aviator procedure."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -17974,7 +18241,8 @@ agcls.AgClassCatalog.add_catalog_entry("{8c88b752-5739-4244-9db7-9fd404b3c0c6}",
 agcls.AgTypeNameMap["ICruiseAirspeedOptions"] = ICruiseAirspeedOptions
 
 class ICruiseAirspeedProfile(object):
-    """Interface used to access the Cruise Profile options for an Aviator procedure"""
+    """Interface used to access the Cruise Profile options for an Aviator procedure."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18017,6 +18285,7 @@ agcls.AgTypeNameMap["ICruiseAirspeedProfile"] = ICruiseAirspeedProfile
 
 class ICruiseAirspeedAndProfileOptions(object):
     """Interface used to access the cruise airspeed options that also include a profile field."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18103,6 +18372,7 @@ agcls.AgTypeNameMap["ICruiseAirspeedAndProfileOptions"] = ICruiseAirspeedAndProf
 
 class IAutomationStrategyFactory(object):
     """Interface used to send connect commands to Aviator objects."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18135,6 +18405,7 @@ agcls.AgTypeNameMap["IAutomationStrategyFactory"] = IAutomationStrategyFactory
 
 class IConnect(object):
     """Interface used to send connect commands to Aviator objects."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18167,6 +18438,7 @@ agcls.AgTypeNameMap["IConnect"] = IConnect
 
 class IRunwayHeadingOptions(object):
     """Interface for the Runway Heading Options found in a Takeoff or Landing procedure."""
+
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18209,6 +18481,7 @@ agcls.AgTypeNameMap["IRunwayHeadingOptions"] = IRunwayHeadingOptions
 
 class IProcedure(object):
     """Interface used to access the options for a procedure. Use this interface to get the Site and Get the time options for the current procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18323,6 +18596,7 @@ agcls.AgTypeNameMap["IProcedure"] = IProcedure
 
 class IProcedureCollection(object):
     """Interface used to access the collection of procedures for a given phase in a mission. Use this interface to Get, Add, or Remove a procedure."""
+
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -18436,6 +18710,7 @@ agcls.AgTypeNameMap["IProcedureCollection"] = IProcedureCollection
 
 class IPhase(object):
     """Interface used to access the phase options for a mission."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18519,6 +18794,7 @@ agcls.AgTypeNameMap["IPhase"] = IPhase
 
 class IPhaseCollection(object):
     """Interface used to access the collection of phases for a mission."""
+
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -18616,6 +18892,7 @@ agcls.AgTypeNameMap["IPhaseCollection"] = IPhaseCollection
 
 class IMission(object):
     """Interface for the mission of an aircraft using the Aviator propagator."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18711,6 +18988,7 @@ agcls.AgTypeNameMap["IMission"] = IMission
 
 class IAviatorPropagator(object):
     """Interface used to access the Aviator interface for an aircraft. Use this interface to get the mission or Aviator catalog."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18779,6 +19057,7 @@ agcls.AgTypeNameMap["IAviatorPropagator"] = IAviatorPropagator
 
 class IPerformanceModel(object):
     """Interface for a performance model of an Aviator vehicle."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18804,6 +19083,7 @@ agcls.AgTypeNameMap["IPerformanceModel"] = IPerformanceModel
 
 class IAdvFixedWingGeometry(object):
     """Interface used to access the options for the wing geometry in the advanced fixed wing tool."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18829,6 +19109,7 @@ agcls.AgTypeNameMap["IAdvFixedWingGeometry"] = IAdvFixedWingGeometry
 
 class IAdvFixedWingTurbofanBasicABPowerplant(object):
     """This interface is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18854,6 +19135,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABPowerplant"] = IAdvFixedWingTur
 
 class IAdvFixedWingTurbojetBasicABPowerplant(object):
     """This interface is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18879,6 +19161,7 @@ agcls.AgTypeNameMap["IAdvFixedWingTurbojetBasicABPowerplant"] = IAdvFixedWingTur
 
 class IAdvFixedWingPowerplant(object):
     """Interface for a powerplant strategy in the advanced fixed wing tool."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18904,6 +19187,7 @@ agcls.AgTypeNameMap["IAdvFixedWingPowerplant"] = IAdvFixedWingPowerplant
 
 class ISiteUnknown(object):
     """Interface of an unknown site."""
+
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -18929,6 +19213,7 @@ agcls.AgTypeNameMap["ISiteUnknown"] = ISiteUnknown
 
 class IAircraftTerrainFollowModel(object):
     """Interface used to access the options for a TerrainFollow performance model of an aircraft."""
+
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19232,6 +19517,7 @@ agcls.AgTypeNameMap["IAircraftTerrainFollowModel"] = IAircraftTerrainFollowModel
 
 class IBasicManeuverTargetPositionVel(object):
     """Interface used to access target position and velocity strategies for basic maneuvers."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19326,6 +19612,7 @@ agcls.AgTypeNameMap["IBasicManeuverTargetPositionVel"] = IBasicManeuverTargetPos
 
 class IPropulsionThrust(object):
     """Interface used to access propulsion thrust for basic maneuver strategies."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19510,6 +19797,7 @@ agcls.AgTypeNameMap["IPropulsionThrust"] = IPropulsionThrust
 
 class IBasicManeuverAirspeedOptions(object):
     """Interface used to access airspeed options for basic maneuver strategies."""
+
     _num_methods = 35
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -19849,6 +20137,7 @@ agcls.AgTypeNameMap["IBasicManeuverAirspeedOptions"] = IBasicManeuverAirspeedOpt
 
 class IBasicManeuverStrategyAileronRoll(object):
     """Interface used to access options for a Aileron Roll Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20008,6 +20297,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyAileronRoll"] = IBasicManeuverStrateg
 
 class IBasicManeuverStrategyAutopilotNav(object):
     """Interface used to access options for the Autopilot - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20148,7 +20438,7 @@ class IBasicManeuverStrategyAutopilotNav(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def stop_when_conditions_met(self) -> bool:
-        """Stop when conditions are met"""
+        """Stop when conditions are met."""
         return self._intf.get_property(IBasicManeuverStrategyAutopilotNav._metadata, IBasicManeuverStrategyAutopilotNav._get_stop_when_conditions_met_metadata)
 
     _set_stop_when_conditions_met_metadata = { "name" : "stop_when_conditions_met",
@@ -20156,7 +20446,7 @@ class IBasicManeuverStrategyAutopilotNav(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @stop_when_conditions_met.setter
     def stop_when_conditions_met(self, newVal:bool) -> None:
-        """Stop when conditions are met"""
+        """Stop when conditions are met."""
         return self._intf.set_property(IBasicManeuverStrategyAutopilotNav._metadata, IBasicManeuverStrategyAutopilotNav._set_stop_when_conditions_met_metadata, newVal)
 
 
@@ -20165,6 +20455,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyAutopilotNav"] = IBasicManeuverStrate
 
 class IBasicManeuverStrategyAutopilotProf(object):
     """Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20432,7 +20723,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def stop_when_conditions_met(self) -> bool:
-        """Stop when conditions are met"""
+        """Stop when conditions are met."""
         return self._intf.get_property(IBasicManeuverStrategyAutopilotProf._metadata, IBasicManeuverStrategyAutopilotProf._get_stop_when_conditions_met_metadata)
 
     _set_stop_when_conditions_met_metadata = { "name" : "stop_when_conditions_met",
@@ -20440,7 +20731,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @stop_when_conditions_met.setter
     def stop_when_conditions_met(self, newVal:bool) -> None:
-        """Stop when conditions are met"""
+        """Stop when conditions are met."""
         return self._intf.set_property(IBasicManeuverStrategyAutopilotProf._metadata, IBasicManeuverStrategyAutopilotProf._set_stop_when_conditions_met_metadata, newVal)
 
 
@@ -20449,6 +20740,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyAutopilotProf"] = IBasicManeuverStrat
 
 class IBasicManeuverStrategyBarrelRoll(object):
     """Interface used to access options for a Barrel Roll Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20616,6 +20908,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyBarrelRoll"] = IBasicManeuverStrategy
 
 class IBasicManeuverStrategyLoop(object):
     """Interface used to access options for a Loop Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -20765,6 +21058,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyLoop"] = IBasicManeuverStrategyLoop
 
 class IBasicManeuverStrategyLTAHover(object):
     """Interface used to access options for a Lighter than Air Hover Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21005,6 +21299,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyLTAHover"] = IBasicManeuverStrategyLT
 
 class IBasicManeuverStrategyFlyAOA(object):
     """Interface used to access options for a Fly AOA Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21182,6 +21477,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyFlyAOA"] = IBasicManeuverStrategyFlyA
 
 class IBasicManeuverStrategyPull(object):
     """Interface used to access options for a Pull Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21287,6 +21583,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyPull"] = IBasicManeuverStrategyPull
 
 class IBasicManeuverStrategyRollingPull(object):
     """Interface used to access options for a Rolling Pull Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21367,7 +21664,7 @@ class IBasicManeuverStrategyRollingPull(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @angle.setter
     def angle(self, newVal:typing.Any) -> None:
-        """The angle value for the active mode"""
+        """The angle value for the active mode."""
         return self._intf.set_property(IBasicManeuverStrategyRollingPull._metadata, IBasicManeuverStrategyRollingPull._set_angle_metadata, newVal)
 
     _get_roll_orientation_metadata = { "name" : "roll_orientation",
@@ -21464,6 +21761,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRollingPull"] = IBasicManeuverStrateg
 
 class IBasicManeuverStrategySmoothAccel(object):
     """Interface used to access options for a Smooth Accel Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21749,6 +22047,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategySmoothAccel"] = IBasicManeuverStrateg
 
 class IBasicManeuverStrategySmoothTurn(object):
     """Interface used to access options for a Smooth Turn Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -21944,6 +22243,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategySmoothTurn"] = IBasicManeuverStrategy
 
 class IBasicManeuverStrategySimpleTurn(object):
     """Interface used to access options for a Simple Turn Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22039,6 +22339,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategySimpleTurn"] = IBasicManeuverStrategy
 
 class IBasicManeuverStrategyIntercept(object):
     """Interface used to access options for an Intercept Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22364,6 +22665,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyIntercept"] = IBasicManeuverStrategyI
 
 class IBasicManeuverStrategyRelativeBearing(object):
     """Interface used to access options for a Relative Bearing Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22547,6 +22849,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRelativeBearing"] = IBasicManeuverStr
 
 class IBasicManeuverStrategyRelativeCourse(object):
     """Interface used to access options for a Relative Course Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -22874,6 +23177,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRelativeCourse"] = IBasicManeuverStra
 
 class IBasicManeuverStrategyRendezvous(object):
     """Interface used to access options for a Rendezvous Formation Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23246,6 +23550,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRendezvous"] = IBasicManeuverStrategy
 
 class IBasicManeuverStrategyStationkeeping(object):
     """Interface used to access options for a Stationkeeping Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23609,6 +23914,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyStationkeeping"] = IBasicManeuverStra
 
 class IBasicManeuverStrategyRelativeFPA(object):
     """Interface used to access options for the Relative Flight Path Angle Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -23843,6 +24149,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRelativeFPA"] = IBasicManeuverStrateg
 
 class IBasicManeuverStrategyRelSpeedAltitude(object):
     """Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24204,6 +24511,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyRelSpeedAltitude"] = IBasicManeuverSt
 
 class IBasicManeuverStrategyBezier(object):
     """Interface used to access options for a Bezier Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24421,6 +24729,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyBezier"] = IBasicManeuverStrategyBezi
 
 class IBasicManeuverStrategyPushPull(object):
     """Interface used to access options for a Push/Pull Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24599,7 +24908,7 @@ class IBasicManeuverStrategyPushPull(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def stop_altitude(self) -> float:
-        """The altitude stopping condition"""
+        """The altitude stopping condition."""
         return self._intf.get_property(IBasicManeuverStrategyPushPull._metadata, IBasicManeuverStrategyPushPull._get_stop_altitude_metadata)
 
     _set_stop_altitude_metadata = { "name" : "set_stop_altitude",
@@ -24684,6 +24993,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyPushPull"] = IBasicManeuverStrategyPu
 
 class IBasicManeuverStrategyGlideProfile(object):
     """Interface used to access options for a Glide Profile Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -24826,7 +25136,7 @@ class IBasicManeuverStrategyGlideProfile(object):
             "marshallers" : (agmarshall.AgEnum_arg(BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE),) }
     @property
     def powered_cruise_mode(self) -> "BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE":
-        """The powered cruise mode"""
+        """The powered cruise mode."""
         return self._intf.get_property(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._get_powered_cruise_mode_metadata)
 
     _set_powered_cruise_mode_metadata = { "name" : "powered_cruise_mode",
@@ -24841,7 +25151,7 @@ class IBasicManeuverStrategyGlideProfile(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def powered_cruise_throttle(self) -> float:
-        """The powered cruise throttle"""
+        """The powered cruise throttle."""
         return self._intf.get_property(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._get_powered_cruise_throttle_metadata)
 
     _set_powered_cruise_throttle_metadata = { "name" : "powered_cruise_throttle",
@@ -24856,7 +25166,7 @@ class IBasicManeuverStrategyGlideProfile(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def powered_cruise_thrust_model(self) -> "PropulsionThrust":
-        """The powered cruise thrust model"""
+        """The powered cruise thrust model."""
         return self._intf.get_property(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._get_powered_cruise_thrust_model_metadata)
 
     _get_glide_speed_control_mode_metadata = { "name" : "glide_speed_control_mode",
@@ -24864,7 +25174,7 @@ class IBasicManeuverStrategyGlideProfile(object):
             "marshallers" : (agmarshall.AgEnum_arg(BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE),) }
     @property
     def glide_speed_control_mode(self) -> "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE":
-        """The glide speed control mode"""
+        """The glide speed control mode."""
         return self._intf.get_property(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._get_glide_speed_control_mode_metadata)
 
     _get_glide_speed_control_altitude_metadata = { "name" : "glide_speed_control_altitude",
@@ -24872,14 +25182,14 @@ class IBasicManeuverStrategyGlideProfile(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def glide_speed_control_altitude(self) -> float:
-        """The glide speed altitude when using the altitude control mode"""
+        """The glide speed altitude when using the altitude control mode."""
         return self._intf.get_property(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._get_glide_speed_control_altitude_metadata)
 
     _set_glide_speed_control_mode_metadata = { "name" : "set_glide_speed_control_mode",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.AgEnum_arg(BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE), agmarshall.DOUBLE_arg,) }
     def set_glide_speed_control_mode(self, eGSMode:"BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", dControlAlt:float) -> None:
-        """Set the glide speed control mode and altitude"""
+        """Set the glide speed control mode and altitude."""
         return self._intf.invoke(IBasicManeuverStrategyGlideProfile._metadata, IBasicManeuverStrategyGlideProfile._set_glide_speed_control_mode_metadata, eGSMode, dControlAlt)
 
 
@@ -24888,6 +25198,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyGlideProfile"] = IBasicManeuverStrate
 
 class IBasicManeuverStrategyCruiseProfile(object):
     """Interface used to access options for a Cruise Profile Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25023,6 +25334,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyCruiseProfile"] = IBasicManeuverStrat
 
 class IBasicManeuverStrategyStraightAhead(object):
     """Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25081,6 +25393,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyStraightAhead"] = IBasicManeuverStrat
 
 class IBasicManeuverStrategyWeave(object):
     """Interface used to access options for a weave strategy of a basic maneuver procedure."""
+
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25217,6 +25530,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyWeave"] = IBasicManeuverStrategyWeave
 
 class IBasicManeuverStrategyBallistic3D(object):
     """Interface used to access options for a balistic 3D strategy of a basic maneuver procedure."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25322,6 +25636,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyBallistic3D"] = IBasicManeuverStrateg
 
 class IBasicManeuverStrategyPitch3D(object):
     """Interface used to access options for a pitch 3D strategy of a basic maneuver procedure."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25445,6 +25760,7 @@ agcls.AgTypeNameMap["IBasicManeuverStrategyPitch3D"] = IBasicManeuverStrategyPit
 
 class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
     """Interface used to access target position and velocity strategy, NoisyBrnRng."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25476,7 +25792,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
-        """method NewRandomEngineSeed"""
+        """method NewRandomEngineSeed."""
         return self._intf.invoke(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._new_random_engine_seed_metadata, )
 
     _get_smoothing_constant_metadata = { "name" : "smoothing_constant",
@@ -25484,7 +25800,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def smoothing_constant(self) -> float:
-        """property SmoothingConstant"""
+        """property SmoothingConstant."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_smoothing_constant_metadata)
 
     _set_smoothing_constant_metadata = { "name" : "smoothing_constant",
@@ -25492,7 +25808,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @smoothing_constant.setter
     def smoothing_constant(self, newVal:float) -> None:
-        """property SmoothingConstant"""
+        """property SmoothingConstant."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_smoothing_constant_metadata, newVal)
 
     _get_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -25500,7 +25816,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def velocity_time_step(self) -> float:
-        """property VelocityTimeStep"""
+        """property VelocityTimeStep."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_velocity_time_step_metadata)
 
     _set_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -25508,7 +25824,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @velocity_time_step.setter
     def velocity_time_step(self, newVal:float) -> None:
-        """property VelocityTimeStep"""
+        """property VelocityTimeStep."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_velocity_time_step_metadata, newVal)
 
     _get_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -25516,7 +25832,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def angle_error_std_dev(self) -> float:
-        """property AngleErrorStdDev"""
+        """property AngleErrorStdDev."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_angle_error_std_dev_metadata)
 
     _set_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -25524,7 +25840,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @angle_error_std_dev.setter
     def angle_error_std_dev(self, newVal:float) -> None:
-        """property AngleErrorStdDev"""
+        """property AngleErrorStdDev."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_angle_error_std_dev_metadata, newVal)
 
     _get_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -25532,7 +25848,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def range_error_std_dev(self) -> float:
-        """property RangeErrorStdDev"""
+        """property RangeErrorStdDev."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_range_error_std_dev_metadata)
 
     _set_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -25540,7 +25856,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @range_error_std_dev.setter
     def range_error_std_dev(self, newVal:float) -> None:
-        """property RangeErrorStdDev"""
+        """property RangeErrorStdDev."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_range_error_std_dev_metadata, newVal)
 
 
@@ -25549,6 +25865,7 @@ agcls.AgTypeNameMap["IBasicManeuverTargetPositionVelNoisyBrnRng"] = IBasicManeuv
 
 class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
     """Interface used to access target position and velocity strategy, Surf Tgt Pos Vel."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25580,7 +25897,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
-        """method NewRandomEngineSeed"""
+        """method NewRandomEngineSeed."""
         return self._intf.invoke(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._new_random_engine_seed_metadata, )
 
     _get_measurement_time_step_metadata = { "name" : "measurement_time_step",
@@ -25588,7 +25905,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def measurement_time_step(self) -> float:
-        """property MeasurementTimeStep"""
+        """property MeasurementTimeStep."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_measurement_time_step_metadata)
 
     _set_measurement_time_step_metadata = { "name" : "measurement_time_step",
@@ -25596,7 +25913,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @measurement_time_step.setter
     def measurement_time_step(self, newVal:float) -> None:
-        """property MeasurementTimeStep"""
+        """property MeasurementTimeStep."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_measurement_time_step_metadata, newVal)
 
     _get_position_cep_metadata = { "name" : "position_cep",
@@ -25604,7 +25921,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def position_cep(self) -> float:
-        """property PositionCEP"""
+        """property PositionCEP."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_position_cep_metadata)
 
     _set_position_cep_metadata = { "name" : "position_cep",
@@ -25612,7 +25929,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @position_cep.setter
     def position_cep(self, newVal:float) -> None:
-        """property PositionCEP"""
+        """property PositionCEP."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_position_cep_metadata, newVal)
 
     _get_course_error_metadata = { "name" : "course_error",
@@ -25620,7 +25937,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def course_error(self) -> float:
-        """property CourseError"""
+        """property CourseError."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_course_error_metadata)
 
     _set_course_error_metadata = { "name" : "course_error",
@@ -25628,7 +25945,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @course_error.setter
     def course_error(self, newVal:float) -> None:
-        """property CourseError"""
+        """property CourseError."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_course_error_metadata, newVal)
 
     _get_speed_error_metadata = { "name" : "speed_error",
@@ -25636,7 +25953,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def speed_error(self) -> float:
-        """property SpeedError"""
+        """property SpeedError."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_speed_error_metadata)
 
     _set_speed_error_metadata = { "name" : "speed_error",
@@ -25644,7 +25961,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @speed_error.setter
     def speed_error(self, newVal:float) -> None:
-        """property SpeedError"""
+        """property SpeedError."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_speed_error_metadata, newVal)
 
 
@@ -25653,6 +25970,7 @@ agcls.AgTypeNameMap["IBasicManeuverTargetPositionVelNoisySurfTgt"] = IBasicManeu
 
 class ITakeoffNormal(object):
     """The interface used to access the options for a Normal takeoff mode. The mode must be set to Normal to access this interface."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25767,6 +26085,7 @@ agcls.AgTypeNameMap["ITakeoffNormal"] = ITakeoffNormal
 
 class ITakeoffDeparturePoint(object):
     """The interface used to access the options for a Departure Point takeoff mode. The mode must be set to Departure Point to access this interface."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25899,6 +26218,7 @@ agcls.AgTypeNameMap["ITakeoffDeparturePoint"] = ITakeoffDeparturePoint
 
 class ITakeoffLowTransition(object):
     """The interface used to access the options for a Low Transition takeoff mode. The mode must be set to Low Transition to access this interface."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -25977,6 +26297,7 @@ agcls.AgTypeNameMap["ITakeoffLowTransition"] = ITakeoffLowTransition
 
 class IReferenceStateForwardFlightOptions(object):
     """Interface used to access the forward flight options for a reference state procedure."""
+
     _num_methods = 33
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26254,7 +26575,7 @@ class IReferenceStateForwardFlightOptions(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @sideslip.setter
     def sideslip(self, newVal:typing.Any) -> None:
-        """The aircraft's yaw angle"""
+        """The aircraft's yaw angle."""
         return self._intf.set_property(IReferenceStateForwardFlightOptions._metadata, IReferenceStateForwardFlightOptions._set_sideslip_metadata, newVal)
 
     _get_pitch_rate_metadata = { "name" : "pitch_rate",
@@ -26294,6 +26615,7 @@ agcls.AgTypeNameMap["IReferenceStateForwardFlightOptions"] = IReferenceStateForw
 
 class IReferenceStateHoverOptions(object):
     """Interface used to access the hover options for a reference state procedure."""
+
     _num_methods = 28
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26568,6 +26890,7 @@ agcls.AgTypeNameMap["IReferenceStateHoverOptions"] = IReferenceStateHoverOptions
 
 class IReferenceStateWeightOnWheelsOptions(object):
     """Interface used to access the weight on wheels options for a reference state procedure."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26716,6 +27039,7 @@ agcls.AgTypeNameMap["IReferenceStateWeightOnWheelsOptions"] = IReferenceStateWei
 
 class IReferenceStateTakeoffLandingOptions(object):
     """Interface used to access the takeoff or landing options for a reference state procedure."""
+
     _num_methods = 33
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -26993,7 +27317,7 @@ class IReferenceStateTakeoffLandingOptions(object):
             "marshallers" : (agmarshall.VARIANT_arg,) }
     @sideslip.setter
     def sideslip(self, newVal:typing.Any) -> None:
-        """The aircraft's yaw angle"""
+        """The aircraft's yaw angle."""
         return self._intf.set_property(IReferenceStateTakeoffLandingOptions._metadata, IReferenceStateTakeoffLandingOptions._set_sideslip_metadata, newVal)
 
     _get_pitch_rate_metadata = { "name" : "pitch_rate",
@@ -27033,6 +27357,7 @@ agcls.AgTypeNameMap["IReferenceStateTakeoffLandingOptions"] = IReferenceStateTak
 
 class ILandingEnterDownwindPattern(object):
     """The interface used to access the options for a Downwind Pattern approach mode for a landing procedure. The approach mode must be set to Downwind Pattern to access this interface."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27219,6 +27544,7 @@ agcls.AgTypeNameMap["ILandingEnterDownwindPattern"] = ILandingEnterDownwindPatte
 
 class ILandingInterceptGlideslope(object):
     """The interface used to access the options for an Intercept Glideslope approach mode for a landing procedure. The approach mode must be set to Intercept Glideslope to access this interface."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27351,6 +27677,7 @@ agcls.AgTypeNameMap["ILandingInterceptGlideslope"] = ILandingInterceptGlideslope
 
 class ILandingStandardInstrumentApproach(object):
     """The interface used to access the options for a Standard Instrument Approach mode for a landing procedure. The approach mode must be set to Standard Instrument Approach to access this interface."""
+
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27518,7 +27845,8 @@ agcls.AgClassCatalog.add_catalog_entry("{28c196c4-2768-49ce-a384-d0c37394be0f}",
 agcls.AgTypeNameMap["ILandingStandardInstrumentApproach"] = ILandingStandardInstrumentApproach
 
 class IProcedureBasicManeuver(object):
-    """Interface used to access the options for a Basic Maneuver procedure"""
+    """Interface used to access the options for a Basic Maneuver procedure."""
+
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27869,6 +28197,7 @@ agcls.AgTypeNameMap["IProcedureBasicManeuver"] = IProcedureBasicManeuver
 
 class ISiteWaypoint(object):
     """Interface used to access the options for a waypoint site."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27937,6 +28266,7 @@ agcls.AgTypeNameMap["ISiteWaypoint"] = ISiteWaypoint
 
 class ISiteEndOfPrevProcedure(object):
     """Interface used to access the options for an End of Previous Procedure site type."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -27969,6 +28299,7 @@ agcls.AgTypeNameMap["ISiteEndOfPrevProcedure"] = ISiteEndOfPrevProcedure
 
 class ISiteVTOLPoint(object):
     """Interface used to access the options for a VTOL Point site."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28073,6 +28404,7 @@ agcls.AgTypeNameMap["ISiteVTOLPoint"] = ISiteVTOLPoint
 
 class ISiteSTKVehicle(object):
     """Interface used to access the options for a STK Vehicle site."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28132,6 +28464,7 @@ agcls.AgTypeNameMap["ISiteSTKVehicle"] = ISiteSTKVehicle
 
 class ISiteReferenceState(object):
     """Interface used to access the options for a Reference State site."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28164,6 +28497,7 @@ agcls.AgTypeNameMap["ISiteReferenceState"] = ISiteReferenceState
 
 class ISiteSuperProcedure(object):
     """Interface used to access the options for a Super Procedure site."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28196,6 +28530,7 @@ agcls.AgTypeNameMap["ISiteSuperProcedure"] = ISiteSuperProcedure
 
 class ISiteRelToPrevProcedure(object):
     """Interface used to access the options for a Relative to Previous Procedure site."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28282,6 +28617,7 @@ agcls.AgTypeNameMap["ISiteRelToPrevProcedure"] = ISiteRelToPrevProcedure
 
 class ISiteSTKObjectWaypoint(object):
     """Interface used to access the options for a STK Object Waypoint site."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28485,6 +28821,7 @@ agcls.AgTypeNameMap["ISiteSTKObjectWaypoint"] = ISiteSTKObjectWaypoint
 
 class ISiteSTKStaticObject(object):
     """Interface used to access the options for a STK Static Object site."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28544,6 +28881,7 @@ agcls.AgTypeNameMap["ISiteSTKStaticObject"] = ISiteSTKStaticObject
 
 class ISiteRelToSTKObject(object):
     """Interface used to access the options for a Relative to Stationary STK Object site."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28657,6 +28995,7 @@ agcls.AgTypeNameMap["ISiteRelToSTKObject"] = ISiteRelToSTKObject
 
 class ISiteSTKAreaTarget(object):
     """Interface used to access the options for a STK Area Target site."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28716,6 +29055,7 @@ agcls.AgTypeNameMap["ISiteSTKAreaTarget"] = ISiteSTKAreaTarget
 
 class ISiteRunway(object):
     """Interface used to access the options for a Runway site type."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -28806,7 +29146,7 @@ class ISiteRunway(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def length(self) -> float:
-        """The length of the runway"""
+        """The length of the runway."""
         return self._intf.get_property(ISiteRunway._metadata, ISiteRunway._get_length_metadata)
 
     _set_length_metadata = { "name" : "length",
@@ -28814,7 +29154,7 @@ class ISiteRunway(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @length.setter
     def length(self, newVal:float) -> None:
-        """The length of the runway"""
+        """The length of the runway."""
         return self._intf.set_property(ISiteRunway._metadata, ISiteRunway._set_length_metadata, newVal)
 
     _get_altitude_reference_metadata = { "name" : "altitude_reference",
@@ -28908,6 +29248,7 @@ agcls.AgTypeNameMap["ISiteRunway"] = ISiteRunway
 
 class IProcedureLanding(object):
     """Interface used to access the options for a landing procedure."""
+
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29030,6 +29371,7 @@ agcls.AgTypeNameMap["IProcedureLanding"] = IProcedureLanding
 
 class IProcedureEnroute(object):
     """Interface used to access the options for an enroute procedure."""
+
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29098,6 +29440,7 @@ agcls.AgTypeNameMap["IProcedureEnroute"] = IProcedureEnroute
 
 class IProcedureExtEphem(object):
     """Interface used to access the options for an ExtEphem procedure."""
+
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29157,7 +29500,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @property
     def use_start_duration(self) -> bool:
-        """Get whether to use Start and Duration"""
+        """Get whether to use Start and Duration."""
         return self._intf.get_property(IProcedureExtEphem._metadata, IProcedureExtEphem._get_use_start_duration_metadata)
 
     _set_use_start_duration_metadata = { "name" : "use_start_duration",
@@ -29165,7 +29508,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
     @use_start_duration.setter
     def use_start_duration(self, useSD:bool) -> None:
-        """Set whether to use Start and Duration"""
+        """Set whether to use Start and Duration."""
         return self._intf.set_property(IProcedureExtEphem._metadata, IProcedureExtEphem._set_use_start_duration_metadata, useSD)
 
     _get_start_time_metadata = { "name" : "start_time",
@@ -29173,7 +29516,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def start_time(self) -> float:
-        """Get the start time"""
+        """Get the start time."""
         return self._intf.get_property(IProcedureExtEphem._metadata, IProcedureExtEphem._get_start_time_metadata)
 
     _set_start_time_metadata = { "name" : "start_time",
@@ -29181,7 +29524,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @start_time.setter
     def start_time(self, start:float) -> None:
-        """Set the start time"""
+        """Set the start time."""
         return self._intf.set_property(IProcedureExtEphem._metadata, IProcedureExtEphem._set_start_time_metadata, start)
 
     _get_duration_metadata = { "name" : "duration",
@@ -29189,7 +29532,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def duration(self) -> float:
-        """Get the duration"""
+        """Get the duration."""
         return self._intf.get_property(IProcedureExtEphem._metadata, IProcedureExtEphem._get_duration_metadata)
 
     _set_duration_metadata = { "name" : "duration",
@@ -29197,7 +29540,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @duration.setter
     def duration(self, start:float) -> None:
-        """Set the duration"""
+        """Set the duration."""
         return self._intf.set_property(IProcedureExtEphem._metadata, IProcedureExtEphem._set_duration_metadata, start)
 
     _get_flight_mode_metadata = { "name" : "flight_mode",
@@ -29205,7 +29548,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.AgEnum_arg(EXT_EPHEM_FLIGHT_MODE),) }
     @property
     def flight_mode(self) -> "EXT_EPHEM_FLIGHT_MODE":
-        """Get the flight mode"""
+        """Get the flight mode."""
         return self._intf.get_property(IProcedureExtEphem._metadata, IProcedureExtEphem._get_flight_mode_metadata)
 
     _set_flight_mode_metadata = { "name" : "flight_mode",
@@ -29213,7 +29556,7 @@ class IProcedureExtEphem(object):
             "marshallers" : (agmarshall.AgEnum_arg(EXT_EPHEM_FLIGHT_MODE),) }
     @flight_mode.setter
     def flight_mode(self, mode:"EXT_EPHEM_FLIGHT_MODE") -> None:
-        """Set the flight mode"""
+        """Set the flight mode."""
         return self._intf.set_property(IProcedureExtEphem._metadata, IProcedureExtEphem._set_flight_mode_metadata, mode)
 
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -29229,6 +29572,7 @@ agcls.AgTypeNameMap["IProcedureExtEphem"] = IProcedureExtEphem
 
 class IProcedureFormationFlyer(object):
     """Interface used to access the options for an enroute procedure."""
+
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29269,7 +29613,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def min_time_step(self) -> float:
-        """Get Min time Step"""
+        """Get Min time Step."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_min_time_step_metadata)
 
     _set_min_time_step_metadata = { "name" : "min_time_step",
@@ -29277,7 +29621,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @min_time_step.setter
     def min_time_step(self, pVal:float) -> None:
-        """Set Min time Step"""
+        """Set Min time Step."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_min_time_step_metadata, pVal)
 
     _get_max_time_step_metadata = { "name" : "max_time_step",
@@ -29285,7 +29629,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def max_time_step(self) -> float:
-        """Get Max time Step"""
+        """Get Max time Step."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_max_time_step_metadata)
 
     _set_max_time_step_metadata = { "name" : "max_time_step",
@@ -29293,7 +29637,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @max_time_step.setter
     def max_time_step(self, pVal:float) -> None:
-        """Set Max time Step"""
+        """Set Max time Step."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_max_time_step_metadata, pVal)
 
     _get_cross_range_close_rate_metadata = { "name" : "cross_range_close_rate",
@@ -29301,7 +29645,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def cross_range_close_rate(self) -> float:
-        """Get Cross Range close rate"""
+        """Get Cross Range close rate."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_cross_range_close_rate_metadata)
 
     _set_cross_range_close_rate_metadata = { "name" : "cross_range_close_rate",
@@ -29309,7 +29653,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @cross_range_close_rate.setter
     def cross_range_close_rate(self, pVal:float) -> None:
-        """Set Cross Range close rate"""
+        """Set Cross Range close rate."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_cross_range_close_rate_metadata, pVal)
 
     _get_initial_close_max_speed_advantage_metadata = { "name" : "initial_close_max_speed_advantage",
@@ -29317,7 +29661,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def initial_close_max_speed_advantage(self) -> float:
-        """Get Initial Close Max Speed Advantage"""
+        """Get Initial Close Max Speed Advantage."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_initial_close_max_speed_advantage_metadata)
 
     _set_initial_close_max_speed_advantage_metadata = { "name" : "initial_close_max_speed_advantage",
@@ -29325,7 +29669,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @initial_close_max_speed_advantage.setter
     def initial_close_max_speed_advantage(self, pVal:float) -> None:
-        """Set Initial Close Max Speed Advantage"""
+        """Set Initial Close Max Speed Advantage."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_initial_close_max_speed_advantage_metadata, pVal)
 
     _get_stop_condition_metadata = { "name" : "stop_condition",
@@ -29333,7 +29677,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.AgEnum_arg(FORMATION_FLYER_STOP_CONDITION),) }
     @property
     def stop_condition(self) -> "FORMATION_FLYER_STOP_CONDITION":
-        """Get Stop condition"""
+        """Get Stop condition."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_stop_condition_metadata)
 
     _set_stop_condition_metadata = { "name" : "stop_condition",
@@ -29341,7 +29685,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.AgEnum_arg(FORMATION_FLYER_STOP_CONDITION),) }
     @stop_condition.setter
     def stop_condition(self, pVal:"FORMATION_FLYER_STOP_CONDITION") -> None:
-        """Set Stop condition"""
+        """Set Stop condition."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_stop_condition_metadata, pVal)
 
     _get_stop_time_metadata = { "name" : "stop_time",
@@ -29349,7 +29693,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def stop_time(self) -> float:
-        """Get stop time"""
+        """Get stop time."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_stop_time_metadata)
 
     _set_stop_time_metadata = { "name" : "stop_time",
@@ -29357,7 +29701,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @stop_time.setter
     def stop_time(self, pVal:float) -> None:
-        """Set stop time"""
+        """Set stop time."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_stop_time_metadata, pVal)
 
     _get_stop_down_range_metadata = { "name" : "stop_down_range",
@@ -29365,7 +29709,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def stop_down_range(self) -> float:
-        """Get stop downrange"""
+        """Get stop downrange."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_stop_down_range_metadata)
 
     _set_stop_down_range_metadata = { "name" : "stop_down_range",
@@ -29373,7 +29717,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @stop_down_range.setter
     def stop_down_range(self, pVal:float) -> None:
-        """Set stop downrange"""
+        """Set stop downrange."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_stop_down_range_metadata, pVal)
 
     _get_stop_fuel_state_metadata = { "name" : "stop_fuel_state",
@@ -29381,7 +29725,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @property
     def stop_fuel_state(self) -> float:
-        """Get stop fuel state"""
+        """Get stop fuel state."""
         return self._intf.get_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._get_stop_fuel_state_metadata)
 
     _set_stop_fuel_state_metadata = { "name" : "stop_fuel_state",
@@ -29389,7 +29733,7 @@ class IProcedureFormationFlyer(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @stop_fuel_state.setter
     def stop_fuel_state(self, pVal:float) -> None:
-        """Set stop fuel state"""
+        """Set stop fuel state."""
         return self._intf.set_property(IProcedureFormationFlyer._metadata, IProcedureFormationFlyer._set_stop_fuel_state_metadata, pVal)
 
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -29405,6 +29749,7 @@ agcls.AgTypeNameMap["IProcedureFormationFlyer"] = IProcedureFormationFlyer
 
 class IProcedureBasicPointToPoint(object):
     """Interface used to access the options for a basic point to point procedure."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29482,6 +29827,7 @@ agcls.AgTypeNameMap["IProcedureBasicPointToPoint"] = IProcedureBasicPointToPoint
 
 class IProcedureDelay(object):
     """Interface used to access the options for a delay procedure."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29587,6 +29933,7 @@ agcls.AgTypeNameMap["IProcedureDelay"] = IProcedureDelay
 
 class IProcedureTakeoff(object):
     """Interface used to access the options for a takeoff procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29673,6 +30020,7 @@ agcls.AgTypeNameMap["IProcedureTakeoff"] = IProcedureTakeoff
 
 class IProcedureArcEnroute(object):
     """Interface used to access the options for an arc enroute procedure."""
+
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29759,6 +30107,7 @@ agcls.AgTypeNameMap["IProcedureArcEnroute"] = IProcedureArcEnroute
 
 class IProcedureArcPointToPoint(object):
     """Interface used to access the options for an arc point to point procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -29872,6 +30221,7 @@ agcls.AgTypeNameMap["IProcedureArcPointToPoint"] = IProcedureArcPointToPoint
 
 class IProcedureFlightLine(object):
     """Interface used to access the options for a flight line procedure."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30075,6 +30425,7 @@ agcls.AgTypeNameMap["IProcedureFlightLine"] = IProcedureFlightLine
 
 class IProcedureHoldingCircular(object):
     """Interface used to access the options for a holding circular procedure."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30340,6 +30691,7 @@ agcls.AgTypeNameMap["IProcedureHoldingCircular"] = IProcedureHoldingCircular
 
 class IProcedureHoldingFigure8(object):
     """Interface used to access the options for a holding figure 8 procedure."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30605,6 +30957,7 @@ agcls.AgTypeNameMap["IProcedureHoldingFigure8"] = IProcedureHoldingFigure8
 
 class IProcedureHoldingRacetrack(object):
     """Interface used to access the options for a holding racetrack procedure."""
+
     _num_methods = 27
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -30870,6 +31223,7 @@ agcls.AgTypeNameMap["IProcedureHoldingRacetrack"] = IProcedureHoldingRacetrack
 
 class IProcedureTransitionToHover(object):
     """Interface used to access the options for a transition to hover procedure."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31026,6 +31380,7 @@ agcls.AgTypeNameMap["IProcedureTransitionToHover"] = IProcedureTransitionToHover
 
 class IProcedureTerrainFollow(object):
     """Interface used to access the options for a terrain following procedure."""
+
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31130,6 +31485,7 @@ agcls.AgTypeNameMap["IProcedureTerrainFollow"] = IProcedureTerrainFollow
 
 class IProcedureHover(object):
     """Interface used to access the options for a hover procedure."""
+
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31429,6 +31785,7 @@ agcls.AgTypeNameMap["IProcedureHover"] = IProcedureHover
 
 class IProcedureHoverTranslate(object):
     """Interface used to access the options for a hover translate procedure."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31620,6 +31977,7 @@ agcls.AgTypeNameMap["IProcedureHoverTranslate"] = IProcedureHoverTranslate
 
 class IProcedureTransitionToForwardFlight(object):
     """Interface used to access the options for a transition to forward flight procedure."""
+
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31730,6 +32088,7 @@ agcls.AgTypeNameMap["IProcedureTransitionToForwardFlight"] = IProcedureTransitio
 
 class IProcedureVerticalTakeoff(object):
     """Interface used to access the options for a vertical takeoff procedure."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -31878,6 +32237,7 @@ agcls.AgTypeNameMap["IProcedureVerticalTakeoff"] = IProcedureVerticalTakeoff
 
 class IProcedureVerticalLanding(object):
     """Interface used to access the options for a vertical landing procedure."""
+
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32026,6 +32386,7 @@ agcls.AgTypeNameMap["IProcedureVerticalLanding"] = IProcedureVerticalLanding
 
 class IProcedureReferenceState(object):
     """Interface used to access the options for a reference state procedure."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32149,7 +32510,7 @@ class IProcedureReferenceState(object):
             "marshallers" : (agmarshall.DOUBLE_arg,) }
     @msl_altitude.setter
     def msl_altitude(self, newVal:float) -> None:
-        """Set the MSLAltitude"""
+        """Set the MSLAltitude."""
         return self._intf.set_property(IProcedureReferenceState._metadata, IProcedureReferenceState._set_msl_altitude_metadata, newVal)
 
     _get_performance_mode_metadata = { "name" : "performance_mode",
@@ -32238,6 +32599,7 @@ agcls.AgTypeNameMap["IProcedureReferenceState"] = IProcedureReferenceState
 
 class IProcedureSuperProcedure(object):
     """Interface used to access the options for a super procedure."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32286,6 +32648,7 @@ agcls.AgTypeNameMap["IProcedureSuperProcedure"] = IProcedureSuperProcedure
 
 class IProcedureLaunch(object):
     """Interface used to access the options for a launch procedure."""
+
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32506,6 +32869,7 @@ agcls.AgTypeNameMap["IProcedureLaunch"] = IProcedureLaunch
 
 class IProcedureAirway(object):
     """Interface used to access the options for an Airway procedure."""
+
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32687,6 +33051,7 @@ agcls.AgTypeNameMap["IProcedureAirway"] = IProcedureAirway
 
 class IProcedureAirwayRouter(object):
     """Interface used to access the options for an Airway Router procedure."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -32877,6 +33242,7 @@ agcls.AgTypeNameMap["IProcedureAirwayRouter"] = IProcedureAirwayRouter
 
 class IProcedureAreaTargetSearch(object):
     """Interface used to access the options for an Area Target Search procedure."""
+
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33088,6 +33454,7 @@ agcls.AgTypeNameMap["IProcedureAreaTargetSearch"] = IProcedureAreaTargetSearch
 
 class IProcedureFormationRecover(object):
     """Interface used to access the options for a Formation Recover procedure."""
+
     _num_methods = 38
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33451,6 +33818,7 @@ agcls.AgTypeNameMap["IProcedureFormationRecover"] = IProcedureFormationRecover
 
 class IProcedureInFormation(object):
     """Interface used to access the options for an In Formation procedure."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33645,6 +34013,7 @@ agcls.AgTypeNameMap["IProcedureInFormation"] = IProcedureInFormation
 
 class IProcedureParallelFlightLine(object):
     """Interface used to access the options for a Parallel Flight Line procedure."""
+
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -33839,6 +34208,7 @@ agcls.AgTypeNameMap["IProcedureParallelFlightLine"] = IProcedureParallelFlightLi
 
 class IProcedureVGTPoint(object):
     """Interface used to access the options for a VGT Point procedure."""
+
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34069,6 +34439,7 @@ agcls.AgTypeNameMap["IProcedureVGTPoint"] = IProcedureVGTPoint
 
 class ISiteRunwayFromCatalog(object):
     """Interface used to access the options for a Runway From Catalog site type."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34117,6 +34488,7 @@ agcls.AgTypeNameMap["ISiteRunwayFromCatalog"] = ISiteRunwayFromCatalog
 
 class ISiteAirportFromCatalog(object):
     """Interface used to access the options for a airport From Catalog site type."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34165,6 +34537,7 @@ agcls.AgTypeNameMap["ISiteAirportFromCatalog"] = ISiteAirportFromCatalog
 
 class ISiteNavaidFromCatalog(object):
     """Interface used to access the options for a navaid From Catalog site type."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34213,6 +34586,7 @@ agcls.AgTypeNameMap["ISiteNavaidFromCatalog"] = ISiteNavaidFromCatalog
 
 class ISiteVTOLPointFromCatalog(object):
     """Interface used to access the options for a VTOL Point From Catalog site type."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34261,6 +34635,7 @@ agcls.AgTypeNameMap["ISiteVTOLPointFromCatalog"] = ISiteVTOLPointFromCatalog
 
 class ISiteWaypointFromCatalog(object):
     """Interface used to access the options for a waypoint From Catalog site type."""
+
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34309,6 +34684,7 @@ agcls.AgTypeNameMap["ISiteWaypointFromCatalog"] = ISiteWaypointFromCatalog
 
 class IProcedureLaunchDynState(object):
     """Interface used to access the options for a dyn state launch procedure."""
+
     _num_methods = 26
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34565,6 +34941,7 @@ agcls.AgTypeNameMap["IProcedureLaunchDynState"] = IProcedureLaunchDynState
 
 class IProcedureLaunchWaypoint(object):
     """Interface used to access the options for a waypoint launch procedure."""
+
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34767,6 +35144,7 @@ agcls.AgTypeNameMap["IProcedureLaunchWaypoint"] = IProcedureLaunchWaypoint
 
 class ISiteDynState(object):
     """Interface used to access the options for a dyn state site type."""
+
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -34828,6 +35206,7 @@ agcls.AgTypeNameMap["ISiteDynState"] = ISiteDynState
 
 class SiteWaypoint(ISiteWaypoint, ISite):
     """Class defining a waypoint site."""
+
     def __init__(self, sourceObject=None):
         ISiteWaypoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34846,6 +35225,7 @@ agcls.AgTypeNameMap["SiteWaypoint"] = SiteWaypoint
 
 class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
     """Class defining an End of Previous Procedure site."""
+
     def __init__(self, sourceObject=None):
         ISiteEndOfPrevProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34864,6 +35244,7 @@ agcls.AgTypeNameMap["SiteEndOfPrevProcedure"] = SiteEndOfPrevProcedure
 
 class SiteVTOLPoint(ISiteVTOLPoint, ISite):
     """Class defining a VTOL Point site."""
+
     def __init__(self, sourceObject=None):
         ISiteVTOLPoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34882,6 +35263,7 @@ agcls.AgTypeNameMap["SiteVTOLPoint"] = SiteVTOLPoint
 
 class SiteReferenceState(ISiteReferenceState, ISite):
     """Class defining a Reference State site."""
+
     def __init__(self, sourceObject=None):
         ISiteReferenceState.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34900,6 +35282,7 @@ agcls.AgTypeNameMap["SiteReferenceState"] = SiteReferenceState
 
 class SiteSTKVehicle(ISiteSTKVehicle, ISite):
     """Class defining a STK Vehicle site."""
+
     def __init__(self, sourceObject=None):
         ISiteSTKVehicle.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34918,6 +35301,7 @@ agcls.AgTypeNameMap["SiteSTKVehicle"] = SiteSTKVehicle
 
 class SiteSuperProcedure(ISiteSuperProcedure, ISite):
     """Class defining a Super Procedure site."""
+
     def __init__(self, sourceObject=None):
         ISiteSuperProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34936,6 +35320,7 @@ agcls.AgTypeNameMap["SiteSuperProcedure"] = SiteSuperProcedure
 
 class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
     """Class defining a Relative to Previous Procedure site."""
+
     def __init__(self, sourceObject=None):
         ISiteRelToPrevProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34954,6 +35339,7 @@ agcls.AgTypeNameMap["SiteRelToPrevProcedure"] = SiteRelToPrevProcedure
 
 class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
     """Class defining a STK Object Waypoint site."""
+
     def __init__(self, sourceObject=None):
         ISiteSTKObjectWaypoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34972,6 +35358,7 @@ agcls.AgTypeNameMap["SiteSTKObjectWaypoint"] = SiteSTKObjectWaypoint
 
 class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
     """Class defining a STK Static Object site."""
+
     def __init__(self, sourceObject=None):
         ISiteSTKStaticObject.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -34990,6 +35377,7 @@ agcls.AgTypeNameMap["SiteSTKStaticObject"] = SiteSTKStaticObject
 
 class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
     """Class defining a Relative to Stationary STK Object site."""
+
     def __init__(self, sourceObject=None):
         ISiteRelToSTKObject.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -35008,6 +35396,7 @@ agcls.AgTypeNameMap["SiteRelToSTKObject"] = SiteRelToSTKObject
 
 class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
     """Class defining a STK Area Target site."""
+
     def __init__(self, sourceObject=None):
         ISiteSTKAreaTarget.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -35026,6 +35415,7 @@ agcls.AgTypeNameMap["SiteSTKAreaTarget"] = SiteSTKAreaTarget
 
 class SiteRunway(ISiteRunway, ISite):
     """Class defining a runway site."""
+
     def __init__(self, sourceObject=None):
         ISiteRunway.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -35044,6 +35434,7 @@ agcls.AgTypeNameMap["SiteRunway"] = SiteRunway
 
 class Site(ISite, ISiteUnknown):
     """Class defining an unknown site type."""
+
     def __init__(self, sourceObject=None):
         ISite.__init__(self, sourceObject)
         ISiteUnknown.__init__(self, sourceObject)
@@ -35062,6 +35453,7 @@ agcls.AgTypeNameMap["Site"] = Site
 
 class ProcedureLanding(IProcedureLanding, IProcedure):
     """Class defining a landing procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureLanding.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35080,6 +35472,7 @@ agcls.AgTypeNameMap["ProcedureLanding"] = ProcedureLanding
 
 class ProcedureEnroute(IProcedureEnroute, IProcedure):
     """Class defining an enroute procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureEnroute.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35098,6 +35491,7 @@ agcls.AgTypeNameMap["ProcedureEnroute"] = ProcedureEnroute
 
 class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
     """Class defining an ExtEphem procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureExtEphem.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35116,6 +35510,7 @@ agcls.AgTypeNameMap["ProcedureExtEphem"] = ProcedureExtEphem
 
 class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
     """Class defining an formationflyer procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureFormationFlyer.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35134,6 +35529,7 @@ agcls.AgTypeNameMap["ProcedureFormationFlyer"] = ProcedureFormationFlyer
 
 class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
     """Class defining a basic point to point procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureBasicPointToPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35152,6 +35548,7 @@ agcls.AgTypeNameMap["ProcedureBasicPointToPoint"] = ProcedureBasicPointToPoint
 
 class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
     """Class defining a arc enroute procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureArcEnroute.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35170,6 +35567,7 @@ agcls.AgTypeNameMap["ProcedureArcEnroute"] = ProcedureArcEnroute
 
 class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
     """Class defining a arc point to point procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureArcPointToPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35188,6 +35586,7 @@ agcls.AgTypeNameMap["ProcedureArcPointToPoint"] = ProcedureArcPointToPoint
 
 class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
     """Class defining a flight line procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureFlightLine.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35206,6 +35605,7 @@ agcls.AgTypeNameMap["ProcedureFlightLine"] = ProcedureFlightLine
 
 class ProcedureDelay(IProcedureDelay, IProcedure):
     """Class defining a delay procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureDelay.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35224,6 +35624,7 @@ agcls.AgTypeNameMap["ProcedureDelay"] = ProcedureDelay
 
 class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
     """Class defining a takeoff procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureTakeoff.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35242,6 +35643,7 @@ agcls.AgTypeNameMap["ProcedureTakeoff"] = ProcedureTakeoff
 
 class ProcedureCollection(IProcedureCollection):
     """Class defining the collection of procedures in the phase of an Aviator mission."""
+
     def __init__(self, sourceObject=None):
         IProcedureCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35258,6 +35660,7 @@ agcls.AgTypeNameMap["ProcedureCollection"] = ProcedureCollection
 
 class Phase(IPhase):
     """Class defining a phase in an Aviator mission."""
+
     def __init__(self, sourceObject=None):
         IPhase.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35274,6 +35677,7 @@ agcls.AgTypeNameMap["Phase"] = Phase
 
 class PhaseCollection(IPhaseCollection):
     """Class defining the collection of phases."""
+
     def __init__(self, sourceObject=None):
         IPhaseCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35290,6 +35694,7 @@ agcls.AgTypeNameMap["PhaseCollection"] = PhaseCollection
 
 class Mission(IMission):
     """Class defining the Aviator mission."""
+
     def __init__(self, sourceObject=None):
         IMission.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35306,6 +35711,7 @@ agcls.AgTypeNameMap["Mission"] = Mission
 
 class AviatorPropagator(IAviatorPropagator):
     """Class defining the Aviator propagator."""
+
     def __init__(self, sourceObject=None):
         IAviatorPropagator.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35322,6 +35728,7 @@ agcls.AgTypeNameMap["AviatorPropagator"] = AviatorPropagator
 
 class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
     """Class defining a Basic Maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureBasicManeuver.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -35340,6 +35747,7 @@ agcls.AgTypeNameMap["ProcedureBasicManeuver"] = ProcedureBasicManeuver
 
 class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStrategy):
     """Class defining Weave strategy for a Basic Maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyWeave.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -35358,6 +35766,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyWeave"] = BasicManeuverStrategyWeave
 
 class ProcedureTimeOptions(IProcedureTimeOptions):
     """Class defining the time options for the current procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureTimeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35374,6 +35783,7 @@ agcls.AgTypeNameMap["ProcedureTimeOptions"] = ProcedureTimeOptions
 
 class CalculationOptions(ICalculationOptions):
     """Class defining the calculation options for a procedure or phase."""
+
     def __init__(self, sourceObject=None):
         ICalculationOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35390,6 +35800,7 @@ agcls.AgTypeNameMap["CalculationOptions"] = CalculationOptions
 
 class AircraftCategory(IAircraftCategory):
     """Class defining the aircraft category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IAircraftCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35406,6 +35817,7 @@ agcls.AgTypeNameMap["AircraftCategory"] = AircraftCategory
 
 class Catalog(ICatalog):
     """Class defining the Aviator Catalog."""
+
     def __init__(self, sourceObject=None):
         ICatalog.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35422,6 +35834,7 @@ agcls.AgTypeNameMap["Catalog"] = Catalog
 
 class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining an aircraft in Aviator."""
+
     def __init__(self, sourceObject=None):
         IAircraftModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
@@ -35442,6 +35855,7 @@ agcls.AgTypeNameMap["AircraftModel"] = AircraftModel
 
 class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
     """Class defining a missile in Aviator."""
+
     def __init__(self, sourceObject=None):
         IMissileModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
@@ -35462,6 +35876,7 @@ agcls.AgTypeNameMap["MissileModel"] = MissileModel
 
 class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining a rotorcraft in Aviator."""
+
     def __init__(self, sourceObject=None):
         IRotorcraftModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
@@ -35482,6 +35897,7 @@ agcls.AgTypeNameMap["RotorcraftModel"] = RotorcraftModel
 
 class RotorcraftAero(IRotorcraftAero):
     """Class defining the aerodynamic options for a rotorcraft."""
+
     def __init__(self, sourceObject=None):
         IRotorcraftAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35498,6 +35914,7 @@ agcls.AgTypeNameMap["RotorcraftAero"] = RotorcraftAero
 
 class RotorcraftProp(IRotorcraftProp):
     """Class defining the propulsion options for a rotorcraft."""
+
     def __init__(self, sourceObject=None):
         IRotorcraftProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35514,6 +35931,7 @@ agcls.AgTypeNameMap["RotorcraftProp"] = RotorcraftProp
 
 class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
     """Class defining the aircraft acceleration category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAcceleration.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35532,6 +35950,7 @@ agcls.AgTypeNameMap["AircraftAcceleration"] = AircraftAcceleration
 
 class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic acceleration performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicAccelerationModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35552,6 +35971,7 @@ agcls.AgTypeNameMap["AircraftBasicAccelerationModel"] = AircraftBasicAcceleratio
 
 class AircraftClimb(IAircraftClimb, ICatalogItem):
     """Class defining the aircraft climb category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftClimb.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35570,6 +35990,7 @@ agcls.AgTypeNameMap["AircraftClimb"] = AircraftClimb
 
 class AircraftCruise(IAircraftCruise, ICatalogItem):
     """Class defining the aircraft cruise category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftCruise.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35588,6 +36009,7 @@ agcls.AgTypeNameMap["AircraftCruise"] = AircraftCruise
 
 class AircraftDescent(IAircraftDescent, ICatalogItem):
     """Class defining the aircraft descent category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftDescent.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35606,6 +36028,7 @@ agcls.AgTypeNameMap["AircraftDescent"] = AircraftDescent
 
 class AircraftLanding(IAircraftLanding, ICatalogItem):
     """Class defining the aircraft landing category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftLanding.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35624,6 +36047,7 @@ agcls.AgTypeNameMap["AircraftLanding"] = AircraftLanding
 
 class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
     """Class defining the aircraft takeoff category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftTakeoff.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35642,6 +36066,7 @@ agcls.AgTypeNameMap["AircraftTakeoff"] = AircraftTakeoff
 
 class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic climb performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicClimbModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35662,6 +36087,7 @@ agcls.AgTypeNameMap["AircraftBasicClimbModel"] = AircraftBasicClimbModel
 
 class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced climb performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvClimbModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35682,6 +36108,7 @@ agcls.AgTypeNameMap["AircraftAdvClimbModel"] = AircraftAdvClimbModel
 
 class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic cruise performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicCruiseModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35702,6 +36129,7 @@ agcls.AgTypeNameMap["AircraftBasicCruiseModel"] = AircraftBasicCruiseModel
 
 class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced cruise performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvCruiseModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35722,6 +36150,7 @@ agcls.AgTypeNameMap["AircraftAdvCruiseModel"] = AircraftAdvCruiseModel
 
 class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic descent performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicDescentModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35742,6 +36171,7 @@ agcls.AgTypeNameMap["AircraftBasicDescentModel"] = AircraftBasicDescentModel
 
 class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced descent performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvDescentModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35762,6 +36192,7 @@ agcls.AgTypeNameMap["AircraftAdvDescentModel"] = AircraftAdvDescentModel
 
 class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic takeoff performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicTakeoffModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35782,6 +36213,7 @@ agcls.AgTypeNameMap["AircraftBasicTakeoffModel"] = AircraftBasicTakeoffModel
 
 class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced takeoff performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvTakeoffModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35802,6 +36234,7 @@ agcls.AgTypeNameMap["AircraftAdvTakeoffModel"] = AircraftAdvTakeoffModel
 
 class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic landing performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicLandingModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35822,6 +36255,7 @@ agcls.AgTypeNameMap["AircraftBasicLandingModel"] = AircraftBasicLandingModel
 
 class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced landing performance model for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvLandingModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -35842,6 +36276,7 @@ agcls.AgTypeNameMap["AircraftAdvLandingModel"] = AircraftAdvLandingModel
 
 class AirportCategory(IAirportCategory):
     """Class defining the airport category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IAirportCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35858,6 +36293,7 @@ agcls.AgTypeNameMap["AirportCategory"] = AirportCategory
 
 class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Airport."""
+
     def __init__(self, sourceObject=None):
         IARINC424Item.__init__(self, sourceObject)
         ICatalogAirport.__init__(self, sourceObject)
@@ -35880,6 +36316,7 @@ agcls.AgTypeNameMap["ARINC424Airport"] = ARINC424Airport
 
 class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Runway."""
+
     def __init__(self, sourceObject=None):
         IARINC424Runway.__init__(self, sourceObject)
         IARINC424Item.__init__(self, sourceObject)
@@ -35904,6 +36341,7 @@ agcls.AgTypeNameMap["ARINC424Runway"] = ARINC424Runway
 
 class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Runway."""
+
     def __init__(self, sourceObject=None):
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogRunway.__init__(self, sourceObject)
@@ -35926,6 +36364,7 @@ agcls.AgTypeNameMap["DAFIFRunway"] = DAFIFRunway
 
 class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Helipad."""
+
     def __init__(self, sourceObject=None):
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
@@ -35948,6 +36387,7 @@ agcls.AgTypeNameMap["DAFIFHelipad"] = DAFIFHelipad
 
 class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Waypoint."""
+
     def __init__(self, sourceObject=None):
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -35968,6 +36408,7 @@ agcls.AgTypeNameMap["DAFIFWaypoint"] = DAFIFWaypoint
 
 class RunwayCategory(IRunwayCategory):
     """Class defining the runway category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IRunwayCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -35984,6 +36425,7 @@ agcls.AgTypeNameMap["RunwayCategory"] = RunwayCategory
 
 class UserRunwaySource(IUserRunwaySource, ICatalogSource):
     """Class defining the user runways in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserRunwaySource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36002,6 +36444,7 @@ agcls.AgTypeNameMap["UserRunwaySource"] = UserRunwaySource
 
 class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
     """Class defining the user runway in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserRunway.__init__(self, sourceObject)
         ICatalogRunway.__init__(self, sourceObject)
@@ -36024,6 +36467,7 @@ agcls.AgTypeNameMap["UserRunway"] = UserRunway
 
 class AltitudeMSLOptions(IAltitudeMSLOptions):
     """Class defining the altitude MSL options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IAltitudeMSLOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36040,6 +36484,7 @@ agcls.AgTypeNameMap["AltitudeMSLOptions"] = AltitudeMSLOptions
 
 class AltitudeOptions(IAltitudeOptions):
     """Class defining the altitude options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36056,6 +36501,7 @@ agcls.AgTypeNameMap["AltitudeOptions"] = AltitudeOptions
 
 class ArcAltitudeOptions(IArcAltitudeOptions):
     """Class defining the altitude options for an arc procedure."""
+
     def __init__(self, sourceObject=None):
         IArcAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36072,6 +36518,7 @@ agcls.AgTypeNameMap["ArcAltitudeOptions"] = ArcAltitudeOptions
 
 class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
     """Class defining the altitude and delay options for an arc procedure."""
+
     def __init__(self, sourceObject=None):
         IArcAltitudeAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36088,6 +36535,7 @@ agcls.AgTypeNameMap["ArcAltitudeAndDelayOptions"] = ArcAltitudeAndDelayOptions
 
 class ArcOptions(IArcOptions):
     """Class defining the arc options for a procedure."""
+
     def __init__(self, sourceObject=None):
         IArcOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36104,6 +36552,7 @@ agcls.AgTypeNameMap["ArcOptions"] = ArcOptions
 
 class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
     """Class defining the altitude MSL and Level off options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IAltitudeMSLAndLevelOffOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36120,6 +36569,7 @@ agcls.AgTypeNameMap["AltitudeMSLAndLevelOffOptions"] = AltitudeMSLAndLevelOffOpt
 
 class CruiseAirspeedOptions(ICruiseAirspeedOptions):
     """Class defining the cruise airspeed options in a procedure."""
+
     def __init__(self, sourceObject=None):
         ICruiseAirspeedOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36136,6 +36586,7 @@ agcls.AgTypeNameMap["CruiseAirspeedOptions"] = CruiseAirspeedOptions
 
 class CruiseAirspeedProfile(ICruiseAirspeedProfile):
     """Class defining the cruise profile options in a procedure."""
+
     def __init__(self, sourceObject=None):
         ICruiseAirspeedProfile.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36152,6 +36603,7 @@ agcls.AgTypeNameMap["CruiseAirspeedProfile"] = CruiseAirspeedProfile
 
 class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options in a procedure."""
+
     def __init__(self, sourceObject=None):
         ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36168,6 +36620,7 @@ agcls.AgTypeNameMap["CruiseAirspeedAndProfileOptions"] = CruiseAirspeedAndProfil
 
 class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options for a landing procedure."""
+
     def __init__(self, sourceObject=None):
         ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36184,6 +36637,7 @@ agcls.AgTypeNameMap["LandingCruiseAirspeedAndProfileOptions"] = LandingCruiseAir
 
 class EnrouteOptions(IEnrouteOptions):
     """Class defining the enroute options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IEnrouteOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36200,6 +36654,7 @@ agcls.AgTypeNameMap["EnrouteOptions"] = EnrouteOptions
 
 class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute and delay options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IEnrouteAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36216,6 +36671,7 @@ agcls.AgTypeNameMap["EnrouteAndDelayOptions"] = EnrouteAndDelayOptions
 
 class LandingEnrouteOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute options in a landing procedure."""
+
     def __init__(self, sourceObject=None):
         IEnrouteAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36232,6 +36688,7 @@ agcls.AgTypeNameMap["LandingEnrouteOptions"] = LandingEnrouteOptions
 
 class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
     """Class defining the enroute turn direction options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IEnrouteTurnDirectionOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36248,6 +36705,7 @@ agcls.AgTypeNameMap["EnrouteTurnDirectionOptions"] = EnrouteTurnDirectionOptions
 
 class NavigationOptions(INavigationOptions):
     """Class defining the navigation options in a procedure."""
+
     def __init__(self, sourceObject=None):
         INavigationOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36264,6 +36722,7 @@ agcls.AgTypeNameMap["NavigationOptions"] = NavigationOptions
 
 class VerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36280,6 +36739,7 @@ agcls.AgTypeNameMap["VerticalPlaneOptions"] = VerticalPlaneOptions
 
 class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
+
     def __init__(self, sourceObject=None):
         IArcVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36296,6 +36756,7 @@ agcls.AgTypeNameMap["ArcVerticalPlaneOptions"] = ArcVerticalPlaneOptions
 
 class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
     """Class defining the vertical plane options for an arc procedure."""
+
     def __init__(self, sourceObject=None):
         IVerticalPlaneAndFlightPathOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36312,6 +36773,7 @@ agcls.AgTypeNameMap["VerticalPlaneAndFlightPathOptions"] = VerticalPlaneAndFligh
 
 class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a landing procedure."""
+
     def __init__(self, sourceObject=None):
         IVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36328,6 +36790,7 @@ agcls.AgTypeNameMap["LandingVerticalPlaneOptions"] = LandingVerticalPlaneOptions
 
 class RunwayHeadingOptions(IRunwayHeadingOptions):
     """Class defining the runway heading options in a takeoff or landing procedure."""
+
     def __init__(self, sourceObject=None):
         IRunwayHeadingOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36344,6 +36807,7 @@ agcls.AgTypeNameMap["RunwayHeadingOptions"] = RunwayHeadingOptions
 
 class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
     """Class defining the enter downwind pattern options for a landing procedure."""
+
     def __init__(self, sourceObject=None):
         ILandingEnterDownwindPattern.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36360,6 +36824,7 @@ agcls.AgTypeNameMap["LandingEnterDownwindPattern"] = LandingEnterDownwindPattern
 
 class LandingInterceptGlideslope(ILandingInterceptGlideslope):
     """Class defining the intercept glideslope options for a landing procedure."""
+
     def __init__(self, sourceObject=None):
         ILandingInterceptGlideslope.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36376,6 +36841,7 @@ agcls.AgTypeNameMap["LandingInterceptGlideslope"] = LandingInterceptGlideslope
 
 class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
     """Class defining the standard instrument approach options for a landing procedure."""
+
     def __init__(self, sourceObject=None):
         ILandingStandardInstrumentApproach.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36392,6 +36858,7 @@ agcls.AgTypeNameMap["LandingStandardInstrumentApproach"] = LandingStandardInstru
 
 class TakeoffDeparturePoint(ITakeoffDeparturePoint):
     """Class defining the departure point options for a takeoff procedure."""
+
     def __init__(self, sourceObject=None):
         ITakeoffDeparturePoint.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36408,6 +36875,7 @@ agcls.AgTypeNameMap["TakeoffDeparturePoint"] = TakeoffDeparturePoint
 
 class TakeoffLowTransition(ITakeoffLowTransition):
     """Class defining the low transition options for a takeoff procedure."""
+
     def __init__(self, sourceObject=None):
         ITakeoffLowTransition.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36424,6 +36892,7 @@ agcls.AgTypeNameMap["TakeoffLowTransition"] = TakeoffLowTransition
 
 class TakeoffNormal(ITakeoffNormal):
     """Class defining the normal options for a takeoff procedure."""
+
     def __init__(self, sourceObject=None):
         ITakeoffNormal.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36440,6 +36909,7 @@ agcls.AgTypeNameMap["TakeoffNormal"] = TakeoffNormal
 
 class LevelTurns(ILevelTurns):
     """Class defining the level turns options for an acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         ILevelTurns.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36456,6 +36926,7 @@ agcls.AgTypeNameMap["LevelTurns"] = LevelTurns
 
 class AttitudeTransitions(IAttitudeTransitions):
     """Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAttitudeTransitions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36472,6 +36943,7 @@ agcls.AgTypeNameMap["AttitudeTransitions"] = AttitudeTransitions
 
 class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
     """Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IClimbAndDescentTransitions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36488,6 +36960,7 @@ agcls.AgTypeNameMap["ClimbAndDescentTransitions"] = ClimbAndDescentTransitions
 
 class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
     """Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAeroPropManeuverModeHelper.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36504,6 +36977,7 @@ agcls.AgTypeNameMap["AeroPropManeuverModeHelper"] = AeroPropManeuverModeHelper
 
 class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAdvAccelerationModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
@@ -36524,6 +36998,7 @@ agcls.AgTypeNameMap["AircraftAdvAccelerationModel"] = AircraftAdvAccelerationMod
 
 class AircraftAccelerationMode(IAircraftAccelerationMode):
     """Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAccelerationMode.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36540,6 +37015,7 @@ agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
 
 class AircraftSimpleAero(IAircraftSimpleAero):
     """Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftSimpleAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36556,6 +37032,7 @@ agcls.AgTypeNameMap["AircraftSimpleAero"] = AircraftSimpleAero
 
 class AircraftExternalAero(IAircraftExternalAero):
     """Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36572,6 +37049,7 @@ agcls.AgTypeNameMap["AircraftExternalAero"] = AircraftExternalAero
 
 class AircraftAero(IAircraftAero):
     """Class defining the aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36588,6 +37066,7 @@ agcls.AgTypeNameMap["AircraftAero"] = AircraftAero
 
 class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
     """Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicFixedWingAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36604,6 +37083,7 @@ agcls.AgTypeNameMap["AircraftBasicFixedWingAero"] = AircraftBasicFixedWingAero
 
 class AircraftProp(IAircraftProp):
     """Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36620,6 +37100,7 @@ agcls.AgTypeNameMap["AircraftProp"] = AircraftProp
 
 class AircraftSimpleProp(IAircraftSimpleProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftSimpleProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36636,6 +37117,7 @@ agcls.AgTypeNameMap["AircraftSimpleProp"] = AircraftSimpleProp
 
 class AircraftExternalProp(IAircraftExternalProp):
     """Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36652,6 +37134,7 @@ agcls.AgTypeNameMap["AircraftExternalProp"] = AircraftExternalProp
 
 class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftBasicFixedWingProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36668,6 +37151,7 @@ agcls.AgTypeNameMap["AircraftBasicFixedWingProp"] = AircraftBasicFixedWingProp
 
 class ARINC424Source(IARINC424Source, ICatalogSource):
     """Class defining an ARINC424 source in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IARINC424Source.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36686,6 +37170,7 @@ agcls.AgTypeNameMap["ARINC424Source"] = ARINC424Source
 
 class DAFIFSource(IDAFIFSource, ICatalogSource):
     """Class defining an DAFIF source in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IDAFIFSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36704,6 +37189,7 @@ agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
 
 class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
     """Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
+
     def __init__(self, sourceObject=None):
         IBasicFixedWingLiftHelper.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36720,6 +37206,7 @@ agcls.AgTypeNameMap["BasicFixedWingFwdFlightLiftHelper"] = BasicFixedWingFwdFlig
 
 class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy):
     """Class defining the Straight Ahead strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyStraightAhead.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -36738,6 +37225,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyStraightAhead"] = BasicManeuverStrateg
 
 class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy):
     """Class defining the Cruise profile strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyCruiseProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -36756,6 +37244,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyCruiseProfile"] = BasicManeuverStrateg
 
 class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy):
     """Class defining the Glide profile strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyGlideProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -36774,6 +37263,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyGlideProfile"] = BasicManeuverStrategy
 
 class AircraftModels(IAircraftModels, ICatalogSource):
     """Class defining the User Aircraft Models in the Aviator Catalog."""
+
     def __init__(self, sourceObject=None):
         IAircraftModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36792,6 +37282,7 @@ agcls.AgTypeNameMap["AircraftModels"] = AircraftModels
 
 class MissileModels(IMissileModels, ICatalogSource):
     """Class defining the User Missile Models in the Aviator Catalog."""
+
     def __init__(self, sourceObject=None):
         IMissileModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36810,6 +37301,7 @@ agcls.AgTypeNameMap["MissileModels"] = MissileModels
 
 class RotorcraftModels(IRotorcraftModels, ICatalogSource):
     """Class defining the User Rotorcraft Models in the Aviator Catalog."""
+
     def __init__(self, sourceObject=None):
         IRotorcraftModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -36828,6 +37320,7 @@ agcls.AgTypeNameMap["RotorcraftModels"] = RotorcraftModels
 
 class Configuration(IConfiguration):
     """Class defining the aircraft configuration for an Aviator mission."""
+
     def __init__(self, sourceObject=None):
         IConfiguration.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36844,6 +37337,7 @@ agcls.AgTypeNameMap["Configuration"] = Configuration
 
 class FuelTankInternal(IFuelTankInternal, IStation):
     """Class defining an internal fuel tank for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IFuelTankInternal.__init__(self, sourceObject)
         IStation.__init__(self, sourceObject)
@@ -36862,6 +37356,7 @@ agcls.AgTypeNameMap["FuelTankInternal"] = FuelTankInternal
 
 class FuelTankExternal(IFuelTankExternal):
     """Class defining an external fuel tank for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IFuelTankExternal.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36878,6 +37373,7 @@ agcls.AgTypeNameMap["FuelTankExternal"] = FuelTankExternal
 
 class PayloadStation(IPayloadStation, IStation):
     """Class defining a payload station for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IPayloadStation.__init__(self, sourceObject)
         IStation.__init__(self, sourceObject)
@@ -36896,6 +37392,7 @@ agcls.AgTypeNameMap["PayloadStation"] = PayloadStation
 
 class StationCollection(IStationCollection):
     """Class defining a collection of payload stations for an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IStationCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36912,6 +37409,7 @@ agcls.AgTypeNameMap["StationCollection"] = StationCollection
 
 class WindModel(IWindModel):
     """Class defining the wind model for a mission, scenario, or procedure."""
+
     def __init__(self, sourceObject=None):
         IWindModel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36928,6 +37426,7 @@ agcls.AgTypeNameMap["WindModel"] = WindModel
 
 class WindModelConstant(IWindModelConstant):
     """Class defining a constant bearing/speed wind model for a mission."""
+
     def __init__(self, sourceObject=None):
         IWindModelConstant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36944,6 +37443,7 @@ agcls.AgTypeNameMap["WindModelConstant"] = WindModelConstant
 
 class WindModelADDS(IWindModelADDS):
     """Class defining a wind model using the NOAA ADDS service for a mission."""
+
     def __init__(self, sourceObject=None):
         IWindModelADDS.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36960,6 +37460,7 @@ agcls.AgTypeNameMap["WindModelADDS"] = WindModelADDS
 
 class ADDSMessage(IADDSMessage):
     """Class defining a message from the NOAA ADDS service."""
+
     def __init__(self, sourceObject=None):
         IADDSMessage.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36976,6 +37477,7 @@ agcls.AgTypeNameMap["ADDSMessage"] = ADDSMessage
 
 class ADDSMessageCollection(IADDSMessageCollection):
     """Class defining a collection of messages from the NOAA ADDS service."""
+
     def __init__(self, sourceObject=None):
         IADDSMessageCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -36992,6 +37494,7 @@ agcls.AgTypeNameMap["ADDSMessageCollection"] = ADDSMessageCollection
 
 class Procedure(IProcedure, IConnect):
     """Class defining an unknown procedure type."""
+
     def __init__(self, sourceObject=None):
         IProcedure.__init__(self, sourceObject)
         IConnect.__init__(self, sourceObject)
@@ -37010,6 +37513,7 @@ agcls.AgTypeNameMap["Procedure"] = Procedure
 
 class AtmosphereModel(IAtmosphereModel):
     """Class defining the atmosphere model for a mission, scenario, or procedure."""
+
     def __init__(self, sourceObject=None):
         IAtmosphereModel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37026,6 +37530,7 @@ agcls.AgTypeNameMap["AtmosphereModel"] = AtmosphereModel
 
 class AtmosphereModelBasic(IAtmosphereModelBasic):
     """Class defining the basic atmosphere model."""
+
     def __init__(self, sourceObject=None):
         IAtmosphereModelBasic.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37042,6 +37547,7 @@ agcls.AgTypeNameMap["AtmosphereModelBasic"] = AtmosphereModelBasic
 
 class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy):
     """Class defining the simple turn strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategySimpleTurn.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37060,6 +37566,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategySimpleTurn"] = BasicManeuverStrategySi
 
 class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy):
     """Class defining the aileron roll strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyAileronRoll.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37078,6 +37585,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyAileronRoll"] = BasicManeuverStrategyA
 
 class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy):
     """Class defining the fly AOA strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyFlyAOA.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37096,6 +37604,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyFlyAOA"] = BasicManeuverStrategyFlyAOA
 
 class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrategy):
     """Class defining the pull strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37114,6 +37623,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyPull"] = BasicManeuverStrategyPull
 
 class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasicManeuverStrategy):
     """Class defining the rolling pull strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRollingPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37132,6 +37642,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRollingPull"] = BasicManeuverStrategyR
 
 class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy):
     """Class defining the smooth accel strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategySmoothAccel.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37150,6 +37661,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategySmoothAccel"] = BasicManeuverStrategyS
 
 class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicManeuverStrategy):
     """Class defining the smooth turn strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategySmoothTurn.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37168,6 +37680,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategySmoothTurn"] = BasicManeuverStrategySm
 
 class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
     """Class defining the airspeed options for basic maneuver strategies."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverAirspeedOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37184,6 +37697,7 @@ agcls.AgTypeNameMap["BasicManeuverAirspeedOptions"] = BasicManeuverAirspeedOptio
 
 class PropulsionThrust(IPropulsionThrust):
     """Class defining the the thrust propulsion used in basic maneuver procedures."""
+
     def __init__(self, sourceObject=None):
         IPropulsionThrust.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37200,6 +37714,7 @@ agcls.AgTypeNameMap["PropulsionThrust"] = PropulsionThrust
 
 class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy):
     """Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyAutopilotNav.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37218,6 +37733,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNav"] = BasicManeuverStrategy
 
 class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy):
     """Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyAutopilotProf.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37236,6 +37752,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotProf"] = BasicManeuverStrateg
 
 class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy):
     """Class defining the barrel roll strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyBarrelRoll.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37254,6 +37771,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyBarrelRoll"] = BasicManeuverStrategyBa
 
 class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrategy):
     """Class defining the loop strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyLoop.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37272,6 +37790,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyLoop"] = BasicManeuverStrategyLoop
 
 class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy):
     """Class defining the lighter than air hover strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyLTAHover.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37290,6 +37809,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyLTAHover"] = BasicManeuverStrategyLTAH
 
 class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicManeuverStrategy):
     """Class defining the Intercept strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyIntercept.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37308,6 +37828,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyIntercept"] = BasicManeuverStrategyInt
 
 class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy):
     """Class defining the Relative Bearing strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRelativeBearing.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37326,6 +37847,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRelativeBearing"] = BasicManeuverStrat
 
 class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy):
     """Class defining the Relative Course strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRelativeCourse.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37344,6 +37866,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRelativeCourse"] = BasicManeuverStrate
 
 class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy):
     """Class defining the Rendezvous/Formation strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRendezvous.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37362,6 +37885,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRendezvous"] = BasicManeuverStrategyRe
 
 class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy):
     """Class defining the Stationkeeping strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyStationkeeping.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37380,6 +37904,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrate
 
 class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy):
     """Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRelativeFPA.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37398,6 +37923,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFPA"] = BasicManeuverStrategyR
 
 class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy):
     """Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyRelSpeedAltitude.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37416,6 +37942,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyRelSpeedAltitude"] = BasicManeuverStra
 
 class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverStrategy):
     """Class defining the Bezier strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyBezier.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37434,6 +37961,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyBezier"] = BasicManeuverStrategyBezier
 
 class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuverStrategy):
     """Class defining the Push/Pull strategy for a basic maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyPushPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -37452,6 +37980,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyPushPull"] = BasicManeuverStrategyPush
 
 class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
     """Class defining a holding circular procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureHoldingCircular.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37470,6 +37999,7 @@ agcls.AgTypeNameMap["ProcedureHoldingCircular"] = ProcedureHoldingCircular
 
 class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
     """Class defining a holding figure 8 procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureHoldingFigure8.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37488,6 +38018,7 @@ agcls.AgTypeNameMap["ProcedureHoldingFigure8"] = ProcedureHoldingFigure8
 
 class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
     """Class defining a holding racetrack procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureHoldingRacetrack.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37506,6 +38037,7 @@ agcls.AgTypeNameMap["ProcedureHoldingRacetrack"] = ProcedureHoldingRacetrack
 
 class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
     """Class defining a transition to hover procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureTransitionToHover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37524,6 +38056,7 @@ agcls.AgTypeNameMap["ProcedureTransitionToHover"] = ProcedureTransitionToHover
 
 class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
     """Class defining a terrain following procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureTerrainFollow.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37542,6 +38075,7 @@ agcls.AgTypeNameMap["ProcedureTerrainFollow"] = ProcedureTerrainFollow
 
 class ProcedureHover(IProcedureHover, IProcedure):
     """Class defining a hover procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureHover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37560,6 +38094,7 @@ agcls.AgTypeNameMap["ProcedureHover"] = ProcedureHover
 
 class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
     """Class defining a hover translate procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureHoverTranslate.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37578,6 +38113,7 @@ agcls.AgTypeNameMap["ProcedureHoverTranslate"] = ProcedureHoverTranslate
 
 class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IProcedure):
     """Class defining a transition to forward flight procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureTransitionToForwardFlight.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37596,6 +38132,7 @@ agcls.AgTypeNameMap["ProcedureTransitionToForwardFlight"] = ProcedureTransitionT
 
 class HoverAltitudeOptions(IHoverAltitudeOptions):
     """Class defining the altitude options for a VTOL procedure."""
+
     def __init__(self, sourceObject=None):
         IHoverAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37612,6 +38149,7 @@ agcls.AgTypeNameMap["HoverAltitudeOptions"] = HoverAltitudeOptions
 
 class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
     """Class defining a vertical takeoff procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureVerticalTakeoff.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37630,6 +38168,7 @@ agcls.AgTypeNameMap["ProcedureVerticalTakeoff"] = ProcedureVerticalTakeoff
 
 class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
     """Class defining a vertical landing procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureVerticalLanding.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37648,6 +38187,7 @@ agcls.AgTypeNameMap["ProcedureVerticalLanding"] = ProcedureVerticalLanding
 
 class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
     """Class defining a reference state procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureReferenceState.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37666,6 +38206,7 @@ agcls.AgTypeNameMap["ProcedureReferenceState"] = ProcedureReferenceState
 
 class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
     """Class defining a super procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureSuperProcedure.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37684,6 +38225,7 @@ agcls.AgTypeNameMap["ProcedureSuperProcedure"] = ProcedureSuperProcedure
 
 class ProcedureLaunch(IProcedureLaunch, IProcedure):
     """Class defining a launch procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureLaunch.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37702,6 +38244,7 @@ agcls.AgTypeNameMap["ProcedureLaunch"] = ProcedureLaunch
 
 class ProcedureAirway(IProcedureAirway, IProcedure):
     """Class defining an Airway procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureAirway.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37720,6 +38263,7 @@ agcls.AgTypeNameMap["ProcedureAirway"] = ProcedureAirway
 
 class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
     """Class defining an Airway Router procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureAirwayRouter.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37738,6 +38282,7 @@ agcls.AgTypeNameMap["ProcedureAirwayRouter"] = ProcedureAirwayRouter
 
 class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
     """Class defining an Area Target Search procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureAreaTargetSearch.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37756,6 +38301,7 @@ agcls.AgTypeNameMap["ProcedureAreaTargetSearch"] = ProcedureAreaTargetSearch
 
 class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
     """Class defining a Formation/Recover procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureFormationRecover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37774,6 +38320,7 @@ agcls.AgTypeNameMap["ProcedureFormationRecover"] = ProcedureFormationRecover
 
 class ProcedureInFormation(IProcedureInFormation, IProcedure):
     """Class defining an In Formation procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureInFormation.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37792,6 +38339,7 @@ agcls.AgTypeNameMap["ProcedureInFormation"] = ProcedureInFormation
 
 class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
     """Class defining a Parallel Flight Line procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureParallelFlightLine.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37810,6 +38358,7 @@ agcls.AgTypeNameMap["ProcedureParallelFlightLine"] = ProcedureParallelFlightLine
 
 class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
     """Class defining a VGT Point procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureVGTPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -37828,6 +38377,7 @@ agcls.AgTypeNameMap["ProcedureVGTPoint"] = ProcedureVGTPoint
 
 class PerformanceModelOptions(IPerformanceModelOptions):
     """Class defining the options for the active performance model in a phase."""
+
     def __init__(self, sourceObject=None):
         IPerformanceModelOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37844,6 +38394,7 @@ agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 
 class AdvFixedWingTool(IAdvFixedWingTool):
     """Class defining the options for the Advanced Fixed Wing Tool of an aircraft."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTool.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37860,6 +38411,7 @@ agcls.AgTypeNameMap["AdvFixedWingTool"] = AdvFixedWingTool
 
 class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
     """Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37876,6 +38428,7 @@ agcls.AgTypeNameMap["AdvFixedWingExternalAero"] = AdvFixedWingExternalAero
 
 class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
     """Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingSubsonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37892,6 +38445,7 @@ agcls.AgTypeNameMap["AdvFixedWingSubsonicAero"] = AdvFixedWingSubsonicAero
 
 class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
     """Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingSubSuperHypersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37908,6 +38462,7 @@ agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicAero"] = AdvFixedWingSubSuper
 
 class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
     """Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingSupersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37924,6 +38479,7 @@ agcls.AgTypeNameMap["AdvFixedWingSupersonicAero"] = AdvFixedWingSupersonicAero
 
 class PerformanceModel(IPerformanceModel, ICatalogItem):
     """Class defining an unknown performance model."""
+
     def __init__(self, sourceObject=None):
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -37942,6 +38498,7 @@ agcls.AgTypeNameMap["PerformanceModel"] = PerformanceModel
 
 class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry):
     """Class defining a basic geometry wing in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingGeometryBasic.__init__(self, sourceObject)
         IAdvFixedWingGeometry.__init__(self, sourceObject)
@@ -37960,6 +38517,7 @@ agcls.AgTypeNameMap["AdvFixedWingGeometryBasic"] = AdvFixedWingGeometryBasic
 
 class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry):
     """Class defining a variable geometry wing in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingGeometryVariable.__init__(self, sourceObject)
         IAdvFixedWingGeometry.__init__(self, sourceObject)
@@ -37978,6 +38536,7 @@ agcls.AgTypeNameMap["AdvFixedWingGeometryVariable"] = AdvFixedWingGeometryVariab
 
 class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
     """Class defining an Electric powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingElectricPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -37994,6 +38553,7 @@ agcls.AgTypeNameMap["AdvFixedWingElectricPowerplant"] = AdvFixedWingElectricPowe
 
 class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
     """Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38010,6 +38570,7 @@ agcls.AgTypeNameMap["AdvFixedWingExternalProp"] = AdvFixedWingExternalProp
 
 class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
     """Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingSubSuperHypersonicProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38026,6 +38587,7 @@ agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicProp"] = AdvFixedWingSubSuper
 
 class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
     """Class defining a Piston powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingPistonPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38041,7 +38603,8 @@ agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}",
 agcls.AgTypeNameMap["AdvFixedWingPistonPowerplant"] = AdvFixedWingPistonPowerplant
 
 class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
-    """Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool"""
+    """Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingEmpiricalJetEngine.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38058,6 +38621,7 @@ agcls.AgTypeNameMap["AdvFixedWingEmpiricalJetEngine"] = AdvFixedWingEmpiricalJet
 
 class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerplant):
     """This class is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38074,6 +38638,7 @@ agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABPowerplant"] = AdvFixedWingTurbo
 
 class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerplant):
     """This class is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38089,7 +38654,8 @@ agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}",
 agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABPowerplant"] = AdvFixedWingTurbojetBasicABPowerplant
 
 class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
-    """Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool"""
+    """Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbofanBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38105,7 +38671,8 @@ agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}",
 agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABProp"] = AdvFixedWingTurbofanBasicABProp
 
 class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
-    """Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool"""
+    """Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbojetBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38121,7 +38688,8 @@ agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}",
 agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABProp"] = AdvFixedWingTurbojetBasicABProp
 
 class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
-    """Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool"""
+    """Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingTurbopropPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38138,6 +38706,7 @@ agcls.AgTypeNameMap["AdvFixedWingTurbopropPowerplant"] = AdvFixedWingTurbopropPo
 
 class MissileSimpleAero(IMissileSimpleAero):
     """Class defining the simple aerodynamic options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileSimpleAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38154,6 +38723,7 @@ agcls.AgTypeNameMap["MissileSimpleAero"] = MissileSimpleAero
 
 class MissileExternalAero(IMissileExternalAero):
     """Class defining the external aerodynamic options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38170,6 +38740,7 @@ agcls.AgTypeNameMap["MissileExternalAero"] = MissileExternalAero
 
 class MissileAdvancedAero(IMissileAdvancedAero):
     """Class defining the advanced aerodynamic options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileAdvancedAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38186,6 +38757,7 @@ agcls.AgTypeNameMap["MissileAdvancedAero"] = MissileAdvancedAero
 
 class MissileAero(IMissileAero):
     """Class defining the aerodynamic options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileAero.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38202,6 +38774,7 @@ agcls.AgTypeNameMap["MissileAero"] = MissileAero
 
 class MissileProp(IMissileProp):
     """Class defining the propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38218,6 +38791,7 @@ agcls.AgTypeNameMap["MissileProp"] = MissileProp
 
 class MissileSimpleProp(IMissileSimpleProp):
     """Class defining the Simple propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileSimpleProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38234,6 +38808,7 @@ agcls.AgTypeNameMap["MissileSimpleProp"] = MissileSimpleProp
 
 class MissileExternalProp(IMissileExternalProp):
     """Class defining the External propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38250,6 +38825,7 @@ agcls.AgTypeNameMap["MissileExternalProp"] = MissileExternalProp
 
 class MissileRamjetProp(IMissileRamjetProp):
     """Class defining the Ramjet propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileRamjetProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38266,6 +38842,7 @@ agcls.AgTypeNameMap["MissileRamjetProp"] = MissileRamjetProp
 
 class MissileRocketProp(IMissileRocketProp):
     """Class defining the Rocket propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileRocketProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38282,6 +38859,7 @@ agcls.AgTypeNameMap["MissileRocketProp"] = MissileRocketProp
 
 class MissileTurbojetProp(IMissileTurbojetProp):
     """Class defining the Turbojet propulsion options for a missile."""
+
     def __init__(self, sourceObject=None):
         IMissileTurbojetProp.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38298,6 +38876,7 @@ agcls.AgTypeNameMap["MissileTurbojetProp"] = MissileTurbojetProp
 
 class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
     """Class defining the Forward Flight options for a Reference State procedure."""
+
     def __init__(self, sourceObject=None):
         IReferenceStateForwardFlightOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38314,6 +38893,7 @@ agcls.AgTypeNameMap["ReferenceStateForwardFlightOptions"] = ReferenceStateForwar
 
 class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
     """Class defining the Takeoff or Landing options for a Reference State procedure."""
+
     def __init__(self, sourceObject=None):
         IReferenceStateTakeoffLandingOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38330,6 +38910,7 @@ agcls.AgTypeNameMap["ReferenceStateTakeoffLandingOptions"] = ReferenceStateTakeo
 
 class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
     """Class defining the Hover options for a Reference State procedure."""
+
     def __init__(self, sourceObject=None):
         IReferenceStateHoverOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38346,6 +38927,7 @@ agcls.AgTypeNameMap["ReferenceStateHoverOptions"] = ReferenceStateHoverOptions
 
 class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
     """Class defining the Weight on Wheels options for a Reference State procedure."""
+
     def __init__(self, sourceObject=None):
         IReferenceStateWeightOnWheelsOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38362,6 +38944,7 @@ agcls.AgTypeNameMap["ReferenceStateWeightOnWheelsOptions"] = ReferenceStateWeigh
 
 class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
     """Class defining a runway from catalog site."""
+
     def __init__(self, sourceObject=None):
         ISiteRunwayFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38380,6 +38963,7 @@ agcls.AgTypeNameMap["SiteRunwayFromCatalog"] = SiteRunwayFromCatalog
 
 class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
     """Class defining a airport from catalog site."""
+
     def __init__(self, sourceObject=None):
         ISiteAirportFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38398,6 +38982,7 @@ agcls.AgTypeNameMap["SiteAirportFromCatalog"] = SiteAirportFromCatalog
 
 class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
     """Class defining a navaid from catalog site."""
+
     def __init__(self, sourceObject=None):
         ISiteNavaidFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38416,6 +39001,7 @@ agcls.AgTypeNameMap["SiteNavaidFromCatalog"] = SiteNavaidFromCatalog
 
 class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
     """Class defining a VTOL point from catalog site."""
+
     def __init__(self, sourceObject=None):
         ISiteVTOLPointFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38434,6 +39020,7 @@ agcls.AgTypeNameMap["SiteVTOLPointFromCatalog"] = SiteVTOLPointFromCatalog
 
 class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
     """Class defining a waypoint from catalog site."""
+
     def __init__(self, sourceObject=None):
         ISiteWaypointFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38452,6 +39039,7 @@ agcls.AgTypeNameMap["SiteWaypointFromCatalog"] = SiteWaypointFromCatalog
 
 class NavaidCategory(INavaidCategory):
     """Class defining the navaid category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         INavaidCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38468,6 +39056,7 @@ agcls.AgTypeNameMap["NavaidCategory"] = NavaidCategory
 
 class VTOLPointCategory(IVTOLPointCategory):
     """Class defining the VTOL point category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IVTOLPointCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38484,6 +39073,7 @@ agcls.AgTypeNameMap["VTOLPointCategory"] = VTOLPointCategory
 
 class WaypointCategory(IWaypointCategory):
     """Class defining the waypoint category in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IWaypointCategory.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38500,6 +39090,7 @@ agcls.AgTypeNameMap["WaypointCategory"] = WaypointCategory
 
 class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Navaid."""
+
     def __init__(self, sourceObject=None):
         IARINC424Item.__init__(self, sourceObject)
         ICatalogNavaid.__init__(self, sourceObject)
@@ -38522,6 +39113,7 @@ agcls.AgTypeNameMap["ARINC424Navaid"] = ARINC424Navaid
 
 class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Helipad."""
+
     def __init__(self, sourceObject=None):
         IARINC424Item.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
@@ -38544,6 +39136,7 @@ agcls.AgTypeNameMap["ARINC424Helipad"] = ARINC424Helipad
 
 class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Waypoint."""
+
     def __init__(self, sourceObject=None):
         IARINC424Item.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -38564,6 +39157,7 @@ agcls.AgTypeNameMap["ARINC424Waypoint"] = ARINC424Waypoint
 
 class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
     """Class defining the user VTOL Point source in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserVTOLPointSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -38582,6 +39176,7 @@ agcls.AgTypeNameMap["UserVTOLPointSource"] = UserVTOLPointSource
 
 class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem):
     """Class defining the user VTOL Point in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserVTOLPoint.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
@@ -38604,6 +39199,7 @@ agcls.AgTypeNameMap["UserVTOLPoint"] = UserVTOLPoint
 
 class UserWaypointSource(IUserWaypointSource, ICatalogSource):
     """Class defining the user waypoint source in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserWaypointSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
@@ -38622,6 +39218,7 @@ agcls.AgTypeNameMap["UserWaypointSource"] = UserWaypointSource
 
 class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
     """Class defining the user waypoint in the Aviator catalog."""
+
     def __init__(self, sourceObject=None):
         IUserWaypoint.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -38642,6 +39239,7 @@ agcls.AgTypeNameMap["UserWaypoint"] = UserWaypoint
 
 class PropulsionEfficiencies(IPropulsionEfficiencies):
     """Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool."""
+
     def __init__(self, sourceObject=None):
         IPropulsionEfficiencies.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38658,6 +39256,7 @@ agcls.AgTypeNameMap["PropulsionEfficiencies"] = PropulsionEfficiencies
 
 class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
     """Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model."""
+
     def __init__(self, sourceObject=None):
         IFuelModelKeroseneAFPROP.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38674,6 +39273,7 @@ agcls.AgTypeNameMap["FuelModelKeroseneAFPROP"] = FuelModelKeroseneAFPROP
 
 class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
     """Class defining the Kerosense - CEA fuel type for a thermodynamic jet engine model."""
+
     def __init__(self, sourceObject=None):
         IFuelModelKeroseneCEA.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38690,6 +39290,7 @@ agcls.AgTypeNameMap["FuelModelKeroseneCEA"] = FuelModelKeroseneCEA
 
 class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
     """Class defining the basic Ramjet model."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingRamjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38706,6 +39307,7 @@ agcls.AgTypeNameMap["AdvFixedWingRamjetBasic"] = AdvFixedWingRamjetBasic
 
 class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
     """Class defining the basic Scramjet model."""
+
     def __init__(self, sourceObject=None):
         IAdvFixedWingScramjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38722,6 +39324,7 @@ agcls.AgTypeNameMap["AdvFixedWingScramjetBasic"] = AdvFixedWingScramjetBasic
 
 class AircraftVTOLModel(IAircraftVTOLModel):
     """Class defining the VTOL performance model of an aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftVTOLModel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38738,6 +39341,7 @@ agcls.AgTypeNameMap["AircraftVTOLModel"] = AircraftVTOLModel
 
 class AircraftVTOL(IAircraftVTOL, ICatalogItem):
     """Class defining the VTOL category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftVTOL.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -38756,6 +39360,7 @@ agcls.AgTypeNameMap["AircraftVTOL"] = AircraftVTOL
 
 class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
     """Class defining the TerrainFollow performance model of an aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftTerrainFollowModel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38772,6 +39377,7 @@ agcls.AgTypeNameMap["AircraftTerrainFollowModel"] = AircraftTerrainFollowModel
 
 class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
     """Class defining the TerrainFollow category of an Aviator aircraft."""
+
     def __init__(self, sourceObject=None):
         IAircraftTerrainFollow.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -38790,6 +39396,7 @@ agcls.AgTypeNameMap["AircraftTerrainFollow"] = AircraftTerrainFollow
 
 class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy):
     """Class defining Ballistic 3D strategy for a Basic Maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyBallistic3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -38808,6 +39415,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyBallistic3D"] = BasicManeuverStrategyB
 
 class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
     """Class defining a Launch Dyn State procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureLaunchDynState.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -38826,6 +39434,7 @@ agcls.AgTypeNameMap["ProcedureLaunchDynState"] = ProcedureLaunchDynState
 
 class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
     """Class defining a Launch Waypoint procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureLaunchWaypoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
@@ -38844,6 +39453,7 @@ agcls.AgTypeNameMap["ProcedureLaunchWaypoint"] = ProcedureLaunchWaypoint
 
 class SiteDynState(ISiteDynState, ISite):
     """Class defining a Dyn State site."""
+
     def __init__(self, sourceObject=None):
         ISiteDynState.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
@@ -38862,6 +39472,7 @@ agcls.AgTypeNameMap["SiteDynState"] = SiteDynState
 
 class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy):
     """Class defining Pitch 3D strategy for a Basic Maneuver procedure."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverStrategyPitch3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
@@ -38880,6 +39491,7 @@ agcls.AgTypeNameMap["BasicManeuverStrategyPitch3D"] = BasicManeuverStrategyPitch
 
 class RefuelDumpProperties(IRefuelDumpProperties):
     """Class defining the refuel/dump properties for the current procedure."""
+
     def __init__(self, sourceObject=None):
         IRefuelDumpProperties.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38896,6 +39508,7 @@ agcls.AgTypeNameMap["RefuelDumpProperties"] = RefuelDumpProperties
 
 class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
     """Class defining fast operations (without error or constraint checks) for time options for the current procedure."""
+
     def __init__(self, sourceObject=None):
         IProcedureFastTimeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38912,6 +39525,7 @@ agcls.AgTypeNameMap["ProcedureFastTimeOptions"] = ProcedureFastTimeOptions
 
 class BasicManeuverTargetPositionVel(IBasicManeuverTargetPositionVel):
     """Class defining the target position and velocity strategies for basic maneuvers."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverTargetPositionVel.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38927,7 +39541,8 @@ agcls.AgClassCatalog.add_catalog_entry("{4084EB67-0992-4F64-B710-7B5B4E275AC5}",
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVel"] = BasicManeuverTargetPositionVel
 
 class BasicManeuverTargetPositionVelNoisyBrnRng(IBasicManeuverTargetPositionVelNoisyBrnRng):
-    """Class defining the position and velocity strategy, Noisy Bearing Range"""
+    """Class defining the position and velocity strategy, Noisy Bearing Range."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverTargetPositionVelNoisyBrnRng.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -38943,7 +39558,8 @@ agcls.AgClassCatalog.add_catalog_entry("{B64A8B6B-FA25-47EF-8945-2DA2817D6853}",
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisyBrnRng"] = BasicManeuverTargetPositionVelNoisyBrnRng
 
 class BasicManeuverTargetPositionVelNoisySurfTgt(IBasicManeuverTargetPositionVelNoisySurfTgt):
-    """Class defining the position and velocity strategy, Noisy Surface Target"""
+    """Class defining the position and velocity strategy, Noisy Surface Target."""
+
     def __init__(self, sourceObject=None):
         IBasicManeuverTargetPositionVelNoisySurfTgt.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
