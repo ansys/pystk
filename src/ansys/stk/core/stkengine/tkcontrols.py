@@ -144,7 +144,7 @@ class ControlBase(Frame):
         self._nativeContainerMethods.release_container(self._container)
         super().destroy()
     
-    def define_linux_events(self):
+    def define_and_bind_linux_events(self):
         def _Expose(self, event):
             """Occurs when at least some part of the frame becomes visible after having been covered up by another window."""
             if self._is_container_attached:
