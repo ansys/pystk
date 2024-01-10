@@ -56,7 +56,7 @@ class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):
             self._startTime = float(str((clr.CastAs(self._root.current_scenario, Scenario)).animation.start_time))
 
         self.csToPy_OnAnimUpdateSubscription = (self._root).Subscribe()
-        self.csToPy_OnAnimUpdateSubscription.OnAnimUpdate += IAgStkObjectRootEvents_OnAnimUpdateEventHandler(
+        self.csToPy_OnAnimUpdateSubscription.on_anim_update += IAgStkObjectRootEvents_OnAnimUpdateEventHandler(
             self.root_OnAnimUpdate
         )
 
@@ -70,7 +70,7 @@ class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):
         self.m_logger.WriteLine6("ONANIMUPDATE: {0}", TimeEpSec)
 
     def UnhookEvents(self):
-        self.csToPy_OnAnimUpdateSubscription.OnAnimUpdate -= IAgStkObjectRootEvents_OnAnimUpdateEventHandler(
+        self.csToPy_OnAnimUpdateSubscription.on_anim_update -= IAgStkObjectRootEvents_OnAnimUpdateEventHandler(
             self.root_OnAnimUpdate
         )
 

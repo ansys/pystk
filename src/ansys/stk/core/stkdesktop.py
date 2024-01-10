@@ -262,7 +262,7 @@ class STKDesktop(object):
         """
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows.")
-        EventSubscriptionManager.UnsubscribeAll()
+        EventSubscriptionManager.unsubscribe_all()
         ObjectLifetimeManager.ReleaseAll()
         
     @staticmethod

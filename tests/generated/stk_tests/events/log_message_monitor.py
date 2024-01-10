@@ -18,7 +18,7 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         self._root: "StkObjectRoot" = root
 
         self.csToPy_OnLogMessageSubscription = (self._root).Subscribe()
-        self.csToPy_OnLogMessageSubscription.OnLogMessage += self._root_OnLogMessage
+        self.csToPy_OnLogMessageSubscription.on_log_message += self._root_OnLogMessage
 
     def _root_OnLogMessage(
         self,
@@ -45,7 +45,7 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         return self._messages
 
     def Terminate(self):
-        self.csToPy_OnLogMessageSubscription.OnLogMessage -= self._root_OnLogMessage
+        self.csToPy_OnLogMessageSubscription.on_log_message -= self._root_OnLogMessage
 
     # region IDisposable Members
 

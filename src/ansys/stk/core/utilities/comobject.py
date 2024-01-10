@@ -12,7 +12,7 @@ class COMObject(object):
     def __init__(self):
         self._pUnk = None
         
-    def GetPointer(self) -> c_void_p:
+    def get_pointer(self) -> c_void_p:
         """Return the COM object pointer as a ctypes.c_void_p."""
         if self._pUnk is None:
             return c_void_p()

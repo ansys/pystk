@@ -140,7 +140,7 @@ class STKEngineApplication(STKXApplication):
     def shutdown(self) -> None:
         """Shut down the STK Engine application."""
         if self._initialized:
-            EventSubscriptionManager.UnsubscribeAll()
+            EventSubscriptionManager.unsubscribe_all()
             self._timer_impl.Terminate()
             ObjectLifetimeManager.ReleaseAll(releaseApplication=False)
             self.terminate()
