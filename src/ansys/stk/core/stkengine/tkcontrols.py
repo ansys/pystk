@@ -32,6 +32,7 @@ class NativeContainerMethods:
             self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved   = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, LONG, LONG, BOOL, BOOL, BOOL, BOOL, BOOL, BOOL)(("Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "x"), (1, "y"), (1, "ticks"), (1, "leftButtonDown"), (1, "middleButtonDown"), (1, "rightButtonDown"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
             self.AgPythonKeyPressed                                                                         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyPressed", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
             self.AgPythonKeyReleased                                                                        = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
+            self.define_linux_events()
     def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
             raise STKRuntimeError(f"STKEngine.StartApplication() must be called before using the STK Engine controls")
@@ -90,8 +91,6 @@ class NativeContainerMethods:
             self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
         def KeyReleased(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
             self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-    if os.name!="nt":
-        self.define_linux_events()
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
@@ -123,6 +122,7 @@ class ControlBase(Frame):
         
         self.bind("<Configure>", self._configure)
         if os.name!="nt":
+            self.define_linux_events()
             self.bind_linux_events()
         
     def __setattr__(self, attrname, value):
@@ -186,10 +186,6 @@ class ControlBase(Frame):
         self.bind("<Motion>", self._Motion)
         self.bind_all("<Any-KeyPress>", self._KeyPress)
         self.bind_all("<Any-KeyRelease>", self._KeyRelease)
-
-    if os.name!="nt":
-        self.define_linux_events()
-        
 
 class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""
