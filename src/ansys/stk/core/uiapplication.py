@@ -29,6 +29,7 @@ def _raise_uninitialized_error(*args):
 
 class OPEN_LOG_FILE_MODE(IntEnum):
     """Log file open modes."""
+   
     FOR_WRITING = 2
     """Open log file in write file mode."""
     FOR_APPENDING = 8
@@ -41,6 +42,7 @@ agcls.AgTypeNameMap["OPEN_LOG_FILE_MODE"] = OPEN_LOG_FILE_MODE
 
 class UI_LOG_MSG_TYPE(IntEnum):
     """Log message types."""
+   
     DEBUG = 0
     """Log messages that provide Debug text."""
     INFO = 1
@@ -62,6 +64,7 @@ agcls.AgTypeNameMap["UI_LOG_MSG_TYPE"] = UI_LOG_MSG_TYPE
 
 class APP_CONSTANTS(IntEnum):
     """APP_CONSTANTS contains base IDs for various structures."""
+   
     APP_ERROR_BASE = 0x200
     """Error base."""
 
@@ -71,6 +74,7 @@ agcls.AgTypeNameMap["APP_CONSTANTS"] = APP_CONSTANTS
 
 class APP_ERROR_CODES(IntEnum):
     """App error codes."""
+   
     PERS_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 1))
     """Failed to load personality."""
     ALREADY_LOAD_FAIL = (((1 << 31) | (4 << 16)) | (APP_CONSTANTS.APP_ERROR_BASE + 2))
@@ -93,6 +97,7 @@ agcls.AgTypeNameMap["APP_ERROR_CODES"] = APP_ERROR_CODES
 
 class IMRUCollection(object):
     """Provide information about most recently used (MRU) list."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -158,6 +163,7 @@ agcls.AgTypeNameMap["IMRUCollection"] = IMRUCollection
 
 class IUiFileOpenExt(object):
     """Access to file open dialog that allows multiple file specifications."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -236,6 +242,7 @@ agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
 class IUiApplication(object):
     """UiApplication represents a root of the Application Model."""
+
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -582,6 +589,7 @@ agcls.AgTypeNameMap["IUiApplication"] = IUiApplication
 
 class IUiApplicationPartnerAccess(object):
     """Access to the application object model for business partners."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -614,6 +622,7 @@ agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
 class IUiFileOpenExtCollection(object):
     """Multiple file open collection."""
+
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -681,6 +690,7 @@ agcls.AgTypeNameMap["IUiFileOpenExtCollection"] = IUiFileOpenExtCollection
 
 class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
     """A root object of the Application Model."""
+
     def __init__(self, sourceObject=None):
         IUiApplication.__init__(self, sourceObject)
         IUiApplicationPartnerAccess.__init__(self, sourceObject)
@@ -699,6 +709,7 @@ agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
 class MRUCollection(IMRUCollection):
     """Provide information about most recently used (MRU) list."""
+
     def __init__(self, sourceObject=None):
         IMRUCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -715,6 +726,7 @@ agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
 
 class UiFileOpenExtCollection(IUiFileOpenExtCollection):
     """Multiple file open collection."""
+
     def __init__(self, sourceObject=None):
         IUiFileOpenExtCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -731,6 +743,7 @@ agcls.AgTypeNameMap["UiFileOpenExtCollection"] = UiFileOpenExtCollection
 
 class UiFileOpenExt(IUiFileOpenExt):
     """Access to file open dialog that allows multiple file specifications."""
+
     def __init__(self, sourceObject=None):
         IUiFileOpenExt.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):

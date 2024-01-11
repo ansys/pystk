@@ -21,6 +21,7 @@ def _raise_uninitialized_error(*args):
 
 class IRemoteFrameBufferHost(object):
     """Called by engine to request operations from the host using the remote frame buffer."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -53,6 +54,7 @@ agcls.AgTypeNameMap["IRemoteFrameBufferHost"] = IRemoteFrameBufferHost
 
 class IRemoteFrameBuffer(object):
     """Expose the control as a remote frame buffer."""
+
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {

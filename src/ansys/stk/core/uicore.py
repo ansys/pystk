@@ -27,6 +27,7 @@ def _raise_uninitialized_error(*args):
 
 class WINDOW_SERVICE(IntEnum):
     """Well-known types of services."""
+   
     WINDOW_2D = 1
     """A 2D window."""
     WINDOW_3D = 2
@@ -39,6 +40,7 @@ agcls.AgTypeNameMap["WINDOW_SERVICE"] = WINDOW_SERVICE
 
 class WINDOW_STATE(IntEnum):
     """Window states."""
+   
     MAXIMIZED = 1
     """Window is maximized."""
     MINIMIZED = 2
@@ -54,6 +56,7 @@ agcls.AgTypeNameMap["WINDOW_STATE"] = WINDOW_STATE
 
 class ARRANGE_STYLE(IntEnum):
     """Window layout styles."""
+   
     CASCADE = 1
     """Child windows are cascaded within the main window."""
     TILED_HORIZONTAL = 2
@@ -69,6 +72,7 @@ agcls.AgTypeNameMap["ARRANGE_STYLE"] = ARRANGE_STYLE
 
 class DOCK_STYLE(IntEnum):
     """Window docking styles."""
+   
     INTEGRATED = 1
     """Child window is integrated into the main window."""
     DOCKED_LEFT = 2
@@ -93,6 +97,7 @@ agcls.AgTypeNameMap["DOCK_STYLE"] = DOCK_STYLE
 
 class FLOAT_STATE(IntEnum):
     """Floating state."""
+   
     FLOATED = 1
     """The UI element is floated."""
     DOCKED = 2
@@ -106,6 +111,7 @@ agcls.AgTypeNameMap["FLOAT_STATE"] = FLOAT_STATE
 
 class IUiToolbar(object):
     """Provide methods and properties to control a toolbar."""
+
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -182,6 +188,7 @@ agcls.AgTypeNameMap["IUiToolbar"] = IUiToolbar
 
 class IUiToolbarCollection(object):
     """Provide methods and properties to obtain a window's toolbars."""
+
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -271,6 +278,7 @@ agcls.AgTypeNameMap["IUiToolbarCollection"] = IUiToolbarCollection
 
 class IUiWindow(object):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
+
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -499,6 +507,7 @@ agcls.AgTypeNameMap["IUiWindow"] = IUiWindow
 
 class IUiWindowsCollection(object):
     """Provide methods and properties to manage the application's windows."""
+
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _metadata = {
@@ -596,6 +605,7 @@ agcls.AgTypeNameMap["IUiWindowsCollection"] = IUiWindowsCollection
 
 class IUiWindowMapObject(object):
     """Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -629,6 +639,7 @@ agcls.AgTypeNameMap["IUiWindowMapObject"] = IUiWindowMapObject
 
 class IUiWindowGlobeObject(object):
     """Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties."""
+
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
@@ -664,6 +675,7 @@ agcls.AgTypeNameMap["IUiWindowGlobeObject"] = IUiWindowGlobeObject
 
 class UiWindowsCollection(IUiWindowsCollection):
     """Provide methods and properties to manage the windows."""
+
     def __init__(self, sourceObject=None):
         IUiWindowsCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -680,6 +692,7 @@ agcls.AgTypeNameMap["UiWindowsCollection"] = UiWindowsCollection
 
 class UiWindow(IUiWindow):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
+
     def __init__(self, sourceObject=None):
         IUiWindow.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -696,6 +709,7 @@ agcls.AgTypeNameMap["UiWindow"] = UiWindow
 
 class UiToolbar(IUiToolbar):
     """Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar."""
+
     def __init__(self, sourceObject=None):
         IUiToolbar.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -712,6 +726,7 @@ agcls.AgTypeNameMap["UiToolbar"] = UiToolbar
 
 class UiToolbarCollection(IUiToolbarCollection):
     """Provide methods and properties to manage the toolbars."""
+
     def __init__(self, sourceObject=None):
         IUiToolbarCollection.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -728,6 +743,7 @@ agcls.AgTypeNameMap["UiToolbarCollection"] = UiToolbarCollection
 
 class UiWindowMapObject(IUiWindowMapObject):
     """Provide methods and properties to manipulate the 2D map."""
+
     def __init__(self, sourceObject=None):
         IUiWindowMapObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
@@ -744,6 +760,7 @@ agcls.AgTypeNameMap["UiWindowMapObject"] = UiWindowMapObject
 
 class UiWindowGlobeObject(IUiWindowGlobeObject):
     """Provide methods and properties to manipulate the 3D globe."""
+
     def __init__(self, sourceObject=None):
         IUiWindowGlobeObject.__init__(self, sourceObject)
     def _private_init(self, intf:interface_proxy):
