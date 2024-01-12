@@ -50,11 +50,12 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "jupyterlab==4.0.10",
-    "sphinx-gallery<=0.7.0",
 ]
 visualization = [
     "numpy==1.26.2",
     "jupyter-rfb==0.4.2",
+    "Pillow==10.2.0",
+    "simplejepg==1.7.2",
 ]
 
 [tool.flit.module]

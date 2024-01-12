@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 import pathlib
 
+from sphinx.util import logging
 from ansys_sphinx_theme import (
     ansys_favicon,
     get_version_match,
@@ -223,23 +224,60 @@ linkcheck_ignore = [
 
 # -- Sphinx configuration ----------------------------------------------------
 
-def generate_example_artifacts(app, exception):
-    import jupytext
-    from sphinx.util import logging
-    from sphinx.util.logging import prefixed_warnings
-
+def copy_directory_recursive(source_path, destination_path):
     logger = logging.getLogger(__name__)
-    logger.info("\nGenerating example artifacts...")
 
-    for notebook in app.outdir.glob("**/*.ipynb"):
-        outdir = pathlib.Path(app.outdir) / notebook.parent.relative_to(app.outdir)
-        script = notebook.name[:-len("mystnb")] + ".py"
-        outfile = outdir / script
-        content = jupytext.read(notebook)
-        jupytext.write(content, outfile, fmt="py")
+    if source_path.is_dir():
+        destination_path.mkdir(parents=True, exist_ok=True)
 
-    logger.info("Done!\n", color="darkgreen")
+        for file in source_path.iterdir():
+            if file.is_dir():
+                logger.info("\nCopying directory {file.name}/...")
+                copy_directory_recursive(file, destination_path / file.name)
+            else:
+                logger.info("\nCopying file {file.name}...")
+                destination_file = destination_path / file.name
+                destination_file.write_text(file.read_text())
+
+
+def remove_directory_recursive(directory_path):
+    logger = logging.getLogger(__name__)
+
+    directory_path = pathlib.Path(directory_path)
+    if not directory_path.exists():
+        return
+
+    for item in directory_path.iterdir():
+        if item.is_file():
+            logger.info("\nRemoving directory {file.name}/...")
+            item.unlink()
+        elif item.is_dir():
+            remove_directory_recursive(item)
+
+    logger.info("\nRemoving directory {file.name}/...")
+    directory_path.rmdir()
+
+
+def copy_examples_to_source_dir(app):
+    logger = logging.getLogger(__name__)
+    logger.info("\nCopying examples/ to doc/source/ directory...")
+    SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
+    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
+    copy_directory_recursive(EXAMPLES_DIRECTORY, SOURCE_DIRECTORY / "examples")
+
+def remove_examples_from_source_dir(app, exception):
+    logger = logging.getLogger(__name__)
+    logger.info("\nRemoving examples/ from doc/source/ directory...")
+    SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
+    remove_directory_recursive(SOURCE_DIRECTORY / "examples")
+
 
 def setup(app):
+    # HACK: rST files are copied to the doc/source directory before the build.
+    # Sphinx needs all source files to be in the source directory to build.
+    # However, the examples are desired to be kept in the root directory. Once the
+    # build has completed, no matter its success, the examples are removed from
+    # the source directory.
     if BUILD_EXAMPLES:
-        app.connect('build-finished', generate_example_artifacts)
+        app.connect("builder-inited", copy_examples_to_source_dir)
+        app.connect("build-finished", remove_examples_from_source_dir)
