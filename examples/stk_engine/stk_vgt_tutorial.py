@@ -27,7 +27,7 @@ class VGTTutorial:
         self.stkRoot = self.stk.new_object_root()
         self._satellite = None
         self.OnAnimUpdateSubscription = self.stkRoot.Subscribe()
-        self.OnAnimUpdateSubscription.OnAnimUpdate += self._on_anim_update
+        self.OnAnimUpdateSubscription.on_anim_update += self._on_anim_update
         self.window = tk.Tk()
         self.window.title("VGT Tutorial")
         self.window.protocol("WM_DELETE_WINDOW", self._exit)
