@@ -12,6 +12,7 @@
 #
 # Start by launching a new STK instance. In this example, STKEngine is used in noGraphics mode. This means that the graphic user interface (GUI) of the product is not launched:
 
+
 # +
 from ansys.stk.core.stkengine import STKEngine
 

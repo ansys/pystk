@@ -61,6 +61,8 @@ extensions = [
     "sphinx_design",
     "sphinx_jinja",
     "numpydoc",
+    "nbsphinx",
+    "myst_parser",
 ]
 
 # Intersphinx mapping
@@ -98,7 +100,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["examples/*.py"]
+exclude_examples = ["examples/stk_engine/*.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
@@ -273,6 +275,9 @@ def remove_examples_from_source_dir(app, exception):
     SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
     remove_directory_recursive(SOURCE_DIRECTORY / "examples")
 
+def print_license(app):
+    logger = logging.getLogger(__name__)
+    logger.info(f"LICENSE: {os.environ['ANSYSLMD_LICENSE_FILE']}")
 
 def setup(app):
     # HACK: rST files are copied to the doc/source directory before the build.
@@ -281,5 +286,7 @@ def setup(app):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     if BUILD_EXAMPLES:
+        import os
+        app.connect("builder-inited", print_license)
         app.connect("builder-inited", copy_examples_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
