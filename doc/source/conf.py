@@ -98,7 +98,8 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["_static/README.md", "api/generated", "links.rst"]
+exclude_examples = ["examples/*.py"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
 source_suffix = {
@@ -150,6 +151,7 @@ else:
     nbsphinx_execute = "always"
     nbsphinx_custom_formats = {
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
+        ".py": ["jupytext.reads", {"fmt": ""}],
     }
     nbsphinx_thumbnails = {
         "examples/applications/hohmann-transfer-using-targeter/index": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
@@ -232,10 +234,10 @@ def copy_directory_recursive(source_path, destination_path):
 
         for file in source_path.iterdir():
             if file.is_dir():
-                logger.info("\nCopying directory {file.name}/...")
+                logger.info(f"Copying directory {file.name}/...")
                 copy_directory_recursive(file, destination_path / file.name)
             else:
-                logger.info("\nCopying file {file.name}...")
+                logger.info(f"Copying file {file.name}...")
                 destination_file = destination_path / file.name
                 destination_file.write_text(file.read_text())
 
@@ -247,14 +249,14 @@ def remove_directory_recursive(directory_path):
     if not directory_path.exists():
         return
 
-    for item in directory_path.iterdir():
-        if item.is_file():
-            logger.info("\nRemoving directory {file.name}/...")
-            item.unlink()
-        elif item.is_dir():
-            remove_directory_recursive(item)
+    for file in directory_path.iterdir():
+        if file.is_file():
+            logger.info(f"Removing directory {file.name}/...")
+            file.unlink()
+        elif file.is_dir():
+            remove_directory_recursive(file)
 
-    logger.info("\nRemoving directory {file.name}/...")
+    logger.info(f"Removing directory {directory_path.name}/...")
     directory_path.rmdir()
 
 
