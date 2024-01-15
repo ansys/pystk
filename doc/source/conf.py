@@ -100,7 +100,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["examples/stk_engine/*.py"]
+exclude_examples = ["examples/stk_engine/solar_panel_tool.py", "examples/stk_engine/stk_tutorial.py", "examples/stk_engine/stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
@@ -156,7 +156,7 @@ else:
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
     nbsphinx_thumbnails = {
-        "examples/stk_engine/hohmann_transfer_using_targeter.py": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/stk_engine/hohmann_transfer_using_targeter.py": "_static/thumbnails/hohmann-transfer-using-targeter.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
@@ -275,10 +275,6 @@ def remove_examples_from_source_dir(app, exception):
     SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
     remove_directory_recursive(SOURCE_DIRECTORY / "examples")
 
-def print_license(app):
-    logger = logging.getLogger(__name__)
-    logger.info(f"LICENSE: {os.environ['ANSYSLMD_LICENSE_FILE']}")
-
 def setup(app):
     # HACK: rST files are copied to the doc/source directory before the build.
     # Sphinx needs all source files to be in the source directory to build.
@@ -287,6 +283,5 @@ def setup(app):
     # the source directory.
     if BUILD_EXAMPLES:
         import os
-        app.connect("builder-inited", print_license)
         app.connect("builder-inited", copy_examples_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
