@@ -156,7 +156,7 @@ else:
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
     nbsphinx_thumbnails = {
-        "examples/applications/hohmann-transfer-using-targeter/index": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/stk_engine/hohmann_transfer_using_targeter.py": "./_static/thumbnails/hohmann-transfer-using-targeter.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """

@@ -10,4 +10,4 @@ This series of tutorials explain how to create custom applications based on
 
 .. nbgallery::
 
-    stk_engine/applications/hohmann-transfer-using-targeter/index.mystnb
+    stk_engine/applications/hohmann_transfer_using_targeter
