@@ -1622,7 +1622,7 @@ class EarlyBoundTests(TestBase):
             laser.frequency = 100000001
         laser.frequency = 375000.0  # default   // ??RESTORE TO THIS VALUE TO (1.0) TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
-        boolArray = [False, True]
+        boolArray: "List[bool]" = [False, True]
         useApdDetectorModel: bool
         for useApdDetectorModel in boolArray:
             if useApdDetectorModel:

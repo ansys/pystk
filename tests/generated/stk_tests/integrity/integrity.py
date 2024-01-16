@@ -181,7 +181,7 @@ class ReportComparison(object):
             res: "ExecCmdResult" = oRoot.execute_command(self._name)
             row: str
             for row in res:
-                s = String.Split(row.replace('"', " "), ",")
+                s: "List[str]" = String.Split(row.replace('"', " "), ",")
                 self._report.append([])
 
         # endregion
@@ -235,7 +235,7 @@ class ReportComparison(object):
 
         def FormatReport(self):
             repstr: str = ""
-            col_len = Array.Create(100)
+            col_len: "List[int]" = Array.Create(100)
             for row in self._report:
                 i: int = 0
                 while i < len(row):
