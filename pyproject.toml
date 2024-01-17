@@ -78,6 +78,7 @@ ignore = [
     "D401", # First line of docstring should be in imperative mood: "Checks equality of the underlying STK references."
     "D404", # First word of the docstring should not be "This"
     "D415", # First line should end with a period, question mark, or exclamation point
+    "D417", # Missing argument description in the docstring for `ToPandasDataFrame`: `indexElementName`
 ]
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
