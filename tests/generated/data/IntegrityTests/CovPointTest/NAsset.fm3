@@ -1,0 +1,18 @@
+VO_v80
+    ShowStaticContours         Yes
+    ShowAnimContours           Yes
+    ShowAtAltitude             No
+    StaticTranslucency         0.500000
+    AnimTranslucency           0.700000
+    StaticSize                 2.000000
+    AnimSize                   3.000000
+    Granularity                0.052360
+    InlayDataPixelsPerDegree   3.000000
+    ShowStaticContourLegend    No
+    StaticXPixelLocation       5
+    StaticYPixelLocation       5
+    StaticBckGndTranslucency   0.000000
+    ShowAnimContourLegend      No
+    AnimXPixelLocation         5
+    AnimYPixelLocation         5
+    AnimBckGndTranslucency     0.500000

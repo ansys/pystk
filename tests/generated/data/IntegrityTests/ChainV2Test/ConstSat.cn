@@ -1,0 +1,28 @@
+stk.v.6.0
+
+BEGIN Constellation
+
+Name  ConstSat
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       0
+   IsRelay     No
+    Object  Satellite/ConstSat1
+    Object  Satellite/ConstSat2
+    Object  Satellite/ConstSat3
+    Object  Facility/Canada
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

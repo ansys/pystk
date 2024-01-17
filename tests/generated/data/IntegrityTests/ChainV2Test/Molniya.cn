@@ -1,0 +1,29 @@
+stk.v.6.0
+
+BEGIN Constellation
+
+Name  Molniya
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       1
+   IsRelay     No
+    Object  Satellite/MOLNIYA_3-36
+    Object  Satellite/MOLNIYA_3-38
+    Object  Satellite/MOLNIYA_3-39
+    Object  Satellite/MOLNIYA_1-79
+    Object  Satellite/MOLNIYA_1-80
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

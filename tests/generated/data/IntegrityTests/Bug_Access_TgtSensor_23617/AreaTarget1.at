@@ -1,0 +1,84 @@
+stk.v.7.0
+
+BEGIN AreaTarget
+
+Name        AreaTarget1
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            6.800290e+001
+		EcfLongitude           -1.431242e+002
+		EcfAltitude            0.000000e+000
+		UseTerrainInfo         Off
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     4
+
+		BEGIN PolygonPoints
+
+			6.59562474356196e+001	-1.41000896969511e+002	0.00000000000000e+000
+			6.81500203441681e+001	-1.50719239634615e+002	0.00000000000000e+000
+			6.96242887624248e+001	-1.37504396711758e+002	0.00000000000000e+000
+			6.59562474356196e+001	-1.41000896969511e+002	0.00000000000000e+000
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             #fff0f5
+                PolygonColor            #fff0f5
+                LabelColor              #fff0f5
+                LineStyle               0
+                LineWidth               1.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowCentroid            On
+                ShowBoundaryPts         Off
+                ShowLabel               On
+                Filled                  Off
+                ShowBoundingRect        Off
+
+            END Graphics
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END AreaTarget
+

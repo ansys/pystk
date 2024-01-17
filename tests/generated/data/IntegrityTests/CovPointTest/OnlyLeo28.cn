@@ -1,0 +1,25 @@
+stk.v.8.0
+
+BEGIN Constellation
+
+Name  OnlyLeo28
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       1
+   IsRelay     No
+    Object  Satellite/Leo_28
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

@@ -1,0 +1,95 @@
+stk.v.6.1
+
+BEGIN LineTarget
+
+Name        LineTarget1
+
+    BEGIN IndexPtData
+
+        CentralBody            Earth
+        AnchorPtIndex          -3
+        NumberOfPolylinePts    11
+
+        BEGIN PolylinePoints
+
+            4.50985048100000e+001    -1.05500410800000e+002    0.00000000000000e+000
+            4.08281770000000e+001    -1.07679149480000e+002    0.00000000000000e+000
+            3.55992041800000e+001    -1.08637794500000e+002    0.00000000000000e+000
+            3.01087827100000e+001    -1.08027747670000e+002    0.00000000000000e+000
+            2.77557449400000e+001    -1.07243401740000e+002    0.00000000000000e+000
+            2.65356512800000e+001    -1.01230083000000e+002    0.00000000000000e+000
+            2.89758386000000e+001    -9.91384938700000e+001    0.00000000000000e+000
+            3.35947646000000e+001    -9.87898956800000e+001    0.00000000000000e+000
+            3.78650924000000e+001    -9.84412974900000e+001    0.00000000000000e+000
+            4.16125229200000e+001    -9.87898956800000e+001    0.00000000000000e+000
+            4.45756075200000e+001    -1.00445737070000e+002    0.00000000000000e+000
+
+        END PolylinePoints
+
+
+    END IndexPtData
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                LineColor               #ff0000
+                LabelColor              #ff0000
+                LineStyle               0
+                LineWidth               1.0
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                ShowBoundingRect        Off
+
+            END Graphics
+            BEGIN PointData
+                ShowPoints           Off
+                NewPointShow         Off
+                NewPointMarkerStyle  1
+                NewPointFontStyle    0
+                NewPointColor        #ff0000
+                PointMarkerShow      Off
+                PointMarkerStyle     1
+                PointColor           #ff0000
+            END PointData
+
+            BEGIN LblNotes
+
+
+            END LblNotes
+
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END LineTarget
+

@@ -1,0 +1,142 @@
+stk.v.8.0
+
+BEGIN CoverageDefinition
+
+Name        MidNorthExercise
+
+BEGIN GridDefinition
+
+    Begin                CustomRegions
+        AreaTarget    AreaTarget/_colorado_1
+        AllowSmallRegionIsotropicAlgorithm
+    End                  CustomRegions
+    LatResolution        2.000000
+    LonResolution        2.000000
+    UsePolarRegions        No
+    GridClass            Target
+    PointLocationMethod  Custom
+        CustomPointFile    MidNorth.pnt
+    CentralBody          Earth
+    AltitudeMethod       Altitude
+    Begin AltitudeList
+        0.000000
+    End AltitudeList
+
+END GridDefinition
+
+BEGIN AccessDefinition
+
+    DataRetention        AllData
+    Convergence          0.001000
+    AbsValueConvergence  1.000000e-014
+    RelValueConvergence  1.000000e-008
+    MaxTimeStep          360.000000
+    MinTimeStep          1.000000e-002
+    UseLightTimeDelay    No
+    TimeSense            PerAsset
+    DetectEventsUsingSamplesOnly No
+    AutoRecompute        No
+    UseAllAssetAccess        No
+    AssetSatisType           AtLeast
+    AssetSatisThreshold      5
+    AccessSaveMode       NoSave
+    RegionAccessAccel    Auto
+
+END AccessDefinition
+
+BEGIN AssetList
+
+    Constellation/Meos   Active Grouped
+    Required Yes
+    UseConstConstraints Yes
+    Begin SubAssets
+        Satellite/Meo_0_12hr   Active
+    Required No
+        Satellite/Meo_0_6hr   Active
+    Required No
+        Satellite/Meo_28_12hr   Active
+    Required No
+        Satellite/Meo_28_6hr   Active
+    Required No
+        Satellite/Meo_97_12hr   Active
+    Required No
+        Satellite/Meo_97_6hr   Active
+    Required No
+    End SubAssets
+    Constellation/Leos   Active 
+    Required No
+    UseConstConstraints Yes
+    Begin SubAssets
+        Satellite/Leo_0   Active
+    Required No
+        Satellite/Leo_28   Active
+    Required No
+        Satellite/Leo_97   Active
+    Required No
+    End SubAssets
+    Constellation/Geos   Active 
+    Required No
+    UseConstConstraints Yes
+    Begin SubAssets
+        Satellite/Geo_m100   Active
+    Required No
+        Satellite/SuperGeo_80   Active
+    Required No
+    End SubAssets
+
+END AssetList
+
+BEGIN Interval
+
+    AccStart             1 Jul 2005 12:00:00.000000000
+    AccStop              2 Jul 2005 12:00:00.000000000
+    UseScenarioInterval       No
+
+END Interval
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+BEGIN Attributes
+
+    GridMarkerStyle      2
+    GridColor            #ffffff
+    ProgressColor        #4169e1
+    SatisfactionColor    #87cefa
+
+END Attributes
+
+BEGIN Graphics
+
+    ShowGrid             Yes
+    ShowRegions          No
+    ShowRegionsText      No
+    ShowPoints           Yes
+    FillPoints           No
+    ShowProgress         Yes
+    ShowSatisfaction     No
+
+END Graphics
+    END Graphics
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+BEGIN SubObjects
+
+Class FigureOfMerit
+
+	NAsset
+
+END Class
+
+END SubObjects
+
+END CoverageDefinition
+

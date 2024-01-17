@@ -1,0 +1,35 @@
+VO_v60
+    IsInvisible           No
+    Translucency          0.700000
+    IsShowingRadialLines  No
+    RadialLineIncr        4
+    IsShowingBoresight  No
+    PulseStyle            Sin
+    PulseAmplitude        0.5
+    PulseWavelength       50000
+    PulseFreq             0.333
+    PulseAntiAliased      Yes
+    PulseReversed         No
+    PulseFrameDependent   Yes
+    IsShowingPulse        No
+    TranslucentLines        Yes
+    UseConstExtensionLength Yes
+    ExtensionLength         50000000.000000
+    TargetExtensionLength   0.000000
+    UseRangeCnstrntMinMax   Yes
+    InheritModelPosOffset Yes
+    UseModelPosOffset     No
+    ModelPosOffset        0.000000 0.000000 0.000000
+    Begin GeneralVectorAxes
+        ArrowPointSize          3.00
+        PersistentLineWidth     2.00
+        Scale                   158113.883000
+    End
+    Begin VectorAngle
+        FractionalScale                1.000000
+        SupportingDihedralArcLineWidth 1.00
+        ArcLineWidth                   2.00
+        PixelThreshold                 1.000000
+    End
+    UseAttachPoint        No
+    SensorRadius          0

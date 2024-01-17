@@ -1,0 +1,752 @@
+VO_v60
+    Begin WinFonts
+        Font "Lucida Console,12,0,0"
+        Font "Lucida Console,14,0,0"
+        Font "Lucida Console,20,0,0"
+    End
+    HideCursor               No
+    IsShowingModels          Yes
+    RelativeModelScale       1.000000
+    AbsoluteModelScale       10000.000000
+    IsUsingDetailThresholds  Yes
+    DetailLevel0             7000000.000000
+    DetailLevel1             14000000.000000
+    DetailLevel2             28000000.000000
+    DetailLevel3             56000000.000000
+    DisableDefKbdActions     No
+    UseTerrainForInlay       No
+    UseEarthImagingGamma     No
+    EarthImagingGammaExp     1.000000
+    Begin ChunkDirs
+        Dir "C:\Documents and Settings\mford\My Documents\STK 6.0\Config\CentralBodies\Earth\GeoData\ChunkData"
+        Dir "C:\Program Files\AGI\STK 6.0\CentralBodies\Earth\GeoData\ChunkData"
+    End
+    EnableTxCache            Yes
+    MaxTxCacheSize           32768.000000
+    InlayTextureStackSizeMb  32
+    ChunkTerrainTextureCacheSizeMb  32
+    MaxInlayTexturesReadPerFrame 1
+    UseStoredViewTime        Yes
+    RunStoredViewConFile     No
+    MaintainViewTimeOrder    Yes
+    RenderFromPBufferToVOWindow No
+    EnableWebTerrainData     No
+    Begin ConfigServerDataList
+        Begin ConfigServerData
+            Name "globeserver.agi.com"
+            Port 80
+            DataURL "bin/getGlobeSvrConfig.pl"
+        End
+    End
+
+    Begin EditData
+        AxisScale       20.000000
+        PointScale      5.000000
+        Linewidth       1.000000
+        LineStyle       0
+        ColorRGB        1.000000  1.000000  0.000000
+    End EditData
+
+    Begin DefaultRefCrdnData
+        Begin View Central Body
+        End
+        Begin STK Object
+        End
+    End DefaultRefCrdnData
+
+    Begin DefaultRefSystemData
+        Begin Untethered
+        End
+    End DefaultRefSystemData
+
+    Begin ViewPathManager
+        EnableLighting              No
+        ShowCameraObj               Yes
+        ShowKeyframeCtrlPts         Yes
+        KeyframeCtrlPtColor         #ffffff
+        KeyframeCtrlPtSize          14
+        ShowKeyframeOrientVecs      No
+        KeyframeOrientVecSize       75
+        ShowNonKeyframeCtrlPts      Yes
+        NonKeyframeCtrlPtColor      #0000ff
+        NonKeyframeCtrlPtSize       10
+        RippleTimeChanges           Yes
+        OptimizeWhileEditing        Yes
+    End ViewPathManager
+
+    Begin Async3dPickOptions
+        SpecialKeysIgnore No
+    End Async3dPickOptions
+
+    Begin SceneWindow
+
+        Begin Scene
+            SceneID                  1
+            CentralBody              Earth
+            DisplayMode              Normal
+            IsAutoStereo             No
+            ProjectionDistance       100000.000000
+            EyeSeparationFactor      0.020000
+            WireframeMode            No
+
+            Begin Compass
+                Show No
+                Radius 65.000000
+                XPosition 80
+                YPosition 100
+                XOrigin Min
+                YOrigin Min
+            End Compass
+
+            Begin Declutter
+                Enabled No
+                ShowsLines Yes
+                AvoidsTerrain Auto
+                ShiftFromTerrain 75
+            End Declutter
+
+        BEGIN SoftVTR
+            OutputFormat     BMP
+            Directory        C:\DOCUME~1\sdupont\LOCALS~1\Temp
+            BaseName         VOsnap
+            Digits           4
+            Frame            0
+            LastAnimTime     0.000000
+            OutputMode       Normal
+            HiResAssembly    Assemble
+            HRWidth          6000
+            HRHeight         4500
+            HRDPI            600.000000
+            UseSnapInterval  No
+            SnapInterval     0.000000
+        END SoftVTR
+
+
+        BEGIN Maps
+            RWDB2 Coastlines    No #00ff00
+            Coastlines    No #00ff00
+            Major_Ice_Shelves    No #00ff00
+            Minor_Ice_Shelves    No #00ff00
+            RWDB2 International Borders    No #00ff00
+                Rank 1: Demarcated or Delimited    No #00ff00
+                Rank 2: Indefinite or Disputed    No #00ff00
+                Rank 3: Lines of separation or sovereignty on land    No #00ff00
+                Rank 4: Lines of separation or sovereignty at sea    No #00ff00
+                Rank 5: Other lines of separation or sovereignty at sea    No #00ff00
+                Rank 6: Continental shelf boundary in Persian Gulf    No #00ff00
+                Rank 7: Demilitarized zone lines in Israel    No #00ff00
+                Rank 8: No defined line    No #00ff00
+                Rank 9: Selected claimed lines    No #00ff00
+                Rank 50: Old Panama Canal Zone lines    No #00ff00
+                Rank 51: Old N. Yemen-S.Yemen lines    No #00ff00
+                Rank 52: Old Jordan-Iraq lines    No #00ff00
+                Rank 53: Old Iraq-Saudi Arabia Neutral Zone lines    No #00ff00
+                Rank 54: Old East Germany-West Germany and Berlin lines    No #00ff00
+                Rank 55: Old N. Vietnam-S. Vietnam boundary    No #00ff00
+                Rank 56: Old Vietnam DMZ lines    No #00ff00
+                Rank 57: Old Kuwait-Saudi Arabia Neutral Zone lines    No #00ff00
+                Rank 58: Old Oman-Yemen line of separation    No #00ff00
+            RWDB2 Islands    No #00ff00
+                Rank 1: Major islands    No #00ff00
+                Rank 2: Additional major islands    No #00ff00
+                Rank 3: Moderately important islands    No #00ff00
+                Rank 4: Additional islands    No #00ff00
+                Rank 5: Minor islands    No #00ff00
+                Rank 6: Very small minor islands    No #00ff00
+                Rank 8: Reefs    No #00ff00
+                Rank 9: Shoals    No #00ff00
+            RWDB2 Lakes    No #00ff00
+                Rank 1: Lakes that should appear on all maps    No #00ff00
+                Rank 2: Major lakes    No #00ff00
+                Rank 3: Additional major lakes    No #00ff00
+                Rank 4: Intermediate lakes    No #00ff00
+                Rank 5: Minor lakes    No #00ff00
+                Rank 6: Additional minor lakes    No #00ff00
+                Rank 7: Swamps    No #00ff00
+                Rank 11: Intermittent major lakes    No #00ff00
+                Rank 12: Intermittent minor lakes    No #00ff00
+                Rank 14: Major salt pans    No #00ff00
+                Rank 15: Minor salt pans    No #00ff00
+                Rank 23: Glaciers    No #00ff00
+            RWDB2 Provincial Borders    No #00ff00
+                Rank 1: First order    No #00ff00
+                Rank 2: Second order    No #00ff00
+                Rank 3: Third order    No #00ff00
+                Rank 4: Special boundaries    No #00ff00
+                Rank 54: Pre-unification German administration lines    No #00ff00
+                Rank 61: First order boundaries in the water    No #00ff00
+                Rank 62: Second order boundaries in the water    No #00ff00
+                Rank 99: Disputed lines    No #00ff00
+            RWDB2 Rivers    No #00ff00
+                Rank 1: Major rivers    No #00ff00
+                Rank 2: Additional major rivers    No #00ff00
+                Rank 3: Intermediate rivers    No #00ff00
+                Rank 4: Additional intermediate rivers    No #00ff00
+                Rank 5: Minor rivers    No #00ff00
+                Rank 6: Additional minor rivers    No #00ff00
+                Rank 10: Major intermittent rivers    No #00ff00
+                Rank 11: Intermediate intermittent rivers    No #00ff00
+                Rank 12: Minor intermittent rivers    No #00ff00
+                Rank 21: Major canals    No #00ff00
+                Rank 22: Minor canals    No #00ff00
+                Rank 23: Irrigation canals    No #00ff00
+            RWDB2_Coastlines    Yes #0c0000
+            Coastlines    No #00ff00
+            Major_Ice_Shelves    No #00ff00
+            Minor_Ice_Shelves    No #00ff00
+            RWDB2_International_Borders    Yes #0c0000
+            Demarcated_or_Delimited    No #00ff00
+            Indefinite_or_Disputed    No #00ff00
+            Lines_of_separation_on_land    No #00ff00
+            Lines_of_separation_at_sea    No #00ff00
+            Other_lines_of_separation_at_sea    No #00ff00
+            Continental_shelf_boundary_in_Persian_Gulf    No #00ff00
+            Demilitarized_zone_lines_in_Israel    No #00ff00
+            No_defined_line    No #00ff00
+            Selected_claimed_lines    No #00ff00
+            Old_Panama_Canal_Zone_lines    No #00ff00
+            Old_North-South_Yemen_lines    No #00ff00
+            Old_Jordan-Iraq_lines    No #00ff00
+            Old_Iraq-Saudi_Arabia_Neutral_Zone_lines    No #00ff00
+            Old_East-West_Germany_and_Berlin_lines    No #00ff00
+            Old_North-South_Vietnam_boundary    No #00ff00
+            Old_Vietnam_DMZ_lines    No #00ff00
+            Old_Kuwait-Saudi_Arabia_Neutral_Zone_lines    No #00ff00
+            Old_Oman-Yemen_line_of_separation    No #00ff00
+            RWDB2_Islands    Yes #0c0000
+            Major_islands    No #00ff00
+            Additional_major_islands    No #00ff00
+            Moderately_important_islands    No #00ff00
+            Additional_islands    No #00ff00
+            Minor_islands    No #00ff00
+            Very_small_minor_islands    No #00ff00
+            Reefs    No #00ff00
+            Shoals    No #00ff00
+            RWDB2_Lakes    No #090000
+            Lakes_that_should_appear_on_all_maps    No #00ff00
+            Major_lakes    No #00ff00
+            Additional_major_lakes    No #00ff00
+            Intermediate_lakes    No #00ff00
+            Minor_lakes    No #00ff00
+            Additional_minor_lakes    No #00ff00
+            Swamps    No #00ff00
+            Intermittent_major_lakes    No #00ff00
+            Intermittent_minor_lakes    No #00ff00
+            Major_salt_pans    No #00ff00
+            Minor_salt_pans    No #00ff00
+            Glaciers    No #00ff00
+            RWDB2_Provincial_Borders    No #090000
+            First_order    No #00ff00
+            Second_order    No #00ff00
+            Third_order    No #00ff00
+            Special_boundaries    No #00ff00
+            Pre-unification_German_administration_lines    No #00ff00
+            First_order_boundaries_on_water    No #00ff00
+            Second_order_boundaries_on_water    No #00ff00
+            Disputed_lines    No #00ff00
+            RWDB2_Rivers    No #090000
+            Major_rivers    No #00ff00
+            Additional_major_rivers    No #00ff00
+            Intermediate_rivers    No #00ff00
+            Additional_intermediate_rivers    No #00ff00
+            Minor_rivers    No #00ff00
+            Additional_minor_rivers    No #00ff00
+            Major_intermittent_rivers    No #00ff00
+            Intermediate_intermittent_rivers    No #00ff00
+            Minor_intermittent_rivers    No #00ff00
+            Major_canals    No #00ff00
+            Minor_canals    No #00ff00
+            Irrigation_canals    No #00ff00
+        END Maps
+
+            SnapFileType             BMP
+            SnapOutputMode           Normal
+            OutputSnapToClipboard    No
+            SnapAntiAliasStrength    0
+            ReadAllNeededTextures    No
+            IsTextured               Yes
+            ShadeSkyByAlt            Yes
+            BackGroundColor          #000000
+            BackGroundRGB            0.000000 0.000000 0.000000
+            GlobeColor               #0000ff
+            GlobeRGB                 0.000000 0.000000 1.000000
+            GlobeFile                Basic.glb
+            TextureAntiAliased       Yes
+            IsShowingArcBall         Yes
+            IsShowingArcBallConstraintAxis No
+            ArcBallColor             #ff00ff
+            ArcBallTranslucency      0.500000
+            IsShowingMap             No
+            IsShowingGlobe           Yes
+            MapResolution            Medium
+            GlobeTesselationFactor   1.000000
+            Begin Border3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #8fbc8f
+            End Border3dLineAttr
+            IsShowingClouds          No
+            CloudAltitude            50068.375450
+            CloudTesselationFactor   1.000000
+            ShowingTimeAsFPS         No
+            ShowingUpdateDelta       Yes
+            ShowGlobeAltFromMSL      No
+            CloudFileIndex           Clouds.cld
+            LightingEnabled          Yes
+            ObjectLightingEnabled    Yes
+            SolarIntensityLightingEnabled Yes
+            AmbientLight             40.000000
+            ObjectAmbientLight       60.000000
+            DayDirectLight           350.000000
+            NightDirectLight         100.000000
+            ObjectDirectLight        150.000000
+            Shininess                40.000000
+            SpecularRGB              0.330000 0.330000 0.330000
+            EnablePositionalLighting Yes
+            LatLonLines              No
+            Begin LatLon3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #f0ffff
+            End LatLon3dLineAttr
+            LatSpacing               30.000000
+            LonSpacing               30.000000
+            TexOutlinesUnselectedRGB 1.000000 1.000000 1.000000
+            TexOutlinesSelectedRGB   0.000000 1.000000 0.000000
+            EquatorLine              No
+            GreenwichLine            No
+            Zoom2dMap              No
+            Begin EqPrmMer3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #0000ff
+            End EqPrmMer3dLineAttr
+            GeoMagContour            No
+            GeoMagLineColor          #ff0000
+            GeoMagLineWidth          2.000000
+            GeoMagLineStyle          4
+            GeoMagSpacing            20
+            GeoMagEpoch              1995
+            GeoMagAltitude           0.000000
+            IsShowingCelestialGrid   No
+            IsShowingCelestGridText  Yes
+            Begin Celestial3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #4d4d4d
+            End Celestial3dLineAttr
+            IsShowingSun             Yes
+            IsShowingSunLabel        No
+            IsShowingSunshine        Yes
+            IsShowingSubSolarPoint   No
+            IsShowingPenumbraLimit   No
+            IsShowingUmbraCone       No
+            UmbraConeRGB             1.000000 0.000000 0.300000
+            IsShowingPenumbraCone    No
+            PenumbraConeRGB          0.941000 0.941000 0.392000
+            Begin CSData
+                Show Yes
+                ShowPoints Yes
+                ShowCTM No
+                ShowLabels No
+                AntiAliasCTM Yes
+                StarPointSize 2.000000
+                VisibleStarThreshold 6.000000
+            End
+            BEGIN CentralBodyDisplay
+                BEGIN CentralBody
+                    Centralbody       Moon
+                    IsShowing         Yes
+                    IsShowingLabel    Yes
+                    IsShowingImage    Yes
+                    ImageFile         Moon.ppm
+                    Color             #ffffff
+                    TessFactor        1.000000
+                END CentralBody
+            END CentralBodyDisplay
+
+            isShowingOverlay            Yes
+            LogoData                 "AGI_logo__big.ppm" No 0 0 Yes 1.000000 Max Min
+            LogoData                 "AGI_logo_small.ppm" Yes 0 0 Yes 0.750000 Max Min
+            LogoData                 "AGI_web_logo_small.ppm" No 0 0 Yes 1.000000 Max Min
+            IsShowingTimeDisplay     Yes
+            TimeDisplayPosition      10 5
+            TimeAttachX              Min
+            TimeAttachY              Min
+            TimeDisplayFontSize      0
+            TimeDisplayColor         #00ff00
+            TimeVertTextAlign        Border
+            IsShowingPositionDisplay No
+            ShowDistanceToViewObj    No
+            PositionDisplayPosition  10 45
+            PositionAttachX          Min
+            PositionAttachY          Min
+            PositionDisplayFontSize  0
+            PositionDisplayColor     #00ff00
+            PositionVertTextAlign    Border
+            IsShowingPositionOn2DMap No
+            PositionOn2DMapStyle     1
+            IsShowingCrdnFrame       Yes
+            CrdnFrameDisplayPosition 10 25
+            CrdnAttachX              Min
+            CrdnAttachY              Min
+            CrdnFrameDisplayFontSize 0
+            CrdnVertTextAlign        Border
+            CrdnFrameDisplayColor    #00ff00
+            IsShowingSpaceGridText   No
+            GridRadialLines          Yes
+            GridRadialResolution     3
+            GridPlaneEcliptic        No
+            Begin Ecliptic3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #00ff00
+            End Ecliptic3dLineAttr
+            GridPlaneEci             No
+            Begin ECI3dLineAttr
+                Width            1.000000
+                Style            0
+                Color            #00ff00
+            End ECI3dLineAttr
+            GridDisplayPosition      10 45
+            GridAttachX              Min
+            GridAttachY              Min
+            GridDisplayFontSize      0
+            GridDisplayColor         #00ff00
+            GridVertTextAlign        Border
+            IsShowingPickAnnotation  Yes
+            UsePickAnnoPosition      No
+            PickAnnoPosition         10 65
+            PickAttachX              Min
+            PickAttachY              Min
+            PickAnnoFontSize         1
+            PickAnnoColor            #f0ffff
+            PickHitMode              DoClosestPickHit
+            PickVertTextAlign        Border
+            IsDepthCued              No
+            DepthCueingStart         10000000.000000
+            DepthCueingEnd           150000000.000000
+            NearPlane                10000.000000
+            FarPlane                 1000000000.000000
+            MultiClippingThreshold   1000000000.000000
+            MultiNearPlane           10000000.000000
+            MultiFarPlane            10000000000.000000
+            EnableMultiFrustum       Yes
+            MaxPercentRadChange      0.300000
+            MinimumViewingAltitude   0.000000
+            StopViewAtAltitude       No
+            StopViewAtObject         Yes
+            PixelAspectRatio         1.000000
+            AntiAliasStrength        0
+            UseMotionBlur            No
+            MotionBlurLength         0.500000
+            UseDepthConeBufferCrossover No
+            DepthConeBufferCrossover 1000.00
+            MeshPixelError           2
+            ChunkTexturePixelError   1
+            EnableBorderViewport     No
+            BorderViewportLoc        Right
+            BorderViewportDim        256
+            BorderViewportColorIndex #4d4d4d
+            BorderViewportLineWidth  2
+    Begin GeneralVectorAxes
+        ArrowPointSize          3.00
+        PersistentLineWidth     2.00
+        Scale                   1.000000
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Inertial"
+            CentralBody Earth
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Fixed"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #8fbc8f
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Fixed"
+            CentralBody Earth
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Fixed"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #0000ff
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector Yes
+            IsCentralBodyFrame Yes
+            Name "Sun"
+            CentralBody Earth
+            MagUnit m
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Inertial"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #ffff00
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector Yes
+            IsCentralBodyFrame Yes
+            Name "Moon"
+            CentralBody Earth
+            MagUnit m
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Inertial"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #ffffff
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector Yes
+            IsCentralBodyFrame Yes
+            Name "NorthCelestialPole"
+            CentralBody Earth
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Fixed"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #ba55d3
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAxes
+        Begin CrdnDef
+            IsVector Yes
+            IsCentralBodyFrame Yes
+            Name "VernalEquinox"
+            CentralBody Earth
+        End
+        Begin RefCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Fixed"
+            CentralBody Earth
+        End
+        Duration                3600.000
+        IsShowing               No
+        IsPersistent            No
+        IsTransparent           No
+        DrawFirstArrowOnly      Yes
+        UseTrueScale            No
+        DrawAtCentralBody       No
+        ArrowType               3D
+        ConnectType             Sweep
+        ColorIndex              #fff0f5
+        IntervalType            AlwaysOn
+        AngleUnit               deg
+    End
+    Begin VectorAngle
+        FractionalScale                1.000000
+        SupportingDihedralArcLineWidth 1.00
+        ArcLineWidth                   2.00
+        PixelThreshold                 0.500000
+        Begin VectorAngleData
+            Name                    "SunRA"
+            CBName                  Earth
+            Show                    No
+            ShowLabel               No
+            ShowAngle               No
+            ColorIndex              #6b8e23
+            IntervalType            AlwaysOn
+            Unit                    deg
+        End
+    End
+    Begin Plane
+    End
+            CBObscuring              No
+            BEGIN AOSLOSAnnotationData 
+                ShowAOSLOS           No
+                ColorIndex           #00ff00
+                FontIndex            0
+                XPosition            10.000000
+                YPosition            100.000000
+                UnitID               0
+                Location             3DWindow
+            END AOSLOSAnnotationData 
+            JoySupport               No
+            RubberBandLineWidth       2.000000
+            RubberBandRGB             0.660000 0.660000 0.660000
+            Begin View
+                ViewName                STKVOInitialView
+                ViewTime                0.000000
+                ViewUpdateDelta         60.000000
+                CentralBody             Earth
+                Begin ViewCrdn
+                    IsVector No
+                    IsCentralBodyFrame Yes
+                    Name "Inertial"
+                    CentralBody Earth
+                End
+                fov                     0.610865
+                UseArcBallRotateSpeedOpt      No
+                ArcBallRotateSpeed            0.000000
+                ArcBallRadius           0.900000
+                ArcBallRotateMode       From
+                ZoomSpeed               0.000000
+                GlobeDetailLevel        1
+                UseLayer                Yes
+                FromName                "Earth"
+                FromRegPosAttView       "View Central Body"
+                FromPosition            -157674607.153952240000000000  -109890291.605827080000000000  78767699.718955055000000000
+                FromOffset              -157674607.153952240000000000  -109890291.605827080000000000  78767699.718955055000000000
+                FromOffsetLLR           0.388961930819569650  -2.532920982552149700  207705340.445021660000000000
+                ToName                  "Earth"
+                ToRegPosAttView         "View Central Body"
+                ToPosition              0.000000000000000000  0.000000000000000000  0.000000000000000000
+                ToOffset                0.000000000000000000  0.000000000000000000  0.000000000000000000
+                ToOffsetLLR             0.000000000000000000  0.000000000000000000  0.000000000000000000
+                ConstantDistanceType    None
+                ConstantDistanceValue   1.000000
+                UpVector                0.311121854733307280  0.216834352459852800  0.925303223327695660
+                ViewRad                 207705340.445021660000000000
+                ViewQuat                0.9360606 -0.0579114 0.1843764 0.2940104
+                ViewCoordSystem         From
+                ViewFromToMode          FromTo
+                ViewToCBIMtx            1.000000000000000000 0.000000000000000000 0.000000000000000000 0.000000000000000000 1.000000000000000000 0.000000000000000000  0.000000000000000000 0.000000000000000000 1.000000000000000000
+                UseUpAxis               Yes
+                UpAxisType              Z
+                UserDefinedUpAxis       0.000000000000000000 0.000000000000000000 1.000000000000000000
+                OverUpAxis              No
+                LockInViewDir           No
+                NoZoom                  No
+                NoPan                   No
+                MinAngleToUpAxis        0.0087266
+                InitUpAxisUp            Yes
+                TempUpAxisUp            Yes
+                CrossAxis               -0.5717782 0.8204083 0.0000000
+            End View
+
+            Begin ViewPathManagerSceneInfo
+                ActiveViewPath                      ""
+                FollowViewPath                      No
+                ActiveCtrlPt                        -1
+                ShowTrackball                       No
+            End ViewPathManagerSceneInfo
+        End Scene
+    End SceneWindow
+    Begin View
+        ViewName                HomeView
+        ViewTime                0.000000
+        ViewUpdateDelta         60.000000
+        CentralBody             Earth
+        Begin ViewCrdn
+            IsVector No
+            IsCentralBodyFrame Yes
+            Name "Inertial"
+            CentralBody Earth
+        End
+        fov                     0.610865
+        UseArcBallRotateSpeedOpt      No
+        ArcBallRotateSpeed            0.000000
+        ArcBallRadius           0.900000
+        ArcBallRotateMode       From
+        ZoomSpeed               0.000000
+        GlobeDetailLevel        1
+        UseLayer                Yes
+        FromName                "Earth"
+        FromRegPosAttView       "View Central Body"
+        FromPosition            44646959.000000000000000000  0.000000000000000000  0.000000000000000000
+        FromOffset              44646959.000000000000000000  0.000000000000000000  0.000000000000000000
+        FromOffsetLLR           0.000000000000000000  0.000000000000000000  44646959.000000000000000000
+        ToName                  "Earth"
+        ToRegPosAttView         "View Central Body"
+        ToPosition              0.000000000000000000  0.000000000000000000  0.000000000000000000
+        ToOffset                0.000000000000000000  0.000000000000000000  0.000000000000000000
+        ToOffsetLLR             0.000000000000000000  0.000000000000000000  0.000000000000000000
+        ConstantDistanceType    None
+        ConstantDistanceValue   1.000000
+        UpVector                0.000000000000000000  0.000000000000000000  1.000000000000000000
+        ViewRad                 44646959.000000000000000000
+        ViewQuat                0.0000000 0.0000000 0.0000000 1.0000000
+        ViewCoordSystem         From
+        ViewFromToMode          FromTo
+        ViewToCBIMtx            0.000000000000000000 0.000000000000000000 0.000000000000000000 0.000000000000000000 0.000000000000000000 0.000000000000000000  0.000000000000000000 0.000000000000000000 0.000000000000000000
+        UseUpAxis               Yes
+        UpAxisType              Z
+        UserDefinedUpAxis       0.000000000000000000 0.000000000000000000 1.000000000000000000
+        OverUpAxis              No
+        LockInViewDir           No
+        NoZoom                  No
+        NoPan                   No
+        MinAngleToUpAxis        0.0087266
+        InitUpAxisUp            Yes
+        TempUpAxisUp            Yes
+        CrossAxis               0.0000000 -1.0000000 0.0000000
+    End View

@@ -1,0 +1,86 @@
+stk.v.7.0
+
+BEGIN LineTarget
+
+Name        Mars_LT
+
+    BEGIN IndexPtData
+
+        CentralBody            Mars
+        AnchorPtIndex          -3
+        NumberOfPolylinePts    10
+
+        BEGIN PolylinePoints
+
+            4.02903124466577e+000    -8.46196957951678e+001    0.00000000000000e+000
+            1.94976025719730e+000    -7.91280204035247e+001    0.00000000000000e+000
+            1.13569715372525e+001    -7.52161687706013e+001    0.00000000000000e+000
+            -1.19661930360752e+001    -8.01068542039002e+001    0.00000000000000e+000
+            1.09163093651592e+001    -8.33238563922372e+001    0.00000000000000e+000
+            1.86151443006472e+001    -7.99337030149063e+001    0.00000000000000e+000
+            3.69945137745558e+000    -4.10549305305165e+001    0.00000000000000e+000
+            -2.71786730800965e+001    -9.14078064953481e+001    0.00000000000000e+000
+            -9.14360889456274e+000    -7.62097359318518e+001    0.00000000000000e+000
+            4.65944073473853e+000    -6.50300668681559e+001    0.00000000000000e+000
+
+        END PolylinePoints
+
+
+    END IndexPtData
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                LineColor               #ff69b4
+                LabelColor              #ff69b4
+                LineStyle               0
+                LineWidth               1.0
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                ShowBoundingRect        Off
+
+            END Graphics
+            BEGIN PointData
+                ShowPoints           Off
+                NewPointShow         On
+                NewPointMarkerStyle  1
+                NewPointFontStyle    0
+                PointMarkerShow      On
+                PointMarkerStyle     1
+            END PointData
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END LineTarget
+

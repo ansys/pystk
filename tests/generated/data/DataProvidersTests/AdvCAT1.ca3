@@ -1,0 +1,4 @@
+VO_v60
+    ShowPrimaryEllipsoids         Yes
+    ShowSecondaryEllipsoids       Yes
+    ShowSecondaryType             WithConjunctions

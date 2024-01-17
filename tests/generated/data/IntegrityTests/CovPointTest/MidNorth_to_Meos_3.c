@@ -1,0 +1,322 @@
+stk.v.8.0
+
+BEGIN Chain
+
+Name  MidNorth_to_Meos_3
+BEGIN Definition
+
+   Type        Chain
+   Operator    Or
+   Order       1
+   Recompute   Yes
+   IntervalType    0
+   ComputeIntervalStart    0.000000
+   ComputeIntervalStop     86400.000000
+   UseSaveIntervalFile    No
+   UseMinAngle     No
+   UseMaxAngle     No
+   UseMinLinkTime     No
+   LTDelayCriterion    2.000000
+   TimeConvergence     0.005000
+   AbsValueConvergence 1.000000e-014
+   RelValueConvergence 1.000000e-008
+   MaxTimeStep         360.000000
+   MinTimeStep         1.000000e-002
+   UseLightTimeDelay   Yes
+    DetectEventsUsingSamplesOnly No
+    Object  Facility/MidNorth
+    Object  Constellation/Meos_3OrMore
+   SaveMode    1
+BEGIN StrandAccesses
+
+  Strand    Facility/MidNorth to Satellite/Meo_0_12hr
+    Start    0
+    Stop     14197.624794606718
+    Start    80944.223174419065
+    Stop     100659.74528610257
+    Start    167368.90394316227
+    Stop     187126.045612288
+    Start    253793.57901476545
+    Stop     273596.94792185794
+    Start    340218.25473907002
+    Stop     360072.93488262175
+    Start    426642.92808749079
+    Stop     446554.56882502959
+    Start    513067.60164327314
+    Stop     533042.5099410126
+    Start    599492.2699399821
+    Stop     619537.53940615163
+    Start    685916.93903896539
+    Stop     706040.59348600602
+    Start    772341.60648550768
+    Stop     777600
+  Strand    Facility/MidNorth to Satellite/Meo_0_6hr
+    Start    0
+    Stop     4291.4220150401279
+    Start    25025.305491958985
+    Stop     32897.276791840588
+    Start    52121.549289543975
+    Stop     58578.255675964989
+    Start    80944.223174419065
+    Stop     90716.065333714607
+    Start    111538.22490015673
+    Stop     119315.45704580117
+    Start    138546.34589014403
+    Stop     144983.45606732287
+    Start    167368.90394316227
+    Stop     177140.71068308767
+    Start    198042.47097945222
+    Stop     205733.33614774127
+    Start    224971.14684233948
+    Stop     231389.22956142557
+    Start    253793.57901476545
+    Stop     263565.35062291316
+    Start    284538.94547009957
+    Stop     292150.91129956406
+    Start    311395.94367836666
+    Stop     317795.67013556295
+    Start    340218.25473907002
+    Stop     349990.00137532846
+    Start    371028.45800621575
+    Stop     378568.17833802168
+    Start    397820.74293125223
+    Stop     404202.87261086015
+    Start    426642.92808749079
+    Stop     436414.64921998134
+    Start    457511.74505368591
+    Stop     464985.13456743455
+    Start    484245.54134500353
+    Stop     490610.97410570149
+    Start    513067.60164327314
+    Stop     522839.29864696
+    Start    543989.46864640468
+    Stop     551401.7760439812
+    Start    570670.33642422582
+    Stop     577020.10456806631
+    Start    599492.2699399821
+    Stop     609263.94704278861
+    Start    630462.20830143115
+    Stop     637818.09652886901
+    Start    657095.135031185
+    Stop     663430.44850601489
+    Start    685916.93903896539
+    Stop     695688.59930169675
+    Start    716930.48058370734
+    Stop     724234.10644509306
+    Start    743519.93370282475
+    Stop     749842.20664364088
+    Start    772341.60648550768
+    Stop     777600
+  Strand    Facility/MidNorth to Satellite/Meo_28_12hr
+    Start    0
+    Stop     14197.624794606718
+    Start    80944.223174419065
+    Stop     100659.74528610257
+    Start    167368.90394316227
+    Stop     187126.045612288
+    Start    253793.57901476545
+    Stop     273596.94792185794
+    Start    340218.25473907002
+    Stop     360072.93488262175
+    Start    426642.92808749079
+    Stop     446554.56882502959
+    Start    513067.60164327314
+    Stop     533042.5099410126
+    Start    599492.2699399821
+    Stop     619537.53940615163
+    Start    685916.93903896539
+    Stop     706040.59348600602
+    Start    772341.60648550768
+    Stop     777600
+  Strand    Facility/MidNorth to Satellite/Meo_28_6hr
+    Start    0
+    Stop     5911.5569115554808
+    Start    25025.305491958985
+    Stop     32897.276791840588
+    Start    50648.542817147907
+    Stop     58578.255675964989
+    Start    83072.166311836278
+    Stop     92339.623147080056
+    Start    111538.22490015673
+    Stop     119315.45704580117
+    Start    137029.59923837837
+    Stop     144983.45606732287
+    Start    169475.7525579902
+    Stop     178767.28515382324
+    Start    198042.47097945222
+    Stop     205733.33614774127
+    Start    223409.99783098025
+    Stop     231389.22956142557
+    Start    255879.50386817046
+    Stop     265194.57477801549
+    Start    284538.94547009957
+    Stop     292150.91129956406
+    Start    309789.72933241562
+    Stop     317795.67013556295
+    Start    342283.44030218199
+    Stop     351621.51484778087
+    Start    371028.45800621575
+    Stop     378568.17833802168
+    Start    396246.89666985674
+    Stop     404202.87261086015
+    Start    428687.55279350904
+    Stop     438048.1342473125
+    Start    457511.74505368591
+    Stop     464985.13456743455
+    Start    482727.01148862269
+    Stop     490610.97410570149
+    Start    515091.86075806565
+    Stop     524474.45799707761
+    Start    543989.46864640468
+    Stop     551401.7760439812
+    Start    569211.58455505897
+    Stop     577020.10456806631
+    Start    601496.36691991286
+    Stop     610900.50604113541
+    Start    630462.20830143115
+    Stop     637818.09652886901
+    Start    655701.04235524242
+    Stop     663430.44850601489
+    Start    687901.07787007454
+    Stop     697326.30966555956
+    Start    716930.48058370734
+    Stop     724234.10644509306
+    Start    742195.86966288905
+    Stop     749842.20664364088
+    Start    774305.99996319297
+    Stop     777600
+  Strand    Facility/MidNorth to Satellite/Meo_97_12hr
+    Start    0
+    Stop     14197.624794606718
+    Start    50648.542817147907
+    Stop     58578.255675964989
+    Start    82352.323979611465
+    Stop     100659.74528610257
+    Start    137029.59923837837
+    Stop     144983.45606732287
+    Start    168726.33214906024
+    Stop     187126.045612288
+    Start    223409.99783098025
+    Stop     231389.22956142557
+    Start    255101.30846712741
+    Stop     273596.94792185794
+    Start    309789.72933241562
+    Stop     317795.67013556295
+    Start    341477.25311067177
+    Stop     360072.93488262175
+    Start    396246.89666985674
+    Stop     404202.87261086015
+    Start    427854.17100908852
+    Stop     446554.56882502959
+    Start    482727.01148862269
+    Stop     490610.97410570149
+    Start    514232.07130859833
+    Stop     533042.5099410126
+    Start    569211.58455505897
+    Stop     577020.10456806631
+    Start    600610.95863309468
+    Stop     619537.53940615163
+    Start    655701.04235524242
+    Stop     663430.44850601489
+    Start    686990.83434024407
+    Stop     706040.59348600602
+    Start    742195.86966288905
+    Stop     749842.20664364088
+    Start    773371.70856611826
+    Stop     777600
+  Strand    Facility/MidNorth to Satellite/Meo_97_6hr
+    Start    0
+    Stop     6243.1039457956213
+    Start    25025.305491958985
+    Stop     32897.276791840588
+    Start    50648.542817147907
+    Stop     54954.462800322784
+    Start    84743.372429946816
+    Stop     92660.470684412387
+    Start    111538.22490015673
+    Stop     119315.45704580117
+    Start    137029.59923837837
+    Stop     141338.67519002699
+    Start    171149.8288063941
+    Stop     179078.08266371131
+    Start    198042.47097945222
+    Stop     205733.33614774127
+    Start    223409.99783098025
+    Stop     227722.19436223331
+    Start    257556.98437086976
+    Stop     265495.94646005309
+    Start    284538.94547009957
+    Stop     292150.91129956406
+    Start    309789.72933241562
+    Stop     314105.0237257671
+    Start    343964.84338491067
+    Stop     351914.06724283128
+    Start    371028.45800621575
+    Stop     378568.17833802168
+    Start    396246.89666985674
+    Stop     400487.16129956284
+    Start    430373.40699257213
+    Stop     438332.45067389426
+    Start    457511.74505368591
+    Stop     464985.13456743455
+    Start    482727.01148862269
+    Stop     486868.61415472324
+    Start    516782.67919648543
+    Stop     524751.1029222759
+    Start    543989.46864640468
+    Stop     551401.7760439812
+    Start    569211.58455505897
+    Stop     573249.38400088763
+    Start    603192.66665622557
+    Stop     611170.03068170219
+    Start    630462.20830143115
+    Stop     637818.09652886901
+    Start    655701.04235524242
+    Stop     659629.47251817223
+    Start    689603.37307600188
+    Stop     697589.23983699165
+    Start    716930.48058370734
+    Stop     724234.10644509306
+    Start    742195.86966288905
+    Stop     746008.89050478581
+    Start    776014.80478011409
+    Stop     777600
+END StrandAccesses
+
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+BEGIN Attributes
+
+StaticColor					#0000ff
+AnimationColor					#ffff00
+AnimationLineWidth					2.000000
+StaticLineWidth					3.000000
+
+END Attributes
+
+BEGIN Graphics
+
+    ShowStatic		Off
+    ShowAnimationHighlight		On
+    ShowAnimationLine		On
+    ShowLinkDirection		Off
+
+END Graphics
+    END Graphics
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END Chain
+

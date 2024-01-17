@@ -1,0 +1,30 @@
+stk.v.8.0
+
+BEGIN Constellation
+
+Name  Meos_AnyOf
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       1
+   IsRelay     No
+    Object  Satellite/Meo_0_12hr
+    Object  Satellite/Meo_0_6hr
+    Object  Satellite/Meo_28_12hr
+    Object  Satellite/Meo_28_6hr
+    Object  Satellite/Meo_97_12hr
+    Object  Satellite/Meo_97_6hr
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

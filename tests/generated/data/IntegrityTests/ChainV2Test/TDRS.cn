@@ -1,0 +1,27 @@
+stk.v.6.0
+
+BEGIN Constellation
+
+Name  TDRS
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       1
+   IsRelay     No
+    Object  Satellite/TDRS_3
+    Object  Satellite/TDRS_5
+    Object  Satellite/TDRS_6
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation
