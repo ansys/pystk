@@ -21,7 +21,7 @@ class TryCatchAssertBlock(object):
     def DoActionRunFinalize2(root: "StkObjectRoot", action, finalizer, *units):
         try:
             runner = CodeRunner(root)
-            runner.DoWithUnits(action, units)
+            runner.DoWithUnits2(action, Enumerable.ToList(units))
 
         finally:
             finalizer()
@@ -36,14 +36,14 @@ class CodeRunner(object):
         self.DoWithUnits2(action, Enumerable.ToList(units))
 
     def Iterate(self, maxIterations: int, action, *units):
-        watch = None
+        watch = Stopwatch()
         if self._bBeginEndUpdate:
             self._root.begin_update()
         try:
 
             def action1():
                 nonlocal watch
-                watch = Stopwatch.StartNew()
+                watch.Start()
 
                 i: int = 0
                 while i < maxIterations:
@@ -53,7 +53,7 @@ class CodeRunner(object):
 
                 watch.Stop()
 
-            self.DoWithUnits(action1, units)
+            self.DoWithUnits2(action1, Enumerable.ToList(units))
 
         finally:
             if self._bBeginEndUpdate:
