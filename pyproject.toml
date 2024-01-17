@@ -58,7 +58,7 @@ Tracker = "https://github.com/pyansys/pystk/issues"
 line-length = 120
 select = [
 #    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
-#    "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
+    "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
 #    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
 #    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
 #    "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
@@ -66,8 +66,26 @@ select = [
 ]
 ignore = [
 #    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-#    "D203",  # One blank line required before class docstring.
-#    "D204"  # One blank line required after class docstring.
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D106", # Missing docstring in public nested class
+    "D107", # Missing docstring in `__init__`
+    "D200", # One-line docstring should fit on one line
+    "D204", # blank line required after class docstring
+    "D210", # No whitespaces allowed surrounding docstring text
+    "D212", # Multi-line docstring summary should start at the first line
+    "D300", # Use triple double quotes `"""`
+    "D401", # First line of docstring should be in imperative mood
+    "D403", # First word of the first line should be properly capitalized
+    "D404", # First word of the docstring should not be "This"
+    "D415", # First line should end with a period, question mark, or exclamation point
+    "D417", # Missing argument description in the docstring
+
+    # Ignored intentionally
+    "D400", # First line should end with a period - This check is redundant, D415 checks this and allows for other punctuation.
 ]
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
