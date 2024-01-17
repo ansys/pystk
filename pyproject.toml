@@ -67,10 +67,17 @@ select = [
 ignore = [
 #    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
     "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D104", # Missing docstring in public package
     "D105", # Missing docstring in magic method
     "D107", # Missing docstring in `__init__`
+    "D200", # One-line docstring should fit on one line
+    "D300", # Use triple double quotes `"""`
+    "D400", # First line should end with a period
     "D401", # First line of docstring should be in imperative mood: "Checks equality of the underlying STK references."
-
+    "D404", # First word of the docstring should not be "This"
+    "D415", # First line should end with a period, question mark, or exclamation point
 ]
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
