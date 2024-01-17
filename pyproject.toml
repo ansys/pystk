@@ -58,7 +58,7 @@ Tracker = "https://github.com/pyansys/pystk/issues"
 line-length = 120
 select = [
 #    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
-    "D415",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
+    "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
 #    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
 #    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
 #    "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
