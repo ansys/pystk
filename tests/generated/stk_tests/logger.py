@@ -124,7 +124,7 @@ class Logger(object):
             with StreamWriter(self.LogFilename, True) as writer:
                 writer.WriteLine(format, obj1, obj2, obj3, obj4)
 
-    def WriteLine10(self, format: str, *args):
+    def WriteLine10(self, format: str, *args: "List[typing.Any]"):
         if self.Enabled:
             Console.WriteLine(format, args)
             with StreamWriter(self.LogFilename, True) as writer:

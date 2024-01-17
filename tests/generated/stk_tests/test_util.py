@@ -6,7 +6,9 @@ import pytz
 import re
 import unittest
 import sys
+
 import typing
+from typing import List
 
 from datetime import datetime, timedelta
 
@@ -349,6 +351,14 @@ class Assert:
         else:
             raise AssertionError(f"unconditional failure" + (f": {msg}" if msg is not None else ""))
 
+    @staticmethod
+    def skipTest(reason):
+        testCase = GetTestCase()
+        if testCase is not None:
+            testCase.skipTest(reason)
+        else:
+            raise AssertionError(f"could not skip test" + (f": {reason}" if msg is not None else ""))
+
 
 class StringAssert:
     @staticmethod
@@ -397,6 +407,14 @@ class Math:
 
     def Abs(value):
         return abs(value)
+
+    def Sign(value):
+        if value > 0:
+            return 1
+        elif value < 0:
+            return -1
+        else:
+            return 0
 
 
 class Math2:
@@ -451,6 +469,10 @@ class NullReferenceException(Exception):
 
 
 class ArgumentOutOfRangeException(Exception):
+    pass
+
+
+class InvalidOperationException(Exception):
     pass
 
 
@@ -733,6 +755,25 @@ class Double:
     def MinValue():
         return sys.float_info.min
 
+    @staticproperty
+    def NegativeInfinity():
+        return -math.inf
+
+    @staticproperty
+    def PositiveInfinity():
+        return math.inf
+
+
+class Int32:
+    # Extracted from Int32.cs
+    @staticproperty
+    def MaxValue():
+        return 2147483647
+
+    @staticproperty
+    def MinValue():
+        return -2147483648
+
 
 class Convert:
     @staticmethod
@@ -1009,6 +1050,26 @@ class TestBase(unittest.TestCase):
     NoGraphicsMode = True
     Units: "UnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
+
+    classesSupportingTemplates = [
+        "Aircraft",
+        "Antenna",
+        "AreaTarget",
+        "Facility",
+        "GroundVehicle",
+        "LaunchVehicle",
+        "LineTarget",
+        "Missile",
+        "Place",
+        "Planet",
+        "Radar",
+        "Receiver",
+        "Satellite",
+        "Sensor",
+        "Ship",
+        "Star",
+        "Target",
+    ]
 
     CurrentDirectory = None
     CodeBaseDir = None
@@ -1292,6 +1353,10 @@ class Stopwatch:
     def ElapsedMilliseconds(self):
         return (self.stop - self.start) * 1000.0
 
+    @property
+    def Elapsed(self):
+        return TimeSpan(self.stop - self.start)
+
 
 class OSHelper:
     @staticmethod
@@ -1435,10 +1500,7 @@ class Array:
 class Enumerable:
     @staticmethod
     def ToList(l):
-        if type(l) == tuple:
-            return list(*l)
-        else:
-            return list(l)
+        return list(l)
 
     @staticmethod
     def Contains(source, value):
@@ -1478,14 +1540,32 @@ def cmp(a, b):
     return (a > b) - (a < b)
 
 
+class Group:
+    def __init__(self, group):
+        self.group = group
+
+    def __str__(self):
+        return self.group
+
+    @property
+    def Value(self):
+        return self.group
+
+
 class GroupCollection:
     def __init__(self, match):
         self.match = match
 
     def __getitem__(self, index):
         if isinstance(index, int):
-            return list(self.match.groups())[index - 1]
-        return self.match.groupdict()[index]
+            if isinstance(self.match, str):
+                if index == 1:
+                    return Group(self.match)
+                else:
+                    raise IndexError("Group index out of range")
+            else:
+                return Group(list(self.match.groups())[index - 1])
+        return Group(self.match.groupdict()[index])
 
 
 class Match:
@@ -1795,7 +1875,9 @@ def GetTestCase():
 
 
 def RegexSubstringMatch(substr):
-    return "^.*" + re.escape(substr) + ".*$"
+    # The leading (?m) sets the re.M flag (to handle multi-line
+    # exception messages)
+    return "(?m)^.*" + re.escape(substr) + ".*$"
 
 
 class ExceptionMessageMatch(enum.IntEnum):

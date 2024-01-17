@@ -1795,7 +1795,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRID INSPECTOR ALL TYPES TEST ----- END -----")
 
     def CompareGridPointsByBoundsType(self, covDef: "CoverageDefinition", eBounds: "COVERAGE_BOUNDS"):
-        def generated1(a, b):
+        def generated1(a: "List[float]", b: "List[float]"):
             return (cmp(a[0], b[0]) * 10) + cmp(a[1], b[1])
 
         arrayCompare = generated1
@@ -1830,8 +1830,8 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(gridInspector):
-            arDouble1 = gridInspector[i]
-            arDouble2 = gridPointLocations[i]
+            arDouble1: "List[float]" = gridInspector[i]
+            arDouble2: "List[float]" = gridPointLocations[i]
             Assert.assertEqual(arDouble1[0], arDouble2[0])
             Assert.assertEqual(arDouble1[1], arDouble2[1])
 
