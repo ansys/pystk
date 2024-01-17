@@ -513,7 +513,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", oCovDef.grid.bounds_type)
-            noSmoothFillBounds: "COVERAGE_BOUNDS[]" = [COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY]
+            noSmoothFillBounds: "List[COVERAGE_BOUNDS]" = [COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY]
             eBound: "COVERAGE_BOUNDS"
             for eBound in noSmoothFillBounds:
                 oCovDef.grid.bounds_type = eBound
@@ -522,7 +522,7 @@ class EarlyBoundTests(TestBase):
                 Assert.assertEqual(eBound, eBound2)
                 self.TestFOMGfxContours(oFOMerit, False)
 
-            SmoothFillBounds: "COVERAGE_BOUNDS[]" = [
+            SmoothFillBounds: "List[COVERAGE_BOUNDS]" = [
                 COVERAGE_BOUNDS.BOUNDS_LAT_LINE,
                 COVERAGE_BOUNDS.BOUNDS_LON_LINE,
                 COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS,
