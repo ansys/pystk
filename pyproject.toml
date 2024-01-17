@@ -55,10 +55,8 @@ Source = "https://github.com/pyansys/pystk"
 Tracker = "https://github.com/pyansys/pystk/issues"
 
 [tool.ruff]
-fix = false
-
-[tool.ruff]
 line-length = 120
+fix = false
 select = [
 #    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
     "D",    # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
