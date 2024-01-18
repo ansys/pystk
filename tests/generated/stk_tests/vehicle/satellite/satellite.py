@@ -7,7 +7,7 @@ from assert_extension import *
 from assertion_harness import *
 from events.log_message_monitor import *
 from events.object_changed_monitor import *
-from integrity.integrity import *
+from report_comparison import *
 from interfaces.stk_objects import *
 from logger import *
 from seet_helper import *
