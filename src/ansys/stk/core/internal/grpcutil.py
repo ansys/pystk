@@ -423,7 +423,7 @@ class grpc_client(object):
             self._handle_rpc_error(rpc_error)
 
     def _handle_rpc_error(self, rpc_error):
-        """If the RPC error is an STK Runtime Error, raises a STKRuntimeError exception. Otherwise rethrow it."""
+        """If the RPC error is an STK Runtime Error, raise a STKRuntimeError exception. Otherwise rethrow it."""
         code = rpc_error.code()
         if code == grpc.StatusCode.UNKNOWN:
             details = rpc_error.details()

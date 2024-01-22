@@ -6,7 +6,7 @@ import importlib
 
 def required_package(package_name: str):
     """
-    Checks if a package is installed by importing it.
+    Check if a package is installed by importing it.
 
     Parameters
     ----------
@@ -22,7 +22,7 @@ def required_package(package_name: str):
     def decorator(function):
         @wraps(function)
         def wrapper(*args, **kwargs):
-            """Tries to import the required package and calls the decorated function."""
+            """Try to import the required package and calls the decorated function."""
             try:
                 importlib.import_module(package_name)
                 return function(*args, **kwargs)
@@ -112,7 +112,7 @@ def to_pandas_dataframe(results: "DataProviderResultDataSetCollection", index_el
 
 
 def _get_unique_element_names(results: "DataProviderResultDataSetCollection") -> Set:
-    """Returns a unique set of element names as a set."""
+    """Return a unique set of element names as a set."""
 
     unique_element_names = set(results.ElementNames)
 
@@ -123,7 +123,7 @@ def _get_unique_element_names(results: "DataProviderResultDataSetCollection") ->
 def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderElements",
                                         index_element_name: str = None) -> Dict[str, object]:
     """
-    Returns a mapping of STK data provider element names and their types to corresponding pandas dtypes.
+    Return a mapping of STK data provider element names and their types to corresponding pandas dtypes.
 
     Notes
     -----

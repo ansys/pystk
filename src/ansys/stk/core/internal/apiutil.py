@@ -18,11 +18,11 @@ class interface_proxy(object):
         return 0
 
     def __bool__(self):
-        """Represents a valid interface."""
+        """Represent a valid interface."""
         return False
 
     def query_interface(self, guid) -> "interface_proxy":
-        """Returns a new object with the requested guid."""
+        """Return a new object with the requested guid."""
         return interface_proxy()
 
     def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
@@ -40,11 +40,11 @@ class enumerator_proxy(object):
         pass
 
     def next(self) -> typing.Any:
-        """Returns the next item in the collection."""
+        """Return the next item in the collection."""
         return None
 
     def reset(self):
-        """Resets the enumeration of the collection."""
+        """Reset the enumeration of the collection."""
 
 class out_arg(object):
     pass

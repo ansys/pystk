@@ -1350,7 +1350,7 @@ class IPathPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPoint)
@@ -1471,7 +1471,7 @@ class IPathPointFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPointFactory)
@@ -1533,7 +1533,7 @@ class IBoundingSphere(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoundingSphere)
@@ -1576,7 +1576,7 @@ class IBoundingSphereFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoundingSphereFactory)
@@ -1624,7 +1624,7 @@ class ITextureFilter2D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureFilter2D)
@@ -1720,7 +1720,7 @@ class ITextureFilter2DFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureFilter2DFactory)
@@ -1799,7 +1799,7 @@ class IRendererTexture2D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRendererTexture2D)
@@ -1835,7 +1835,7 @@ class IRendererTextureTemplate2D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRendererTextureTemplate2D)
@@ -1888,7 +1888,7 @@ class IPathPointCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPointCollection)
@@ -1953,7 +1953,7 @@ class IObjectCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IObjectCollection)
@@ -2018,7 +2018,7 @@ class ISceneCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneCollection)
@@ -2084,7 +2084,7 @@ class IScreenOverlayContainer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayContainer)
@@ -2151,7 +2151,7 @@ class IScreenOverlayPickResultCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayPickResultCollection)
@@ -2213,7 +2213,7 @@ class IGlobeImageOverlayAddCompleteEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlayAddCompleteEventArgs)
@@ -2247,7 +2247,7 @@ class ITerrainOverlayAddCompleteEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayAddCompleteEventArgs)
@@ -2284,7 +2284,7 @@ class IPickResultCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickResultCollection)
@@ -2347,7 +2347,7 @@ class IRenderingEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRenderingEventArgs)
@@ -2390,7 +2390,7 @@ class IBatchPrimitiveIndex(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBatchPrimitiveIndex)
@@ -2435,7 +2435,7 @@ class IKmlDocumentCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocumentCollection)
@@ -2500,7 +2500,7 @@ class IKmlFeatureCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFeatureCollection)
@@ -2563,7 +2563,7 @@ class IKmlDocumentLoadedEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocumentLoadedEventArgs)
@@ -2687,7 +2687,7 @@ class IFactoryAndInitializers(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFactoryAndInitializers)
@@ -3379,7 +3379,7 @@ class IExtrudedPolylineTriangulatorResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExtrudedPolylineTriangulatorResult)
@@ -3432,7 +3432,7 @@ class ISolidTriangulatorResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidTriangulatorResult)
@@ -3492,7 +3492,7 @@ class ISurfaceShapesResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceShapesResult)
@@ -3546,7 +3546,7 @@ class ISurfaceTriangulatorResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceTriangulatorResult)
@@ -3616,7 +3616,7 @@ class ITriangulatorResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangulatorResult)
@@ -3682,7 +3682,7 @@ class IAGICustomTerrainOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGICustomTerrainOverlay)
@@ -3708,7 +3708,7 @@ class IAGIProcessedImageGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedImageGlobeOverlay)
@@ -3734,7 +3734,7 @@ class IAGIProcessedTerrainOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedTerrainOverlay)
@@ -3760,7 +3760,7 @@ class IAGIRoamImageGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIRoamImageGlobeOverlay)
@@ -3790,7 +3790,7 @@ class ICameraSnapshot(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICameraSnapshot)
@@ -3855,7 +3855,7 @@ class ICameraVideoRecording(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICameraVideoRecording)
@@ -3921,7 +3921,7 @@ class ICentralBodyGraphicsIndexer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICentralBodyGraphicsIndexer)
@@ -3995,7 +3995,7 @@ class ICustomImageGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlay)
@@ -4081,7 +4081,7 @@ class ICustomImageGlobeOverlayPluginActivator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginActivator)
@@ -4123,7 +4123,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginProxy)
@@ -4176,7 +4176,7 @@ class IGeospatialImageGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeospatialImageGlobeOverlay)
@@ -4238,7 +4238,7 @@ class IGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeOverlay)
@@ -4324,7 +4324,7 @@ class IGlobeOverlaySettings(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeOverlaySettings)
@@ -4402,7 +4402,7 @@ class ILighting(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILighting)
@@ -4488,7 +4488,7 @@ class IPathPrimitiveUpdatePolicy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitiveUpdatePolicy)
@@ -4556,7 +4556,7 @@ class IProjectedRasterOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectedRasterOverlay)
@@ -4864,7 +4864,7 @@ class IProjection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjection)
@@ -4982,7 +4982,7 @@ class IProjectionStream(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionStream)
@@ -5037,7 +5037,7 @@ class ISceneGlobeOverlaySettings(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneGlobeOverlaySettings)
@@ -5131,7 +5131,7 @@ class IScreenOverlayCollectionBase(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayCollectionBase)
@@ -5231,7 +5231,7 @@ class ITexture2DFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITexture2DFactory)
@@ -5276,7 +5276,7 @@ class IVisualEffects(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVisualEffects)
@@ -5352,7 +5352,7 @@ class IAltitudeDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeDisplayCondition)
@@ -5444,7 +5444,7 @@ class IAxesPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAxesPrimitive)
@@ -5684,7 +5684,7 @@ class ICamera(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICamera)
@@ -6103,7 +6103,7 @@ class ICentralBodyGraphics(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICentralBodyGraphics)
@@ -6311,7 +6311,7 @@ class IClouds(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IClouds)
@@ -6423,7 +6423,7 @@ class ICompositeDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositeDisplayCondition)
@@ -6601,7 +6601,7 @@ class ICompositePrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositePrimitive)
@@ -6698,7 +6698,7 @@ class IConstantDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConstantDisplayCondition)
@@ -6739,7 +6739,7 @@ class IDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDisplayCondition)
@@ -6770,7 +6770,7 @@ class IDistanceDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceDisplayCondition)
@@ -6849,7 +6849,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToGlobeOverlayDisplayCondition)
@@ -6945,7 +6945,7 @@ class IDistanceToPositionDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPositionDisplayCondition)
@@ -7054,7 +7054,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPrimitiveDisplayCondition)
@@ -7144,7 +7144,7 @@ class IDurationPathPrimitiveUpdatePolicy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDurationPathPrimitiveUpdatePolicy)
@@ -7203,7 +7203,7 @@ class IFrameRate(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFrameRate)
@@ -7271,7 +7271,7 @@ class IGlobeImageOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlay)
@@ -7403,7 +7403,7 @@ class IGraphicsFont(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGraphicsFont)
@@ -7504,7 +7504,7 @@ class IGreatArcInterpolator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGreatArcInterpolator)
@@ -7580,7 +7580,7 @@ class IImageCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IImageCollection)
@@ -7598,7 +7598,7 @@ class IImageCollection(object):
             raise StopIteration
         return nextval
     def Subscribe(self) -> IImageCollectionEventHandler:
-        """Returns an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of IImageCollection."""
+        """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of IImageCollection."""
         return IImageCollectionEventHandler(self._intf)
     
     _get_count_metadata = { "name" : "count",
@@ -7766,7 +7766,7 @@ class IAlphaFromLuminanceFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromLuminanceFilter)
@@ -7792,7 +7792,7 @@ class IAlphaFromPixelFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromPixelFilter)
@@ -7819,7 +7819,7 @@ class IAlphaFromRasterFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromRasterFilter)
@@ -7861,7 +7861,7 @@ class IBandExtractFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandExtractFilter)
@@ -7905,7 +7905,7 @@ class IBandOrderFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandOrderFilter)
@@ -7962,7 +7962,7 @@ class IBlurFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBlurFilter)
@@ -8004,7 +8004,7 @@ class IBrightnessFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBrightnessFilter)
@@ -8045,7 +8045,7 @@ class IColorToLuminanceFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IColorToLuminanceFilter)
@@ -8072,7 +8072,7 @@ class IContrastFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IContrastFilter)
@@ -8118,7 +8118,7 @@ class IConvolutionFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConvolutionFilter)
@@ -8190,7 +8190,7 @@ class IEdgeDetectFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEdgeDetectFilter)
@@ -8232,7 +8232,7 @@ class IFilteringRasterStream(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFilteringRasterStream)
@@ -8275,7 +8275,7 @@ class IFlipFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFlipFilter)
@@ -8317,7 +8317,7 @@ class IGammaCorrectionFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGammaCorrectionFilter)
@@ -8358,7 +8358,7 @@ class IGaussianBlurFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGaussianBlurFilter)
@@ -8385,7 +8385,7 @@ class IGradientDetectFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGradientDetectFilter)
@@ -8427,7 +8427,7 @@ class ILevelsFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelsFilter)
@@ -8468,7 +8468,7 @@ class IProjectionRasterStreamPluginActivator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginActivator)
@@ -8512,7 +8512,7 @@ class IProjectionRasterStreamPluginProxy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginProxy)
@@ -8587,7 +8587,7 @@ class IRaster(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRaster)
@@ -8696,7 +8696,7 @@ class IRasterAttributes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterAttributes)
@@ -8809,7 +8809,7 @@ class IRasterFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterFilter)
@@ -8837,7 +8837,7 @@ class IRasterStream(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterStream)
@@ -8886,7 +8886,7 @@ class IRotateFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotateFilter)
@@ -8933,7 +8933,7 @@ class ISequenceFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISequenceFilter)
@@ -9011,7 +9011,7 @@ class ISharpenFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISharpenFilter)
@@ -9086,7 +9086,7 @@ class IVideoStream(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVideoStream)
@@ -9373,7 +9373,7 @@ class IKmlContainer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlContainer)
@@ -9407,7 +9407,7 @@ class IKmlDocument(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocument)
@@ -9449,7 +9449,7 @@ class IKmlFeature(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFeature)
@@ -9545,7 +9545,7 @@ class IKmlFolder(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFolder)
@@ -9579,14 +9579,14 @@ class IKmlGraphics(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlGraphics)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IKmlGraphics, None)
     def Subscribe(self) -> IKmlGraphicsEventHandler:
-        """Returns an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of IKmlGraphics."""
+        """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of IKmlGraphics."""
         return IKmlGraphicsEventHandler(self._intf)
     
     _get_documents_metadata = { "name" : "documents",
@@ -9688,7 +9688,7 @@ class IKmlNetworkLink(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlNetworkLink)
@@ -9897,7 +9897,7 @@ class IMarkerBatchPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitive)
@@ -10330,7 +10330,7 @@ class IMarkerBatchPrimitiveOptionalParameters(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveOptionalParameters)
@@ -10429,7 +10429,7 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMaximumCountPathPrimitiveUpdatePolicy)
@@ -10492,7 +10492,7 @@ class IModelArticulation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelArticulation)
@@ -10590,7 +10590,7 @@ class IModelArticulationCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelArticulationCollection)
@@ -10684,7 +10684,7 @@ class IModelPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelPrimitive)
@@ -10799,7 +10799,7 @@ class IModelTransformation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelTransformation)
@@ -10963,7 +10963,7 @@ class IOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOverlay)
@@ -11591,7 +11591,7 @@ class IPathPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitive)
@@ -11862,7 +11862,7 @@ class IPickResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickResult)
@@ -11915,7 +11915,7 @@ class IPixelSizeDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPixelSizeDisplayCondition)
@@ -12004,7 +12004,7 @@ class IPointBatchPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitive)
@@ -12279,7 +12279,7 @@ class IPointBatchPrimitiveOptionalParameters(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveOptionalParameters)
@@ -12353,7 +12353,7 @@ class IPolylinePrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitive)
@@ -12685,7 +12685,7 @@ class IPolylinePrimitiveOptionalParameters(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveOptionalParameters)
@@ -12719,7 +12719,7 @@ class IPositionInterpolator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPositionInterpolator)
@@ -12775,7 +12775,7 @@ class IPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPrimitive)
@@ -12931,7 +12931,7 @@ class IPrimitiveManager(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPrimitiveManager)
@@ -13045,7 +13045,7 @@ class IRasterImageGlobeOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterImageGlobeOverlay)
@@ -13104,7 +13104,7 @@ class IRhumbLineInterpolator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRhumbLineInterpolator)
@@ -13182,14 +13182,14 @@ class IScene(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScene)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IScene, None)
     def Subscribe(self) -> ISceneEventHandler:
-        """Returns an ISceneEventHandler that is subscribed to handle events associated with this instance of IScene."""
+        """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of IScene."""
         return ISceneEventHandler(self._intf)
     
     _get_camera_metadata = { "name" : "camera",
@@ -13387,7 +13387,7 @@ class ISceneDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneDisplayCondition)
@@ -13441,7 +13441,7 @@ class ISceneManager(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneManager)
@@ -13530,7 +13530,7 @@ class IScreenOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlay)
@@ -13556,7 +13556,7 @@ class IScreenOverlayCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayCollection)
@@ -13587,7 +13587,7 @@ class IScreenOverlayManager(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayManager)
@@ -13661,7 +13661,7 @@ class IScreenOverlayPickResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayPickResult)
@@ -13749,7 +13749,7 @@ class ISolidPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidPrimitive)
@@ -14075,7 +14075,7 @@ class IStereoscopic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStereoscopic)
@@ -14177,7 +14177,7 @@ class ISurfaceMeshPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceMeshPrimitive)
@@ -14350,7 +14350,7 @@ class ITerrainOverlayCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayCollection)
@@ -14368,7 +14368,7 @@ class ITerrainOverlayCollection(object):
             raise StopIteration
         return nextval
     def Subscribe(self) -> ITerrainOverlayCollectionEventHandler:
-        """Returns an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
+        """Return an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of ITerrainOverlayCollection."""
         return ITerrainOverlayCollectionEventHandler(self._intf)
     
     _get_count_metadata = { "name" : "count",
@@ -14540,7 +14540,7 @@ class ITerrainOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlay)
@@ -14635,7 +14635,7 @@ class ITextBatchPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitive)
@@ -14908,7 +14908,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveOptionalParameters)
@@ -15042,7 +15042,7 @@ class ITextOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextOverlay)
@@ -15128,7 +15128,7 @@ class ITextureMatrix(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureMatrix)
@@ -15287,7 +15287,7 @@ class ITextureScreenOverlay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureScreenOverlay)
@@ -15361,7 +15361,7 @@ class ITimeIntervalDisplayCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeIntervalDisplayCondition)
@@ -15438,7 +15438,7 @@ class ITriangleMeshPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitive)
@@ -15629,7 +15629,7 @@ class ITriangleMeshPrimitiveOptionalParameters(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveOptionalParameters)
@@ -15696,7 +15696,7 @@ class IVectorPrimitive(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorPrimitive)
@@ -15932,7 +15932,7 @@ class IBoxTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoxTriangulatorInitializer)
@@ -15966,7 +15966,7 @@ class ICylinderTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICylinderTriangulatorInitializer)
@@ -16007,7 +16007,7 @@ class IEllipsoidTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEllipsoidTriangulatorInitializer)
@@ -16058,7 +16058,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExtrudedPolylineTriangulatorInitializer)
@@ -16169,7 +16169,7 @@ class ISurfaceExtentTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceExtentTriangulatorInitializer)
@@ -16214,7 +16214,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfacePolygonTriangulatorInitializer)
@@ -16293,7 +16293,7 @@ class ISurfaceShapesInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceShapesInitializer)
@@ -16403,7 +16403,7 @@ class IAGICustomTerrainOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGICustomTerrainOverlayFactory)
@@ -16436,7 +16436,7 @@ class IAGIProcessedImageGlobeOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedImageGlobeOverlayFactory)
@@ -16469,7 +16469,7 @@ class IAGIProcessedTerrainOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedTerrainOverlayFactory)
@@ -16502,7 +16502,7 @@ class IAGIRoamImageGlobeOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIRoamImageGlobeOverlayFactory)
@@ -16535,7 +16535,7 @@ class ICustomImageGlobeOverlayPluginActivatorFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginActivatorFactory)
@@ -16568,7 +16568,7 @@ class IGeospatialImageGlobeOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeospatialImageGlobeOverlayFactory)
@@ -16602,7 +16602,7 @@ class IProjectedRasterOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectedRasterOverlayFactory)
@@ -16645,7 +16645,7 @@ class IProjectionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionFactory)
@@ -16694,7 +16694,7 @@ class IAltitudeDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeDisplayConditionFactory)
@@ -16741,7 +16741,7 @@ class IAxesPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAxesPrimitiveFactory)
@@ -16774,7 +16774,7 @@ class ICompositeDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositeDisplayConditionFactory)
@@ -16807,7 +16807,7 @@ class ICompositePrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositePrimitiveFactory)
@@ -16841,7 +16841,7 @@ class IConstantDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConstantDisplayConditionFactory)
@@ -16882,7 +16882,7 @@ class IDistanceDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceDisplayConditionFactory)
@@ -16923,7 +16923,7 @@ class IDistanceToGlobeOverlayDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToGlobeOverlayDisplayConditionFactory)
@@ -16965,7 +16965,7 @@ class IDistanceToPositionDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPositionDisplayConditionFactory)
@@ -17013,7 +17013,7 @@ class IDistanceToPrimitiveDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPrimitiveDisplayConditionFactory)
@@ -17054,7 +17054,7 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDurationPathPrimitiveUpdatePolicyFactory)
@@ -17094,7 +17094,7 @@ class IGlobeImageOverlayInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlayInitializer)
@@ -17129,7 +17129,7 @@ class IGraphicsFontFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGraphicsFontFactory)
@@ -17171,7 +17171,7 @@ class IGreatArcInterpolatorFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGreatArcInterpolatorFactory)
@@ -17218,7 +17218,7 @@ class IAlphaFromLuminanceFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromLuminanceFilterFactory)
@@ -17251,7 +17251,7 @@ class IAlphaFromPixelFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromPixelFilterFactory)
@@ -17285,7 +17285,7 @@ class IAlphaFromRasterFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromRasterFilterFactory)
@@ -17327,7 +17327,7 @@ class IBandExtractFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandExtractFilterFactory)
@@ -17376,7 +17376,7 @@ class IBandOrderFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandOrderFilterFactory)
@@ -17424,7 +17424,7 @@ class IBlurFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBlurFilterFactory)
@@ -17465,7 +17465,7 @@ class IBrightnessFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBrightnessFilterFactory)
@@ -17505,7 +17505,7 @@ class IColorToLuminanceFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IColorToLuminanceFilterFactory)
@@ -17539,7 +17539,7 @@ class IContrastFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IContrastFilterFactory)
@@ -17582,7 +17582,7 @@ class IConvolutionFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConvolutionFilterFactory)
@@ -17637,7 +17637,7 @@ class IEdgeDetectFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEdgeDetectFilterFactory)
@@ -17677,7 +17677,7 @@ class IFilteringRasterStreamFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFilteringRasterStreamFactory)
@@ -17711,7 +17711,7 @@ class IFlipFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFlipFilterFactory)
@@ -17752,7 +17752,7 @@ class IGammaCorrectionFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGammaCorrectionFilterFactory)
@@ -17792,7 +17792,7 @@ class IGaussianBlurFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGaussianBlurFilterFactory)
@@ -17826,7 +17826,7 @@ class IGradientDetectFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGradientDetectFilterFactory)
@@ -17869,7 +17869,7 @@ class IJpeg2000WriterInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IJpeg2000WriterInitializer)
@@ -17923,7 +17923,7 @@ class ILevelsFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelsFilterFactory)
@@ -17956,7 +17956,7 @@ class IProjectionRasterStreamPluginActivatorFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginActivatorFactory)
@@ -17991,7 +17991,7 @@ class IRasterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterFactory)
@@ -18043,7 +18043,7 @@ class IRasterAttributesFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterAttributesFactory)
@@ -18112,7 +18112,7 @@ class IRotateFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotateFilterFactory)
@@ -18152,7 +18152,7 @@ class ISequenceFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISequenceFilterFactory)
@@ -18186,7 +18186,7 @@ class ISharpenFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISharpenFilterFactory)
@@ -18228,7 +18228,7 @@ class IVideoStreamFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVideoStreamFactory)
@@ -18281,7 +18281,7 @@ class IMarkerBatchPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveFactory)
@@ -18356,7 +18356,7 @@ class IMarkerBatchPrimitiveOptionalParametersFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveOptionalParametersFactory)
@@ -18390,7 +18390,7 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMaximumCountPathPrimitiveUpdatePolicyFactory)
@@ -18432,7 +18432,7 @@ class IModelPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelPrimitiveFactory)
@@ -18482,7 +18482,7 @@ class IPathPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitiveFactory)
@@ -18539,7 +18539,7 @@ class IPixelSizeDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPixelSizeDisplayConditionFactory)
@@ -18582,7 +18582,7 @@ class IPointBatchPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveFactory)
@@ -18638,7 +18638,7 @@ class IPointBatchPrimitiveOptionalParametersFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveOptionalParametersFactory)
@@ -18678,7 +18678,7 @@ class IPolylinePrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveFactory)
@@ -18762,7 +18762,7 @@ class IPolylinePrimitiveOptionalParametersFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveOptionalParametersFactory)
@@ -18797,7 +18797,7 @@ class IRasterImageGlobeOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterImageGlobeOverlayFactory)
@@ -18846,7 +18846,7 @@ class IRhumbLineInterpolatorFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRhumbLineInterpolatorFactory)
@@ -18893,7 +18893,7 @@ class ISceneDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneDisplayConditionFactory)
@@ -18932,7 +18932,7 @@ class ISceneManagerInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneManagerInitializer)
@@ -19014,7 +19014,7 @@ class IScreenOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayFactory)
@@ -19057,7 +19057,7 @@ class ISolidPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidPrimitiveFactory)
@@ -19117,7 +19117,7 @@ class ISurfaceMeshPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceMeshPrimitiveFactory)
@@ -19178,7 +19178,7 @@ class ITerrainOverlayInitializer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayInitializer)
@@ -19214,7 +19214,7 @@ class ITextBatchPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveFactory)
@@ -19261,7 +19261,7 @@ class ITextBatchPrimitiveOptionalParametersFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveOptionalParametersFactory)
@@ -19297,7 +19297,7 @@ class ITextOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextOverlayFactory)
@@ -19308,7 +19308,7 @@ class ITextOverlayFactory(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.AgInterface_in_arg("IGraphicsFont"), agmarshall.AgInterface_out_arg,) }
     def initialize(self, font:"IGraphicsFont") -> "TextOverlay":
-        """Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels. <param name='font'>The graphics font that defines how text is drawn.</param>"""
+        """Initialize the overlay with a position of (0, 0), a width of 100 pixels, and a height of 50 pixels. <param name='font'>The graphics font that defines how text is drawn</param>."""
         return self._intf.invoke(ITextOverlayFactory._metadata, ITextOverlayFactory._initialize_metadata, font, out_arg())
 
     _initialize_with_xy_width_height_metadata = { "name" : "initialize_with_xy_width_height",
@@ -19354,7 +19354,7 @@ class ITextureMatrixFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureMatrixFactory)
@@ -19412,7 +19412,7 @@ class ITextureScreenOverlayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureScreenOverlayFactory)
@@ -19475,7 +19475,7 @@ class ITimeIntervalDisplayConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeIntervalDisplayConditionFactory)
@@ -19523,7 +19523,7 @@ class ITriangleMeshPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveFactory)
@@ -19563,7 +19563,7 @@ class ITriangleMeshPrimitiveOptionalParametersFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveOptionalParametersFactory)
@@ -19596,7 +19596,7 @@ class IVectorPrimitiveFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorPrimitiveFactory)
@@ -19625,7 +19625,7 @@ class PathPoint(IPathPoint):
         self.__dict__["_intf"] = intf
         IPathPoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPoint, [IPathPoint])
@@ -19642,7 +19642,7 @@ class PathPointFactory(IPathPointFactory):
         self.__dict__["_intf"] = intf
         IPathPointFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPointFactory, [IPathPointFactory])
@@ -19659,7 +19659,7 @@ class BoundingSphere(IBoundingSphere):
         self.__dict__["_intf"] = intf
         IBoundingSphere._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BoundingSphere, [IBoundingSphere])
@@ -19676,7 +19676,7 @@ class BoundingSphereFactory(IBoundingSphereFactory):
         self.__dict__["_intf"] = intf
         IBoundingSphereFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BoundingSphereFactory, [IBoundingSphereFactory])
@@ -19693,7 +19693,7 @@ class TextureFilter2D(ITextureFilter2D):
         self.__dict__["_intf"] = intf
         ITextureFilter2D._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureFilter2D, [ITextureFilter2D])
@@ -19710,7 +19710,7 @@ class TextureFilter2DFactory(ITextureFilter2DFactory):
         self.__dict__["_intf"] = intf
         ITextureFilter2DFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureFilter2DFactory, [ITextureFilter2DFactory])
@@ -19727,7 +19727,7 @@ class RendererTexture2D(IRendererTexture2D):
         self.__dict__["_intf"] = intf
         IRendererTexture2D._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RendererTexture2D, [IRendererTexture2D])
@@ -19744,7 +19744,7 @@ class RendererTextureTemplate2D(IRendererTextureTemplate2D):
         self.__dict__["_intf"] = intf
         IRendererTextureTemplate2D._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RendererTextureTemplate2D, [IRendererTextureTemplate2D])
@@ -19761,7 +19761,7 @@ class PathPointCollection(IPathPointCollection):
         self.__dict__["_intf"] = intf
         IPathPointCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPointCollection, [IPathPointCollection])
@@ -19778,7 +19778,7 @@ class ObjectCollection(IObjectCollection):
         self.__dict__["_intf"] = intf
         IObjectCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ObjectCollection, [IObjectCollection])
@@ -19795,7 +19795,7 @@ class SceneCollection(ISceneCollection):
         self.__dict__["_intf"] = intf
         ISceneCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneCollection, [ISceneCollection])
@@ -19812,7 +19812,7 @@ class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
         self.__dict__["_intf"] = intf
         IScreenOverlayPickResultCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayPickResultCollection, [IScreenOverlayPickResultCollection])
@@ -19829,7 +19829,7 @@ class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventAr
         self.__dict__["_intf"] = intf
         IGlobeImageOverlayAddCompleteEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GlobeImageOverlayAddCompleteEventArgs, [IGlobeImageOverlayAddCompleteEventArgs])
@@ -19846,7 +19846,7 @@ class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
         self.__dict__["_intf"] = intf
         ITerrainOverlayAddCompleteEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TerrainOverlayAddCompleteEventArgs, [ITerrainOverlayAddCompleteEventArgs])
@@ -19863,7 +19863,7 @@ class PickResultCollection(IPickResultCollection):
         self.__dict__["_intf"] = intf
         IPickResultCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PickResultCollection, [IPickResultCollection])
@@ -19880,7 +19880,7 @@ class RenderingEventArgs(IRenderingEventArgs):
         self.__dict__["_intf"] = intf
         IRenderingEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RenderingEventArgs, [IRenderingEventArgs])
@@ -19897,7 +19897,7 @@ class BatchPrimitiveIndex(IBatchPrimitiveIndex):
         self.__dict__["_intf"] = intf
         IBatchPrimitiveIndex._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BatchPrimitiveIndex, [IBatchPrimitiveIndex])
@@ -19914,7 +19914,7 @@ class KmlDocumentCollection(IKmlDocumentCollection):
         self.__dict__["_intf"] = intf
         IKmlDocumentCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlDocumentCollection, [IKmlDocumentCollection])
@@ -19931,7 +19931,7 @@ class KmlFeatureCollection(IKmlFeatureCollection):
         self.__dict__["_intf"] = intf
         IKmlFeatureCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlFeatureCollection, [IKmlFeatureCollection])
@@ -19948,7 +19948,7 @@ class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
         self.__dict__["_intf"] = intf
         IKmlDocumentLoadedEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlDocumentLoadedEventArgs, [IKmlDocumentLoadedEventArgs])
@@ -19965,7 +19965,7 @@ class FactoryAndInitializers(IFactoryAndInitializers):
         self.__dict__["_intf"] = intf
         IFactoryAndInitializers._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FactoryAndInitializers, [IFactoryAndInitializers])
@@ -19984,7 +19984,7 @@ class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, IT
         IExtrudedPolylineTriangulatorResult._private_init(self, intf)
         ITriangulatorResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorResult, [IExtrudedPolylineTriangulatorResult, ITriangulatorResult])
@@ -20003,7 +20003,7 @@ class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
         ISolidTriangulatorResult._private_init(self, intf)
         ITriangulatorResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SolidTriangulatorResult, [ISolidTriangulatorResult, ITriangulatorResult])
@@ -20020,7 +20020,7 @@ class SurfaceShapesResult(ISurfaceShapesResult):
         self.__dict__["_intf"] = intf
         ISurfaceShapesResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceShapesResult, [ISurfaceShapesResult])
@@ -20039,7 +20039,7 @@ class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult)
         ISurfaceTriangulatorResult._private_init(self, intf)
         ITriangulatorResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceTriangulatorResult, [ISurfaceTriangulatorResult, ITriangulatorResult])
@@ -20056,7 +20056,7 @@ class TriangulatorResult(ITriangulatorResult):
         self.__dict__["_intf"] = intf
         ITriangulatorResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TriangulatorResult, [ITriangulatorResult])
@@ -20077,7 +20077,7 @@ class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeO
         ITerrainOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlay, [IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
@@ -20098,7 +20098,7 @@ class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageO
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlay, [IAGIProcessedImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -20119,7 +20119,7 @@ class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, I
         ITerrainOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlay, [IAGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
@@ -20140,7 +20140,7 @@ class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IG
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlay, [IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -20157,7 +20157,7 @@ class CameraSnapshot(ICameraSnapshot):
         self.__dict__["_intf"] = intf
         ICameraSnapshot._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CameraSnapshot, [ICameraSnapshot])
@@ -20174,7 +20174,7 @@ class CameraVideoRecording(ICameraVideoRecording):
         self.__dict__["_intf"] = intf
         ICameraVideoRecording._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CameraVideoRecording, [ICameraVideoRecording])
@@ -20191,7 +20191,7 @@ class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
         self.__dict__["_intf"] = intf
         ICentralBodyGraphicsIndexer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CentralBodyGraphicsIndexer, [ICentralBodyGraphicsIndexer])
@@ -20212,7 +20212,7 @@ class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlo
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlay, [ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -20229,7 +20229,7 @@ class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActiv
         self.__dict__["_intf"] = intf
         ICustomImageGlobeOverlayPluginActivator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivator, [ICustomImageGlobeOverlayPluginActivator])
@@ -20246,7 +20246,7 @@ class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
         self.__dict__["_intf"] = intf
         ICustomImageGlobeOverlayPluginProxy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginProxy, [ICustomImageGlobeOverlayPluginProxy])
@@ -20267,7 +20267,7 @@ class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverl
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlay, [IGeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -20284,7 +20284,7 @@ class GlobeOverlay(IGlobeOverlay):
         self.__dict__["_intf"] = intf
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GlobeOverlay, [IGlobeOverlay])
@@ -20301,7 +20301,7 @@ class GlobeOverlaySettings(IGlobeOverlaySettings):
         self.__dict__["_intf"] = intf
         IGlobeOverlaySettings._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GlobeOverlaySettings, [IGlobeOverlaySettings])
@@ -20318,7 +20318,7 @@ class Lighting(ILighting):
         self.__dict__["_intf"] = intf
         ILighting._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Lighting, [ILighting])
@@ -20335,7 +20335,7 @@ class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
         self.__dict__["_intf"] = intf
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPrimitiveUpdatePolicy, [IPathPrimitiveUpdatePolicy])
@@ -20356,7 +20356,7 @@ class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobe
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectedRasterOverlay, [IProjectedRasterOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -20373,7 +20373,7 @@ class Projection(IProjection):
         self.__dict__["_intf"] = intf
         IProjection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Projection, [IProjection])
@@ -20392,7 +20392,7 @@ class ProjectionStream(IProjectionStream, IProjection):
         IProjectionStream._private_init(self, intf)
         IProjection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectionStream, [IProjectionStream, IProjection])
@@ -20409,7 +20409,7 @@ class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
         self.__dict__["_intf"] = intf
         ISceneGlobeOverlaySettings._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneGlobeOverlaySettings, [ISceneGlobeOverlaySettings])
@@ -20426,7 +20426,7 @@ class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
         self.__dict__["_intf"] = intf
         IScreenOverlayCollectionBase._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayCollectionBase, [IScreenOverlayCollectionBase])
@@ -20443,7 +20443,7 @@ class Texture2DFactory(ITexture2DFactory):
         self.__dict__["_intf"] = intf
         ITexture2DFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Texture2DFactory, [ITexture2DFactory])
@@ -20460,7 +20460,7 @@ class VisualEffects(IVisualEffects):
         self.__dict__["_intf"] = intf
         IVisualEffects._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VisualEffects, [IVisualEffects])
@@ -20479,7 +20479,7 @@ class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
         IAltitudeDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AltitudeDisplayCondition, [IAltitudeDisplayCondition, IDisplayCondition])
@@ -20498,7 +20498,7 @@ class AxesPrimitive(IAxesPrimitive, IPrimitive):
         IAxesPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AxesPrimitive, [IAxesPrimitive, IPrimitive])
@@ -20515,7 +20515,7 @@ class Camera(ICamera):
         self.__dict__["_intf"] = intf
         ICamera._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Camera, [ICamera])
@@ -20532,7 +20532,7 @@ class CentralBodyGraphics(ICentralBodyGraphics):
         self.__dict__["_intf"] = intf
         ICentralBodyGraphics._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CentralBodyGraphics, [ICentralBodyGraphics])
@@ -20549,7 +20549,7 @@ class Clouds(IClouds):
         self.__dict__["_intf"] = intf
         IClouds._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Clouds, [IClouds])
@@ -20568,7 +20568,7 @@ class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
         ICompositeDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CompositeDisplayCondition, [ICompositeDisplayCondition, IDisplayCondition])
@@ -20587,7 +20587,7 @@ class CompositePrimitive(ICompositePrimitive, IPrimitive):
         ICompositePrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CompositePrimitive, [ICompositePrimitive, IPrimitive])
@@ -20606,7 +20606,7 @@ class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
         IConstantDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ConstantDisplayCondition, [IConstantDisplayCondition, IDisplayCondition])
@@ -20623,7 +20623,7 @@ class DisplayCondition(IDisplayCondition):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DisplayCondition, [IDisplayCondition])
@@ -20642,7 +20642,7 @@ class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
         IDistanceDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceDisplayCondition, [IDistanceDisplayCondition, IDisplayCondition])
@@ -20661,7 +20661,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondi
         IDistanceToGlobeOverlayDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayCondition, [IDistanceToGlobeOverlayDisplayCondition, IDisplayCondition])
@@ -20680,7 +20680,7 @@ class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, ID
         IDistanceToPositionDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayCondition, [IDistanceToPositionDisplayCondition, IDisplayCondition])
@@ -20699,7 +20699,7 @@ class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, 
         IDistanceToPrimitiveDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayCondition, [IDistanceToPrimitiveDisplayCondition, IDisplayCondition])
@@ -20718,7 +20718,7 @@ class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPat
         IDurationPathPrimitiveUpdatePolicy._private_init(self, intf)
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicy, [IDurationPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
@@ -20735,7 +20735,7 @@ class FrameRate(IFrameRate):
         self.__dict__["_intf"] = intf
         IFrameRate._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FrameRate, [IFrameRate])
@@ -20754,7 +20754,7 @@ class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GlobeImageOverlay, [IGlobeImageOverlay, IGlobeOverlay])
@@ -20771,7 +20771,7 @@ class GraphicsFont(IGraphicsFont):
         self.__dict__["_intf"] = intf
         IGraphicsFont._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GraphicsFont, [IGraphicsFont])
@@ -20790,7 +20790,7 @@ class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
         IGreatArcInterpolator._private_init(self, intf)
         IPositionInterpolator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GreatArcInterpolator, [IGreatArcInterpolator, IPositionInterpolator])
@@ -20807,7 +20807,7 @@ class ImageCollection(IImageCollection):
         self.__dict__["_intf"] = intf
         IImageCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ImageCollection, [IImageCollection])
@@ -20826,7 +20826,7 @@ class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
         IAlphaFromLuminanceFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilter, [IAlphaFromLuminanceFilter, IRasterFilter])
@@ -20845,7 +20845,7 @@ class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
         IAlphaFromPixelFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromPixelFilter, [IAlphaFromPixelFilter, IRasterFilter])
@@ -20864,7 +20864,7 @@ class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
         IAlphaFromRasterFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromRasterFilter, [IAlphaFromRasterFilter, IRasterFilter])
@@ -20883,7 +20883,7 @@ class BandExtractFilter(IBandExtractFilter, IRasterFilter):
         IBandExtractFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BandExtractFilter, [IBandExtractFilter, IRasterFilter])
@@ -20902,7 +20902,7 @@ class BandOrderFilter(IBandOrderFilter, IRasterFilter):
         IBandOrderFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BandOrderFilter, [IBandOrderFilter, IRasterFilter])
@@ -20923,7 +20923,7 @@ class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BlurFilter, [IBlurFilter, IConvolutionFilter, IRasterFilter])
@@ -20942,7 +20942,7 @@ class BrightnessFilter(IBrightnessFilter, IRasterFilter):
         IBrightnessFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BrightnessFilter, [IBrightnessFilter, IRasterFilter])
@@ -20961,7 +20961,7 @@ class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
         IColorToLuminanceFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ColorToLuminanceFilter, [IColorToLuminanceFilter, IRasterFilter])
@@ -20980,7 +20980,7 @@ class ContrastFilter(IContrastFilter, IRasterFilter):
         IContrastFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ContrastFilter, [IContrastFilter, IRasterFilter])
@@ -20999,7 +20999,7 @@ class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ConvolutionFilter, [IConvolutionFilter, IRasterFilter])
@@ -21020,7 +21020,7 @@ class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EdgeDetectFilter, [IEdgeDetectFilter, IConvolutionFilter, IRasterFilter])
@@ -21041,7 +21041,7 @@ class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
         IRasterStream._private_init(self, intf)
         IRaster._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FilteringRasterStream, [IFilteringRasterStream, IRasterStream, IRaster])
@@ -21060,7 +21060,7 @@ class FlipFilter(IFlipFilter, IRasterFilter):
         IFlipFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FlipFilter, [IFlipFilter, IRasterFilter])
@@ -21079,7 +21079,7 @@ class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
         IGammaCorrectionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GammaCorrectionFilter, [IGammaCorrectionFilter, IRasterFilter])
@@ -21100,7 +21100,7 @@ class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter)
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GaussianBlurFilter, [IGaussianBlurFilter, IConvolutionFilter, IRasterFilter])
@@ -21121,7 +21121,7 @@ class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFil
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GradientDetectFilter, [IGradientDetectFilter, IConvolutionFilter, IRasterFilter])
@@ -21140,7 +21140,7 @@ class LevelsFilter(ILevelsFilter, IRasterFilter):
         ILevelsFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LevelsFilter, [ILevelsFilter, IRasterFilter])
@@ -21157,7 +21157,7 @@ class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivat
         self.__dict__["_intf"] = intf
         IProjectionRasterStreamPluginActivator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivator, [IProjectionRasterStreamPluginActivator])
@@ -21174,7 +21174,7 @@ class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
         self.__dict__["_intf"] = intf
         IProjectionRasterStreamPluginProxy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginProxy, [IProjectionRasterStreamPluginProxy])
@@ -21191,7 +21191,7 @@ class Raster(IRaster):
         self.__dict__["_intf"] = intf
         IRaster._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Raster, [IRaster])
@@ -21208,7 +21208,7 @@ class RasterAttributes(IRasterAttributes):
         self.__dict__["_intf"] = intf
         IRasterAttributes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterAttributes, [IRasterAttributes])
@@ -21225,7 +21225,7 @@ class RasterFilter(IRasterFilter):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterFilter, [IRasterFilter])
@@ -21244,7 +21244,7 @@ class RasterStream(IRasterStream, IRaster):
         IRasterStream._private_init(self, intf)
         IRaster._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterStream, [IRasterStream, IRaster])
@@ -21263,7 +21263,7 @@ class RotateFilter(IRotateFilter, IRasterFilter):
         IRotateFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotateFilter, [IRotateFilter, IRasterFilter])
@@ -21282,7 +21282,7 @@ class SequenceFilter(ISequenceFilter, IRasterFilter):
         ISequenceFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SequenceFilter, [ISequenceFilter, IRasterFilter])
@@ -21303,7 +21303,7 @@ class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
         IConvolutionFilter._private_init(self, intf)
         IRasterFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SharpenFilter, [ISharpenFilter, IConvolutionFilter, IRasterFilter])
@@ -21324,7 +21324,7 @@ class VideoStream(IVideoStream, IRasterStream, IRaster):
         IRasterStream._private_init(self, intf)
         IRaster._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VideoStream, [IVideoStream, IRasterStream, IRaster])
@@ -21343,7 +21343,7 @@ class KmlContainer(IKmlContainer, IKmlFeature):
         IKmlContainer._private_init(self, intf)
         IKmlFeature._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlContainer, [IKmlContainer, IKmlFeature])
@@ -21364,7 +21364,7 @@ class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
         IKmlContainer._private_init(self, intf)
         IKmlFeature._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlDocument, [IKmlDocument, IKmlContainer, IKmlFeature])
@@ -21381,7 +21381,7 @@ class KmlFeature(IKmlFeature):
         self.__dict__["_intf"] = intf
         IKmlFeature._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlFeature, [IKmlFeature])
@@ -21402,7 +21402,7 @@ class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
         IKmlContainer._private_init(self, intf)
         IKmlFeature._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlFolder, [IKmlFolder, IKmlContainer, IKmlFeature])
@@ -21419,7 +21419,7 @@ class KmlGraphics(IKmlGraphics):
         self.__dict__["_intf"] = intf
         IKmlGraphics._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlGraphics, [IKmlGraphics])
@@ -21438,7 +21438,7 @@ class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
         IKmlNetworkLink._private_init(self, intf)
         IKmlFeature._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, KmlNetworkLink, [IKmlNetworkLink, IKmlFeature])
@@ -21457,7 +21457,7 @@ class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
         IMarkerBatchPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MarkerBatchPrimitive, [IMarkerBatchPrimitive, IPrimitive])
@@ -21474,7 +21474,7 @@ class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParame
         self.__dict__["_intf"] = intf
         IMarkerBatchPrimitiveOptionalParameters._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParameters, [IMarkerBatchPrimitiveOptionalParameters])
@@ -21493,7 +21493,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePoli
         IMaximumCountPathPrimitiveUpdatePolicy._private_init(self, intf)
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicy, [IMaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
@@ -21510,7 +21510,7 @@ class ModelArticulation(IModelArticulation):
         self.__dict__["_intf"] = intf
         IModelArticulation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ModelArticulation, [IModelArticulation])
@@ -21527,7 +21527,7 @@ class ModelArticulationCollection(IModelArticulationCollection):
         self.__dict__["_intf"] = intf
         IModelArticulationCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ModelArticulationCollection, [IModelArticulationCollection])
@@ -21546,7 +21546,7 @@ class ModelPrimitive(IModelPrimitive, IPrimitive):
         IModelPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ModelPrimitive, [IModelPrimitive, IPrimitive])
@@ -21563,7 +21563,7 @@ class ModelTransformation(IModelTransformation):
         self.__dict__["_intf"] = intf
         IModelTransformation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ModelTransformation, [IModelTransformation])
@@ -21582,7 +21582,7 @@ class Overlay(IOverlay, IScreenOverlayContainer):
         IOverlay._private_init(self, intf)
         IScreenOverlayContainer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Overlay, [IOverlay, IScreenOverlayContainer])
@@ -21601,7 +21601,7 @@ class PathPrimitive(IPathPrimitive, IPrimitive):
         IPathPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPrimitive, [IPathPrimitive, IPrimitive])
@@ -21618,7 +21618,7 @@ class PickResult(IPickResult):
         self.__dict__["_intf"] = intf
         IPickResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PickResult, [IPickResult])
@@ -21637,7 +21637,7 @@ class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
         IPixelSizeDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PixelSizeDisplayCondition, [IPixelSizeDisplayCondition, IDisplayCondition])
@@ -21656,7 +21656,7 @@ class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
         IPointBatchPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PointBatchPrimitive, [IPointBatchPrimitive, IPrimitive])
@@ -21673,7 +21673,7 @@ class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParamete
         self.__dict__["_intf"] = intf
         IPointBatchPrimitiveOptionalParameters._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParameters, [IPointBatchPrimitiveOptionalParameters])
@@ -21692,7 +21692,7 @@ class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
         IPolylinePrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PolylinePrimitive, [IPolylinePrimitive, IPrimitive])
@@ -21709,7 +21709,7 @@ class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
         self.__dict__["_intf"] = intf
         IPolylinePrimitiveOptionalParameters._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParameters, [IPolylinePrimitiveOptionalParameters])
@@ -21726,7 +21726,7 @@ class PositionInterpolator(IPositionInterpolator):
         self.__dict__["_intf"] = intf
         IPositionInterpolator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PositionInterpolator, [IPositionInterpolator])
@@ -21743,7 +21743,7 @@ class Primitive(IPrimitive):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Primitive, [IPrimitive])
@@ -21760,7 +21760,7 @@ class PrimitiveManager(IPrimitiveManager):
         self.__dict__["_intf"] = intf
         IPrimitiveManager._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PrimitiveManager, [IPrimitiveManager])
@@ -21781,7 +21781,7 @@ class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlo
         IGlobeImageOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlay, [IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
@@ -21800,7 +21800,7 @@ class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
         IRhumbLineInterpolator._private_init(self, intf)
         IPositionInterpolator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RhumbLineInterpolator, [IRhumbLineInterpolator, IPositionInterpolator])
@@ -21817,7 +21817,7 @@ class Scene(IScene):
         self.__dict__["_intf"] = intf
         IScene._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Scene, [IScene])
@@ -21836,7 +21836,7 @@ class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
         ISceneDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneDisplayCondition, [ISceneDisplayCondition, IDisplayCondition])
@@ -21853,7 +21853,7 @@ class SceneManager(ISceneManager):
         self.__dict__["_intf"] = intf
         ISceneManager._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneManager, [ISceneManager])
@@ -21874,7 +21874,7 @@ class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
         IOverlay._private_init(self, intf)
         IScreenOverlayContainer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlay, [IScreenOverlay, IOverlay, IScreenOverlayContainer])
@@ -21893,7 +21893,7 @@ class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollection
         IScreenOverlayCollection._private_init(self, intf)
         IScreenOverlayCollectionBase._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayCollection, [IScreenOverlayCollection, IScreenOverlayCollectionBase])
@@ -21914,7 +21914,7 @@ class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, 
         IScreenOverlayCollectionBase._private_init(self, intf)
         IScreenOverlayContainer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayManager, [IScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer])
@@ -21931,7 +21931,7 @@ class ScreenOverlayPickResult(IScreenOverlayPickResult):
         self.__dict__["_intf"] = intf
         IScreenOverlayPickResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayPickResult, [IScreenOverlayPickResult])
@@ -21950,7 +21950,7 @@ class SolidPrimitive(ISolidPrimitive, IPrimitive):
         ISolidPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SolidPrimitive, [ISolidPrimitive, IPrimitive])
@@ -21967,7 +21967,7 @@ class Stereoscopic(IStereoscopic):
         self.__dict__["_intf"] = intf
         IStereoscopic._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Stereoscopic, [IStereoscopic])
@@ -21986,7 +21986,7 @@ class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
         ISurfaceMeshPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitive, [ISurfaceMeshPrimitive, IPrimitive])
@@ -22003,7 +22003,7 @@ class TerrainOverlayCollection(ITerrainOverlayCollection):
         self.__dict__["_intf"] = intf
         ITerrainOverlayCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TerrainOverlayCollection, [ITerrainOverlayCollection])
@@ -22022,7 +22022,7 @@ class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
         ITerrainOverlay._private_init(self, intf)
         IGlobeOverlay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TerrainOverlay, [ITerrainOverlay, IGlobeOverlay])
@@ -22041,7 +22041,7 @@ class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
         ITextBatchPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextBatchPrimitive, [ITextBatchPrimitive, IPrimitive])
@@ -22058,7 +22058,7 @@ class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters
         self.__dict__["_intf"] = intf
         ITextBatchPrimitiveOptionalParameters._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParameters, [ITextBatchPrimitiveOptionalParameters])
@@ -22081,7 +22081,7 @@ class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContaine
         IOverlay._private_init(self, intf)
         IScreenOverlayContainer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextOverlay, [ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
@@ -22098,7 +22098,7 @@ class TextureMatrix(ITextureMatrix):
         self.__dict__["_intf"] = intf
         ITextureMatrix._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureMatrix, [ITextureMatrix])
@@ -22121,7 +22121,7 @@ class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScr
         IOverlay._private_init(self, intf)
         IScreenOverlayContainer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureScreenOverlay, [ITextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
@@ -22140,7 +22140,7 @@ class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondit
         ITimeIntervalDisplayCondition._private_init(self, intf)
         IDisplayCondition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeIntervalDisplayCondition, [ITimeIntervalDisplayCondition, IDisplayCondition])
@@ -22159,7 +22159,7 @@ class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
         ITriangleMeshPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TriangleMeshPrimitive, [ITriangleMeshPrimitive, IPrimitive])
@@ -22176,7 +22176,7 @@ class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalPara
         self.__dict__["_intf"] = intf
         ITriangleMeshPrimitiveOptionalParameters._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParameters, [ITriangleMeshPrimitiveOptionalParameters])
@@ -22195,7 +22195,7 @@ class VectorPrimitive(IVectorPrimitive, IPrimitive):
         IVectorPrimitive._private_init(self, intf)
         IPrimitive._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorPrimitive, [IVectorPrimitive, IPrimitive])
@@ -22212,7 +22212,7 @@ class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
         self.__dict__["_intf"] = intf
         IBoxTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BoxTriangulatorInitializer, [IBoxTriangulatorInitializer])
@@ -22229,7 +22229,7 @@ class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
         self.__dict__["_intf"] = intf
         ICylinderTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CylinderTriangulatorInitializer, [ICylinderTriangulatorInitializer])
@@ -22246,7 +22246,7 @@ class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
         self.__dict__["_intf"] = intf
         IEllipsoidTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EllipsoidTriangulatorInitializer, [IEllipsoidTriangulatorInitializer])
@@ -22263,7 +22263,7 @@ class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorIniti
         self.__dict__["_intf"] = intf
         IExtrudedPolylineTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorInitializer, [IExtrudedPolylineTriangulatorInitializer])
@@ -22280,7 +22280,7 @@ class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer
         self.__dict__["_intf"] = intf
         ISurfaceExtentTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceExtentTriangulatorInitializer, [ISurfaceExtentTriangulatorInitializer])
@@ -22297,7 +22297,7 @@ class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializ
         self.__dict__["_intf"] = intf
         ISurfacePolygonTriangulatorInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfacePolygonTriangulatorInitializer, [ISurfacePolygonTriangulatorInitializer])
@@ -22314,7 +22314,7 @@ class SurfaceShapesInitializer(ISurfaceShapesInitializer):
         self.__dict__["_intf"] = intf
         ISurfaceShapesInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceShapesInitializer, [ISurfaceShapesInitializer])
@@ -22331,7 +22331,7 @@ class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
         self.__dict__["_intf"] = intf
         IAGICustomTerrainOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlayFactory, [IAGICustomTerrainOverlayFactory])
@@ -22348,7 +22348,7 @@ class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory
         self.__dict__["_intf"] = intf
         IAGIProcessedImageGlobeOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlayFactory, [IAGIProcessedImageGlobeOverlayFactory])
@@ -22365,7 +22365,7 @@ class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
         self.__dict__["_intf"] = intf
         IAGIProcessedTerrainOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlayFactory, [IAGIProcessedTerrainOverlayFactory])
@@ -22382,7 +22382,7 @@ class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
         self.__dict__["_intf"] = intf
         IAGIRoamImageGlobeOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlayFactory, [IAGIRoamImageGlobeOverlayFactory])
@@ -22399,7 +22399,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPlug
         self.__dict__["_intf"] = intf
         ICustomImageGlobeOverlayPluginActivatorFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivatorFactory, [ICustomImageGlobeOverlayPluginActivatorFactory])
@@ -22416,7 +22416,7 @@ class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
         self.__dict__["_intf"] = intf
         IGeospatialImageGlobeOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlayFactory, [IGeospatialImageGlobeOverlayFactory])
@@ -22433,7 +22433,7 @@ class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
         self.__dict__["_intf"] = intf
         IProjectedRasterOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectedRasterOverlayFactory, [IProjectedRasterOverlayFactory])
@@ -22450,7 +22450,7 @@ class ProjectionFactory(IProjectionFactory):
         self.__dict__["_intf"] = intf
         IProjectionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectionFactory, [IProjectionFactory])
@@ -22467,7 +22467,7 @@ class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         IAltitudeDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AltitudeDisplayConditionFactory, [IAltitudeDisplayConditionFactory])
@@ -22484,7 +22484,7 @@ class AxesPrimitiveFactory(IAxesPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IAxesPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AxesPrimitiveFactory, [IAxesPrimitiveFactory])
@@ -22501,7 +22501,7 @@ class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         ICompositeDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CompositeDisplayConditionFactory, [ICompositeDisplayConditionFactory])
@@ -22518,7 +22518,7 @@ class CompositePrimitiveFactory(ICompositePrimitiveFactory):
         self.__dict__["_intf"] = intf
         ICompositePrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CompositePrimitiveFactory, [ICompositePrimitiveFactory])
@@ -22535,7 +22535,7 @@ class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         IConstantDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ConstantDisplayConditionFactory, [IConstantDisplayConditionFactory])
@@ -22552,7 +22552,7 @@ class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         IDistanceDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceDisplayConditionFactory, [IDistanceDisplayConditionFactory])
@@ -22569,7 +22569,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDispl
         self.__dict__["_intf"] = intf
         IDistanceToGlobeOverlayDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayConditionFactory, [IDistanceToGlobeOverlayDisplayConditionFactory])
@@ -22586,7 +22586,7 @@ class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayCondit
         self.__dict__["_intf"] = intf
         IDistanceToPositionDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayConditionFactory, [IDistanceToPositionDisplayConditionFactory])
@@ -22603,7 +22603,7 @@ class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayCond
         self.__dict__["_intf"] = intf
         IDistanceToPrimitiveDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayConditionFactory, [IDistanceToPrimitiveDisplayConditionFactory])
@@ -22620,7 +22620,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolic
         self.__dict__["_intf"] = intf
         IDurationPathPrimitiveUpdatePolicyFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicyFactory, [IDurationPathPrimitiveUpdatePolicyFactory])
@@ -22637,7 +22637,7 @@ class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlayInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GlobeImageOverlayInitializer, [IGlobeImageOverlayInitializer])
@@ -22654,7 +22654,7 @@ class GraphicsFontFactory(IGraphicsFontFactory):
         self.__dict__["_intf"] = intf
         IGraphicsFontFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GraphicsFontFactory, [IGraphicsFontFactory])
@@ -22671,7 +22671,7 @@ class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
         self.__dict__["_intf"] = intf
         IGreatArcInterpolatorFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GreatArcInterpolatorFactory, [IGreatArcInterpolatorFactory])
@@ -22688,7 +22688,7 @@ class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
         self.__dict__["_intf"] = intf
         IAlphaFromLuminanceFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilterFactory, [IAlphaFromLuminanceFilterFactory])
@@ -22705,7 +22705,7 @@ class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
         self.__dict__["_intf"] = intf
         IAlphaFromPixelFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromPixelFilterFactory, [IAlphaFromPixelFilterFactory])
@@ -22722,7 +22722,7 @@ class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
         self.__dict__["_intf"] = intf
         IAlphaFromRasterFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AlphaFromRasterFilterFactory, [IAlphaFromRasterFilterFactory])
@@ -22739,7 +22739,7 @@ class BandExtractFilterFactory(IBandExtractFilterFactory):
         self.__dict__["_intf"] = intf
         IBandExtractFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BandExtractFilterFactory, [IBandExtractFilterFactory])
@@ -22756,7 +22756,7 @@ class BandOrderFilterFactory(IBandOrderFilterFactory):
         self.__dict__["_intf"] = intf
         IBandOrderFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BandOrderFilterFactory, [IBandOrderFilterFactory])
@@ -22773,7 +22773,7 @@ class BlurFilterFactory(IBlurFilterFactory):
         self.__dict__["_intf"] = intf
         IBlurFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BlurFilterFactory, [IBlurFilterFactory])
@@ -22790,7 +22790,7 @@ class BrightnessFilterFactory(IBrightnessFilterFactory):
         self.__dict__["_intf"] = intf
         IBrightnessFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BrightnessFilterFactory, [IBrightnessFilterFactory])
@@ -22807,7 +22807,7 @@ class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
         self.__dict__["_intf"] = intf
         IColorToLuminanceFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ColorToLuminanceFilterFactory, [IColorToLuminanceFilterFactory])
@@ -22824,7 +22824,7 @@ class ContrastFilterFactory(IContrastFilterFactory):
         self.__dict__["_intf"] = intf
         IContrastFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ContrastFilterFactory, [IContrastFilterFactory])
@@ -22841,7 +22841,7 @@ class ConvolutionFilterFactory(IConvolutionFilterFactory):
         self.__dict__["_intf"] = intf
         IConvolutionFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ConvolutionFilterFactory, [IConvolutionFilterFactory])
@@ -22858,7 +22858,7 @@ class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
         self.__dict__["_intf"] = intf
         IEdgeDetectFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EdgeDetectFilterFactory, [IEdgeDetectFilterFactory])
@@ -22875,7 +22875,7 @@ class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
         self.__dict__["_intf"] = intf
         IFilteringRasterStreamFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FilteringRasterStreamFactory, [IFilteringRasterStreamFactory])
@@ -22892,7 +22892,7 @@ class FlipFilterFactory(IFlipFilterFactory):
         self.__dict__["_intf"] = intf
         IFlipFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FlipFilterFactory, [IFlipFilterFactory])
@@ -22909,7 +22909,7 @@ class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
         self.__dict__["_intf"] = intf
         IGammaCorrectionFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GammaCorrectionFilterFactory, [IGammaCorrectionFilterFactory])
@@ -22926,7 +22926,7 @@ class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
         self.__dict__["_intf"] = intf
         IGaussianBlurFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GaussianBlurFilterFactory, [IGaussianBlurFilterFactory])
@@ -22943,7 +22943,7 @@ class GradientDetectFilterFactory(IGradientDetectFilterFactory):
         self.__dict__["_intf"] = intf
         IGradientDetectFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, GradientDetectFilterFactory, [IGradientDetectFilterFactory])
@@ -22960,7 +22960,7 @@ class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
         self.__dict__["_intf"] = intf
         IJpeg2000WriterInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Jpeg2000WriterInitializer, [IJpeg2000WriterInitializer])
@@ -22977,7 +22977,7 @@ class LevelsFilterFactory(ILevelsFilterFactory):
         self.__dict__["_intf"] = intf
         ILevelsFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LevelsFilterFactory, [ILevelsFilterFactory])
@@ -22994,7 +22994,7 @@ class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPlugin
         self.__dict__["_intf"] = intf
         IProjectionRasterStreamPluginActivatorFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivatorFactory, [IProjectionRasterStreamPluginActivatorFactory])
@@ -23011,7 +23011,7 @@ class RasterFactory(IRasterFactory):
         self.__dict__["_intf"] = intf
         IRasterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterFactory, [IRasterFactory])
@@ -23028,7 +23028,7 @@ class RasterAttributesFactory(IRasterAttributesFactory):
         self.__dict__["_intf"] = intf
         IRasterAttributesFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterAttributesFactory, [IRasterAttributesFactory])
@@ -23045,7 +23045,7 @@ class RotateFilterFactory(IRotateFilterFactory):
         self.__dict__["_intf"] = intf
         IRotateFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotateFilterFactory, [IRotateFilterFactory])
@@ -23062,7 +23062,7 @@ class SequenceFilterFactory(ISequenceFilterFactory):
         self.__dict__["_intf"] = intf
         ISequenceFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SequenceFilterFactory, [ISequenceFilterFactory])
@@ -23079,7 +23079,7 @@ class SharpenFilterFactory(ISharpenFilterFactory):
         self.__dict__["_intf"] = intf
         ISharpenFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SharpenFilterFactory, [ISharpenFilterFactory])
@@ -23096,7 +23096,7 @@ class VideoStreamFactory(IVideoStreamFactory):
         self.__dict__["_intf"] = intf
         IVideoStreamFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VideoStreamFactory, [IVideoStreamFactory])
@@ -23113,7 +23113,7 @@ class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IMarkerBatchPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveFactory, [IMarkerBatchPrimitiveFactory])
@@ -23130,7 +23130,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptiona
         self.__dict__["_intf"] = intf
         IMarkerBatchPrimitiveOptionalParametersFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParametersFactory, [IMarkerBatchPrimitiveOptionalParametersFactory])
@@ -23147,7 +23147,7 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpd
         self.__dict__["_intf"] = intf
         IMaximumCountPathPrimitiveUpdatePolicyFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicyFactory, [IMaximumCountPathPrimitiveUpdatePolicyFactory])
@@ -23164,7 +23164,7 @@ class ModelPrimitiveFactory(IModelPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IModelPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ModelPrimitiveFactory, [IModelPrimitiveFactory])
@@ -23181,7 +23181,7 @@ class PathPrimitiveFactory(IPathPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IPathPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PathPrimitiveFactory, [IPathPrimitiveFactory])
@@ -23198,7 +23198,7 @@ class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         IPixelSizeDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PixelSizeDisplayConditionFactory, [IPixelSizeDisplayConditionFactory])
@@ -23215,7 +23215,7 @@ class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IPointBatchPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PointBatchPrimitiveFactory, [IPointBatchPrimitiveFactory])
@@ -23232,7 +23232,7 @@ class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalP
         self.__dict__["_intf"] = intf
         IPointBatchPrimitiveOptionalParametersFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParametersFactory, [IPointBatchPrimitiveOptionalParametersFactory])
@@ -23249,7 +23249,7 @@ class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
         self.__dict__["_intf"] = intf
         IPolylinePrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PolylinePrimitiveFactory, [IPolylinePrimitiveFactory])
@@ -23266,7 +23266,7 @@ class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParam
         self.__dict__["_intf"] = intf
         IPolylinePrimitiveOptionalParametersFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParametersFactory, [IPolylinePrimitiveOptionalParametersFactory])
@@ -23283,7 +23283,7 @@ class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
         self.__dict__["_intf"] = intf
         IRasterImageGlobeOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlayFactory, [IRasterImageGlobeOverlayFactory])
@@ -23300,7 +23300,7 @@ class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
         self.__dict__["_intf"] = intf
         IRhumbLineInterpolatorFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RhumbLineInterpolatorFactory, [IRhumbLineInterpolatorFactory])
@@ -23317,7 +23317,7 @@ class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         ISceneDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneDisplayConditionFactory, [ISceneDisplayConditionFactory])
@@ -23334,7 +23334,7 @@ class SceneManagerInitializer(ISceneManagerInitializer):
         self.__dict__["_intf"] = intf
         ISceneManagerInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SceneManagerInitializer, [ISceneManagerInitializer])
@@ -23351,7 +23351,7 @@ class ScreenOverlayFactory(IScreenOverlayFactory):
         self.__dict__["_intf"] = intf
         IScreenOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ScreenOverlayFactory, [IScreenOverlayFactory])
@@ -23368,7 +23368,7 @@ class SolidPrimitiveFactory(ISolidPrimitiveFactory):
         self.__dict__["_intf"] = intf
         ISolidPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SolidPrimitiveFactory, [ISolidPrimitiveFactory])
@@ -23385,7 +23385,7 @@ class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
         self.__dict__["_intf"] = intf
         ISurfaceMeshPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitiveFactory, [ISurfaceMeshPrimitiveFactory])
@@ -23402,7 +23402,7 @@ class TerrainOverlayInitializer(ITerrainOverlayInitializer):
         self.__dict__["_intf"] = intf
         ITerrainOverlayInitializer._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TerrainOverlayInitializer, [ITerrainOverlayInitializer])
@@ -23419,7 +23419,7 @@ class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
         self.__dict__["_intf"] = intf
         ITextBatchPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextBatchPrimitiveFactory, [ITextBatchPrimitiveFactory])
@@ -23436,7 +23436,7 @@ class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalPar
         self.__dict__["_intf"] = intf
         ITextBatchPrimitiveOptionalParametersFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParametersFactory, [ITextBatchPrimitiveOptionalParametersFactory])
@@ -23453,7 +23453,7 @@ class TextOverlayFactory(ITextOverlayFactory):
         self.__dict__["_intf"] = intf
         ITextOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextOverlayFactory, [ITextOverlayFactory])
@@ -23470,7 +23470,7 @@ class TextureMatrixFactory(ITextureMatrixFactory):
         self.__dict__["_intf"] = intf
         ITextureMatrixFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureMatrixFactory, [ITextureMatrixFactory])
@@ -23487,7 +23487,7 @@ class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
         self.__dict__["_intf"] = intf
         ITextureScreenOverlayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TextureScreenOverlayFactory, [ITextureScreenOverlayFactory])
@@ -23504,7 +23504,7 @@ class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
         self.__dict__["_intf"] = intf
         ITimeIntervalDisplayConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeIntervalDisplayConditionFactory, [ITimeIntervalDisplayConditionFactory])
@@ -23521,7 +23521,7 @@ class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
         self.__dict__["_intf"] = intf
         ITriangleMeshPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveFactory, [ITriangleMeshPrimitiveFactory])
@@ -23538,7 +23538,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptio
         self.__dict__["_intf"] = intf
         ITriangleMeshPrimitiveOptionalParametersFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParametersFactory, [ITriangleMeshPrimitiveOptionalParametersFactory])
@@ -23555,7 +23555,7 @@ class VectorPrimitiveFactory(IVectorPrimitiveFactory):
         self.__dict__["_intf"] = intf
         IVectorPrimitiveFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorPrimitiveFactory, [IVectorPrimitiveFactory])

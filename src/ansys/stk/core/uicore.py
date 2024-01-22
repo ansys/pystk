@@ -129,7 +129,7 @@ class IUiToolbar(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiToolbar)
@@ -207,7 +207,7 @@ class IUiToolbarCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiToolbarCollection)
@@ -314,7 +314,7 @@ class IUiWindow(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindow)
@@ -416,7 +416,7 @@ class IUiWindow(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def top(self) -> int:
-        """The window vertical position"""
+        """The window vertical position."""
         return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_top_metadata)
 
     _set_top_metadata = { "name" : "top",
@@ -527,7 +527,7 @@ class IUiWindowsCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowsCollection)
@@ -618,7 +618,7 @@ class IUiWindowMapObject(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowMapObject)
@@ -652,7 +652,7 @@ class IUiWindowGlobeObject(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowGlobeObject)
@@ -682,7 +682,7 @@ class UiWindowsCollection(IUiWindowsCollection):
         self.__dict__["_intf"] = intf
         IUiWindowsCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiWindowsCollection, [IUiWindowsCollection])
@@ -699,7 +699,7 @@ class UiWindow(IUiWindow):
         self.__dict__["_intf"] = intf
         IUiWindow._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiWindow, [IUiWindow])
@@ -716,7 +716,7 @@ class UiToolbar(IUiToolbar):
         self.__dict__["_intf"] = intf
         IUiToolbar._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiToolbar, [IUiToolbar])
@@ -733,7 +733,7 @@ class UiToolbarCollection(IUiToolbarCollection):
         self.__dict__["_intf"] = intf
         IUiToolbarCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiToolbarCollection, [IUiToolbarCollection])
@@ -750,7 +750,7 @@ class UiWindowMapObject(IUiWindowMapObject):
         self.__dict__["_intf"] = intf
         IUiWindowMapObject._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiWindowMapObject, [IUiWindowMapObject])
@@ -767,7 +767,7 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
         self.__dict__["_intf"] = intf
         IUiWindowGlobeObject._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiWindowGlobeObject, [IUiWindowGlobeObject])

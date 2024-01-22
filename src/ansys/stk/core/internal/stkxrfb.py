@@ -34,7 +34,7 @@ class IRemoteFrameBufferHost(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBufferHost)
@@ -81,7 +81,7 @@ class IRemoteFrameBuffer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBuffer)

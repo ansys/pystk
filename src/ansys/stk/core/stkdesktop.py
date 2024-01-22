@@ -48,7 +48,7 @@ class ThreadMarshaller(object):
         del(self._obj)
        
     def get_marshalled_to_current_thread(self) -> typing.Any:
-        """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
+        """Return an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
             raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
         pUnk_raw = PVOID()
@@ -256,7 +256,7 @@ class STKDesktop(object):
     @staticmethod
     def release_all() -> None:
         """
-        Releases all handles from Python to STK Desktop applications.
+        Release all handles from Python to STK Desktop applications.
 
         Not applicable to gRPC connections.
         """
@@ -268,7 +268,7 @@ class STKDesktop(object):
     @staticmethod
     def create_thread_marshaller(stk_object:typing.Any) -> ThreadMarshaller:
         """
-        Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+        Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
 
         Not applicable to gRPC connections.
         """

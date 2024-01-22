@@ -98,7 +98,7 @@ class AsyncioTimerManager(object):
         self._fire_timers()
 
     def _next_timer_proc(self):
-        ''' Return time in sec until next timer proc '''
+        ''' Return time in sec until next timer proc.'''
         tempTimers = self._timers.copy()
         if len(tempTimers) == 0:
             return 0.050
@@ -125,7 +125,7 @@ asyncioTimerManager = None
 
 class AgRemoteFrameBufferHostVTable(Structure):
     '''
-    Structure of the vtable for IRemoteFrameBufferHost
+    Structure of the vtable for IRemoteFrameBufferHost.
     '''
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
@@ -135,7 +135,7 @@ class AgRemoteFrameBufferHostVTable(Structure):
 
 class AgRemoteFrameBufferHost(object):
     '''
-    Implements IRemoteFrameBufferHost 
+    Implements IRemoteFrameBufferHost.
     
     Assemble a vtable following the layout of that interface
     '''
