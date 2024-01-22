@@ -36,7 +36,7 @@ class ISTKXInitialize(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXInitialize)
@@ -79,7 +79,7 @@ class STKXInitialize(ISTKXInitialize):
         self.__dict__["_intf"] = intf
         ISTKXInitialize._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXInitialize, [ISTKXInitialize])

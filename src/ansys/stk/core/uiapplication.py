@@ -113,7 +113,7 @@ class IMRUCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMRUCollection)
@@ -181,7 +181,7 @@ class IUiFileOpenExt(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiFileOpenExt)
@@ -291,7 +291,7 @@ class IUiApplication(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiApplication)
@@ -467,7 +467,7 @@ class IUiApplication(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
     def create_object(self, progID:str, remoteServer:str) -> typing.Any:
-        """Only works from local HTML pages and scripts"""
+        """Only works from local HTML pages and scripts."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_object_metadata, progID, remoteServer, out_arg())
 
     _file_save_as_dialog_metadata = { "name" : "file_save_as_dialog",
@@ -511,7 +511,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @property
     def message_pending_delay(self) -> int:
-        """Get or set message-pending delay for server busy dialog (in milliseconds )"""
+        """Get or set message-pending delay for server busy dialog (in milliseconds)."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_message_pending_delay_metadata)
 
     _set_message_pending_delay_metadata = { "name" : "message_pending_delay",
@@ -519,7 +519,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.LONG_arg,) }
     @message_pending_delay.setter
     def message_pending_delay(self, newVal:int) -> None:
-        """Get or set message-pending delay for server busy dialog (in milliseconds)"""
+        """Get or set message-pending delay for server busy dialog (in milliseconds)."""
         return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_message_pending_delay_metadata, newVal)
 
     _get_personality2_metadata = { "name" : "personality2",
@@ -527,7 +527,7 @@ class IUiApplication(object):
             "marshallers" : (agmarshall.AgInterface_out_arg,) }
     @property
     def personality2(self) -> typing.Any:
-        """Return an new instance of the root object of the STK Object Model"""
+        """Return an new instance of the root object of the STK Object Model."""
         return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality2_metadata)
 
     _open_log_file_metadata = { "name" : "open_log_file",
@@ -602,7 +602,7 @@ class IUiApplicationPartnerAccess(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiApplicationPartnerAccess)
@@ -638,7 +638,7 @@ class IUiFileOpenExtCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiFileOpenExtCollection)
@@ -699,7 +699,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
         IUiApplication._private_init(self, intf)
         IUiApplicationPartnerAccess._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiApplication, [IUiApplication, IUiApplicationPartnerAccess])
@@ -716,7 +716,7 @@ class MRUCollection(IMRUCollection):
         self.__dict__["_intf"] = intf
         IMRUCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MRUCollection, [IMRUCollection])
@@ -733,7 +733,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
         self.__dict__["_intf"] = intf
         IUiFileOpenExtCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiFileOpenExtCollection, [IUiFileOpenExtCollection])
@@ -750,7 +750,7 @@ class UiFileOpenExt(IUiFileOpenExt):
         self.__dict__["_intf"] = intf
         IUiFileOpenExt._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiFileOpenExt, [IUiFileOpenExt])

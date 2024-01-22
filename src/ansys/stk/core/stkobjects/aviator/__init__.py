@@ -2675,7 +2675,7 @@ class ISite(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISite)
@@ -2726,7 +2726,7 @@ class IWindModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModel)
@@ -2834,7 +2834,7 @@ class IADDSMessage(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IADDSMessage)
@@ -2911,7 +2911,7 @@ class IFuelTankInternal(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelTankInternal)
@@ -3043,7 +3043,7 @@ class IFuelTankExternal(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelTankExternal)
@@ -3173,7 +3173,7 @@ class IPayloadStation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPayloadStation)
@@ -3278,7 +3278,7 @@ class IAircraftModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftModel)
@@ -3406,7 +3406,7 @@ class IAircraftSimpleAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftSimpleAero)
@@ -3505,7 +3505,7 @@ class ILevelTurns(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelTurns)
@@ -3615,7 +3615,7 @@ class IAttitudeTransitions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAttitudeTransitions)
@@ -3697,7 +3697,7 @@ class IClimbAndDescentTransitions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IClimbAndDescentTransitions)
@@ -3807,7 +3807,7 @@ class ICatalogItem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogItem)
@@ -3947,7 +3947,7 @@ class IAircraftBasicClimbModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicClimbModel)
@@ -4120,7 +4120,7 @@ class IAircraftBasicAccelerationModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicAccelerationModel)
@@ -4195,7 +4195,7 @@ class IAircraftCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftCategory)
@@ -4247,7 +4247,7 @@ class IRunwayCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRunwayCategory)
@@ -4297,7 +4297,7 @@ class IBasicManeuverStrategy(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategy)
@@ -4324,7 +4324,7 @@ class IAircraftVTOL(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftVTOL)
@@ -4377,7 +4377,7 @@ class IAircraftExternalAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftExternalAero)
@@ -4517,7 +4517,7 @@ class IAircraftSimpleProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftSimpleProp)
@@ -4609,7 +4609,7 @@ class IAircraftExternalProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftExternalProp)
@@ -4750,7 +4750,7 @@ class IAircraftBasicFixedWingProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicFixedWingProp)
@@ -4979,7 +4979,7 @@ class IAircraftAdvClimbModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvClimbModel)
@@ -5199,7 +5199,7 @@ class IAircraftBasicCruiseModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicCruiseModel)
@@ -5485,7 +5485,7 @@ class IAircraftAdvCruiseModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvCruiseModel)
@@ -5638,7 +5638,7 @@ class IAircraftBasicDescentModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicDescentModel)
@@ -5824,7 +5824,7 @@ class IAircraftAdvDescentModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvDescentModel)
@@ -6010,7 +6010,7 @@ class IAircraftBasicLandingModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicLandingModel)
@@ -6142,7 +6142,7 @@ class IAircraftAdvLandingModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvLandingModel)
@@ -6285,7 +6285,7 @@ class IAircraftBasicTakeoffModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicTakeoffModel)
@@ -6459,7 +6459,7 @@ class IAircraftAdvTakeoffModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvTakeoffModel)
@@ -6633,7 +6633,7 @@ class IAircraftVTOLModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftVTOLModel)
@@ -6859,7 +6859,7 @@ class IAircraftTerrainFollow(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTerrainFollow)
@@ -6906,7 +6906,7 @@ class IPerformanceModelOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPerformanceModelOptions)
@@ -7031,7 +7031,7 @@ class IAdvFixedWingTool(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTool)
@@ -7386,7 +7386,7 @@ class IAdvFixedWingExternalAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingExternalAero)
@@ -7446,7 +7446,7 @@ class IAdvFixedWingSubsonicAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingSubsonicAero)
@@ -7583,7 +7583,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicAero)
@@ -7761,7 +7761,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicProp)
@@ -8006,7 +8006,7 @@ class IAdvFixedWingSupersonicAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingSupersonicAero)
@@ -8195,7 +8195,7 @@ class IAdvFixedWingGeometryBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingGeometryBasic)
@@ -8261,7 +8261,7 @@ class IAdvFixedWingGeometryVariable(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingGeometryVariable)
@@ -8371,7 +8371,7 @@ class IAdvFixedWingElectricPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingElectricPowerplant)
@@ -8447,7 +8447,7 @@ class IAdvFixedWingExternalProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingExternalProp)
@@ -8505,7 +8505,7 @@ class IAdvFixedWingPistonPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingPistonPowerplant)
@@ -8618,7 +8618,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTurbopropPowerplant)
@@ -8715,7 +8715,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingEmpiricalJetEngine)
@@ -8829,7 +8829,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABProp)
@@ -9081,7 +9081,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABProp)
@@ -9323,7 +9323,7 @@ class IAviatorVehicle(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAviatorVehicle)
@@ -9402,7 +9402,7 @@ class IMissileModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileModel)
@@ -9804,7 +9804,7 @@ class IMissileAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileAero)
@@ -9876,7 +9876,7 @@ class IMissileProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileProp)
@@ -9966,7 +9966,7 @@ class IMissileSimpleAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileSimpleAero)
@@ -10068,7 +10068,7 @@ class IMissileSimpleProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileSimpleProp)
@@ -10148,7 +10148,7 @@ class IMissileExternalAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileExternalAero)
@@ -10233,7 +10233,7 @@ class IMissileExternalProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileExternalProp)
@@ -10352,7 +10352,7 @@ class IMissileAdvancedAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileAdvancedAero)
@@ -10783,7 +10783,7 @@ class IMissileRamjetProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileRamjetProp)
@@ -11002,7 +11002,7 @@ class IMissileRocketProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileRocketProp)
@@ -11201,7 +11201,7 @@ class IMissileTurbojetProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileTurbojetProp)
@@ -11510,7 +11510,7 @@ class IRotorcraftModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftModel)
@@ -11906,7 +11906,7 @@ class IRotorcraftAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftAero)
@@ -12113,7 +12113,7 @@ class IRotorcraftProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftProp)
@@ -12189,7 +12189,7 @@ class IUserRunwaySource(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserRunwaySource)
@@ -12253,7 +12253,7 @@ class IUserRunway(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserRunway)
@@ -12423,7 +12423,7 @@ class IARINC424Item(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Item)
@@ -12491,7 +12491,7 @@ class IARINC424Source(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Source)
@@ -12585,7 +12585,7 @@ class IDAFIFSource(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDAFIFSource)
@@ -12674,7 +12674,7 @@ class IUserVTOLPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserVTOLPoint)
@@ -12778,7 +12778,7 @@ class IUserVTOLPointSource(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserVTOLPointSource)
@@ -12831,7 +12831,7 @@ class IUserWaypoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserWaypoint)
@@ -12912,7 +12912,7 @@ class IUserWaypointSource(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserWaypointSource)
@@ -12966,7 +12966,7 @@ class IPropulsionEfficiencies(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropulsionEfficiencies)
@@ -13059,7 +13059,7 @@ class IFuelModelKeroseneAFPROP(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelModelKeroseneAFPROP)
@@ -13120,7 +13120,7 @@ class IFuelModelKeroseneCEA(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelModelKeroseneCEA)
@@ -13192,7 +13192,7 @@ class IAdvFixedWingRamjetBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingRamjetBasic)
@@ -13352,7 +13352,7 @@ class IAdvFixedWingScramjetBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingScramjetBasic)
@@ -13507,7 +13507,7 @@ class IRefuelDumpProperties(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRefuelDumpProperties)
@@ -13616,7 +13616,7 @@ class IProcedureFastTimeOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFastTimeOptions)
@@ -13689,7 +13689,7 @@ class IAtmosphereModelBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAtmosphereModelBasic)
@@ -13809,7 +13809,7 @@ class IAtmosphereModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAtmosphereModel)
@@ -13894,7 +13894,7 @@ class IADDSMessageCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IADDSMessageCollection)
@@ -13984,7 +13984,7 @@ class IWindModelADDS(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModelADDS)
@@ -14128,7 +14128,7 @@ class IWindModelConstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModelConstant)
@@ -14218,7 +14218,7 @@ class IStation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStation)
@@ -14255,7 +14255,7 @@ class IStationCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStationCollection)
@@ -14395,7 +14395,7 @@ class IConfiguration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConfiguration)
@@ -14588,7 +14588,7 @@ class ICatalogSource(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogSource)
@@ -14645,7 +14645,7 @@ class IAircraftModels(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftModels)
@@ -14694,7 +14694,7 @@ class IMissileModels(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileModels)
@@ -14743,7 +14743,7 @@ class IRotorcraftModels(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftModels)
@@ -14790,7 +14790,7 @@ class IBasicFixedWingLiftHelper(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicFixedWingLiftHelper)
@@ -14847,7 +14847,7 @@ class IAircraftBasicFixedWingAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicFixedWingAero)
@@ -15138,7 +15138,7 @@ class IAircraftAero(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAero)
@@ -15255,7 +15255,7 @@ class IAircraftProp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftProp)
@@ -15380,7 +15380,7 @@ class IAircraftAccelerationMode(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAccelerationMode)
@@ -15442,7 +15442,7 @@ class IAircraftAdvAccelerationModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvAccelerationModel)
@@ -15525,7 +15525,7 @@ class IAeroPropManeuverModeHelper(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAeroPropManeuverModeHelper)
@@ -15702,7 +15702,7 @@ class ICatalogRunway(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogRunway)
@@ -15728,7 +15728,7 @@ class ICatalogAirport(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogAirport)
@@ -15754,7 +15754,7 @@ class ICatalogNavaid(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogNavaid)
@@ -15780,7 +15780,7 @@ class ICatalogVTOLPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogVTOLPoint)
@@ -15806,7 +15806,7 @@ class ICatalogWaypoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogWaypoint)
@@ -15832,7 +15832,7 @@ class IARINC424Airport(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Airport)
@@ -15869,7 +15869,7 @@ class IDAFIFItem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDAFIFItem)
@@ -15930,7 +15930,7 @@ class IARINC424Runway(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Runway)
@@ -15963,7 +15963,7 @@ class IAirportCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAirportCategory)
@@ -15997,7 +15997,7 @@ class INavaidCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, INavaidCategory)
@@ -16033,7 +16033,7 @@ class IVTOLPointCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVTOLPointCategory)
@@ -16093,7 +16093,7 @@ class IWaypointCategory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWaypointCategory)
@@ -16210,7 +16210,7 @@ class IAircraftClimb(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftClimb)
@@ -16267,7 +16267,7 @@ class IAircraftCruise(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftCruise)
@@ -16324,7 +16324,7 @@ class IAircraftDescent(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftDescent)
@@ -16381,7 +16381,7 @@ class IAircraftLanding(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftLanding)
@@ -16438,7 +16438,7 @@ class IAircraftTakeoff(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTakeoff)
@@ -16495,7 +16495,7 @@ class IAircraftAcceleration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAcceleration)
@@ -16554,7 +16554,7 @@ class ICatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalog)
@@ -16642,7 +16642,7 @@ class IProcedureTimeOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTimeOptions)
@@ -16798,7 +16798,7 @@ class ICalculationOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationOptions)
@@ -16945,7 +16945,7 @@ class INavigationOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, INavigationOptions)
@@ -17058,7 +17058,7 @@ class IAltitudeMSLAndLevelOffOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeMSLAndLevelOffOptions)
@@ -17151,7 +17151,7 @@ class IAltitudeMSLOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeMSLOptions)
@@ -17214,7 +17214,7 @@ class IAltitudeOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeOptions)
@@ -17293,7 +17293,7 @@ class IHoverAltitudeOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IHoverAltitudeOptions)
@@ -17372,7 +17372,7 @@ class IArcAltitudeOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcAltitudeOptions)
@@ -17453,7 +17453,7 @@ class IArcAltitudeAndDelayOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcAltitudeAndDelayOptions)
@@ -17556,7 +17556,7 @@ class IArcOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcOptions)
@@ -17699,7 +17699,7 @@ class IVerticalPlaneOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVerticalPlaneOptions)
@@ -17780,7 +17780,7 @@ class IVerticalPlaneAndFlightPathOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVerticalPlaneAndFlightPathOptions)
@@ -17879,7 +17879,7 @@ class IArcVerticalPlaneOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcVerticalPlaneOptions)
@@ -17988,7 +17988,7 @@ class IEnrouteOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteOptions)
@@ -18051,7 +18051,7 @@ class IEnrouteAndDelayOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteAndDelayOptions)
@@ -18128,7 +18128,7 @@ class IEnrouteTurnDirectionOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteTurnDirectionOptions)
@@ -18190,7 +18190,7 @@ class ICruiseAirspeedOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedOptions)
@@ -18256,7 +18256,7 @@ class ICruiseAirspeedProfile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedProfile)
@@ -18304,7 +18304,7 @@ class ICruiseAirspeedAndProfileOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedAndProfileOptions)
@@ -18385,7 +18385,7 @@ class IAutomationStrategyFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAutomationStrategyFactory)
@@ -18418,7 +18418,7 @@ class IConnect(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConnect)
@@ -18452,7 +18452,7 @@ class IRunwayHeadingOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRunwayHeadingOptions)
@@ -18503,7 +18503,7 @@ class IProcedure(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedure)
@@ -18618,7 +18618,7 @@ class IProcedureCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureCollection)
@@ -18729,7 +18729,7 @@ class IPhase(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPhase)
@@ -18814,7 +18814,7 @@ class IPhaseCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPhaseCollection)
@@ -18912,7 +18912,7 @@ class IMission(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMission)
@@ -19005,7 +19005,7 @@ class IAviatorPropagator(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAviatorPropagator)
@@ -19070,7 +19070,7 @@ class IPerformanceModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPerformanceModel)
@@ -19096,7 +19096,7 @@ class IAdvFixedWingGeometry(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingGeometry)
@@ -19122,7 +19122,7 @@ class IAdvFixedWingTurbofanBasicABPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABPowerplant)
@@ -19148,7 +19148,7 @@ class IAdvFixedWingTurbojetBasicABPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABPowerplant)
@@ -19174,7 +19174,7 @@ class IAdvFixedWingPowerplant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvFixedWingPowerplant)
@@ -19200,7 +19200,7 @@ class ISiteUnknown(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteUnknown)
@@ -19256,7 +19256,7 @@ class IAircraftTerrainFollowModel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTerrainFollowModel)
@@ -19537,7 +19537,7 @@ class IBasicManeuverTargetPositionVel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVel)
@@ -19642,7 +19642,7 @@ class IPropulsionThrust(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropulsionThrust)
@@ -19844,7 +19844,7 @@ class IBasicManeuverAirspeedOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverAirspeedOptions)
@@ -20164,7 +20164,7 @@ class IBasicManeuverStrategyAileronRoll(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAileronRoll)
@@ -20324,7 +20324,7 @@ class IBasicManeuverStrategyAutopilotNav(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAutopilotNav)
@@ -20496,7 +20496,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAutopilotProf)
@@ -20768,7 +20768,7 @@ class IBasicManeuverStrategyBarrelRoll(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBarrelRoll)
@@ -20934,7 +20934,7 @@ class IBasicManeuverStrategyLoop(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyLoop)
@@ -21094,7 +21094,7 @@ class IBasicManeuverStrategyLTAHover(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyLTAHover)
@@ -21328,7 +21328,7 @@ class IBasicManeuverStrategyFlyAOA(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyFlyAOA)
@@ -21498,7 +21498,7 @@ class IBasicManeuverStrategyPull(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPull)
@@ -21612,7 +21612,7 @@ class IBasicManeuverStrategyRollingPull(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRollingPull)
@@ -21802,7 +21802,7 @@ class IBasicManeuverStrategySmoothAccel(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySmoothAccel)
@@ -22078,7 +22078,7 @@ class IBasicManeuverStrategySmoothTurn(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySmoothTurn)
@@ -22263,7 +22263,7 @@ class IBasicManeuverStrategySimpleTurn(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySimpleTurn)
@@ -22385,7 +22385,7 @@ class IBasicManeuverStrategyIntercept(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyIntercept)
@@ -22695,7 +22695,7 @@ class IBasicManeuverStrategyRelativeBearing(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeBearing)
@@ -22895,7 +22895,7 @@ class IBasicManeuverStrategyRelativeCourse(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeCourse)
@@ -23228,7 +23228,7 @@ class IBasicManeuverStrategyRendezvous(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRendezvous)
@@ -23600,7 +23600,7 @@ class IBasicManeuverStrategyStationkeeping(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyStationkeeping)
@@ -23950,7 +23950,7 @@ class IBasicManeuverStrategyRelativeFPA(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeFPA)
@@ -24199,7 +24199,7 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelSpeedAltitude)
@@ -24545,7 +24545,7 @@ class IBasicManeuverStrategyBezier(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBezier)
@@ -24768,7 +24768,7 @@ class IBasicManeuverStrategyPushPull(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPushPull)
@@ -25026,7 +25026,7 @@ class IBasicManeuverStrategyGlideProfile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyGlideProfile)
@@ -25223,7 +25223,7 @@ class IBasicManeuverStrategyCruiseProfile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyCruiseProfile)
@@ -25350,7 +25350,7 @@ class IBasicManeuverStrategyStraightAhead(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyStraightAhead)
@@ -25418,7 +25418,7 @@ class IBasicManeuverStrategyWeave(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyWeave)
@@ -25551,7 +25551,7 @@ class IBasicManeuverStrategyBallistic3D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBallistic3D)
@@ -25659,7 +25659,7 @@ class IBasicManeuverStrategyPitch3D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPitch3D)
@@ -25781,7 +25781,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisyBrnRng)
@@ -25886,7 +25886,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisySurfTgt)
@@ -25992,7 +25992,7 @@ class ITakeoffNormal(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffNormal)
@@ -26109,7 +26109,7 @@ class ITakeoffDeparturePoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffDeparturePoint)
@@ -26236,7 +26236,7 @@ class ITakeoffLowTransition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffLowTransition)
@@ -26342,7 +26342,7 @@ class IReferenceStateForwardFlightOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateForwardFlightOptions)
@@ -26655,7 +26655,7 @@ class IReferenceStateHoverOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateHoverOptions)
@@ -26916,7 +26916,7 @@ class IReferenceStateWeightOnWheelsOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateWeightOnWheelsOptions)
@@ -27084,7 +27084,7 @@ class IReferenceStateTakeoffLandingOptions(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateTakeoffLandingOptions)
@@ -27387,7 +27387,7 @@ class ILandingEnterDownwindPattern(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingEnterDownwindPattern)
@@ -27568,7 +27568,7 @@ class ILandingInterceptGlideslope(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingInterceptGlideslope)
@@ -27705,7 +27705,7 @@ class ILandingStandardInstrumentApproach(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingStandardInstrumentApproach)
@@ -27895,7 +27895,7 @@ class IProcedureBasicManeuver(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureBasicManeuver)
@@ -28214,7 +28214,7 @@ class ISiteWaypoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteWaypoint)
@@ -28279,7 +28279,7 @@ class ISiteEndOfPrevProcedure(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteEndOfPrevProcedure)
@@ -28320,7 +28320,7 @@ class ISiteVTOLPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteVTOLPoint)
@@ -28420,7 +28420,7 @@ class ISiteSTKVehicle(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKVehicle)
@@ -28477,7 +28477,7 @@ class ISiteReferenceState(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteReferenceState)
@@ -28510,7 +28510,7 @@ class ISiteSuperProcedure(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSuperProcedure)
@@ -28549,7 +28549,7 @@ class ISiteRelToPrevProcedure(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRelToPrevProcedure)
@@ -28649,7 +28649,7 @@ class ISiteSTKObjectWaypoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKObjectWaypoint)
@@ -28837,7 +28837,7 @@ class ISiteSTKStaticObject(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKStaticObject)
@@ -28903,7 +28903,7 @@ class ISiteRelToSTKObject(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRelToSTKObject)
@@ -29011,7 +29011,7 @@ class ISiteSTKAreaTarget(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKAreaTarget)
@@ -29086,7 +29086,7 @@ class ISiteRunway(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRunway)
@@ -29271,7 +29271,7 @@ class IProcedureLanding(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLanding)
@@ -29388,7 +29388,7 @@ class IProcedureEnroute(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureEnroute)
@@ -29464,7 +29464,7 @@ class IProcedureExtEphem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureExtEphem)
@@ -29601,7 +29601,7 @@ class IProcedureFormationFlyer(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFormationFlyer)
@@ -29767,7 +29767,7 @@ class IProcedureBasicPointToPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureBasicPointToPoint)
@@ -29848,7 +29848,7 @@ class IProcedureDelay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureDelay)
@@ -29952,7 +29952,7 @@ class IProcedureTakeoff(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTakeoff)
@@ -30039,7 +30039,7 @@ class IProcedureArcEnroute(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureArcEnroute)
@@ -30129,7 +30129,7 @@ class IProcedureArcPointToPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureArcPointToPoint)
@@ -30253,7 +30253,7 @@ class IProcedureFlightLine(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFlightLine)
@@ -30464,7 +30464,7 @@ class IProcedureHoldingCircular(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingCircular)
@@ -30730,7 +30730,7 @@ class IProcedureHoldingFigure8(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingFigure8)
@@ -30996,7 +30996,7 @@ class IProcedureHoldingRacetrack(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingRacetrack)
@@ -31250,7 +31250,7 @@ class IProcedureTransitionToHover(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTransitionToHover)
@@ -31401,7 +31401,7 @@ class IProcedureTerrainFollow(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTerrainFollow)
@@ -31528,7 +31528,7 @@ class IProcedureHover(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHover)
@@ -31816,7 +31816,7 @@ class IProcedureHoverTranslate(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoverTranslate)
@@ -31999,7 +31999,7 @@ class IProcedureTransitionToForwardFlight(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTransitionToForwardFlight)
@@ -32114,7 +32114,7 @@ class IProcedureVerticalTakeoff(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVerticalTakeoff)
@@ -32263,7 +32263,7 @@ class IProcedureVerticalLanding(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVerticalLanding)
@@ -32419,7 +32419,7 @@ class IProcedureReferenceState(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureReferenceState)
@@ -32614,7 +32614,7 @@ class IProcedureSuperProcedure(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureSuperProcedure)
@@ -32682,7 +32682,7 @@ class IProcedureLaunch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunch)
@@ -32899,7 +32899,7 @@ class IProcedureAirway(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAirway)
@@ -33082,7 +33082,7 @@ class IProcedureAirwayRouter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAirwayRouter)
@@ -33275,7 +33275,7 @@ class IProcedureAreaTargetSearch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAreaTargetSearch)
@@ -33504,7 +33504,7 @@ class IProcedureFormationRecover(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFormationRecover)
@@ -33849,7 +33849,7 @@ class IProcedureInFormation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureInFormation)
@@ -34044,7 +34044,7 @@ class IProcedureParallelFlightLine(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureParallelFlightLine)
@@ -34243,7 +34243,7 @@ class IProcedureVGTPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVGTPoint)
@@ -34454,7 +34454,7 @@ class ISiteRunwayFromCatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRunwayFromCatalog)
@@ -34503,7 +34503,7 @@ class ISiteAirportFromCatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteAirportFromCatalog)
@@ -34552,7 +34552,7 @@ class ISiteNavaidFromCatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteNavaidFromCatalog)
@@ -34601,7 +34601,7 @@ class ISiteVTOLPointFromCatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteVTOLPointFromCatalog)
@@ -34650,7 +34650,7 @@ class ISiteWaypointFromCatalog(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteWaypointFromCatalog)
@@ -34722,7 +34722,7 @@ class IProcedureLaunchDynState(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunchDynState)
@@ -34973,7 +34973,7 @@ class IProcedureLaunchWaypoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunchWaypoint)
@@ -35160,7 +35160,7 @@ class ISiteDynState(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteDynState)
@@ -35215,7 +35215,7 @@ class SiteWaypoint(ISiteWaypoint, ISite):
         ISiteWaypoint._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteWaypoint, [ISiteWaypoint, ISite])
@@ -35234,7 +35234,7 @@ class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
         ISiteEndOfPrevProcedure._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteEndOfPrevProcedure, [ISiteEndOfPrevProcedure, ISite])
@@ -35253,7 +35253,7 @@ class SiteVTOLPoint(ISiteVTOLPoint, ISite):
         ISiteVTOLPoint._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteVTOLPoint, [ISiteVTOLPoint, ISite])
@@ -35272,7 +35272,7 @@ class SiteReferenceState(ISiteReferenceState, ISite):
         ISiteReferenceState._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteReferenceState, [ISiteReferenceState, ISite])
@@ -35291,7 +35291,7 @@ class SiteSTKVehicle(ISiteSTKVehicle, ISite):
         ISiteSTKVehicle._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteSTKVehicle, [ISiteSTKVehicle, ISite])
@@ -35310,7 +35310,7 @@ class SiteSuperProcedure(ISiteSuperProcedure, ISite):
         ISiteSuperProcedure._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteSuperProcedure, [ISiteSuperProcedure, ISite])
@@ -35329,7 +35329,7 @@ class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
         ISiteRelToPrevProcedure._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteRelToPrevProcedure, [ISiteRelToPrevProcedure, ISite])
@@ -35348,7 +35348,7 @@ class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
         ISiteSTKObjectWaypoint._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteSTKObjectWaypoint, [ISiteSTKObjectWaypoint, ISite])
@@ -35367,7 +35367,7 @@ class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
         ISiteSTKStaticObject._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteSTKStaticObject, [ISiteSTKStaticObject, ISite])
@@ -35386,7 +35386,7 @@ class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
         ISiteRelToSTKObject._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteRelToSTKObject, [ISiteRelToSTKObject, ISite])
@@ -35405,7 +35405,7 @@ class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
         ISiteSTKAreaTarget._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteSTKAreaTarget, [ISiteSTKAreaTarget, ISite])
@@ -35424,7 +35424,7 @@ class SiteRunway(ISiteRunway, ISite):
         ISiteRunway._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteRunway, [ISiteRunway, ISite])
@@ -35443,7 +35443,7 @@ class Site(ISite, ISiteUnknown):
         ISite._private_init(self, intf)
         ISiteUnknown._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Site, [ISite, ISiteUnknown])
@@ -35462,7 +35462,7 @@ class ProcedureLanding(IProcedureLanding, IProcedure):
         IProcedureLanding._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureLanding, [IProcedureLanding, IProcedure])
@@ -35481,7 +35481,7 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
         IProcedureEnroute._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureEnroute, [IProcedureEnroute, IProcedure])
@@ -35500,7 +35500,7 @@ class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
         IProcedureExtEphem._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureExtEphem, [IProcedureExtEphem, IProcedure])
@@ -35519,7 +35519,7 @@ class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
         IProcedureFormationFlyer._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureFormationFlyer, [IProcedureFormationFlyer, IProcedure])
@@ -35538,7 +35538,7 @@ class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
         IProcedureBasicPointToPoint._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureBasicPointToPoint, [IProcedureBasicPointToPoint, IProcedure])
@@ -35557,7 +35557,7 @@ class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
         IProcedureArcEnroute._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureArcEnroute, [IProcedureArcEnroute, IProcedure])
@@ -35576,7 +35576,7 @@ class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
         IProcedureArcPointToPoint._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureArcPointToPoint, [IProcedureArcPointToPoint, IProcedure])
@@ -35595,7 +35595,7 @@ class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
         IProcedureFlightLine._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureFlightLine, [IProcedureFlightLine, IProcedure])
@@ -35614,7 +35614,7 @@ class ProcedureDelay(IProcedureDelay, IProcedure):
         IProcedureDelay._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureDelay, [IProcedureDelay, IProcedure])
@@ -35633,7 +35633,7 @@ class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
         IProcedureTakeoff._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureTakeoff, [IProcedureTakeoff, IProcedure])
@@ -35650,7 +35650,7 @@ class ProcedureCollection(IProcedureCollection):
         self.__dict__["_intf"] = intf
         IProcedureCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureCollection, [IProcedureCollection])
@@ -35667,7 +35667,7 @@ class Phase(IPhase):
         self.__dict__["_intf"] = intf
         IPhase._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Phase, [IPhase])
@@ -35684,7 +35684,7 @@ class PhaseCollection(IPhaseCollection):
         self.__dict__["_intf"] = intf
         IPhaseCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PhaseCollection, [IPhaseCollection])
@@ -35701,7 +35701,7 @@ class Mission(IMission):
         self.__dict__["_intf"] = intf
         IMission._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Mission, [IMission])
@@ -35718,7 +35718,7 @@ class AviatorPropagator(IAviatorPropagator):
         self.__dict__["_intf"] = intf
         IAviatorPropagator._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AviatorPropagator, [IAviatorPropagator])
@@ -35737,7 +35737,7 @@ class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
         IProcedureBasicManeuver._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureBasicManeuver, [IProcedureBasicManeuver, IProcedure])
@@ -35756,7 +35756,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStra
         IBasicManeuverStrategyWeave._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyWeave, [IBasicManeuverStrategyWeave, IBasicManeuverStrategy])
@@ -35773,7 +35773,7 @@ class ProcedureTimeOptions(IProcedureTimeOptions):
         self.__dict__["_intf"] = intf
         IProcedureTimeOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureTimeOptions, [IProcedureTimeOptions])
@@ -35790,7 +35790,7 @@ class CalculationOptions(ICalculationOptions):
         self.__dict__["_intf"] = intf
         ICalculationOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationOptions, [ICalculationOptions])
@@ -35807,7 +35807,7 @@ class AircraftCategory(IAircraftCategory):
         self.__dict__["_intf"] = intf
         IAircraftCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftCategory, [IAircraftCategory])
@@ -35824,7 +35824,7 @@ class Catalog(ICatalog):
         self.__dict__["_intf"] = intf
         ICatalog._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Catalog, [ICatalog])
@@ -35845,7 +35845,7 @@ class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
         IAviatorVehicle._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftModel, [IAircraftModel, IAviatorVehicle, ICatalogItem])
@@ -35866,7 +35866,7 @@ class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
         IAviatorVehicle._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileModel, [IMissileModel, IAviatorVehicle, ICatalogItem])
@@ -35887,7 +35887,7 @@ class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
         IAviatorVehicle._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotorcraftModel, [IRotorcraftModel, IAviatorVehicle, ICatalogItem])
@@ -35904,7 +35904,7 @@ class RotorcraftAero(IRotorcraftAero):
         self.__dict__["_intf"] = intf
         IRotorcraftAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotorcraftAero, [IRotorcraftAero])
@@ -35921,7 +35921,7 @@ class RotorcraftProp(IRotorcraftProp):
         self.__dict__["_intf"] = intf
         IRotorcraftProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotorcraftProp, [IRotorcraftProp])
@@ -35940,7 +35940,7 @@ class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
         IAircraftAcceleration._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAcceleration, [IAircraftAcceleration, ICatalogItem])
@@ -35961,7 +35961,7 @@ class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerforman
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicAccelerationModel, [IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem])
@@ -35980,7 +35980,7 @@ class AircraftClimb(IAircraftClimb, ICatalogItem):
         IAircraftClimb._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftClimb, [IAircraftClimb, ICatalogItem])
@@ -35999,7 +35999,7 @@ class AircraftCruise(IAircraftCruise, ICatalogItem):
         IAircraftCruise._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftCruise, [IAircraftCruise, ICatalogItem])
@@ -36018,7 +36018,7 @@ class AircraftDescent(IAircraftDescent, ICatalogItem):
         IAircraftDescent._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftDescent, [IAircraftDescent, ICatalogItem])
@@ -36037,7 +36037,7 @@ class AircraftLanding(IAircraftLanding, ICatalogItem):
         IAircraftLanding._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftLanding, [IAircraftLanding, ICatalogItem])
@@ -36056,7 +36056,7 @@ class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
         IAircraftTakeoff._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftTakeoff, [IAircraftTakeoff, ICatalogItem])
@@ -36077,7 +36077,7 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicClimbModel, [IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem])
@@ -36098,7 +36098,7 @@ class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogI
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvClimbModel, [IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem])
@@ -36119,7 +36119,7 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicCruiseModel, [IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem])
@@ -36140,7 +36140,7 @@ class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalo
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvCruiseModel, [IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem])
@@ -36161,7 +36161,7 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicDescentModel, [IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem])
@@ -36182,7 +36182,7 @@ class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICata
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvDescentModel, [IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem])
@@ -36203,7 +36203,7 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicTakeoffModel, [IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem])
@@ -36224,7 +36224,7 @@ class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICata
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvTakeoffModel, [IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem])
@@ -36245,7 +36245,7 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicLandingModel, [IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem])
@@ -36266,7 +36266,7 @@ class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICata
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvLandingModel, [IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem])
@@ -36283,7 +36283,7 @@ class AirportCategory(IAirportCategory):
         self.__dict__["_intf"] = intf
         IAirportCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AirportCategory, [IAirportCategory])
@@ -36306,7 +36306,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Airport, [IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem])
@@ -36331,7 +36331,7 @@ class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWay
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Runway, [IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
@@ -36354,7 +36354,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DAFIFRunway, [IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
@@ -36377,7 +36377,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DAFIFHelipad, [IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
@@ -36398,7 +36398,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DAFIFWaypoint, [IDAFIFItem, ICatalogWaypoint, ICatalogItem])
@@ -36415,7 +36415,7 @@ class RunwayCategory(IRunwayCategory):
         self.__dict__["_intf"] = intf
         IRunwayCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RunwayCategory, [IRunwayCategory])
@@ -36434,7 +36434,7 @@ class UserRunwaySource(IUserRunwaySource, ICatalogSource):
         IUserRunwaySource._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserRunwaySource, [IUserRunwaySource, ICatalogSource])
@@ -36457,7 +36457,7 @@ class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
         ICatalogItem._private_init(self, intf)
         ICatalogWaypoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserRunway, [IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint])
@@ -36474,7 +36474,7 @@ class AltitudeMSLOptions(IAltitudeMSLOptions):
         self.__dict__["_intf"] = intf
         IAltitudeMSLOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AltitudeMSLOptions, [IAltitudeMSLOptions])
@@ -36491,7 +36491,7 @@ class AltitudeOptions(IAltitudeOptions):
         self.__dict__["_intf"] = intf
         IAltitudeOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AltitudeOptions, [IAltitudeOptions])
@@ -36508,7 +36508,7 @@ class ArcAltitudeOptions(IArcAltitudeOptions):
         self.__dict__["_intf"] = intf
         IArcAltitudeOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ArcAltitudeOptions, [IArcAltitudeOptions])
@@ -36525,7 +36525,7 @@ class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
         self.__dict__["_intf"] = intf
         IArcAltitudeAndDelayOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ArcAltitudeAndDelayOptions, [IArcAltitudeAndDelayOptions])
@@ -36542,7 +36542,7 @@ class ArcOptions(IArcOptions):
         self.__dict__["_intf"] = intf
         IArcOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ArcOptions, [IArcOptions])
@@ -36559,7 +36559,7 @@ class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
         self.__dict__["_intf"] = intf
         IAltitudeMSLAndLevelOffOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AltitudeMSLAndLevelOffOptions, [IAltitudeMSLAndLevelOffOptions])
@@ -36576,7 +36576,7 @@ class CruiseAirspeedOptions(ICruiseAirspeedOptions):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CruiseAirspeedOptions, [ICruiseAirspeedOptions])
@@ -36593,7 +36593,7 @@ class CruiseAirspeedProfile(ICruiseAirspeedProfile):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedProfile._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CruiseAirspeedProfile, [ICruiseAirspeedProfile])
@@ -36610,7 +36610,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedAndProfileOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
@@ -36627,7 +36627,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedAndProfileOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingCruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
@@ -36644,7 +36644,7 @@ class EnrouteOptions(IEnrouteOptions):
         self.__dict__["_intf"] = intf
         IEnrouteOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EnrouteOptions, [IEnrouteOptions])
@@ -36661,7 +36661,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
         self.__dict__["_intf"] = intf
         IEnrouteAndDelayOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EnrouteAndDelayOptions, [IEnrouteAndDelayOptions])
@@ -36678,7 +36678,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions):
         self.__dict__["_intf"] = intf
         IEnrouteAndDelayOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingEnrouteOptions, [IEnrouteAndDelayOptions])
@@ -36695,7 +36695,7 @@ class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
         self.__dict__["_intf"] = intf
         IEnrouteTurnDirectionOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, EnrouteTurnDirectionOptions, [IEnrouteTurnDirectionOptions])
@@ -36712,7 +36712,7 @@ class NavigationOptions(INavigationOptions):
         self.__dict__["_intf"] = intf
         INavigationOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, NavigationOptions, [INavigationOptions])
@@ -36729,7 +36729,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions):
         self.__dict__["_intf"] = intf
         IVerticalPlaneOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VerticalPlaneOptions, [IVerticalPlaneOptions])
@@ -36746,7 +36746,7 @@ class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
         self.__dict__["_intf"] = intf
         IArcVerticalPlaneOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ArcVerticalPlaneOptions, [IArcVerticalPlaneOptions])
@@ -36763,7 +36763,7 @@ class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
         self.__dict__["_intf"] = intf
         IVerticalPlaneAndFlightPathOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VerticalPlaneAndFlightPathOptions, [IVerticalPlaneAndFlightPathOptions])
@@ -36780,7 +36780,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
         self.__dict__["_intf"] = intf
         IVerticalPlaneOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingVerticalPlaneOptions, [IVerticalPlaneOptions])
@@ -36797,7 +36797,7 @@ class RunwayHeadingOptions(IRunwayHeadingOptions):
         self.__dict__["_intf"] = intf
         IRunwayHeadingOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RunwayHeadingOptions, [IRunwayHeadingOptions])
@@ -36814,7 +36814,7 @@ class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
         self.__dict__["_intf"] = intf
         ILandingEnterDownwindPattern._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingEnterDownwindPattern, [ILandingEnterDownwindPattern])
@@ -36831,7 +36831,7 @@ class LandingInterceptGlideslope(ILandingInterceptGlideslope):
         self.__dict__["_intf"] = intf
         ILandingInterceptGlideslope._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingInterceptGlideslope, [ILandingInterceptGlideslope])
@@ -36848,7 +36848,7 @@ class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
         self.__dict__["_intf"] = intf
         ILandingStandardInstrumentApproach._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LandingStandardInstrumentApproach, [ILandingStandardInstrumentApproach])
@@ -36865,7 +36865,7 @@ class TakeoffDeparturePoint(ITakeoffDeparturePoint):
         self.__dict__["_intf"] = intf
         ITakeoffDeparturePoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TakeoffDeparturePoint, [ITakeoffDeparturePoint])
@@ -36882,7 +36882,7 @@ class TakeoffLowTransition(ITakeoffLowTransition):
         self.__dict__["_intf"] = intf
         ITakeoffLowTransition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TakeoffLowTransition, [ITakeoffLowTransition])
@@ -36899,7 +36899,7 @@ class TakeoffNormal(ITakeoffNormal):
         self.__dict__["_intf"] = intf
         ITakeoffNormal._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TakeoffNormal, [ITakeoffNormal])
@@ -36916,7 +36916,7 @@ class LevelTurns(ILevelTurns):
         self.__dict__["_intf"] = intf
         ILevelTurns._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, LevelTurns, [ILevelTurns])
@@ -36933,7 +36933,7 @@ class AttitudeTransitions(IAttitudeTransitions):
         self.__dict__["_intf"] = intf
         IAttitudeTransitions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AttitudeTransitions, [IAttitudeTransitions])
@@ -36950,7 +36950,7 @@ class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
         self.__dict__["_intf"] = intf
         IClimbAndDescentTransitions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ClimbAndDescentTransitions, [IClimbAndDescentTransitions])
@@ -36967,7 +36967,7 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
         self.__dict__["_intf"] = intf
         IAeroPropManeuverModeHelper._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AeroPropManeuverModeHelper, [IAeroPropManeuverModeHelper])
@@ -36988,7 +36988,7 @@ class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceMo
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAdvAccelerationModel, [IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem])
@@ -37005,7 +37005,7 @@ class AircraftAccelerationMode(IAircraftAccelerationMode):
         self.__dict__["_intf"] = intf
         IAircraftAccelerationMode._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAccelerationMode, [IAircraftAccelerationMode])
@@ -37022,7 +37022,7 @@ class AircraftSimpleAero(IAircraftSimpleAero):
         self.__dict__["_intf"] = intf
         IAircraftSimpleAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftSimpleAero, [IAircraftSimpleAero])
@@ -37039,7 +37039,7 @@ class AircraftExternalAero(IAircraftExternalAero):
         self.__dict__["_intf"] = intf
         IAircraftExternalAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftExternalAero, [IAircraftExternalAero])
@@ -37056,7 +37056,7 @@ class AircraftAero(IAircraftAero):
         self.__dict__["_intf"] = intf
         IAircraftAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftAero, [IAircraftAero])
@@ -37073,7 +37073,7 @@ class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
         self.__dict__["_intf"] = intf
         IAircraftBasicFixedWingAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingAero, [IAircraftBasicFixedWingAero])
@@ -37090,7 +37090,7 @@ class AircraftProp(IAircraftProp):
         self.__dict__["_intf"] = intf
         IAircraftProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftProp, [IAircraftProp])
@@ -37107,7 +37107,7 @@ class AircraftSimpleProp(IAircraftSimpleProp):
         self.__dict__["_intf"] = intf
         IAircraftSimpleProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftSimpleProp, [IAircraftSimpleProp])
@@ -37124,7 +37124,7 @@ class AircraftExternalProp(IAircraftExternalProp):
         self.__dict__["_intf"] = intf
         IAircraftExternalProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftExternalProp, [IAircraftExternalProp])
@@ -37141,7 +37141,7 @@ class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
         self.__dict__["_intf"] = intf
         IAircraftBasicFixedWingProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingProp, [IAircraftBasicFixedWingProp])
@@ -37160,7 +37160,7 @@ class ARINC424Source(IARINC424Source, ICatalogSource):
         IARINC424Source._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Source, [IARINC424Source, ICatalogSource])
@@ -37179,7 +37179,7 @@ class DAFIFSource(IDAFIFSource, ICatalogSource):
         IDAFIFSource._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DAFIFSource, [IDAFIFSource, ICatalogSource])
@@ -37196,7 +37196,7 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
         self.__dict__["_intf"] = intf
         IBasicFixedWingLiftHelper._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicFixedWingFwdFlightLiftHelper, [IBasicFixedWingLiftHelper])
@@ -37215,7 +37215,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IB
         IBasicManeuverStrategyStraightAhead._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStraightAhead, [IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy])
@@ -37234,7 +37234,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IB
         IBasicManeuverStrategyCruiseProfile._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyCruiseProfile, [IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy])
@@ -37253,7 +37253,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBas
         IBasicManeuverStrategyGlideProfile._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyGlideProfile, [IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy])
@@ -37272,7 +37272,7 @@ class AircraftModels(IAircraftModels, ICatalogSource):
         IAircraftModels._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftModels, [IAircraftModels, ICatalogSource])
@@ -37291,7 +37291,7 @@ class MissileModels(IMissileModels, ICatalogSource):
         IMissileModels._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileModels, [IMissileModels, ICatalogSource])
@@ -37310,7 +37310,7 @@ class RotorcraftModels(IRotorcraftModels, ICatalogSource):
         IRotorcraftModels._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RotorcraftModels, [IRotorcraftModels, ICatalogSource])
@@ -37327,7 +37327,7 @@ class Configuration(IConfiguration):
         self.__dict__["_intf"] = intf
         IConfiguration._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Configuration, [IConfiguration])
@@ -37346,7 +37346,7 @@ class FuelTankInternal(IFuelTankInternal, IStation):
         IFuelTankInternal._private_init(self, intf)
         IStation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FuelTankInternal, [IFuelTankInternal, IStation])
@@ -37363,7 +37363,7 @@ class FuelTankExternal(IFuelTankExternal):
         self.__dict__["_intf"] = intf
         IFuelTankExternal._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FuelTankExternal, [IFuelTankExternal])
@@ -37382,7 +37382,7 @@ class PayloadStation(IPayloadStation, IStation):
         IPayloadStation._private_init(self, intf)
         IStation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PayloadStation, [IPayloadStation, IStation])
@@ -37399,7 +37399,7 @@ class StationCollection(IStationCollection):
         self.__dict__["_intf"] = intf
         IStationCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, StationCollection, [IStationCollection])
@@ -37416,7 +37416,7 @@ class WindModel(IWindModel):
         self.__dict__["_intf"] = intf
         IWindModel._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WindModel, [IWindModel])
@@ -37433,7 +37433,7 @@ class WindModelConstant(IWindModelConstant):
         self.__dict__["_intf"] = intf
         IWindModelConstant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WindModelConstant, [IWindModelConstant])
@@ -37450,7 +37450,7 @@ class WindModelADDS(IWindModelADDS):
         self.__dict__["_intf"] = intf
         IWindModelADDS._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WindModelADDS, [IWindModelADDS])
@@ -37467,7 +37467,7 @@ class ADDSMessage(IADDSMessage):
         self.__dict__["_intf"] = intf
         IADDSMessage._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ADDSMessage, [IADDSMessage])
@@ -37484,7 +37484,7 @@ class ADDSMessageCollection(IADDSMessageCollection):
         self.__dict__["_intf"] = intf
         IADDSMessageCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ADDSMessageCollection, [IADDSMessageCollection])
@@ -37503,7 +37503,7 @@ class Procedure(IProcedure, IConnect):
         IProcedure._private_init(self, intf)
         IConnect._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Procedure, [IProcedure, IConnect])
@@ -37520,7 +37520,7 @@ class AtmosphereModel(IAtmosphereModel):
         self.__dict__["_intf"] = intf
         IAtmosphereModel._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AtmosphereModel, [IAtmosphereModel])
@@ -37537,7 +37537,7 @@ class AtmosphereModelBasic(IAtmosphereModelBasic):
         self.__dict__["_intf"] = intf
         IAtmosphereModelBasic._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AtmosphereModelBasic, [IAtmosphereModelBasic])
@@ -37556,7 +37556,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicMa
         IBasicManeuverStrategySimpleTurn._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategySimpleTurn, [IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy])
@@ -37575,7 +37575,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasic
         IBasicManeuverStrategyAileronRoll._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAileronRoll, [IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy])
@@ -37594,7 +37594,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverSt
         IBasicManeuverStrategyFlyAOA._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyFlyAOA, [IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy])
@@ -37613,7 +37613,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrate
         IBasicManeuverStrategyPull._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPull, [IBasicManeuverStrategyPull, IBasicManeuverStrategy])
@@ -37632,7 +37632,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasic
         IBasicManeuverStrategyRollingPull._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRollingPull, [IBasicManeuverStrategyRollingPull, IBasicManeuverStrategy])
@@ -37651,7 +37651,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasic
         IBasicManeuverStrategySmoothAccel._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAccel, [IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy])
@@ -37670,7 +37670,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicMa
         IBasicManeuverStrategySmoothTurn._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothTurn, [IBasicManeuverStrategySmoothTurn, IBasicManeuverStrategy])
@@ -37687,7 +37687,7 @@ class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
         self.__dict__["_intf"] = intf
         IBasicManeuverAirspeedOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverAirspeedOptions, [IBasicManeuverAirspeedOptions])
@@ -37704,7 +37704,7 @@ class PropulsionThrust(IPropulsionThrust):
         self.__dict__["_intf"] = intf
         IPropulsionThrust._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PropulsionThrust, [IPropulsionThrust])
@@ -37723,7 +37723,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBas
         IBasicManeuverStrategyAutopilotNav._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNav, [IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy])
@@ -37742,7 +37742,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IB
         IBasicManeuverStrategyAutopilotProf._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotProf, [IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy])
@@ -37761,7 +37761,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicMa
         IBasicManeuverStrategyBarrelRoll._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBarrelRoll, [IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy])
@@ -37780,7 +37780,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrate
         IBasicManeuverStrategyLoop._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLoop, [IBasicManeuverStrategyLoop, IBasicManeuverStrategy])
@@ -37799,7 +37799,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuv
         IBasicManeuverStrategyLTAHover._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLTAHover, [IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy])
@@ -37818,7 +37818,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicMane
         IBasicManeuverStrategyIntercept._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyIntercept, [IBasicManeuverStrategyIntercept, IBasicManeuverStrategy])
@@ -37837,7 +37837,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing
         IBasicManeuverStrategyRelativeBearing._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeBearing, [IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy])
@@ -37856,7 +37856,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, 
         IBasicManeuverStrategyRelativeCourse._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeCourse, [IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy])
@@ -37875,7 +37875,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicMa
         IBasicManeuverStrategyRendezvous._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRendezvous, [IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy])
@@ -37894,7 +37894,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, 
         IBasicManeuverStrategyStationkeeping._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStationkeeping, [IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy])
@@ -37913,7 +37913,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
         IBasicManeuverStrategyRelativeFPA._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFPA, [IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy])
@@ -37932,7 +37932,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitu
         IBasicManeuverStrategyRelSpeedAltitude._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelSpeedAltitude, [IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy])
@@ -37951,7 +37951,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverSt
         IBasicManeuverStrategyBezier._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBezier, [IBasicManeuverStrategyBezier, IBasicManeuverStrategy])
@@ -37970,7 +37970,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuv
         IBasicManeuverStrategyPushPull._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPushPull, [IBasicManeuverStrategyPushPull, IBasicManeuverStrategy])
@@ -37989,7 +37989,7 @@ class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
         IProcedureHoldingCircular._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureHoldingCircular, [IProcedureHoldingCircular, IProcedure])
@@ -38008,7 +38008,7 @@ class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
         IProcedureHoldingFigure8._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureHoldingFigure8, [IProcedureHoldingFigure8, IProcedure])
@@ -38027,7 +38027,7 @@ class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
         IProcedureHoldingRacetrack._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureHoldingRacetrack, [IProcedureHoldingRacetrack, IProcedure])
@@ -38046,7 +38046,7 @@ class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
         IProcedureTransitionToHover._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureTransitionToHover, [IProcedureTransitionToHover, IProcedure])
@@ -38065,7 +38065,7 @@ class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
         IProcedureTerrainFollow._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureTerrainFollow, [IProcedureTerrainFollow, IProcedure])
@@ -38084,7 +38084,7 @@ class ProcedureHover(IProcedureHover, IProcedure):
         IProcedureHover._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureHover, [IProcedureHover, IProcedure])
@@ -38103,7 +38103,7 @@ class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
         IProcedureHoverTranslate._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureHoverTranslate, [IProcedureHoverTranslate, IProcedure])
@@ -38122,7 +38122,7 @@ class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IP
         IProcedureTransitionToForwardFlight._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureTransitionToForwardFlight, [IProcedureTransitionToForwardFlight, IProcedure])
@@ -38139,7 +38139,7 @@ class HoverAltitudeOptions(IHoverAltitudeOptions):
         self.__dict__["_intf"] = intf
         IHoverAltitudeOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, HoverAltitudeOptions, [IHoverAltitudeOptions])
@@ -38158,7 +38158,7 @@ class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
         IProcedureVerticalTakeoff._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureVerticalTakeoff, [IProcedureVerticalTakeoff, IProcedure])
@@ -38177,7 +38177,7 @@ class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
         IProcedureVerticalLanding._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureVerticalLanding, [IProcedureVerticalLanding, IProcedure])
@@ -38196,7 +38196,7 @@ class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
         IProcedureReferenceState._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureReferenceState, [IProcedureReferenceState, IProcedure])
@@ -38215,7 +38215,7 @@ class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
         IProcedureSuperProcedure._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureSuperProcedure, [IProcedureSuperProcedure, IProcedure])
@@ -38234,7 +38234,7 @@ class ProcedureLaunch(IProcedureLaunch, IProcedure):
         IProcedureLaunch._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureLaunch, [IProcedureLaunch, IProcedure])
@@ -38253,7 +38253,7 @@ class ProcedureAirway(IProcedureAirway, IProcedure):
         IProcedureAirway._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureAirway, [IProcedureAirway, IProcedure])
@@ -38272,7 +38272,7 @@ class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
         IProcedureAirwayRouter._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureAirwayRouter, [IProcedureAirwayRouter, IProcedure])
@@ -38291,7 +38291,7 @@ class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
         IProcedureAreaTargetSearch._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureAreaTargetSearch, [IProcedureAreaTargetSearch, IProcedure])
@@ -38310,7 +38310,7 @@ class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
         IProcedureFormationRecover._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureFormationRecover, [IProcedureFormationRecover, IProcedure])
@@ -38329,7 +38329,7 @@ class ProcedureInFormation(IProcedureInFormation, IProcedure):
         IProcedureInFormation._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureInFormation, [IProcedureInFormation, IProcedure])
@@ -38348,7 +38348,7 @@ class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
         IProcedureParallelFlightLine._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureParallelFlightLine, [IProcedureParallelFlightLine, IProcedure])
@@ -38367,7 +38367,7 @@ class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
         IProcedureVGTPoint._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureVGTPoint, [IProcedureVGTPoint, IProcedure])
@@ -38384,7 +38384,7 @@ class PerformanceModelOptions(IPerformanceModelOptions):
         self.__dict__["_intf"] = intf
         IPerformanceModelOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PerformanceModelOptions, [IPerformanceModelOptions])
@@ -38401,7 +38401,7 @@ class AdvFixedWingTool(IAdvFixedWingTool):
         self.__dict__["_intf"] = intf
         IAdvFixedWingTool._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTool, [IAdvFixedWingTool])
@@ -38418,7 +38418,7 @@ class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
         self.__dict__["_intf"] = intf
         IAdvFixedWingExternalAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingExternalAero, [IAdvFixedWingExternalAero])
@@ -38435,7 +38435,7 @@ class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
         self.__dict__["_intf"] = intf
         IAdvFixedWingSubsonicAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingSubsonicAero, [IAdvFixedWingSubsonicAero])
@@ -38452,7 +38452,7 @@ class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
         self.__dict__["_intf"] = intf
         IAdvFixedWingSubSuperHypersonicAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicAero, [IAdvFixedWingSubSuperHypersonicAero])
@@ -38469,7 +38469,7 @@ class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
         self.__dict__["_intf"] = intf
         IAdvFixedWingSupersonicAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingSupersonicAero, [IAdvFixedWingSupersonicAero])
@@ -38488,7 +38488,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PerformanceModel, [IPerformanceModel, ICatalogItem])
@@ -38507,7 +38507,7 @@ class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometr
         IAdvFixedWingGeometryBasic._private_init(self, intf)
         IAdvFixedWingGeometry._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingGeometryBasic, [IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry])
@@ -38526,7 +38526,7 @@ class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingG
         IAdvFixedWingGeometryVariable._private_init(self, intf)
         IAdvFixedWingGeometry._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingGeometryVariable, [IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry])
@@ -38543,7 +38543,7 @@ class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
         self.__dict__["_intf"] = intf
         IAdvFixedWingElectricPowerplant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingElectricPowerplant, [IAdvFixedWingElectricPowerplant])
@@ -38560,7 +38560,7 @@ class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
         self.__dict__["_intf"] = intf
         IAdvFixedWingExternalProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingExternalProp, [IAdvFixedWingExternalProp])
@@ -38577,7 +38577,7 @@ class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
         self.__dict__["_intf"] = intf
         IAdvFixedWingSubSuperHypersonicProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicProp, [IAdvFixedWingSubSuperHypersonicProp])
@@ -38594,7 +38594,7 @@ class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
         self.__dict__["_intf"] = intf
         IAdvFixedWingPistonPowerplant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingPistonPowerplant, [IAdvFixedWingPistonPowerplant])
@@ -38611,7 +38611,7 @@ class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
         self.__dict__["_intf"] = intf
         IAdvFixedWingEmpiricalJetEngine._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingEmpiricalJetEngine, [IAdvFixedWingEmpiricalJetEngine])
@@ -38628,7 +38628,7 @@ class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerpla
         self.__dict__["_intf"] = intf
         IAdvFixedWingTurbofanBasicABPowerplant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABPowerplant, [IAdvFixedWingTurbofanBasicABPowerplant])
@@ -38645,7 +38645,7 @@ class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerpla
         self.__dict__["_intf"] = intf
         IAdvFixedWingTurbojetBasicABPowerplant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABPowerplant, [IAdvFixedWingTurbojetBasicABPowerplant])
@@ -38662,7 +38662,7 @@ class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
         self.__dict__["_intf"] = intf
         IAdvFixedWingTurbofanBasicABProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABProp, [IAdvFixedWingTurbofanBasicABProp])
@@ -38679,7 +38679,7 @@ class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
         self.__dict__["_intf"] = intf
         IAdvFixedWingTurbojetBasicABProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABProp, [IAdvFixedWingTurbojetBasicABProp])
@@ -38696,7 +38696,7 @@ class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
         self.__dict__["_intf"] = intf
         IAdvFixedWingTurbopropPowerplant._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingTurbopropPowerplant, [IAdvFixedWingTurbopropPowerplant])
@@ -38713,7 +38713,7 @@ class MissileSimpleAero(IMissileSimpleAero):
         self.__dict__["_intf"] = intf
         IMissileSimpleAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileSimpleAero, [IMissileSimpleAero])
@@ -38730,7 +38730,7 @@ class MissileExternalAero(IMissileExternalAero):
         self.__dict__["_intf"] = intf
         IMissileExternalAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileExternalAero, [IMissileExternalAero])
@@ -38747,7 +38747,7 @@ class MissileAdvancedAero(IMissileAdvancedAero):
         self.__dict__["_intf"] = intf
         IMissileAdvancedAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileAdvancedAero, [IMissileAdvancedAero])
@@ -38764,7 +38764,7 @@ class MissileAero(IMissileAero):
         self.__dict__["_intf"] = intf
         IMissileAero._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileAero, [IMissileAero])
@@ -38781,7 +38781,7 @@ class MissileProp(IMissileProp):
         self.__dict__["_intf"] = intf
         IMissileProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileProp, [IMissileProp])
@@ -38798,7 +38798,7 @@ class MissileSimpleProp(IMissileSimpleProp):
         self.__dict__["_intf"] = intf
         IMissileSimpleProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileSimpleProp, [IMissileSimpleProp])
@@ -38815,7 +38815,7 @@ class MissileExternalProp(IMissileExternalProp):
         self.__dict__["_intf"] = intf
         IMissileExternalProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileExternalProp, [IMissileExternalProp])
@@ -38832,7 +38832,7 @@ class MissileRamjetProp(IMissileRamjetProp):
         self.__dict__["_intf"] = intf
         IMissileRamjetProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileRamjetProp, [IMissileRamjetProp])
@@ -38849,7 +38849,7 @@ class MissileRocketProp(IMissileRocketProp):
         self.__dict__["_intf"] = intf
         IMissileRocketProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileRocketProp, [IMissileRocketProp])
@@ -38866,7 +38866,7 @@ class MissileTurbojetProp(IMissileTurbojetProp):
         self.__dict__["_intf"] = intf
         IMissileTurbojetProp._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, MissileTurbojetProp, [IMissileTurbojetProp])
@@ -38883,7 +38883,7 @@ class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
         self.__dict__["_intf"] = intf
         IReferenceStateForwardFlightOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ReferenceStateForwardFlightOptions, [IReferenceStateForwardFlightOptions])
@@ -38900,7 +38900,7 @@ class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
         self.__dict__["_intf"] = intf
         IReferenceStateTakeoffLandingOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ReferenceStateTakeoffLandingOptions, [IReferenceStateTakeoffLandingOptions])
@@ -38917,7 +38917,7 @@ class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
         self.__dict__["_intf"] = intf
         IReferenceStateHoverOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ReferenceStateHoverOptions, [IReferenceStateHoverOptions])
@@ -38934,7 +38934,7 @@ class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
         self.__dict__["_intf"] = intf
         IReferenceStateWeightOnWheelsOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ReferenceStateWeightOnWheelsOptions, [IReferenceStateWeightOnWheelsOptions])
@@ -38953,7 +38953,7 @@ class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
         ISiteRunwayFromCatalog._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteRunwayFromCatalog, [ISiteRunwayFromCatalog, ISite])
@@ -38972,7 +38972,7 @@ class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
         ISiteAirportFromCatalog._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteAirportFromCatalog, [ISiteAirportFromCatalog, ISite])
@@ -38991,7 +38991,7 @@ class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
         ISiteNavaidFromCatalog._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteNavaidFromCatalog, [ISiteNavaidFromCatalog, ISite])
@@ -39010,7 +39010,7 @@ class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
         ISiteVTOLPointFromCatalog._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteVTOLPointFromCatalog, [ISiteVTOLPointFromCatalog, ISite])
@@ -39029,7 +39029,7 @@ class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
         ISiteWaypointFromCatalog._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteWaypointFromCatalog, [ISiteWaypointFromCatalog, ISite])
@@ -39046,7 +39046,7 @@ class NavaidCategory(INavaidCategory):
         self.__dict__["_intf"] = intf
         INavaidCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, NavaidCategory, [INavaidCategory])
@@ -39063,7 +39063,7 @@ class VTOLPointCategory(IVTOLPointCategory):
         self.__dict__["_intf"] = intf
         IVTOLPointCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VTOLPointCategory, [IVTOLPointCategory])
@@ -39080,7 +39080,7 @@ class WaypointCategory(IWaypointCategory):
         self.__dict__["_intf"] = intf
         IWaypointCategory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WaypointCategory, [IWaypointCategory])
@@ -39103,7 +39103,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Navaid, [IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem])
@@ -39126,7 +39126,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Helipad, [IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
@@ -39147,7 +39147,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ARINC424Waypoint, [IARINC424Item, ICatalogWaypoint, ICatalogItem])
@@ -39166,7 +39166,7 @@ class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
         IUserVTOLPointSource._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserVTOLPointSource, [IUserVTOLPointSource, ICatalogSource])
@@ -39189,7 +39189,7 @@ class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalo
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserVTOLPoint, [IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
@@ -39208,7 +39208,7 @@ class UserWaypointSource(IUserWaypointSource, ICatalogSource):
         IUserWaypointSource._private_init(self, intf)
         ICatalogSource._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserWaypointSource, [IUserWaypointSource, ICatalogSource])
@@ -39229,7 +39229,7 @@ class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
         ICatalogWaypoint._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UserWaypoint, [IUserWaypoint, ICatalogWaypoint, ICatalogItem])
@@ -39246,7 +39246,7 @@ class PropulsionEfficiencies(IPropulsionEfficiencies):
         self.__dict__["_intf"] = intf
         IPropulsionEfficiencies._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PropulsionEfficiencies, [IPropulsionEfficiencies])
@@ -39263,7 +39263,7 @@ class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
         self.__dict__["_intf"] = intf
         IFuelModelKeroseneAFPROP._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FuelModelKeroseneAFPROP, [IFuelModelKeroseneAFPROP])
@@ -39280,7 +39280,7 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
         self.__dict__["_intf"] = intf
         IFuelModelKeroseneCEA._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, FuelModelKeroseneCEA, [IFuelModelKeroseneCEA])
@@ -39297,7 +39297,7 @@ class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
         self.__dict__["_intf"] = intf
         IAdvFixedWingRamjetBasic._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingRamjetBasic, [IAdvFixedWingRamjetBasic])
@@ -39314,7 +39314,7 @@ class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
         self.__dict__["_intf"] = intf
         IAdvFixedWingScramjetBasic._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AdvFixedWingScramjetBasic, [IAdvFixedWingScramjetBasic])
@@ -39331,7 +39331,7 @@ class AircraftVTOLModel(IAircraftVTOLModel):
         self.__dict__["_intf"] = intf
         IAircraftVTOLModel._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftVTOLModel, [IAircraftVTOLModel])
@@ -39350,7 +39350,7 @@ class AircraftVTOL(IAircraftVTOL, ICatalogItem):
         IAircraftVTOL._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftVTOL, [IAircraftVTOL, ICatalogItem])
@@ -39367,7 +39367,7 @@ class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
         self.__dict__["_intf"] = intf
         IAircraftTerrainFollowModel._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftTerrainFollowModel, [IAircraftTerrainFollowModel])
@@ -39386,7 +39386,7 @@ class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
         IAircraftTerrainFollow._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AircraftTerrainFollow, [IAircraftTerrainFollow, ICatalogItem])
@@ -39405,7 +39405,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasic
         IBasicManeuverStrategyBallistic3D._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBallistic3D, [IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy])
@@ -39424,7 +39424,7 @@ class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
         IProcedureLaunchDynState._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureLaunchDynState, [IProcedureLaunchDynState, IProcedure])
@@ -39443,7 +39443,7 @@ class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
         IProcedureLaunchWaypoint._private_init(self, intf)
         IProcedure._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureLaunchWaypoint, [IProcedureLaunchWaypoint, IProcedure])
@@ -39462,7 +39462,7 @@ class SiteDynState(ISiteDynState, ISite):
         ISiteDynState._private_init(self, intf)
         ISite._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SiteDynState, [ISiteDynState, ISite])
@@ -39481,7 +39481,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuver
         IBasicManeuverStrategyPitch3D._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPitch3D, [IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy])
@@ -39498,7 +39498,7 @@ class RefuelDumpProperties(IRefuelDumpProperties):
         self.__dict__["_intf"] = intf
         IRefuelDumpProperties._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RefuelDumpProperties, [IRefuelDumpProperties])
@@ -39515,7 +39515,7 @@ class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
         self.__dict__["_intf"] = intf
         IProcedureFastTimeOptions._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ProcedureFastTimeOptions, [IProcedureFastTimeOptions])
@@ -39532,7 +39532,7 @@ class BasicManeuverTargetPositionVel(IBasicManeuverTargetPositionVel):
         self.__dict__["_intf"] = intf
         IBasicManeuverTargetPositionVel._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVel, [IBasicManeuverTargetPositionVel])
@@ -39549,7 +39549,7 @@ class BasicManeuverTargetPositionVelNoisyBrnRng(IBasicManeuverTargetPositionVelN
         self.__dict__["_intf"] = intf
         IBasicManeuverTargetPositionVelNoisyBrnRng._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBrnRng, [IBasicManeuverTargetPositionVelNoisyBrnRng])
@@ -39566,7 +39566,7 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(IBasicManeuverTargetPositionVel
         self.__dict__["_intf"] = intf
         IBasicManeuverTargetPositionVelNoisySurfTgt._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTgt, [IBasicManeuverTargetPositionVelNoisySurfTgt])

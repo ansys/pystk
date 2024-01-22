@@ -565,7 +565,7 @@ class ILocationData(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILocationData)
@@ -611,7 +611,7 @@ class IPosition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPosition)
@@ -792,7 +792,7 @@ class IPlanetocentric(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetocentric)
@@ -869,7 +869,7 @@ class IGeocentric(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeocentric)
@@ -946,7 +946,7 @@ class ISpherical(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpherical)
@@ -1023,7 +1023,7 @@ class ICylindrical(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICylindrical)
@@ -1100,7 +1100,7 @@ class ICartesian(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian)
@@ -1177,7 +1177,7 @@ class IGeodetic(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeodetic)
@@ -1254,7 +1254,7 @@ class IPlanetodetic(IPosition):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetodetic)
@@ -1339,7 +1339,7 @@ class IDirection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirection)
@@ -1477,7 +1477,7 @@ class IDirectionEuler(IDirection):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionEuler)
@@ -1554,7 +1554,7 @@ class IDirectionPR(IDirection):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionPR)
@@ -1631,7 +1631,7 @@ class IDirectionRADec(IDirection):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionRADec)
@@ -1708,7 +1708,7 @@ class IDirectionXYZ(IDirection):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionXYZ)
@@ -1787,7 +1787,7 @@ class ICartesian3Vector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian3Vector)
@@ -1893,7 +1893,7 @@ class IOrientation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientation)
@@ -2031,7 +2031,7 @@ class IOrientationAzEl(IOrientation):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationAzEl)
@@ -2110,7 +2110,7 @@ class IOrientationEulerAngles(IOrientation):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationEulerAngles)
@@ -2204,7 +2204,7 @@ class IOrientationQuaternion(IOrientation):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationQuaternion)
@@ -2298,7 +2298,7 @@ class IOrientationYPRAngles(IOrientation):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationYPRAngles)
@@ -2384,7 +2384,7 @@ class IOrientationPositionOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationPositionOffset)
@@ -2431,7 +2431,7 @@ class IOrbitState(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrbitState)
@@ -2564,7 +2564,7 @@ class ICartesian2Vector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian2Vector)
@@ -2645,7 +2645,7 @@ class IUnitPreferencesDimension(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimension)
@@ -2717,7 +2717,7 @@ class IPropertyInfo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfo)
@@ -2810,7 +2810,7 @@ class IPropertyInfoCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfoCollection)
@@ -2890,7 +2890,7 @@ class IRuntimeTypeInfo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfo)
@@ -2947,7 +2947,7 @@ class IRuntimeTypeInfoProvider(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfoProvider)
@@ -2986,7 +2986,7 @@ class IExecCmdResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
@@ -3067,7 +3067,7 @@ class IExecMultiCmdResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
@@ -3133,7 +3133,7 @@ class IUnitPreferencesUnit(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnit)
@@ -3196,7 +3196,7 @@ class IUnitPreferencesUnitCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnitCollection)
@@ -3285,7 +3285,7 @@ class IUnitPreferencesDimensionCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimensionCollection)
@@ -3421,7 +3421,7 @@ class IQuantity(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IQuantity)
@@ -3527,7 +3527,7 @@ class IDate(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDate)
@@ -3680,7 +3680,7 @@ class IConversionUtility(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConversionUtility)
@@ -3840,7 +3840,7 @@ class IDoublesCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDoublesCollection)
@@ -3934,7 +3934,7 @@ class ExecCmdResult(IExecCmdResult):
         self.__dict__["_intf"] = intf
         IExecCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
@@ -3951,7 +3951,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         self.__dict__["_intf"] = intf
         IExecMultiCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
@@ -3968,7 +3968,7 @@ class UnitPreferencesUnit(IUnitPreferencesUnit):
         self.__dict__["_intf"] = intf
         IUnitPreferencesUnit._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UnitPreferencesUnit, [IUnitPreferencesUnit])
@@ -3985,7 +3985,7 @@ class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
         self.__dict__["_intf"] = intf
         IUnitPreferencesUnitCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UnitPreferencesUnitCollection, [IUnitPreferencesUnitCollection])
@@ -4002,7 +4002,7 @@ class UnitPreferencesDimension(IUnitPreferencesDimension):
         self.__dict__["_intf"] = intf
         IUnitPreferencesDimension._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UnitPreferencesDimension, [IUnitPreferencesDimension])
@@ -4019,7 +4019,7 @@ class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
         self.__dict__["_intf"] = intf
         IUnitPreferencesDimensionCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UnitPreferencesDimensionCollection, [IUnitPreferencesDimensionCollection])
@@ -4036,7 +4036,7 @@ class ConversionUtility(IConversionUtility):
         self.__dict__["_intf"] = intf
         IConversionUtility._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ConversionUtility, [IConversionUtility])
@@ -4053,7 +4053,7 @@ class Quantity(IQuantity):
         self.__dict__["_intf"] = intf
         IQuantity._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Quantity, [IQuantity])
@@ -4070,7 +4070,7 @@ class Date(IDate):
         self.__dict__["_intf"] = intf
         IDate._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Date, [IDate])
@@ -4089,7 +4089,7 @@ class Position(ILocationData, IPosition):
         ILocationData._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Position, [ILocationData, IPosition])
@@ -4108,7 +4108,7 @@ class Cartesian(ICartesian, IPosition):
         ICartesian._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Cartesian, [ICartesian, IPosition])
@@ -4127,7 +4127,7 @@ class Geodetic(IGeodetic, IPosition):
         IGeodetic._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Geodetic, [IGeodetic, IPosition])
@@ -4146,7 +4146,7 @@ class Geocentric(IGeocentric, IPosition):
         IGeocentric._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Geocentric, [IGeocentric, IPosition])
@@ -4165,7 +4165,7 @@ class Planetodetic(IPlanetodetic, IPosition):
         IPlanetodetic._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Planetodetic, [IPlanetodetic, IPosition])
@@ -4184,7 +4184,7 @@ class Planetocentric(IPlanetocentric, IPosition):
         IPlanetocentric._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Planetocentric, [IPlanetocentric, IPosition])
@@ -4203,7 +4203,7 @@ class Spherical(ISpherical, IPosition):
         ISpherical._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Spherical, [ISpherical, IPosition])
@@ -4222,7 +4222,7 @@ class Cylindrical(ICylindrical, IPosition):
         ICylindrical._private_init(self, intf)
         IPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Cylindrical, [ICylindrical, IPosition])
@@ -4239,7 +4239,7 @@ class Direction(IDirection):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Direction, [IDirection])
@@ -4258,7 +4258,7 @@ class DirectionEuler(IDirectionEuler, IDirection):
         IDirectionEuler._private_init(self, intf)
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DirectionEuler, [IDirectionEuler, IDirection])
@@ -4277,7 +4277,7 @@ class DirectionPR(IDirectionPR, IDirection):
         IDirectionPR._private_init(self, intf)
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DirectionPR, [IDirectionPR, IDirection])
@@ -4296,7 +4296,7 @@ class DirectionRADec(IDirectionRADec, IDirection):
         IDirectionRADec._private_init(self, intf)
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DirectionRADec, [IDirectionRADec, IDirection])
@@ -4315,7 +4315,7 @@ class DirectionXYZ(IDirectionXYZ, IDirection):
         IDirectionXYZ._private_init(self, intf)
         IDirection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DirectionXYZ, [IDirectionXYZ, IDirection])
@@ -4332,7 +4332,7 @@ class Orientation(IOrientation):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Orientation, [IOrientation])
@@ -4351,7 +4351,7 @@ class OrientationAzEl(IOrientationAzEl, IOrientation):
         IOrientationAzEl._private_init(self, intf)
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, OrientationAzEl, [IOrientationAzEl, IOrientation])
@@ -4370,7 +4370,7 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
         IOrientationEulerAngles._private_init(self, intf)
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, OrientationEulerAngles, [IOrientationEulerAngles, IOrientation])
@@ -4389,7 +4389,7 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation):
         IOrientationQuaternion._private_init(self, intf)
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, OrientationQuaternion, [IOrientationQuaternion, IOrientation])
@@ -4408,7 +4408,7 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
         IOrientationYPRAngles._private_init(self, intf)
         IOrientation._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, OrientationYPRAngles, [IOrientationYPRAngles, IOrientation])
@@ -4425,7 +4425,7 @@ class DoublesCollection(IDoublesCollection):
         self.__dict__["_intf"] = intf
         IDoublesCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DoublesCollection, [IDoublesCollection])
@@ -4442,7 +4442,7 @@ class Cartesian3Vector(ICartesian3Vector):
         self.__dict__["_intf"] = intf
         ICartesian3Vector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Cartesian3Vector, [ICartesian3Vector])
@@ -4459,7 +4459,7 @@ class Cartesian2Vector(ICartesian2Vector):
         self.__dict__["_intf"] = intf
         ICartesian2Vector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Cartesian2Vector, [ICartesian2Vector])
@@ -4476,7 +4476,7 @@ class PropertyInfo(IPropertyInfo):
         self.__dict__["_intf"] = intf
         IPropertyInfo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PropertyInfo, [IPropertyInfo])
@@ -4493,7 +4493,7 @@ class PropertyInfoCollection(IPropertyInfoCollection):
         self.__dict__["_intf"] = intf
         IPropertyInfoCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PropertyInfoCollection, [IPropertyInfoCollection])
@@ -4510,7 +4510,7 @@ class RuntimeTypeInfo(IRuntimeTypeInfo):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RuntimeTypeInfo, [IRuntimeTypeInfo])
@@ -4531,7 +4531,7 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
         IOrientation._private_init(self, intf)
         IOrientationPositionOffset._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
@@ -4552,7 +4552,7 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
         IOrientation._private_init(self, intf)
         IOrientationPositionOffset._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
@@ -4573,7 +4573,7 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
         IOrientation._private_init(self, intf)
         IOrientationPositionOffset._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
@@ -4594,7 +4594,7 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
         IOrientation._private_init(self, intf)
         IOrientationPositionOffset._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
@@ -4611,7 +4611,7 @@ class CROrientationOffsetCart(ICartesian3Vector):
         self.__dict__["_intf"] = intf
         ICartesian3Vector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CROrientationOffsetCart, [ICartesian3Vector])

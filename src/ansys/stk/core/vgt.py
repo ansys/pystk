@@ -1949,7 +1949,7 @@ class ITimeToolIntervalCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalCollection)
@@ -2013,7 +2013,7 @@ class ITimeToolInterval(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolInterval)
@@ -2057,7 +2057,7 @@ class IVectorGeometryToolPoint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPoint)
@@ -2107,7 +2107,7 @@ class IVectorGeometryToolVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVector)
@@ -2158,7 +2158,7 @@ class IVectorGeometryToolSystem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystem)
@@ -2221,7 +2221,7 @@ class IVectorGeometryToolAxes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxes)
@@ -2319,7 +2319,7 @@ class IVectorGeometryToolAngle(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngle)
@@ -2386,7 +2386,7 @@ class IVectorGeometryToolPlane(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlane)
@@ -2456,7 +2456,7 @@ class IAnalysisWorkbenchContext(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchContext)
@@ -2508,7 +2508,7 @@ class IAnalysisWorkbenchComponent(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchComponent)
@@ -2681,7 +2681,7 @@ class ICalculationToolEvaluateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolEvaluateResult)
@@ -2725,7 +2725,7 @@ class ICalculationToolEvaluateWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolEvaluateWithRateResult)
@@ -2776,7 +2776,7 @@ class ITimeToolEventIntervalResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalResult)
@@ -2819,7 +2819,7 @@ class ITimeToolEventFindOccurrenceResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventFindOccurrenceResult)
@@ -2865,7 +2865,7 @@ class ITimeToolFindTimesResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolFindTimesResult)
@@ -2932,7 +2932,7 @@ class ITimeToolIntervalsVectorResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalsVectorResult)
@@ -2975,7 +2975,7 @@ class ITimeToolEventIntervalCollectionOccurredResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionOccurredResult)
@@ -3018,7 +3018,7 @@ class ITimeToolIntervalListResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalListResult)
@@ -3063,7 +3063,7 @@ class ITimeToolIntervalVectorCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalVectorCollection)
@@ -3135,7 +3135,7 @@ class ITimeToolEventGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventGroup)
@@ -3251,7 +3251,7 @@ class ITimeToolEventIntervalGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalGroup)
@@ -3367,7 +3367,7 @@ class ITimeToolEventIntervalListGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListGroup)
@@ -3483,7 +3483,7 @@ class ITimeToolEventArrayGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayGroup)
@@ -3599,7 +3599,7 @@ class ICalculationToolScalarGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarGroup)
@@ -3715,7 +3715,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionGroup)
@@ -3831,7 +3831,7 @@ class ICalculationToolParameterSetGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetGroup)
@@ -3947,7 +3947,7 @@ class ICalculationToolConditionGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionGroup)
@@ -4063,7 +4063,7 @@ class ICalculationToolConditionSetGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetGroup)
@@ -4171,7 +4171,7 @@ class ICalculationToolConditionSetEvaluateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetEvaluateResult)
@@ -4215,7 +4215,7 @@ class ICalculationToolConditionSetEvaluateWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetEvaluateWithRateResult)
@@ -4274,7 +4274,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridGroup)
@@ -4390,7 +4390,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGroup)
@@ -4506,7 +4506,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcGroup)
@@ -4623,7 +4623,7 @@ class ICalculationToolScalar(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalar)
@@ -4729,7 +4729,7 @@ class ICalculationToolScalarAngle(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarAngle)
@@ -4773,7 +4773,7 @@ class ICalculationToolScalarConstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarConstant)
@@ -4833,7 +4833,7 @@ class ICalculationToolScalarCustom(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarCustom)
@@ -4910,7 +4910,7 @@ class ICalculationToolScalarDataElement(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDataElement)
@@ -5054,7 +5054,7 @@ class ICalculationToolScalarDerivative(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDerivative)
@@ -5134,7 +5134,7 @@ class ICalculationToolScalarDotProduct(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDotProduct)
@@ -5236,7 +5236,7 @@ class ICalculationToolScalarElapsedTime(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarElapsedTime)
@@ -5296,7 +5296,7 @@ class ICalculationToolScalarFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFactory)
@@ -5472,7 +5472,7 @@ class ICalculationToolScalarFile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFile)
@@ -5575,7 +5575,7 @@ class ICalculationToolScalarFixedAtTimeInstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFixedAtTimeInstant)
@@ -5661,7 +5661,7 @@ class ICalculationToolScalarFunction(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFunction)
@@ -5942,7 +5942,7 @@ class ICalculationToolScalarFunction2Var(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFunction2Var)
@@ -6165,7 +6165,7 @@ class ICalculationToolScalarIntegral(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarIntegral)
@@ -6383,7 +6383,7 @@ class ICalculationToolScalarPlugin(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarPlugin)
@@ -6461,7 +6461,7 @@ class ICalculationToolScalarSurfaceDistanceBetweenPoints(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarSurfaceDistanceBetweenPoints)
@@ -6552,7 +6552,7 @@ class ICalculationToolScalarVectorComponent(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarVectorComponent)
@@ -6624,7 +6624,7 @@ class ICalculationToolScalarVectorMagnitude(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarVectorMagnitude)
@@ -6667,7 +6667,7 @@ class ICalculationToolCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolCondition)
@@ -6723,7 +6723,7 @@ class ICalculationToolConditionCombined(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionCombined)
@@ -6818,7 +6818,7 @@ class ICalculationToolConditionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionFactory)
@@ -6882,7 +6882,7 @@ class ICalculationToolConditionPointInVolume(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionPointInVolume)
@@ -6951,7 +6951,7 @@ class ICalculationToolConditionScalarBounds(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionScalarBounds)
@@ -7079,7 +7079,7 @@ class ICalculationToolConditionSet(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSet)
@@ -7129,7 +7129,7 @@ class ICalculationToolConditionSetFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetFactory)
@@ -7184,7 +7184,7 @@ class ICalculationToolConditionSetScalarThresholds(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetScalarThresholds)
@@ -7278,7 +7278,7 @@ class IAnalysisWorkbenchConverge(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchConverge)
@@ -7311,7 +7311,7 @@ class ICalculationToolConvergeBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConvergeBasic)
@@ -7397,7 +7397,7 @@ class IAnalysisWorkbenchDerivative(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchDerivative)
@@ -7424,7 +7424,7 @@ class ICalculationToolDerivativeBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolDerivativeBasic)
@@ -7471,7 +7471,7 @@ class ITimeToolEvent(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEvent)
@@ -7552,7 +7552,7 @@ class ITimeToolEventArray(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArray)
@@ -7606,7 +7606,7 @@ class ITimeToolEventArrayConditionCrossings(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayConditionCrossings)
@@ -7752,7 +7752,7 @@ class ITimeToolEventArrayExtrema(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayExtrema)
@@ -7907,7 +7907,7 @@ class ITimeToolEventArrayFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFactory)
@@ -8014,7 +8014,7 @@ class ITimeToolEventArrayFiltered(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFiltered)
@@ -8139,7 +8139,7 @@ class ITimeToolEventArrayFixedStep(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFixedStep)
@@ -8241,7 +8241,7 @@ class ITimeToolEventArrayFixedTimes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFixedTimes)
@@ -8285,7 +8285,7 @@ class ITimeToolEventArrayMerged(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayMerged)
@@ -8350,7 +8350,7 @@ class ITimeToolEventArraySignaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArraySignaled)
@@ -8454,7 +8454,7 @@ class ITimeToolEventArrayStartStopTimes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayStartStopTimes)
@@ -8511,7 +8511,7 @@ class ITimeToolEventEpoch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventEpoch)
@@ -8565,7 +8565,7 @@ class ITimeToolEventExtremum(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventExtremum)
@@ -8706,7 +8706,7 @@ class ITimeToolEventFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventFactory)
@@ -8817,7 +8817,7 @@ class ITimeToolEventInterval(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventInterval)
@@ -8900,7 +8900,7 @@ class ITimeToolEventIntervalBetweenTimeInstants(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalBetweenTimeInstants)
@@ -8959,7 +8959,7 @@ class ITimeToolEventIntervalCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollection)
@@ -9026,7 +9026,7 @@ class ITimeToolEventIntervalCollectionCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionCondition)
@@ -9146,7 +9146,7 @@ class ITimeToolEventIntervalCollectionFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionFactory)
@@ -9212,7 +9212,7 @@ class ITimeToolEventIntervalCollectionLighting(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionLighting)
@@ -9292,7 +9292,7 @@ class ITimeToolEventIntervalCollectionSignaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionSignaled)
@@ -9401,7 +9401,7 @@ class ITimeToolEventIntervalFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFactory)
@@ -9492,7 +9492,7 @@ class ITimeToolEventIntervalFixed(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFixed)
@@ -9546,7 +9546,7 @@ class ITimeToolEventIntervalFixedDuration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFixedDuration)
@@ -9622,7 +9622,7 @@ class ITimeToolEventIntervalFromIntervalList(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFromIntervalList)
@@ -9697,7 +9697,7 @@ class ITimeToolEventIntervalList(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalList)
@@ -9772,7 +9772,7 @@ class ITimeToolEventIntervalListCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListCondition)
@@ -9897,7 +9897,7 @@ class ITimeToolEventIntervalListFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFactory)
@@ -9996,7 +9996,7 @@ class ITimeToolEventIntervalListFile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFile)
@@ -10055,7 +10055,7 @@ class ITimeToolEventIntervalListFiltered(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFiltered)
@@ -10120,7 +10120,7 @@ class ITimeToolEventIntervalListFixed(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFixed)
@@ -10174,7 +10174,7 @@ class ITimeToolEventIntervalListMerged(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListMerged)
@@ -10315,7 +10315,7 @@ class ITimeToolEventIntervalListScaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListScaled)
@@ -10410,7 +10410,7 @@ class ITimeToolEventIntervalListSignaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListSignaled)
@@ -10514,7 +10514,7 @@ class ITimeToolEventIntervalListTimeOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListTimeOffset)
@@ -10577,7 +10577,7 @@ class ITimeToolEventIntervalScaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalScaled)
@@ -10672,7 +10672,7 @@ class ITimeToolEventIntervalSignaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalSignaled)
@@ -10789,7 +10789,7 @@ class ITimeToolEventIntervalSmartInterval(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalSmartInterval)
@@ -10940,7 +10940,7 @@ class ITimeToolEventIntervalTimeOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalTimeOffset)
@@ -11005,7 +11005,7 @@ class ITimeToolEventSignaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventSignaled)
@@ -11111,7 +11111,7 @@ class ITimeToolEventSmartEpoch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventSmartEpoch)
@@ -11185,7 +11185,7 @@ class ITimeToolEventStartStopTime(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventStartStopTime)
@@ -11244,7 +11244,7 @@ class ITimeToolEventTimeOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventTimeOffset)
@@ -11301,7 +11301,7 @@ class ITimeToolFirstIntervalsFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolFirstIntervalsFilter)
@@ -11345,7 +11345,7 @@ class ITimeToolGapsFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolGapsFilter)
@@ -11401,7 +11401,7 @@ class IAnalysisWorkbenchIntegral(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchIntegral)
@@ -11432,7 +11432,7 @@ class ICalculationToolIntegralBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolIntegralBasic)
@@ -11503,7 +11503,7 @@ class IAnalysisWorkbenchInterp(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchInterp)
@@ -11532,7 +11532,7 @@ class ICalculationToolInterpBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolInterpBasic)
@@ -11591,7 +11591,7 @@ class ITimeToolIntervalsFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalsFilter)
@@ -11648,7 +11648,7 @@ class ITimeToolLastIntervalsFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolLastIntervalsFilter)
@@ -11694,7 +11694,7 @@ class ICalculationToolParameterSet(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSet)
@@ -11769,7 +11769,7 @@ class ICalculationToolParameterSetAttitude(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetAttitude)
@@ -11831,7 +11831,7 @@ class ICalculationToolParameterSetFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetFactory)
@@ -11909,7 +11909,7 @@ class ICalculationToolParameterSetGroundTrajectory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetGroundTrajectory)
@@ -11976,7 +11976,7 @@ class ICalculationToolParameterSetOrbit(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetOrbit)
@@ -12095,7 +12095,7 @@ class ICalculationToolParameterSetTrajectory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetTrajectory)
@@ -12154,7 +12154,7 @@ class ICalculationToolParameterSetVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetVector)
@@ -12210,7 +12210,7 @@ class ITimeToolPruneFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPruneFilter)
@@ -12244,7 +12244,7 @@ class ITimeToolPruneFilterFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPruneFilterFactory)
@@ -12282,7 +12282,7 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolRelativeSatisfactionConditionFilter)
@@ -12353,7 +12353,7 @@ class IAnalysisWorkbenchSampling(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchSampling)
@@ -12381,7 +12381,7 @@ class ICalculationToolSamplingBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingBasic)
@@ -12441,7 +12441,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingCurvatureTolerance)
@@ -12558,7 +12558,7 @@ class ICalculationToolSamplingFixedStep(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingFixedStep)
@@ -12599,7 +12599,7 @@ class ICalculationToolSamplingMethod(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingMethod)
@@ -12635,7 +12635,7 @@ class ICalculationToolSamplingMethodFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingMethodFactory)
@@ -12691,7 +12691,7 @@ class ICalculationToolSamplingRelativeTolerance(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingRelativeTolerance)
@@ -12797,7 +12797,7 @@ class ITimeToolSatisfactionConditionFilter(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolSatisfactionConditionFilter)
@@ -12868,7 +12868,7 @@ class IAnalysisWorkbenchSignalDelay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchSignalDelay)
@@ -12903,7 +12903,7 @@ class ITimeToolSignalDelayBasic(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolSignalDelayBasic)
@@ -13013,7 +13013,7 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFactory)
@@ -13118,7 +13118,7 @@ class ISpatialAnalysisToolVolumeFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFactory)
@@ -13221,7 +13221,7 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridFactory)
@@ -13308,7 +13308,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridCoordinateDefinition)
@@ -13379,7 +13379,7 @@ class ISpatialAnalysisToolGridValuesCustom(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesCustom)
@@ -13429,7 +13429,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedNumberOfSteps)
@@ -13539,7 +13539,7 @@ class ISpatialAnalysisToolGridValuesFixedStep(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedStep)
@@ -13640,7 +13640,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesMethod)
@@ -13683,7 +13683,7 @@ class ITimeToolLightTimeDelay(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolLightTimeDelay)
@@ -13784,7 +13784,7 @@ class ISpatialAnalysisToolVolume(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolume)
@@ -13810,7 +13810,7 @@ class ISpatialAnalysisToolVolumeCalc(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalc)
@@ -13843,7 +13843,7 @@ class ISpatialAnalysisToolVolumeCalcAltitude(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAltitude)
@@ -13938,7 +13938,7 @@ class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAngleOffVector)
@@ -14058,7 +14058,7 @@ class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcConditionSatMetric)
@@ -14245,7 +14245,7 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcDelayRange)
@@ -14363,7 +14363,7 @@ class ISpatialAnalysisToolVolumeCalcFile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFile)
@@ -14412,7 +14412,7 @@ class ISpatialAnalysisToolVolumeCalcFromScalar(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFromScalar)
@@ -14460,7 +14460,7 @@ class ISpatialAnalysisToolVolumeCalcRange(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcRange)
@@ -14549,7 +14549,7 @@ class ISpatialAnalysisToolVolumeCalcSolarIntensity(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcSolarIntensity)
@@ -14612,7 +14612,7 @@ class ISpatialAnalysisToolVolumeCombined(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCombined)
@@ -14704,7 +14704,7 @@ class ISpatialAnalysisToolVolumeFromCalc(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCalc)
@@ -14804,7 +14804,7 @@ class ISpatialAnalysisToolVolumeFromCondition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCondition)
@@ -14908,7 +14908,7 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromGrid)
@@ -14965,7 +14965,7 @@ class ISpatialAnalysisToolVolumeFromTimeSatisfaction(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromTimeSatisfaction)
@@ -15006,7 +15006,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGrid)
@@ -15042,7 +15042,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridBearingAlt)
@@ -15156,7 +15156,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCartesian)
@@ -15224,7 +15224,7 @@ class ISpatialAnalysisToolVolumeGridConstrained(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridConstrained)
@@ -15284,7 +15284,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCylindrical)
@@ -15355,7 +15355,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridLatLonAlt)
@@ -15442,7 +15442,7 @@ class ISpatialAnalysisToolVolumeGridResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridResult)
@@ -15536,7 +15536,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridSpherical)
@@ -15603,7 +15603,7 @@ class ISpatialAnalysisToolVolumeInview(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeInview)
@@ -15657,7 +15657,7 @@ class ISpatialAnalysisToolVolumeLighting(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeLighting)
@@ -15737,7 +15737,7 @@ class ISpatialAnalysisToolVolumeOverTime(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeOverTime)
@@ -15838,7 +15838,7 @@ class ITimeToolTimeProperties(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolTimeProperties)
@@ -15873,7 +15873,7 @@ class IAnalysisWorkbenchTypeInfo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchTypeInfo)
@@ -15923,7 +15923,7 @@ class IAnalysisWorkbenchRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchRefTo)
@@ -15957,7 +15957,7 @@ class IAnalysisWorkbenchTemplate(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchTemplate)
@@ -15992,7 +15992,7 @@ class IAnalysisWorkbenchInstance(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchInstance)
@@ -16037,7 +16037,7 @@ class IVectorGeometryToolPointRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointRefTo)
@@ -16094,7 +16094,7 @@ class IVectorGeometryToolVectorRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorRefTo)
@@ -16151,7 +16151,7 @@ class IVectorGeometryToolAxesRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesRefTo)
@@ -16208,7 +16208,7 @@ class IVectorGeometryToolAngleRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleRefTo)
@@ -16265,7 +16265,7 @@ class IVectorGeometryToolSystemRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemRefTo)
@@ -16322,7 +16322,7 @@ class IVectorGeometryToolPlaneRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneRefTo)
@@ -16381,7 +16381,7 @@ class IVectorGeometryToolAxesLabels(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesLabels)
@@ -16455,7 +16455,7 @@ class IVectorGeometryToolPlaneLabels(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneLabels)
@@ -16514,7 +16514,7 @@ class IVectorGeometryToolAxesAlignedAndConstrained(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAlignedAndConstrained)
@@ -16576,7 +16576,7 @@ class IVectorGeometryToolAxesAngularOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAngularOffset)
@@ -16644,7 +16644,7 @@ class IVectorGeometryToolAxesFixedAtEpoch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFixedAtEpoch)
@@ -16705,7 +16705,7 @@ class IVectorGeometryToolAxesBPlane(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesBPlane)
@@ -16772,7 +16772,7 @@ class IVectorGeometryToolAxesCustomScript(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesCustomScript)
@@ -16822,7 +16822,7 @@ class IVectorGeometryToolAxesAttitudeFile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAttitudeFile)
@@ -16864,7 +16864,7 @@ class IVectorGeometryToolAxesFixed(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFixed)
@@ -16907,7 +16907,7 @@ class IVectorGeometryToolAxesModelAttach(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesModelAttach)
@@ -16955,7 +16955,7 @@ class IVectorGeometryToolAxesSpinning(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesSpinning)
@@ -17045,7 +17045,7 @@ class IVectorGeometryToolAxesOnSurface(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesOnSurface)
@@ -17105,7 +17105,7 @@ class IVectorGeometryToolAxesTrajectory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTrajectory)
@@ -17165,7 +17165,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesLagrangeLibration)
@@ -17225,7 +17225,7 @@ class IVectorGeometryToolAxesCommonTasks(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesCommonTasks)
@@ -17284,7 +17284,7 @@ class IVectorGeometryToolAxesAtTimeInstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAtTimeInstant)
@@ -17360,7 +17360,7 @@ class IVectorGeometryToolAxesPlugin(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesPlugin)
@@ -17432,7 +17432,7 @@ class IVectorGeometryToolAngleBetweenVectors(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleBetweenVectors)
@@ -17475,7 +17475,7 @@ class IVectorGeometryToolAngleBetweenPlanes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleBetweenPlanes)
@@ -17523,7 +17523,7 @@ class IVectorGeometryToolAngleDihedral(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleDihedral)
@@ -17606,7 +17606,7 @@ class IVectorGeometryToolAngleRotation(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleRotation)
@@ -17666,7 +17666,7 @@ class IVectorGeometryToolAngleToPlane(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleToPlane)
@@ -17725,7 +17725,7 @@ class IVectorGeometryToolPlaneNormal(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneNormal)
@@ -17777,7 +17777,7 @@ class IVectorGeometryToolPlaneQuadrant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneQuadrant)
@@ -17829,7 +17829,7 @@ class IVectorGeometryToolPlaneTrajectory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTrajectory)
@@ -17890,7 +17890,7 @@ class IVectorGeometryToolPlaneTriad(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTriad)
@@ -17957,7 +17957,7 @@ class IVectorGeometryToolPlaneTwoVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTwoVector)
@@ -18012,7 +18012,7 @@ class IVectorGeometryToolPointBPlane(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointBPlane)
@@ -18085,7 +18085,7 @@ class IVectorGeometryToolPointFile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFile)
@@ -18127,7 +18127,7 @@ class IVectorGeometryToolPointFixedInSystem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFixedInSystem)
@@ -18173,7 +18173,7 @@ class IVectorGeometryToolPointGrazing(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGrazing)
@@ -18240,7 +18240,7 @@ class IVectorGeometryToolPointGlint(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGlint)
@@ -18301,7 +18301,7 @@ class IVectorGeometryToolPointCovarianceGrazing(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCovarianceGrazing)
@@ -18420,7 +18420,7 @@ class IVectorGeometryToolPointPlaneIntersection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlaneIntersection)
@@ -18475,7 +18475,7 @@ class IVectorGeometryToolPointOnSurface(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointOnSurface)
@@ -18550,7 +18550,7 @@ class IVectorGeometryToolPointModelAttach(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointModelAttach)
@@ -18607,7 +18607,7 @@ class IVectorGeometryToolPointSatelliteCollectionEntry(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointSatelliteCollectionEntry)
@@ -18649,7 +18649,7 @@ class IVectorGeometryToolPointPlaneProjection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlaneProjection)
@@ -18694,7 +18694,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLagrangeLibration)
@@ -18753,7 +18753,7 @@ class IVectorGeometryToolPointCommonTasks(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCommonTasks)
@@ -18822,7 +18822,7 @@ class IVectorGeometryToolPointCentBodyIntersect(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCentBodyIntersect)
@@ -19025,7 +19025,7 @@ class IVectorGeometryToolPointAtTimeInstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointAtTimeInstant)
@@ -19101,7 +19101,7 @@ class IVectorGeometryToolPointPlugin(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlugin)
@@ -19176,7 +19176,7 @@ class IVectorGeometryToolPointCBFixedOffset(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCBFixedOffset)
@@ -19241,7 +19241,7 @@ class IVectorGeometryToolSystemAssembled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemAssembled)
@@ -19288,7 +19288,7 @@ class IVectorGeometryToolSystemOnSurface(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemOnSurface)
@@ -19365,7 +19365,7 @@ class IAnalysisWorkbenchLLAPosition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchLLAPosition)
@@ -19437,7 +19437,7 @@ class IVectorGeometryToolSystemCommonTasks(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemCommonTasks)
@@ -19479,7 +19479,7 @@ class IVectorGeometryToolVectorAngleRate(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorAngleRate)
@@ -19531,7 +19531,7 @@ class IVectorGeometryToolVectorApoapsis(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorApoapsis)
@@ -19591,7 +19591,7 @@ class IVectorGeometryToolVectorFixedAtEpoch(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtEpoch)
@@ -19651,7 +19651,7 @@ class IVectorGeometryToolVectorAngularVelocity(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorAngularVelocity)
@@ -19719,7 +19719,7 @@ class IVectorGeometryToolVectorConing(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorConing)
@@ -19841,7 +19841,7 @@ class IVectorGeometryToolVectorCross(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorCross)
@@ -19917,7 +19917,7 @@ class IVectorGeometryToolVectorCustomScript(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorCustomScript)
@@ -19986,7 +19986,7 @@ class IVectorGeometryToolVectorDerivative(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDerivative)
@@ -20066,7 +20066,7 @@ class IVectorGeometryToolVectorDisplacement(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDisplacement)
@@ -20162,7 +20162,7 @@ class IVectorGeometryToolVectorTwoPlanesIntersection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorTwoPlanesIntersection)
@@ -20205,7 +20205,7 @@ class IVectorGeometryToolVectorModelAttach(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorModelAttach)
@@ -20247,7 +20247,7 @@ class IVectorGeometryToolVectorProjection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorProjection)
@@ -20293,7 +20293,7 @@ class IVectorGeometryToolVectorScaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScaled)
@@ -20360,7 +20360,7 @@ class IVectorGeometryToolVectorEccentricity(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorEccentricity)
@@ -20418,7 +20418,7 @@ class IVectorGeometryToolVectorFixedInAxes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedInAxes)
@@ -20461,7 +20461,7 @@ class IVectorGeometryToolVectorLineOfNodes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorLineOfNodes)
@@ -20506,7 +20506,7 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorOrbitAngularMomentum)
@@ -20566,7 +20566,7 @@ class IVectorGeometryToolVectorOrbitNormal(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorOrbitNormal)
@@ -20626,7 +20626,7 @@ class IVectorGeometryToolVectorPeriapsis(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorPeriapsis)
@@ -20690,7 +20690,7 @@ class IVectorGeometryToolVectorReflection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorReflection)
@@ -20780,7 +20780,7 @@ class IVectorGeometryToolVectorRotationVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorRotationVector)
@@ -20838,7 +20838,7 @@ class IVectorGeometryToolVectorDirectionToStar(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDirectionToStar)
@@ -20884,7 +20884,7 @@ class IVectorGeometryToolVectorFixedAtTimeInstant(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtTimeInstant)
@@ -20970,7 +20970,7 @@ class IVectorGeometryToolVectorLinearCombination(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorLinearCombination)
@@ -21119,7 +21119,7 @@ class IVectorGeometryToolVectorProjectAlongVector(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorProjectAlongVector)
@@ -21198,7 +21198,7 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScalarLinearCombination)
@@ -21415,7 +21415,7 @@ class IVectorGeometryToolVectorScalarScaled(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScalarScaled)
@@ -21536,7 +21536,7 @@ class IVectorGeometryToolVectorVelocityAcceleration(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorVelocityAcceleration)
@@ -21612,7 +21612,7 @@ class IVectorGeometryToolVectorPlugin(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorPlugin)
@@ -21690,7 +21690,7 @@ class IVectorGeometryToolVectorDispSurface(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDispSurface)
@@ -21781,7 +21781,7 @@ class IVectorGeometryToolVectorFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFactory)
@@ -21853,7 +21853,7 @@ class IVectorGeometryToolAxesFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFactory)
@@ -21909,7 +21909,7 @@ class IVectorGeometryToolSystemFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemFactory)
@@ -21953,7 +21953,7 @@ class IVectorGeometryToolPointFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFactory)
@@ -22016,7 +22016,7 @@ class IVectorGeometryToolPlaneFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFactory)
@@ -22057,7 +22057,7 @@ class IVectorGeometryToolAngleFactory(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFactory)
@@ -22106,7 +22106,7 @@ class IVectorGeometryToolVectorGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorGroup)
@@ -22223,7 +22223,7 @@ class IVectorGeometryToolPointGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGroup)
@@ -22347,7 +22347,7 @@ class IVectorGeometryToolAngleGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleGroup)
@@ -22464,7 +22464,7 @@ class IVectorGeometryToolAxesGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesGroup)
@@ -22588,7 +22588,7 @@ class IVectorGeometryToolPlaneGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneGroup)
@@ -22705,7 +22705,7 @@ class IVectorGeometryToolSystemGroup(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemGroup)
@@ -22841,7 +22841,7 @@ class IAnalysisWorkbenchProvider(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchProvider)
@@ -23044,7 +23044,7 @@ class IAnalysisWorkbenchRoot(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchRoot)
@@ -23102,7 +23102,7 @@ class IVectorGeometryToolWellKnownEarthSystems(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthSystems)
@@ -23155,7 +23155,7 @@ class IVectorGeometryToolWellKnownEarthAxes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthAxes)
@@ -23217,7 +23217,7 @@ class IVectorGeometryToolWellKnownSunSystems(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSunSystems)
@@ -23286,7 +23286,7 @@ class IVectorGeometryToolWellKnownSunAxes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSunAxes)
@@ -23345,7 +23345,7 @@ class IVectorGeometryToolWellKnownSystems(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSystems)
@@ -23388,7 +23388,7 @@ class IVectorGeometryToolWellKnownAxes(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownAxes)
@@ -23431,7 +23431,7 @@ class IVectorGeometryToolAngleFindAngleResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleResult)
@@ -23475,7 +23475,7 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleWithRateResult)
@@ -23530,7 +23530,7 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindWithRateResult)
@@ -23608,7 +23608,7 @@ class IVectorGeometryToolAngleFindResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindResult)
@@ -23675,7 +23675,7 @@ class IVectorGeometryToolAxesTransformResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTransformResult)
@@ -23719,7 +23719,7 @@ class IVectorGeometryToolAxesTransformWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTransformWithRateResult)
@@ -23771,7 +23771,7 @@ class IVectorGeometryToolPlaneFindInAxesResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesResult)
@@ -23825,7 +23825,7 @@ class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesWithRateResult)
@@ -23894,7 +23894,7 @@ class IVectorGeometryToolPlaneFindInSystemResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemResult)
@@ -23958,7 +23958,7 @@ class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemWithRateResult)
@@ -24041,7 +24041,7 @@ class IVectorGeometryToolAxesFindInAxesResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesResult)
@@ -24085,7 +24085,7 @@ class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesWithRateResult)
@@ -24136,7 +24136,7 @@ class IVectorGeometryToolPointLocateInSystemResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemResult)
@@ -24180,7 +24180,7 @@ class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemWithRateResult)
@@ -24231,7 +24231,7 @@ class IVectorGeometryToolSystemTransformResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemTransformResult)
@@ -24275,7 +24275,7 @@ class IVectorGeometryToolSystemTransformWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemTransformWithRateResult)
@@ -24329,7 +24329,7 @@ class IVectorGeometryToolSystemFindInSystemResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemFindInSystemResult)
@@ -24396,7 +24396,7 @@ class IVectorGeometryToolVectorFindInAxesResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesResult)
@@ -24440,7 +24440,7 @@ class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesWithRateResult)
@@ -24490,7 +24490,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchMethodCallResult)
@@ -24524,7 +24524,7 @@ class IAnalysisWorkbenchCentralBody(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBody)
@@ -24560,7 +24560,7 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyRefTo)
@@ -24612,7 +24612,7 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyCollection)
@@ -24695,7 +24695,7 @@ class IAnalysisWorkbenchCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCollection)
@@ -24780,7 +24780,7 @@ class ITimeToolPointSamplingResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingResult)
@@ -24826,7 +24826,7 @@ class ITimeToolPointSamplingInterval(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingInterval)
@@ -24895,7 +24895,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingIntervalCollection)
@@ -24959,7 +24959,7 @@ class ITimeToolAxesSamplingResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingResult)
@@ -25005,7 +25005,7 @@ class ITimeToolAxesSamplingInterval(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingInterval)
@@ -25074,7 +25074,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingIntervalCollection)
@@ -25133,7 +25133,7 @@ class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
         self.__dict__["_intf"] = intf
         ICalculationToolEvaluateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolEvaluateResult, [ICalculationToolEvaluateResult])
@@ -25150,7 +25150,7 @@ class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResu
         self.__dict__["_intf"] = intf
         ICalculationToolEvaluateWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolEvaluateWithRateResult, [ICalculationToolEvaluateWithRateResult])
@@ -25167,7 +25167,7 @@ class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalResult, [ITimeToolEventIntervalResult])
@@ -25184,7 +25184,7 @@ class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
         self.__dict__["_intf"] = intf
         ITimeToolEventFindOccurrenceResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventFindOccurrenceResult, [ITimeToolEventFindOccurrenceResult])
@@ -25201,7 +25201,7 @@ class TimeToolFindTimesResult(ITimeToolFindTimesResult):
         self.__dict__["_intf"] = intf
         ITimeToolFindTimesResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolFindTimesResult, [ITimeToolFindTimesResult])
@@ -25218,7 +25218,7 @@ class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
         self.__dict__["_intf"] = intf
         ITimeToolIntervalsVectorResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolIntervalsVectorResult, [ITimeToolIntervalsVectorResult])
@@ -25235,7 +25235,7 @@ class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollec
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalCollectionOccurredResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionOccurredResult, [ITimeToolEventIntervalCollectionOccurredResult])
@@ -25252,7 +25252,7 @@ class TimeToolIntervalListResult(ITimeToolIntervalListResult):
         self.__dict__["_intf"] = intf
         ITimeToolIntervalListResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolIntervalListResult, [ITimeToolIntervalListResult])
@@ -25269,7 +25269,7 @@ class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
         self.__dict__["_intf"] = intf
         ITimeToolIntervalVectorCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolIntervalVectorCollection, [ITimeToolIntervalVectorCollection])
@@ -25286,7 +25286,7 @@ class TimeToolEventGroup(ITimeToolEventGroup):
         self.__dict__["_intf"] = intf
         ITimeToolEventGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventGroup, [ITimeToolEventGroup])
@@ -25303,7 +25303,7 @@ class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalGroup, [ITimeToolEventIntervalGroup])
@@ -25320,7 +25320,7 @@ class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalListGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListGroup, [ITimeToolEventIntervalListGroup])
@@ -25337,7 +25337,7 @@ class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
         self.__dict__["_intf"] = intf
         ITimeToolEventArrayGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayGroup, [ITimeToolEventArrayGroup])
@@ -25354,7 +25354,7 @@ class CalculationToolScalarGroup(ICalculationToolScalarGroup):
         self.__dict__["_intf"] = intf
         ICalculationToolScalarGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarGroup, [ICalculationToolScalarGroup])
@@ -25371,7 +25371,7 @@ class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalCollectionGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionGroup, [ITimeToolEventIntervalCollectionGroup])
@@ -25388,7 +25388,7 @@ class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSetGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroup, [ICalculationToolParameterSetGroup])
@@ -25405,7 +25405,7 @@ class CalculationToolConditionGroup(ICalculationToolConditionGroup):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionGroup, [ICalculationToolConditionGroup])
@@ -25422,7 +25422,7 @@ class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSetGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSetGroup, [ICalculationToolConditionSetGroup])
@@ -25439,7 +25439,7 @@ class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEval
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSetEvaluateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateResult, [ICalculationToolConditionSetEvaluateResult])
@@ -25456,7 +25456,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditio
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSetEvaluateWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateWithRateResult, [ICalculationToolConditionSetEvaluateWithRateResult])
@@ -25473,7 +25473,7 @@ class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGridGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridGroup, [ISpatialAnalysisToolVolumeGridGroup])
@@ -25490,7 +25490,7 @@ class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGroup, [ISpatialAnalysisToolVolumeGroup])
@@ -25507,7 +25507,7 @@ class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeCalcGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcGroup, [ISpatialAnalysisToolVolumeCalcGroup])
@@ -25526,7 +25526,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent)
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25547,7 +25547,7 @@ class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolSc
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25568,7 +25568,7 @@ class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculation
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25589,7 +25589,7 @@ class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationTool
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25610,7 +25610,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalcu
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25631,7 +25631,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalcula
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25652,7 +25652,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalcula
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25673,7 +25673,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalcu
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25690,7 +25690,7 @@ class CalculationToolScalarFactory(ICalculationToolScalarFactory):
         self.__dict__["_intf"] = intf
         ICalculationToolScalarFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarFactory, [ICalculationToolScalarFactory])
@@ -25711,7 +25711,7 @@ class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScal
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarFile, [ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25732,7 +25732,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeI
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25753,7 +25753,7 @@ class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculation
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25774,7 +25774,7 @@ class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICal
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarFunction2Var, [ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25795,7 +25795,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculation
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [ICalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25816,7 +25816,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationTool
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25837,7 +25837,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSu
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25858,7 +25858,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25879,7 +25879,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude
         ICalculationToolScalar._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent])
@@ -25898,7 +25898,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
         ICalculationToolCondition._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IAnalysisWorkbenchComponent])
@@ -25919,7 +25919,7 @@ class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalcu
         ICalculationToolCondition._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent])
@@ -25936,7 +25936,7 @@ class CalculationToolConditionFactory(ICalculationToolConditionFactory):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionFactory, [ICalculationToolConditionFactory])
@@ -25957,7 +25957,7 @@ class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolu
         ICalculationToolCondition._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionPointInVolume, [ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent])
@@ -25978,7 +25978,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds
         ICalculationToolCondition._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent])
@@ -25997,7 +25997,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
         ICalculationToolConditionSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
@@ -26014,7 +26014,7 @@ class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSetFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSetFactory, [ICalculationToolConditionSetFactory])
@@ -26035,7 +26035,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetSc
         ICalculationToolConditionSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
@@ -26054,7 +26054,7 @@ class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchCo
         IAnalysisWorkbenchConverge._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchConverge, [IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
@@ -26075,7 +26075,7 @@ class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkb
         IAnalysisWorkbenchConverge._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
@@ -26094,7 +26094,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
         IAnalysisWorkbenchDerivative._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
@@ -26115,7 +26115,7 @@ class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisW
         IAnalysisWorkbenchDerivative._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
@@ -26134,7 +26134,7 @@ class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEvent, [ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26153,7 +26153,7 @@ class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArray, [ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26174,7 +26174,7 @@ class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayConditionCrossings, [ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26195,7 +26195,7 @@ class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray,
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayExtrema, [ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26212,7 +26212,7 @@ class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
         self.__dict__["_intf"] = intf
         ITimeToolEventArrayFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayFactory, [ITimeToolEventArrayFactory])
@@ -26233,7 +26233,7 @@ class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArra
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayFiltered, [ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26254,7 +26254,7 @@ class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventAr
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayFixedStep, [ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26275,7 +26275,7 @@ class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEvent
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayFixedTimes, [ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26296,7 +26296,7 @@ class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, I
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayMerged, [ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26317,7 +26317,7 @@ class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArra
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArraySignaled, [ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26338,7 +26338,7 @@ class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeT
         ITimeToolEventArray._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventArrayStartStopTimes, [ITimeToolEventArrayStartStopTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
@@ -26359,7 +26359,7 @@ class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbench
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventEpoch, [ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26380,7 +26380,7 @@ class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWor
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventExtremum, [ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26397,7 +26397,7 @@ class TimeToolEventFactory(ITimeToolEventFactory):
         self.__dict__["_intf"] = intf
         ITimeToolEventFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventFactory, [ITimeToolEventFactory])
@@ -26416,7 +26416,7 @@ class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent)
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventInterval, [ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26437,7 +26437,7 @@ class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTime
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalBetweenTimeInstants, [ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26456,7 +26456,7 @@ class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysi
         ITimeToolEventIntervalCollection._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollection, [ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
@@ -26477,7 +26477,7 @@ class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionC
         ITimeToolEventIntervalCollection._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionCondition, [ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
@@ -26494,7 +26494,7 @@ class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFac
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalCollectionFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionFactory, [ITimeToolEventIntervalCollectionFactory])
@@ -26515,7 +26515,7 @@ class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLi
         ITimeToolEventIntervalCollection._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionLighting, [ITimeToolEventIntervalCollectionLighting, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
@@ -26536,7 +26536,7 @@ class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSi
         ITimeToolEventIntervalCollection._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionSignaled, [ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
@@ -26553,7 +26553,7 @@ class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFactory, [ITimeToolEventIntervalFactory])
@@ -26574,7 +26574,7 @@ class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInte
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFixed, [ITimeToolEventIntervalFixed, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26595,7 +26595,7 @@ class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, IT
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFixedDuration, [ITimeToolEventIntervalFixedDuration, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26616,7 +26616,7 @@ class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalLi
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFromIntervalList, [ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26635,7 +26635,7 @@ class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchCo
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalList, [ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26656,7 +26656,7 @@ class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, IT
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListCondition, [ITimeToolEventIntervalListCondition, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26673,7 +26673,7 @@ class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
         self.__dict__["_intf"] = intf
         ITimeToolEventIntervalListFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFactory, [ITimeToolEventIntervalListFactory])
@@ -26694,7 +26694,7 @@ class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEve
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFile, [ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26715,7 +26715,7 @@ class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITim
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFiltered, [ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26736,7 +26736,7 @@ class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolE
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFixed, [ITimeToolEventIntervalListFixed, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26757,7 +26757,7 @@ class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToo
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListMerged, [ITimeToolEventIntervalListMerged, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26778,7 +26778,7 @@ class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToo
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListScaled, [ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26799,7 +26799,7 @@ class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITim
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListSignaled, [ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26820,7 +26820,7 @@ class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, 
         ITimeToolEventIntervalList._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListTimeOffset, [ITimeToolEventIntervalListTimeOffset, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
@@ -26841,7 +26841,7 @@ class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventIn
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalScaled, [ITimeToolEventIntervalScaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26862,7 +26862,7 @@ class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEve
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalSignaled, [ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26883,7 +26883,7 @@ class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, IT
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalSmartInterval, [ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26904,7 +26904,7 @@ class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToo
         ITimeToolEventInterval._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventIntervalTimeOffset, [ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
@@ -26925,7 +26925,7 @@ class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWor
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventSignaled, [ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26946,7 +26946,7 @@ class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysi
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventSmartEpoch, [ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26967,7 +26967,7 @@ class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IA
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventStartStopTime, [ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -26988,7 +26988,7 @@ class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysi
         ITimeToolEvent._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolEventTimeOffset, [ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent])
@@ -27007,7 +27007,7 @@ class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPrune
         ITimeToolFirstIntervalsFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolFirstIntervalsFilter, [ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter])
@@ -27026,7 +27026,7 @@ class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
         ITimeToolGapsFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolGapsFilter, [ITimeToolGapsFilter, ITimeToolPruneFilter])
@@ -27045,7 +27045,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
         IAnalysisWorkbenchIntegral._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
@@ -27066,7 +27066,7 @@ class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkb
         IAnalysisWorkbenchIntegral._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
@@ -27085,7 +27085,7 @@ class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchCompon
         IAnalysisWorkbenchInterp._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchInterp, [IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
@@ -27106,7 +27106,7 @@ class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbench
         IAnalysisWorkbenchInterp._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolInterpBasic, [ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
@@ -27125,7 +27125,7 @@ class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
         ITimeToolIntervalsFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolIntervalsFilter, [ITimeToolIntervalsFilter, ITimeToolPruneFilter])
@@ -27144,7 +27144,7 @@ class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFi
         ITimeToolLastIntervalsFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolLastIntervalsFilter, [ITimeToolLastIntervalsFilter, ITimeToolPruneFilter])
@@ -27163,7 +27163,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27184,7 +27184,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, 
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27201,7 +27201,7 @@ class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSetFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetFactory, [ICalculationToolParameterSetFactory])
@@ -27222,7 +27222,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGr
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [ICalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27243,7 +27243,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalcu
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27264,7 +27264,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajecto
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27285,7 +27285,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICal
         ICalculationToolParameterSet._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
@@ -27302,7 +27302,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolPruneFilter, [ITimeToolPruneFilter])
@@ -27319,7 +27319,7 @@ class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilterFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolPruneFilterFactory, [ITimeToolPruneFilterFactory])
@@ -27338,7 +27338,7 @@ class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionC
         ITimeToolRelativeSatisfactionConditionFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolRelativeSatisfactionConditionFilter, [ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter])
@@ -27357,7 +27357,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
         IAnalysisWorkbenchSampling._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
@@ -27378,7 +27378,7 @@ class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkb
         IAnalysisWorkbenchSampling._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
@@ -27397,7 +27397,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatur
         ICalculationToolSamplingCurvatureTolerance._private_init(self, intf)
         ICalculationToolSamplingMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingCurvatureTolerance, [ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod])
@@ -27416,7 +27416,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalcu
         ICalculationToolSamplingFixedStep._private_init(self, intf)
         ICalculationToolSamplingMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingFixedStep, [ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod])
@@ -27433,7 +27433,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethod, [ICalculationToolSamplingMethod])
@@ -27450,7 +27450,7 @@ class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethodFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethodFactory, [ICalculationToolSamplingMethodFactory])
@@ -27469,7 +27469,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeT
         ICalculationToolSamplingRelativeTolerance._private_init(self, intf)
         ICalculationToolSamplingMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, CalculationToolSamplingRelativeTolerance, [ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod])
@@ -27488,7 +27488,7 @@ class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, 
         ITimeToolSatisfactionConditionFilter._private_init(self, intf)
         ITimeToolPruneFilter._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolSatisfactionConditionFilter, [ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter])
@@ -27507,7 +27507,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
@@ -27528,7 +27528,7 @@ class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSign
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [ITimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
@@ -27545,7 +27545,7 @@ class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeCalcFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFactory, [ISpatialAnalysisToolVolumeCalcFactory])
@@ -27562,7 +27562,7 @@ class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFactory, [ISpatialAnalysisToolVolumeFactory])
@@ -27579,7 +27579,7 @@ class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGridFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridFactory, [ISpatialAnalysisToolVolumeGridFactory])
@@ -27596,7 +27596,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordi
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridCoordinateDefinition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridCoordinateDefinition, [ISpatialAnalysisToolGridCoordinateDefinition])
@@ -27615,7 +27615,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, 
         ISpatialAnalysisToolGridValuesCustom._private_init(self, intf)
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesCustom, [ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod])
@@ -27634,7 +27634,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
         ISpatialAnalysisToolGridValuesFixedNumberOfSteps._private_init(self, intf)
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedNumberOfSteps, [ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod])
@@ -27653,7 +27653,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixed
         ISpatialAnalysisToolGridValuesFixedStep._private_init(self, intf)
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedStep, [ISpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod])
@@ -27670,7 +27670,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesMethod, [ISpatialAnalysisToolGridValuesMethod])
@@ -27687,7 +27687,7 @@ class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
         self.__dict__["_intf"] = intf
         ITimeToolLightTimeDelay._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolLightTimeDelay, [ITimeToolLightTimeDelay])
@@ -27706,7 +27706,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -27725,7 +27725,7 @@ class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWor
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalc, [ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27746,7 +27746,7 @@ class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitu
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAltitude, [ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27767,7 +27767,7 @@ class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalc
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAngleOffVector, [ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27788,7 +27788,7 @@ class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolume
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcConditionSatMetric, [ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27809,7 +27809,7 @@ class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDela
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcDelayRange, [ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27830,7 +27830,7 @@ class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpa
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFile, [ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27851,7 +27851,7 @@ class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFrom
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFromScalar, [ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27872,7 +27872,7 @@ class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, IS
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcRange, [ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27893,7 +27893,7 @@ class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalc
         ISpatialAnalysisToolVolumeCalc._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcSolarIntensity, [ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
@@ -27914,7 +27914,7 @@ class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpa
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCombined, [ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -27935,7 +27935,7 @@ class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpa
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCalc, [ISpatialAnalysisToolVolumeFromCalc, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -27956,7 +27956,7 @@ class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondi
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCondition, [ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -27977,7 +27977,7 @@ class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpa
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromGrid, [ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -27998,7 +27998,7 @@ class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFr
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromTimeSatisfaction, [ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -28017,7 +28017,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28038,7 +28038,7 @@ class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBear
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridBearingAlt, [ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28059,7 +28059,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCarte
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28080,7 +28080,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridCon
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28101,7 +28101,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCyl
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28122,7 +28122,7 @@ class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLo
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatLonAlt, [ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28139,7 +28139,7 @@ class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGridResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridResult, [ISpatialAnalysisToolVolumeGridResult])
@@ -28160,7 +28160,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpher
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
@@ -28181,7 +28181,7 @@ class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatial
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeInview, [ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -28202,7 +28202,7 @@ class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpa
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeLighting, [ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -28223,7 +28223,7 @@ class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpa
         ISpatialAnalysisToolVolume._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeOverTime, [ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
@@ -28240,7 +28240,7 @@ class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchGeneric, [IAnalysisWorkbenchComponent])
@@ -28257,7 +28257,7 @@ class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchTypeInfo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchTypeInfo, [IAnalysisWorkbenchTypeInfo])
@@ -28276,7 +28276,7 @@ class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchIns
         IAnalysisWorkbenchContext._private_init(self, intf)
         IAnalysisWorkbenchInstance._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchInstance, [IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance])
@@ -28295,7 +28295,7 @@ class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTem
         IAnalysisWorkbenchContext._private_init(self, intf)
         IAnalysisWorkbenchTemplate._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchTemplate, [IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate])
@@ -28314,7 +28314,7 @@ class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkb
         IVectorGeometryToolPointRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointRefTo, [IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo])
@@ -28333,7 +28333,7 @@ class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWor
         IVectorGeometryToolVectorRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorRefTo, [IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo])
@@ -28352,7 +28352,7 @@ class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkben
         IVectorGeometryToolAxesRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesRefTo, [IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo])
@@ -28371,7 +28371,7 @@ class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkb
         IVectorGeometryToolAngleRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleRefTo, [IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo])
@@ -28390,7 +28390,7 @@ class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWor
         IVectorGeometryToolSystemRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemRefTo, [IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo])
@@ -28409,7 +28409,7 @@ class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkb
         IVectorGeometryToolPlaneRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneRefTo, [IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo])
@@ -28430,7 +28430,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimePropertie
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28447,7 +28447,7 @@ class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxesLabels._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLabels, [IVectorGeometryToolAxesLabels])
@@ -28468,7 +28468,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, I
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28489,7 +28489,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties,
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28510,7 +28510,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimePropertie
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28531,7 +28531,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties,
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28548,7 +28548,7 @@ class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlaneLabels._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneLabels, [IVectorGeometryToolPlaneLabels])
@@ -28569,7 +28569,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties,
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28592,7 +28592,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAligned
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28615,7 +28615,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, 
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28638,7 +28638,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28661,7 +28661,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometr
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28684,7 +28684,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28707,7 +28707,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28730,7 +28730,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryT
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [IVectorGeometryToolAxesFixed, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28753,7 +28753,7 @@ class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttach, [IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28776,7 +28776,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [IVectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28799,7 +28799,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorG
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28822,7 +28822,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVecto
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28845,7 +28845,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLib
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [IVectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28862,7 +28862,7 @@ class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxesCommonTasks._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCommonTasks, [IVectorGeometryToolAxesCommonTasks])
@@ -28885,7 +28885,7 @@ class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, 
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolAxes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [IVectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
@@ -28908,7 +28908,7 @@ class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkb
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolAxes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
@@ -28931,7 +28931,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVecto
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28954,7 +28954,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [IVectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -28977,7 +28977,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorG
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29000,7 +29000,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorG
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29023,7 +29023,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29046,7 +29046,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeome
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29069,7 +29069,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorG
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29092,7 +29092,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29115,7 +29115,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometr
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [IVectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29138,7 +29138,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVecto
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29161,7 +29161,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeome
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29184,7 +29184,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryT
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29207,7 +29207,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29230,7 +29230,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29253,7 +29253,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometr
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29276,7 +29276,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianc
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [IVectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29299,7 +29299,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneInte
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29322,7 +29322,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVecto
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29345,7 +29345,7 @@ class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttach, [IVectorGeometryToolPointModelAttach, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29368,7 +29368,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSa
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29391,7 +29391,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [IVectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29414,7 +29414,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeL
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29431,7 +29431,7 @@ class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPointCommonTasks._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCommonTasks, [IVectorGeometryToolPointCommonTasks])
@@ -29454,7 +29454,7 @@ class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyI
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCentBodyIntersect, [IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
@@ -29477,7 +29477,7 @@ class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
@@ -29500,7 +29500,7 @@ class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWor
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
@@ -29523,7 +29523,7 @@ class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCBFixedOffset, [IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
@@ -29546,7 +29546,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29569,7 +29569,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29586,7 +29586,7 @@ class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchLLAPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchLLAPosition, [IAnalysisWorkbenchLLAPosition])
@@ -29603,7 +29603,7 @@ class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystemCommonTasks._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemCommonTasks, [IVectorGeometryToolSystemCommonTasks])
@@ -29626,7 +29626,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29649,7 +29649,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVecto
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29672,7 +29672,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [IVectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29695,7 +29695,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVe
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [IVectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29718,7 +29718,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29741,7 +29741,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeome
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29764,7 +29764,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29787,7 +29787,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29810,7 +29810,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29833,7 +29833,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29856,7 +29856,7 @@ class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, 
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttach, [IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29879,7 +29879,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29902,7 +29902,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeo
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [IVectorGeometryToolVectorScaled, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29925,7 +29925,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [IVectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29948,7 +29948,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, 
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29971,7 +29971,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, 
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [IVectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -29994,7 +29994,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbi
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [IVectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30017,7 +30017,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, 
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30040,7 +30040,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVec
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30063,7 +30063,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IV
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [IVectorGeometryToolVectorReflection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30086,7 +30086,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVe
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [IVectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30109,7 +30109,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirection
         ITimeToolTimeProperties._private_init(self, intf)
         IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
@@ -30132,7 +30132,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedA
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30155,7 +30155,7 @@ class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearC
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30178,7 +30178,7 @@ class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjec
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectAlongVector, [IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30201,7 +30201,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorS
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [IVectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30224,7 +30224,7 @@ class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30247,7 +30247,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelo
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30270,7 +30270,7 @@ class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisW
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [IVectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30293,7 +30293,7 @@ class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, 
         ITimeToolTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDispSurface, [IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
@@ -30310,7 +30310,7 @@ class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVectorFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFactory, [IVectorGeometryToolVectorFactory])
@@ -30327,7 +30327,7 @@ class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxesFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFactory, [IVectorGeometryToolAxesFactory])
@@ -30344,7 +30344,7 @@ class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystemFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemFactory, [IVectorGeometryToolSystemFactory])
@@ -30361,7 +30361,7 @@ class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPointFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFactory, [IVectorGeometryToolPointFactory])
@@ -30378,7 +30378,7 @@ class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlaneFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneFactory, [IVectorGeometryToolPlaneFactory])
@@ -30395,7 +30395,7 @@ class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngleFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleFactory, [IVectorGeometryToolAngleFactory])
@@ -30412,7 +30412,7 @@ class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVectorGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorGroup, [IVectorGeometryToolVectorGroup])
@@ -30429,7 +30429,7 @@ class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPointGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGroup, [IVectorGeometryToolPointGroup])
@@ -30446,7 +30446,7 @@ class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngleGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleGroup, [IVectorGeometryToolAngleGroup])
@@ -30463,7 +30463,7 @@ class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxesGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesGroup, [IVectorGeometryToolAxesGroup])
@@ -30480,7 +30480,7 @@ class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlaneGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneGroup, [IVectorGeometryToolPlaneGroup])
@@ -30497,7 +30497,7 @@ class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystemGroup._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemGroup, [IVectorGeometryToolSystemGroup])
@@ -30514,7 +30514,7 @@ class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchProvider._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchProvider, [IAnalysisWorkbenchProvider])
@@ -30531,7 +30531,7 @@ class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchRoot._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchRoot, [IAnalysisWorkbenchRoot])
@@ -30548,7 +30548,7 @@ class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthS
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownEarthSystems._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthSystems, [IVectorGeometryToolWellKnownEarthSystems])
@@ -30565,7 +30565,7 @@ class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownEarthAxes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthAxes, [IVectorGeometryToolWellKnownEarthAxes])
@@ -30582,7 +30582,7 @@ class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSyste
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownSunSystems._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunSystems, [IVectorGeometryToolWellKnownSunSystems])
@@ -30599,7 +30599,7 @@ class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownSunAxes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunAxes, [IVectorGeometryToolWellKnownSunAxes])
@@ -30616,7 +30616,7 @@ class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownSystems._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSystems, [IVectorGeometryToolWellKnownSystems])
@@ -30633,7 +30633,7 @@ class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolWellKnownAxes._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownAxes, [IVectorGeometryToolWellKnownAxes])
@@ -30652,7 +30652,7 @@ class AnalysisWorkbenchMethodCallAngleFindResult(IAnalysisWorkbenchMethodCallRes
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAngleFindResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindResult])
@@ -30671,7 +30671,7 @@ class AnalysisWorkbenchMethodCallAngleFindWithRateResult(IAnalysisWorkbenchMetho
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAngleFindWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindWithRateResult])
@@ -30690,7 +30690,7 @@ class AnalysisWorkbenchMethodCallAxesTransformResult(IAnalysisWorkbenchMethodCal
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAxesTransformResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformResult])
@@ -30709,7 +30709,7 @@ class AnalysisWorkbenchMethodCallAxesTransformWithRateResult(IAnalysisWorkbenchM
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAxesTransformWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformWithRateResult])
@@ -30728,7 +30728,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesResult(IAnalysisWorkbenchMethodCa
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAxesFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesResult])
@@ -30747,7 +30747,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult(IAnalysisWorkbench
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAxesFindInAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesWithRateResult])
@@ -30766,7 +30766,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesResult(IAnalysisWorkbenchMethodC
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPlaneFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesResult])
@@ -30785,7 +30785,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult(IAnalysisWorkbenc
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPlaneFindInAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesWithRateResult])
@@ -30804,7 +30804,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemResult(IAnalysisWorkbenchMetho
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPlaneFindInSystemResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemResult])
@@ -30823,7 +30823,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult(IAnalysisWorkbe
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPlaneFindInSystemWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemWithRateResult])
@@ -30842,7 +30842,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemResult(IAnalysisWorkbenchMet
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPointLocateInSystemResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemResult])
@@ -30861,7 +30861,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult(IAnalysisWork
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolPointLocateInSystemWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemWithRateResult])
@@ -30880,7 +30880,7 @@ class AnalysisWorkbenchMethodCallSystemTransformResult(IAnalysisWorkbenchMethodC
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolSystemTransformResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformResult])
@@ -30899,7 +30899,7 @@ class AnalysisWorkbenchMethodCallSystemTransformWithRateResult(IAnalysisWorkbenc
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolSystemTransformWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformWithRateResult])
@@ -30918,7 +30918,7 @@ class AnalysisWorkbenchMethodCallSystemFindInSystemResult(IAnalysisWorkbenchMeth
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolSystemFindInSystemResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemFindInSystemResult])
@@ -30937,7 +30937,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesResult(IAnalysisWorkbenchMethod
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolVectorFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesResult])
@@ -30956,7 +30956,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult(IAnalysisWorkben
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolVectorFindInAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesWithRateResult])
@@ -30975,7 +30975,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult(IAnalysisWorkbench
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAngleFindAngleWithRateResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleWithRateResult])
@@ -30994,7 +30994,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleResult(IAnalysisWorkbenchMethodCa
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
         IVectorGeometryToolAngleFindAngleResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleResult])
@@ -31011,7 +31011,7 @@ class TimeToolInterval(ITimeToolInterval):
         self.__dict__["_intf"] = intf
         ITimeToolInterval._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolInterval, [ITimeToolInterval])
@@ -31028,7 +31028,7 @@ class TimeToolIntervalCollection(ITimeToolIntervalCollection):
         self.__dict__["_intf"] = intf
         ITimeToolIntervalCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolIntervalCollection, [ITimeToolIntervalCollection])
@@ -31045,7 +31045,7 @@ class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchCentralBody._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBody, [IAnalysisWorkbenchCentralBody])
@@ -31064,7 +31064,7 @@ class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAna
         IAnalysisWorkbenchCentralBodyRefTo._private_init(self, intf)
         IAnalysisWorkbenchRefTo._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyRefTo, [IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo])
@@ -31081,7 +31081,7 @@ class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollec
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchCentralBodyCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyCollection, [IAnalysisWorkbenchCentralBodyCollection])
@@ -31098,7 +31098,7 @@ class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCollection, [IAnalysisWorkbenchCollection])
@@ -31115,7 +31115,7 @@ class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
         self.__dict__["_intf"] = intf
         ITimeToolPointSamplingResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolPointSamplingResult, [ITimeToolPointSamplingResult])
@@ -31132,7 +31132,7 @@ class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
         self.__dict__["_intf"] = intf
         ITimeToolPointSamplingInterval._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolPointSamplingInterval, [ITimeToolPointSamplingInterval])
@@ -31149,7 +31149,7 @@ class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalColl
         self.__dict__["_intf"] = intf
         ITimeToolPointSamplingIntervalCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolPointSamplingIntervalCollection, [ITimeToolPointSamplingIntervalCollection])
@@ -31166,7 +31166,7 @@ class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
         self.__dict__["_intf"] = intf
         ITimeToolAxesSamplingResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingResult, [ITimeToolAxesSamplingResult])
@@ -31183,7 +31183,7 @@ class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
         self.__dict__["_intf"] = intf
         ITimeToolAxesSamplingInterval._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingInterval, [ITimeToolAxesSamplingInterval])
@@ -31200,7 +31200,7 @@ class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollec
         self.__dict__["_intf"] = intf
         ITimeToolAxesSamplingIntervalCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingIntervalCollection, [ITimeToolAxesSamplingIntervalCollection])

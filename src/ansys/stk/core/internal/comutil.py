@@ -413,12 +413,12 @@ class _CreateAgObjectLifetimeManager(object):
         
     @staticmethod
     def _ReleaseImpl(pUnk:"IUnknown"):
-        """Calls Release in STK."""
+        """Call Release in STK."""
         _CreateAgObjectLifetimeManager._Release(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
         
     @staticmethod
     def _AddRefImpl(pUnk:"IUnknown"):
-        """Calls AddRef in STK."""
+        """Call AddRef in STK."""
         _CreateAgObjectLifetimeManager._AddRef(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
                 
     def create_ownership(self, pUnk:"IUnknown"):
@@ -450,7 +450,7 @@ class _CreateAgObjectLifetimeManager(object):
                     self._ref_counts[ptraddress] = 1
                 
     def InternalAddRef(self, pUnk:"IUnknown"):
-        """Increments the internal reference count of pUnk."""
+        """Increment the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
         with _gc_disabler() as gc_lock:
             if ptraddress in self._ref_counts:
@@ -553,19 +553,19 @@ class IUnknown(object):
         pIntf.take_ownership()
         return pIntf
     def create_ownership(self):
-        """Calls AddRef on the pointer, and registers the pointer to be Released when the ref count goes to zero."""
+        """Call AddRef on the pointer, and register the pointer to be Released when the ref count goes to zero."""
         ObjectLifetimeManager.create_ownership(self) 
     def take_ownership(self, isApplication=False):
-        """Registers the pointer to be Released when the ref count goes to zero but does not call AddRef."""
+        """Register the pointer to be Released when the ref count goes to zero but does not call AddRef."""
         ObjectLifetimeManager.take_ownership(self, isApplication) 
     def AddRef(self):
-        """Increments the ref count if the pointer was registered.
+        """Increment the ref count if the pointer was registered.
         
         Pointer registration must be done by create_ownership or take_ownership.
         """
         ObjectLifetimeManager.InternalAddRef(self)  
     def Release(self):
-        """Decrements the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
+        """Decrement the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
         
         Pointer registration must be done by create_ownership or take_ownership.
         """

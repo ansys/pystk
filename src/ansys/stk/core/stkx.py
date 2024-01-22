@@ -354,7 +354,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXSSLCertificateErrorEventArgs)
@@ -475,7 +475,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXConControlQuitReceivedEventArgs)
@@ -522,7 +522,7 @@ class IPickInfoData(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickInfoData)
@@ -596,7 +596,7 @@ class IRubberBandPickInfoData(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRubberBandPickInfoData)
@@ -657,14 +657,14 @@ class ISTKXApplication(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplication)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, ISTKXApplication, None)
     def Subscribe(self) -> ISTKXApplicationEventHandler:
-        """Returns an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
+        """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
     
     _execute_command_metadata = { "name" : "execute_command",
@@ -725,7 +725,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BSTR_arg,) }
     @property
     def version(self) -> str:
-        """Return the version number"""
+        """Return the version number."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_version_metadata)
 
     _get_licensing_report_metadata = { "name" : "get_licensing_report",
@@ -754,21 +754,21 @@ class ISTKXApplication(object):
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.BSTR_arg, agmarshall.LONG_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg,) }
     def set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
-        """Set http proxy online options"""
+        """Set http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, out_arg())
 
     _get_online_options_metadata = { "name" : "get_online_options",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.BSTR_arg, agmarshall.LONG_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
     def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
-        """Get http proxy online options"""
+        """Get http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, out_arg(), out_arg(), out_arg(), out_arg(), out_arg())
 
     _set_connect_handler_metadata = { "name" : "set_connect_handler",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
     def set_connect_handler(self, commandID:str, progID:str) -> None:
-        """Set callback to handle a certain connect command"""
+        """Set callback to handle a certain connect command."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_connect_handler_metadata, commandID, progID)
 
     _get_log_file_full_name_metadata = { "name" : "log_file_full_name",
@@ -889,7 +889,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}",
 agcls.AgTypeNameMap["ISTKXApplication"] = ISTKXApplication
 
 class IDataObject(object):
-    """DataObject is used for OLE drag and drop operations"""
+    """DataObject is used for OLE drag and drop operations."""
 
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -903,7 +903,7 @@ class IDataObject(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObject)
@@ -941,7 +941,7 @@ class IObjPathCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IObjPathCollection)
@@ -1012,7 +1012,7 @@ class IDrawElem(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElem)
@@ -1064,7 +1064,7 @@ class IDrawElemRect(IDrawElem):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemRect)
@@ -1182,7 +1182,7 @@ class IDrawElemCollection(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemCollection)
@@ -1283,7 +1283,7 @@ class IWinProjectionPosition(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWinProjectionPosition)
@@ -1344,7 +1344,7 @@ class IDrawElemLine(IDrawElem):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemLine)
@@ -1459,7 +1459,7 @@ class IExecCmdResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
@@ -1540,7 +1540,7 @@ class IExecMultiCmdResult(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
@@ -1650,14 +1650,14 @@ class IUiAxGraphics3DCntrl(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics3DCntrl)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IUiAxGraphics3DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
-        """Returns an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
+        """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "name" : "back_color",
@@ -1850,7 +1850,7 @@ class IUiAxGraphics3DCntrl(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LONG_arg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copy an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._copy_from_win_id_metadata, winID)
 
     _start_object_editing_metadata = { "name" : "start_object_editing",
@@ -2080,14 +2080,14 @@ class IUiAx2DCntrl(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAx2DCntrl)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IUiAx2DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
-        """Returns an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
+        """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "name" : "back_color",
@@ -2242,7 +2242,7 @@ class IUiAx2DCntrl(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LONG_arg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copy an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._copy_from_win_id_metadata, winID)
 
     _rubber_band_pick_info_metadata = { "name" : "rubber_band_pick_info",
@@ -2443,7 +2443,7 @@ class ISTKXApplicationPartnerAccess(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplicationPartnerAccess)
@@ -2479,7 +2479,7 @@ class IDataObjectFiles(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObjectFiles)
@@ -2558,7 +2558,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics2DAnalysisCntrl)
@@ -2708,7 +2708,7 @@ class ExecCmdResult(IExecCmdResult):
         self.__dict__["_intf"] = intf
         IExecCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
@@ -2725,7 +2725,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         self.__dict__["_intf"] = intf
         IExecMultiCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
@@ -2742,7 +2742,7 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
         self.__dict__["_intf"] = intf
         IUiAxGraphics3DCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAxGraphics3DCntrl, [IUiAxGraphics3DCntrl])
@@ -2759,7 +2759,7 @@ class UiAx2DCntrl(IUiAx2DCntrl):
         self.__dict__["_intf"] = intf
         IUiAx2DCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAx2DCntrl, [IUiAx2DCntrl])
@@ -2776,7 +2776,7 @@ class PickInfoData(IPickInfoData):
         self.__dict__["_intf"] = intf
         IPickInfoData._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PickInfoData, [IPickInfoData])
@@ -2793,7 +2793,7 @@ class STKXApplication(ISTKXApplication):
         self.__dict__["_intf"] = intf
         ISTKXApplication._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXApplication, [ISTKXApplication])
@@ -2810,7 +2810,7 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
         self.__dict__["_intf"] = intf
         ISTKXApplicationPartnerAccess._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXApplicationPartnerAccess, [ISTKXApplicationPartnerAccess])
@@ -2827,7 +2827,7 @@ class DataObject(IDataObject):
         self.__dict__["_intf"] = intf
         IDataObject._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DataObject, [IDataObject])
@@ -2844,7 +2844,7 @@ class DataObjectFiles(IDataObjectFiles):
         self.__dict__["_intf"] = intf
         IDataObjectFiles._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DataObjectFiles, [IDataObjectFiles])
@@ -2861,7 +2861,7 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
         self.__dict__["_intf"] = intf
         IRubberBandPickInfoData._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RubberBandPickInfoData, [IRubberBandPickInfoData])
@@ -2878,7 +2878,7 @@ class ObjPathCollection(IObjPathCollection):
         self.__dict__["_intf"] = intf
         IObjPathCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ObjPathCollection, [IObjPathCollection])
@@ -2895,7 +2895,7 @@ class DrawElemRect(IDrawElemRect):
         self.__dict__["_intf"] = intf
         IDrawElemRect._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemRect, [IDrawElemRect])
@@ -2912,7 +2912,7 @@ class DrawElemCollection(IDrawElemCollection):
         self.__dict__["_intf"] = intf
         IDrawElemCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemCollection, [IDrawElemCollection])
@@ -2929,7 +2929,7 @@ class Draw2DElemRect(IDrawElemRect):
         self.__dict__["_intf"] = intf
         IDrawElemRect._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElemRect])
@@ -2946,7 +2946,7 @@ class Draw2DElemCollection(IDrawElemCollection):
         self.__dict__["_intf"] = intf
         IDrawElemCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElemCollection])
@@ -2955,7 +2955,7 @@ agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}",
 agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
 class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
-    """AGI Graphics Analysis Control"""
+    """AGI Graphics Analysis Control."""
 
     def __init__(self, sourceObject=None):
         IUiAxGraphics2DAnalysisCntrl.__init__(self, sourceObject)
@@ -2963,7 +2963,7 @@ class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
         self.__dict__["_intf"] = intf
         IUiAxGraphics2DAnalysisCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAxGraphics2DAnalysisCntrl, [IUiAxGraphics2DAnalysisCntrl])
@@ -2980,7 +2980,7 @@ class WinProjectionPosition(IWinProjectionPosition):
         self.__dict__["_intf"] = intf
         IWinProjectionPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WinProjectionPosition, [IWinProjectionPosition])
@@ -2997,7 +2997,7 @@ class DrawElemLine(IDrawElemLine):
         self.__dict__["_intf"] = intf
         IDrawElemLine._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemLine, [IDrawElemLine])
@@ -3014,7 +3014,7 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
         self.__dict__["_intf"] = intf
         ISTKXSSLCertificateErrorEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXSSLCertificateErrorEventArgs, [ISTKXSSLCertificateErrorEventArgs])
@@ -3031,7 +3031,7 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
         self.__dict__["_intf"] = intf
         ISTKXConControlQuitReceivedEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXConControlQuitReceivedEventArgs, [ISTKXConControlQuitReceivedEventArgs])

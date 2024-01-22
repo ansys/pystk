@@ -45,7 +45,7 @@ class IStrategyMATLABNav(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABNav)
@@ -132,7 +132,7 @@ class IStrategyMATLABProfile(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABProfile)
@@ -219,7 +219,7 @@ class IStrategyMATLABFull3D(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABFull3D)
@@ -328,7 +328,7 @@ class IStrategyMATLAB3DGuidance(object):
     def _private_init(self, intf:interface_proxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLAB3DGuidance)
@@ -580,7 +580,7 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
         IStrategyMATLABNav._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, StrategyMATLABNav, [IStrategyMATLABNav, IBasicManeuverStrategy])
@@ -599,7 +599,7 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
         IStrategyMATLABProfile._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, StrategyMATLABProfile, [IStrategyMATLABProfile, IBasicManeuverStrategy])
@@ -618,7 +618,7 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
         IStrategyMATLABFull3D._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, StrategyMATLABFull3D, [IStrategyMATLABFull3D, IBasicManeuverStrategy])
@@ -637,7 +637,7 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
         IStrategyMATLAB3DGuidance._private_init(self, intf)
         IBasicManeuverStrategy._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, StrategyMATLAB3DGuidance, [IStrategyMATLAB3DGuidance, IBasicManeuverStrategy])
@@ -654,7 +654,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
         self.__dict__["_intf"] = intf
         IAutomationStrategyFactory._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, BasicManeuverMATLABFactory, [IAutomationStrategyFactory])
