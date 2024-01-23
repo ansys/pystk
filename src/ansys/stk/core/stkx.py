@@ -757,12 +757,14 @@ class ISTKXApplication(object):
         """Set http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
 
+
     _get_online_options_metadata = { "name" : "get_online_options",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
         """Get http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, OutArg(), OutArg(), OutArg(), OutArg(), OutArg())
+
 
     _set_connect_handler_metadata = { "name" : "set_connect_handler",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),

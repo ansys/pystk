@@ -470,6 +470,7 @@ class IUiApplication(object):
         """Only works from local HTML pages and scripts."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_object_metadata, progID, remoteServer, OutArg())
 
+
     _file_save_as_dialog_metadata = { "name" : "file_save_as_dialog",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
