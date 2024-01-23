@@ -10,7 +10,7 @@ from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
-from ..internal.apiutil     import (interface_proxy, initialize_from_source_object, get_interface_property, 
+from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
     set_interface_attribute, set_class_attribute)
 from ..internal.eventutil   import *
 from ..utilities.exceptions import *
@@ -33,10 +33,10 @@ class ISTKXInitialize(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, ISTKXInitialize)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXInitialize)
@@ -52,14 +52,14 @@ class ISTKXInitialize(object):
 
     _initialize_data_metadata = { "name" : "initialize_data",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def initialize_data(self, installHome:str, configDirectory:str) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
         return self._intf.invoke(ISTKXInitialize._metadata, ISTKXInitialize._initialize_data_metadata, installHome, configDirectory)
 
     _initialize_data_ex_metadata = { "name" : "initialize_data_ex",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
     def initialize_data_ex(self, installHome:str, configDirectory:str, bDefaults:bool, bStyles:bool, bVGT:bool, bAMM:bool, bGator:bool, bOnlineData:bool, bOnlineSGP4:bool) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
         return self._intf.invoke(ISTKXInitialize._metadata, ISTKXInitialize._initialize_data_ex_metadata, installHome, configDirectory, bDefaults, bStyles, bVGT, bAMM, bGator, bOnlineData, bOnlineSGP4)
@@ -75,11 +75,11 @@ class STKXInitialize(ISTKXInitialize):
 
     def __init__(self, sourceObject=None):
         ISTKXInitialize.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKXInitialize._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXInitialize, [ISTKXInitialize])

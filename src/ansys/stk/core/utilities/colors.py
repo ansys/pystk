@@ -76,7 +76,7 @@ class ColorRGBA(object):
             
     @property
     def color(self) -> Color:
-        """The Color value that contains R, G, B values"""
+        """The Color value that contains R, G, B values."""
         return self._color
 
 class _ColorsImpl(object):

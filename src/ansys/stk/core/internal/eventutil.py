@@ -20,10 +20,10 @@ from .comevents              import *
 from ..utilities.exceptions  import *
 
 try:
-    from .grpcutil   import grpc_interface
+    from .grpcutil   import GrpcInterface
     from .grpcevents import *
 except:
-    class grpc_interface(object):
+    class GrpcInterface(object):
         def __init__(self):
             pass
 
@@ -72,7 +72,7 @@ class STKEventSubscriber(object):
     def _subscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
         assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.Subscribe()
+        self._impl.subscribe()
         
     def unsubscribe(self):
         """Unsubscribe from events."""
@@ -83,7 +83,7 @@ class STKEventSubscriber(object):
     def _unsubscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
         assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.Unsubscribe()
+        self._impl.unsubscribe()
         
 class _STKEvent(object):
     def __init__(self):
@@ -162,8 +162,8 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         self._events["OnStkObjectPaste"]           = _STKEvent()
         if type(interface)==IUnknown:
             impl = IStkObjectRootEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgStkObjectRootEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = IStkObjectRootEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IStkObjectRootEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -471,8 +471,8 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         self._events["OnConControlQuitReceived"]     = _STKEvent()
         if type(interface)==IUnknown:
             impl = ISTKXApplicationEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgSTKXApplicationEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = ISTKXApplicationEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISTKXApplicationEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -733,7 +733,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         IAgUiAxStockEventHandler.__init__(self)
         if type(interface)==IUnknown:
             impl = IUiAxGraphics2DCntrlEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
+        elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics2DCntrlEventHandler.")
@@ -761,7 +761,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         self._events["_OnObjectEditingStop"]      = _STKEvent()
         if type(interface)==IUnknown:
             impl = IUiAxGraphics3DCntrlEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
+        elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IUiAxGraphics3DCntrlEventHandler.")
@@ -826,8 +826,8 @@ class ISceneEventHandler(STKEventSubscriber):
         self._events["Rendering"] = _STKEvent()
         if type(interface)==IUnknown:
             impl = ISceneEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgStkGraphicsSceneEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = IStkGraphicsSceneEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ISceneEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -861,8 +861,8 @@ class IKmlGraphicsEventHandler(STKEventSubscriber):
         self._events["DocumentLoaded"] = _STKEvent()
         if type(interface)==IUnknown:
             impl = IKmlGraphicsEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgStkGraphicsKmlGraphicsEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = IStkGraphicsKmlGraphicsEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IKmlGraphicsEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -896,8 +896,8 @@ class IImageCollectionEventHandler(STKEventSubscriber):
         self._events["AddComplete"] = _STKEvent()
         if type(interface)==IUnknown:
             impl = IImageCollectionEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgStkGraphicsImageCollectionEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = IStkGraphicsImageCollectionEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create IImageCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)
@@ -931,8 +931,8 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
         self._events["AddComplete"] = _STKEvent()
         if type(interface)==IUnknown:
             impl = ITerrainOverlayCollectionEventCOMHandler(interface, self._events)
-        elif type(interface)==grpc_interface:
-            impl = IAgStkGraphicsTerrainCollectionEventGrpcHandler(interface, self._events)
+        elif type(interface)==GrpcInterface:
+            impl = IStkGraphicsTerrainCollectionEventGrpcHandler(interface, self._events)
         else:
             raise STKRuntimeError(f"Unexpected type {type(interface)}, cannot create ITerrainOverlayCollectionEventHandler.")
         STKEventSubscriber.__init__(self, impl)
