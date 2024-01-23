@@ -81,7 +81,6 @@ class STKDesktopApplication(UiApplication):
     Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
     to obtain an initialized STKDesktopApplication object.
     """
-    
     def __init__(self):
         if os.name != "nt":
             raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")

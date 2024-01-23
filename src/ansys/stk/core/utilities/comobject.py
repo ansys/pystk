@@ -9,7 +9,6 @@ class COMObject(object):
     
     May be returned from STK if the return argument is not part of the STK Object Model.
     """
-    
     def __init__(self):
         self._pUnk = None
         

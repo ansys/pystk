@@ -11,7 +11,6 @@ from .exceptions import STKColorError
 
 class Color(object):
     """An opaque color representation that can be used with the STK Object Model."""
-
     def __init__(self):
         self._r = 0
         self._g = 0
@@ -53,7 +52,6 @@ class Color(object):
             
 class ColorRGBA(object):
     """A variably translucent color representation that can be used with certain methods in the STK Object Model."""
-
     def __init__(self, c:Color, alpha=255):
         self._color = c
         self._alpha = alpha
@@ -92,7 +90,6 @@ class Colors(object):
     
     Contains factory methods and named colors.
     """
-    
     @staticmethod
     def FromRGB(r:int, g:int, b:int) -> Color:
         """Create a new Color from R, G, B values in the range [0, 255]."""

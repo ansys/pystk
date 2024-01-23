@@ -93,7 +93,6 @@ class NativeContainerMethods:
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
-
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -185,7 +184,6 @@ class ControlBase(Frame):
 
 class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
     """The 3D Globe control for Tkinter."""
-
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
@@ -197,7 +195,6 @@ class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
 
 class MapControl(UiAx2DCntrl, ControlBase):
     """The 2D Map control for Tkinter."""
-
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
@@ -209,7 +206,6 @@ class MapControl(UiAx2DCntrl, ControlBase):
 
 class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
     """The Graphics Analysis control for Tkinter."""
-    
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
