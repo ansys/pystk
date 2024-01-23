@@ -1,132 +1,180 @@
-stk.v.6.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Sensor
 
-    Name            MolniyaFOV11
+    Name		 MolniyaFOV11
 
-BEGIN Pattern
+    BEGIN Pattern
 
-    BEGIN Conical
+        BEGIN Conical
 
-        InnerConeAngle         0.000000000000e+000
-        OuterConeAngle         9.000000000000e+001
-        MinClockAngle          0.000000000000e+000
-        MaxClockAngle          3.600000000000e+002
+            InnerConeAngle		  0.0000000000000000e+00
+            OuterConeAngle		  9.0000000000000000e+01
+            MinClockAngle		  0.0000000000000000e+00
+            MaxClockAngle		  3.6000000000000000e+02
 
-    END Conical
+        END Conical
 
-END Pattern
+        DetailedTerrainHorizon		 Yes
 
-BEGIN Pointing
 
-    BEGIN Fixed
+    END Pattern
 
-    PointingMethod          AzEl
-    Sequence                323
-    Qx                      0.000000000000e+000
-    Qy                      0.000000000000e+000
-    Qz                      0.000000000000e+000
-    Qs                      1.000000000000e+000
+    BEGIN Pointing
 
-    END Fixed
+        BEGIN Fixed
 
-END Pointing
+            PointingMethod		 AzEl
+            Sequence		 323
+            Qx		  0.0000000000000000e+00
+            Qy		  0.0000000000000000e+00
+            Qz		  0.0000000000000000e+00
+            Qs		  1.0000000000000000e+00
 
-BEGIN Optics
+        END Fixed
 
-    FocalLength             0.000000000000e+000
-    DetectorPitch           0.000000000000e+000
-    IQConstant              0.000000000000e+000
-    GsdCoefficient          0.000000000000e+000
+    END Pointing
 
-END Optics
+    BEGIN Optics
 
-BEGIN Extensions
-    
-    BEGIN Graphics
+        FocalLength		  0.0000000000000000e+00
+        DetectorPitch		  0.0000000000000000e+00
+        IQConstant		  0.0000000000000000e+00
+        GsdCoefficient		  0.0000000000000000e+00
 
-		BEGIN Attributes
+    END Optics
 
-			Inherit             Yes
-			Show                Yes
-			LineStyle           0
-			LineWidth           1.000000
-			PatternColor        #ffa500
+    BEGIN Extensions
 
-		END Attributes
+        BEGIN ExternData
+        END ExternData
 
-		BEGIN Display
+        BEGIN ADFFileData
+        END ADFFileData
 
-			NumberOfPatterns        1
-			PersistenceDuration     0.000000000000e+000
-			MinDisplayAltitude      0.000000000000e+000
-			MaxDisplayAltitude      1.000000000000e+007
-			IntersectType           CentralBody
-			ForwardPersist          No
-			SpaceLength             5.000000000000e+007
-			TgtExtLength            0.000000000000e+000
-			FOVHalfAngle            No
-			HalfAngle               0.000000000000e+000
-			FOV                     No
-			ProjDisplay             Sphere
-			DisplayType             ConstantRadius
-			TerrainNorth            0.000000000000e+000
-			TerrainSouth            0.000000000000e+000
-			TerrainEast             0.000000000000e+000
-			TerrainWest             0.000000000000e+000
-			DisplayFOVWithConstraints           No
-			ShowBoresight           No
-			BoresightMarker         4
-			BoresightColor          7
+        BEGIN AccessConstraints
+            FieldOfView IncludeIntervals
+            LineOfSight IncludeIntervals
 
-		END Display
-    END Graphics
-    
-    BEGIN Swath
-        ShowSwath    No
-        Color        #ffa500
-        LineStyle    0
-        LineWidth    1.000000
-    END Swath
-    
-    BEGIN ExternData
-    END ExternData
-    
-    BEGIN AccessConstraints
-		AtFieldOfView   IncludeIntervals 
-		FieldOfView   IncludeIntervals 
-		LineOfSight   IncludeIntervals 
-    END AccessConstraints
-    
-    BEGIN ObjectCoverage
-    END ObjectCoverage
-    
-    BEGIN Desc
-    END Desc
-    
-    BEGIN Refraction
-		RefractionModel	4/3 Earth Radius Method
-    END Refraction
-    
-    BEGIN DisplayTm
-		DisplayGT	AlwaysOff
-		DisplayType	AlwaysOn
-    END DisplayTm
-    
-    BEGIN Crdn
-    END Crdn
-    
-    BEGIN DIS
-    END DIS
-    
-    BEGIN VO
-    END VO
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
 
-END Extensions
+        BEGIN ObjectCoverage
+        END ObjectCoverage
 
-BEGIN SubObjects
+        BEGIN Desc
+        END Desc
 
-END SubObjects
+        BEGIN Refraction
+            RefractionModel		 Effective Radius Method
+
+            UseRefractionInAccess		 No
+
+            BEGIN ModelData
+                RefractionCeiling		  5.0000000000000000e+03
+                MaxTargetAltitude		  1.0000000000000000e+04
+                EffectiveRadius		  1.3333333333333333e+00
+
+                UseExtrapolation		 Yes
+
+
+            END ModelData
+        END Refraction
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                Inherit		 Yes
+                Show		 Yes
+                LineStyle		 0
+                LineWidth		 1
+                PatternColor		 #ffa500
+
+            END Attributes
+
+            BEGIN Display
+
+                NumberOfPatterns		 1
+                PersistenceDuration		  0.0000000000000000e+00
+                PersistenceIgnoreDefChg		 No
+                UpdatesDefnOften		 No
+                MinDisplayAltitude		  0.0000000000000000e+00
+                MaxDisplayAltitude		  1.0000000000000000e+07
+                AltitudeIntersectSense		 Either
+                ShowBothAltCrossings		 No
+                IntersectType		 CentralBody
+                ShowGround		 Yes
+                UseProjectionRadii		 No
+                ExcludeHorizonArcs		 No
+                ForwardPersist		 No
+                FillPersist		 No
+                DsplyTmHidesPersist		 No
+                SpaceLength		  5.0000000000000000e+07
+                TgtExtLength		  0.0000000000000000e+00
+                FOVHalfAngle		 No
+                HalfAngle		  0.0000000000000000e+00
+                ProjDisplay		 Sphere
+                DisplayType		 ConstantRadius
+                DisplayFOVWithConstraints		 No
+                ShowBoresight		 No
+                BoresightMarker		 4
+                BoresightColor		 #ffffff
+                ShowFill		 No
+                FillTranslucency		 0.5
+                ShowOn2DMap		 Yes
+
+            END Display
+
+            BEGIN Swath
+
+                MaxStep		  6.0000000000000000e+01
+                MinStep		  1.0000000000000001e-01
+                CloseSwath		 Yes
+                Tolerance		  4.0000000000000000e+00
+                MatchTolerance		  9.0000000000000000e+01
+                ShowSwath		 No
+                ComputationalMethod		 Numerical
+                Color		 #ffa500
+                LineStyle		 0
+                LineWidth		 1
+                SwathIntervalPtr		
+                BEGIN EVENTINTERVAL
+                    BEGIN Interval
+                        Start		 1 Jan 1997 00:00:00.000000000
+                        Stop		 1 Jan 1997 04:00:00.000000000
+                    END Interval
+                    IntervalState		 Explicit
+                END EVENTINTERVAL
+
+
+            END Swath
+
+            BEGIN DisplayTimes
+                DisplayType		 AlwaysOn
+            END DisplayTimes
+        END Graphics
+
+        BEGIN Swath
+        END Swath
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+    BEGIN SubObjects
+
+    END SubObjects
 
 END Sensor
 

@@ -1,90 +1,103 @@
-stk.v.7.0
+stk.v.12.0
+WrittenBy    STK_v12.8.0
 
 BEGIN AreaTarget
 
-Name        AreaTarget1
+    Name		 AreaTarget1
 
-	BEGIN CentroidPosition
+    BEGIN CentroidPosition
 
-		CentralBody            Earth
-		AutoCentroid           On
-		EcfLatitude            1.507775e+001
-		EcfLongitude           -4.726003e+000
-		EcfAltitude            0.000000e+000
-		UseTerrainInfo         Off
-		DisplayCoords          Geodetic
+        CentralBody		 Earth
+        AutoCentroid		 On
+        EcfLatitude		 -1.1235520672946576e+01
+        EcfLongitude		 -9.7841338816807539e+00
+        EcfAltitude		  0.0000000000000000e+00
+        UseTerrainInfo		 Off
+        DisplayCoords		 Geodetic
 
-		AreaType               Pattern
-		NumberOfPolygonPts     10
+        AreaType		 Pattern
+        AreaValue		  5.3972251578623047e+12
+        NumberOfPolygonPts		 5
 
-		BEGIN PolygonPoints
+        BEGIN PolygonPoints
 
-			2.14285714285714e+001	-7.13153204437398e+000	0.00000000000000e+000
-			2.37142857142857e+001	-6.56100908082406e+000	0.00000000000000e+000
-			2.37142857142857e+001	-5.99048611727414e+000	0.00000000000000e+000
-			2.08571428571429e+001	8.27258797147388e+000	0.00000000000000e+000
-			2.08571428571429e+001	8.27258797147388e+000	0.00000000000000e+000
-			1.42857142857143e+000	1.42631240887483e+000	0.00000000000000e+000
-			1.42857142857143e+000	1.42631240887483e+000	0.00000000000000e+000
-			1.00000000000000e+001	-2.08240831695721e+001	0.00000000000000e+000
-			1.00000000000000e+001	-2.08240831695721e+001	0.00000000000000e+000
-			2.14285714285714e+001	-7.13153204437398e+000	0.00000000000000e+000
+             0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+            -2.1162790697674421e+01  1.3953488372093024e+00  0.0000000000000000e+00
+            -2.2093023255813954e+01 -1.9069767441860467e+01  0.0000000000000000e+00
+            -9.3023255813953487e-01 -2.1395348837209305e+01  0.0000000000000000e+00
+             0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
 
-		END PolygonPoints
+        END PolygonPoints
 
+        BoundaryType		 GreatArc
+        Granularity		 0.008726645999999999
 
-	END CentroidPosition
+    END CentroidPosition
 
-BEGIN Extensions
-    
-    BEGIN Graphics
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN AccessConstraints
+            LineOfSight IncludeIntervals
+
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
+
+        BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
+        END Desc
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN Graphics
 
             BEGIN Attributes
 
-                MarkerColor             #ffa500
-                PolygonColor            #ffa500
-                LabelColor              #ffa500
-                LineStyle               0
-                LineWidth               1.0
-                MarkerStyle             1
-                FontStyle               0
+                MarkerColor		 #ffa500
+                PolygonColor		 #ffa500
+                LabelColor		 #ffa500
+                LineStyle		 0
+                LineWidth		 1
+                FillTranslucency		 0.5
+                MarkerStyle		 1
+                FontStyle		 0
 
             END Attributes
 
             BEGIN Graphics
 
-                Inherit                 On
-                ShowCentroid            On
-                ShowBoundaryPts         Off
-                ShowLabel               On
-                Filled                  Off
-                ShowBoundingRect        Off
+                ShowGfx		 On
+                Inherit		 On
+                ShowCentroid		 On
+                ShowBoundaryPts		 Off
+                ShowLabel		 On
+                Filled		 Off
+                SymmetricFill		 Off
+                ShowBoundingRect		 Off
 
             END Graphics
-    END Graphics
-    
-    BEGIN ExternData
-    END ExternData
-    
-    BEGIN AccessConstraints
-		LineOfSight   IncludeIntervals 
-    END AccessConstraints
-    
-    BEGIN Desc
-    END Desc
-    
-    BEGIN DisplayTm
-		DisplayGT	AlwaysOff
-		DisplayType	AlwaysOn
-    END DisplayTm
-    
-    BEGIN Crdn
-    END Crdn
-    
-    BEGIN VO
-    END VO
 
-END Extensions
+            BEGIN DisplayTimes
+                DisplayType		 AlwaysOn
+            END DisplayTimes
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
 
 END AreaTarget
 

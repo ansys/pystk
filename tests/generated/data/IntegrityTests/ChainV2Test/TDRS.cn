@@ -1,27 +1,30 @@
-stk.v.6.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Constellation
 
-Name  TDRS
-BEGIN Definition
+    Name		 TDRS
+    BEGIN Definition
+        Object		 Satellite/TDRS_3
+        Object		 Satellite/TDRS_5
+        Object		 Satellite/TDRS_6
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        UseRoutingRulesFile		 No
 
-   Type        Constellation
-   Operator    Or
-   Order       1
-   IsRelay     No
-    Object  Satellite/TDRS_3
-    Object  Satellite/TDRS_5
-    Object  Satellite/TDRS_6
-   SaveMode    0
-   UseLoadIntervalFile    No
+    END Definition
 
-END Definition
+    BEGIN Extensions
 
-BEGIN Extensions
-    
-    BEGIN Desc
-    END Desc
+        BEGIN ADFFileData
+        END ADFFileData
 
-END Extensions
+        BEGIN Desc
+        END Desc
+
+    END Extensions
 
 END Constellation

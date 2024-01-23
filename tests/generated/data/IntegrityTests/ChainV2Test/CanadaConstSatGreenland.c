@@ -1,56 +1,100 @@
-stk.v.6.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Chain
 
-Name  CanadaConstSatGreenland
-BEGIN Definition
+    Name		 CanadaConstSatGreenland
+    BEGIN Definition
+        Object		 Facility/Canada
+        Object		 Constellation/ConstSat
+        Object		 Facility/Greenland
+        Recompute		 No
+        LastRequestedToBeComputedInParallel		 No
+        IntervalType		 0
+        ComputeIntervalStart		 0
+        ComputeIntervalStop		 14400
+        ComputeIntervalPtr		
+        BEGIN EVENTINTERVAL
+            BEGIN Interval
+                Start		 1 Jan 1997 00:00:00.000000000
+                Stop		 1 Jan 1997 04:00:00.000000000
+            END Interval
+            IntervalState		 Explicit
+        END EVENTINTERVAL
 
-   Type        Chain
-   Operator    Or
-   Order       1
-   Recompute   NofM
-   IntervalType    0
-   ComputeIntervalStart    0.000000
-   ComputeIntervalStop     14400.000000
-   UseSaveIntervalFile    No
-   UseMinAngle     No
-   UseMaxAngle     No
-   UseMinLinkTime     No
-    Object  Facility/Canada
-    Object  Constellation/ConstSat
-    Object  Facility/Greenland
-   SaveMode    0
-   UseLoadIntervalFile    No
+        ConstConstraintsByStrands		 Yes
+        UseSaveIntervalFile		 No
+        UseMinAngle		 No
+        UseMaxAngle		 No
+        UseMinLinkTime		 No
+        LTDelayCriterion		 2
+        TimeConvergence		 0.005
+        AbsValueConvergence		 1e-14
+        RelValueConvergence		 1e-08
+        MaxTimeStep		 360
+        MinTimeStep		 0.01
+        UseLightTimeDelay		 Yes
+        DetectEventsUsingSamplesOnly		 No
+        UseLoadIntervalFile		 No
+        AllowSameInstInStrands		 Yes
+        KeepStrandsWithNoIntvls		 No
+        ComputeOptimalPath		 No
+        OptimalPathSampleTime		  1.0000000000000000e+01
+        OptimalPathIncludeAccessEdgeTimesInSamples		 Yes
+        OptimalPathNumBestStrandsToStore		 1
+        OptimalPathMetric		 Distance
+        OptimalPathLinkCompare		 Min
+        OptimalPathStrandCompare		 Min
+        OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
+        SaveMode		 0
 
-END Definition
+    END Definition
 
-BEGIN Extensions
-    
-    BEGIN Graphics
+    BEGIN Extensions
 
-BEGIN Attributes
+        BEGIN ExternData
+        END ExternData
 
-StaticColor					#f0ffff
-AnimationColor					#f0ffff
-AnimationLineWidth					1.000000
-StaticLineWidth					3.000000
+        BEGIN ADFFileData
+        END ADFFileData
 
-END Attributes
+        BEGIN Desc
+        END Desc
 
-BEGIN Graphics
+        BEGIN Crdn
+        END Crdn
 
-    ShowStatic		On
-    ShowAnimationHighlight		On
-    ShowAnimationLine		On
-    ShowLinkDirection		On
+        BEGIN Graphics
 
-END Graphics
-    END Graphics
-    
-    BEGIN Desc
-    END Desc
+            BEGIN Attributes
 
-END Extensions
+                StaticColor		 #f0ffff
+                AnimationColor		 #f0ffff
+                OptStrandsColor		 #ffffff
+                AnimationLineWidth		 1
+                StaticLineWidth		 3
+                OptStrandsLineWidth		 5
+
+            END Attributes
+
+            BEGIN Graphics
+                ShowGfx		 On
+                Show2dGfx		 On
+                ShowStatic		 On
+                ShowAnimationHighlight		 On
+                ShowAnimationLine		 On
+                ShowLinkDirection		 On
+                ShowOptStrands		 On
+                ShowOnly1stOptStrand		 On
+                UseHideAnimGfxIfMoreThanNStrands		 On
+                HideAnimGfxIfMoreThanNStrandsNum		 100000
+            END Graphics
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
 
 END Chain
 

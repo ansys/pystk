@@ -1,28 +1,31 @@
-stk.v.6.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Constellation
 
-Name  ConstSat
-BEGIN Definition
+    Name		 ConstSat
+    BEGIN Definition
+        Object		 Satellite/ConstSat1
+        Object		 Satellite/ConstSat2
+        Object		 Satellite/ConstSat3
+        Object		 Facility/Canada
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 0
+        ToOperator		 Or
+        ToOrder		 0
+        UseRoutingRulesFile		 No
 
-   Type        Constellation
-   Operator    Or
-   Order       0
-   IsRelay     No
-    Object  Satellite/ConstSat1
-    Object  Satellite/ConstSat2
-    Object  Satellite/ConstSat3
-    Object  Facility/Canada
-   SaveMode    0
-   UseLoadIntervalFile    No
+    END Definition
 
-END Definition
+    BEGIN Extensions
 
-BEGIN Extensions
-    
-    BEGIN Desc
-    END Desc
+        BEGIN ADFFileData
+        END ADFFileData
 
-END Extensions
+        BEGIN Desc
+        END Desc
+
+    END Extensions
 
 END Constellation

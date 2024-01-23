@@ -1,149 +1,264 @@
-stk.v.7.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Sensor
 
-    Name            Sensor1
+    Name		 Sensor1
 
-BEGIN Pattern
+    BEGIN Pattern
 
-    BEGIN SimpleCone
+        BEGIN SimpleCone
 
-        ConeAngle              1.500000000000e+001
+            ConeAngle		  1.4999999999999998e+01
+            AngularPatternResolution		  4.0000000000000000e+00
 
-    END SimpleCone
+        END SimpleCone
 
-END Pattern
+        DetailedTerrainHorizon		 Yes
 
-BEGIN Pointing
 
-    BEGIN Targeted
+    END Pattern
 
-    TargetMode              Tracking
-    Sequence                323
-    TrackingMode            Transmit
+    BEGIN Pointing
 
-    BEGIN AssignedTargets
+        BEGIN Targeted
 
-    AreaTarget/AreaTarget1
-    Facility/Facility1
-    Facility/Facility2
-    Facility/Facility3
-    Facility/Facility4
-    Facility/Facility5
-    GroundVehicle/GroundVehicle1
-    LineTarget/LineTarget1
+            TargetMode		 Tracking
+            AboutBoresightOption		 323            TrackingMode		 Transmit
+            AberrationType		 Annual
+            TimeDelayConvergence		 5e-05
+            MaxTimeStep		 360
+            MinTimeStep		 0.01
+            TimeConvergence		 0.005
+            AbsValueConvergence		 1e-14
+            RelValueConvergence		 1e-08
+            DetectEventsUsingSamplesOnly		 No
 
-    END AssignedTargets
-    Begin Stable
-        Use          No
-        Mode         NorthStable
-    End Stable
-    AdjustPointingToTargetsDuringAccessToTargets   No
-    UseTrackControl            No
+            BEGIN AssignedTargets
 
-    END Targeted
+                AreaTarget/AreaTarget1
+                Facility/Facility1
+                Facility/Facility2
+                Facility/Facility3
+                Facility/Facility4
+                Facility/Facility5
+                GroundVehicle/GroundVehicle1
+                LineTarget/LineTarget1
 
-END Pointing
+            END AssignedTargets
 
-BEGIN Optics
+            BEGIN TargetInviews
 
-    FocalLength             1.000000000000e+002
-    DetectorPitch           1.000000000000e-003
-    IQConstant              0.000000000000e+000
-    GsdCoefficient          0.000000000000e+000
+                Facility/Facility1 2005-07-01T12:00:00.000000000 2005-07-01T12:57:50.047474942
+                Facility/Facility2 2005-07-01T12:00:54.087532131 2005-07-01T13:09:47.167238922
+                Facility/Facility3 2005-07-01T12:02:31.707725845 2005-07-01T13:20:49.565356632
+                Facility/Facility4 2005-07-01T12:04:43.496023486 2005-07-01T13:28:59.053553862
+                Facility/Facility5 2005-07-01T12:06:49.030748400 2005-07-01T13:34:56.255818103
+                LineTarget/LineTarget1 2005-07-01T14:11:23.070598776 2005-07-01T14:19:58.989403927
+                AreaTarget/AreaTarget1 2005-07-01T14:12:51.092516900 2005-07-01T14:29:00.496509641
+                Facility/Facility5 2005-07-01T15:10:41.669224617 2005-07-01T16:33:09.407108060
+                Facility/Facility4 2005-07-01T15:13:05.517983929 2005-07-01T16:28:05.000353813
+                Facility/Facility3 2005-07-01T15:17:51.216470926 2005-07-01T16:14:57.827694358
+                LineTarget/LineTarget1 2005-07-01T16:38:50.740233592 2005-07-01T17:25:34.077886098
+                AreaTarget/AreaTarget1 2005-07-01T16:40:05.051376629 2005-07-01T17:30:53.148376726
+                Facility/Facility5 2005-07-01T18:28:46.549404242 2005-07-01T19:46:02.222051739
+                Facility/Facility4 2005-07-01T18:43:27.491109543 2005-07-01T19:52:38.272793073
+                Facility/Facility3 2005-07-01T19:03:28.714263223 2005-07-01T19:59:28.658177426
+                Facility/Facility2 2005-07-01T19:16:28.359257739 2005-07-01T20:09:01.405094739
+                Facility/Facility1 2005-07-01T19:22:56.076470089 2005-07-01T20:14:46.586252321
+                LineTarget/LineTarget1 2005-07-01T19:23:55.519260216 2005-07-01T20:17:18.268393237
+                AreaTarget/AreaTarget1 2005-07-01T19:25:20.102285723 2005-07-01T20:25:36.913296558
+                Facility/Facility5 2005-07-01T21:46:39.811959693 2005-07-01T23:07:35.760289147
+                Facility/Facility4 2005-07-01T21:52:10.331942492 2005-07-01T23:12:16.255077374
+                Facility/Facility3 2005-07-01T21:57:45.451918749 2005-07-01T23:15:46.448579338
+                Facility/Facility2 2005-07-01T22:01:26.082442378 2005-07-01T23:18:14.180691867
+                Facility/Facility1 2005-07-01T22:04:31.715598864 2005-07-01T23:19:39.857397028
+                LineTarget/LineTarget1 2005-07-01T22:11:12.720272688 2005-07-01T22:40:54.480696986
+                AreaTarget/AreaTarget1 2005-07-01T22:14:33.932621662 2005-07-01T23:03:33.458642654
+                LineTarget/LineTarget1 2005-07-02T00:30:15.794726505 2005-07-02T01:10:20.542928923
+                AreaTarget/AreaTarget1 2005-07-02T00:32:23.067034274 2005-07-02T01:10:18.726149160
+                Facility/Facility5 2005-07-02T00:46:59.259987167 2005-07-02T02:13:59.117874895
+                Facility/Facility4 2005-07-02T00:47:30.464401980 2005-07-02T02:14:42.288526951
+                Facility/Facility3 2005-07-02T00:49:04.377756622 2005-07-02T02:15:14.196330829
+                Facility/Facility2 2005-07-02T00:49:39.455023255 2005-07-02T02:14:31.560383637
+                Facility/Facility1 2005-07-02T00:50:39.165222775 2005-07-02T02:13:28.557603650
+                AreaTarget/AreaTarget1 2005-07-02T03:03:20.977074472 2005-07-02T04:02:53.996458153
+                LineTarget/LineTarget1 2005-07-02T03:04:54.713785798 2005-07-02T03:58:16.847897944
+                Facility/Facility1 2005-07-02T03:34:40.037403950 2005-07-02T04:59:24.084344565
+                Facility/Facility2 2005-07-02T03:35:58.280057098 2005-07-02T05:03:30.272274150
+                Facility/Facility3 2005-07-02T03:37:59.125865218 2005-07-02T05:07:33.613540256
+                Facility/Facility4 2005-07-02T03:39:02.773045747 2005-07-02T05:09:52.202950558
+                Facility/Facility5 2005-07-02T03:41:07.342330745 2005-07-02T05:12:03.741062929
+                AreaTarget/AreaTarget1 2005-07-02T05:56:22.553360069 2005-07-02T06:50:06.254230505
+                LineTarget/LineTarget1 2005-07-02T06:00:12.821883190 2005-07-02T06:40:39.440024822
+                Facility/Facility1 2005-07-02T06:20:14.081748524 2005-07-02T07:43:17.950889212
+                Facility/Facility2 2005-07-02T06:22:58.914468636 2005-07-02T07:49:26.848042277
+                Facility/Facility3 2005-07-02T06:26:34.919512497 2005-07-02T07:56:02.364153238
+                Facility/Facility4 2005-07-02T06:29:28.576020057 2005-07-02T08:00:55.045322438
+                Facility/Facility5 2005-07-02T06:33:02.211938805 2005-07-02T08:05:25.941004357
+                AreaTarget/AreaTarget1 2005-07-02T08:57:11.567740275 2005-07-02T09:25:06.874146317
+                Facility/Facility1 2005-07-02T09:13:28.314640507 2005-07-02T10:29:20.206913411
+                Facility/Facility2 2005-07-02T09:16:00.035034203 2005-07-02T10:36:57.162137957
+                Facility/Facility3 2005-07-02T09:19:17.294496315 2005-07-02T10:45:04.139655407
+                Facility/Facility4 2005-07-02T09:22:29.071145150 2005-07-02T10:51:35.801729443
+                Facility/Facility5 2005-07-02T09:25:58.416942852 2005-07-02T10:57:16.145565496
 
-END Optics
+            END TargetInviews
 
-BEGIN Extensions
-    
-    BEGIN Graphics
+            SaveTargetAccesses		 Yes
 
-		BEGIN Attributes
+            UseTargetSchedule		 No
 
-			Inherit             Yes
-			Show                Yes
-			LineStyle           0
-			LineWidth           1.000000
-			PatternColor        #ff69b4
+            BEGIN Stable
+                Use		 No
+                Mode		 NorthStable
+            END Stable
+            AdjustPointingToTargetsDuringAccessToTargets		 No
+            UseTrackControl		 No
 
-		END Attributes
+        END Targeted
 
-		BEGIN Display
+    END Pointing
 
-			NumberOfPatterns        1
-			PersistenceDuration     0.000000000000e+000
-			MinDisplayAltitude      0.000000000000e+000
-			MaxDisplayAltitude      1.000000000000e+007
-			IntersectType           CentralBody
-			ForwardPersist          No
-			FillPersist             No
-			SpaceLength             5.000000000000e+007
-			TgtExtLength            0.000000000000e+000
-			FOVHalfAngle            No
-			HalfAngle               0.000000000000e+000
-			FOV                     No
-			ProjDisplay             Sphere
-			DisplayType             ConstantRadius
-			DisplayFOVWithConstraints           No
-			ShowBoresight           No
-			BoresightMarker         4
-			BoresightColor          #ffffff
-			ShowFill                No
-			FillStyle               7
-			ShowOn2DMap             Yes
+    BEGIN Optics
 
-		END Display
-    END Graphics
-    
-    BEGIN Swath
-        ShowSwath    No
-        Color        #f0ffff
-        LineStyle    0
-        LineWidth    1.000000
-    END Swath
-    
-    BEGIN ExternData
-    END ExternData
-    
-    BEGIN AccessConstraints
-		AtFieldOfView   IncludeIntervals 
-		FieldOfView   IncludeIntervals 
-		LineOfSight   IncludeIntervals 
-    END AccessConstraints
-    
-    BEGIN ObjectCoverage
-    END ObjectCoverage
-    
-    BEGIN Desc
-        ShortText    0
+        FocalLength		  1.0000000000000000e+02
+        DetectorPitch		  1.0000000000000000e-03
+        IQConstant		  0.0000000000000000e+00
+        GsdCoefficient		  0.0000000000000000e+00
 
-        LongText    0
+    END Optics
 
-    END Desc
-    
-    BEGIN Refraction
-		RefractionModel	4/3 Earth Radius Method
-    END Refraction
-    
-    BEGIN DisplayTm
-		DisplayGT	AlwaysOff
-		DisplayType	AlwaysOn
-    END DisplayTm
-    
-    BEGIN Crdn
-    END Crdn
-    
-    BEGIN DIS
-    END DIS
-    
-    BEGIN VO
-    END VO
+    BEGIN Extensions
 
-END Extensions
+        BEGIN ExternData
+        END ExternData
 
-BEGIN SubObjects
+        BEGIN ADFFileData
+        END ADFFileData
 
-END SubObjects
+        BEGIN AccessConstraints
+            FieldOfView IncludeIntervals
+            LineOfSight IncludeIntervals
+
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
+
+        BEGIN ObjectCoverage
+        END ObjectCoverage
+
+        BEGIN Desc
+        END Desc
+
+        BEGIN Refraction
+            RefractionModel		 Effective Radius Method
+
+            UseRefractionInAccess		 No
+
+            BEGIN ModelData
+                RefractionCeiling		  5.0000000000000000e+03
+                MaxTargetAltitude		  1.0000000000000000e+04
+                EffectiveRadius		  1.3333333333333333e+00
+
+                UseExtrapolation		 Yes
+
+
+            END ModelData
+        END Refraction
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                Inherit		 Yes
+                Show		 Yes
+                LineStyle		 0
+                LineWidth		 1
+                PatternColor		 #ff69b4
+
+            END Attributes
+
+            BEGIN Display
+
+                NumberOfPatterns		 1
+                PersistenceDuration		  0.0000000000000000e+00
+                PersistenceIgnoreDefChg		 No
+                UpdatesDefnOften		 No
+                MinDisplayAltitude		  0.0000000000000000e+00
+                MaxDisplayAltitude		  1.0000000000000000e+07
+                AltitudeIntersectSense		 Either
+                ShowBothAltCrossings		 No
+                IntersectType		 CentralBody
+                ShowGround		 Yes
+                UseProjectionRadii		 No
+                ExcludeHorizonArcs		 No
+                ForwardPersist		 No
+                FillPersist		 No
+                DsplyTmHidesPersist		 No
+                SpaceLength		  5.0000000000000000e+07
+                TgtExtLength		  0.0000000000000000e+00
+                FOVHalfAngle		 No
+                HalfAngle		  0.0000000000000000e+00
+                ProjDisplay		 Sphere
+                DisplayType		 ConstantRadius
+                DisplayFOVWithConstraints		 No
+                ShowBoresight		 No
+                BoresightMarker		 4
+                BoresightColor		 #ffffff
+                ShowFill		 No
+                FillTranslucency		 0.5
+                ShowOn2DMap		 Yes
+
+            END Display
+
+            BEGIN Swath
+
+                MaxStep		  6.0000000000000000e+01
+                MinStep		  1.0000000000000001e-01
+                CloseSwath		 Yes
+                Tolerance		  4.0000000000000000e+00
+                MatchTolerance		  9.0000000000000000e+01
+                ShowSwath		 No
+                ComputationalMethod		 Numerical
+                Color		 #f0ffff
+                LineStyle		 0
+                LineWidth		 1
+                SwathIntervalPtr		
+                BEGIN EVENTINTERVAL
+                    BEGIN Interval
+                        Start		 1 Jul 2005 12:00:00.000000000
+                        Stop		 2 Jul 2005 12:00:00.000000000
+                    END Interval
+                    IntervalState		 Explicit
+                END EVENTINTERVAL
+
+
+            END Swath
+
+            BEGIN DisplayTimes
+                DisplayType		 AlwaysOn
+            END DisplayTimes
+        END Graphics
+
+        BEGIN Swath
+        END Swath
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+    BEGIN SubObjects
+
+    END SubObjects
 
 END Sensor
 

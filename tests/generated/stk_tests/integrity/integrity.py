@@ -2,13 +2,15 @@ import pytest
 from test_util import *
 from assertion_harness import *
 from logger import *
+from report_comparison import *
 from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
-from report_comparison import *
 
+
+@category("EarlyBoundTests")
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Propagation(TestBase):
     def __init__(self, *args, **kwargs):

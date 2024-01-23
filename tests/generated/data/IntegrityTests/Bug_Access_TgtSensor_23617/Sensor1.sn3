@@ -1,271 +1,280 @@
-VO_v70
-    IsInvisible           No
-    Translucency          0.800000
-    IsShowingRadialLines  No
-    RadialLineIncr        4
-    IsShowingBoresight  No
-    IsShowingFill       No
-    FillTranslucency      0.500000
-    PulseStyle            Sin
-    PulseAmplitude        0.5
-    PulseWavelength       500000
-    PulseFreq             0.167
-    PulseAntiAliased      No
-    PulseReversed         No
-    PulseFrameDependent   Yes
-    IsShowingPulse        No
-    TranslucentLines        No
-    UseConstExtensionLength No
-    ExtensionLength         50000000.000000
-    TargetExtensionLength   0.000000
-    UseRangeCnstrntMinMax   Yes
-    IsShowingCompleteDome   No
-    InheritModelPosOffset Yes
-    UseModelPosOffset     No
-    ModelPosOffset        0.000000 0.000000 0.000000
-    FixVectorAxesScaleToAttSph No
-    Begin GeneralVectorAxes
-        ArrowPointSize          3.00
-        PersistentLineWidth     2.00
-        Scale                   158489.319246
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector Yes
-            IsCentralBodyFrame No
-            Name "Boresight"
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #f08080
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector Yes
-            IsCentralBodyFrame No
-            Name "Up"
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #0000ff
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector Yes
-            IsCentralBodyFrame No
-            Name "Spin"
-            MagUnit deg/sec
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #ff00ff
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #87cefa
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector No
-            IsCentralBodyFrame Yes
-            Name "J2000"
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #8fbc8f
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAxes
-        Begin CrdnDef
-            IsVector Yes
-            IsCentralBodyFrame No
-            Name "Sun"
-            MagUnit m
-        End
-        Begin RefCrdn
-            IsVector No
-            IsCentralBodyFrame No
-            Name "Body"
-            Object _Default
-        End
-        Duration                3600.000
-        IsShowing               No
-        IsPersistent            No
-        IsTransparent           No
-        DrawFirstArrowOnly      Yes
-        UseTrueScale            No
-        Label                   Name
-        DrawAtCentralBody       No
-        ArrowType               3D
-        ConnectType             Sweep
-        ColorIndex              #ffff00
-        IntervalType            AlwaysOn
-        AngleUnit               deg
-    End
-    Begin VectorAngle
-        FractionalScale                1.000000
-        SupportingDihedralArcLineWidth 1.00
-        ArcLineWidth                   2.00
-        PixelThreshold                 0.500000
-        Begin VectorAngleData
-            Name                    "Sun"
-            Show                    No
-            ShowLabel               Yes
-            ShowAngle               Yes
-            ColorIndex              #ff69b4
-            IntervalType            AlwaysOn
-            Unit                    deg
-        End
-    End
-    Begin Plane
-    End
-    UseAttachPoint        No
-    SensorRadius          0
-    Begin DynamicDataText
-        Name               "Boresight AzEl"
-        Show               No
-        ShowTitle          Yes
-        ReportFormat       Horizontal
-        Type               Orthographic
-        AttachX            Min
-        AttachY            Max
-        X                  10.000000
-        Y                  10.000000
-        Z                  0.000000
-        IsPos3D            No
-        FontIndex          0
-        TextColorIndex     #ffff00
-        BGEnabled          No
-        IsBGTransparent    No
-        BGWidth            100
-        BGHeight           100
-        BGColorIndex       #999999
-        VertTextAlign      Border
-    End
-    Begin DynamicDataText
-        Name               "Boresight Grazing Point LLA"
-        Show               No
-        ShowTitle          Yes
-        ReportFormat       Horizontal
-        Type               Orthographic
-        AttachX            Min
-        AttachY            Max
-        X                  10.000000
-        Y                  10.000000
-        Z                  0.000000
-        IsPos3D            No
-        FontIndex          0
-        TextColorIndex     #ffff00
-        BGEnabled          No
-        IsBGTransparent    No
-        BGWidth            100
-        BGHeight           100
-        BGColorIndex       #999999
-        VertTextAlign      Border
-    End
-    Begin DynamicDataText
-        Name               "Boresight Intersection"
-        Show               No
-        ShowTitle          Yes
-        ReportFormat       Horizontal
-        Type               Orthographic
-        AttachX            Min
-        AttachY            Max
-        X                  10.000000
-        Y                  10.000000
-        Z                  0.000000
-        IsPos3D            No
-        FontIndex          0
-        TextColorIndex     #ffff00
-        BGEnabled          No
-        IsBGTransparent    No
-        BGWidth            100
-        BGHeight           100
-        BGColorIndex       #999999
-        VertTextAlign      Border
-    End
+VO_V120		
+Translucency		 0.8
+IsShowingRadialLines		 No
+RadialLineIncr		 4
+IsShowingBoresight		 No
+IsShowingFill		 No
+FillTranslucency		 0.5
+FillResolution		  4.0000000000000000e+00
+PulseStyle		 Sin
+PulseAmplitude		 0.5
+PulseWavelength		 500000
+PulseFreq		 0.167
+PulseAntiAliased		 No
+PulseReversed		 No
+PulseFrameDependent		 Yes
+IsShowingPulse		 No
+TranslucentLines		 No
+PersistSpaceProjLines		 No
+PersistPartialCBProjLines		 Yes
+UseConstExtensionLength		 No
+ExtensionLength		 50000000
+UseSpaceExtLenTimeList		 No
+UseTgtExtLenTimeList		 No
+TargetExtensionLength		 0
+UseRangeCnstrntMinMax		 Yes
+IsShowingCompleteDome		 No
+Inherit2dProjection		 No
+ShowDomesWith2dProjection		 No
+InheritModelPosOffset		 Yes
+UseModelPosOffset		 No
+ModelPosOffset		 0 0 0
+FixVectorAxesScaleToAttSph		 No
+BEGIN GeneralVectorAxes
+    PersistentLineWidth		 2
+    Scale		 158489.319246
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Boresight"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #f08080
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Up"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #0000ff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Spin"
+        MagUnit		 deg/sec
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ff00ff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #87cefa
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 Yes
+        Name		 "J2000"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #8fbc8f
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Sun"
+        MagUnit		 m
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 3600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffff00
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAngle
+    FractionalScale		 1
+    SupportingDihedralArcLineWidth		 1
+    ArcLineWidth		 2
+    PixelThreshold		 0.5
+    BEGIN VectorAngleData
+        Name		 "Sun"
+        Show		 No
+        ShowLabel		 Yes
+        ShowAngle		 Yes
+        ShowDihedralAngleSupportingArcs		 Yes
+        ColorIndex		 #ff69b4
+        IntervalType		 AlwaysOn
+        Unit		 deg
+    END
+END
+UseAttachPoint		 No
+SensorRadius		 0
+ShowStarsInFOV		 No
+UseDefStarCollection		 Yes
+BEGIN DynamicDataText
+    Name		 "Boresight AzEl"
+    Show		 No
+    ShowTitle		 Yes
+    ShowObjName		 Yes
+    ReportFormat		 Horizontal
+    Type		 ORTHOGRAPHIC
+    AttachX		 MIN
+    AttachY		 MAX
+    X		 10
+    Y		 10
+    FontIndex		 0
+    TextColorIndex		 #ffff00
+    BGEnabled		 No
+    IsBGTransparent		 No
+    BGWidth		 100
+    BGHeight		 50
+    AutoSizeWidth		 Yes
+    AutoSizeHeight		 Yes
+    BGColorIndex		 #999999
+    Version		 0
+    VertTextAlign		 BOTTOM
+    BGTranslucency		 1
+END
+BEGIN DynamicDataText
+    Name		 "Boresight Grazing Point LLA"
+    Show		 No
+    ShowTitle		 Yes
+    ShowObjName		 Yes
+    ReportFormat		 Horizontal
+    Type		 ORTHOGRAPHIC
+    AttachX		 MIN
+    AttachY		 MAX
+    X		 10
+    Y		 10
+    FontIndex		 0
+    TextColorIndex		 #ffff00
+    BGEnabled		 No
+    IsBGTransparent		 No
+    BGWidth		 100
+    BGHeight		 50
+    AutoSizeWidth		 Yes
+    AutoSizeHeight		 Yes
+    BGColorIndex		 #999999
+    Version		 0
+    VertTextAlign		 BOTTOM
+    BGTranslucency		 1
+END
+BEGIN DynamicDataText
+    Name		 "Boresight Intersection"
+    Show		 No
+    ShowTitle		 Yes
+    ShowObjName		 Yes
+    ReportFormat		 Horizontal
+    Type		 ORTHOGRAPHIC
+    AttachX		 MIN
+    AttachY		 MAX
+    X		 10
+    Y		 10
+    FontIndex		 0
+    TextColorIndex		 #ffff00
+    BGEnabled		 No
+    IsBGTransparent		 No
+    BGWidth		 100
+    BGHeight		 50
+    AutoSizeWidth		 Yes
+    AutoSizeHeight		 Yes
+    BGColorIndex		 #999999
+    Version		 0
+    VertTextAlign		 BOTTOM
+    BGTranslucency		 1
+END

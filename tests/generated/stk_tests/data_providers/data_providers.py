@@ -623,17 +623,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oDataSet)
         arValues = oDataSet.get_values()
         # logger.WriteLine("\tThe Intervals[0].DataSets[0] contains: {0} values", oDataSet.Count);
-        Assert.assertEqual(73, oDataSet.count)
+        Assert.assertEqual(199, oDataSet.count)
         Assert.assertEqual("Date", oDataSet.dimension_name)
         Assert.assertEqual("Time", oDataSet.element_name)
         Assert.assertEqual("1 Jun 2004 12:00:00.000000000", clr.Convert(arValues[0], str))
-        Assert.assertEqual("1 Jun 2004 12:00:12.901858505", clr.Convert(arValues[1], str))
-        Assert.assertEqual("1 Jun 2004 12:00:40.825166553", clr.Convert(arValues[2], str))
-        Assert.assertEqual("1 Jun 2004 12:01:08.748320604", clr.Convert(arValues[3], str))
-        Assert.assertEqual("1 Jun 2004 12:01:36.671309690", clr.Convert(arValues[4], str))
-        Assert.assertEqual("1 Jun 2004 12:03:28.361186026", clr.Convert(arValues[8], str))
-        Assert.assertEqual("1 Jun 2004 12:03:46.507300934", clr.Convert(arValues[9], str))
-        Assert.assertEqual("1 Jun 2004 12:08:11.087930838", clr.Convert(arValues[19], str))
+        Assert.assertEqual("1 Jun 2004 12:00:19.531224281", clr.Convert(arValues[1], str))
+        Assert.assertEqual("1 Jun 2004 12:00:35.335125888", clr.Convert(arValues[2], str))
+        Assert.assertEqual("1 Jun 2004 12:00:52.900970419", clr.Convert(arValues[3], str))
+        Assert.assertEqual("1 Jun 2004 12:00:56.812066962", clr.Convert(arValues[4], str))
+        Assert.assertEqual("1 Jun 2004 12:01:30.188313568", clr.Convert(arValues[8], str))
+        Assert.assertEqual("1 Jun 2004 12:01:35.887349506", clr.Convert(arValues[9], str))
+        Assert.assertEqual("1 Jun 2004 12:05:01.726211163", clr.Convert(arValues[19], str))
 
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
@@ -644,11 +644,11 @@ class EarlyBoundTests(TestBase):
         oDataSet = oResult.intervals[0].data_sets[2]
         arValues = oDataSet.get_values()
         # logger.WriteLine("\tThe Intervals[0].DataSets[2] contains: {0} values", oDataSet.Count);
-        Assert.assertEqual(73, oDataSet.count)
+        Assert.assertEqual(199, oDataSet.count)
         Assert.assertEqual("Distance", oDataSet.dimension_name)
         Assert.assertEqual("y", oDataSet.element_name)
-        Assert.assertEqual(163.895275, Math.Round(float(arValues[0]), 6))
-        Assert.assertEqual(157.135035, Math.Round(float(arValues[13]), 6))
+        Assert.assertEqual(24.44683, Math.Round(float(arValues[0]), 6))
+        Assert.assertEqual(40.338076, Math.Round(float(arValues[13]), 6))
 
         iIndex: int = 0
         while iIndex < Array.Length(arValues):
@@ -3129,26 +3129,26 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oDataSet)
         arValues = oDataSet.get_values()
         # logger.WriteLine("\tThe Intervals[0].DataSets[0] contains: {0} values", oDataSet.Count);
-        Assert.assertEqual(73, oDataSet.count)
+        Assert.assertEqual(199, oDataSet.count)
         Assert.assertEqual("Date", oDataSet.dimension_name)
         Assert.assertEqual("Time", oDataSet.element_name)
         Assert.assertEqual("1 Jun 2004 12:00:00.000000000", clr.Convert(arValues[0], str))
-        Assert.assertEqual("1 Jun 2004 12:00:12.901858505", clr.Convert(arValues[1], str))
-        Assert.assertEqual("1 Jun 2004 12:00:40.825166553", clr.Convert(arValues[2], str))
-        Assert.assertEqual("1 Jun 2004 12:01:08.748320604", clr.Convert(arValues[3], str))
-        Assert.assertEqual("1 Jun 2004 12:01:36.671309690", clr.Convert(arValues[4], str))
-        Assert.assertEqual("1 Jun 2004 12:03:28.361186026", clr.Convert(arValues[8], str))
-        Assert.assertEqual("1 Jun 2004 12:03:46.507300934", clr.Convert(arValues[9], str))
-        Assert.assertEqual("1 Jun 2004 12:08:11.087930838", clr.Convert(arValues[19], str))
+        Assert.assertEqual("1 Jun 2004 12:00:19.531224281", clr.Convert(arValues[1], str))
+        Assert.assertEqual("1 Jun 2004 12:00:35.335125888", clr.Convert(arValues[2], str))
+        Assert.assertEqual("1 Jun 2004 12:00:52.900970419", clr.Convert(arValues[3], str))
+        Assert.assertEqual("1 Jun 2004 12:00:56.812066962", clr.Convert(arValues[4], str))
+        Assert.assertEqual("1 Jun 2004 12:01:30.188313568", clr.Convert(arValues[8], str))
+        Assert.assertEqual("1 Jun 2004 12:01:35.887349506", clr.Convert(arValues[9], str))
+        Assert.assertEqual("1 Jun 2004 12:05:01.726211163", clr.Convert(arValues[19], str))
 
         oDataSet = oResult.intervals[0].data_sets[1]
         Assert.assertIsNotNone(oDataSet)
         arValues = oDataSet.get_values()
-        Assert.assertEqual(73, oDataSet.count)
+        Assert.assertEqual(199, oDataSet.count)
         Assert.assertEqual("Distance", oDataSet.dimension_name)
         Assert.assertEqual("y", oDataSet.element_name)
-        Assert.assertEqual(163.895275, Math.Round(float(arValues[0]), 6))
-        Assert.assertEqual(157.135035, Math.Round(float(arValues[13]), 6))
+        Assert.assertEqual(24.44683, Math.Round(float(arValues[0]), 6))
+        Assert.assertEqual(40.338076, Math.Round(float(arValues[13]), 6))
 
         del oResult
         TestBase.logger.WriteLine("----- Aircraft CARTESIAN POSITION FIXED ELEMENTS TEST ----- END -----")
@@ -3546,15 +3546,11 @@ class EarlyBoundTests(TestBase):
             oInterval: "DataProviderResultInterval" = oCollection[0]
             Assert.assertEqual(oCollection[0], oInterval)
 
-            Assert.assertEqual("1", self.DumpRawCrossingData(oInterval, 1.0))
-            Assert.assertEqual("2", self.DumpRawCrossingData(oInterval, 2.0))
-            Assert.assertEqual("31 Jun 2004 12:52:46.0-1", self.DumpRawCrossingData(oInterval, 3.0))
-            Assert.assertEqual(
-                "41 Jun 2004 12:05:23.911 Jun 2004 12:34:51.8-1", self.DumpRawCrossingData(oInterval, 4.0)
-            )
-            Assert.assertEqual(
-                "51 Jun 2004 12:05:23.911 Jun 2004 12:17:03.6-1", self.DumpRawCrossingData(oInterval, 5.0)
-            )
+            Assert.assertEqual("11 Jun 2004 12:33:44.5-1", self.DumpRawCrossingData(oInterval, 1.0))
+            Assert.assertEqual("21 Jun 2004 12:33:44.5-1", self.DumpRawCrossingData(oInterval, 2.0))
+            Assert.assertEqual("31 Jun 2004 12:33:44.5-1", self.DumpRawCrossingData(oInterval, 3.0))
+            Assert.assertEqual("4", self.DumpRawCrossingData(oInterval, 4.0))
+            Assert.assertEqual("5", self.DumpRawCrossingData(oInterval, 5.0))
 
             arBoundaries = [1.0, 2.0, 3.0, 4.0, 5.0]
             arRanges = oInterval.multiple_threshold_crossings("FOM Value", arBoundaries)
@@ -3590,7 +3586,7 @@ class EarlyBoundTests(TestBase):
                 iRange += 1
 
             Assert.assertEqual(
-                "0#1#2#1 Jun 2004 12:52:46.03#1 Jun 2004 12:52:46.03#3#1 Jun 2004 12:00:00.00#1 Jun 2004 12:00:00.00#1 Jun 2004 12:34:51.82#1 Jun 2004 12:34:51.82#4#1 Jun 2004 12:05:23.93#1 Jun 2004 12:05:23.93#1 Jun 2004 12:17:03.61#1 Jun 2004 12:17:03.61#5#1 Jun 2004 12:05:23.93#1 Jun 2004 12:05:23.93#",
+                "0#1#1 Jun 2004 12:33:44.55#1 Jun 2004 12:33:44.55#1 Jun 2004 12:33:44.55#1 Jun 2004 12:33:44.55#2#1 Jun 2004 12:33:44.55#1 Jun 2004 12:33:44.55#3#1 Jun 2004 12:00:00.00#1 Jun 2004 12:00:00.00#4#5#",
                 outStr,
             )
 

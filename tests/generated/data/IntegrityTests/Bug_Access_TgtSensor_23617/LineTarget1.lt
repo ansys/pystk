@@ -1,79 +1,98 @@
-stk.v.7.0
+stk.v.12.0
+WrittenBy    STK_v12.9.0
 
 BEGIN LineTarget
 
-Name        LineTarget1
+    Name		 LineTarget1
 
     BEGIN IndexPtData
 
-        CentralBody            Earth
-        AnchorPtIndex          -3
-        NumberOfPolylinePts    3
+        CentralBody		 Earth
+        AnchorPtIndex		 -3
+        NumberOfPolylinePts		 3
 
         BEGIN PolylinePoints
 
-            6.89991468067365e+001    -1.65290831298191e+002    0.00000000000000e+000
-            6.74140984830097e+001    -1.77593950570480e+002    0.00000000000000e+000
-            6.98872706766613e+001    1.74913695163506e+002    0.00000000000000e+000
+             0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+             0.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00
+             1.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00
 
         END PolylinePoints
 
+        BoundaryType		 GreatArc
+        Granularity		 0.008726645999999999
 
     END IndexPtData
 
-BEGIN Extensions
-    
-    BEGIN Graphics
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN AccessConstraints
+            LineOfSight IncludeIntervals
+
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
+
+        BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
+        END Desc
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
+        BEGIN Graphics
 
             BEGIN Attributes
 
-                LineColor               #ffd700
-                LabelColor              #ffd700
-                LineStyle               0
-                LineWidth               1.0
-                FontStyle               0
+                LineColor		 #ffd700
+                LabelColor		 #ffd700
+                LineStyle		 0
+                LineWidth		 1
+                FontStyle		 0
 
             END Attributes
 
             BEGIN Graphics
 
-                Inherit                 On
-                ShowLabel               On
-                ShowBoundingRect        Off
+                ShowGfx		 On
+                Inherit		 On
+                ShowLabel		 On
+                ShowBoundingRect		 Off
 
             END Graphics
             BEGIN PointData
-                ShowPoints           Off
-                NewPointShow         On
-                NewPointMarkerStyle  1
-                NewPointFontStyle    0
-                PointMarkerShow      On
-                PointMarkerStyle     1
+                ShowPoints		 Off
+                NewPointShow		 Off
+                NewPointMarkerStyle		 1
+                NewPointFontStyle		 0
+                PointMarkerShow		 On
+                PointMarkerStyle		 1
             END PointData
-    END Graphics
-    
-    BEGIN ExternData
-    END ExternData
-    
-    BEGIN AccessConstraints
-		LineOfSight   IncludeIntervals 
-    END AccessConstraints
-    
-    BEGIN Desc
-    END Desc
-    
-    BEGIN DisplayTm
-		DisplayGT	AlwaysOff
-		DisplayType	AlwaysOn
-    END DisplayTm
-    
-    BEGIN Crdn
-    END Crdn
-    
-    BEGIN VO
-    END VO
 
-END Extensions
+            BEGIN DisplayTimes
+                DisplayType		 AlwaysOn
+            END DisplayTimes
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
 
 END LineTarget
 
