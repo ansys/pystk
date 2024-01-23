@@ -42,7 +42,7 @@ doc = [
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "jupyterlab==4.0.10",
+    "jupyterlab==4.0.11",
 ]
 
 [tool.flit.module]
@@ -81,7 +81,6 @@ ignore = [
     "D401", # First line of docstring should be in imperative mood
     "D403", # First word of the first line should be properly capitalized
     "D404", # First word of the docstring should not be "This"
-    "D415", # First line should end with a period, question mark, or exclamation point
     "D417", # Missing argument description in the docstring
 
     # Ignored intentionally
