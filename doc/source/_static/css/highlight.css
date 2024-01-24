@@ -12,6 +12,17 @@
     display: none;
 }
 
+/* Center output notebook images */
+.nboutput . img {
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+/* Remove the 'snapshot' label in the JupyterWidget snapshots */
+.nboutput img + * {
+    display: none;
+}
+
 .highlight .hll { background-color: #ffffcc !important; }
 .highlight { font-size: 1rem; background: #f0f0f0 !important; }
 .highlight .c { color: #60a0b0 !important; font-style: italic !important; } /* Comment */
