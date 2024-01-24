@@ -1,0 +1,109 @@
+stk.v.6.0
+
+BEGIN AreaTarget
+
+Name        Crosses180AT
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            -1.773105e+001
+		EcfLongitude           1.716826e+002
+		EcfAltitude            0.000000e+000
+		UseTerrainInfo         Off
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     23
+
+		BEGIN PolygonPoints
+
+			3.54857142800000e+001	1.66803519130000e+002	0.00000000000000e+000
+			3.34285714200000e+001	-1.69970674540000e+002	0.00000000000000e+000
+			1.54285714200000e+001	-1.63636363720000e+002	0.00000000000000e+000
+			9.77142857000000e+000	-1.74193548410000e+002	0.00000000000000e+000
+			6.17142857000000e+000	1.70498533770000e+002	0.00000000000000e+000
+			-4.62857142000000e+000	1.62052786020000e+002	0.00000000000000e+000
+			-1.85142857100000e+001	1.71026393010000e+002	0.00000000000000e+000
+			-2.16000000000000e+001	-1.72082111480000e+002	0.00000000000000e+000
+			-3.54857142800000e+001	-1.57829912140000e+002	0.00000000000000e+000
+			-5.29714285700000e+001	-1.58357771380000e+002	0.00000000000000e+000
+			-6.06857142800000e+001	-1.78416422290000e+002	0.00000000000000e+000
+			-5.96571428500000e+001	1.63636363720000e+002	0.00000000000000e+000
+			-5.09142857100000e+001	1.52551319800000e+002	0.00000000000000e+000
+			-4.26857142800000e+001	1.63108504490000e+002	0.00000000000000e+000
+			-4.57714285700000e+001	1.73665689180000e+002	0.00000000000000e+000
+			-3.85714285700000e+001	-1.78944281530000e+002	0.00000000000000e+000
+			-2.88000000000000e+001	1.74721407650000e+002	0.00000000000000e+000
+			-2.21142857100000e+001	1.63636363720000e+002	0.00000000000000e+000
+			-1.23428571400000e+001	1.50967742090000e+002	0.00000000000000e+000
+			-1.54285714000000e+000	1.45689149750000e+002	0.00000000000000e+000
+			8.74285714000000e+000	1.51495601330000e+002	0.00000000000000e+000
+			1.74857142800000e+001	1.56246334440000e+002	0.00000000000000e+000
+			3.54857142800000e+001	1.66803519130000e+002	0.00000000000000e+000
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             #ff00ff
+                PolygonColor            #ff00ff
+                LabelColor              #ff00ff
+                LineStyle               0
+                LineWidth               1.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowCentroid            On
+                ShowBoundaryPts         Off
+                ShowLabel               On
+                Filled                  Off
+                ShowBoundingRect        Off
+
+            END Graphics
+
+            BEGIN LblNotes
+
+
+            END LblNotes
+
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END AreaTarget
+

@@ -3,12 +3,12 @@
 ################################################################################
 
 __all__ = [ "GrpcEventHandlerImpl",
-            "StkObjectRootEventGrpcHandler", 
-            "STKXApplicationEventGrpcHandler", 
-            "SceneEventGrpcHandler",
-            "KmlGraphicsEventGrpcHandler",
-            "ImageCollectionEventGrpcHandler",
-            "TerrainOverlayCollectionEventGrpcHandler"]
+            "IStkObjectRootEventGrpcHandler", 
+            "ISTKXApplicationEventGrpcHandler", 
+            "IStkGraphicsSceneEventGrpcHandler",
+            "IStkGraphicsKmlGraphicsEventGrpcHandler",
+            "IStkGraphicsImageCollectionEventGrpcHandler",
+            "IStkGraphicsTerrainCollectionEventGrpcHandler"]
 
 from .grpcutil import *
 from .coclassutil import AgTypeNameMap
@@ -38,7 +38,7 @@ class _isub_callback(object):
             self._intf.unsubscribe(self._handler, self._event_name, self._func)
 
 class GrpcEventHandlerImpl(object):
-    def __init__(self, interface:grpc_interface, event_handler:AgGrpcServices_pb2.EventHandler, events:dict):
+    def __init__(self, interface:GrpcInterface, event_handler:AgGrpcServices_pb2.EventHandler, events:dict):
         self._intf = interface
         self._handler = event_handler
         self._events = events
@@ -50,20 +50,20 @@ class GrpcEventHandlerImpl(object):
         self._events[event]._set_iadd_callback(_iadd_callback(self._intf, event, self._handler, callback))
         self._events[event]._set_isub_callback(_isub_callback(self._intf, event, self._handler, callback))
 
-    def Subscribe(self):
+    def subscribe(self):
         # No action needed since events are subscribed individually rather than all at once
         pass
     
-    def Unsubscribe(self):
+    def unsubscribe(self):
         self._intf.unsubscribe_all(self._handler)
         
 ################################################################################
-#          IAgStkObjectRootEvents
+#          IStkObjectRootEvents
 ################################################################################
 
-class IAgStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
+class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkObjectRootEvents, events)
         self._register_iadd_isub_callbacks("OnScenarioNew", self._on_scenario_new)
         self._register_iadd_isub_callbacks("OnScenarioLoad", self._on_scenario_load)
@@ -308,12 +308,12 @@ class IAgStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
       
     
 ################################################################################
-#          IAgSTKXApplicationEvents
+#          ISTKXApplicationEvents
 ################################################################################
 
-class IAgSTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
+class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgSTKXApplicationEvents, events)
         self._register_iadd_isub_callbacks("OnScenarioNew", self._on_scenario_new)
         self._register_iadd_isub_callbacks("OnScenarioLoad", self._on_scenario_load)
@@ -430,12 +430,12 @@ class IAgSTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
 
 
 ################################################################################
-#          IAgStkGraphicsSceneEvents
+#          IStkGraphicsSceneEvents
 ################################################################################
 
-class IAgStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
+class IStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsSceneEvents, events)
         self._register_iadd_isub_callbacks("Rendering", self._Rendering)
 
@@ -448,12 +448,12 @@ class IAgStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
 
                 
 ################################################################################
-#          IAgStkGraphicsKmlGraphicsEvents
+#          IStkGraphicsKmlGraphicsEvents
 ################################################################################
 
-class IAgStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
+class IStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsKmlGraphicsEvents, events)
         self._register_iadd_isub_callbacks("DocumentLoaded", self._DocumentLoaded)
 
@@ -466,12 +466,12 @@ class IAgStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 
 
 ################################################################################
-#          IAgStkGraphicsImageCollectionEvents
+#          IStkGraphicsImageCollectionEvents
 ################################################################################
 
-class IAgStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
+class IStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsImageCollectionEvents, events)
         self._register_iadd_isub_callbacks("AddComplete", self._AddComplete)
 
@@ -484,12 +484,12 @@ class IAgStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
                 
 ################################################################################
-#          IAgStkGraphicsTerrainCollectionEvents
+#          IStkGraphicsTerrainCollectionEvents
 ################################################################################
 
-class IAgStkGraphicsTerrainCollectionEventGrpcHandler(GrpcEventHandlerImpl):
+class IStkGraphicsTerrainCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
-    def __init__(self, interface:grpc_interface, events:dict):
+    def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsTerrainCollectionEvents, events)
         self._register_iadd_isub_callbacks("AddComplete", self._AddComplete)
 

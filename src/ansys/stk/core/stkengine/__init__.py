@@ -15,7 +15,7 @@ if os.name != "nt":
     from ctypes.util                  import find_library
 
 from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
-from ..internal.comutil            import ole32lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
+from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
 from ..internal.eventutil          import EventSubscriptionManager
 from ..internal.stkxinitialization import *
 from ..utilities.exceptions        import *
@@ -40,6 +40,7 @@ class STKEngineApplication(STKXApplication):
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
+
     def __init__(self):
         STKXApplication.__init__(self)
         self.__dict__["_initialized"] = False
@@ -56,10 +57,10 @@ class STKEngineApplication(STKXApplication):
         
     def _stkx_intialize(self):
         CLSID_AgSTKXInitialize = GUID()
-        if Succeeded(ole32lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
+        if Succeeded(OLE32Lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
             IID_IUnknown = GUID(IUnknown._guid)
             stkxinit_unk = IUnknown()
-            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.take_ownership()
                 pInit = STKXInitialize()
                 pInit._private_init(stkxinit_unk)
@@ -114,10 +115,10 @@ class STKEngineApplication(STKXApplication):
         if not self.__dict__["_initialized"]:
             raise RuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
         CLSID_AgStkObjectRoot = GUID()
-        if Succeeded(ole32lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
+        if Succeeded(OLE32Lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
             IID_IUnknown = GUID(IUnknown._guid)
             root_unk = IUnknown()
-            ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
+            OLE32Lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
             root_unk.take_ownership()
             root = StkObjectRoot()
             root._private_init(root_unk)
@@ -128,10 +129,10 @@ class STKEngineApplication(STKXApplication):
         if not self.__dict__['_initialized']:
             raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
         CLSID_AgStkObjectModelContext = GUID()
-        if Succeeded(ole32lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', CLSID_AgStkObjectModelContext)):
+        if Succeeded(OLE32Lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', CLSID_AgStkObjectModelContext)):
             IID_IUnknown = GUID(IUnknown._guid)
             context_unk = IUnknown()
-            ole32lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
+            OLE32Lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
             context_unk.take_ownership()
             context = StkObjectModelContext()
             context._private_init(context_unk)
@@ -151,6 +152,7 @@ class STKEngineApplication(STKXApplication):
 
 class STKEngine(object):
     """Initialize and manage the STK Engine application."""
+    
     _is_engine_running = False
             
     @staticmethod
@@ -175,10 +177,10 @@ class STKEngine(object):
             raise RuntimeError("Only one STKEngine instance is allowed per Python process.")
         CoInitializeManager.initialize()
         CLSID_AgSTKXApplication = GUID()
-        if Succeeded(ole32lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
+        if Succeeded(OLE32Lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
             pUnk = IUnknown()
             IID_IUnknown = GUID(IUnknown._guid)
-            if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
                 pUnk.take_ownership(isApplication=True)
                 STKEngine._is_engine_running = True
                 STKEngine._init_x11(noGraphics)

@@ -13,8 +13,8 @@ if os.name == "nt":
 from .stkx import STKXApplication
 from .stkobjects import StkObjectRoot, StkObjectModelContext
 from .utilities.exceptions import *
-from .internal.grpcutil import grpc_client
-from .internal.apiutil import interface_proxy
+from .internal.grpcutil import GrpcClient
+from .internal.apiutil import InterfaceProxy
 
 class STKRuntimeApplication(STKXApplication):
     """
@@ -25,11 +25,11 @@ class STKRuntimeApplication(STKXApplication):
     """
 
     def __init__(self):
-        self.__dict__["_intf"] = interface_proxy()
+        self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
         
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf: InterfaceProxy):
         STKXApplication._private_init(self, intf)
         
     def __del__(self):
@@ -64,7 +64,7 @@ class STKRuntimeApplication(STKXApplication):
         """Safely disconnect from STKRuntime."""
         if self._intf:
             self._intf.client.TerminateConnection()
-            self.__dict__["_intf"] = interface_proxy()
+            self.__dict__["_intf"] = InterfaceProxy()
 
 class STKRuntime(object):
     """Connect to STKRuntime using gRPC."""
@@ -128,7 +128,7 @@ class STKRuntime(object):
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         """
-        client = grpc_client.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
         if client is not None:
             app_intf = client.GetStkApplicationInterface()
             app = STKRuntimeApplication()

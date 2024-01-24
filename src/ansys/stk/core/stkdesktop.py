@@ -12,11 +12,11 @@ import subprocess
 if os.name == "nt":
     import winreg
 
-from .internal.comutil       import (ole32lib, oleaut32lib, GUID, IUnknown, CoInitializeManager, Succeeded,
+from .internal.comutil       import (OLE32Lib, OLEAut32Lib, GUID, IUnknown, CoInitializeManager, Succeeded,
                                  CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
 from .internal.coclassutil   import attach_to_stk_by_pid
 from .internal.eventutil     import EventSubscriptionManager
-from .internal.apiutil       import interface_proxy
+from .internal.apiutil       import InterfaceProxy
 from .utilities.exceptions   import *
 from .graphics               import *
 from .stkobjects             import *
@@ -39,20 +39,20 @@ class ThreadMarshaller(object):
         self._obj = obj
         self._obj_type = type(obj)
         self._pStream = PVOID()
-        if not Succeeded(ole32lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._intf.p, byref(self._pStream))):
+        if not Succeeded(OLE32Lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._intf.p, byref(self._pStream))):
             raise STKRuntimeError("ThreadMarshaller failed to initialize.")
            
     def __del__(self):
         if self._pStream is not None:
-            ole32lib.CoReleaseMarshalData(self._pStream)
+            OLE32Lib.CoReleaseMarshalData(self._pStream)
         del(self._obj)
        
     def get_marshalled_to_current_thread(self) -> typing.Any:
-        """Returns an instance of the original stk_object that may be used on the current thread. May only be called once."""
+        """Return an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
             raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
         pUnk_raw = PVOID()
-        hr = ole32lib.CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
+        hr = OLE32Lib.CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
         self._pStream = None
         if not Succeeded(hr):
             if hr == CO_E_NOTINITIALIZED:
@@ -68,11 +68,11 @@ class ThreadMarshaller(object):
         
     def initialize_thread(self) -> None:
         """Must be called on the destination thread prior to calling GetMarshalledToCurrentThread()."""
-        ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+        OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         
     def release_thread(self) -> None:
         """Call in the destination thread after all calls to STK are finished."""
-        ole32lib.CoUninitialize()
+        OLE32Lib.CoUninitialize()
 
 class STKDesktopApplication(UiApplication):
     """
@@ -81,14 +81,15 @@ class STKDesktopApplication(UiApplication):
     Use STKDesktop.StartApplication() or STKDesktop.AttachToApplication() 
     to obtain an initialized STKDesktopApplication object.
     """
+    
     def __init__(self):
         if os.name != "nt":
             raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
-        self.__dict__["_intf"] = interface_proxy()
+        self.__dict__["_intf"] = InterfaceProxy()
         UiApplication.__init__(self)
         self.__dict__["_root"] = None
         
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf: InterfaceProxy):
         UiApplication._private_init(self, intf)
         
     def __del__(self):
@@ -121,13 +122,13 @@ class STKDesktopApplication(UiApplication):
             self._disconnect_grpc()
         else:
             self.quit()
-            self.__dict__["_intf"] = interface_proxy()
+            self.__dict__["_intf"] = InterfaceProxy()
             
     def _disconnect_grpc(self) -> None:
         """Safely disconnect from STK."""
         if self._intf:
             self._intf.client.TerminateConnection()
-            self.__dict__["_intf"] = interface_proxy()
+            self.__dict__["_intf"] = InterfaceProxy()
 
 
 class STKDesktop(object):
@@ -184,10 +185,10 @@ class STKDesktop(object):
             return app
         else:
             CLSID_AgUiApplication = GUID()
-            if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
+            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
                 pUnk = IUnknown()
                 IID_IUnknown = GUID(IUnknown._guid)
-                if Succeeded(ole32lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
+                if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
                     pUnk.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
                     app._private_init(pUnk)
@@ -220,10 +221,10 @@ class STKDesktop(object):
             if pid is not None:
                 raise STKInitializationError(f"Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
             try:
-                from .internal.grpcutil import grpc_client
+                from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
-            client = grpc_client.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+            client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
                 pAppImpl = client.GetStkApplicationInterface()
                 app = STKDesktopApplication()
@@ -234,10 +235,10 @@ class STKDesktop(object):
                 raise STKInitializationError(f"Could not connect to gRPC server at {grpc_host}:{grpc_port}.")
         elif pid is None:
             CLSID_AgUiApplication = GUID()
-            if Succeeded(ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
+            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
                 pUnk = IUnknown()
                 IID_IUnknown = GUID(IUnknown._guid)
-                if Succeeded(oleaut32lib.GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
+                if Succeeded(OLEAut32Lib.GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
                     pUnk.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
                     app._private_init(pUnk)
@@ -256,7 +257,7 @@ class STKDesktop(object):
     @staticmethod
     def release_all() -> None:
         """
-        Releases all handles from Python to STK Desktop applications.
+        Release all handles from Python to STK Desktop applications.
 
         Not applicable to gRPC connections.
         """
@@ -268,7 +269,7 @@ class STKDesktop(object):
     @staticmethod
     def create_thread_marshaller(stk_object:typing.Any) -> ThreadMarshaller:
         """
-        Returns a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
+        Return a ThreadMarshaller instance capable of marshalling the stk_object argument to a new thread.
 
         Not applicable to gRPC connections.
         """

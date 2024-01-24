@@ -1,0 +1,26 @@
+stk.v.6.0
+
+BEGIN Constellation
+
+Name  CovDefTest2
+BEGIN Definition
+
+   Type        Constellation
+   Operator    Or
+   Order       1
+   IsRelay     No
+    Object  Satellite/CovDefTest1
+    Object  Satellite/CovDefTest2
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

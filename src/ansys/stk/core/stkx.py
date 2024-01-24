@@ -24,7 +24,7 @@ from .internal  import coclassutil      as agcls
 from .internal  import marshall         as agmarshall
 from .utilities import colors           as agcolor
 from .internal.comutil     import IDispatch, IPictureDisp
-from .internal.apiutil     import (interface_proxy, enumerator_proxy, out_arg, 
+from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute)
 from .internal.eventutil   import *
@@ -351,10 +351,10 @@ class ISTKXSSLCertificateErrorEventArgs(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, ISTKXSSLCertificateErrorEventArgs)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXSSLCertificateErrorEventArgs)
@@ -363,14 +363,14 @@ class ISTKXSSLCertificateErrorEventArgs(object):
     
     _set_ignore_error_metadata = { "name" : "set_ignore_error",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     def set_ignore_error(self, ignoreError:bool) -> None:
         """Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server."""
         return self._intf.invoke(ISTKXSSLCertificateErrorEventArgs._metadata, ISTKXSSLCertificateErrorEventArgs._set_ignore_error_metadata, ignoreError)
 
     _get_is_error_ignored_metadata = { "name" : "is_error_ignored",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_error_ignored(self) -> bool:
         """Return whether the invalid certificate error is ignored."""
@@ -378,14 +378,14 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _set_ignore_error_permanently_metadata = { "name" : "set_ignore_error_permanently",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     def set_ignore_error_permanently(self, ignoreErrorPermanently:bool) -> None:
         """Specify True to ignore the certificate error and add the certificate to the list of trusted certificates."""
         return self._intf.invoke(ISTKXSSLCertificateErrorEventArgs._metadata, ISTKXSSLCertificateErrorEventArgs._set_ignore_error_permanently_metadata, ignoreErrorPermanently)
 
     _get_serial_number_metadata = { "name" : "serial_number",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def serial_number(self) -> str:
         """Certificate's serial number."""
@@ -393,7 +393,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_issuer_metadata = { "name" : "issuer",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def issuer(self) -> str:
         """The provider who issued the certificate."""
@@ -401,7 +401,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_subject_metadata = { "name" : "subject",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def subject(self) -> str:
         """Certificate's subject field."""
@@ -409,7 +409,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_valid_date_metadata = { "name" : "valid_date",
             "arg_types" : (POINTER(agcom.DATE),),
-            "marshallers" : (agmarshall.DATE_arg,) }
+            "marshallers" : (agmarshall.DateArg,) }
     @property
     def valid_date(self) -> datetime:
         """Certificate's valid date."""
@@ -417,7 +417,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_expiration_date_metadata = { "name" : "expiration_date",
             "arg_types" : (POINTER(agcom.DATE),),
-            "marshallers" : (agmarshall.DATE_arg,) }
+            "marshallers" : (agmarshall.DateArg,) }
     @property
     def expiration_date(self) -> datetime:
         """Certificate's expiration date."""
@@ -425,7 +425,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_is_expired_metadata = { "name" : "is_expired",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_expired(self) -> bool:
         """Whether the certificate is expired."""
@@ -433,7 +433,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_pem_data_metadata = { "name" : "pem_data",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def pem_data(self) -> str:
         """Certificate's PEM data encoded as base-64."""
@@ -441,7 +441,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _get_handled_metadata = { "name" : "handled",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def handled(self) -> bool:
         """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
@@ -449,7 +449,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
 
     _set_handled_metadata = { "name" : "handled",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @handled.setter
     def handled(self, bHandled:bool) -> None:
         """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
@@ -472,10 +472,10 @@ class ISTKXConControlQuitReceivedEventArgs(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, ISTKXConControlQuitReceivedEventArgs)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXConControlQuitReceivedEventArgs)
@@ -484,7 +484,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
     
     _get_acknowledge_metadata = { "name" : "acknowledge",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def acknowledge(self) -> bool:
         """Indicate whether or not to acknowledge the connect command."""
@@ -492,7 +492,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
 
     _set_acknowledge_metadata = { "name" : "acknowledge",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @acknowledge.setter
     def acknowledge(self, acknowledge:bool) -> None:
         """Indicate whether or not to acknowledge the connect command."""
@@ -519,10 +519,10 @@ class IPickInfoData(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IPickInfoData)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickInfoData)
@@ -531,7 +531,7 @@ class IPickInfoData(object):
     
     _get_obj_path_metadata = { "name" : "obj_path",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def obj_path(self) -> str:
         """Path of the STK object picked if any (or empty string)."""
@@ -539,7 +539,7 @@ class IPickInfoData(object):
 
     _get_lat_metadata = { "name" : "lat",
             "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DOUBLE_arg,) }
+            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def lat(self) -> float:
         """Latitude of point clicked (if available)."""
@@ -547,7 +547,7 @@ class IPickInfoData(object):
 
     _get_lon_metadata = { "name" : "lon",
             "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DOUBLE_arg,) }
+            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def lon(self) -> float:
         """Longitude of point clicked (if available)."""
@@ -555,7 +555,7 @@ class IPickInfoData(object):
 
     _get_altitude_metadata = { "name" : "altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DOUBLE_arg,) }
+            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude(self) -> float:
         """Altitude of point clicked (if available)."""
@@ -563,7 +563,7 @@ class IPickInfoData(object):
 
     _get_is_obj_path_valid_metadata = { "name" : "is_obj_path_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_obj_path_valid(self) -> bool:
         """Indicate if the ObjPath property is valid."""
@@ -571,7 +571,7 @@ class IPickInfoData(object):
 
     _get_is_lat_lon_altitude_valid_metadata = { "name" : "is_lat_lon_altitude_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_lat_lon_altitude_valid(self) -> bool:
         """Indicate if the Lat/Lon/Alt properties are valid."""
@@ -593,10 +593,10 @@ class IRubberBandPickInfoData(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IRubberBandPickInfoData)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRubberBandPickInfoData)
@@ -605,7 +605,7 @@ class IRubberBandPickInfoData(object):
     
     _get_obj_paths_metadata = { "name" : "obj_paths",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def obj_paths(self) -> "ObjPathCollection":
         """List of object paths selected."""
@@ -654,29 +654,29 @@ class ISTKXApplication(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, ISTKXApplication)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplication)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, ISTKXApplication, None)
     def Subscribe(self) -> ISTKXApplicationEventHandler:
-        """Returns an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
+        """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
     
     _execute_command_metadata = { "name" : "execute_command",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def execute_command(self, command:str) -> "ExecCmdResult":
         """Send a connect command to STK X."""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._execute_command_metadata, command, out_arg())
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._execute_command_metadata, command, OutArg())
 
     _get_enable_connect_metadata = { "name" : "enable_connect",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def enable_connect(self) -> bool:
         """Enable or disable TCP/IP connect command processing (default: disabled)."""
@@ -684,14 +684,14 @@ class ISTKXApplication(object):
 
     _set_enable_connect_metadata = { "name" : "enable_connect",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_connect.setter
     def enable_connect(self, newVal:bool) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_enable_connect_metadata, newVal)
 
     _get_connect_port_metadata = { "name" : "connect_port",
             "arg_types" : (POINTER(agcom.SHORT),),
-            "marshallers" : (agmarshall.SHORT_arg,) }
+            "marshallers" : (agmarshall.ShortArg,) }
     @property
     def connect_port(self) -> int:
         """Specify TCP/IP port to be used by Connect (default: 5001)."""
@@ -699,14 +699,14 @@ class ISTKXApplication(object):
 
     _set_connect_port_metadata = { "name" : "connect_port",
             "arg_types" : (agcom.SHORT,),
-            "marshallers" : (agmarshall.SHORT_arg,) }
+            "marshallers" : (agmarshall.ShortArg,) }
     @connect_port.setter
     def connect_port(self, newVal:int) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_connect_port_metadata, newVal)
 
     _get_host_id_metadata = { "name" : "host_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def host_id(self) -> str:
         """Return the Host ID."""
@@ -714,7 +714,7 @@ class ISTKXApplication(object):
 
     _get_registration_id_metadata = { "name" : "registration_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def registration_id(self) -> str:
         """Return the Registration ID."""
@@ -722,22 +722,22 @@ class ISTKXApplication(object):
 
     _get_version_metadata = { "name" : "version",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def version(self) -> str:
-        """Return the version number"""
+        """Return the version number."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_version_metadata)
 
     _get_licensing_report_metadata = { "name" : "get_licensing_report",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     def get_licensing_report(self) -> str:
         """This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_licensing_report_metadata, out_arg())
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_licensing_report_metadata, OutArg())
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
@@ -745,35 +745,37 @@ class ISTKXApplication(object):
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
     def vendor_id(self, vendorID:str) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_vendor_id_metadata, vendorID)
 
     _set_online_options_metadata = { "name" : "set_online_options",
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.BSTR_arg, agmarshall.LONG_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg, agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
     def set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
-        """Set http proxy online options"""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, out_arg())
+        """Set http proxy online options."""
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
+
 
     _get_online_options_metadata = { "name" : "get_online_options",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg, agmarshall.BSTR_arg, agmarshall.LONG_arg, agmarshall.BSTR_arg, agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
-        """Get http proxy online options"""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, out_arg(), out_arg(), out_arg(), out_arg(), out_arg())
+        """Get http proxy online options."""
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, OutArg(), OutArg(), OutArg(), OutArg(), OutArg())
+
 
     _set_connect_handler_metadata = { "name" : "set_connect_handler",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_connect_handler(self, commandID:str, progID:str) -> None:
-        """Set callback to handle a certain connect command"""
+        """Set callback to handle a certain connect command."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_connect_handler_metadata, commandID, progID)
 
     _get_log_file_full_name_metadata = { "name" : "log_file_full_name",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def log_file_full_name(self) -> str:
         """Return full path and log file name."""
@@ -781,7 +783,7 @@ class ISTKXApplication(object):
 
     _get_logging_mode_metadata = { "name" : "logging_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
     @property
     def logging_mode(self) -> "LOGGING_MODE":
         """Control the log file generation, and if the log file is deleted or not on application exit."""
@@ -789,14 +791,14 @@ class ISTKXApplication(object):
 
     _set_logging_mode_metadata = { "name" : "logging_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
     @logging_mode.setter
     def logging_mode(self, newVal:"LOGGING_MODE") -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_logging_mode_metadata, newVal)
 
     _get_connect_max_connections_metadata = { "name" : "connect_max_connections",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def connect_max_connections(self) -> int:
         """Specify the maximum number of Connect connections to allow."""
@@ -804,28 +806,28 @@ class ISTKXApplication(object):
 
     _set_connect_max_connections_metadata = { "name" : "connect_max_connections",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @connect_max_connections.setter
     def connect_max_connections(self, newVal:int) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_connect_max_connections_metadata, newVal)
 
     _execute_multiple_commands_metadata = { "name" : "execute_multiple_commands",
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LPSAFEARRAY_arg, agmarshall.AgEnum_arg(EXEC_MULTI_CMD_RESULT_ACTION), agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(EXEC_MULTI_CMD_RESULT_ACTION), agmarshall.InterfaceOutArg,) }
     def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "ExecMultiCmdResult":
         """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, out_arg())
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, OutArg())
 
     _is_feature_available_metadata = { "name" : "is_feature_available",
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.AgEnum_arg(FEATURE_CODES), agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.EnumArg(FEATURE_CODES), agmarshall.VariantBoolArg,) }
     def is_feature_available(self, featureCode:"FEATURE_CODES") -> bool:
         """Return true if the specified feature is available."""
-        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._is_feature_available_metadata, featureCode, out_arg())
+        return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._is_feature_available_metadata, featureCode, OutArg())
 
     _get_no_graphics_metadata = { "name" : "no_graphics",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def no_graphics(self) -> bool:
         """Start engine with or without graphics (default: engine starts with graphics.)."""
@@ -833,7 +835,7 @@ class ISTKXApplication(object):
 
     _set_no_graphics_metadata = { "name" : "no_graphics",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_graphics.setter
     def no_graphics(self, newVal:bool) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_no_graphics_metadata, newVal)
@@ -847,7 +849,7 @@ class ISTKXApplication(object):
 
     _get_show_sla_if_not_accepted_metadata = { "name" : "show_sla_if_not_accepted",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def show_sla_if_not_accepted(self) -> bool:
         """Show the Software License Agreement dialog if not already accepted."""
@@ -855,7 +857,7 @@ class ISTKXApplication(object):
 
     _set_show_sla_if_not_accepted_metadata = { "name" : "show_sla_if_not_accepted",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @show_sla_if_not_accepted.setter
     def show_sla_if_not_accepted(self, newVal:bool) -> None:
         return self._intf.set_property(ISTKXApplication._metadata, ISTKXApplication._set_show_sla_if_not_accepted_metadata, newVal)
@@ -871,7 +873,7 @@ class ISTKXApplication(object):
 
     _set_use_hook_metadata = { "name" : "use_hook",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_hook.setter
     def use_hook(self, newVal:bool) -> None:
         """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
@@ -889,7 +891,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A2BB8372-EA5F-4D9D-84C3-4D9E5B9A8840}",
 agcls.AgTypeNameMap["ISTKXApplication"] = ISTKXApplication
 
 class IDataObject(object):
-    """DataObject is used for OLE drag and drop operations"""
+    """DataObject is used for OLE drag and drop operations."""
 
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -900,10 +902,10 @@ class IDataObject(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDataObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObject)
@@ -912,7 +914,7 @@ class IDataObject(object):
     
     _get_files_metadata = { "name" : "files",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def files(self) -> "DataObjectFiles":
         """Return a collection of filenames."""
@@ -938,10 +940,10 @@ class IObjPathCollection(object):
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IObjPathCollection)
         self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IObjPathCollection)
@@ -961,7 +963,7 @@ class IObjPathCollection(object):
     
     _get_count_metadata = { "name" : "count",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
@@ -969,25 +971,25 @@ class IObjPathCollection(object):
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(IObjPathCollection._metadata, IObjPathCollection._item_metadata, index, out_arg())
+        return self._intf.invoke(IObjPathCollection._metadata, IObjPathCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> enumerator_proxy:
+    def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the object paths in the collection."""
         return self._intf.get_property(IObjPathCollection._metadata, IObjPathCollection._get__NewEnum_metadata)
 
     _range_metadata = { "name" : "range",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.LONG_arg, agmarshall.LPSAFEARRAY_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
     def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
-        return self._intf.invoke(IObjPathCollection._metadata, IObjPathCollection._range_metadata, startIndex, stopIndex, out_arg())
+        return self._intf.invoke(IObjPathCollection._metadata, IObjPathCollection._range_metadata, startIndex, stopIndex, OutArg())
 
     __getitem__ = item
 
@@ -1009,10 +1011,10 @@ class IDrawElem(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDrawElem)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElem)
@@ -1021,7 +1023,7 @@ class IDrawElem(object):
     
     _get_visible_metadata = { "name" : "visible",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def visible(self) -> bool:
         """Show or hide the element."""
@@ -1029,7 +1031,7 @@ class IDrawElem(object):
 
     _set_visible_metadata = { "name" : "visible",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
     def visible(self, newVal:bool) -> None:
         return self._intf.set_property(IDrawElem._metadata, IDrawElem._set_visible_metadata, newVal)
@@ -1060,11 +1062,11 @@ class IDrawElemRect(IDrawElem):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDrawElemRect)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemRect)
@@ -1073,7 +1075,7 @@ class IDrawElemRect(IDrawElem):
     
     _get_left_metadata = { "name" : "left",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
     @property
     def left(self) -> int:
         """The x-coordinate of the left edge of this rectangle."""
@@ -1081,7 +1083,7 @@ class IDrawElemRect(IDrawElem):
 
     _get_right_metadata = { "name" : "right",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
     @property
     def right(self) -> int:
         """The x-coordinate of the right edge of this rectangle."""
@@ -1089,7 +1091,7 @@ class IDrawElemRect(IDrawElem):
 
     _get_top_metadata = { "name" : "top",
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEYPosPixelsArg,) }
     @property
     def top(self) -> int:
         """The y-coordinate of the top edge of this rectangle."""
@@ -1097,7 +1099,7 @@ class IDrawElemRect(IDrawElem):
 
     _get_bottom_metadata = { "name" : "bottom",
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEYPosPixelsArg,) }
     @property
     def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this rectangle."""
@@ -1105,14 +1107,14 @@ class IDrawElemRect(IDrawElem):
 
     _set_metadata = { "name" : "set",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS,),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg,) }
     def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
         return self._intf.invoke(IDrawElemRect._metadata, IDrawElemRect._set_metadata, left, top, right, bottom)
 
     _get_color_metadata = { "name" : "color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def color(self) -> agcolor.Color:
         """Color of the rectangle."""
@@ -1120,14 +1122,14 @@ class IDrawElemRect(IDrawElem):
 
     _set_color_metadata = { "name" : "color",
             "arg_types" : (agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
     def color(self, newVal:agcolor.Color) -> None:
         return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_color_metadata, newVal)
 
     _get_line_width_metadata = { "name" : "line_width",
             "arg_types" : (POINTER(agcom.FLOAT),),
-            "marshallers" : (agmarshall.FLOAT_arg,) }
+            "marshallers" : (agmarshall.FloatArg,) }
     @property
     def line_width(self) -> float:
         """Specify the width of the line."""
@@ -1135,14 +1137,14 @@ class IDrawElemRect(IDrawElem):
 
     _set_line_width_metadata = { "name" : "line_width",
             "arg_types" : (agcom.FLOAT,),
-            "marshallers" : (agmarshall.FLOAT_arg,) }
+            "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
     def line_width(self, newVal:float) -> None:
         return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_line_width_metadata, newVal)
 
     _get_line_style_metadata = { "name" : "line_style",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @property
     def line_style(self) -> "LINE_STYLE":
         """Specify the style of the line."""
@@ -1150,7 +1152,7 @@ class IDrawElemRect(IDrawElem):
 
     _set_line_style_metadata = { "name" : "line_style",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @line_style.setter
     def line_style(self, newVal:"LINE_STYLE") -> None:
         return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_line_style_metadata, newVal)
@@ -1179,10 +1181,10 @@ class IDrawElemCollection(object):
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDrawElemCollection)
         self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemCollection)
@@ -1202,7 +1204,7 @@ class IDrawElemCollection(object):
     
     _get_count_metadata = { "name" : "count",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
@@ -1210,16 +1212,16 @@ class IDrawElemCollection(object):
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "IDrawElem":
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._item_metadata, index, out_arg())
+        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> enumerator_proxy:
+    def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
         return self._intf.get_property(IDrawElemCollection._metadata, IDrawElemCollection._get__NewEnum_metadata)
 
@@ -1232,21 +1234,21 @@ class IDrawElemCollection(object):
 
     _add_metadata = { "name" : "add",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def add(self, elemType:str) -> "IDrawElem":
         """Factory to create and add a new element to the end of the sequence."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._add_metadata, elemType, out_arg())
+        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._add_metadata, elemType, OutArg())
 
     _remove_metadata = { "name" : "remove",
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.AgInterface_in_arg("IDrawElem"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("IDrawElem"),) }
     def remove(self, drawElem:"IDrawElem") -> None:
         """Remove the specified element."""
         return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._remove_metadata, drawElem)
 
     _get_visible_metadata = { "name" : "visible",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def visible(self) -> bool:
         """Show or hide all the elements."""
@@ -1254,7 +1256,7 @@ class IDrawElemCollection(object):
 
     _set_visible_metadata = { "name" : "visible",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
     def visible(self, newVal:bool) -> None:
         return self._intf.set_property(IDrawElemCollection._metadata, IDrawElemCollection._set_visible_metadata, newVal)
@@ -1280,10 +1282,10 @@ class IWinProjectionPosition(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IWinProjectionPosition)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWinProjectionPosition)
@@ -1292,7 +1294,7 @@ class IWinProjectionPosition(object):
     
     _get_x_position_metadata = { "name" : "x_position",
             "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DOUBLE_arg,) }
+            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def x_position(self) -> float:
         """Projected window X position."""
@@ -1300,7 +1302,7 @@ class IWinProjectionPosition(object):
 
     _get_y_position_metadata = { "name" : "y_position",
             "arg_types" : (POINTER(agcom.DOUBLE),),
-            "marshallers" : (agmarshall.DOUBLE_arg,) }
+            "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def y_position(self) -> float:
         """Projected window Y position."""
@@ -1308,7 +1310,7 @@ class IWinProjectionPosition(object):
 
     _get_is_win_projection_position_valid_metadata = { "name" : "is_win_projection_position_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_win_projection_position_valid(self) -> bool:
         """Indicate if the returned projected position is valid or not."""
@@ -1340,11 +1342,11 @@ class IDrawElemLine(IDrawElem):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDrawElemLine)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElem._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemLine)
@@ -1353,7 +1355,7 @@ class IDrawElemLine(IDrawElem):
     
     _get_left_metadata = { "name" : "left",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
     @property
     def left(self) -> int:
         """The x-coordinate of the left edge of this line."""
@@ -1361,7 +1363,7 @@ class IDrawElemLine(IDrawElem):
 
     _get_right_metadata = { "name" : "right",
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg,) }
     @property
     def right(self) -> int:
         """The x-coordinate of the right edge of this line."""
@@ -1369,7 +1371,7 @@ class IDrawElemLine(IDrawElem):
 
     _get_top_metadata = { "name" : "top",
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEYPosPixelsArg,) }
     @property
     def top(self) -> int:
         """The y-coordinate of the top edge of this line."""
@@ -1377,7 +1379,7 @@ class IDrawElemLine(IDrawElem):
 
     _get_bottom_metadata = { "name" : "bottom",
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
-            "marshallers" : (agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEYPosPixelsArg,) }
     @property
     def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this line."""
@@ -1385,14 +1387,14 @@ class IDrawElemLine(IDrawElem):
 
     _set_metadata = { "name" : "set",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS,),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg,) }
     def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
         return self._intf.invoke(IDrawElemLine._metadata, IDrawElemLine._set_metadata, left, top, right, bottom)
 
     _get_color_metadata = { "name" : "color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def color(self) -> agcolor.Color:
         """Color of the rectangle."""
@@ -1400,14 +1402,14 @@ class IDrawElemLine(IDrawElem):
 
     _set_color_metadata = { "name" : "color",
             "arg_types" : (agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
     def color(self, newVal:agcolor.Color) -> None:
         return self._intf.set_property(IDrawElemLine._metadata, IDrawElemLine._set_color_metadata, newVal)
 
     _get_line_width_metadata = { "name" : "line_width",
             "arg_types" : (POINTER(agcom.FLOAT),),
-            "marshallers" : (agmarshall.FLOAT_arg,) }
+            "marshallers" : (agmarshall.FloatArg,) }
     @property
     def line_width(self) -> float:
         """Specify the width of the line."""
@@ -1415,14 +1417,14 @@ class IDrawElemLine(IDrawElem):
 
     _set_line_width_metadata = { "name" : "line_width",
             "arg_types" : (agcom.FLOAT,),
-            "marshallers" : (agmarshall.FLOAT_arg,) }
+            "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
     def line_width(self, newVal:float) -> None:
         return self._intf.set_property(IDrawElemLine._metadata, IDrawElemLine._set_line_width_metadata, newVal)
 
     _get_line_style_metadata = { "name" : "line_style",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @property
     def line_style(self) -> "LINE_STYLE":
         """Specify the style of the line."""
@@ -1430,7 +1432,7 @@ class IDrawElemLine(IDrawElem):
 
     _set_line_style_metadata = { "name" : "line_style",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @line_style.setter
     def line_style(self, newVal:"LINE_STYLE") -> None:
         return self._intf.set_property(IDrawElemLine._metadata, IDrawElemLine._set_line_style_metadata, newVal)
@@ -1456,10 +1458,10 @@ class IExecCmdResult(object):
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IExecCmdResult)
         self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
@@ -1479,7 +1481,7 @@ class IExecCmdResult(object):
     
     _get_count_metadata = { "name" : "count",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
@@ -1487,29 +1489,29 @@ class IExecCmdResult(object):
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._item_metadata, index, out_arg())
+        return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> enumerator_proxy:
+    def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
         return self._intf.get_property(IExecCmdResult._metadata, IExecCmdResult._get__NewEnum_metadata)
 
     _range_metadata = { "name" : "range",
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.LONG_arg, agmarshall.LPSAFEARRAY_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
     def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
-        return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._range_metadata, startIndex, stopIndex, out_arg())
+        return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._range_metadata, startIndex, stopIndex, OutArg())
 
     _get_is_succeeded_metadata = { "name" : "is_succeeded",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_succeeded(self) -> bool:
         """Indicate whether the object contains valid results."""
@@ -1537,10 +1539,10 @@ class IExecMultiCmdResult(object):
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IExecMultiCmdResult)
         self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
@@ -1560,7 +1562,7 @@ class IExecMultiCmdResult(object):
     
     _get_count_metadata = { "name" : "count",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
@@ -1568,16 +1570,16 @@ class IExecMultiCmdResult(object):
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "ExecCmdResult":
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(IExecMultiCmdResult._metadata, IExecMultiCmdResult._item_metadata, index, out_arg())
+        return self._intf.invoke(IExecMultiCmdResult._metadata, IExecMultiCmdResult._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> enumerator_proxy:
+    def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the objects in the collection."""
         return self._intf.get_property(IExecMultiCmdResult._metadata, IExecMultiCmdResult._get__NewEnum_metadata)
 
@@ -1647,22 +1649,22 @@ class IUiAxGraphics3DCntrl(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IUiAxGraphics3DCntrl)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics3DCntrl)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IUiAxGraphics3DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
-        """Returns an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
+        """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "name" : "back_color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
@@ -1670,14 +1672,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_back_color_metadata = { "name" : "back_color",
             "arg_types" : (agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
@@ -1685,27 +1687,27 @@ class IUiAxGraphics3DCntrl(object):
 
     _picture_put_reference_metadata = { "name" : "picture_put_reference",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
     def picture(self, pPicture:IPictureDisp) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_picture_metadata, pPicture)
 
     _pick_info_metadata = { "name" : "pick_info",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
-        return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._pick_info_metadata, x, y, out_arg())
+        return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._pick_info_metadata, x, y, OutArg())
 
     _get_win_id_metadata = { "name" : "win_id",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
@@ -1713,14 +1715,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_win_id_metadata = { "name" : "win_id",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @win_id.setter
     def win_id(self, newVal:int) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_win_id_metadata, newVal)
 
     _get_application_metadata = { "name" : "application",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
@@ -1735,7 +1737,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _get_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
@@ -1743,14 +1745,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
     def no_logo(self, bNoLogo:bool) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_no_logo_metadata, bNoLogo)
 
     _get_ole_drop_mode_metadata = { "name" : "ole_drop_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @property
     def ole_drop_mode(self) -> "OLE_DROP_MODE":
         """How the control handles drop operations."""
@@ -1758,14 +1760,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_ole_drop_mode_metadata = { "name" : "ole_drop_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @ole_drop_mode.setter
     def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_ole_drop_mode_metadata, psOLEDropMode)
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
@@ -1773,21 +1775,21 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
     def vendor_id(self, vendorID:str) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_vendor_id_metadata, vendorID)
 
     _rubber_band_pick_info_metadata = { "name" : "rubber_band_pick_info",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
-        return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, out_arg())
+        return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
 
     _get_mouse_mode_metadata = { "name" : "mouse_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @property
     def mouse_mode(self) -> "MOUSE_MODE":
         """Whether this control responds to mouse events."""
@@ -1795,14 +1797,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_mouse_mode_metadata = { "name" : "mouse_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @mouse_mode.setter
     def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_mouse_mode_metadata, psMouseMode)
 
     _get_draw_elements_metadata = { "name" : "draw_elements",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def draw_elements(self) -> "IDrawElemCollection":
         """Elements to draw on the control."""
@@ -1810,7 +1812,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _get_ready_state_metadata = { "name" : "ready_state",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def ready_state(self) -> int:
         """Return/sets the background color of the control."""
@@ -1818,7 +1820,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _get_ppt_preload_mode_metadata = { "name" : "ppt_preload_mode",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def ppt_preload_mode(self) -> bool:
         """Special mode for PowerPoint : if true the VO control window is kept around when switching between slides."""
@@ -1826,14 +1828,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_ppt_preload_mode_metadata = { "name" : "ppt_preload_mode",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @ppt_preload_mode.setter
     def ppt_preload_mode(self, bPptPreloadMode:bool) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_ppt_preload_mode_metadata, bPptPreloadMode)
 
     _get_advanced_pick_mode_metadata = { "name" : "advanced_pick_mode",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
@@ -1841,21 +1843,21 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_advanced_pick_mode_metadata = { "name" : "advanced_pick_mode",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
     def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_advanced_pick_mode_metadata, bAdvancePickMode)
 
     _copy_from_win_id_metadata = { "name" : "copy_from_win_id",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copy an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._copy_from_win_id_metadata, winID)
 
     _start_object_editing_metadata = { "name" : "start_object_editing",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     def start_object_editing(self, objEditPath:str) -> None:
         """Enters into 3D object editing mode."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._start_object_editing_metadata, objEditPath)
@@ -1869,14 +1871,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _stop_object_editing_metadata = { "name" : "stop_object_editing",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     def stop_object_editing(self, canceled:bool) -> None:
         """End 3D object editing mode."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._stop_object_editing_metadata, canceled)
 
     _get_is_object_editing_metadata = { "name" : "is_object_editing",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def is_object_editing(self) -> bool:
         """Return true if in 3D object editing mode."""
@@ -1884,7 +1886,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _get_in_zoom_mode_metadata = { "name" : "in_zoom_mode",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def in_zoom_mode(self) -> bool:
         """Return true if in zoom in mode."""
@@ -1892,7 +1894,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_mouse_cursor_from_file_metadata = { "name" : "set_mouse_cursor_from_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
         """Set mouse cursor to the selected cursor file."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
@@ -1906,14 +1908,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_mouse_cursor_from_handle_metadata = { "name" : "set_mouse_cursor_from_handle",
             "arg_types" : (agcom.OLE_HANDLE,),
-            "marshallers" : (agmarshall.OLE_HANDLE_arg,) }
+            "marshallers" : (agmarshall.OLEHandleArg,) }
     def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
 
     _get_show_progress_image_metadata = { "name" : "show_progress_image",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @property
     def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
         """The animated progress image type."""
@@ -1921,14 +1923,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_show_progress_image_metadata = { "name" : "show_progress_image",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @show_progress_image.setter
     def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_show_progress_image_metadata, psProgressImage)
 
     _get_progress_image_x_offset_metadata = { "name" : "progress_image_x_offset",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
@@ -1936,14 +1938,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_progress_image_x_offset_metadata = { "name" : "progress_image_x_offset",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
     def progress_image_x_offset(self, xOffset:int) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_progress_image_x_offset_metadata, xOffset)
 
     _get_progress_image_y_offset_metadata = { "name" : "progress_image_y_offset",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
@@ -1951,14 +1953,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_progress_image_y_offset_metadata = { "name" : "progress_image_y_offset",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
     def progress_image_y_offset(self, yOffset:int) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_progress_image_y_offset_metadata, yOffset)
 
     _get_progress_image_file_metadata = { "name" : "progress_image_file",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
@@ -1966,14 +1968,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_progress_image_file_metadata = { "name" : "progress_image_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
     def progress_image_file(self, imageFile:str) -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_progress_image_file_metadata, imageFile)
 
     _get_progress_image_x_origin_metadata = { "name" : "progress_image_x_origin",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @property
     def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
         """The X origin alignment for animated progress image."""
@@ -1981,14 +1983,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_progress_image_x_origin_metadata = { "name" : "progress_image_x_origin",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @progress_image_x_origin.setter
     def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_progress_image_x_origin_metadata, progressImageXOrigin)
 
     _get_progress_image_y_origin_metadata = { "name" : "progress_image_y_origin",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @property
     def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
         """The Y origin alignment for animated progress image."""
@@ -1996,14 +1998,14 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_progress_image_y_origin_metadata = { "name" : "progress_image_y_origin",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @progress_image_y_origin.setter
     def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_progress_image_y_origin_metadata, progressImageYOrigin)
 
     _get_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
@@ -2011,7 +2013,7 @@ class IUiAxGraphics3DCntrl(object):
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
@@ -2077,22 +2079,22 @@ class IUiAx2DCntrl(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IUiAx2DCntrl)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAx2DCntrl)
     def __setattr__(self, attrname, value):
         set_interface_attribute(self, attrname, value, IUiAx2DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
-        """Returns an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
+        """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "name" : "back_color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
@@ -2100,14 +2102,14 @@ class IUiAx2DCntrl(object):
 
     _set_back_color_metadata = { "name" : "back_color",
             "arg_types" : (agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
@@ -2115,20 +2117,20 @@ class IUiAx2DCntrl(object):
 
     _picture_put_reference_metadata = { "name" : "picture_put_reference",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
     def picture(self, pPicture:IPictureDisp) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_picture_metadata, pPicture)
 
     _get_win_id_metadata = { "name" : "win_id",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
@@ -2136,7 +2138,7 @@ class IUiAx2DCntrl(object):
 
     _set_win_id_metadata = { "name" : "win_id",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @win_id.setter
     def win_id(self, newVal:int) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_win_id_metadata, newVal)
@@ -2157,14 +2159,14 @@ class IUiAx2DCntrl(object):
 
     _pick_info_metadata = { "name" : "pick_info",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
-        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._pick_info_metadata, x, y, out_arg())
+        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._pick_info_metadata, x, y, OutArg())
 
     _get_application_metadata = { "name" : "application",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
@@ -2172,7 +2174,7 @@ class IUiAx2DCntrl(object):
 
     _get_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
@@ -2180,14 +2182,14 @@ class IUiAx2DCntrl(object):
 
     _set_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
     def no_logo(self, bNoLogo:bool) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_no_logo_metadata, bNoLogo)
 
     _get_ole_drop_mode_metadata = { "name" : "ole_drop_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @property
     def ole_drop_mode(self) -> "OLE_DROP_MODE":
         """How the control handles drop operations."""
@@ -2195,14 +2197,14 @@ class IUiAx2DCntrl(object):
 
     _set_ole_drop_mode_metadata = { "name" : "ole_drop_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @ole_drop_mode.setter
     def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_ole_drop_mode_metadata, psOLEDropMode)
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
@@ -2210,14 +2212,14 @@ class IUiAx2DCntrl(object):
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
     def vendor_id(self, vendorID:str) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_vendor_id_metadata, vendorID)
 
     _get_mouse_mode_metadata = { "name" : "mouse_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @property
     def mouse_mode(self) -> "MOUSE_MODE":
         """Whether this control responds to mouse events."""
@@ -2225,14 +2227,14 @@ class IUiAx2DCntrl(object):
 
     _set_mouse_mode_metadata = { "name" : "mouse_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @mouse_mode.setter
     def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_mouse_mode_metadata, psMouseMode)
 
     _get_ready_state_metadata = { "name" : "ready_state",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def ready_state(self) -> int:
         """Return/sets the background color of the control."""
@@ -2240,21 +2242,21 @@ class IUiAx2DCntrl(object):
 
     _copy_from_win_id_metadata = { "name" : "copy_from_win_id",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     def copy_from_win_id(self, winID:int) -> None:
-        """Copy an existing Window's scene into this control"""
+        """Copy an existing Window's scene into this control."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._copy_from_win_id_metadata, winID)
 
     _rubber_band_pick_info_metadata = { "name" : "rubber_band_pick_info",
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.OLE_XPOS_PIXELS_arg, agmarshall.OLE_YPOS_PIXELS_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
-        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, out_arg())
+        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
 
     _get_advanced_pick_mode_metadata = { "name" : "advanced_pick_mode",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
@@ -2262,21 +2264,21 @@ class IUiAx2DCntrl(object):
 
     _set_advanced_pick_mode_metadata = { "name" : "advanced_pick_mode",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
     def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_advanced_pick_mode_metadata, bAdvancePickMode)
 
     _get_window_projected_position_metadata = { "name" : "get_window_projected_position",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.DOUBLE_arg, agmarshall.AgEnum_arg(GRAPHICS_2D_DRAW_COORDS), agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(GRAPHICS_2D_DRAW_COORDS), agmarshall.InterfaceOutArg,) }
     def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "WinProjectionPosition":
         """Get the window projected position for given values."""
-        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_window_projected_position_metadata, lat, lon, alt, drawCoords, out_arg())
+        return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_window_projected_position_metadata, lat, lon, alt, drawCoords, OutArg())
 
     _get_in_zoom_mode_metadata = { "name" : "in_zoom_mode",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def in_zoom_mode(self) -> bool:
         """Return true if in zoom in mode."""
@@ -2284,7 +2286,7 @@ class IUiAx2DCntrl(object):
 
     _set_mouse_cursor_from_file_metadata = { "name" : "set_mouse_cursor_from_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
         """Set mouse cursor to the selected cursor file."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
@@ -2298,14 +2300,14 @@ class IUiAx2DCntrl(object):
 
     _set_mouse_cursor_from_handle_metadata = { "name" : "set_mouse_cursor_from_handle",
             "arg_types" : (agcom.OLE_HANDLE,),
-            "marshallers" : (agmarshall.OLE_HANDLE_arg,) }
+            "marshallers" : (agmarshall.OLEHandleArg,) }
     def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
 
     _get_show_progress_image_metadata = { "name" : "show_progress_image",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @property
     def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
         """The animated progress image type."""
@@ -2313,14 +2315,14 @@ class IUiAx2DCntrl(object):
 
     _set_show_progress_image_metadata = { "name" : "show_progress_image",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @show_progress_image.setter
     def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_show_progress_image_metadata, psProgressImage)
 
     _get_progress_image_x_offset_metadata = { "name" : "progress_image_x_offset",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
@@ -2328,14 +2330,14 @@ class IUiAx2DCntrl(object):
 
     _set_progress_image_x_offset_metadata = { "name" : "progress_image_x_offset",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
     def progress_image_x_offset(self, xOffset:int) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_progress_image_x_offset_metadata, xOffset)
 
     _get_progress_image_y_offset_metadata = { "name" : "progress_image_y_offset",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
@@ -2343,14 +2345,14 @@ class IUiAx2DCntrl(object):
 
     _set_progress_image_y_offset_metadata = { "name" : "progress_image_y_offset",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
     def progress_image_y_offset(self, yOffset:int) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_progress_image_y_offset_metadata, yOffset)
 
     _get_progress_image_file_metadata = { "name" : "progress_image_file",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
@@ -2358,14 +2360,14 @@ class IUiAx2DCntrl(object):
 
     _set_progress_image_file_metadata = { "name" : "progress_image_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
     def progress_image_file(self, imageFile:str) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_progress_image_file_metadata, imageFile)
 
     _get_progress_image_x_origin_metadata = { "name" : "progress_image_x_origin",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @property
     def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
         """The X origin alignment for animated progress image."""
@@ -2373,14 +2375,14 @@ class IUiAx2DCntrl(object):
 
     _set_progress_image_x_origin_metadata = { "name" : "progress_image_x_origin",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @progress_image_x_origin.setter
     def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_progress_image_x_origin_metadata, progressImageXOrigin)
 
     _get_progress_image_y_origin_metadata = { "name" : "progress_image_y_origin",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @property
     def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
         """The Y origin alignment for animated progress image."""
@@ -2388,14 +2390,14 @@ class IUiAx2DCntrl(object):
 
     _set_progress_image_y_origin_metadata = { "name" : "progress_image_y_origin",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @progress_image_y_origin.setter
     def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_progress_image_y_origin_metadata, progressImageYOrigin)
 
     _get_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
@@ -2403,7 +2405,7 @@ class IUiAx2DCntrl(object):
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
@@ -2411,7 +2413,7 @@ class IUiAx2DCntrl(object):
 
     _get_pan_mode_enabled_metadata = { "name" : "pan_mode_enabled",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def pan_mode_enabled(self) -> bool:
         """Enable/disable pan mode for map control."""
@@ -2419,7 +2421,7 @@ class IUiAx2DCntrl(object):
 
     _set_pan_mode_enabled_metadata = { "name" : "pan_mode_enabled",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @pan_mode_enabled.setter
     def pan_mode_enabled(self, bPanMode:bool) -> None:
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_pan_mode_enabled_metadata, bPanMode)
@@ -2440,10 +2442,10 @@ class ISTKXApplicationPartnerAccess(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, ISTKXApplicationPartnerAccess)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplicationPartnerAccess)
@@ -2452,10 +2454,10 @@ class ISTKXApplicationPartnerAccess(object):
     
     _grant_partner_access_metadata = { "name" : "grant_partner_access",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.BSTR_arg, agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def grant_partner_access(self, vendor:str, product:str, key:str) -> "STKXApplication":
         """Provide object model root for authorized business partners."""
-        return self._intf.invoke(ISTKXApplicationPartnerAccess._metadata, ISTKXApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, out_arg())
+        return self._intf.invoke(ISTKXApplicationPartnerAccess._metadata, ISTKXApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
 
 
 agcls.AgClassCatalog.add_catalog_entry("{ABF4E08E-211F-40B6-A2F0-6938DAA560CE}", ISTKXApplicationPartnerAccess)
@@ -2476,10 +2478,10 @@ class IDataObjectFiles(object):
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IDataObjectFiles)
         self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObjectFiles)
@@ -2499,22 +2501,22 @@ class IDataObjectFiles(object):
     
     _get__NewEnum_metadata = { "name" : "_NewEnum",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVARIANT_arg,) }
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> enumerator_proxy:
+    def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the file names in the collection."""
         return self._intf.get_property(IDataObjectFiles._metadata, IDataObjectFiles._get__NewEnum_metadata)
 
     _item_metadata = { "name" : "item",
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.LONG_arg, agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the file name at the specified index (0-based)."""
-        return self._intf.invoke(IDataObjectFiles._metadata, IDataObjectFiles._item_metadata, index, out_arg())
+        return self._intf.invoke(IDataObjectFiles._metadata, IDataObjectFiles._item_metadata, index, OutArg())
 
     _get_count_metadata = { "name" : "count",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
         """Number of file names contained in the collection."""
@@ -2555,10 +2557,10 @@ class IUiAxGraphics2DAnalysisCntrl(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IUiAxGraphics2DAnalysisCntrl)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics2DAnalysisCntrl)
@@ -2567,7 +2569,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
     
     _get_back_color_metadata = { "name" : "back_color",
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
@@ -2575,14 +2577,14 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_back_color_metadata = { "name" : "back_color",
             "arg_types" : (agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.OLE_COLOR_arg,) }
+            "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
@@ -2590,20 +2592,20 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _picture_put_reference_metadata = { "name" : "picture_put_reference",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
         return self._intf.invoke(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IPictureDisp_arg,) }
+            "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
     def picture(self, pPicture:IPictureDisp) -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_picture_metadata, pPicture)
 
     _get_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
@@ -2611,14 +2613,14 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_no_logo_metadata = { "name" : "no_logo",
             "arg_types" : (agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.VARIANT_BOOL_arg,) }
+            "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
     def no_logo(self, bNoLogo:bool) -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_no_logo_metadata, bNoLogo)
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
         """This property is deprecated. The identifier of the vendor."""
@@ -2626,14 +2628,14 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
     def vendor_id(self, vendorID:str) -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_vendor_id_metadata, vendorID)
 
     _get_ready_state_metadata = { "name" : "ready_state",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def ready_state(self) -> int:
         """Return the ready state of the control."""
@@ -2641,7 +2643,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _get_application_metadata = { "name" : "application",
             "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.AgInterface_out_arg,) }
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
@@ -2649,7 +2651,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _get_control_mode_metadata = { "name" : "control_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.AgEnum_arg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
     @property
     def control_mode(self) -> "GRAPHICS_2D_ANALYSIS_MODE":
         """The Graphics control mode."""
@@ -2657,14 +2659,14 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_control_mode_metadata = { "name" : "control_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.AgEnum_arg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
     @control_mode.setter
     def control_mode(self, eGfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_control_mode_metadata, eGfxAnalysisMode)
 
     _get_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
         """The splash logo graphic file to be displayed in the control."""
@@ -2672,7 +2674,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
             "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BSTR_arg,) }
+            "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
         """The splash logo graphic file to be displayed in the control."""
@@ -2680,7 +2682,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _get_win_id_metadata = { "name" : "win_id",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @property
     def win_id(self) -> int:
         """Window identifier (for Connect commands)."""
@@ -2688,7 +2690,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
 
     _set_win_id_metadata = { "name" : "win_id",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.LONG_arg,) }
+            "marshallers" : (agmarshall.LongArg,) }
     @win_id.setter
     def win_id(self, newVal:int) -> None:
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_win_id_metadata, newVal)
@@ -2704,11 +2706,11 @@ class ExecCmdResult(IExecCmdResult):
 
     def __init__(self, sourceObject=None):
         IExecCmdResult.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IExecCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
@@ -2721,11 +2723,11 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
 
     def __init__(self, sourceObject=None):
         IExecMultiCmdResult.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IExecMultiCmdResult._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
@@ -2738,11 +2740,11 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
 
     def __init__(self, sourceObject=None):
         IUiAxGraphics3DCntrl.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IUiAxGraphics3DCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAxGraphics3DCntrl, [IUiAxGraphics3DCntrl])
@@ -2755,11 +2757,11 @@ class UiAx2DCntrl(IUiAx2DCntrl):
 
     def __init__(self, sourceObject=None):
         IUiAx2DCntrl.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IUiAx2DCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAx2DCntrl, [IUiAx2DCntrl])
@@ -2772,11 +2774,11 @@ class PickInfoData(IPickInfoData):
 
     def __init__(self, sourceObject=None):
         IPickInfoData.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPickInfoData._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, PickInfoData, [IPickInfoData])
@@ -2789,11 +2791,11 @@ class STKXApplication(ISTKXApplication):
 
     def __init__(self, sourceObject=None):
         ISTKXApplication.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKXApplication._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXApplication, [ISTKXApplication])
@@ -2806,11 +2808,11 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
 
     def __init__(self, sourceObject=None):
         ISTKXApplicationPartnerAccess.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKXApplicationPartnerAccess._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXApplicationPartnerAccess, [ISTKXApplicationPartnerAccess])
@@ -2823,11 +2825,11 @@ class DataObject(IDataObject):
 
     def __init__(self, sourceObject=None):
         IDataObject.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDataObject._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DataObject, [IDataObject])
@@ -2840,11 +2842,11 @@ class DataObjectFiles(IDataObjectFiles):
 
     def __init__(self, sourceObject=None):
         IDataObjectFiles.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDataObjectFiles._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DataObjectFiles, [IDataObjectFiles])
@@ -2857,11 +2859,11 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
 
     def __init__(self, sourceObject=None):
         IRubberBandPickInfoData.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRubberBandPickInfoData._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, RubberBandPickInfoData, [IRubberBandPickInfoData])
@@ -2874,11 +2876,11 @@ class ObjPathCollection(IObjPathCollection):
 
     def __init__(self, sourceObject=None):
         IObjPathCollection.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IObjPathCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, ObjPathCollection, [IObjPathCollection])
@@ -2891,11 +2893,11 @@ class DrawElemRect(IDrawElemRect):
 
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElemRect._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemRect, [IDrawElemRect])
@@ -2908,11 +2910,11 @@ class DrawElemCollection(IDrawElemCollection):
 
     def __init__(self, sourceObject=None):
         IDrawElemCollection.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElemCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemCollection, [IDrawElemCollection])
@@ -2925,11 +2927,11 @@ class Draw2DElemRect(IDrawElemRect):
 
     def __init__(self, sourceObject=None):
         IDrawElemRect.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElemRect._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElemRect])
@@ -2942,11 +2944,11 @@ class Draw2DElemCollection(IDrawElemCollection):
 
     def __init__(self, sourceObject=None):
         IDrawElemCollection.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElemCollection._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElemCollection])
@@ -2955,15 +2957,15 @@ agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}",
 agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
 class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
-    """AGI Graphics Analysis Control"""
+    """AGI Graphics Analysis Control."""
 
     def __init__(self, sourceObject=None):
         IUiAxGraphics2DAnalysisCntrl.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IUiAxGraphics2DAnalysisCntrl._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, UiAxGraphics2DAnalysisCntrl, [IUiAxGraphics2DAnalysisCntrl])
@@ -2976,11 +2978,11 @@ class WinProjectionPosition(IWinProjectionPosition):
 
     def __init__(self, sourceObject=None):
         IWinProjectionPosition.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IWinProjectionPosition._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, WinProjectionPosition, [IWinProjectionPosition])
@@ -2993,11 +2995,11 @@ class DrawElemLine(IDrawElemLine):
 
     def __init__(self, sourceObject=None):
         IDrawElemLine.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElemLine._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, DrawElemLine, [IDrawElemLine])
@@ -3010,11 +3012,11 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
 
     def __init__(self, sourceObject=None):
         ISTKXSSLCertificateErrorEventArgs.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKXSSLCertificateErrorEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXSSLCertificateErrorEventArgs, [ISTKXSSLCertificateErrorEventArgs])
@@ -3027,11 +3029,11 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
 
     def __init__(self, sourceObject=None):
         ISTKXConControlQuitReceivedEventArgs.__init__(self, sourceObject)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISTKXConControlQuitReceivedEventArgs._private_init(self, intf)
     def __eq__(self, other):
-        """Checks equality of the underlying STK references."""
+        """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         set_class_attribute(self, attrname, value, STKXConControlQuitReceivedEventArgs, [ISTKXConControlQuitReceivedEventArgs])

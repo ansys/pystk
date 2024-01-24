@@ -1,0 +1,74 @@
+VO_v60
+    IsInvisible           No
+    Modelfile             Ground\facility.mdl
+    UseModelList         No
+    IsShowingModel        Yes
+    ModelScale            316.227766
+    IsSwapped             Yes
+    Level0SwapDistance    10000000.000000
+    Level1SwapDistance    20000000.000000
+    Level2SwapDistance    40000000.000000
+    Level3SwapDistance    80000000.000000
+    ShowMarker            Yes
+    Begin Marker
+        Show               Yes
+        Type               LineGraphic
+        Shape              Point
+        IsTransparent      No
+        Rotate             No
+        Angle              0.000000
+        HorizOrigin        Center
+        VertOrigin         Center
+        MinSize            5
+        MaxSize            5
+        AutoSize           No
+        MinSizeDistance    0.000000
+        MaxSizeDistance    1000000000000000.000000
+        RotateRelToNorth   No
+    End
+    FixVectorAxesScaleToModel Yes
+    Begin GeneralVectorAxes
+        ArrowPointSize          3.00
+        PersistentLineWidth     2.00
+        Scale                   15811.388300
+    End
+    Begin VectorAngle
+        FractionalScale                1.000000
+        SupportingDihedralArcLineWidth 1.00
+        ArcLineWidth                   2.00
+        PixelThreshold                 1.000000
+    End
+    Begin Plane
+    End
+    SaveArticStateAsDef   No
+    UseModelPosOffset     No
+    ModelPosOffset        0.000000000000 0.000000000000 0.000000000000
+    UseModelRotation      No
+    ModelRotation         0.000000000000 0.000000000000 0.000000000000
+    DontSaveArticFile     No
+    ObscurationToObject   No
+    AzElMaskTranslucency  0.8000
+    AzElMaskLineTransparency  0.000000
+    AzElMaskLineThickness  1.000000
+    AzElMaskLabelCompassShow  Yes
+    AzElMaskLabelAltShow  No
+    AzElMaskNumAltLabels  20
+    ShowRangeContours     No
+    TranslRangeCntrLines  No
+    RangeCntrLineTransl   0.0000
+    UseLabelOffset        No
+    LabelOffsetInPixels   No
+    LabelXYZ              0.000000 10.000000 10.000000
+    IsShowingVaporTrail       No
+    VaporMaxPuffs             100
+    VaporColorIndex           7
+    VaporTransPriority        1
+    VaporWindSpeed            0.000000 0.000000 0.000000
+    VaporIsInSpace            No
+    VaporUseAttachPoint       No
+    VaporOutputRate           0.500000
+    VaporRadius               1000.000000
+    VaporExpansionRate        0.010000
+    VaporStartTime            0.000000
+    VaporEndTime              86400.000000
+    VaporTexturemap           smoke.pgm

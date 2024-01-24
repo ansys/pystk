@@ -42,7 +42,7 @@ class ExportDataFileHelper(object):
         # ****************************
 
         # Export for Attitude file type only supports versions 4.3, 6, 8, and current
-        arSupportedVersionFormats: "EXPORT_TOOL_VERSION_FORMAT[]" = [
+        arSupportedVersionFormats: "List[EXPORT_TOOL_VERSION_FORMAT]" = [
             EXPORT_TOOL_VERSION_FORMAT.FORMAT430,
             EXPORT_TOOL_VERSION_FORMAT.FORMAT600,
             EXPORT_TOOL_VERSION_FORMAT.FORMAT800,
@@ -203,8 +203,8 @@ class ExportDataFileHelper(object):
             )
         )
 
-        omFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileAttitude.a"))
-        connectFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileAttitude.a"))
+        omFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileAttitude.a"))
+        connectFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileAttitude.a"))
 
         Assert.assertEqual(omFileContent, connectFileContent)
 
@@ -226,8 +226,8 @@ class ExportDataFileHelper(object):
             )
         )
 
-        omFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
-        connectFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFilePropDef.pg"))
+        omFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
+        connectFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFilePropDef.pg"))
         Assert.assertEqual(omFileContent, connectFileContent)
 
     # endregion
@@ -241,16 +241,16 @@ class ExportDataFileHelper(object):
 
             # Format:  "CREATION_DATE  = 2010-09-21T14:00:06"
             pos: int = connectFile.find("CREATION_DATE")
-            oldCreationDate: str = connectFile[pos:36]  # e.g. "2010-09-21T14:00:06"
+            oldCreationDate: str = connectFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
 
-            s: str = oldCreationDate[17:4]
+            s: str = oldCreationDate[17 : (17 + 4)]
 
-            year: int = Convert.ToInt16(oldCreationDate[17:4])
-            mon: int = Convert.ToInt16(oldCreationDate[22:2])
-            day: int = Convert.ToInt16(oldCreationDate[25:2])
-            hour: int = Convert.ToInt16(oldCreationDate[28:2])
-            min: int = Convert.ToInt16(oldCreationDate[31:2])
-            sec: int = Convert.ToInt16(oldCreationDate[34:2])
+            year: int = Convert.ToInt16(oldCreationDate[17 : (17 + 4)])
+            mon: int = Convert.ToInt16(oldCreationDate[22 : (22 + 2)])
+            day: int = Convert.ToInt16(oldCreationDate[25 : (25 + 2)])
+            hour: int = Convert.ToInt16(oldCreationDate[28 : (28 + 2)])
+            min: int = Convert.ToInt16(oldCreationDate[31 : (31 + 2)])
+            sec: int = Convert.ToInt16(oldCreationDate[34 : (34 + 2)])
 
             dt = DateTime(year, mon, day, hour, min, sec)
             dt2 = dt.AddSeconds(-1)
@@ -398,8 +398,8 @@ class ExportDataFileHelper(object):
                 )
             )
 
-        omFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileStk.e"))
-        connectFileContent = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileStk.e"))
+        omFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileStk.e"))
+        connectFileContent: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileStk.e"))
 
         Assert.assertEqual(omFileContent, connectFileContent)
 
@@ -994,8 +994,8 @@ class ExportDataFileHelper(object):
             )
         )
 
-        omFile = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileCode500.eph"))
-        connectFile = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileCode500.eph"))
+        omFile: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileCode500.eph"))
+        connectFile: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileCode500.eph"))
 
         Assert.assertEqual(omFile, connectFile)
 
@@ -1067,15 +1067,15 @@ class ExportDataFileHelper(object):
             )
         )
 
-        omFile = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileSpice.bsp"))
-        connectFile = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileSpice.bsp"))
+        omFile: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileSpice.bsp"))
+        connectFile: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileSpice.bsp"))
 
         Assert.assertEqual(omFile, connectFile)
 
     # endregion
 
     @staticmethod
-    def IndexOf(array, pattern, offset: int):
+    def IndexOf(array: "List[int]", pattern: "List[int]", offset: int):
         success: int = 0
 
         index: int = offset
@@ -1094,7 +1094,7 @@ class ExportDataFileHelper(object):
         return -1
 
     @staticmethod
-    def RedactCreationDate(array):
+    def RedactCreationDate(array: "List[int]"):
         # The STK binary ephemeris files contains a header with metadata including the creation date
         # in an XML section:
         #     <CreationDate Format = "Gregorian" TimeStandard = "UTC">
@@ -1251,8 +1251,8 @@ class ExportDataFileHelper(object):
                 )
             )
 
-        omFileBytes = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileStk.be"))
-        connectFileBytes = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileStk.be"))
+        omFileBytes: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("OMExternalFileStk.be"))
+        connectFileBytes: "List[int]" = File.ReadAllBytes(TestBase.GetScenarioFile("ConnectExternalFileStk.be"))
 
         ExportDataFileHelper.RedactCreationDate(omFileBytes)
         ExportDataFileHelper.RedactCreationDate(connectFileBytes)
@@ -1681,7 +1681,7 @@ class PropagatorGreatArcHelper(object):
 
         # UseScenarioAnalysisTime property is read-only if the
         # method for computing the waypoints is not DETERMINE_VEL_FROM_TIME
-        methods: "VEHICLE_WAYPOINT_COMP_METHOD[]" = [
+        methods: "List[VEHICLE_WAYPOINT_COMP_METHOD]" = [
             VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL,
             VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC,
         ]
@@ -6132,8 +6132,8 @@ class LLAReportReader(object):
         # Start reading data
         line: str = sr.ReadLine()
         while (line != None) and (len(line) != 0):
-            columns = Array.Create(7)
-            columns[0] = line[0:24]
+            columns: "List[typing.Any]" = Array.Create(7)
+            columns[0] = line[0 : (0 + 24)]
             line = line[24:]
             line = line.strip()
 
@@ -6141,7 +6141,7 @@ class LLAReportReader(object):
             while (pos < Array.Length(columns)) and (len(line) != 0):
                 ws: int = line.find(" ")
                 if ws != -1:
-                    columns[pos] = float(line[0:ws])
+                    columns[pos] = float(line[0 : (0 + ws)])
                     line = line[ws:]
                     line = line.strip()
 
@@ -6178,6 +6178,7 @@ class ConnectRealtimePointBuilderHelper(object):
         root: "StkObjectRoot" = obj.root
         Assert.assertIsNotNone(root)
         path: str = obj.path
+        row: "List[typing.Any]"
         for row in data:
             Assert.assertEqual(7, Array.Length(row))
 
@@ -6217,6 +6218,7 @@ class OMRealtimePointBuilderHelper(object):
         obj.root.unit_preferences.set_current_unit("Distance", "km")
 
         point: "VehicleRealtimeLLAPoints" = pb.lla
+        row: "List[typing.Any]"
         for row in data:
             Assert.assertEqual(7, Array.Length(row))
 
@@ -6265,6 +6267,7 @@ class BoostedOMRealtimePointBuilderHelper(object):
         altrate = Array.Create(BoostedOMRealtimePointBuilderHelper.BATCH_SIZE)
 
         batchIndex: int = 0
+        row: "List[typing.Any]"
         for row in data:
             Assert.assertEqual(7, Array.Length(row))
 
@@ -7832,7 +7835,7 @@ class BasicAttitudeRealTimeHelper(object):
         dtIncrement: int = 600  #  (int)((dtSpan.Value + 100) / (data.Length >> 2));
 
         # Attitude data
-        data = [
+        data: "List[typing.Any]" = [
             -1.8e-05,
             0.259177,
             -5e-06,
@@ -8102,8 +8105,8 @@ class BasicAttitudeRealTimeHelper(object):
             times = ds1.get_values()
             # Check if the start/stop times of the report match the
             # times used to add the attitude data.
-            reportedStartTime = str(times[0])[0 : len(str(startTime))]
-            reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : len(str(stopTime))]
+            reportedStartTime = str(times[0])[0 : (0 + len(str(startTime)))]
+            reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : (0 + len(str(stopTime)))]
             Assert.assertEqual(reportedStartTime, startTime)
             Assert.assertEqual(reportedStopTime, stopTime)
             if oAttitude.data_reference.is_profile_type_supported(VEHICLE_PROFILE.PROFILE_FIXED_IN_AXES):
@@ -8131,8 +8134,8 @@ class BasicAttitudeRealTimeHelper(object):
                 resultB = tvdp.exec_elements(startTime, stopTime, reportStep, elements)
                 ds2: "DataProviderResultDataSet" = self.FindDataSet(resultB.data_sets, "Time")
                 times = ds2.get_values()
-                reportedStartTime = str(times[0])[0 : len(str(startTime))]
-                reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : len(str(stopTime))]
+                reportedStartTime = str(times[0])[0 : (0 + len(str(startTime)))]
+                reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : (0 + len(str(stopTime)))]
                 Assert.assertEqual(reportedStartTime, startTime)
                 Assert.assertEqual(reportedStopTime, stopTime)
 

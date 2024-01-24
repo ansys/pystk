@@ -7,9 +7,9 @@ from assert_extension import *
 from assertion_harness import *
 from events.log_message_monitor import *
 from events.object_changed_monitor import *
-from integrity.integrity import *
 from interfaces.stk_objects import *
 from logger import *
+from report_comparison import *
 from seet_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
@@ -3673,10 +3673,10 @@ class EarlyBoundTests(TestBase):
 
     # region RealtimePointBuilders
     class RealtimeBuilderTemplate(object):
-        def __init__(self, o: "IStkObject", llaPoints, bPositionOnly: bool):
+        def __init__(self, o: "IStkObject", llaPoints: "List[List[float]]", bPositionOnly: bool):
             self._pb: "VehicleRealtimePointBuilder" = None
             self._increment: float = 0
-            self._llaPoints = llaPoints
+            self._llaPoints: "List[List[float]]" = llaPoints
             self._o: "IStkObject" = o
             self._bPositionOnly: bool = bPositionOnly
 
@@ -3715,8 +3715,10 @@ class EarlyBoundTests(TestBase):
             rptComparer = ReportComparison(self._o.root.unit_preferences)
             rptComparer.AddReport(self._o, '"LLA Position"')
 
+            point: "List[float]"
+
             for point in self._llaPoints:
-                copy = Array.Create(Array.Length(point))
+                copy: "List[float]" = Array.Create(Array.Length(point))
                 Array.CopyTo(point, copy, 0)
                 copy[0] = copy[0] + self._increment
                 d(self, copy)
@@ -3727,7 +3729,7 @@ class EarlyBoundTests(TestBase):
 
             self._o.root.execute_command("SetUnits / km Latitude deg Longitude deg")
 
-            def action1(point):
+            def action1(point: "List[float]"):
                 utcg: str = self._o.root.conversion_utility.convert_date(
                     "EpSec", "UTCG", Double.ToString(((point[0] + self._increment)))
                 )
@@ -3819,7 +3821,7 @@ class EarlyBoundTests(TestBase):
 
             self._pb.remove_all_points()
 
-    def AddLLAPoint(self, template, point):
+    def AddLLAPoint(self, template, point: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
@@ -3832,7 +3834,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.lla.add_position("bogus", point[1], point[2], point[3])
 
-    def AddAGL_LLAPoint(self, template, point):
+    def AddAGL_LLAPoint(self, template, point: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.agl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
@@ -3845,14 +3847,14 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.agl_lla.add_position("bogus", point[1], point[2], point[3])
 
-    def AddLLAHPSPoint(self, template, point):
+    def AddLLAHPSPoint(self, template, point: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.llahps.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
             with pytest.raises(Exception):
                 ptBuilder.llahps.add("bogus", point[1], point[2], point[3], point[4], point[5], point[6])
 
-    def AddMSL_LLAPoint(self, template, point):
+    def AddMSL_LLAPoint(self, template, point: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.msl_lla.add(point[0], point[1], point[2], point[3], point[4], point[5], point[6])
@@ -3865,7 +3867,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.msl_lla.add_position("bogus", point[1], point[2], point[3])
 
-    def AddB1950Point(self, template, xyz):
+    def AddB1950Point(self, template, xyz: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.b1950.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
@@ -3878,7 +3880,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.b1950.add_position("bogus", xyz[1], xyz[2], xyz[3])
 
-    def AddCustomReferencePoint(self, template, xyz):
+    def AddCustomReferencePoint(self, template, xyz: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.get_points_in_frame("Facility/Facility1 Body").add(
@@ -3889,7 +3891,7 @@ class EarlyBoundTests(TestBase):
                     "bogus", xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6]
                 )
 
-    def AddECFPoint(self, template, xyz):
+    def AddECFPoint(self, template, xyz: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.ecf.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
@@ -3902,7 +3904,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.ecf.add_position("bogus", xyz[1], xyz[2], xyz[3])
 
-    def AddECIPoint(self, template, xyz):
+    def AddECIPoint(self, template, xyz: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.eci.add(xyz[0], xyz[1], xyz[2], xyz[3], xyz[4], xyz[5], xyz[6])
@@ -3915,7 +3917,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 ptBuilder.eci.add_position("bogus", xyz[1], xyz[2], xyz[3])
 
-    def AddUTMPoint(self, template, xyz):
+    def AddUTMPoint(self, template, xyz: "List[float]"):
         if not template.UsePositionOnly:
             ptBuilder: "VehicleRealtimePointBuilder" = template.PointBuilder
             ptBuilder.utm.add(xyz[0], "18S", 523.222, 3706.636, 0.0, 0.0, 0.0, 0.0)
@@ -3967,7 +3969,7 @@ class EarlyBoundTests(TestBase):
         # Testing the point builders and make sure
         # they produce adequate results
         # --------------------------------------------------------------
-        llaPoints = [
+        llaPoints: "List[List[float]]" = [
             [1200, 33.228, -124.048, 5499.893923, 0.020872, -0.019911, 1.894301],
             [1800, 44.334, -136.636, 6519.040995, 0.016347, -0.022419, 1.498066],
             [2400, 52.975, -151.364, 7293.946325, 0.012494, -0.027073, 1.084131],
@@ -3996,7 +3998,7 @@ class EarlyBoundTests(TestBase):
         # template.Invoke(AddLLAHPSPoint, "LLAHPS");
         template.Invoke(self.AddUTMPoint, "UTM")
 
-        xyzPoints = [
+        xyzPoints: "List[List[float]]" = [
             [1200, -5566.02923, -8237.014508, 6488.958938, -2.424759, 2.582109, 4.650424],
             [1800, -6712.154343, -6339.3299, 8990.466501, -1.391726, 3.654763, 3.676547],
             [2400, -7233.04941, -3949.429322, 10892.152493, -0.3504, 4.245331, 2.660486],
@@ -4105,7 +4107,7 @@ class EarlyBoundTests(TestBase):
             propagator.force_model.third_body_gravity.remove_all()
             Assert.assertEqual(0, propagator.force_model.third_body_gravity.count)
             # Get a list of available third body names
-            thirdBodyNames = CSToJavaArrayHelper.ToOneDimensionalObjectArray(
+            thirdBodyNames: "List[typing.Any]" = CSToJavaArrayHelper.ToOneDimensionalObjectArray(
                 propagator.force_model.third_body_gravity.available_third_body_names
             )
             Array.Sort(thirdBodyNames)
@@ -4141,7 +4143,7 @@ class EarlyBoundTests(TestBase):
             propagator.force_model.third_body_gravity.remove_all()
             Assert.assertEqual(0, propagator.force_model.third_body_gravity.count)
             # Get a list of available third body names
-            thirdBodyNames = CSToJavaArrayHelper.ToOneDimensionalObjectArray(
+            thirdBodyNames: "List[typing.Any]" = CSToJavaArrayHelper.ToOneDimensionalObjectArray(
                 propagator.force_model.third_body_gravity.available_third_body_names
             )
             Array.Sort(thirdBodyNames)

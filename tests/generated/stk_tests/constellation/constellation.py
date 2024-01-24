@@ -223,7 +223,13 @@ class EarlyBoundTests(TestBase):
             Constellation,
         )
         try:
-            facilities = ["Cn_Facility_1", "Cn_Facility_2", "Cn_Facility_3", "Cn_Facility_4", "Cn_Facility_5"]
+            facilities: "List[str]" = [
+                "Cn_Facility_1",
+                "Cn_Facility_2",
+                "Cn_Facility_3",
+                "Cn_Facility_4",
+                "Cn_Facility_5",
+            ]
             try:
                 facility: str
                 for facility in facilities:

@@ -1,0 +1,96 @@
+stk.v.6.0
+
+BEGIN AreaTarget
+
+Name        FOMTest
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            -1.142426e+001
+		EcfLongitude           -5.630747e+001
+		EcfAltitude            0.000000e+000
+		UseTerrainInfo         Off
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     10
+
+		BEGIN PolygonPoints
+
+			1.54285714000000e+000	-5.33137826900000e+001	0.00000000000000e+000
+			-3.08571428000000e+000	-4.17008795300000e+001	0.00000000000000e+000
+			-1.18285714200000e+001	-3.58944279500000e+001	0.00000000000000e+000
+			-2.77714285700000e+001	-4.59237534100000e+001	0.00000000000000e+000
+			-3.24000000000000e+001	-5.75366565700000e+001	0.00000000000000e+000
+			-1.90285714200000e+001	-6.12316712100000e+001	0.00000000000000e+000
+			-1.02857142800000e+001	-7.23167151400000e+001	0.00000000000000e+000
+			-1.54285714000000e+000	-7.23167151400000e+001	0.00000000000000e+000
+			3.60000000000000e+000	-6.54545450900000e+001	0.00000000000000e+000
+			1.54285714000000e+000	-5.33137826900000e+001	0.00000000000000e+000
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             #ff69b4
+                PolygonColor            #ff69b4
+                LabelColor              #ff69b4
+                LineStyle               0
+                LineWidth               1.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowCentroid            On
+                ShowBoundaryPts         Off
+                ShowLabel               On
+                Filled                  Off
+                ShowBoundingRect        Off
+
+            END Graphics
+
+            BEGIN LblNotes
+
+
+            END LblNotes
+
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END AreaTarget
+

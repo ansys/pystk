@@ -4,7 +4,7 @@ import typing
 
 from ..utilities.exceptions import *
 
-class interface_proxy(object):
+class InterfaceProxy(object):
     """Proxy class to isolate the call strategy to STK (COM, gRPC, etc)."""
     def __init__(self):
         pass
@@ -18,12 +18,12 @@ class interface_proxy(object):
         return 0
 
     def __bool__(self):
-        """Represents a valid interface."""
+        """Represent a valid interface."""
         return False
 
-    def query_interface(self, guid) -> "interface_proxy":
-        """Returns a new object with the requested guid."""
-        return interface_proxy()
+    def query_interface(self, guid) -> "InterfaceProxy":
+        """Return a new object with the requested guid."""
+        return InterfaceProxy()
 
     def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
         pass
@@ -34,23 +34,23 @@ class interface_proxy(object):
     def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
         pass
 
-class enumerator_proxy(object):
+class EnumeratorProxy(object):
     """Proxy class to isolate the call strategy for enumeration (COM, gRPC, etc)."""
     def __init__(self):
         pass
 
     def next(self) -> typing.Any:
-        """Returns the next item in the collection."""
+        """Return the next item in the collection."""
         return None
 
     def reset(self):
-        """Resets the enumeration of the collection."""
+        """Reset the enumeration of the collection."""
 
-class out_arg(object):
+class OutArg(object):
     pass
 
 def initialize_from_source_object(this, sourceObject, interfaceType):
-    this.__dict__["_intf"] = interface_proxy()
+    this.__dict__["_intf"] = InterfaceProxy()
     if sourceObject is not None and sourceObject._intf is not None:
         intf = sourceObject._intf.query_interface(interfaceType._metadata["uuid"])
         if intf is not None:

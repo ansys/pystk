@@ -1,0 +1,378 @@
+stk.v.6.2
+
+BEGIN ReportStyle
+Name		Waypoints
+
+BEGIN ClassId
+	Class		Aircraft
+END ClassId
+
+BEGIN Header
+	StyleType		0
+	Date		Yes
+	Name		Yes
+	DescShort		No
+	DescLong		No
+	YLog10		No
+	Y2Log10		No
+	Ticks		No
+	GridLines		No
+	NumAnnotations		3
+	AnnotationRotation		1
+	NumTick		12
+	NumGridX		12
+	NumGridY		12
+	BackgroundColor		#ffffff
+	ViewableDuration		3600.000000
+	RealTimeMode		No
+	LegendStatus		1
+
+BEGIN PostProcessor
+	Destination	0
+	Use	0
+	Destination	1
+	Use	0
+	Destination	2
+	Use	0
+	Destination	3
+	Use	0
+END PostProcessor
+	NumSections		1
+END Header
+
+BEGIN Section
+	Name		Section 1
+	ClassName		Aircraft
+	NameInTitle		No
+	ExpandMethod		0
+	PropMask		1
+	ShowIntervals		No
+	NumIntervals		0
+	NumLines		1
+
+BEGIN Line
+	Name		Line 1
+	NumElements		11
+
+BEGIN Element
+	Name		Waypoints-Time
+	IsIndepVar		No
+	Title		Time
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Time
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		2
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-Latitude
+	IsIndepVar		No
+	Title		Latitude
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Latitude
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		19
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		No
+BEGIN Units
+		DistanceUnit		Meters
+		TimeUnit		Seconds
+		DateFormat		EpochSeconds
+		AngleUnit		Radians
+		MassUnit		Kilograms
+		PowerUnit		dBW
+		FrequencyUnit		Hertz
+		SmallDistanceUnit		Meters
+		LatitudeUnit		Degrees
+		LongitudeUnit		Radians
+		DurationUnit		Seconds
+		Temperature		Kelvin
+		SmallTimeUnit		Seconds
+		RatioUnit		Decibel
+		RcsUnit		Decibel
+		DopplerVelocityUnit		MetersperSecond
+		SARTimeResProdUnit		Meter-Second
+		PowerSpectralDensityUnit		Decibels(WattsperHertz)
+		ForceUnit		Newtons
+		PressureUnit		Pascals
+		SpecificImpulseUnit		Seconds
+		PRFUnit		Hertz
+		BandwidthUnit		Hertz
+		SmallVelocityUnit		MetersperSecond
+		DataRateUnit		BitsPerSecond
+		Percent		UnitValue
+		PowerFluxDensityUnit		Decibels(Wattspermetersquared)
+		SpectralDensityUnit		Decibel-Hertz
+		RadiationDoseUnit		RadsSilicon
+		RadiationShieldThicknessUnit		MilsAluminum
+		MagneticFieldUnit		Tesla
+END Units
+END Element
+
+BEGIN Element
+	Name		Waypoints-Longitude
+	IsIndepVar		No
+	Title		Longitude
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Longitude
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		20
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		No
+BEGIN Units
+		DistanceUnit		Meters
+		TimeUnit		Seconds
+		DateFormat		EpochSeconds
+		AngleUnit		Radians
+		MassUnit		Kilograms
+		PowerUnit		dBW
+		FrequencyUnit		Hertz
+		SmallDistanceUnit		Meters
+		LatitudeUnit		Radians
+		LongitudeUnit		Degrees
+		DurationUnit		Seconds
+		Temperature		Kelvin
+		SmallTimeUnit		Seconds
+		RatioUnit		Decibel
+		RcsUnit		Decibel
+		DopplerVelocityUnit		MetersperSecond
+		SARTimeResProdUnit		Meter-Second
+		PowerSpectralDensityUnit		Decibels(WattsperHertz)
+		ForceUnit		Newtons
+		PressureUnit		Pascals
+		SpecificImpulseUnit		Seconds
+		PRFUnit		Hertz
+		BandwidthUnit		Hertz
+		SmallVelocityUnit		MetersperSecond
+		DataRateUnit		BitsPerSecond
+		Percent		UnitValue
+		PowerFluxDensityUnit		Decibels(Wattspermetersquared)
+		SpectralDensityUnit		Decibel-Hertz
+		RadiationDoseUnit		RadsSilicon
+		RadiationShieldThicknessUnit		MilsAluminum
+		MagneticFieldUnit		Tesla
+END Units
+END Element
+
+BEGIN Element
+	Name		Waypoints-Altitude
+	IsIndepVar		No
+	Title		Altitude
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Altitude
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		0
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-Speed
+	IsIndepVar		No
+	Title		Speed
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Speed
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		4
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-Acceleration
+	IsIndepVar		No
+	Title		Acceleration
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		Acceleration
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		11
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-TurnRadius
+	IsIndepVar		No
+	Title		TurnRadius
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		TurnRadius
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		0
+	UnitType		0
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-UTM Zone
+	IsIndepVar		No
+	Title		UTM Zone
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		UTM Zone
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		2
+	UnitType		6
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-UTM Easting
+	IsIndepVar		No
+	Title		UTM Easting
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		UTM Easting
+	SumAllowedMask		23
+	SummaryOnly		No
+	DataType		0
+	UnitType		0
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-UTM Northing
+	IsIndepVar		No
+	Title		UTM Northing
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		UTM Northing
+	SumAllowedMask		23
+	SummaryOnly		No
+	DataType		0
+	UnitType		0
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+
+BEGIN Element
+	Name		Waypoints-MGRS Cell
+	IsIndepVar		No
+	Title		MGRS Cell
+	NameInTitle		Yes
+	Service		Waypoints
+	Element		MGRS Cell
+	SumAllowedMask		0
+	SummaryOnly		No
+	DataType		2
+	UnitType		6
+	LineStyle		0
+	LineWidth		0
+	LineColor		#000000
+	PointStyle		0
+	PointSize		0
+	PointColor		#000000
+	FillPattern		0
+	FillColor		#000000
+	PropMask		0
+	UseScenUnits		Yes
+END Element
+END Line
+END Section
+END ReportStyle
+

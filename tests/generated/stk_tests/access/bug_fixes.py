@@ -783,8 +783,8 @@ class BugFixes(TestBase):
             )
             availStart: str = clr.Convert(accStart, str)
             availStop: str = clr.Convert(accStop, str)
-            startTrunc: str = availStart[0 : Math.Min(19, len(availStart))]  # drop partial secs
-            stopTrunc: str = availStop[0 : Math.Min(19, len(availStop))]  # drop partial secs
+            startTrunc: str = availStart[0 : (0 + Math.Min(19, len(availStart)))]  # drop partial secs
+            stopTrunc: str = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
                 agAssert, self.CompareIntervalTimes("S", availStartTrunc, availStopTrunc, startTrunc, stopTrunc)
             )
@@ -799,8 +799,8 @@ class BugFixes(TestBase):
             )
             availStart = clr.Convert(accStart, str)
             availStop = clr.Convert(accStop, str)
-            startTrunc = availStart[0 : Math.Min(20, len(availStart))]  # drop partial secs
-            stopTrunc = availStop[0 : Math.Min(19, len(availStop))]  # drop partial secs
+            startTrunc = availStart[0 : (0 + Math.Min(20, len(availStart)))]  # drop partial secs
+            stopTrunc = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
                 agAssert, self.CompareIntervalTimes("T", availStartTrunc, availStopTrunc, startTrunc, stopTrunc)
             )
@@ -831,8 +831,8 @@ class BugFixes(TestBase):
             )
             availStart = clr.Convert(accStart, str)
             availStop = clr.Convert(accStop, str)
-            startTrunc = availStart[0 : Math.Min(19, len(availStart))]  # drop partial secs
-            stopTrunc = availStop[0 : Math.Min(19, len(availStop))]  # drop partial secs
+            startTrunc = availStart[0 : (0 + Math.Min(19, len(availStart)))]  # drop partial secs
+            stopTrunc = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
                 agAssert, self.CompareIntervalTimes("U", expectedStartTrunc, expectedStopTrunc, startTrunc, stopTrunc)
             )
@@ -1195,7 +1195,7 @@ class BugFixes(TestBase):
                 ("Access/Facility-" + oFacility.instance_name) + "-To-Satellite-"
             ) + oSatellite.instance_name
             expectedLen: int = len(expectedInstPath)
-            accCrdnInstPath: str = accCrdn.path[0 : Math.Min(expectedLen, len(accCrdn.path))]
+            accCrdnInstPath: str = accCrdn.path[0 : (0 + Math.Min(expectedLen, len(accCrdn.path)))]
             Assert.assertEqual(expectedInstPath, accCrdnInstPath)
 
             accIntrvlListType: "CRDN_EVENT_INTERVAL_LIST_TYPE" = accInvtlListVals.type

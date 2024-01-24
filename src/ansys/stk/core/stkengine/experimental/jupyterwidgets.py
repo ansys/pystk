@@ -18,7 +18,7 @@ from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
 from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
     UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...internal.comutil import ole32lib, \
+from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
     GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkengine import STKEngineApplication
@@ -98,7 +98,7 @@ class AsyncioTimerManager(object):
         self._fire_timers()
 
     def _next_timer_proc(self):
-        ''' Return time in sec until next timer proc '''
+        ''' Return time in sec until next timer proc.'''
         tempTimers = self._timers.copy()
         if len(tempTimers) == 0:
             return 0.050
@@ -123,22 +123,24 @@ class AsyncioTimerManager(object):
 asyncioTimerManager = None
 
 
-class AgRemoteFrameBufferHostVTable(Structure):
+class RemoteFrameBufferHostVTable(Structure):
     '''
-    Structure of the vtable for IRemoteFrameBufferHost
+    Structure of the vtable for IRemoteFrameBufferHost.
     '''
+    
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
                 ("IUnknown3",        c_void_p),
                 ("refresh",          c_void_p)]
 
 
-class AgRemoteFrameBufferHost(object):
+class RemoteFrameBufferHost(object):
     '''
-    Implements IRemoteFrameBufferHost 
+    Implements IRemoteFrameBufferHost.
     
     Assemble a vtable following the layout of that interface
     '''
+
     _IID_IUnknown = GUID(IUnknown._guid)
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
@@ -200,6 +202,7 @@ class WidgetBase(RemoteFrameBuffer):
     '''
     Base class for Jupyter controls.
     '''
+
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -277,10 +280,10 @@ class WidgetBase(RemoteFrameBuffer):
 
     def __create_instance(self, clsid: str) -> LPVOID:
         guid = GUID()
-        if Succeeded(ole32lib.CLSIDFromString(clsid, guid)):
+        if Succeeded(OLE32Lib.CLSIDFromString(clsid, guid)):
             IID_IUnknown = GUID(IUnknown._guid)
             unk = IUnknown()
-            if Succeeded(ole32lib.CoCreateInstance(byref(guid), None,
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(guid), None,
                                           CLSCTX_INPROC_SERVER,
                                           byref(IID_IUnknown), byref(unk.p))):
                 unk.take_ownership()
@@ -381,6 +384,7 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     '''
     The 2D Map widget for jupyter.
     '''
+
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
@@ -395,6 +399,7 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     '''
     The Graphics Analysis widget for jupyter.
     '''
+
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 

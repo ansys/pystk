@@ -766,7 +766,7 @@ class EarlyBoundTests(TestBase):
 
         cartSTMs: "ComponentInfoCollection" = components.get_folder("Cartesian STM")
 
-        arCartStmNames = [
+        arCartStmNames: "List[str]" = [
             "STMPosXPosX",
             "STMPosXPosY",
             "STMPosXPosZ",
@@ -949,7 +949,7 @@ class EarlyBoundTests(TestBase):
 
         curvilinearRelMotionElems: "ComponentInfoCollection" = components.get_folder("Curvilinear Relative Motion")
 
-        arCurvilinearRelMotionNames = [
+        arCurvilinearRelMotionNames: "List[str]" = [
             "Crossrange Position",
             "Crossrange Velocity",
             "Crosstrack Angle",
@@ -2372,7 +2372,7 @@ class EarlyBoundTests(TestBase):
 
         stmEigenvalues: "ComponentInfoCollection" = components.get_folder("STM Eigenvalues")
 
-        arEigValNames = [
+        arEigValNames: "List[str]" = [
             "lambda1Imag",
             "lambda1Real",
             "lambda2Imag",
@@ -2410,7 +2410,7 @@ class EarlyBoundTests(TestBase):
 
         stmEigenvectors: "ComponentInfoCollection" = components.get_folder("STM Eigenvectors")
 
-        arEigVecNames = [
+        arEigVecNames: "List[str]" = [
             "Lambda1PosXImag",
             "Lambda1PosXReal",
             "Lambda1PosYImag",
@@ -4308,7 +4308,7 @@ class EarlyBoundTests(TestBase):
         while i < components.folder_count:
             compFolder: "ComponentInfoCollection" = components.get_folder(i)
 
-            compNames = Array.Create(compFolder.count)
+            compNames: "List[str]" = Array.Create(compFolder.count)
 
             j: int = 0
             while j < compFolder.count:
