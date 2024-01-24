@@ -165,7 +165,7 @@ class RemoteFrameBufferHost(object):
 
         self.__dict__['_cfunc_Refresh'] = CFUNCTYPE(None, PVOID)(self._refresh)
 
-        self.__dict__['_vtable'] = AgRemoteFrameBufferHostVTable(
+        self.__dict__['_vtable'] = RemoteFrameBufferHostVTable(
             *[cast(self._cfunc_IUnknown1, c_void_p),
               cast(self._cfunc_IUnknown2, c_void_p),
               cast(self._cfunc_IUnknown3, c_void_p),
@@ -184,10 +184,10 @@ class RemoteFrameBufferHost(object):
                         riid: REFIID,
                         ppvObject: POINTER(PVOID)) -> int:
         iid = riid.contents
-        if iid == AgRemoteFrameBufferHost._IID_IUnknown:
+        if iid == RemoteFrameBufferHost._IID_IUnknown:
             ppvObject[0] = addressof(self._pUnk)
             return S_OK
-        elif iid == AgRemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
+        elif iid == RemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
             ppvObject[0] = addressof(self._pUnk)
             return S_OK
         else:
@@ -236,7 +236,7 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfb = IRemoteFrameBuffer(self)
         self._rfb.set_to_off_screen_rendering(w, h)
 
-        self._rfbHostImpl = AgRemoteFrameBufferHost(self)
+        self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
         self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._pUnk)
