@@ -7,7 +7,7 @@ services:
     build: 
       context: ./stk-engine
       args:
-        baseImage: mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019
+        baseImage: mcr.microsoft.com/dotnet/framework/runtime:3.5-20240109-windowsservercore-ltsc2016
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
