@@ -33,7 +33,7 @@ from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(stk, 640, 480)
-globe_plotter
+globe_plotter.snapshot()
 # -
 
 # ## Adding a satellite to the scenario
