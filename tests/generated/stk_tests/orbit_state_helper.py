@@ -161,7 +161,7 @@ class OrbitStateHelper(object):
 
         except Exception as ex:
             sExpectedMsg: str = "Invalid orbit has been specified!"
-            Assert.assertEqual(sExpectedMsg, str(ex)[0 : len(sExpectedMsg)])
+            Assert.assertEqual(sExpectedMsg, str(ex)[0 : (0 + len(sExpectedMsg))])
             self.m_logger.WriteLine5("\t\tExpected exception: {0}", str(ex))
 
         del tempCart

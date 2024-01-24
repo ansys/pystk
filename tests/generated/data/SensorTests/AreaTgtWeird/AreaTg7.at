@@ -1,0 +1,110 @@
+stk.v.4.1.1
+
+BEGIN AreaTarget
+
+Name        AreaTg7
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            -4.725348e+01
+		EcfLongitude           -6.675601e+01
+		EcfAltitude            0.000000e+00
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     21
+
+		BEGIN PolygonPoints
+
+			-5.1487700000e+01	-7.7171400000e+01	0.0000000000e+00
+			-4.6735900000e+01	-7.7631200000e+01	0.0000000000e+00
+			-4.1792400000e+01	-7.1844700000e+01	0.0000000000e+00
+			-4.7387300000e+01	-7.1883000000e+01	0.0000000000e+00
+			-4.7349000000e+01	-7.1384900000e+01	0.0000000000e+00
+			-4.7195700000e+01	-7.0848400000e+01	0.0000000000e+00
+			-4.2712100000e+01	-6.9622100000e+01	0.0000000000e+00
+			-4.2827100000e+01	-6.9468800000e+01	0.0000000000e+00
+			-4.6544300000e+01	-6.6939600000e+01	0.0000000000e+00
+			-4.8268700000e+01	-6.5636600000e+01	0.0000000000e+00
+			-4.9418400000e+01	-6.4487000000e+01	0.0000000000e+00
+			-4.9878200000e+01	-6.3643900000e+01	0.0000000000e+00
+			-5.0376400000e+01	-6.2532600000e+01	0.0000000000e+00
+			-4.9495000000e+01	-6.1919500000e+01	0.0000000000e+00
+			-4.7962200000e+01	-6.1651200000e+01	0.0000000000e+00
+			-4.6429300000e+01	-6.3107400000e+01	0.0000000000e+00
+			-4.3708500000e+01	-6.4142100000e+01	0.0000000000e+00
+			-4.2712100000e+01	-6.4372000000e+01	0.0000000000e+00
+			-4.9111800000e+01	-5.8278900000e+01	0.0000000000e+00
+			-5.1066200000e+01	-5.7014300000e+01	0.0000000000e+00
+			-5.1487700000e+01	-7.7171400000e+01	0.0000000000e+00
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             3
+                PolygonColor            3
+                LabelColor              3
+                LineStyle               0
+                LineWidth               2.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                Filled                  Off
+
+            END Graphics
+    END Graphics
+    
+    BEGIN Shapefiles
+    END Shapefiles
+    
+    BEGIN AccessConstraints
+		LineOfSight
+    END AccessConstraints
+    
+    BEGIN Report
+    END Report
+    
+    BEGIN DynData
+    END DynData
+    
+    BEGIN Desc
+        ShortText    34
+Area Target 7 -  target w/ fingers
+        LongText    93
+very irregular shape specially designed
+to test RedSensor access to an irregular Area
+Target
+
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN AsyncIPC
+    END AsyncIPC
+
+END Extensions
+
+END AreaTarget
+

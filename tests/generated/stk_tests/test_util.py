@@ -6,7 +6,9 @@ import pytz
 import re
 import unittest
 import sys
+
 import typing
+from typing import List
 
 from datetime import datetime, timedelta
 
@@ -49,10 +51,10 @@ class EngineLifetimeManager:
     locked = False
     target = None
     ctrlWindow = None
-    app = None
+    app_provider: "IAgAppProvider" = None
 
     @staticmethod
-    def Initialize(lock=False, target="StkXNoGfx"):
+    def Initialize(lock=False, target="StkXNoGfx") -> "IAgAppProvider":
         if os.name != "nt" and target == "Stk":
             raise RuntimeError("Stk target not supported on Linux.")
 
@@ -72,42 +74,34 @@ class EngineLifetimeManager:
 
         if EngineLifetimeManager.stk is None:
             if EngineLifetimeManager.target == TestTarget.eStk:
-                EngineLifetimeManager.stk = STKDesktop.StartApplication(userControl=False, visible=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
+                EngineLifetimeManager.app_provider = PythonStkApplicationProvider()
             elif EngineLifetimeManager.target == TestTarget.eStkX:
-                EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=False)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.app_provider = PythonStkXApplicationProvider()
                 EngineLifetimeManager.ctrlWindow = frmStkX()
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
-                EngineLifetimeManager.stk = STKEngine.StartApplication(noGraphics=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.app_provider = PythonStkXNoGfxApplicationProvider()
             elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
-                EngineLifetimeManager.stk = STKDesktop.StartApplication(
-                    userControl=False, visible=True, grpc_server=True, grpc_desktop_options="/Automation"
-                )
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.Root
+                EngineLifetimeManager.app_provider = PythonStkApplicationProvider(use_grpc=True)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
-                import ansys.stk.core.stkruntime
-
-                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=False)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=False)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
-                import ansys.stk.core.stkruntime
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=True)
 
-                EngineLifetimeManager.stk = ansys.stk.core.stkruntime.STKRuntime.StartApplication(noGraphics=True)
-                EngineLifetimeManager.root = EngineLifetimeManager.stk.NewObjectRoot()
+            if EngineLifetimeManager.app_provider != None:
+                EngineLifetimeManager.stk = EngineLifetimeManager.app_provider.stk
+                EngineLifetimeManager.root = EngineLifetimeManager.app_provider.Application
             EngineLifetimeManager.locked = lock
 
             print(EngineLifetimeManager.root.execute_command("GetStkVersion /")[0])
 
-        return (EngineLifetimeManager.stk, EngineLifetimeManager.root)
+        return EngineLifetimeManager.app_provider
 
     @staticmethod
     def Uninitialize(force=False):
         if force or not EngineLifetimeManager.locked:
             if EngineLifetimeManager.ctrlWindow is not None:
                 EngineLifetimeManager.ctrlWindow.destroy()
-            EngineLifetimeManager.stk.ShutDown()
+            EngineLifetimeManager.stk.shutdown()
             EngineLifetimeManager.stk = None
 
     @staticmethod
@@ -357,6 +351,14 @@ class Assert:
         else:
             raise AssertionError(f"unconditional failure" + (f": {msg}" if msg is not None else ""))
 
+    @staticmethod
+    def skipTest(reason):
+        testCase = GetTestCase()
+        if testCase is not None:
+            testCase.skipTest(reason)
+        else:
+            raise AssertionError(f"could not skip test" + (f": {reason}" if msg is not None else ""))
+
 
 class StringAssert:
     @staticmethod
@@ -405,6 +407,14 @@ class Math:
 
     def Abs(value):
         return abs(value)
+
+    def Sign(value):
+        if value > 0:
+            return 1
+        elif value < 0:
+            return -1
+        else:
+            return 0
 
 
 class Math2:
@@ -459,6 +469,10 @@ class NullReferenceException(Exception):
 
 
 class ArgumentOutOfRangeException(Exception):
+    pass
+
+
+class InvalidOperationException(Exception):
     pass
 
 
@@ -741,6 +755,25 @@ class Double:
     def MinValue():
         return sys.float_info.min
 
+    @staticproperty
+    def NegativeInfinity():
+        return -math.inf
+
+    @staticproperty
+    def PositiveInfinity():
+        return math.inf
+
+
+class Int32:
+    # Extracted from Int32.cs
+    @staticproperty
+    def MaxValue():
+        return 2147483647
+
+    @staticproperty
+    def MinValue():
+        return -2147483648
+
 
 class Convert:
     @staticmethod
@@ -937,15 +970,41 @@ class PythonStkApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
-        self.stk = stk
-        PythonStkApplicationProvider.Application = root
+    def __init__(self, use_grpc=False):
+        options = "/Automation" if use_grpc else ""
+        self.stk: "STKDesktopApplication" = STKDesktop.start_application(
+            userControl=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
+        )
+        PythonStkApplicationProvider.Application = self.stk.root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.Root
+        return self.stk.root
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
+
+
+class PythonStkRuntimeApplicationProvider(IAgAppProvider):
+    Target = TestTarget.eStkRuntimeNoGfx
+
+    Application = None
+
+    def __init__(self, noGraphics: bool):
+        import ansys.stk.core.stkruntime
+
+        self.stk: agi.stk12.stkruntime.STKRuntimeApplication = ansys.stk.core.stkruntime.STKRuntime.start_application(
+            noGraphics=noGraphics
+        )
+        PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
+
+    def CreateApplication(self, ignored) -> "StkObjectRoot":
+        return self.stk.new_object_root()
+
+    def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
+        return self.stk.new_object_model_context()
+
+    def InstantiateSTKXApplication(self) -> "STKXApplication":
+        return self.stk
 
 
 class PythonStkXApplicationProvider(IAgAppProvider):
@@ -953,15 +1012,15 @@ class PythonStkXApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
-        self.stk = stk
-        PythonStkXApplicationProvider.Application = root
+    def __init__(self):
+        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=False)
+        PythonStkXApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.NewObjectRoot()
+        return self.stk.new_object_root()
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
 
     def InstantiateSTKXApplication(self) -> "STKXApplication":
         return self.stk
@@ -972,15 +1031,15 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, stk, root):
-        self.stk = stk
-        PythonStkXNoGfxApplicationProvider.Application = root
+    def __init__(self):
+        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=True)
+        PythonStkXNoGfxApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
-        return self.stk.NewObjectRoot()
+        return self.stk.new_object_root()
 
     def InstantiateStkObjectModelContext(self) -> "StkObjectModelContext":
-        return self.stk.NewObjectModelContext()
+        return self.stk.new_object_model_context()
 
 
 class TestBase(unittest.TestCase):
@@ -991,6 +1050,26 @@ class TestBase(unittest.TestCase):
     NoGraphicsMode = True
     Units: "UnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
+
+    classesSupportingTemplates = [
+        "Aircraft",
+        "Antenna",
+        "AreaTarget",
+        "Facility",
+        "GroundVehicle",
+        "LaunchVehicle",
+        "LineTarget",
+        "Missile",
+        "Place",
+        "Planet",
+        "Radar",
+        "Receiver",
+        "Satellite",
+        "Sensor",
+        "Ship",
+        "Star",
+        "Target",
+    ]
 
     CurrentDirectory = None
     CodeBaseDir = None
@@ -1011,7 +1090,10 @@ class TestBase(unittest.TestCase):
 
     @staticmethod
     def Initialize():
-        (TestBase.stk, TestBase.root) = EngineLifetimeManager.Initialize()
+        TestBase.ApplicationProvider: IAgAppProvider = EngineLifetimeManager.Initialize()
+        TestBase.Target = TestBase.ApplicationProvider.Target
+        TestBase.stk = TestBase.ApplicationProvider.stk
+        TestBase.root: "StkObjectRoot" = TestBase.ApplicationProvider.Application
 
         # Try to recover if previous test aborted with a scenario loaded
         if TestBase.root.current_scenario != None:
@@ -1033,21 +1115,15 @@ class TestBase(unittest.TestCase):
 
         TestBase.CheckICRFDataFilesVersion()
 
-        if EngineLifetimeManager.target == TestTarget.eStk or EngineLifetimeManager.target == TestTarget.eStkGrpc:
-            TestBase.ApplicationProvider = PythonStkApplicationProvider(TestBase.stk, TestBase.root)
+        if EngineLifetimeManager.target in [
+            TestTarget.eStk,
+            TestTarget.eStkGrpc,
+            TestTarget.eStkX,
+            TestTarget.eStkRuntime,
+        ]:
             TestBase.NoGraphicsMode = False
-        elif EngineLifetimeManager.target == TestTarget.eStkX:
-            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
-            TestBase.NoGraphicsMode = False
-        elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
-            TestBase.ApplicationProvider = PythonStkXNoGfxApplicationProvider(TestBase.stk, TestBase.root)
-        elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
-            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
-            TestBase.NoGraphicsMode = False
-        elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
-            TestBase.ApplicationProvider = PythonStkXApplicationProvider(TestBase.stk, TestBase.root)
+        elif EngineLifetimeManager.target in [TestTarget.eStkNoGfx, TestTarget.eStkRuntimeNoGfx]:
             TestBase.NoGraphicsMode = True
-        TestBase.Target = TestBase.ApplicationProvider.Target
 
     @staticproperty
     def TemporaryDirectory():
@@ -1277,6 +1353,10 @@ class Stopwatch:
     def ElapsedMilliseconds(self):
         return (self.stop - self.start) * 1000.0
 
+    @property
+    def Elapsed(self):
+        return TimeSpan(self.stop - self.start)
+
 
 class OSHelper:
     @staticmethod
@@ -1420,10 +1500,7 @@ class Array:
 class Enumerable:
     @staticmethod
     def ToList(l):
-        if type(l) == tuple:
-            return list(*l)
-        else:
-            return list(l)
+        return list(l)
 
     @staticmethod
     def Contains(source, value):
@@ -1463,14 +1540,32 @@ def cmp(a, b):
     return (a > b) - (a < b)
 
 
+class Group:
+    def __init__(self, group):
+        self.group = group
+
+    def __str__(self):
+        return self.group
+
+    @property
+    def Value(self):
+        return self.group
+
+
 class GroupCollection:
     def __init__(self, match):
         self.match = match
 
     def __getitem__(self, index):
         if isinstance(index, int):
-            return list(self.match.groups())[index - 1]
-        return self.match.groupdict()[index]
+            if isinstance(self.match, str):
+                if index == 1:
+                    return Group(self.match)
+                else:
+                    raise IndexError("Group index out of range")
+            else:
+                return Group(list(self.match.groups())[index - 1])
+        return Group(self.match.groupdict()[index])
 
 
 class Match:
@@ -1691,6 +1786,15 @@ class DataProviderResultWriter(object):
 class CategoryManager:
     included_categories = []
     excluded_categories = []
+    isUsingPyTest = False
+
+    @staticmethod
+    def SetUsingPyTest(value: bool):
+        CategoryManager.isUsingPyTest = value
+
+    @staticmethod
+    def IsUsingPyTest() -> bool:
+        return CategoryManager.isUsingPyTest
 
     @staticmethod
     def AddIncludedCategory(name):
@@ -1715,17 +1819,46 @@ class CategoryManager:
             return False
 
 
-def category(name):
-    if not CategoryManager.IsIncluded(name):
-        return unittest.skip(f'Category "{name}" is not included')
-    elif CategoryManager.IsExcluded(name):
-        return unittest.skip(f'Category "{name}" is excluded')
-    else:
+class category:
+    """
+    Category decorator for classes or methods.
 
-        def _identity(obj):
-            return obj
+    Used to include/exclude tests based on the --include
+    and --exclude command line options.
 
-        return _identity
+    For pytest, adds a `categories` member to classes or test
+    methods. This member is checked in conftest.py
+    pytest_runtest_setup method.
+    """
+
+    def __init__(self, category_name):
+        self.category_name = category_name
+
+    def __call__(self, class_or_function):
+        if not CategoryManager.IsUsingPyTest():
+            if not CategoryManager.IsIncluded(self.category_name):
+                return unittest.skip(f'Category "{self.category_name}" is not included')(class_or_function)
+            elif CategoryManager.IsExcluded(self.category_name):
+                return unittest.skip(f'Category "{self.category_name}" is excluded')(class_or_function)
+            else:
+                return class_or_function
+        else:
+            if inspect.isclass(class_or_function):
+                # Propagate the category from the class to all
+                # the test methods in the class
+                for item in class_or_function.__dict__:
+                    if item.startswith("test_"):
+                        member = class_or_function.__dict__[item]
+                        if member is not None:
+                            if not hasattr(member, "categories"):
+                                member.categories = []
+                            member.categories.append(self.category_name)
+            else:
+                # Accumulate the categories
+                if not hasattr(class_or_function, "categories"):
+                    class_or_function.categories = []
+                class_or_function.categories.append(self.category_name)
+            return class_or_function
 
 
 def GetTestCase():
@@ -1742,7 +1875,9 @@ def GetTestCase():
 
 
 def RegexSubstringMatch(substr):
-    return "^.*" + re.escape(substr) + ".*$"
+    # The leading (?m) sets the re.M flag (to handle multi-line
+    # exception messages)
+    return "(?m)^.*" + re.escape(substr) + ".*$"
 
 
 class ExceptionMessageMatch(enum.IntEnum):

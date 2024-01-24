@@ -1,0 +1,29 @@
+VO_v70
+    IsInvisible                 No
+    IsFilled                    No
+    Translucency                0.700000
+    FillGranularity             0.017453
+    BorderWallShowOnOff              No
+    BorderWallUseTerrainAltFileOnOff No
+    BorderWallTransparencyOnOff      No
+    BorderWallLineTransparencyOnOff  No
+    BorderWallTransparency           0.700000
+    BorderWallLineTransparency       0.700000
+    BorderWallTopCapType             WGS84
+    BorderWallTopCap                 0.000000
+    BorderWallBotCapType             WGS84
+    BorderWallBotCap                 0.000000
+    BorderWallSampleRate             2.000000
+    UseLabelMaxViewingDist      No
+    LabelMaxViewingDist         1000000000000000000.000000
+    Begin GeneralVectorAxes
+        ArrowPointSize          3.00
+        PersistentLineWidth     2.00
+        Scale                   50000.000000
+    End
+    Begin VectorAngle
+        FractionalScale                1.000000
+        SupportingDihedralArcLineWidth 1.00
+        ArcLineWidth                   2.00
+        PixelThreshold                 1.000000
+    End

@@ -13,8 +13,8 @@ if os.name == "nt":
 from .stkx import STKXApplication
 from .stkobjects import StkObjectRoot, StkObjectModelContext
 from .utilities.exceptions import *
-from .internal.grpcutil import grpc_client
-from .internal.apiutil import interface_proxy
+from .internal.grpcutil import GrpcClient
+from .internal.apiutil import InterfaceProxy
 
 class STKRuntimeApplication(STKXApplication):
     """
@@ -25,18 +25,18 @@ class STKRuntimeApplication(STKXApplication):
     """
 
     def __init__(self):
-        self.__dict__["_intf"] = interface_proxy()
+        self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
         
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf: InterfaceProxy):
         STKXApplication._private_init(self, intf)
         
     def __del__(self):
         if self._intf:
             self._intf.client.TerminateConnection(False)
         
-    def NewObjectRoot(self) -> StkObjectRoot:
+    def new_object_root(self) -> StkObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
         if self._intf:
             root_unk = self._intf.client.NewObjectRoot()
@@ -45,7 +45,7 @@ class STKRuntimeApplication(STKXApplication):
             return root
         raise STKInitializationError(f"Not connected to the gRPC server.")
             
-    def NewObjectModelContext(self) -> StkObjectModelContext:
+    def new_object_model_context(self) -> StkObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
         if self._intf:
             context_unk = self._intf.client.NewObjectModelContext()
@@ -54,7 +54,7 @@ class STKRuntimeApplication(STKXApplication):
             return context
         raise STKInitializationError(f"Not connected to the gRPC server.")
 
-    def ShutDown(self) -> None:
+    def shutdown(self) -> None:
         """Shut down the STKRuntime application."""
         if self._intf:
             self._intf.client.set_shutdown_stkruntime(True)
@@ -64,7 +64,7 @@ class STKRuntimeApplication(STKXApplication):
         """Safely disconnect from STKRuntime."""
         if self._intf:
             self._intf.client.TerminateConnection()
-            self.__dict__["_intf"] = interface_proxy()
+            self.__dict__["_intf"] = InterfaceProxy()
 
 class STKRuntime(object):
     """Connect to STKRuntime using gRPC."""
@@ -81,7 +81,7 @@ class STKRuntime(object):
             return None
         
     @staticmethod
-    def StartApplication(grpc_host:str="0.0.0.0", \
+    def start_application(grpc_host:str="0.0.0.0", \
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
                          userControl:bool=False, \
@@ -112,13 +112,13 @@ class STKRuntime(object):
 
         subprocess.Popen(cmd_line, shell=True)
         host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
-        app = STKRuntime.AttachToApplication(host, grpc_port, grpc_timeout_sec)
+        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
         app._intf.client.set_shutdown_stkruntime(not userControl)
         return app
 
         
     @staticmethod
-    def AttachToApplication(grpc_host:str="localhost", \
+    def attach_to_application(grpc_host:str="localhost", \
                             grpc_port:int=40704, \
                             grpc_timeout_sec:int=60) -> STKRuntimeApplication:
         """
@@ -128,7 +128,7 @@ class STKRuntime(object):
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
         """
-        client = grpc_client.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
         if client is not None:
             app_intf = client.GetStkApplicationInterface()
             app = STKRuntimeApplication()

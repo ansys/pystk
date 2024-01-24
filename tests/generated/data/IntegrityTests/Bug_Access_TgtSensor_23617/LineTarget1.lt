@@ -1,0 +1,98 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN LineTarget
+
+    Name		 LineTarget1
+
+    BEGIN IndexPtData
+
+        CentralBody		 Earth
+        AnchorPtIndex		 -3
+        NumberOfPolylinePts		 3
+
+        BEGIN PolylinePoints
+
+             0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+             0.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00
+             1.0000000000000000e+00  1.0000000000000000e+00  0.0000000000000000e+00
+
+        END PolylinePoints
+
+        BoundaryType		 GreatArc
+        Granularity		 0.008726645999999999
+
+    END IndexPtData
+
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN AccessConstraints
+            LineOfSight IncludeIntervals
+
+            UsePreferredMaxStep No
+            PreferredMaxStep 360
+        END AccessConstraints
+
+        BEGIN Desc
+            BEGIN ShortText
+
+            END ShortText
+            BEGIN LongText
+
+            END LongText
+        END Desc
+
+        BEGIN Crdn
+        END Crdn
+
+        BEGIN ChainProcessingDelay
+            ConstantDelay		  0.0000000000000000e+00
+        END ChainProcessingDelay
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                LineColor		 #ffd700
+                LabelColor		 #ffd700
+                LineStyle		 0
+                LineWidth		 1
+                FontStyle		 0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                ShowGfx		 On
+                Inherit		 On
+                ShowLabel		 On
+                ShowBoundingRect		 Off
+
+            END Graphics
+            BEGIN PointData
+                ShowPoints		 Off
+                NewPointShow		 Off
+                NewPointMarkerStyle		 1
+                NewPointFontStyle		 0
+                PointMarkerShow		 On
+                PointMarkerStyle		 1
+            END PointData
+
+            BEGIN DisplayTimes
+                DisplayType		 AlwaysOn
+            END DisplayTimes
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+END LineTarget
+

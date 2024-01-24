@@ -1,0 +1,8 @@
+VO_v70
+    IsInvisible               No
+    IsShowingPlanetPoint      Yes
+    IsShowingSubPlanetPoint   No
+    Inherit2DGfx              Yes
+    IsShowingPlanetLabel      Yes
+    IsShowingSubPlanetLabel   No
+    IsShowingOrbit            No

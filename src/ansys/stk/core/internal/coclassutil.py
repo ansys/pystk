@@ -7,7 +7,7 @@ import copy
 from ctypes import byref, cast, pointer, POINTER, Structure 
 
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
-from .comutil import ole32lib, oleaut32lib, IAGFUNCTYPE, IUnknown, Succeeded
+from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded
 from ..utilities.comobject  import COMObject
 from ..utilities.exceptions import *
 
@@ -57,13 +57,13 @@ class _IErrorInfo(object):
         #GetHelpContextIndex = 5 (skipping GetHelpContext as it is not needed)
         if os.name!="nt":
             GetDescriptionIndex = 1
-        self._GetDescription = IAGFUNCTYPE(pUnk, IID__IErrorInfo, vtable_offset + GetDescriptionIndex, POINTER(BSTR))
-    def GetDescription(self):
+        self._GetDescription = IFuncType(pUnk, IID__IErrorInfo, vtable_offset + GetDescriptionIndex, POINTER(BSTR))
+    def get_description(self):
         p = BSTR()
         hr = self._GetDescription(byref(p))
         if Succeeded(hr):
             desc = p.value
-            oleaut32lib.SysFreeString(p)
+            OLEAut32Lib.SysFreeString(p)
             return desc
             
 def evaluate_hresult(hr:HRESULT) -> None:
@@ -71,10 +71,10 @@ def evaluate_hresult(hr:HRESULT) -> None:
     if not Succeeded(hr):
         punk = IUnknown()
         msg = None
-        if oleaut32lib.GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
+        if OLEAut32Lib.GetErrorInfo(DWORD(), byref(punk.p)) == S_OK:
             punk.take_ownership()
             ierrorinfo = _IErrorInfo(punk)
-            msg = ierrorinfo.GetDescription()
+            msg = ierrorinfo.get_description()
             del(ierrorinfo)
             del(punk)
         elif (hr & 0xFFFFFFFF) == 0x80070057: # E_INVALIDARG
@@ -87,10 +87,10 @@ def evaluate_hresult(hr:HRESULT) -> None:
 #   Querying class information
 ###############################################################################
             
-class _IAgProvideClassId(object):
+class _IProvideClassId(object):
     guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
     def __init__(self, pUnk):
-        IID__IAgProvideClassId = GUID(_IAgProvideClassId.guid)
+        IID__IAgProvideClassId = GUID(_IProvideClassId.guid)
         pIntf = pUnk.query_interface(iid=IID__IAgProvideClassId)
         self.valid = False
         if pIntf is not None:
@@ -98,20 +98,20 @@ class _IAgProvideClassId(object):
             del(pIntf)
         vtable_offset = IUnknown._num_methods - 1
         GetClsidIndex = 1
-        self._GetClsid = IAGFUNCTYPE(pUnk, IID__IAgProvideClassId, vtable_offset + GetClsidIndex, POINTER(GUID))
+        self._GetClsid = IFuncType(pUnk, IID__IAgProvideClassId, vtable_offset + GetClsidIndex, POINTER(GUID))
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
         del(self._GetClsid)
         return False
-    def GetClsid(self):
+    def get_clsid(self):
         coclass_clsid = GUID()
         if self.valid:
             if Succeeded(self._GetClsid(byref(coclass_clsid))):
                 return coclass_clsid
         return None
             
-class _TYPEATTR(Structure):
+class _TypeAttr(Structure):
     LCID = DWORD
     MEMBERID = LONG
     TYPEKIND = INT
@@ -150,15 +150,15 @@ class _ITypeInfo(object):
         ReleaseTypeAttrIndex        = 17
         #ReleaseFuncDescIndex       = 18  (skipping ReleaseFuncDesc as it is not needed)
         #ReleaseVarDescIndex        = 19  (skipping ReleaseVarDesc as it is not needed)
-        self._GetTypeAttr = IAGFUNCTYPE(pUnk, IID__ITypeInfo, vtable_offset + GetTypeAttrIndex, POINTER(PVOID))
-        self._ReleaseTypeAttr = IAGFUNCTYPE(pUnk, IID__ITypeInfo, vtable_offset + ReleaseTypeAttrIndex, POINTER(_TYPEATTR))
-    def GetTypeAttr(self):
+        self._GetTypeAttr = IFuncType(pUnk, IID__ITypeInfo, vtable_offset + GetTypeAttrIndex, POINTER(PVOID))
+        self._ReleaseTypeAttr = IFuncType(pUnk, IID__ITypeInfo, vtable_offset + ReleaseTypeAttrIndex, POINTER(_TypeAttr))
+    def get_type_attr(self):
         p = PVOID()
         hr = self._GetTypeAttr(byref(p))
         if Succeeded(hr):
-            ta = cast(p, POINTER(_TYPEATTR)).contents
+            ta = cast(p, POINTER(_TypeAttr)).contents
             return ta
-    def ReleaseTypeAttr(self, ta):
+    def release_type_attr(self, ta):
         self._ReleaseTypeAttr(byref(ta))
             
 class _IProvideClassInfo(object):
@@ -172,23 +172,23 @@ class _IProvideClassInfo(object):
             del(pIntf)
         vtable_offset = IUnknown._num_methods - 1
         GetClassInfoIndex = 1
-        self._GetClassInfo = IAGFUNCTYPE(pUnk, IID__IProvideClassInfo, vtable_offset + GetClassInfoIndex, POINTER(PVOID))
+        self._GetClassInfo = IFuncType(pUnk, IID__IProvideClassInfo, vtable_offset + GetClassInfoIndex, POINTER(PVOID))
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
         del(self._GetClassInfo)
         return False
-    def GetClassInfo(self):
+    def get_class_info(self):
         if self.valid:
             pUnk = IUnknown()
             hr = self._GetClassInfo(byref(pUnk.p))
             if Succeeded(hr):
                 pUnk.take_ownership()
                 type_info = _ITypeInfo(pUnk)
-                type_attr = type_info.GetTypeAttr()
+                type_attr = type_info.get_type_attr()
                 if type_attr is not None:
                     guid = copy.deepcopy(type_attr.guid)
-                    type_info.ReleaseTypeAttr(type_attr)
+                    type_info.release_type_attr(type_attr)
                 else:
                     guid = None
                 del(type_info)
@@ -202,18 +202,18 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
     if punk:
         coclass._pUnk = punk
         my_clsid = None
-        with _IAgProvideClassId(punk) as provideClassInfo:
-            my_clsid = provideClassInfo.GetClsid()
+        with _IProvideClassId(punk) as provideClassInfo:
+            my_clsid = provideClassInfo.get_clsid()
         if my_clsid is None and os.name=="nt":
             with _IProvideClassInfo(punk) as provideClassInfo:
-                my_clsid = provideClassInfo.GetClassInfo()
+                my_clsid = provideClassInfo.get_class_info()
         if my_clsid is not None:
             p = BSTR()
-            if Succeeded(ole32lib.StringFromCLSID(byref(my_clsid), byref(p))):
+            if Succeeded(OLE32Lib.StringFromCLSID(byref(my_clsid), byref(p))):
                 if AgClassCatalog.check_clsid_available(p.value):
                     coclass = AgClassCatalog.get_class(p.value)()
                     coclass._private_init(punk)
-                ole32lib.CoTaskMemFree(p)
+                OLE32Lib.CoTaskMemFree(p)
     return coclass
     
 def compare_com_objects(first, second) -> bool:
@@ -246,20 +246,20 @@ class IConnectionPoint(object):
         AdviseIndex                         = 3 
         UnadviseIndex                       = 4 
         #EnumConnectionsIndex               = 5 (skipping EnumConnections as it is not needed)
-        self._GetConnectionInterface = IAGFUNCTYPE(pUnk, IID_IConnectionPoint, vtable_offset + GetConnectionInterfaceIndex, POINTER(GUID))
-        self._Advise                 = IAGFUNCTYPE(pUnk, IID_IConnectionPoint, vtable_offset + AdviseIndex, PVOID, POINTER(DWORD))
-        self._Unadvise               = IAGFUNCTYPE(pUnk, IID_IConnectionPoint, vtable_offset + UnadviseIndex, DWORD)
-    def GetConnectionInterface(self) -> GUID:
+        self._GetConnectionInterface = IFuncType(pUnk, IID_IConnectionPoint, vtable_offset + GetConnectionInterfaceIndex, POINTER(GUID))
+        self._Advise                 = IFuncType(pUnk, IID_IConnectionPoint, vtable_offset + AdviseIndex, PVOID, POINTER(DWORD))
+        self._Unadvise               = IFuncType(pUnk, IID_IConnectionPoint, vtable_offset + UnadviseIndex, DWORD)
+    def get_connection_interface(self) -> GUID:
         guid = GUID()
         hr = self._GetConnectionInterface(byref(guid))
         if Succeeded(hr):
             return guid
-    def Advise(self, event_sink:PVOID) -> DWORD:
+    def advise(self, event_sink:PVOID) -> DWORD:
         cookie = DWORD()
         hr = self._Advise(event_sink, byref(cookie))
         if Succeeded(hr):
             return cookie
-    def Unadvise(self, cookie:DWORD):
+    def unadvise(self, cookie:DWORD):
         self._Unadvise(cookie)
             
 class IConnectionPointContainer(object):
@@ -269,8 +269,8 @@ class IConnectionPointContainer(object):
         vtable_offset = IUnknown._num_methods - 1
         #EnumConnectionPointsIndex = 1 (skipping EnumConnectionPoints as it is not needed)
         FindConnectionPointIndex   = 2
-        self._FindConnectionPoint = IAGFUNCTYPE(pUnk, IID_IConnectionPointContainer, vtable_offset + FindConnectionPointIndex, POINTER(GUID), POINTER(PVOID))
-    def FindConnectionPoint(self, iid:GUID) -> IConnectionPoint:
+        self._FindConnectionPoint = IFuncType(pUnk, IID_IConnectionPointContainer, vtable_offset + FindConnectionPointIndex, POINTER(GUID), POINTER(PVOID))
+    def find_connection_point(self, iid:GUID) -> IConnectionPoint:
         pUnk = IUnknown()
         hr = self._FindConnectionPoint(iid, byref(pUnk.p))
         if Succeeded(hr):
@@ -286,7 +286,7 @@ class IConnectionPointContainer(object):
 
 class _IRunningObjectTable(object):
     guid = "{00000010-0000-0000-C000-000000000046}"
-    def __init__(self, pUnk):
+    def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         self.gettingAnApplication = True
@@ -299,14 +299,14 @@ class _IRunningObjectTable(object):
         #NoteChangeTimeIndex        = 5 (skipping NoteChangeTime as it is not needed)
         #GetTimeOfLastChangeIndex   = 6 (skipping GetTimeOfLastChange as it is not needed)
         EnumRunningIndex            = 7 
-        self._GetObject   = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
-        self._EnumRunning = IAGFUNCTYPE(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
-    def GetObject(self, pmkObjectName: "_IMoniker") -> "IUnknown":
+        self._GetObject   = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + GetObjectIndex, PVOID, POINTER(PVOID))
+        self._EnumRunning = IFuncType(pUnk, IID__IRunningObjectTable, vtable_offset + EnumRunningIndex, POINTER(PVOID))
+    def get_object(self, pmkObjectName: "_IMoniker") -> "IUnknown":
         ppunkObject = IUnknown()
         self._GetObject(pmkObjectName.pUnk.p, byref(ppunkObject.p))
         ppunkObject.take_ownership(isApplication=self.gettingAnApplication) 
         return ppunkObject
-    def EnumRunning(self) -> "_IEnumMoniker":
+    def enum_running(self) -> "_IEnumMoniker":
         ppenumMoniker = IUnknown()
         self._EnumRunning(byref(ppenumMoniker.p))
         ppenumMoniker.take_ownership()
@@ -316,7 +316,7 @@ class _IRunningObjectTable(object):
     
 class _IEnumMoniker(object):
     guid = "{00000102-0000-0000-C000-000000000046}"
-    def __init__(self, pUnk):
+    def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         IID__IEnumMoniker = GUID(_IEnumMoniker.guid)
@@ -325,27 +325,27 @@ class _IEnumMoniker(object):
         #SkipIndex  = 2 (skipping Skip as it is not needed)
         ResetIndex  = 3
         #CloneIndex = 4 (skipping Clone as it is not needed)
-        self._Next   = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + NextIndex, ULONG, POINTER(PVOID), POINTER(ULONG))
-        self._Reset  = IAGFUNCTYPE(pUnk, IID__IEnumMoniker, vtable_offset + ResetIndex)
-    def Next(self) -> "_IMoniker":
+        self._Next   = IFuncType(pUnk, IID__IEnumMoniker, vtable_offset + NextIndex, ULONG, POINTER(PVOID), POINTER(ULONG))
+        self._Reset  = IFuncType(pUnk, IID__IEnumMoniker, vtable_offset + ResetIndex)
+    def next(self) -> "_IMoniker":
         one_obj = ULONG(1)
         num_fetched = ULONG(0)
         pUnk = IUnknown()
         CLSID_AgUiApplication = GUID()
-        ole32lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
-        ole32lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
+        OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)
+        OLE32Lib.CreateClassMoniker(CLSID_AgUiApplication, byref(pUnk.p))
         pUnk.take_ownership()
         self._Next(one_obj, byref(pUnk.p), byref(num_fetched))
         if num_fetched.value == 1:
             iMon = _IMoniker(pUnk)
             del(pUnk)
             return iMon
-    def Reset(self):
+    def reset(self):
         self._Reset()
     
 class _IMalloc(object):
     guid = "{00000002-0000-0000-C000-000000000046}"
-    def __init__(self, pUnk):
+    def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         IID__IMalloc = GUID(_IMalloc.guid)
@@ -356,13 +356,13 @@ class _IMalloc(object):
         #GetSizeIndex        = 4 (skipping GetSize as it is not needed)
         #DidAllocIndex       = 5 (skipping DidAlloc as it is not needed)
         #HeapMinimizeIndex   = 6 (skipping HeapMinimize as it is not needed)
-        self._Free = IAGFUNCTYPE(pUnk, IID__IMalloc, vtable_offset + FreeIndex, PVOID)
-    def Free(self, pv):
+        self._Free = IFuncType(pUnk, IID__IMalloc, vtable_offset + FreeIndex, PVOID)
+    def free(self, pv):
         self._Free(pv)
     
 class _IMoniker(object):
     guid = "{0000000f-0000-0000-C000-000000000046}"
-    def __init__(self, pUnk):
+    def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         self.pUnk = pUnk
@@ -385,24 +385,24 @@ class _IMoniker(object):
         GetDisplayNameIndex          = 13 
         #ParseDisplayNameIndex       = 14 (skipping ParseDisplayName as it is not needed)
         #IsSystemMonikerIndex        = 15 (skipping IsSystemMoniker as it is not needed)
-        self._GetDisplayName = IAGFUNCTYPE(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
-    def _FreeDisplayName(self, ppszDisplayName):
+        self._GetDisplayName = IFuncType(pUnk, IID__IMoniker, vtable_offset + GetDisplayNameIndex, PVOID, PVOID, POINTER(BSTR))
+    def _free_display_name(self, ppszDisplayName):
         pMalloc = IUnknown()
-        ole32lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
+        OLE32Lib.CoGetMalloc(DWORD(1), byref(pMalloc.p))
         pMalloc.take_ownership()
         iMalloc = _IMalloc(pMalloc)
-        iMalloc.Free(ppszDisplayName)
+        iMalloc.free(ppszDisplayName)
         del(iMalloc)
         del(pMalloc)
-    def GetDisplayName(self) -> str:
+    def get_display_name(self) -> str:
         pbc = IUnknown()
         pmkToLeft = IUnknown()
-        ole32lib.CreateBindCtx(DWORD(0), byref(pbc.p))
+        OLE32Lib.CreateBindCtx(DWORD(0), byref(pbc.p))
         pbc.take_ownership()
         ppszDisplayName = BSTR()
         self._GetDisplayName(pbc.p, pmkToLeft.p, byref(ppszDisplayName))
         display_name = ppszDisplayName.value
-        self._FreeDisplayName(ppszDisplayName)
+        self._free_display_name(ppszDisplayName)
         del(pmkToLeft)
         del(pbc)
         return display_name
@@ -412,22 +412,22 @@ def attach_to_stk_by_pid(pid:int) -> IUnknown:
         raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
     runningObjectTable = IUnknown()
     str_prog_id = "!STK.Application:" + str(pid)
-    if Succeeded(ole32lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
+    if Succeeded(OLE32Lib.GetRunningObjectTable(DWORD(0), byref(runningObjectTable.p))):
         runningObjectTable.take_ownership()
         runningObjectTable = _IRunningObjectTable(runningObjectTable)
-        enumMoniker = runningObjectTable.EnumRunning()
-        enumMoniker.Reset()
-        moniker = enumMoniker.Next()
+        enumMoniker = runningObjectTable.enum_running()
+        enumMoniker.reset()
+        moniker = enumMoniker.next()
         while moniker is not None:
-            instanceName = moniker.GetDisplayName()
+            instanceName = moniker.get_display_name()
             if instanceName == str_prog_id:
-                ret = runningObjectTable.GetObject(moniker)
+                ret = runningObjectTable.get_object(moniker)
                 del(moniker)
                 del(enumMoniker)
                 del(runningObjectTable)
                 return ret
             else:
-                moniker = enumMoniker.Next()
+                moniker = enumMoniker.next()
         del(moniker)
         del(enumMoniker)
         del(runningObjectTable)

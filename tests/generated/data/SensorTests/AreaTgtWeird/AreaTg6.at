@@ -1,0 +1,132 @@
+stk.v.4.1.1
+
+BEGIN AreaTarget
+
+Name        AreaTg6
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            1.273013e+01
+		EcfLongitude           -9.094928e+00
+		EcfAltitude            0.000000e+00
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     38
+
+		BEGIN PolygonPoints
+
+			5.5210000000e-01	5.9263800000e+01	0.0000000000e+00
+			-2.7791400000e+01	4.6012300000e+01	0.0000000000e+00
+			-5.7975500000e+01	2.0245400000e+01	0.0000000000e+00
+			-2.7423300000e+01	-2.6135000000e+01	0.0000000000e+00
+			-5.3374000000e+00	-4.5276100000e+01	0.0000000000e+00
+			5.5210000000e-01	-5.1901800000e+01	0.0000000000e+00
+			7.1779000000e+00	-5.0061300000e+01	0.0000000000e+00
+			1.2883000000e+00	-3.8650300000e+01	0.0000000000e+00
+			-6.4417000000e+00	-2.9447900000e+01	0.0000000000e+00
+			-8.6503000000e+00	-2.6503100000e+01	0.0000000000e+00
+			-3.4969000000e+00	-2.1349700000e+01	0.0000000000e+00
+			5.3374000000e+00	-2.7239300000e+01	0.0000000000e+00
+			1.4171800000e+01	-3.3496900000e+01	0.0000000000e+00
+			1.8957100000e+01	-3.3496900000e+01	0.0000000000e+00
+			1.7852800000e+01	-2.6871200000e+01	0.0000000000e+00
+			1.3067500000e+01	-2.1349700000e+01	0.0000000000e+00
+			9.3865000000e+00	-1.8036800000e+01	0.0000000000e+00
+			5.3374000000e+00	-1.4723900000e+01	0.0000000000e+00
+			9.7546000000e+00	-1.0674800000e+01	0.0000000000e+00
+			1.7484700000e+01	-1.4723900000e+01	0.0000000000e+00
+			2.3374200000e+01	-2.0245400000e+01	0.0000000000e+00
+			2.8895700000e+01	-1.9877300000e+01	0.0000000000e+00
+			2.5950900000e+01	-1.2883400000e+01	0.0000000000e+00
+			2.3374200000e+01	-6.6258000000e+00	0.0000000000e+00
+			1.9693300000e+01	-3.6810000000e+00	0.0000000000e+00
+			2.5582800000e+01	1.4724000000e+00	0.0000000000e+00
+			3.0368100000e+01	-3.6810000000e+00	0.0000000000e+00
+			3.5889600000e+01	-9.9387000000e+00	0.0000000000e+00
+			4.1411000000e+01	-9.9387000000e+00	0.0000000000e+00
+			3.6257700000e+01	1.8405000000e+00	0.0000000000e+00
+			3.2208600000e+01	8.8344000000e+00	0.0000000000e+00
+			2.9263800000e+01	1.2515300000e+01	0.0000000000e+00
+			2.9263800000e+01	1.2515300000e+01	0.0000000000e+00
+			2.9263800000e+01	1.2515300000e+01	0.0000000000e+00
+			9.0084000000e+00	3.5685700000e+01	0.0000000000e+00
+			-4.9638000000e+00	3.5317800000e+01	0.0000000000e+00
+			3.8607000000e+00	5.0033500000e+01	0.0000000000e+00
+			5.5210000000e-01	5.9263800000e+01	0.0000000000e+00
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             4
+                PolygonColor            4
+                LabelColor              4
+                LineStyle               0
+                LineWidth               2.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowLabel               On
+                Filled                  Off
+
+            END Graphics
+    END Graphics
+    
+    BEGIN Shapefiles
+    END Shapefiles
+    
+    BEGIN AccessConstraints
+		LineOfSight
+    END AccessConstraints
+    
+    BEGIN Report
+    END Report
+    
+    BEGIN DynData
+    END DynData
+    
+    BEGIN Desc
+        ShortText    22
+Very Large Area Target
+        LongText    324
+The purpose of this area target is to test STK's
+ability to handle area targets that are "larger" than
+the Vehicles field of view... i.e. a case where
+the  Vehicle will be "engulfed" by the Area Target.
+
+additionally, Area Target has "fingers" to test
+costum sensor access.
+
+this also serves as a speed test to the algorithm
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN AsyncIPC
+    END AsyncIPC
+
+END Extensions
+
+END AreaTarget
+

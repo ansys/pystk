@@ -16,7 +16,7 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
         self._root: "StkObjectRoot" = root
 
         self.csToPy_OnStkObjectChangedSubscription = (self._root).Subscribe()
-        self.csToPy_OnStkObjectChangedSubscription.OnStkObjectChanged += self._root_OnStkObjectChanged
+        self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed += self._root_OnStkObjectChanged
 
     @property
     def Counter(self):
@@ -27,7 +27,7 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
         return self._lastSender
 
     def Terminate(self):
-        self.csToPy_OnStkObjectChangedSubscription.OnStkObjectChanged -= self._root_OnStkObjectChanged
+        self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed -= self._root_OnStkObjectChanged
 
     def _root_OnStkObjectChanged(self, pArgs: "StkObjectChangedEventArgs"):
         sPath: str = pArgs.path

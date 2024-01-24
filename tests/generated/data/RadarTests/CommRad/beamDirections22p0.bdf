@@ -1,0 +1,11 @@
+# File format is as follows:
+# If first character of a line is '#' the entire line is treated as a comment line.
+# First non-comment line is file format version.  Tells STK the format of the remaining file.
+# Second non-comment line is a sampling mode.  Only "SampleAndHold" is supported (future will bring more options).
+# Remaining non-comment lines are time specified pointing directions with the following format:
+#   <time>  1  <direction 1 Az>  <direction l El> where only 1 direction is currently supported for the beam directions and 
+#   Az/El are in degrees and in Antenna's body reference frame.
+BeamAsciiDataDirectionProvider   v1
+SampleAndHold
+-1e-300 1 22.0 0.0
+130.0  1 22.0 0.0

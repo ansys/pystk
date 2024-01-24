@@ -223,7 +223,6 @@ class EarlyBoundTests(TestBase):
 
     @category("Basic Tests")
     @category("OrbitState Test")
-    @category("ExcludeWithGrpc")
     def test_BasicTrajectory(self):
         TestBase.logger.WriteLine("----- THE BASIC TRAJECTORY TEST ----- BEGIN -----")
         self.Units.reset_units()

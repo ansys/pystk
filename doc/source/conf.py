@@ -170,4 +170,6 @@ autodoc_mock_imports = ["tkinter"]
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
+    "https://www.ansys.com/*"
 ]
+

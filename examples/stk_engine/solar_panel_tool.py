@@ -15,8 +15,8 @@ class SolarPanelTool:
 
     def __init__(self):
         """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.StartApplication(noGraphics=False)
-        self.root = self.stk.NewObjectRoot()
+        self.stk = STKEngine.start_application(noGraphics=False)
+        self.root = self.stk.new_object_root()
         self.reportFilePath = ""
         self.firstTime = True
         self.window = tk.Tk()
@@ -68,7 +68,7 @@ class SolarPanelTool:
     def _exit(self):
         self.root.close_scenario()
         self.window.destroy()
-        self.stk.ShutDown()
+        self.stk.shutdown()
 
     def _new_scenario(self):
         self.root.new_scenario("SolarPanelTest")

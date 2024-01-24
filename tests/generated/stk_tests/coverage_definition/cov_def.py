@@ -1701,7 +1701,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", curDateUnit)
 
-        # Ensure that fast and slow give the same results, and that fast is 20+ on x86 and 15+ on x64 times faster than slow.
+        # Ensure that fast and slow give the same results, and that fast is faster than slow.
         Assert.assertEqual(sbFast.ToString(), sbSlow.ToString())
         Assert.assertGreater(float(watchSlow.ElapsedMilliseconds), (4.0 * watchFast.ElapsedMilliseconds))
 
@@ -1795,7 +1795,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRID INSPECTOR ALL TYPES TEST ----- END -----")
 
     def CompareGridPointsByBoundsType(self, covDef: "CoverageDefinition", eBounds: "COVERAGE_BOUNDS"):
-        def generated1(a, b):
+        def generated1(a: "List[float]", b: "List[float]"):
             return (cmp(a[0], b[0]) * 10) + cmp(a[1], b[1])
 
         arrayCompare = generated1
@@ -1830,8 +1830,8 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(gridInspector):
-            arDouble1 = gridInspector[i]
-            arDouble2 = gridPointLocations[i]
+            arDouble1: "List[float]" = gridInspector[i]
+            arDouble2: "List[float]" = gridPointLocations[i]
             Assert.assertEqual(arDouble1[0], arDouble2[0])
             Assert.assertEqual(arDouble1[1], arDouble2[1])
 

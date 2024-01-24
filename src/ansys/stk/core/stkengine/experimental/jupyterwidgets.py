@@ -18,7 +18,7 @@ from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
 from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
     UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...internal.comutil import ole32lib, \
+from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
     GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkengine import STKEngineApplication
@@ -65,40 +65,40 @@ class AsyncioTimerManager(object):
 
         self._next_id = 1
         self._timers = dict()
-        self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
-        self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
+        self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
+        self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
         AgUtSetTimerCallbacks(
             self._install_timer_cfunc,
             self._delete_timer_cfunc, c_void_p())
 
-    def Terminate(self):
+    def terminate(self):
         self._timers.clear()
 
-    def __InstallTimer(self, milliseconds, TIMERPROC, callbackData):
+    def __install_timer(self, milliseconds, TIMERPROC, callbackData):
         id = self._next_id
         self._next_id = id + 1
         self._timers[id] = AsyncioTimerManager.TimerInfo(
             id, milliseconds, TIMERPROC, callbackData)
-        self._SetAlarmForNextTimerProc()
+        self._set_alarm_for_next_timer_proc()
         return id
 
-    def __DeleteTimer(self, timerID, callbackData):
+    def __delete_timer(self, timerID, callbackData):
         if timerID in self._timers:
             del(self._timers[timerID])
         return 0
 
-    def _FireTimers(self):
+    def _fire_timers(self):
         timers = self._timers.copy()
         for timerid in timers:
             timers[timerid].fire()
-        self._SetAlarmForNextTimerProc()
+        self._set_alarm_for_next_timer_proc()
 
     async def _wait(self, delay):
         await asyncio.sleep(delay)
-        self._FireTimers()
+        self._fire_timers()
 
-    def _NextTimerProc(self):
-        ''' Return time in sec until next timer proc '''
+    def _next_timer_proc(self):
+        ''' Return time in sec until next timer proc.'''
         tempTimers = self._timers.copy()
         if len(tempTimers) == 0:
             return 0.050
@@ -112,33 +112,35 @@ class AsyncioTimerManager(object):
             else:
                 return 0
 
-    def _SetAlarmForNextTimerProc(self):
-        next_proc = self._NextTimerProc()
+    def _set_alarm_for_next_timer_proc(self):
+        next_proc = self._next_timer_proc()
         if next_proc > 0:
             self.task = asyncio.ensure_future(self._wait(next_proc))
         else:
-            self._FireTimers()
+            self._fire_timers()
 
 
 asyncioTimerManager = None
 
 
-class AgRemoteFrameBufferHostVTable(Structure):
+class RemoteFrameBufferHostVTable(Structure):
     '''
-    Structure of the vtable for IRemoteFrameBufferHost
+    Structure of the vtable for IRemoteFrameBufferHost.
     '''
+    
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
                 ("IUnknown3",        c_void_p),
                 ("refresh",          c_void_p)]
 
 
-class AgRemoteFrameBufferHost(object):
+class RemoteFrameBufferHost(object):
     '''
-    Implements IRemoteFrameBufferHost 
+    Implements IRemoteFrameBufferHost.
     
     Assemble a vtable following the layout of that interface
     '''
+
     _IID_IUnknown = GUID(IUnknown._guid)
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
@@ -148,9 +150,9 @@ class AgRemoteFrameBufferHost(object):
 
     def _init_vtable(self):
 
-        qi = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._QueryInterface)
-        addref = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-        release = CFUNCTYPE(ULONG, PVOID)(self._Release)
+        qi = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
+        addref = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+        release = CFUNCTYPE(ULONG, PVOID)(self._release)
 
         if os.name == "nt":
             self.__dict__['_cfunc_IUnknown1'] = qi
@@ -161,7 +163,7 @@ class AgRemoteFrameBufferHost(object):
             self.__dict__['_cfunc_IUnknown1'] = addref
             self.__dict__['_cfunc_IUnknown2'] = release
 
-        self.__dict__['_cfunc_Refresh'] = CFUNCTYPE(None, PVOID)(self._Refresh)
+        self.__dict__['_cfunc_Refresh'] = CFUNCTYPE(None, PVOID)(self._refresh)
 
         self.__dict__['_vtable'] = AgRemoteFrameBufferHostVTable(
             *[cast(self._cfunc_IUnknown1, c_void_p),
@@ -171,13 +173,13 @@ class AgRemoteFrameBufferHost(object):
         )
         self.__dict__['_pUnk'] = pointer(self._vtable)
 
-    def _AddRef(self, pThis: PVOID) -> int:
+    def _add_ref(self, pThis: PVOID) -> int:
         return 1
 
-    def _Release(self, pThis: PVOID) -> int:
+    def _release(self, pThis: PVOID) -> int:
         return 0
 
-    def _QueryInterface(self,
+    def _query_interface(self,
                         pThis: PVOID,
                         riid: REFIID,
                         ppvObject: POINTER(PVOID)) -> int:
@@ -192,7 +194,7 @@ class AgRemoteFrameBufferHost(object):
             ppvObject[0] = 0
             return E_NOINTERFACE
 
-    def _Refresh(self, pThis: PVOID) -> None:
+    def _refresh(self, pThis: PVOID) -> None:
         self.owner.request_draw()
 
 
@@ -200,6 +202,7 @@ class WidgetBase(RemoteFrameBuffer):
     '''
     Base class for Jupyter controls.
     '''
+
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -224,11 +227,11 @@ class WidgetBase(RemoteFrameBuffer):
         self.resizable = resizable
         self.pixel_ratio = 1.0
 
-        self._unk = self.__CreateInstance(self._progid)
+        self._unk = self.__create_instance(self._progid)
 
         self._interface._private_init(self, self._unk)
 
-        self.__CreateFrameBuffer(w, h)
+        self.__create_frame_buffer(w, h)
 
         self._rfb = IRemoteFrameBuffer(self)
         self._rfb.set_to_off_screen_rendering(w, h)
@@ -269,18 +272,18 @@ class WidgetBase(RemoteFrameBuffer):
         del self._unk
         self.stk = None
 
-    def __CreateFrameBuffer(self, w: int, h: int):
+    def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
             del self.frame
         self.frame = np.ones((int(h), int(w), 3), np.uint8)
         self.pointer, read_only_flag = self.frame.__array_interface__['data']
 
-    def __CreateInstance(self, clsid: str) -> LPVOID:
+    def __create_instance(self, clsid: str) -> LPVOID:
         guid = GUID()
-        if Succeeded(ole32lib.CLSIDFromString(clsid, guid)):
+        if Succeeded(OLE32Lib.CLSIDFromString(clsid, guid)):
             IID_IUnknown = GUID(IUnknown._guid)
             unk = IUnknown()
-            if Succeeded(ole32lib.CoCreateInstance(byref(guid), None,
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(guid), None,
                                           CLSCTX_INPROC_SERVER,
                                           byref(IID_IUnknown), byref(unk.p))):
                 unk.take_ownership()
@@ -317,7 +320,7 @@ class WidgetBase(RemoteFrameBuffer):
             w = int(event["width"]*pixel_ratio)
             h = int(event["height"]*pixel_ratio)
             self.pixel_ratio = pixel_ratio
-            self.__CreateFrameBuffer(w, h)
+            self.__create_frame_buffer(w, h)
             self._rfb.notify_resize(0, 0, w, h)
         elif event_type == "pointer_down":
             (x, y) = self.__get_position(event)
@@ -381,6 +384,7 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     '''
     The 2D Map widget for jupyter.
     '''
+
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
@@ -395,6 +399,7 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     '''
     The Graphics Analysis widget for jupyter.
     '''
+
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 

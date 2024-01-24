@@ -1,0 +1,144 @@
+stk.v.8.0
+
+BEGIN FigureOfMerit
+
+Name        FigureOfMerit1
+
+BEGIN FomDefinition
+
+
+    BEGIN NAssetCoverage
+        StaticStat          Minimum
+
+    END NAssetCoverage
+    ApplySatisfaction    Yes
+    SatisfactionType     AtLeast
+    SatisfactionThreshold    3.00000000000000e+000
+    NotExecutedValue         0.00000000000000e+000
+
+END FomDefinition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+BEGIN Attributes
+
+    StaticColor                 #fff0f5
+    StaticColorRampStartColor   #ffd700
+    StaticColorRampEndColor     #ba55d3
+    StaticMarkerStyle           3
+    StaticContourMarkerStyle    3
+    AnimationColor              #7fff00
+    AnimColorRampStartColor     #ff0000
+    AnimColorRampEndColor       #0000ff
+    AnimationMarkerStyle        2
+    AnimationContourMarkerStyle 2
+    ObjectCovMarkerStyle        0
+    ObjectCovLineStyle          0
+    ObjectCovLineWidth          1.000000
+
+END Attributes
+
+BEGIN Graphics
+
+    ShowStatic           Yes
+    ShowAnim             Yes
+    ShowStaticContours   No
+    ShowAnimContours     Yes
+    ShareContours        No
+    StaticFillPoints     Yes
+    AnimFillPoints       Yes
+    StaticColorRamp      Yes
+    AnimColorRamp        Yes
+    StaticContourType    Block
+    AnimContourType      Block
+    Begin StaticContours
+        NumContourLevels          3
+        BEGIN ContourLevel
+            Value            1.000000000000e+000
+            Color            #999999
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+        BEGIN ContourLevel
+            Value            2.000000000000e+000
+            Color            #f0e68c
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+        BEGIN ContourLevel
+            Value            3.000000000000e+000
+            Color            #00ff00
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+    End StaticContours
+    Begin StaticLegend
+        DrawLegendOnMap    No
+        XPixelLocation     5
+        YPixelLocation     5
+        Orientation        HorizMinToMax
+        MaxPerRow          20
+        ColorPixelWidth    40
+        ColorPixelHeight   20
+        TextColor          #ffffff
+        BackgroundColor    #000000
+        Title              N Asset Coverage - Static Contours
+        Format             %.1f
+    End StaticLegend
+    Begin AnimContours
+        NumContourLevels          3
+        BEGIN ContourLevel
+            Value            1.000000000000e+000
+            Color            #00ffff
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+        BEGIN ContourLevel
+            Value            2.000000000000e+000
+            Color            #ff00ff
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+        BEGIN ContourLevel
+            Value            3.000000000000e+000
+            Color            #ffff00
+            MarkerStyle      0
+            LineStyle        0
+            LineWidth        0.000000
+        END ContourLevel
+    End AnimContours
+    Begin DynamicLegend
+        DrawLegendOnMap    No
+        XPixelLocation     5
+        YPixelLocation     5
+        Orientation        HorizMinToMax
+        MaxPerRow          20
+        ColorPixelWidth    40
+        ColorPixelHeight   20
+        TextColor          #ffffff
+        BackgroundColor    #000000
+        Title              N Asset Coverage - Dynamic Contours
+        Format             %.1f
+    End DynamicLegend
+    AccumulationType     CurrentOnly
+
+END Graphics
+    END Graphics
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END FigureOfMerit
+

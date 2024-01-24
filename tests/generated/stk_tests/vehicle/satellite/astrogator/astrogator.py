@@ -1302,7 +1302,9 @@ class EarlyBoundTests(TestBase):
     # region Maneuver_OptimalFinite
     def test_Maneuver_OptimalFinite(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Maneuver_OptimalFinite START")
-        if ((self.Target != TestTarget.eStkX)) and ((self.Target != TestTarget.eStkNoGfx)):
+        if (((self.Target != TestTarget.eStkX)) and ((self.Target != TestTarget.eStkNoGfx))) and (
+            (self.Target != TestTarget.eStkRuntimeNoGfx)
+        ):
             maneuver: "MissionControlSequenceManeuver" = clr.Convert(
                 EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-"),
                 MissionControlSequenceManeuver,
@@ -4159,7 +4161,8 @@ longitude = 121;"""
                     name: "PropertyInfo" = rtti2.properties[0]
                     Assert.assertEqual(enumChoices[i].name, clr.Convert(name.get_value(), str))
                     value: "PropertyInfo" = rtti2.properties[1]
-                    Assert.assertEqual(enumChoices[i].value, int(value.get_value()))
+                    rttiValue: typing.Any = value.get_value()
+                    Assert.assertEqual(enumChoices[i].value, int(rttiValue))
 
                 i += 1
 

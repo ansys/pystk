@@ -646,6 +646,75 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat1")
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat2")
 
+    # endregion
+
+    # region TerrainCollection
+    def test_ScenarioTerrainChangeUpdatesVGTComponents(self):
+        tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
+            (clr.Convert(EarlyBoundTests.AG_SC, IStkObject)).central_body_name
+        ].terrain_collection
+        oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
+        oTerrain.use_terrain = True
+
+        aircraft: "IStkObject" = (clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)).children.new(
+            STK_OBJECT_TYPE.AIRCRAFT, "MyAircraft"
+        )
+        ac: "Aircraft" = clr.CastAs(aircraft, Aircraft)
+        ac.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        ga: "VehiclePropagatorGreatArc" = clr.CastAs(ac.route, VehiclePropagatorGreatArc)
+        waypoints = [
+            [44.03468398, -122.97447479, 3.048, 0.07716667, 0],
+            [46.0515, -122.186, 0.048, 0.07716667, 0],
+            [46.3481, -122.186, 3.048, 0.07716667, 0],
+        ]
+        ga.set_points_smooth_rate_and_propagate(waypoints)
+
+        originPoint: "VectorGeometryToolPointCentBodyIntersect" = clr.CastAs(
+            aircraft.vgt.points.factory.create("cbi", "", VECTOR_GEOMETRY_TOOL_POINT_TYPE.CENTRAL_BODY_INTERSECT),
+            VectorGeometryToolPointCentBodyIntersect,
+        )
+        nadirVector: "IVectorGeometryToolVector" = aircraft.vgt.vectors["Nadir(Detic)"]
+        destinationPoint: "IVectorGeometryToolPoint" = aircraft.vgt.points["Center"]
+        originPoint.direction_vector = nadirVector
+        originPoint.reference_point = destinationPoint
+        originPoint.intersection_surface = CRDN_INTERSECTION_SURFACE.AT_TERRAIN
+
+        displacementVector: "VectorGeometryToolVectorDisplacement" = (
+            aircraft.vgt.vectors.factory.create_displacement_vector(
+                "d", clr.CastAs(originPoint, IVectorGeometryToolPoint), destinationPoint
+            )
+        )
+
+        vm: "CalculationToolScalarVectorMagnitude" = clr.CastAs(
+            aircraft.vgt.calc_scalars.factory.create_calc_scalar_vector_magnitude("vm", "test"),
+            CalculationToolScalarVectorMagnitude,
+        )
+        vm.input_vector = clr.CastAs(displacementVector, IVectorGeometryToolVector)
+
+        bounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
+            aircraft.vgt.conditions.factory.create_condition_scalar_bounds("sb", "desc"),
+            CalculationToolConditionScalarBounds,
+        )
+        qtyMin: "Quantity" = TestBase.Application.conversion_utility.new_quantity("TimeUnit", "sec", 3.05)
+        bounds.set_minimum(qtyMin)
+        bounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN
+        bounds.scalar = clr.CastAs(vm, ICalculationToolScalar)
+
+        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(aircraft.vgt.conditions["sb"], IAnalysisWorkbenchComponent)
+
+        crdnEvent: "ITimeToolEventIntervalList" = clr.CastAs(
+            crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolEventIntervalList
+        )
+        if crdnEvent != None:
+            result: "TimeToolIntervalListResult" = crdnEvent.find_intervals()
+            Assert.assertEqual(2, result.intervals.count)
+
+        oTerrain.use_terrain = False
+        crdnEvent = clr.CastAs(crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolEventIntervalList)
+        if crdnEvent != None:
+            result: "TimeToolIntervalListResult" = crdnEvent.find_intervals()
+            Assert.assertEqual(1, result.intervals.count)
+
     @category("Basic Tests")
     def test_TerrainCollection(self):
         strADFFilePath: str = "w001001.adf"
