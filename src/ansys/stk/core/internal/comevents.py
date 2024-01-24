@@ -34,26 +34,26 @@ class COMEventHandlerImpl(object):
         del(self._cp)
         del(self._cpc)
 
-    def _AddRef(self, pThis:PVOID) -> int:
+    def _add_ref(self, pThis:PVOID) -> int:
         return 1
         
-    def _Release(self, pThis:PVOID) -> int:
+    def _release(self, pThis:PVOID) -> int:
         return 0
         
-    def _GetTypeInfoCount(self, pThis:PVOID, pctinfo:POINTER(UINT)) -> int:
+    def _get_type_info_count(self, pThis:PVOID, pctinfo:POINTER(UINT)) -> int:
         return E_NOTIMPL
         
-    def _GetTypeInfo(self, pThis:PVOID, iTInfo:UINT, lcid:LCID, ppTInfo:POINTER(PVOID)) -> int:
+    def _get_type_info(self, pThis:PVOID, iTInfo:UINT, lcid:LCID, ppTInfo:POINTER(PVOID)) -> int:
         return E_NOTIMPL
         
-    def _GetIDsOfNames(self, pThis:PVOID, riid:REFIID, rgszNames:POINTER(LPOLESTR), cNames:UINT, lcid:LCID, rgDispId:POINTER(DISPID)) -> int:
+    def _get_ids_of_names(self, pThis:PVOID, riid:REFIID, rgszNames:POINTER(LPOLESTR), cNames:UINT, lcid:LCID, rgDispId:POINTER(DISPID)) -> int:
         return E_NOTIMPL
 
-    def Subscribe(self):
+    def subscribe(self):
         if self._connection_id is None:
             self._connection_id = self._cp.advise(addressof(self._base_pUnkSink))
     
-    def Unsubscribe(self):
+    def unsubscribe(self):
         if self._connection_id is not None:
             self._cp.unadvise(self._connection_id)
             self._connection_id = None
@@ -62,7 +62,7 @@ class COMEventHandlerImpl(object):
 #          IAgStkObjectRootEvents
 ################################################################################
                  
-class _AgStkObjectRootRawEventsUnkSink(Structure):
+class _StkObjectRootRawEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",               c_void_p),
                  ("IUnknown2",               c_void_p),
                  ("IUnknown3",               c_void_p),
@@ -90,7 +90,7 @@ class _AgStkObjectRootRawEventsUnkSink(Structure):
                  ("on_scenario_before_close",   c_void_p),
                  ("on_stk_object_pre_delete",    c_void_p)]
                  
-class _AgStkObjectRootRawEvents2UnkSink(Structure):
+class _StkObjectRootRawEvents2UnkSink(Structure):
     _fields_ = [ ("IUnknown1",                  c_void_p),
                  ("IUnknown2",                  c_void_p),
                  ("IUnknown3",                  c_void_p),
@@ -116,21 +116,21 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable1(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]           = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]           = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]           = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]           = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]           = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:           
             self.__dict__["_cfunc_IUnknown3"]           = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]           = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]           = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown1"]           = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]           = CFUNCTYPE(ULONG, PVOID)(self._release)
         self.__dict__["_cfunc_OnScenarioNew"]           = CFUNCTYPE(None, PVOID, BSTR)(self._on_scenario_new)
         self.__dict__["_cfunc_OnScenarioLoad"]          = CFUNCTYPE(None, PVOID, BSTR)(self._on_scenario_load)
         self.__dict__["_cfunc_OnScenarioClose"]         = CFUNCTYPE(None, PVOID)(self._on_scenario_close)
         self.__dict__["_cfunc_OnScenarioSave"]          = CFUNCTYPE(None, PVOID, BSTR)(self._on_scenario_save)
         self.__dict__["_cfunc_OnLogMessage"]            = CFUNCTYPE(None, PVOID, BSTR, LONG, LONG, BSTR, LONG, LONG)(self._on_log_message)
         self.__dict__["_cfunc_OnAnimUpdate"]            = CFUNCTYPE(None, PVOID, DOUBLE)(self._on_anim_update)
-        self.__dict__["_cfunc_OnStkObjectAdded"]        = CFUNCTYPE(None, PVOID, VARIANT)(self._on_stk_object_added)
-        self.__dict__["_cfunc_OnStkObjectDeleted"]      = CFUNCTYPE(None, PVOID, VARIANT)(self._on_stk_object_deleted)
-        self.__dict__["_cfunc_OnStkObjectRenamed"]      = CFUNCTYPE(None, PVOID, VARIANT, BSTR, BSTR)(self._on_stk_object_renamed)
+        self.__dict__["_cfunc_OnStkObjectAdded"]        = CFUNCTYPE(None, PVOID, Variant)(self._on_stk_object_added)
+        self.__dict__["_cfunc_OnStkObjectDeleted"]      = CFUNCTYPE(None, PVOID, Variant)(self._on_stk_object_deleted)
+        self.__dict__["_cfunc_OnStkObjectRenamed"]      = CFUNCTYPE(None, PVOID, Variant, BSTR, BSTR)(self._on_stk_object_renamed)
         self.__dict__["_cfunc_OnAnimationPlayback"]     = CFUNCTYPE(None, PVOID, DOUBLE, LONG, LONG)(self._on_animation_playback)
         self.__dict__["_cfunc_OnAnimationRewind"]       = CFUNCTYPE(None, PVOID)(self._on_animation_rewind)
         self.__dict__["_cfunc_OnAnimationPause"]        = CFUNCTYPE(None, PVOID, DOUBLE)(self._on_animation_pause)
@@ -146,7 +146,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
         self.__dict__["_cfunc_OnScenarioBeforeClose"]   = CFUNCTYPE(None, PVOID)(self._on_scenario_before_close)
         self.__dict__["_cfunc_OnStkObjectPreDelete"]    = CFUNCTYPE(None, PVOID, PVOID)(self._on_stk_object_pre_delete)
 
-        self.__dict__["_vtable1"] = _AgStkObjectRootRawEventsUnkSink( *[cast(self._cfunc_IUnknown1,               c_void_p),
+        self.__dict__["_vtable1"] = _StkObjectRootRawEventsUnkSink( *[cast(self._cfunc_IUnknown1,               c_void_p),
                                                                         cast(self._cfunc_IUnknown2,               c_void_p),
                                                                         cast(self._cfunc_IUnknown3,               c_void_p),
                                                                         cast(self._cfunc_OnScenarioNew,           c_void_p),
@@ -183,7 +183,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
         self.__dict__["_cfunc_OnStkObjectCopy"]            = CFUNCTYPE(None, PVOID, PVOID)(self._on_stk_object_copy)
         self.__dict__["_cfunc_OnStkObjectPaste"]           = CFUNCTYPE(None, PVOID, PVOID)(self._on_stk_object_paste)
 
-        self.__dict__["_vtable2"] = _AgStkObjectRootRawEvents2UnkSink( *[cast(self._cfunc_IUnknown1,                  c_void_p),
+        self.__dict__["_vtable2"] = _StkObjectRootRawEvents2UnkSink( *[cast(self._cfunc_IUnknown1,                  c_void_p),
                                                                          cast(self._cfunc_IUnknown2,                  c_void_p),
                                                                          cast(self._cfunc_IUnknown3,                  c_void_p),
                                                                          cast(self._cfunc_OnStkObjectStart3dEditing,  c_void_p),
@@ -237,19 +237,19 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
         for callback in self._events["OnAnimUpdate"]._callbacks:
             callback(timeEpSec)
 
-    def _on_stk_object_added(self, pThis:PVOID, Sender:VARIANT) -> None:
+    def _on_stk_object_added(self, pThis:PVOID, Sender:Variant) -> None:
         for callback in self._events["OnStkObjectAdded"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender:
+            with agmarshall.VariantArg(Sender) as arg_Sender:
                 callback(arg_Sender.python_val)
                 
-    def _on_stk_object_deleted(self, pThis:PVOID, Sender:VARIANT) -> None:
+    def _on_stk_object_deleted(self, pThis:PVOID, Sender:Variant) -> None:
         for callback in self._events["OnStkObjectDeleted"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender:
+            with agmarshall.VariantArg(Sender) as arg_Sender:
                 callback(arg_Sender.python_val)
                 
-    def _on_stk_object_renamed(self, pThis:PVOID, Sender:VARIANT, OldPath:str, NewPath:str) -> None:
+    def _on_stk_object_renamed(self, pThis:PVOID, Sender:Variant, OldPath:str, NewPath:str) -> None:
         for callback in self._events["OnStkObjectRenamed"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender:
+            with agmarshall.VariantArg(Sender) as arg_Sender:
                 callback(arg_Sender.python_val, OldPath, NewPath)
                 
     def _on_animation_playback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
@@ -266,7 +266,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_scenario_before_save(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnScenarioBeforeSave"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_animation_step(self, pThis:PVOID, CurrentTime:float) -> None:
@@ -287,7 +287,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_percent_complete_update(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnPercentCompleteUpdate"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["PctCmpltEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["PctCmpltEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_percent_complete_end(self, pThis:PVOID) -> None:
@@ -300,7 +300,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_changed(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_scenario_before_close(self, pThis:PVOID) -> None:
@@ -309,7 +309,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_delete(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_stk_object_start_3d_editing(self, pThis:PVOID, path:str) -> None:
@@ -330,17 +330,17 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_cut(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_copy(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_paste(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
       
     
@@ -348,7 +348,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 #          IAgSTKXApplicationEvents
 ################################################################################
                  
-class _AgSTKXApplicationEventsUnkSink(Structure):
+class _STKXApplicationEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",                   c_void_p),
                  ("IUnknown2",                   c_void_p),
                  ("IUnknown3",                   c_void_p),
@@ -379,12 +379,12 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]               = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]               = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]               = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]               = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]               = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:               
             self.__dict__["_cfunc_IUnknown3"]               = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]               = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]               = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown1"]               = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]               = CFUNCTYPE(ULONG, PVOID)(self._release)
         self.__dict__["_cfunc_OnScenarioNew"]               = CFUNCTYPE(None, PVOID, BSTR)(self._OnScenarioNew)
         self.__dict__["_cfunc_OnScenarioLoad"]              = CFUNCTYPE(None, PVOID, BSTR)(self._OnScenarioLoad)
         self.__dict__["_cfunc_OnScenarioClose"]             = CFUNCTYPE(None, PVOID)(self._on_scenario_close)
@@ -400,7 +400,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
         self.__dict__["_cfunc_OnSSLCertificateServerError"] = CFUNCTYPE(None, PVOID, PVOID)(self._OnSSLCertificateServerError)
         self.__dict__["_cfunc_OnConControlQuitReceived"]    = CFUNCTYPE(None, PVOID, PVOID)(self._OnConControlQuitReceived)
         
-        self.__dict__["_vtable"] = _AgSTKXApplicationEventsUnkSink( *[cast(self._cfunc_IUnknown1,                   c_void_p),
+        self.__dict__["_vtable"] = _STKXApplicationEventsUnkSink( *[cast(self._cfunc_IUnknown1,                   c_void_p),
                                                                       cast(self._cfunc_IUnknown2,                   c_void_p),
                                                                       cast(self._cfunc_IUnknown3,                   c_void_p),
                                                                       cast(self._cfunc_OnScenarioNew,               c_void_p),
@@ -485,12 +485,12 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnSSLCertificateServerError"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["STKXSSLCertificateErrorEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
         
     def _OnConControlQuitReceived(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnConControlQuitReceived"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(pArgs, agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
 
                 
@@ -498,7 +498,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 #          ActiveX controls
 ################################################################################
                  
-class _AgUiAxStockEventsUnkSink(Structure):
+class _UiAxStockEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",   c_void_p),
                  ("IUnknown2",   c_void_p),
                  ("IUnknown3",   c_void_p),
@@ -513,7 +513,7 @@ class _AgUiAxStockEventsUnkSink(Structure):
                  ("ole_drag_drop", c_void_p),
                  ("mouse_wheel",  c_void_p)]
                  
-class _AgUiAxVOCntrlEventsUnkSink(Structure):
+class _AgUiAxGraphics3DCntrlEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",             c_void_p),
                  ("IUnknown2",             c_void_p),
                  ("IUnknown3",             c_void_p),
@@ -595,7 +595,7 @@ class IAgUiAxStockEventCOMHandler(object):
 
     def _ole_drag_drop(self, pThis:PVOID, Data:PVOID, Effect:int, Button:int, Shift:int, X:int, Y:int) -> int:
         for callback in self._events["OLEDragDrop"]._callbacks:
-            with agmarshall.AgInterface_event_callback_arg(Data, agcls.AgTypeNameMap["DataObject"]) as arg_Data:
+            with agmarshall.InterfaceEventCallbackArg(Data, agcls.AgTypeNameMap["DataObject"]) as arg_Data:
                 callback(arg_Data.python_val, Effect, KeyCode, Shift, X, Y)
         return S_OK
             
@@ -610,14 +610,14 @@ class IUiAxGraphics2DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:               
             self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._release)
         
-        self.__dict__["_vtable"] = _AgUiAxStockEventsUnkSink( *[cast(self._cfunc_IUnknown1,   c_void_p),
+        self.__dict__["_vtable"] = _UiAxStockEventsUnkSink( *[cast(self._cfunc_IUnknown1,   c_void_p),
                                                                 cast(self._cfunc_IUnknown2,   c_void_p),
                                                                 cast(self._cfunc_IUnknown3,   c_void_p),
                                                                 cast(self._cfunc_KeyDown,     c_void_p),
@@ -659,18 +659,18 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:               
             self.__dict__["_cfunc_IUnknown3"] = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown1"] = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"] = CFUNCTYPE(ULONG, PVOID)(self._release)
         self.__dict__["_cfunc_OnObjectEditingStart"]  = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_start)
         self.__dict__["_cfunc_OnObjectEditingApply"]  = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_apply)
         self.__dict__["_cfunc_OnObjectEditingCancel"] = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_cancel)
         self.__dict__["_cfunc_OnObjectEditingStop"]   = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_stop)
         
-        self.__dict__["_vtable"] = _AgUiAxVOCntrlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
+        self.__dict__["_vtable"] = _AgUiAxGraphics3DCntrlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
                                                                   cast(self._cfunc_IUnknown2,             c_void_p),
                                                                   cast(self._cfunc_IUnknown3,             c_void_p),
                                                                   cast(self._cfunc_KeyDown,               c_void_p),
@@ -732,7 +732,7 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
 #          IAgStkGraphicsSceneEvents
 ################################################################################
                  
-class _AgStkGraphicsSceneEventsUnkSink(Structure):
+class _StkGraphicsSceneEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",        c_void_p),
                  ("IUnknown2",        c_void_p),
                  ("IUnknown3",        c_void_p),
@@ -754,19 +754,19 @@ class ISceneEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:                                    
             self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
-        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._GetTypeInfoCount)
-        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._GetTypeInfo)
-        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._GetIDsOfNames)
-        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DISPPARAMS), POINTER(VARIANT), POINTER(EXCEPINFO), POINTER(UINT))(self._invoke)
-        self.__dict__["_cfunc_Rendering"]        = CFUNCTYPE(HRESULT, PVOID, VARIANT, PVOID)(self._rendering)
+            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
+        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._get_type_info_count)
+        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._get_type_info)
+        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._get_ids_of_names)
+        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DispParams), POINTER(Variant), POINTER(ExcepInfo), POINTER(UINT))(self._invoke)
+        self.__dict__["_cfunc_Rendering"]        = CFUNCTYPE(HRESULT, PVOID, Variant, PVOID)(self._rendering)
         
-        self.__dict__["_vtable"] = _AgStkGraphicsSceneEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
+        self.__dict__["_vtable"] = _StkGraphicsSceneEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
                                                                        cast(self._cfunc_IUnknown2,        c_void_p),
                                                                        cast(self._cfunc_IUnknown3,        c_void_p),
                                                                        cast(self._cfunc_GetTypeInfoCount, c_void_p),
@@ -791,7 +791,7 @@ class ISceneEventCOMHandler(COMEventHandlerImpl):
             ppvObject[0] = 0
             return E_NOINTERFACE
             
-    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
+    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DispParams), pVarResult:POINTER(Variant), pExcepInfo:POINTER(ExcepInfo), puArgErr:POINTER(UINT)) -> int:
         if dispIdMember == ISceneEventCOMHandler._DISPID_Rendering:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
@@ -800,10 +800,10 @@ class ISceneEventCOMHandler(COMEventHandlerImpl):
         else:
             return E_NOINTERFACE
 
-    def _rendering(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
+    def _rendering(self, pThis:PVOID, Sender:Variant, Args:PVOID) -> None:
         for callback in self._events["Rendering"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["RenderingEventArgs"]) as arg_Args:
+            with agmarshall.VariantArg(Sender) as arg_Sender, \
+                 agmarshall.InterfaceEventCallbackArg(Args, agcls.AgTypeNameMap["RenderingEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
                 
@@ -811,7 +811,7 @@ class ISceneEventCOMHandler(COMEventHandlerImpl):
 #          IAgStkGraphicsKmlGraphicsEvents
 ################################################################################
 
-class _AgStkGraphicsKmlGraphicsEventsUnkSink(Structure):
+class _StkGraphicsKmlGraphicsEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",        c_void_p),
                  ("IUnknown2",        c_void_p),
                  ("IUnknown3",        c_void_p),
@@ -833,19 +833,19 @@ class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:                                    
             self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
-        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._GetTypeInfoCount)
-        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._GetTypeInfo)
-        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._GetIDsOfNames)
-        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DISPPARAMS), POINTER(VARIANT), POINTER(EXCEPINFO), POINTER(UINT))(self._invoke)
-        self.__dict__["_cfunc_DocumentLoaded"]   = CFUNCTYPE(HRESULT, PVOID, VARIANT, PVOID)(self._document_loaded)
+            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
+        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._get_type_info_count)
+        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._get_type_info)
+        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._get_ids_of_names)
+        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DispParams), POINTER(Variant), POINTER(ExcepInfo), POINTER(UINT))(self._invoke)
+        self.__dict__["_cfunc_DocumentLoaded"]   = CFUNCTYPE(HRESULT, PVOID, Variant, PVOID)(self._document_loaded)
         
-        self.__dict__["_vtable"] = _AgStkGraphicsKmlGraphicsEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
+        self.__dict__["_vtable"] = _StkGraphicsKmlGraphicsEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
                                                                              cast(self._cfunc_IUnknown2,        c_void_p),
                                                                              cast(self._cfunc_IUnknown3,        c_void_p),
                                                                              cast(self._cfunc_GetTypeInfoCount, c_void_p),
@@ -870,7 +870,7 @@ class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
             ppvObject[0] = 0
             return E_NOINTERFACE
             
-    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
+    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DispParams), pVarResult:POINTER(Variant), pExcepInfo:POINTER(ExcepInfo), puArgErr:POINTER(UINT)) -> int:
         if dispIdMember == IKmlGraphicsEventCOMHandler._DISPID_DocumentLoaded:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
@@ -879,10 +879,10 @@ class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
         else:
             return E_NOINTERFACE
 
-    def _document_loaded(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
+    def _document_loaded(self, pThis:PVOID, Sender:Variant, Args:PVOID) -> None:
         for callback in self._events["DocumentLoaded"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"]) as arg_Args:
+            with agmarshall.VariantArg(Sender) as arg_Sender, \
+                 agmarshall.InterfaceEventCallbackArg(Args, agcls.AgTypeNameMap["KmlDocumentLoadedEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
 
@@ -890,7 +890,7 @@ class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
 #          IAgStkGraphicsImageCollectionEvents
 ################################################################################
 
-class _AgStkGraphicsImageCollectionEventsUnkSink(Structure):
+class _StkGraphicsImageCollectionEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",        c_void_p),
                  ("IUnknown2",        c_void_p),
                  ("IUnknown3",        c_void_p),
@@ -912,19 +912,19 @@ class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:                                    
             self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
-        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._GetTypeInfoCount)
-        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._GetTypeInfo)
-        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._GetIDsOfNames)
-        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DISPPARAMS), POINTER(VARIANT), POINTER(EXCEPINFO), POINTER(UINT))(self._invoke)
-        self.__dict__["_cfunc_AddComplete"]      = CFUNCTYPE(HRESULT, PVOID, VARIANT, PVOID)(self._add_complete)
+            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
+        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._get_type_info_count)
+        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._get_type_info)
+        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._get_ids_of_names)
+        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DispParams), POINTER(Variant), POINTER(ExcepInfo), POINTER(UINT))(self._invoke)
+        self.__dict__["_cfunc_AddComplete"]      = CFUNCTYPE(HRESULT, PVOID, Variant, PVOID)(self._add_complete)
         
-        self.__dict__["_vtable"] = _AgStkGraphicsImageCollectionEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
+        self.__dict__["_vtable"] = _StkGraphicsImageCollectionEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
                                                                                  cast(self._cfunc_IUnknown2,        c_void_p),
                                                                                  cast(self._cfunc_IUnknown3,        c_void_p),
                                                                                  cast(self._cfunc_GetTypeInfoCount, c_void_p),
@@ -949,7 +949,7 @@ class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
             ppvObject[0] = 0
             return E_NOINTERFACE
             
-    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
+    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DispParams), pVarResult:POINTER(Variant), pExcepInfo:POINTER(ExcepInfo), puArgErr:POINTER(UINT)) -> int:
         if dispIdMember == IImageCollectionEventCOMHandler._DISPID_AddComplete:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
@@ -958,10 +958,10 @@ class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
         else:
             return E_NOINTERFACE
 
-    def _add_complete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
+    def _add_complete(self, pThis:PVOID, Sender:Variant, Args:PVOID) -> None:
         for callback in self._events["AddComplete"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
+            with agmarshall.VariantArg(Sender) as arg_Sender, \
+                 agmarshall.InterfaceEventCallbackArg(Args, agcls.AgTypeNameMap["GlobeImageOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
                 
@@ -969,7 +969,7 @@ class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
 #          IAgStkGraphicsTerrainCollectionEvents
 ################################################################################
 
-class _AgStkGraphicsTerrainCollectionEventsUnkSink(Structure):
+class _StkGraphicsTerrainCollectionEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",        c_void_p),
                  ("IUnknown2",        c_void_p),
                  ("IUnknown3",        c_void_p),
@@ -991,19 +991,19 @@ class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):
     def _init_vtable(self):
         if os.name == "nt":
             self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
         else:                                    
             self.__dict__["_cfunc_IUnknown3"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(PVOID))(self._query_interface)
-            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._AddRef)
-            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._Release)
-        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._GetTypeInfoCount)
-        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._GetTypeInfo)
-        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._GetIDsOfNames)
-        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DISPPARAMS), POINTER(VARIANT), POINTER(EXCEPINFO), POINTER(UINT))(self._invoke)
-        self.__dict__["_cfunc_AddComplete"]      = CFUNCTYPE(HRESULT, PVOID, VARIANT, PVOID)(self._add_complete)
+            self.__dict__["_cfunc_IUnknown1"]    = CFUNCTYPE(ULONG, PVOID)(self._add_ref)
+            self.__dict__["_cfunc_IUnknown2"]    = CFUNCTYPE(ULONG, PVOID)(self._release)
+        self.__dict__["_cfunc_GetTypeInfoCount"] = CFUNCTYPE(HRESULT, PVOID, POINTER(UINT))(self._get_type_info_count)
+        self.__dict__["_cfunc_GetTypeInfo"]      = CFUNCTYPE(HRESULT, PVOID, UINT, LCID, POINTER(PVOID))(self._get_type_info)
+        self.__dict__["_cfunc_GetIDsOfNames"]    = CFUNCTYPE(HRESULT, PVOID, REFIID, POINTER(LPOLESTR), UINT, LCID, POINTER(DISPID))(self._get_ids_of_names)
+        self.__dict__["_cfunc_Invoke"]           = CFUNCTYPE(HRESULT, PVOID, DISPID, REFIID, LCID, WORD, POINTER(DispParams), POINTER(Variant), POINTER(ExcepInfo), POINTER(UINT))(self._invoke)
+        self.__dict__["_cfunc_AddComplete"]      = CFUNCTYPE(HRESULT, PVOID, Variant, PVOID)(self._add_complete)
         
-        self.__dict__["_vtable"] = _AgStkGraphicsTerrainCollectionEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
+        self.__dict__["_vtable"] = _StkGraphicsTerrainCollectionEventsUnkSink( *[cast(self._cfunc_IUnknown1,        c_void_p),
                                                                                    cast(self._cfunc_IUnknown2,        c_void_p),
                                                                                    cast(self._cfunc_IUnknown3,        c_void_p),
                                                                                    cast(self._cfunc_GetTypeInfoCount, c_void_p),
@@ -1028,7 +1028,7 @@ class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):
             ppvObject[0] = 0
             return E_NOINTERFACE
             
-    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DISPPARAMS), pVarResult:POINTER(VARIANT), pExcepInfo:POINTER(EXCEPINFO), puArgErr:POINTER(UINT)) -> int:
+    def _invoke(self, pThis:PVOID, dispIdMember:DISPID, riid:REFIID, lcid:LCID, wFlags:WORD, pDispParams:POINTER(DispParams), pVarResult:POINTER(Variant), pExcepInfo:POINTER(ExcepInfo), puArgErr:POINTER(UINT)) -> int:
         if dispIdMember == ITerrainOverlayCollectionEventCOMHandler._DISPID_AddComplete:
             variant_Sender = pDispParams.contents.rgvarg[1]
             pArgs = agmarshall.ctype_val_from_VARIANT(pDispParams.contents.rgvarg[0])
@@ -1037,10 +1037,10 @@ class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):
         else:
             return E_NOINTERFACE
 
-    def _add_complete(self, pThis:PVOID, Sender:VARIANT, Args:PVOID) -> None:
+    def _add_complete(self, pThis:PVOID, Sender:Variant, Args:PVOID) -> None:
         for callback in self._events["AddComplete"]._callbacks:
-            with agmarshall.VARIANT_arg(Sender) as arg_Sender, \
-                 agmarshall.AgInterface_event_callback_arg(Args, agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"]) as arg_Args:
+            with agmarshall.VariantArg(Sender) as arg_Sender, \
+                 agmarshall.InterfaceEventCallbackArg(Args, agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
 
 

@@ -10,7 +10,7 @@ from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IUnknown
-from ..internal.apiutil     import (interface_proxy, initialize_from_source_object, get_interface_property, 
+from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
     set_interface_attribute)
 from ..internal.eventutil   import *
 from ..utilities.exceptions import *
@@ -31,7 +31,7 @@ class IRemoteFrameBufferHost(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IRemoteFrameBufferHost)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
@@ -78,7 +78,7 @@ class IRemoteFrameBuffer(object):
     }
     def __init__(self, sourceObject=None):
         initialize_from_source_object(self, sourceObject, IRemoteFrameBuffer)
-    def _private_init(self, intf:interface_proxy):
+    def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
@@ -90,84 +90,84 @@ class IRemoteFrameBuffer(object):
     
     _snap_to_rbg_raster_metadata = { "name" : "snap_to_rbg_raster",
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.PVOID_arg,) }
+            "marshallers" : (agmarshall.PVoidArg,) }
     def snap_to_rbg_raster(self, rbgRasterPtr:agcom.PVOID) -> None:
         """Captures the current scene to a raster."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._snap_to_rbg_raster_metadata, rbgRasterPtr)
 
     _set_to_off_screen_rendering_metadata = { "name" : "set_to_off_screen_rendering",
             "arg_types" : (agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg,) }
     def set_to_off_screen_rendering(self, initialWidth:int, initialHeight:int) -> None:
         """Switch to offscreen rendering."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_to_off_screen_rendering_metadata, initialWidth, initialHeight)
 
     _notify_resize_metadata = { "name" : "notify_resize",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_resize(self, left:int, top:int, width:int, height:int) -> None:
         """Notifies that a resize event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_resize_metadata, left, top, width, height)
 
     _notify_l_button_up_metadata = { "name" : "notify_l_button_up",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_l_button_up(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse left button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_l_button_up_metadata, x, y, keyState)
 
     _notify_r_button_up_metadata = { "name" : "notify_r_button_up",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_r_button_up(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse right button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_r_button_up_metadata, x, y, keyState)
 
     _notify_m_button_up_metadata = { "name" : "notify_m_button_up",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_m_button_up(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse middle button up event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_m_button_up_metadata, x, y, keyState)
 
     _notify_l_button_down_metadata = { "name" : "notify_l_button_down",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_l_button_down(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse left button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_l_button_down_metadata, x, y, keyState)
 
     _notify_r_button_down_metadata = { "name" : "notify_r_button_down",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_r_button_down(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse right button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_r_button_down_metadata, x, y, keyState)
 
     _notify_m_button_down_metadata = { "name" : "notify_m_button_down",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_m_button_down(self, x:int, y:int, keyState:int) -> None:
         """Notifies that a mouse middle button down event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_m_button_down_metadata, x, y, keyState)
 
     _notify_mouse_move_metadata = { "name" : "notify_mouse_move",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_move(self, x:int, y:int, buttons:int, keyState:int) -> None:
         """Called by the client on a mouse move event."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_move_metadata, x, y, buttons, keyState)
 
     _notify_mouse_wheel_metadata = { "name" : "notify_mouse_wheel",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.INT_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_wheel(self, x:int, y:int, steps:int, keyState:int) -> None:
         """Called by the client on a mouse wheel event."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_wheel_metadata, x, y, steps, keyState)
 
     _set_host_metadata = { "name" : "set_host",
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.AgInterface_in_arg("IRemoteFrameBufferHost"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("IRemoteFrameBufferHost"),) }
     def set_host(self, pHost:"IRemoteFrameBufferHost") -> None:
         """Set the host using this remote frame buffer."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_host_metadata, pHost)
@@ -181,14 +181,14 @@ class IRemoteFrameBuffer(object):
 
     _set_to_direct_x_rendering_metadata = { "name" : "set_to_direct_x_rendering",
             "arg_types" : (agcom.INT, agcom.INT, agcom.PVOID, agcom.PVOID, agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.INT_arg, agmarshall.INT_arg, agmarshall.PVOID_arg, agmarshall.PVOID_arg, agmarshall.PVOID_arg, agmarshall.PVOID_arg,) }
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg, agmarshall.PVoidArg,) }
     def set_to_direct_x_rendering(self, initialWidth:int, initialHeight:int, hwnd:agcom.PVOID, directXDevice:agcom.PVOID, directXTexture:agcom.PVOID, directXSharedHandle:agcom.PVOID) -> None:
         """Switch to rendering to the specified Dirext X texture."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._set_to_direct_x_rendering_metadata, initialWidth, initialHeight, hwnd, directXDevice, directXTexture, directXSharedHandle)
 
     _update_direct_x_rendering_texture_metadata = { "name" : "update_direct_x_rendering_texture",
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.PVOID_arg, agmarshall.PVOID_arg,) }
+            "marshallers" : (agmarshall.PVoidArg, agmarshall.PVoidArg,) }
     def update_direct_x_rendering_texture(self, directXTexture:agcom.PVOID, directXSharedHandle:agcom.PVOID) -> None:
         """Update Dirext X texture (for instance after a resize)."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._update_direct_x_rendering_texture_metadata, directXTexture, directXSharedHandle)

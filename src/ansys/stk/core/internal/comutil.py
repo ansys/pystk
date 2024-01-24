@@ -8,7 +8,7 @@ import gc
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
 from ctypes import POINTER, Structure, Union, byref, cast, pointer 
 
-from .apiutil import out_arg
+from .apiutil import OutArg
 
 ###############################################################################
 #   COM Types
@@ -79,7 +79,7 @@ LONG_MIN   = -2147483648
 VARIANT_FALSE = VARIANT_BOOL(0)
 VARIANT_TRUE = VARIANT_BOOL(-1)
 
-# VARIANT Types
+# Variant Types
 VT_EMPTY           = 0x0000
 VT_NULL            = 0x0001
 VT_I2              = 0x0002
@@ -124,9 +124,9 @@ class GUID(Structure):
     _fields_ = [("Data1", BYTE*4), ("Data2", BYTE*2), ("Data3", BYTE*2), ("Data4", BYTE*8)]
     def __init__(self, name=None):
         if name is not None:
-            if ole32lib.CLSIDFromString is None:
-                ole32lib._initialize()
-            ole32lib.CLSIDFromString(str(name), byref(self))
+            if OLE32Lib.CLSIDFromString is None:
+                OLE32Lib._initialize()
+            OLE32Lib.CLSIDFromString(str(name), byref(self))
 
     @staticmethod
     def from_registry_format(data: str) -> "GUID":
@@ -192,7 +192,7 @@ IID = GUID
 REFIID = POINTER(IID)
             
 class varUnion(Union):
-    # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the VARIANT class
+    # GCC throws an error when trying to marshall ctypes.Union to C++ methods. Therefore the Variant class
     # only has a raw buffer that is equivalent in size to the varUnion.
     _fields_ = [
                 ("buffer", BYTE*16),
@@ -235,20 +235,20 @@ class varUnion(Union):
                 ("ppdispVal", POINTER(PVOID)) #VT_DISPATCH|VT_BYREF
                ]
                 
-class VARIANT(Structure):
+class Variant(Structure):
     # Copy a varUnion into the buffer to get the correct data.
     _fields_ = [("vt", WORD), ("wReserved1", WORD), ("wReserved2", WORD), ("wReserved3", WORD), ("buffer", BYTE*16)]
     def __init__(self):
-        # To initialize VARIANT from python data, use marshall.VARIANT_from_python_data
+        # To initialize Variant from python data, use marshall.VARIANT_from_python_data
         pass
     
-class SAFEARRAYBOUND(Structure):
+class SafearrayBound(Structure):
     _fields_ = [("cElements", ULONG), ("lLbound", LONG)]
     
-class DISPPARAMS(Structure):
-    _fields_ = [("rgvarg", POINTER(VARIANT)), ("rgdispidNamedArgs", POINTER(DISPID)), ("cArgs", UINT), ("cNamedArgs", UINT)]
+class DispParams(Structure):
+    _fields_ = [("rgvarg", POINTER(Variant)), ("rgdispidNamedArgs", POINTER(DISPID)), ("cArgs", UINT), ("cNamedArgs", UINT)]
     
-class EXCEPINFO(Structure):
+class ExcepInfo(Structure):
     _fields_ = [
                 ("wCode", WORD), 
                 ("wReserved", WORD), 
@@ -271,7 +271,7 @@ else:
     from ctypes import CFUNCTYPE
     WINFUNCTYPE = CFUNCTYPE
 
-class ole32lib:
+class OLE32Lib:
 
     _handle = None
 
@@ -296,37 +296,37 @@ class ole32lib:
 
     def _initialize():
 
-        if ole32lib._handle is not None:
+        if OLE32Lib._handle is not None:
             return
 
         if os.name == "nt":
             from ctypes import windll
-            ole32lib._handle = windll.ole32
+            OLE32Lib._handle = windll.ole32
         else:
             from ctypes import cdll
-            ole32lib._handle = cdll.LoadLibrary("libagxcom.so")
+            OLE32Lib._handle = cdll.LoadLibrary("libagxcom.so")
 
-        ole32lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", ole32lib._handle), ((1, "lpsz"), (1, "pclsid")))
-        ole32lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", ole32lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
-        ole32lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", ole32lib._handle),
+        OLE32Lib.CLSIDFromString     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromString", OLE32Lib._handle), ((1, "lpsz"), (1, "pclsid")))
+        OLE32Lib.CLSIDFromProgID     = WINFUNCTYPE(HRESULT, LPCWSTR, POINTER(GUID))(("CLSIDFromProgID", OLE32Lib._handle), ((1, "lpszProgID"), (1, "lpclsid")))
+        OLE32Lib.CoCreateInstance    = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, DWORD, POINTER(GUID), POINTER(LPVOID))(("CoCreateInstance", OLE32Lib._handle),
                                        ((1, "rclsid"), (1, "pUnkOuter"), (1, "dwClsContext"), (1, "riid"), (1, "ppv")))
-        ole32lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", ole32lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
-        ole32lib.CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", ole32lib._handle), ((1, "pv"),))
-        ole32lib.CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", ole32lib._handle))
-        ole32lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", ole32lib._handle), ((1, "rclsid"), (1, "lplpsz")))
+        OLE32Lib.CoInitializeEx      = WINFUNCTYPE(HRESULT, c_void_p, DWORD)(("CoInitializeEx", OLE32Lib._handle), ((1, "pvReserved"), (1, "dwCoInit")))
+        OLE32Lib.CoTaskMemFree       = WINFUNCTYPE(None, LPVOID)(("CoTaskMemFree", OLE32Lib._handle), ((1, "pv"),))
+        OLE32Lib.CoUninitialize      = WINFUNCTYPE(None)(("CoUninitialize", OLE32Lib._handle))
+        OLE32Lib.StringFromCLSID     = WINFUNCTYPE(HRESULT, POINTER(GUID), POINTER(LPOLESTR))(("StringFromCLSID", OLE32Lib._handle), ((1, "rclsid"), (1, "lplpsz")))
 
         if os.name=="nt":
 
-            ole32lib.CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", ole32lib._handle), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
-            ole32lib.CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", ole32lib._handle), ((1, "pStm"), (1, "iid"), (1, "ppv")))
-            ole32lib.CoReleaseMarshalData                  = WINFUNCTYPE(HRESULT, LPSTREAM)(("CoReleaseMarshalData", ole32lib._handle), ((1, "pStm"),))
+            OLE32Lib.CoMarshalInterThreadInterfaceInStream = WINFUNCTYPE(HRESULT, REFIID, PVOID, POINTER(LPSTREAM))(("CoMarshalInterThreadInterfaceInStream", OLE32Lib._handle), ((1, "riid"), (1, "pUnk"), (1, "ppStm")))
+            OLE32Lib.CoGetInterfaceAndReleaseStream        = WINFUNCTYPE(HRESULT, LPSTREAM, REFIID, POINTER(PVOID))(("CoGetInterfaceAndReleaseStream", OLE32Lib._handle), ((1, "pStm"), (1, "iid"), (1, "ppv")))
+            OLE32Lib.CoReleaseMarshalData                  = WINFUNCTYPE(HRESULT, LPSTREAM)(("CoReleaseMarshalData", OLE32Lib._handle), ((1, "pStm"),))
 
-            ole32lib.CreateClassMoniker    = WINFUNCTYPE(HRESULT, GUID, POINTER(LPVOID))(("CreateClassMoniker", ole32lib._handle), ((1, "rclsid"), (1, "ppmk")))
-            ole32lib.GetRunningObjectTable = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetRunningObjectTable", ole32lib._handle), ((1, "dwReserved"), (1, "pprot")))
-            ole32lib.CreateBindCtx         = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CreateBindCtx", ole32lib._handle), ((1, "dwReserved"), (1, "ppbc")))
-            ole32lib.CoGetMalloc           = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CoGetMalloc", ole32lib._handle), ((1, "dwMemContext"), (1, "ppMalloc")))
+            OLE32Lib.CreateClassMoniker    = WINFUNCTYPE(HRESULT, GUID, POINTER(LPVOID))(("CreateClassMoniker", OLE32Lib._handle), ((1, "rclsid"), (1, "ppmk")))
+            OLE32Lib.GetRunningObjectTable = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetRunningObjectTable", OLE32Lib._handle), ((1, "dwReserved"), (1, "pprot")))
+            OLE32Lib.CreateBindCtx         = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CreateBindCtx", OLE32Lib._handle), ((1, "dwReserved"), (1, "ppbc")))
+            OLE32Lib.CoGetMalloc           = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("CoGetMalloc", OLE32Lib._handle), ((1, "dwMemContext"), (1, "ppMalloc")))
 
-class oleaut32lib:
+class OLEAut32Lib:
 
     _handle = None
 
@@ -348,34 +348,34 @@ class oleaut32lib:
 
     def _initialize():
 
-        if oleaut32lib._handle is not None:
+        if OLEAut32Lib._handle is not None:
             return
 
         if os.name == "nt":
             from ctypes import windll
-            oleaut32lib._handle = windll.OleAut32
+            OLEAut32Lib._handle = windll.OleAut32
         else:
             from ctypes import cdll
-            oleaut32lib._handle = cdll.LoadLibrary("libagxcom.so")
+            OLEAut32Lib._handle = cdll.LoadLibrary("libagxcom.so")
 
-        oleaut32lib.GetActiveObject     = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, POINTER(LPVOID))(("GetActiveObject", oleaut32lib._handle),
+        OLEAut32Lib.GetActiveObject     = WINFUNCTYPE(HRESULT, POINTER(GUID), LPVOID, POINTER(LPVOID))(("GetActiveObject", OLEAut32Lib._handle),
                                        ((1, "rclsid"), (1, "pvReserved"), (1, "ppunk"))) if os.name=="nt" else None
-        oleaut32lib.GetErrorInfo        = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetErrorInfo", oleaut32lib._handle), ((1, "dwReserved"), (1, "ppErrorInfo")))
-        oleaut32lib.SafeArrayAccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LPVOID))(("SafeArrayAccessData", oleaut32lib._handle), ((1, "pSafeArray"), (1, "ppvData")))
-        oleaut32lib.SafeArrayCreate     = WINFUNCTYPE(LPSAFEARRAY, VARTYPE, UINT, POINTER(SAFEARRAYBOUND))(("SafeArrayCreate", oleaut32lib._handle), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
-        oleaut32lib.SafeArrayDestroy    = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayDestroy", oleaut32lib._handle), ((1, "pSafeArray"),))
-        oleaut32lib.SafeArrayGetDim     = WINFUNCTYPE(UINT,    LPSAFEARRAY)(("SafeArrayGetDim", oleaut32lib._handle), ((1, "pSafeArray"),))
-        oleaut32lib.SafeArrayGetLBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetLBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pLBound")))
-        oleaut32lib.SafeArrayGetUBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetUBound", oleaut32lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pUBound")))
-        oleaut32lib.SafeArrayGetVartype = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(VARTYPE))(("SafeArrayGetVartype", oleaut32lib._handle), ((1, "pSafeArray"), (1, "vt")))
-        oleaut32lib.SafeArrayGetElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayGetElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
-        oleaut32lib.SafeArrayPutElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayPutElement", oleaut32lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
-        oleaut32lib.SafeArrayUnaccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayUnaccessData", oleaut32lib._handle), ((1, "pSafeArray"),))
-        oleaut32lib.SysAllocString      = WINFUNCTYPE(LPVOID, LPOLESTR)(("SysAllocString", oleaut32lib._handle), ((1, "psz"),))
-        oleaut32lib.SysFreeString       = WINFUNCTYPE(None, LPOLESTR)(("SysFreeString", oleaut32lib._handle), ((1, "bstrString"),))
-        oleaut32lib.VariantClear        = WINFUNCTYPE(HRESULT, POINTER(VARIANT))(("VariantClear", oleaut32lib._handle), ((1, "pVariant"),))
-        oleaut32lib.VariantCopy         = WINFUNCTYPE(HRESULT, POINTER(VARIANT), POINTER(VARIANT))(("VariantCopy", oleaut32lib._handle), ((1, "pvargDest"),(1, "pvargSrc")))
-        oleaut32lib.VariantInit         = WINFUNCTYPE(None, POINTER(VARIANT))(("VariantInit", oleaut32lib._handle), ((1, "pVariant"),))
+        OLEAut32Lib.GetErrorInfo        = WINFUNCTYPE(HRESULT, DWORD, POINTER(LPVOID))(("GetErrorInfo", OLEAut32Lib._handle), ((1, "dwReserved"), (1, "ppErrorInfo")))
+        OLEAut32Lib.SafeArrayAccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LPVOID))(("SafeArrayAccessData", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "ppvData")))
+        OLEAut32Lib.SafeArrayCreate     = WINFUNCTYPE(LPSAFEARRAY, VARTYPE, UINT, POINTER(SafearrayBound))(("SafeArrayCreate", OLEAut32Lib._handle), ((1, "vt"), (1, "cDims"), (1, "rgsabound")))
+        OLEAut32Lib.SafeArrayDestroy    = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayDestroy", OLEAut32Lib._handle), ((1, "pSafeArray"),))
+        OLEAut32Lib.SafeArrayGetDim     = WINFUNCTYPE(UINT,    LPSAFEARRAY)(("SafeArrayGetDim", OLEAut32Lib._handle), ((1, "pSafeArray"),))
+        OLEAut32Lib.SafeArrayGetLBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetLBound", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pLBound")))
+        OLEAut32Lib.SafeArrayGetUBound  = WINFUNCTYPE(HRESULT, LPSAFEARRAY, UINT, POINTER(LONG))(("SafeArrayGetUBound", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "nDim"), (1, "pUBound")))
+        OLEAut32Lib.SafeArrayGetVartype = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(VARTYPE))(("SafeArrayGetVartype", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "vt")))
+        OLEAut32Lib.SafeArrayGetElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayGetElement", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+        OLEAut32Lib.SafeArrayPutElement = WINFUNCTYPE(HRESULT, LPSAFEARRAY, POINTER(LONG), PVOID)(("SafeArrayPutElement", OLEAut32Lib._handle), ((1, "pSafeArray"), (1, "rgIndices"), (1, "pElement")))
+        OLEAut32Lib.SafeArrayUnaccessData = WINFUNCTYPE(HRESULT, LPSAFEARRAY)(("SafeArrayUnaccessData", OLEAut32Lib._handle), ((1, "pSafeArray"),))
+        OLEAut32Lib.SysAllocString      = WINFUNCTYPE(LPVOID, LPOLESTR)(("SysAllocString", OLEAut32Lib._handle), ((1, "psz"),))
+        OLEAut32Lib.SysFreeString       = WINFUNCTYPE(None, LPOLESTR)(("SysFreeString", OLEAut32Lib._handle), ((1, "bstrString"),))
+        OLEAut32Lib.VariantClear        = WINFUNCTYPE(HRESULT, POINTER(Variant))(("VariantClear", OLEAut32Lib._handle), ((1, "pVariant"),))
+        OLEAut32Lib.VariantCopy         = WINFUNCTYPE(HRESULT, POINTER(Variant), POINTER(Variant))(("VariantCopy", OLEAut32Lib._handle), ((1, "pvargDest"),(1, "pvargSrc")))
+        OLEAut32Lib.VariantInit         = WINFUNCTYPE(None, POINTER(Variant))(("VariantInit", OLEAut32Lib._handle), ((1, "pVariant"),))
 
 ###############################################################################
 #   Helper functions
@@ -383,7 +383,7 @@ class oleaut32lib:
 def Succeeded(hr):
     return hr >= S_OK
     
-class _gc_disabler(object):
+class _GCDisabler(object):
     def __init__(self):
         self._is_gc_enabled = False
     def __enter__(self):
@@ -440,7 +440,7 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            with _gc_disabler() as gc_lock:
+            with _GCDisabler() as gc_lock:
                 if isApplication:
                     self._applications.append(ptraddress)
                 if ptraddress in self._ref_counts:
@@ -452,7 +452,7 @@ class _CreateAgObjectLifetimeManager(object):
     def InternalAddRef(self, pUnk:"IUnknown"):
         """Increment the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
-        with _gc_disabler() as gc_lock:
+        with _GCDisabler() as gc_lock:
             if ptraddress in self._ref_counts:
                 self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
 
@@ -464,7 +464,7 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            with _gc_disabler() as gc_lock:
+            with _GCDisabler() as gc_lock:
                 if ptraddress in self._ref_counts:
                     if self._ref_counts[ptraddress] == 1:
                         _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
@@ -473,7 +473,7 @@ class _CreateAgObjectLifetimeManager(object):
                         self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
                 
     def ReleaseAll(self, releaseApplication=True):
-        with _gc_disabler() as gc_lock:
+        with _GCDisabler() as gc_lock:
             preserved_app_ref_counts = dict()
             while len(self._ref_counts) > 0:
                 ref_count = self._ref_counts.popitem()
@@ -496,22 +496,22 @@ class _CreateCoInitializeManager(object):
         
     def initialize(self):
         if self.init_count == 0:
-            ole32lib._initialize()
-            oleaut32lib._initialize()
-            ole32lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
+            OLE32Lib._initialize()
+            OLEAut32Lib._initialize()
+            OLE32Lib.CoInitializeEx(None, COINIT_APARTMENTTHREADED)
         self.init_count = self.init_count + 1
         
     def uninitialize(self):
         self.init_count = self.init_count - 1
         if self.init_count == 0:
-            ole32lib.CoUninitialize()
+            OLE32Lib.CoUninitialize()
             
 CoInitializeManager = _CreateCoInitializeManager()
 
 def _initialize_embedded():
     """Called by STK during plugin initialization."""
-    ole32lib._initialize()
-    oleaut32lib._initialize()
+    OLE32Lib._initialize()
+    OLEAut32Lib._initialize()
 
 ###############################################################################
 #   Interfaces
@@ -577,7 +577,7 @@ class IUnknown(object):
 
     def get_property(self, intf_metatdata:dict, method_metadata:dict):
         method_offset = intf_metatdata["method_offsets"]["get_" + method_metadata["name"]]
-        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, out_arg())
+        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, OutArg())
 
     def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
         method_offset = intf_metatdata["method_offsets"]["set_" + method_metadata["name"]]
@@ -589,10 +589,10 @@ class IUnknown(object):
         vtable_index = intf_metatdata["vtable_reference"] + method_offset
         arg_types = method_metadata["arg_types"]
         marshaller_classes = method_metadata["marshallers"]
-        method = IAGFUNCTYPE(self, guid, vtable_index, *arg_types)
+        method = IFuncType(self, guid, vtable_index, *arg_types)
         marshallers = []
         for arg, marshaller_class in zip(args, marshaller_classes):
-            if type(arg) is out_arg:
+            if type(arg) is OutArg:
                 marshaller = marshaller_class()
                 marshallers.append(marshaller)
             else:
@@ -607,7 +607,7 @@ class IUnknown(object):
         evaluate_hresult(method(*call_args))
         return_vals = []
         for arg, marshaller in zip(args, marshallers):
-            if type(arg) is out_arg:
+            if type(arg) is OutArg:
                 return_vals.append(marshaller.python_val)  
         del(marshallers)
         if len(return_vals) == 0:
@@ -628,22 +628,22 @@ class IPictureDisp(IUnknown):
     def __init__(self):
         raise STKRuntimeError("IPictureDisp not supported.")
         
-class IEnumVARIANT(object):
+class IEnumVariant(object):
     guid = "{00020404-0000-0000-C000-000000000046}"
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _num_methods = 4
     def __init__(self, pUnk):
         self.pUnk = pUnk
-        IID_IEnumVARIANT = GUID(IEnumVARIANT.guid)
-        vtable_offset_local = IEnumVARIANT._vtable_offset - 1
-        self._Next  = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(VARIANT), POINTER(ULONG))
-        self._Reset = IAGFUNCTYPE(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
-    def next(self) -> VARIANT:
+        IID_IEnumVARIANT = GUID(IEnumVariant.guid)
+        vtable_offset_local = IEnumVariant._vtable_offset - 1
+        self._Next  = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+1, ULONG, POINTER(Variant), POINTER(ULONG))
+        self._Reset = IFuncType(pUnk, IID_IEnumVARIANT, vtable_offset_local+3)
+    def next(self) -> Variant:
         from .marshall import python_val_from_VARIANT
         one_obj = ULONG(1)
         num_fetched = ULONG()
-        obj = VARIANT()
-        oleaut32lib.VariantInit(obj)
+        obj = Variant()
+        OLEAut32Lib.VariantInit(obj)
         if self._Next(one_obj, byref(obj), byref(num_fetched)) == S_OK:
             return python_val_from_VARIANT(obj, clear_variant=True)
         else:
@@ -651,7 +651,7 @@ class IEnumVARIANT(object):
     def reset(self) -> None:
         self._Reset()
           
-class IAGFUNCTYPE(object):
+class IFuncType(object):
     """Wrapper for calling methods into COM interface vtables."""
     def __init__(self, pUnk, iid, method_index, *argtypes):
         self.pUnk = pUnk

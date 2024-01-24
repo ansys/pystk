@@ -10,8 +10,8 @@ from concurrent.futures import ThreadPoolExecutor
 from . import AgGrpcServices_pb2
 from . import AgGrpcServices_pb2_grpc
 
-from .marshall import AgEnum_arg, OLE_COLOR_arg
-from .apiutil import out_arg
+from .marshall import EnumArg, OLEColorArg
+from .apiutil import OutArg
 from .comutil import GUID
 from ..utilities.exceptions import *
 from ..utilities.colors import Color
@@ -61,12 +61,12 @@ def _grpc_post_process_return_vals(return_vals, marshallers, *input_args):
     ret_val_iter = 0
     temp_return_list = []
     for input_arg, marshaller in zip(input_args, marshallers):
-        if type(input_arg) == out_arg:
+        if type(input_arg) == OutArg:
             return_val = return_vals[ret_val_iter] if multiple_returns else return_vals
             ret_val_iter += 1
-            if type(marshaller)==AgEnum_arg:
+            if type(marshaller)==EnumArg:
                 temp_return_list.append(marshaller(return_val).python_val)
-            elif marshaller is OLE_COLOR_arg:
+            elif marshaller is OLEColorArg:
                 c = Color()
                 c._FromOLECOLOR(return_val)
                 temp_return_list.append(c)
@@ -77,7 +77,7 @@ def _grpc_post_process_return_vals(return_vals, marshallers, *input_args):
     else:
         return tuple(temp_return_list)
 
-class grpc_interface(object):
+class GrpcInterface(object):
     def __init__(self, client, obj):
         self.client = client
         self.obj = obj
@@ -95,7 +95,7 @@ class grpc_interface(object):
     def __bool__(self):
         return self.client.active() and self.obj.value > 0
 
-    def query_interface(self, guid:GUID|str) -> "grpc_interface":
+    def query_interface(self, guid:GUID|str) -> "GrpcInterface":
         if isinstance(guid, GUID): guid=str(guid)
         if self.client.SupportsInterface(self.obj, guid):
             return self
@@ -110,7 +110,7 @@ class grpc_interface(object):
     def get_property(self, intf_metatdata:dict, method_metadata:dict):
         guid_str = intf_metatdata["uuid"]
         method_offset = intf_metatdata["method_offsets"]["get_" + method_metadata["name"]]
-        return _grpc_post_process_return_vals(self.client.GetProperty(self.obj, guid_str, method_offset), method_metadata["marshallers"], out_arg())
+        return _grpc_post_process_return_vals(self.client.GetProperty(self.obj, guid_str, method_offset), method_metadata["marshallers"], OutArg())
 
     def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
         guid_str = intf_metatdata["uuid"]
@@ -126,7 +126,7 @@ class grpc_interface(object):
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
         return self.client.Unsubscribe(self.obj, event_handler, "", None)
 
-class grpc_application(grpc_interface):
+class GrpcApplication(GrpcInterface):
     def __init__(self, client, obj):
         self.client = client
         self.obj = obj
@@ -136,37 +136,37 @@ class grpc_application(grpc_interface):
         # The application reference is released by the server when calling TerminateConnection()
         pass
 
-class unmanaged_grpc_interface(grpc_interface):
+class UnmanagedGrpcInterface(GrpcInterface):
     def __init__(self, client, obj):
         self.client = client
         self.obj = obj
 
     def __del__(self):
-        # Intentionally not calling grpc_interface.__del__
+        # Intentionally not calling GrpcInterface.__del__
         pass
 
     def release(self):
         self.client.Release(self.obj)
 
-class grpc_enumerator(grpc_interface):
+class GrpcEnumerator(GrpcInterface):
     _NEXT_INDEX = 1
     _SKIP_INDEX = 2
     _RESET_INDEX = 3
     _CLONE_INDEX = 4
     
     def __init__(self, client, obj):
-        grpc_interface.__init__(self, client=client, obj=obj)
+        GrpcInterface.__init__(self, client=client, obj=obj)
 
     def next(self) -> typing.Any:
-        (retval, num_fetched) = self.client.Invoke(self.obj, IID_IEnumVARIANT, grpc_enumerator._NEXT_INDEX)
+        (retval, num_fetched) = self.client.Invoke(self.obj, IID_IEnumVARIANT, GrpcEnumerator._NEXT_INDEX)
         if num_fetched == 1:
             return retval
         return None
 
     def reset(self):
-        self.client.Invoke(self.obj, IID_IEnumVARIANT, grpc_enumerator._RESET_INDEX)
+        self.client.Invoke(self.obj, IID_IEnumVARIANT, GrpcEnumerator._RESET_INDEX)
 
-class grpc_client(object):
+class GrpcClient(object):
 
     def __init__(self):
        self.channel = None
@@ -221,9 +221,9 @@ class grpc_client(object):
         self._connection_id = connect_response.connection_id
 
     @staticmethod
-    def new_client(host, port, timeout_sec:int=60) -> "grpc_client":
+    def new_client(host, port, timeout_sec:int=60) -> "GrpcClient":
         addr = f"{host}:{port}"
-        new_grpc_client = grpc_client()
+        new_grpc_client = GrpcClient()
         new_grpc_client.channel = grpc.insecure_channel(addr)
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
@@ -284,31 +284,31 @@ class grpc_client(object):
             cls = AgClassCatalog.get_class(clsid)
             pyobj = cls()
             if managed:
-                intf = grpc_interface(obj=obj, client=self)
+                intf = GrpcInterface(obj=obj, client=self)
             else:
-                intf = unmanaged_grpc_interface(obj=obj, client=self)
+                intf = UnmanagedGrpcInterface(obj=obj, client=self)
             pyobj._private_init(intf)
             return pyobj
         elif clsid == IID_IEnumVARIANT:
-            return grpc_enumerator(obj=obj, client=self)
+            return GrpcEnumerator(obj=obj, client=self)
         else:
             self.Release(obj)
             return None
         
-    def GetStkApplicationInterface(self) -> grpc_interface:
+    def GetStkApplicationInterface(self) -> GrpcInterface:
         grpc_app_request = AgGrpcServices_pb2.EmptyMessage()
         grpc_app_response = self.stub.GetStkApplication(grpc_app_request)
-        intf = grpc_application(obj=grpc_app_response.obj, client=self)
+        intf = GrpcApplication(obj=grpc_app_response.obj, client=self)
         return intf
         
-    def NewObjectRoot(self) -> grpc_interface:
+    def NewObjectRoot(self) -> GrpcInterface:
         grpc_response = self.stub.EngineNewRoot(AgGrpcServices_pb2.EmptyMessage())
-        intf = grpc_interface(obj=grpc_response.obj, client=self)
+        intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
         
-    def NewObjectModelContext(self) -> grpc_interface:
+    def NewObjectModelContext(self) -> GrpcInterface:
         grpc_response = self.stub.EngineNewRootContext(AgGrpcServices_pb2.EmptyMessage())
-        intf = grpc_interface(obj=grpc_response.obj, client=self)
+        intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
         
     def _marshall_single_grpc_value(self, val:AgGrpcServices_pb2.Variant.VariantValue, manage_ref_counts:bool=True) -> typing.Any:
@@ -383,7 +383,7 @@ class grpc_client(object):
         request.index = method_offset
         request.interface_guid = guid
         for arg in args:
-            if type(arg) != out_arg:
+            if type(arg) != OutArg:
                 new_grpc_arg = AgGrpcServices_pb2.Variant()
                 self._marshall_input_arg(arg, new_grpc_arg)
                 request.args.append(new_grpc_arg)
@@ -415,7 +415,7 @@ class grpc_client(object):
         request.index = method_offset
         request.interface_guid = guid
         for arg in args:
-            if type(arg) != out_arg:
+            if type(arg) != OutArg:
                 self._marshall_input_arg(arg, request.variant)
         try:
             response = self.stub.SetProperty(request)
