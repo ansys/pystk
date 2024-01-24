@@ -40,6 +40,7 @@ class STKEngineApplication(STKXApplication):
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
+
     def __init__(self):
         STKXApplication.__init__(self)
         self.__dict__["_initialized"] = False
@@ -151,6 +152,7 @@ class STKEngineApplication(STKXApplication):
 
 class STKEngine(object):
     """Initialize and manage the STK Engine application."""
+    
     _is_engine_running = False
             
     @staticmethod

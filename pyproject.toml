@@ -74,7 +74,6 @@ ignore = [
     "D106", # Missing docstring in public nested class
     "D107", # Missing docstring in `__init__`
     "D200", # One-line docstring should fit on one line
-    "D204", # blank line required after class docstring
     "D210", # No whitespaces allowed surrounding docstring text
     "D212", # Multi-line docstring summary should start at the first line
     "D300", # Use triple double quotes `"""`
