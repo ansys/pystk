@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-centos7
-ARG basePythonImage=ansys/stk:latest-centos7-pybase
+ARG baseImage=ansys/stk:latest-windowsservercore-ltsc2019
+ARG basePythonImage=ansys/stk:latest-windowsservercore-ltsc2019-pybase
 FROM ${basePythonImage} as builder
 
 ##############################################

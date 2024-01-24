@@ -1,5 +1,5 @@
 # By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:latest-centos7
+ARG baseImage=ansys/stk:latest-windowsservercore-ltsc2019
 FROM ${baseImage}
 
 # Install system dependencies
