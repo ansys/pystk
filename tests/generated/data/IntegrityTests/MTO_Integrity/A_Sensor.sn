@@ -1,0 +1,192 @@
+stk.v.9.0
+WrittenBy    STK_v9.0.0
+
+BEGIN Sensor
+
+    Name            A_Sensor
+
+BEGIN Pattern
+
+    BEGIN SimpleCone
+
+        ConeAngle              4.500000000000e+001
+        AngularPatternResolution     4.000000000000e+000
+
+    END SimpleCone
+
+END Pattern
+
+BEGIN Pointing
+
+    BEGIN Fixed
+
+    PointingMethod          AzEl
+    Sequence                323
+    Qx                      0.000000000000e+000
+    Qy                      0.000000000000e+000
+    Qz                      0.000000000000e+000
+    Qs                      1.000000000000e+000
+
+    END Fixed
+
+END Pointing
+
+BEGIN Optics
+
+    FocalLength             1.000000000000e+002
+    DetectorPitch           1.000000000000e-003
+    IQConstant              0.000000000000e+000
+    GsdCoefficient          0.000000000000e+000
+
+END Optics
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+		BEGIN Attributes
+
+			Inherit             Yes
+			Show                Yes
+			LineStyle           0
+			LineWidth           1.000000
+			PatternColor        #ffffff
+
+		END Attributes
+
+		BEGIN Display
+
+			NumberOfPatterns        1
+			PersistenceDuration     0.000000000000e+000
+			PersistenceIgnoreDefChg No
+			MinDisplayAltitude      0.000000000000e+000
+			MaxDisplayAltitude      1.000000000000e+007
+			AltitudeIntersectSense           Either
+			ShowBothAltCrossings           No
+			IntersectType           CentralBody
+			ShowGround          Yes
+			UseProjectionRadii          No
+			ExcludeHorizonArcs           No
+			ForwardPersist          No
+			FillPersist             No
+			SpaceLength             5.000000000000e+007
+			TgtExtLength            0.000000000000e+000
+			FOVHalfAngle            No
+			HalfAngle               0.000000000000e+000
+			FOV                     No
+			ProjDisplay             Sphere
+			DisplayType             ConstantRadius
+			DisplayFOVWithConstraints           No
+			ShowBoresight           No
+			BoresightMarker         4
+			BoresightColor          #ffffff
+			ShowFill                No
+			FillStyle               7
+			ShowOn2DMap             Yes
+
+		END Display
+
+		BEGIN    Swath
+
+			MaxStep            6.000000000000e+001
+			MinStep            1.000000000000e-001
+			CloseSwath    Yes
+			Tolerance          4.000000000000e+000
+			MatchTolerance     9.000000000000e+001
+			ShowSwath    No
+			Color        #f0ffff
+			LineStyle    0
+			LineWidth    1.000000
+
+		END    Swath
+    END Graphics
+    
+    BEGIN ContourGfx
+	ShowContours      Off
+    END ContourGfx
+    
+    BEGIN Swath
+    END Swath
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		AtFieldOfView   IncludeIntervals 
+		FieldOfView   IncludeIntervals 
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN ObjectCoverage
+    END ObjectCoverage
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN Refraction
+		RefractionModel	Effective Radius Method
+
+		UseRefractionInAccess		No
+
+		BEGIN ModelData
+			RefractionCeiling	5.00000000000000e+003
+			MaxTargetAltitude	1.00000000000000e+004
+			EffectiveRadius		1.33333333333333e+000
+
+			UseExtrapolation	 Yes
+
+
+		END ModelData
+    END Refraction
+    
+    BEGIN Contours
+	ActiveContourType Point Cloud
+
+	BEGIN ContourSet Point Cloud
+		Altitude          0.000000e+000
+		ShowAtAltitude    Off
+		Projected         On
+		Relative          On
+		ShowLabels        Off
+		LineWidth         1.000000
+		DecimalDigits     1
+		ColorRamp         On
+		ColorRampStartColor   #ff0000
+		ColorRampEndColor     #0000ff
+		BEGIN ContourDefinition
+		BEGIN CntrPointCloud
+			MetricName PointCloud
+			Resolution	9.000000  9.000000
+			BEGIN LatLonGrid
+				LatLimits	0.000000	0.000000
+				LonLimits	0.000000	0.000000
+				NumPts		30	30
+				Altitude	0.000000
+			END LatLonGrid
+		END CntrPointCloud
+		END ContourDefinition
+	END ContourSet
+    END Contours
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN DIS
+    END DIS
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+BEGIN SubObjects
+
+END SubObjects
+
+END Sensor
+

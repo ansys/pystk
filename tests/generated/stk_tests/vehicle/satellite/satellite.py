@@ -7,9 +7,9 @@ from assert_extension import *
 from assertion_harness import *
 from events.log_message_monitor import *
 from events.object_changed_monitor import *
-from integrity.integrity import *
 from interfaces.stk_objects import *
 from logger import *
+from report_comparison import *
 from seet_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *

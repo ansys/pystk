@@ -1,0 +1,165 @@
+<!-- STKv4.0 Format="XML" -->
+<STKOBJECT>
+<OBJECT Class = "Propagator" Name = "Moon_Full_RKF">
+    <OBJECT Class = "link" Name = "CentralBody">
+        <OBJECT Class = "string" Name = ""> &quot;Moon&quot; </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "string" Name = "Description"> &quot;Heliocentric&quot; </OBJECT>
+    <OBJECT Class = "link" Name = "NumericalIntegrator">
+        <OBJECT Class = "NumIntegrator" Name = "Heliocentric_RKF7th8th">
+            <OBJECT Class = "string" Name = "Description"> &quot;8th order Runge-Kutta-Fehlberg with 7th order error control&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "ErrorControl"> &quot;Relative to state&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "InitialStep"> 60 sec </OBJECT>
+            <OBJECT Class = "double" Name = "MaxAbsError"> 9.999999999999999e-012 &quot;&quot; </OBJECT>
+            <OBJECT Class = "int" Name = "MaxIterations"> 100 </OBJECT>
+            <OBJECT Class = "double" Name = "MaxRelError"> 9.999999999999999e-012 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "MaxStep"> 86400 sec </OBJECT>
+            <OBJECT Class = "double" Name = "MinStep"> 1 sec </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "double" Name = "SCHigh"> 0.9 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "SCLow"> 1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "StepTruncationRounding"> 0.001 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "StepTruncationThreshold"> 0.1 &quot;&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;RKF7th8th&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseFixedStep"> True </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMaxStep"> True </OBJECT>
+            <OBJECT Class = "bool" Name = "UseMinStep"> False </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;8th order Runge-Kutta-Fehlberg with 7th order error control&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "ListLink" Name = "PropFuncs">
+        <OBJECT Class = "EOMFuncWrapper" Name = "Earth">
+            <OBJECT Class = "string" Name = "Description"> &quot;Earth 3rd Body Effect&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "GravityField">
+                <OBJECT Class = "EOMFuncWrapper" Name = "Gravitational_Force">
+                    <OBJECT Class = "link" Name = "CentralBody">
+                        <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+                    </OBJECT>
+                    <OBJECT Class = "int" Name = "Degree"> 0 </OBJECT>
+                    <OBJECT Class = "string" Name = "Description"> &quot;Gravitational force from central body&quot; </OBJECT>
+                    <OBJECT Class = "string" Name = "GravityFile"> &quot;STKData\CentralBodies\Earth\WGS84_EGM96.grv&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "IncludeTimeDependentSolidTides"> False </OBJECT>
+                    <OBJECT Class = "double" Name = "MinRadiusPercent"> 0.99 unitValue </OBJECT>
+                    <OBJECT Class = "int" Name = "OceanTideMaxDegree"> 4 </OBJECT>
+                    <OBJECT Class = "int" Name = "OceanTideMaxOrder"> 4 </OBJECT>
+                    <OBJECT Class = "double" Name = "OceanTideMinAmp"> 0 m </OBJECT>
+                    <OBJECT Class = "int" Name = "Order"> 0 </OBJECT>
+                    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                    <OBJECT Class = "container" Name = "ShooterControls" />
+                    <OBJECT Class = "double" Name = "SolidTideMinAmp"> 0 m </OBJECT>
+                    <OBJECT Class = "string" Name = "Type"> &quot;GravityFieldFunc&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "UseOceanTides"> False </OBJECT>
+                    <OBJECT Class = "string" Name = "UserComment"> &quot;Gravitational force from central body&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "UseSolidTides"> False </OBJECT>
+                    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+                </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Mode"> &quot;Point Mass&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "GravSource"> &quot;Cb File - System&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "Mu"> 398600441800000 m^3*sec^-2 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "link" Name = "ThirdBody">
+                <OBJECT Class = "string" Name = ""> &quot;Earth&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;ThirdBodyFunc&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Earth 3rd Body Effect&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "EOMFuncWrapper" Name = "General_Relativity">
+            <OBJECT Class = "string" Name = "Description"> &quot;Correction to acceleration due to general relativity&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "string" Name = "Type"> &quot;GenRelativityFunc&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Correction to acceleration due to general relativity&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "EOMFuncWrapper" Name = "Spherical_SRP">
+            <OBJECT Class = "double" Name = "AtmosphereAlt"> 0 m </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Spherical solar radiation pressure model&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "Luminosity"> 3.823e+026 &quot;&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "MeanFlux"> 1359.388569998896 &quot;&quot; </OBJECT>
+            <OBJECT Class = "ListLink" Name = "OtherEclipsingBodies" />
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "string" Name = "ShadowModel"> &quot;Dual Cone&quot; </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "string" Name = "SolarForceMethod"> &quot;Use Luminosity&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "SunPosition"> &quot;ApparentSunToTrueCB&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;SRPSpherical&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Spherical solar radiation pressure model&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "EOMFuncWrapper" Name = "Gravitational_Force">
+            <OBJECT Class = "link" Name = "CentralBody">
+                <OBJECT Class = "string" Name = ""> &quot;Moon&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "int" Name = "Degree"> 21 </OBJECT>
+            <OBJECT Class = "string" Name = "Description"> &quot;Gravitational force from central body&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "GravityFile"> &quot;STKData\CentralBodies\Moon\LP150Q.grv&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "IncludeTimeDependentSolidTides"> False </OBJECT>
+            <OBJECT Class = "double" Name = "MinRadiusPercent"> 0.99 unitValue </OBJECT>
+            <OBJECT Class = "int" Name = "OceanTideMaxDegree"> 4 </OBJECT>
+            <OBJECT Class = "int" Name = "OceanTideMaxOrder"> 4 </OBJECT>
+            <OBJECT Class = "double" Name = "OceanTideMinAmp"> 0 m </OBJECT>
+            <OBJECT Class = "int" Name = "Order"> 21 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "double" Name = "SolidTideMinAmp"> 0 m </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;GravityFieldFunc&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseOceanTides"> False </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Gravitational force from central body&quot; </OBJECT>
+            <OBJECT Class = "bool" Name = "UseSolidTides"> True </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+        <OBJECT Class = "EOMFuncWrapper" Name = "Sun">
+            <OBJECT Class = "string" Name = "Description"> &quot;Solar 3rd Body Effect&quot; </OBJECT>
+            <OBJECT Class = "link" Name = "GravityField">
+                <OBJECT Class = "EOMFuncWrapper" Name = "Gravitational_Force">
+                    <OBJECT Class = "link" Name = "CentralBody">
+                        <OBJECT Class = "string" Name = ""> &quot;Sun&quot; </OBJECT>
+                    </OBJECT>
+                    <OBJECT Class = "int" Name = "Degree"> 0 </OBJECT>
+                    <OBJECT Class = "string" Name = "Description"> &quot;Gravitational force from central body&quot; </OBJECT>
+                    <OBJECT Class = "string" Name = "GravityFile"> &quot;STKData\CentralBodies\Sun\ZonalsToJ4.grv&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "IncludeTimeDependentSolidTides"> False </OBJECT>
+                    <OBJECT Class = "double" Name = "MinRadiusPercent"> 0.99 unitValue </OBJECT>
+                    <OBJECT Class = "int" Name = "OceanTideMaxDegree"> 4 </OBJECT>
+                    <OBJECT Class = "int" Name = "OceanTideMaxOrder"> 4 </OBJECT>
+                    <OBJECT Class = "double" Name = "OceanTideMinAmp"> 0 m </OBJECT>
+                    <OBJECT Class = "int" Name = "Order"> 0 </OBJECT>
+                    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+                    <OBJECT Class = "container" Name = "ShooterControls" />
+                    <OBJECT Class = "double" Name = "SolidTideMinAmp"> 0 m </OBJECT>
+                    <OBJECT Class = "string" Name = "Type"> &quot;GravityFieldFunc&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "UseOceanTides"> False </OBJECT>
+                    <OBJECT Class = "string" Name = "UserComment"> &quot;Gravitational force from central body&quot; </OBJECT>
+                    <OBJECT Class = "bool" Name = "UseSolidTides"> False </OBJECT>
+                    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+                </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Mode"> &quot;Point Mass&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "GravSource"> &quot;Cb File - System&quot; </OBJECT>
+            <OBJECT Class = "double" Name = "Mu"> 1.327122e+020 m^3*sec^-2 </OBJECT>
+            <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+            <OBJECT Class = "container" Name = "ShooterControls" />
+            <OBJECT Class = "link" Name = "ThirdBody">
+                <OBJECT Class = "string" Name = ""> &quot;Sun&quot; </OBJECT>
+            </OBJECT>
+            <OBJECT Class = "string" Name = "Type"> &quot;ThirdBodyFunc&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "UserComment"> &quot;Solar 3rd Body Effect&quot; </OBJECT>
+            <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+        </OBJECT>
+    </OBJECT>
+    <OBJECT Class = "bool" Name = "ReadOnly"> False </OBJECT>
+    <OBJECT Class = "double" Name = "RegularizedTimeExponent"> 1.5 &quot;&quot; </OBJECT>
+    <OBJECT Class = "int" Name = "RegularizedTimeStepsPerOrbit"> 90 </OBJECT>
+    <OBJECT Class = "container" Name = "ShooterControls" />
+    <OBJECT Class = "string" Name = "Type"> &quot;NumericalPropagatorWrapper&quot; </OBJECT>
+    <OBJECT Class = "string" Name = "UserComment"> &quot;Selenocentric&quot; </OBJECT>
+    <OBJECT Class = "bool" Name = "UseRegularizedTime"> False </OBJECT>
+    <OBJECT Class = "bool" Name = "UseVOP"> False </OBJECT>
+    <OBJECT Class = "string" Name = "Version"> &quot;1.0.0 a&quot; </OBJECT>
+</OBJECT>
+</STKOBJECT>

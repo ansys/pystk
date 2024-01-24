@@ -1,0 +1,99 @@
+stk.v.6.0
+
+BEGIN CoverageDefinition
+
+Name        FOMTestComm
+
+BEGIN GridDefinition
+
+    Begin                CustomRegions
+        AreaTarget    AreaTarget/FOMTest
+        AllowSmallRegionAlgorithm
+    End                  CustomRegions
+    LatResolution        3.000000
+    LonResolution        3.000000
+    GridClass            Receiver
+    SeedInstance         Facility/FOMTest/Receiver/FOMTest
+    UseCopyOfSeed        Yes
+    PointLocationMethod  EqualArea
+    AltitudeMethod       Altitude
+    Altitude             0.000000
+
+END GridDefinition
+
+BEGIN AccessDefinition
+
+    DataRetention        AllData
+    Convergence          0.050000
+    AutoRecompute        Yes
+    AccessSaveMode       SaveWith
+    RegionAccessAccel    Auto
+
+END AccessDefinition
+
+BEGIN AssetList
+
+    Aircraft/FOMTest/Transmitter/FOMTest   Active 
+    Satellite/FOMTest1/Transmitter/FOMTest   Active 
+    Satellite/FOMTest2/Transmitter/FOMTest   Active 
+
+END AssetList
+
+BEGIN Interval
+
+    AccStart             1 Jan 2001 00:00:00.000000000
+    AccStop              2 Jan 2001 00:00:00.000000000
+    UseScenarioInterval       Yes
+
+END Interval
+
+Begin SavedAccesses
+    FileName: FOMTestComm.cva
+End SavedAccesses
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+BEGIN Attributes
+
+    GridMarkerStyle      0
+    GridColor            #9b30ff
+    ProgressColor        #ffa500
+    SatisfactionColor    #f08080
+
+END Attributes
+
+BEGIN Graphics
+
+    ShowGrid             No
+    ShowRegions          No
+    ShowRegionsText      Yes
+    ShowPoints           No
+    FillPoints           No
+    ShowProgress         No
+    ShowSatisfaction     No
+
+END Graphics
+    END Graphics
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+BEGIN SubObjects
+
+Class FigureOfMerit
+
+	FOMTestComm
+
+END Class
+
+END SubObjects
+
+END CoverageDefinition
+

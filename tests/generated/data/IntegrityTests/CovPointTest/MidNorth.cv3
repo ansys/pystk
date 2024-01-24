@@ -1,0 +1,9 @@
+VO_v80
+    ShowStatic          Yes
+    StaticTranslucency  0.500000
+    StaticPointSize     2.000000
+    ShowAnim            Yes
+    AnimTranslucency    0.700000
+    AnimPointSize       3.000000
+    Granularity         0.052360
+    ShowAtAltitude      No

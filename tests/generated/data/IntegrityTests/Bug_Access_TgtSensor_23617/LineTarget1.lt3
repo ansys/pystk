@@ -1,0 +1,225 @@
+VO_V120		
+LineWallShowOnOff		 No
+LineWallUseTerrainAltFileOnOff		 No
+LineWallTransparencyOnOff		 No
+LineWallLineTransparencyOnOff		 No
+LineWallTransparency		 0.699999988079071
+LineWallLineTransparency		 0.699999988079071
+LineWallTopCapType		 WGS84
+LineWallTopCap		 0
+LineWallBotCapType		 WGS84
+LineWallBotCap		 0
+LineWallSampleRate		 2
+UseLabelMaxViewDist		 No
+LabelMaxViewDist		 1e+18
+BEGIN GeneralVectorAxes
+    PersistentLineWidth		 2
+    Scale		 49999.99999999999
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "East"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #f0ffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "West"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #f0ffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "North"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #f0ffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "South"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #f0ffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Sun"
+        MagUnit		 m
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffff00
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Moon"
+        MagUnit		 m
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Zenith"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #87cefa
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #87cefa
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAngle
+    FractionalScale		 1
+    SupportingDihedralArcLineWidth		 1
+    ArcLineWidth		 2
+    PixelThreshold		 0.5
+END

@@ -1,0 +1,27 @@
+stk.v.8.0
+
+BEGIN Constellation
+
+Name  Leos_Exactly2
+BEGIN Definition
+
+   Type        Constellation
+   Operator    XNofM
+   Order       2
+   IsRelay     No
+    Object  Satellite/Leo_0
+    Object  Satellite/Leo_28
+    Object  Satellite/Leo_97
+   SaveMode    0
+   UseLoadIntervalFile    No
+
+END Definition
+
+BEGIN Extensions
+    
+    BEGIN Desc
+    END Desc
+
+END Extensions
+
+END Constellation

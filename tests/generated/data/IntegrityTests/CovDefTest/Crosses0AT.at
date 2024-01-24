@@ -1,0 +1,100 @@
+stk.v.6.0
+
+BEGIN AreaTarget
+
+Name        Crosses0AT
+
+	BEGIN CentroidPosition
+
+		CentralBody            Earth
+		AutoCentroid           On
+		EcfLatitude            9.572997e+000
+		EcfLongitude           6.979435e+000
+		EcfAltitude            0.000000e+000
+		UseTerrainInfo         Off
+		DisplayCoords          Geodetic
+
+		AreaType               Pattern
+		NumberOfPolygonPts     14
+
+		BEGIN PolygonPoints
+
+			5.14285714200000e+001	1.00293254500000e+001	0.00000000000000e+000
+			4.93714285700000e+001	-1.42521993300000e+001	0.00000000000000e+000
+			3.18857142800000e+001	-1.79472139700000e+001	0.00000000000000e+000
+			2.57142857100000e+001	-5.27859230000000e-001	0.00000000000000e+000
+			1.54285714200000e+001	9.50146622000000e+000	0.00000000000000e+000
+			-3.08571428000000e+000	3.69501464000000e+000	0.00000000000000e+000
+			-1.54285714200000e+001	-2.05865101400000e+001	0.00000000000000e+000
+			-2.98285714200000e+001	-1.47800585600000e+001	0.00000000000000e+000
+			-3.70285714200000e+001	1.00293254500000e+001	0.00000000000000e+000
+			-3.49714285700000e+001	2.69208209600000e+001	0.00000000000000e+000
+			-7.20000000000000e+000	4.11730202900000e+001	0.00000000000000e+000
+			2.52000000000000e+001	3.06158356000000e+001	0.00000000000000e+000
+			4.26857142800000e+001	2.42815247900000e+001	0.00000000000000e+000
+			5.14285714200000e+001	1.00293254500000e+001	0.00000000000000e+000
+
+		END PolygonPoints
+
+
+	END CentroidPosition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+            BEGIN Attributes
+
+                MarkerColor             #00ffff
+                PolygonColor            #00ffff
+                LabelColor              #00ffff
+                LineStyle               0
+                LineWidth               1.0
+                MarkerStyle             1
+                FontStyle               0
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Inherit                 On
+                ShowCentroid            On
+                ShowBoundaryPts         Off
+                ShowLabel               On
+                Filled                  Off
+                ShowBoundingRect        Off
+
+            END Graphics
+
+            BEGIN LblNotes
+
+
+            END LblNotes
+
+    END Graphics
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END AreaTarget
+

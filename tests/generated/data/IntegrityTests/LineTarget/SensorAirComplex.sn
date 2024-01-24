@@ -1,0 +1,144 @@
+stk.v.6.1
+
+BEGIN Sensor
+
+    Name            SensorAirComplex
+
+BEGIN Pattern
+
+    BEGIN Conical
+
+        InnerConeAngle         3.000000000000e+001
+        OuterConeAngle         4.000000000000e+001
+        MinClockAngle          2.000000000000e+001
+        MaxClockAngle          2.200000000000e+001
+
+    END Conical
+
+END Pattern
+
+BEGIN Pointing
+
+    BEGIN Spinning
+
+    Begin Fixed
+    PointingMethod          AzEl
+    Sequence                323
+    Qx                      -8.852132690138e-002
+    Qy                      3.303660895494e-001
+    Qz                      2.432103468017e-001
+    Qs                      9.076733711904e-001
+    End Fixed
+    ConeAngle              20.000000
+    SpinRate               0.200000
+    ThetaZero              0.000000
+    ScanMode              Continuous
+    Begin Stable
+    Mode         NorthStable
+    End Stable
+
+    END Spinning
+
+END Pointing
+
+BEGIN Optics
+
+    FocalLength             1.000000000000e+002
+    DetectorPitch           1.000000000000e-003
+    IQConstant              0.000000000000e+000
+    GsdCoefficient          0.000000000000e+000
+
+END Optics
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+		BEGIN Attributes
+
+			Inherit             Yes
+			Show                Yes
+			LineStyle           0
+			LineWidth           1.000000
+			PatternColor        #00ff00
+
+		END Attributes
+
+		BEGIN Display
+
+			NumberOfPatterns        1
+			PersistenceDuration     0.000000000000e+000
+			MinDisplayAltitude      0.000000000000e+000
+			MaxDisplayAltitude      1.000000000000e+007
+			IntersectType           CentralBody
+			ForwardPersist          No
+			FillPersist             Yes
+			SpaceLength             5.000000000000e+007
+			TgtExtLength            0.000000000000e+000
+			FOVHalfAngle            No
+			HalfAngle               0.000000000000e+000
+			FOV                     No
+			ProjDisplay             Sphere
+			DisplayType             ConstantRadius
+			TerrainNorth            0.000000000000e+000
+			TerrainSouth            0.000000000000e+000
+			TerrainEast             0.000000000000e+000
+			TerrainWest             0.000000000000e+000
+			DisplayFOVWithConstraints           No
+			ShowBoresight           No
+			BoresightMarker         4
+			BoresightColor          #ffffff
+			ShowFill                No
+			FillStyle               7
+
+		END Display
+    END Graphics
+    
+    BEGIN Swath
+        ShowSwath    No
+        Color        #f0ffff
+        LineStyle    0
+        LineWidth    1.000000
+    END Swath
+    
+    BEGIN ExternData
+    END ExternData
+    
+    BEGIN AccessConstraints
+		AtFieldOfView   IncludeIntervals 
+		FieldOfView   IncludeIntervals 
+		LineOfSight   IncludeIntervals 
+    END AccessConstraints
+    
+    BEGIN ObjectCoverage
+    END ObjectCoverage
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN Refraction
+		RefractionModel	4/3 Earth Radius Method
+    END Refraction
+    
+    BEGIN DisplayTm
+		DisplayGT	AlwaysOff
+		DisplayType	AlwaysOn
+    END DisplayTm
+    
+    BEGIN Crdn
+    END Crdn
+    
+    BEGIN DIS
+    END DIS
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+BEGIN SubObjects
+
+END SubObjects
+
+END Sensor
+

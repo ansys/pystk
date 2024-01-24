@@ -1,0 +1,448 @@
+VO_V120		
+InitializeSolarPanels		 No
+Modelfile		 Land\groundvehicle.mdl
+UseCatalogModelFile		 Yes
+ModelDefaultColorFromMarker		 No
+IsShowingModel		 Yes
+ModelScale		 31.622777
+UseModelFilePosOffset		 No
+UseModelPosOffset		 No
+ModelPosOffset		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+UseModelRotation		 No
+ModelRotation		  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+IsSwapped		 Yes
+Level0SwapDistance		 300000
+Level1SwapDistance		 600000
+Level2SwapDistance		 28000000
+Level3SwapDistance		 56000000
+Level4SwapDistance		 112000000
+ShowMarker		 Yes
+BEGIN Marker
+    Show		 Yes
+    Type		 LineGraphic
+    Shape		 Square
+    IsTransparent		 No
+    OneOneBlend		 No
+    Rotate		 No
+    Angle		 0
+    HorizOrigin		 Center
+    VertOrigin		 Center
+    MinSize		 12
+    SizeInMeters		 No
+    RotateRelToNorth		 No
+    UseDirectionAngle		 No
+END
+BEGIN GlintMarker
+    Show		 No
+    Type		 LineGraphic
+    Shape		 Point
+    IsTransparent		 No
+    OneOneBlend		 No
+    Rotate		 No
+    Angle		 0
+    HorizOrigin		 Center
+    VertOrigin		 Center
+    MinSize		 4
+    SizeInMeters		 No
+    RotateRelToNorth		 No
+    UseDirectionAngle		 No
+END
+BEGIN Covariance
+    UseProbability		 Yes
+    Probability		 95
+    Scale		 2.795483589172363
+    NonIntervalLineWidth		 1
+    NonIntervalTranslucency		 0
+    NonIntervalShow		 No
+    NonIntervalColorIndex		 #ff69b4
+    DefaultIntervalLineWidth		 1
+    DefaultIntervalTranslucency		 0
+    DefaultIntervalShow		 Yes
+    DefaultIntervalColorIndex		 #d2691e
+    UseIntervals		 No
+    UseEllipticCoord		 No
+END
+BEGIN PointingCovarianceList
+    FixScaleToModel		 Yes
+    ConeScale		 50000
+END
+DontSaveArticFile		 Yes
+ArticulationFileEnabled		 No
+ArticulationFile		 GroundVehicle1.gvma
+ObscurationToObject		 No
+Inherit2DPassGfx		 No
+GtLeadingType		 AllData
+GtTrailingType		 AllData
+OrbitLeadingType		 AllData
+OrbitTrailingType		 AllData
+GtArcDrawRouteOnSurface		 Yes
+FixVectorAxesScaleToModel		 Yes
+FixVectorAxesScaleToAttSph		 No
+VectorAxesAngleSwapDist		 -0.5
+PlaneSwapDist		 -2.5
+BEGIN GeneralVectorAxes
+    PersistentLineWidth		 2
+    Scale		 1000
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #00ffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #0000ff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "VVLH(CBF)"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #4169e1
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "North"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "South"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "East"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "West"
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffffff
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Velocity(CBF)"
+        MagUnit		 km/sec
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "TopoCentric"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ff6a6a
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAxes
+    BEGIN CrdnDef
+        IsVector		 Yes
+        IsCentralBodyFrame		 No
+        Name		 "Sun"
+        MagUnit		 m
+    END
+    BEGIN RefCrdn
+        IsVector		 No
+        IsCentralBodyFrame		 No
+        Name		 "Body"
+        Object		 _Default
+    END
+    Duration		 600
+    IsShowing		 No
+    IsPersistent		 No
+    IsTransparent		 No
+    UseTrueScale		 No
+    Label		 Name
+    DrawAtCentralBody		 No
+    ConnectType		 Sweep
+    ColorIndex		 #ffff00
+    IntervalType		 AlwaysOn
+    Thickness		 10
+    AngleUnit		 deg
+END
+BEGIN VectorAngle
+    FractionalScale		 1
+    SupportingDihedralArcLineWidth		 1
+    ArcLineWidth		 2
+    PixelThreshold		 0.5
+    BEGIN VectorAngleData
+        Name		 "VelocityAzimuth"
+        Show		 No
+        ShowLabel		 Yes
+        ShowAngle		 Yes
+        ShowDihedralAngleSupportingArcs		 Yes
+        ColorIndex		 #fff0f5
+        IntervalType		 AlwaysOn
+        Unit		 deg
+    END
+END
+SetModelColorArtic		 No
+SaveArticStateAsDef		 No
+ShowElevFov		 No
+ShowElevFovCones		 No
+ElevFovTranslucency		 0.7
+ShowElevContourFill		 No
+ElevContourFillTranslucency		 0.5
+ShowRangeContours		 No
+TranslRangeCntrLines		 No
+RangeCntrLineTransl		 0.7
+RangeLblSwapDist		 -2.5
+AOULblSwapDist		 -1.5
+BorderWallShowOnOff		 No
+BorderWallUseTerrainAltFileOnOff		 No
+BorderWallTransparencyOnOff		 No
+BorderWallLineTransparencyOnOff		 No
+BorderWallTransparency		 0.699999988079071
+BorderWallLineTransparency		 0.699999988079071
+BorderWallTopCapType		 WGS84
+BorderWallTopCap		 0
+BorderWallBotCapType		 WGS84
+BorderWallBotCap		 0
+BorderWallSampleRate		 2
+ShowSAAContour		 No
+IsShowingGeoBox		 No
+GeoBoxColorIndex		 #ff0000
+GeoBoxNS		  1.7453292520000000e-02
+GeoBoxEW		  1.7453292520000000e-02
+GeoBoxTickSpacing		  3.4906585000000000e-03
+TrkTickFrequencyTime		 60
+ShowOrbTrkTicks		 No
+OrbTrkTickWidth		 50000
+OrbTrkPointSize		 3
+OrbTrkLinWidth		 1
+OrbTrkStyle		 Radial
+ShowGrdTrkTicks		 No
+GrdTrkTickWidth		 50000
+GrdTrkPointSize		 3
+GrdTrkLinWidth		 1
+GrdTrkStyle		 CrossTrack
+UseObjLineAttachPt		 No
+DropLinesTo		 Ellipsoid
+IsShowingVaporTrail		 No
+VaporMaxPuffs		 100
+VaporColorIndex		 #ffffff
+VaporWindSpeed		 0 0 0
+VaporIsInSpace		 No
+VaporUseAttachPoint		 No
+VaporOutputRate		  5.0000000000000000e-01
+VaporRadius		 1000
+VaporExpansionRate		 0.01
+VaporStartTime		 0
+VaporEndTime		 86400
+VaporIntervalPtr		
+BEGIN EVENTINTERVAL
+    EventInterval		
+    BEGIN EVENTINTERVAL
+        Type		 EVENTINTERVAL_LINKTO
+        Name		 AnalysisInterval
+        AbsolutePath		 Scenario
+    END EVENTINTERVAL
+    IntervalState		 Implicit
+END EVENTINTERVAL
+
+VaporTexturemap		 smoke.pgm
+BEGIN Point
+    Show		 No
+    Size		 5
+END Point
+UseLabelOffset		 No
+LabelOffsetInPixels		 No
+LabelXYZ		 0 10 10
+BEGIN DynamicDataText
+    Name		 "Velocity Heading"
+    Show		 No
+    ShowTitle		 Yes
+    ShowObjName		 Yes
+    ReportFormat		 Horizontal
+    Type		 ORTHOGRAPHIC
+    AttachX		 MIN
+    AttachY		 MAX
+    X		 5
+    Y		 5
+    FontIndex		 0
+    TextColorIndex		 #ffff00
+    BGEnabled		 No
+    IsBGTransparent		 No
+    BGWidth		 100
+    BGHeight		 50
+    AutoSizeWidth		 Yes
+    AutoSizeHeight		 Yes
+    BGColorIndex		 #ffff00
+    Version		 0
+    VertTextAlign		 BOTTOM
+    BGTranslucency		 1
+END
+ShowGroundMarker		 No
+BEGIN GroundMarker
+    Show		 No
+    Type		 LineGraphic
+    Shape		 Point
+    IsTransparent		 No
+    OneOneBlend		 No
+    Rotate		 No
+    Angle		 0
+    HorizOrigin		 Center
+    VertOrigin		 Center
+    MinSize		 4
+    SizeInMeters		 No
+    RotateRelToNorth		 No
+    UseDirectionAngle		 No
+END
+BEGIN WaypointGfxData
+    NewMarkerType		 LineGraphic
+    NewMarkerShape		 Point
+    NewMarkerIsTransparent		 No
+    NewMarkerSize		 4
+    CommonMarkerSize		 4
+END WaypointGfxData

@@ -1,0 +1,95 @@
+stk.v.6.0
+
+BEGIN FigureOfMerit
+
+Name        FOMTestComm
+
+BEGIN FomDefinition
+
+
+    BEGIN Constraint
+        StaticStat          Minimum
+        TimeStep            120.000000
+        AssetStat           Minimum
+        UseAllAssets        No
+        ConstraintName      C/N
+
+    END Constraint
+    ApplySatisfaction    No
+    SatisfactionThreshold    0.00000000000000e+000
+    NotExecutedValue         0.00000000000000e+000
+
+END FomDefinition
+
+BEGIN Extensions
+    
+    BEGIN Graphics
+
+BEGIN Attributes
+
+    StaticColor                 #ff6a6a
+    StaticColorRampStartColor   #ff69b4
+    StaticColorRampEndColor     #d2691e
+    StaticMarkerStyle           3
+    StaticContourMarkerStyle    3
+    AnimationColor              #9b30ff
+    AnimColorRampStartColor     #fff0f5
+    AnimColorRampEndColor       #7fff00
+    AnimationMarkerStyle        2
+    AnimationContourMarkerStyle 2
+    ObjectCovMarkerStyle        0
+    ObjectCovLineStyle          0
+    ObjectCovLineWidth          1.000000
+
+END Attributes
+
+BEGIN Graphics
+
+    ShowStatic           Yes
+    ShowAnim             Yes
+    ShowStaticContours   No
+    ShowAnimContours     No
+    ShareContours        No
+    StaticFillPoints     No
+    AnimFillPoints       No
+    StaticColorRamp      No
+    AnimColorRamp        No
+    StaticContourType    Block
+    AnimContourType      Block
+    Begin StaticLegend
+        DrawOnMap          No
+        Orientation        HorizMinToMax
+        MaxPerRow          20
+        ColorWidth         30.000000
+        ColorHeight        30.000000
+        TextColor          #ffffff
+        BackgroundColor    #000000
+        Title              Access Constraint - Static Contours
+        Format             %.0f
+    End StaticLegend
+    Begin DynamicLegend
+        DrawOnMap          No
+        Orientation        HorizMinToMax
+        MaxPerRow          20
+        ColorWidth         30.000000
+        ColorHeight        30.000000
+        TextColor          #ffffff
+        BackgroundColor    #000000
+        Title              Access Constraint - Dynamic Contours
+        Format             %.0f
+    End DynamicLegend
+    AccumulationType     CurrentOnly
+
+END Graphics
+    END Graphics
+    
+    BEGIN Desc
+    END Desc
+    
+    BEGIN VO
+    END VO
+
+END Extensions
+
+END FigureOfMerit
+

@@ -1,0 +1,31 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Constellation
+
+    Name		 ConstSat
+    BEGIN Definition
+        Object		 Satellite/ConstSat1
+        Object		 Satellite/ConstSat2
+        Object		 Satellite/ConstSat3
+        Object		 Facility/Canada
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 0
+        ToOperator		 Or
+        ToOrder		 0
+        UseRoutingRulesFile		 No
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation
