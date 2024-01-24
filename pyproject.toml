@@ -38,7 +38,7 @@ doc = [
     "ansys-sphinx-theme==0.13.1",
     "enum-tools[sphinx]==0.11.0",
     "jupytext==1.15.2",
-    "jupyter_server==2.12.1",
+    "jupyter_server==2.12.4",
     "myst-parser==2.0.0",
     "nbsphinx==0.9.3",
     "numpydoc==1.5.0",
@@ -47,7 +47,8 @@ doc = [
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "jupyterlab==4.0.10",
+    #"jupyterlab==4.0.9",
+    "jupyterlab==4.1.0b2",
 ]
 visualization = [
     "numpy==1.26.2",

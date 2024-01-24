@@ -28,6 +28,14 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+
+globe_plotter = GlobeWidget(stk, 640, 480)
+globe_plotter
+# -
+
 # ## Adding a satellite to the scenario
 #
 # Now that a new scenario is available, add a new satellite:
@@ -223,4 +231,4 @@ from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
 globe_plotter = GlobeWidget(stk, 640, 480)
-globe_plotter
+globe_plotter.snapshot()
