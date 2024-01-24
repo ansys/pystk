@@ -31,33 +31,33 @@ Interfaces
     IAircraftSimpleProp
     IAircraftExternalProp
     IAircraftBasicFixedWingProp
-    IAircraftAdvClimbModel
+    IAircraftAdvancedClimbModel
     IAircraftBasicCruiseModel
-    IAircraftAdvCruiseModel
+    IAircraftAdvancedCruiseModel
     IAircraftBasicDescentModel
-    IAircraftAdvDescentModel
+    IAircraftAdvancedDescentModel
     IAircraftBasicLandingModel
-    IAircraftAdvLandingModel
+    IAircraftAdvancedLandingModel
     IAircraftBasicTakeoffModel
-    IAircraftAdvTakeoffModel
+    IAircraftAdvancedTakeoffModel
     IAircraftVTOLModel
     IAircraftTerrainFollow
     IPerformanceModelOptions
-    IAdvFixedWingTool
-    IAdvFixedWingExternalAero
-    IAdvFixedWingSubsonicAero
-    IAdvFixedWingSubSuperHypersonicAero
-    IAdvFixedWingSubSuperHypersonicProp
-    IAdvFixedWingSupersonicAero
-    IAdvFixedWingGeometryBasic
-    IAdvFixedWingGeometryVariable
-    IAdvFixedWingElectricPowerplant
-    IAdvFixedWingExternalProp
-    IAdvFixedWingPistonPowerplant
-    IAdvFixedWingTurbopropPowerplant
-    IAdvFixedWingEmpiricalJetEngine
-    IAdvFixedWingTurbojetBasicABProp
-    IAdvFixedWingTurbofanBasicABProp
+    IAdvancedFixedWingTool
+    IAdvancedFixedWingExternalAero
+    IAdvancedFixedWingSubsonicAero
+    IAdvancedFixedWingSubSuperHypersonicAero
+    IAdvancedFixedWingSubSuperHypersonicProp
+    IAdvancedFixedWingSupersonicAero
+    IAdvancedFixedWingGeometryBasic
+    IAdvancedFixedWingGeometryVariable
+    IAdvancedFixedWingElectricPowerplant
+    IAdvancedFixedWingExternalProp
+    IAdvancedFixedWingPistonPowerplant
+    IAdvancedFixedWingTurbopropPowerplant
+    IAdvancedFixedWingEmpiricalJetEngine
+    IAdvancedFixedWingTurbojetBasicABProp
+    IAdvancedFixedWingTurbofanBasicABProp
     IAviatorVehicle
     IMissileModel
     IMissileAero
@@ -85,8 +85,8 @@ Interfaces
     IPropulsionEfficiencies
     IFuelModelKeroseneAFPROP
     IFuelModelKeroseneCEA
-    IAdvFixedWingRamjetBasic
-    IAdvFixedWingScramjetBasic
+    IAdvancedFixedWingRamjetBasic
+    IAdvancedFixedWingScramjetBasic
     IRefuelDumpProperties
     IProcedureFastTimeOptions
     IAtmosphereModelBasic
@@ -106,7 +106,7 @@ Interfaces
     IAircraftAero
     IAircraftProp
     IAircraftAccelerationMode
-    IAircraftAdvAccelerationModel
+    IAircraftAdvancedAccelerationModel
     IAeroPropManeuverModeHelper
     ICatalogRunway
     ICatalogAirport
@@ -156,10 +156,10 @@ Interfaces
     IMission
     IAviatorPropagator
     IPerformanceModel
-    IAdvFixedWingGeometry
-    IAdvFixedWingTurbofanBasicABPowerplant
-    IAdvFixedWingTurbojetBasicABPowerplant
-    IAdvFixedWingPowerplant
+    IAdvancedFixedWingGeometry
+    IAdvancedFixedWingTurbofanBasicABPowerplant
+    IAdvancedFixedWingTurbojetBasicABPowerplant
+    IAdvancedFixedWingPowerplant
     ISiteUnknown
     IAircraftTerrainFollowModel
     IBasicManeuverTargetPositionVel
@@ -286,7 +286,7 @@ Enumerations
     AIRCRAFT_PROP_STRATEGY
     AGL_MSL
     LANDING_APPROACH_FIX_RANGE_MODE
-    ACCELERATION_ADV_ACCEL_MODE
+    ACCELERATION_ADVANCED_ACCEL_MODE
     ACCEL_MANEUVER_AERO_PROP_MODE
     BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
     BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
@@ -358,9 +358,9 @@ Enumerations
     DESCENT_SPEED_TYPE
     TAKEOFF_LANDING_SPEED_MODE
     DEPARTURE_SPEED_MODE
-    ADV_FIXED_WING_AERO_STRATEGY
-    ADV_FIXED_WING_GEOMETRY
-    ADV_FIXED_WING_POWERPLANT_STRATEGY
+    ADVANCED_FIXED_WING_AERO_STRATEGY
+    ADVANCED_FIXED_WING_GEOMETRY
+    ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
     MISSILE_AERO_STRATEGY
     MISSILE_PROP_STRATEGY
     ROTORCRAFT_POWERPLANT_TYPE
@@ -448,15 +448,15 @@ Classes
     AircraftLanding
     AircraftTakeoff
     AircraftBasicClimbModel
-    AircraftAdvClimbModel
+    AircraftAdvancedClimbModel
     AircraftBasicCruiseModel
-    AircraftAdvCruiseModel
+    AircraftAdvancedCruiseModel
     AircraftBasicDescentModel
-    AircraftAdvDescentModel
+    AircraftAdvancedDescentModel
     AircraftBasicTakeoffModel
-    AircraftAdvTakeoffModel
+    AircraftAdvancedTakeoffModel
     AircraftBasicLandingModel
-    AircraftAdvLandingModel
+    AircraftAdvancedLandingModel
     AirportCategory
     ARINC424Airport
     ARINC424Runway
@@ -496,7 +496,7 @@ Classes
     AttitudeTransitions
     ClimbAndDescentTransitions
     AeroPropManeuverModeHelper
-    AircraftAdvAccelerationModel
+    AircraftAdvancedAccelerationModel
     AircraftAccelerationMode
     AircraftSimpleAero
     AircraftExternalAero
@@ -573,24 +573,24 @@ Classes
     ProcedureParallelFlightLine
     ProcedureVGTPoint
     PerformanceModelOptions
-    AdvFixedWingTool
-    AdvFixedWingExternalAero
-    AdvFixedWingSubsonicAero
-    AdvFixedWingSubSuperHypersonicAero
-    AdvFixedWingSupersonicAero
+    AdvancedFixedWingTool
+    AdvancedFixedWingExternalAero
+    AdvancedFixedWingSubsonicAero
+    AdvancedFixedWingSubSuperHypersonicAero
+    AdvancedFixedWingSupersonicAero
     PerformanceModel
-    AdvFixedWingGeometryBasic
-    AdvFixedWingGeometryVariable
-    AdvFixedWingElectricPowerplant
-    AdvFixedWingExternalProp
-    AdvFixedWingSubSuperHypersonicProp
-    AdvFixedWingPistonPowerplant
-    AdvFixedWingEmpiricalJetEngine
-    AdvFixedWingTurbofanBasicABPowerplant
-    AdvFixedWingTurbojetBasicABPowerplant
-    AdvFixedWingTurbofanBasicABProp
-    AdvFixedWingTurbojetBasicABProp
-    AdvFixedWingTurbopropPowerplant
+    AdvancedFixedWingGeometryBasic
+    AdvancedFixedWingGeometryVariable
+    AdvancedFixedWingElectricPowerplant
+    AdvancedFixedWingExternalProp
+    AdvancedFixedWingSubSuperHypersonicProp
+    AdvancedFixedWingPistonPowerplant
+    AdvancedFixedWingEmpiricalJetEngine
+    AdvancedFixedWingTurbofanBasicABPowerplant
+    AdvancedFixedWingTurbojetBasicABPowerplant
+    AdvancedFixedWingTurbofanBasicABProp
+    AdvancedFixedWingTurbojetBasicABProp
+    AdvancedFixedWingTurbopropPowerplant
     MissileSimpleAero
     MissileExternalAero
     MissileAdvancedAero
@@ -623,8 +623,8 @@ Classes
     PropulsionEfficiencies
     FuelModelKeroseneAFPROP
     FuelModelKeroseneCEA
-    AdvFixedWingRamjetBasic
-    AdvFixedWingScramjetBasic
+    AdvancedFixedWingRamjetBasic
+    AdvancedFixedWingScramjetBasic
     AircraftVTOLModel
     AircraftVTOL
     AircraftTerrainFollowModel
@@ -713,31 +713,31 @@ Interfaces
 .. autoclass:: IAircraftBasicFixedWingProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvClimbModel
+.. autoclass:: IAircraftAdvancedClimbModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraftBasicCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvCruiseModel
+.. autoclass:: IAircraftAdvancedCruiseModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraftBasicDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvDescentModel
+.. autoclass:: IAircraftAdvancedDescentModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraftBasicLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvLandingModel
+.. autoclass:: IAircraftAdvancedLandingModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraftBasicTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvTakeoffModel
+.. autoclass:: IAircraftAdvancedTakeoffModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAircraftVTOLModel
@@ -749,49 +749,49 @@ Interfaces
 .. autoclass:: IPerformanceModelOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTool
+.. autoclass:: IAdvancedFixedWingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingExternalAero
+.. autoclass:: IAdvancedFixedWingExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingSubsonicAero
+.. autoclass:: IAdvancedFixedWingSubsonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingSubSuperHypersonicAero
+.. autoclass:: IAdvancedFixedWingSubSuperHypersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingSubSuperHypersonicProp
+.. autoclass:: IAdvancedFixedWingSubSuperHypersonicProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingSupersonicAero
+.. autoclass:: IAdvancedFixedWingSupersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingGeometryBasic
+.. autoclass:: IAdvancedFixedWingGeometryBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingGeometryVariable
+.. autoclass:: IAdvancedFixedWingGeometryVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingElectricPowerplant
+.. autoclass:: IAdvancedFixedWingElectricPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingExternalProp
+.. autoclass:: IAdvancedFixedWingExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingPistonPowerplant
+.. autoclass:: IAdvancedFixedWingPistonPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTurbopropPowerplant
+.. autoclass:: IAdvancedFixedWingTurbopropPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingEmpiricalJetEngine
+.. autoclass:: IAdvancedFixedWingEmpiricalJetEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTurbojetBasicABProp
+.. autoclass:: IAdvancedFixedWingTurbojetBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTurbofanBasicABProp
+.. autoclass:: IAdvancedFixedWingTurbofanBasicABProp
     :members:
     :exclude-members: __init__
 .. autoclass:: IAviatorVehicle
@@ -875,10 +875,10 @@ Interfaces
 .. autoclass:: IFuelModelKeroseneCEA
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingRamjetBasic
+.. autoclass:: IAdvancedFixedWingRamjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingScramjetBasic
+.. autoclass:: IAdvancedFixedWingScramjetBasic
     :members:
     :exclude-members: __init__
 .. autoclass:: IRefuelDumpProperties
@@ -938,7 +938,7 @@ Interfaces
 .. autoclass:: IAircraftAccelerationMode
     :members:
     :exclude-members: __init__
-.. autoclass:: IAircraftAdvAccelerationModel
+.. autoclass:: IAircraftAdvancedAccelerationModel
     :members:
     :exclude-members: __init__
 .. autoclass:: IAeroPropManeuverModeHelper
@@ -1088,16 +1088,16 @@ Interfaces
 .. autoclass:: IPerformanceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingGeometry
+.. autoclass:: IAdvancedFixedWingGeometry
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTurbofanBasicABPowerplant
+.. autoclass:: IAdvancedFixedWingTurbofanBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingTurbojetBasicABPowerplant
+.. autoclass:: IAdvancedFixedWingTurbojetBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvFixedWingPowerplant
+.. autoclass:: IAdvancedFixedWingPowerplant
     :members:
     :exclude-members: __init__
 .. autoclass:: ISiteUnknown
@@ -1438,7 +1438,7 @@ Enumerations
     :members:
 .. autoenum:: LANDING_APPROACH_FIX_RANGE_MODE
     :members:
-.. autoenum:: ACCELERATION_ADV_ACCEL_MODE
+.. autoenum:: ACCELERATION_ADVANCED_ACCEL_MODE
     :members:
 .. autoenum:: ACCEL_MANEUVER_AERO_PROP_MODE
     :members:
@@ -1582,11 +1582,11 @@ Enumerations
     :members:
 .. autoenum:: DEPARTURE_SPEED_MODE
     :members:
-.. autoenum:: ADV_FIXED_WING_AERO_STRATEGY
+.. autoenum:: ADVANCED_FIXED_WING_AERO_STRATEGY
     :members:
-.. autoenum:: ADV_FIXED_WING_GEOMETRY
+.. autoenum:: ADVANCED_FIXED_WING_GEOMETRY
     :members:
-.. autoenum:: ADV_FIXED_WING_POWERPLANT_STRATEGY
+.. autoenum:: ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
     :members:
 .. autoenum:: MISSILE_AERO_STRATEGY
     :members:
@@ -1800,31 +1800,31 @@ Classes
 .. autoclass:: AircraftBasicClimbModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvClimbModel
+.. autoclass:: AircraftAdvancedClimbModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftBasicCruiseModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvCruiseModel
+.. autoclass:: AircraftAdvancedCruiseModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftBasicDescentModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvDescentModel
+.. autoclass:: AircraftAdvancedDescentModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftBasicTakeoffModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvTakeoffModel
+.. autoclass:: AircraftAdvancedTakeoffModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftBasicLandingModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvLandingModel
+.. autoclass:: AircraftAdvancedLandingModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AirportCategory
@@ -1944,7 +1944,7 @@ Classes
 .. autoclass:: AeroPropManeuverModeHelper
     :members:
     :exclude-members: __init__
-.. autoclass:: AircraftAdvAccelerationModel
+.. autoclass:: AircraftAdvancedAccelerationModel
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftAccelerationMode
@@ -2175,58 +2175,58 @@ Classes
 .. autoclass:: PerformanceModelOptions
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTool
+.. autoclass:: AdvancedFixedWingTool
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingExternalAero
+.. autoclass:: AdvancedFixedWingExternalAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingSubsonicAero
+.. autoclass:: AdvancedFixedWingSubsonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingSubSuperHypersonicAero
+.. autoclass:: AdvancedFixedWingSubSuperHypersonicAero
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingSupersonicAero
+.. autoclass:: AdvancedFixedWingSupersonicAero
     :members:
     :exclude-members: __init__
 .. autoclass:: PerformanceModel
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingGeometryBasic
+.. autoclass:: AdvancedFixedWingGeometryBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingGeometryVariable
+.. autoclass:: AdvancedFixedWingGeometryVariable
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingElectricPowerplant
+.. autoclass:: AdvancedFixedWingElectricPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingExternalProp
+.. autoclass:: AdvancedFixedWingExternalProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingSubSuperHypersonicProp
+.. autoclass:: AdvancedFixedWingSubSuperHypersonicProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingPistonPowerplant
+.. autoclass:: AdvancedFixedWingPistonPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingEmpiricalJetEngine
+.. autoclass:: AdvancedFixedWingEmpiricalJetEngine
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTurbofanBasicABPowerplant
+.. autoclass:: AdvancedFixedWingTurbofanBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTurbojetBasicABPowerplant
+.. autoclass:: AdvancedFixedWingTurbojetBasicABPowerplant
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTurbofanBasicABProp
+.. autoclass:: AdvancedFixedWingTurbofanBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTurbojetBasicABProp
+.. autoclass:: AdvancedFixedWingTurbojetBasicABProp
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingTurbopropPowerplant
+.. autoclass:: AdvancedFixedWingTurbopropPowerplant
     :members:
     :exclude-members: __init__
 .. autoclass:: MissileSimpleAero
@@ -2325,10 +2325,10 @@ Classes
 .. autoclass:: FuelModelKeroseneCEA
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingRamjetBasic
+.. autoclass:: AdvancedFixedWingRamjetBasic
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvFixedWingScramjetBasic
+.. autoclass:: AdvancedFixedWingScramjetBasic
     :members:
     :exclude-members: __init__
 .. autoclass:: AircraftVTOLModel
