@@ -28,6 +28,14 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+
+plotter = GlobeWidget(stk, 640, 480)
+plotter.show()
+# -
+
 # ## Adding a satellite to the scenario
 #
 # Now that a new scenario is available, add a new satellite:
@@ -216,10 +224,20 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 
 satellite.propagator.run_mission_control_sequence()
 
-# ## Plot the trajectory
+# ## Retrieve results
 
 # +
-from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+start_transfer = satellite.propagator.main_sequence["Start transfer"]
+finish_transfer = satellite.propagator.main_sequence["End transfer"]
 
-globe_plotter = GlobeWidget(stk, 640, 480)
-globe_plotter.show()
+start_differential_corrector = start_transfer.profiles["Differential Corrector"]
+finish_differential_corrector = finish_transfer.profiles["Differential Corrector"]
+
+start_transfer.apply_profiles()
+finish_transfer.apply_profiles()
+# -
+
+# ## Plot the trajectory
+
+plotter.zoom_out(factor=3)
+plotter.show()

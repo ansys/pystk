@@ -349,6 +349,16 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
+    def zoom_out(self, factor):
+        event = {
+            "event_type": "wheel",
+            "x": 0,
+            "y": 0,
+            "dy": 100 * factor,
+            "modifiers": [],
+        }
+        self.handle_event(event)
+
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
