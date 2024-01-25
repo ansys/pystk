@@ -226,6 +226,5 @@ satellite.propagator.run_mission_control_sequence()
 
 # ## Plot the trajectory
 
-# +
 globe_plotter = GlobeWidget(stk, 640, 480)
 globe_plotter.show()

@@ -353,23 +353,8 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
 
-    def __repr__(self):
-        try:
-            shell = get_ipython().__class__.__name__
-            if shell == "ZMQInteractiveShell":
-                # Jupyter notebook or qtconsole
-                is_interactive = True
-            elif shell == "TerminalInteractiveShell":
-                # Terminal running IPython
-                is_interactive = False
-            else:
-                # Other type of shell
-                is_interactive = False
-        except NameError:
-            # Standard Python interpreter
-            is_interactive = False
-        finally:
-            return self.snapshot() if is_interactive else super().__repr__()
+    def _repr_html_(self):
+        return self.snapshot()
 
     def show(self):
         return self
