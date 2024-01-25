@@ -353,6 +353,9 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
 
+    def show(self):
+        return self
+
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
