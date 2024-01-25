@@ -356,9 +356,9 @@ class WidgetBase(RemoteFrameBuffer):
     def _repr_html_(self):
         return self.snapshot()
 
-    def show(self):
-        return self
-
+    def show(self, **snapshot_kwargs):
+        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "true") == "true"
+        return self.snapshot(**snapshot_kwargs) if needs_snapshot else self
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
