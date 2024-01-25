@@ -12,7 +12,6 @@ env:
   STK_DOCKER_IMAGE: 'ansys/stk:latest-centos7'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
-  SKIP_CICD: contains(github.event.pull_request.labels.*.name, 'ci:skip')
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -26,7 +25,8 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
-    if: !env.SKIP_CICD
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     steps:
      - uses: actions/checkout@v4
 
@@ -44,7 +44,7 @@ jobs:
     name: "Branch style checks"
     runs-on: ubuntu-latest
     if: |
-      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
@@ -54,7 +54,7 @@ jobs:
     name: "Code style checks"
     runs-on: ubuntu-latest
     if: |
-      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
@@ -66,7 +66,7 @@ jobs:
     name: "Doc style checks"
     runs-on: ubuntu-latest
     if: |
-      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
@@ -78,7 +78,7 @@ jobs:
     name: "Doc build"
     runs-on: ubuntu-latest
     if: |
-      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     needs: doc-style
     timeout-minutes: 30
@@ -173,7 +173,7 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
@@ -284,7 +284,8 @@ jobs:
   build-library:
     name: "Build library"
     runs-on: ubuntu-latest
-    if: !env.SKIP_CICD
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v5
