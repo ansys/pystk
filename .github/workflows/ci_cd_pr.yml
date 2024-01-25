@@ -26,7 +26,7 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
-    if: !{{ env.SKIP_CICD }}
+    if: !env.SKIP_CICD
     steps:
      - uses: actions/checkout@v4
 
@@ -43,7 +43,9 @@ jobs:
   branch-name-style:
     name: "Branch style checks"
     runs-on: ubuntu-latest
-    if: !{{ env.SKIP_CICD }}
+    if: |
+      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
       - uses: ansys/actions/branch-name-style@v5
@@ -51,7 +53,9 @@ jobs:
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
-    if: !{{ env.SKIP_CICD }}
+    if: |
+      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
       - uses: ansys/actions/code-style@v5
@@ -61,7 +65,9 @@ jobs:
   doc-style:
     name: "Doc style checks"
     runs-on: ubuntu-latest
-    if: !{{ env.SKIP_CICD }}
+    if: |
+      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
       - uses: ansys/actions/doc-style@v5
@@ -71,7 +77,9 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ubuntu-latest
-    if: !{{env.SKIP_CICD}}
+    if: |
+      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: doc-style
     timeout-minutes: 30
     steps:
@@ -165,8 +173,8 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'tests:skip') &&
-      !{{ env.SKIP_CICD }}
+      !env.SKIP_CICD ||
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -276,7 +284,7 @@ jobs:
   build-library:
     name: "Build library"
     runs-on: ubuntu-latest
-    if: !{{ env.SKIP_CICD }}
+    if: !env.SKIP_CICD
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v5
