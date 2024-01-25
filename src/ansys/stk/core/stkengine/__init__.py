@@ -40,7 +40,7 @@ class STKEngineApplication(STKXApplication):
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
-
+    
     def __init__(self):
         STKXApplication.__init__(self)
         self.__dict__["_initialized"] = False

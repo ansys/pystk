@@ -649,7 +649,7 @@ class EarlyBoundTests(TestBase):
     # region Advanced_AdvEllipsoid
     def test_Advanced_AdvEllipsoid(self):
         advanced: "AdvCATAdvanced" = EarlyBoundTests.AG_ACAT.advanced
-        advEllipsoid: "AdvCATAdvEllipsoid" = advanced.adv_ellipsoid
+        advEllipsoid: "AdvCATAdvancedEllipsoid" = advanced.advanced_ellipsoid
 
         SatDBDir: str = TestBase.PathCombine(TestBase.GetSTKDBDir(), r"Databases\Satellite")
 
