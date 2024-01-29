@@ -2,52 +2,53 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
-__all__ = ["ACCELERATION_ADV_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
+__all__ = ["ACCELERATION_ADVANCED_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
 "ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", "ADDS_MISSING_MSG_TYPE", "ADDS_MSG_EXTRAP_TYPE", "ADDS_MSG_INTERP_TYPE", 
-"ADV_FIXED_WING_AERO_STRATEGY", "ADV_FIXED_WING_GEOMETRY", "ADV_FIXED_WING_POWERPLANT_STRATEGY", "AERO_PROP_FLIGHT_MODE", 
+"ADVANCED_FIXED_WING_AERO_STRATEGY", "ADVANCED_FIXED_WING_GEOMETRY", "ADVANCED_FIXED_WING_POWERPLANT_STRATEGY", "AERO_PROP_FLIGHT_MODE", 
 "AERO_PROP_SIMPLE_MODE", "AFPROP_FUEL_TYPE", "AGL_MSL", "AILERON_ROLL_FLIGHT_PATH", "AILERON_ROLL_MODE", "AIRCRAFT_AERO_STRATEGY", 
 "AIRCRAFT_PROP_STRATEGY", "AIRSPEED_TYPE", "ALTITUDE_CONSTRAINT_MANEUVER_MODE", "ALTITUDE_REFERENCE", "AND_OR", "ANGLE_MODE", 
 "APPROACH_MODE", "ARINC424Airport", "ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", "ARINC424Source", "ARINC424Waypoint", 
-"ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", "AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZ_PLANE_MODE", "AdvFixedWingElectricPowerplant", 
-"AdvFixedWingEmpiricalJetEngine", "AdvFixedWingExternalAero", "AdvFixedWingExternalProp", "AdvFixedWingGeometryBasic", "AdvFixedWingGeometryVariable", 
-"AdvFixedWingPistonPowerplant", "AdvFixedWingRamjetBasic", "AdvFixedWingScramjetBasic", "AdvFixedWingSubSuperHypersonicAero", 
-"AdvFixedWingSubSuperHypersonicProp", "AdvFixedWingSubsonicAero", "AdvFixedWingSupersonicAero", "AdvFixedWingTool", "AdvFixedWingTurbofanBasicABPowerplant", 
-"AdvFixedWingTurbofanBasicABProp", "AdvFixedWingTurbojetBasicABPowerplant", "AdvFixedWingTurbojetBasicABProp", "AdvFixedWingTurbopropPowerplant", 
-"AeroPropManeuverModeHelper", "AircraftAcceleration", "AircraftAccelerationMode", "AircraftAdvAccelerationModel", "AircraftAdvClimbModel", 
-"AircraftAdvCruiseModel", "AircraftAdvDescentModel", "AircraftAdvLandingModel", "AircraftAdvTakeoffModel", "AircraftAero", 
-"AircraftBasicAccelerationModel", "AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAero", 
-"AircraftBasicFixedWingProp", "AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", 
-"AircraftCruise", "AircraftDescent", "AircraftExternalAero", "AircraftExternalProp", "AircraftLanding", "AircraftModel", 
-"AircraftModels", "AircraftProp", "AircraftSimpleAero", "AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", 
-"AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", "AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", 
-"AltitudeOptions", "ArcAltitudeAndDelayOptions", "ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", 
-"AtmosphereModelBasic", "AttitudeTransitions", "AviatorPropagator", "BALLISTIC_3D_CONTROL_MODE", "BASIC_FIXED_WING_PROP_MODE", 
-"BASIC_MANEUVER_AIRSPEED_MODE", "BASIC_MANEUVER_ALTITUDE_LIMIT", "BASIC_MANEUVER_FUEL_FLOW_TYPE", "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", 
-"BASIC_MANEUVER_REFERENCE_FRAME", "BASIC_MANEUVER_STRATEGY", "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS", "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", 
-"BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", "BasicFixedWingFwdFlightLiftHelper", "BasicManeuverAirspeedOptions", "BasicManeuverStrategyAileronRoll", 
-"BasicManeuverStrategyAutopilotNav", "BasicManeuverStrategyAutopilotProf", "BasicManeuverStrategyBallistic3D", "BasicManeuverStrategyBarrelRoll", 
-"BasicManeuverStrategyBezier", "BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", "BasicManeuverStrategyGlideProfile", 
-"BasicManeuverStrategyIntercept", "BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", "BasicManeuverStrategyPitch3D", 
-"BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelSpeedAltitude", "BasicManeuverStrategyRelativeBearing", 
-"BasicManeuverStrategyRelativeCourse", "BasicManeuverStrategyRelativeFPA", "BasicManeuverStrategyRendezvous", "BasicManeuverStrategyRollingPull", 
-"BasicManeuverStrategySimpleTurn", "BasicManeuverStrategySmoothAccel", "BasicManeuverStrategySmoothTurn", "BasicManeuverStrategyStationkeeping", 
-"BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", "BasicManeuverTargetPositionVel", "BasicManeuverTargetPositionVelNoisyBrnRng", 
-"BasicManeuverTargetPositionVelNoisySurfTgt", "CEA_FUEL_TYPE", "CLIMB_SPEED_TYPE", "CLOSURE_MODE", "CLOSURE_VALUE", "CRUISE_MAX_PERF_SPEED_TYPE", 
-"CRUISE_SPEED", "CalculationOptions", "Catalog", "ClimbAndDescentTransitions", "Configuration", "CruiseAirspeedAndProfileOptions", 
-"CruiseAirspeedOptions", "CruiseAirspeedProfile", "DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DELAY_ALTITUDE_MODE", 
-"DELAY_TURN_DIRECTION", "DEPARTURE_SPEED_MODE", "DESCENT_SPEED_TYPE", "ERROR_CODES", "EXT_EPHEM_FLIGHT_MODE", "EnrouteAndDelayOptions", 
-"EnrouteOptions", "EnrouteTurnDirectionOptions", "FLIGHT_LINE_PROC_TYPE", "FLY_AOA_LEFT_RIGHT", "FLY_TO_FLIGHT_PATH_ANGLE_MODE", 
-"FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", "FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", "FuelTankExternal", 
-"FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", "HOLDING_PROFILE_MODE", "HOLD_REFUEL_DUMP_MODE", "HOVER_ALTITUDE_MODE", 
-"HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", "IADDSMessage", "IADDSMessageCollection", "IARINC424Airport", 
-"IARINC424Item", "IARINC424Runway", "IARINC424Source", "IAdvFixedWingElectricPowerplant", "IAdvFixedWingEmpiricalJetEngine", 
-"IAdvFixedWingExternalAero", "IAdvFixedWingExternalProp", "IAdvFixedWingGeometry", "IAdvFixedWingGeometryBasic", "IAdvFixedWingGeometryVariable", 
-"IAdvFixedWingPistonPowerplant", "IAdvFixedWingPowerplant", "IAdvFixedWingRamjetBasic", "IAdvFixedWingScramjetBasic", "IAdvFixedWingSubSuperHypersonicAero", 
-"IAdvFixedWingSubSuperHypersonicProp", "IAdvFixedWingSubsonicAero", "IAdvFixedWingSupersonicAero", "IAdvFixedWingTool", 
-"IAdvFixedWingTurbofanBasicABPowerplant", "IAdvFixedWingTurbofanBasicABProp", "IAdvFixedWingTurbojetBasicABPowerplant", 
-"IAdvFixedWingTurbojetBasicABProp", "IAdvFixedWingTurbopropPowerplant", "IAeroPropManeuverModeHelper", "IAircraftAcceleration", 
-"IAircraftAccelerationMode", "IAircraftAdvAccelerationModel", "IAircraftAdvClimbModel", "IAircraftAdvCruiseModel", "IAircraftAdvDescentModel", 
-"IAircraftAdvLandingModel", "IAircraftAdvTakeoffModel", "IAircraftAero", "IAircraftBasicAccelerationModel", "IAircraftBasicClimbModel", 
+"ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", "AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZ_PLANE_MODE", "AdvancedFixedWingElectricPowerplant", 
+"AdvancedFixedWingEmpiricalJetEngine", "AdvancedFixedWingExternalAero", "AdvancedFixedWingExternalProp", "AdvancedFixedWingGeometryBasic", 
+"AdvancedFixedWingGeometryVariable", "AdvancedFixedWingPistonPowerplant", "AdvancedFixedWingRamjetBasic", "AdvancedFixedWingScramjetBasic", 
+"AdvancedFixedWingSubSuperHypersonicAero", "AdvancedFixedWingSubSuperHypersonicProp", "AdvancedFixedWingSubsonicAero", "AdvancedFixedWingSupersonicAero", 
+"AdvancedFixedWingTool", "AdvancedFixedWingTurbofanBasicABPowerplant", "AdvancedFixedWingTurbofanBasicABProp", "AdvancedFixedWingTurbojetBasicABPowerplant", 
+"AdvancedFixedWingTurbojetBasicABProp", "AdvancedFixedWingTurbopropPowerplant", "AeroPropManeuverModeHelper", "AircraftAcceleration", 
+"AircraftAccelerationMode", "AircraftAdvancedAccelerationModel", "AircraftAdvancedClimbModel", "AircraftAdvancedCruiseModel", 
+"AircraftAdvancedDescentModel", "AircraftAdvancedLandingModel", "AircraftAdvancedTakeoffModel", "AircraftAero", "AircraftBasicAccelerationModel", 
+"AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAero", "AircraftBasicFixedWingProp", 
+"AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", "AircraftCruise", "AircraftDescent", 
+"AircraftExternalAero", "AircraftExternalProp", "AircraftLanding", "AircraftModel", "AircraftModels", "AircraftProp", "AircraftSimpleAero", 
+"AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", "AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", 
+"AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", "AltitudeOptions", "ArcAltitudeAndDelayOptions", 
+"ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", "AtmosphereModelBasic", "AttitudeTransitions", 
+"AviatorPropagator", "BALLISTIC_3D_CONTROL_MODE", "BASIC_FIXED_WING_PROP_MODE", "BASIC_MANEUVER_AIRSPEED_MODE", "BASIC_MANEUVER_ALTITUDE_LIMIT", 
+"BASIC_MANEUVER_FUEL_FLOW_TYPE", "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", "BASIC_MANEUVER_REFERENCE_FRAME", "BASIC_MANEUVER_STRATEGY", 
+"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS", "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", "BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", 
+"BasicFixedWingFwdFlightLiftHelper", "BasicManeuverAirspeedOptions", "BasicManeuverStrategyAileronRoll", "BasicManeuverStrategyAutopilotNav", 
+"BasicManeuverStrategyAutopilotProf", "BasicManeuverStrategyBallistic3D", "BasicManeuverStrategyBarrelRoll", "BasicManeuverStrategyBezier", 
+"BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", "BasicManeuverStrategyGlideProfile", "BasicManeuverStrategyIntercept", 
+"BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", "BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", 
+"BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelSpeedAltitude", "BasicManeuverStrategyRelativeBearing", "BasicManeuverStrategyRelativeCourse", 
+"BasicManeuverStrategyRelativeFPA", "BasicManeuverStrategyRendezvous", "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", 
+"BasicManeuverStrategySmoothAccel", "BasicManeuverStrategySmoothTurn", "BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", 
+"BasicManeuverStrategyWeave", "BasicManeuverTargetPositionVel", "BasicManeuverTargetPositionVelNoisyBrnRng", "BasicManeuverTargetPositionVelNoisySurfTgt", 
+"CEA_FUEL_TYPE", "CLIMB_SPEED_TYPE", "CLOSURE_MODE", "CLOSURE_VALUE", "CRUISE_MAX_PERF_SPEED_TYPE", "CRUISE_SPEED", "CalculationOptions", 
+"Catalog", "ClimbAndDescentTransitions", "Configuration", "CruiseAirspeedAndProfileOptions", "CruiseAirspeedOptions", "CruiseAirspeedProfile", 
+"DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DELAY_ALTITUDE_MODE", "DELAY_TURN_DIRECTION", "DEPARTURE_SPEED_MODE", 
+"DESCENT_SPEED_TYPE", "ERROR_CODES", "EXT_EPHEM_FLIGHT_MODE", "EnrouteAndDelayOptions", "EnrouteOptions", "EnrouteTurnDirectionOptions", 
+"FLIGHT_LINE_PROC_TYPE", "FLY_AOA_LEFT_RIGHT", "FLY_TO_FLIGHT_PATH_ANGLE_MODE", "FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", 
+"FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", "FuelTankExternal", "FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", 
+"HOLDING_PROFILE_MODE", "HOLD_REFUEL_DUMP_MODE", "HOVER_ALTITUDE_MODE", "HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", 
+"IADDSMessage", "IADDSMessageCollection", "IARINC424Airport", "IARINC424Item", "IARINC424Runway", "IARINC424Source", "IAdvancedFixedWingElectricPowerplant", 
+"IAdvancedFixedWingEmpiricalJetEngine", "IAdvancedFixedWingExternalAero", "IAdvancedFixedWingExternalProp", "IAdvancedFixedWingGeometry", 
+"IAdvancedFixedWingGeometryBasic", "IAdvancedFixedWingGeometryVariable", "IAdvancedFixedWingPistonPowerplant", "IAdvancedFixedWingPowerplant", 
+"IAdvancedFixedWingRamjetBasic", "IAdvancedFixedWingScramjetBasic", "IAdvancedFixedWingSubSuperHypersonicAero", "IAdvancedFixedWingSubSuperHypersonicProp", 
+"IAdvancedFixedWingSubsonicAero", "IAdvancedFixedWingSupersonicAero", "IAdvancedFixedWingTool", "IAdvancedFixedWingTurbofanBasicABPowerplant", 
+"IAdvancedFixedWingTurbofanBasicABProp", "IAdvancedFixedWingTurbojetBasicABPowerplant", "IAdvancedFixedWingTurbojetBasicABProp", 
+"IAdvancedFixedWingTurbopropPowerplant", "IAeroPropManeuverModeHelper", "IAircraftAcceleration", "IAircraftAccelerationMode", 
+"IAircraftAdvancedAccelerationModel", "IAircraftAdvancedClimbModel", "IAircraftAdvancedCruiseModel", "IAircraftAdvancedDescentModel", 
+"IAircraftAdvancedLandingModel", "IAircraftAdvancedTakeoffModel", "IAircraftAero", "IAircraftBasicAccelerationModel", "IAircraftBasicClimbModel", 
 "IAircraftBasicCruiseModel", "IAircraftBasicDescentModel", "IAircraftBasicFixedWingAero", "IAircraftBasicFixedWingProp", 
 "IAircraftBasicLandingModel", "IAircraftBasicTakeoffModel", "IAircraftCategory", "IAircraftClimb", "IAircraftCruise", "IAircraftDescent", 
 "IAircraftExternalAero", "IAircraftExternalProp", "IAircraftLanding", "IAircraftModel", "IAircraftModels", "IAircraftProp", 
@@ -759,7 +760,7 @@ LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_END.__doc__ = "Runway end."
 
 agcls.AgTypeNameMap["LANDING_APPROACH_FIX_RANGE_MODE"] = LANDING_APPROACH_FIX_RANGE_MODE
 
-class ACCELERATION_ADV_ACCEL_MODE(IntEnum):
+class ACCELERATION_ADVANCED_ACCEL_MODE(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
    
     ACCEL_MODE_MAX_ACCEL = 0
@@ -767,10 +768,10 @@ class ACCELERATION_ADV_ACCEL_MODE(IntEnum):
     ACCEL_MODE_OVERRIDE_ACCEL = 1
     """Manually override the acceleration."""
 
-ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL.__doc__ = "Max acceleration."
-ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_OVERRIDE_ACCEL.__doc__ = "Manually override the acceleration."
+ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL.__doc__ = "Max acceleration."
+ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_OVERRIDE_ACCEL.__doc__ = "Manually override the acceleration."
 
-agcls.AgTypeNameMap["ACCELERATION_ADV_ACCEL_MODE"] = ACCELERATION_ADV_ACCEL_MODE
+agcls.AgTypeNameMap["ACCELERATION_ADVANCED_ACCEL_MODE"] = ACCELERATION_ADVANCED_ACCEL_MODE
 
 class ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
@@ -2022,7 +2023,7 @@ DEPARTURE_SPEED_MODE.USE_CLIMB_MODEL.__doc__ = "The aircraft will fly at the air
 
 agcls.AgTypeNameMap["DEPARTURE_SPEED_MODE"] = DEPARTURE_SPEED_MODE
 
-class ADV_FIXED_WING_AERO_STRATEGY(IntEnum):
+class ADVANCED_FIXED_WING_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
    
     EXTERNAL_AERO_FILE = 0
@@ -2034,14 +2035,14 @@ class ADV_FIXED_WING_AERO_STRATEGY(IntEnum):
     SUPERSONIC_AERO = 3
     """Define the aerodynamics for an aircraft that generally travels at supersonic speeds."""
 
-ADV_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
-ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
-ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
-ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
+ADVANCED_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
+ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
+ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
+ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
 
-agcls.AgTypeNameMap["ADV_FIXED_WING_AERO_STRATEGY"] = ADV_FIXED_WING_AERO_STRATEGY
+agcls.AgTypeNameMap["ADVANCED_FIXED_WING_AERO_STRATEGY"] = ADVANCED_FIXED_WING_AERO_STRATEGY
 
-class ADV_FIXED_WING_GEOMETRY(IntEnum):
+class ADVANCED_FIXED_WING_GEOMETRY(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
    
     BASIC_GEOMETRY = 0
@@ -2049,12 +2050,12 @@ class ADV_FIXED_WING_GEOMETRY(IntEnum):
     VARIABLE_GEOMETRY = 1
     """Define the minimum and maximum properties of an adjustable wing."""
 
-ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY.__doc__ = "Define the static properties of an immovable wing."
-ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY.__doc__ = "Define the minimum and maximum properties of an adjustable wing."
+ADVANCED_FIXED_WING_GEOMETRY.BASIC_GEOMETRY.__doc__ = "Define the static properties of an immovable wing."
+ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY.__doc__ = "Define the minimum and maximum properties of an adjustable wing."
 
-agcls.AgTypeNameMap["ADV_FIXED_WING_GEOMETRY"] = ADV_FIXED_WING_GEOMETRY
+agcls.AgTypeNameMap["ADVANCED_FIXED_WING_GEOMETRY"] = ADVANCED_FIXED_WING_GEOMETRY
 
-class ADV_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
+class ADVANCED_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     """The powerplant strategy for the Advanced Fixed Wing Tool."""
    
     ELECTRIC_POWERPLANT = 0
@@ -2082,20 +2083,20 @@ class ADV_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     TURBOPROP = 11
     """An empirical model that models a turboprop engine."""
 
-ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT.__doc__ = "An electric engine."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE.__doc__ = "Define the powerplant using an external .prop file."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT.__doc__ = "A piston, or reciprocating, engine."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT.__doc__ = "A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB.__doc__ = "A thermodynamic model of a dual-spool turbofan engine that has an afterburner."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING.__doc__ = "An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING.__doc__ = "An empirical model that models a turbojet engine that has an afterburner."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB.__doc__ = "An empirical model that models a turbojet engine."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET.__doc__ = "An empirical model that models a turbojet engine."
-ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP.__doc__ = "An empirical model that models a turboprop engine."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT.__doc__ = "An electric engine."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE.__doc__ = "Define the powerplant using an external .prop file."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT.__doc__ = "A piston, or reciprocating, engine."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT.__doc__ = "A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB.__doc__ = "A thermodynamic model of a dual-spool turbofan engine that has an afterburner."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more fan thrust than jet thrust."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS.__doc__ = "An empirical model for a turbofan engine that produces significantly more jet thrust than fan thrust."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING.__doc__ = "An empirical model for a turbofan engine that has an afterburner and produces significantly more jet thrust than fan thrust."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING.__doc__ = "An empirical model that models a turbojet engine that has an afterburner."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB.__doc__ = "An empirical model that models a turbojet engine."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET.__doc__ = "An empirical model that models a turbojet engine."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP.__doc__ = "An empirical model that models a turboprop engine."
 
-agcls.AgTypeNameMap["ADV_FIXED_WING_POWERPLANT_STRATEGY"] = ADV_FIXED_WING_POWERPLANT_STRATEGY
+agcls.AgTypeNameMap["ADVANCED_FIXED_WING_POWERPLANT_STRATEGY"] = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
 
 class MISSILE_AERO_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
@@ -3268,7 +3269,7 @@ class IAircraftModel(object):
                              "get_landing" : 6,
                              "get_takeoff" : 7,
                              "get_default_configuration" : 8,
-                             "get_adv_fixed_wing_tool" : 9,
+                             "get_advanced_fixed_wing_tool" : 9,
                              "get_as_catalog_item" : 10,
                              "get_vtol" : 11,
                              "get_terrain_follow" : 12, }
@@ -3349,13 +3350,13 @@ class IAircraftModel(object):
         """The aircraft's default configuration as saved in the catalog."""
         return self._intf.get_property(IAircraftModel._metadata, IAircraftModel._get_default_configuration_metadata)
 
-    _get_adv_fixed_wing_tool_metadata = { "name" : "adv_fixed_wing_tool",
+    _get_advanced_fixed_wing_tool_metadata = { "name" : "advanced_fixed_wing_tool",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def adv_fixed_wing_tool(self) -> "AdvFixedWingTool":
+    def advanced_fixed_wing_tool(self) -> "AdvancedFixedWingTool":
         """Get the Advanced Fixed Wing Tool for the aircraft."""
-        return self._intf.get_property(IAircraftModel._metadata, IAircraftModel._get_adv_fixed_wing_tool_metadata)
+        return self._intf.get_property(IAircraftModel._metadata, IAircraftModel._get_advanced_fixed_wing_tool_metadata)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4944,7 +4945,7 @@ class IAircraftBasicFixedWingProp(object):
 agcls.AgClassCatalog.add_catalog_entry("{0c92bc71-bb3f-4953-8171-6efb0d0ab922}", IAircraftBasicFixedWingProp)
 agcls.AgTypeNameMap["IAircraftBasicFixedWingProp"] = IAircraftBasicFixedWingProp
 
-class IAircraftAdvClimbModel(object):
+class IAircraftAdvancedClimbModel(object):
     """Interface used to access the advanced climb model options for a climb model of an aircraft in the Aviator catalog."""
 
     _num_methods = 21
@@ -4975,16 +4976,16 @@ class IAircraftAdvClimbModel(object):
                              "get_as_catalog_item" : 21, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvClimbModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedClimbModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvClimbModel)
+        return get_interface_property(attrname, IAircraftAdvancedClimbModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvClimbModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedClimbModel, None)
     
     _get_climb_speed_type_metadata = { "name" : "climb_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -4992,7 +4993,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def climb_speed_type(self) -> "CLIMB_SPEED_TYPE":
         """The mode to calculate the aircraft's airspeed while climbing."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_climb_speed_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_climb_speed_type_metadata)
 
     _set_climb_speed_type_metadata = { "name" : "climb_speed_type",
             "arg_types" : (agcom.LONG,),
@@ -5000,7 +5001,7 @@ class IAircraftAdvClimbModel(object):
     @climb_speed_type.setter
     def climb_speed_type(self, newVal:"CLIMB_SPEED_TYPE") -> None:
         """The mode to calculate the aircraft's airspeed while climbing."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_climb_speed_type_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_climb_speed_type_metadata, newVal)
 
     _get_climb_override_airspeed_type_metadata = { "name" : "climb_override_airspeed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5008,7 +5009,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def climb_override_airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the override airspeed type."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_climb_override_airspeed_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_climb_override_airspeed_type_metadata)
 
     _get_climb_override_airspeed_metadata = { "name" : "climb_override_airspeed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5016,14 +5017,14 @@ class IAircraftAdvClimbModel(object):
     @property
     def climb_override_airspeed(self) -> float:
         """Get the override airsepeed."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_climb_override_airspeed_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_climb_override_airspeed_metadata)
 
     _set_climb_override_airspeed_metadata = { "name" : "set_climb_override_airspeed",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_climb_override_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the override airspeed and airspeed type."""
-        return self._intf.invoke(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_climb_override_airspeed_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_climb_override_airspeed_metadata, airspeedType, aispeed)
 
     _get_use_afterburner_metadata = { "name" : "use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -5031,7 +5032,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def use_afterburner(self) -> bool:
         """Opt to use the engine's afterburner when climbing if available."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_use_afterburner_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_use_afterburner_metadata)
 
     _set_use_afterburner_metadata = { "name" : "use_afterburner",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -5039,7 +5040,7 @@ class IAircraftAdvClimbModel(object):
     @use_afterburner.setter
     def use_afterburner(self, newVal:bool) -> None:
         """Opt to use the engine's afterburner when climbing if available."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_use_afterburner_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_use_afterburner_metadata, newVal)
 
     _get_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -5047,7 +5048,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def use_airspeed_limit(self) -> bool:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_use_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_use_airspeed_limit_metadata)
 
     _set_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -5055,7 +5056,7 @@ class IAircraftAdvClimbModel(object):
     @use_airspeed_limit.setter
     def use_airspeed_limit(self, newVal:bool) -> None:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_use_airspeed_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_use_airspeed_limit_metadata, newVal)
 
     _get_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5063,7 +5064,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def altitude_limit(self) -> float:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_altitude_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_altitude_limit_metadata)
 
     _set_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (agcom.DOUBLE,),
@@ -5071,7 +5072,7 @@ class IAircraftAdvClimbModel(object):
     @altitude_limit.setter
     def altitude_limit(self, newVal:float) -> None:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_altitude_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_altitude_limit_metadata, newVal)
 
     _get_airspeed_limit_type_metadata = { "name" : "airspeed_limit_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5079,7 +5080,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def airspeed_limit_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_airspeed_limit_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_airspeed_limit_type_metadata)
 
     _get_airspeed_limit_metadata = { "name" : "airspeed_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5087,14 +5088,14 @@ class IAircraftAdvClimbModel(object):
     @property
     def airspeed_limit(self) -> float:
         """Get the airsepeed limit below the altitude threshold."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_airspeed_limit_metadata)
 
     _set_airspeed_limit_metadata = { "name" : "set_airspeed_limit",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_airspeed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        return self._intf.invoke(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_airspeed_limit_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_airspeed_limit_metadata, airspeedType, aispeed)
 
     _get_use_flight_path_angle_limit_metadata = { "name" : "use_flight_path_angle_limit",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -5102,7 +5103,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def use_flight_path_angle_limit(self) -> bool:
         """Opt to limit the flight path angle."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_use_flight_path_angle_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_use_flight_path_angle_limit_metadata)
 
     _set_use_flight_path_angle_limit_metadata = { "name" : "use_flight_path_angle_limit",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -5110,7 +5111,7 @@ class IAircraftAdvClimbModel(object):
     @use_flight_path_angle_limit.setter
     def use_flight_path_angle_limit(self, newVal:bool) -> None:
         """Opt to limit the flight path angle."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_use_flight_path_angle_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_use_flight_path_angle_limit_metadata, newVal)
 
     _get_flight_path_angle_metadata = { "name" : "flight_path_angle",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -5118,14 +5119,14 @@ class IAircraftAdvClimbModel(object):
     @property
     def flight_path_angle(self) -> typing.Any:
         """Get the flight path angle limit."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_flight_path_angle_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_flight_path_angle_metadata)
 
     _set_flight_path_angle_metadata = { "name" : "set_flight_path_angle",
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def set_flight_path_angle(self, angle:typing.Any) -> None:
         """Enable the flight path angle limit an set the flight path angle value."""
-        return self._intf.invoke(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_flight_path_angle_metadata, angle)
+        return self._intf.invoke(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_flight_path_angle_metadata, angle)
 
     _get_compute_delta_altitude_metadata = { "name" : "compute_delta_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5133,7 +5134,7 @@ class IAircraftAdvClimbModel(object):
     @property
     def compute_delta_altitude(self) -> float:
         """The maximum change in altitude in a computed segment before the data is sampled again."""
-        return self._intf.get_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_compute_delta_altitude_metadata)
+        return self._intf.get_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_compute_delta_altitude_metadata)
 
     _set_compute_delta_altitude_metadata = { "name" : "compute_delta_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -5141,18 +5142,18 @@ class IAircraftAdvClimbModel(object):
     @compute_delta_altitude.setter
     def compute_delta_altitude(self, newVal:float) -> None:
         """The maximum change in altitude in a computed segment before the data is sampled again."""
-        return self._intf.set_property(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._set_compute_delta_altitude_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._set_compute_delta_altitude_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvClimbModel._metadata, IAircraftAdvClimbModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedClimbModel._metadata, IAircraftAdvancedClimbModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{3e994b97-b141-4cee-aada-d02409dc4756}", IAircraftAdvClimbModel)
-agcls.AgTypeNameMap["IAircraftAdvClimbModel"] = IAircraftAdvClimbModel
+agcls.AgClassCatalog.add_catalog_entry("{3e994b97-b141-4cee-aada-d02409dc4756}", IAircraftAdvancedClimbModel)
+agcls.AgTypeNameMap["IAircraftAdvancedClimbModel"] = IAircraftAdvancedClimbModel
 
 class IAircraftBasicCruiseModel(object):
     """Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog."""
@@ -5457,7 +5458,7 @@ class IAircraftBasicCruiseModel(object):
 agcls.AgClassCatalog.add_catalog_entry("{0416553d-3446-49c1-8b44-e677197bd059}", IAircraftBasicCruiseModel)
 agcls.AgTypeNameMap["IAircraftBasicCruiseModel"] = IAircraftBasicCruiseModel
 
-class IAircraftAdvCruiseModel(object):
+class IAircraftAdvancedCruiseModel(object):
     """Interface used to access the advanced cruise model options for a cruise model of an aircraft in the Aviator catalog."""
 
     _num_methods = 14
@@ -5481,16 +5482,16 @@ class IAircraftAdvCruiseModel(object):
                              "get_as_catalog_item" : 14, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvCruiseModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedCruiseModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvCruiseModel)
+        return get_interface_property(attrname, IAircraftAdvancedCruiseModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvCruiseModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedCruiseModel, None)
     
     _get_default_cruise_altitude_metadata = { "name" : "default_cruise_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5498,7 +5499,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def default_cruise_altitude(self) -> float:
         """The aircraft's default cruising altitude."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_default_cruise_altitude_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_default_cruise_altitude_metadata)
 
     _set_default_cruise_altitude_metadata = { "name" : "default_cruise_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -5506,7 +5507,7 @@ class IAircraftAdvCruiseModel(object):
     @default_cruise_altitude.setter
     def default_cruise_altitude(self, newVal:float) -> None:
         """The aircraft's default cruising altitude."""
-        return self._intf.set_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_default_cruise_altitude_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_default_cruise_altitude_metadata, newVal)
 
     _get_max_perf_airspeed_metadata = { "name" : "max_perf_airspeed",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5514,7 +5515,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def max_perf_airspeed(self) -> "CRUISE_MAX_PERF_SPEED_TYPE":
         """The method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_max_perf_airspeed_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_max_perf_airspeed_metadata)
 
     _set_max_perf_airspeed_metadata = { "name" : "max_perf_airspeed",
             "arg_types" : (agcom.LONG,),
@@ -5522,7 +5523,7 @@ class IAircraftAdvCruiseModel(object):
     @max_perf_airspeed.setter
     def max_perf_airspeed(self, newVal:"CRUISE_MAX_PERF_SPEED_TYPE") -> None:
         """The method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        return self._intf.set_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_max_perf_airspeed_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_max_perf_airspeed_metadata, newVal)
 
     _get_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -5530,7 +5531,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def use_airspeed_limit(self) -> bool:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_use_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_use_airspeed_limit_metadata)
 
     _set_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -5538,7 +5539,7 @@ class IAircraftAdvCruiseModel(object):
     @use_airspeed_limit.setter
     def use_airspeed_limit(self, newVal:bool) -> None:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.set_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_use_airspeed_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_use_airspeed_limit_metadata, newVal)
 
     _get_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5546,7 +5547,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def altitude_limit(self) -> float:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_altitude_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_altitude_limit_metadata)
 
     _set_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (agcom.DOUBLE,),
@@ -5554,7 +5555,7 @@ class IAircraftAdvCruiseModel(object):
     @altitude_limit.setter
     def altitude_limit(self, newVal:float) -> None:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.set_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_altitude_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_altitude_limit_metadata, newVal)
 
     _get_airspeed_limit_type_metadata = { "name" : "airspeed_limit_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5562,7 +5563,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def airspeed_limit_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_airspeed_limit_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_airspeed_limit_type_metadata)
 
     _get_airspeed_limit_metadata = { "name" : "airspeed_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5570,14 +5571,14 @@ class IAircraftAdvCruiseModel(object):
     @property
     def airspeed_limit(self) -> float:
         """Get the airsepeed limit below the altitude threshold."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_airspeed_limit_metadata)
 
     _set_airspeed_limit_metadata = { "name" : "set_airspeed_limit",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_airspeed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        return self._intf.invoke(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_airspeed_limit_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_airspeed_limit_metadata, airspeedType, aispeed)
 
     _get_compute_delta_downrange_metadata = { "name" : "compute_delta_downrange",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5585,7 +5586,7 @@ class IAircraftAdvCruiseModel(object):
     @property
     def compute_delta_downrange(self) -> float:
         """The maximum change in downrange distance in a computed segment before the data is sampled again."""
-        return self._intf.get_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_compute_delta_downrange_metadata)
+        return self._intf.get_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_compute_delta_downrange_metadata)
 
     _set_compute_delta_downrange_metadata = { "name" : "compute_delta_downrange",
             "arg_types" : (agcom.DOUBLE,),
@@ -5593,18 +5594,18 @@ class IAircraftAdvCruiseModel(object):
     @compute_delta_downrange.setter
     def compute_delta_downrange(self, newVal:float) -> None:
         """The maximum change in downrange distance in a computed segment before the data is sampled again."""
-        return self._intf.set_property(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._set_compute_delta_downrange_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._set_compute_delta_downrange_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvCruiseModel._metadata, IAircraftAdvCruiseModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedCruiseModel._metadata, IAircraftAdvancedCruiseModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{49d2ea85-8dad-44b8-8ebd-596a3ef22c88}", IAircraftAdvCruiseModel)
-agcls.AgTypeNameMap["IAircraftAdvCruiseModel"] = IAircraftAdvCruiseModel
+agcls.AgClassCatalog.add_catalog_entry("{49d2ea85-8dad-44b8-8ebd-596a3ef22c88}", IAircraftAdvancedCruiseModel)
+agcls.AgTypeNameMap["IAircraftAdvancedCruiseModel"] = IAircraftAdvancedCruiseModel
 
 class IAircraftBasicDescentModel(object):
     """Interface used to access the basic descent model options for a descent model of an aircraft in the Aviator catalog."""
@@ -5791,7 +5792,7 @@ class IAircraftBasicDescentModel(object):
 agcls.AgClassCatalog.add_catalog_entry("{b2fec1db-7e30-401b-91cf-b78db9b1401b}", IAircraftBasicDescentModel)
 agcls.AgTypeNameMap["IAircraftBasicDescentModel"] = IAircraftBasicDescentModel
 
-class IAircraftAdvDescentModel(object):
+class IAircraftAdvancedDescentModel(object):
     """Interface used to access the advanced descent model options for a descent model of an aircraft in the Aviator catalog."""
 
     _num_methods = 19
@@ -5820,16 +5821,16 @@ class IAircraftAdvDescentModel(object):
                              "get_as_catalog_item" : 19, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvDescentModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedDescentModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvDescentModel)
+        return get_interface_property(attrname, IAircraftAdvancedDescentModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvDescentModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedDescentModel, None)
     
     _get_descent_speed_type_metadata = { "name" : "descent_speed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5837,7 +5838,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def descent_speed_type(self) -> "DESCENT_SPEED_TYPE":
         """The mode to calculate the aircraft's airspeed while descending ."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_descent_speed_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_descent_speed_type_metadata)
 
     _set_descent_speed_type_metadata = { "name" : "descent_speed_type",
             "arg_types" : (agcom.LONG,),
@@ -5845,7 +5846,7 @@ class IAircraftAdvDescentModel(object):
     @descent_speed_type.setter
     def descent_speed_type(self, newVal:"DESCENT_SPEED_TYPE") -> None:
         """The mode to calculate the aircraft's airspeed while descending ."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_descent_speed_type_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_descent_speed_type_metadata, newVal)
 
     _get_descent_stall_speed_ratio_metadata = { "name" : "descent_stall_speed_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5853,7 +5854,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def descent_stall_speed_ratio(self) -> float:
         """The ratio of the airspeed upon leaving the ground to the stall speed."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_descent_stall_speed_ratio_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_descent_stall_speed_ratio_metadata)
 
     _set_descent_stall_speed_ratio_metadata = { "name" : "descent_stall_speed_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -5861,7 +5862,7 @@ class IAircraftAdvDescentModel(object):
     @descent_stall_speed_ratio.setter
     def descent_stall_speed_ratio(self, newVal:float) -> None:
         """The ratio of the airspeed upon leaving the ground to the stall speed."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_descent_stall_speed_ratio_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_descent_stall_speed_ratio_metadata, newVal)
 
     _get_descent_override_airspeed_type_metadata = { "name" : "descent_override_airspeed_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5869,7 +5870,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def descent_override_airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the override airspeed type."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_descent_override_airspeed_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_descent_override_airspeed_type_metadata)
 
     _get_descent_override_airspeed_metadata = { "name" : "descent_override_airspeed",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5877,14 +5878,14 @@ class IAircraftAdvDescentModel(object):
     @property
     def descent_override_airspeed(self) -> float:
         """Get the override airsepeed."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_descent_override_airspeed_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_descent_override_airspeed_metadata)
 
     _set_descent_override_airspeed_metadata = { "name" : "set_descent_override_airspeed",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_descent_override_airspeed(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the override airspeed and airspeed type."""
-        return self._intf.invoke(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_descent_override_airspeed_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_descent_override_airspeed_metadata, airspeedType, aispeed)
 
     _get_speedbrakes_metadata = { "name" : "speedbrakes",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5892,7 +5893,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def speedbrakes(self) -> float:
         """The extension of the speedbrakes during the landing."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_speedbrakes_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_speedbrakes_metadata)
 
     _set_speedbrakes_metadata = { "name" : "speedbrakes",
             "arg_types" : (agcom.DOUBLE,),
@@ -5900,7 +5901,7 @@ class IAircraftAdvDescentModel(object):
     @speedbrakes.setter
     def speedbrakes(self, newVal:float) -> None:
         """The extension of the speedbrakes during the landing."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_speedbrakes_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_speedbrakes_metadata, newVal)
 
     _get_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -5908,7 +5909,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def use_airspeed_limit(self) -> bool:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_use_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_use_airspeed_limit_metadata)
 
     _set_use_airspeed_limit_metadata = { "name" : "use_airspeed_limit",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -5916,7 +5917,7 @@ class IAircraftAdvDescentModel(object):
     @use_airspeed_limit.setter
     def use_airspeed_limit(self, newVal:bool) -> None:
         """Opt to limit the airspeed below a specified altitude."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_use_airspeed_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_use_airspeed_limit_metadata, newVal)
 
     _get_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5924,7 +5925,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def altitude_limit(self) -> float:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_altitude_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_altitude_limit_metadata)
 
     _set_altitude_limit_metadata = { "name" : "altitude_limit",
             "arg_types" : (agcom.DOUBLE,),
@@ -5932,7 +5933,7 @@ class IAircraftAdvDescentModel(object):
     @altitude_limit.setter
     def altitude_limit(self, newVal:float) -> None:
         """The altitude threshold, below which the airspeed limit will be applied."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_altitude_limit_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_altitude_limit_metadata, newVal)
 
     _get_airspeed_limit_type_metadata = { "name" : "airspeed_limit_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -5940,7 +5941,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def airspeed_limit_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed limit type."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_airspeed_limit_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_airspeed_limit_type_metadata)
 
     _get_airspeed_limit_metadata = { "name" : "airspeed_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5948,14 +5949,14 @@ class IAircraftAdvDescentModel(object):
     @property
     def airspeed_limit(self) -> float:
         """Get the airsepeed limit below the altitude threshold."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_airspeed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_airspeed_limit_metadata)
 
     _set_airspeed_limit_metadata = { "name" : "set_airspeed_limit",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_airspeed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the airspeed limit and airspeed type below the altitude threshold."""
-        return self._intf.invoke(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_airspeed_limit_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_airspeed_limit_metadata, airspeedType, aispeed)
 
     _get_compute_delta_altitude_metadata = { "name" : "compute_delta_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5963,7 +5964,7 @@ class IAircraftAdvDescentModel(object):
     @property
     def compute_delta_altitude(self) -> float:
         """The maximum change in altitude in a computed segment before the data is sampled again."""
-        return self._intf.get_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_compute_delta_altitude_metadata)
+        return self._intf.get_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_compute_delta_altitude_metadata)
 
     _set_compute_delta_altitude_metadata = { "name" : "compute_delta_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -5971,18 +5972,18 @@ class IAircraftAdvDescentModel(object):
     @compute_delta_altitude.setter
     def compute_delta_altitude(self, newVal:float) -> None:
         """The maximum change in altitude in a computed segment before the data is sampled again."""
-        return self._intf.set_property(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._set_compute_delta_altitude_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._set_compute_delta_altitude_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvDescentModel._metadata, IAircraftAdvDescentModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedDescentModel._metadata, IAircraftAdvancedDescentModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{e668da71-2641-4751-a2eb-880eff768017}", IAircraftAdvDescentModel)
-agcls.AgTypeNameMap["IAircraftAdvDescentModel"] = IAircraftAdvDescentModel
+agcls.AgClassCatalog.add_catalog_entry("{e668da71-2641-4751-a2eb-880eff768017}", IAircraftAdvancedDescentModel)
+agcls.AgTypeNameMap["IAircraftAdvancedDescentModel"] = IAircraftAdvancedDescentModel
 
 class IAircraftBasicLandingModel(object):
     """Interface used to access the basic landing model options for a landing model of an aircraft in the Aviator catalog."""
@@ -6115,7 +6116,7 @@ class IAircraftBasicLandingModel(object):
 agcls.AgClassCatalog.add_catalog_entry("{3e5cc8b6-970b-4412-8ee7-4863224e2ae5}", IAircraftBasicLandingModel)
 agcls.AgTypeNameMap["IAircraftBasicLandingModel"] = IAircraftBasicLandingModel
 
-class IAircraftAdvLandingModel(object):
+class IAircraftAdvancedLandingModel(object):
     """Interface used to access the advanced landing model options for a landing model of an aircraft in the Aviator catalog."""
 
     _num_methods = 13
@@ -6138,16 +6139,16 @@ class IAircraftAdvLandingModel(object):
                              "get_as_catalog_item" : 13, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvLandingModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedLandingModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvLandingModel)
+        return get_interface_property(attrname, IAircraftAdvancedLandingModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvLandingModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedLandingModel, None)
     
     _get_landing_speed_mode_metadata = { "name" : "landing_speed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6155,7 +6156,7 @@ class IAircraftAdvLandingModel(object):
     @property
     def landing_speed_mode(self) -> "TAKEOFF_LANDING_SPEED_MODE":
         """The mode to calculate the aircraft's speed at wheels down."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_landing_speed_mode_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_landing_speed_mode_metadata)
 
     _set_landing_speed_mode_metadata = { "name" : "landing_speed_mode",
             "arg_types" : (agcom.LONG,),
@@ -6163,7 +6164,7 @@ class IAircraftAdvLandingModel(object):
     @landing_speed_mode.setter
     def landing_speed_mode(self, newVal:"TAKEOFF_LANDING_SPEED_MODE") -> None:
         """The mode to calculate the aircraft's speed at wheels down."""
-        return self._intf.set_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_landing_speed_mode_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_landing_speed_mode_metadata, newVal)
 
     _get_stall_speed_ratio_metadata = { "name" : "stall_speed_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6171,14 +6172,14 @@ class IAircraftAdvLandingModel(object):
     @property
     def stall_speed_ratio(self) -> float:
         """The ratio of the airspeed to the stall speed at wheels down."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_stall_speed_ratio_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_stall_speed_ratio_metadata)
 
     _set_stall_speed_ratio_metadata = { "name" : "set_stall_speed_ratio",
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     def set_stall_speed_ratio(self, stallSpeedRatio:float) -> None:
         """Set the landing speed mode to StallSpeedRatio and specify the stall speed ratio."""
-        return self._intf.invoke(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_stall_speed_ratio_metadata, stallSpeedRatio)
+        return self._intf.invoke(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_stall_speed_ratio_metadata, stallSpeedRatio)
 
     _get_angle_of_attack_metadata = { "name" : "angle_of_attack",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -6186,14 +6187,14 @@ class IAircraftAdvLandingModel(object):
     @property
     def angle_of_attack(self) -> typing.Any:
         """The Angle of Attack at wheels down."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_angle_of_attack_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_angle_of_attack_metadata)
 
     _set_angle_of_attack_metadata = { "name" : "set_angle_of_attack",
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def set_angle_of_attack(self, angleOfAttack:typing.Any) -> None:
         """Set the landing speed mode to AngleOfAttack and specify the angle of attack."""
-        return self._intf.invoke(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_angle_of_attack_metadata, angleOfAttack)
+        return self._intf.invoke(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_angle_of_attack_metadata, angleOfAttack)
 
     _get_flaps_metadata = { "name" : "flaps",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6201,7 +6202,7 @@ class IAircraftAdvLandingModel(object):
     @property
     def flaps(self) -> float:
         """The extension of the flaps during the landing."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_flaps_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_flaps_metadata)
 
     _set_flaps_metadata = { "name" : "flaps",
             "arg_types" : (agcom.DOUBLE,),
@@ -6209,7 +6210,7 @@ class IAircraftAdvLandingModel(object):
     @flaps.setter
     def flaps(self, newVal:float) -> None:
         """The extension of the flaps during the landing."""
-        return self._intf.set_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_flaps_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_flaps_metadata, newVal)
 
     _get_speedbrakes_metadata = { "name" : "speedbrakes",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6217,7 +6218,7 @@ class IAircraftAdvLandingModel(object):
     @property
     def speedbrakes(self) -> float:
         """The extension of the speedbrakes during the landing."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_speedbrakes_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_speedbrakes_metadata)
 
     _set_speedbrakes_metadata = { "name" : "speedbrakes",
             "arg_types" : (agcom.DOUBLE,),
@@ -6225,7 +6226,7 @@ class IAircraftAdvLandingModel(object):
     @speedbrakes.setter
     def speedbrakes(self, newVal:float) -> None:
         """The extension of the speedbrakes during the landing."""
-        return self._intf.set_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_speedbrakes_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_speedbrakes_metadata, newVal)
 
     _get_braking_decel_g_metadata = { "name" : "braking_decel_g",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6233,7 +6234,7 @@ class IAircraftAdvLandingModel(object):
     @property
     def braking_decel_g(self) -> float:
         """The deceleration rate, in G, when braking."""
-        return self._intf.get_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_braking_decel_g_metadata)
+        return self._intf.get_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_braking_decel_g_metadata)
 
     _set_braking_decel_g_metadata = { "name" : "braking_decel_g",
             "arg_types" : (agcom.DOUBLE,),
@@ -6241,18 +6242,18 @@ class IAircraftAdvLandingModel(object):
     @braking_decel_g.setter
     def braking_decel_g(self, newVal:float) -> None:
         """The deceleration rate, in G, when braking."""
-        return self._intf.set_property(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._set_braking_decel_g_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._set_braking_decel_g_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvLandingModel._metadata, IAircraftAdvLandingModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedLandingModel._metadata, IAircraftAdvancedLandingModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{bee9a455-0eeb-493f-aff6-93a11be34090}", IAircraftAdvLandingModel)
-agcls.AgTypeNameMap["IAircraftAdvLandingModel"] = IAircraftAdvLandingModel
+agcls.AgClassCatalog.add_catalog_entry("{bee9a455-0eeb-493f-aff6-93a11be34090}", IAircraftAdvancedLandingModel)
+agcls.AgTypeNameMap["IAircraftAdvancedLandingModel"] = IAircraftAdvancedLandingModel
 
 class IAircraftBasicTakeoffModel(object):
     """Interface used to access the basic takeoff model options for a takeoff model of an aircraft in the Aviator catalog."""
@@ -6429,7 +6430,7 @@ class IAircraftBasicTakeoffModel(object):
 agcls.AgClassCatalog.add_catalog_entry("{981697a5-e6b3-45d7-a3d4-7caec2237c0a}", IAircraftBasicTakeoffModel)
 agcls.AgTypeNameMap["IAircraftBasicTakeoffModel"] = IAircraftBasicTakeoffModel
 
-class IAircraftAdvTakeoffModel(object):
+class IAircraftAdvancedTakeoffModel(object):
     """Interface used to access the advanced takeoff model options for a takeoff model of an aircraft in the Aviator catalog."""
 
     _num_methods = 16
@@ -6455,16 +6456,16 @@ class IAircraftAdvTakeoffModel(object):
                              "get_as_catalog_item" : 16, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvTakeoffModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedTakeoffModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvTakeoffModel)
+        return get_interface_property(attrname, IAircraftAdvancedTakeoffModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvTakeoffModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedTakeoffModel, None)
     
     _get_takeoff_speed_mode_metadata = { "name" : "takeoff_speed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6472,7 +6473,7 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def takeoff_speed_mode(self) -> "TAKEOFF_LANDING_SPEED_MODE":
         """The mode to calculate the aircraft's airspeed upon leaving the ground."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_takeoff_speed_mode_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_takeoff_speed_mode_metadata)
 
     _set_takeoff_speed_mode_metadata = { "name" : "takeoff_speed_mode",
             "arg_types" : (agcom.LONG,),
@@ -6480,7 +6481,7 @@ class IAircraftAdvTakeoffModel(object):
     @takeoff_speed_mode.setter
     def takeoff_speed_mode(self, newVal:"TAKEOFF_LANDING_SPEED_MODE") -> None:
         """The mode to calculate the aircraft's  airspeed upon leaving the ground."""
-        return self._intf.set_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_takeoff_speed_mode_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_takeoff_speed_mode_metadata, newVal)
 
     _get_stall_speed_ratio_metadata = { "name" : "stall_speed_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6488,14 +6489,14 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def stall_speed_ratio(self) -> float:
         """The ratio of the airspeed to the stall speed upon leaving the ground."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_stall_speed_ratio_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_stall_speed_ratio_metadata)
 
     _set_stall_speed_ratio_metadata = { "name" : "set_stall_speed_ratio",
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     def set_stall_speed_ratio(self, stallSpeedRatio:float) -> None:
         """Set the takeoff speed mode to StallSpeedRatio and specify the stall speed ratio."""
-        return self._intf.invoke(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_stall_speed_ratio_metadata, stallSpeedRatio)
+        return self._intf.invoke(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_stall_speed_ratio_metadata, stallSpeedRatio)
 
     _get_angle_of_attack_metadata = { "name" : "angle_of_attack",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -6503,14 +6504,14 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def angle_of_attack(self) -> typing.Any:
         """The Angle of Attack upon leaving the ground."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_angle_of_attack_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_angle_of_attack_metadata)
 
     _set_angle_of_attack_metadata = { "name" : "set_angle_of_attack",
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def set_angle_of_attack(self, angleOfAttack:typing.Any) -> None:
         """Set the takeoff speed mode to AngleOfAttack and specify the angle of attack."""
-        return self._intf.invoke(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_angle_of_attack_metadata, angleOfAttack)
+        return self._intf.invoke(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_angle_of_attack_metadata, angleOfAttack)
 
     _get_flaps_metadata = { "name" : "flaps",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6518,7 +6519,7 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def flaps(self) -> float:
         """The extension of the flaps during takeoff."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_flaps_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_flaps_metadata)
 
     _set_flaps_metadata = { "name" : "flaps",
             "arg_types" : (agcom.DOUBLE,),
@@ -6526,7 +6527,7 @@ class IAircraftAdvTakeoffModel(object):
     @flaps.setter
     def flaps(self, newVal:float) -> None:
         """The extension of the flaps during takeoff."""
-        return self._intf.set_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_flaps_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_flaps_metadata, newVal)
 
     _get_departure_speed_mode_metadata = { "name" : "departure_speed_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6534,7 +6535,7 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def departure_speed_mode(self) -> "DEPARTURE_SPEED_MODE":
         """The mode to calculate the airspeed upon leaving the ground."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_departure_speed_mode_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_departure_speed_mode_metadata)
 
     _set_departure_speed_mode_metadata = { "name" : "departure_speed_mode",
             "arg_types" : (agcom.LONG,),
@@ -6542,7 +6543,7 @@ class IAircraftAdvTakeoffModel(object):
     @departure_speed_mode.setter
     def departure_speed_mode(self, newVal:"DEPARTURE_SPEED_MODE") -> None:
         """The mode to calculate the airspeed upon leaving the ground."""
-        return self._intf.set_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_departure_speed_mode_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_departure_speed_mode_metadata, newVal)
 
     _get_departure_speed_limit_metadata = { "name" : "departure_speed_limit",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6550,7 +6551,7 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def departure_speed_limit(self) -> float:
         """The aircraft's maximum airspeed upon leaving the ground."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_departure_speed_limit_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_departure_speed_limit_metadata)
 
     _get_departure_speed_limit_type_metadata = { "name" : "departure_speed_limit_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6558,14 +6559,14 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def departure_speed_limit_type(self) -> "AIRSPEED_TYPE":
         """The departure speed limim type."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_departure_speed_limit_type_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_departure_speed_limit_type_metadata)
 
     _set_departure_speed_limit_metadata = { "name" : "set_departure_speed_limit",
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_departure_speed_limit(self, airspeedType:"AIRSPEED_TYPE", aispeed:float) -> None:
         """Set the departure speed limit of the aircraft."""
-        return self._intf.invoke(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_departure_speed_limit_metadata, airspeedType, aispeed)
+        return self._intf.invoke(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_departure_speed_limit_metadata, airspeedType, aispeed)
 
     _get_use_afterburner_metadata = { "name" : "use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6573,7 +6574,7 @@ class IAircraftAdvTakeoffModel(object):
     @property
     def use_afterburner(self) -> bool:
         """Opt whether to use the afterburner if it is possible."""
-        return self._intf.get_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_use_afterburner_metadata)
+        return self._intf.get_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_use_afterburner_metadata)
 
     _set_use_afterburner_metadata = { "name" : "use_afterburner",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -6581,18 +6582,18 @@ class IAircraftAdvTakeoffModel(object):
     @use_afterburner.setter
     def use_afterburner(self, newVal:bool) -> None:
         """Opt whether to use the afterburner if it is possible."""
-        return self._intf.set_property(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._set_use_afterburner_metadata, newVal)
+        return self._intf.set_property(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._set_use_afterburner_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvTakeoffModel._metadata, IAircraftAdvTakeoffModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedTakeoffModel._metadata, IAircraftAdvancedTakeoffModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{3290c530-62d6-49d7-8d89-69f0c3e6148d}", IAircraftAdvTakeoffModel)
-agcls.AgTypeNameMap["IAircraftAdvTakeoffModel"] = IAircraftAdvTakeoffModel
+agcls.AgClassCatalog.add_catalog_entry("{3290c530-62d6-49d7-8d89-69f0c3e6148d}", IAircraftAdvancedTakeoffModel)
+agcls.AgTypeNameMap["IAircraftAdvancedTakeoffModel"] = IAircraftAdvancedTakeoffModel
 
 class IAircraftVTOLModel(object):
     """Interface used to access the options for a VTOL performance model of an aircraft."""
@@ -6976,7 +6977,7 @@ class IPerformanceModelOptions(object):
 agcls.AgClassCatalog.add_catalog_entry("{DE05DB32-36E7-4C14-916E-C626C4E084FD}", IPerformanceModelOptions)
 agcls.AgTypeNameMap["IPerformanceModelOptions"] = IPerformanceModelOptions
 
-class IAdvFixedWingTool(object):
+class IAdvancedFixedWingTool(object):
     """Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft."""
 
     _num_methods = 41
@@ -7027,16 +7028,16 @@ class IAdvFixedWingTool(object):
                              "get_powerplant_mode_as_sub_super_hypersonic" : 41, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTool)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTool)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTool)
+        return get_interface_property(attrname, IAdvancedFixedWingTool)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTool, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTool, None)
     
     _get_wing_area_metadata = { "name" : "wing_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7044,7 +7045,7 @@ class IAdvFixedWingTool(object):
     @property
     def wing_area(self) -> float:
         """The total surface area of the wing."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_wing_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_wing_area_metadata)
 
     _set_wing_area_metadata = { "name" : "wing_area",
             "arg_types" : (agcom.DOUBLE,),
@@ -7052,7 +7053,7 @@ class IAdvFixedWingTool(object):
     @wing_area.setter
     def wing_area(self, newVal:float) -> None:
         """The total surface area of the wing."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_wing_area_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_wing_area_metadata, newVal)
 
     _get_flaps_area_metadata = { "name" : "flaps_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7060,7 +7061,7 @@ class IAdvFixedWingTool(object):
     @property
     def flaps_area(self) -> float:
         """The total surface area of the flaps."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_flaps_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_flaps_area_metadata)
 
     _set_flaps_area_metadata = { "name" : "flaps_area",
             "arg_types" : (agcom.DOUBLE,),
@@ -7068,7 +7069,7 @@ class IAdvFixedWingTool(object):
     @flaps_area.setter
     def flaps_area(self, newVal:float) -> None:
         """The total surface area of the flaps."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_flaps_area_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_flaps_area_metadata, newVal)
 
     _get_speedbrakes_area_metadata = { "name" : "speedbrakes_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7076,7 +7077,7 @@ class IAdvFixedWingTool(object):
     @property
     def speedbrakes_area(self) -> float:
         """The total surface area of the speedbrakes."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_speedbrakes_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_speedbrakes_area_metadata)
 
     _set_speedbrakes_area_metadata = { "name" : "speedbrakes_area",
             "arg_types" : (agcom.DOUBLE,),
@@ -7084,7 +7085,7 @@ class IAdvFixedWingTool(object):
     @speedbrakes_area.setter
     def speedbrakes_area(self, newVal:float) -> None:
         """The total surface area of the speedbrakes."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_speedbrakes_area_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_speedbrakes_area_metadata, newVal)
 
     _get_max_altitude_metadata = { "name" : "max_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7092,7 +7093,7 @@ class IAdvFixedWingTool(object):
     @property
     def max_altitude(self) -> float:
         """The maximum altitude of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_max_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_max_altitude_metadata)
 
     _set_max_altitude_metadata = { "name" : "max_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -7100,7 +7101,7 @@ class IAdvFixedWingTool(object):
     @max_altitude.setter
     def max_altitude(self, newVal:float) -> None:
         """The maximum altitude of the aircraft."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_max_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_max_altitude_metadata, newVal)
 
     _get_max_mach_metadata = { "name" : "max_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7108,7 +7109,7 @@ class IAdvFixedWingTool(object):
     @property
     def max_mach(self) -> float:
         """The maximum mach number of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_max_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_max_mach_metadata)
 
     _set_max_mach_metadata = { "name" : "max_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -7116,7 +7117,7 @@ class IAdvFixedWingTool(object):
     @max_mach.setter
     def max_mach(self, newVal:float) -> None:
         """The maximum mach number of the aircraft."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_max_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_max_mach_metadata, newVal)
 
     _get_max_eas_metadata = { "name" : "max_eas",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7124,7 +7125,7 @@ class IAdvFixedWingTool(object):
     @property
     def max_eas(self) -> float:
         """The maximum equivalent airspeed of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_max_eas_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_max_eas_metadata)
 
     _set_max_eas_metadata = { "name" : "max_eas",
             "arg_types" : (agcom.DOUBLE,),
@@ -7132,7 +7133,7 @@ class IAdvFixedWingTool(object):
     @max_eas.setter
     def max_eas(self, newVal:float) -> None:
         """The maximum equivalent airspeed of the aircraft."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_max_eas_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_max_eas_metadata, newVal)
 
     _get_min_load_factor_metadata = { "name" : "min_load_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7140,7 +7141,7 @@ class IAdvFixedWingTool(object):
     @property
     def min_load_factor(self) -> float:
         """The minimum load factor the aircraft can bear."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_min_load_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_min_load_factor_metadata)
 
     _set_min_load_factor_metadata = { "name" : "min_load_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -7148,7 +7149,7 @@ class IAdvFixedWingTool(object):
     @min_load_factor.setter
     def min_load_factor(self, newVal:float) -> None:
         """The minimum load factor the aircraft can bear."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_min_load_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_min_load_factor_metadata, newVal)
 
     _get_max_load_factor_metadata = { "name" : "max_load_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7156,7 +7157,7 @@ class IAdvFixedWingTool(object):
     @property
     def max_load_factor(self) -> float:
         """The maximum load factor the aircraft can bear."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_max_load_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_max_load_factor_metadata)
 
     _set_max_load_factor_metadata = { "name" : "max_load_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -7164,7 +7165,7 @@ class IAdvFixedWingTool(object):
     @max_load_factor.setter
     def max_load_factor(self, newVal:float) -> None:
         """The maximum load factor the aircraft can bear."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_max_load_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_max_load_factor_metadata, newVal)
 
     _get_use_max_temperature_limit_metadata = { "name" : "use_max_temperature_limit",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7172,7 +7173,7 @@ class IAdvFixedWingTool(object):
     @property
     def use_max_temperature_limit(self) -> bool:
         """The option to limit the maximum speed of the aircraft so the specified temperature is not exceeded."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_use_max_temperature_limit_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_use_max_temperature_limit_metadata)
 
     _set_use_max_temperature_limit_metadata = { "name" : "use_max_temperature_limit",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -7180,7 +7181,7 @@ class IAdvFixedWingTool(object):
     @use_max_temperature_limit.setter
     def use_max_temperature_limit(self, newVal:bool) -> None:
         """The option to limit the maximum speed of the aircraft so the specified temperature is not exceeded."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_use_max_temperature_limit_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_use_max_temperature_limit_metadata, newVal)
 
     _get_max_temperature_metadata = { "name" : "max_temperature",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7188,7 +7189,7 @@ class IAdvFixedWingTool(object):
     @property
     def max_temperature(self) -> float:
         """The maximum total temperature limit of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_max_temperature_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_max_temperature_metadata)
 
     _set_max_temperature_metadata = { "name" : "max_temperature",
             "arg_types" : (agcom.DOUBLE,),
@@ -7196,7 +7197,7 @@ class IAdvFixedWingTool(object):
     @max_temperature.setter
     def max_temperature(self, newVal:float) -> None:
         """The maximum total temperature limit of the aircraft."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_max_temperature_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_max_temperature_metadata, newVal)
 
     _get_cache_aero_data_metadata = { "name" : "cache_aero_data",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7204,7 +7205,7 @@ class IAdvFixedWingTool(object):
     @property
     def cache_aero_data(self) -> bool:
         """The option to store intermediate results for aerodynamics calculations."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_cache_aero_data_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_cache_aero_data_metadata)
 
     _set_cache_aero_data_metadata = { "name" : "cache_aero_data",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -7212,7 +7213,7 @@ class IAdvFixedWingTool(object):
     @cache_aero_data.setter
     def cache_aero_data(self, newVal:bool) -> None:
         """The option to store intermediate results for aerodynamics calculations."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_cache_aero_data_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_cache_aero_data_metadata, newVal)
 
     _get_cache_fuel_flow_metadata = { "name" : "cache_fuel_flow",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7220,7 +7221,7 @@ class IAdvFixedWingTool(object):
     @property
     def cache_fuel_flow(self) -> bool:
         """The option to store intermediate results for fuel flow calculations."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_cache_fuel_flow_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_cache_fuel_flow_metadata)
 
     _set_cache_fuel_flow_metadata = { "name" : "cache_fuel_flow",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -7228,148 +7229,148 @@ class IAdvFixedWingTool(object):
     @cache_fuel_flow.setter
     def cache_fuel_flow(self, newVal:bool) -> None:
         """The option to store intermediate results for fuel flow calculations."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_cache_fuel_flow_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_cache_fuel_flow_metadata, newVal)
 
     _get_aero_strategy_metadata = { "name" : "aero_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_AERO_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERO_STRATEGY),) }
     @property
-    def aero_strategy(self) -> "ADV_FIXED_WING_AERO_STRATEGY":
+    def aero_strategy(self) -> "ADVANCED_FIXED_WING_AERO_STRATEGY":
         """The aerodynamic strategy type."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_aero_strategy_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_aero_strategy_metadata)
 
     _set_aero_strategy_metadata = { "name" : "aero_strategy",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_AERO_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERO_STRATEGY),) }
     @aero_strategy.setter
-    def aero_strategy(self, newVal:"ADV_FIXED_WING_AERO_STRATEGY") -> None:
+    def aero_strategy(self, newVal:"ADVANCED_FIXED_WING_AERO_STRATEGY") -> None:
         """The aerodynamic strategy type."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_aero_strategy_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_aero_strategy_metadata, newVal)
 
     _get_aero_mode_as_external_metadata = { "name" : "aero_mode_as_external",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_external(self) -> "AdvFixedWingExternalAero":
+    def aero_mode_as_external(self) -> "AdvancedFixedWingExternalAero":
         """Get the interface for an Extern File Aerodynamics strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_aero_mode_as_external_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_aero_mode_as_external_metadata)
 
     _get_aero_mode_as_subsonic_metadata = { "name" : "aero_mode_as_subsonic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_subsonic(self) -> "AdvFixedWingSubsonicAero":
+    def aero_mode_as_subsonic(self) -> "AdvancedFixedWingSubsonicAero":
         """Get the interface for a Subsonic Aerodynamics strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_aero_mode_as_subsonic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_aero_mode_as_subsonic_metadata)
 
     _get_aero_mode_as_sub_super_hypersonic_metadata = { "name" : "aero_mode_as_sub_super_hypersonic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_sub_super_hypersonic(self) -> "AdvFixedWingSubSuperHypersonicAero":
+    def aero_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicAero":
         """Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_aero_mode_as_sub_super_hypersonic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_aero_mode_as_sub_super_hypersonic_metadata)
 
     _get_aero_mode_as_supersonic_metadata = { "name" : "aero_mode_as_supersonic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_supersonic(self) -> "AdvFixedWingSupersonicAero":
+    def aero_mode_as_supersonic(self) -> "AdvancedFixedWingSupersonicAero":
         """Get the interface for a Supersonic Aerodynamics strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_aero_mode_as_supersonic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_aero_mode_as_supersonic_metadata)
 
     _get_powerplant_strategy_metadata = { "name" : "powerplant_strategy",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_POWERPLANT_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY),) }
     @property
-    def powerplant_strategy(self) -> "ADV_FIXED_WING_POWERPLANT_STRATEGY":
+    def powerplant_strategy(self) -> "ADVANCED_FIXED_WING_POWERPLANT_STRATEGY":
         """The powerplant strategy type."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_strategy_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_strategy_metadata)
 
     _set_powerplant_strategy_metadata = { "name" : "powerplant_strategy",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_POWERPLANT_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY),) }
     @powerplant_strategy.setter
-    def powerplant_strategy(self, newVal:"ADV_FIXED_WING_POWERPLANT_STRATEGY") -> None:
+    def powerplant_strategy(self, newVal:"ADVANCED_FIXED_WING_POWERPLANT_STRATEGY") -> None:
         """The powerplant  strategy type."""
-        return self._intf.set_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._set_powerplant_strategy_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._set_powerplant_strategy_metadata, newVal)
 
     _get_powerplant_mode_as_electric_metadata = { "name" : "powerplant_mode_as_electric",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_electric(self) -> "AdvFixedWingElectricPowerplant":
+    def powerplant_mode_as_electric(self) -> "AdvancedFixedWingElectricPowerplant":
         """Get the interface for an Electric Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_electric_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_electric_metadata)
 
     _get_powerplant_mode_as_external_metadata = { "name" : "powerplant_mode_as_external",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_external(self) -> "AdvFixedWingExternalProp":
+    def powerplant_mode_as_external(self) -> "AdvancedFixedWingExternalProp":
         """Get the interface for an External Prop File Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_external_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_external_metadata)
 
     _get_powerplant_mode_as_piston_metadata = { "name" : "powerplant_mode_as_piston",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_piston(self) -> "AdvFixedWingPistonPowerplant":
+    def powerplant_mode_as_piston(self) -> "AdvancedFixedWingPistonPowerplant":
         """Get the interface for a Piston Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_piston_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_piston_metadata)
 
     _get_powerplant_mode_as_turboprop_metadata = { "name" : "powerplant_mode_as_turboprop",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_turboprop(self) -> "AdvFixedWingTurbopropPowerplant":
+    def powerplant_mode_as_turboprop(self) -> "AdvancedFixedWingTurbopropPowerplant":
         """Get the interface for a Turboprop Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_turboprop_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_turboprop_metadata)
 
     _get_powerplant_mode_as_empirical_jet_engine_metadata = { "name" : "powerplant_mode_as_empirical_jet_engine",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_empirical_jet_engine(self) -> "AdvFixedWingEmpiricalJetEngine":
+    def powerplant_mode_as_empirical_jet_engine(self) -> "AdvancedFixedWingEmpiricalJetEngine":
         """Get the interface for an Empirical Jet Engine Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_empirical_jet_engine_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_empirical_jet_engine_metadata)
 
     _create_all_perf_models_metadata = { "name" : "create_all_perf_models",
             "arg_types" : (agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
     def create_all_perf_models(self, name:str, overwrite:bool, makeDefault:bool) -> None:
         """Create a set of advanced performance models for the aircraft with the given name."""
-        return self._intf.invoke(IAdvFixedWingTool._metadata, IAdvFixedWingTool._create_all_perf_models_metadata, name, overwrite, makeDefault)
+        return self._intf.invoke(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._create_all_perf_models_metadata, name, overwrite, makeDefault)
 
     _get_powerplant_mode_as_basic_turbofan_metadata = { "name" : "powerplant_mode_as_basic_turbofan",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_basic_turbofan(self) -> "AdvFixedWingTurbofanBasicABProp":
+    def powerplant_mode_as_basic_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABProp":
         """Get the interface for a Turbofan - Basic w/ AB Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_basic_turbofan_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_basic_turbofan_metadata)
 
     _get_powerplant_mode_as_basic_turbojet_metadata = { "name" : "powerplant_mode_as_basic_turbojet",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_basic_turbojet(self) -> "AdvFixedWingTurbojetBasicABProp":
+    def powerplant_mode_as_basic_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABProp":
         """Get the interface for a Turbojet - Basic w/ AB Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_basic_turbojet_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_basic_turbojet_metadata)
 
     _get_powerplant_mode_as_sub_super_hypersonic_metadata = { "name" : "powerplant_mode_as_sub_super_hypersonic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_sub_super_hypersonic(self) -> "AdvFixedWingSubSuperHypersonicProp":
+    def powerplant_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicProp":
         """Get the interface for a Sub/Super/Hypersoinc Powerplant strategy."""
-        return self._intf.get_property(IAdvFixedWingTool._metadata, IAdvFixedWingTool._get_powerplant_mode_as_sub_super_hypersonic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTool._metadata, IAdvancedFixedWingTool._get_powerplant_mode_as_sub_super_hypersonic_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{3722BD33-A1BE-48AD-AF6F-4AC40B19FBBA}", IAdvFixedWingTool)
-agcls.AgTypeNameMap["IAdvFixedWingTool"] = IAdvFixedWingTool
+agcls.AgClassCatalog.add_catalog_entry("{3722BD33-A1BE-48AD-AF6F-4AC40B19FBBA}", IAdvancedFixedWingTool)
+agcls.AgTypeNameMap["IAdvancedFixedWingTool"] = IAdvancedFixedWingTool
 
-class IAdvFixedWingExternalAero(object):
+class IAdvancedFixedWingExternalAero(object):
     """Interface used to access the options for an external file aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 3
@@ -7382,16 +7383,16 @@ class IAdvFixedWingExternalAero(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingExternalAero)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingExternalAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingExternalAero)
+        return get_interface_property(attrname, IAdvancedFixedWingExternalAero)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingExternalAero, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingExternalAero, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7399,14 +7400,14 @@ class IAdvFixedWingExternalAero(object):
     @property
     def filepath(self) -> str:
         """The filepath for the external aero file."""
-        return self._intf.get_property(IAdvFixedWingExternalAero._metadata, IAdvFixedWingExternalAero._get_filepath_metadata)
+        return self._intf.get_property(IAdvancedFixedWingExternalAero._metadata, IAdvancedFixedWingExternalAero._get_filepath_metadata)
 
     _set_filepath_metadata = { "name" : "set_filepath",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external aero file."""
-        return self._intf.invoke(IAdvFixedWingExternalAero._metadata, IAdvFixedWingExternalAero._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(IAdvancedFixedWingExternalAero._metadata, IAdvancedFixedWingExternalAero._set_filepath_metadata, filepath, OutArg())
 
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7414,13 +7415,13 @@ class IAdvFixedWingExternalAero(object):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(IAdvFixedWingExternalAero._metadata, IAdvFixedWingExternalAero._get_is_valid_metadata)
+        return self._intf.get_property(IAdvancedFixedWingExternalAero._metadata, IAdvancedFixedWingExternalAero._get_is_valid_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{7A440104-B346-417B-98CB-7718A5A95848}", IAdvFixedWingExternalAero)
-agcls.AgTypeNameMap["IAdvFixedWingExternalAero"] = IAdvFixedWingExternalAero
+agcls.AgClassCatalog.add_catalog_entry("{7A440104-B346-417B-98CB-7718A5A95848}", IAdvancedFixedWingExternalAero)
+agcls.AgTypeNameMap["IAdvancedFixedWingExternalAero"] = IAdvancedFixedWingExternalAero
 
-class IAdvFixedWingSubsonicAero(object):
+class IAdvancedFixedWingSubsonicAero(object):
     """Interface used to access the options for the subsonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 12
@@ -7442,48 +7443,48 @@ class IAdvFixedWingSubsonicAero(object):
                              "set_transonic_mach_drag_factor" : 12, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubsonicAero)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubsonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingSubsonicAero)
+        return get_interface_property(attrname, IAdvancedFixedWingSubsonicAero)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingSubsonicAero, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubsonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_GEOMETRY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_GEOMETRY),) }
     @property
-    def geometry_type(self) -> "ADV_FIXED_WING_GEOMETRY":
+    def geometry_type(self) -> "ADVANCED_FIXED_WING_GEOMETRY":
         """The type of wing geometry for the aircraft."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_geometry_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_geometry_type_metadata)
 
     _set_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_GEOMETRY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_GEOMETRY),) }
     @geometry_type.setter
-    def geometry_type(self, newVal:"ADV_FIXED_WING_GEOMETRY") -> None:
+    def geometry_type(self, newVal:"ADVANCED_FIXED_WING_GEOMETRY") -> None:
         """The type of wing geometry for the aircraft."""
-        return self._intf.set_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._set_geometry_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._set_geometry_type_metadata, newVal)
 
     _get_geometry_mode_as_basic_metadata = { "name" : "geometry_mode_as_basic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def geometry_mode_as_basic(self) -> "AdvFixedWingGeometryBasic":
+    def geometry_mode_as_basic(self) -> "AdvancedFixedWingGeometryBasic":
         """The options for a basic geometry wing."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_geometry_mode_as_basic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_geometry_mode_as_basic_metadata)
 
     _get_geometry_mode_as_variable_metadata = { "name" : "geometry_mode_as_variable",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def geometry_mode_as_variable(self) -> "AdvFixedWingGeometryVariable":
+    def geometry_mode_as_variable(self) -> "AdvancedFixedWingGeometryVariable":
         """The options for a variable geometry wing."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_geometry_mode_as_variable_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_geometry_mode_as_variable_metadata)
 
     _get_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -7491,7 +7492,7 @@ class IAdvFixedWingSubsonicAero(object):
     @property
     def max_aoa(self) -> typing.Any:
         """The maximum angle of attack possible."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (agcom.Variant,),
@@ -7499,7 +7500,7 @@ class IAdvFixedWingSubsonicAero(object):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """The maximum angle of attack possible."""
-        return self._intf.set_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._set_max_aoa_metadata, newVal)
 
     _get_cd0_metadata = { "name" : "cd0",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7507,7 +7508,7 @@ class IAdvFixedWingSubsonicAero(object):
     @property
     def cd0(self) -> float:
         """The parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_cd0_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_cd0_metadata)
 
     _set_cd0_metadata = { "name" : "cd0",
             "arg_types" : (agcom.DOUBLE,),
@@ -7515,7 +7516,7 @@ class IAdvFixedWingSubsonicAero(object):
     @cd0.setter
     def cd0(self, newVal:float) -> None:
         """The parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.set_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._set_cd0_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._set_cd0_metadata, newVal)
 
     _get_mach_divergence_metadata = { "name" : "mach_divergence",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7523,7 +7524,7 @@ class IAdvFixedWingSubsonicAero(object):
     @property
     def mach_divergence(self) -> float:
         """The speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_mach_divergence_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_mach_divergence_metadata)
 
     _set_mach_divergence_metadata = { "name" : "mach_divergence",
             "arg_types" : (agcom.DOUBLE,),
@@ -7531,7 +7532,7 @@ class IAdvFixedWingSubsonicAero(object):
     @mach_divergence.setter
     def mach_divergence(self, newVal:float) -> None:
         """The speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._set_mach_divergence_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._set_mach_divergence_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7539,7 +7540,7 @@ class IAdvFixedWingSubsonicAero(object):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence."""
-        return self._intf.get_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -7547,13 +7548,13 @@ class IAdvFixedWingSubsonicAero(object):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence."""
-        return self._intf.set_property(IAdvFixedWingSubsonicAero._metadata, IAdvFixedWingSubsonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubsonicAero._metadata, IAdvancedFixedWingSubsonicAero._set_transonic_mach_drag_factor_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{9e4abf77-2ca1-4130-8ff8-e13d216d722b}", IAdvFixedWingSubsonicAero)
-agcls.AgTypeNameMap["IAdvFixedWingSubsonicAero"] = IAdvFixedWingSubsonicAero
+agcls.AgClassCatalog.add_catalog_entry("{9e4abf77-2ca1-4130-8ff8-e13d216d722b}", IAdvancedFixedWingSubsonicAero)
+agcls.AgTypeNameMap["IAdvancedFixedWingSubsonicAero"] = IAdvancedFixedWingSubsonicAero
 
-class IAdvFixedWingSubSuperHypersonicAero(object):
+class IAdvancedFixedWingSubSuperHypersonicAero(object):
     """Interface used to access the options for the Sub/Super/Hypersonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 16
@@ -7579,16 +7580,16 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
                              "set_wave_drag_factor" : 16, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubSuperHypersonicAero)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubSuperHypersonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicAero)
+        return get_interface_property(attrname, IAdvancedFixedWingSubSuperHypersonicAero)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingSubSuperHypersonicAero, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubSuperHypersonicAero, None)
     
     _get_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -7596,7 +7597,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def max_aoa(self) -> typing.Any:
         """The maximum angle of attack possible."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (agcom.Variant,),
@@ -7604,7 +7605,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """The maximum angle of attack possible."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_max_aoa_metadata, newVal)
 
     _get_transonic_min_mach_metadata = { "name" : "transonic_min_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7612,7 +7613,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def transonic_min_mach(self) -> float:
         """The minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_transonic_min_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_transonic_min_mach_metadata)
 
     _set_transonic_min_mach_metadata = { "name" : "transonic_min_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -7620,7 +7621,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @transonic_min_mach.setter
     def transonic_min_mach(self, newVal:float) -> None:
         """The minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_transonic_min_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_transonic_min_mach_metadata, newVal)
 
     _get_transonic_max_mach_metadata = { "name" : "transonic_max_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7628,7 +7629,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def transonic_max_mach(self) -> float:
         """The maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_transonic_max_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_transonic_max_mach_metadata)
 
     _set_transonic_max_mach_metadata = { "name" : "transonic_max_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -7636,7 +7637,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @transonic_max_mach.setter
     def transonic_max_mach(self, newVal:float) -> None:
         """The maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_transonic_max_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_transonic_max_mach_metadata, newVal)
 
     _get_super_hyper_mach_transition_metadata = { "name" : "super_hyper_mach_transition",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7644,7 +7645,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def super_hyper_mach_transition(self) -> float:
         """The minimum speed at which the air flow will be treated as hypersonic."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_super_hyper_mach_transition_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_super_hyper_mach_transition_metadata)
 
     _set_super_hyper_mach_transition_metadata = { "name" : "super_hyper_mach_transition",
             "arg_types" : (agcom.DOUBLE,),
@@ -7652,7 +7653,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @super_hyper_mach_transition.setter
     def super_hyper_mach_transition(self, newVal:float) -> None:
         """The minimum speed at which the air flow will be treated as hypersonic."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_super_hyper_mach_transition_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_super_hyper_mach_transition_metadata, newVal)
 
     _get_leading_edge_frontal_area_ratio_metadata = { "name" : "leading_edge_frontal_area_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7660,7 +7661,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def leading_edge_frontal_area_ratio(self) -> float:
         """The frontal face thickness of the aircraft's wings at their leading edge."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_leading_edge_frontal_area_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_leading_edge_frontal_area_ratio_metadata)
 
     _set_leading_edge_frontal_area_ratio_metadata = { "name" : "leading_edge_frontal_area_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -7668,7 +7669,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @leading_edge_frontal_area_ratio.setter
     def leading_edge_frontal_area_ratio(self, newVal:float) -> None:
         """The frontal face thickness of the aircraft's wings at their leading edge."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_leading_edge_frontal_area_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_leading_edge_frontal_area_ratio_metadata, newVal)
 
     _get_subsonic_aspect_ratio_metadata = { "name" : "subsonic_aspect_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7676,7 +7677,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def subsonic_aspect_ratio(self) -> float:
         """The aircraft's wingspan squared divided by the wing area."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_subsonic_aspect_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_subsonic_aspect_ratio_metadata)
 
     _set_subsonic_aspect_ratio_metadata = { "name" : "subsonic_aspect_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -7684,7 +7685,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @subsonic_aspect_ratio.setter
     def subsonic_aspect_ratio(self, newVal:float) -> None:
         """The aircraft's wingspan squared divided by the wing area."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_subsonic_aspect_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_subsonic_aspect_ratio_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7692,7 +7693,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -7700,7 +7701,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
 
     _get_wave_drag_factor_metadata = { "name" : "wave_drag_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7708,7 +7709,7 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @property
     def wave_drag_factor(self) -> float:
         """A scalar value that models drag produced by shock waves at or near the aircraft's critical Mach number."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._get_wave_drag_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._get_wave_drag_factor_metadata)
 
     _set_wave_drag_factor_metadata = { "name" : "wave_drag_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -7716,13 +7717,13 @@ class IAdvFixedWingSubSuperHypersonicAero(object):
     @wave_drag_factor.setter
     def wave_drag_factor(self, newVal:float) -> None:
         """A scalar value that models drag produced by shock waves at or near the aircraft's critical Mach number."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicAero._metadata, IAdvFixedWingSubSuperHypersonicAero._set_wave_drag_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicAero._metadata, IAdvancedFixedWingSubSuperHypersonicAero._set_wave_drag_factor_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{c229225f-d608-457a-a100-7ef7a8618825}", IAdvFixedWingSubSuperHypersonicAero)
-agcls.AgTypeNameMap["IAdvFixedWingSubSuperHypersonicAero"] = IAdvFixedWingSubSuperHypersonicAero
+agcls.AgClassCatalog.add_catalog_entry("{c229225f-d608-457a-a100-7ef7a8618825}", IAdvancedFixedWingSubSuperHypersonicAero)
+agcls.AgTypeNameMap["IAdvancedFixedWingSubSuperHypersonicAero"] = IAdvancedFixedWingSubSuperHypersonicAero
 
-class IAdvFixedWingSubSuperHypersonicProp(object):
+class IAdvancedFixedWingSubSuperHypersonicProp(object):
     """Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 25
@@ -7757,16 +7758,16 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
                              "set_max_ram_scram_burner_total_temperature" : 25, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingSubSuperHypersonicProp)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubSuperHypersonicProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingSubSuperHypersonicProp)
+        return get_interface_property(attrname, IAdvancedFixedWingSubSuperHypersonicProp)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingSubSuperHypersonicProp, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubSuperHypersonicProp, None)
     
     _get_turbine_mode_metadata = { "name" : "turbine_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7774,7 +7775,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def turbine_mode(self) -> "TURBINE_MODE":
         """The turbine operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_turbine_mode_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_metadata)
 
     _set_turbine_mode_metadata = { "name" : "turbine_mode",
             "arg_types" : (agcom.LONG,),
@@ -7782,23 +7783,23 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @turbine_mode.setter
     def turbine_mode(self, newVal:"TURBINE_MODE") -> None:
         """The turbine operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_turbine_mode_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_turbine_mode_metadata, newVal)
 
     _get_turbine_mode_as_turbojet_metadata = { "name" : "turbine_mode_as_turbojet",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def turbine_mode_as_turbojet(self) -> "AdvFixedWingTurbojetBasicABProp":
+    def turbine_mode_as_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABProp":
         """Get the interface for a Turbojet Basic w/ AB tubrine mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbojet_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbojet_metadata)
 
     _get_turbine_mode_as_turbofan_metadata = { "name" : "turbine_mode_as_turbofan",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def turbine_mode_as_turbofan(self) -> "AdvFixedWingTurbofanBasicABProp":
+    def turbine_mode_as_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABProp":
         """Get the interface for a Turbojet Basic w/ AB tubrine mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbofan_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbofan_metadata)
 
     _get_ramjet_mode_metadata = { "name" : "ramjet_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7806,7 +7807,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def ramjet_mode(self) -> "RAMJET_MODE":
         """The ramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_ramjet_mode_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_ramjet_mode_metadata)
 
     _set_ramjet_mode_metadata = { "name" : "ramjet_mode",
             "arg_types" : (agcom.LONG,),
@@ -7814,15 +7815,15 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @ramjet_mode.setter
     def ramjet_mode(self, newVal:"RAMJET_MODE") -> None:
         """The ramjet operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_ramjet_mode_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_ramjet_mode_metadata, newVal)
 
     _get_ramjet_mode_as_basic_metadata = { "name" : "ramjet_mode_as_basic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ramjet_mode_as_basic(self) -> "AdvFixedWingRamjetBasic":
+    def ramjet_mode_as_basic(self) -> "AdvancedFixedWingRamjetBasic":
         """Get the interface for a Ramjet - Basic."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_ramjet_mode_as_basic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_ramjet_mode_as_basic_metadata)
 
     _get_scramjet_mode_metadata = { "name" : "scramjet_mode",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7830,7 +7831,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def scramjet_mode(self) -> "SCRAMJET_MODE":
         """The scramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_scramjet_mode_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_scramjet_mode_metadata)
 
     _set_scramjet_mode_metadata = { "name" : "scramjet_mode",
             "arg_types" : (agcom.LONG,),
@@ -7838,15 +7839,15 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @scramjet_mode.setter
     def scramjet_mode(self, newVal:"SCRAMJET_MODE") -> None:
         """The scramjet operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_scramjet_mode_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_scramjet_mode_metadata, newVal)
 
     _get_scramjet_mode_as_basic_metadata = { "name" : "scramjet_mode_as_basic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def scramjet_mode_as_basic(self) -> "AdvFixedWingScramjetBasic":
+    def scramjet_mode_as_basic(self) -> "AdvancedFixedWingScramjetBasic":
         """Get the interface for a Scramjet - Basic."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_scramjet_mode_as_basic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_scramjet_mode_as_basic_metadata)
 
     _get_turbine_reference_area_metadata = { "name" : "turbine_reference_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7854,7 +7855,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def turbine_reference_area(self) -> float:
         """The reference area used for the turbine operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_turbine_reference_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_turbine_reference_area_metadata)
 
     _get_ramjet_reference_area_metadata = { "name" : "ramjet_reference_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7862,7 +7863,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def ramjet_reference_area(self) -> float:
         """The reference area used for the ramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_ramjet_reference_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_ramjet_reference_area_metadata)
 
     _get_scramjet_reference_area_metadata = { "name" : "scramjet_reference_area",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7870,7 +7871,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def scramjet_reference_area(self) -> float:
         """The reference area used for the scramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_scramjet_reference_area_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_scramjet_reference_area_metadata)
 
     _get_max_turbine_compression_temp_metadata = { "name" : "max_turbine_compression_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7878,7 +7879,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def max_turbine_compression_temp(self) -> float:
         """The maximum temperature at the compressor stage in the turbine operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_max_turbine_compression_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_max_turbine_compression_temp_metadata)
 
     _set_max_turbine_compression_temp_metadata = { "name" : "max_turbine_compression_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -7886,7 +7887,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @max_turbine_compression_temp.setter
     def max_turbine_compression_temp(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage in the turbine operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_max_turbine_compression_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_max_turbine_compression_temp_metadata, newVal)
 
     _get_max_turbine_burner_temp_metadata = { "name" : "max_turbine_burner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7894,7 +7895,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def max_turbine_burner_temp(self) -> float:
         """The maximum temperature at the combustion stage in the turbine operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_max_turbine_burner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_max_turbine_burner_temp_metadata)
 
     _set_max_turbine_burner_temp_metadata = { "name" : "max_turbine_burner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -7902,7 +7903,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @max_turbine_burner_temp.setter
     def max_turbine_burner_temp(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage in the turbine operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_max_turbine_burner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_max_turbine_burner_temp_metadata, newVal)
 
     _get_can_ram_compressor_pressure_ratio_metadata = { "name" : "can_ram_compressor_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7910,7 +7911,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def can_ram_compressor_pressure_ratio(self) -> float:
         """Can Ram compressor pressure ratio."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_can_ram_compressor_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_can_ram_compressor_pressure_ratio_metadata)
 
     _set_can_ram_compressor_pressure_ratio_metadata = { "name" : "can_ram_compressor_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -7918,7 +7919,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @can_ram_compressor_pressure_ratio.setter
     def can_ram_compressor_pressure_ratio(self, newVal:float) -> None:
         """Can Ram compressor pressure ratio."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_can_ram_compressor_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_can_ram_compressor_pressure_ratio_metadata, newVal)
 
     _get_must_ram_compressor_pressure_ratio_metadata = { "name" : "must_ram_compressor_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7926,7 +7927,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def must_ram_compressor_pressure_ratio(self) -> float:
         """Must Ram compressor pressure ratio."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_must_ram_compressor_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_must_ram_compressor_pressure_ratio_metadata)
 
     _set_must_ram_compressor_pressure_ratio_metadata = { "name" : "must_ram_compressor_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -7934,7 +7935,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @must_ram_compressor_pressure_ratio.setter
     def must_ram_compressor_pressure_ratio(self, newVal:float) -> None:
         """Must Ram compressor pressure ratio."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_must_ram_compressor_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_must_ram_compressor_pressure_ratio_metadata, newVal)
 
     _get_max_ram_scram_compression_temperature_metadata = { "name" : "max_ram_scram_compression_temperature",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7942,7 +7943,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def max_ram_scram_compression_temperature(self) -> float:
         """The maximum temperature at the compressor stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_max_ram_scram_compression_temperature_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_max_ram_scram_compression_temperature_metadata)
 
     _set_max_ram_scram_compression_temperature_metadata = { "name" : "max_ram_scram_compression_temperature",
             "arg_types" : (agcom.DOUBLE,),
@@ -7950,7 +7951,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @max_ram_scram_compression_temperature.setter
     def max_ram_scram_compression_temperature(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_max_ram_scram_compression_temperature_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_max_ram_scram_compression_temperature_metadata, newVal)
 
     _get_max_ram_scram_burner_total_temperature_metadata = { "name" : "max_ram_scram_burner_total_temperature",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7958,7 +7959,7 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @property
     def max_ram_scram_burner_total_temperature(self) -> float:
         """The maximum temperature at the combustion stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.get_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._get_max_ram_scram_burner_total_temperature_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._get_max_ram_scram_burner_total_temperature_metadata)
 
     _set_max_ram_scram_burner_total_temperature_metadata = { "name" : "max_ram_scram_burner_total_temperature",
             "arg_types" : (agcom.DOUBLE,),
@@ -7966,13 +7967,13 @@ class IAdvFixedWingSubSuperHypersonicProp(object):
     @max_ram_scram_burner_total_temperature.setter
     def max_ram_scram_burner_total_temperature(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.set_property(IAdvFixedWingSubSuperHypersonicProp._metadata, IAdvFixedWingSubSuperHypersonicProp._set_max_ram_scram_burner_total_temperature_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSubSuperHypersonicProp._metadata, IAdvancedFixedWingSubSuperHypersonicProp._set_max_ram_scram_burner_total_temperature_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{1a204443-6853-4897-b530-6e7231607545}", IAdvFixedWingSubSuperHypersonicProp)
-agcls.AgTypeNameMap["IAdvFixedWingSubSuperHypersonicProp"] = IAdvFixedWingSubSuperHypersonicProp
+agcls.AgClassCatalog.add_catalog_entry("{1a204443-6853-4897-b530-6e7231607545}", IAdvancedFixedWingSubSuperHypersonicProp)
+agcls.AgTypeNameMap["IAdvancedFixedWingSubSuperHypersonicProp"] = IAdvancedFixedWingSubSuperHypersonicProp
 
-class IAdvFixedWingSupersonicAero(object):
+class IAdvancedFixedWingSupersonicAero(object):
     """Interface used to access the options for the supersonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 20
@@ -8002,48 +8003,48 @@ class IAdvFixedWingSupersonicAero(object):
                              "set_leading_edge_suction_efficiency" : 20, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingSupersonicAero)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSupersonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingSupersonicAero)
+        return get_interface_property(attrname, IAdvancedFixedWingSupersonicAero)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingSupersonicAero, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingSupersonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_GEOMETRY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_GEOMETRY),) }
     @property
-    def geometry_type(self) -> "ADV_FIXED_WING_GEOMETRY":
+    def geometry_type(self) -> "ADVANCED_FIXED_WING_GEOMETRY":
         """The type of wing geometry for the aircraft."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_geometry_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_geometry_type_metadata)
 
     _set_geometry_type_metadata = { "name" : "geometry_type",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADV_FIXED_WING_GEOMETRY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_GEOMETRY),) }
     @geometry_type.setter
-    def geometry_type(self, newVal:"ADV_FIXED_WING_GEOMETRY") -> None:
+    def geometry_type(self, newVal:"ADVANCED_FIXED_WING_GEOMETRY") -> None:
         """The type of wing geometry for the aircraft."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_geometry_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_geometry_type_metadata, newVal)
 
     _get_geometry_mode_as_basic_metadata = { "name" : "geometry_mode_as_basic",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def geometry_mode_as_basic(self) -> "AdvFixedWingGeometryBasic":
+    def geometry_mode_as_basic(self) -> "AdvancedFixedWingGeometryBasic":
         """The options for a basic geometry wing."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_geometry_mode_as_basic_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_geometry_mode_as_basic_metadata)
 
     _get_geometry_mode_as_variable_metadata = { "name" : "geometry_mode_as_variable",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def geometry_mode_as_variable(self) -> "AdvFixedWingGeometryVariable":
+    def geometry_mode_as_variable(self) -> "AdvancedFixedWingGeometryVariable":
         """The options for a variable geometry wing."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_geometry_mode_as_variable_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_geometry_mode_as_variable_metadata)
 
     _get_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -8051,7 +8052,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def max_aoa(self) -> typing.Any:
         """The maximum angle of attack possible."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "name" : "max_aoa",
             "arg_types" : (agcom.Variant,),
@@ -8059,7 +8060,7 @@ class IAdvFixedWingSupersonicAero(object):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """The maximum angle of attack possible."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_max_aoa_metadata, newVal)
 
     _get_subsonic_cd0_metadata = { "name" : "subsonic_cd0",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8067,7 +8068,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def subsonic_cd0(self) -> float:
         """The parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_subsonic_cd0_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_subsonic_cd0_metadata)
 
     _set_subsonic_cd0_metadata = { "name" : "subsonic_cd0",
             "arg_types" : (agcom.DOUBLE,),
@@ -8075,7 +8076,7 @@ class IAdvFixedWingSupersonicAero(object):
     @subsonic_cd0.setter
     def subsonic_cd0(self, newVal:float) -> None:
         """The parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_subsonic_cd0_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_subsonic_cd0_metadata, newVal)
 
     _get_transonic_min_mach_metadata = { "name" : "transonic_min_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8083,7 +8084,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def transonic_min_mach(self) -> float:
         """The minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_transonic_min_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_transonic_min_mach_metadata)
 
     _set_transonic_min_mach_metadata = { "name" : "transonic_min_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8091,7 +8092,7 @@ class IAdvFixedWingSupersonicAero(object):
     @transonic_min_mach.setter
     def transonic_min_mach(self, newVal:float) -> None:
         """The minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_transonic_min_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_transonic_min_mach_metadata, newVal)
 
     _get_transonic_max_mach_metadata = { "name" : "transonic_max_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8099,7 +8100,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def transonic_max_mach(self) -> float:
         """The maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_transonic_max_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_transonic_max_mach_metadata)
 
     _set_transonic_max_mach_metadata = { "name" : "transonic_max_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8107,7 +8108,7 @@ class IAdvFixedWingSupersonicAero(object):
     @transonic_max_mach.setter
     def transonic_max_mach(self, newVal:float) -> None:
         """The maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_transonic_max_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_transonic_max_mach_metadata, newVal)
 
     _get_supersonic_max_mach_metadata = { "name" : "supersonic_max_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8115,7 +8116,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def supersonic_max_mach(self) -> float:
         """The speed at which the Supersonic Mach Drag Factor is applied."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_supersonic_max_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_supersonic_max_mach_metadata)
 
     _set_supersonic_max_mach_metadata = { "name" : "supersonic_max_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8123,7 +8124,7 @@ class IAdvFixedWingSupersonicAero(object):
     @supersonic_max_mach.setter
     def supersonic_max_mach(self, newVal:float) -> None:
         """The speed at which the Supersonic Mach Drag Factor is applied."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_supersonic_max_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_supersonic_max_mach_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8131,7 +8132,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "name" : "transonic_mach_drag_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -8139,7 +8140,7 @@ class IAdvFixedWingSupersonicAero(object):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """A factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
 
     _get_supersonic_mach_drag_factor_metadata = { "name" : "supersonic_mach_drag_factor",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8147,7 +8148,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def supersonic_mach_drag_factor(self) -> float:
         """A scalar value applied to the aircraft's parasitic drag coefficient when it is flying faster than the Supersonic Max Mach."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_supersonic_mach_drag_factor_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_supersonic_mach_drag_factor_metadata)
 
     _set_supersonic_mach_drag_factor_metadata = { "name" : "supersonic_mach_drag_factor",
             "arg_types" : (agcom.DOUBLE,),
@@ -8155,7 +8156,7 @@ class IAdvFixedWingSupersonicAero(object):
     @supersonic_mach_drag_factor.setter
     def supersonic_mach_drag_factor(self, newVal:float) -> None:
         """A scalar value applied to the aircraft's parasitic drag coefficient when it is flying faster than the Supersonic Max Mach."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_supersonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_supersonic_mach_drag_factor_metadata, newVal)
 
     _get_leading_edge_suction_efficiency_metadata = { "name" : "leading_edge_suction_efficiency",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8163,7 +8164,7 @@ class IAdvFixedWingSupersonicAero(object):
     @property
     def leading_edge_suction_efficiency(self) -> float:
         """The ability of the wing's leading edge to ingest turbulent airflow and thereby reduce induced drag."""
-        return self._intf.get_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._get_leading_edge_suction_efficiency_metadata)
+        return self._intf.get_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._get_leading_edge_suction_efficiency_metadata)
 
     _set_leading_edge_suction_efficiency_metadata = { "name" : "leading_edge_suction_efficiency",
             "arg_types" : (agcom.DOUBLE,),
@@ -8171,13 +8172,13 @@ class IAdvFixedWingSupersonicAero(object):
     @leading_edge_suction_efficiency.setter
     def leading_edge_suction_efficiency(self, newVal:float) -> None:
         """The ability of the wing's leading edge to ingest turbulent airflow and thereby reduce induced drag."""
-        return self._intf.set_property(IAdvFixedWingSupersonicAero._metadata, IAdvFixedWingSupersonicAero._set_leading_edge_suction_efficiency_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingSupersonicAero._metadata, IAdvancedFixedWingSupersonicAero._set_leading_edge_suction_efficiency_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{8864671c-5df8-40d1-95db-a2f92c6016ea}", IAdvFixedWingSupersonicAero)
-agcls.AgTypeNameMap["IAdvFixedWingSupersonicAero"] = IAdvFixedWingSupersonicAero
+agcls.AgClassCatalog.add_catalog_entry("{8864671c-5df8-40d1-95db-a2f92c6016ea}", IAdvancedFixedWingSupersonicAero)
+agcls.AgTypeNameMap["IAdvancedFixedWingSupersonicAero"] = IAdvancedFixedWingSupersonicAero
 
-class IAdvFixedWingGeometryBasic(object):
+class IAdvancedFixedWingGeometryBasic(object):
     """Interface used to access the options for a basic geometry wing in the advanced fixed wing tool."""
 
     _num_methods = 4
@@ -8191,16 +8192,16 @@ class IAdvFixedWingGeometryBasic(object):
                              "set_wing_sweep" : 4, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometryBasic)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometryBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingGeometryBasic)
+        return get_interface_property(attrname, IAdvancedFixedWingGeometryBasic)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometryBasic, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometryBasic, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8208,14 +8209,14 @@ class IAdvFixedWingGeometryBasic(object):
     @property
     def aspect_ratio(self) -> float:
         """The wing sweep of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingGeometryBasic._metadata, IAdvFixedWingGeometryBasic._get_aspect_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryBasic._metadata, IAdvancedFixedWingGeometryBasic._get_aspect_ratio_metadata)
 
     _set_aspect_ratio_metadata = { "name" : "set_aspect_ratio",
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     def set_aspect_ratio(self, aspectRatio:float) -> None:
         """The wing sweep of the aircraft."""
-        return self._intf.invoke(IAdvFixedWingGeometryBasic._metadata, IAdvFixedWingGeometryBasic._set_aspect_ratio_metadata, aspectRatio)
+        return self._intf.invoke(IAdvancedFixedWingGeometryBasic._metadata, IAdvancedFixedWingGeometryBasic._set_aspect_ratio_metadata, aspectRatio)
 
     _get_wing_sweep_metadata = { "name" : "wing_sweep",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -8223,7 +8224,7 @@ class IAdvFixedWingGeometryBasic(object):
     @property
     def wing_sweep(self) -> typing.Any:
         """The wing sweep of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingGeometryBasic._metadata, IAdvFixedWingGeometryBasic._get_wing_sweep_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryBasic._metadata, IAdvancedFixedWingGeometryBasic._get_wing_sweep_metadata)
 
     _set_wing_sweep_metadata = { "name" : "wing_sweep",
             "arg_types" : (agcom.Variant,),
@@ -8231,13 +8232,13 @@ class IAdvFixedWingGeometryBasic(object):
     @wing_sweep.setter
     def wing_sweep(self, newVal:typing.Any) -> None:
         """The wing sweep of the aircraft."""
-        return self._intf.set_property(IAdvFixedWingGeometryBasic._metadata, IAdvFixedWingGeometryBasic._set_wing_sweep_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingGeometryBasic._metadata, IAdvancedFixedWingGeometryBasic._set_wing_sweep_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{56a5685f-3271-4635-9989-24663bd35e0d}", IAdvFixedWingGeometryBasic)
-agcls.AgTypeNameMap["IAdvFixedWingGeometryBasic"] = IAdvFixedWingGeometryBasic
+agcls.AgClassCatalog.add_catalog_entry("{56a5685f-3271-4635-9989-24663bd35e0d}", IAdvancedFixedWingGeometryBasic)
+agcls.AgTypeNameMap["IAdvancedFixedWingGeometryBasic"] = IAdvancedFixedWingGeometryBasic
 
-class IAdvFixedWingGeometryVariable(object):
+class IAdvancedFixedWingGeometryVariable(object):
     """Interface used to access the options for a variable geometry wing in the advanced fixed wing tool."""
 
     _num_methods = 10
@@ -8257,16 +8258,16 @@ class IAdvFixedWingGeometryVariable(object):
                              "set_max_sweep_angle" : 10, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometryVariable)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometryVariable)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingGeometryVariable)
+        return get_interface_property(attrname, IAdvancedFixedWingGeometryVariable)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometryVariable, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometryVariable, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8274,14 +8275,14 @@ class IAdvFixedWingGeometryVariable(object):
     @property
     def aspect_ratio(self) -> float:
         """The wing sweep of the aircraft."""
-        return self._intf.get_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._get_aspect_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._get_aspect_ratio_metadata)
 
     _set_aspect_ratio_metadata = { "name" : "set_aspect_ratio",
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     def set_aspect_ratio(self, aspectRatio:float) -> None:
         """The wing sweep of the aircraft."""
-        return self._intf.invoke(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._set_aspect_ratio_metadata, aspectRatio)
+        return self._intf.invoke(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._set_aspect_ratio_metadata, aspectRatio)
 
     _get_start_sweep_mach_metadata = { "name" : "start_sweep_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8289,7 +8290,7 @@ class IAdvFixedWingGeometryVariable(object):
     @property
     def start_sweep_mach(self) -> float:
         """The mach number at which the wings start to sweep from the min sweep angle."""
-        return self._intf.get_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._get_start_sweep_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._get_start_sweep_mach_metadata)
 
     _set_start_sweep_mach_metadata = { "name" : "start_sweep_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8297,7 +8298,7 @@ class IAdvFixedWingGeometryVariable(object):
     @start_sweep_mach.setter
     def start_sweep_mach(self, newVal:float) -> None:
         """The mach number at which the wings start to sweep from the min sweep angle."""
-        return self._intf.set_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._set_start_sweep_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._set_start_sweep_mach_metadata, newVal)
 
     _get_stop_sweep_mach_metadata = { "name" : "stop_sweep_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8305,7 +8306,7 @@ class IAdvFixedWingGeometryVariable(object):
     @property
     def stop_sweep_mach(self) -> float:
         """The mach number at which the wings are swept to the max sweep angle."""
-        return self._intf.get_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._get_stop_sweep_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._get_stop_sweep_mach_metadata)
 
     _set_stop_sweep_mach_metadata = { "name" : "stop_sweep_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8313,7 +8314,7 @@ class IAdvFixedWingGeometryVariable(object):
     @stop_sweep_mach.setter
     def stop_sweep_mach(self, newVal:float) -> None:
         """The mach number at which the wings are swept to the max sweep angle."""
-        return self._intf.set_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._set_stop_sweep_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._set_stop_sweep_mach_metadata, newVal)
 
     _get_min_sweep_angle_metadata = { "name" : "min_sweep_angle",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -8321,7 +8322,7 @@ class IAdvFixedWingGeometryVariable(object):
     @property
     def min_sweep_angle(self) -> typing.Any:
         """The minimum sweep angle of the wings."""
-        return self._intf.get_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._get_min_sweep_angle_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._get_min_sweep_angle_metadata)
 
     _set_min_sweep_angle_metadata = { "name" : "min_sweep_angle",
             "arg_types" : (agcom.Variant,),
@@ -8329,7 +8330,7 @@ class IAdvFixedWingGeometryVariable(object):
     @min_sweep_angle.setter
     def min_sweep_angle(self, newVal:typing.Any) -> None:
         """The minimum sweep angle of the wings."""
-        return self._intf.set_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._set_min_sweep_angle_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._set_min_sweep_angle_metadata, newVal)
 
     _get_max_sweep_angle_metadata = { "name" : "max_sweep_angle",
             "arg_types" : (POINTER(agcom.Variant),),
@@ -8337,7 +8338,7 @@ class IAdvFixedWingGeometryVariable(object):
     @property
     def max_sweep_angle(self) -> typing.Any:
         """The maximum sweep angle of the wings."""
-        return self._intf.get_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._get_max_sweep_angle_metadata)
+        return self._intf.get_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._get_max_sweep_angle_metadata)
 
     _set_max_sweep_angle_metadata = { "name" : "max_sweep_angle",
             "arg_types" : (agcom.Variant,),
@@ -8345,13 +8346,13 @@ class IAdvFixedWingGeometryVariable(object):
     @max_sweep_angle.setter
     def max_sweep_angle(self, newVal:typing.Any) -> None:
         """The maximum sweep angle of the wings."""
-        return self._intf.set_property(IAdvFixedWingGeometryVariable._metadata, IAdvFixedWingGeometryVariable._set_max_sweep_angle_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingGeometryVariable._metadata, IAdvancedFixedWingGeometryVariable._set_max_sweep_angle_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{e6f7e882-f360-4744-858a-7ea1eb2104c6}", IAdvFixedWingGeometryVariable)
-agcls.AgTypeNameMap["IAdvFixedWingGeometryVariable"] = IAdvFixedWingGeometryVariable
+agcls.AgClassCatalog.add_catalog_entry("{e6f7e882-f360-4744-858a-7ea1eb2104c6}", IAdvancedFixedWingGeometryVariable)
+agcls.AgTypeNameMap["IAdvancedFixedWingGeometryVariable"] = IAdvancedFixedWingGeometryVariable
 
-class IAdvFixedWingElectricPowerplant(object):
+class IAdvancedFixedWingElectricPowerplant(object):
     """Interface used to access the options for the Electric powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 6
@@ -8367,16 +8368,16 @@ class IAdvFixedWingElectricPowerplant(object):
                              "set_propeller_diameter" : 6, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingElectricPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingElectricPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingElectricPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingElectricPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingElectricPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingElectricPowerplant, None)
     
     _get_max_power_metadata = { "name" : "max_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8384,7 +8385,7 @@ class IAdvFixedWingElectricPowerplant(object):
     @property
     def max_power(self) -> float:
         """The maximum power of the engine."""
-        return self._intf.get_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._get_max_power_metadata)
+        return self._intf.get_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._get_max_power_metadata)
 
     _set_max_power_metadata = { "name" : "max_power",
             "arg_types" : (agcom.DOUBLE,),
@@ -8392,7 +8393,7 @@ class IAdvFixedWingElectricPowerplant(object):
     @max_power.setter
     def max_power(self, newVal:float) -> None:
         """The maximum power of the engine."""
-        return self._intf.set_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._set_max_power_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._set_max_power_metadata, newVal)
 
     _get_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8400,7 +8401,7 @@ class IAdvFixedWingElectricPowerplant(object):
     @property
     def propeller_count(self) -> int:
         """The number of propellers."""
-        return self._intf.get_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._get_propeller_count_metadata)
+        return self._intf.get_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._get_propeller_count_metadata)
 
     _set_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (agcom.LONG,),
@@ -8408,7 +8409,7 @@ class IAdvFixedWingElectricPowerplant(object):
     @propeller_count.setter
     def propeller_count(self, newVal:int) -> None:
         """The number of propellers."""
-        return self._intf.set_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._set_propeller_count_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._set_propeller_count_metadata, newVal)
 
     _get_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8416,7 +8417,7 @@ class IAdvFixedWingElectricPowerplant(object):
     @property
     def propeller_diameter(self) -> float:
         """The propeller diameter."""
-        return self._intf.get_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._get_propeller_diameter_metadata)
+        return self._intf.get_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._get_propeller_diameter_metadata)
 
     _set_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (agcom.DOUBLE,),
@@ -8424,13 +8425,13 @@ class IAdvFixedWingElectricPowerplant(object):
     @propeller_diameter.setter
     def propeller_diameter(self, newVal:float) -> None:
         """The propeller diameter."""
-        return self._intf.set_property(IAdvFixedWingElectricPowerplant._metadata, IAdvFixedWingElectricPowerplant._set_propeller_diameter_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingElectricPowerplant._metadata, IAdvancedFixedWingElectricPowerplant._set_propeller_diameter_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{285ba7fc-1c89-49e1-983b-bf16ce641584}", IAdvFixedWingElectricPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingElectricPowerplant"] = IAdvFixedWingElectricPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{285ba7fc-1c89-49e1-983b-bf16ce641584}", IAdvancedFixedWingElectricPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingElectricPowerplant"] = IAdvancedFixedWingElectricPowerplant
 
-class IAdvFixedWingExternalProp(object):
+class IAdvancedFixedWingExternalProp(object):
     """Interface used to access the options for the External Prop File powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 3
@@ -8443,16 +8444,16 @@ class IAdvFixedWingExternalProp(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingExternalProp)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingExternalProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingExternalProp)
+        return get_interface_property(attrname, IAdvancedFixedWingExternalProp)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingExternalProp, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingExternalProp, None)
     
     _get_filepath_metadata = { "name" : "filepath",
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8460,14 +8461,14 @@ class IAdvFixedWingExternalProp(object):
     @property
     def filepath(self) -> str:
         """The filepath for the external aero file."""
-        return self._intf.get_property(IAdvFixedWingExternalProp._metadata, IAdvFixedWingExternalProp._get_filepath_metadata)
+        return self._intf.get_property(IAdvancedFixedWingExternalProp._metadata, IAdvancedFixedWingExternalProp._get_filepath_metadata)
 
     _set_filepath_metadata = { "name" : "set_filepath",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external aero file."""
-        return self._intf.invoke(IAdvFixedWingExternalProp._metadata, IAdvFixedWingExternalProp._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(IAdvancedFixedWingExternalProp._metadata, IAdvancedFixedWingExternalProp._set_filepath_metadata, filepath, OutArg())
 
     _get_is_valid_metadata = { "name" : "is_valid",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8475,13 +8476,13 @@ class IAdvFixedWingExternalProp(object):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(IAdvFixedWingExternalProp._metadata, IAdvFixedWingExternalProp._get_is_valid_metadata)
+        return self._intf.get_property(IAdvancedFixedWingExternalProp._metadata, IAdvancedFixedWingExternalProp._get_is_valid_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{a886a5d9-63f4-455c-9cda-bce9c81d941d}", IAdvFixedWingExternalProp)
-agcls.AgTypeNameMap["IAdvFixedWingExternalProp"] = IAdvFixedWingExternalProp
+agcls.AgClassCatalog.add_catalog_entry("{a886a5d9-63f4-455c-9cda-bce9c81d941d}", IAdvancedFixedWingExternalProp)
+agcls.AgTypeNameMap["IAdvancedFixedWingExternalProp"] = IAdvancedFixedWingExternalProp
 
-class IAdvFixedWingPistonPowerplant(object):
+class IAdvancedFixedWingPistonPowerplant(object):
     """Interface used to access the options for the Piston powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 10
@@ -8501,16 +8502,16 @@ class IAdvFixedWingPistonPowerplant(object):
                              "set_fuel_flow" : 10, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingPistonPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingPistonPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingPistonPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingPistonPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingPistonPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingPistonPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8518,7 +8519,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @property
     def max_sea_level_static_power(self) -> float:
         """The maximum static power of the engine at sea level."""
-        return self._intf.get_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._get_max_sea_level_static_power_metadata)
+        return self._intf.get_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._get_max_sea_level_static_power_metadata)
 
     _set_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (agcom.DOUBLE,),
@@ -8526,7 +8527,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @max_sea_level_static_power.setter
     def max_sea_level_static_power(self, newVal:float) -> None:
         """The maximum static power of the engine at sea level."""
-        return self._intf.set_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._set_max_sea_level_static_power_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._set_max_sea_level_static_power_metadata, newVal)
 
     _get_critical_altitude_metadata = { "name" : "critical_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8534,7 +8535,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @property
     def critical_altitude(self) -> float:
         """The engine's critical altitude."""
-        return self._intf.get_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._get_critical_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._get_critical_altitude_metadata)
 
     _set_critical_altitude_metadata = { "name" : "critical_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -8542,7 +8543,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @critical_altitude.setter
     def critical_altitude(self, newVal:float) -> None:
         """The engine's critical altitude."""
-        return self._intf.set_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._set_critical_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._set_critical_altitude_metadata, newVal)
 
     _get_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8550,7 +8551,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @property
     def propeller_count(self) -> int:
         """The number of propellers."""
-        return self._intf.get_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._get_propeller_count_metadata)
+        return self._intf.get_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._get_propeller_count_metadata)
 
     _set_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (agcom.LONG,),
@@ -8558,7 +8559,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @propeller_count.setter
     def propeller_count(self, newVal:int) -> None:
         """The number of propellers."""
-        return self._intf.set_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._set_propeller_count_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._set_propeller_count_metadata, newVal)
 
     _get_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8566,7 +8567,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @property
     def propeller_diameter(self) -> float:
         """The propeller diameter."""
-        return self._intf.get_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._get_propeller_diameter_metadata)
+        return self._intf.get_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._get_propeller_diameter_metadata)
 
     _set_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (agcom.DOUBLE,),
@@ -8574,7 +8575,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @propeller_diameter.setter
     def propeller_diameter(self, newVal:float) -> None:
         """The propeller diameter."""
-        return self._intf.set_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._set_propeller_diameter_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._set_propeller_diameter_metadata, newVal)
 
     _get_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8582,7 +8583,7 @@ class IAdvFixedWingPistonPowerplant(object):
     @property
     def fuel_flow(self) -> float:
         """The engine's fuel flow at max power."""
-        return self._intf.get_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._get_fuel_flow_metadata)
+        return self._intf.get_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._get_fuel_flow_metadata)
 
     _set_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (agcom.DOUBLE,),
@@ -8590,13 +8591,13 @@ class IAdvFixedWingPistonPowerplant(object):
     @fuel_flow.setter
     def fuel_flow(self, newVal:float) -> None:
         """The engine's fuel flow at max power."""
-        return self._intf.set_property(IAdvFixedWingPistonPowerplant._metadata, IAdvFixedWingPistonPowerplant._set_fuel_flow_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingPistonPowerplant._metadata, IAdvancedFixedWingPistonPowerplant._set_fuel_flow_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{891f9708-b367-447d-9e25-bb8fb24d6c83}", IAdvFixedWingPistonPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingPistonPowerplant"] = IAdvFixedWingPistonPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{891f9708-b367-447d-9e25-bb8fb24d6c83}", IAdvancedFixedWingPistonPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingPistonPowerplant"] = IAdvancedFixedWingPistonPowerplant
 
-class IAdvFixedWingTurbopropPowerplant(object):
+class IAdvancedFixedWingTurbopropPowerplant(object):
     """Interface used to access the options for the Turboprop powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 8
@@ -8614,16 +8615,16 @@ class IAdvFixedWingTurbopropPowerplant(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbopropPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbopropPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTurbopropPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingTurbopropPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbopropPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbopropPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8631,7 +8632,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @property
     def max_sea_level_static_power(self) -> float:
         """The maximum static power of the engine at sea level."""
-        return self._intf.get_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._get_max_sea_level_static_power_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._get_max_sea_level_static_power_metadata)
 
     _set_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
             "arg_types" : (agcom.DOUBLE,),
@@ -8639,7 +8640,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @max_sea_level_static_power.setter
     def max_sea_level_static_power(self, newVal:float) -> None:
         """The maximum static power of the engine at sea level."""
-        return self._intf.set_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._set_max_sea_level_static_power_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._set_max_sea_level_static_power_metadata, newVal)
 
     _get_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8647,7 +8648,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @property
     def propeller_count(self) -> int:
         """The number of propellers."""
-        return self._intf.get_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._get_propeller_count_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._get_propeller_count_metadata)
 
     _set_propeller_count_metadata = { "name" : "propeller_count",
             "arg_types" : (agcom.LONG,),
@@ -8655,7 +8656,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @propeller_count.setter
     def propeller_count(self, newVal:int) -> None:
         """The number of propellers."""
-        return self._intf.set_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._set_propeller_count_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._set_propeller_count_metadata, newVal)
 
     _get_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8663,7 +8664,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @property
     def propeller_diameter(self) -> float:
         """The propeller diameter."""
-        return self._intf.get_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._get_propeller_diameter_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._get_propeller_diameter_metadata)
 
     _set_propeller_diameter_metadata = { "name" : "propeller_diameter",
             "arg_types" : (agcom.DOUBLE,),
@@ -8671,7 +8672,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @propeller_diameter.setter
     def propeller_diameter(self, newVal:float) -> None:
         """The propeller diameter."""
-        return self._intf.set_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._set_propeller_diameter_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._set_propeller_diameter_metadata, newVal)
 
     _get_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8679,7 +8680,7 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @property
     def fuel_flow(self) -> float:
         """The engine's fuel flow at max power."""
-        return self._intf.get_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._get_fuel_flow_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._get_fuel_flow_metadata)
 
     _set_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (agcom.DOUBLE,),
@@ -8687,13 +8688,13 @@ class IAdvFixedWingTurbopropPowerplant(object):
     @fuel_flow.setter
     def fuel_flow(self, newVal:float) -> None:
         """The engine's fuel flow at max power."""
-        return self._intf.set_property(IAdvFixedWingTurbopropPowerplant._metadata, IAdvFixedWingTurbopropPowerplant._set_fuel_flow_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbopropPowerplant._metadata, IAdvancedFixedWingTurbopropPowerplant._set_fuel_flow_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{04fd63b4-761a-49b4-8a9c-c1610f676993}", IAdvFixedWingTurbopropPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingTurbopropPowerplant"] = IAdvFixedWingTurbopropPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{04fd63b4-761a-49b4-8a9c-c1610f676993}", IAdvancedFixedWingTurbopropPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingTurbopropPowerplant"] = IAdvancedFixedWingTurbopropPowerplant
 
-class IAdvFixedWingEmpiricalJetEngine(object):
+class IAdvancedFixedWingEmpiricalJetEngine(object):
     """Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 8
@@ -8711,16 +8712,16 @@ class IAdvFixedWingEmpiricalJetEngine(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingEmpiricalJetEngine)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingEmpiricalJetEngine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingEmpiricalJetEngine)
+        return get_interface_property(attrname, IAdvancedFixedWingEmpiricalJetEngine)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingEmpiricalJetEngine, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingEmpiricalJetEngine, None)
     
     _get_max_sea_level_static_thrust_metadata = { "name" : "max_sea_level_static_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8728,7 +8729,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @property
     def max_sea_level_static_thrust(self) -> float:
         """The maximum static thrust of the engine at sea level."""
-        return self._intf.get_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._get_max_sea_level_static_thrust_metadata)
+        return self._intf.get_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._get_max_sea_level_static_thrust_metadata)
 
     _set_max_sea_level_static_thrust_metadata = { "name" : "max_sea_level_static_thrust",
             "arg_types" : (agcom.DOUBLE,),
@@ -8736,7 +8737,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @max_sea_level_static_thrust.setter
     def max_sea_level_static_thrust(self, newVal:float) -> None:
         """The maximum static thrust of the engine at sea level."""
-        return self._intf.set_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._set_max_sea_level_static_thrust_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._set_max_sea_level_static_thrust_metadata, newVal)
 
     _get_design_point_altitude_metadata = { "name" : "design_point_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8744,7 +8745,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @property
     def design_point_altitude(self) -> float:
         """The altitude design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._get_design_point_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._get_design_point_altitude_metadata)
 
     _set_design_point_altitude_metadata = { "name" : "design_point_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -8752,7 +8753,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @design_point_altitude.setter
     def design_point_altitude(self, newVal:float) -> None:
         """The altitude design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._set_design_point_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._set_design_point_altitude_metadata, newVal)
 
     _get_design_point_mach_number_metadata = { "name" : "design_point_mach_number",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8760,7 +8761,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @property
     def design_point_mach_number(self) -> float:
         """The mach number design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._get_design_point_mach_number_metadata)
+        return self._intf.get_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._get_design_point_mach_number_metadata)
 
     _set_design_point_mach_number_metadata = { "name" : "design_point_mach_number",
             "arg_types" : (agcom.DOUBLE,),
@@ -8768,7 +8769,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @design_point_mach_number.setter
     def design_point_mach_number(self, newVal:float) -> None:
         """The mach number design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._set_design_point_mach_number_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._set_design_point_mach_number_metadata, newVal)
 
     _get_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8776,7 +8777,7 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @property
     def fuel_flow(self) -> float:
         """The engine's fuel flow at max power."""
-        return self._intf.get_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._get_fuel_flow_metadata)
+        return self._intf.get_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._get_fuel_flow_metadata)
 
     _set_fuel_flow_metadata = { "name" : "fuel_flow",
             "arg_types" : (agcom.DOUBLE,),
@@ -8784,13 +8785,13 @@ class IAdvFixedWingEmpiricalJetEngine(object):
     @fuel_flow.setter
     def fuel_flow(self, newVal:float) -> None:
         """The engine's fuel flow at max power."""
-        return self._intf.set_property(IAdvFixedWingEmpiricalJetEngine._metadata, IAdvFixedWingEmpiricalJetEngine._set_fuel_flow_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingEmpiricalJetEngine._metadata, IAdvancedFixedWingEmpiricalJetEngine._set_fuel_flow_metadata, newVal)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{f8fa49f0-f901-4b85-ac60-0712141db32c}", IAdvFixedWingEmpiricalJetEngine)
-agcls.AgTypeNameMap["IAdvFixedWingEmpiricalJetEngine"] = IAdvFixedWingEmpiricalJetEngine
+agcls.AgClassCatalog.add_catalog_entry("{f8fa49f0-f901-4b85-ac60-0712141db32c}", IAdvancedFixedWingEmpiricalJetEngine)
+agcls.AgTypeNameMap["IAdvancedFixedWingEmpiricalJetEngine"] = IAdvancedFixedWingEmpiricalJetEngine
 
-class IAdvFixedWingTurbojetBasicABProp(object):
+class IAdvancedFixedWingTurbojetBasicABProp(object):
     """Interface used to access the options for the Turbojet - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 25
@@ -8825,16 +8826,16 @@ class IAdvFixedWingTurbojetBasicABProp(object):
                              "get_fuel_mode_as_cea" : 25, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbojetBasicABProp)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbojetBasicABProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABProp)
+        return get_interface_property(attrname, IAdvancedFixedWingTurbojetBasicABProp)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbojetBasicABProp, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbojetBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8842,7 +8843,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def can_use_afterburner(self) -> bool:
         """Opt whether the engine has an afterburner."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_can_use_afterburner_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_can_use_afterburner_metadata)
 
     _set_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -8850,7 +8851,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @can_use_afterburner.setter
     def can_use_afterburner(self, newVal:bool) -> None:
         """Opt whether the engine has an afterburner."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_can_use_afterburner_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_can_use_afterburner_metadata, newVal)
 
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8858,7 +8859,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def design_altitude(self) -> float:
         """The altitude design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_design_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -8866,7 +8867,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """The altitude design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8874,7 +8875,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def design_mach(self) -> float:
         """The mach number design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_design_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -8882,7 +8883,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """The mach number design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8890,7 +8891,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def design_thrust(self) -> float:
         """The thrust design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_design_thrust_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (agcom.DOUBLE,),
@@ -8898,7 +8899,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """The thrust design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_design_thrust_metadata, newVal)
 
     _get_afterburner_on_metadata = { "name" : "afterburner_on",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8906,7 +8907,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def afterburner_on(self) -> bool:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_afterburner_on_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -8914,7 +8915,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @afterburner_on.setter
     def afterburner_on(self, newVal:bool) -> None:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_afterburner_on_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_afterburner_on_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8922,7 +8923,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def max_compression_temp(self) -> float:
         """The maximum temperature at the compressor stage."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_max_compression_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -8930,7 +8931,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8938,7 +8939,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def max_burner_temp(self) -> float:
         """The maximum temperature at the combustion stage."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_max_burner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -8946,7 +8947,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_max_burner_temp_metadata, newVal)
 
     _get_max_afterburner_temp_metadata = { "name" : "max_afterburner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8954,7 +8955,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def max_afterburner_temp(self) -> float:
         """The maximum temperature at the afterburner."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_max_afterburner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_max_afterburner_temp_metadata)
 
     _set_max_afterburner_temp_metadata = { "name" : "max_afterburner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -8962,7 +8963,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @max_afterburner_temp.setter
     def max_afterburner_temp(self, newVal:float) -> None:
         """The maximum temperature at the afterburner."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_max_afterburner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_max_afterburner_temp_metadata, newVal)
 
     _get_hpc_pressure_ratio_metadata = { "name" : "hpc_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8970,7 +8971,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def hpc_pressure_ratio(self) -> float:
         """The pressure ratio of the high-pressure compressor."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_hpc_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_hpc_pressure_ratio_metadata)
 
     _set_hpc_pressure_ratio_metadata = { "name" : "hpc_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -8978,7 +8979,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @hpc_pressure_ratio.setter
     def hpc_pressure_ratio(self, newVal:float) -> None:
         """The pressure ratio of the high-pressure compressor."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
 
     _get_lpc_pressure_ratio_metadata = { "name" : "lpc_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8986,7 +8987,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def lpc_pressure_ratio(self) -> float:
         """The pressure ratio of the low-pressure compressor."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_lpc_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_lpc_pressure_ratio_metadata)
 
     _set_lpc_pressure_ratio_metadata = { "name" : "lpc_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -8994,7 +8995,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @lpc_pressure_ratio.setter
     def lpc_pressure_ratio(self, newVal:float) -> None:
         """The pressure ratio of the low-pressure compressor."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
 
     _get_efficiencies_and_losses_metadata = { "name" : "efficiencies_and_losses",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9002,7 +9003,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_efficiencies_and_losses_metadata)
 
     _get_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9010,7 +9011,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_fuel_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (agcom.LONG,),
@@ -9018,7 +9019,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        return self._intf.set_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "name" : "fuel_mode_as_afprop",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9026,7 +9027,7 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "name" : "fuel_mode_as_cea",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9034,13 +9035,13 @@ class IAdvFixedWingTurbojetBasicABProp(object):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(IAdvFixedWingTurbojetBasicABProp._metadata, IAdvFixedWingTurbojetBasicABProp._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbojetBasicABProp._metadata, IAdvancedFixedWingTurbojetBasicABProp._get_fuel_mode_as_cea_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{7ff41deb-7c10-42ac-8805-0b251e250018}", IAdvFixedWingTurbojetBasicABProp)
-agcls.AgTypeNameMap["IAdvFixedWingTurbojetBasicABProp"] = IAdvFixedWingTurbojetBasicABProp
+agcls.AgClassCatalog.add_catalog_entry("{7ff41deb-7c10-42ac-8805-0b251e250018}", IAdvancedFixedWingTurbojetBasicABProp)
+agcls.AgTypeNameMap["IAdvancedFixedWingTurbojetBasicABProp"] = IAdvancedFixedWingTurbojetBasicABProp
 
-class IAdvFixedWingTurbofanBasicABProp(object):
+class IAdvancedFixedWingTurbofanBasicABProp(object):
     """Interface used to access the options for the Turbofan - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 27
@@ -9077,16 +9078,16 @@ class IAdvFixedWingTurbofanBasicABProp(object):
                              "get_fuel_mode_as_cea" : 27, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbofanBasicABProp)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbofanBasicABProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABProp)
+        return get_interface_property(attrname, IAdvancedFixedWingTurbofanBasicABProp)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbofanBasicABProp, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbofanBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9094,7 +9095,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def can_use_afterburner(self) -> bool:
         """Opt whether the engine has an afterburner."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_can_use_afterburner_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_can_use_afterburner_metadata)
 
     _set_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -9102,7 +9103,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @can_use_afterburner.setter
     def can_use_afterburner(self, newVal:bool) -> None:
         """Opt whether the engine has an afterburner."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_can_use_afterburner_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_can_use_afterburner_metadata, newVal)
 
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9110,7 +9111,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def design_altitude(self) -> float:
         """The altitude design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_design_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -9118,7 +9119,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """The altitude design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9126,7 +9127,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def design_mach(self) -> float:
         """The mach number design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_design_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -9134,7 +9135,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """The mach number design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9142,7 +9143,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def design_thrust(self) -> float:
         """The thrust design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_design_thrust_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (agcom.DOUBLE,),
@@ -9150,7 +9151,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """The thrust design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_design_thrust_metadata, newVal)
 
     _get_afterburner_on_metadata = { "name" : "afterburner_on",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9158,7 +9159,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def afterburner_on(self) -> bool:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_afterburner_on_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "name" : "afterburner_on",
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -9166,7 +9167,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @afterburner_on.setter
     def afterburner_on(self, newVal:bool) -> None:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_afterburner_on_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_afterburner_on_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9174,7 +9175,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def max_compression_temp(self) -> float:
         """The maximum temperature at the compressor stage."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_max_compression_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -9182,7 +9183,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9190,7 +9191,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def max_burner_temp(self) -> float:
         """The maximum temperature at the combustion stage."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_max_burner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -9198,7 +9199,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_max_burner_temp_metadata, newVal)
 
     _get_max_afterburner_temp_metadata = { "name" : "max_afterburner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9206,7 +9207,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def max_afterburner_temp(self) -> float:
         """The maximum temperature at the afterburner."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_max_afterburner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_max_afterburner_temp_metadata)
 
     _set_max_afterburner_temp_metadata = { "name" : "max_afterburner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -9214,7 +9215,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @max_afterburner_temp.setter
     def max_afterburner_temp(self, newVal:float) -> None:
         """The maximum temperature at the afterburner."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_max_afterburner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_max_afterburner_temp_metadata, newVal)
 
     _get_hpc_pressure_ratio_metadata = { "name" : "hpc_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9222,7 +9223,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def hpc_pressure_ratio(self) -> float:
         """The pressure ratio of the high-pressure compressor."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_hpc_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_hpc_pressure_ratio_metadata)
 
     _set_hpc_pressure_ratio_metadata = { "name" : "hpc_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -9230,7 +9231,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @hpc_pressure_ratio.setter
     def hpc_pressure_ratio(self, newVal:float) -> None:
         """The pressure ratio of the high-pressure compressor."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
 
     _get_lpc_pressure_ratio_metadata = { "name" : "lpc_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9238,7 +9239,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def lpc_pressure_ratio(self) -> float:
         """The pressure ratio of the low-pressure compressor."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_lpc_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_lpc_pressure_ratio_metadata)
 
     _set_lpc_pressure_ratio_metadata = { "name" : "lpc_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -9246,7 +9247,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @lpc_pressure_ratio.setter
     def lpc_pressure_ratio(self, newVal:float) -> None:
         """The pressure ratio of the low-pressure compressor."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
 
     _get_fan_pressure_ratio_metadata = { "name" : "fan_pressure_ratio",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9254,7 +9255,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def fan_pressure_ratio(self) -> float:
         """The pressure ratio of the fan."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_fan_pressure_ratio_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_fan_pressure_ratio_metadata)
 
     _set_fan_pressure_ratio_metadata = { "name" : "fan_pressure_ratio",
             "arg_types" : (agcom.DOUBLE,),
@@ -9262,7 +9263,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @fan_pressure_ratio.setter
     def fan_pressure_ratio(self, newVal:float) -> None:
         """The pressure ratio of the fan."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_fan_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_fan_pressure_ratio_metadata, newVal)
 
     _get_efficiencies_and_losses_metadata = { "name" : "efficiencies_and_losses",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9270,7 +9271,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_efficiencies_and_losses_metadata)
 
     _get_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9278,7 +9279,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_fuel_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (agcom.LONG,),
@@ -9286,7 +9287,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        return self._intf.set_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "name" : "fuel_mode_as_afprop",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9294,7 +9295,7 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "name" : "fuel_mode_as_cea",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9302,11 +9303,11 @@ class IAdvFixedWingTurbofanBasicABProp(object):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(IAdvFixedWingTurbofanBasicABProp._metadata, IAdvFixedWingTurbofanBasicABProp._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(IAdvancedFixedWingTurbofanBasicABProp._metadata, IAdvancedFixedWingTurbofanBasicABProp._get_fuel_mode_as_cea_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{f26a8761-895c-47b1-9836-9278313cf45d}", IAdvFixedWingTurbofanBasicABProp)
-agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABProp"] = IAdvFixedWingTurbofanBasicABProp
+agcls.AgClassCatalog.add_catalog_entry("{f26a8761-895c-47b1-9836-9278313cf45d}", IAdvancedFixedWingTurbofanBasicABProp)
+agcls.AgTypeNameMap["IAdvancedFixedWingTurbofanBasicABProp"] = IAdvancedFixedWingTurbofanBasicABProp
 
 class IAviatorVehicle(object):
     """Interface for a vehicle in Aviator."""
@@ -13163,7 +13164,7 @@ class IFuelModelKeroseneCEA(object):
 agcls.AgClassCatalog.add_catalog_entry("{52d8882c-bc92-469c-ae5b-2ac105b2f88b}", IFuelModelKeroseneCEA)
 agcls.AgTypeNameMap["IFuelModelKeroseneCEA"] = IFuelModelKeroseneCEA
 
-class IAdvFixedWingRamjetBasic(object):
+class IAdvancedFixedWingRamjetBasic(object):
     """Interface used to access the options for a basic Ramjet mode."""
 
     _num_methods = 15
@@ -13188,16 +13189,16 @@ class IAdvFixedWingRamjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingRamjetBasic)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingRamjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingRamjetBasic)
+        return get_interface_property(attrname, IAdvancedFixedWingRamjetBasic)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingRamjetBasic, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingRamjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13205,7 +13206,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def design_altitude(self) -> float:
         """The altitude design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_design_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -13213,7 +13214,7 @@ class IAdvFixedWingRamjetBasic(object):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """The altitude design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13221,7 +13222,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def design_mach(self) -> float:
         """The mach number design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_design_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -13229,7 +13230,7 @@ class IAdvFixedWingRamjetBasic(object):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """The mach number design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_design_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13237,7 +13238,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def design_thrust(self) -> float:
         """The thrust design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_design_thrust_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (agcom.DOUBLE,),
@@ -13245,7 +13246,7 @@ class IAdvFixedWingRamjetBasic(object):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """The thrust design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_design_thrust_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13253,7 +13254,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def max_compression_temp(self) -> float:
         """The maximum temperature at the compressor stage."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_max_compression_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -13261,7 +13262,7 @@ class IAdvFixedWingRamjetBasic(object):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13269,7 +13270,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def max_burner_temp(self) -> float:
         """The maximum temperature at the combustion stage."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_max_burner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -13277,7 +13278,7 @@ class IAdvFixedWingRamjetBasic(object):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_max_burner_temp_metadata, newVal)
 
     _get_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13285,7 +13286,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_fuel_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (agcom.LONG,),
@@ -13293,7 +13294,7 @@ class IAdvFixedWingRamjetBasic(object):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        return self._intf.set_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "name" : "fuel_mode_as_afprop",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13301,7 +13302,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "name" : "fuel_mode_as_cea",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13309,7 +13310,7 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_fuel_mode_as_cea_metadata)
 
     _get_efficiencies_and_losses_metadata = { "name" : "efficiencies_and_losses",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13317,13 +13318,13 @@ class IAdvFixedWingRamjetBasic(object):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(IAdvFixedWingRamjetBasic._metadata, IAdvFixedWingRamjetBasic._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(IAdvancedFixedWingRamjetBasic._metadata, IAdvancedFixedWingRamjetBasic._get_efficiencies_and_losses_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{9533600c-479f-42f8-b14d-a56199f9f64f}", IAdvFixedWingRamjetBasic)
-agcls.AgTypeNameMap["IAdvFixedWingRamjetBasic"] = IAdvFixedWingRamjetBasic
+agcls.AgClassCatalog.add_catalog_entry("{9533600c-479f-42f8-b14d-a56199f9f64f}", IAdvancedFixedWingRamjetBasic)
+agcls.AgTypeNameMap["IAdvancedFixedWingRamjetBasic"] = IAdvancedFixedWingRamjetBasic
 
-class IAdvFixedWingScramjetBasic(object):
+class IAdvancedFixedWingScramjetBasic(object):
     """Interface used to access the options for a basic Scramjet mode."""
 
     _num_methods = 15
@@ -13348,16 +13349,16 @@ class IAdvFixedWingScramjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingScramjetBasic)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingScramjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingScramjetBasic)
+        return get_interface_property(attrname, IAdvancedFixedWingScramjetBasic)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingScramjetBasic, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingScramjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13365,7 +13366,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def design_altitude(self) -> float:
         """The altitude design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_design_altitude_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "name" : "design_altitude",
             "arg_types" : (agcom.DOUBLE,),
@@ -13373,7 +13374,7 @@ class IAdvFixedWingScramjetBasic(object):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """The altitude design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13381,7 +13382,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def design_mach(self) -> float:
         """The mach number design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_design_mach_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "name" : "design_mach",
             "arg_types" : (agcom.DOUBLE,),
@@ -13389,7 +13390,7 @@ class IAdvFixedWingScramjetBasic(object):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """The mach number design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_design_mach_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13397,7 +13398,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def design_thrust(self) -> float:
         """The thrust design point of the engine."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_design_thrust_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "name" : "design_thrust",
             "arg_types" : (agcom.DOUBLE,),
@@ -13405,7 +13406,7 @@ class IAdvFixedWingScramjetBasic(object):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """The thrust design point of the engine."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_design_thrust_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13413,7 +13414,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def max_compression_temp(self) -> float:
         """The maximum temperature at the compressor stage."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_max_compression_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "name" : "max_compression_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -13421,7 +13422,7 @@ class IAdvFixedWingScramjetBasic(object):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """The maximum temperature at the compressor stage."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13429,7 +13430,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def max_burner_temp(self) -> float:
         """The maximum temperature at the combustion stage."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_max_burner_temp_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "name" : "max_burner_temp",
             "arg_types" : (agcom.DOUBLE,),
@@ -13437,7 +13438,7 @@ class IAdvFixedWingScramjetBasic(object):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """The maximum temperature at the combustion stage."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_max_burner_temp_metadata, newVal)
 
     _get_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13445,7 +13446,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """The jet engine's fuel type."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_fuel_type_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "name" : "fuel_type",
             "arg_types" : (agcom.LONG,),
@@ -13453,7 +13454,7 @@ class IAdvFixedWingScramjetBasic(object):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """The jet engine's fuel type."""
-        return self._intf.set_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "name" : "fuel_mode_as_afprop",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13461,7 +13462,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "name" : "fuel_mode_as_cea",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13469,7 +13470,7 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_fuel_mode_as_cea_metadata)
 
     _get_efficiencies_and_losses_metadata = { "name" : "efficiencies_and_losses",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13477,11 +13478,11 @@ class IAdvFixedWingScramjetBasic(object):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """The jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(IAdvFixedWingScramjetBasic._metadata, IAdvFixedWingScramjetBasic._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(IAdvancedFixedWingScramjetBasic._metadata, IAdvancedFixedWingScramjetBasic._get_efficiencies_and_losses_metadata)
 
 
-agcls.AgClassCatalog.add_catalog_entry("{24585a26-2d65-4fa8-850d-d19e5f7d190d}", IAdvFixedWingScramjetBasic)
-agcls.AgTypeNameMap["IAdvFixedWingScramjetBasic"] = IAdvFixedWingScramjetBasic
+agcls.AgClassCatalog.add_catalog_entry("{24585a26-2d65-4fa8-850d-d19e5f7d190d}", IAdvancedFixedWingScramjetBasic)
+agcls.AgTypeNameMap["IAdvancedFixedWingScramjetBasic"] = IAdvancedFixedWingScramjetBasic
 
 class IRefuelDumpProperties(object):
     """Interface used to access the refuel/dump properties for the current procedure."""
@@ -15389,17 +15390,17 @@ class IAircraftAccelerationMode(object):
     
     _get_accel_mode_metadata = { "name" : "accel_mode",
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADV_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCEL_MODE),) }
     @property
-    def accel_mode(self) -> "ACCELERATION_ADV_ACCEL_MODE":
+    def accel_mode(self) -> "ACCELERATION_ADVANCED_ACCEL_MODE":
         """Opt whether to override the acceleration or deceleration of the aircraft."""
         return self._intf.get_property(IAircraftAccelerationMode._metadata, IAircraftAccelerationMode._get_accel_mode_metadata)
 
     _set_accel_mode_metadata = { "name" : "accel_mode",
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADV_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCEL_MODE),) }
     @accel_mode.setter
-    def accel_mode(self, newVal:"ACCELERATION_ADV_ACCEL_MODE") -> None:
+    def accel_mode(self, newVal:"ACCELERATION_ADVANCED_ACCEL_MODE") -> None:
         """Opt whether to override the acceleration or deceleration of the aircraft."""
         return self._intf.set_property(IAircraftAccelerationMode._metadata, IAircraftAccelerationMode._set_accel_mode_metadata, newVal)
 
@@ -15423,7 +15424,7 @@ class IAircraftAccelerationMode(object):
 agcls.AgClassCatalog.add_catalog_entry("{ed792861-7946-4e82-bf56-24fd86d3fdb2}", IAircraftAccelerationMode)
 agcls.AgTypeNameMap["IAircraftAccelerationMode"] = IAircraftAccelerationMode
 
-class IAircraftAdvAccelerationModel(object):
+class IAircraftAdvancedAccelerationModel(object):
     """Interface used to access the Advanced Acceleration Model options of an aircraft."""
 
     _num_methods = 5
@@ -15438,16 +15439,16 @@ class IAircraftAdvAccelerationModel(object):
                              "get_as_catalog_item" : 5, }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAircraftAdvAccelerationModel)
+        initialize_from_source_object(self, sourceObject, IAircraftAdvancedAccelerationModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAircraftAdvAccelerationModel)
+        return get_interface_property(attrname, IAircraftAdvancedAccelerationModel)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAircraftAdvAccelerationModel, None)
+        set_interface_attribute(self, attrname, value, IAircraftAdvancedAccelerationModel, None)
     
     _get_level_turns_metadata = { "name" : "level_turns",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15455,7 +15456,7 @@ class IAircraftAdvAccelerationModel(object):
     @property
     def level_turns(self) -> "LevelTurns":
         """Get the level turns interface."""
-        return self._intf.get_property(IAircraftAdvAccelerationModel._metadata, IAircraftAdvAccelerationModel._get_level_turns_metadata)
+        return self._intf.get_property(IAircraftAdvancedAccelerationModel._metadata, IAircraftAdvancedAccelerationModel._get_level_turns_metadata)
 
     _get_attitude_transitions_metadata = { "name" : "attitude_transitions",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15463,7 +15464,7 @@ class IAircraftAdvAccelerationModel(object):
     @property
     def attitude_transitions(self) -> "AttitudeTransitions":
         """Get the attitude transitions interface."""
-        return self._intf.get_property(IAircraftAdvAccelerationModel._metadata, IAircraftAdvAccelerationModel._get_attitude_transitions_metadata)
+        return self._intf.get_property(IAircraftAdvancedAccelerationModel._metadata, IAircraftAdvancedAccelerationModel._get_attitude_transitions_metadata)
 
     _get_climb_and_descent_transitions_metadata = { "name" : "climb_and_descent_transitions",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15471,7 +15472,7 @@ class IAircraftAdvAccelerationModel(object):
     @property
     def climb_and_descent_transitions(self) -> "ClimbAndDescentTransitions":
         """Get the climb and descent transitions interface."""
-        return self._intf.get_property(IAircraftAdvAccelerationModel._metadata, IAircraftAdvAccelerationModel._get_climb_and_descent_transitions_metadata)
+        return self._intf.get_property(IAircraftAdvancedAccelerationModel._metadata, IAircraftAdvancedAccelerationModel._get_climb_and_descent_transitions_metadata)
 
     _get_acceleration_mode_metadata = { "name" : "acceleration_mode",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15479,18 +15480,18 @@ class IAircraftAdvAccelerationModel(object):
     @property
     def acceleration_mode(self) -> "AircraftAccelerationMode":
         """Get the acceleration mode interface."""
-        return self._intf.get_property(IAircraftAdvAccelerationModel._metadata, IAircraftAdvAccelerationModel._get_acceleration_mode_metadata)
+        return self._intf.get_property(IAircraftAdvancedAccelerationModel._metadata, IAircraftAdvancedAccelerationModel._get_acceleration_mode_metadata)
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_catalog_item(self) -> "ICatalogItem":
         """Get the catalog item interface for this object."""
-        return self._intf.invoke(IAircraftAdvAccelerationModel._metadata, IAircraftAdvAccelerationModel._get_as_catalog_item_metadata, OutArg())
+        return self._intf.invoke(IAircraftAdvancedAccelerationModel._metadata, IAircraftAdvancedAccelerationModel._get_as_catalog_item_metadata, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{bb08fcaa-8e26-49be-bde2-9bbe5408c1fa}", IAircraftAdvAccelerationModel)
-agcls.AgTypeNameMap["IAircraftAdvAccelerationModel"] = IAircraftAdvAccelerationModel
+agcls.AgClassCatalog.add_catalog_entry("{bb08fcaa-8e26-49be-bde2-9bbe5408c1fa}", IAircraftAdvancedAccelerationModel)
+agcls.AgTypeNameMap["IAircraftAdvancedAccelerationModel"] = IAircraftAdvancedAccelerationModel
 
 class IAeroPropManeuverModeHelper(object):
     """Interface used to access the The calculation mode for the Aero/Prop maneuver mode helper. Helper found in the Basic Acceleration Model of an aircraft."""
@@ -16202,7 +16203,7 @@ class IAircraftClimb(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_climb_by_name" : 2,
-                             "get_adv_climb_by_name" : 3,
+                             "get_advanced_climb_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16231,12 +16232,12 @@ class IAircraftClimb(object):
         """Get the basic climb model with the given name."""
         return self._intf.invoke(IAircraftClimb._metadata, IAircraftClimb._get_basic_climb_by_name_metadata, name, OutArg())
 
-    _get_adv_climb_by_name_metadata = { "name" : "get_adv_climb_by_name",
+    _get_advanced_climb_by_name_metadata = { "name" : "get_advanced_climb_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_climb_by_name(self, name:str) -> "AircraftAdvClimbModel":
+    def get_advanced_climb_by_name(self, name:str) -> "AircraftAdvancedClimbModel":
         """Get the advanced climb model with the given name."""
-        return self._intf.invoke(IAircraftClimb._metadata, IAircraftClimb._get_adv_climb_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftClimb._metadata, IAircraftClimb._get_advanced_climb_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16259,7 +16260,7 @@ class IAircraftCruise(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_cruise_by_name" : 2,
-                             "get_adv_cruise_by_name" : 3,
+                             "get_advanced_cruise_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16288,12 +16289,12 @@ class IAircraftCruise(object):
         """Get the basic cruise model with the given name."""
         return self._intf.invoke(IAircraftCruise._metadata, IAircraftCruise._get_basic_cruise_by_name_metadata, name, OutArg())
 
-    _get_adv_cruise_by_name_metadata = { "name" : "get_adv_cruise_by_name",
+    _get_advanced_cruise_by_name_metadata = { "name" : "get_advanced_cruise_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_cruise_by_name(self, name:str) -> "AircraftAdvCruiseModel":
+    def get_advanced_cruise_by_name(self, name:str) -> "AircraftAdvancedCruiseModel":
         """Get the advanced cruise model with the given name."""
-        return self._intf.invoke(IAircraftCruise._metadata, IAircraftCruise._get_adv_cruise_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftCruise._metadata, IAircraftCruise._get_advanced_cruise_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16316,7 +16317,7 @@ class IAircraftDescent(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_descent_by_name" : 2,
-                             "get_adv_descent_by_name" : 3,
+                             "get_advanced_descent_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16345,12 +16346,12 @@ class IAircraftDescent(object):
         """Get the basic descent model with the given name."""
         return self._intf.invoke(IAircraftDescent._metadata, IAircraftDescent._get_basic_descent_by_name_metadata, name, OutArg())
 
-    _get_adv_descent_by_name_metadata = { "name" : "get_adv_descent_by_name",
+    _get_advanced_descent_by_name_metadata = { "name" : "get_advanced_descent_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_descent_by_name(self, name:str) -> "AircraftAdvDescentModel":
+    def get_advanced_descent_by_name(self, name:str) -> "AircraftAdvancedDescentModel":
         """Get the advanced descent model with the given name."""
-        return self._intf.invoke(IAircraftDescent._metadata, IAircraftDescent._get_adv_descent_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftDescent._metadata, IAircraftDescent._get_advanced_descent_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16373,7 +16374,7 @@ class IAircraftLanding(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_landing_by_name" : 2,
-                             "get_adv_landing_by_name" : 3,
+                             "get_advanced_landing_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16402,12 +16403,12 @@ class IAircraftLanding(object):
         """Get the basic Landing model with the given name."""
         return self._intf.invoke(IAircraftLanding._metadata, IAircraftLanding._get_basic_landing_by_name_metadata, name, OutArg())
 
-    _get_adv_landing_by_name_metadata = { "name" : "get_adv_landing_by_name",
+    _get_advanced_landing_by_name_metadata = { "name" : "get_advanced_landing_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_landing_by_name(self, name:str) -> "AircraftAdvLandingModel":
+    def get_advanced_landing_by_name(self, name:str) -> "AircraftAdvancedLandingModel":
         """Get the advanced Landing model with the given name."""
-        return self._intf.invoke(IAircraftLanding._metadata, IAircraftLanding._get_adv_landing_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftLanding._metadata, IAircraftLanding._get_advanced_landing_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16430,7 +16431,7 @@ class IAircraftTakeoff(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_takeoff_by_name" : 2,
-                             "get_adv_takeoff_by_name" : 3,
+                             "get_advanced_takeoff_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16459,12 +16460,12 @@ class IAircraftTakeoff(object):
         """Get the basic Takeoff model with the given name."""
         return self._intf.invoke(IAircraftTakeoff._metadata, IAircraftTakeoff._get_basic_takeoff_by_name_metadata, name, OutArg())
 
-    _get_adv_takeoff_by_name_metadata = { "name" : "get_adv_takeoff_by_name",
+    _get_advanced_takeoff_by_name_metadata = { "name" : "get_advanced_takeoff_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_takeoff_by_name(self, name:str) -> "AircraftAdvTakeoffModel":
+    def get_advanced_takeoff_by_name(self, name:str) -> "AircraftAdvancedTakeoffModel":
         """Get the advanced Takeoff model with the given name."""
-        return self._intf.invoke(IAircraftTakeoff._metadata, IAircraftTakeoff._get_adv_takeoff_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftTakeoff._metadata, IAircraftTakeoff._get_advanced_takeoff_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16487,7 +16488,7 @@ class IAircraftAcceleration(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
         "method_offsets" : { "get_built_in_model" : 1,
                              "get_basic_acceleration_by_name" : 2,
-                             "get_adv_acceleration_by_name" : 3,
+                             "get_advanced_acceleration_by_name" : 3,
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
@@ -16516,12 +16517,12 @@ class IAircraftAcceleration(object):
         """Get the basic acceleration model with the given name."""
         return self._intf.invoke(IAircraftAcceleration._metadata, IAircraftAcceleration._get_basic_acceleration_by_name_metadata, name, OutArg())
 
-    _get_adv_acceleration_by_name_metadata = { "name" : "get_adv_acceleration_by_name",
+    _get_advanced_acceleration_by_name_metadata = { "name" : "get_advanced_acceleration_by_name",
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_adv_acceleration_by_name(self, name:str) -> "AircraftAdvAccelerationModel":
+    def get_advanced_acceleration_by_name(self, name:str) -> "AircraftAdvancedAccelerationModel":
         """Get the advanced acceleration model with the given name."""
-        return self._intf.invoke(IAircraftAcceleration._metadata, IAircraftAcceleration._get_adv_acceleration_by_name_metadata, name, OutArg())
+        return self._intf.invoke(IAircraftAcceleration._metadata, IAircraftAcceleration._get_advanced_acceleration_by_name_metadata, name, OutArg())
 
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -19081,7 +19082,7 @@ class IPerformanceModel(object):
 agcls.AgClassCatalog.add_catalog_entry("{8fb55502-c401-4188-adc9-7a889fdbe996}", IPerformanceModel)
 agcls.AgTypeNameMap["IPerformanceModel"] = IPerformanceModel
 
-class IAdvFixedWingGeometry(object):
+class IAdvancedFixedWingGeometry(object):
     """Interface used to access the options for the wing geometry in the advanced fixed wing tool."""
 
     _num_methods = 0
@@ -19092,23 +19093,23 @@ class IAdvFixedWingGeometry(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingGeometry)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometry)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingGeometry)
+        return get_interface_property(attrname, IAdvancedFixedWingGeometry)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingGeometry, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometry, None)
     
 
-agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}", IAdvFixedWingGeometry)
-agcls.AgTypeNameMap["IAdvFixedWingGeometry"] = IAdvFixedWingGeometry
+agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}", IAdvancedFixedWingGeometry)
+agcls.AgTypeNameMap["IAdvancedFixedWingGeometry"] = IAdvancedFixedWingGeometry
 
-class IAdvFixedWingTurbofanBasicABPowerplant(object):
-    """This interface is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
+class IAdvancedFixedWingTurbofanBasicABPowerplant(object):
+    """This interface is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19118,23 +19119,23 @@ class IAdvFixedWingTurbofanBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbofanBasicABPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbofanBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTurbofanBasicABPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingTurbofanBasicABPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbofanBasicABPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbofanBasicABPowerplant, None)
     
 
-agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}", IAdvFixedWingTurbofanBasicABPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingTurbofanBasicABPowerplant"] = IAdvFixedWingTurbofanBasicABPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}", IAdvancedFixedWingTurbofanBasicABPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingTurbofanBasicABPowerplant"] = IAdvancedFixedWingTurbofanBasicABPowerplant
 
-class IAdvFixedWingTurbojetBasicABPowerplant(object):
-    """This interface is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
+class IAdvancedFixedWingTurbojetBasicABPowerplant(object):
+    """This interface is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19144,22 +19145,22 @@ class IAdvFixedWingTurbojetBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingTurbojetBasicABPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbojetBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingTurbojetBasicABPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingTurbojetBasicABPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingTurbojetBasicABPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbojetBasicABPowerplant, None)
     
 
-agcls.AgClassCatalog.add_catalog_entry("{552db5f4-fe5d-4709-80b4-7ba074c673ff}", IAdvFixedWingTurbojetBasicABPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingTurbojetBasicABPowerplant"] = IAdvFixedWingTurbojetBasicABPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{552db5f4-fe5d-4709-80b4-7ba074c673ff}", IAdvancedFixedWingTurbojetBasicABPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingTurbojetBasicABPowerplant"] = IAdvancedFixedWingTurbojetBasicABPowerplant
 
-class IAdvFixedWingPowerplant(object):
+class IAdvancedFixedWingPowerplant(object):
     """Interface for a powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 0
@@ -19170,20 +19171,20 @@ class IAdvFixedWingPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
-        initialize_from_source_object(self, sourceObject, IAdvFixedWingPowerplant)
+        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IAdvFixedWingPowerplant)
+        return get_interface_property(attrname, IAdvancedFixedWingPowerplant)
     def __setattr__(self, attrname, value):
-        set_interface_attribute(self, attrname, value, IAdvFixedWingPowerplant, None)
+        set_interface_attribute(self, attrname, value, IAdvancedFixedWingPowerplant, None)
     
 
-agcls.AgClassCatalog.add_catalog_entry("{79824361-d702-4f4b-81ac-001876fb51ef}", IAdvFixedWingPowerplant)
-agcls.AgTypeNameMap["IAdvFixedWingPowerplant"] = IAdvFixedWingPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{79824361-d702-4f4b-81ac-001876fb51ef}", IAdvancedFixedWingPowerplant)
+agcls.AgTypeNameMap["IAdvancedFixedWingPowerplant"] = IAdvancedFixedWingPowerplant
 
 class ISiteUnknown(object):
     """Interface of an unknown site."""
@@ -36085,26 +36086,26 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
 agcls.AgClassCatalog.add_catalog_entry("{2950de29-1009-4c2a-8db5-378b41c6d48d}", AircraftBasicClimbModel)
 agcls.AgTypeNameMap["AircraftBasicClimbModel"] = AircraftBasicClimbModel
 
-class AircraftAdvClimbModel(IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedClimbModel(IAircraftAdvancedClimbModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced climb performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvClimbModel.__init__(self, sourceObject)
+        IAircraftAdvancedClimbModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvClimbModel._private_init(self, intf)
+        IAircraftAdvancedClimbModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvClimbModel, [IAircraftAdvClimbModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedClimbModel, [IAircraftAdvancedClimbModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{C1C87503-2B8E-41BC-8BA9-02B7CC1E02C2}", AircraftAdvClimbModel)
-agcls.AgTypeNameMap["AircraftAdvClimbModel"] = AircraftAdvClimbModel
+agcls.AgClassCatalog.add_catalog_entry("{C1C87503-2B8E-41BC-8BA9-02B7CC1E02C2}", AircraftAdvancedClimbModel)
+agcls.AgTypeNameMap["AircraftAdvancedClimbModel"] = AircraftAdvancedClimbModel
 
 class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic cruise performance model for an Aviator aircraft."""
@@ -36127,26 +36128,26 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
 agcls.AgClassCatalog.add_catalog_entry("{c6090ace-e557-4bef-adf3-2e56387015a8}", AircraftBasicCruiseModel)
 agcls.AgTypeNameMap["AircraftBasicCruiseModel"] = AircraftBasicCruiseModel
 
-class AircraftAdvCruiseModel(IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedCruiseModel(IAircraftAdvancedCruiseModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced cruise performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvCruiseModel.__init__(self, sourceObject)
+        IAircraftAdvancedCruiseModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvCruiseModel._private_init(self, intf)
+        IAircraftAdvancedCruiseModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvCruiseModel, [IAircraftAdvCruiseModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedCruiseModel, [IAircraftAdvancedCruiseModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{ead08117-2561-4bb7-a82b-86057f506090}", AircraftAdvCruiseModel)
-agcls.AgTypeNameMap["AircraftAdvCruiseModel"] = AircraftAdvCruiseModel
+agcls.AgClassCatalog.add_catalog_entry("{ead08117-2561-4bb7-a82b-86057f506090}", AircraftAdvancedCruiseModel)
+agcls.AgTypeNameMap["AircraftAdvancedCruiseModel"] = AircraftAdvancedCruiseModel
 
 class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic descent performance model for an Aviator aircraft."""
@@ -36169,26 +36170,26 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
 agcls.AgClassCatalog.add_catalog_entry("{30cb8d6f-afe5-4275-8479-4ce73b93a758}", AircraftBasicDescentModel)
 agcls.AgTypeNameMap["AircraftBasicDescentModel"] = AircraftBasicDescentModel
 
-class AircraftAdvDescentModel(IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedDescentModel(IAircraftAdvancedDescentModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced descent performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvDescentModel.__init__(self, sourceObject)
+        IAircraftAdvancedDescentModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvDescentModel._private_init(self, intf)
+        IAircraftAdvancedDescentModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvDescentModel, [IAircraftAdvDescentModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedDescentModel, [IAircraftAdvancedDescentModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{40ee1832-9491-49e5-bd27-40d40fefb326}", AircraftAdvDescentModel)
-agcls.AgTypeNameMap["AircraftAdvDescentModel"] = AircraftAdvDescentModel
+agcls.AgClassCatalog.add_catalog_entry("{40ee1832-9491-49e5-bd27-40d40fefb326}", AircraftAdvancedDescentModel)
+agcls.AgTypeNameMap["AircraftAdvancedDescentModel"] = AircraftAdvancedDescentModel
 
 class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic takeoff performance model for an Aviator aircraft."""
@@ -36211,26 +36212,26 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
 agcls.AgClassCatalog.add_catalog_entry("{3d9380c9-1aa0-4dcf-86bb-ded3b6b656e8}", AircraftBasicTakeoffModel)
 agcls.AgTypeNameMap["AircraftBasicTakeoffModel"] = AircraftBasicTakeoffModel
 
-class AircraftAdvTakeoffModel(IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedTakeoffModel(IAircraftAdvancedTakeoffModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced takeoff performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvTakeoffModel.__init__(self, sourceObject)
+        IAircraftAdvancedTakeoffModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvTakeoffModel._private_init(self, intf)
+        IAircraftAdvancedTakeoffModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvTakeoffModel, [IAircraftAdvTakeoffModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedTakeoffModel, [IAircraftAdvancedTakeoffModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{fc3190a3-fbeb-46bb-8395-22405fbf5b80}", AircraftAdvTakeoffModel)
-agcls.AgTypeNameMap["AircraftAdvTakeoffModel"] = AircraftAdvTakeoffModel
+agcls.AgClassCatalog.add_catalog_entry("{fc3190a3-fbeb-46bb-8395-22405fbf5b80}", AircraftAdvancedTakeoffModel)
+agcls.AgTypeNameMap["AircraftAdvancedTakeoffModel"] = AircraftAdvancedTakeoffModel
 
 class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the basic landing performance model for an Aviator aircraft."""
@@ -36253,26 +36254,26 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
 agcls.AgClassCatalog.add_catalog_entry("{bd4e5100-7e2c-40ca-815a-02a618a4321d}", AircraftBasicLandingModel)
 agcls.AgTypeNameMap["AircraftBasicLandingModel"] = AircraftBasicLandingModel
 
-class AircraftAdvLandingModel(IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedLandingModel(IAircraftAdvancedLandingModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced landing performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvLandingModel.__init__(self, sourceObject)
+        IAircraftAdvancedLandingModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvLandingModel._private_init(self, intf)
+        IAircraftAdvancedLandingModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvLandingModel, [IAircraftAdvLandingModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedLandingModel, [IAircraftAdvancedLandingModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{fb7534d7-1f9b-4133-9712-66728255532b}", AircraftAdvLandingModel)
-agcls.AgTypeNameMap["AircraftAdvLandingModel"] = AircraftAdvLandingModel
+agcls.AgClassCatalog.add_catalog_entry("{fb7534d7-1f9b-4133-9712-66728255532b}", AircraftAdvancedLandingModel)
+agcls.AgTypeNameMap["AircraftAdvancedLandingModel"] = AircraftAdvancedLandingModel
 
 class AirportCategory(IAirportCategory):
     """Class defining the airport category in the Aviator catalog."""
@@ -36975,26 +36976,26 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
 agcls.AgClassCatalog.add_catalog_entry("{854b3e50-7d20-4d15-a58d-b1f36dac5c77}", AeroPropManeuverModeHelper)
 agcls.AgTypeNameMap["AeroPropManeuverModeHelper"] = AeroPropManeuverModeHelper
 
-class AircraftAdvAccelerationModel(IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem):
+class AircraftAdvancedAccelerationModel(IAircraftAdvancedAccelerationModel, IPerformanceModel, ICatalogItem):
     """Class defining the advanced acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAircraftAdvAccelerationModel.__init__(self, sourceObject)
+        IAircraftAdvancedAccelerationModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAircraftAdvAccelerationModel._private_init(self, intf)
+        IAircraftAdvancedAccelerationModel._private_init(self, intf)
         IPerformanceModel._private_init(self, intf)
         ICatalogItem._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AircraftAdvAccelerationModel, [IAircraftAdvAccelerationModel, IPerformanceModel, ICatalogItem])
+        set_class_attribute(self, attrname, value, AircraftAdvancedAccelerationModel, [IAircraftAdvancedAccelerationModel, IPerformanceModel, ICatalogItem])
 
-agcls.AgClassCatalog.add_catalog_entry("{e55e8521-3091-4a5d-afe0-57f7e7ee698e}", AircraftAdvAccelerationModel)
-agcls.AgTypeNameMap["AircraftAdvAccelerationModel"] = AircraftAdvAccelerationModel
+agcls.AgClassCatalog.add_catalog_entry("{e55e8521-3091-4a5d-afe0-57f7e7ee698e}", AircraftAdvancedAccelerationModel)
+agcls.AgTypeNameMap["AircraftAdvancedAccelerationModel"] = AircraftAdvancedAccelerationModel
 
 class AircraftAccelerationMode(IAircraftAccelerationMode):
     """Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft."""
@@ -38392,90 +38393,90 @@ class PerformanceModelOptions(IPerformanceModelOptions):
 agcls.AgClassCatalog.add_catalog_entry("{d37c0417-9eab-4d38-8a3f-a70e144b5368}", PerformanceModelOptions)
 agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 
-class AdvFixedWingTool(IAdvFixedWingTool):
+class AdvancedFixedWingTool(IAdvancedFixedWingTool):
     """Class defining the options for the Advanced Fixed Wing Tool of an aircraft."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTool.__init__(self, sourceObject)
+        IAdvancedFixedWingTool.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTool._private_init(self, intf)
+        IAdvancedFixedWingTool._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTool, [IAdvFixedWingTool])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTool, [IAdvancedFixedWingTool])
 
-agcls.AgClassCatalog.add_catalog_entry("{e250469c-80a2-44d2-b53d-2712363d7b47}", AdvFixedWingTool)
-agcls.AgTypeNameMap["AdvFixedWingTool"] = AdvFixedWingTool
+agcls.AgClassCatalog.add_catalog_entry("{e250469c-80a2-44d2-b53d-2712363d7b47}", AdvancedFixedWingTool)
+agcls.AgTypeNameMap["AdvancedFixedWingTool"] = AdvancedFixedWingTool
 
-class AdvFixedWingExternalAero(IAdvFixedWingExternalAero):
+class AdvancedFixedWingExternalAero(IAdvancedFixedWingExternalAero):
     """Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingExternalAero.__init__(self, sourceObject)
+        IAdvancedFixedWingExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingExternalAero._private_init(self, intf)
+        IAdvancedFixedWingExternalAero._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingExternalAero, [IAdvFixedWingExternalAero])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalAero, [IAdvancedFixedWingExternalAero])
 
-agcls.AgClassCatalog.add_catalog_entry("{0938800e-fa5d-446d-bf7b-3d79283da798}", AdvFixedWingExternalAero)
-agcls.AgTypeNameMap["AdvFixedWingExternalAero"] = AdvFixedWingExternalAero
+agcls.AgClassCatalog.add_catalog_entry("{0938800e-fa5d-446d-bf7b-3d79283da798}", AdvancedFixedWingExternalAero)
+agcls.AgTypeNameMap["AdvancedFixedWingExternalAero"] = AdvancedFixedWingExternalAero
 
-class AdvFixedWingSubsonicAero(IAdvFixedWingSubsonicAero):
+class AdvancedFixedWingSubsonicAero(IAdvancedFixedWingSubsonicAero):
     """Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingSubsonicAero.__init__(self, sourceObject)
+        IAdvancedFixedWingSubsonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingSubsonicAero._private_init(self, intf)
+        IAdvancedFixedWingSubsonicAero._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingSubsonicAero, [IAdvFixedWingSubsonicAero])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubsonicAero, [IAdvancedFixedWingSubsonicAero])
 
-agcls.AgClassCatalog.add_catalog_entry("{ced4d6ca-5a7e-4640-936f-e0db35949454}", AdvFixedWingSubsonicAero)
-agcls.AgTypeNameMap["AdvFixedWingSubsonicAero"] = AdvFixedWingSubsonicAero
+agcls.AgClassCatalog.add_catalog_entry("{ced4d6ca-5a7e-4640-936f-e0db35949454}", AdvancedFixedWingSubsonicAero)
+agcls.AgTypeNameMap["AdvancedFixedWingSubsonicAero"] = AdvancedFixedWingSubsonicAero
 
-class AdvFixedWingSubSuperHypersonicAero(IAdvFixedWingSubSuperHypersonicAero):
+class AdvancedFixedWingSubSuperHypersonicAero(IAdvancedFixedWingSubSuperHypersonicAero):
     """Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingSubSuperHypersonicAero.__init__(self, sourceObject)
+        IAdvancedFixedWingSubSuperHypersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingSubSuperHypersonicAero._private_init(self, intf)
+        IAdvancedFixedWingSubSuperHypersonicAero._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicAero, [IAdvFixedWingSubSuperHypersonicAero])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicAero, [IAdvancedFixedWingSubSuperHypersonicAero])
 
-agcls.AgClassCatalog.add_catalog_entry("{aa686d0d-7a40-44bb-b340-a5a5470ed81f}", AdvFixedWingSubSuperHypersonicAero)
-agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicAero"] = AdvFixedWingSubSuperHypersonicAero
+agcls.AgClassCatalog.add_catalog_entry("{aa686d0d-7a40-44bb-b340-a5a5470ed81f}", AdvancedFixedWingSubSuperHypersonicAero)
+agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicAero"] = AdvancedFixedWingSubSuperHypersonicAero
 
-class AdvFixedWingSupersonicAero(IAdvFixedWingSupersonicAero):
+class AdvancedFixedWingSupersonicAero(IAdvancedFixedWingSupersonicAero):
     """Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingSupersonicAero.__init__(self, sourceObject)
+        IAdvancedFixedWingSupersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingSupersonicAero._private_init(self, intf)
+        IAdvancedFixedWingSupersonicAero._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingSupersonicAero, [IAdvFixedWingSupersonicAero])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSupersonicAero, [IAdvancedFixedWingSupersonicAero])
 
-agcls.AgClassCatalog.add_catalog_entry("{00683dc3-fc6d-4ba2-9d0b-306363523e17}", AdvFixedWingSupersonicAero)
-agcls.AgTypeNameMap["AdvFixedWingSupersonicAero"] = AdvFixedWingSupersonicAero
+agcls.AgClassCatalog.add_catalog_entry("{00683dc3-fc6d-4ba2-9d0b-306363523e17}", AdvancedFixedWingSupersonicAero)
+agcls.AgTypeNameMap["AdvancedFixedWingSupersonicAero"] = AdvancedFixedWingSupersonicAero
 
 class PerformanceModel(IPerformanceModel, ICatalogItem):
     """Class defining an unknown performance model."""
@@ -38496,213 +38497,213 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
 agcls.AgClassCatalog.add_catalog_entry("{07c21222-ddfa-4417-8739-aa7e41a6091a}", PerformanceModel)
 agcls.AgTypeNameMap["PerformanceModel"] = PerformanceModel
 
-class AdvFixedWingGeometryBasic(IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry):
+class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometryBasic, IAdvancedFixedWingGeometry):
     """Class defining a basic geometry wing in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingGeometryBasic.__init__(self, sourceObject)
-        IAdvFixedWingGeometry.__init__(self, sourceObject)
+        IAdvancedFixedWingGeometryBasic.__init__(self, sourceObject)
+        IAdvancedFixedWingGeometry.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingGeometryBasic._private_init(self, intf)
-        IAdvFixedWingGeometry._private_init(self, intf)
+        IAdvancedFixedWingGeometryBasic._private_init(self, intf)
+        IAdvancedFixedWingGeometry._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingGeometryBasic, [IAdvFixedWingGeometryBasic, IAdvFixedWingGeometry])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryBasic, [IAdvancedFixedWingGeometryBasic, IAdvancedFixedWingGeometry])
 
-agcls.AgClassCatalog.add_catalog_entry("{3fccd7b1-9fd7-424e-a251-cadcc2d44a0a}", AdvFixedWingGeometryBasic)
-agcls.AgTypeNameMap["AdvFixedWingGeometryBasic"] = AdvFixedWingGeometryBasic
+agcls.AgClassCatalog.add_catalog_entry("{3fccd7b1-9fd7-424e-a251-cadcc2d44a0a}", AdvancedFixedWingGeometryBasic)
+agcls.AgTypeNameMap["AdvancedFixedWingGeometryBasic"] = AdvancedFixedWingGeometryBasic
 
-class AdvFixedWingGeometryVariable(IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry):
+class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometryVariable, IAdvancedFixedWingGeometry):
     """Class defining a variable geometry wing in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingGeometryVariable.__init__(self, sourceObject)
-        IAdvFixedWingGeometry.__init__(self, sourceObject)
+        IAdvancedFixedWingGeometryVariable.__init__(self, sourceObject)
+        IAdvancedFixedWingGeometry.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingGeometryVariable._private_init(self, intf)
-        IAdvFixedWingGeometry._private_init(self, intf)
+        IAdvancedFixedWingGeometryVariable._private_init(self, intf)
+        IAdvancedFixedWingGeometry._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingGeometryVariable, [IAdvFixedWingGeometryVariable, IAdvFixedWingGeometry])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryVariable, [IAdvancedFixedWingGeometryVariable, IAdvancedFixedWingGeometry])
 
-agcls.AgClassCatalog.add_catalog_entry("{a7cb26ac-fa5b-416d-b81b-8a5975937740}", AdvFixedWingGeometryVariable)
-agcls.AgTypeNameMap["AdvFixedWingGeometryVariable"] = AdvFixedWingGeometryVariable
+agcls.AgClassCatalog.add_catalog_entry("{a7cb26ac-fa5b-416d-b81b-8a5975937740}", AdvancedFixedWingGeometryVariable)
+agcls.AgTypeNameMap["AdvancedFixedWingGeometryVariable"] = AdvancedFixedWingGeometryVariable
 
-class AdvFixedWingElectricPowerplant(IAdvFixedWingElectricPowerplant):
+class AdvancedFixedWingElectricPowerplant(IAdvancedFixedWingElectricPowerplant):
     """Class defining an Electric powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingElectricPowerplant.__init__(self, sourceObject)
+        IAdvancedFixedWingElectricPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingElectricPowerplant._private_init(self, intf)
+        IAdvancedFixedWingElectricPowerplant._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingElectricPowerplant, [IAdvFixedWingElectricPowerplant])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingElectricPowerplant, [IAdvancedFixedWingElectricPowerplant])
 
-agcls.AgClassCatalog.add_catalog_entry("{64f956f4-4b87-4b13-b459-efef51191309}", AdvFixedWingElectricPowerplant)
-agcls.AgTypeNameMap["AdvFixedWingElectricPowerplant"] = AdvFixedWingElectricPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{64f956f4-4b87-4b13-b459-efef51191309}", AdvancedFixedWingElectricPowerplant)
+agcls.AgTypeNameMap["AdvancedFixedWingElectricPowerplant"] = AdvancedFixedWingElectricPowerplant
 
-class AdvFixedWingExternalProp(IAdvFixedWingExternalProp):
+class AdvancedFixedWingExternalProp(IAdvancedFixedWingExternalProp):
     """Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingExternalProp.__init__(self, sourceObject)
+        IAdvancedFixedWingExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingExternalProp._private_init(self, intf)
+        IAdvancedFixedWingExternalProp._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingExternalProp, [IAdvFixedWingExternalProp])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalProp, [IAdvancedFixedWingExternalProp])
 
-agcls.AgClassCatalog.add_catalog_entry("{86d612c4-8537-48d7-912b-931a2c939c8e}", AdvFixedWingExternalProp)
-agcls.AgTypeNameMap["AdvFixedWingExternalProp"] = AdvFixedWingExternalProp
+agcls.AgClassCatalog.add_catalog_entry("{86d612c4-8537-48d7-912b-931a2c939c8e}", AdvancedFixedWingExternalProp)
+agcls.AgTypeNameMap["AdvancedFixedWingExternalProp"] = AdvancedFixedWingExternalProp
 
-class AdvFixedWingSubSuperHypersonicProp(IAdvFixedWingSubSuperHypersonicProp):
+class AdvancedFixedWingSubSuperHypersonicProp(IAdvancedFixedWingSubSuperHypersonicProp):
     """Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingSubSuperHypersonicProp.__init__(self, sourceObject)
+        IAdvancedFixedWingSubSuperHypersonicProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingSubSuperHypersonicProp._private_init(self, intf)
+        IAdvancedFixedWingSubSuperHypersonicProp._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingSubSuperHypersonicProp, [IAdvFixedWingSubSuperHypersonicProp])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicProp, [IAdvancedFixedWingSubSuperHypersonicProp])
 
-agcls.AgClassCatalog.add_catalog_entry("{15279d03-0f3b-458d-957c-2cdee97bc0a8}", AdvFixedWingSubSuperHypersonicProp)
-agcls.AgTypeNameMap["AdvFixedWingSubSuperHypersonicProp"] = AdvFixedWingSubSuperHypersonicProp
+agcls.AgClassCatalog.add_catalog_entry("{15279d03-0f3b-458d-957c-2cdee97bc0a8}", AdvancedFixedWingSubSuperHypersonicProp)
+agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicProp"] = AdvancedFixedWingSubSuperHypersonicProp
 
-class AdvFixedWingPistonPowerplant(IAdvFixedWingPistonPowerplant):
+class AdvancedFixedWingPistonPowerplant(IAdvancedFixedWingPistonPowerplant):
     """Class defining a Piston powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingPistonPowerplant.__init__(self, sourceObject)
+        IAdvancedFixedWingPistonPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingPistonPowerplant._private_init(self, intf)
+        IAdvancedFixedWingPistonPowerplant._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingPistonPowerplant, [IAdvFixedWingPistonPowerplant])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingPistonPowerplant, [IAdvancedFixedWingPistonPowerplant])
 
-agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}", AdvFixedWingPistonPowerplant)
-agcls.AgTypeNameMap["AdvFixedWingPistonPowerplant"] = AdvFixedWingPistonPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}", AdvancedFixedWingPistonPowerplant)
+agcls.AgTypeNameMap["AdvancedFixedWingPistonPowerplant"] = AdvancedFixedWingPistonPowerplant
 
-class AdvFixedWingEmpiricalJetEngine(IAdvFixedWingEmpiricalJetEngine):
+class AdvancedFixedWingEmpiricalJetEngine(IAdvancedFixedWingEmpiricalJetEngine):
     """Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingEmpiricalJetEngine.__init__(self, sourceObject)
+        IAdvancedFixedWingEmpiricalJetEngine.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingEmpiricalJetEngine._private_init(self, intf)
+        IAdvancedFixedWingEmpiricalJetEngine._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingEmpiricalJetEngine, [IAdvFixedWingEmpiricalJetEngine])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingEmpiricalJetEngine, [IAdvancedFixedWingEmpiricalJetEngine])
 
-agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}", AdvFixedWingEmpiricalJetEngine)
-agcls.AgTypeNameMap["AdvFixedWingEmpiricalJetEngine"] = AdvFixedWingEmpiricalJetEngine
+agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}", AdvancedFixedWingEmpiricalJetEngine)
+agcls.AgTypeNameMap["AdvancedFixedWingEmpiricalJetEngine"] = AdvancedFixedWingEmpiricalJetEngine
 
-class AdvFixedWingTurbofanBasicABPowerplant(IAdvFixedWingTurbofanBasicABPowerplant):
-    """This class is deprecated. Use AdvFixedWingTurbofanBasicABProp instead."""
+class AdvancedFixedWingTurbofanBasicABPowerplant(IAdvancedFixedWingTurbofanBasicABPowerplant):
+    """This class is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
+        IAdvancedFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTurbofanBasicABPowerplant._private_init(self, intf)
+        IAdvancedFixedWingTurbofanBasicABPowerplant._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABPowerplant, [IAdvFixedWingTurbofanBasicABPowerplant])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABPowerplant, [IAdvancedFixedWingTurbofanBasicABPowerplant])
 
-agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}", AdvFixedWingTurbofanBasicABPowerplant)
-agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABPowerplant"] = AdvFixedWingTurbofanBasicABPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}", AdvancedFixedWingTurbofanBasicABPowerplant)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPowerplant"] = AdvancedFixedWingTurbofanBasicABPowerplant
 
-class AdvFixedWingTurbojetBasicABPowerplant(IAdvFixedWingTurbojetBasicABPowerplant):
-    """This class is deprecated. Use AdvFixedWingTurbojetBasicABProp instead."""
+class AdvancedFixedWingTurbojetBasicABPowerplant(IAdvancedFixedWingTurbojetBasicABPowerplant):
+    """This class is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
+        IAdvancedFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTurbojetBasicABPowerplant._private_init(self, intf)
+        IAdvancedFixedWingTurbojetBasicABPowerplant._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABPowerplant, [IAdvFixedWingTurbojetBasicABPowerplant])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABPowerplant, [IAdvancedFixedWingTurbojetBasicABPowerplant])
 
-agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}", AdvFixedWingTurbojetBasicABPowerplant)
-agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABPowerplant"] = AdvFixedWingTurbojetBasicABPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}", AdvancedFixedWingTurbojetBasicABPowerplant)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABPowerplant"] = AdvancedFixedWingTurbojetBasicABPowerplant
 
-class AdvFixedWingTurbofanBasicABProp(IAdvFixedWingTurbofanBasicABProp):
+class AdvancedFixedWingTurbofanBasicABProp(IAdvancedFixedWingTurbofanBasicABProp):
     """Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTurbofanBasicABProp.__init__(self, sourceObject)
+        IAdvancedFixedWingTurbofanBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTurbofanBasicABProp._private_init(self, intf)
+        IAdvancedFixedWingTurbofanBasicABProp._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTurbofanBasicABProp, [IAdvFixedWingTurbofanBasicABProp])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABProp, [IAdvancedFixedWingTurbofanBasicABProp])
 
-agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}", AdvFixedWingTurbofanBasicABProp)
-agcls.AgTypeNameMap["AdvFixedWingTurbofanBasicABProp"] = AdvFixedWingTurbofanBasicABProp
+agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}", AdvancedFixedWingTurbofanBasicABProp)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABProp"] = AdvancedFixedWingTurbofanBasicABProp
 
-class AdvFixedWingTurbojetBasicABProp(IAdvFixedWingTurbojetBasicABProp):
+class AdvancedFixedWingTurbojetBasicABProp(IAdvancedFixedWingTurbojetBasicABProp):
     """Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTurbojetBasicABProp.__init__(self, sourceObject)
+        IAdvancedFixedWingTurbojetBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTurbojetBasicABProp._private_init(self, intf)
+        IAdvancedFixedWingTurbojetBasicABProp._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTurbojetBasicABProp, [IAdvFixedWingTurbojetBasicABProp])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABProp, [IAdvancedFixedWingTurbojetBasicABProp])
 
-agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}", AdvFixedWingTurbojetBasicABProp)
-agcls.AgTypeNameMap["AdvFixedWingTurbojetBasicABProp"] = AdvFixedWingTurbojetBasicABProp
+agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}", AdvancedFixedWingTurbojetBasicABProp)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABProp"] = AdvancedFixedWingTurbojetBasicABProp
 
-class AdvFixedWingTurbopropPowerplant(IAdvFixedWingTurbopropPowerplant):
+class AdvancedFixedWingTurbopropPowerplant(IAdvancedFixedWingTurbopropPowerplant):
     """Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingTurbopropPowerplant.__init__(self, sourceObject)
+        IAdvancedFixedWingTurbopropPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingTurbopropPowerplant._private_init(self, intf)
+        IAdvancedFixedWingTurbopropPowerplant._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingTurbopropPowerplant, [IAdvFixedWingTurbopropPowerplant])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbopropPowerplant, [IAdvancedFixedWingTurbopropPowerplant])
 
-agcls.AgClassCatalog.add_catalog_entry("{7ac5402a-9b5d-4fc9-94b5-365e9bc1e25e}", AdvFixedWingTurbopropPowerplant)
-agcls.AgTypeNameMap["AdvFixedWingTurbopropPowerplant"] = AdvFixedWingTurbopropPowerplant
+agcls.AgClassCatalog.add_catalog_entry("{7ac5402a-9b5d-4fc9-94b5-365e9bc1e25e}", AdvancedFixedWingTurbopropPowerplant)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbopropPowerplant"] = AdvancedFixedWingTurbopropPowerplant
 
 class MissileSimpleAero(IMissileSimpleAero):
     """Class defining the simple aerodynamic options for a missile."""
@@ -39288,39 +39289,39 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
 agcls.AgClassCatalog.add_catalog_entry("{6df7fa84-6983-4ed2-9447-a11d0fbd0fac}", FuelModelKeroseneCEA)
 agcls.AgTypeNameMap["FuelModelKeroseneCEA"] = FuelModelKeroseneCEA
 
-class AdvFixedWingRamjetBasic(IAdvFixedWingRamjetBasic):
+class AdvancedFixedWingRamjetBasic(IAdvancedFixedWingRamjetBasic):
     """Class defining the basic Ramjet model."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingRamjetBasic.__init__(self, sourceObject)
+        IAdvancedFixedWingRamjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingRamjetBasic._private_init(self, intf)
+        IAdvancedFixedWingRamjetBasic._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingRamjetBasic, [IAdvFixedWingRamjetBasic])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingRamjetBasic, [IAdvancedFixedWingRamjetBasic])
 
-agcls.AgClassCatalog.add_catalog_entry("{9f333e9b-3d22-429d-9880-940122216dde}", AdvFixedWingRamjetBasic)
-agcls.AgTypeNameMap["AdvFixedWingRamjetBasic"] = AdvFixedWingRamjetBasic
+agcls.AgClassCatalog.add_catalog_entry("{9f333e9b-3d22-429d-9880-940122216dde}", AdvancedFixedWingRamjetBasic)
+agcls.AgTypeNameMap["AdvancedFixedWingRamjetBasic"] = AdvancedFixedWingRamjetBasic
 
-class AdvFixedWingScramjetBasic(IAdvFixedWingScramjetBasic):
+class AdvancedFixedWingScramjetBasic(IAdvancedFixedWingScramjetBasic):
     """Class defining the basic Scramjet model."""
 
     def __init__(self, sourceObject=None):
-        IAdvFixedWingScramjetBasic.__init__(self, sourceObject)
+        IAdvancedFixedWingScramjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IAdvFixedWingScramjetBasic._private_init(self, intf)
+        IAdvancedFixedWingScramjetBasic._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
-        set_class_attribute(self, attrname, value, AdvFixedWingScramjetBasic, [IAdvFixedWingScramjetBasic])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingScramjetBasic, [IAdvancedFixedWingScramjetBasic])
 
-agcls.AgClassCatalog.add_catalog_entry("{6caec1e6-8cf4-4752-89c6-42b55473f144}", AdvFixedWingScramjetBasic)
-agcls.AgTypeNameMap["AdvFixedWingScramjetBasic"] = AdvFixedWingScramjetBasic
+agcls.AgClassCatalog.add_catalog_entry("{6caec1e6-8cf4-4752-89c6-42b55473f144}", AdvancedFixedWingScramjetBasic)
+agcls.AgTypeNameMap["AdvancedFixedWingScramjetBasic"] = AdvancedFixedWingScramjetBasic
 
 class AircraftVTOLModel(IAircraftVTOLModel):
     """Class defining the VTOL performance model of an aircraft."""

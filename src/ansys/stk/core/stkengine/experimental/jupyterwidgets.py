@@ -140,7 +140,7 @@ class RemoteFrameBufferHost(object):
     
     Assemble a vtable following the layout of that interface
     '''
-
+    
     _IID_IUnknown = GUID(IUnknown._guid)
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
@@ -202,7 +202,7 @@ class WidgetBase(RemoteFrameBuffer):
     '''
     Base class for Jupyter controls.
     '''
-
+    
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -400,7 +400,7 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     '''
     The 2D Map widget for jupyter.
     '''
-
+    
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
@@ -415,7 +415,7 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     '''
     The Graphics Analysis widget for jupyter.
     '''
-
+    
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
