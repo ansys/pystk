@@ -2,6 +2,13 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""The Vector Geometry (VGT) API enables users define new or utilize existing geometric constructs such as coordinate systems, vectors, points, angles, axes and planes.
+
+The geometric elements can be used to transform between coordinate
+systems, compute first and second derivatives, or perform other types of
+analysis.
+"""
+
 __all__ = ["AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyRefTo", 
 "AnalysisWorkbenchCollection", "AnalysisWorkbenchConverge", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchGeneric", "AnalysisWorkbenchInstance", 
 "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterp", "AnalysisWorkbenchLLAPosition", "AnalysisWorkbenchMethodCallAngleFindAngleResult", 
