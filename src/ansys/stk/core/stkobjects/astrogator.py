@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""This library contains Object Model components specifically designed to support STK Astrogator."""
+
 __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CONTROL", "ATTITUDE_UPDATE", "AccessStoppingCondition", 
 "AsTriggerCondition", "AstrogatorCentralBody", "AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", 
 "AttitudeControlFiniteFile", "AttitudeControlFinitePlugin", "AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", 

@@ -2,6 +2,40 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
+
+The top of the STK X object model presents the following creatable components:
+
+  * The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.   
+The main way to communicate with the engine is to send Connect commands.
+Connect is a language for accessing and manipulating STK (see the
+ExecuteCommand method).  
+The Application object also exposes connection points that you can sink to
+receive notification about the state of the STK engine (for instance a
+scenario has been loaded; an animation step is performed, etc.).  
+Notice that you can instantiate many application objects, but they all refer
+to the same unique STK engine.
+
+  * The Globe control enables you to insert a 3D view into your application.  
+You can use several Globe controls if you wish to have different views of the
+same scenario. By default the STK keyboard and mouse interaction mechanism are
+used, but various events are available, allowing your application to implement
+specific keyboard and mouse interactions and modes.
+
+  * The Map control can be used to insert a 2D view into your application.  
+The Map control gives your application a 2D view of the scenario. You can use
+several Map controls if you wish to have different views of the same scenario.
+By default the STK keyboard and mouse interaction mechanism are used, but
+various events are available, allowing your application to implement specific
+keyboard and mouse interactions and modes.
+
+  * The Graphics Analysis control allows you to insert graphics analysis capability into your application. The Graphics Analysis Control can perform various analyses when set in any of the following four analysis modes. 
+    * Area Tool 
+    * AzElMask Tool 
+    * Obscuration Tool 
+    * Solar Panel Tool
+"""
+
 __all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
 "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FEATURE_CODES", 
 "GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", 
@@ -757,14 +791,12 @@ class ISTKXApplication(object):
         """Set http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
 
-
     _get_online_options_metadata = { "name" : "get_online_options",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
         """Get http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, OutArg(), OutArg(), OutArg(), OutArg(), OutArg())
-
 
     _set_connect_handler_metadata = { "name" : "set_connect_handler",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
