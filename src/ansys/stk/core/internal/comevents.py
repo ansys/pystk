@@ -739,7 +739,7 @@ class _StkGraphicsSceneEventsUnkSink(Structure):
                  ("GetTypeInfoCount", c_void_p),
                  ("GetTypeInfo",      c_void_p),
                  ("GetIDsOfNames",    c_void_p),
-                 ("Invoke",           c_void_p),
+                 ("invoke",           c_void_p),
                  ("rendering",        c_void_p)]
 
 class ISceneEventCOMHandler(COMEventHandlerImpl):
@@ -818,7 +818,7 @@ class _StkGraphicsKmlGraphicsEventsUnkSink(Structure):
                  ("GetTypeInfoCount", c_void_p),
                  ("GetTypeInfo",      c_void_p),
                  ("GetIDsOfNames",    c_void_p),
-                 ("Invoke",           c_void_p),
+                 ("invoke",           c_void_p),
                  ("document_loaded",   c_void_p)]
 
 class IKmlGraphicsEventCOMHandler(COMEventHandlerImpl):
@@ -897,7 +897,7 @@ class _StkGraphicsImageCollectionEventsUnkSink(Structure):
                  ("GetTypeInfoCount", c_void_p),
                  ("GetTypeInfo",      c_void_p),
                  ("GetIDsOfNames",    c_void_p),
-                 ("Invoke",           c_void_p),
+                 ("invoke",           c_void_p),
                  ("add_complete",      c_void_p)]
 
 class IImageCollectionEventCOMHandler(COMEventHandlerImpl):
@@ -976,7 +976,7 @@ class _StkGraphicsTerrainCollectionEventsUnkSink(Structure):
                  ("GetTypeInfoCount", c_void_p),
                  ("GetTypeInfo",      c_void_p),
                  ("GetIDsOfNames",    c_void_p),
-                 ("Invoke",           c_void_p),
+                 ("invoke",           c_void_p),
                  ("add_complete",      c_void_p)]
 
 class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):

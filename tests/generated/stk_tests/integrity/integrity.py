@@ -10395,7 +10395,7 @@ class Access(TestBase):
     def test_AccessTest(self, objPath1: str, objPath2: str):
         if not ("DummyScenario1" in TestBase.Application.current_scenario.instance_name):
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("IntegrityTests", "DummyScenario1", "DummyScenario1.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("IntegrityTests", "DummyScenario1", "DummyScenario1.sc"))
 
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
         TestBase.Application.execute_command("SetUnits / EPSEC")
