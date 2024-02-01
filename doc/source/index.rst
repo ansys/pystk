@@ -37,8 +37,8 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
            :link-type: doc
     
            A detailed guide describing the PySTK API. This guide documents all the
-           methods and properties for each one of the interfaces, classes and
-           enumerations of each one of the modules in PySTK.
+           methods and properties for each interface, class, and
+           enumerations of each PySTK module.
         {% endif %}
       
        {% if build_examples %}
