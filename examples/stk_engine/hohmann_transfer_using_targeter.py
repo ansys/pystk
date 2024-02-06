@@ -239,5 +239,5 @@ finish_transfer.apply_profiles()
 
 # ## Plot the trajectory
 
-plotter.camera.position = [50e3, 66e3, 64000]
+plotter.camera.position = [50000, 66000, 64000]
 plotter.show()
