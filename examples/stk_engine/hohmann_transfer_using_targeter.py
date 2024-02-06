@@ -32,7 +32,7 @@ root.new_scenario("HohmannTransfer")
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
-plotter = GlobeWidget(stk, 640, 480)
+plotter = GlobeWidget(root, 640, 480)
 plotter.show()
 # -
 
@@ -239,5 +239,5 @@ finish_transfer.apply_profiles()
 
 # ## Plot the trajectory
 
-plotter.zoom_out(factor=3)
+plotter.camera.position = [50e3, 66e3, 64000]
 plotter.show()
