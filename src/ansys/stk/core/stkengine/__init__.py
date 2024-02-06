@@ -2,6 +2,8 @@
 #          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################
 
+"""Starts STK Engine and provides access to the Object Model root."""
+
 __all__ = ["STKEngine", "STKEngineApplication", "STK_ENGINE_TIMER_TYPE"]
 
 import os

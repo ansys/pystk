@@ -2,7 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
-"""This library contains objects and enumerations shared by the STK X and STK Objects libraries.
+"""
+This library contains objects and enumerations shared by the STK X and STK Objects libraries.
 
 The types provided by STK Util are used indirectly through
 methods and properties in the STK X and STK Objects libraries.

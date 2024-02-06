@@ -2,7 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
-"""STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
+"""
+STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
 
 The top of the STK X object model presents the following creatable components:
 

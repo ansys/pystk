@@ -2,7 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
-"""Access and manipulate visual elements in STK.
+"""
+Access and manipulate visual elements in STK.
 
 These include STK globe terrain
 and imagery, camera control, 3D models, triangle meshes, surface polygons and
