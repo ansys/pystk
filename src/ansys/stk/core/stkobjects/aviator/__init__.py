@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""This library contains Object Model components specifically designed to support STK Aviator."""
+
 __all__ = ["ACCELERATION_ADVANCED_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
 "ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", "ADDS_MISSING_MSG_TYPE", "ADDS_MSG_EXTRAP_TYPE", "ADDS_MSG_INTERP_TYPE", 
 "ADVANCED_FIXED_WING_AERO_STRATEGY", "ADVANCED_FIXED_WING_GEOMETRY", "ADVANCED_FIXED_WING_POWERPLANT_STRATEGY", "AERO_PROP_FLIGHT_MODE", 

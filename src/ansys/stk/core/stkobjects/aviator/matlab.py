@@ -2,6 +2,14 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""
+This library contains Object Model components to support the MATLAB strategies found in the Basic Maneuver Procedure.
+
+MATLAB strategies allow the users to
+utilize MATLAB Aerospace Toolbox functions to define the force modeling of the
+aircraft.
+"""
+
 __all__ = ["BasicManeuverMATLABFactory", "IStrategyMATLAB3DGuidance", "IStrategyMATLABFull3D", "IStrategyMATLABNav", "IStrategyMATLABProfile", 
 "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNav", "StrategyMATLABProfile"]
 

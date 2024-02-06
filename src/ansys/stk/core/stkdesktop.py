@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################
 
+"""Starts STK Desktop or attaches to an already running STK Desktop, and provides access to the Object Model root."""
+
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os

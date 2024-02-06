@@ -2,6 +2,8 @@
 #          Copyright 2022-2022, Ansys Government Initiatives
 ################################################################################
 
+"""Map and globe widgets for Jupyter Notebooks using Remote Frame Buffer."""
+
 # Dependencies: jupyter_rfb, pillow, imageio, simplejpeg, ipycanvas
 
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']

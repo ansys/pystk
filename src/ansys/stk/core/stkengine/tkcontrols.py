@@ -2,6 +2,8 @@
 #          Copyright 2021-2021, Ansys Government Initiatives
 ################################################################################
 
+"""Enables Tkinter integration."""
+
 __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os

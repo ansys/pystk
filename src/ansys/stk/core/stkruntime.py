@@ -2,6 +2,8 @@
 #          Copyright 2023-2023, Analytical Graphics, Inc.
 ################################################################################
 
+"""Starts STK Runtime or attaches to an already running STK Runtime, and provides access to the Object Model root."""
+
 __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
