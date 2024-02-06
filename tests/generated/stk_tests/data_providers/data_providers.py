@@ -2219,7 +2219,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgDataPrvTimeVar_ExecEventArray(self):
         try:
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
             scenObj: "IStkObject" = TestBase.Application.current_scenario
             oSatellite: "IStkObject" = scenObj.children["Satellite1"]
@@ -2319,7 +2319,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgDataPrvTimeVar_ExecElementsEventArray(self):
         try:
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
             scenObj: "IStkObject" = TestBase.Application.current_scenario
             oSatellite: "IStkObject" = scenObj.children["Satellite1"]
@@ -2425,7 +2425,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgDataPrvTimeVar_ExecElementsEventArrayOnly(self):
         try:
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
             scenObj: "IStkObject" = TestBase.Application.current_scenario
             oSatellite: "IStkObject" = scenObj.children["Satellite1"]
@@ -3842,7 +3842,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgDataPrvInterval_ExecElementsEventArray(self):
         try:
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
             scenObj: "IStkObject" = TestBase.Application.current_scenario
             oSatellite: "IStkObject" = scenObj.children["Satellite1"]
@@ -3882,7 +3882,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgDataPrvInterval_ExecEventArray(self):
         try:
             TestBase.Application.close_scenario()
-            TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
+            TestBase.LoadTestScenario(TestBase.PathCombine("DataProvidersTests", "ENG88167", "OMTestScenario.sc"))
 
             scenObj: "IStkObject" = TestBase.Application.current_scenario
             oSatellite: "IStkObject" = scenObj.children["Satellite1"]

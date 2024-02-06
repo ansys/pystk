@@ -143,9 +143,9 @@ class STKEngineApplication(STKXApplication):
         if self._initialized:
             EventSubscriptionManager.unsubscribe_all()
             self._timer_impl.Terminate()
-            ObjectLifetimeManager.ReleaseAll(releaseApplication=False)
+            ObjectLifetimeManager.release_all(releaseApplication=False)
             self.terminate()
-            ObjectLifetimeManager.ReleaseAll(releaseApplication=True)
+            ObjectLifetimeManager.release_all(releaseApplication=True)
             CoInitializeManager.uninitialize()
             self.__dict__["_initialized"] = False
 
