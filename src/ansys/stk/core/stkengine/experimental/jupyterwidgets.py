@@ -21,7 +21,7 @@ from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
     GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
-from ...stkengine import STKEngineApplication
+from ...stkobjects import StkObjectRoot
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
@@ -212,7 +212,7 @@ class WidgetBase(RemoteFrameBuffer):
     _mouse3 = 0x0400
 
     def __init__(self,
-                 stk: STKEngineApplication,
+                 root: StkObjectRoot,
                  w: int = 800,
                  h: int = 600,
                  resizable: bool = True):
@@ -263,14 +263,15 @@ class WidgetBase(RemoteFrameBuffer):
         if asyncioTimerManager is None:
             asyncioTimerManager = AsyncioTimerManager()
 
-        self.stk = stk
+        self.root = root
+        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
         del self._rfb
         del self._rfbHostImpl
         del self._rfbHost
         del self._unk
-        self.stk = None
+        #self.stk = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -349,22 +350,15 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
-    def zoom_out(self, factor):
-        event = {
-            "event_type": "wheel",
-            "x": 0,
-            "y": 0,
-            "dy": 100 * factor,
-            "modifiers": [],
-        }
-        self.handle_event(event)
-
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
 
-    def _repr_html_(self):
-        return self.snapshot()
+    def animate(self):
+        self.root.execute_command("Animate * Start Loop")
+
+    def zoom(self, distance):
+        self.camera.distance += distance
 
     def show(self, **snapshot_kwargs):
         needs_snapshot = os.environ.get("BUILD_EXAMPLES", "true") == "true"
@@ -381,7 +375,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
     #   stk = STKEngine.StartApplication(noGraphics=False)
     #   root = stk.NewObjectRoot()
-    #   g = GlobeWidget(stk, 600, 400)
+    #   g = GlobeWidget(root, 600, 400)
     #   root.NewScenario("RemoteFrameBuffer")
     #   root.ExecuteCommand('Animate * Start Loop')
     #   g
@@ -389,8 +383,8 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int):
+        WidgetBase.__init__(self, root, w, h)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
@@ -404,8 +398,8 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int):
+        WidgetBase.__init__(self, root, w, h)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
@@ -419,8 +413,8 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int):
+        WidgetBase.__init__(self, root, w, h)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
