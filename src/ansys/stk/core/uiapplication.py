@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
+
 __all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication", "IUiApplicationPartnerAccess", "IUiFileOpenExt", 
 "IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
 "UiFileOpenExtCollection"]

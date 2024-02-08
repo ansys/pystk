@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""The STK UI Core library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
+
 __all__ = ["ARRANGE_STYLE", "DOCK_STYLE", "FLOAT_STATE", "IUiToolbar", "IUiToolbarCollection", "IUiWindow", "IUiWindowGlobeObject", 
 "IUiWindowMapObject", "IUiWindowsCollection", "UiToolbar", "UiToolbarCollection", "UiWindow", "UiWindowGlobeObject", "UiWindowMapObject", 
 "UiWindowsCollection", "WINDOW_SERVICE", "WINDOW_STATE"]

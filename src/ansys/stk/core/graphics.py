@@ -2,6 +2,16 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""
+Access and manipulate visual elements in STK.
+
+These include STK globe terrain
+and imagery, camera control, 3D models, triangle meshes, surface polygons and
+polylines, text batches, screen overlays, scene lighting, and raster and
+projection streaming. STK Graphics is available in STK, using UI plugins, as
+well as in STK Engine custom applications.
+"""
+
 __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
 "AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
 "ANTI_ALIASING", "AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", 
