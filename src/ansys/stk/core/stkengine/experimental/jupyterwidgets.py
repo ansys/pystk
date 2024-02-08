@@ -273,7 +273,7 @@ class WidgetBase(RemoteFrameBuffer):
         del self._rfbHostImpl
         del self._rfbHost
         del self._unk
-        #self.stk = None
+        self.root = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -358,9 +358,7 @@ class WidgetBase(RemoteFrameBuffer):
 
     def animate(self):
         self.root.execute_command("Animate * Start Loop")
-
-    def zoom(self, distance):
-        self.camera.distance += distance
+        self.show()
 
     def show(self, **snapshot_kwargs):
         needs_snapshot = os.environ.get("BUILD_EXAMPLES", "true") == "true"
