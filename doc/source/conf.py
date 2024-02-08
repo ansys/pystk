@@ -262,17 +262,25 @@ def remove_directory_recursive(directory_path):
     directory_path.rmdir()
 
 
-def copy_examples_to_source_dir(app):
+def copy_directory(origin, destination):
     logger = logging.getLogger(__name__)
-    logger.info("\nCopying examples/ to doc/source/ directory...")
+    logger.info(f"\nCopying {origin}/ to {destination}/...")
+    copy_directory_recursive(origin, destination)
+
+def copy_examples_to_source_dir(app):
     SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
     EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
-    copy_directory_recursive(EXAMPLES_DIRECTORY, SOURCE_DIRECTORY / "examples")
+    copy_directory(EXAMPLES_DIRECTORY, SOURCE_DIRECTORY / "examples")
+
+def copy_examples_to_output_dir(app):
+    OUTPUT_DIRECTORY = pathlib.Path(app.outdir)
+    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
+    copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY / "examples")
 
 def remove_examples_from_source_dir(app, exception):
-    logger = logging.getLogger(__name__)
-    logger.info("\nRemoving examples/ from doc/source/ directory...")
     SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
+    logger = logging.getLogger(__name__)
+    logger.info(f"\nRemoving examples/ from {SOURCE_DIRECTORY} directory...")
     remove_directory_recursive(SOURCE_DIRECTORY / "examples")
 
 def setup(app):
@@ -285,3 +293,4 @@ def setup(app):
         import os
         app.connect("builder-inited", copy_examples_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
+        app.connect("build-finished", copy_examples_to_output_dir)
