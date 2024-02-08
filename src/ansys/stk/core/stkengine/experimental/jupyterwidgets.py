@@ -394,7 +394,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str):
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
@@ -409,7 +409,7 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str):
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
@@ -424,8 +424,8 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int):
-        WidgetBase.__init__(self, root, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
