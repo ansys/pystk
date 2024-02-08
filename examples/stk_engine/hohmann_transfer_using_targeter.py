@@ -28,6 +28,8 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
+# Once created, it is possible to plot the scenario by running:
+
 # +
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
@@ -75,7 +77,7 @@ print(element_types)
 # +
 from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
 
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Inner orbit", "-")
+initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
 initial_state.set_element_type(ELEMENT_TYPE.KEPLERIAN)
 # -
 
@@ -92,8 +94,8 @@ initial_state.element.true_anomaly = 0.00
 #
 # The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires to create a new segment in the main sequence. This segment must be of the propagate type. The total duration of the propagation is set in this example for 7200 seconds.
 
-inital_state_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Transfer orbit", "-")
-inital_state_sequence.stopping_conditions["Duration"].properties.trip = 7200
+inital_state_propagate = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Initial State Propagate", "-")
+inital_state_propagate.stopping_conditions["Duration"].properties.trip = 7200
 
 # Additional configurations, like the name for this propagation and its color can also be declared in this step:
 
@@ -101,15 +103,15 @@ inital_state_sequence.stopping_conditions["Duration"].properties.trip = 7200
 from ansys.stk.core.utilities.colors import Color, Colors
 
 
-inital_state_sequence.propagator_name = "Earth point mass"
-inital_state_sequence.properties.color = Colors.Blue
+inital_state_propagate.propagator_name = "Earth point mass"
+inital_state_propagate.properties.color = Colors.Blue
 # -
 
 # ## Define the target sequence for solving transfer orbit
 #
 # The target sequence is the set of steps defining the complete maneuver.
 
-start_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start transfer", "-")
+start_transfer_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
 
 # ### First impulse to transfer the satellite to the final orbit
 #
@@ -119,7 +121,7 @@ start_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_S
 from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE
 
 
-delta_v1 = start_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First impulse", "-")
+delta_v1 = start_transfer_sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
 delta_v1.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 # -
 
@@ -135,20 +137,20 @@ delta_v1.results.add('Keplerian Elems/Radius of Apoapsis');
 
 # Now, configure the solver for this target sequence. A differential corrector can be used to solve for the desired final radius at apoapsis. Retrieve the differential corrector for the target sequence:
 
-first_impulse_differential_corrector = start_transfer.profiles["Differential Corrector"]
+first_impulse_differential_corrector = start_transfer_sequence.profiles["Differential Corrector"]
 
 # Configure the differential corrector for the first impulse:
 
-control_delta_v1_x = first_impulse_differential_corrector.control_parameters.get_control_by_paths("First impulse", "ImpulsiveMnvr.Cartesian.X")
+control_delta_v1_x = first_impulse_differential_corrector.control_parameters.get_control_by_paths("First Impulse", "ImpulsiveMnvr.Cartesian.X")
 control_delta_v1_x.enable = True
 control_delta_v1_x.max_step = 0.30
 
 # Impose the numerical conditions to be met by the impulse along its X axis:
 
-target_radius_of_apoapsis = first_impulse_differential_corrector.results.get_result_by_paths("First impulse", "Radius Of Apoapsis")
-target_radius_of_apoapsis.enable = True
-target_radius_of_apoapsis.desired_value = 42238.00
-target_radius_of_apoapsis.tolerance = 0.10
+desired_radius_of_apoapsis = first_impulse_differential_corrector.results.get_result_by_paths("First Impulse", "Radius Of Apoapsis")
+desired_radius_of_apoapsis.enable = True
+desired_radius_of_apoapsis.desired_value = 42238.00
+desired_radius_of_apoapsis.tolerance = 0.10
 
 # Establish the maximum number of iterations and an iterative profile search:
 
@@ -157,14 +159,14 @@ first_impulse_differential_corrector.mode = PROFILE_MODE.ITERATE
 
 # Finally, run all active profiles in the target sequence:
 
-start_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+start_transfer_sequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 
 # ### Propagate the satellite to the end of the transfer orbit
 
 # Once the impulse is solved, the maneuver is complete. The next step is to propagate the satellite to the end of the transfer orbit. This is done by adding a new propagation segment to the main sequence:
 
-propagate_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Transfer orbit", "-")
-propagate_transfer.properties.color = Colors.Green
+propagate_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Transfer Orbit", "-")
+propagate_transfer.properties.color = Colors.Red
 propagate_transfer.stopping_conditions.add("Apoapsis")
 propagate_transfer.stopping_conditions.remove("Duration")
 
@@ -172,11 +174,11 @@ propagate_transfer.stopping_conditions.remove("Duration")
 #
 # For the final impulse, create a new target sequence:
 
-end_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "End transfer", "-")
+end_transfer_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "End Transfer", "-")
 
 # Next, add a new impulsive maneuver to model the burn to adapt the transfer orbit to the final desired one:
 
-delta_v2 = end_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last impulse", "-")
+delta_v2 = end_transfer_sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
 delta_v2.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 
 # Again, define the thrust in the direction of the local velocity vector:
@@ -187,20 +189,20 @@ delta_v2.results.add("Keplerian Elems/Eccentricity");
 
 # Configure the differential corrector for this target sequence:
 
-last_impulse_differential_corrector = end_transfer.profiles["Differential Corrector"]
+last_impulse_differential_corrector = end_transfer_sequence.profiles["Differential Corrector"]
 
 # Configure the differential corrector for the last impulse:
 
-control_delta_v2_x = last_impulse_differential_corrector.control_parameters.get_control_by_paths("Last impulse", "ImpulsiveMnvr.Cartesian.X")
+control_delta_v2_x = last_impulse_differential_corrector.control_parameters.get_control_by_paths("Last Impulse", "ImpulsiveMnvr.Cartesian.X")
 control_delta_v2_x.enable = True
 control_delta_v2_x.max_step = 0.30
 
 # Impose the numerical conditions to be met by the impulse along its X axis:
 
-target_eccentricity = last_impulse_differential_corrector.results.get_result_by_paths("Last impulse", "Eccentricity")
-target_eccentricity.enable = True
-target_eccentricity.desired_value = 0
-target_eccentricity.tolerance = 0.01
+desired_eccentricity = last_impulse_differential_corrector.results.get_result_by_paths("Last Impulse", "Eccentricity")
+desired_eccentricity.enable = True
+desired_eccentricity.desired_value = 0
+desired_eccentricity.tolerance = 0.01
 
 # Again, establish the maximum number of iterations and an iterative profile search:
 
@@ -208,36 +210,64 @@ last_impulse_differential_corrector.enable_display_status = True
 last_impulse_differential_corrector.mode = PROFILE_MODE.ITERATE
 
 # Finally, run all active profiles in the target sequence:
-# end_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-# Propagation along the final orbit
+
+end_transfer_sequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+
+# ## Propagation along the final orbit
 #
 # Once the last impulse has been applied, it is possible to propagate the satellite along its final parking orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
 
-propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate final orbit", "-")
+propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-")
 propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
 propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 
 # ## Running the main control sequence
 #
-# Once that all the segments for the main sequence are defined, run the analysis:
+# Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
 
 satellite.propagator.run_mission_control_sequence()
 
-# ## Retrieve results
+# ## Retrieve the results
+#
+# Once the analysis has been performed, analytical results can be retrieved for a desired segment.
+
+# ### Results for the first impulse
 
 # +
-start_transfer = satellite.propagator.main_sequence["Start transfer"]
-finish_transfer = satellite.propagator.main_sequence["End transfer"]
+start_transfer_sequence = satellite.propagator.main_sequence["Start Transfer"]
+start_differential_corrector = start_transfer_sequence.profiles["Differential Corrector"]
 
-start_differential_corrector = start_transfer.profiles["Differential Corrector"]
-finish_differential_corrector = finish_transfer.profiles["Differential Corrector"]
+delta_v1_x = start_differential_corrector.control_parameters.get_control_by_paths("First Impulse", "ImpulsiveMnvr.Cartesian.X").final_value
+print(f"\N{GREEK CAPITAL LETTER DELTA}V1 along X direction: {delta_v1_x:.5f} [km/s]")
 
-start_transfer.apply_profiles()
-finish_transfer.apply_profiles()
+thrust_v1_x = start_transfer_sequence.segments["First Impulse"].maneuver.attitude_control.x
+print(f"Thrust along X direction: {thrust_v1_x:.5f} [??]")
 # -
 
-# ## Plot the trajectory
+# ### Results for the last impulse
 
-plotter.camera.position = [50000, 66000, 64000]
+# +
+end_transfer_sequence = satellite.propagator.main_sequence["End Transfer"]
+end_differential_corrector = end_transfer_sequence.profiles["Differential Corrector"]
+
+delta_v2_x = end_differential_corrector.control_parameters.get_control_by_paths("Last Impulse", "ImpulsiveMnvr.Cartesian.X").final_value
+print(f"\N{GREEK CAPITAL LETTER DELTA}V2 along X direction: {delta_v2_x:.5f} [km/s]")
+
+thrust_v2_x = end_transfer_sequence.segments["Last Impulse"].maneuver.attitude_control.x
+print(f"Thrust along X direction: {thrust_v2_x:.5f} [??]")
+# -
+
+# ## Apply the results
+#
+# Previously computed results need to be applied to the main sequence. This can be done by running:
+
+start_transfer_sequence.apply_profiles()
+end_transfer_sequence.apply_profiles()
+
+# ## Plot the trajectory
+#
+# Finally, it is possible to visualize the complete sequence of maneuvers by showing the plotter again. Since the maneuver gets out of the field of view of the plotter's camera, the position of the camera is updated:
+
+plotter.camera.position = [57000, 85000, 55000]
 plotter.show()
