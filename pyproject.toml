@@ -54,6 +54,7 @@ visualization = [
     "jupyter-rfb==0.4.2",
     "Pillow==10.2.0",
     "simplejpeg==1.7.2",
+    "sidecar==0.7.0"
 ]
 
 [tool.flit.module]

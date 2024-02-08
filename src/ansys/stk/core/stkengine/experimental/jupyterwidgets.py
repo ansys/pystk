@@ -217,6 +217,7 @@ class WidgetBase(RemoteFrameBuffer):
                  root: StkObjectRoot,
                  w: int = 800,
                  h: int = 600,
+                 title: str = None,
                  resizable: bool = True):
 
         super().__init__()
@@ -266,6 +267,7 @@ class WidgetBase(RemoteFrameBuffer):
             asyncioTimerManager = AsyncioTimerManager()
 
         self.root = root
+        self.title = title or self.root.current_scenario.instance_name
         self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
@@ -352,6 +354,9 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
+    def set_title(self, title):
+        self.title = title
+
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
@@ -360,9 +365,15 @@ class WidgetBase(RemoteFrameBuffer):
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
-    def show(self, **snapshot_kwargs):
-        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "true") == "true"
-        return self.snapshot(**snapshot_kwargs) if needs_snapshot else self
+    def show(self, in_sidecar=False, **snapshot_kwargs):
+        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "false") == "true"
+        canvas = self.snapshot(**snapshot_kwargs) if needs_snapshot else self
+        if in_sidecar:
+            from sidecar import Sidecar
+            with Sidecar(title=self.title):
+                display(canvas)
+        else:
+            return canvas
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
@@ -383,8 +394,8 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int):
-        WidgetBase.__init__(self, root, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
@@ -398,8 +409,8 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int):
-        WidgetBase.__init__(self, root, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
