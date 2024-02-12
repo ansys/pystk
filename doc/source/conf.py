@@ -3,7 +3,9 @@ from datetime import datetime
 import os
 import pathlib
 
+import sphinx
 from sphinx.util import logging
+
 from ansys_sphinx_theme import (
     ansys_favicon,
     get_version_match,
@@ -228,7 +230,18 @@ linkcheck_ignore = [
 
 # -- Sphinx configuration ----------------------------------------------------
 
-def copy_directory_recursive(source_path, destination_path):
+def copy_directory_recursive(source_path: pathlib.Path, destination_path: pathlib.Path):
+    """
+    Copy a directory from a source to a destination path.
+
+    Parameters
+    ----------
+    source_path : pathlib.Path
+        Source directory to be copied.
+    destination_path : pathlib.Path
+        Destination directory.
+
+    """
     logger = logging.getLogger(__name__)
 
     if source_path.is_dir():
@@ -244,10 +257,18 @@ def copy_directory_recursive(source_path, destination_path):
                 destination_file.write_text(file.read_text())
 
 
-def remove_directory_recursive(directory_path):
+def remove_directory_recursive(directory_path: pathlib.Path):
+    """
+    Revemo a directory given its path.
+
+    Parameters
+    ----------
+    directory_path : pathlib.Path
+       Path instance representing the path to the directory. 
+
+    """
     logger = logging.getLogger(__name__)
 
-    directory_path = pathlib.Path(directory_path)
     if not directory_path.exists():
         return
 
@@ -262,35 +283,83 @@ def remove_directory_recursive(directory_path):
     directory_path.rmdir()
 
 
-def copy_directory(origin, destination):
+def copy_directory(origin: pathlib.Path, destination: pathlib.Path):
+    """
+    Copy a directory from an origin to a desired destination.
+
+    Parameters
+    ----------
+    origin : pathlib.Path
+        Desired location of the directory to be copied.
+    destination : pathlib.Path
+        Destination directory path.
+
+    """
     logger = logging.getLogger(__name__)
     logger.info(f"\nCopying {origin}/ to {destination}/...")
     copy_directory_recursive(origin, destination)
 
-def copy_examples_to_source_dir(app):
-    SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
-    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
-    copy_directory(EXAMPLES_DIRECTORY, SOURCE_DIRECTORY / "examples")
+def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the examples directory to the source directory of the documentation.
 
-def copy_examples_to_output_dir(app):
-    OUTPUT_DIRECTORY = pathlib.Path(app.outdir)
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
-    copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY / "examples")
+    copy_directory(EXAMPLES_DIRECTORY, SOURCE_EXAMPLES)
+
+def copy_examples_to_output_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the examples directory to the output directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
+    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
+    copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY)
 
 def remove_examples_from_source_dir(app, exception):
-    SOURCE_DIRECTORY = pathlib.Path(app.srcdir)
-    logger = logging.getLogger(__name__)
-    logger.info(f"\nRemoving examples/ from {SOURCE_DIRECTORY} directory...")
-    remove_directory_recursive(SOURCE_DIRECTORY / "examples")
+    """
+    Remove the example files from the documentation source directory.
 
-def setup(app):
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
+
+    """
+    EXAMPLES_DIRECTORY = pathlib.Path(app.srcdir) / "examples"
+    logger = logging.getLogger(__name__)
+    logger.info(f"\nRemoving {EXAMPLES_DIRECTORY} directory...")
+    remove_directory_recursive(EXAMPLES_DIRECTORY)
+
+def setup(app: sphinx.application.Sphinx):
+    """
+    Setup different hook functions during the documentation build.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
     # HACK: rST files are copied to the doc/source directory before the build.
     # Sphinx needs all source files to be in the source directory to build.
     # However, the examples are desired to be kept in the root directory. Once the
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     if BUILD_EXAMPLES:
-        import os
         app.connect("builder-inited", copy_examples_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
