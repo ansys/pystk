@@ -7,7 +7,7 @@
 }
 
 /* Center output notebook images */
-.nboutput . img {
+.nboutput img {
     display: block !important;
     margin: 0 auto !important;
 }
