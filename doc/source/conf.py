@@ -313,7 +313,7 @@ def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
     EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
     copy_directory(EXAMPLES_DIRECTORY, SOURCE_EXAMPLES)
 
-def copy_examples_to_output_dir(app: sphinx.application.Sphinx):
+def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
     Copy the examples directory to the output directory of the documentation.
 
@@ -327,7 +327,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx):
     EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
     copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY)
 
-def remove_examples_from_source_dir(app, exception):
+def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
     Remove the example files from the documentation source directory.
 
