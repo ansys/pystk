@@ -28,7 +28,7 @@ print(f"Using {stk.version}")
 root = stk.new_object_root()
 root.new_scenario("HohmannTransfer")
 
-# Once created, it is possible to plot the scenario by running:
+# Once created, it is possible to show a 3D graphics window by running:
 
 # +
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
@@ -72,7 +72,7 @@ element_types = [element_type for element_type, _ in ELEMENT_TYPE.__members__.it
 print(element_types)
 # -
 
-# The segment type is also required for specifying the initial state of the satellite. List the supported segment types by running:
+# An initial state segment is required to specify the initial state of the satellite. To see the list of different segment types, run:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
@@ -81,7 +81,7 @@ initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_S
 initial_state.set_element_type(ELEMENT_TYPE.KEPLERIAN)
 # -
 
-# Now, set at least six of the previous elements. Since the initial orbit of the satellite is a
+# A total of six orbital parameters are required to specify the initial state of the satellite. Considering the data provided in this example, it is possible to assign the following parameters:
 
 initial_state.element.periapsis_radius_size = 6700.00
 initial_state.element.eccentricity = 0.00
@@ -92,24 +92,24 @@ initial_state.element.true_anomaly = 0.00
 
 # ## Set up the parking orbit of the satellite
 #
-# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires to create a new segment in the main sequence. This segment must be of the propagate type. The total duration of the propagation is set in this example for 7200 seconds.
+# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires creating a new segment in the main sequence. This segment must be of the propagate type. To be consistent with the assumptions of the Hohmann transfer, the segment should be propagated using an Earth Point Mass propagator. The total duration of the propagation is set in this example for 7200 seconds. 
 
-inital_state_propagate = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Initial State Propagate", "-")
-inital_state_propagate.stopping_conditions["Duration"].properties.trip = 7200
+parking_orbit_propagate = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-")
+parking_orbit_propagate.propagator_name = "Earth point mass"
+parking_orbit_propagate.stopping_conditions["Duration"].properties.trip = 7200
 
-# Additional configurations, like the name for this propagation and its color can also be declared in this step:
+# Additional configurations, like the color used to visualize the orbit of the satellite, can also be declared by running:
 
 # +
-from ansys.stk.core.utilities.colors import Color, Colors
+from ansys.stk.core.utilities.colors import Colors
 
 
-inital_state_propagate.propagator_name = "Earth point mass"
-inital_state_propagate.properties.color = Colors.Blue
+parking_orbit_propagate.properties.color = Colors.Blue
 # -
 
 # ## Define the target sequence for solving transfer orbit
 #
-# The target sequence is the set of steps defining the complete maneuver.
+# The target sequence is used to find the magnitude of each $\Delta v$ so that the satellite can achieve its desired altitude.
 
 start_transfer_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
 
@@ -125,7 +125,7 @@ delta_v1 = start_transfer_sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "First
 delta_v1.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 # -
 
-# This first impulse takes place in the direction of the velocity vector at the periapsis. For this reason, it is convenient to define the thrust impulse in the Velocity-Normal-CoNormal (VNC) frame. By selecting the VNC frame, the velocity vector is now aligned with the X-axis.
+# This first impulse takes place in the direction of the velocity vector at the periapsis. For this reason, it is convenient to define the thrust impulse in the Velocity-Normal-CoNormal (VNC) frame. By selecting the VNC frame, the velocity vector is now aligned with the X-axis. The magnitude of the burn will be determined using the radius of apoapsis after the maneuver, so radius of apoapsis is added as a result to the maneuver segment:
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ATTITUDE_CONTROL, CONTROL_MANEUVER, PROFILE_MODE, TARGET_SEQ_ACTION
@@ -157,18 +157,22 @@ desired_radius_of_apoapsis.tolerance = 0.10
 first_impulse_differential_corrector.max_iterations = 50
 first_impulse_differential_corrector.mode = PROFILE_MODE.ITERATE
 
-# Finally, run all active profiles in the target sequence:
+# Finally, set the mode of the target sequence to run all active profiles:
 
 start_transfer_sequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 
 # ### Propagate the satellite to the end of the transfer orbit
 
-# Once the impulse is solved, the maneuver is complete. The next step is to propagate the satellite to the end of the transfer orbit. This is done by adding a new propagation segment to the main sequence:
+# After the first maneuver, the next step is to propagate the satellite to the end of the transfer orbit. This is done by adding a new propagation segment to the main sequence:
 
 propagate_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Transfer Orbit", "-")
-propagate_transfer.properties.color = Colors.Red
+propagate_transfer.propagator_name = "Earth point mass"
 propagate_transfer.stopping_conditions.add("Apoapsis")
 propagate_transfer.stopping_conditions.remove("Duration")
+
+# This segment is colored using red to differentiate it from the parking segment:
+
+propagate_transfer.properties.color = Colors.Red
 
 # ### Final impulse to circularize the orbit
 #
@@ -181,7 +185,7 @@ end_transfer_sequence = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.T
 delta_v2 = end_transfer_sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
 delta_v2.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 
-# Again, define the thrust in the direction of the local velocity vector:
+# Again, define the thrust in the direction of the local velocity vector. This time, eccentricity is used as a result since the desired orbit at the end of the transfer is circular:
 
 delta_v2.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 delta_v2.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
@@ -209,13 +213,13 @@ desired_eccentricity.tolerance = 0.01
 last_impulse_differential_corrector.enable_display_status = True
 last_impulse_differential_corrector.mode = PROFILE_MODE.ITERATE
 
-# Finally, run all active profiles in the target sequence:
+# Finally, set the mode of the target sequence to run all active profiles:
 
 end_transfer_sequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 
 # ## Propagation along the final orbit
 #
-# Once the last impulse has been applied, it is possible to propagate the satellite along its final parking orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
+# Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
 
 propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-")
 propagate_final_orbit.properties.color = Colors.Green
