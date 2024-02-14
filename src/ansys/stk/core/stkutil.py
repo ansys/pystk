@@ -644,91 +644,91 @@ class IPosition(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IPosition"),) }
     def assign(self, pPosition:"IPosition") -> None:
-        """This assigns the coordinates into the system."""
+        """Assign the coordinates into the system."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_metadata, pPosition)
 
     _assign_geocentric_metadata = { "name" : "assign_geocentric",
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_geocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        """Helper method to assign the position using the Geocentric representation."""
+        """Assign the position using the Geocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_geocentric_metadata, lat, lon, alt)
 
     _assign_geodetic_metadata = { "name" : "assign_geodetic",
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_geodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        """Helper method to assign the position using the Geodetic representation."""
+        """Assign the position using the Geodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_geodetic_metadata, lat, lon, alt)
 
     _assign_spherical_metadata = { "name" : "assign_spherical",
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_spherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None:
-        """Helper method to assign the position using the Spherical representation."""
+        """Assign the position using the Spherical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_spherical_metadata, lat, lon, radius)
 
     _assign_cylindrical_metadata = { "name" : "assign_cylindrical",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.Variant,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg,) }
     def assign_cylindrical(self, radius:float, z:float, lon:typing.Any) -> None:
-        """Helper method to assign the position using the Cylindrical representation."""
+        """Assign the position using the Cylindrical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_cylindrical_metadata, radius, z, lon)
 
     _assign_cartesian_metadata = { "name" : "assign_cartesian",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_cartesian(self, x:float, y:float, z:float) -> None:
-        """Helper method to assign the position using the Cartesian representation."""
+        """Assign the position using the Cartesian representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_cartesian_metadata, x, y, z)
 
     _assign_planetocentric_metadata = { "name" : "assign_planetocentric",
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_planetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        """Helper method to assign the position using the Planetocentric representation."""
+        """Assign the position using the Planetocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_planetocentric_metadata, lat, lon, alt)
 
     _assign_planetodetic_metadata = { "name" : "assign_planetodetic",
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_planetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
-        """Helper method to assign the position using the Planetodetic representation."""
+        """Assign the position using the Planetodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_planetodetic_metadata, lat, lon, alt)
 
     _query_planetocentric_metadata = { "name" : "query_planetocentric",
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_planetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        """Helper method to get the position using the Planetocentric representation."""
+        """Get the position using the Planetocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetocentric_metadata, OutArg(), OutArg(), OutArg())
 
     _query_planetodetic_metadata = { "name" : "query_planetodetic",
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_planetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        """Helper method to get the position using the Planetodetic representation."""
+        """Get the position using the Planetodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetodetic_metadata, OutArg(), OutArg(), OutArg())
 
     _query_spherical_metadata = { "name" : "query_spherical",
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_spherical(self) -> typing.Tuple[typing.Any, typing.Any, float]:
-        """Helper method to get the position using the Spherical representation."""
+        """Get the position using the Spherical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_spherical_metadata, OutArg(), OutArg(), OutArg())
 
     _query_cylindrical_metadata = { "name" : "query_cylindrical",
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_cylindrical(self) -> typing.Tuple[float, typing.Any, float]:
-        """Helper method to get the position using the Cylindrical representation."""
+        """Get the position using the Cylindrical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cylindrical_metadata, OutArg(), OutArg(), OutArg())
 
     _query_cartesian_metadata = { "name" : "query_cartesian",
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_cartesian(self) -> typing.Tuple[float, float, float]:
-        """Helper method to get the position using the Cartesian representation."""
+        """Get the position using the Cartesian representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cartesian_metadata, OutArg(), OutArg(), OutArg())
 
     _get_central_body_name_metadata = { "name" : "central_body_name",
@@ -1357,7 +1357,7 @@ class IDirection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(DIRECTION_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"DIRECTION_TYPE") -> "IDirection":
-        """Method to changes the direction to the type specified."""
+        """Change the direction to the type specified."""
         return self._intf.invoke(IDirection._metadata, IDirection._convert_to_metadata, type, OutArg())
 
     _get_direction_type_metadata = { "name" : "direction_type",
@@ -1379,56 +1379,56 @@ class IDirection(object):
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
     def assign_euler(self, b:typing.Any, c:typing.Any, sequence:"EULER_DIRECTION_SEQUENCE") -> None:
-        """Helper method to set direction using the Euler representation. Params B and C use Angle Dimension."""
+        """Set direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_euler_metadata, b, c, sequence)
 
     _assign_pr_metadata = { "name" : "assign_pr",
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_pr(self, pitch:typing.Any, roll:typing.Any) -> None:
-        """Helper method to set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
+        """Set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_pr_metadata, pitch, roll)
 
     _assign_ra_dec_metadata = { "name" : "assign_ra_dec",
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_ra_dec(self, ra:typing.Any, dec:typing.Any) -> None:
-        """Helper method to set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
+        """Set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_ra_dec_metadata, ra, dec)
 
     _assign_xyz_metadata = { "name" : "assign_xyz",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_xyz(self, x:float, y:float, z:float) -> None:
-        """Helper method to set direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
+        """Set direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_xyz_metadata, x, y, z)
 
     _query_euler_metadata = { "name" : "query_euler",
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_euler(self, sequence:"EULER_DIRECTION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
-        """Helper method to get direction using the Euler representation. Params B and C use Angle Dimension."""
+        """Get direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_euler_metadata, sequence, OutArg(), OutArg())
 
     _query_pr_metadata = { "name" : "query_pr",
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_pr(self, sequence:"PR_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
-        """Helper method to get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
+        """Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_pr_metadata, sequence, OutArg(), OutArg())
 
     _query_ra_dec_metadata = { "name" : "query_ra_dec",
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_ra_dec(self) -> typing.Tuple[typing.Any, typing.Any]:
-        """Helper method to get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
+        """Get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_ra_dec_metadata, OutArg(), OutArg())
 
     _query_xyz_metadata = { "name" : "query_xyz",
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_xyz(self) -> typing.Tuple[float, float, float]:
-        """Helper method to get direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
+        """Get direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_xyz_metadata, OutArg(), OutArg(), OutArg())
 
     _query_euler_array_metadata = { "name" : "query_euler_array",
@@ -1911,7 +1911,7 @@ class IOrientation(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(ORIENTATION_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"ORIENTATION_TYPE") -> "IOrientation":
-        """Method to change the orientation method to the type specified."""
+        """Change the orientation method to the type specified."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._convert_to_metadata, type, OutArg())
 
     _get_orientation_type_metadata = { "name" : "orientation_type",
@@ -1933,56 +1933,56 @@ class IOrientation(object):
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     def assign_az_el(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AZ_EL_ABOUT_BORESIGHT") -> None:
-        """Helper method to set orientation using the AzEl representation."""
+        """Set orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_az_el_metadata, azimuth, elevation, aboutBoresight)
 
     _assign_euler_angles_metadata = { "name" : "assign_euler_angles",
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
-        """Helper method to set orientation using the Euler angles representation."""
+        """Set orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_euler_angles_metadata, sequence, a, b, c)
 
     _assign_quaternion_metadata = { "name" : "assign_quaternion",
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_quaternion(self, qx:float, qy:float, qz:float, qs:float) -> None:
-        """Helper method to set orientation using the Quaternion representation."""
+        """Set orientation using the Quaternion representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_quaternion_metadata, qx, qy, qz, qs)
 
     _assign_ypr_angles_metadata = { "name" : "assign_ypr_angles",
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
-        """Helper method to set orientation using the YPR angles representation."""
+        """Set orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_ypr_angles_metadata, sequence, yaw, pitch, roll)
 
     _query_az_el_metadata = { "name" : "query_az_el",
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     def query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]:
-        """Helper method to get orientation using the AzEl representation."""
+        """Get orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_az_el_metadata, OutArg(), OutArg(), OutArg())
 
     _query_euler_angles_metadata = { "name" : "query_euler_angles",
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
-        """Helper method to get orientation using the Euler angles representation."""
+        """Get orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
     _query_quaternion_metadata = { "name" : "query_quaternion",
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_quaternion(self) -> typing.Tuple[float, float, float, float]:
-        """Helper method to get orientation using the Quaternion representation."""
+        """Get orientation using the Quaternion representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_quaternion_metadata, OutArg(), OutArg(), OutArg(), OutArg())
 
     _query_ypr_angles_metadata = { "name" : "query_ypr_angles",
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
-        """Helper method to get orientation using the YPR angles representation."""
+        """Get orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_ypr_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
     _query_az_el_array_metadata = { "name" : "query_az_el_array",
@@ -2223,7 +2223,7 @@ class IOrientationQuaternion(IOrientation):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qx(self) -> float:
-        """The first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si..."""
+        """Get or set the first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si..."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qx_metadata)
 
     _set_qx_metadata = { "name" : "qx",
@@ -2238,7 +2238,7 @@ class IOrientationQuaternion(IOrientation):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qy(self) -> float:
-        """The second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s..."""
+        """Get or set the second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s..."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qy_metadata)
 
     _set_qy_metadata = { "name" : "qy",
@@ -2253,7 +2253,7 @@ class IOrientationQuaternion(IOrientation):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qz(self) -> float:
-        """The third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si..."""
+        """Get or set the third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si..."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qz_metadata)
 
     _set_qz_metadata = { "name" : "qz",
@@ -2268,7 +2268,7 @@ class IOrientationQuaternion(IOrientation):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qs(self) -> float:
-        """The scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
+        """Get or set the scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qs_metadata)
 
     _set_qs_metadata = { "name" : "qs",
@@ -2449,7 +2449,7 @@ class IOrbitState(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(ORBIT_STATE_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"ORBIT_STATE_TYPE") -> "IOrbitState":
-        """Method to changes the coordinate type to the type specified."""
+        """Change the coordinate type to the type specified."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._convert_to_metadata, type, OutArg())
 
     _get_orbit_state_type_metadata = { "name" : "orbit_state_type",
@@ -2471,49 +2471,49 @@ class IOrbitState(object):
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_classical(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
-        """Helper method to assign a new orbit state using Classical representation."""
+        """Assign a new orbit state using Classical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_classical_metadata, eCoordinateSystem, semiMajorAxis, eccentricity, inclination, argOfPerigee, rAAN, meanAnomaly)
 
     _assign_cartesian_metadata = { "name" : "assign_cartesian",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_cartesian(self, eCoordinateSystem:"COORDINATE_SYSTEM", xPosition:float, yPosition:float, zPosition:float, xVelocity:float, yVelocity:float, zVelocity:float) -> None:
-        """Helper method to assign a new orbit state using Cartesian representation."""
+        """Assign a new orbit state using Cartesian representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_cartesian_metadata, eCoordinateSystem, xPosition, yPosition, zPosition, xVelocity, yVelocity, zVelocity)
 
     _assign_geodetic_metadata = { "name" : "assign_geodetic",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_geodetic(self, eCoordinateSystem:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, latitudeRate:float, longitudeRate:float, altitudeRate:float) -> None:
-        """Helper method to assign a new orbit state using Geodetic representation."""
+        """Assign a new orbit state using Geodetic representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_geodetic_metadata, eCoordinateSystem, latitude, longitude, altitude, latitudeRate, longitudeRate, altitudeRate)
 
     _assign_equinoctial_posigrade_metadata = { "name" : "assign_equinoctial_posigrade",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_equinoctial_posigrade(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
-        """Helper method to assign a new orbit state using Equinoctial representation."""
+        """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_posigrade_metadata, eCoordinateSystem, semiMajorAxis, h, k, p, q, meanLon)
 
     _assign_equinoctial_retrograde_metadata = { "name" : "assign_equinoctial_retrograde",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_equinoctial_retrograde(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
-        """Helper method to assign a new orbit state using Equinoctial representation."""
+        """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_retrograde_metadata, eCoordinateSystem, semiMajorAxis, h, k, p, q, meanLon)
 
     _assign_mixed_spherical_metadata = { "name" : "assign_mixed_spherical",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_mixed_spherical(self, eCoordinateSystem:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
-        """Helper method to assign a new orbit state using Mixed Spherical representation."""
+        """Assign a new orbit state using Mixed Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_mixed_spherical_metadata, eCoordinateSystem, latitude, longitude, altitude, horFlightPathAngle, flightPathAzimuth, velocity)
 
     _assign_spherical_metadata = { "name" : "assign_spherical",
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_spherical(self, eCoordinateSystem:"COORDINATE_SYSTEM", rightAscension:float, declination:float, radius:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
-        """Helper method to assign a new orbit state using Spherical representation."""
+        """Assign a new orbit state using Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_spherical_metadata, eCoordinateSystem, rightAscension, declination, radius, horFlightPathAngle, flightPathAzimuth, velocity)
 
     _get_central_body_name_metadata = { "name" : "central_body_name",
@@ -2529,7 +2529,7 @@ class IOrbitState(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def epoch(self) -> typing.Any:
-        """The state epoch."""
+        """Get or set the state epoch."""
         return self._intf.get_property(IOrbitState._metadata, IOrbitState._get_epoch_metadata)
 
     _set_epoch_metadata = { "name" : "epoch",
@@ -2543,7 +2543,7 @@ class IOrbitState(object):
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.EnumArg(DELAUNAY_L_TYPE_TEMP), agmarshall.EnumArg(DELAUNAY_H_TYPE_TEMP), agmarshall.EnumArg(DELAUNAY_G_TYPE_TEMP), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_delaunay(self, eCoordinateSystem:"COORDINATE_SYSTEM", lType:"DELAUNAY_L_TYPE_TEMP", hType:"DELAUNAY_H_TYPE_TEMP", gType:"DELAUNAY_G_TYPE_TEMP", meanAnomaly:float, argOfPeriapsis:float, rAAN:float) -> None:
-        """Helper method to assign a new orbit state using Delaunay representation."""
+        """Assign a new orbit state using Delaunay representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_delaunay_metadata, eCoordinateSystem, lType, hType, gType, meanAnomaly, argOfPeriapsis, rAAN)
 
 
@@ -2736,7 +2736,7 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the property."""
+        """Get the name of the property."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_name_metadata)
 
     _get_property_type_metadata = { "name" : "property_type",
@@ -2744,21 +2744,21 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.EnumArg(PROPERTY_INFO_VALUE_TYPE),) }
     @property
     def property_type(self) -> "PROPERTY_INFO_VALUE_TYPE":
-        """The type of property."""
+        """Get the type of property."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_property_type_metadata)
 
     _get_value_metadata = { "name" : "get_value",
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     def get_value(self) -> typing.Any:
-        """The value of the property. Use PropertyType to determine the type to cast to."""
+        """Get the value of the property. Use PropertyType to determine the type to cast to."""
         return self._intf.invoke(IPropertyInfo._metadata, IPropertyInfo._get_value_metadata, OutArg())
 
     _set_value_metadata = { "name" : "set_value",
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def set_value(self, propertyInfo:typing.Any) -> None:
-        """The value of the property. Use PropertyType to determine the type to cast to."""
+        """Set the value of the property. Use PropertyType to determine the type to cast to."""
         return self._intf.invoke(IPropertyInfo._metadata, IPropertyInfo._set_value_metadata, propertyInfo)
 
     _get_has_min_metadata = { "name" : "has_min",
@@ -2766,7 +2766,7 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def has_min(self) -> bool:
-        """Used to determine if the property has a minimum value."""
+        """Determine if the property has a minimum value."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_has_min_metadata)
 
     _get_has_max_metadata = { "name" : "has_max",
@@ -2774,7 +2774,7 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def has_max(self) -> bool:
-        """Used to determine if the property has a maximum value."""
+        """Determine if the property has a maximum value."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_has_max_metadata)
 
     _get_min_metadata = { "name" : "min",
@@ -2782,7 +2782,7 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def min(self) -> typing.Any:
-        """The minimum value of this property. Use PropertyType to determine the type to cast to."""
+        """Get the minimum value of this property. Use PropertyType to determine the type to cast to."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_min_metadata)
 
     _get_max_metadata = { "name" : "max",
@@ -2790,7 +2790,7 @@ class IPropertyInfo(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def max(self) -> typing.Any:
-        """The maximum value of this property. Use PropertyType to determine the type to cast to."""
+        """Get the maximum value of this property. Use PropertyType to determine the type to cast to."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_max_metadata)
 
 
@@ -2855,7 +2855,7 @@ class IPropertyInfoCollection(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
-        """The number of properties available."""
+        """Get the number of properties available."""
         return self._intf.get_property(IPropertyInfoCollection._metadata, IPropertyInfoCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
@@ -2909,7 +2909,7 @@ class IRuntimeTypeInfo(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def properties(self) -> "PropertyInfoCollection":
-        """The collection of properties."""
+        """Get the collection of properties."""
         return self._intf.get_property(IRuntimeTypeInfo._metadata, IRuntimeTypeInfo._get_properties_metadata)
 
     _get_is_collection_metadata = { "name" : "is_collection",
@@ -3448,7 +3448,7 @@ class IQuantity(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit(self) -> str:
-        """The current Unit abbreviation."""
+        """Get the current Unit abbreviation."""
         return self._intf.get_property(IQuantity._metadata, IQuantity._get_unit_metadata)
 
     _convert_to_unit_metadata = { "name" : "convert_to_unit",
@@ -3463,7 +3463,7 @@ class IQuantity(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def value(self) -> float:
-        """The current value."""
+        """Get or set the current value."""
         return self._intf.get_property(IQuantity._metadata, IQuantity._get_value_metadata)
 
     _set_value_metadata = { "name" : "value",
@@ -3560,7 +3560,7 @@ class IDate(object):
             "marshallers" : (agmarshall.DateArg,) }
     @property
     def ole_date(self) -> datetime:
-        """The current time in OLE DATE Format."""
+        """Get or set the current time in OLE DATE Format."""
         return self._intf.get_property(IDate._metadata, IDate._get_ole_date_metadata)
 
     _set_ole_date_metadata = { "name" : "ole_date",
@@ -3575,7 +3575,7 @@ class IDate(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def whole_days(self) -> int:
-        """The Julian Day Number of the date of interest."""
+        """Get or set the Julian Day Number of the date of interest."""
         return self._intf.get_property(IDate._metadata, IDate._get_whole_days_metadata)
 
     _set_whole_days_metadata = { "name" : "whole_days",
@@ -3605,7 +3605,7 @@ class IDate(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def whole_days_utc(self) -> int:
-        """The UTC Day Number of the date of interest."""
+        """Get or set the UTC Day Number of the date of interest."""
         return self._intf.get_property(IDate._metadata, IDate._get_whole_days_utc_metadata)
 
     _set_whole_days_utc_metadata = { "name" : "whole_days_utc",

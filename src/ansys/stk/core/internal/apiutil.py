@@ -14,7 +14,7 @@ class InterfaceProxy(object):
         return False
 
     def __hash__(self):
-        """Used primarily for reference count management."""
+        """Manage reference count."""
         return 0
 
     def __bool__(self):

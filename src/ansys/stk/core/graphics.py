@@ -1993,7 +1993,7 @@ class IObjectCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.LongArg, agmarshall.VariantArg,) }
     def item(self, index:int) -> typing.Any:
-        """An item in the collection at the specified index."""
+        """Return an item in the collection at the specified index."""
         return self._intf.invoke(IObjectCollection._metadata, IObjectCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -2058,7 +2058,7 @@ class ISceneCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "Scene":
-        """A scene in the collection at a specified index."""
+        """Return a scene in the collection at a specified index."""
         return self._intf.invoke(ISceneCollection._metadata, ISceneCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -3884,7 +3884,7 @@ class ICameraVideoRecording(object):
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def start_recording(self, wmvFilename:str, videoBitRate:int, videoFrameRate:int) -> None:
-        """This method is deprecated. Use StartRecordingVideo instead. Starts recording a file in the WMV format at the specified bit and frame rate."""
+        """Do not use this method, as it is deprecated. Use StartRecordingVideo instead. Starts recording a file in the WMV format at the specified bit and frame rate."""
         return self._intf.invoke(ICameraVideoRecording._metadata, ICameraVideoRecording._start_recording_metadata, wmvFilename, videoBitRate, videoFrameRate)
 
     _start_recording_frame_stack_metadata = { "name" : "start_recording_frame_stack",
@@ -4040,14 +4040,14 @@ class ICustomImageGlobeOverlay(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IScene"),) }
     def start_up(self, scene:"IScene") -> None:
-        """Called automatically when imagery is being added to the globe."""
+        """Initiate start-up when imagery is being added to the globe."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._start_up_metadata, scene)
 
     _shut_down_metadata = { "name" : "shut_down",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IScene"),) }
     def shut_down(self, scene:"IScene") -> None:
-        """Called automatically when imagery is being removed from the globe."""
+        """Initiate shutdown when imagery is being removed from the globe."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._shut_down_metadata, scene)
 
     _clear_cache_metadata = { "name" : "clear_cache",
@@ -7247,7 +7247,7 @@ class IFrameRate(object):
             "arg_types" : (),
             "marshallers" : () }
     def reset(self) -> None:
-        """This resets the frame rate counter back to zero. The frame rate computation begins anew."""
+        """Reset the frame rate counter back to zero. The frame rate computation begins anew."""
         return self._intf.invoke(IFrameRate._metadata, IFrameRate._reset_metadata, )
 
 
@@ -9840,7 +9840,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0b66ea82-dd0d-444f-b097-dda9427e1b87}",
 agcls.AgTypeNameMap["IKmlNetworkLink"] = IKmlNetworkLink
 
 class IMarkerBatchPrimitive(object):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     _num_methods = 54
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -11967,7 +11967,7 @@ agcls.AgClassCatalog.add_catalog_entry("{e5ccd610-a3b3-4f0c-9d51-e367a9ea5abf}",
 agcls.AgTypeNameMap["IPixelSizeDisplayCondition"] = IPixelSizeDisplayCondition
 
 class IPointBatchPrimitive(object):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -12972,7 +12972,7 @@ class IPrimitiveManager(object):
             "marshallers" : (agmarshall.IntArg,) }
     @property
     def precision_exponent(self) -> int:
-        """This property is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis..."""
+        """Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis..."""
         return self._intf.get_property(IPrimitiveManager._metadata, IPrimitiveManager._get_precision_exponent_metadata)
 
     _set_precision_exponent_metadata = { "name" : "precision_exponent",
@@ -14600,7 +14600,7 @@ agcls.AgClassCatalog.add_catalog_entry("{dfe57e34-7b31-4360-a7a8-8db856882670}",
 agcls.AgTypeNameMap["ITerrainOverlay"] = ITerrainOverlay
 
 class ITextBatchPrimitive(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18271,7 +18271,7 @@ agcls.AgClassCatalog.add_catalog_entry("{fbde7847-ccff-4c4e-83cf-5f7b05468709}",
 agcls.AgTypeNameMap["IVideoStreamFactory"] = IVideoStreamFactory
 
 class IMarkerBatchPrimitiveFactory(object):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18575,7 +18575,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2c7bb493-89f9-40f9-b562-feed771d08b7}",
 agcls.AgTypeNameMap["IPixelSizeDisplayConditionFactory"] = IPixelSizeDisplayConditionFactory
 
 class IPointBatchPrimitiveFactory(object):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19208,7 +19208,7 @@ agcls.AgClassCatalog.add_catalog_entry("{74c0acde-8d75-49df-87c1-2c39e3240283}",
 agcls.AgTypeNameMap["ITerrainOverlayInitializer"] = ITerrainOverlayInitializer
 
 class ITextBatchPrimitiveFactory(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -21457,7 +21457,7 @@ agcls.AgClassCatalog.add_catalog_entry("{BD2ECA7D-919B-4C64-8AA1-E503A80EF3EA}",
 agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitive.__init__(self, sourceObject)
@@ -21656,7 +21656,7 @@ agcls.AgClassCatalog.add_catalog_entry("{26B1DA4F-DA20-4E44-A98D-D54CC67821B8}",
 agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     def __init__(self, sourceObject=None):
         IPointBatchPrimitive.__init__(self, sourceObject)
@@ -22041,7 +22041,7 @@ agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}",
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     def __init__(self, sourceObject=None):
         ITextBatchPrimitive.__init__(self, sourceObject)
@@ -23115,7 +23115,7 @@ agcls.AgClassCatalog.add_catalog_entry("{A977E2D9-785B-4AB0-B01F-927486E3170B}",
 agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     def __init__(self, sourceObject=None):
         IMarkerBatchPrimitiveFactory.__init__(self, sourceObject)
@@ -23217,7 +23217,7 @@ agcls.AgClassCatalog.add_catalog_entry("{52EC4EAD-B9A0-4940-BAE8-BD115805BB46}",
 agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayConditionFactory
 
 class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     def __init__(self, sourceObject=None):
         IPointBatchPrimitiveFactory.__init__(self, sourceObject)
@@ -23421,7 +23421,7 @@ agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}",
 agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     def __init__(self, sourceObject=None):
         ITextBatchPrimitiveFactory.__init__(self, sourceObject)

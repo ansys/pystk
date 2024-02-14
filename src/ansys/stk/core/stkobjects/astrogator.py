@@ -3696,7 +3696,7 @@ class IConstraintCollection(object):
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "AsTriggerCondition":
-        """A property that allows you to iterate through the collection."""
+        """Iterate through the collection."""
         return self._intf.invoke(IConstraintCollection._metadata, IConstraintCollection._item_metadata, indexOrName, OutArg())
 
     _remove_metadata = { "name" : "remove",
@@ -3792,14 +3792,14 @@ class IPluginProperties(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
     def get_property(self, path:str) -> typing.Any:
-        """Method to get a property."""
+        """Get a property."""
         return self._intf.invoke(IPluginProperties._metadata, IPluginProperties._get_property_metadata, path, OutArg())
 
     _set_property_metadata = { "name" : "set_property",
             "arg_types" : (agcom.BSTR, agcom.Variant,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
     def set_property(self, path:str, propertyValue:typing.Any) -> None:
-        """Method to set a property."""
+        """Set a property."""
         return self._intf.invoke(IPluginProperties._metadata, IPluginProperties._set_property_metadata, path, propertyValue)
 
     _get_available_properties_metadata = { "name" : "available_properties",
@@ -4172,7 +4172,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_major_iterations(self) -> int:
-        """The maximum number of major iterations allowed."""
+        """Get or set the maximum number of major iterations allowed."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_max_major_iterations_metadata)
 
     _set_max_major_iterations_metadata = { "name" : "max_major_iterations",
@@ -4217,7 +4217,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_minor_iterations(self) -> int:
-        """The maximum number of iterations for the QP subproblem allowed during a single major iteration."""
+        """Get or set the maximum number of iterations for the QP subproblem allowed during a single major iteration."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_max_minor_iterations_metadata)
 
     _set_max_minor_iterations_metadata = { "name" : "max_minor_iterations",
@@ -4232,7 +4232,7 @@ class IManeuverOptimalFiniteSNOPTOptimizer(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_minor_feasibility(self) -> float:
-        """The tolerance which the QP subproblem must meet before being considered feasible."""
+        """Get or set the tolerance which the QP subproblem must meet before being considered feasible."""
         return self._intf.get_property(IManeuverOptimalFiniteSNOPTOptimizer._metadata, IManeuverOptimalFiniteSNOPTOptimizer._get_tolerance_on_minor_feasibility_metadata)
 
     _set_tolerance_on_minor_feasibility_metadata = { "name" : "tolerance_on_minor_feasibility",
@@ -4987,7 +4987,7 @@ class IGoldenSectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IGoldenSectionControl._metadata, IGoldenSectionControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -4995,7 +4995,7 @@ class IGoldenSectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IGoldenSectionControl._metadata, IGoldenSectionControl._get_parent_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -5003,7 +5003,7 @@ class IGoldenSectionControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IGoldenSectionControl._metadata, IGoldenSectionControl._get_current_value_metadata)
 
     _get_lower_bound_metadata = { "name" : "lower_bound",
@@ -5056,7 +5056,7 @@ class IGoldenSectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IGoldenSectionControl._metadata, IGoldenSectionControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -5211,7 +5211,7 @@ class IGoldenSectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IGoldenSectionResult._metadata, IGoldenSectionResult._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -5219,7 +5219,7 @@ class IGoldenSectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IGoldenSectionResult._metadata, IGoldenSectionResult._get_parent_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -5227,7 +5227,7 @@ class IGoldenSectionResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IGoldenSectionResult._metadata, IGoldenSectionResult._get_current_value_metadata)
 
     _get_desired_operation_metadata = { "name" : "desired_operation",
@@ -5235,7 +5235,7 @@ class IGoldenSectionResult(object):
             "marshallers" : (agmarshall.EnumArg(GOLDEN_SECTION_DESIRED_OPERATION),) }
     @property
     def desired_operation(self) -> "GOLDEN_SECTION_DESIRED_OPERATION":
-        """The Desired Operation/Objective of golden section."""
+        """Get or set the Desired Operation/Objective of golden section."""
         return self._intf.get_property(IGoldenSectionResult._metadata, IGoldenSectionResult._get_desired_operation_metadata)
 
     _set_desired_operation_metadata = { "name" : "desired_operation",
@@ -5265,7 +5265,7 @@ class IGoldenSectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IGoldenSectionResult._metadata, IGoldenSectionResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -5409,7 +5409,7 @@ class IGridSearchControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IGridSearchControl._metadata, IGridSearchControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -5417,7 +5417,7 @@ class IGridSearchControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IGridSearchControl._metadata, IGridSearchControl._get_parent_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -5425,7 +5425,7 @@ class IGridSearchControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IGridSearchControl._metadata, IGridSearchControl._get_current_value_metadata)
 
     _get_lower_bound_metadata = { "name" : "lower_bound",
@@ -5478,7 +5478,7 @@ class IGridSearchControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IGridSearchControl._metadata, IGridSearchControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -5633,7 +5633,7 @@ class IGridSearchResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IGridSearchResult._metadata, IGridSearchResult._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -5641,7 +5641,7 @@ class IGridSearchResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IGridSearchResult._metadata, IGridSearchResult._get_parent_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -5649,7 +5649,7 @@ class IGridSearchResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IGridSearchResult._metadata, IGridSearchResult._get_current_value_metadata)
 
     _get_desired_operation_metadata = { "name" : "desired_operation",
@@ -5657,7 +5657,7 @@ class IGridSearchResult(object):
             "marshallers" : (agmarshall.EnumArg(GRID_SEARCH_DESIRED_OPERATION),) }
     @property
     def desired_operation(self) -> "GRID_SEARCH_DESIRED_OPERATION":
-        """The Desired Operation/Objective of grid search."""
+        """Get or set the Desired Operation/Objective of grid search."""
         return self._intf.get_property(IGridSearchResult._metadata, IGridSearchResult._get_desired_operation_metadata)
 
     _set_desired_operation_metadata = { "name" : "desired_operation",
@@ -5687,7 +5687,7 @@ class IGridSearchResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IGridSearchResult._metadata, IGridSearchResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -5829,7 +5829,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -5837,7 +5837,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_parent_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -5845,7 +5845,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_current_value_metadata)
 
     _get_desired_value_metadata = { "name" : "desired_value",
@@ -5853,7 +5853,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def desired_value(self) -> typing.Any:
-        """The value that you want to achieve."""
+        """Get or set the value that you want to achieve."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_desired_value_metadata)
 
     _set_desired_value_metadata = { "name" : "desired_value",
@@ -5868,7 +5868,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def tolerance(self) -> typing.Any:
-        """The profile will stop when it achieves a value within this range of the Desired Value."""
+        """Get or set the profile will stop when it achieves a value within this range of the Desired Value."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_tolerance_metadata)
 
     _set_tolerance_metadata = { "name" : "tolerance",
@@ -5898,7 +5898,7 @@ class IBisectionResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IBisectionResult._metadata, IBisectionResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -6063,7 +6063,7 @@ class IStoppingConditionElement(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def properties(self) -> "IStoppingConditionComponent":
-        """The properties available to the stopping condition."""
+        """Get the properties available to the stopping condition."""
         return self._intf.get_property(IStoppingConditionElement._metadata, IStoppingConditionElement._get_properties_metadata)
 
 
@@ -6398,7 +6398,7 @@ class IState(object):
             "marshallers" : (agmarshall.EnumArg(ELEMENT_TYPE),) }
     @property
     def element_type(self) -> "ELEMENT_TYPE":
-        """The element type."""
+        """Get the element type."""
         return self._intf.get_property(IState._metadata, IState._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "set_element_type",
@@ -6421,7 +6421,7 @@ class IState(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def epoch(self) -> typing.Any:
-        """The epoch of the Orbit State. Uses DateFormat Dimension."""
+        """Get or set the epoch of the Orbit State. Uses DateFormat Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_epoch_metadata)
 
     _set_epoch_metadata = { "name" : "epoch",
@@ -6436,7 +6436,7 @@ class IState(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system."""
+        """Get the coordinate system."""
         return self._intf.get_property(IState._metadata, IState._get_coord_system_name_metadata)
 
     _get_dry_mass_metadata = { "name" : "dry_mass",
@@ -6444,7 +6444,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def dry_mass(self) -> float:
-        """The mass of the spacecraft exclusive of propellant. Uses Mass Dimension."""
+        """Get or set the mass of the spacecraft exclusive of propellant. Uses Mass Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_dry_mass_metadata)
 
     _set_dry_mass_metadata = { "name" : "dry_mass",
@@ -6459,7 +6459,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def fuel_mass(self) -> float:
-        """The mass of the spacecraft propellant. Uses Mass Dimension."""
+        """Get or set the mass of the spacecraft propellant. Uses Mass Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_fuel_mass_metadata)
 
     _set_fuel_mass_metadata = { "name" : "fuel_mass",
@@ -6474,7 +6474,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def drag_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Uses SmallArea Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Uses SmallArea Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_drag_area_metadata)
 
     _set_drag_area_metadata = { "name" : "drag_area",
@@ -6489,7 +6489,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def srp_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Uses SmallArea Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Uses SmallArea Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_srp_area_metadata)
 
     _set_srp_area_metadata = { "name" : "srp_area",
@@ -6504,7 +6504,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tank_pressure(self) -> float:
-        """The fuel tank pressure. Uses Pressure Dimension."""
+        """Get or set the fuel tank pressure. Uses Pressure Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_tank_pressure_metadata)
 
     _set_tank_pressure_metadata = { "name" : "tank_pressure",
@@ -6519,7 +6519,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tank_temperature(self) -> float:
-        """The temperature of the fuel tank. Uses Temperature Dimension."""
+        """Get or set the temperature of the fuel tank. Uses Temperature Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_tank_temperature_metadata)
 
     _set_tank_temperature_metadata = { "name" : "tank_temperature",
@@ -6534,7 +6534,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def fuel_density(self) -> float:
-        """The density of the fuel tank. Uses SmallDensity Dimension."""
+        """Get or set the density of the fuel tank. Uses SmallDensity Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_fuel_density_metadata)
 
     _set_fuel_density_metadata = { "name" : "fuel_density",
@@ -6549,7 +6549,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def cr(self) -> float:
-        """The reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
+        """Get or set the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
         return self._intf.get_property(IState._metadata, IState._get_cr_metadata)
 
     _set_cr_metadata = { "name" : "cr",
@@ -6564,7 +6564,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def cd(self) -> float:
-        """The dimensionless drag coefficient associated with the drag area. Dimensionless."""
+        """Get or set the dimensionless drag coefficient associated with the drag area. Dimensionless."""
         return self._intf.get_property(IState._metadata, IState._get_cd_metadata)
 
     _set_cd_metadata = { "name" : "cd",
@@ -6579,7 +6579,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_coeff(self) -> float:
-        """The reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
+        """Get or set the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
         return self._intf.get_property(IState._metadata, IState._get_radiation_pressure_coeff_metadata)
 
     _set_radiation_pressure_coeff_metadata = { "name" : "radiation_pressure_coeff",
@@ -6594,7 +6594,7 @@ class IState(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses Small Area Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses Small Area Dimension."""
         return self._intf.get_property(IState._metadata, IState._get_radiation_pressure_area_metadata)
 
     _set_radiation_pressure_area_metadata = { "name" : "radiation_pressure_area",
@@ -6672,7 +6672,7 @@ class IStoppingConditionComponent(object):
             "marshallers" : (agmarshall.EnumArg(STOPPING_CONDITION),) }
     @property
     def stopping_condition_type(self) -> "STOPPING_CONDITION":
-        """The type of stopping condition."""
+        """Get the type of stopping condition."""
         return self._intf.get_property(IStoppingConditionComponent._metadata, IStoppingConditionComponent._get_stopping_condition_type_metadata)
 
 
@@ -6718,7 +6718,7 @@ class IAutomaticSequence(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the sequence."""
+        """Get or set the name of the sequence."""
         return self._intf.get_property(IAutomaticSequence._metadata, IAutomaticSequence._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -6733,7 +6733,7 @@ class IAutomaticSequence(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def user_comment(self) -> str:
-        """The user comment."""
+        """Get or set the user comment."""
         return self._intf.get_property(IAutomaticSequence._metadata, IAutomaticSequence._get_user_comment_metadata)
 
     _set_user_comment_metadata = { "name" : "user_comment",
@@ -6829,7 +6829,7 @@ class IAutomaticSequenceCollection(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
-        """The size of the collection."""
+        """Get the size of the collection."""
         return self._intf.get_property(IAutomaticSequenceCollection._metadata, IAutomaticSequenceCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
@@ -6933,7 +6933,7 @@ class IBPlaneCollection(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
-        """The number of active BPlanes."""
+        """Get the number of active BPlanes."""
         return self._intf.get_property(IBPlaneCollection._metadata, IBPlaneCollection._get_count_metadata)
 
     __getitem__ = item
@@ -7112,7 +7112,7 @@ class IManeuverFinitePropagator(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def propagator_name(self) -> str:
-        """The propagator."""
+        """Get or set the propagator."""
         return self._intf.get_property(IManeuverFinitePropagator._metadata, IManeuverFinitePropagator._get_propagator_name_metadata)
 
     _set_propagator_name_metadata = { "name" : "propagator_name",
@@ -7127,7 +7127,7 @@ class IManeuverFinitePropagator(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def stopping_conditions(self) -> "StoppingConditionCollection":
-        """The stopping conditions list."""
+        """Get the stopping conditions list."""
         return self._intf.get_property(IManeuverFinitePropagator._metadata, IManeuverFinitePropagator._get_stopping_conditions_metadata)
 
     _get_min_propagation_time_metadata = { "name" : "min_propagation_time",
@@ -7210,7 +7210,7 @@ class IManeuverFinitePropagator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def bias(self) -> float:
-        """The value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension."""
+        """Get or set the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension."""
         return self._intf.get_property(IManeuverFinitePropagator._metadata, IManeuverFinitePropagator._get_bias_metadata)
 
     _set_bias_metadata = { "name" : "bias",
@@ -7320,7 +7320,7 @@ class IBurnoutVelocity(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def fixed_velocity(self) -> float:
-        """The velocity magnitude . Uses Rate Dimension."""
+        """Get or set the velocity magnitude . Uses Rate Dimension."""
         return self._intf.get_property(IBurnoutVelocity._metadata, IBurnoutVelocity._get_fixed_velocity_metadata)
 
     _set_fixed_velocity_metadata = { "name" : "fixed_velocity",
@@ -7335,7 +7335,7 @@ class IBurnoutVelocity(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def inertial_velocity(self) -> float:
-        """The velocity magnitude. Uses Rate Dimension."""
+        """Get or set the velocity magnitude. Uses Rate Dimension."""
         return self._intf.get_property(IBurnoutVelocity._metadata, IBurnoutVelocity._get_inertial_velocity_metadata)
 
     _set_inertial_velocity_metadata = { "name" : "inertial_velocity",
@@ -7350,7 +7350,7 @@ class IBurnoutVelocity(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def inertial_velocity_azimuth(self) -> typing.Any:
-        """The inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension."""
+        """Get or set the inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutVelocity._metadata, IBurnoutVelocity._get_inertial_velocity_azimuth_metadata)
 
     _set_inertial_velocity_azimuth_metadata = { "name" : "inertial_velocity_azimuth",
@@ -7492,7 +7492,7 @@ class IAttitudeControl(object):
             "marshallers" : (agmarshall.EnumArg(CUSTOM_FUNCTION),) }
     @property
     def custom_function(self) -> "CUSTOM_FUNCTION":
-        """The attitude definition to use for other STK functions."""
+        """Get or set the attitude definition to use for other STK functions."""
         return self._intf.get_property(IAttitudeControl._metadata, IAttitudeControl._get_custom_function_metadata)
 
     _set_custom_function_metadata = { "name" : "custom_function",
@@ -7634,7 +7634,7 @@ class IManeuver(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def attitude_control(self) -> "IAttitudeControl":
-        """The attitude control properties collection."""
+        """Get the attitude control properties collection."""
         return self._intf.get_property(IManeuver._metadata, IManeuver._get_attitude_control_metadata)
 
     _get_propulsion_method_metadata = { "name" : "propulsion_method",
@@ -7642,7 +7642,7 @@ class IManeuver(object):
             "marshallers" : (agmarshall.EnumArg(PROPULSION_METHOD),) }
     @property
     def propulsion_method(self) -> "PROPULSION_METHOD":
-        """The propulsion type to be modeled."""
+        """Get the propulsion type to be modeled."""
         return self._intf.get_property(IManeuver._metadata, IManeuver._get_propulsion_method_metadata)
 
     _set_propulsion_method_metadata = { "name" : "set_propulsion_method",
@@ -7657,7 +7657,7 @@ class IManeuver(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def propulsion_method_value(self) -> str:
-        """The specific engine model or thruster set to be used for the maneuver."""
+        """Get the specific engine model or thruster set to be used for the maneuver."""
         return self._intf.get_property(IManeuver._metadata, IManeuver._get_propulsion_method_value_metadata)
 
 
@@ -7754,7 +7754,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def component_name(self) -> str:
-        """The name of the component."""
+        """Get or set the name of the component."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_component_name_metadata)
 
     _set_component_name_metadata = { "name" : "component_name",
@@ -7769,7 +7769,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def attribute(self) -> str:
-        """The name of the attribute."""
+        """Get or set the name of the attribute."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_attribute_metadata)
 
     _set_attribute_metadata = { "name" : "attribute",
@@ -7784,7 +7784,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit(self) -> str:
-        """The unit."""
+        """Get or set the unit."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_unit_metadata)
 
     _set_unit_metadata = { "name" : "unit",
@@ -7822,7 +7822,7 @@ class IScriptingSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def object_name(self) -> str:
-        """The profile/segment that contains the attribute."""
+        """Get or set the profile/segment that contains the attribute."""
         return self._intf.get_property(IScriptingSegment._metadata, IScriptingSegment._get_object_name_metadata)
 
     _set_object_name_metadata = { "name" : "object_name",
@@ -8222,7 +8222,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The parameter name."""
+        """Get or set the parameter name."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -8237,7 +8237,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def param_value(self) -> typing.Any:
-        """The parameter value.  Set in Object Model unit preference for selected dimension."""
+        """Get or set the parameter value.  Set in Object Model unit preference for selected dimension."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_param_value_metadata)
 
     _set_param_value_metadata = { "name" : "param_value",
@@ -8252,7 +8252,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit(self) -> str:
-        """The parameter's unit that is used to represent ParamValue during the scripting tool script execution. ParamValue is set in Object Model unit preference for selected dimension and not this unit. As with other units configurable in the desktop environment for STK, this unit is separate (and may differ) from the Object Model unit preference."""
+        """Get or set the parameter's unit that is used to represent ParamValue during the scripting tool script execution. ParamValue is set in Object Model unit preference for selected dimension and not this unit. As with other units configurable in the desktop environment for STK, this unit is separate (and may differ) from the Object Model unit preference."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_unit_metadata)
 
     _set_unit_metadata = { "name" : "unit",
@@ -8267,7 +8267,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.EnumArg(SCRIPTING_PARAMETER_TYPE),) }
     @property
     def type(self) -> "SCRIPTING_PARAMETER_TYPE":
-        """The parameter's type."""
+        """Get or set the parameter's type."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_type_metadata)
 
     _set_type_metadata = { "name" : "type",
@@ -8297,7 +8297,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def user_comment(self) -> str:
-        """The parameter's comment."""
+        """Get or set the parameter's comment."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_user_comment_metadata)
 
     _set_user_comment_metadata = { "name" : "user_comment",
@@ -8312,7 +8312,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def dimension(self) -> str:
-        """The parameter's dimension."""
+        """Get or set the parameter's dimension."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_dimension_metadata)
 
     _set_dimension_metadata = { "name" : "dimension",
@@ -8327,7 +8327,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def enumeration_choices(self) -> "ScriptingParameterEnumerationChoiceCollection":
-        """The collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration."""
+        """Get the collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_enumeration_choices_metadata)
 
     _get_use_min_value_metadata = { "name" : "use_min_value",
@@ -8350,7 +8350,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def min_value(self) -> typing.Any:
-        """The minimum value permitted for the parameter value."""
+        """Get or set the minimum value permitted for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_min_value_metadata)
 
     _set_min_value_metadata = { "name" : "min_value",
@@ -8380,7 +8380,7 @@ class IScriptingParameter(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def max_value(self) -> typing.Any:
-        """The maximum value permitted for the parameter value."""
+        """Get or set the maximum value permitted for the parameter value."""
         return self._intf.get_property(IScriptingParameter._metadata, IScriptingParameter._get_max_value_metadata)
 
     _set_max_value_metadata = { "name" : "max_value",
@@ -8569,7 +8569,7 @@ class IScriptingCalcObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def component_name(self) -> str:
-        """The name of the component."""
+        """Get or set the name of the component."""
         return self._intf.get_property(IScriptingCalcObject._metadata, IScriptingCalcObject._get_component_name_metadata)
 
     _set_component_name_metadata = { "name" : "component_name",
@@ -8584,7 +8584,7 @@ class IScriptingCalcObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The name of the calculation object."""
+        """Get or set the name of the calculation object."""
         return self._intf.get_property(IScriptingCalcObject._metadata, IScriptingCalcObject._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -8599,7 +8599,7 @@ class IScriptingCalcObject(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def calc_object(self) -> "IComponentInfo":
-        """The calculation object type."""
+        """Get or set the calculation object type."""
         return self._intf.get_property(IScriptingCalcObject._metadata, IScriptingCalcObject._get_calc_object_metadata)
 
     _set_calc_object_metadata = { "name" : "calc_object",
@@ -8614,7 +8614,7 @@ class IScriptingCalcObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit(self) -> str:
-        """The unit."""
+        """Get or set the unit."""
         return self._intf.get_property(IScriptingCalcObject._metadata, IScriptingCalcObject._get_unit_metadata)
 
     _set_unit_metadata = { "name" : "unit",
@@ -8849,7 +8849,7 @@ class IScriptingTool(object):
             "marshallers" : (agmarshall.EnumArg(LANGUAGE),) }
     @property
     def language_type(self) -> "LANGUAGE":
-        """The scripting language being used."""
+        """Get or set the scripting language being used."""
         return self._intf.get_property(IScriptingTool._metadata, IScriptingTool._get_language_type_metadata)
 
     _set_language_type_metadata = { "name" : "language_type",
@@ -8969,7 +8969,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def dry_mass(self) -> float:
-        """The mass of the spacecraft exclusive of propellant. Uses Mass Dimension."""
+        """Get or set the mass of the spacecraft exclusive of propellant. Uses Mass Dimension."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_dry_mass_metadata)
 
     _set_dry_mass_metadata = { "name" : "dry_mass",
@@ -8984,7 +8984,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def cd(self) -> float:
-        """The dimensionless drag coefficient associated with the drag area. Dimensionless."""
+        """Get or set the dimensionless drag coefficient associated with the drag area. Dimensionless."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_cd_metadata)
 
     _set_cd_metadata = { "name" : "cd",
@@ -8999,7 +8999,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def drag_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Uses SmallArea Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Uses SmallArea Dimension."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_drag_area_metadata)
 
     _set_drag_area_metadata = { "name" : "drag_area",
@@ -9014,7 +9014,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def cr(self) -> float:
-        """The reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
+        """Get or set the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_cr_metadata)
 
     _set_cr_metadata = { "name" : "cr",
@@ -9029,7 +9029,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radiation_pressure_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Uses SmallArea Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Uses SmallArea Dimension."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_solar_radiation_pressure_area_metadata)
 
     _set_solar_radiation_pressure_area_metadata = { "name" : "solar_radiation_pressure_area",
@@ -9044,7 +9044,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def ck(self) -> float:
-        """The reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
+        """Get or set the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_ck_metadata)
 
     _set_ck_metadata = { "name" : "ck",
@@ -9059,7 +9059,7 @@ class ISpacecraftParameters(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_area(self) -> float:
-        """The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses SmallArea Dimension."""
+        """Get or set the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses SmallArea Dimension."""
         return self._intf.get_property(ISpacecraftParameters._metadata, ISpacecraftParameters._get_radiation_pressure_area_metadata)
 
     _set_radiation_pressure_area_metadata = { "name" : "radiation_pressure_area",
@@ -9141,7 +9141,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tank_pressure(self) -> float:
-        """The fuel tank pressure. Uses Pressure Dimension."""
+        """Get or set the fuel tank pressure. Uses Pressure Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_tank_pressure_metadata)
 
     _set_tank_pressure_metadata = { "name" : "tank_pressure",
@@ -9156,7 +9156,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tank_volume(self) -> float:
-        """The volume of the fuel tank. Uses SmallVolume Dimension."""
+        """Get or set the volume of the fuel tank. Uses SmallVolume Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_tank_volume_metadata)
 
     _set_tank_volume_metadata = { "name" : "tank_volume",
@@ -9171,7 +9171,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tank_temperature(self) -> float:
-        """The temperature of the fuel tank. Uses Temperature Dimension."""
+        """Get or set the temperature of the fuel tank. Uses Temperature Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_tank_temperature_metadata)
 
     _set_tank_temperature_metadata = { "name" : "tank_temperature",
@@ -9186,7 +9186,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def fuel_density(self) -> float:
-        """The density of the fuel. Uses SmallDensity Dimension."""
+        """Get or set the density of the fuel. Uses SmallDensity Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_fuel_density_metadata)
 
     _set_fuel_density_metadata = { "name" : "fuel_density",
@@ -9201,7 +9201,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def fuel_mass(self) -> float:
-        """The mass of the spacecraft propellant. Uses Mass Dimension."""
+        """Get or set the mass of the spacecraft propellant. Uses Mass Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_fuel_mass_metadata)
 
     _set_fuel_mass_metadata = { "name" : "fuel_mass",
@@ -9216,7 +9216,7 @@ class IFuelTank(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def maximum_fuel_mass(self) -> float:
-        """The maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Uses Mass Dimension."""
+        """Get or set the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Uses Mass Dimension."""
         return self._intf.get_property(IFuelTank._metadata, IFuelTank._get_maximum_fuel_mass_metadata)
 
     _set_maximum_fuel_mass_metadata = { "name" : "maximum_fuel_mass",
@@ -9265,7 +9265,7 @@ class IMissionControlSequenceSegmentProperties(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def display_coordinate_system(self) -> str:
-        """The coordinate system that will be used in the segment summary report."""
+        """Get or set the coordinate system that will be used in the segment summary report."""
         return self._intf.get_property(IMissionControlSequenceSegmentProperties._metadata, IMissionControlSequenceSegmentProperties._get_display_coordinate_system_metadata)
 
     _set_display_coordinate_system_metadata = { "name" : "display_coordinate_system",
@@ -9280,7 +9280,7 @@ class IMissionControlSequenceSegmentProperties(object):
             "marshallers" : (agmarshall.OLEColorArg,) }
     @property
     def color(self) -> agcolor.Color:
-        """The display color of the segment."""
+        """Get or set the display color of the segment."""
         return self._intf.get_property(IMissionControlSequenceSegmentProperties._metadata, IMissionControlSequenceSegmentProperties._get_color_metadata)
 
     _set_color_metadata = { "name" : "color",
@@ -9317,7 +9317,7 @@ class IMissionControlSequenceSegmentProperties(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def b_planes(self) -> "BPlaneCollection":
-        """The B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition."""
+        """Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition."""
         return self._intf.get_property(IMissionControlSequenceSegmentProperties._metadata, IMissionControlSequenceSegmentProperties._get_b_planes_metadata)
 
     _get_last_run_code_metadata = { "name" : "last_run_code",
@@ -9325,7 +9325,7 @@ class IMissionControlSequenceSegmentProperties(object):
             "marshallers" : (agmarshall.EnumArg(RUN_CODE),) }
     @property
     def last_run_code(self) -> "RUN_CODE":
-        """The last run code returned by the segment."""
+        """Get the last run code returned by the segment."""
         return self._intf.get_property(IMissionControlSequenceSegmentProperties._metadata, IMissionControlSequenceSegmentProperties._get_last_run_code_metadata)
 
 
@@ -9398,7 +9398,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system."""
+        """Get or set the coordinate system."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -9413,7 +9413,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def orbit_epoch(self) -> typing.Any:
-        """The orbit epoch. Uses DateFormat Dimension."""
+        """Get or set the orbit epoch. Uses DateFormat Dimension."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_orbit_epoch_metadata)
 
     _set_orbit_epoch_metadata = { "name" : "orbit_epoch",
@@ -9428,7 +9428,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def spacecraft_parameters(self) -> "SpacecraftParameters":
-        """The spacecraft  parameters."""
+        """Get the spacecraft  parameters."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_spacecraft_parameters_metadata)
 
     _get_fuel_tank_metadata = { "name" : "fuel_tank",
@@ -9436,7 +9436,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def fuel_tank(self) -> "FuelTank":
-        """The fuel tank parameters."""
+        """Get the fuel tank parameters."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_fuel_tank_metadata)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -9444,7 +9444,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.EnumArg(ELEMENT_TYPE),) }
     @property
     def element_type(self) -> "ELEMENT_TYPE":
-        """The coordinate type."""
+        """Get the coordinate type."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "set_element_type",
@@ -9459,7 +9459,7 @@ class IMissionControlSequenceInitialState(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def element(self) -> "IElement":
-        """The elements of the selected coordinate type."""
+        """Get the elements of the selected coordinate type."""
         return self._intf.get_property(IMissionControlSequenceInitialState._metadata, IMissionControlSequenceInitialState._get_element_metadata)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -9553,7 +9553,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def initial_state(self) -> "State":
-        """The initial state of the segment."""
+        """Get the initial state of the segment."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_initial_state_metadata)
 
     _get_final_state_metadata = { "name" : "final_state",
@@ -9561,7 +9561,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def final_state(self) -> "State":
-        """The final state of the segment."""
+        """Get the final state of the segment."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_final_state_metadata)
 
     _get_result_value_metadata = { "name" : "get_result_value",
@@ -9583,7 +9583,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "CalcObjectCollection":
-        """The results of the segment."""
+        """Get the results of the segment."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_results_metadata)
 
     _get_exec_summary_metadata = { "name" : "exec_summary",
@@ -9591,7 +9591,7 @@ class IMissionControlSequenceSegment(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def exec_summary(self) -> "IDataProviderResult":
-        """The segment summary report."""
+        """Get the segment summary report."""
         return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_exec_summary_metadata)
 
 
@@ -9781,7 +9781,7 @@ class IMissionControlSequenceOptions(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def stopping_condition_time_tolerance(self) -> float:
-        """The time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied."""
+        """Get or set the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied."""
         return self._intf.get_property(IMissionControlSequenceOptions._metadata, IMissionControlSequenceOptions._get_stopping_condition_time_tolerance_metadata)
 
     _set_stopping_condition_time_tolerance_metadata = { "name" : "stopping_condition_time_tolerance",
@@ -9841,7 +9841,7 @@ class IMissionControlSequenceOptions(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def graphics_update_rate(self) -> float:
-        """The rate (between 0 and 1) at which to update graphics. Dimensionless."""
+        """Get or set the rate (between 0 and 1) at which to update graphics. Dimensionless."""
         return self._intf.get_property(IMissionControlSequenceOptions._metadata, IMissionControlSequenceOptions._get_graphics_update_rate_metadata)
 
     _set_graphics_update_rate_metadata = { "name" : "graphics_update_rate",
@@ -9886,7 +9886,7 @@ class IMissionControlSequenceOptions(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_ephem_step(self) -> float:
-        """The minimum step size for saving ephemeris. Uses Time Dimension."""
+        """Get or set the minimum step size for saving ephemeris. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequenceOptions._metadata, IMissionControlSequenceOptions._get_min_ephem_step_metadata)
 
     _set_min_ephem_step_metadata = { "name" : "min_ephem_step",
@@ -9979,7 +9979,7 @@ class IDriverMissionControlSequence(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def main_sequence(self) -> "MissionControlSequenceSegmentCollection":
-        """The Mission Control Sequence."""
+        """Get the Mission Control Sequence."""
         return self._intf.get_property(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._get_main_sequence_metadata)
 
     _get_options_metadata = { "name" : "options",
@@ -9987,7 +9987,7 @@ class IDriverMissionControlSequence(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def options(self) -> "MissionControlSequenceOptions":
-        """The Mission Control Sequence options."""
+        """Get the Mission Control Sequence options."""
         return self._intf.get_property(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._get_options_metadata)
 
     _get_auto_sequence_metadata = { "name" : "auto_sequence",
@@ -9995,7 +9995,7 @@ class IDriverMissionControlSequence(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def auto_sequence(self) -> "AutomaticSequenceCollection":
-        """The Automatic Sequences."""
+        """Get the Automatic Sequences."""
         return self._intf.get_property(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._get_auto_sequence_metadata)
 
     _run_mission_control_sequence_metadata = { "name" : "run_mission_control_sequence",
@@ -10073,7 +10073,7 @@ class IDriverMissionControlSequence(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def calculation_graphs(self) -> "CalculationGraphCollection":
-        """The calculation graphs."""
+        """Get the calculation graphs."""
         return self._intf.get_property(IDriverMissionControlSequence._metadata, IDriverMissionControlSequence._get_calculation_graphs_metadata)
 
 
@@ -10311,7 +10311,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def inclination(self) -> typing.Any:
-        """The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension."""
+        """Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_inclination_metadata)
 
     _set_inclination_metadata = { "name" : "inclination",
@@ -10326,7 +10326,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def raan(self) -> typing.Any:
-        """The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension."""
+        """Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_raan_metadata)
 
     _set_raan_metadata = { "name" : "raan",
@@ -10341,7 +10341,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def arg_of_periapsis(self) -> typing.Any:
-        """The angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension."""
+        """Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_arg_of_periapsis_metadata)
 
     _set_arg_of_periapsis_metadata = { "name" : "arg_of_periapsis",
@@ -10356,7 +10356,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def true_anomaly(self) -> typing.Any:
-        """The angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension."""
+        """Get or set the angle from the eccentricity vector (points toward perigee) to the satellite position vector, measured in the direction of satellite motion and in the orbit plane. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_true_anomaly_metadata)
 
     _set_true_anomaly_metadata = { "name" : "true_anomaly",
@@ -10401,7 +10401,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_motion(self) -> float:
-        """The uniform rate of the satellite in a circular orbit of the same period, typically expressed as degrees or radians per second, or as revolutions per day. Uses AngleRate dimension."""
+        """Get or set the uniform rate of the satellite in a circular orbit of the same period, typically expressed as degrees or radians per second, or as revolutions per day. Uses AngleRate dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_mean_motion_metadata)
 
     _set_mean_motion_metadata = { "name" : "mean_motion",
@@ -10409,7 +10409,6 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @mean_motion.setter
     def mean_motion(self, inVal:float) -> None:
-        """."""
         return self._intf.set_property(IElementKeplerian._metadata, IElementKeplerian._set_mean_motion_metadata, inVal)
 
     _get_periapsis_altitude_size_metadata = { "name" : "periapsis_altitude_size",
@@ -10447,7 +10446,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def period(self) -> float:
-        """The duration of one orbit, based on assumed two-body motion. Uses Time dimension."""
+        """Get or set the duration of one orbit, based on assumed two-body motion. Uses Time dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_period_metadata)
 
     _set_period_metadata = { "name" : "period",
@@ -10462,7 +10461,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def lan(self) -> typing.Any:
-        """The Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension."""
+        """Get or set the Earth-fixed longitude where the satellite has crossed the inertial equator (the intersection of the ground track and the inertial equator) from south to north based on an assumption of two-body motion. Uses Angle dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_lan_metadata)
 
     _set_lan_metadata = { "name" : "lan",
@@ -10477,7 +10476,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def arg_of_latitude(self) -> typing.Any:
-        """The sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension."""
+        """Get or set the sum of the True Anomaly and the Argument of Perigee. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_arg_of_latitude_metadata)
 
     _set_arg_of_latitude_metadata = { "name" : "arg_of_latitude",
@@ -10507,7 +10506,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def mean_anomaly(self) -> typing.Any:
-        """The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension."""
+        """Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_mean_anomaly_metadata)
 
     _set_mean_anomaly_metadata = { "name" : "mean_anomaly",
@@ -10522,7 +10521,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_past_asc_node(self) -> float:
-        """The elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension."""
+        """Get or set the elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_time_past_asc_node_metadata)
 
     _set_time_past_asc_node_metadata = { "name" : "time_past_asc_node",
@@ -10537,7 +10536,7 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_past_periapsis(self) -> float:
-        """The elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension."""
+        """Get or set the elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension."""
         return self._intf.get_property(IElementKeplerian._metadata, IElementKeplerian._get_time_past_periapsis_metadata)
 
     _set_time_past_periapsis_metadata = { "name" : "time_past_periapsis",
@@ -10560,7 +10559,6 @@ class IElementKeplerian(IElement):
             "marshallers" : (agmarshall.EnumArg(ELEMENT),) }
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
-        """."""
         return self._intf.set_property(IElementKeplerian._metadata, IElementKeplerian._set_element_type_metadata, inVal)
 
     _get_apoapsis_altitude_shape_metadata = { "name" : "apoapsis_altitude_shape",
@@ -10672,7 +10670,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def mean_anomaly(self) -> typing.Any:
-        """The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate (l). Uses Angle Dimension."""
+        """Get or set the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate (l). Uses Angle Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_mean_anomaly_metadata)
 
     _set_mean_anomaly_metadata = { "name" : "mean_anomaly",
@@ -10687,7 +10685,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def arg_of_periapsis(self) -> typing.Any:
-        """The angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane (g). Uses Angle Dimension."""
+        """Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane (g). Uses Angle Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_arg_of_periapsis_metadata)
 
     _set_arg_of_periapsis_metadata = { "name" : "arg_of_periapsis",
@@ -10702,7 +10700,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def raan(self) -> typing.Any:
-        """The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane (h). Uses Angle Dimension."""
+        """Get or set the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane (h). Uses Angle Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_raan_metadata)
 
     _set_raan_metadata = { "name" : "raan",
@@ -10747,7 +10745,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delaunay_g(self) -> float:
-        """The magnitude of the orbital angular momentum. Defined as sqrt(GM * p). Uses AreaRate Dimension."""
+        """Get or set the magnitude of the orbital angular momentum. Defined as sqrt(GM * p). Uses AreaRate Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_delaunay_g_metadata)
 
     _set_delaunay_g_metadata = { "name" : "delaunay_g",
@@ -10777,7 +10775,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delaunay_h(self) -> float:
-        """The Z component of the orbital angular momentum. Defined as G cos(inc).  Uses AreaRate Dimension."""
+        """Get or set the Z component of the orbital angular momentum. Defined as G cos(inc).  Uses AreaRate Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_delaunay_h_metadata)
 
     _set_delaunay_h_metadata = { "name" : "delaunay_h",
@@ -10792,7 +10790,7 @@ class IElementDelaunay(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def inclination(self) -> typing.Any:
-        """The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension."""
+        """Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension."""
         return self._intf.get_property(IElementDelaunay._metadata, IElementDelaunay._get_inclination_metadata)
 
     _set_inclination_metadata = { "name" : "inclination",
@@ -10864,7 +10862,7 @@ class IElementEquinoctial(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_motion(self) -> float:
-        """The average angular rate of the satellite based on 2 body motion. Uses Rate Dimension."""
+        """Get or set the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension."""
         return self._intf.get_property(IElementEquinoctial._metadata, IElementEquinoctial._get_mean_motion_metadata)
 
     _set_mean_motion_metadata = { "name" : "mean_motion",
@@ -11039,7 +11037,7 @@ class IElementMixedSpherical(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude(self) -> float:
-        """The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid. Uses Distance Dimension."""
+        """Get or set the object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid. Uses Distance Dimension."""
         return self._intf.get_property(IElementMixedSpherical._metadata, IElementMixedSpherical._get_altitude_metadata)
 
     _set_altitude_metadata = { "name" : "altitude",
@@ -11069,7 +11067,7 @@ class IElementMixedSpherical(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def velocity_azimuth(self) -> typing.Any:
-        """The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension."""
+        """Get or set the angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension."""
         return self._intf.get_property(IElementMixedSpherical._metadata, IElementMixedSpherical._get_velocity_azimuth_metadata)
 
     _set_velocity_azimuth_metadata = { "name" : "velocity_azimuth",
@@ -11084,7 +11082,7 @@ class IElementMixedSpherical(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def velocity_magnitude(self) -> float:
-        """The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Rate Dimension."""
+        """Get or set the angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Rate Dimension."""
         return self._intf.get_property(IElementMixedSpherical._metadata, IElementMixedSpherical._get_velocity_magnitude_metadata)
 
     _set_velocity_magnitude_metadata = { "name" : "velocity_magnitude",
@@ -11184,7 +11182,7 @@ class IElementSpherical(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius_magnitude(self) -> float:
-        """The magnitude of the satellite position vector. Uses Distance Dimension."""
+        """Get or set the magnitude of the satellite position vector. Uses Distance Dimension."""
         return self._intf.get_property(IElementSpherical._metadata, IElementSpherical._get_radius_magnitude_metadata)
 
     _set_radius_magnitude_metadata = { "name" : "radius_magnitude",
@@ -11214,7 +11212,7 @@ class IElementSpherical(IElement):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def velocity_azimuth(self) -> typing.Any:
-        """The angle in the satellite local horizontal plane between the projection of the velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension."""
+        """Get or set the angle in the satellite local horizontal plane between the projection of the velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension."""
         return self._intf.get_property(IElementSpherical._metadata, IElementSpherical._get_velocity_azimuth_metadata)
 
     _set_velocity_azimuth_metadata = { "name" : "velocity_azimuth",
@@ -11229,7 +11227,7 @@ class IElementSpherical(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def velocity_magnitude(self) -> float:
-        """The magnitude of the velocity vector. Uses Rate Dimension."""
+        """Get or set the magnitude of the velocity vector. Uses Rate Dimension."""
         return self._intf.get_property(IElementSpherical._metadata, IElementSpherical._get_velocity_magnitude_metadata)
 
     _set_velocity_magnitude_metadata = { "name" : "velocity_magnitude",
@@ -11617,7 +11615,7 @@ class IElementGeodetic(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def latitude_rate(self) -> float:
-        """The rate of change of the satellite's latitude. Uses Rate Dimension."""
+        """Get or set the rate of change of the satellite's latitude. Uses Rate Dimension."""
         return self._intf.get_property(IElementGeodetic._metadata, IElementGeodetic._get_latitude_rate_metadata)
 
     _set_latitude_rate_metadata = { "name" : "latitude_rate",
@@ -11632,7 +11630,7 @@ class IElementGeodetic(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def longitude_rate(self) -> float:
-        """The rate of change of the satellite's longitude. Uses Rate Dimension."""
+        """Get or set the rate of change of the satellite's longitude. Uses Rate Dimension."""
         return self._intf.get_property(IElementGeodetic._metadata, IElementGeodetic._get_longitude_rate_metadata)
 
     _set_longitude_rate_metadata = { "name" : "longitude_rate",
@@ -11647,7 +11645,7 @@ class IElementGeodetic(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude_rate(self) -> float:
-        """The rate of change of the altitude. Uses Rate Dimension."""
+        """Get or set the rate of change of the altitude. Uses Rate Dimension."""
         return self._intf.get_property(IElementGeodetic._metadata, IElementGeodetic._get_altitude_rate_metadata)
 
     _set_altitude_rate_metadata = { "name" : "altitude_rate",
@@ -11662,7 +11660,7 @@ class IElementGeodetic(IElement):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius_rate(self) -> float:
-        """The rate of change of the radius. Uses Rate Dimension."""
+        """Get or set the rate of change of the radius. Uses Rate Dimension."""
         return self._intf.get_property(IElementGeodetic._metadata, IElementGeodetic._get_radius_rate_metadata)
 
     _set_radius_rate_metadata = { "name" : "radius_rate",
@@ -11980,7 +11978,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def trip(self) -> typing.Any:
-        """The desired value - the value at which the condition will be satisfied. Dimension depends on context."""
+        """Get or set the desired value - the value at which the condition will be satisfied. Dimension depends on context."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_trip_metadata)
 
     _set_trip_metadata = { "name" : "trip",
@@ -11995,7 +11993,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance(self) -> float:
-        """The desired tolerance for achieving the stopping condition. Dimension depends on context."""
+        """Get or set the desired tolerance for achieving the stopping condition. Dimension depends on context."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_tolerance_metadata)
 
     _set_tolerance_metadata = { "name" : "tolerance",
@@ -12010,7 +12008,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def repeat_count(self) -> float:
-        """The number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
+        """Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "name" : "repeat_count",
@@ -12040,7 +12038,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_trip_times(self) -> float:
-        """The maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless."""
+        """Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_max_trip_times_metadata)
 
     _set_max_trip_times_metadata = { "name" : "max_trip_times",
@@ -12055,7 +12053,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system(self) -> str:
-        """The coordinate system. The default coordinate system of a stopping condition is Earth Inertial."""
+        """Get or set the coordinate system. The default coordinate system of a stopping condition is Earth Inertial."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_coord_system_metadata)
 
     _set_coord_system_metadata = { "name" : "coord_system",
@@ -12070,7 +12068,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def sequence(self) -> str:
-        """The automatic sequence to trigger if the highlighted stopping condition is satisfied."""
+        """Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_sequence_metadata)
 
     _set_sequence_metadata = { "name" : "sequence",
@@ -12123,7 +12121,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body. The default central body of a stopping condition is the Earth."""
+        """Get or set the central body. The default central body of a stopping condition is the Earth."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -12161,7 +12159,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def dimension(self) -> str:
-        """The dimension of the stopping condition."""
+        """Get the dimension of the stopping condition."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_dimension_metadata)
 
     _get_reference_point_metadata = { "name" : "reference_point",
@@ -12169,7 +12167,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_point(self) -> str:
-        """Reference point used for calculation."""
+        """Get or set the reference point used for calculation."""
         return self._intf.get_property(IStoppingCondition._metadata, IStoppingCondition._get_reference_point_metadata)
 
     _set_reference_point_metadata = { "name" : "reference_point",
@@ -12177,7 +12175,7 @@ class IStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @reference_point.setter
     def reference_point(self, inVal:str) -> None:
-        """Reference point used for calculation."""
+        """Get or set the reference point used for calculation."""
         return self._intf.set_property(IStoppingCondition._metadata, IStoppingCondition._set_reference_point_metadata, inVal)
 
     _copy_user_calc_object_to_clipboard_metadata = { "name" : "copy_user_calc_object_to_clipboard",
@@ -12266,7 +12264,7 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def repeat_count(self) -> float:
-        """The number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
+        """Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
         return self._intf.get_property(ILightingStoppingCondition._metadata, ILightingStoppingCondition._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "name" : "repeat_count",
@@ -12312,7 +12310,7 @@ class ILightingStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def sequence(self) -> str:
-        """The automatic sequence to trigger if the highlighted stopping condition is satisfied."""
+        """Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied."""
         return self._intf.get_property(ILightingStoppingCondition._metadata, ILightingStoppingCondition._get_sequence_metadata)
 
     _set_sequence_metadata = { "name" : "sequence",
@@ -12441,7 +12439,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_convergence(self) -> float:
-        """Set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension."""
+        """Get or set the time tolerance that is used by the access algorithms to determine the start times and stop times of access intervals. Uses Time dimension."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_time_convergence_metadata)
 
     _set_time_convergence_metadata = { "name" : "time_convergence",
@@ -12456,7 +12454,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def repeat_count(self) -> float:
-        """The number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
+        """Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "name" : "repeat_count",
@@ -12486,7 +12484,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_trip_times(self) -> float:
-        """The maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless."""
+        """Get or set the maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_max_trip_times_metadata)
 
     _set_max_trip_times_metadata = { "name" : "max_trip_times",
@@ -12501,7 +12499,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def sequence(self) -> str:
-        """The automatic sequence to trigger if the highlighted stopping condition is satisfied."""
+        """Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_sequence_metadata)
 
     _set_sequence_metadata = { "name" : "sequence",
@@ -12547,7 +12545,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.EnumArg(ABERRATION_TYPE),) }
     @property
     def aberration_type(self) -> "ABERRATION_TYPE":
-        """Set the model of aberration to be used in access computations."""
+        """Get or set the model of aberration to be used in access computations."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_aberration_type_metadata)
 
     _set_aberration_type_metadata = { "name" : "aberration_type",
@@ -12569,7 +12567,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.EnumArg(BASE_SELECTION),) }
     @property
     def base_selection_type(self) -> "BASE_SELECTION":
-        """The base object for the access calculation."""
+        """Get the base object for the access calculation."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_base_selection_type_metadata)
 
     _get_base_selection_metadata = { "name" : "base_selection",
@@ -12600,7 +12598,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.EnumArg(IV_TIME_SENSE),) }
     @property
     def signal_sense(self) -> "IV_TIME_SENSE":
-        """Set the direction of the signal."""
+        """Get or set the direction of the signal."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "name" : "signal_sense",
@@ -12615,7 +12613,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def target_object(self) -> "ILinkToObject":
-        """The target object for the access calculation."""
+        """Get the target object for the access calculation."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_target_object_metadata)
 
     _get_time_delay_convergence_tolerance_metadata = { "name" : "time_delay_convergence_tolerance",
@@ -12623,7 +12621,7 @@ class IAccessStoppingCondition(IStoppingConditionComponent):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_delay_convergence_tolerance(self) -> float:
-        """The tolerance used when iterating to determine the light time delay. The iteration stops when the improvement in the value is less than this tolerance. Uses Time Dimension."""
+        """Get or set the tolerance used when iterating to determine the light time delay. The iteration stops when the improvement in the value is less than this tolerance. Uses Time Dimension."""
         return self._intf.get_property(IAccessStoppingCondition._metadata, IAccessStoppingCondition._get_time_delay_convergence_tolerance_metadata)
 
     _set_time_delay_convergence_tolerance_metadata = { "name" : "time_delay_convergence_tolerance",
@@ -12699,7 +12697,7 @@ class IMissionControlSequencePropagate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def propagator_name(self) -> str:
-        """The propagator."""
+        """Get or set the propagator."""
         return self._intf.get_property(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._get_propagator_name_metadata)
 
     _set_propagator_name_metadata = { "name" : "propagator_name",
@@ -12714,7 +12712,7 @@ class IMissionControlSequencePropagate(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def stopping_conditions(self) -> "StoppingConditionCollection":
-        """The list of stopping conditions defined for the segment."""
+        """Get the list of stopping conditions defined for the segment."""
         return self._intf.get_property(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._get_stopping_conditions_metadata)
 
     _get_min_propagation_time_metadata = { "name" : "min_propagation_time",
@@ -12722,7 +12720,7 @@ class IMissionControlSequencePropagate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_propagation_time(self) -> float:
-        """The minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension."""
+        """Get or set the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._get_min_propagation_time_metadata)
 
     _set_min_propagation_time_metadata = { "name" : "min_propagation_time",
@@ -12737,7 +12735,7 @@ class IMissionControlSequencePropagate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_propagation_time(self) -> float:
-        """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension."""
+        """Get or set the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequencePropagate._metadata, IMissionControlSequencePropagate._get_max_propagation_time_metadata)
 
     _set_max_propagation_time_metadata = { "name" : "max_propagation_time",
@@ -12890,7 +12888,7 @@ class IMissionControlSequenceSequence(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def repeat_count(self) -> int:
-        """The number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless."""
+        """Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless."""
         return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "name" : "repeat_count",
@@ -12920,7 +12918,7 @@ class IMissionControlSequenceSequence(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def segments(self) -> "MissionControlSequenceSegmentCollection":
-        """The list of segments defined for the sequence."""
+        """Get the list of segments defined for the sequence."""
         return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_segments_metadata)
 
     _get_sequence_state_to_pass_metadata = { "name" : "sequence_state_to_pass",
@@ -13042,7 +13040,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body."""
+        """Get or set the central body."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -13057,7 +13055,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def step_size(self) -> float:
-        """The time interval between calculated ephemeris output points. Uses Time Dimension."""
+        """Get or set the time interval between calculated ephemeris output points. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_step_size_metadata)
 
     _set_step_size_metadata = { "name" : "step_size",
@@ -13072,7 +13070,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def pre_launch_time(self) -> float:
-        """The amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension."""
+        """Get or set the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_pre_launch_time_metadata)
 
     _set_pre_launch_time_metadata = { "name" : "pre_launch_time",
@@ -13087,7 +13085,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def epoch(self) -> typing.Any:
-        """The date and time of the launch. Uses DateFormat Dimension."""
+        """Get or set the date and time of the launch. Uses DateFormat Dimension."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_epoch_metadata)
 
     _set_epoch_metadata = { "name" : "epoch",
@@ -13131,7 +13129,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_acceleration(self) -> float:
-        """The initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension."""
+        """Get or set the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_initial_acceleration_metadata)
 
     _set_initial_acceleration_metadata = { "name" : "initial_acceleration",
@@ -13154,7 +13152,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def fuel_tank(self) -> "FuelTank":
-        """The spacecraft's fuel tank properties."""
+        """Get the spacecraft's fuel tank properties."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_fuel_tank_metadata)
 
     _get_display_system_type_metadata = { "name" : "display_system_type",
@@ -13162,7 +13160,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.EnumArg(LAUNCH_DISPLAY_SYSTEM),) }
     @property
     def display_system_type(self) -> "LAUNCH_DISPLAY_SYSTEM":
-        """The launch coordinate type."""
+        """Get the launch coordinate type."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_display_system_type_metadata)
 
     _set_display_system_type_metadata = { "name" : "set_display_system_type",
@@ -13185,7 +13183,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.EnumArg(ASCENT_TYPE),) }
     @property
     def ascent_type(self) -> "ASCENT_TYPE":
-        """The order of the spline used to generate the motion along the ellipse."""
+        """Get or set the order of the spline used to generate the motion along the ellipse."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_ascent_type_metadata)
 
     _set_ascent_type_metadata = { "name" : "ascent_type",
@@ -13200,7 +13198,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_of_flight(self) -> float:
-        """The time of flight (the time from launch to burnout). Uses Time Dimension."""
+        """Get or set the time of flight (the time from launch to burnout). Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_time_of_flight_metadata)
 
     _set_time_of_flight_metadata = { "name" : "time_of_flight",
@@ -13215,7 +13213,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.EnumArg(BURNOUT_TYPE),) }
     @property
     def burnout_type(self) -> "BURNOUT_TYPE":
-        """The burnout type."""
+        """Get the burnout type."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_burnout_type_metadata)
 
     _set_burnout_type_metadata = { "name" : "set_burnout_type",
@@ -13230,7 +13228,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def burnout(self) -> "IBurnout":
-        """The burnout point definition."""
+        """Get the burnout point definition."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_burnout_metadata)
 
     _get_burnout_velocity_metadata = { "name" : "burnout_velocity",
@@ -13238,7 +13236,7 @@ class IMissionControlSequenceLaunch(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def burnout_velocity(self) -> "BurnoutVelocity":
-        """The burnout velocity definition."""
+        """Get the burnout velocity definition."""
         return self._intf.get_property(IMissionControlSequenceLaunch._metadata, IMissionControlSequenceLaunch._get_burnout_velocity_metadata)
 
     _get_use_previous_segment_state_metadata = { "name" : "use_previous_segment_state",
@@ -13316,7 +13314,7 @@ class IDisplaySystemGeodetic(IDisplaySystem):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def latitude(self) -> typing.Any:
-        """The latitude of the launch location. Uses Angle Dimension."""
+        """Get or set the latitude of the launch location. Uses Angle Dimension."""
         return self._intf.get_property(IDisplaySystemGeodetic._metadata, IDisplaySystemGeodetic._get_latitude_metadata)
 
     _set_latitude_metadata = { "name" : "latitude",
@@ -13331,7 +13329,7 @@ class IDisplaySystemGeodetic(IDisplaySystem):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def longitude(self) -> typing.Any:
-        """The longitude of the launch location. Uses Angle Dimension."""
+        """Get or set the longitude of the launch location. Uses Angle Dimension."""
         return self._intf.get_property(IDisplaySystemGeodetic._metadata, IDisplaySystemGeodetic._get_longitude_metadata)
 
     _set_longitude_metadata = { "name" : "longitude",
@@ -13346,7 +13344,7 @@ class IDisplaySystemGeodetic(IDisplaySystem):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude(self) -> float:
-        """The altitude of the launch location. Uses Distance Dimension."""
+        """Get or set the altitude of the launch location. Uses Distance Dimension."""
         return self._intf.get_property(IDisplaySystemGeodetic._metadata, IDisplaySystemGeodetic._get_altitude_metadata)
 
     _set_altitude_metadata = { "name" : "altitude",
@@ -13393,7 +13391,7 @@ class IDisplaySystemGeocentric(IDisplaySystem):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def latitude(self) -> typing.Any:
-        """The latitude of the launch location. Uses Angle Dimension."""
+        """Get or set the latitude of the launch location. Uses Angle Dimension."""
         return self._intf.get_property(IDisplaySystemGeocentric._metadata, IDisplaySystemGeocentric._get_latitude_metadata)
 
     _set_latitude_metadata = { "name" : "latitude",
@@ -13408,7 +13406,7 @@ class IDisplaySystemGeocentric(IDisplaySystem):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def longitude(self) -> typing.Any:
-        """The longitude of the launch location. Uses Angle Dimension."""
+        """Get or set the longitude of the launch location. Uses Angle Dimension."""
         return self._intf.get_property(IDisplaySystemGeocentric._metadata, IDisplaySystemGeocentric._get_longitude_metadata)
 
     _set_longitude_metadata = { "name" : "longitude",
@@ -13423,7 +13421,7 @@ class IDisplaySystemGeocentric(IDisplaySystem):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius(self) -> float:
-        """The radius of the launch location. Uses Distance Dimension."""
+        """Get or set the radius of the launch location. Uses Distance Dimension."""
         return self._intf.get_property(IDisplaySystemGeocentric._metadata, IDisplaySystemGeocentric._get_radius_metadata)
 
     _set_radius_metadata = { "name" : "radius",
@@ -13598,7 +13596,7 @@ class IBurnoutGeodetic(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def latitude(self) -> typing.Any:
-        """The latitude of the spacecraft burnout. Uses Angle Dimension."""
+        """Get or set the latitude of the spacecraft burnout. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutGeodetic._metadata, IBurnoutGeodetic._get_latitude_metadata)
 
     _set_latitude_metadata = { "name" : "latitude",
@@ -13613,7 +13611,7 @@ class IBurnoutGeodetic(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def longitude(self) -> typing.Any:
-        """The longitude of the spacecraft burnout. Uses Angle Dimension."""
+        """Get or set the longitude of the spacecraft burnout. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutGeodetic._metadata, IBurnoutGeodetic._get_longitude_metadata)
 
     _set_longitude_metadata = { "name" : "longitude",
@@ -13628,7 +13626,7 @@ class IBurnoutGeodetic(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude(self) -> float:
-        """The altitude of the spacecraft burnout. Uses Distance Dimension."""
+        """Get or set the altitude of the spacecraft burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutGeodetic._metadata, IBurnoutGeodetic._get_altitude_metadata)
 
     _set_altitude_metadata = { "name" : "altitude",
@@ -13675,7 +13673,7 @@ class IBurnoutGeocentric(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def latitude(self) -> typing.Any:
-        """The latitude of the spacecraft burnout. Uses Angle Dimension."""
+        """Get or set the latitude of the spacecraft burnout. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutGeocentric._metadata, IBurnoutGeocentric._get_latitude_metadata)
 
     _set_latitude_metadata = { "name" : "latitude",
@@ -13690,7 +13688,7 @@ class IBurnoutGeocentric(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def longitude(self) -> typing.Any:
-        """The longitude of the spacecraft burnout. Uses Angle Dimension."""
+        """Get or set the longitude of the spacecraft burnout. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutGeocentric._metadata, IBurnoutGeocentric._get_longitude_metadata)
 
     _set_longitude_metadata = { "name" : "longitude",
@@ -13705,7 +13703,7 @@ class IBurnoutGeocentric(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius(self) -> float:
-        """The radius of the spacecraft burnout. Uses Distance Dimension."""
+        """Get or set the radius of the spacecraft burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutGeocentric._metadata, IBurnoutGeocentric._get_radius_metadata)
 
     _set_radius_metadata = { "name" : "radius",
@@ -13752,7 +13750,7 @@ class IBurnoutLaunchAzAltitude(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def azimuth(self) -> typing.Any:
-        """The azimuth of the launch trajectory. Uses Angle Dimension."""
+        """Get or set the azimuth of the launch trajectory. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzAltitude._metadata, IBurnoutLaunchAzAltitude._get_azimuth_metadata)
 
     _set_azimuth_metadata = { "name" : "azimuth",
@@ -13767,7 +13765,7 @@ class IBurnoutLaunchAzAltitude(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def down_range_dist(self) -> float:
-        """The downrange distance of the spacecraft from launch at burnout. Uses Distance Dimension."""
+        """Get or set the downrange distance of the spacecraft from launch at burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzAltitude._metadata, IBurnoutLaunchAzAltitude._get_down_range_dist_metadata)
 
     _set_down_range_dist_metadata = { "name" : "down_range_dist",
@@ -13782,7 +13780,7 @@ class IBurnoutLaunchAzAltitude(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def altitude_radius(self) -> float:
-        """The altitude of the spacecraft at burnout. Uses Distance Dimension."""
+        """Get or set the altitude of the spacecraft at burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzAltitude._metadata, IBurnoutLaunchAzAltitude._get_altitude_radius_metadata)
 
     _set_altitude_radius_metadata = { "name" : "altitude_radius",
@@ -13829,7 +13827,7 @@ class IBurnoutLaunchAzRadius(IBurnout):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def azimuth(self) -> typing.Any:
-        """The azimuth of the launch trajectory. Uses Angle Dimension."""
+        """Get or set the azimuth of the launch trajectory. Uses Angle Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzRadius._metadata, IBurnoutLaunchAzRadius._get_azimuth_metadata)
 
     _set_azimuth_metadata = { "name" : "azimuth",
@@ -13844,7 +13842,7 @@ class IBurnoutLaunchAzRadius(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def down_range_dist(self) -> float:
-        """The downrange distance of the spacecraft from launch at burnout. Uses Distance Dimension."""
+        """Get or set the downrange distance of the spacecraft from launch at burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzRadius._metadata, IBurnoutLaunchAzRadius._get_down_range_dist_metadata)
 
     _set_down_range_dist_metadata = { "name" : "down_range_dist",
@@ -13859,7 +13857,7 @@ class IBurnoutLaunchAzRadius(IBurnout):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius(self) -> float:
-        """The radius of the spacecraft at burnout. Uses Distance Dimension."""
+        """Get or set the radius of the spacecraft at burnout. Uses Distance Dimension."""
         return self._intf.get_property(IBurnoutLaunchAzRadius._metadata, IBurnoutLaunchAzRadius._get_radius_metadata)
 
     _set_radius_metadata = { "name" : "radius",
@@ -13921,7 +13919,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def leader(self) -> "ILinkToObject":
-        """The leader object."""
+        """Get the leader object."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_leader_metadata)
 
     _get_x_offset_metadata = { "name" : "x_offset",
@@ -13929,7 +13927,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def x_offset(self) -> float:
-        """The distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension."""
+        """Get or set the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_x_offset_metadata)
 
     _set_x_offset_metadata = { "name" : "x_offset",
@@ -13944,7 +13942,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def y_offset(self) -> float:
-        """The distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension."""
+        """Get or set the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_y_offset_metadata)
 
     _set_y_offset_metadata = { "name" : "y_offset",
@@ -13959,7 +13957,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def z_offset(self) -> float:
-        """The distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension."""
+        """Get or set the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_z_offset_metadata)
 
     _set_z_offset_metadata = { "name" : "z_offset",
@@ -13982,7 +13980,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def spacecraft_parameters(self) -> "SpacecraftParameters":
-        """The spacecraft's physical properties."""
+        """Get the spacecraft's physical properties."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_spacecraft_parameters_metadata)
 
     _get_fuel_tank_metadata = { "name" : "fuel_tank",
@@ -13990,7 +13988,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def fuel_tank(self) -> "FuelTank":
-        """The spacecraft's fuel tank properties."""
+        """Get the spacecraft's fuel tank properties."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_fuel_tank_metadata)
 
     _get_joining_type_metadata = { "name" : "joining_type",
@@ -13998,7 +13996,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.EnumArg(FOLLOW_JOIN),) }
     @property
     def joining_type(self) -> "FOLLOW_JOIN":
-        """The joining type."""
+        """Get or set the joining type."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_joining_type_metadata)
 
     _set_joining_type_metadata = { "name" : "joining_type",
@@ -14013,7 +14011,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.EnumArg(FOLLOW_SEPARATION),) }
     @property
     def separation_type(self) -> "FOLLOW_SEPARATION":
-        """The separation type."""
+        """Get or set the separation type."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_separation_type_metadata)
 
     _set_separation_type_metadata = { "name" : "separation_type",
@@ -14028,7 +14026,7 @@ class IMissionControlSequenceFollow(object):
             "marshallers" : (agmarshall.EnumArg(FOLLOW_SPACECRAFT_AND_FUEL_TANK),) }
     @property
     def spacecraft_and_fuel_tank_type(self) -> "FOLLOW_SPACECRAFT_AND_FUEL_TANK":
-        """The spacecraft snd fuel tank configuration type."""
+        """Get or set the spacecraft snd fuel tank configuration type."""
         return self._intf.get_property(IMissionControlSequenceFollow._metadata, IMissionControlSequenceFollow._get_spacecraft_and_fuel_tank_type_metadata)
 
     _set_spacecraft_and_fuel_tank_type_metadata = { "name" : "spacecraft_and_fuel_tank_type",
@@ -14120,7 +14118,7 @@ class IMissionControlSequenceManeuver(object):
             "marshallers" : (agmarshall.EnumArg(MANEUVER_TYPE),) }
     @property
     def maneuver_type(self) -> "MANEUVER_TYPE":
-        """The maneuver type."""
+        """Get the maneuver type."""
         return self._intf.get_property(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._get_maneuver_type_metadata)
 
     _set_maneuver_type_metadata = { "name" : "set_maneuver_type",
@@ -14135,7 +14133,7 @@ class IMissionControlSequenceManeuver(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def maneuver(self) -> "IManeuver":
-        """The Maneuver properties."""
+        """Get the Maneuver properties."""
         return self._intf.get_property(IMissionControlSequenceManeuver._metadata, IMissionControlSequenceManeuver._get_maneuver_metadata)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -14205,7 +14203,7 @@ class IManeuverFinite(IManeuver):
             "marshallers" : (agmarshall.EnumArg(PRESSURE_MODE),) }
     @property
     def pressure_mode(self) -> "PRESSURE_MODE":
-        """The pressure mode."""
+        """Get or set the pressure mode."""
         return self._intf.get_property(IManeuverFinite._metadata, IManeuverFinite._get_pressure_mode_metadata)
 
     _set_pressure_mode_metadata = { "name" : "pressure_mode",
@@ -14220,7 +14218,7 @@ class IManeuverFinite(IManeuver):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def thrust_efficiency(self) -> float:
-        """The thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless."""
+        """Get or set the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless."""
         return self._intf.get_property(IManeuverFinite._metadata, IManeuverFinite._get_thrust_efficiency_metadata)
 
     _set_thrust_efficiency_metadata = { "name" : "thrust_efficiency",
@@ -14250,7 +14248,7 @@ class IManeuverFinite(IManeuver):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def propagator(self) -> "ManeuverFinitePropagator":
-        """The propagator."""
+        """Get the propagator."""
         return self._intf.get_property(IManeuverFinite._metadata, IManeuverFinite._get_propagator_metadata)
 
 
@@ -14330,7 +14328,7 @@ class IAttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delta_v_magnitude(self) -> float:
-        """The size of the delta-V to be applied to the orbit along the velocity vector. Uses Rate Dimension."""
+        """Get or set the size of the delta-V to be applied to the orbit along the velocity vector. Uses Rate Dimension."""
         return self._intf.get_property(IAttitudeControlImpulsiveVelocityVector._metadata, IAttitudeControlImpulsiveVelocityVector._get_delta_v_magnitude_metadata)
 
     _set_delta_v_magnitude_metadata = { "name" : "delta_v_magnitude",
@@ -14382,7 +14380,7 @@ class IAttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delta_v_magnitude(self) -> float:
-        """The size of the delta-V to be applied to the orbit along the velocity vector. Uses Rate Dimension."""
+        """Get or set the size of the delta-V to be applied to the orbit along the velocity vector. Uses Rate Dimension."""
         return self._intf.get_property(IAttitudeControlImpulsiveAntiVelocityVector._metadata, IAttitudeControlImpulsiveAntiVelocityVector._get_delta_v_magnitude_metadata)
 
     _set_delta_v_magnitude_metadata = { "name" : "delta_v_magnitude",
@@ -14436,7 +14434,7 @@ class IAttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delta_v_magnitude(self) -> float:
-        """The size of the delta-V to be applied along the X axis - as defined by the selected axes and rotation. Uses Rate Dimension."""
+        """Get or set the size of the delta-V to be applied along the X axis - as defined by the selected axes and rotation. Uses Rate Dimension."""
         return self._intf.get_property(IAttitudeControlImpulsiveAttitude._metadata, IAttitudeControlImpulsiveAttitude._get_delta_v_magnitude_metadata)
 
     _set_delta_v_magnitude_metadata = { "name" : "delta_v_magnitude",
@@ -14466,7 +14464,7 @@ class IAttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def orientation(self) -> "IOrientation":
-        """The orientation of the attitude."""
+        """Get the orientation of the attitude."""
         return self._intf.get_property(IAttitudeControlImpulsiveAttitude._metadata, IAttitudeControlImpulsiveAttitude._get_orientation_metadata)
 
 
@@ -14507,7 +14505,7 @@ class IAttitudeControlImpulsiveFile(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def delta_v_magnitude(self) -> float:
-        """The size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension."""
+        """Get or set the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension."""
         return self._intf.get_property(IAttitudeControlImpulsiveFile._metadata, IAttitudeControlImpulsiveFile._get_delta_v_magnitude_metadata)
 
     _set_delta_v_magnitude_metadata = { "name" : "delta_v_magnitude",
@@ -14522,7 +14520,7 @@ class IAttitudeControlImpulsiveFile(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """The attitude file to use."""
+        """Get or set the attitude file to use."""
         return self._intf.get_property(IAttitudeControlImpulsiveFile._metadata, IAttitudeControlImpulsiveFile._get_filename_metadata)
 
     _set_filename_metadata = { "name" : "filename",
@@ -14537,7 +14535,7 @@ class IAttitudeControlImpulsiveFile(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def file_time_offset(self) -> float:
-        """The time offset can be used to adjust the time stored in the attitude file. Dimensionless."""
+        """Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless."""
         return self._intf.get_property(IAttitudeControlImpulsiveFile._metadata, IAttitudeControlImpulsiveFile._get_file_time_offset_metadata)
 
     _set_file_time_offset_metadata = { "name" : "file_time_offset",
@@ -14552,7 +14550,7 @@ class IAttitudeControlImpulsiveFile(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def full_filename(self) -> str:
-        """The full path and name of the attitude file to use."""
+        """Get the full path and name of the attitude file to use."""
         return self._intf.get_property(IAttitudeControlImpulsiveFile._metadata, IAttitudeControlImpulsiveFile._get_full_filename_metadata)
 
 
@@ -14609,7 +14607,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def thrust_axes_name(self) -> str:
-        """The thrust axes."""
+        """Get or set the thrust axes."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_thrust_axes_name_metadata)
 
     _set_thrust_axes_name_metadata = { "name" : "thrust_axes_name",
@@ -14647,7 +14645,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.EnumArg(IMP_DELTA_V_REP),) }
     @property
     def coord_type(self) -> "IMP_DELTA_V_REP":
-        """The coordinate representation for the DeltaV."""
+        """Get or set the coordinate representation for the DeltaV."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_coord_type_metadata)
 
     _set_coord_type_metadata = { "name" : "coord_type",
@@ -14662,7 +14660,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def x(self) -> float:
-        """The Cartesian X component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
+        """Get or set the Cartesian X component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_x_metadata)
 
     _set_x_metadata = { "name" : "x",
@@ -14677,7 +14675,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def y(self) -> float:
-        """The Cartesian Y component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
+        """Get or set the Cartesian Y component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_y_metadata)
 
     _set_y_metadata = { "name" : "y",
@@ -14692,7 +14690,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def z(self) -> float:
-        """The Cartesian Z component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
+        """Get or set the Cartesian Z component of the impulsive DeltaV (dimension: SmallDistance/Time)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_z_metadata)
 
     _set_z_metadata = { "name" : "z",
@@ -14707,7 +14705,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def azimuth(self) -> typing.Any:
-        """The spherical Azimuth angle of the impulsive DeltaV (dimension: Angle)."""
+        """Get or set the spherical Azimuth angle of the impulsive DeltaV (dimension: Angle)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_azimuth_metadata)
 
     _set_azimuth_metadata = { "name" : "azimuth",
@@ -14722,7 +14720,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def elevation(self) -> typing.Any:
-        """The spherical Elevation angle of the impulsive DeltaV (dimension: Angle)."""
+        """Get or set the spherical Elevation angle of the impulsive DeltaV (dimension: Angle)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_elevation_metadata)
 
     _set_elevation_metadata = { "name" : "elevation",
@@ -14737,7 +14735,7 @@ class IAttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def magnitude(self) -> float:
-        """The spherical Magnitude of the impulsive DeltaV (dimension: SmallDistance/Time)."""
+        """Get or set the spherical Magnitude of the impulsive DeltaV (dimension: SmallDistance/Time)."""
         return self._intf.get_property(IAttitudeControlImpulsiveThrustVector._metadata, IAttitudeControlImpulsiveThrustVector._get_magnitude_metadata)
 
     _set_magnitude_metadata = { "name" : "magnitude",
@@ -14893,7 +14891,7 @@ class IAttitudeControlFiniteAttitude(IAttitudeControlFinite):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def orientation(self) -> "IOrientation":
-        """The orientation of the attitude."""
+        """Get the orientation of the attitude."""
         return self._intf.get_property(IAttitudeControlFiniteAttitude._metadata, IAttitudeControlFiniteAttitude._get_orientation_metadata)
 
 
@@ -14932,7 +14930,7 @@ class IAttitudeControlFiniteFile(IAttitudeControlFinite):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """The attitude file to use."""
+        """Get or set the attitude file to use."""
         return self._intf.get_property(IAttitudeControlFiniteFile._metadata, IAttitudeControlFiniteFile._get_filename_metadata)
 
     _set_filename_metadata = { "name" : "filename",
@@ -14947,7 +14945,7 @@ class IAttitudeControlFiniteFile(IAttitudeControlFinite):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def file_time_offset(self) -> float:
-        """The time offset can be used to adjust the time stored in the attitude file. Dimensionless."""
+        """Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless."""
         return self._intf.get_property(IAttitudeControlFiniteFile._metadata, IAttitudeControlFiniteFile._get_file_time_offset_metadata)
 
     _set_file_time_offset_metadata = { "name" : "file_time_offset",
@@ -14962,7 +14960,7 @@ class IAttitudeControlFiniteFile(IAttitudeControlFinite):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def full_filename(self) -> str:
-        """The full path and name of the attitude file to use."""
+        """Get the full path and name of the attitude file to use."""
         return self._intf.get_property(IAttitudeControlFiniteFile._metadata, IAttitudeControlFiniteFile._get_full_filename_metadata)
 
 
@@ -15017,7 +15015,7 @@ class IAttitudeControlFiniteThrustVector(IAttitudeControlFinite):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def thrust_axes_name(self) -> str:
-        """The thrust axes."""
+        """Get or set the thrust axes."""
         return self._intf.get_property(IAttitudeControlFiniteThrustVector._metadata, IAttitudeControlFiniteThrustVector._get_thrust_axes_name_metadata)
 
     _set_thrust_axes_name_metadata = { "name" : "thrust_axes_name",
@@ -15109,7 +15107,7 @@ class IAttitudeControlFiniteTimeVarying(IAttitudeControlFinite):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def thrust_axes_name(self) -> str:
-        """The thrust axes."""
+        """Get or set the thrust axes."""
         return self._intf.get_property(IAttitudeControlFiniteTimeVarying._metadata, IAttitudeControlFiniteTimeVarying._get_thrust_axes_name_metadata)
 
     _set_thrust_axes_name_metadata = { "name" : "thrust_axes_name",
@@ -15460,7 +15458,7 @@ class IAttitudeControlFinitePlugin(IAttitudeControlFinite):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_name(self) -> str:
-        """The selected plugin's name."""
+        """Get the selected plugin's name."""
         return self._intf.get_property(IAttitudeControlFinitePlugin._metadata, IAttitudeControlFinitePlugin._get_plugin_name_metadata)
 
     _get_plugin_config_metadata = { "name" : "plugin_config",
@@ -15468,7 +15466,7 @@ class IAttitudeControlFinitePlugin(IAttitudeControlFinite):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IAttitudeControlFinitePlugin._metadata, IAttitudeControlFinitePlugin._get_plugin_config_metadata)
 
 
@@ -15559,7 +15557,7 @@ class IMissionControlSequenceHold(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def step_size(self) -> float:
-        """The time interval between calculated ephemeris output points. Uses Time Dimension."""
+        """Get or set the time interval between calculated ephemeris output points. Uses Time Dimension."""
         return self._intf.get_property(IMissionControlSequenceHold._metadata, IMissionControlSequenceHold._get_step_size_metadata)
 
     _set_step_size_metadata = { "name" : "step_size",
@@ -15604,7 +15602,7 @@ class IMissionControlSequenceHold(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def stopping_conditions(self) -> "StoppingConditionCollection":
-        """The stopping conditions defined for the segment."""
+        """Get the stopping conditions defined for the segment."""
         return self._intf.get_property(IMissionControlSequenceHold._metadata, IMissionControlSequenceHold._get_stopping_conditions_metadata)
 
     _get_min_propagation_time_metadata = { "name" : "min_propagation_time",
@@ -15865,7 +15863,7 @@ class IMissionControlSequenceReturn(object):
             "marshallers" : (agmarshall.EnumArg(RETURN_CONTROL),) }
     @property
     def return_control_to_parent_sequence(self) -> "RETURN_CONTROL":
-        """The state of the segment."""
+        """Get or set the state of the segment."""
         return self._intf.get_property(IMissionControlSequenceReturn._metadata, IMissionControlSequenceReturn._get_return_control_to_parent_sequence_metadata)
 
     _set_return_control_to_parent_sequence_metadata = { "name" : "return_control_to_parent_sequence",
@@ -15963,7 +15961,7 @@ class IProfile(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the profile."""
+        """Get or set the name of the profile."""
         return self._intf.get_property(IProfile._metadata, IProfile._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -15978,7 +15976,7 @@ class IProfile(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def status(self) -> str:
-        """The status of the profile."""
+        """Get or set the status of the profile."""
         return self._intf.get_property(IProfile._metadata, IProfile._get_status_metadata)
 
     _get_user_comment_metadata = { "name" : "user_comment",
@@ -16001,7 +15999,7 @@ class IProfile(object):
             "marshallers" : (agmarshall.EnumArg(PROFILE_MODE),) }
     @property
     def mode(self) -> "PROFILE_MODE":
-        """The profile's mode."""
+        """Get or set the profile's mode."""
         return self._intf.get_property(IProfile._metadata, IProfile._get_mode_metadata)
 
     _set_mode_metadata = { "name" : "mode",
@@ -16404,7 +16402,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_name_metadata)
 
     _get_final_value_metadata = { "name" : "final_value",
@@ -16412,7 +16410,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def final_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_final_value_metadata)
 
     _get_last_update_metadata = { "name" : "last_update",
@@ -16420,7 +16418,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def last_update(self) -> typing.Any:
-        """The amount by which the value of the independent variable changed during the last targeter run."""
+        """Get the amount by which the value of the independent variable changed during the last targeter run."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_last_update_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -16428,7 +16426,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_parent_name_metadata)
 
     _get_initial_value_metadata = { "name" : "initial_value",
@@ -16436,7 +16434,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def initial_value(self) -> typing.Any:
-        """The nominal value of the element selected as a parameter. Dimension depends on context."""
+        """Get the nominal value of the element selected as a parameter. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_initial_value_metadata)
 
     _get_perturbation_metadata = { "name" : "perturbation",
@@ -16444,7 +16442,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def perturbation(self) -> typing.Any:
-        """The value to be used in calculating numerical derivatives. Dimension depends on context."""
+        """Get the value to be used in calculating numerical derivatives. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_perturbation_metadata)
 
     _set_perturbation_metadata = { "name" : "perturbation",
@@ -16459,7 +16457,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def correction(self) -> typing.Any:
-        """The amount by which the nominal value of the parameter should be corrected to achieve the selected goals. Dimension depends on context."""
+        """Get the amount by which the nominal value of the parameter should be corrected to achieve the selected goals. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_correction_metadata)
 
     _set_correction_metadata = { "name" : "correction",
@@ -16474,7 +16472,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def tolerance(self) -> typing.Any:
-        """The smallest update to the parameter to be made before the targeter stops. Only used if the convergence criteria is set to 'Either equality constraints or last control parameter updates within tolerance'. Dimension depends on context."""
+        """Get or set the smallest update to the parameter to be made before the targeter stops. Only used if the convergence criteria is set to 'Either equality constraints or last control parameter updates within tolerance'. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_tolerance_metadata)
 
     _set_tolerance_metadata = { "name" : "tolerance",
@@ -16489,7 +16487,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def max_step(self) -> typing.Any:
-        """The maximum increment to make to the value of the parameter in any one step. Dimension depends on context."""
+        """Get or set the maximum increment to make to the value of the parameter in any one step. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -16557,7 +16555,7 @@ class IDifferentialCorrectorControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IDifferentialCorrectorControl._metadata, IDifferentialCorrectorControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -16642,7 +16640,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_name_metadata)
 
     _get_desired_value_metadata = { "name" : "desired_value",
@@ -16650,7 +16648,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def desired_value(self) -> typing.Any:
-        """The desired value. Dimension depends on context."""
+        """Get or set the desired value. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_desired_value_metadata)
 
     _set_desired_value_metadata = { "name" : "desired_value",
@@ -16665,7 +16663,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
+        """Get the value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_current_value_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -16681,7 +16679,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def difference(self) -> typing.Any:
-        """The difference between the current and desired value for this dependent variable. Dimension depends on context."""
+        """Get the difference between the current and desired value for this dependent variable. Dimension depends on context."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_difference_metadata)
 
     _get_tolerance_metadata = { "name" : "tolerance",
@@ -16734,7 +16732,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def weight(self) -> float:
-        """The factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless."""
+        """Get or set the factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_weight_metadata)
 
     _set_weight_metadata = { "name" : "weight",
@@ -16749,7 +16747,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def dimension(self) -> str:
-        """The dimension of the values."""
+        """Get the dimension of the values."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_dimension_metadata)
 
     _get_use_custom_display_unit_metadata = { "name" : "use_custom_display_unit",
@@ -16772,7 +16770,7 @@ class IDifferentialCorrectorResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IDifferentialCorrectorResult._metadata, IDifferentialCorrectorResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -16833,7 +16831,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def control_name(self) -> str:
-        """The name of the control parameter."""
+        """Get the name of the control parameter."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_control_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -16841,7 +16839,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The current value of the control parameter."""
+        """Get the current value of the control parameter."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_current_value_metadata)
 
     _get_parent_segment_name_metadata = { "name" : "parent_segment_name",
@@ -16849,7 +16847,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_segment_name(self) -> str:
-        """The parent segment of the control parameter."""
+        """Get the parent segment of the control parameter."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_parent_segment_name_metadata)
 
     _get_initial_value_metadata = { "name" : "initial_value",
@@ -16857,7 +16855,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def initial_value(self) -> typing.Any:
-        """The initial value of the control parameter. Dimension depends on context."""
+        """Get the initial value of the control parameter. Dimension depends on context."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_initial_value_metadata)
 
     _get_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -16865,7 +16863,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin identifier."""
+        """Get the plugin identifier."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_plugin_identifier_metadata)
 
     _get_plugin_config_metadata = { "name" : "plugin_config",
@@ -16873,7 +16871,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_plugin_config_metadata)
 
     _get_dimension_metadata = { "name" : "dimension",
@@ -16881,7 +16879,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def dimension(self) -> str:
-        """The dimension of the values."""
+        """Get the dimension of the values."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_dimension_metadata)
 
     _get_use_custom_display_unit_metadata = { "name" : "use_custom_display_unit",
@@ -16904,7 +16902,7 @@ class ISearchPluginControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(ISearchPluginControl._metadata, ISearchPluginControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -16970,7 +16968,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def result_name(self) -> str:
-        """The name of the equality constraint."""
+        """Get the name of the equality constraint."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_result_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -16978,7 +16976,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The current value of the result variable."""
+        """Get the current value of the result variable."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_current_value_metadata)
 
     _get_parent_segment_name_metadata = { "name" : "parent_segment_name",
@@ -16986,7 +16984,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_segment_name(self) -> str:
-        """The parent segment of the result variable."""
+        """Get the parent segment of the result variable."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_parent_segment_name_metadata)
 
     _get_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -16994,7 +16992,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin identifier."""
+        """Get the plugin identifier."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_plugin_identifier_metadata)
 
     _get_plugin_config_metadata = { "name" : "plugin_config",
@@ -17002,7 +17000,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_plugin_config_metadata)
 
     _get_dimension_metadata = { "name" : "dimension",
@@ -17010,7 +17008,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def dimension(self) -> str:
-        """The dimension of the values."""
+        """Get the dimension of the values."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_dimension_metadata)
 
     _get_use_custom_display_unit_metadata = { "name" : "use_custom_display_unit",
@@ -17033,7 +17031,7 @@ class ISearchPluginResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(ISearchPluginResult._metadata, ISearchPluginResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -17405,7 +17403,7 @@ class ITargeterGraphActiveControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the active control."""
+        """Get the name of the active control."""
         return self._intf.get_property(ITargeterGraphActiveControl._metadata, ITargeterGraphActiveControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -17413,7 +17411,7 @@ class ITargeterGraphActiveControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The segment or component to which the element belongs."""
+        """Get the segment or component to which the element belongs."""
         return self._intf.get_property(ITargeterGraphActiveControl._metadata, ITargeterGraphActiveControl._get_parent_name_metadata)
 
     _get_show_graph_value_metadata = { "name" : "show_graph_value",
@@ -17524,7 +17522,7 @@ class ITargeterGraphResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the result."""
+        """Get the name of the result."""
         return self._intf.get_property(ITargeterGraphResult._metadata, ITargeterGraphResult._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -17532,7 +17530,7 @@ class ITargeterGraphResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The segment or component for which this result has been selected."""
+        """Get the segment or component for which this result has been selected."""
         return self._intf.get_property(ITargeterGraphResult._metadata, ITargeterGraphResult._get_parent_name_metadata)
 
     _get_show_desired_value_metadata = { "name" : "show_desired_value",
@@ -17827,7 +17825,7 @@ class ITargeterGraph(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the graph."""
+        """Get or set the name of the graph."""
         return self._intf.get_property(ITargeterGraph._metadata, ITargeterGraph._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -17835,7 +17833,7 @@ class ITargeterGraph(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @name.setter
     def name(self, inVal:str) -> None:
-        """The name of the graph."""
+        """Get or set the name of the graph."""
         return self._intf.set_property(ITargeterGraph._metadata, ITargeterGraph._set_name_metadata, inVal)
 
     _get_generate_on_run_metadata = { "name" : "generate_on_run",
@@ -18121,7 +18119,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def controls(self) -> "SearchPluginControlCollection":
-        """The selected control parameters."""
+        """Get the selected control parameters."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_controls_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -18129,7 +18127,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "SearchPluginResultCollection":
-        """The selected equality constraints."""
+        """Get the selected equality constraints."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_results_metadata)
 
     _get_plugin_config_metadata = { "name" : "plugin_config",
@@ -18137,7 +18135,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_plugin_config_metadata)
 
     _get_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -18145,7 +18143,7 @@ class IProfileSearchPlugin(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin identifier."""
+        """Get the plugin identifier."""
         return self._intf.get_property(IProfileSearchPlugin._metadata, IProfileSearchPlugin._get_plugin_identifier_metadata)
 
     _get_scripting_tool_metadata = { "name" : "scripting_tool",
@@ -18257,7 +18255,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def control_parameters(self) -> "DifferentialCorrectorControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_control_parameters_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -18265,7 +18263,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "DifferentialCorrectorResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_results_metadata)
 
     _get_max_iterations_metadata = { "name" : "max_iterations",
@@ -18273,7 +18271,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The number of complete iterations of the profile to try before stopping. Dimensionless."""
+        """Get or set the number of complete iterations of the profile to try before stopping. Dimensionless."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -18303,7 +18301,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.EnumArg(CONVERGENCE_CRITERIA),) }
     @property
     def convergence_criteria(self) -> "CONVERGENCE_CRITERIA":
-        """The convergence criteria."""
+        """Get or set the convergence criteria."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_convergence_criteria_metadata)
 
     _set_convergence_criteria_metadata = { "name" : "convergence_criteria",
@@ -18333,7 +18331,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_line_search_iterations(self) -> int:
-        """The number of line search iterations to try before stopping. Dimensionless."""
+        """Get or set the number of line search iterations to try before stopping. Dimensionless."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_max_line_search_iterations_metadata)
 
     _set_max_line_search_iterations_metadata = { "name" : "max_line_search_iterations",
@@ -18348,7 +18346,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def line_search_lower_bound(self) -> float:
-        """The low boundary for the line search. Dimensionless."""
+        """Get or set the low boundary for the line search. Dimensionless."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_line_search_lower_bound_metadata)
 
     _set_line_search_lower_bound_metadata = { "name" : "line_search_lower_bound",
@@ -18363,7 +18361,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def line_search_upper_bound(self) -> float:
-        """The high boundary for the line search. Dimensionless."""
+        """Get or set the high boundary for the line search. Dimensionless."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_line_search_upper_bound_metadata)
 
     _set_line_search_upper_bound_metadata = { "name" : "line_search_upper_bound",
@@ -18378,7 +18376,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def line_search_tolerance(self) -> float:
-        """The tolerance for the line search. Dimensionless."""
+        """Get or set the tolerance for the line search. Dimensionless."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_line_search_tolerance_metadata)
 
     _set_line_search_tolerance_metadata = { "name" : "line_search_tolerance",
@@ -18408,7 +18406,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def homotopy_steps(self) -> int:
-        """The number of steps to divide a problem into for a homotopic calculation. Dimensionless - ."""
+        """Get or set the number of steps to divide a problem into for a homotopic calculation. Dimensionless - ."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_homotopy_steps_metadata)
 
     _set_homotopy_steps_metadata = { "name" : "homotopy_steps",
@@ -18423,7 +18421,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.EnumArg(DERIVE_CALC_METHOD),) }
     @property
     def derivative_calc_method(self) -> "DERIVE_CALC_METHOD":
-        """The derivative calculation method."""
+        """Get or set the derivative calculation method."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_derivative_calc_method_metadata)
 
     _set_derivative_calc_method_metadata = { "name" : "derivative_calc_method",
@@ -18506,7 +18504,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.EnumArg(ROOT_FINDING_ALGORITHM),) }
     @property
     def root_finding_algorithm(self) -> "ROOT_FINDING_ALGORITHM":
-        """The root-finding algorithm to use."""
+        """Get or set the root-finding algorithm to use."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_root_finding_algorithm_metadata)
 
     _set_root_finding_algorithm_metadata = { "name" : "root_finding_algorithm",
@@ -18521,7 +18519,7 @@ class IProfileDifferentialCorrector(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def num_iterations(self) -> int:
-        """The number of iterations of the last run."""
+        """Get the number of iterations of the last run."""
         return self._intf.get_property(IProfileDifferentialCorrector._metadata, IProfileDifferentialCorrector._get_num_iterations_metadata)
 
     _get_targeter_graphs_metadata = { "name" : "targeter_graphs",
@@ -18582,7 +18580,7 @@ class IProfileChangeManeuverType(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def segment(self) -> "MissionControlSequenceManeuver":
-        """The targeted maneuver segment."""
+        """Get or set the targeted maneuver segment."""
         return self._intf.get_property(IProfileChangeManeuverType._metadata, IProfileChangeManeuverType._get_segment_metadata)
 
     _set_segment_metadata = { "name" : "segment",
@@ -18597,7 +18595,7 @@ class IProfileChangeManeuverType(IProfile):
             "marshallers" : (agmarshall.EnumArg(MANEUVER_TYPE),) }
     @property
     def maneuver_type(self) -> "MANEUVER_TYPE":
-        """The new maneuver type for the targeted segment."""
+        """Get or set the new maneuver type for the targeted segment."""
         return self._intf.get_property(IProfileChangeManeuverType._metadata, IProfileChangeManeuverType._get_maneuver_type_metadata)
 
     _set_maneuver_type_metadata = { "name" : "maneuver_type",
@@ -18687,7 +18685,7 @@ class IProfileScriptingTool(IProfile):
             "marshallers" : (agmarshall.EnumArg(LANGUAGE),) }
     @property
     def language_type(self) -> "LANGUAGE":
-        """The scripting language being used."""
+        """Get or set the scripting language being used."""
         return self._intf.get_property(IProfileScriptingTool._metadata, IProfileScriptingTool._get_language_type_metadata)
 
     _set_language_type_metadata = { "name" : "language_type",
@@ -18754,7 +18752,7 @@ class IProfileChangeReturnSegment(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def segment_name(self) -> str:
-        """The targeted return segment."""
+        """Get or set the targeted return segment."""
         return self._intf.get_property(IProfileChangeReturnSegment._metadata, IProfileChangeReturnSegment._get_segment_name_metadata)
 
     _set_segment_name_metadata = { "name" : "segment_name",
@@ -18776,7 +18774,7 @@ class IProfileChangeReturnSegment(IProfile):
             "marshallers" : (agmarshall.EnumArg(RETURN_CONTROL),) }
     @property
     def state(self) -> "RETURN_CONTROL":
-        """The new state for the targeted return segment."""
+        """Get or set the new state for the targeted return segment."""
         return self._intf.get_property(IProfileChangeReturnSegment._metadata, IProfileChangeReturnSegment._get_state_metadata)
 
     _set_state_metadata = { "name" : "state",
@@ -18822,7 +18820,7 @@ class IProfileChangePropagator(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def segment_name(self) -> str:
-        """The name of the profile."""
+        """Get or set the name of the profile."""
         return self._intf.get_property(IProfileChangePropagator._metadata, IProfileChangePropagator._get_segment_name_metadata)
 
     _set_segment_name_metadata = { "name" : "segment_name",
@@ -18836,7 +18834,7 @@ class IProfileChangePropagator(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IMissionControlSequenceSegment"),) }
     def set_segment(self, pVAMCSSegment:"IMissionControlSequenceSegment") -> None:
-        """The targeted segment."""
+        """Set the targeted segment."""
         return self._intf.invoke(IProfileChangePropagator._metadata, IProfileChangePropagator._set_segment_metadata, pVAMCSSegment)
 
     _get_propagator_name_metadata = { "name" : "propagator_name",
@@ -18844,7 +18842,7 @@ class IProfileChangePropagator(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def propagator_name(self) -> str:
-        """The new propagator's name."""
+        """Get or set the new propagator's name."""
         return self._intf.get_property(IProfileChangePropagator._metadata, IProfileChangePropagator._get_propagator_name_metadata)
 
     _set_propagator_name_metadata = { "name" : "propagator_name",
@@ -18890,7 +18888,7 @@ class IProfileChangeStopSegment(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def segment_name(self) -> str:
-        """The targeted stop segment."""
+        """Get or set the targeted stop segment."""
         return self._intf.get_property(IProfileChangeStopSegment._metadata, IProfileChangeStopSegment._get_segment_name_metadata)
 
     _set_segment_name_metadata = { "name" : "segment_name",
@@ -18912,7 +18910,7 @@ class IProfileChangeStopSegment(IProfile):
             "marshallers" : (agmarshall.EnumArg(STATE),) }
     @property
     def state(self) -> "STATE":
-        """The new state of the targeted stop segment."""
+        """Get or set the new state of the targeted stop segment."""
         return self._intf.get_property(IProfileChangeStopSegment._metadata, IProfileChangeStopSegment._get_state_metadata)
 
     _set_state_metadata = { "name" : "state",
@@ -18961,7 +18959,7 @@ class IProfileChangeStoppingConditionState(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def segment_name(self) -> str:
-        """The segment that contains the targeted stopping condition."""
+        """Get or set the segment that contains the targeted stopping condition."""
         return self._intf.get_property(IProfileChangeStoppingConditionState._metadata, IProfileChangeStoppingConditionState._get_segment_name_metadata)
 
     _set_segment_name_metadata = { "name" : "segment_name",
@@ -18983,7 +18981,7 @@ class IProfileChangeStoppingConditionState(IProfile):
             "marshallers" : (agmarshall.EnumArg(STATE),) }
     @property
     def state(self) -> "STATE":
-        """The new state of the targeted stopping condition."""
+        """Get or set the new state of the targeted stopping condition."""
         return self._intf.get_property(IProfileChangeStoppingConditionState._metadata, IProfileChangeStoppingConditionState._get_state_metadata)
 
     _set_state_metadata = { "name" : "state",
@@ -18997,7 +18995,7 @@ class IProfileChangeStoppingConditionState(IProfile):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IStoppingCondition"),) }
     def set_trigger(self, stoppingCondition:"IStoppingCondition") -> None:
-        """The targeted stopping condition."""
+        """Set the targeted stopping condition."""
         return self._intf.invoke(IProfileChangeStoppingConditionState._metadata, IProfileChangeStoppingConditionState._set_trigger_metadata, stoppingCondition)
 
     _get_trigger_name_metadata = { "name" : "trigger_name",
@@ -19005,7 +19003,7 @@ class IProfileChangeStoppingConditionState(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def trigger_name(self) -> str:
-        """The name of the targeted stopping condition."""
+        """Get or set the name of the targeted stopping condition."""
         return self._intf.get_property(IProfileChangeStoppingConditionState._metadata, IProfileChangeStoppingConditionState._get_trigger_name_metadata)
 
     _set_trigger_name_metadata = { "name" : "trigger_name",
@@ -19051,7 +19049,7 @@ class IProfileSeedFiniteManeuver(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def segment_name(self) -> str:
-        """The targeted maneuver segment."""
+        """Get or set the targeted maneuver segment."""
         return self._intf.get_property(IProfileSeedFiniteManeuver._metadata, IProfileSeedFiniteManeuver._get_segment_name_metadata)
 
     _set_segment_name_metadata = { "name" : "segment_name",
@@ -19144,7 +19142,7 @@ class IUserVariableDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The dimension of the user variable."""
+        """Get or set the dimension of the user variable."""
         return self._intf.get_property(IUserVariableDefinition._metadata, IUserVariableDefinition._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -19152,7 +19150,7 @@ class IUserVariableDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @unit_dimension.setter
     def unit_dimension(self, inVal:str) -> None:
-        """The dimension of the user variable."""
+        """Get or set the dimension of the user variable."""
         return self._intf.set_property(IUserVariableDefinition._metadata, IUserVariableDefinition._set_unit_dimension_metadata, inVal)
 
     _get_variable_name_metadata = { "name" : "variable_name",
@@ -19160,7 +19158,7 @@ class IUserVariableDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def variable_name(self) -> str:
-        """The name of the user variable."""
+        """Get or set the name of the user variable."""
         return self._intf.get_property(IUserVariableDefinition._metadata, IUserVariableDefinition._get_variable_name_metadata)
 
     _set_variable_name_metadata = { "name" : "variable_name",
@@ -19168,7 +19166,7 @@ class IUserVariableDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_name.setter
     def variable_name(self, inVal:str) -> None:
-        """The name of the user variable."""
+        """Get or set the name of the user variable."""
         return self._intf.set_property(IUserVariableDefinition._metadata, IUserVariableDefinition._set_variable_name_metadata, inVal)
 
 
@@ -19209,7 +19207,7 @@ class IUserVariable(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The dimension of the user variable."""
+        """Get the dimension of the user variable."""
         return self._intf.get_property(IUserVariable._metadata, IUserVariable._get_unit_dimension_metadata)
 
     _get_variable_name_metadata = { "name" : "variable_name",
@@ -19217,7 +19215,7 @@ class IUserVariable(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def variable_name(self) -> str:
-        """The name of the user variable."""
+        """Set the name of the user variable."""
         return self._intf.get_property(IUserVariable._metadata, IUserVariable._get_variable_name_metadata)
 
     _get_variable_value_metadata = { "name" : "variable_value",
@@ -19225,7 +19223,7 @@ class IUserVariable(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def variable_value(self) -> typing.Any:
-        """The initial value of the user variable."""
+        """Get or set the initial value of the user variable."""
         return self._intf.get_property(IUserVariable._metadata, IUserVariable._get_variable_value_metadata)
 
     _set_variable_value_metadata = { "name" : "variable_value",
@@ -19233,7 +19231,7 @@ class IUserVariable(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @variable_value.setter
     def variable_value(self, inVal:typing.Any) -> None:
-        """The initial value of the user variable."""
+        """Get or set the initial value of the user variable."""
         return self._intf.set_property(IUserVariable._metadata, IUserVariable._set_variable_value_metadata, inVal)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -19305,7 +19303,7 @@ class IUserVariableUpdate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The dimension of the user variable."""
+        """Get the dimension of the user variable."""
         return self._intf.get_property(IUserVariableUpdate._metadata, IUserVariableUpdate._get_unit_dimension_metadata)
 
     _get_variable_name_metadata = { "name" : "variable_name",
@@ -19313,7 +19311,7 @@ class IUserVariableUpdate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def variable_name(self) -> str:
-        """The name of the user variable."""
+        """Get the name of the user variable."""
         return self._intf.get_property(IUserVariableUpdate._metadata, IUserVariableUpdate._get_variable_name_metadata)
 
     _get_variable_value_metadata = { "name" : "variable_value",
@@ -19428,7 +19426,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def control_parameters(self) -> "SNOPTControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_control_parameters_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -19436,7 +19434,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "SNOPTResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_results_metadata)
 
     _get_targeter_graphs_metadata = { "name" : "targeter_graphs",
@@ -19475,7 +19473,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_major_iterations(self) -> int:
-        """The maximum number of major iterations allowed."""
+        """Get or set the maximum number of major iterations allowed."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_max_major_iterations_metadata)
 
     _set_max_major_iterations_metadata = { "name" : "max_major_iterations",
@@ -19520,7 +19518,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_minor_iterations(self) -> int:
-        """The maximum number of iterations for the QP subproblem allowed during a single major iteration."""
+        """Get or set the maximum number of iterations for the QP subproblem allowed during a single major iteration."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_max_minor_iterations_metadata)
 
     _set_max_minor_iterations_metadata = { "name" : "max_minor_iterations",
@@ -19535,7 +19533,7 @@ class IProfileSNOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_minor_feasibility(self) -> float:
-        """The tolerance which the QP subproblem must meet before being considered feasible."""
+        """Get or set the tolerance which the QP subproblem must meet before being considered feasible."""
         return self._intf.get_property(IProfileSNOPTOptimizer._metadata, IProfileSNOPTOptimizer._get_tolerance_on_minor_feasibility_metadata)
 
     _set_tolerance_on_minor_feasibility_metadata = { "name" : "tolerance_on_minor_feasibility",
@@ -19652,7 +19650,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -19660,7 +19658,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_parent_name_metadata)
 
     _get_initial_value_metadata = { "name" : "initial_value",
@@ -19668,7 +19666,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def initial_value(self) -> typing.Any:
-        """The nominal value of the element selected as a parameter. Dimension depends on context."""
+        """Get the nominal value of the element selected as a parameter. Dimension depends on context."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_initial_value_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -19676,7 +19674,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get or set the value of the independent variable after the last targeter run."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_current_value_metadata)
 
     _set_current_value_metadata = { "name" : "current_value",
@@ -19751,7 +19749,7 @@ class ISNOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(ISNOPTControl._metadata, ISNOPTControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -19825,7 +19823,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -19833,7 +19831,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
+        """Get the value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_current_value_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -19849,7 +19847,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def lower_bound(self) -> typing.Any:
-        """The lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
+        """Get or set the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_lower_bound_metadata)
 
     _set_lower_bound_metadata = { "name" : "lower_bound",
@@ -19864,7 +19862,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def upper_bound(self) -> typing.Any:
-        """The upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
+        """Get or set the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_upper_bound_metadata)
 
     _set_upper_bound_metadata = { "name" : "upper_bound",
@@ -19894,7 +19892,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def weight(self) -> float:
-        """The factor by which the constraint error is to be multiplied."""
+        """Get or set the factor by which the constraint error is to be multiplied."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_weight_metadata)
 
     _set_weight_metadata = { "name" : "weight",
@@ -19909,7 +19907,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.EnumArg(SNOPT_GOAL),) }
     @property
     def goal(self) -> "SNOPT_GOAL":
-        """The purpose of the element in the problem."""
+        """Get or set the purpose of the element in the problem."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_goal_metadata)
 
     _set_goal_metadata = { "name" : "goal",
@@ -19939,7 +19937,7 @@ class ISNOPTResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(ISNOPTResult._metadata, ISNOPTResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -19998,7 +19996,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def control_parameters(self) -> "IPOPTControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_control_parameters_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -20006,7 +20004,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "IPOPTResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_results_metadata)
 
     _get_targeter_graphs_metadata = { "name" : "targeter_graphs",
@@ -20045,7 +20043,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_convergence(self) -> float:
-        """The tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8."""
+        """Get or set the tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_tolerance_on_convergence_metadata)
 
     _set_tolerance_on_convergence_metadata = { "name" : "tolerance_on_convergence",
@@ -20060,7 +20058,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def maximum_iterations(self) -> int:
-        """The maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000."""
+        """Get or set the maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_maximum_iterations_metadata)
 
     _set_maximum_iterations_metadata = { "name" : "maximum_iterations",
@@ -20075,7 +20073,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_constraint_violation(self) -> float:
-        """The tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4."""
+        """Get or set the tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_tolerance_on_constraint_violation_metadata)
 
     _set_tolerance_on_constraint_violation_metadata = { "name" : "tolerance_on_constraint_violation",
@@ -20090,7 +20088,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_dual_infeasibility(self) -> float:
-        """The desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1."""
+        """Get or set the desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_tolerance_on_dual_infeasibility_metadata)
 
     _set_tolerance_on_dual_infeasibility_metadata = { "name" : "tolerance_on_dual_infeasibility",
@@ -20105,7 +20103,7 @@ class IProfileIPOPTOptimizer(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance_on_complementary_infeasibility(self) -> float:
-        """The desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4."""
+        """Get or set the desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4."""
         return self._intf.get_property(IProfileIPOPTOptimizer._metadata, IProfileIPOPTOptimizer._get_tolerance_on_complementary_infeasibility_metadata)
 
     _set_tolerance_on_complementary_infeasibility_metadata = { "name" : "tolerance_on_complementary_infeasibility",
@@ -20192,7 +20190,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -20200,7 +20198,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_parent_name_metadata)
 
     _get_initial_value_metadata = { "name" : "initial_value",
@@ -20208,7 +20206,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def initial_value(self) -> typing.Any:
-        """The nominal value of the element selected as a parameter. Dimension depends on context."""
+        """Get the nominal value of the element selected as a parameter. Dimension depends on context."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_initial_value_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -20216,7 +20214,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get or set the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_current_value_metadata)
 
     _set_current_value_metadata = { "name" : "current_value",
@@ -20291,7 +20289,7 @@ class IIPOPTControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IIPOPTControl._metadata, IIPOPTControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -20365,7 +20363,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_name_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -20373,7 +20371,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
+        """Get the value achieved for this dependent variable in the last targeter run. Dimension depends on context."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_current_value_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -20389,7 +20387,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def lower_bound(self) -> typing.Any:
-        """The lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
+        """Get or set the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_lower_bound_metadata)
 
     _set_lower_bound_metadata = { "name" : "lower_bound",
@@ -20404,7 +20402,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def upper_bound(self) -> typing.Any:
-        """The upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
+        """Get or set the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_upper_bound_metadata)
 
     _set_upper_bound_metadata = { "name" : "upper_bound",
@@ -20434,7 +20432,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def weight(self) -> float:
-        """The factor by which the constraint error is to be multiplied."""
+        """Get or set the factor by which the constraint error is to be multiplied."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_weight_metadata)
 
     _set_weight_metadata = { "name" : "weight",
@@ -20449,7 +20447,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.EnumArg(IPOPT_GOAL),) }
     @property
     def goal(self) -> "IPOPT_GOAL":
-        """The purpose of the element in the problem."""
+        """Get or set the purpose of the element in the problem."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_goal_metadata)
 
     _set_goal_metadata = { "name" : "goal",
@@ -20479,7 +20477,7 @@ class IIPOPTResult(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IIPOPTResult._metadata, IIPOPTResult._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -20560,7 +20558,7 @@ class IManeuverOptimalFinite(IManeuver):
             "marshallers" : (agmarshall.EnumArg(PRESSURE_MODE),) }
     @property
     def pressure_mode(self) -> "PRESSURE_MODE":
-        """The pressure mode."""
+        """Get or set the pressure mode."""
         return self._intf.get_property(IManeuverOptimalFinite._metadata, IManeuverOptimalFinite._get_pressure_mode_metadata)
 
     _set_pressure_mode_metadata = { "name" : "pressure_mode",
@@ -20575,7 +20573,7 @@ class IManeuverOptimalFinite(IManeuver):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def thrust_efficiency(self) -> float:
-        """The fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless."""
+        """Get or set the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless."""
         return self._intf.get_property(IManeuverOptimalFinite._metadata, IManeuverOptimalFinite._get_thrust_efficiency_metadata)
 
     _set_thrust_efficiency_metadata = { "name" : "thrust_efficiency",
@@ -20819,7 +20817,7 @@ class IManeuverOptimalFinite(IManeuver):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def steering_nodes(self) -> "ManeuverOptimalFiniteSteeringNodeCollection":
-        """The list of steering nodes."""
+        """Get the list of steering nodes."""
         return self._intf.get_property(IManeuverOptimalFinite._metadata, IManeuverOptimalFinite._get_steering_nodes_metadata)
 
     _export_nodes_metadata = { "name" : "export_nodes",
@@ -20903,7 +20901,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def node_index(self) -> int:
-        """The index of the node in the array of nodes."""
+        """Get the index of the node in the array of nodes."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_node_index_metadata)
 
     _get_time_metadata = { "name" : "time",
@@ -20911,7 +20909,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time(self) -> float:
-        """The time associated with the node."""
+        """Get the time associated with the node."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_time_metadata)
 
     _get_mass_metadata = { "name" : "mass",
@@ -20919,7 +20917,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass(self) -> float:
-        """The mass at the node."""
+        """Get the mass at the node."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_mass_metadata)
 
     _get_azimuth_metadata = { "name" : "azimuth",
@@ -20927,7 +20925,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def azimuth(self) -> float:
-        """The azimuth of the steering angle."""
+        """Get the azimuth of the steering angle."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_azimuth_metadata)
 
     _get_elevation_metadata = { "name" : "elevation",
@@ -20935,7 +20933,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def elevation(self) -> float:
-        """The elevation of the steering angle."""
+        """Get the elevation of the steering angle."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_elevation_metadata)
 
     _get_direction_cos_x_metadata = { "name" : "direction_cos_x",
@@ -20943,7 +20941,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def direction_cos_x(self) -> float:
-        """The first component of the steering unit vector."""
+        """Get the first component of the steering unit vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_direction_cos_x_metadata)
 
     _get_direction_cos_y_metadata = { "name" : "direction_cos_y",
@@ -20951,7 +20949,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def direction_cos_y(self) -> float:
-        """The second component of the steering unit vector."""
+        """Get the second component of the steering unit vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_direction_cos_y_metadata)
 
     _get_direction_cos_z_metadata = { "name" : "direction_cos_z",
@@ -20959,7 +20957,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def direction_cos_z(self) -> float:
-        """The third component of the steering unit vector."""
+        """Get the third component of the steering unit vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_direction_cos_z_metadata)
 
     _get_position_x_metadata = { "name" : "position_x",
@@ -20967,7 +20965,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def position_x(self) -> float:
-        """The X component of the position vector."""
+        """Get the X component of the position vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_position_x_metadata)
 
     _get_position_y_metadata = { "name" : "position_y",
@@ -20975,7 +20973,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def position_y(self) -> float:
-        """The Y component of the position vector."""
+        """Get the Y component of the position vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_position_y_metadata)
 
     _get_position_z_metadata = { "name" : "position_z",
@@ -20983,7 +20981,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def position_z(self) -> float:
-        """The Z component of the position vector."""
+        """Get the Z component of the position vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_position_z_metadata)
 
     _get_vel_x_metadata = { "name" : "vel_x",
@@ -20991,7 +20989,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def vel_x(self) -> float:
-        """The X component of the velocity vector."""
+        """Get the X component of the velocity vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_vel_x_metadata)
 
     _get_vel_y_metadata = { "name" : "vel_y",
@@ -20999,7 +20997,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def vel_y(self) -> float:
-        """The Y component of the velocity vector."""
+        """Get the Y component of the velocity vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_vel_y_metadata)
 
     _get_vel_z_metadata = { "name" : "vel_z",
@@ -21007,7 +21005,7 @@ class IManeuverOptimalFiniteSteeringNodeElement(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def vel_z(self) -> float:
-        """The Z component of the velocity vector."""
+        """Get the Z component of the velocity vector."""
         return self._intf.get_property(IManeuverOptimalFiniteSteeringNodeElement._metadata, IManeuverOptimalFiniteSteeringNodeElement._get_vel_z_metadata)
 
 
@@ -21097,7 +21095,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system."""
+        """Get or set the coordinate system."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -21112,7 +21110,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
     @property
     def target_coord_type(self) -> "LAMBERT_TARGET_COORD_TYPE":
-        """The target coordinate type."""
+        """Get the target coordinate type."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_coord_type_metadata)
 
     _set_target_coord_type_metadata = { "name" : "set_target_coord_type",
@@ -21142,7 +21140,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_x(self) -> float:
-        """The X component of the target position for the end of the Lambert transfer."""
+        """Get or set the X component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_position_x_metadata)
 
     _set_target_position_x_metadata = { "name" : "target_position_x",
@@ -21157,7 +21155,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_y(self) -> float:
-        """The Y component of the target position for the end of the Lambert transfer."""
+        """Get or set the Y component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_position_y_metadata)
 
     _set_target_position_y_metadata = { "name" : "target_position_y",
@@ -21172,7 +21170,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_z(self) -> float:
-        """The Z component of the target position for the end of the Lambert transfer."""
+        """Get or set the Z component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_position_z_metadata)
 
     _set_target_position_z_metadata = { "name" : "target_position_z",
@@ -21187,7 +21185,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_x(self) -> float:
-        """The X component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the X component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_velocity_x_metadata)
 
     _set_target_velocity_x_metadata = { "name" : "target_velocity_x",
@@ -21202,7 +21200,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_y(self) -> float:
-        """The Y component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the Y component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_velocity_y_metadata)
 
     _set_target_velocity_y_metadata = { "name" : "target_velocity_y",
@@ -21217,7 +21215,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_z(self) -> float:
-        """The Z component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the Z component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_velocity_z_metadata)
 
     _set_target_velocity_z_metadata = { "name" : "target_velocity_z",
@@ -21232,7 +21230,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_semimajor_axis(self) -> float:
-        """The target semimajor axis for the end of the Lambert transfer."""
+        """Get or set the target semimajor axis for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_semimajor_axis_metadata)
 
     _set_target_semimajor_axis_metadata = { "name" : "target_semimajor_axis",
@@ -21247,7 +21245,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_eccentricity(self) -> float:
-        """The target eccentricity for the end of the Lambert transfer."""
+        """Get or set the target eccentricity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_eccentricity_metadata)
 
     _set_target_eccentricity_metadata = { "name" : "target_eccentricity",
@@ -21262,7 +21260,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_inclination(self) -> float:
-        """The target inclination for the end of the Lambert transfer."""
+        """Get or set the target inclination for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_inclination_metadata)
 
     _set_target_inclination_metadata = { "name" : "target_inclination",
@@ -21277,7 +21275,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_right_ascension_of_ascending_node(self) -> float:
-        """The target right ascension of the ascending node for the end of the Lambert transfer."""
+        """Get or set the target right ascension of the ascending node for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_right_ascension_of_ascending_node_metadata)
 
     _set_target_right_ascension_of_ascending_node_metadata = { "name" : "target_right_ascension_of_ascending_node",
@@ -21292,7 +21290,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_argument_of_periapsis(self) -> float:
-        """The target argument of periapsis for the end of the Lambert transfer."""
+        """Get or set the target argument of periapsis for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_argument_of_periapsis_metadata)
 
     _set_target_argument_of_periapsis_metadata = { "name" : "target_argument_of_periapsis",
@@ -21307,7 +21305,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_true_anomaly(self) -> float:
-        """The target true anomaly for the end of the Lambert transfer."""
+        """Get or set the target true anomaly for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_target_true_anomaly_metadata)
 
     _set_target_true_anomaly_metadata = { "name" : "target_true_anomaly",
@@ -21337,7 +21335,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_of_flight(self) -> float:
-        """The time of flight between departure and arrival for the Lambert solution."""
+        """Get or set the time of flight between departure and arrival for the Lambert solution."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_time_of_flight_metadata)
 
     _set_time_of_flight_metadata = { "name" : "time_of_flight",
@@ -21352,7 +21350,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def revolutions(self) -> int:
-        """The number of revolutions. Dimensionless."""
+        """Get or set the number of revolutions. Dimensionless."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_revolutions_metadata)
 
     _set_revolutions_metadata = { "name" : "revolutions",
@@ -21367,7 +21365,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.EnumArg(LAMBERT_ORBITAL_ENERGY_TYPE),) }
     @property
     def orbital_energy(self) -> "LAMBERT_ORBITAL_ENERGY_TYPE":
-        """The orbital energy for the Lambert solution."""
+        """Get or set the orbital energy for the Lambert solution."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_orbital_energy_metadata)
 
     _set_orbital_energy_metadata = { "name" : "orbital_energy",
@@ -21382,7 +21380,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.EnumArg(LAMBERT_DIRECTION_OF_MOTION_TYPE),) }
     @property
     def direction_of_motion(self) -> "LAMBERT_DIRECTION_OF_MOTION_TYPE":
-        """The direction of motion (long or short) for the Lambert solution."""
+        """Get or set the direction of motion (long or short) for the Lambert solution."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_direction_of_motion_metadata)
 
     _set_direction_of_motion_metadata = { "name" : "direction_of_motion",
@@ -21397,7 +21395,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def central_body_collision_altitude_padding(self) -> float:
-        """The minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body."""
+        """Get or set the minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_central_body_collision_altitude_padding_metadata)
 
     _set_central_body_collision_altitude_padding_metadata = { "name" : "central_body_collision_altitude_padding",
@@ -21427,7 +21425,7 @@ class IProfileLambertProfile(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def first_maneuver_segment(self) -> str:
-        """The first maneuver segment to manipulate that occurs at the start of the transfer."""
+        """Get or set the first maneuver segment to manipulate that occurs at the start of the transfer."""
         return self._intf.get_property(IProfileLambertProfile._metadata, IProfileLambertProfile._get_first_maneuver_segment_metadata)
 
     _set_first_maneuver_segment_metadata = { "name" : "first_maneuver_segment",
@@ -21607,7 +21605,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system."""
+        """Get or set the coordinate system."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -21622,7 +21620,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
     @property
     def target_coord_type(self) -> "LAMBERT_TARGET_COORD_TYPE":
-        """The target coordinate type."""
+        """Get the target coordinate type."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_coord_type_metadata)
 
     _set_target_coord_type_metadata = { "name" : "set_target_coord_type",
@@ -21667,7 +21665,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_x(self) -> float:
-        """The X component of the target position for the end of the Lambert transfer."""
+        """Get or set the X component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_position_x_metadata)
 
     _set_target_position_x_metadata = { "name" : "target_position_x",
@@ -21682,7 +21680,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_y(self) -> float:
-        """The Y component of the target position for the end of the Lambert transfer."""
+        """Get or set the Y component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_position_y_metadata)
 
     _set_target_position_y_metadata = { "name" : "target_position_y",
@@ -21697,7 +21695,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_position_z(self) -> float:
-        """The Z component of the target position for the end of the Lambert transfer."""
+        """Get or set the Z component of the target position for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_position_z_metadata)
 
     _set_target_position_z_metadata = { "name" : "target_position_z",
@@ -21712,7 +21710,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_x(self) -> float:
-        """The X component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the X component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_velocity_x_metadata)
 
     _set_target_velocity_x_metadata = { "name" : "target_velocity_x",
@@ -21727,7 +21725,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_y(self) -> float:
-        """The Y component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the Y component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_velocity_y_metadata)
 
     _set_target_velocity_y_metadata = { "name" : "target_velocity_y",
@@ -21742,7 +21740,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_velocity_z(self) -> float:
-        """The Z component of the target velocity for the end of the Lambert transfer."""
+        """Get or set the Z component of the target velocity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_velocity_z_metadata)
 
     _set_target_velocity_z_metadata = { "name" : "target_velocity_z",
@@ -21757,7 +21755,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_semimajor_axis(self) -> float:
-        """The target semimajor axis for the end of the Lambert transfer."""
+        """Get or set the target semimajor axis for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_semimajor_axis_metadata)
 
     _set_target_semimajor_axis_metadata = { "name" : "target_semimajor_axis",
@@ -21772,7 +21770,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_eccentricity(self) -> float:
-        """The target eccentricity for the end of the Lambert transfer."""
+        """Get or set the target eccentricity for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_eccentricity_metadata)
 
     _set_target_eccentricity_metadata = { "name" : "target_eccentricity",
@@ -21787,7 +21785,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_inclination(self) -> float:
-        """The target inclination for the end of the Lambert transfer."""
+        """Get or set the target inclination for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_inclination_metadata)
 
     _set_target_inclination_metadata = { "name" : "target_inclination",
@@ -21802,7 +21800,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_right_ascension_of_ascending_node(self) -> float:
-        """The target right ascension of the ascending node for the end of the Lambert transfer."""
+        """Get or set the target right ascension of the ascending node for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_right_ascension_of_ascending_node_metadata)
 
     _set_target_right_ascension_of_ascending_node_metadata = { "name" : "target_right_ascension_of_ascending_node",
@@ -21817,7 +21815,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_argument_of_periapsis(self) -> float:
-        """The target argument of periapsis for the end of the Lambert transfer."""
+        """Get or set the target argument of periapsis for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_argument_of_periapsis_metadata)
 
     _set_target_argument_of_periapsis_metadata = { "name" : "target_argument_of_periapsis",
@@ -21832,7 +21830,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def target_true_anomaly(self) -> float:
-        """The target true anomaly for the end of the Lambert transfer."""
+        """Get or set the target true anomaly for the end of the Lambert transfer."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_target_true_anomaly_metadata)
 
     _set_target_true_anomaly_metadata = { "name" : "target_true_anomaly",
@@ -21997,7 +21995,7 @@ class IProfileLambertSearchProfile(IProfile):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def central_body_collision_altitude_padding(self) -> float:
-        """The minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body."""
+        """Get or set the minimum altitude below which the Lambert algorithm will consider the spacecraft to have hit the central body."""
         return self._intf.get_property(IProfileLambertSearchProfile._metadata, IProfileLambertSearchProfile._get_central_body_collision_altitude_padding_metadata)
 
     _set_central_body_collision_altitude_padding_metadata = { "name" : "central_body_collision_altitude_padding",
@@ -22138,7 +22136,7 @@ class IProfileGoldenSection(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def controls(self) -> "GoldenSectionControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileGoldenSection._metadata, IProfileGoldenSection._get_controls_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -22146,7 +22144,7 @@ class IProfileGoldenSection(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "GoldenSectionResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileGoldenSection._metadata, IProfileGoldenSection._get_results_metadata)
 
     _get_max_iterations_metadata = { "name" : "max_iterations",
@@ -22154,7 +22152,7 @@ class IProfileGoldenSection(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The number of complete iterations of the profile to try before stopping. Dimensionless."""
+        """Get or set the number of complete iterations of the profile to try before stopping. Dimensionless."""
         return self._intf.get_property(IProfileGoldenSection._metadata, IProfileGoldenSection._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -22243,7 +22241,7 @@ class IProfileGridSearch(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def controls(self) -> "GridSearchControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileGridSearch._metadata, IProfileGridSearch._get_controls_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -22251,7 +22249,7 @@ class IProfileGridSearch(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "GridSearchResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileGridSearch._metadata, IProfileGridSearch._get_results_metadata)
 
     _get_log_file_metadata = { "name" : "log_file",
@@ -22453,7 +22451,7 @@ class IProfileBisection(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def control_parameters(self) -> "BisectionControlCollection":
-        """The list of control parameters defined for the profile."""
+        """Get the list of control parameters defined for the profile."""
         return self._intf.get_property(IProfileBisection._metadata, IProfileBisection._get_control_parameters_metadata)
 
     _get_results_metadata = { "name" : "results",
@@ -22461,7 +22459,7 @@ class IProfileBisection(IProfile):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def results(self) -> "BisectionResultCollection":
-        """The list of results defined for the profile."""
+        """Get the list of results defined for the profile."""
         return self._intf.get_property(IProfileBisection._metadata, IProfileBisection._get_results_metadata)
 
     _get_targeter_graphs_metadata = { "name" : "targeter_graphs",
@@ -22500,7 +22498,7 @@ class IProfileBisection(IProfile):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def maximum_iterations(self) -> int:
-        """The maximum number of iterations allowed."""
+        """Get or set the maximum number of iterations allowed."""
         return self._intf.get_property(IProfileBisection._metadata, IProfileBisection._get_maximum_iterations_metadata)
 
     _set_maximum_iterations_metadata = { "name" : "maximum_iterations",
@@ -22568,7 +22566,7 @@ class IBisectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The name of the parameter."""
+        """Get the name of the parameter."""
         return self._intf.get_property(IBisectionControl._metadata, IBisectionControl._get_name_metadata)
 
     _get_parent_name_metadata = { "name" : "parent_name",
@@ -22576,7 +22574,7 @@ class IBisectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The name of the segment to which the parameter belongs."""
+        """Get the name of the segment to which the parameter belongs."""
         return self._intf.get_property(IBisectionControl._metadata, IBisectionControl._get_parent_name_metadata)
 
     _get_initial_value_metadata = { "name" : "initial_value",
@@ -22584,7 +22582,7 @@ class IBisectionControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def initial_value(self) -> typing.Any:
-        """The nominal value of the element selected as a parameter. Dimension depends on context."""
+        """Get the nominal value of the element selected as a parameter. Dimension depends on context."""
         return self._intf.get_property(IBisectionControl._metadata, IBisectionControl._get_initial_value_metadata)
 
     _get_current_value_metadata = { "name" : "current_value",
@@ -22592,7 +22590,7 @@ class IBisectionControl(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def current_value(self) -> typing.Any:
-        """The value of the independent variable after the last targeter run."""
+        """Get or set the value of the independent variable after the last targeter run."""
         return self._intf.get_property(IBisectionControl._metadata, IBisectionControl._get_current_value_metadata)
 
     _set_current_value_metadata = { "name" : "current_value",
@@ -22637,7 +22635,7 @@ class IBisectionControl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def custom_display_unit(self) -> str:
-        """The unit in which the value will be displayed in the GUI."""
+        """Get or set the unit in which the value will be displayed in the GUI."""
         return self._intf.get_property(IBisectionControl._metadata, IBisectionControl._get_custom_display_unit_metadata)
 
     _set_custom_display_unit_metadata = { "name" : "custom_display_unit",
@@ -23018,7 +23016,7 @@ class IStateCalcCartesianElem(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcCartesianElem._metadata, IStateCalcCartesianElem._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -23064,7 +23062,7 @@ class IStateCalcCartSTMElem(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcCartSTMElem._metadata, IStateCalcCartSTMElem._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -23079,7 +23077,7 @@ class IStateCalcCartSTMElem(object):
             "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
     @property
     def final_var(self) -> "STM_PERT_VARIABLES":
-        """The final variation variable."""
+        """Get or set the final variation variable."""
         return self._intf.get_property(IStateCalcCartSTMElem._metadata, IStateCalcCartSTMElem._get_final_var_metadata)
 
     _set_final_var_metadata = { "name" : "final_var",
@@ -23094,7 +23092,7 @@ class IStateCalcCartSTMElem(object):
             "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
     @property
     def init_var(self) -> "STM_PERT_VARIABLES":
-        """The initial variation variable."""
+        """Get or set the initial variation variable."""
         return self._intf.get_property(IStateCalcCartSTMElem._metadata, IStateCalcCartSTMElem._get_init_var_metadata)
 
     _set_init_var_metadata = { "name" : "init_var",
@@ -23140,7 +23138,7 @@ class IStateCalcSTMEigenval(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcSTMEigenval._metadata, IStateCalcSTMEigenval._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -23155,7 +23153,7 @@ class IStateCalcSTMEigenval(object):
             "marshallers" : (agmarshall.EnumArg(STM_EIGEN_NUMBER),) }
     @property
     def eigenvalue_number(self) -> "STM_EIGEN_NUMBER":
-        """The number identifying one of the six Eigenvalues."""
+        """Get or set the number identifying one of the six Eigenvalues."""
         return self._intf.get_property(IStateCalcSTMEigenval._metadata, IStateCalcSTMEigenval._get_eigenvalue_number_metadata)
 
     _set_eigenvalue_number_metadata = { "name" : "eigenvalue_number",
@@ -23218,7 +23216,7 @@ class IStateCalcSTMEigenvecElem(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcSTMEigenvecElem._metadata, IStateCalcSTMEigenvecElem._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -23233,7 +23231,7 @@ class IStateCalcSTMEigenvecElem(object):
             "marshallers" : (agmarshall.EnumArg(STM_EIGEN_NUMBER),) }
     @property
     def eigenvector_number(self) -> "STM_EIGEN_NUMBER":
-        """The number identifying one of the six Eigenvectors."""
+        """Get or set the number identifying one of the six Eigenvectors."""
         return self._intf.get_property(IStateCalcSTMEigenvecElem._metadata, IStateCalcSTMEigenvecElem._get_eigenvector_number_metadata)
 
     _set_eigenvector_number_metadata = { "name" : "eigenvector_number",
@@ -23248,7 +23246,7 @@ class IStateCalcSTMEigenvecElem(object):
             "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
     @property
     def state_variable(self) -> "STM_PERT_VARIABLES":
-        """The variable identifying the component within an Eigenvector."""
+        """Get or set the variable identifying the component within an Eigenvector."""
         return self._intf.get_property(IStateCalcSTMEigenvecElem._metadata, IStateCalcSTMEigenvecElem._get_state_variable_metadata)
 
     _set_state_variable_metadata = { "name" : "state_variable",
@@ -23307,7 +23305,7 @@ class IStateCalcEnvironment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEnvironment._metadata, IStateCalcEnvironment._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23322,7 +23320,7 @@ class IStateCalcEnvironment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_model_name(self) -> str:
-        """The atmospheric density model of the component."""
+        """Get or set the atmospheric density model of the component."""
         return self._intf.get_property(IStateCalcEnvironment._metadata, IStateCalcEnvironment._get_atmos_model_name_metadata)
 
     _set_atmos_model_name_metadata = { "name" : "atmos_model_name",
@@ -23366,7 +23364,7 @@ class IStateCalcEquinoctialElem(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcEquinoctialElem._metadata, IStateCalcEquinoctialElem._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -23381,7 +23379,7 @@ class IStateCalcEquinoctialElem(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcEquinoctialElem._metadata, IStateCalcEquinoctialElem._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -23500,7 +23498,7 @@ class IStateCalcSEETMagnitudeFieldFieldLineSepAngle(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def target_object(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcSEETMagnitudeFieldFieldLineSepAngle._metadata, IStateCalcSEETMagnitudeFieldFieldLineSepAngle._get_target_object_metadata)
 
 
@@ -23642,7 +23640,7 @@ class IStateCalcCloseApproachBearing(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachBearing._metadata, IStateCalcCloseApproachBearing._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23657,7 +23655,7 @@ class IStateCalcCloseApproachBearing(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachBearing._metadata, IStateCalcCloseApproachBearing._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -23672,7 +23670,7 @@ class IStateCalcCloseApproachBearing(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachBearing._metadata, IStateCalcCloseApproachBearing._get_reference_metadata)
 
 
@@ -23710,7 +23708,7 @@ class IStateCalcCloseApproachMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachMagnitude._metadata, IStateCalcCloseApproachMagnitude._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23725,7 +23723,7 @@ class IStateCalcCloseApproachMagnitude(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachMagnitude._metadata, IStateCalcCloseApproachMagnitude._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -23740,7 +23738,7 @@ class IStateCalcCloseApproachMagnitude(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachMagnitude._metadata, IStateCalcCloseApproachMagnitude._get_reference_metadata)
 
 
@@ -23778,7 +23776,7 @@ class IStateCalcCloseApproachTheta(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachTheta._metadata, IStateCalcCloseApproachTheta._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23793,7 +23791,7 @@ class IStateCalcCloseApproachTheta(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachTheta._metadata, IStateCalcCloseApproachTheta._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -23808,7 +23806,7 @@ class IStateCalcCloseApproachTheta(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachTheta._metadata, IStateCalcCloseApproachTheta._get_reference_metadata)
 
 
@@ -23846,7 +23844,7 @@ class IStateCalcCloseApproachX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachX._metadata, IStateCalcCloseApproachX._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23861,7 +23859,7 @@ class IStateCalcCloseApproachX(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachX._metadata, IStateCalcCloseApproachX._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -23876,7 +23874,7 @@ class IStateCalcCloseApproachX(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachX._metadata, IStateCalcCloseApproachX._get_reference_metadata)
 
 
@@ -23914,7 +23912,7 @@ class IStateCalcCloseApproachY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachY._metadata, IStateCalcCloseApproachY._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23929,7 +23927,7 @@ class IStateCalcCloseApproachY(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachY._metadata, IStateCalcCloseApproachY._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -23944,7 +23942,7 @@ class IStateCalcCloseApproachY(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachY._metadata, IStateCalcCloseApproachY._get_reference_metadata)
 
 
@@ -23982,7 +23980,7 @@ class IStateCalcCloseApproachCosBearing(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCloseApproachCosBearing._metadata, IStateCalcCloseApproachCosBearing._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -23997,7 +23995,7 @@ class IStateCalcCloseApproachCosBearing(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCloseApproachCosBearing._metadata, IStateCalcCloseApproachCosBearing._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -24012,7 +24010,7 @@ class IStateCalcCloseApproachCosBearing(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCloseApproachCosBearing._metadata, IStateCalcCloseApproachCosBearing._get_reference_metadata)
 
 
@@ -24054,7 +24052,7 @@ class IStateCalcRelGroundTrackError(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelGroundTrackError._metadata, IStateCalcRelGroundTrackError._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24069,7 +24067,7 @@ class IStateCalcRelGroundTrackError(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
     @property
     def direction(self) -> "CALC_OBJECT_DIRECTION":
-        """The direction to search for the desired value."""
+        """Get or set the direction to search for the desired value."""
         return self._intf.get_property(IStateCalcRelGroundTrackError._metadata, IStateCalcRelGroundTrackError._get_direction_metadata)
 
     _set_direction_metadata = { "name" : "direction",
@@ -24099,7 +24097,7 @@ class IStateCalcRelGroundTrackError(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelGroundTrackError._metadata, IStateCalcRelGroundTrackError._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -24114,7 +24112,7 @@ class IStateCalcRelGroundTrackError(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelGroundTrackError._metadata, IStateCalcRelGroundTrackError._get_reference_metadata)
 
 
@@ -24156,7 +24154,7 @@ class IStateCalcRelAtAOLMaster(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelAtAOLMaster._metadata, IStateCalcRelAtAOLMaster._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24171,7 +24169,7 @@ class IStateCalcRelAtAOLMaster(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object of interest."""
+        """Get or set the calculation object of interest."""
         return self._intf.get_property(IStateCalcRelAtAOLMaster._metadata, IStateCalcRelAtAOLMaster._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -24186,7 +24184,7 @@ class IStateCalcRelAtAOLMaster(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
     @property
     def direction(self) -> "CALC_OBJECT_DIRECTION":
-        """The direction to search for the desired value."""
+        """Get or set the direction to search for the desired value."""
         return self._intf.get_property(IStateCalcRelAtAOLMaster._metadata, IStateCalcRelAtAOLMaster._get_direction_metadata)
 
     _set_direction_metadata = { "name" : "direction",
@@ -24201,7 +24199,7 @@ class IStateCalcRelAtAOLMaster(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelAtAOLMaster._metadata, IStateCalcRelAtAOLMaster._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -24216,7 +24214,7 @@ class IStateCalcRelAtAOLMaster(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelAtAOLMaster._metadata, IStateCalcRelAtAOLMaster._get_reference_metadata)
 
 
@@ -24254,7 +24252,7 @@ class IStateCalcDeltaFromMaster(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object of interest."""
+        """Get or set the calculation object of interest."""
         return self._intf.get_property(IStateCalcDeltaFromMaster._metadata, IStateCalcDeltaFromMaster._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -24269,7 +24267,7 @@ class IStateCalcDeltaFromMaster(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcDeltaFromMaster._metadata, IStateCalcDeltaFromMaster._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -24284,7 +24282,7 @@ class IStateCalcDeltaFromMaster(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcDeltaFromMaster._metadata, IStateCalcDeltaFromMaster._get_reference_metadata)
 
 
@@ -24321,7 +24319,7 @@ class IStateCalcLonDriftRate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcLonDriftRate._metadata, IStateCalcLonDriftRate._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24336,7 +24334,7 @@ class IStateCalcLonDriftRate(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcLonDriftRate._metadata, IStateCalcLonDriftRate._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -24378,7 +24376,7 @@ class IStateCalcMeanEarthLon(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcMeanEarthLon._metadata, IStateCalcMeanEarthLon._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24420,7 +24418,7 @@ class IStateCalcRectifiedLon(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRectifiedLon._metadata, IStateCalcRectifiedLon._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24462,7 +24460,7 @@ class IStateCalcTrueLongitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcTrueLongitude._metadata, IStateCalcTrueLongitude._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24504,7 +24502,7 @@ class IStateCalcGeodeticTrueLongitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGeodeticTrueLongitude._metadata, IStateCalcGeodeticTrueLongitude._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24546,7 +24544,7 @@ class IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee._metadata, IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24588,7 +24586,7 @@ class IStateCalcMeanRightAscension(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcMeanRightAscension._metadata, IStateCalcMeanRightAscension._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24630,7 +24628,7 @@ class IStateCalcGeodeticMeanRightAscension(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGeodeticMeanRightAscension._metadata, IStateCalcGeodeticMeanRightAscension._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24672,7 +24670,7 @@ class IStateCalcTwoBodyDriftRate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcTwoBodyDriftRate._metadata, IStateCalcTwoBodyDriftRate._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24716,7 +24714,7 @@ class IStateCalcDriftRateFactor(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcDriftRateFactor._metadata, IStateCalcDriftRateFactor._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24731,7 +24729,7 @@ class IStateCalcDriftRateFactor(object):
             "marshallers" : (agmarshall.EnumArg(GEO_STATIONARY_DRIFT_RATE_MODEL),) }
     @property
     def drift_rate_model(self) -> "GEO_STATIONARY_DRIFT_RATE_MODEL":
-        """The gravity model used to compute drift rate."""
+        """Get or set the gravity model used to compute drift rate."""
         return self._intf.get_property(IStateCalcDriftRateFactor._metadata, IStateCalcDriftRateFactor._get_drift_rate_model_metadata)
 
     _set_drift_rate_model_metadata = { "name" : "drift_rate_model",
@@ -24773,7 +24771,7 @@ class IStateCalcEccentricityX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEccentricityX._metadata, IStateCalcEccentricityX._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24815,7 +24813,7 @@ class IStateCalcEccentricityY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEccentricityY._metadata, IStateCalcEccentricityY._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24859,7 +24857,7 @@ class IStateCalcInclinationX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcInclinationX._metadata, IStateCalcInclinationX._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24918,7 +24916,7 @@ class IStateCalcInclinationY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcInclinationY._metadata, IStateCalcInclinationY._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -24975,7 +24973,7 @@ class IStateCalcUnitAngularMomentumX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcUnitAngularMomentumX._metadata, IStateCalcUnitAngularMomentumX._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25017,7 +25015,7 @@ class IStateCalcUnitAngularMomentumY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcUnitAngularMomentumY._metadata, IStateCalcUnitAngularMomentumY._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25059,7 +25057,7 @@ class IStateCalcUnitAngularMomentumZ(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcUnitAngularMomentumZ._metadata, IStateCalcUnitAngularMomentumZ._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25101,7 +25099,7 @@ class IStateCalcGeodeticElem(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGeodeticElem._metadata, IStateCalcGeodeticElem._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25151,7 +25149,7 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25166,7 +25164,7 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def reference_longitude(self) -> typing.Any:
-        """The longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension."""
+        """Get or set the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension."""
         return self._intf.get_property(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._get_reference_longitude_metadata)
 
     _set_reference_longitude_metadata = { "name" : "reference_longitude",
@@ -25181,7 +25179,7 @@ class IStateCalcRepeatingGroundTrackErr(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def repeat_count(self) -> float:
-        """The number of orbits before the ground track repeats over the same longitude. Dimensionless."""
+        """Get or set the number of orbits before the ground track repeats over the same longitude. Dimensionless."""
         return self._intf.get_property(IStateCalcRepeatingGroundTrackErr._metadata, IStateCalcRepeatingGroundTrackErr._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "name" : "repeat_count",
@@ -25254,7 +25252,7 @@ class IStateCalcAltitudeOfApoapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcAltitudeOfApoapsis._metadata, IStateCalcAltitudeOfApoapsis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25269,7 +25267,7 @@ class IStateCalcAltitudeOfApoapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcAltitudeOfApoapsis._metadata, IStateCalcAltitudeOfApoapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25313,7 +25311,7 @@ class IStateCalcAltitudeOfPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcAltitudeOfPeriapsis._metadata, IStateCalcAltitudeOfPeriapsis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25328,7 +25326,7 @@ class IStateCalcAltitudeOfPeriapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcAltitudeOfPeriapsis._metadata, IStateCalcAltitudeOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25372,7 +25370,7 @@ class IStateCalcArgOfLat(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcArgOfLat._metadata, IStateCalcArgOfLat._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -25387,7 +25385,7 @@ class IStateCalcArgOfLat(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcArgOfLat._metadata, IStateCalcArgOfLat._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25431,7 +25429,7 @@ class IStateCalcArgOfPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcArgOfPeriapsis._metadata, IStateCalcArgOfPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -25446,7 +25444,7 @@ class IStateCalcArgOfPeriapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcArgOfPeriapsis._metadata, IStateCalcArgOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25490,7 +25488,7 @@ class IStateCalcEccentricityAnomaly(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEccentricityAnomaly._metadata, IStateCalcEccentricityAnomaly._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25505,7 +25503,7 @@ class IStateCalcEccentricityAnomaly(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcEccentricityAnomaly._metadata, IStateCalcEccentricityAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25549,7 +25547,7 @@ class IStateCalcEccentricity(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEccentricity._metadata, IStateCalcEccentricity._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25564,7 +25562,7 @@ class IStateCalcEccentricity(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcEccentricity._metadata, IStateCalcEccentricity._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25608,7 +25606,7 @@ class IStateCalcInclination(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcInclination._metadata, IStateCalcInclination._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -25623,7 +25621,7 @@ class IStateCalcInclination(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcInclination._metadata, IStateCalcInclination._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25667,7 +25665,7 @@ class IStateCalcLonOfAscNode(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcLonOfAscNode._metadata, IStateCalcLonOfAscNode._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25682,7 +25680,7 @@ class IStateCalcLonOfAscNode(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcLonOfAscNode._metadata, IStateCalcLonOfAscNode._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25726,7 +25724,7 @@ class IStateCalcMeanAnomaly(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcMeanAnomaly._metadata, IStateCalcMeanAnomaly._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25741,7 +25739,7 @@ class IStateCalcMeanAnomaly(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcMeanAnomaly._metadata, IStateCalcMeanAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25785,7 +25783,7 @@ class IStateCalcMeanMotion(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcMeanMotion._metadata, IStateCalcMeanMotion._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25800,7 +25798,7 @@ class IStateCalcMeanMotion(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcMeanMotion._metadata, IStateCalcMeanMotion._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25844,7 +25842,7 @@ class IStateCalcOrbitPeriod(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcOrbitPeriod._metadata, IStateCalcOrbitPeriod._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25859,7 +25857,7 @@ class IStateCalcOrbitPeriod(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcOrbitPeriod._metadata, IStateCalcOrbitPeriod._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25903,7 +25901,7 @@ class IStateCalcNumRevs(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcNumRevs._metadata, IStateCalcNumRevs._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -25918,7 +25916,7 @@ class IStateCalcNumRevs(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcNumRevs._metadata, IStateCalcNumRevs._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -25962,7 +25960,7 @@ class IStateCalcRAAN(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcRAAN._metadata, IStateCalcRAAN._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -25977,7 +25975,7 @@ class IStateCalcRAAN(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcRAAN._metadata, IStateCalcRAAN._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26021,7 +26019,7 @@ class IStateCalcRadOfApoapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRadOfApoapsis._metadata, IStateCalcRadOfApoapsis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -26036,7 +26034,7 @@ class IStateCalcRadOfApoapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcRadOfApoapsis._metadata, IStateCalcRadOfApoapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26080,7 +26078,7 @@ class IStateCalcRadOfPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRadOfPeriapsis._metadata, IStateCalcRadOfPeriapsis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -26095,7 +26093,7 @@ class IStateCalcRadOfPeriapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcRadOfPeriapsis._metadata, IStateCalcRadOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26139,7 +26137,7 @@ class IStateCalcSemiMajorAxis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcSemiMajorAxis._metadata, IStateCalcSemiMajorAxis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -26154,7 +26152,7 @@ class IStateCalcSemiMajorAxis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcSemiMajorAxis._metadata, IStateCalcSemiMajorAxis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26198,7 +26196,7 @@ class IStateCalcTimePastAscNode(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcTimePastAscNode._metadata, IStateCalcTimePastAscNode._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -26213,7 +26211,7 @@ class IStateCalcTimePastAscNode(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcTimePastAscNode._metadata, IStateCalcTimePastAscNode._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26257,7 +26255,7 @@ class IStateCalcTimePastPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcTimePastPeriapsis._metadata, IStateCalcTimePastPeriapsis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -26272,7 +26270,7 @@ class IStateCalcTimePastPeriapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcTimePastPeriapsis._metadata, IStateCalcTimePastPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -26435,7 +26433,7 @@ class IStateCalcSequenceDeltaV(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def sequence_name(self) -> str:
-        """The sequence whose DeltaV's are to be summed."""
+        """Get or set the sequence whose DeltaV's are to be summed."""
         return self._intf.get_property(IStateCalcSequenceDeltaV._metadata, IStateCalcSequenceDeltaV._get_sequence_name_metadata)
 
     _set_sequence_name_metadata = { "name" : "sequence_name",
@@ -26479,7 +26477,7 @@ class IStateCalcSequenceDeltaVSquared(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def sequence_name(self) -> str:
-        """The sequence whose DeltaV's are to be accumulated."""
+        """Get or set the sequence whose DeltaV's are to be accumulated."""
         return self._intf.get_property(IStateCalcSequenceDeltaVSquared._metadata, IStateCalcSequenceDeltaVSquared._get_sequence_name_metadata)
 
     _set_sequence_name_metadata = { "name" : "sequence_name",
@@ -26615,7 +26613,7 @@ class IStateCalcInertialDeltaVx(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcInertialDeltaVx._metadata, IStateCalcInertialDeltaVx._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -26657,7 +26655,7 @@ class IStateCalcInertialDeltaVy(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcInertialDeltaVy._metadata, IStateCalcInertialDeltaVy._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -26699,7 +26697,7 @@ class IStateCalcInertialDeltaVz(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcInertialDeltaVz._metadata, IStateCalcInertialDeltaVz._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -26825,7 +26823,7 @@ class IStateCalcVectorX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcVectorX._metadata, IStateCalcVectorX._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -26840,7 +26838,7 @@ class IStateCalcVectorX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorX._metadata, IStateCalcVectorX._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -26855,7 +26853,7 @@ class IStateCalcVectorX(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcVectorX._metadata, IStateCalcVectorX._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -26918,7 +26916,7 @@ class IStateCalcVectorY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcVectorY._metadata, IStateCalcVectorY._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -26933,7 +26931,7 @@ class IStateCalcVectorY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorY._metadata, IStateCalcVectorY._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -26948,7 +26946,7 @@ class IStateCalcVectorY(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcVectorY._metadata, IStateCalcVectorY._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -27011,7 +27009,7 @@ class IStateCalcVectorZ(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcVectorZ._metadata, IStateCalcVectorZ._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -27026,7 +27024,7 @@ class IStateCalcVectorZ(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorZ._metadata, IStateCalcVectorZ._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -27041,7 +27039,7 @@ class IStateCalcVectorZ(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcVectorZ._metadata, IStateCalcVectorZ._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -27150,7 +27148,7 @@ class IStateCalcAbsoluteValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcAbsoluteValue._metadata, IStateCalcAbsoluteValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27194,7 +27192,7 @@ class IStateCalcDifference(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcDifference._metadata, IStateCalcDifference._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27209,7 +27207,7 @@ class IStateCalcDifference(object):
             "marshallers" : (agmarshall.EnumArg(DIFFERENCE_ORDER),) }
     @property
     def difference_order(self) -> "DIFFERENCE_ORDER":
-        """The order of the difference calculation."""
+        """Get or set the order of the difference calculation."""
         return self._intf.get_property(IStateCalcDifference._metadata, IStateCalcDifference._get_difference_order_metadata)
 
     _set_difference_order_metadata = { "name" : "difference_order",
@@ -27257,7 +27255,7 @@ class IStateCalcDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcDifferenceOtherSegment._metadata, IStateCalcDifferenceOtherSegment._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27272,7 +27270,7 @@ class IStateCalcDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcDifferenceOtherSegment._metadata, IStateCalcDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -27287,7 +27285,7 @@ class IStateCalcDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcDifferenceOtherSegment._metadata, IStateCalcDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -27302,7 +27300,7 @@ class IStateCalcDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_DIFFERENCE_ORDER),) }
     @property
     def difference_order(self) -> "SEGMENT_DIFFERENCE_ORDER":
-        """The order of the difference calculation."""
+        """Get or set the order of the difference calculation."""
         return self._intf.get_property(IStateCalcDifferenceOtherSegment._metadata, IStateCalcDifferenceOtherSegment._get_difference_order_metadata)
 
     _set_difference_order_metadata = { "name" : "difference_order",
@@ -27346,7 +27344,7 @@ class IStateCalcPositionDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcPositionDifferenceOtherSegment._metadata, IStateCalcPositionDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -27361,7 +27359,7 @@ class IStateCalcPositionDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcPositionDifferenceOtherSegment._metadata, IStateCalcPositionDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -27405,7 +27403,7 @@ class IStateCalcVelDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcVelDifferenceOtherSegment._metadata, IStateCalcVelDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -27420,7 +27418,7 @@ class IStateCalcVelDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcVelDifferenceOtherSegment._metadata, IStateCalcVelDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -27464,7 +27462,7 @@ class IStateCalcPositionVelDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcPositionVelDifferenceOtherSegment._metadata, IStateCalcPositionVelDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -27479,7 +27477,7 @@ class IStateCalcPositionVelDifferenceOtherSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcPositionVelDifferenceOtherSegment._metadata, IStateCalcPositionVelDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -27525,7 +27523,7 @@ class IStateCalcValueAtSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcValueAtSegment._metadata, IStateCalcValueAtSegment._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27540,7 +27538,7 @@ class IStateCalcValueAtSegment(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcValueAtSegment._metadata, IStateCalcValueAtSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -27555,7 +27553,7 @@ class IStateCalcValueAtSegment(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcValueAtSegment._metadata, IStateCalcValueAtSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -27597,7 +27595,7 @@ class IStateCalcMaxValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcMaxValue._metadata, IStateCalcMaxValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27639,7 +27637,7 @@ class IStateCalcMinValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcMinValue._metadata, IStateCalcMinValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27681,7 +27679,7 @@ class IStateCalcMeanValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcMeanValue._metadata, IStateCalcMeanValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27723,7 +27721,7 @@ class IStateCalcMedianValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcMedianValue._metadata, IStateCalcMedianValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27765,7 +27763,7 @@ class IStateCalcStandardDeviation(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcStandardDeviation._metadata, IStateCalcStandardDeviation._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27807,7 +27805,7 @@ class IStateCalcNegative(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation  object."""
+        """Get or set the calculation  object."""
         return self._intf.get_property(IStateCalcNegative._metadata, IStateCalcNegative._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -27851,7 +27849,7 @@ class IStateCalcTrueAnomaly(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcTrueAnomaly._metadata, IStateCalcTrueAnomaly._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -27866,7 +27864,7 @@ class IStateCalcTrueAnomaly(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcTrueAnomaly._metadata, IStateCalcTrueAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -27910,7 +27908,7 @@ class IBDotRCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def target_body_name(self) -> str:
-        """The target body for B-plane computation."""
+        """Get or set the target body for B-plane computation."""
         return self._intf.get_property(IBDotRCalc._metadata, IBDotRCalc._get_target_body_name_metadata)
 
     _set_target_body_name_metadata = { "name" : "target_body_name",
@@ -27925,7 +27923,7 @@ class IBDotRCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_vector_name(self) -> str:
-        """The reference vector to use to define the B-plane."""
+        """Get or set the reference vector to use to define the B-plane."""
         return self._intf.get_property(IBDotRCalc._metadata, IBDotRCalc._get_reference_vector_name_metadata)
 
     _set_reference_vector_name_metadata = { "name" : "reference_vector_name",
@@ -27969,7 +27967,7 @@ class IBDotTCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def target_body_name(self) -> str:
-        """The target body for B-plane computation."""
+        """Get or set the target body for B-plane computation."""
         return self._intf.get_property(IBDotTCalc._metadata, IBDotTCalc._get_target_body_name_metadata)
 
     _set_target_body_name_metadata = { "name" : "target_body_name",
@@ -27984,7 +27982,7 @@ class IBDotTCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_vector_name(self) -> str:
-        """The reference vector to use to define the B-plane."""
+        """Get or set the reference vector to use to define the B-plane."""
         return self._intf.get_property(IBDotTCalc._metadata, IBDotTCalc._get_reference_vector_name_metadata)
 
     _set_reference_vector_name_metadata = { "name" : "reference_vector_name",
@@ -28026,7 +28024,7 @@ class IBMagnitudeCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def target_body_name(self) -> str:
-        """The target body for B-plane computation."""
+        """Get or set the target body for B-plane computation."""
         return self._intf.get_property(IBMagnitudeCalc._metadata, IBMagnitudeCalc._get_target_body_name_metadata)
 
     _set_target_body_name_metadata = { "name" : "target_body_name",
@@ -28070,7 +28068,7 @@ class IBThetaCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def target_body_name(self) -> str:
-        """The target body for B-plane computation."""
+        """Get or set the target body for B-plane computation."""
         return self._intf.get_property(IBThetaCalc._metadata, IBThetaCalc._get_target_body_name_metadata)
 
     _set_target_body_name_metadata = { "name" : "target_body_name",
@@ -28085,7 +28083,7 @@ class IBThetaCalc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_vector_name(self) -> str:
-        """The reference vector to use to define the B-plane."""
+        """Get or set the reference vector to use to define the B-plane."""
         return self._intf.get_property(IBThetaCalc._metadata, IBThetaCalc._get_reference_vector_name_metadata)
 
     _set_reference_vector_name_metadata = { "name" : "reference_vector_name",
@@ -28131,7 +28129,7 @@ class IStateCalcDeltaDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcDeltaDec._metadata, IStateCalcDeltaDec._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28146,7 +28144,7 @@ class IStateCalcDeltaDec(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
     def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
-        """The central body's reference type."""
+        """Get or set the central body's reference type."""
         return self._intf.get_property(IStateCalcDeltaDec._metadata, IStateCalcDeltaDec._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "name" : "reference_type",
@@ -28161,7 +28159,7 @@ class IStateCalcDeltaDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_body(self) -> str:
-        """The reference body of the component. Read only when the ReferenceType is eVACalcObjectCentralBodyReferenceParent."""
+        """Get or set the reference body of the component. Read only when the ReferenceType is eVACalcObjectCentralBodyReferenceParent."""
         return self._intf.get_property(IStateCalcDeltaDec._metadata, IStateCalcDeltaDec._get_reference_body_metadata)
 
     _set_reference_body_metadata = { "name" : "reference_body",
@@ -28207,7 +28205,7 @@ class IStateCalcDeltaRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcDeltaRA._metadata, IStateCalcDeltaRA._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28222,7 +28220,7 @@ class IStateCalcDeltaRA(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
     def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
-        """The central body's reference type."""
+        """Get or set the central body's reference type."""
         return self._intf.get_property(IStateCalcDeltaRA._metadata, IStateCalcDeltaRA._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "name" : "reference_type",
@@ -28237,7 +28235,7 @@ class IStateCalcDeltaRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_body(self) -> str:
-        """The reference body of the component. Read only when the ReferenceType is eVACalcObjectCentralBodyReferenceParent."""
+        """Get or set the reference body of the component. Read only when the ReferenceType is eVACalcObjectCentralBodyReferenceParent."""
         return self._intf.get_property(IStateCalcDeltaRA._metadata, IStateCalcDeltaRA._get_reference_body_metadata)
 
     _set_reference_body_metadata = { "name" : "reference_body",
@@ -28279,7 +28277,7 @@ class IStateCalcBetaAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcBetaAngle._metadata, IStateCalcBetaAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28321,7 +28319,7 @@ class IStateCalcLocalApparentSolarLon(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcLocalApparentSolarLon._metadata, IStateCalcLocalApparentSolarLon._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28365,7 +28363,7 @@ class IStateCalcLonOfPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcLonOfPeriapsis._metadata, IStateCalcLonOfPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -28380,7 +28378,7 @@ class IStateCalcLonOfPeriapsis(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcLonOfPeriapsis._metadata, IStateCalcLonOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28440,7 +28438,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -28455,7 +28453,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def input_coord_system_name(self) -> str:
-        """The coordinate system of the input state."""
+        """Get or set the coordinate system of the input state."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_input_coord_system_name_metadata)
 
     _set_input_coord_system_name_metadata = { "name" : "input_coord_system_name",
@@ -28470,7 +28468,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def x(self) -> typing.Any:
-        """The x position component. Uses Distance Dimension."""
+        """Get or set the x position component. Uses Distance Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_x_metadata)
 
     _set_x_metadata = { "name" : "x",
@@ -28485,7 +28483,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def y(self) -> typing.Any:
-        """The y position component. Uses Distance Dimension."""
+        """Get or set the y position component. Uses Distance Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_y_metadata)
 
     _set_y_metadata = { "name" : "y",
@@ -28500,7 +28498,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def z(self) -> typing.Any:
-        """The z position component. Uses Distance Dimension."""
+        """Get or set the z position component. Uses Distance Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_z_metadata)
 
     _set_z_metadata = { "name" : "z",
@@ -28515,7 +28513,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def vx(self) -> typing.Any:
-        """The x velocity component. Uses Rate Dimension."""
+        """Get or set the x velocity component. Uses Rate Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_vx_metadata)
 
     _set_vx_metadata = { "name" : "vx",
@@ -28530,7 +28528,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def vy(self) -> typing.Any:
-        """The y velocity component. Uses Rate Dimension."""
+        """Get or set the y velocity component. Uses Rate Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_vy_metadata)
 
     _set_vy_metadata = { "name" : "vy",
@@ -28545,7 +28543,7 @@ class IStateCalcOrbitStateValue(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def vz(self) -> typing.Any:
-        """The z velocity component. Uses Rate Dimension."""
+        """Get or set the z velocity component. Uses Rate Dimension."""
         return self._intf.get_property(IStateCalcOrbitStateValue._metadata, IStateCalcOrbitStateValue._get_vz_metadata)
 
     _set_vz_metadata = { "name" : "vz",
@@ -28618,7 +28616,7 @@ class IStateCalcSignedEccentricity(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcSignedEccentricity._metadata, IStateCalcSignedEccentricity._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28633,7 +28631,7 @@ class IStateCalcSignedEccentricity(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcSignedEccentricity._metadata, IStateCalcSignedEccentricity._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28677,7 +28675,7 @@ class IStateCalcTrueLon(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcTrueLon._metadata, IStateCalcTrueLon._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -28692,7 +28690,7 @@ class IStateCalcTrueLon(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type."""
+        """Get or set the element type."""
         return self._intf.get_property(IStateCalcTrueLon._metadata, IStateCalcTrueLon._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -28734,7 +28732,7 @@ class IStateCalcPower(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def power_source_name(self) -> str:
-        """The power source."""
+        """Get or set the power source."""
         return self._intf.get_property(IStateCalcPower._metadata, IStateCalcPower._get_power_source_name_metadata)
 
     _set_power_source_name_metadata = { "name" : "power_source_name",
@@ -28781,7 +28779,7 @@ class IStateCalcRelMotion(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelMotion._metadata, IStateCalcRelMotion._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28811,7 +28809,7 @@ class IStateCalcRelMotion(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelMotion._metadata, IStateCalcRelMotion._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -28826,7 +28824,7 @@ class IStateCalcRelMotion(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelMotion._metadata, IStateCalcRelMotion._get_reference_metadata)
 
 
@@ -28872,7 +28870,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -28917,7 +28915,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -28932,7 +28930,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_reference_metadata)
 
     _get_sun_position_metadata = { "name" : "sun_position",
@@ -28940,7 +28938,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
     @property
     def sun_position(self) -> "CALC_OBJECT_SUN_POSITION":
-        """The type of the Sun location."""
+        """Get or set the type of the Sun location."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -28955,7 +28953,7 @@ class IStateCalcSolarBetaAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcSolarBetaAngle._metadata, IStateCalcSolarBetaAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -29010,7 +29008,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -29055,7 +29053,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -29070,7 +29068,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_reference_metadata)
 
     _get_sun_position_metadata = { "name" : "sun_position",
@@ -29078,7 +29076,7 @@ class IStateCalcSolarInPlaneAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
     @property
     def sun_position(self) -> "CALC_OBJECT_SUN_POSITION":
-        """The type of the Sun location."""
+        """Get or set the type of the Sun location."""
         return self._intf.get_property(IStateCalcSolarInPlaneAngle._metadata, IStateCalcSolarInPlaneAngle._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -29161,7 +29159,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -29206,7 +29204,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -29221,7 +29219,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_reference_metadata)
 
     _get_relative_position_type_metadata = { "name" : "relative_position_type",
@@ -29229,7 +29227,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
     @property
     def relative_position_type(self) -> "CALC_OBJECT_RELATIVE_POSITION":
-        """The type of the relative position."""
+        """Get or set the type of the relative position."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_relative_position_type_metadata)
 
     _set_relative_position_type_metadata = { "name" : "relative_position_type",
@@ -29244,7 +29242,7 @@ class IStateCalcRelPositionDecAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcRelPositionDecAngle._metadata, IStateCalcRelPositionDecAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -29299,7 +29297,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -29344,7 +29342,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -29359,7 +29357,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_reference_metadata)
 
     _get_relative_position_type_metadata = { "name" : "relative_position_type",
@@ -29367,7 +29365,7 @@ class IStateCalcRelPositionInPlaneAngle(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
     @property
     def relative_position_type(self) -> "CALC_OBJECT_RELATIVE_POSITION":
-        """The type of the relative position."""
+        """Get or set the type of the relative position."""
         return self._intf.get_property(IStateCalcRelPositionInPlaneAngle._metadata, IStateCalcRelPositionInPlaneAngle._get_relative_position_type_metadata)
 
     _set_relative_position_type_metadata = { "name" : "relative_position_type",
@@ -29446,7 +29444,7 @@ class IStateCalcRelativeInclination(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcRelativeInclination._metadata, IStateCalcRelativeInclination._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -29491,7 +29489,7 @@ class IStateCalcRelativeInclination(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcRelativeInclination._metadata, IStateCalcRelativeInclination._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -29506,7 +29504,7 @@ class IStateCalcRelativeInclination(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcRelativeInclination._metadata, IStateCalcRelativeInclination._get_reference_metadata)
 
 
@@ -29552,7 +29550,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -29597,7 +29595,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
     @property
     def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
-        """The reference object selection."""
+        """Get or set the reference object selection."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "name" : "reference_selection",
@@ -29612,7 +29610,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference(self) -> "ILinkToObject":
-        """The reference object."""
+        """Get the reference object."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_reference_metadata)
 
     _get_element_type_metadata = { "name" : "element_type",
@@ -29635,7 +29633,7 @@ class IStateCalcCurvilinearRelMotion(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
     @property
     def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
-        """Set the sign of the angle when the relative position has a positive component along the orbit normal."""
+        """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(IStateCalcCurvilinearRelMotion._metadata, IStateCalcCurvilinearRelMotion._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "name" : "sign_convention",
@@ -29681,7 +29679,7 @@ class IStateCalcCustomFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reset_function_name(self) -> str:
-        """The custom function called before computing, before each segment runs, and before reporting."""
+        """Get or set the custom function called before computing, before each segment runs, and before reporting."""
         return self._intf.get_property(IStateCalcCustomFunction._metadata, IStateCalcCustomFunction._get_reset_function_name_metadata)
 
     _set_reset_function_name_metadata = { "name" : "reset_function_name",
@@ -29696,7 +29694,7 @@ class IStateCalcCustomFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def eval_function_name(self) -> str:
-        """The custom function used to calculate this object's value."""
+        """Get or set the custom function used to calculate this object's value."""
         return self._intf.get_property(IStateCalcCustomFunction._metadata, IStateCalcCustomFunction._get_eval_function_name_metadata)
 
     _set_eval_function_name_metadata = { "name" : "eval_function_name",
@@ -29711,7 +29709,7 @@ class IStateCalcCustomFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcCustomFunction._metadata, IStateCalcCustomFunction._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -29757,7 +29755,7 @@ class IStateCalcScript(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def calc_arguments(self) -> "CalcObjectCollection":
-        """The arguments to be applied to the function."""
+        """Get the arguments to be applied to the function."""
         return self._intf.get_property(IStateCalcScript._metadata, IStateCalcScript._get_calc_arguments_metadata)
 
     _get_inline_func_metadata = { "name" : "inline_func",
@@ -29765,7 +29763,7 @@ class IStateCalcScript(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def inline_func(self) -> str:
-        """The expression to be applied as a function."""
+        """Get or set the expression to be applied as a function."""
         return self._intf.get_property(IStateCalcScript._metadata, IStateCalcScript._get_inline_func_metadata)
 
     _set_inline_func_metadata = { "name" : "inline_func",
@@ -29780,7 +29778,7 @@ class IStateCalcScript(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcScript._metadata, IStateCalcScript._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -29795,7 +29793,7 @@ class IStateCalcScript(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def calc_arguments_link_embed(self) -> "CalcObjectLinkEmbedControlCollection":
-        """The arguments to be applied to the function."""
+        """Get the arguments to be applied to the function."""
         return self._intf.get_property(IStateCalcScript._metadata, IStateCalcScript._get_calc_arguments_link_embed_metadata)
 
 
@@ -29986,7 +29984,7 @@ class IStateCalcCosOfVerticalFPA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcCosOfVerticalFPA._metadata, IStateCalcCosOfVerticalFPA._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -30028,7 +30026,7 @@ class IStateCalcDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcDec._metadata, IStateCalcDec._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30070,7 +30068,7 @@ class IStateCalcFPA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcFPA._metadata, IStateCalcFPA._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30112,7 +30110,7 @@ class IStateCalcRMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def reference_point_name(self) -> str:
-        """Reference point used for calculation."""
+        """Get or set the reference point used for calculation."""
         return self._intf.get_property(IStateCalcRMagnitude._metadata, IStateCalcRMagnitude._get_reference_point_name_metadata)
 
     _set_reference_point_name_metadata = { "name" : "reference_point_name",
@@ -30120,6 +30118,7 @@ class IStateCalcRMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @reference_point_name.setter
     def reference_point_name(self, inVal:str) -> None:
+        """Get or set the reference point used for calculation."""
         return self._intf.set_property(IStateCalcRMagnitude._metadata, IStateCalcRMagnitude._set_reference_point_name_metadata, inVal)
 
 
@@ -30154,7 +30153,7 @@ class IStateCalcRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcRA._metadata, IStateCalcRA._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30196,7 +30195,7 @@ class IStateCalcVMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcVMagnitude._metadata, IStateCalcVMagnitude._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30238,7 +30237,7 @@ class IStateCalcVelAz(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcVelAz._metadata, IStateCalcVelAz._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30282,7 +30281,7 @@ class IStateCalcC3Energy(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcC3Energy._metadata, IStateCalcC3Energy._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -30297,7 +30296,7 @@ class IStateCalcC3Energy(object):
             "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
     @property
     def element_type(self) -> "CALC_OBJECT_ELEM":
-        """The element type - osculating or a mean type."""
+        """Get or set the element type - osculating or a mean type."""
         return self._intf.get_property(IStateCalcC3Energy._metadata, IStateCalcC3Energy._get_element_type_metadata)
 
     _set_element_type_metadata = { "name" : "element_type",
@@ -30339,7 +30338,7 @@ class IStateCalcInAsympDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcInAsympDec._metadata, IStateCalcInAsympDec._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30381,7 +30380,7 @@ class IStateCalcInAsympRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcInAsympRA._metadata, IStateCalcInAsympRA._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30423,7 +30422,7 @@ class IStateCalcInVelAzAtPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcInVelAzAtPeriapsis._metadata, IStateCalcInVelAzAtPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30465,7 +30464,7 @@ class IStateCalcOutAsympDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcOutAsympDec._metadata, IStateCalcOutAsympDec._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30507,7 +30506,7 @@ class IStateCalcOutAsympRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcOutAsympRA._metadata, IStateCalcOutAsympRA._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30549,7 +30548,7 @@ class IStateCalcOutVelAzAtPeriapsis(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcOutVelAzAtPeriapsis._metadata, IStateCalcOutVelAzAtPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -30660,7 +30659,7 @@ class IStateCalcVectorGeometryToolAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def angle_name(self) -> str:
-        """The angle."""
+        """Get or set the angle."""
         return self._intf.get_property(IStateCalcVectorGeometryToolAngle._metadata, IStateCalcVectorGeometryToolAngle._get_angle_name_metadata)
 
     _set_angle_name_metadata = { "name" : "angle_name",
@@ -30704,7 +30703,7 @@ class IStateCalcAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector1_name(self) -> str:
-        """The first vector of the angle."""
+        """Get or set the first vector of the angle."""
         return self._intf.get_property(IStateCalcAngle._metadata, IStateCalcAngle._get_vector1_name_metadata)
 
     _set_vector1_name_metadata = { "name" : "vector1_name",
@@ -30719,7 +30718,7 @@ class IStateCalcAngle(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector2_name(self) -> str:
-        """The second vector of the angle."""
+        """Get or set the second vector of the angle."""
         return self._intf.get_property(IStateCalcAngle._metadata, IStateCalcAngle._get_vector2_name_metadata)
 
     _set_vector2_name_metadata = { "name" : "vector2_name",
@@ -30763,7 +30762,7 @@ class IStateCalcDotProduct(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector1_name(self) -> str:
-        """The first vector."""
+        """Get or set the first vector."""
         return self._intf.get_property(IStateCalcDotProduct._metadata, IStateCalcDotProduct._get_vector1_name_metadata)
 
     _set_vector1_name_metadata = { "name" : "vector1_name",
@@ -30778,7 +30777,7 @@ class IStateCalcDotProduct(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector2_name(self) -> str:
-        """The second vector."""
+        """Get or set the second vector."""
         return self._intf.get_property(IStateCalcDotProduct._metadata, IStateCalcDotProduct._get_vector2_name_metadata)
 
     _set_vector2_name_metadata = { "name" : "vector2_name",
@@ -30822,7 +30821,7 @@ class IStateCalcVectorDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcVectorDec._metadata, IStateCalcVectorDec._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -30837,7 +30836,7 @@ class IStateCalcVectorDec(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorDec._metadata, IStateCalcVectorDec._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -30881,7 +30880,7 @@ class IStateCalcVectorMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorMagnitude._metadata, IStateCalcVectorMagnitude._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -30896,7 +30895,7 @@ class IStateCalcVectorMagnitude(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcVectorMagnitude._metadata, IStateCalcVectorMagnitude._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -30940,7 +30939,7 @@ class IStateCalcVectorRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_axes_name(self) -> str:
-        """The coordinate axes."""
+        """Get or set the coordinate axes."""
         return self._intf.get_property(IStateCalcVectorRA._metadata, IStateCalcVectorRA._get_coord_axes_name_metadata)
 
     _set_coord_axes_name_metadata = { "name" : "coord_axes_name",
@@ -30955,7 +30954,7 @@ class IStateCalcVectorRA(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vector_name(self) -> str:
-        """The vector."""
+        """Get or set the vector."""
         return self._intf.get_property(IStateCalcVectorRA._metadata, IStateCalcVectorRA._get_vector_name_metadata)
 
     _set_vector_name_metadata = { "name" : "vector_name",
@@ -31009,7 +31008,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.EnumArg(ABERRATION_TYPE),) }
     @property
     def aberration_type(self) -> "ABERRATION_TYPE":
-        """The type of aberration to use, if light time delay is applied."""
+        """Get or set the type of aberration to use, if light time delay is applied."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_aberration_type_metadata)
 
     _set_aberration_type_metadata = { "name" : "aberration_type",
@@ -31023,7 +31022,7 @@ class IStateCalcOnePointAccess(object):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(BASE_SELECTION),) }
     def set_base_selection(self, selection:"BASE_SELECTION") -> None:
-        """Base Selection."""
+        """Set the base selection."""
         return self._intf.invoke(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._set_base_selection_metadata, selection)
 
     _get_base_selection_type_metadata = { "name" : "base_selection_type",
@@ -31031,7 +31030,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.EnumArg(BASE_SELECTION),) }
     @property
     def base_selection_type(self) -> "BASE_SELECTION":
-        """The base selection type."""
+        """Get the base selection type."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_base_selection_type_metadata)
 
     _get_base_selection_metadata = { "name" : "base_selection",
@@ -31039,7 +31038,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def base_selection(self) -> "ILinkToObject":
-        """The base selection object."""
+        """Get the base selection object."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_base_selection_metadata)
 
     _get_clock_host_metadata = { "name" : "clock_host",
@@ -31047,7 +31046,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.EnumArg(IV_CLOCK_HOST),) }
     @property
     def clock_host(self) -> "IV_CLOCK_HOST":
-        """The object whose location is associated with time."""
+        """Get or set the object whose location is associated with time."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_clock_host_metadata)
 
     _set_clock_host_metadata = { "name" : "clock_host",
@@ -31077,7 +31076,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def target_object(self) -> "ILinkToObject":
-        """The target object."""
+        """Get the target object."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_target_object_metadata)
 
     _get_time_delay_convergence_tolerance_metadata = { "name" : "time_delay_convergence_tolerance",
@@ -31085,7 +31084,7 @@ class IStateCalcOnePointAccess(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def time_delay_convergence_tolerance(self) -> float:
-        """The time delay convergence tolerance, if light time delay is applied. Uses Time Dimension."""
+        """Get or set the time delay convergence tolerance, if light time delay is applied. Uses Time Dimension."""
         return self._intf.get_property(IStateCalcOnePointAccess._metadata, IStateCalcOnePointAccess._get_time_delay_convergence_tolerance_metadata)
 
     _set_time_delay_convergence_tolerance_metadata = { "name" : "time_delay_convergence_tolerance",
@@ -31149,7 +31148,7 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcDifferenceAcrossSegmentsOtherSat._metadata, IStateCalcDifferenceAcrossSegmentsOtherSat._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -31164,7 +31163,7 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcDifferenceAcrossSegmentsOtherSat._metadata, IStateCalcDifferenceAcrossSegmentsOtherSat._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -31179,7 +31178,7 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcDifferenceAcrossSegmentsOtherSat._metadata, IStateCalcDifferenceAcrossSegmentsOtherSat._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -31194,7 +31193,7 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_DIFFERENCE_ORDER),) }
     @property
     def difference_order(self) -> "SEGMENT_DIFFERENCE_ORDER":
-        """The order of the difference calculation."""
+        """Get or set the order of the difference calculation."""
         return self._intf.get_property(IStateCalcDifferenceAcrossSegmentsOtherSat._metadata, IStateCalcDifferenceAcrossSegmentsOtherSat._get_difference_order_metadata)
 
     _set_difference_order_metadata = { "name" : "difference_order",
@@ -31209,7 +31208,7 @@ class IStateCalcDifferenceAcrossSegmentsOtherSat(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference_sat(self) -> "ILinkToObject":
-        """The Astrogator satellite on which the segment to be compared exists."""
+        """Get the Astrogator satellite on which the segment to be compared exists."""
         return self._intf.get_property(IStateCalcDifferenceAcrossSegmentsOtherSat._metadata, IStateCalcDifferenceAcrossSegmentsOtherSat._get_reference_sat_metadata)
 
 
@@ -31249,7 +31248,7 @@ class IStateCalcValueAtSegmentOtherSat(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The calculation object."""
+        """Get or set the calculation object."""
         return self._intf.get_property(IStateCalcValueAtSegmentOtherSat._metadata, IStateCalcValueAtSegmentOtherSat._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -31264,7 +31263,7 @@ class IStateCalcValueAtSegmentOtherSat(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def other_segment_name(self) -> str:
-        """The segment to be compared against."""
+        """Get or set the segment to be compared against."""
         return self._intf.get_property(IStateCalcValueAtSegmentOtherSat._metadata, IStateCalcValueAtSegmentOtherSat._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "name" : "other_segment_name",
@@ -31279,7 +31278,7 @@ class IStateCalcValueAtSegmentOtherSat(object):
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
-        """The segment state to use in the calculation."""
+        """Get or set the segment state to use in the calculation."""
         return self._intf.get_property(IStateCalcValueAtSegmentOtherSat._metadata, IStateCalcValueAtSegmentOtherSat._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "name" : "segment_state_to_use",
@@ -31294,7 +31293,7 @@ class IStateCalcValueAtSegmentOtherSat(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def reference_sat(self) -> "ILinkToObject":
-        """The Astrogator satellite on which the segment to be compared exists."""
+        """Get the Astrogator satellite on which the segment to be compared exists."""
         return self._intf.get_property(IStateCalcValueAtSegmentOtherSat._metadata, IStateCalcValueAtSegmentOtherSat._get_reference_sat_metadata)
 
 
@@ -31329,7 +31328,7 @@ class IStateCalcRARate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcRARate._metadata, IStateCalcRARate._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -31371,7 +31370,7 @@ class IStateCalcDecRate(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def coord_system_name(self) -> str:
-        """The coordinate system within which the element is defined."""
+        """Get or set the coordinate system within which the element is defined."""
         return self._intf.get_property(IStateCalcDecRate._metadata, IStateCalcDecRate._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "name" : "coord_system_name",
@@ -31417,7 +31416,7 @@ class IStateCalcGravitationalParameter(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGravitationalParameter._metadata, IStateCalcGravitationalParameter._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -31432,7 +31431,7 @@ class IStateCalcGravitationalParameter(object):
             "marshallers" : (agmarshall.EnumArg(GRAVITATIONAL_PARAMETER_SOURCE),) }
     @property
     def grav_source(self) -> "GRAVITATIONAL_PARAMETER_SOURCE":
-        """The source for the gravitational parameter."""
+        """Get or set the source for the gravitational parameter."""
         return self._intf.get_property(IStateCalcGravitationalParameter._metadata, IStateCalcGravitationalParameter._get_grav_source_metadata)
 
     _set_grav_source_metadata = { "name" : "grav_source",
@@ -31493,7 +31492,7 @@ class IStateCalcReferenceRadius(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcReferenceRadius._metadata, IStateCalcReferenceRadius._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -31508,7 +31507,7 @@ class IStateCalcReferenceRadius(object):
             "marshallers" : (agmarshall.EnumArg(REFERENCE_RADIUS_SOURCE),) }
     @property
     def reference_radius_source(self) -> "REFERENCE_RADIUS_SOURCE":
-        """The source for the reference radius."""
+        """Get or set the source for the reference radius."""
         return self._intf.get_property(IStateCalcReferenceRadius._metadata, IStateCalcReferenceRadius._get_reference_radius_source_metadata)
 
     _set_reference_radius_source_metadata = { "name" : "reference_radius_source",
@@ -31575,7 +31574,7 @@ class IStateCalcGravCoeff(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcGravCoeff._metadata, IStateCalcGravCoeff._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -31746,7 +31745,7 @@ class IStateCalcScalar(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def scalar_name(self) -> str:
-        """The scalar name."""
+        """Get or set the scalar name."""
         return self._intf.get_property(IStateCalcScalar._metadata, IStateCalcScalar._get_scalar_name_metadata)
 
     _set_scalar_name_metadata = { "name" : "scalar_name",
@@ -31761,7 +31760,7 @@ class IStateCalcScalar(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def unit_dimension(self) -> str:
-        """The unit dimension."""
+        """Get or set the unit dimension."""
         return self._intf.get_property(IStateCalcScalar._metadata, IStateCalcScalar._get_unit_dimension_metadata)
 
     _set_unit_dimension_metadata = { "name" : "unit_dimension",
@@ -31803,7 +31802,7 @@ class IStateCalcApparentSolarTime(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcApparentSolarTime._metadata, IStateCalcApparentSolarTime._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -31845,7 +31844,7 @@ class IStateCalcEarthMeanSolarTime(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEarthMeanSolarTime._metadata, IStateCalcEarthMeanSolarTime._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -31887,7 +31886,7 @@ class IStateCalcEarthMeanLocTimeAN(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body of the component."""
+        """Get or set the central body of the component."""
         return self._intf.get_property(IStateCalcEarthMeanLocTimeAN._metadata, IStateCalcEarthMeanLocTimeAN._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -32069,7 +32068,7 @@ class ICentralBodyGravityModel(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def gravitational_param(self) -> float:
-        """The gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension."""
+        """Get or set the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension."""
         return self._intf.get_property(ICentralBodyGravityModel._metadata, ICentralBodyGravityModel._get_gravitational_param_metadata)
 
     _set_gravitational_param_metadata = { "name" : "gravitational_param",
@@ -32099,7 +32098,7 @@ class ICentralBodyGravityModel(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def j2(self) -> float:
-        """The J2 property. Taking into account first order Earth oblateness effects. Dimensionless."""
+        """Get or set the J2 property. Taking into account first order Earth oblateness effects. Dimensionless."""
         return self._intf.get_property(ICentralBodyGravityModel._metadata, ICentralBodyGravityModel._get_j2_metadata)
 
     _set_j2_metadata = { "name" : "j2",
@@ -32114,7 +32113,7 @@ class ICentralBodyGravityModel(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def j3(self) -> float:
-        """The J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless."""
+        """Get or set the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless."""
         return self._intf.get_property(ICentralBodyGravityModel._metadata, ICentralBodyGravityModel._get_j3_metadata)
 
     _set_j3_metadata = { "name" : "j3",
@@ -32129,7 +32128,7 @@ class ICentralBodyGravityModel(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def j4(self) -> float:
-        """The J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless."""
+        """Get or set the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless."""
         return self._intf.get_property(ICentralBodyGravityModel._metadata, ICentralBodyGravityModel._get_j4_metadata)
 
     _set_j4_metadata = { "name" : "j4",
@@ -32198,7 +32197,7 @@ class ICentralBodyShapeSphere(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radius(self) -> float:
-        """The radius. Uses Distance Dimension."""
+        """Get or set the radius. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeSphere._metadata, ICentralBodyShapeSphere._get_radius_metadata)
 
     _set_radius_metadata = { "name" : "radius",
@@ -32244,7 +32243,7 @@ class ICentralBodyShapeOblateSpheroid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_radius(self) -> float:
-        """The minimum radius. Uses Distance Dimension."""
+        """Get or set the minimum radius. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeOblateSpheroid._metadata, ICentralBodyShapeOblateSpheroid._get_min_radius_metadata)
 
     _set_min_radius_metadata = { "name" : "min_radius",
@@ -32259,7 +32258,7 @@ class ICentralBodyShapeOblateSpheroid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_radius(self) -> float:
-        """The maximum radius. Uses Distance Dimension."""
+        """Get or set the maximum radius. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeOblateSpheroid._metadata, ICentralBodyShapeOblateSpheroid._get_max_radius_metadata)
 
     _set_max_radius_metadata = { "name" : "max_radius",
@@ -32274,7 +32273,7 @@ class ICentralBodyShapeOblateSpheroid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def flattening_coefficient(self) -> float:
-        """The flattening coefficient; automatically derived from the minimum and maximum radii. Dimensionless."""
+        """Get the flattening coefficient; automatically derived from the minimum and maximum radii. Dimensionless."""
         return self._intf.get_property(ICentralBodyShapeOblateSpheroid._metadata, ICentralBodyShapeOblateSpheroid._get_flattening_coefficient_metadata)
 
 
@@ -32314,7 +32313,7 @@ class ICentralBodyShapeTriaxialEllipsoid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def semi_major_axis(self) -> float:
-        """The semi-major axis. Uses Distance Dimension."""
+        """Get or set the semi-major axis. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeTriaxialEllipsoid._metadata, ICentralBodyShapeTriaxialEllipsoid._get_semi_major_axis_metadata)
 
     _set_semi_major_axis_metadata = { "name" : "semi_major_axis",
@@ -32329,7 +32328,7 @@ class ICentralBodyShapeTriaxialEllipsoid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def semi_mid_axis(self) -> float:
-        """The semi-mid axis. Uses Distance Dimension."""
+        """Get or set the semi-mid axis. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeTriaxialEllipsoid._metadata, ICentralBodyShapeTriaxialEllipsoid._get_semi_mid_axis_metadata)
 
     _set_semi_mid_axis_metadata = { "name" : "semi_mid_axis",
@@ -32344,7 +32343,7 @@ class ICentralBodyShapeTriaxialEllipsoid(ICentralBodyShape):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def semi_minor_axis(self) -> float:
-        """The semi-minor axis. Uses Distance Dimension."""
+        """Get or set the semi-minor axis. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyShapeTriaxialEllipsoid._metadata, ICentralBodyShapeTriaxialEllipsoid._get_semi_minor_axis_metadata)
 
     _set_semi_minor_axis_metadata = { "name" : "semi_minor_axis",
@@ -32413,7 +32412,7 @@ class ICentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitude):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """The name of the rotation coefficients file."""
+        """Get or set the name of the rotation coefficients file."""
         return self._intf.get_property(ICentralBodyAttitudeRotationCoefficientsFile._metadata, ICentralBodyAttitudeRotationCoefficientsFile._get_filename_metadata)
 
     _set_filename_metadata = { "name" : "filename",
@@ -32466,7 +32465,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def right_ascension(self) -> typing.Any:
-        """The right ascension; the angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spin axis -- the angle  in the drawing below. Uses Angle Dimension."""
+        """Get or set the right ascension; the angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spin axis -- the angle  in the drawing below. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_right_ascension_metadata)
 
     _set_right_ascension_metadata = { "name" : "right_ascension",
@@ -32481,7 +32480,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def declination(self) -> typing.Any:
-        """The declination; the angle from the X-Y plane of the coordinate system to the spin axis vector. Uses Angle Dimension."""
+        """Get or set the declination; the angle from the X-Y plane of the coordinate system to the spin axis vector. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_declination_metadata)
 
     _set_declination_metadata = { "name" : "declination",
@@ -32496,7 +32495,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def right_ascension_rate(self) -> float:
-        """The right ascension rate; the rate of change in the right ascension. Uses AngleRate Dimension."""
+        """Get or set the right ascension rate; the rate of change in the right ascension. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_right_ascension_rate_metadata)
 
     _set_right_ascension_rate_metadata = { "name" : "right_ascension_rate",
@@ -32511,7 +32510,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def declination_rate(self) -> float:
-        """The declination rate; the rate of change in the declination. Uses AngleRate Dimension."""
+        """Get or set the declination rate; the rate of change in the declination. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_declination_rate_metadata)
 
     _set_declination_rate_metadata = { "name" : "declination_rate",
@@ -32526,7 +32525,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def rotation_offset(self) -> typing.Any:
-        """The rotation offset; the angle from the inertially fixed reference direction to the body-fixed prime meridian (0 deg longitude) at the time of epoch. Uses AngleUnit Dimension."""
+        """Get or set the rotation offset; the angle from the inertially fixed reference direction to the body-fixed prime meridian (0 deg longitude) at the time of epoch. Uses AngleUnit Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_rotation_offset_metadata)
 
     _set_rotation_offset_metadata = { "name" : "rotation_offset",
@@ -32541,7 +32540,7 @@ class ICentralBodyAttitudeIAU1994(ICentralBodyAttitude):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def rotation_rate(self) -> float:
-        """The rotation rate; the rate of the central body's rotation. Uses AngleRate Dimension."""
+        """Get or set the rotation rate; the rate of the central body's rotation. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyAttitudeIAU1994._metadata, ICentralBodyAttitudeIAU1994._get_rotation_rate_metadata)
 
     _set_rotation_rate_metadata = { "name" : "rotation_rate",
@@ -32608,7 +32607,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def epoch(self) -> float:
-        """The epoch. Dimensionless."""
+        """Get or set the epoch. Dimensionless."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_epoch_metadata)
 
     _set_epoch_metadata = { "name" : "epoch",
@@ -32623,7 +32622,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def semi_major_axis(self) -> float:
-        """The semi-major axis; one-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension."""
+        """Get or set the semi-major axis; one-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_semi_major_axis_metadata)
 
     _set_semi_major_axis_metadata = { "name" : "semi_major_axis",
@@ -32638,7 +32637,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def semi_major_axis_rate(self) -> float:
-        """The semi-major axis rate of change. Uses Rate Dimension."""
+        """Get or set the semi-major axis rate of change. Uses Rate Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_semi_major_axis_rate_metadata)
 
     _set_semi_major_axis_rate_metadata = { "name" : "semi_major_axis_rate",
@@ -32653,7 +32652,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def eccentricity(self) -> float:
-        """The eccentricity; the ratio of the distance between the two foci of the ellipse and its major axis. Dimensionless."""
+        """Get or set the eccentricity; the ratio of the distance between the two foci of the ellipse and its major axis. Dimensionless."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_eccentricity_metadata)
 
     _set_eccentricity_metadata = { "name" : "eccentricity",
@@ -32668,7 +32667,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def eccentricity_rate(self) -> float:
-        """The eccentricity rate of change. Dimensionless."""
+        """Get or set the eccentricity rate of change. Dimensionless."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_eccentricity_rate_metadata)
 
     _set_eccentricity_rate_metadata = { "name" : "eccentricity_rate",
@@ -32683,7 +32682,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def inclination(self) -> typing.Any:
-        """The inclination; the angle from the Z axis of the inertial coordinate system to the orbit angular velocity vector. Uses Angle Dimension."""
+        """Get or set the inclination; the angle from the Z axis of the inertial coordinate system to the orbit angular velocity vector. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_inclination_metadata)
 
     _set_inclination_metadata = { "name" : "inclination",
@@ -32698,7 +32697,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def inclination_rate(self) -> float:
-        """The inclination rate of change. Uses AngleRate Dimension."""
+        """Get or set the inclination rate of change. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_inclination_rate_metadata)
 
     _set_inclination_rate_metadata = { "name" : "inclination_rate",
@@ -32713,7 +32712,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def raan(self) -> typing.Any:
-        """The right ascension; the angle from the X axis of the inertial coordinate system to the point where the orbit crosses the X-Y plane in the +Z direction. Uses Angle Dimension."""
+        """Get or set the right ascension; the angle from the X axis of the inertial coordinate system to the point where the orbit crosses the X-Y plane in the +Z direction. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_raan_metadata)
 
     _set_raan_metadata = { "name" : "raan",
@@ -32728,7 +32727,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def raan_rate(self) -> float:
-        """The right ascension rate of change. Uses AngleRate Dimension."""
+        """Get or set the right ascension rate of change. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_raan_rate_metadata)
 
     _set_raan_rate_metadata = { "name" : "raan_rate",
@@ -32743,7 +32742,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def arg_of_periapsis(self) -> typing.Any:
-        """The argument of periapsis; The angle measured in direction of the body's orbital motion, and in the orbit plane, from the ascending node to the periapsis of the orbit. Uses Angle Dimension."""
+        """Get or set the argument of periapsis; The angle measured in direction of the body's orbital motion, and in the orbit plane, from the ascending node to the periapsis of the orbit. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_arg_of_periapsis_metadata)
 
     _set_arg_of_periapsis_metadata = { "name" : "arg_of_periapsis",
@@ -32758,7 +32757,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def arg_of_periapsis_rate(self) -> float:
-        """The argument of periapsis rate of change. Uses AngleRate Dimension."""
+        """Get or set the argument of periapsis rate of change. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_arg_of_periapsis_rate_metadata)
 
     _set_arg_of_periapsis_rate_metadata = { "name" : "arg_of_periapsis_rate",
@@ -32773,7 +32772,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def mean_longitude(self) -> typing.Any:
-        """The mean longitude; the sum of the Right Ascension of the Ascending Node, the Argument of Periapsis and the Mean Anomaly. Uses Angle Dimension."""
+        """Get or set the mean longitude; the sum of the Right Ascension of the Ascending Node, the Argument of Periapsis and the Mean Anomaly. Uses Angle Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_mean_longitude_metadata)
 
     _set_mean_longitude_metadata = { "name" : "mean_longitude",
@@ -32788,7 +32787,7 @@ class ICentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_longitude_rate(self) -> float:
-        """The mean longitude rate of change. Uses AngleRate Dimension."""
+        """Get or set the mean longitude rate of change. Uses AngleRate Dimension."""
         return self._intf.get_property(ICentralBodyEphemerisAnalyticOrbit._metadata, ICentralBodyEphemerisAnalyticOrbit._get_mean_longitude_rate_metadata)
 
     _set_mean_longitude_rate_metadata = { "name" : "mean_longitude_rate",
@@ -32831,7 +32830,7 @@ class ICentralBodyEphemerisJPLSpice(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def jpl_spice_id(self) -> str:
-        """The SPICE file name."""
+        """Get or set the SPICE file name."""
         return self._intf.get_property(ICentralBodyEphemerisJPLSpice._metadata, ICentralBodyEphemerisJPLSpice._get_jpl_spice_id_metadata)
 
     _set_jpl_spice_id_metadata = { "name" : "jpl_spice_id",
@@ -32874,7 +32873,7 @@ class ICentralBodyEphemerisFile(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def filename(self) -> str:
-        """The ephemeris file name."""
+        """Get or set the ephemeris file name."""
         return self._intf.get_property(ICentralBodyEphemerisFile._metadata, ICentralBodyEphemerisFile._get_filename_metadata)
 
     _set_filename_metadata = { "name" : "filename",
@@ -32917,7 +32916,7 @@ class ICentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def jplde_filename(self) -> str:
-        """The DE file name."""
+        """Get or set the DE file name."""
         return self._intf.get_property(ICentralBodyEphemerisJPLDesignExplorerOptimizer._metadata, ICentralBodyEphemerisJPLDesignExplorerOptimizer._get_jplde_filename_metadata)
 
     _set_jplde_filename_metadata = { "name" : "jplde_filename",
@@ -32960,7 +32959,7 @@ class ICentralBodyEphemerisPlanetary(ICentralBodyEphemeris):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def planetary_filename(self) -> str:
-        """The planetary ephemeris file name."""
+        """Get or set the planetary ephemeris file name."""
         return self._intf.get_property(ICentralBodyEphemerisPlanetary._metadata, ICentralBodyEphemerisPlanetary._get_planetary_filename_metadata)
 
     _set_planetary_filename_metadata = { "name" : "planetary_filename",
@@ -33041,7 +33040,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def gravitational_param(self) -> float:
-        """The gravitational parameter to be used. Uses Gravity Parameter Dimension."""
+        """Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_gravitational_param_metadata)
 
     _set_gravitational_param_metadata = { "name" : "gravitational_param",
@@ -33056,7 +33055,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def parent_name(self) -> str:
-        """The parent of this central body."""
+        """Get or set the parent of this central body."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_parent_name_metadata)
 
     _set_parent_name_metadata = { "name" : "parent_name",
@@ -33071,7 +33070,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def children(self) -> "CentralBodyCollection":
-        """The children of this central body."""
+        """Get the children of this central body."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_children_metadata)
 
     _get_default_gravity_model_name_metadata = { "name" : "default_gravity_model_name",
@@ -33079,7 +33078,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def default_gravity_model_name(self) -> str:
-        """The gravity model."""
+        """Get the gravity model."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_gravity_model_name_metadata)
 
     _set_default_gravity_model_by_name_metadata = { "name" : "set_default_gravity_model_by_name",
@@ -33094,7 +33093,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def default_gravity_model_data(self) -> "CentralBodyGravityModel":
-        """The gravity model parameters."""
+        """Get the gravity model parameters."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_gravity_model_data_metadata)
 
     _add_gravity_model_metadata = { "name" : "add_gravity_model",
@@ -33116,7 +33115,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def default_shape_name(self) -> str:
-        """The shape of the central body."""
+        """Get the shape of the central body."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_shape_name_metadata)
 
     _get_default_shape_data_metadata = { "name" : "default_shape_data",
@@ -33124,7 +33123,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def default_shape_data(self) -> "ICentralBodyShape":
-        """The parameters of the central body shape."""
+        """Get the parameters of the central body shape."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_shape_data_metadata)
 
     _set_default_shape_by_name_metadata = { "name" : "set_default_shape_by_name",
@@ -33153,7 +33152,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def default_attitude_name(self) -> str:
-        """The attitude of the central body."""
+        """Get the attitude of the central body."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_attitude_name_metadata)
 
     _get_default_attitude_data_metadata = { "name" : "default_attitude_data",
@@ -33161,7 +33160,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def default_attitude_data(self) -> "ICentralBodyAttitude":
-        """The parameters of the central body attitude."""
+        """Get the parameters of the central body attitude."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_attitude_data_metadata)
 
     _set_default_attitude_by_name_metadata = { "name" : "set_default_attitude_by_name",
@@ -33190,7 +33189,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def default_ephemeris_name(self) -> str:
-        """The ephemeris of the central body."""
+        """Get the ephemeris of the central body."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_ephemeris_name_metadata)
 
     _set_default_ephemeris_by_name_metadata = { "name" : "set_default_ephemeris_by_name",
@@ -33205,7 +33204,7 @@ class IAstrogatorCentralBody(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def default_ephemeris_data(self) -> "ICentralBodyEphemeris":
-        """The  parameters of the central body ephemeris."""
+        """Get the parameters of the central body ephemeris."""
         return self._intf.get_property(IAstrogatorCentralBody._metadata, IAstrogatorCentralBody._get_default_ephemeris_data_metadata)
 
     _add_ephemeris_metadata = { "name" : "add_ephemeris",
@@ -33374,7 +33373,7 @@ class IPowerInternal(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def generated_power(self) -> float:
-        """The power generated by the spacecraft from internal sources. Uses Power Dimension."""
+        """Get or set the power generated by the spacecraft from internal sources. Uses Power Dimension."""
         return self._intf.get_property(IPowerInternal._metadata, IPowerInternal._get_generated_power_metadata)
 
     _set_generated_power_metadata = { "name" : "generated_power",
@@ -33389,7 +33388,7 @@ class IPowerInternal(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def percent_degradation_per_year(self) -> float:
-        """The percent degradation per year; degradation factor is (1-x%/yr)^(timeSinceRefEpoch). Dimensionless."""
+        """Get or set the percent degradation per year; degradation factor is (1-x%/yr)^(timeSinceRefEpoch). Dimensionless."""
         return self._intf.get_property(IPowerInternal._metadata, IPowerInternal._get_percent_degradation_per_year_metadata)
 
     _set_percent_degradation_per_year_metadata = { "name" : "percent_degradation_per_year",
@@ -33404,7 +33403,7 @@ class IPowerInternal(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def reference_epoch(self) -> typing.Any:
-        """The date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
+        """Get or set the date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
         return self._intf.get_property(IPowerInternal._metadata, IPowerInternal._get_reference_epoch_metadata)
 
     _set_reference_epoch_metadata = { "name" : "reference_epoch",
@@ -33483,7 +33482,7 @@ class IPowerProcessed(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def load(self) -> float:
-        """The power diverted from power source and unavailable to PPU. Uses Power Dimension."""
+        """Get or set the power diverted from power source and unavailable to PPU. Uses Power Dimension."""
         return self._intf.get_property(IPowerProcessed._metadata, IPowerProcessed._get_load_metadata)
 
     _set_load_metadata = { "name" : "load",
@@ -33498,7 +33497,7 @@ class IPowerProcessed(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def efficiency(self) -> float:
-        """The efficiency of the PPU unit. Dimensionless."""
+        """Get or set the efficiency of the PPU unit. Dimensionless."""
         return self._intf.get_property(IPowerProcessed._metadata, IPowerProcessed._get_efficiency_metadata)
 
     _set_efficiency_metadata = { "name" : "efficiency",
@@ -33513,7 +33512,7 @@ class IPowerProcessed(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def input_power_source_name(self) -> str:
-        """The source of power available to PPU."""
+        """Get or set the source of power available to PPU."""
         return self._intf.get_property(IPowerProcessed._metadata, IPowerProcessed._get_input_power_source_name_metadata)
 
     _set_input_power_source_name_metadata = { "name" : "input_power_source_name",
@@ -33611,7 +33610,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def area(self) -> float:
-        """The solar array panel area. Uses Area Dimension."""
+        """Get or set the solar array panel area. Uses Area Dimension."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_area_metadata)
 
     _set_area_metadata = { "name" : "area",
@@ -33626,7 +33625,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def concentration(self) -> float:
-        """The solar array concentrator factor. Dimensionless."""
+        """Get or set the solar array concentrator factor. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_concentration_metadata)
 
     _set_concentration_metadata = { "name" : "concentration",
@@ -33641,7 +33640,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def cell_efficiency_percent(self) -> float:
-        """The cell efficiency in producing output power from incident sunlight. Dimensionless."""
+        """Get or set the cell efficiency in producing output power from incident sunlight. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_cell_efficiency_percent_metadata)
 
     _set_cell_efficiency_percent_metadata = { "name" : "cell_efficiency_percent",
@@ -33656,7 +33655,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def array_efficiency_percent(self) -> float:
-        """The array efficiency in producing output power from a collection of cells. Dimensionless."""
+        """Get or set the array efficiency in producing output power from a collection of cells. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_array_efficiency_percent_metadata)
 
     _set_array_efficiency_percent_metadata = { "name" : "array_efficiency_percent",
@@ -33671,7 +33670,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def percent_degradation_per_year(self) -> float:
-        """The percent degradation per year; degradation factor is (1-x%/yr)^(timeSinceRefEpoch). Dimensionless."""
+        """Get or set the percent degradation per year; degradation factor is (1-x%/yr)^(timeSinceRefEpoch). Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_percent_degradation_per_year_metadata)
 
     _set_percent_degradation_per_year_metadata = { "name" : "percent_degradation_per_year",
@@ -33686,7 +33685,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def reference_epoch(self) -> typing.Any:
-        """The date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
+        """Get or set the date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_reference_epoch_metadata)
 
     _set_reference_epoch_metadata = { "name" : "reference_epoch",
@@ -33701,7 +33700,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def inclination_to_sun_line(self) -> typing.Any:
-        """The angle between the panel normal vector to the apparent sun line. Uses AngleUnit Dimension."""
+        """Get or set the angle between the panel normal vector to the apparent sun line. Uses AngleUnit Dimension."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_inclination_to_sun_line_metadata)
 
     _set_inclination_to_sun_line_metadata = { "name" : "inclination_to_sun_line",
@@ -33716,7 +33715,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def c0(self) -> float:
-        """The ThermalModel.C0 coefficient. Dimensionless."""
+        """Get or set the ThermalModel.C0 coefficient. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_c0_metadata)
 
     _set_c0_metadata = { "name" : "c0",
@@ -33731,7 +33730,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def c1(self) -> float:
-        """The ThermalModel.C1 coefficient. Dimensionless."""
+        """Get or set the ThermalModel.C1 coefficient. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_c1_metadata)
 
     _set_c1_metadata = { "name" : "c1",
@@ -33746,7 +33745,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def c2(self) -> float:
-        """The ThermalModel.C2 coefficient. Dimensionless."""
+        """Get or set the ThermalModel.C2 coefficient. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_c2_metadata)
 
     _set_c2_metadata = { "name" : "c2",
@@ -33761,7 +33760,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def c3(self) -> float:
-        """The ThermalModel.C3 coefficient. Dimensionless."""
+        """Get or set the ThermalModel.C3 coefficient. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_c3_metadata)
 
     _set_c3_metadata = { "name" : "c3",
@@ -33776,7 +33775,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def c4(self) -> float:
-        """The ThermalModel.C4 coefficient. Dimensionless."""
+        """Get or set the ThermalModel.C4 coefficient. Dimensionless."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_c4_metadata)
 
     _set_c4_metadata = { "name" : "c4",
@@ -33791,7 +33790,7 @@ class IPowerSolarArray(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def approximation_formula(self) -> str:
-        """The thermal factor as function of distance (in AU) to Sun."""
+        """Get the thermal factor as function of distance (in AU) to Sun."""
         return self._intf.get_property(IPowerSolarArray._metadata, IPowerSolarArray._get_approximation_formula_metadata)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -33907,7 +33906,7 @@ class ICR3BPFunc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def secondary_name(self) -> str:
-        """The secondary body following CR3BP model definitions."""
+        """Get or set the secondary body following CR3BP model definitions."""
         return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_secondary_name_metadata)
 
     _set_secondary_name_metadata = { "name" : "secondary_name",
@@ -34267,7 +34266,7 @@ class IBlendedDensity(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def density_blending_altitude_range(self) -> float:
-        """The blending range (distance dimension), begins at lower bound of upper model."""
+        """Get or set the blending range (distance dimension), begins at lower bound of upper model."""
         return self._intf.get_property(IBlendedDensity._metadata, IBlendedDensity._get_density_blending_altitude_range_metadata)
 
     _set_density_blending_altitude_range_metadata = { "name" : "density_blending_altitude_range",
@@ -34314,7 +34313,7 @@ class IBlendedDensity(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def lower_bound_upper_atm_model(self) -> float:
-        """The lowest valid altitude of the upper atmospheric density model."""
+        """Get the lowest valid altitude of the upper atmospheric density model."""
         return self._intf.get_property(IBlendedDensity._metadata, IBlendedDensity._get_lower_bound_upper_atm_model_metadata)
 
 
@@ -34350,7 +34349,7 @@ class IDragModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin name."""
+        """Get or set the plugin name."""
         return self._intf.get_property(IDragModelPlugin._metadata, IDragModelPlugin._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -34365,7 +34364,7 @@ class IDragModelPlugin(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IDragModelPlugin._metadata, IDragModelPlugin._get_plugin_config_metadata)
 
 
@@ -34458,7 +34457,7 @@ class ICira72Function(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ICira72Function._metadata, ICira72Function._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -34473,7 +34472,7 @@ class ICira72Function(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(ICira72Function._metadata, ICira72Function._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -34548,7 +34547,7 @@ class ICira72Function(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate of geomagnetic flux values from the flux file."""
+        """Get or set the update rate of geomagnetic flux values from the flux file."""
         return self._intf.get_property(ICira72Function._metadata, ICira72Function._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -34593,7 +34592,7 @@ class ICira72Function(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(ICira72Function._metadata, ICira72Function._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -34703,7 +34702,7 @@ class IExponential(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def reference_density(self) -> float:
-        """The reference density. Uses Density Dimension."""
+        """Get or set the reference density. Uses Density Dimension."""
         return self._intf.get_property(IExponential._metadata, IExponential._get_reference_density_metadata)
 
     _set_reference_density_metadata = { "name" : "reference_density",
@@ -34718,7 +34717,7 @@ class IExponential(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def reference_altitude(self) -> float:
-        """The reference altitude. Uses Distance Dimension."""
+        """Get or set the reference altitude. Uses Distance Dimension."""
         return self._intf.get_property(IExponential._metadata, IExponential._get_reference_altitude_metadata)
 
     _set_reference_altitude_metadata = { "name" : "reference_altitude",
@@ -34733,7 +34732,7 @@ class IExponential(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def scale_altitude(self) -> float:
-        """The scale altitude. Uses Distance Dimension."""
+        """Get or set the scale altitude. Uses Distance Dimension."""
         return self._intf.get_property(IExponential._metadata, IExponential._get_scale_altitude_metadata)
 
     _set_scale_altitude_metadata = { "name" : "scale_altitude",
@@ -34763,7 +34762,7 @@ class IExponential(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IExponential._metadata, IExponential._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -34893,7 +34892,7 @@ class IHarrisPriester(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IHarrisPriester._metadata, IHarrisPriester._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -34908,7 +34907,7 @@ class IHarrisPriester(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IHarrisPriester._metadata, IHarrisPriester._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -34968,7 +34967,7 @@ class IHarrisPriester(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IHarrisPriester._metadata, IHarrisPriester._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -35097,7 +35096,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin name."""
+        """Get or set the plugin name."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -35112,7 +35111,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_plugin_config_metadata)
 
     _get_use_approximate_altitude_metadata = { "name" : "use_approximate_altitude",
@@ -35151,7 +35150,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -35166,7 +35165,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -35346,7 +35345,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -35361,7 +35360,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -35376,7 +35375,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_aug_data_file(self) -> str:
-        """The atmospheric model augmented data file path."""
+        """Get or set the atmospheric model augmented data file path."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_atmos_aug_data_file_metadata)
 
     _set_atmos_aug_data_file_metadata = { "name" : "atmos_aug_data_file",
@@ -35391,7 +35390,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_aug_dtc_file(self) -> str:
-        """The atmospheric model augmented geomagnetic data file path."""
+        """Get or set the atmospheric model augmented geomagnetic data file path."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_atmos_aug_dtc_file_metadata)
 
     _set_atmos_aug_dtc_file_metadata = { "name" : "atmos_aug_dtc_file",
@@ -35421,7 +35420,7 @@ class IDensityModelPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IDensityModelPlugin._metadata, IDensityModelPlugin._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -35567,7 +35566,7 @@ class IJacchiaRoberts(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IJacchiaRoberts._metadata, IJacchiaRoberts._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -35582,7 +35581,7 @@ class IJacchiaRoberts(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IJacchiaRoberts._metadata, IJacchiaRoberts._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -35657,7 +35656,7 @@ class IJacchiaRoberts(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IJacchiaRoberts._metadata, IJacchiaRoberts._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -35672,7 +35671,7 @@ class IJacchiaRoberts(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IJacchiaRoberts._metadata, IJacchiaRoberts._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -35702,7 +35701,7 @@ class IJacchiaRoberts(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IJacchiaRoberts._metadata, IJacchiaRoberts._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -35832,7 +35831,7 @@ class IJacchiaBowman2008(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IJacchiaBowman2008._metadata, IJacchiaBowman2008._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -35847,7 +35846,7 @@ class IJacchiaBowman2008(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IJacchiaBowman2008._metadata, IJacchiaBowman2008._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -35997,7 +35996,7 @@ class IJacchiaBowman2008(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_aug_data_file(self) -> str:
-        """The atmospheric model space weather data file path."""
+        """Get or set the atmospheric model space weather data file path."""
         return self._intf.get_property(IJacchiaBowman2008._metadata, IJacchiaBowman2008._get_atmos_aug_data_file_metadata)
 
     _set_atmos_aug_data_file_metadata = { "name" : "atmos_aug_data_file",
@@ -36012,7 +36011,7 @@ class IJacchiaBowman2008(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_aug_dtc_file(self) -> str:
-        """The atmospheric model DTC file path."""
+        """Get or set the atmospheric model DTC file path."""
         return self._intf.get_property(IJacchiaBowman2008._metadata, IJacchiaBowman2008._get_atmos_aug_dtc_file_metadata)
 
     _set_atmos_aug_dtc_file_metadata = { "name" : "atmos_aug_dtc_file",
@@ -36042,7 +36041,7 @@ class IJacchiaBowman2008(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IJacchiaBowman2008._metadata, IJacchiaBowman2008._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -36166,7 +36165,7 @@ class IJacchia_1960(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IJacchia_1960._metadata, IJacchia_1960._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -36196,7 +36195,7 @@ class IJacchia_1960(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IJacchia_1960._metadata, IJacchia_1960._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -36334,7 +36333,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -36349,7 +36348,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -36424,7 +36423,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -36439,7 +36438,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -36469,7 +36468,7 @@ class IJacchia_1970(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IJacchia_1970._metadata, IJacchia_1970._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -36607,7 +36606,7 @@ class IJacchia_1971(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IJacchia_1971._metadata, IJacchia_1971._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -36622,7 +36621,7 @@ class IJacchia_1971(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IJacchia_1971._metadata, IJacchia_1971._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -36697,7 +36696,7 @@ class IJacchia_1971(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IJacchia_1971._metadata, IJacchia_1971._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -36712,7 +36711,7 @@ class IJacchia_1971(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IJacchia_1971._metadata, IJacchia_1971._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -36742,7 +36741,7 @@ class IJacchia_1971(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IJacchia_1971._metadata, IJacchia_1971._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -36880,7 +36879,7 @@ class IMSISE_1990(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMSISE_1990._metadata, IMSISE_1990._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -36895,7 +36894,7 @@ class IMSISE_1990(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMSISE_1990._metadata, IMSISE_1990._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -36970,7 +36969,7 @@ class IMSISE_1990(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IMSISE_1990._metadata, IMSISE_1990._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -36985,7 +36984,7 @@ class IMSISE_1990(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMSISE_1990._metadata, IMSISE_1990._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -37015,7 +37014,7 @@ class IMSISE_1990(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMSISE_1990._metadata, IMSISE_1990._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -37153,7 +37152,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -37168,7 +37167,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -37243,7 +37242,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -37258,7 +37257,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -37288,7 +37287,7 @@ class IMSIS_1986(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMSIS_1986._metadata, IMSIS_1986._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -37426,7 +37425,7 @@ class INRLMSISE_2000(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(INRLMSISE_2000._metadata, INRLMSISE_2000._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -37441,7 +37440,7 @@ class INRLMSISE_2000(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(INRLMSISE_2000._metadata, INRLMSISE_2000._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -37516,7 +37515,7 @@ class INRLMSISE_2000(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate for geomagnetic flux values from the flux file."""
+        """Get or set the update rate for geomagnetic flux values from the flux file."""
         return self._intf.get_property(INRLMSISE_2000._metadata, INRLMSISE_2000._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -37531,7 +37530,7 @@ class INRLMSISE_2000(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(INRLMSISE_2000._metadata, INRLMSISE_2000._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -37561,7 +37560,7 @@ class INRLMSISE_2000(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(INRLMSISE_2000._metadata, INRLMSISE_2000._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -37698,7 +37697,7 @@ class IUS_Standard_Atmosphere(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IUS_Standard_Atmosphere._metadata, IUS_Standard_Atmosphere._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -37834,7 +37833,7 @@ class IMarsGRAM37(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMarsGRAM37._metadata, IMarsGRAM37._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -37894,7 +37893,7 @@ class IMarsGRAM37(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMarsGRAM37._metadata, IMarsGRAM37._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -37924,7 +37923,7 @@ class IMarsGRAM37(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMarsGRAM37._metadata, IMarsGRAM37._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -37954,7 +37953,7 @@ class IMarsGRAM37(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMarsGRAM37._metadata, IMarsGRAM37._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -38090,7 +38089,7 @@ class IMarsGRAM2005(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMarsGRAM2005._metadata, IMarsGRAM2005._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -38150,7 +38149,7 @@ class IMarsGRAM2005(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMarsGRAM2005._metadata, IMarsGRAM2005._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -38180,7 +38179,7 @@ class IMarsGRAM2005(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMarsGRAM2005._metadata, IMarsGRAM2005._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -38210,7 +38209,7 @@ class IMarsGRAM2005(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMarsGRAM2005._metadata, IMarsGRAM2005._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -38398,7 +38397,7 @@ class IVenusGRAM2005(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IVenusGRAM2005._metadata, IVenusGRAM2005._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -38534,7 +38533,7 @@ class IMarsGRAM2010(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMarsGRAM2010._metadata, IMarsGRAM2010._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -38594,7 +38593,7 @@ class IMarsGRAM2010(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMarsGRAM2010._metadata, IMarsGRAM2010._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -38624,7 +38623,7 @@ class IMarsGRAM2010(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMarsGRAM2010._metadata, IMarsGRAM2010._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -38654,7 +38653,7 @@ class IMarsGRAM2010(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMarsGRAM2010._metadata, IMarsGRAM2010._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -38790,7 +38789,7 @@ class IMarsGRAM2001(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMarsGRAM2001._metadata, IMarsGRAM2001._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -38850,7 +38849,7 @@ class IMarsGRAM2001(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMarsGRAM2001._metadata, IMarsGRAM2001._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -38880,7 +38879,7 @@ class IMarsGRAM2001(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMarsGRAM2001._metadata, IMarsGRAM2001._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -38910,7 +38909,7 @@ class IMarsGRAM2001(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMarsGRAM2001._metadata, IMarsGRAM2001._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -39046,7 +39045,7 @@ class IMarsGRAM2000(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IMarsGRAM2000._metadata, IMarsGRAM2000._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -39106,7 +39105,7 @@ class IMarsGRAM2000(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IMarsGRAM2000._metadata, IMarsGRAM2000._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -39136,7 +39135,7 @@ class IMarsGRAM2000(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def atmos_data_filename(self) -> str:
-        """The atmospheric model data file path."""
+        """Get or set the atmospheric model data file path."""
         return self._intf.get_property(IMarsGRAM2000._metadata, IMarsGRAM2000._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "name" : "atmos_data_filename",
@@ -39166,7 +39165,7 @@ class IMarsGRAM2000(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IMarsGRAM2000._metadata, IMarsGRAM2000._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -39304,7 +39303,7 @@ class IDTM2012(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IDTM2012._metadata, IDTM2012._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -39319,7 +39318,7 @@ class IDTM2012(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IDTM2012._metadata, IDTM2012._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -39379,7 +39378,7 @@ class IDTM2012(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IDTM2012._metadata, IDTM2012._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -39447,7 +39446,7 @@ class IDTM2012(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate of geomagnetic flux values from the flux file."""
+        """Get or set the update rate of geomagnetic flux values from the flux file."""
         return self._intf.get_property(IDTM2012._metadata, IDTM2012._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -39577,7 +39576,7 @@ class IDTM2020(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(IDTM2020._metadata, IDTM2020._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -39592,7 +39591,7 @@ class IDTM2020(object):
             "marshallers" : (agmarshall.EnumArg(ATMOS_DATA_SOURCE),) }
     @property
     def atmos_data_source(self) -> "ATMOS_DATA_SOURCE":
-        """The atmospheric model data source - data file or constant values."""
+        """Get or set the atmospheric model data source - data file or constant values."""
         return self._intf.get_property(IDTM2020._metadata, IDTM2020._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "name" : "atmos_data_source",
@@ -39652,7 +39651,7 @@ class IDTM2020(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def drag_model_plugin_name(self) -> str:
-        """The name of the drag model plugin."""
+        """Get or set the name of the drag model plugin."""
         return self._intf.get_property(IDTM2020._metadata, IDTM2020._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "name" : "drag_model_plugin_name",
@@ -39720,7 +39719,7 @@ class IDTM2020(object):
             "marshallers" : (agmarshall.EnumArg(GEO_MAGNETIC_FLUX_UPDATE_RATE),) }
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GEO_MAGNETIC_FLUX_UPDATE_RATE":
-        """The update rate of geomagnetic flux values from the flux file."""
+        """Get or set the update rate of geomagnetic flux values from the flux file."""
         return self._intf.get_property(IDTM2020._metadata, IDTM2020._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "name" : "atmos_data_geo_magnetic_flux_update_rate",
@@ -39825,7 +39824,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def gravity_filename(self) -> str:
-        """The name of the file containing the gravity field."""
+        """Get or set the name of the file containing the gravity field."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_gravity_filename_metadata)
 
     _set_gravity_filename_metadata = { "name" : "gravity_filename",
@@ -39840,7 +39839,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def degree(self) -> int:
-        """The degree of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless."""
+        """Get or set the degree of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_degree_metadata)
 
     _set_degree_metadata = { "name" : "degree",
@@ -39855,7 +39854,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def order(self) -> int:
-        """The order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless."""
+        """Get or set the order of geopotential coefficients to be included for Central Body gravity computations. Valid range is from 0 to 90, depending on the gravity model. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_order_metadata)
 
     _set_order_metadata = { "name" : "order",
@@ -39901,7 +39900,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solid_tide_min_amp(self) -> float:
-        """The minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension."""
+        """Get or set the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_solid_tide_min_amp_metadata)
 
     _set_solid_tide_min_amp_metadata = { "name" : "solid_tide_min_amp",
@@ -39931,7 +39930,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def ocean_tide_min_amp(self) -> float:
-        """The minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension."""
+        """Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_ocean_tide_min_amp_metadata)
 
     _set_ocean_tide_min_amp_metadata = { "name" : "ocean_tide_min_amp",
@@ -39946,7 +39945,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_radius_percent(self) -> float:
-        """The percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension."""
+        """Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_min_radius_percent_metadata)
 
     _set_min_radius_percent_metadata = { "name" : "min_radius_percent",
@@ -39961,7 +39960,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The name of the central body."""
+        """Get the name of the central body."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_central_body_name_metadata)
 
     _get_ocean_tide_max_degree_metadata = { "name" : "ocean_tide_max_degree",
@@ -39969,7 +39968,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def ocean_tide_max_degree(self) -> int:
-        """The maximum degree for force contributions from ocean tides that will be included in the computation. Dimensionless."""
+        """Get or set the maximum degree for force contributions from ocean tides that will be included in the computation. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_ocean_tide_max_degree_metadata)
 
     _set_ocean_tide_max_degree_metadata = { "name" : "ocean_tide_max_degree",
@@ -39984,7 +39983,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def ocean_tide_max_order(self) -> int:
-        """The maximum order for force contributions from ocean tides that will be included in the computation. Dimensionless."""
+        """Get or set the maximum order for force contributions from ocean tides that will be included in the computation. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_ocean_tide_max_order_metadata)
 
     _set_ocean_tide_max_order_metadata = { "name" : "ocean_tide_max_order",
@@ -39999,7 +39998,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.EnumArg(SOLID_TIDE),) }
     @property
     def solid_tide_type(self) -> "SOLID_TIDE":
-        """The type of solid tide contribution to be modeled."""
+        """Get or set the type of solid tide contribution to be modeled."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_solid_tide_type_metadata)
 
     _set_solid_tide_type_metadata = { "name" : "solid_tide_type",
@@ -40044,7 +40043,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def partials_degree(self) -> int:
-        """The degree of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the degree used for state computations. Dimensionless."""
+        """Get or set the degree of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the degree used for state computations. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_partials_degree_metadata)
 
     _set_partials_degree_metadata = { "name" : "partials_degree",
@@ -40059,7 +40058,7 @@ class IGravityFieldFunction(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def partials_order(self) -> int:
-        """The order of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the order used for state computations. Dimensionless."""
+        """Get or set the order of geopotential coefficients to be included for Central Body gravity state transition matrix computations. Valid range is from 0 to 90, depending on the gravity model and the order used for state computations. Dimensionless."""
         return self._intf.get_property(IGravityFieldFunction._metadata, IGravityFieldFunction._get_partials_order_metadata)
 
     _set_partials_order_metadata = { "name" : "partials_order",
@@ -40119,7 +40118,7 @@ class IPointMassFunction(object):
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
     @property
     def grav_source(self) -> "GRAV_PARAM_SOURCE":
-        """The source for the third body's gravitational parameter."""
+        """Get or set the source for the third body's gravitational parameter."""
         return self._intf.get_property(IPointMassFunction._metadata, IPointMassFunction._get_grav_source_metadata)
 
     _set_grav_source_metadata = { "name" : "grav_source",
@@ -40134,7 +40133,7 @@ class IPointMassFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mu(self) -> float:
-        """The gravitational parameter. Uses Gravity Param Dimension."""
+        """Get or set the gravitational parameter. Uses Gravity Param Dimension."""
         return self._intf.get_property(IPointMassFunction._metadata, IPointMassFunction._get_mu_metadata)
 
     _set_mu_metadata = { "name" : "mu",
@@ -40180,7 +40179,7 @@ class ITwoBodyFunction(object):
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
     @property
     def grav_source(self) -> "GRAV_PARAM_SOURCE":
-        """The source for the gravitational parameter."""
+        """Get or set the source for the gravitational parameter."""
         return self._intf.get_property(ITwoBodyFunction._metadata, ITwoBodyFunction._get_grav_source_metadata)
 
     _set_grav_source_metadata = { "name" : "grav_source",
@@ -40195,7 +40194,7 @@ class ITwoBodyFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mu(self) -> float:
-        """The gravitational parameter. Uses Gravity Param Dimension."""
+        """Get or set the gravitational parameter. Uses Gravity Param Dimension."""
         return self._intf.get_property(ITwoBodyFunction._metadata, ITwoBodyFunction._get_mu_metadata)
 
     _set_mu_metadata = { "name" : "mu",
@@ -40210,7 +40209,7 @@ class ITwoBodyFunction(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_radius_percent(self) -> float:
-        """The percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension."""
+        """Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension."""
         return self._intf.get_property(ITwoBodyFunction._metadata, ITwoBodyFunction._get_min_radius_percent_metadata)
 
     _set_min_radius_percent_metadata = { "name" : "min_radius_percent",
@@ -40253,7 +40252,7 @@ class IHPOPPluginFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin name."""
+        """Get or set the plugin name."""
         return self._intf.get_property(IHPOPPluginFunction._metadata, IHPOPPluginFunction._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -40268,7 +40267,7 @@ class IHPOPPluginFunction(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IHPOPPluginFunction._metadata, IHPOPPluginFunction._get_plugin_config_metadata)
 
 
@@ -40304,7 +40303,7 @@ class IEOMFuncPluginFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin name."""
+        """Get or set the plugin name."""
         return self._intf.get_property(IEOMFuncPluginFunction._metadata, IEOMFuncPluginFunction._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -40319,7 +40318,7 @@ class IEOMFuncPluginFunction(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(IEOMFuncPluginFunction._metadata, IEOMFuncPluginFunction._get_plugin_config_metadata)
 
 
@@ -40365,7 +40364,7 @@ class ISRPAeroT20(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPAeroT20._metadata, ISRPAeroT20._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -40380,7 +40379,7 @@ class ISRPAeroT20(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPAeroT20._metadata, ISRPAeroT20._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -40395,7 +40394,7 @@ class ISRPAeroT20(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPAeroT20._metadata, ISRPAeroT20._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -40448,7 +40447,7 @@ class ISRPAeroT20(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPAeroT20._metadata, ISRPAeroT20._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -40501,7 +40500,7 @@ class ISRPAeroT30(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPAeroT30._metadata, ISRPAeroT30._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -40516,7 +40515,7 @@ class ISRPAeroT30(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPAeroT30._metadata, ISRPAeroT30._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -40531,7 +40530,7 @@ class ISRPAeroT30(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPAeroT30._metadata, ISRPAeroT30._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -40584,7 +40583,7 @@ class ISRPAeroT30(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPAeroT30._metadata, ISRPAeroT30._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -40637,7 +40636,7 @@ class ISRPGSPM04aIIA(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aIIA._metadata, ISRPGSPM04aIIA._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -40652,7 +40651,7 @@ class ISRPGSPM04aIIA(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPGSPM04aIIA._metadata, ISRPGSPM04aIIA._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -40667,7 +40666,7 @@ class ISRPGSPM04aIIA(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPGSPM04aIIA._metadata, ISRPGSPM04aIIA._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -40720,7 +40719,7 @@ class ISRPGSPM04aIIA(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aIIA._metadata, ISRPGSPM04aIIA._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -40773,7 +40772,7 @@ class ISRPGSPM04aIIR(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aIIR._metadata, ISRPGSPM04aIIR._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -40788,7 +40787,7 @@ class ISRPGSPM04aIIR(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPGSPM04aIIR._metadata, ISRPGSPM04aIIR._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -40803,7 +40802,7 @@ class ISRPGSPM04aIIR(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPGSPM04aIIR._metadata, ISRPGSPM04aIIR._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -40856,7 +40855,7 @@ class ISRPGSPM04aIIR(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aIIR._metadata, ISRPGSPM04aIIR._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -40909,7 +40908,7 @@ class ISRPGSPM04aeIIA(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aeIIA._metadata, ISRPGSPM04aeIIA._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -40924,7 +40923,7 @@ class ISRPGSPM04aeIIA(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPGSPM04aeIIA._metadata, ISRPGSPM04aeIIA._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -40939,7 +40938,7 @@ class ISRPGSPM04aeIIA(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPGSPM04aeIIA._metadata, ISRPGSPM04aeIIA._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -40992,7 +40991,7 @@ class ISRPGSPM04aeIIA(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aeIIA._metadata, ISRPGSPM04aeIIA._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41045,7 +41044,7 @@ class ISRPGSPM04aeIIR(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aeIIR._metadata, ISRPGSPM04aeIIR._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -41060,7 +41059,7 @@ class ISRPGSPM04aeIIR(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPGSPM04aeIIR._metadata, ISRPGSPM04aeIIR._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -41075,7 +41074,7 @@ class ISRPGSPM04aeIIR(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPGSPM04aeIIR._metadata, ISRPGSPM04aeIIR._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -41128,7 +41127,7 @@ class ISRPGSPM04aeIIR(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPGSPM04aeIIR._metadata, ISRPGSPM04aeIIR._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41187,7 +41186,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -41202,7 +41201,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -41217,7 +41216,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -41240,7 +41239,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_flux(self) -> float:
-        """The mean solar flux at 1 au (W/m^2)."""
+        """Get or set the mean solar flux at 1 au (W/m^2)."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_mean_flux_metadata)
 
     _set_mean_flux_metadata = { "name" : "mean_flux",
@@ -41255,7 +41254,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def luminosity(self) -> float:
-        """The luminosity of sun. Dimensionless."""
+        """GetGets or sets the luminosity of sun. Dimensionless."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_luminosity_metadata)
 
     _set_luminosity_metadata = { "name" : "luminosity",
@@ -41270,7 +41269,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.EnumArg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method."""
+        """Get or set the solar force method."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41315,7 +41314,7 @@ class ISRPSpherical(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPSpherical._metadata, ISRPSpherical._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41376,7 +41375,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -41391,7 +41390,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -41406,7 +41405,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -41429,7 +41428,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_flux(self) -> float:
-        """The mean solar flux at 1 au (W/m^2)."""
+        """GetGets or sets the mean solar flux at 1 au (W/m^2)."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_mean_flux_metadata)
 
     _set_mean_flux_metadata = { "name" : "mean_flux",
@@ -41444,7 +41443,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def luminosity(self) -> float:
-        """The luminosity of sun. Dimensionless."""
+        """Get or set the luminosity of sun. Dimensionless."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_luminosity_metadata)
 
     _set_luminosity_metadata = { "name" : "luminosity",
@@ -41459,7 +41458,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.EnumArg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method."""
+        """Get or set the solar force method."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41504,7 +41503,7 @@ class ISRPNPlate(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPNPlate._metadata, ISRPNPlate._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41582,7 +41581,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -41597,7 +41596,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -41612,7 +41611,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -41635,7 +41634,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_flux(self) -> float:
-        """The mean solar flux at 1 au (W/m^2)."""
+        """Get or set the mean solar flux at 1 au (W/m^2)."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_mean_flux_metadata)
 
     _set_mean_flux_metadata = { "name" : "mean_flux",
@@ -41650,7 +41649,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def luminosity(self) -> float:
-        """The luminosity of sun. Dimensionless."""
+        """Get or set the luminosity of sun. Dimensionless."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_luminosity_metadata)
 
     _set_luminosity_metadata = { "name" : "luminosity",
@@ -41665,7 +41664,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.EnumArg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method."""
+        """Get or set the solar force method."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41710,7 +41709,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41740,7 +41739,7 @@ class ISRPTabAreaVec(object):
             "marshallers" : (agmarshall.EnumArg(TAB_VEC_INTERP_METHOD),) }
     @property
     def interpolation_method(self) -> "TAB_VEC_INTERP_METHOD":
-        """The file interpolation method."""
+        """Get or set the file interpolation method."""
         return self._intf.get_property(ISRPTabAreaVec._metadata, ISRPTabAreaVec._get_interpolation_method_metadata)
 
     _set_interpolation_method_metadata = { "name" : "interpolation_method",
@@ -41801,7 +41800,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -41816,7 +41815,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -41831,7 +41830,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -41854,7 +41853,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mean_flux(self) -> float:
-        """The mean solar flux at 1 au (W/m^2)."""
+        """Get or set the mean solar flux at 1 au (W/m^2)."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_mean_flux_metadata)
 
     _set_mean_flux_metadata = { "name" : "mean_flux",
@@ -41869,7 +41868,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def luminosity(self) -> float:
-        """The luminosity of sun. Dimensionless."""
+        """Get or set the luminosity of sun. Dimensionless."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_luminosity_metadata)
 
     _set_luminosity_metadata = { "name" : "luminosity",
@@ -41884,7 +41883,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.EnumArg(SOLAR_FORCE_METHOD),) }
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
-        """The solar force method."""
+        """Get or set the solar force method."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "name" : "solar_force_method",
@@ -41929,7 +41928,7 @@ class ISRPVariableArea(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPVariableArea._metadata, ISRPVariableArea._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -41992,7 +41991,7 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def third_body_name(self) -> str:
-        """The selected third body model."""
+        """Get or set the selected third body model."""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_third_body_name_metadata)
 
     _set_third_body_name_metadata = { "name" : "third_body_name",
@@ -42022,14 +42021,14 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def mode(self) -> "IComponentInfo":
-        """The third body gravity mode. The IComponentInfo object returned by this property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType."""
+        """Get the third body gravity mode. The IComponentInfo object returned by this property can be cast to GravityFieldFunction or PointMassFunction depending on the selected ModeType."""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_mode_metadata)
 
     _set_mode_type_metadata = { "name" : "set_mode_type",
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(THIRD_BODY_MODE),) }
     def set_mode_type(self, mode:"THIRD_BODY_MODE") -> None:
-        """The third body gravity mode."""
+        """Set the third body gravity mode."""
         return self._intf.invoke(IThirdBodyFunction._metadata, IThirdBodyFunction._set_mode_type_metadata, mode)
 
     _get_mode_type_metadata = { "name" : "mode_type",
@@ -42037,7 +42036,7 @@ class IThirdBodyFunction(object):
             "marshallers" : (agmarshall.EnumArg(THIRD_BODY_MODE),) }
     @property
     def mode_type(self) -> "THIRD_BODY_MODE":
-        """The third body gravity mode type."""
+        """Get the third body gravity mode type."""
         return self._intf.get_property(IThirdBodyFunction._metadata, IThirdBodyFunction._get_mode_type_metadata)
 
     _get_ephemeris_source_warning_metadata = { "name" : "ephemeris_source_warning",
@@ -42094,7 +42093,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The plugin name."""
+        """Get or set the plugin name."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -42109,7 +42108,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the selected plugin."""
+        """Get the properties of the selected plugin."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_plugin_config_metadata)
 
     _get_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -42117,7 +42116,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def atmos_altitude(self) -> float:
-        """The atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
+        """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "name" : "atmos_altitude",
@@ -42132,7 +42131,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
-        """The shadow model type."""
+        """Get or set the shadow model type."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "name" : "shadow_model",
@@ -42147,7 +42146,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @property
     def sun_position(self) -> "SUN_POSITION":
-        """The sun position computation."""
+        """Get or set the sun position computation."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "name" : "sun_position",
@@ -42200,7 +42199,7 @@ class ISRPReflectionPlugin(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def solar_radius(self) -> float:
-        """The solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
+        """Get the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
         return self._intf.get_property(ISRPReflectionPlugin._metadata, ISRPReflectionPlugin._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "name" : "solar_radius",
@@ -42844,7 +42843,7 @@ class IEngineConstAcc(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
+        """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineConstAcc._metadata, IEngineConstAcc._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -42859,7 +42858,7 @@ class IEngineConstAcc(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def acceleration(self) -> float:
-        """The acceleration for this engine. Uses Acceleration Dimension."""
+        """Get or set the acceleration for this engine. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineConstAcc._metadata, IEngineConstAcc._get_acceleration_metadata)
 
     _set_acceleration_metadata = { "name" : "acceleration",
@@ -42874,7 +42873,7 @@ class IEngineConstAcc(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp(self) -> float:
-        """The specific impulse for this engine. Uses SpecificImpulse Dimension."""
+        """Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension."""
         return self._intf.get_property(IEngineConstAcc._metadata, IEngineConstAcc._get_isp_metadata)
 
     _set_isp_metadata = { "name" : "isp",
@@ -42953,7 +42952,7 @@ class IEngineConstant(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
+        """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineConstant._metadata, IEngineConstant._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -42968,7 +42967,7 @@ class IEngineConstant(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def thrust(self) -> float:
-        """The thrust for this engine. Uses Force Dimension."""
+        """Get or set the thrust for this engine. Uses Force Dimension."""
         return self._intf.get_property(IEngineConstant._metadata, IEngineConstant._get_thrust_metadata)
 
     _set_thrust_metadata = { "name" : "thrust",
@@ -42983,7 +42982,7 @@ class IEngineConstant(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp(self) -> float:
-        """The specific impulse for this engine. Uses SpecificImpulse Dimension."""
+        """Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension."""
         return self._intf.get_property(IEngineConstant._metadata, IEngineConstant._get_isp_metadata)
 
     _set_isp_metadata = { "name" : "isp",
@@ -43094,7 +43093,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp_c0(self) -> float:
-        """The constant coefficient (C0). Dimensionless."""
+        """Get or set the constant coefficient (C0). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_isp_c0_metadata)
 
     _set_isp_c0_metadata = { "name" : "isp_c0",
@@ -43109,7 +43108,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp_c1(self) -> float:
-        """The linear coefficient (C1). Dimensionless."""
+        """Get or set the linear coefficient (C1). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_isp_c1_metadata)
 
     _set_isp_c1_metadata = { "name" : "isp_c1",
@@ -43124,7 +43123,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp_c2(self) -> float:
-        """The quadratic coefficient (C2). Dimensionless."""
+        """Get or set the quadratic coefficient (C2). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_isp_c2_metadata)
 
     _set_isp_c2_metadata = { "name" : "isp_c2",
@@ -43139,7 +43138,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def isp_c3(self) -> float:
-        """The cubic coefficient (C3). Dimensionless."""
+        """Get or set the cubic coefficient (C3). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_isp_c3_metadata)
 
     _set_isp_c3_metadata = { "name" : "isp_c3",
@@ -43154,7 +43153,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.EnumArg(ENGINE_MODEL_FUNCTION),) }
     @property
     def mass_flow_rate_equation_type(self) -> "ENGINE_MODEL_FUNCTION":
-        """The independent variable for the mass flow rate equation."""
+        """Get or set the independent variable for the mass flow rate equation."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_equation_type_metadata)
 
     _set_mass_flow_rate_equation_type_metadata = { "name" : "mass_flow_rate_equation_type",
@@ -43169,7 +43168,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_rate_c0(self) -> float:
-        """The constant coefficient (C0). Dimensionless."""
+        """Get or set the constant coefficient (C0). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_c0_metadata)
 
     _set_mass_flow_rate_c0_metadata = { "name" : "mass_flow_rate_c0",
@@ -43184,7 +43183,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_rate_c1(self) -> float:
-        """The linear coefficient (C1). Dimensionless."""
+        """Get or set the linear coefficient (C1). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_c1_metadata)
 
     _set_mass_flow_rate_c1_metadata = { "name" : "mass_flow_rate_c1",
@@ -43199,7 +43198,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_rate_c2(self) -> float:
-        """The quadratic coefficient (C2). Dimensionless."""
+        """Get or set the quadratic coefficient (C2). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_c2_metadata)
 
     _set_mass_flow_rate_c2_metadata = { "name" : "mass_flow_rate_c2",
@@ -43214,7 +43213,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_rate_c3(self) -> float:
-        """The cubic coefficient (C3). Dimensionless."""
+        """Get or set the cubic coefficient (C3). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_c3_metadata)
 
     _set_mass_flow_rate_c3_metadata = { "name" : "mass_flow_rate_c3",
@@ -43229,7 +43228,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def mass_flow_rate_equation(self) -> str:
-        """The equation for mass flow rate."""
+        """Get the equation for mass flow rate."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_rate_equation_metadata)
 
     _get_mass_flow_efficiency_c0_metadata = { "name" : "mass_flow_efficiency_c0",
@@ -43237,7 +43236,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_efficiency_c0(self) -> float:
-        """The constant coefficient (C0). Dimensionless."""
+        """Get or set the constant coefficient (C0). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_c0_metadata)
 
     _set_mass_flow_efficiency_c0_metadata = { "name" : "mass_flow_efficiency_c0",
@@ -43252,7 +43251,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_efficiency_c1(self) -> float:
-        """The linear coefficient (C1). Dimensionless."""
+        """Get or set the linear coefficient (C1). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_c1_metadata)
 
     _set_mass_flow_efficiency_c1_metadata = { "name" : "mass_flow_efficiency_c1",
@@ -43267,7 +43266,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_efficiency_c2(self) -> float:
-        """The quadratic coefficient (C2). Dimensionless."""
+        """Get or set the quadratic coefficient (C2). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_c2_metadata)
 
     _set_mass_flow_efficiency_c2_metadata = { "name" : "mass_flow_efficiency_c2",
@@ -43282,7 +43281,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_flow_efficiency_c3(self) -> float:
-        """The cubic coefficient (C3). Dimensionless."""
+        """Get or set the cubic coefficient (C3). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_c3_metadata)
 
     _set_mass_flow_efficiency_c3_metadata = { "name" : "mass_flow_efficiency_c3",
@@ -43297,7 +43296,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.EnumArg(ENGINE_MODEL_FUNCTION),) }
     @property
     def mass_flow_efficiency_independent_var(self) -> "ENGINE_MODEL_FUNCTION":
-        """The independent variable for the mass flow efficiency equation."""
+        """Get or set the independent variable for the mass flow efficiency equation."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_independent_var_metadata)
 
     _set_mass_flow_efficiency_independent_var_metadata = { "name" : "mass_flow_efficiency_independent_var",
@@ -43312,7 +43311,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def mass_flow_efficiency_equation(self) -> str:
-        """The equation for mass flow efficiency."""
+        """Get the equation for mass flow efficiency."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_mass_flow_efficiency_equation_metadata)
 
     _get_power_efficiency_c0_metadata = { "name" : "power_efficiency_c0",
@@ -43320,7 +43319,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def power_efficiency_c0(self) -> float:
-        """The constant coefficient (C0). Dimensionless."""
+        """Get or set the constant coefficient (C0). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_c0_metadata)
 
     _set_power_efficiency_c0_metadata = { "name" : "power_efficiency_c0",
@@ -43335,7 +43334,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def power_efficiency_c1(self) -> float:
-        """The linear coefficient (C1). Dimensionless."""
+        """Get or set the linear coefficient (C1). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_c1_metadata)
 
     _set_power_efficiency_c1_metadata = { "name" : "power_efficiency_c1",
@@ -43350,7 +43349,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def power_efficiency_c2(self) -> float:
-        """The quadratic coefficient (C2). Dimensionless."""
+        """Get or set the quadratic coefficient (C2). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_c2_metadata)
 
     _set_power_efficiency_c2_metadata = { "name" : "power_efficiency_c2",
@@ -43365,7 +43364,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def power_efficiency_c3(self) -> float:
-        """The cubic coefficient (C3). Dimensionless."""
+        """Get or set the cubic coefficient (C3). Dimensionless."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_c3_metadata)
 
     _set_power_efficiency_c3_metadata = { "name" : "power_efficiency_c3",
@@ -43380,7 +43379,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.EnumArg(ENGINE_MODEL_FUNCTION),) }
     @property
     def power_efficiency_independent_var(self) -> "ENGINE_MODEL_FUNCTION":
-        """The independent variable for the power efficiency equation."""
+        """Get or set the independent variable for the power efficiency equation."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_independent_var_metadata)
 
     _set_power_efficiency_independent_var_metadata = { "name" : "power_efficiency_independent_var",
@@ -43395,7 +43394,7 @@ class IEngineDefinition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def power_efficiency_equation(self) -> str:
-        """The equation for power efficiency."""
+        """Get the equation for power efficiency."""
         return self._intf.get_property(IEngineDefinition._metadata, IEngineDefinition._get_power_efficiency_equation_metadata)
 
     _get_input_power_source_name_metadata = { "name" : "input_power_source_name",
@@ -43632,7 +43631,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
+        """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -43647,7 +43646,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def input_power_source_name(self) -> str:
-        """The object that computes the power input to the engine."""
+        """Get or set the object that computes the power input to the engine."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_input_power_source_name_metadata)
 
     _set_input_power_source_name_metadata = { "name" : "input_power_source_name",
@@ -43662,7 +43661,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_required_power(self) -> float:
-        """The minimum power required for engine to produce thrust. Uses Power Dimension."""
+        """Get or set the minimum power required for engine to produce thrust. Uses Power Dimension."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_min_required_power_metadata)
 
     _set_min_required_power_metadata = { "name" : "min_required_power",
@@ -43677,7 +43676,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_input_power(self) -> float:
-        """The maximum power that can be used by engine to produce thrust. Uses Power Dimension."""
+        """Get or set the maximum power that can be used by engine to produce thrust. Uses Power Dimension."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_max_input_power_metadata)
 
     _set_max_input_power_metadata = { "name" : "max_input_power",
@@ -43692,7 +43691,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def percent_degradation_per_year(self) -> float:
-        """The degradation factor is ((1-x%/yr)^(timeSinceRefEpoch))."""
+        """Get or set the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch))."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_percent_degradation_per_year_metadata)
 
     _set_percent_degradation_per_year_metadata = { "name" : "percent_degradation_per_year",
@@ -43707,7 +43706,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def reference_epoch(self) -> typing.Any:
-        """The date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
+        """Get or set the date and Time used as reference epoch for degradation. Uses DateFormat Dimension."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_reference_epoch_metadata)
 
     _set_reference_epoch_metadata = { "name" : "reference_epoch",
@@ -43722,7 +43721,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def percent_throttle(self) -> float:
-        """The percentage of available thrust to use (100 is full on, 0 is off). Dimensionless."""
+        """Get or set the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_percent_throttle_metadata)
 
     _set_percent_throttle_metadata = { "name" : "percent_throttle",
@@ -43737,7 +43736,7 @@ class IEngineIon(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def engine_definition(self) -> "EngineDefinition":
-        """The engine definition."""
+        """Get the engine definition."""
         return self._intf.get_property(IEngineIon._metadata, IEngineIon._get_engine_definition_metadata)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -43815,7 +43814,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension."""
+        """Get or set the earth surface gravity acceleration for Isp conversions. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -43830,7 +43829,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def eval_function_name(self) -> str:
-        """The EvalFunction - custom function to call at every thrust evaluation."""
+        """Get or set the EvalFunction - custom function to call at every thrust evaluation."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_eval_function_name_metadata)
 
     _set_eval_function_name_metadata = { "name" : "eval_function_name",
@@ -43845,7 +43844,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def post_function_name(self) -> str:
-        """The PostFunction - custom function to call after all propagation ends."""
+        """Get or set the PostFunction - custom function to call after all propagation ends."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_post_function_name_metadata)
 
     _set_post_function_name_metadata = { "name" : "post_function_name",
@@ -43860,7 +43859,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def pre_function_name(self) -> str:
-        """The PreFunction - custom function to call before any propagation begins."""
+        """Get or set the PreFunction - custom function to call before any propagation begins."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_pre_function_name_metadata)
 
     _set_pre_function_name_metadata = { "name" : "pre_function_name",
@@ -43875,7 +43874,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def seg_start_function_name(self) -> str:
-        """The SegStartFunction - custom function to call at the beginning of each segment."""
+        """Get or set the SegStartFunction - custom function to call at the beginning of each segment."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_seg_start_function_name_metadata)
 
     _set_seg_start_function_name_metadata = { "name" : "seg_start_function_name",
@@ -43890,7 +43889,7 @@ class IEngineCustom(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def update_function_name(self) -> str:
-        """The UpdateFunction - custom function to call at the beginning of each integration step."""
+        """Get or set the UpdateFunction - custom function to call at the beginning of each integration step."""
         return self._intf.get_property(IEngineCustom._metadata, IEngineCustom._get_update_function_name_metadata)
 
     _set_update_function_name_metadata = { "name" : "update_function_name",
@@ -43964,7 +43963,7 @@ class IEnginePlugin(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
+        """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
         return self._intf.get_property(IEnginePlugin._metadata, IEnginePlugin._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -43979,7 +43978,7 @@ class IEnginePlugin(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def plugin_identifier(self) -> str:
-        """The PluginIdentifier - the ProgID of the COM component you are using for this model."""
+        """Get or set the PluginIdentifier - the ProgID of the COM component you are using for this model."""
         return self._intf.get_property(IEnginePlugin._metadata, IEnginePlugin._get_plugin_identifier_metadata)
 
     _set_plugin_identifier_metadata = { "name" : "plugin_identifier",
@@ -43994,7 +43993,7 @@ class IEnginePlugin(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def plugin_config(self) -> "PluginProperties":
-        """The properties of the plugin."""
+        """Get the properties of the plugin."""
         return self._intf.get_property(IEnginePlugin._metadata, IEnginePlugin._get_plugin_config_metadata)
 
 
@@ -44035,7 +44034,7 @@ class IEngineModelPoly(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def g(self) -> float:
-        """The gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
+        """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
         return self._intf.get_property(IEngineModelPoly._metadata, IEngineModelPoly._get_g_metadata)
 
     _set_g_metadata = { "name" : "g",
@@ -44050,7 +44049,7 @@ class IEngineModelPoly(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def thrust_coefficients(self) -> "EngineModelThrustCoefficients":
-        """The thrust Coefficients."""
+        """Get the thrust Coefficients."""
         return self._intf.get_property(IEngineModelPoly._metadata, IEngineModelPoly._get_thrust_coefficients_metadata)
 
     _get_isp_coefficients_metadata = { "name" : "isp_coefficients",
@@ -44058,7 +44057,7 @@ class IEngineModelPoly(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def isp_coefficients(self) -> "EngineModelIspCoefficients":
-        """The Isp Coefficients."""
+        """Get the Isp Coefficients."""
         return self._intf.get_property(IEngineModelPoly._metadata, IEngineModelPoly._get_isp_coefficients_metadata)
 
     _enable_control_parameter_metadata = { "name" : "enable_control_parameter",
@@ -44136,7 +44135,7 @@ class IDesignCR3BPObjectCollection(object):
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "DesignCR3BPObject":
-        """A property that allows you to iterate through the collection."""
+        """Iterate through the collection."""
         return self._intf.invoke(IDesignCR3BPObjectCollection._metadata, IDesignCR3BPObjectCollection._item_metadata, indexOrName, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -44152,7 +44151,7 @@ class IDesignCR3BPObjectCollection(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
-        """The number of associated objects in the set."""
+        """Get the number of associated objects in the set."""
         return self._intf.get_property(IDesignCR3BPObjectCollection._metadata, IDesignCR3BPObjectCollection._get_count_metadata)
 
     _get_item_by_index_metadata = { "name" : "get_item_by_index",
@@ -44302,7 +44301,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def mass_parameter(self) -> float:
-        """The mass parameter computed from the primary and secondary bodies."""
+        """Get the mass parameter computed from the primary and secondary bodies."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_mass_parameter_metadata)
 
     _get_characteristic_distance_metadata = { "name" : "characteristic_distance",
@@ -44310,7 +44309,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def characteristic_distance(self) -> float:
-        """The characteristic distance computed from the primary and secondary bodies."""
+        """Get the characteristic distance computed from the primary and secondary bodies."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_characteristic_distance_metadata)
 
     _get_characteristic_time_metadata = { "name" : "characteristic_time",
@@ -44318,7 +44317,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def characteristic_time(self) -> float:
-        """The characteristic time computed from the primary and secondary bodies."""
+        """Get the characteristic time computed from the primary and secondary bodies."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_characteristic_time_metadata)
 
     _get_characteristic_velocity_metadata = { "name" : "characteristic_velocity",
@@ -44326,7 +44325,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def characteristic_velocity(self) -> float:
-        """The characteristic velocity computed from the primary and secondary bodies."""
+        """Get the characteristic velocity computed from the primary and secondary bodies."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_characteristic_velocity_metadata)
 
     _get_characteristic_acceleration_metadata = { "name" : "characteristic_acceleration",
@@ -44334,7 +44333,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def characteristic_acceleration(self) -> float:
-        """The characteristic acceleration computed from the primary and secondary bodies."""
+        """Get the characteristic acceleration computed from the primary and secondary bodies."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_characteristic_acceleration_metadata)
 
     _get_rotating_system_choice_metadata = { "name" : "rotating_system_choice",
@@ -44342,7 +44341,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.EnumArg(ROTATING_COORDINATE_SYSTEM),) }
     @property
     def rotating_system_choice(self) -> "ROTATING_COORDINATE_SYSTEM":
-        """The rotating coordinate system and associated calculation objects to interact with."""
+        """Get the rotating coordinate system and associated calculation objects to interact with."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_rotating_system_choice_metadata)
 
     _set_rotating_system_choice_metadata = { "name" : "rotating_system_choice",
@@ -44406,7 +44405,7 @@ class IDesignCR3BPSetup(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def associated_objects(self) -> "DesignCR3BPObjectCollection":
-        """The list of associated objects."""
+        """Get the list of associated objects."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_associated_objects_metadata)
 
 
@@ -44442,7 +44441,7 @@ class IDesignCR3BPObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def object_name(self) -> str:
-        """The associated object name."""
+        """Get the associated object name."""
         return self._intf.get_property(IDesignCR3BPObject._metadata, IDesignCR3BPObject._get_object_name_metadata)
 
     _get_object_type_metadata = { "name" : "object_type",
@@ -44450,7 +44449,7 @@ class IDesignCR3BPObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def object_type(self) -> str:
-        """The associated object type."""
+        """Get the associated object type."""
         return self._intf.get_property(IDesignCR3BPObject._metadata, IDesignCR3BPObject._get_object_type_metadata)
 
     _get_object_depends_on_metadata = { "name" : "object_depends_on",
@@ -44458,7 +44457,7 @@ class IDesignCR3BPObject(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def object_depends_on(self) -> str:
-        """The associated object depends on."""
+        """Get the associated object depends on."""
         return self._intf.get_property(IDesignCR3BPObject._metadata, IDesignCR3BPObject._get_object_depends_on_metadata)
 
 
@@ -44507,7 +44506,7 @@ class IThruster(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def name(self) -> str:
-        """The thruster name."""
+        """Get or set the thruster name."""
         return self._intf.get_property(IThruster._metadata, IThruster._get_name_metadata)
 
     _set_name_metadata = { "name" : "name",
@@ -44544,7 +44543,7 @@ class IThruster(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def engine_model_name(self) -> str:
-        """The engine model."""
+        """Get or set the engine model."""
         return self._intf.get_property(IThruster._metadata, IThruster._get_engine_model_name_metadata)
 
     _set_engine_model_name_metadata = { "name" : "engine_model_name",
@@ -44559,7 +44558,7 @@ class IThruster(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def thruster_efficiency(self) -> float:
-        """The thruster efficiency. Dimensionless."""
+        """Get or set the thruster efficiency. Dimensionless."""
         return self._intf.get_property(IThruster._metadata, IThruster._get_thruster_efficiency_metadata)
 
     _set_thruster_efficiency_metadata = { "name" : "thruster_efficiency",
@@ -44574,7 +44573,7 @@ class IThruster(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def equivalent_on_time(self) -> float:
-        """The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless."""
+        """Get or set the equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless."""
         return self._intf.get_property(IThruster._metadata, IThruster._get_equivalent_on_time_metadata)
 
     _set_equivalent_on_time_metadata = { "name" : "equivalent_on_time",
@@ -44673,7 +44672,7 @@ class IThrusterSetCollection(object):
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "Thruster":
-        """A property that allows you to iterate through the collection."""
+        """Iterate through the collection."""
         return self._intf.invoke(IThrusterSetCollection._metadata, IThrusterSetCollection._item_metadata, indexOrName, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -44689,7 +44688,7 @@ class IThrusterSetCollection(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def count(self) -> int:
-        """The number of thrusters in the set."""
+        """Get the number of thrusters in the set."""
         return self._intf.get_property(IThrusterSetCollection._metadata, IThrusterSetCollection._get_count_metadata)
 
     _add_metadata = { "name" : "add",
@@ -44784,7 +44783,7 @@ class IThrusterSet(object):
             "marshallers" : (agmarshall.EnumArg(THRUSTER_DIRECTION),) }
     @property
     def direction_definition(self) -> "THRUSTER_DIRECTION":
-        """The thruster set direction definition."""
+        """Get or set the thruster set direction definition."""
         return self._intf.get_property(IThrusterSet._metadata, IThrusterSet._get_direction_definition_metadata)
 
     _set_direction_definition_metadata = { "name" : "direction_definition",
@@ -44799,7 +44798,7 @@ class IThrusterSet(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def thrusters(self) -> "ThrusterSetCollection":
-        """The list of thrusters."""
+        """Get the list of thrusters."""
         return self._intf.get_property(IThrusterSet._metadata, IThrusterSet._get_thrusters_metadata)
 
 
@@ -44846,7 +44845,7 @@ class IAsTriggerCondition(object):
             "marshallers" : (agmarshall.EnumArg(CRITERIA),) }
     @property
     def criteria(self) -> "CRITERIA":
-        """The criteria to be applied to the desired value."""
+        """Get or set the criteria to be applied to the desired value."""
         return self._intf.get_property(IAsTriggerCondition._metadata, IAsTriggerCondition._get_criteria_metadata)
 
     _set_criteria_metadata = { "name" : "criteria",
@@ -44861,7 +44860,7 @@ class IAsTriggerCondition(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def calc_object(self) -> "IComponentInfo":
-        """The calculation object to perform calculation to evaluate condition."""
+        """Get or set the calculation object to perform calculation to evaluate condition."""
         return self._intf.get_property(IAsTriggerCondition._metadata, IAsTriggerCondition._get_calc_object_metadata)
 
     _set_calc_object_metadata = { "name" : "calc_object",
@@ -44876,7 +44875,7 @@ class IAsTriggerCondition(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def calc_object_name(self) -> str:
-        """The name of the calculation object to perform calculation to evaluate condition."""
+        """Get or set the name of the calculation object to perform calculation to evaluate condition."""
         return self._intf.get_property(IAsTriggerCondition._metadata, IAsTriggerCondition._get_calc_object_name_metadata)
 
     _set_calc_object_name_metadata = { "name" : "calc_object_name",
@@ -44891,7 +44890,7 @@ class IAsTriggerCondition(object):
             "marshallers" : (agmarshall.VariantArg,) }
     @property
     def value(self) -> typing.Any:
-        """The value to satisfy the condition. Dimension depends on CalcObject."""
+        """Get or set the value to satisfy the condition. Dimension depends on CalcObject."""
         return self._intf.get_property(IAsTriggerCondition._metadata, IAsTriggerCondition._get_value_metadata)
 
     _set_value_metadata = { "name" : "value",
@@ -44979,7 +44978,7 @@ class ICustomFunctionScriptEngine(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def script_filename(self) -> str:
-        """The file containing the function to call."""
+        """Get or set the file containing the function to call."""
         return self._intf.get_property(ICustomFunctionScriptEngine._metadata, ICustomFunctionScriptEngine._get_script_filename_metadata)
 
     _set_script_filename_metadata = { "name" : "script_filename",
@@ -44994,7 +44993,7 @@ class ICustomFunctionScriptEngine(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def file_extension_name(self) -> str:
-        """The file extension."""
+        """Get or set the file extension."""
         return self._intf.get_property(ICustomFunctionScriptEngine._metadata, ICustomFunctionScriptEngine._get_file_extension_name_metadata)
 
     _set_file_extension_name_metadata = { "name" : "file_extension_name",
@@ -45204,7 +45203,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body for Propagation."""
+        """Get or set the central body for Propagation."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -45249,7 +45248,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def regularized_time_exponent(self) -> float:
-        """The exponent to use in regularized time; related to numerical integrator. Dimensionless."""
+        """Get or set the exponent to use in regularized time; related to numerical integrator. Dimensionless."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_regularized_time_exponent_metadata)
 
     _set_regularized_time_exponent_metadata = { "name" : "regularized_time_exponent",
@@ -45264,7 +45263,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def regularized_time_steps_per_orbit(self) -> int:
-        """The steps per orbit used in regularized time; related to numerical integrator. Dimensionless."""
+        """Get or set the steps per orbit used in regularized time; related to numerical integrator. Dimensionless."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_regularized_time_steps_per_orbit_metadata)
 
     _set_regularized_time_steps_per_orbit_metadata = { "name" : "regularized_time_steps_per_orbit",
@@ -45279,7 +45278,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def propagator_functions(self) -> "PropagatorFunctionCollection":
-        """The list of propagator functions."""
+        """Get the list of propagator functions."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_propagator_functions_metadata)
 
     _get_numerical_integrator_metadata = { "name" : "numerical_integrator",
@@ -45287,7 +45286,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def numerical_integrator(self) -> "INumericalIntegrator":
-        """The numerical integrator."""
+        """Get the numerical integrator."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_numerical_integrator_metadata)
 
     _get_numerical_integrator_type_metadata = { "name" : "numerical_integrator_type",
@@ -45295,7 +45294,7 @@ class INumericalPropagatorWrapper(object):
             "marshallers" : (agmarshall.EnumArg(NUMERICAL_INTEGRATOR),) }
     @property
     def numerical_integrator_type(self) -> "NUMERICAL_INTEGRATOR":
-        """The single step integrator type."""
+        """Get the single step integrator type."""
         return self._intf.get_property(INumericalPropagatorWrapper._metadata, INumericalPropagatorWrapper._get_numerical_integrator_type_metadata)
 
     _set_numerical_integrator_metadata = { "name" : "set_numerical_integrator",
@@ -45341,7 +45340,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def central_body_name(self) -> str:
-        """The central body for Propagation."""
+        """Get or set the central body for Propagation."""
         return self._intf.get_property(INumericalPropagatorWrapperCR3BP._metadata, INumericalPropagatorWrapperCR3BP._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "name" : "central_body_name",
@@ -45356,7 +45355,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def propagator_functions(self) -> "PropagatorFunctionCollection":
-        """The list of propagator functions."""
+        """Get the list of propagator functions."""
         return self._intf.get_property(INumericalPropagatorWrapperCR3BP._metadata, INumericalPropagatorWrapperCR3BP._get_propagator_functions_metadata)
 
     _get_numerical_integrator_metadata = { "name" : "numerical_integrator",
@@ -45364,7 +45363,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def numerical_integrator(self) -> "INumericalIntegrator":
-        """The numerical integrator."""
+        """Get the numerical integrator."""
         return self._intf.get_property(INumericalPropagatorWrapperCR3BP._metadata, INumericalPropagatorWrapperCR3BP._get_numerical_integrator_metadata)
 
     _get_numerical_integrator_type_metadata = { "name" : "numerical_integrator_type",
@@ -45372,7 +45371,7 @@ class INumericalPropagatorWrapperCR3BP(object):
             "marshallers" : (agmarshall.EnumArg(NUMERICAL_INTEGRATOR),) }
     @property
     def numerical_integrator_type(self) -> "NUMERICAL_INTEGRATOR":
-        """The numerical integrator type."""
+        """Get the numerical integrator type."""
         return self._intf.get_property(INumericalPropagatorWrapperCR3BP._metadata, INumericalPropagatorWrapperCR3BP._get_numerical_integrator_type_metadata)
 
     _set_numerical_integrator_metadata = { "name" : "set_numerical_integrator",
@@ -45436,7 +45435,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -45496,7 +45495,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -45511,7 +45510,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -45526,7 +45525,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -45541,7 +45540,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_sequences(self) -> int:
-        """The maximum number of sequences. Dimensionless."""
+        """Get or set the maximum number of sequences. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_max_sequences_metadata)
 
     _set_max_sequences_metadata = { "name" : "max_sequences",
@@ -45556,7 +45555,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum number of iterations. Dimensionless."""
+        """Get or set the maximum number of iterations. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -45571,7 +45570,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def tolerance(self) -> float:
-        """The error tolerance for step size control. Dimensionless."""
+        """Get or set the error tolerance for step size control. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_tolerance_metadata)
 
     _set_tolerance_metadata = { "name" : "tolerance",
@@ -45586,7 +45585,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def first_safety_coefficient(self) -> float:
-        """The first safety coefficient. Dimensionless."""
+        """Get or set the first safety coefficient. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_first_safety_coefficient_metadata)
 
     _set_first_safety_coefficient_metadata = { "name" : "first_safety_coefficient",
@@ -45601,7 +45600,7 @@ class IBulirschStoerIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def second_safety_coefficient(self) -> float:
-        """The second safety coefficient. Dimensionless."""
+        """Get or set the second safety coefficient. Dimensionless."""
         return self._intf.get_property(IBulirschStoerIntegrator._metadata, IBulirschStoerIntegrator._get_second_safety_coefficient_metadata)
 
     _set_second_safety_coefficient_metadata = { "name" : "second_safety_coefficient",
@@ -45652,7 +45651,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -45667,7 +45666,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_corrector_rel_err(self) -> float:
-        """The maximum relative error between corrector iterations. Dimensionless."""
+        """Get or set the maximum relative error between corrector iterations. Dimensionless."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_max_corrector_rel_err_metadata)
 
     _set_max_corrector_rel_err_metadata = { "name" : "max_corrector_rel_err",
@@ -45682,7 +45681,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.EnumArg(PREDICTOR_CORRECTOR),) }
     @property
     def corrector_mode(self) -> "PREDICTOR_CORRECTOR":
-        """The Predictor Corrector scheme."""
+        """Get or set the Predictor Corrector scheme."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_corrector_mode_metadata)
 
     _set_corrector_mode_metadata = { "name" : "corrector_mode",
@@ -45697,7 +45696,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_corrector_iterations(self) -> int:
-        """The maximum corrector iterations. Dimensionless."""
+        """Get or set the maximum corrector iterations. Dimensionless."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_max_corrector_iterations_metadata)
 
     _set_max_corrector_iterations_metadata = { "name" : "max_corrector_iterations",
@@ -45712,7 +45711,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def single_step_integrator(self) -> "INumericalIntegrator":
-        """The stopping integrator; a single-step integrator."""
+        """Get the stopping integrator; a single-step integrator."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_single_step_integrator_metadata)
 
     _get_single_step_integrator_type_metadata = { "name" : "single_step_integrator_type",
@@ -45720,7 +45719,7 @@ class IGaussJacksonIntegrator(object):
             "marshallers" : (agmarshall.EnumArg(NUMERICAL_INTEGRATOR),) }
     @property
     def single_step_integrator_type(self) -> "NUMERICAL_INTEGRATOR":
-        """The stopping integrator type."""
+        """Get the stopping integrator type."""
         return self._intf.get_property(IGaussJacksonIntegrator._metadata, IGaussJacksonIntegrator._get_single_step_integrator_type_metadata)
 
     _set_single_step_integrator_metadata = { "name" : "set_single_step_integrator",
@@ -45784,7 +45783,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -45844,7 +45843,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -45859,7 +45858,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -45874,7 +45873,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -45889,7 +45888,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_abs_err(self) -> float:
-        """The maximum absolute error; Also used if relative scale is too small. Dimensionless."""
+        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_max_abs_err_metadata)
 
     _set_max_abs_err_metadata = { "name" : "max_abs_err",
@@ -45904,7 +45903,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def high_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
+        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_high_safety_coefficient_metadata)
 
     _set_high_safety_coefficient_metadata = { "name" : "high_safety_coefficient",
@@ -45919,7 +45918,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def low_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
+        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_low_safety_coefficient_metadata)
 
     _set_low_safety_coefficient_metadata = { "name" : "low_safety_coefficient",
@@ -45934,7 +45933,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.EnumArg(ERROR_CONTROL),) }
     @property
     def error_control(self) -> "ERROR_CONTROL":
-        """The error control method."""
+        """Get or set the error control method."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_error_control_metadata)
 
     _set_error_control_metadata = { "name" : "error_control",
@@ -45949,7 +45948,7 @@ class IRungeKutta2nd3rd(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum iterations. Dimensionless."""
+        """Get or set the maximum iterations. Dimensionless."""
         return self._intf.get_property(IRungeKutta2nd3rd._metadata, IRungeKutta2nd3rd._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -45991,7 +45990,7 @@ class IRungeKutta4th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKutta4th._metadata, IRungeKutta4th._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -46055,7 +46054,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -46115,7 +46114,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -46130,7 +46129,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -46145,7 +46144,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -46160,7 +46159,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_abs_err(self) -> float:
-        """The maximum absolute error; Also used if relative scale is too small. Dimensionless."""
+        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_max_abs_err_metadata)
 
     _set_max_abs_err_metadata = { "name" : "max_abs_err",
@@ -46175,7 +46174,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def high_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
+        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_high_safety_coefficient_metadata)
 
     _set_high_safety_coefficient_metadata = { "name" : "high_safety_coefficient",
@@ -46190,7 +46189,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def low_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
+        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_low_safety_coefficient_metadata)
 
     _set_low_safety_coefficient_metadata = { "name" : "low_safety_coefficient",
@@ -46205,7 +46204,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.EnumArg(ERROR_CONTROL),) }
     @property
     def error_control(self) -> "ERROR_CONTROL":
-        """The error control method."""
+        """Get or set the error control method."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_error_control_metadata)
 
     _set_error_control_metadata = { "name" : "error_control",
@@ -46220,7 +46219,7 @@ class IRungeKutta4th5th(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum iterations. Dimensionless."""
+        """Get or set the maximum iterations. Dimensionless."""
         return self._intf.get_property(IRungeKutta4th5th._metadata, IRungeKutta4th5th._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -46284,7 +46283,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -46344,7 +46343,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -46359,7 +46358,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -46374,7 +46373,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -46389,7 +46388,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_abs_err(self) -> float:
-        """The maximum absolute error; Also used if relative scale is too small. Dimensionless."""
+        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_max_abs_err_metadata)
 
     _set_max_abs_err_metadata = { "name" : "max_abs_err",
@@ -46404,7 +46403,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def high_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
+        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_high_safety_coefficient_metadata)
 
     _set_high_safety_coefficient_metadata = { "name" : "high_safety_coefficient",
@@ -46419,7 +46418,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def low_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
+        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_low_safety_coefficient_metadata)
 
     _set_low_safety_coefficient_metadata = { "name" : "low_safety_coefficient",
@@ -46434,7 +46433,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.EnumArg(ERROR_CONTROL),) }
     @property
     def error_control(self) -> "ERROR_CONTROL":
-        """The error control method."""
+        """Get or set the error control method."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_error_control_metadata)
 
     _set_error_control_metadata = { "name" : "error_control",
@@ -46449,7 +46448,7 @@ class IRungeKutta4thAdapt(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum iterations. Dimensionless."""
+        """Get or set the maximum iterations. Dimensionless."""
         return self._intf.get_property(IRungeKutta4thAdapt._metadata, IRungeKutta4thAdapt._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -46513,7 +46512,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -46573,7 +46572,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -46588,7 +46587,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -46603,7 +46602,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -46618,7 +46617,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_abs_err(self) -> float:
-        """The maximum absolute error; Also used if relative scale is too small. Dimensionless."""
+        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_max_abs_err_metadata)
 
     _set_max_abs_err_metadata = { "name" : "max_abs_err",
@@ -46633,7 +46632,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def high_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
+        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_high_safety_coefficient_metadata)
 
     _set_high_safety_coefficient_metadata = { "name" : "high_safety_coefficient",
@@ -46648,7 +46647,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def low_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
+        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_low_safety_coefficient_metadata)
 
     _set_low_safety_coefficient_metadata = { "name" : "low_safety_coefficient",
@@ -46663,7 +46662,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.EnumArg(ERROR_CONTROL),) }
     @property
     def error_control(self) -> "ERROR_CONTROL":
-        """The error control method."""
+        """Get or set the error control method."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_error_control_metadata)
 
     _set_error_control_metadata = { "name" : "error_control",
@@ -46678,7 +46677,7 @@ class IRungeKuttaF7th8th(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum iterations. Dimensionless."""
+        """Get or set the maximum iterations. Dimensionless."""
         return self._intf.get_property(IRungeKuttaF7th8th._metadata, IRungeKuttaF7th8th._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -46744,7 +46743,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def initial_step(self) -> float:
-        """The initial step. Uses time dimension."""
+        """Get or set the initial step. Uses time dimension."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_initial_step_metadata)
 
     _set_initial_step_metadata = { "name" : "initial_step",
@@ -46804,7 +46803,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_step(self) -> float:
-        """The maximum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the maximum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_max_step_metadata)
 
     _set_max_step_metadata = { "name" : "max_step",
@@ -46819,7 +46818,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min_step(self) -> float:
-        """The minimum step size to allow (absolute value). Uses Time Dimension."""
+        """Get or set the minimum step size to allow (absolute value). Uses Time Dimension."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_min_step_metadata)
 
     _set_min_step_metadata = { "name" : "min_step",
@@ -46834,7 +46833,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_rel_err(self) -> float:
-        """The maximum relative error used to control step size. Dimensionless."""
+        """Get or set the maximum relative error used to control step size. Dimensionless."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_max_rel_err_metadata)
 
     _set_max_rel_err_metadata = { "name" : "max_rel_err",
@@ -46849,7 +46848,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max_abs_err(self) -> float:
-        """The maximum absolute error; Also used if relative scale is too small. Dimensionless."""
+        """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_max_abs_err_metadata)
 
     _set_max_abs_err_metadata = { "name" : "max_abs_err",
@@ -46864,7 +46863,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def high_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
+        """Get or set the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_high_safety_coefficient_metadata)
 
     _set_high_safety_coefficient_metadata = { "name" : "high_safety_coefficient",
@@ -46879,7 +46878,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def low_safety_coefficient(self) -> float:
-        """The 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
+        """Get or set the 'safety' coefficient used to increase step size if the error is too low. Dimensionless."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_low_safety_coefficient_metadata)
 
     _set_low_safety_coefficient_metadata = { "name" : "low_safety_coefficient",
@@ -46894,7 +46893,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.EnumArg(ERROR_CONTROL),) }
     @property
     def error_control(self) -> "ERROR_CONTROL":
-        """The error control method."""
+        """Get or set the error control method."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_error_control_metadata)
 
     _set_error_control_metadata = { "name" : "error_control",
@@ -46909,7 +46908,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.LongArg,) }
     @property
     def max_iterations(self) -> int:
-        """The maximum iterations. Dimensionless."""
+        """Get or set the maximum iterations. Dimensionless."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_max_iterations_metadata)
 
     _set_max_iterations_metadata = { "name" : "max_iterations",
@@ -46924,7 +46923,7 @@ class IRungeKuttaV8th9th(object):
             "marshallers" : (agmarshall.EnumArg(COEFF_RUNGE_KUTTA_V_8TH_9TH),) }
     @property
     def coeff_type(self) -> "COEFF_RUNGE_KUTTA_V_8TH_9TH":
-        """The set of coefficients to use."""
+        """Get or set the set of coefficients to use."""
         return self._intf.get_property(IRungeKuttaV8th9th._metadata, IRungeKuttaV8th9th._get_coeff_type_metadata)
 
     _set_coeff_type_metadata = { "name" : "coeff_type",

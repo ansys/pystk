@@ -75,7 +75,6 @@ ignore = [
     "D210", # No whitespaces allowed surrounding docstring text
     "D212", # Multi-line docstring summary should start at the first line
     "D300", # Use triple double quotes `"""`
-    "D401", # First line of docstring should be in imperative mood
     "D403", # First word of the first line should be properly capitalized
     "D404", # First word of the docstring should not be "This"
     "D417", # Missing argument description in the docstring

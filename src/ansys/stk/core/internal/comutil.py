@@ -423,7 +423,7 @@ class _CreateAgObjectLifetimeManager(object):
                 
     def create_ownership(self, pUnk:"IUnknown"):
         """
-        Adds pUnk to the reference manager and calls AddRef in STK.
+        Add pUnk to the reference manager and call AddRef in STK.
 
         Use if pUnk has a ref-count of 0.
         """
@@ -434,7 +434,7 @@ class _CreateAgObjectLifetimeManager(object):
                 
     def take_ownership(self, pUnk:"IUnknown", isApplication=False):
         """
-        Adds pUnk to the reference manager; does not call AddRef in STK.
+        Add pUnk to the reference manager; does not call AddRef in STK.
 
         Use if pUnk has a ref-count of 1.
         """
@@ -509,7 +509,7 @@ class _CreateCoInitializeManager(object):
 CoInitializeManager = _CreateCoInitializeManager()
 
 def _initialize_embedded():
-    """Called by STK during plugin initialization."""
+    """Initialize OLE libraries for STK plugin initialization."""
     OLE32Lib._initialize()
     OLEAut32Lib._initialize()
 
