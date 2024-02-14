@@ -767,7 +767,7 @@ class ISTKXApplication(object):
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def get_licensing_report(self) -> str:
-        """This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
+        """Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_licensing_report_metadata, OutArg())
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
@@ -775,7 +775,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -1269,7 +1269,7 @@ class IDrawElemCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def add(self, elemType:str) -> "IDrawElem":
-        """Factory to create and add a new element to the end of the sequence."""
+        """Create and add a new element to the end of the sequence."""
         return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._add_metadata, elemType, OutArg())
 
     _remove_metadata = { "name" : "remove",
@@ -1803,7 +1803,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2041,7 +2041,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2049,7 +2049,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_picture_from_file_metadata, pictureFile)
 
 
@@ -2240,7 +2240,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2433,7 +2433,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2441,7 +2441,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_picture_from_file_metadata, pictureFile)
 
     _get_pan_mode_enabled_metadata = { "name" : "pan_mode_enabled",
@@ -2656,7 +2656,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2702,7 +2702,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2710,7 +2710,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_picture_from_file_metadata, pictureFile)
 
     _get_win_id_metadata = { "name" : "win_id",

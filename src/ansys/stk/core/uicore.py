@@ -328,7 +328,7 @@ class IUiWindow(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def caption(self) -> str:
-        """The window caption. Can only be set within UI plugins for the non unique windows they own."""
+        """Get or set the window caption. Can only be set within UI plugins for the non unique windows they own."""
         return self._intf.get_property(IUiWindow._metadata, IUiWindow._get_caption_metadata)
 
     _set_caption_metadata = { "name" : "caption",
@@ -336,7 +336,7 @@ class IUiWindow(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @caption.setter
     def caption(self, caption:str) -> None:
-        """The window caption. Can only be set within UI plugins for the non unique windows they own."""
+        """Get or set  the window caption. Can only be set within UI plugins for the non unique windows they own."""
         return self._intf.set_property(IUiWindow._metadata, IUiWindow._set_caption_metadata, caption)
 
     _activate_metadata = { "name" : "activate",
