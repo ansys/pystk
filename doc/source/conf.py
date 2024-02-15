@@ -346,7 +346,7 @@ def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: E
 
 def setup(app: sphinx.application.Sphinx):
     """
-    Setup different hook functions during the documentation build.
+    Run different hook functions during the documentation build.
 
     Parameters
     ----------
