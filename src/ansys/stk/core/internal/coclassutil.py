@@ -217,7 +217,7 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
     return coclass
     
 def compare_com_objects(first, second) -> bool:
-    """Used to compare whether the given interfaces point to the same COM object."""
+    """Compare whether the given interfaces point to the same COM object."""
     if first is None and second is None:
         return True
     elif first is None or second is None:
