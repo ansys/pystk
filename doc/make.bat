@@ -8,7 +8,11 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
+if "%SPHINXOPTS%" == "" (
+	set SPHINXOPTS=-j auto -W --color -n
+)
 set SOURCEDIR=source
+set APIDIR=api
 set BUILDDIR=_build
 
 if "%1" == "" goto help
@@ -33,7 +37,7 @@ goto end
 
 :clean
 rmdir /s /q %BUILDDIR% > /NUL 2>&1
-for /d /r %SOURCEDIR% %%d in (_autosummary) do @if exist "%%d" rmdir /s /q "%%d"
+for /d /r %SOURCEDIR% %%d in (%APIDIR%) do @if exist "%%d" rmdir /s /q "%%d"
 goto end
 
 :help

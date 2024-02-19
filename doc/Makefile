@@ -2,9 +2,10 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -j auto
+SPHINXOPTS    = -j auto -n
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
+APIDIR        = api
 BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
@@ -22,7 +23,7 @@ help:
 clean:
 	rm -rf $(BUILDDIR)
 	rm -rf $(SOURCEDIR)/examples
-	find . -type d -name "_autosummary" -exec rm -rf {} +
+	find $(SOURCEDIR) -type d -name $(APIDIR) -exec rm -rf {} +
 
 # Customized pdf fov svg format images
 pdf:
