@@ -9,6 +9,7 @@
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 
 import asyncio
+from ctypes import POINTER
 import numpy as np
 import os
 import time
@@ -22,7 +23,7 @@ from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
-    GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
+    GUID, PVOID, REFIID, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkengine import STKEngineApplication
 from ...utilities.exceptions import STKAttributeError
 
