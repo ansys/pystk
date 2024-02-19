@@ -1,4 +1,3 @@
-{% if own_page_types and obj["type"] in own_page_types %}
 {%- if obj.display %}
 .. py:property:: {{ obj.short_name }}
    {% if obj.annotation %}
