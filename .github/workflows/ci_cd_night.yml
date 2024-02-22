@@ -38,17 +38,51 @@ jobs:
 
   doc-build:
     name: "Doc build"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, pystk]
     timeout-minutes: 30
-    if: inputs.run-doc || github.event_name == 'schedule'
     steps:
-      - name: "Building project documentation"
-        uses: ansys/actions/doc-build@v5
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-    env:
-      BUILD_API: true
-      BUILD_EXAMPLES: true
+
+      - name: "Checkout the project"
+        uses: actions/checkout@v4
+
+      - name: "Generate the name of the Docker image and the container"
+        run: |
+          python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
+          container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
+          echo "STK_PYTHON_IMAGE=$python_image_name" >> $GITHUB_ENV
+          echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
+
+      - name: "Start the container from the desired image"
+        run: |
+          docker run \
+            --detach -it \
+            --network="host" \
+            --name ${{ env.STK_CONTAINER }} \
+            --env ANSYSLMD_LICENSE_FILE=${{ env.LICENSE_SERVER_PORT }}@${{ secrets.LICENSE_SERVER }} \
+            --volume ${PWD}:/home/stk/pystk \
+            ${{ env.STK_PYTHON_IMAGE }}
+
+      - name: "Install Pandoc inside the container"
+        run: |
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "yum install -y epel-release && yum install -y pandoc --enablerepo=epel"
+
+      - name: "Install Tox"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "python -m pip install tox && rm -rf .tox"
+
+      - name: "Build the full documentation"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
 
   tests:
     name: "Tests Python ${{ matrix.python }}"
