@@ -84,6 +84,19 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
 
+      - name: "Upload combined artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          path: doc/_build/html
+          name: documentation-html
+
+      - name: "Stop the container"
+        if: always()
+        run: |
+          docker stop ${{ env.STK_CONTAINER }}
+          docker logs ${{ env.STK_CONTAINER }}
+          docker rm ${{ env.STK_CONTAINER }}
+
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
