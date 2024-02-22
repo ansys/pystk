@@ -37,7 +37,7 @@ tests = [
 doc = [
     "ansys-sphinx-theme==0.14.0",
     "enum-tools[sphinx]==0.11.0",
-    "jupytext==1.15.2",
+    "jupytext==1.16.1",
     "jupyter-server==2.12.5",
     "myst-parser==2.0.0",
     "nbsphinx==0.9.3",
