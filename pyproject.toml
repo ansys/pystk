@@ -37,12 +37,24 @@ tests = [
 doc = [
     "ansys-sphinx-theme==0.14.0",
     "enum-tools[sphinx]==0.11.0",
+    "jupytext==1.15.2",
+    "jupyter-server==2.12.5",
+    "myst-parser==2.0.0",
+    "nbsphinx==0.9.3",
     "numpydoc==1.5.0",
+    "nbconvert==7.13.0",
     "sphinx==7.2.6",
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "jupyterlab==4.1.2",
+]
+visualization = [
+    "numpy==1.26.2",
+    "jupyter-rfb==0.4.2",
+    "Pillow==10.2.0",
+    "simplejpeg==1.7.2",
+    "sidecar==0.7.0"
 ]
 
 [tool.flit.module]
@@ -85,6 +97,7 @@ ignore = [
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
+    "examples/**/*.py"
 ]
 
 # [tool.ruff.format]

@@ -3,6 +3,9 @@ from datetime import datetime
 import os
 import pathlib
 
+import sphinx
+from sphinx.util import logging
+
 from ansys_sphinx_theme import (
     ansys_favicon,
     get_version_match,
@@ -46,6 +49,7 @@ html_theme_options = {
 }
 html_static_path = ["_static"]
 html_css_files = [
+    "css/highlight.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 ]
 
@@ -59,6 +63,8 @@ extensions = [
     "sphinx_design",
     "sphinx_jinja",
     "numpydoc",
+    "nbsphinx",
+    "myst_parser",
 ]
 
 # Intersphinx mapping
@@ -96,10 +102,15 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_patterns = ["api/generated", "links.rst"]
+exclude_examples = ["examples/stk_engine/solar_panel_tool.py", "examples/stk_engine/stk_tutorial.py", "examples/stk_engine/stk_vgt_tutorial.py"]
+exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
-# The suffix(es) of source filenames.
-source_suffix = ".rst"
+# The suffix(es) of source filenames
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".mystnb": "jupyter_notebook",
+    ".md": "markdown",
+}
 
 # The master toctree document.
 master_doc = "index"
@@ -138,8 +149,51 @@ BUILD_EXAMPLES = (
     True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 )
 if not BUILD_EXAMPLES:
-    exclude_patterns.append("examples.rst")
+    exclude_patterns.append("examples/**")
+else:
+    extensions.extend(["myst_parser", "nbsphinx"])
+    nbsphinx_execute = "always"
+    nbsphinx_custom_formats = {
+        ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
+        ".py": ["jupytext.reads", {"fmt": ""}],
+    }
+    nbsphinx_thumbnails = {
+        "examples/stk_engine/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+    }
+    nbsphinx_prompt_width = ""
+    nbsphinx_prolog = """
 
+.. grid:: 2 
+    :gutter: 1
+
+    .. grid-item::
+        :child-align: center
+    
+        .. button-link:: {cname_pref}/{python_file_loc}
+           :color: primary
+           :shadow:
+        
+            Download as Python script :fab:`python`
+
+    .. grid-item::
+        :child-align: center
+
+        .. button-link:: {cname_pref}/{ipynb_file_loc}
+           :color: primary
+           :shadow:
+        
+            Download as Jupyter notebook :fas:`book`
+
+----
+    
+    """.format(
+        cname_pref=f"https://{cname}/version/{get_version_match(version)}",
+        python_file_loc="{{ env.docname }}.py",
+        ipynb_file_loc="{{ env.docname }}.ipynb",
+    )
+
+
+# -- Jinja context configuration ---------------------------------------------
 jinja_contexts = {
     "docker_images": {
         "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
@@ -173,3 +227,139 @@ linkcheck_ignore = [
     "https://www.ansys.com/*"
 ]
 
+
+# -- Sphinx configuration ----------------------------------------------------
+
+def copy_directory_recursive(source_path: pathlib.Path, destination_path: pathlib.Path):
+    """
+    Copy a directory from a source to a destination path.
+
+    Parameters
+    ----------
+    source_path : pathlib.Path
+        Source directory to be copied.
+    destination_path : pathlib.Path
+        Destination directory.
+
+    """
+    logger = logging.getLogger(__name__)
+
+    if source_path.is_dir():
+        destination_path.mkdir(parents=True, exist_ok=True)
+
+        for file in source_path.iterdir():
+            if file.is_dir():
+                logger.info(f"Copying directory {file.name}/...")
+                copy_directory_recursive(file, destination_path / file.name)
+            else:
+                logger.info(f"Copying file {file.name}...")
+                destination_file = destination_path / file.name
+                destination_file.write_text(file.read_text())
+
+
+def remove_directory_recursive(directory_path: pathlib.Path):
+    """
+    Revemo a directory given its path.
+
+    Parameters
+    ----------
+    directory_path : pathlib.Path
+       Path instance representing the path to the directory. 
+
+    """
+    logger = logging.getLogger(__name__)
+
+    if not directory_path.exists():
+        return
+
+    for file in directory_path.iterdir():
+        if file.is_file():
+            logger.info(f"Removing directory {file.name}/...")
+            file.unlink()
+        elif file.is_dir():
+            remove_directory_recursive(file)
+
+    logger.info(f"Removing directory {directory_path.name}/...")
+    directory_path.rmdir()
+
+
+def copy_directory(origin: pathlib.Path, destination: pathlib.Path):
+    """
+    Copy a directory from an origin to a desired destination.
+
+    Parameters
+    ----------
+    origin : pathlib.Path
+        Desired location of the directory to be copied.
+    destination : pathlib.Path
+        Destination directory path.
+
+    """
+    logger = logging.getLogger(__name__)
+    logger.info(f"\nCopying {origin}/ to {destination}/...")
+    copy_directory_recursive(origin, destination)
+
+def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the examples directory to the source directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
+    copy_directory(EXAMPLES_DIRECTORY, SOURCE_EXAMPLES)
+
+def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
+    """
+    Copy the examples directory to the output directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
+    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
+    copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY)
+
+def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
+    """
+    Remove the example files from the documentation source directory.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
+
+    """
+    EXAMPLES_DIRECTORY = pathlib.Path(app.srcdir) / "examples"
+    logger = logging.getLogger(__name__)
+    logger.info(f"\nRemoving {EXAMPLES_DIRECTORY} directory...")
+    remove_directory_recursive(EXAMPLES_DIRECTORY)
+
+def setup(app: sphinx.application.Sphinx):
+    """
+    Run different hook functions during the documentation build.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    # HACK: rST files are copied to the doc/source directory before the build.
+    # Sphinx needs all source files to be in the source directory to build.
+    # However, the examples are desired to be kept in the root directory. Once the
+    # build has completed, no matter its success, the examples are removed from
+    # the source directory.
+    if BUILD_EXAMPLES:
+        app.connect("builder-inited", copy_examples_to_source_dir)
+        app.connect("build-finished", remove_examples_from_source_dir)
+        app.connect("build-finished", copy_examples_to_output_dir)

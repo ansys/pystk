@@ -23,7 +23,7 @@ from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
     GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
-from ...stkengine import STKEngineApplication
+from ...stkobjects import StkObjectRoot
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
@@ -167,7 +167,7 @@ class RemoteFrameBufferHost(object):
 
         self.__dict__['_cfunc_Refresh'] = CFUNCTYPE(None, PVOID)(self._refresh)
 
-        self.__dict__['_vtable'] = AgRemoteFrameBufferHostVTable(
+        self.__dict__['_vtable'] = RemoteFrameBufferHostVTable(
             *[cast(self._cfunc_IUnknown1, c_void_p),
               cast(self._cfunc_IUnknown2, c_void_p),
               cast(self._cfunc_IUnknown3, c_void_p),
@@ -186,10 +186,10 @@ class RemoteFrameBufferHost(object):
                         riid: REFIID,
                         ppvObject: POINTER(PVOID)) -> int:
         iid = riid.contents
-        if iid == AgRemoteFrameBufferHost._IID_IUnknown:
+        if iid == RemoteFrameBufferHost._IID_IUnknown:
             ppvObject[0] = addressof(self._pUnk)
             return S_OK
-        elif iid == AgRemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
+        elif iid == RemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
             ppvObject[0] = addressof(self._pUnk)
             return S_OK
         else:
@@ -214,9 +214,10 @@ class WidgetBase(RemoteFrameBuffer):
     _mouse3 = 0x0400
 
     def __init__(self,
-                 stk: STKEngineApplication,
+                 root: StkObjectRoot,
                  w: int = 800,
                  h: int = 600,
+                 title: str = None,
                  resizable: bool = True):
 
         super().__init__()
@@ -238,7 +239,7 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfb = IRemoteFrameBuffer(self)
         self._rfb.set_to_off_screen_rendering(w, h)
 
-        self._rfbHostImpl = AgRemoteFrameBufferHost(self)
+        self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
         self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._pUnk)
@@ -265,14 +266,16 @@ class WidgetBase(RemoteFrameBuffer):
         if asyncioTimerManager is None:
             asyncioTimerManager = AsyncioTimerManager()
 
-        self.stk = stk
+        self.root = root
+        self.title = title or self.root.current_scenario.instance_name
+        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
         del self._rfb
         del self._rfbHostImpl
         del self._rfbHost
         del self._unk
-        self.stk = None
+        self.root = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -351,10 +354,26 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
+    def set_title(self, title):
+        self.title = title
+
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
 
+    def animate(self):
+        self.root.execute_command("Animate * Start Loop")
+        self.show()
+
+    def show(self, in_sidecar=False, **snapshot_kwargs):
+        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "false") == "true"
+        canvas = self.snapshot(**snapshot_kwargs) if needs_snapshot else self
+        if in_sidecar:
+            from sidecar import Sidecar
+            with Sidecar(title=self.title):
+                display(canvas)
+        else:
+            return canvas
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
@@ -367,7 +386,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
     #   stk = STKEngine.StartApplication(noGraphics=False)
     #   root = stk.NewObjectRoot()
-    #   g = GlobeWidget(stk, 600, 400)
+    #   g = GlobeWidget(root, 600, 400)
     #   root.NewScenario("RemoteFrameBuffer")
     #   root.ExecuteCommand('Animate * Start Loop')
     #   g
@@ -375,8 +394,8 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
@@ -390,8 +409,8 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
@@ -405,8 +424,8 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
-        WidgetBase.__init__(self, stk, w, h)
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         WidgetBase.__setattr__(self, attrname, value)
