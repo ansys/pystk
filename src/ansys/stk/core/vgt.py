@@ -2,6 +2,14 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""
+The Vector Geometry (VGT) API enables users define new or utilize existing geometric constructs such as coordinate systems, vectors, points, angles, axes and planes.
+
+The geometric elements can be used to transform between coordinate
+systems, compute first and second derivatives, or perform other types of
+analysis.
+"""
+
 __all__ = ["AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyRefTo", 
 "AnalysisWorkbenchCollection", "AnalysisWorkbenchConverge", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchGeneric", "AnalysisWorkbenchInstance", 
 "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterp", "AnalysisWorkbenchLLAPosition", "AnalysisWorkbenchMethodCallAngleFindAngleResult", 
@@ -6425,14 +6433,14 @@ class ICalculationToolScalarPlugin(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_property(self, name:str, value:str) -> None:
-        """The method is used to set the plugin properties. The method throws an exception if the specified property does not exist, an invalid value was specified or the specified property is read-only."""
+        """Set the plugin properties. This method throws an exception if the specified property does not exist, an invalid value was specified or the specified property is read-only."""
         return self._intf.invoke(ICalculationToolScalarPlugin._metadata, ICalculationToolScalarPlugin._set_property_metadata, name, value)
 
     _get_property_metadata = { "name" : "get_property",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def get_property(self, name:str) -> str:
-        """The method reads a value of the specified plugin property. The method throws an exception if the property does not exist."""
+        """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(ICalculationToolScalarPlugin._metadata, ICalculationToolScalarPlugin._get_property_metadata, name, OutArg())
 
 
@@ -13342,7 +13350,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def set_grid_values_fixed_number_of_steps(self, min:float, max:float, numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
-        """This method is deprecated. Use SetGridValuesFixedNumberOfStepsEx."""
+        """Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx."""
         return self._intf.invoke(ISpatialAnalysisToolGridCoordinateDefinition._metadata, ISpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_metadata, min, max, numSteps, OutArg())
 
     _set_grid_values_custom_metadata = { "name" : "set_grid_values_custom",
@@ -13441,7 +13449,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def min(self) -> float:
-        """This property is deprecated. Use MinEx."""
+        """Do not use this property, as it is deprecated. Use MinEx."""
         return self._intf.get_property(ISpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, ISpatialAnalysisToolGridValuesFixedNumberOfSteps._get_min_metadata)
 
     _set_min_metadata = { "name" : "min",
@@ -13456,7 +13464,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def max(self) -> float:
-        """This property is deprecated. Use MaxEx."""
+        """Do not use this property, as it is deprecated. Use MaxEx."""
         return self._intf.get_property(ISpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, ISpatialAnalysisToolGridValuesFixedNumberOfSteps._get_max_metadata)
 
     _set_max_metadata = { "name" : "max",
@@ -17402,14 +17410,14 @@ class IVectorGeometryToolAxesPlugin(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_property(self, name:str, value:str) -> None:
-        """The method is used to set the plugin properties. The method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
+        """Set the plugin properties. This method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
         return self._intf.invoke(IVectorGeometryToolAxesPlugin._metadata, IVectorGeometryToolAxesPlugin._set_property_metadata, name, value)
 
     _get_property_metadata = { "name" : "get_property",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def get_property(self, name:str) -> str:
-        """The method reads a value of the specified plugin property. The method throws an exception if the property does not exist."""
+        """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(IVectorGeometryToolAxesPlugin._metadata, IVectorGeometryToolAxesPlugin._get_property_metadata, name, OutArg())
 
 
@@ -19143,14 +19151,14 @@ class IVectorGeometryToolPointPlugin(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_property(self, name:str, value:str) -> None:
-        """The method is used to set the plugin properties. The method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
+        """Set the plugin properties. This method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
         return self._intf.invoke(IVectorGeometryToolPointPlugin._metadata, IVectorGeometryToolPointPlugin._set_property_metadata, name, value)
 
     _get_property_metadata = { "name" : "get_property",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def get_property(self, name:str) -> str:
-        """The method reads a value of the specified plugin property. The method throws an exception if the property does not exist."""
+        """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(IVectorGeometryToolPointPlugin._metadata, IVectorGeometryToolPointPlugin._get_property_metadata, name, OutArg())
 
 
@@ -21654,14 +21662,14 @@ class IVectorGeometryToolVectorPlugin(object):
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_property(self, name:str, value:str) -> None:
-        """The method is used to set the plugin properties. The method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
+        """Set the plugin properties. This method throws an exception if the specified property does not exist, invalid value was specified or the specified property is read-only."""
         return self._intf.invoke(IVectorGeometryToolVectorPlugin._metadata, IVectorGeometryToolVectorPlugin._set_property_metadata, name, value)
 
     _get_property_metadata = { "name" : "get_property",
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def get_property(self, name:str) -> str:
-        """The method reads a value of the specified plugin property. The method throws an exception if the property does not exist."""
+        """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(IVectorGeometryToolVectorPlugin._metadata, IVectorGeometryToolVectorPlugin._get_property_metadata, name, OutArg())
 
 

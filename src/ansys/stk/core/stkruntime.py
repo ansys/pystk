@@ -2,6 +2,8 @@
 #          Copyright 2023-2023, Analytical Graphics, Inc.
 ################################################################################
 
+"""Starts STK Runtime or attaches to an already running STK Runtime, and provides access to the Object Model root."""
+
 __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
@@ -130,7 +132,7 @@ class STKRuntime(object):
         """
         client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
         if client is not None:
-            app_intf = client.GetStkApplicationInterface()
+            app_intf = client.get_stk_application_interface()
             app = STKRuntimeApplication()
             app._private_init(app_intf)
             atexit.register(app._disconnect)

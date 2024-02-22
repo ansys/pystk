@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################
 
+"""Starts STK Desktop or attaches to an already running STK Desktop, and provides access to the Object Model root."""
+
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
@@ -226,7 +228,7 @@ class STKDesktop(object):
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
             client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
-                pAppImpl = client.GetStkApplicationInterface()
+                pAppImpl = client.get_stk_application_interface()
                 app = STKDesktopApplication()
                 app._private_init(pAppImpl)
                 atexit.register(app._disconnect_grpc)
@@ -264,7 +266,7 @@ class STKDesktop(object):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows.")
         EventSubscriptionManager.unsubscribe_all()
-        ObjectLifetimeManager.ReleaseAll()
+        ObjectLifetimeManager.release_all()
         
     @staticmethod
     def create_thread_marshaller(stk_object:typing.Any) -> ThreadMarshaller:

@@ -8,8 +8,8 @@ PySTK is just a Python API to STK, meaning that STK is still required to perform
 all the necessary computations.
 
 Make sure that you followed the ``building_stk_images`` guide to properly
-containerize STK. PySTK can also attach to an STK instance in your machine,
-being able to launch the product.
+containerize STK. PySTK can also attach to an STK instance on your machine,
+with the ability to launch the product.
 
 
 User installation
@@ -50,7 +50,7 @@ These include ``pip`` and ``GitHub``.
 Developer installation
 ======================
 
-The developer installation is specifically intended for project maintainers.
+Developer installation is specifically intended for project maintainers.
 This specialized installation is tailored to equip developers with the essential
 tools and resources required for effective contribution to the project's
 development and maintenance. The developer installation assumes a certain level
@@ -118,8 +118,8 @@ Activate previous environment:
             source <venv>/bin/activate
 
 Install the project in editable mode. This means that any changes you make to
-the package's source code immediately reflect in your project without requiring
-to reinstalling it.
+the package's source code immediately reflect in your project without requiring you
+to reinstall it.
 
 .. code-block::
 

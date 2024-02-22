@@ -109,7 +109,7 @@ End of the tab
                
                docker compose build
 
-        #. Build a single images by running:
+        #. Build a single image by running:
 
            .. code-block::
                
@@ -182,7 +182,7 @@ The docker run command is utilized to create and run a container from a Docker
 image. Various options are available to customize the container creation
 process.
 
-- ``--detach`` Runs the container in detached mode, allowing it to run in the background.
+- ``--detach`` Runs the container in detached mode, enabling it to run in the background.
 - ``--interactive`` Enables interactive mode, providing a TTY session for connecting to the container.
 - ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the container's output.
 - ``--network="host"`` Shares the host's network stack with the container, enabling network connectivity.
@@ -236,7 +236,7 @@ Command breakdown
 The ``docker exec`` command is used to execute commands within a Docker
 container. It provides several options to enhance the execution experience.
 
-- ``--interactive`` Allows interactive mode, enabling interaction with the command executed within the container.
+- ``--interactive`` Enables interactive mode, enabling interaction with the command executed within the container.
 - ``--tty`` Allocates a pseudo-TTY, ensuring proper formatting and display of the executed command's output.
 - ``<container-name>`` Specifies the name or ID of the target container in which the command should be executed.
 - ``<command>`` Represents the shell command that you want to execute within the container.

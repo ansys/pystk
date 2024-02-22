@@ -2,6 +2,8 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
+
 __all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication", "IUiApplicationPartnerAccess", "IUiFileOpenExt", 
 "IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
 "UiFileOpenExtCollection"]
@@ -469,7 +471,6 @@ class IUiApplication(object):
     def create_object(self, progID:str, remoteServer:str) -> typing.Any:
         """Only works from local HTML pages and scripts."""
         return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_object_metadata, progID, remoteServer, OutArg())
-
 
     _file_save_as_dialog_metadata = { "name" : "file_save_as_dialog",
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),

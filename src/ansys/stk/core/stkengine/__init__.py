@@ -2,6 +2,8 @@
 #          Copyright 2020-2020, Ansys Government Initiatives
 ################################################################################
 
+"""Starts STK Engine and provides access to the Object Model root."""
+
 __all__ = ["STKEngine", "STKEngineApplication", "STK_ENGINE_TIMER_TYPE"]
 
 import os
@@ -40,7 +42,7 @@ class STKEngineApplication(STKXApplication):
 
     Use STKEngine.StartApplication() to obtain an initialized STKEngineApplication object.
     """
-
+    
     def __init__(self):
         STKXApplication.__init__(self)
         self.__dict__["_initialized"] = False
@@ -143,9 +145,9 @@ class STKEngineApplication(STKXApplication):
         if self._initialized:
             EventSubscriptionManager.unsubscribe_all()
             self._timer_impl.Terminate()
-            ObjectLifetimeManager.ReleaseAll(releaseApplication=False)
+            ObjectLifetimeManager.release_all(releaseApplication=False)
             self.terminate()
-            ObjectLifetimeManager.ReleaseAll(releaseApplication=True)
+            ObjectLifetimeManager.release_all(releaseApplication=True)
             CoInitializeManager.uninitialize()
             self.__dict__["_initialized"] = False
 
