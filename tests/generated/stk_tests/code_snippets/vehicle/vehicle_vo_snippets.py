@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.stkobjects import *
 
@@ -71,7 +72,7 @@ class VehicleVOSnippets(CodeSnippetsTestBase):
     def ConfigureVeVODropline(self, dropLine: "VehicleGraphics3DDropLinePathItem"):
         dropLine.is_visible = True
         dropLine.use_2d_color = False
-        dropLine.color = Color.Red
+        dropLine.color = Colors.Red
         dropLine.line_style = LINE_STYLE.DASHED
         dropLine.line_width = LINE_WIDTH.WIDTH4
         dropLine.interval = 100.0  # in sec

@@ -15,6 +15,7 @@ from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
 from parameterized import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -2311,7 +2312,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(False, bPlaneTemplateDisplayElement.is_visible)
             # Color (readonly)
             with pytest.raises(Exception):
-                bPlaneTemplateDisplayElement.color = Color.FromArgb(1193046)
+                bPlaneTemplateDisplayElement.color = Colors.from_argb(1193046)
             # ScaleFactor (readonly)
             with pytest.raises(Exception):
                 bPlaneTemplateDisplayElement.scale_factor = 12.3456
@@ -2326,9 +2327,9 @@ class EarlyBoundTests(TestBase):
             TestBase.logger.WriteLine5("\t\t\tThe current Name is: {0}", bPlaneTemplateDisplayElement.name)
             # Color
             TestBase.logger.WriteLine6("\t\t\tThe current Color is: {0}", bPlaneTemplateDisplayElement.color)
-            bPlaneTemplateDisplayElement.color = Color.FromArgb(9991764)
+            bPlaneTemplateDisplayElement.color = Colors.from_argb(9991764)
             TestBase.logger.WriteLine6("\t\t\tThe new Color is: {0}", bPlaneTemplateDisplayElement.color)
-            AssertEx.AreEqual(Color.FromArgb(9991764), bPlaneTemplateDisplayElement.color)
+            AssertEx.AreEqual(Colors.from_argb(9991764), bPlaneTemplateDisplayElement.color)
             # ScaleFactor
             TestBase.logger.WriteLine6(
                 "\t\t\tThe current ScaleFactor is: {0}", bPlaneTemplateDisplayElement.scale_factor
@@ -2486,7 +2487,7 @@ class EarlyBoundTests(TestBase):
             oInstance.event_name = "EventName"
         # PointColor
         with pytest.raises(Exception):
-            oInstance.additional_points.point_color = Color.FromArgb(2241348)
+            oInstance.additional_points.point_color = Colors.from_argb(2241348)
         # IsLabelVisible
         with pytest.raises(Exception):
             oInstance.is_label_visible = True
@@ -2495,13 +2496,13 @@ class EarlyBoundTests(TestBase):
             oInstance.point_size = 3
         # FirstPointColor
         with pytest.raises(Exception):
-            oInstance.additional_points.first_point_color = Color.FromArgb(3359829)
+            oInstance.additional_points.first_point_color = Colors.from_argb(3359829)
         # IsConnectPointsVisible
         with pytest.raises(Exception):
             oInstance.is_connect_points_visible = True
         # ConnectPointsColor
         with pytest.raises(Exception):
-            oInstance.connect_points_color = Color.FromArgb(4478310)
+            oInstance.connect_points_color = Colors.from_argb(4478310)
         # ConnectPointLineWidth
         with pytest.raises(Exception):
             oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
@@ -2540,9 +2541,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("The new Event Name", oInstance.event_name)
         # PointColor
         TestBase.logger.WriteLine6("\t\tThe current PointColor is: {0}", oInstance.additional_points.point_color)
-        oInstance.additional_points.point_color = Color.FromArgb(1122867)
+        oInstance.additional_points.point_color = Colors.from_argb(1122867)
         TestBase.logger.WriteLine6("\t\tThe new PointColor is: {0}", oInstance.additional_points.point_color)
-        AssertEx.AreEqual(Color.FromArgb(1122867), oInstance.additional_points.point_color)
+        AssertEx.AreEqual(Colors.from_argb(1122867), oInstance.additional_points.point_color)
         # IsLabelVisible
         TestBase.logger.WriteLine4("\t\tThe current IsLabelVisible is: {0}", oInstance.is_label_visible)
         oInstance.is_label_visible = False
@@ -2562,9 +2563,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6(
             "\t\tThe current FirstPointColor is: {0}", oInstance.additional_points.first_point_color
         )
-        oInstance.additional_points.first_point_color = Color.FromArgb(2241348)
+        oInstance.additional_points.first_point_color = Colors.from_argb(2241348)
         TestBase.logger.WriteLine6("\t\tThe new FirstPointColor is: {0}", oInstance.additional_points.first_point_color)
-        AssertEx.AreEqual(Color.FromArgb(2241348), oInstance.additional_points.first_point_color)
+        AssertEx.AreEqual(Colors.from_argb(2241348), oInstance.additional_points.first_point_color)
         # IsConnectPointsVisible (false)
         TestBase.logger.WriteLine4(
             "\t\tThe current IsConnectPointsVisible is: {0}", oInstance.is_connect_points_visible
@@ -2574,7 +2575,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, oInstance.is_connect_points_visible)
         # ConnectPointsColor
         with pytest.raises(Exception):
-            oInstance.connect_points_color = Color.FromArgb(4478310)
+            oInstance.connect_points_color = Colors.from_argb(4478310)
         # ConnectPointLineWidth
         with pytest.raises(Exception):
             oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
@@ -2584,9 +2585,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, oInstance.is_connect_points_visible)
         # ConnectPointsColor
         TestBase.logger.WriteLine6("\t\tThe current ConnectPointsColor is: {0}", oInstance.connect_points_color)
-        oInstance.connect_points_color = Color.FromArgb(4478310)
+        oInstance.connect_points_color = Colors.from_argb(4478310)
         TestBase.logger.WriteLine6("\t\tThe new ConnectPointsColor is: {0}", oInstance.connect_points_color)
-        AssertEx.AreEqual(Color.FromArgb(4478310), oInstance.connect_points_color)
+        AssertEx.AreEqual(Colors.from_argb(4478310), oInstance.connect_points_color)
         # ConnectPointLineWidth
         TestBase.logger.WriteLine6("\t\tThe current ConnectPointLineWidth is: {0}", oInstance.connect_point_line_width)
         oInstance.connect_point_line_width = LINE_WIDTH.WIDTH1
@@ -2703,7 +2704,7 @@ class EarlyBoundTests(TestBase):
                 oPoint.is_visible = True
             # Color
             with pytest.raises(Exception):
-                oPoint.color = Color.FromArgb(11189196)
+                oPoint.color = Colors.from_argb(11189196)
             # SetPositionType
             with pytest.raises(Exception):
                 oPoint.set_position_type(oPoint.position_type)
@@ -2732,7 +2733,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(False, oPoint.is_visible)
             # Color
             with pytest.raises(Exception):
-                oPoint.color = Color.FromArgb(11189196)
+                oPoint.color = Colors.from_argb(11189196)
             # SetPositionType
             with pytest.raises(Exception):
                 oPoint.set_position_type(oPoint.position_type)
@@ -2759,9 +2760,9 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(True, oPoint.is_visible)
             # Color
             TestBase.logger.WriteLine6("\t\tThe current Color is: {0}", oPoint.color)
-            oPoint.color = Color.FromArgb(65280)
+            oPoint.color = Colors.from_argb(65280)
             TestBase.logger.WriteLine6("\t\tThe new Color is: {0}", oPoint.color)
-            AssertEx.AreEqual(Color.FromArgb(65280), oPoint.color)
+            AssertEx.AreEqual(Colors.from_argb(65280), oPoint.color)
             # PositionType
             TestBase.logger.WriteLine6("\t\tThe current PositionType is: {0}", oPoint.position_type)
             # PositionSupportedTypes
@@ -2921,10 +2922,10 @@ class EarlyBoundTests(TestBase):
         if bReadOnly:
             # PointColor
             with pytest.raises(Exception):
-                oCollection.point_color = Color.FromArgb(65535)
+                oCollection.point_color = Colors.from_argb(65535)
             # FirstPointColor
             with pytest.raises(Exception):
-                oCollection.first_point_color = Color.FromArgb(16776960)
+                oCollection.first_point_color = Colors.from_argb(16776960)
             # RemoveAll
             with pytest.raises(Exception):
                 oCollection.remove_all()

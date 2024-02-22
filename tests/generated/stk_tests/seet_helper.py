@@ -3,6 +3,7 @@ from test_util import *
 from assert_extension import *
 from assertion_harness import *
 from logger import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -549,8 +550,8 @@ class SEETHelper(object):
         magFieldLine.is_3d_visible = True
         Assert.assertTrue(magFieldLine.is_3d_visible)
 
-        magFieldLine.color = Color.FromArgb(100)
-        AssertEx.AreEqual(Color.FromArgb(100), magFieldLine.color)
+        magFieldLine.color = Colors.from_argb(100)
+        AssertEx.AreEqual(Colors.from_argb(100), magFieldLine.color)
 
         magFieldLine.line_style = LINE_STYLE.DASHED
         Assert.assertEqual(LINE_STYLE.DASHED, magFieldLine.line_style)

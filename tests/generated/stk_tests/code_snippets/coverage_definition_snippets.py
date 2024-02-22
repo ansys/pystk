@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -201,16 +202,16 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         # Configure animation
         cvAnimation: "CoverageGraphics2DAnimation" = cvGraphics.animation
         cvAnimation.is_satisfaction_visible = True
-        cvAnimation.color = Color.Green
+        cvAnimation.color = Colors.Green
 
         # Configure progress
         cvProgress: "CoverageGraphics2DProgress" = cvGraphics.progress
         cvProgress.is_visible = True
-        cvProgress.color = Color.Red
+        cvProgress.color = Colors.Red
 
         # Configure static
         cvStatic: "CoverageGraphics2DStatic" = cvGraphics.static
-        cvStatic.color = Color.Blue
+        cvStatic.color = Colors.Blue
         cvStatic.marker_style = "Star"
 
     # endregion

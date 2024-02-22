@@ -4,6 +4,7 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -898,7 +899,7 @@ class FOMHelper(object):
                 oAttributes.marker_style = "X"
             # Color
             with pytest.raises(Exception):
-                oAttributes.color = Color.FromArgb(1122867)
+                oAttributes.color = Colors.from_argb(1122867)
 
         else:
             # IsVisible (false)
@@ -914,7 +915,7 @@ class FOMHelper(object):
                 oAttributes.marker_style = "X"
             # Color (readonly)
             with pytest.raises(Exception):
-                oAttributes.color = Color.FromArgb(1122867)
+                oAttributes.color = Colors.from_argb(1122867)
             # IsVisible (true)
             oAttributes.is_visible = True
             self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
@@ -941,9 +942,9 @@ class FOMHelper(object):
             Assert.assertEqual("Square", oAttributes.marker_style)
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: 0x{0:X}", oAttributes.color)
-            oAttributes.color = Color.FromArgb(1122867)
+            oAttributes.color = Colors.from_argb(1122867)
             self.m_logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAttributes.color)
-            AssertEx.AreEqual(Color.FromArgb(1122867), oAttributes.color)
+            AssertEx.AreEqual(Colors.from_argb(1122867), oAttributes.color)
 
         self.m_logger.WriteLine("----- GRAPHICS ATTRIBUTES TEST ----- END -----")
 
@@ -970,7 +971,7 @@ class FOMHelper(object):
                 oAttributes, FigureOfMeritGraphics2DAttributesAnimation
             )
             # Verify that the color is accessible through the managed class
-            cr = klass.color
+            cr: Color = klass.color
             AssertEx.AreEqual(cr, klass.color)
             AssertEx.AreEqual(cr, dispatch.color)
             # base class properties test
@@ -1144,22 +1145,22 @@ class FOMHelper(object):
         if bReadOnly:
             # StartColor
             with pytest.raises(Exception):
-                oColor.start_color = Color.FromArgb(10061943)
+                oColor.start_color = Colors.from_argb(10061943)
             # EndColor
             with pytest.raises(Exception):
-                oColor.end_color = Color.FromArgb(13426158)
+                oColor.end_color = Colors.from_argb(13426158)
 
         else:
             # StartColor
             self.m_logger.WriteLine6("\tThe current StartColor is: 0x{0:X}", oColor.start_color)
-            oColor.start_color = Color.FromArgb(10061943)
+            oColor.start_color = Colors.from_argb(10061943)
             self.m_logger.WriteLine6("\tThe new StartColor is: 0x{0:X}", oColor.start_color)
-            AssertEx.AreEqual(Color.FromArgb(10061943), oColor.start_color)
+            AssertEx.AreEqual(Colors.from_argb(10061943), oColor.start_color)
             # EndColor
             self.m_logger.WriteLine6("\tThe current EndColor is: 0x{0:X}", oColor.end_color)
-            oColor.end_color = Color.FromArgb(13426158)
+            oColor.end_color = Colors.from_argb(13426158)
             self.m_logger.WriteLine6("\tThe new EndColor is: 0x{0:X}", oColor.end_color)
-            AssertEx.AreEqual(Color.FromArgb(13426158), oColor.end_color)
+            AssertEx.AreEqual(Colors.from_argb(13426158), oColor.end_color)
 
         self.m_logger.WriteLine("----- GRAPHICS RAMP COLOR TEST ----- END -----")
 
@@ -1228,13 +1229,13 @@ class FOMHelper(object):
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: 0x{0:X}", gfxLevelAttributesElement.color)
             if eMethod == FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT:
-                gfxLevelAttributesElement.color = Color.FromArgb(13426158)
+                gfxLevelAttributesElement.color = Colors.from_argb(13426158)
                 self.m_logger.WriteLine6("\tThe new Color is: 0x{0:X}", gfxLevelAttributesElement.color)
-                AssertEx.AreEqual(Color.FromArgb(13426158), gfxLevelAttributesElement.color)
+                AssertEx.AreEqual(Colors.from_argb(13426158), gfxLevelAttributesElement.color)
 
             else:
                 with pytest.raises(Exception):
-                    gfxLevelAttributesElement.color = Color.FromArgb(13426158)
+                    gfxLevelAttributesElement.color = Colors.from_argb(13426158)
 
             self.m_logger.WriteLine3("\tThe new LevelAttributes collection contains: {0} elements.", oCollection.count)
 
@@ -1324,14 +1325,14 @@ class FOMHelper(object):
         else:
             # BackgroundColor
             self.m_logger.WriteLine6("\tThe current Background is: {0}", oOptions.background_color)
-            oOptions.background_color = Color.Blue
+            oOptions.background_color = Colors.Blue
             self.m_logger.WriteLine6("\tThe new Background is: {0}", oOptions.background_color)
-            Assert.assertEqual(Color.Blue, oOptions.background_color)
+            Assert.assertEqual(Colors.Blue, oOptions.background_color)
             # TextColor
             self.m_logger.WriteLine6("\tThe current Text is: {0}", oOptions.text_color)
-            oOptions.text_color = Color.Green
+            oOptions.text_color = Colors.Green
             self.m_logger.WriteLine6("\tThe new Text is: {0}", oOptions.text_color)
-            Assert.assertEqual(Color.Green, oOptions.text_color)
+            Assert.assertEqual(Colors.Green, oOptions.text_color)
 
     @staticmethod
     def GetColor(color: int):

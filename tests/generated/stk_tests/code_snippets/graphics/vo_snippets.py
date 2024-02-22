@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.stkobjects import *
 
@@ -50,7 +51,7 @@ class VOSnippets(CodeSnippetsTestBase):
         # Put modifications here
         voElt.is_visible = True
         voElt.use_background = True
-        voElt.bg_color = Color.Green
+        voElt.bg_color = Colors.Green
         voElt.use_background = False
 
         root.end_update()  # Resume updates now

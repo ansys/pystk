@@ -8,6 +8,7 @@ from logger import *
 from math2 import *
 from seet_helper import *
 from stk_util_helper import *
+from ansys.stk.core.utilities.colors import *
 from parameterized import *
 
 from ansys.stk.core.stkobjects import *
@@ -1729,16 +1730,16 @@ class EarlyBoundTests(TestBase):
         # Testing text outline
         gfx.text_outline_style = TEXT_OUTLINE_STYLE.NONE
         with pytest.raises(Exception):
-            gfx.text_outline_color = Color.FromArgb(233)
+            gfx.text_outline_color = Colors.from_argb(233)
 
         gfx.text_outline_style = TEXT_OUTLINE_STYLE.THIN
         Assert.assertEqual(TEXT_OUTLINE_STYLE.THIN, gfx.text_outline_style)
-        gfx.text_outline_color = Color.FromArgb(255)
-        AssertEx.AreEqual(Color.FromArgb(255), gfx.text_outline_color)
+        gfx.text_outline_color = Colors.from_argb(255)
+        AssertEx.AreEqual(Colors.from_argb(255), gfx.text_outline_color)
         gfx.text_outline_style = TEXT_OUTLINE_STYLE.THICK
         Assert.assertEqual(TEXT_OUTLINE_STYLE.THICK, gfx.text_outline_style)
-        gfx.text_outline_color = Color.FromArgb(2555)
-        AssertEx.AreEqual(Color.FromArgb(2555), gfx.text_outline_color)
+        gfx.text_outline_color = Colors.from_argb(2555)
+        AssertEx.AreEqual(Colors.from_argb(2555), gfx.text_outline_color)
         with pytest.raises(Exception):
             gfx.text_outline_style = TEXT_OUTLINE_STYLE.UNKNOWN
 
@@ -2011,10 +2012,10 @@ class EarlyBoundTests(TestBase):
             magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.FIELD_MAGNITUDE
 
         with pytest.raises(Exception):
-            magFieldGfx.color_ramp_start_color = Color.Yellow
+            magFieldGfx.color_ramp_start_color = Colors.Yellow
 
         with pytest.raises(Exception):
-            magFieldGfx.color_ramp_stop_color = Color.Red
+            magFieldGfx.color_ramp_stop_color = Colors.Red
 
         with pytest.raises(Exception):
             magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LINEAR
@@ -2076,11 +2077,11 @@ class EarlyBoundTests(TestBase):
         magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.LATITUDE_LINE
         Assert.assertEqual(SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.LATITUDE_LINE, magFieldGfx.color_mode)
 
-        magFieldGfx.color_ramp_start_color = Color.Yellow
-        Assert.assertEqual(Color.Yellow, magFieldGfx.color_ramp_start_color)
+        magFieldGfx.color_ramp_start_color = Colors.Yellow
+        Assert.assertEqual(Colors.Yellow, magFieldGfx.color_ramp_start_color)
 
-        magFieldGfx.color_ramp_stop_color = Color.Red
-        Assert.assertEqual(Color.Red, magFieldGfx.color_ramp_stop_color)
+        magFieldGfx.color_ramp_stop_color = Colors.Red
+        Assert.assertEqual(Colors.Red, magFieldGfx.color_ramp_stop_color)
 
         with pytest.raises(Exception):
             magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.UNKNOWN

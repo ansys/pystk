@@ -11,6 +11,7 @@ from math2 import *
 from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_vo import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -1970,9 +1971,9 @@ class SensorHelper(object):
 
         # Color
         self.m_logger.WriteLine6("\tThe current Color is: {0}", oGraphics.color)
-        oGraphics.color = Color.FromArgb(16384250)
+        oGraphics.color = Colors.from_argb(16384250)
         self.m_logger.WriteLine6("\tThe new Color is: {0}", oGraphics.color)
-        AssertEx.AreEqual(Color.FromArgb(16384250), oGraphics.color)
+        AssertEx.AreEqual(Colors.from_argb(16384250), oGraphics.color)
         # LineStyle
         self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", oGraphics.line_style)
         oGraphics.line_style = LINE_STYLE.DASHED  # Dashed
@@ -2027,7 +2028,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine4("\tThe new EnableBoresightGfx flag is: {0}", oGraphics.enable_boresight_graphics_2d)
         Assert.assertEqual(False, oGraphics.enable_boresight_graphics_2d)
         with pytest.raises(Exception):
-            oGraphics.boresight_color = Color.FromArgb(11468975)
+            oGraphics.boresight_color = Colors.from_argb(11468975)
         with pytest.raises(Exception):
             oGraphics.boresight_marker_style = "Plus"
         # EnableBoresightGfx (true)
@@ -2036,9 +2037,9 @@ class SensorHelper(object):
         Assert.assertEqual(True, oGraphics.enable_boresight_graphics_2d)
         # BoresightColor
         self.m_logger.WriteLine6("\tThe current BoresightColor is: {0}", oGraphics.boresight_color)
-        oGraphics.boresight_color = Color.FromArgb(11468975)
+        oGraphics.boresight_color = Colors.from_argb(11468975)
         self.m_logger.WriteLine6("\tThe new BoresightColor is: {0}", oGraphics.boresight_color)
-        AssertEx.AreEqual(Color.FromArgb(11468975), oGraphics.boresight_color)
+        AssertEx.AreEqual(Colors.from_argb(11468975), oGraphics.boresight_color)
         # BoresightMarkerStyle
         self.m_logger.WriteLine5("\tThe current BoresightMarkerStyle is: {0}", oGraphics.boresight_marker_style)
         oGraphics.boresight_marker_style = "Plus"
@@ -3131,7 +3132,7 @@ class SensorHelper(object):
 
         # Color (readonly)
         with pytest.raises(Exception):
-            oSwath.color = Color.FromArgb(16711680)
+            oSwath.color = Colors.from_argb(16711680)
         # LineStyle (readonly)
         with pytest.raises(Exception):
             oSwath.line_style = LINE_STYLE.DASH_DOT
@@ -3146,9 +3147,9 @@ class SensorHelper(object):
 
         # Color
         self.m_logger.WriteLine6("\t\tThe current Color is: {0}", oSwath.color)
-        oSwath.color = Color.FromArgb(16711680)
+        oSwath.color = Colors.from_argb(16711680)
         self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oSwath.color)
-        AssertEx.AreEqual(Color.FromArgb(16711680), oSwath.color)
+        AssertEx.AreEqual(Colors.from_argb(16711680), oSwath.color)
         # LineStyle
         self.m_logger.WriteLine6("\t\tThe current LineStyle is: {0}", oSwath.line_style)
         oSwath.line_style = LINE_STYLE.LMS_DASH

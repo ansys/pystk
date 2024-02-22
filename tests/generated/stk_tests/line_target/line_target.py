@@ -8,6 +8,7 @@ from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -164,14 +165,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, gfx.label_visible)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: {0}", gfx.color)
-        gfx.color = Color.FromArgb(16711680)
+        gfx.color = Colors.from_argb(16711680)
         TestBase.logger.WriteLine6("\tThe new Color is: {0}", gfx.color)
-        AssertEx.AreEqual(Color.FromArgb(16711680), gfx.color)
+        AssertEx.AreEqual(Colors.from_argb(16711680), gfx.color)
         # LabelColor
         TestBase.logger.WriteLine6("\tThe current LabelColor is: {0}", gfx.label_color)
-        gfx.label_color = Color.FromArgb(65280)
+        gfx.label_color = Colors.from_argb(65280)
         TestBase.logger.WriteLine6("\tThe new LabelColor is: {0}", gfx.label_color)
-        AssertEx.AreEqual(Color.FromArgb(65280), gfx.label_color)
+        AssertEx.AreEqual(Colors.from_argb(65280), gfx.label_color)
         # BoundingRectVisible
         TestBase.logger.WriteLine4("\tThe current BoundingRectVisible is: {0}", gfx.bounding_rect_visible)
         gfx.bounding_rect_visible = True
