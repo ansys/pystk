@@ -50,7 +50,7 @@ doc = [
     "jupyterlab==4.1.2",
 ]
 visualization = [
-    "numpy==1.26.2",
+    "numpy==1.26.4",
     "jupyter-rfb==0.4.2",
     "Pillow==10.2.0",
     "simplejpeg==1.7.2",
