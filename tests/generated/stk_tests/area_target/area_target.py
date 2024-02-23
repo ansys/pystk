@@ -9,6 +9,7 @@ from logger import *
 from math2 import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -17,13 +18,13 @@ class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
 
-    basicColorRed = Color.FromArgb(255, 255, 0, 0)
-    labelColorRed = Color.FromArgb(255, 255, 0, 0)
-    labelColorRedBlue = Color.FromArgb(255, 255, 0, 128)
-    labelColorGreenBlue = Color.FromArgb(255, 0, 255, 128)
-    centroidColorRed = Color.FromArgb(255, 255, 0, 0)
-    boundaryColorRedGreen = Color.FromArgb(255, 255, 128, 0)
-    centroidColorRedBlue = Color.FromArgb(255, 255, 0, 255)
+    basicColorRed: Color = Colors.from_argb(255, 255, 0, 0)
+    labelColorRed: Color = Colors.from_argb(255, 255, 0, 0)
+    labelColorRedBlue: Color = Colors.from_argb(255, 255, 0, 128)
+    labelColorGreenBlue: Color = Colors.from_argb(255, 0, 255, 128)
+    centroidColorRed: Color = Colors.from_argb(255, 255, 0, 0)
+    boundaryColorRedGreen: Color = Colors.from_argb(255, 255, 128, 0)
+    centroidColorRedBlue: Color = Colors.from_argb(255, 255, 0, 255)
 
     # region OneTimeSetUp
     @staticmethod

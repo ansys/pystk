@@ -7,6 +7,7 @@ from logger import *
 from math2 import *
 from orientation_helper import *
 from parameterized import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
 
@@ -10072,7 +10073,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 props.apply_final_state_to_b_planes()
             with pytest.raises(Exception):
-                props.color = Color.FromArgb(12345)
+                props.color = Colors.from_argb(12345)
             with pytest.raises(Exception):
                 props.display_coordinate_system = "Earth Inertial"
             with pytest.raises(Exception):
@@ -10085,11 +10086,11 @@ class EarlyBoundTests(TestBase):
             Assert.assertFalse(props.update_animation_time_after_run)
             if TestBase.NoGraphicsMode:
                 with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                    props.color = Color.FromArgb(65280)
+                    props.color = Colors.from_argb(65280)
 
             else:
-                props.color = Color.FromArgb(65280)
-                AssertEx.AreEqual(Color.FromArgb(65280), props.color)
+                props.color = Colors.from_argb(65280)
+                AssertEx.AreEqual(Colors.from_argb(65280), props.color)
 
             props.display_coordinate_system = "CentralBody/Earth Inertial"
             Assert.assertEqual("CentralBody/Earth Inertial", props.display_coordinate_system)

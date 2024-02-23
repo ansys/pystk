@@ -11,6 +11,7 @@ from orientation_helper import *
 from vehicle.vehicle_basic import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -73,12 +74,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, gfx.use_inst_name_label)
         gfx.label_name = "new label"
         Assert.assertEqual("new label", gfx.label_name)
-        gfx.label_color = Color.FromArgb(((128 * 256) * 256))
-        AssertEx.AreEqual(Color.FromArgb(((128 * 256) * 256)), gfx.label_color)
+        gfx.label_color = Colors.from_argb(((128 * 256) * 256))
+        AssertEx.AreEqual(Colors.from_argb(((128 * 256) * 256)), gfx.label_color)
         gfx.label_visible = True
         Assert.assertEqual(True, gfx.label_visible)
-        gfx.marker_color = Color.FromArgb((255 * 256))
-        AssertEx.AreEqual(Color.FromArgb((255 * 256)), gfx.marker_color)
+        gfx.marker_color = Colors.from_argb((255 * 256))
+        AssertEx.AreEqual(Colors.from_argb((255 * 256)), gfx.marker_color)
         gfx.marker_style = "Star"
         Assert.assertEqual("Star", gfx.marker_style)
 
@@ -88,13 +89,13 @@ class EarlyBoundTests(TestBase):
         oHelper = GfxLabelNoteHelper(self.Units)
         oHelper.Run(clr.Convert(gfx.label_notes, LabelNoteCollection))
 
-        uiLC = gfx.label_color
-        uiNewColor = Color.FromArgb(65280)  # Green
+        uiLC: Color = gfx.label_color
+        uiNewColor: Color = Colors.from_argb(65280)  # Green
         gfx.label_color = uiNewColor
         AssertEx.AreEqual(uiNewColor, gfx.label_color)
 
-        uiMC = gfx.marker_color
-        uiNewColor = Color.FromArgb(16711680)  # Blue
+        uiMC: Color = gfx.marker_color
+        uiNewColor = Colors.from_argb(16711680)  # Blue
         gfx.marker_color = uiNewColor
         AssertEx.AreEqual(uiNewColor, gfx.marker_color)
         gfx.label_name = "Finish"
@@ -130,17 +131,17 @@ class EarlyBoundTests(TestBase):
         azel.display_range_minimum = 10
         Assert.assertEqual(10, azel.display_range_minimum)
         with pytest.raises(Exception):
-            azel.altitude_color = Color.Yellow
+            azel.altitude_color = Colors.Yellow
         with pytest.raises(Exception):
-            azel.range_color = Color.Yellow
+            azel.range_color = Colors.Yellow
         azel.altitude_color_visible = True
         Assert.assertTrue(azel.altitude_color_visible)
-        azel.altitude_color = Color.Yellow
-        AssertEx.AreEqual(Color.Yellow, azel.altitude_color)
+        azel.altitude_color = Colors.Yellow
+        AssertEx.AreEqual(Colors.Yellow, azel.altitude_color)
         azel.range_color_visible = True
         Assert.assertTrue(azel.range_color_visible)
-        azel.range_color = Color.Yellow
-        AssertEx.AreEqual(Color.Yellow, azel.range_color)
+        azel.range_color = Colors.Yellow
+        AssertEx.AreEqual(Colors.Yellow, azel.range_color)
 
     # endregion
 

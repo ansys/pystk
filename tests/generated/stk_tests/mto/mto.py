@@ -7,6 +7,7 @@ from logger import *
 from math2 import *
 from vehicle.vehicle_gfx import *
 from vehicle.vehicle_vo import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -1000,7 +1001,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < oTrackCollectionGfx.count:
-            oTrackCollectionGfx[i].color = Color.FromArgb(i)
+            oTrackCollectionGfx[i].color = Colors.from_argb(i)
             oTrackCollectionGfx[i].is_visible = True
 
             i += 1
@@ -1857,8 +1858,8 @@ class EarlyBoundTests(TestBase):
 
     # region GraphicsTrackHelper
     def GraphicsTrackHelper(self, oGfxTrack: "MtoDefaultGraphics2DTrack"):
-        oGfxTrack.color = Color.FromArgb(16384250)
-        AssertEx.AreEqual(Color.FromArgb(16384250), oGfxTrack.color)
+        oGfxTrack.color = Colors.from_argb(16384250)
+        AssertEx.AreEqual(Colors.from_argb(16384250), oGfxTrack.color)
 
         oGfxTrack.fade_times.use_post_fade = True
         Assert.assertEqual(True, oGfxTrack.fade_times.use_post_fade)
@@ -1875,8 +1876,8 @@ class EarlyBoundTests(TestBase):
         oGfxTrack.label_visible = True
         Assert.assertEqual(True, oGfxTrack.label_visible)
 
-        oGfxTrack.label_color = Color.FromArgb(16384251)
-        AssertEx.AreEqual(Color.FromArgb(16384251), oGfxTrack.label_color)
+        oGfxTrack.label_color = Colors.from_argb(16384251)
+        AssertEx.AreEqual(Colors.from_argb(16384251), oGfxTrack.label_color)
 
         oGfxTrack.lead_trail_times.use_lead_trail = True
         Assert.assertEqual(True, oGfxTrack.lead_trail_times.use_lead_trail)
@@ -1892,8 +1893,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(LINE_STYLE.L_DASH, oGfxTrack.line.style)
         oGfxTrack.line.width = LINE_WIDTH.WIDTH5
         Assert.assertEqual(LINE_WIDTH.WIDTH5, oGfxTrack.line.width)
-        oGfxTrack.line.color = Color.FromArgb(16384252)
-        AssertEx.AreEqual(Color.FromArgb(16384252), oGfxTrack.line.color)
+        oGfxTrack.line.color = Colors.from_argb(16384252)
+        AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
         Assert.assertEqual(75, oGfxTrack.line.translucency)
 
@@ -1901,15 +1902,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, oGfxTrack.marker.is_visible)
         oGfxTrack.marker.style = "Star"
         Assert.assertEqual("Star", oGfxTrack.marker.style)
-        oGfxTrack.marker.color = Color.FromArgb(16384253)
-        AssertEx.AreEqual(Color.FromArgb(16384253), oGfxTrack.marker.color)
+        oGfxTrack.marker.color = Colors.from_argb(16384253)
+        AssertEx.AreEqual(Colors.from_argb(16384253), oGfxTrack.marker.color)
 
         oHelper = GfxRangeContoursHelper(self.Units)
         oHelper.Run(oGfxTrack.range_contours)
 
     def GraphicsTrackHelper2(self, oGfxTrack: "MtoGraphics2DTrack"):
-        oGfxTrack.color = Color.FromArgb(16384250)
-        AssertEx.AreEqual(Color.FromArgb(16384250), oGfxTrack.color)
+        oGfxTrack.color = Colors.from_argb(16384250)
+        AssertEx.AreEqual(Colors.from_argb(16384250), oGfxTrack.color)
 
         oGfxTrack.fade_times.use_post_fade = True
         Assert.assertEqual(True, oGfxTrack.fade_times.use_post_fade)
@@ -1926,8 +1927,8 @@ class EarlyBoundTests(TestBase):
         oGfxTrack.label_visible = True
         Assert.assertEqual(True, oGfxTrack.label_visible)
 
-        oGfxTrack.label_color = Color.FromArgb(16384251)
-        AssertEx.AreEqual(Color.FromArgb(16384251), oGfxTrack.label_color)
+        oGfxTrack.label_color = Colors.from_argb(16384251)
+        AssertEx.AreEqual(Colors.from_argb(16384251), oGfxTrack.label_color)
 
         oGfxTrack.lead_trail_times.use_lead_trail = True
         Assert.assertEqual(True, oGfxTrack.lead_trail_times.use_lead_trail)
@@ -1943,8 +1944,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(LINE_STYLE.L_DASH, oGfxTrack.line.style)
         oGfxTrack.line.width = LINE_WIDTH.WIDTH5
         Assert.assertEqual(LINE_WIDTH.WIDTH5, oGfxTrack.line.width)
-        oGfxTrack.line.color = Color.FromArgb(16384252)
-        AssertEx.AreEqual(Color.FromArgb(16384252), oGfxTrack.line.color)
+        oGfxTrack.line.color = Colors.from_argb(16384252)
+        AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
         Assert.assertEqual(75, oGfxTrack.line.translucency)
 
@@ -1952,8 +1953,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, oGfxTrack.marker.is_visible)
         oGfxTrack.marker.style = "Star"
         Assert.assertEqual("Star", oGfxTrack.marker.style)
-        oGfxTrack.marker.color = Color.FromArgb(16384253)
-        AssertEx.AreEqual(Color.FromArgb(16384253), oGfxTrack.marker.color)
+        oGfxTrack.marker.color = Colors.from_argb(16384253)
+        AssertEx.AreEqual(Colors.from_argb(16384253), oGfxTrack.marker.color)
 
         oHelper = GfxRangeContoursHelper(self.Units)
         oHelper.Run(oGfxTrack.range_contours)
@@ -2017,9 +2018,9 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_MTO.tracks.add(0)
         oNewGfxTrack: "MtoGraphics2DTrack" = EarlyBoundTests.AG_MTO.graphics.tracks[0]
 
-        AssertEx.AreEqual(Color.FromArgb(16384251), oNewGfxTrack.label_color)
-        AssertEx.AreEqual(Color.FromArgb(16384252), oNewGfxTrack.line.color)
-        AssertEx.AreEqual(Color.FromArgb(16384253), oNewGfxTrack.marker.color)
+        AssertEx.AreEqual(Colors.from_argb(16384251), oNewGfxTrack.label_color)
+        AssertEx.AreEqual(Colors.from_argb(16384252), oNewGfxTrack.line.color)
+        AssertEx.AreEqual(Colors.from_argb(16384253), oNewGfxTrack.marker.color)
 
         Assert.assertEqual(True, oNewGfxTrack.fade_times.use_post_fade)
         Assert.assertEqual(True, oNewGfxTrack.fade_times.use_pre_fade)

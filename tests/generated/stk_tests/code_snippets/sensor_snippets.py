@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -336,7 +337,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         # Configure swath display properties
         swath: "Swath" = sensor.swath
         swath.enable = True
-        swath.color = Color.Red  # red
+        swath.color = Colors.Red  # red
         swath.line_style = LINE_STYLE.LMS_DASH
         swath.line_width = LINE_WIDTH.WIDTH2
 

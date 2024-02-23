@@ -8,6 +8,7 @@ from interfaces.stk_objects import *
 from logger import *
 from math2 import *
 from vehicle.vehicle_basic import *
+from ansys.stk.core.utilities.colors import *
 from parameterized import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -113,7 +114,7 @@ class EarlyBoundTests(TestBase):
             basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
                 polarSat.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
-            basicAtt.color = Color.Yellow
+            basicAtt.color = Colors.Yellow
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -148,7 +149,7 @@ class EarlyBoundTests(TestBase):
             basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
                 shuttle.graphics.attributes, IVehicleGraphics2DAttributesBasic
             )
-            basicAtt.color = Color.Cyan
+            basicAtt.color = Colors.Cyan
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -238,9 +239,9 @@ class EarlyBoundTests(TestBase):
             element: "FigureOfMeritGraphics2DLevelAttributesElement" = (
                 twoEyes.graphics.animation.contours.level_attributes.add_level(1)
             )
-            element.color = Color.Pink
+            element.color = Colors.Pink
             element = twoEyes.graphics.animation.contours.level_attributes.add_level(2)
-            element.color = Color.Silver
+            element.color = Colors.Silver
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -2013,9 +2014,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Square", oStatic.marker_style)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oStatic.color)
-        oStatic.color = Color.FromArgb(1122867)
+        oStatic.color = Colors.from_argb(1122867)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oStatic.color)
-        AssertEx.AreEqual(Color.FromArgb(1122867), oStatic.color)
+        AssertEx.AreEqual(Colors.from_argb(1122867), oStatic.color)
 
         # Animation
         oAnimation: "CoverageGraphics2DAnimation" = oGraphics.animation
@@ -2026,15 +2027,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("\tThe new IsSatisfactionVisible is: {0}", oAnimation.is_satisfaction_visible)
         Assert.assertFalse(oAnimation.is_satisfaction_visible)
         with pytest.raises(Exception):
-            oAnimation.color = Color.FromArgb(11189196)
+            oAnimation.color = Colors.from_argb(11189196)
         oAnimation.is_satisfaction_visible = True
         TestBase.logger.WriteLine4("\tThe new IsSatisfactionVisible is: {0}", oAnimation.is_satisfaction_visible)
         Assert.assertTrue(oAnimation.is_satisfaction_visible)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oAnimation.color)
-        oAnimation.color = Color.FromArgb(4478310)
+        oAnimation.color = Colors.from_argb(4478310)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAnimation.color)
-        AssertEx.AreEqual(Color.FromArgb(4478310), oAnimation.color)
+        AssertEx.AreEqual(Colors.from_argb(4478310), oAnimation.color)
 
         oStatic.fill_points = True
         oAnimation.fill_translucency = 55.0
@@ -2050,15 +2051,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oProgress.is_visible)
         Assert.assertFalse(oProgress.is_visible)
         with pytest.raises(Exception):
-            oProgress.color = Color.FromArgb(11189196)
+            oProgress.color = Colors.from_argb(11189196)
         oProgress.is_visible = True
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oProgress.is_visible)
         Assert.assertTrue(oProgress.is_visible)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oProgress.color)
-        oProgress.color = Color.FromArgb(7833753)
+        oProgress.color = Colors.from_argb(7833753)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oProgress.color)
-        AssertEx.AreEqual(Color.FromArgb(7833753), oProgress.color)
+        AssertEx.AreEqual(Colors.from_argb(7833753), oProgress.color)
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- END -----")
 
     # endregion
