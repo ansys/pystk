@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -205,11 +206,11 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         # Add level ranges (batch)
         contours.level_attributes.add_level_range(25, 35, 1)
         firstLevel: "FigureOfMeritGraphics2DLevelAttributesElement" = contours.level_attributes[0]
-        firstLevel.color = Color.Blue
+        firstLevel.color = Colors.Blue
 
         # Add one level (individually)
         level: "FigureOfMeritGraphics2DLevelAttributesElement" = contours.level_attributes.add_level(55)
-        level.color = Color.Red
+        level.color = Colors.Red
 
     # endregion
 

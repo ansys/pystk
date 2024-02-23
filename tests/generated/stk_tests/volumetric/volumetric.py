@@ -2,6 +2,7 @@ import pytest
 from test_util import *
 from assertion_harness import *
 from interfaces.stk_objects import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -412,9 +413,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmVOGrid.point_size = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOGrid.point_color = Color.Red
+            vmVOGrid.point_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOGrid.line_color = Color.Red
+            vmVOGrid.line_color = Colors.Red
 
         vmVOGrid.show_grid = True
         Assert.assertTrue(vmVOGrid.show_grid)
@@ -425,7 +426,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmVOGrid.point_size = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOGrid.point_color = Color.Red
+            vmVOGrid.point_color = Colors.Red
 
         vmVOGrid.show_grid_points = True
         Assert.assertTrue(vmVOGrid.show_grid_points)
@@ -439,24 +440,24 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             vmVOGrid.point_size = 21
 
-        vmVOGrid.point_color = Color.Red
-        Assert.assertEqual(Color.Red, vmVOGrid.point_color)
-        vmVOGrid.point_color = Color.Blue
-        Assert.assertEqual(Color.Blue, vmVOGrid.point_color)
+        vmVOGrid.point_color = Colors.Red
+        Assert.assertEqual(Colors.Red, vmVOGrid.point_color)
+        vmVOGrid.point_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, vmVOGrid.point_color)
 
         vmVOGrid.show_grid_lines = False
         Assert.assertFalse(vmVOGrid.show_grid_lines)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOGrid.line_color = Color.Red
+            vmVOGrid.line_color = Colors.Red
 
         vmVOGrid.show_grid_lines = True
         Assert.assertTrue(vmVOGrid.show_grid_lines)
 
-        vmVOGrid.line_color = Color.Red
-        Assert.assertEqual(Color.Red, vmVOGrid.line_color)
-        vmVOGrid.line_color = Color.Blue
-        Assert.assertEqual(Color.Blue, vmVOGrid.line_color)
+        vmVOGrid.line_color = Colors.Red
+        Assert.assertEqual(Colors.Red, vmVOGrid.line_color)
+        vmVOGrid.line_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, vmVOGrid.line_color)
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Grid - END")
 
@@ -476,17 +477,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(vmVOActiveGridPoints.show_active_inactive_boundary)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOActiveGridPoints.active_inactive_boundary_color = Color.Red
+            vmVOActiveGridPoints.active_inactive_boundary_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmVOActiveGridPoints.active_inactive_boundary_translucency = 0
 
         vmVOActiveGridPoints.show_active_inactive_boundary = True
         Assert.assertTrue(vmVOActiveGridPoints.show_active_inactive_boundary)
 
-        vmVOActiveGridPoints.active_inactive_boundary_color = Color.Red
-        Assert.assertEqual(Color.Red, vmVOActiveGridPoints.active_inactive_boundary_color)
-        vmVOActiveGridPoints.active_inactive_boundary_color = Color.Blue
-        Assert.assertEqual(Color.Blue, vmVOActiveGridPoints.active_inactive_boundary_color)
+        vmVOActiveGridPoints.active_inactive_boundary_color = Colors.Red
+        Assert.assertEqual(Colors.Red, vmVOActiveGridPoints.active_inactive_boundary_color)
+        vmVOActiveGridPoints.active_inactive_boundary_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, vmVOActiveGridPoints.active_inactive_boundary_color)
 
         vmVOActiveGridPoints.active_inactive_boundary_translucency = 0
         Assert.assertEqual(0, vmVOActiveGridPoints.active_inactive_boundary_translucency)
@@ -503,21 +504,21 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(vmVOActiveGridPoints.show_active_inactive_fill)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOActiveGridPoints.inactive_fill_color = Color.Red
+            vmVOActiveGridPoints.inactive_fill_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmVOActiveGridPoints.inactive_fill_translucency = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            vmVOActiveGridPoints.active_fill_color = Color.Red
+            vmVOActiveGridPoints.active_fill_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmVOActiveGridPoints.active_fill_translucency = 0
 
         vmVOActiveGridPoints.show_active_inactive_fill = True
         Assert.assertTrue(vmVOActiveGridPoints.show_active_inactive_fill)
 
-        vmVOActiveGridPoints.inactive_fill_color = Color.Red
-        Assert.assertEqual(Color.Red, vmVOActiveGridPoints.inactive_fill_color)
-        vmVOActiveGridPoints.inactive_fill_color = Color.Blue
-        Assert.assertEqual(Color.Blue, vmVOActiveGridPoints.inactive_fill_color)
+        vmVOActiveGridPoints.inactive_fill_color = Colors.Red
+        Assert.assertEqual(Colors.Red, vmVOActiveGridPoints.inactive_fill_color)
+        vmVOActiveGridPoints.inactive_fill_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, vmVOActiveGridPoints.inactive_fill_color)
 
         vmVOActiveGridPoints.inactive_fill_translucency = 0
         Assert.assertEqual(0, vmVOActiveGridPoints.inactive_fill_translucency)
@@ -528,10 +529,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             vmVOActiveGridPoints.inactive_fill_translucency = 101
 
-        vmVOActiveGridPoints.active_fill_color = Color.Red
-        Assert.assertEqual(Color.Red, vmVOActiveGridPoints.active_fill_color)
-        vmVOActiveGridPoints.active_fill_color = Color.Blue
-        Assert.assertEqual(Color.Blue, vmVOActiveGridPoints.active_fill_color)
+        vmVOActiveGridPoints.active_fill_color = Colors.Red
+        Assert.assertEqual(Colors.Red, vmVOActiveGridPoints.active_fill_color)
+        vmVOActiveGridPoints.active_fill_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, vmVOActiveGridPoints.active_fill_color)
 
         vmVOActiveGridPoints.active_fill_translucency = 0
         Assert.assertEqual(0, vmVOActiveGridPoints.active_fill_translucency)
@@ -579,7 +580,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(vmVOSpatialCalculationLevels.show_boundary_levels)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not enabled")):
-            vmVOSpatialCalculationLevels.boundary_levels.add(1, Color.Red, 10)
+            vmVOSpatialCalculationLevels.boundary_levels.add(1, Colors.Red, 10)
 
         vmVOSpatialCalculationLevels.show_boundary_levels = True
         Assert.assertTrue(vmVOSpatialCalculationLevels.show_boundary_levels)
@@ -597,7 +598,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(vmVOSpatialCalculationLevels.show_fill_levels)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not enabled")):
-            vmVOSpatialCalculationLevels.fill_levels.add(1, Color.Red, 10)
+            vmVOSpatialCalculationLevels.fill_levels.add(1, Colors.Red, 10)
 
         vmVOSpatialCalculationLevels.show_fill_levels = True
         Assert.assertTrue(vmVOSpatialCalculationLevels.show_fill_levels)
@@ -612,44 +613,44 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, levelColl.count)
 
         # Add some
-        levelColl.add(1, Color.Red, 10)
-        levelColl.add(2, Color.Green, 20)
-        levelColl.add(3, Color.Blue, 30)
+        levelColl.add(1, Colors.Red, 10)
+        levelColl.add(2, Colors.Green, 20)
+        levelColl.add(3, Colors.Blue, 30)
         Assert.assertEqual(3, levelColl.count)
 
         Assert.assertEqual(1, levelColl[0].value)
-        Assert.assertEqual(Color.Red, levelColl[0].color)
+        Assert.assertEqual(Colors.Red, levelColl[0].color)
         Assert.assertAlmostEqual(10, levelColl[0].translucency, delta=0.0001)
 
         Assert.assertEqual(2, levelColl[1].value)
-        Assert.assertEqual(Color.Green, levelColl[1].color)
+        Assert.assertEqual(Colors.Green, levelColl[1].color)
         Assert.assertAlmostEqual(20, levelColl[1].translucency, delta=0.0001)
 
         Assert.assertEqual(3, levelColl[2].value)
-        Assert.assertEqual(Color.Blue, levelColl[2].color)
+        Assert.assertEqual(Colors.Blue, levelColl[2].color)
         Assert.assertAlmostEqual(30, levelColl[2].translucency, delta=0.0001)
 
         # Change some (call Add on an existing value will actually change it).
-        levelColl.add(1, Color.Yellow, 40)
-        levelColl.add(2, Color.Black, 50)
+        levelColl.add(1, Colors.Yellow, 40)
+        levelColl.add(2, Colors.Black, 50)
         Assert.assertEqual(3, levelColl.count)
 
         Assert.assertEqual(1, levelColl[0].value)
-        Assert.assertEqual(Color.Yellow, levelColl[0].color)
+        Assert.assertEqual(Colors.Yellow, levelColl[0].color)
         Assert.assertAlmostEqual(40, levelColl[0].translucency, delta=0.0001)
 
         Assert.assertEqual(2, levelColl[1].value)
-        Assert.assertEqual(Color.Black, levelColl[1].color)
+        Assert.assertEqual(Colors.Black, levelColl[1].color)
         Assert.assertAlmostEqual(50, levelColl[1].translucency, delta=0.0001)
 
         level0: "VmGraphics3DSpatialCalculationLevel" = levelColl[0]
         Assert.assertEqual(1, level0.value)
-        Assert.assertEqual(Color.Yellow, level0.color)
+        Assert.assertEqual(Colors.Yellow, level0.color)
         Assert.assertAlmostEqual(40, level0.translucency, delta=0.001)
 
         level1: "VmGraphics3DSpatialCalculationLevel" = levelColl[1]
         Assert.assertEqual(2, level1.value)
-        Assert.assertEqual(Color.Black, level1.color)
+        Assert.assertEqual(Colors.Black, level1.color)
         Assert.assertAlmostEqual(50, level1.translucency, delta=0.001)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -669,7 +670,7 @@ class EarlyBoundTests(TestBase):
         levelColl.remove_at(1)
         Assert.assertEqual(2, levelColl.count)
         Assert.assertEqual(2, level1.value)
-        Assert.assertEqual(Color.Black, level1.color)
+        Assert.assertEqual(Colors.Black, level1.color)
         Assert.assertEqual(50, level1.translucency)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -750,10 +751,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.translucency = 101
 
-        legend.background_color = Color.Red
-        Assert.assertEqual(Color.Red, legend.background_color)
-        legend.background_color = Color.Blue
-        Assert.assertEqual(Color.Blue, legend.background_color)
+        legend.background_color = Colors.Red
+        Assert.assertEqual(Colors.Red, legend.background_color)
+        legend.background_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, legend.background_color)
 
         legend.title = "My Title"
         Assert.assertEqual("My Title", legend.title)
@@ -774,10 +775,10 @@ class EarlyBoundTests(TestBase):
         legend.notation = VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E
         Assert.assertEqual(VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E, legend.notation)
 
-        legend.text_color = Color.Red
-        Assert.assertEqual(Color.Red, legend.text_color)
-        legend.text_color = Color.Blue
-        Assert.assertEqual(Color.Blue, legend.text_color)
+        legend.text_color = Colors.Red
+        Assert.assertEqual(Colors.Red, legend.text_color)
+        legend.text_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, legend.text_color)
 
         legend.level_order = VM_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX
         Assert.assertEqual(VM_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX, legend.level_order)

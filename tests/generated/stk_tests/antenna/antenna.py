@@ -8,6 +8,7 @@ from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -612,10 +613,10 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaGraphics_BoresightColor
     @category("Graphics Tests")
     def test_IAgAntennaGraphics_BoresightColor(self):
-        EarlyBoundTests.antennaGraphics.boresight_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.antennaGraphics.boresight_color)
-        EarlyBoundTests.antennaGraphics.boresight_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.antennaGraphics.boresight_color)
+        EarlyBoundTests.antennaGraphics.boresight_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.antennaGraphics.boresight_color)
+        EarlyBoundTests.antennaGraphics.boresight_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.antennaGraphics.boresight_color)
 
     # endregion
 
@@ -769,12 +770,12 @@ class EarlyBoundTests(TestBase):
         level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
         EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-        level4.color = Color.Red
-        Assert.assertEqual(Color.Red, level4.color)
+        level4.color = Colors.Red
+        Assert.assertEqual(Colors.Red, level4.color)
         EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
-        color = level4.color
+        color: Color = level4.color
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            level4.color = Color.Red
+            level4.color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
             level8: "AntennaContourLevel" = levelCollection.get_level(8.0)
 
@@ -843,10 +844,10 @@ class EarlyBoundTests(TestBase):
             FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, EarlyBoundTests.antennaContour.color_method
         )
 
-        EarlyBoundTests.antennaContour.start_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.antennaContour.start_color)
-        EarlyBoundTests.antennaContour.stop_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.antennaContour.stop_color)
+        EarlyBoundTests.antennaContour.start_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.antennaContour.start_color)
+        EarlyBoundTests.antennaContour.stop_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.antennaContour.stop_color)
 
         EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
         Assert.assertEqual(
@@ -854,9 +855,9 @@ class EarlyBoundTests(TestBase):
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.antennaContour.start_color = Color.Red
+            EarlyBoundTests.antennaContour.start_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.antennaContour.stop_color = Color.Red
+            EarlyBoundTests.antennaContour.stop_color = Colors.Red
 
     # endregion
 

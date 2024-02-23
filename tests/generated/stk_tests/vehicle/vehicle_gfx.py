@@ -5,6 +5,7 @@ from assertion_harness import *
 from display_times_helper import *
 from logger import *
 from math2 import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -28,7 +29,7 @@ class GfxAttributesBasicHelper(object):
         Assert.assertEqual(False, oBasic.is_visible)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.color = Color.FromArgb(16711935)
+            oBasic.color = Colors.from_argb(16711935)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oBasic.marker_style = "Square"
@@ -51,9 +52,9 @@ class GfxAttributesBasicHelper(object):
         Assert.assertEqual(True, oBasic.is_visible)
         # Color
         self.m_logger.WriteLine6("\t\tCurrent Color is: {0}", oBasic.color)
-        oBasic.color = Color.FromArgb(16711935)
+        oBasic.color = Colors.from_argb(16711935)
         self.m_logger.WriteLine6("\t\tNew Color is: {0}", oBasic.color)
-        AssertEx.AreEqual(Color.FromArgb(16711935), oBasic.color)
+        AssertEx.AreEqual(Colors.from_argb(16711935), oBasic.color)
         # MarkerStyle
         self.m_logger.WriteLine5("\t\tCurrent MarkerStyle is: {0}", oBasic.marker_style)
         oBasic.marker_style = "Square"
@@ -591,17 +592,17 @@ class GfxAttributesTimeComponentsHelper(object):
 
         evCollEle3.use_color_ramp = True
         Assert.assertTrue(evCollEle3.use_color_ramp)
-        evCollEle3.color_ramp_start_color = Color.AliceBlue
-        AssertEx.AreEqual(Color.AliceBlue, evCollEle3.color_ramp_start_color)
-        evCollEle3.color_ramp_end_color = Color.AntiqueWhite
-        AssertEx.AreEqual(Color.AntiqueWhite, evCollEle3.color_ramp_end_color)
+        evCollEle3.color_ramp_start_color = Colors.AliceBlue
+        AssertEx.AreEqual(Colors.AliceBlue, evCollEle3.color_ramp_start_color)
+        evCollEle3.color_ramp_end_color = Colors.AntiqueWhite
+        AssertEx.AreEqual(Colors.AntiqueWhite, evCollEle3.color_ramp_end_color)
 
         evCollEle3.use_color_ramp = False
         Assert.assertFalse(evCollEle3.use_color_ramp)
-        evCollEle3.color_ramp_start_color = Color.Black
-        AssertEx.AreEqual(Color.Black, evCollEle3.color_ramp_start_color)
-        evCollEle3.color_ramp_end_color = Color.Blue
-        AssertEx.AreEqual(Color.Blue, evCollEle3.color_ramp_end_color)
+        evCollEle3.color_ramp_start_color = Colors.Black
+        AssertEx.AreEqual(Colors.Black, evCollEle3.color_ramp_start_color)
+        evCollEle3.color_ramp_end_color = Colors.Blue
+        AssertEx.AreEqual(Colors.Blue, evCollEle3.color_ramp_end_color)
         evCollEle3.use_color_ramp = True
 
         oBasicHelper = GfxAttributesBasicHelper()
@@ -706,26 +707,26 @@ class GfxIntervalsCollectionHelper(object):
 
         # Add additional elements
         oInterval = oCollection.add("1 Jul 1999 00:00:00.000", "1 Jul 1999 00:04:00.000")
-        oInterval.graphics_2d_attributes.color = Color.Yellow
+        oInterval.graphics_2d_attributes.color = Colors.Yellow
         Assert.assertIsNotNone(oInterval)
         Assert.assertEqual("1 Jul 1999 00:00:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:04:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 2), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:20:00.000", "1 Jul 1999 00:25:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics_2d_attributes.color = Color.Red
+        oInterval.graphics_2d_attributes.color = Colors.Red
         Assert.assertEqual("1 Jul 1999 00:20:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:25:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 3), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:10:00.000", "1 Jul 1999 00:15:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics_2d_attributes.color = Color.RoyalBlue
+        oInterval.graphics_2d_attributes.color = Colors.RoyalBlue
         Assert.assertEqual("1 Jul 1999 00:10:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:15:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 4), oCollection.count)
         oInterval = oCollection.add("1 Jul 1999 00:30:00.000", "1 Jul 1999 00:35:00.000")
         Assert.assertIsNotNone(oInterval)
-        oInterval.graphics_2d_attributes.color = Color.Yellow
+        oInterval.graphics_2d_attributes.color = Colors.Yellow
         Assert.assertEqual("1 Jul 1999 00:30:00.000", oInterval.start_time)
         Assert.assertEqual("1 Jul 1999 00:35:00.000", oInterval.stop_time)
         Assert.assertEqual((iCount + 5), oCollection.count)
@@ -1019,7 +1020,7 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.user_text,
                 elevationsElement.label_angle,
             )
-            elevationsElement.color = Color.FromArgb((elevationsElement.color._ToOLECOLOR() + 250))
+            elevationsElement.color = Colors.from_argb((elevationsElement.color._to_ole_color() + 250))
             elevationsElement.line_style = LINE_STYLE.M_DASH
             elevationsElement.line_width = LINE_WIDTH.WIDTH2
             elevationsElement.elevation += 1.5
@@ -1226,7 +1227,7 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.user_text,
                 levelAttribute.label_angle,
             )
-            levelAttribute.color = Color.FromArgb((levelAttribute.color._ToOLECOLOR() + 250))
+            levelAttribute.color = Colors.from_argb((levelAttribute.color._to_ole_color() + 250))
             levelAttribute.line_style = LINE_STYLE.M_DASH
             levelAttribute.line_width = LINE_WIDTH.WIDTH2
             levelAttribute.level = float(levelAttribute.level) + 1.5
@@ -1382,7 +1383,7 @@ class GfxGroundEllipsesHelper(object):
             groundEllipsesElement.interpolate = True
             groundEllipsesElement.is_name_visible = True
             groundEllipsesElement.is_center_visible = True
-            groundEllipsesElement.color = Color.FromArgb(66047)
+            groundEllipsesElement.color = Colors.from_argb(66047)
             groundEllipsesElement.line_width = LINE_WIDTH.WIDTH2
 
         iIndex: int = 0
@@ -1482,7 +1483,7 @@ class GfxLightingHelper(object):
         Assert.assertEqual(False, oVeGfxLightingElement.visible)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVeGfxLightingElement.color = Color.FromArgb(12632256)
+            oVeGfxLightingElement.color = Colors.from_argb(12632256)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
@@ -1499,9 +1500,9 @@ class GfxLightingHelper(object):
         Assert.assertEqual(True, oVeGfxLightingElement.visible)
         # Color
         self.m_logger.WriteLine6("\tThe current Color is: {0}", oVeGfxLightingElement.color)
-        oVeGfxLightingElement.color = Color.FromArgb(255)
+        oVeGfxLightingElement.color = Colors.from_argb(255)
         self.m_logger.WriteLine6("\tThe new Color is: {0}", oVeGfxLightingElement.color)
-        AssertEx.AreEqual(Color.FromArgb(255), oVeGfxLightingElement.color)
+        AssertEx.AreEqual(Colors.from_argb(255), oVeGfxLightingElement.color)
         # LineStyle
         self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", oVeGfxLightingElement.line_style)
         oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
@@ -2059,13 +2060,13 @@ class GfxWaypointMarkersHelper(object):
             waypointMarkersElement.use_veh_color = True
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                waypointMarkersElement.color = Color.FromArgb(1193046)
+                waypointMarkersElement.color = Colors.from_argb(1193046)
 
             waypointMarkersElement.is_label_visible = True
             waypointMarkersElement.label = "WaypointLabel"
             waypointMarkersElement.is_visible = True
             waypointMarkersElement.use_veh_color = False
-            waypointMarkersElement.color = Color.FromArgb(65280)
+            waypointMarkersElement.color = Colors.from_argb(65280)
             waypointMarkersElement.marker_style = "X"
 
         iIndex: int = 0
@@ -2185,9 +2186,9 @@ class GfxTimeEventsHelper(object):
 
                 # Color
                 self.m_logger.WriteLine6("\t\tThe current Color is: {0}", oLine.color)
-                oLine.color = Color.FromArgb(12377850)
+                oLine.color = Colors.from_argb(12377850)
                 self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oLine.color)
-                AssertEx.AreEqual(Color.FromArgb(12377850), oLine.color)
+                AssertEx.AreEqual(Colors.from_argb(12377850), oLine.color)
                 # UniqueID
                 self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oLine.unique_id)
                 oLine.unique_id = "Test line"
@@ -2266,9 +2267,9 @@ class GfxTimeEventsHelper(object):
 
                 # Color
                 self.m_logger.WriteLine6("\t\tThe current Color is: {0}", oMarker.color)
-                oMarker.color = Color.FromArgb(11259375)
+                oMarker.color = Colors.from_argb(11259375)
                 self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oMarker.color)
-                AssertEx.AreEqual(Color.FromArgb(11259375), oMarker.color)
+                AssertEx.AreEqual(Colors.from_argb(11259375), oMarker.color)
                 # MarkerStyle
                 self.m_logger.WriteLine5("\t\tThe current MarkerStyle is: {0}", oMarker.marker_style)
                 oMarker.marker_style = "Star"
@@ -2310,9 +2311,9 @@ class GfxTimeEventsHelper(object):
 
                 # Color
                 self.m_logger.WriteLine6("\t\tThe current Color is: {0}", oText.color)
-                oText.color = Color.FromArgb(12377850)
+                oText.color = Colors.from_argb(12377850)
                 self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oText.color)
-                AssertEx.AreEqual(Color.FromArgb(12377850), oText.color)
+                AssertEx.AreEqual(Colors.from_argb(12377850), oText.color)
                 # UniqueID
                 self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oText.unique_id)
                 oText.unique_id = "Test text"

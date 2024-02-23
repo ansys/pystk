@@ -68,7 +68,7 @@ def _grpc_post_process_return_vals(return_vals, marshallers, *input_args):
                 temp_return_list.append(marshaller(return_val).python_val)
             elif marshaller is OLEColorArg:
                 c = Color()
-                c._FromOLECOLOR(return_val)
+                c._from_ole_color(return_val)
                 temp_return_list.append(c)
             else:
                 temp_return_list.append(return_val)
@@ -374,7 +374,7 @@ class GrpcClient(object):
             elif val is None:
                 rpc_val.null.SetInParent()
             elif type(val) == Color:
-                rpc_val.unsigned_int_val = val._ToOLECOLOR()
+                rpc_val.unsigned_int_val = val._to_ole_color()
             dest_grpc_arg.values.append(rpc_val)
         
     def invoke(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset, *args) -> typing.Any:

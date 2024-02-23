@@ -4,6 +4,7 @@ from assert_extension import *
 from assertion_harness import *
 from logger import *
 from math2 import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
@@ -3471,7 +3472,7 @@ class GatorHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.show_graph_value = True
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                active.line_color = Color.Blue
+                active.line_color = Colors.Blue
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.point_style = "Square"
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -3482,7 +3483,7 @@ class GatorHelper(object):
             Assert.assertFalse(active.show_graph_value)
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                active.line_color = Color.Blue
+                active.line_color = Colors.Blue
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 active.point_style = "Square"
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -3491,8 +3492,8 @@ class GatorHelper(object):
             active.show_graph_value = True
             Assert.assertTrue(active.show_graph_value)
 
-            active.line_color = Color.Blue
-            AssertEx.AreEqual(Color.Blue, active.line_color)
+            active.line_color = Colors.Blue
+            AssertEx.AreEqual(Colors.Blue, active.line_color)
             active.point_style = "Square"
             Assert.assertEqual("Square", active.point_style)
             active.y_axis = "Y2"
@@ -3517,7 +3518,7 @@ class GatorHelper(object):
         if TestBase.NoGraphicsMode:
             result.graph_option = GRAPH_OPTION.GRAPH_VALUE
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                result.line_color = Color.Blue
+                result.line_color = Colors.Blue
             result.point_style = "Square"
             result.y_axis = "Y2"
 
@@ -3526,7 +3527,7 @@ class GatorHelper(object):
             Assert.assertEqual(GRAPH_OPTION.NO_GRAPH, result.graph_option)
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                result.line_color = Color.Blue
+                result.line_color = Colors.Blue
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 result.point_style = "Square"
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -3535,8 +3536,8 @@ class GatorHelper(object):
             result.graph_option = GRAPH_OPTION.GRAPH_VALUE
             Assert.assertEqual(GRAPH_OPTION.GRAPH_VALUE, result.graph_option)
 
-            result.line_color = Color.Blue
-            AssertEx.AreEqual(Color.Blue, result.line_color)
+            result.line_color = Colors.Blue
+            AssertEx.AreEqual(Colors.Blue, result.line_color)
             result.point_style = "Square"
             Assert.assertEqual("Square", result.point_style)
             result.y_axis = "Y2"

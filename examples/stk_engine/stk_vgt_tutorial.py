@@ -165,7 +165,7 @@ class VGTTutorial:
         self.increaseSpeedBtn.pack(side=tk.LEFT)
         self.animationBtnFrame.pack(side=tk.TOP, anchor=tk.W)
         self.globeControl = GlobeControl(self.window, width=873, height=429)
-        self.globeControl.back_color = Color.FromRGB(217, 217, 217)
+        self.globeControl.back_color = Color.from_rgb(217, 217, 217)
         self.globeControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.lowerFrame = tk.Frame(self.window, width=873)
         self.descriptionFrame = tk.LabelFrame(self.lowerFrame, text="Description")
