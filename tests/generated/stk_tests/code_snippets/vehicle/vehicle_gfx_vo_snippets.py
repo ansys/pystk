@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.stkobjects import *
 
@@ -118,7 +119,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     def ConfigureVehicleGfxBasic(self, basicAttributes: "IVehicleGraphics2DAttributesBasic"):
         # Change display
         basicAttributes.is_visible = True
-        basicAttributes.color = Color.Red
+        basicAttributes.color = Colors.Red
         basicAttributes.line.style = LINE_STYLE.DOTTED
         basicAttributes.line.width = LINE_WIDTH.WIDTH3
         basicAttributes.marker_style = "Square"
@@ -171,9 +172,9 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
         accessAttributes.access_objects.add("Satellite/sat1")
 
         accessAttributes.during_access.is_visible = True
-        accessAttributes.during_access.color = Color.Yellow
+        accessAttributes.during_access.color = Colors.Yellow
         accessAttributes.no_access.is_visible = True
-        accessAttributes.no_access.color = Color.Red
+        accessAttributes.no_access.color = Colors.Red
 
     # endregion
 
@@ -199,7 +200,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
         elevation: "VehicleGraphics2DElevationsElement" = gfxContours.elevations.add_level(25.0)
 
         # Configure contour elevation element
-        elevation.color = Color.Red
+        elevation.color = Colors.Red
         elevation.distance_visible = True
         elevation.line_style = LINE_STYLE.DOTTED
         elevation.line_width = LINE_WIDTH.WIDTH3
@@ -225,7 +226,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
         sunlight: "VehicleGraphics2DLightingElement" = lighting.sunlight
 
         sunlight.visible = True
-        sunlight.color = Color.Red
+        sunlight.color = Colors.Red
         sunlight.line_style = LINE_STYLE.DOTTED
         sunlight.line_width = LINE_WIDTH.WIDTH3
         sunlight.marker_style = "Circle"

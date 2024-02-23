@@ -5,6 +5,7 @@ from assert_extension import *
 from assertion_harness import *
 from interfaces.stk_objects import *
 from logger import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -146,9 +147,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(gfx.is_object_graphics_visible)
         # Color
         TestBase.logger.WriteLine6("The current Color is: {0}", gfx.color)
-        gfx.color = Color.FromArgb(6636321)
+        gfx.color = Colors.from_argb(6636321)
         TestBase.logger.WriteLine6("The new Color is: {0}", gfx.color)
-        AssertEx.AreEqual(Color.FromArgb(6636321), gfx.color)
+        AssertEx.AreEqual(Colors.from_argb(6636321), gfx.color)
         # Marker Style
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         arMarkers = scenario.graphics_3d.available_marker_types()

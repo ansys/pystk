@@ -144,7 +144,7 @@ class STKEngineApplication(STKXApplication):
         """Shut down the STK Engine application."""
         if self._initialized:
             EventSubscriptionManager.unsubscribe_all()
-            self._timer_impl.Terminate()
+            self._timer_impl.terminate()
             ObjectLifetimeManager.release_all(releaseApplication=False)
             self.terminate()
             ObjectLifetimeManager.release_all(releaseApplication=True)

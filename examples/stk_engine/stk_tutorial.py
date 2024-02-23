@@ -48,12 +48,12 @@ class STKTutorial:
         self.window.protocol("WM_DELETE_WINDOW", self._exit)
         self.controlFrame = tk.Frame()
         self.mapControl = MapControl(self.controlFrame, width=640, height=360)
-        self.mapControl.back_color = Color.FromRGB(217, 217, 217)
+        self.mapControl.back_color = Color.from_rgb(217, 217, 217)
         self.mapControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.globeControl = GlobeControl(
             self.controlFrame, width=640, height=360
         )
-        self.globeControl.back_color = Color.FromRGB(217, 217, 217)
+        self.globeControl.back_color = Color.from_rgb(217, 217, 217)
         self.globeControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.controlFrame.pack(fill=tk.BOTH, expand=tk.YES, side=tk.LEFT)
         self.buttonFrame = tk.Frame()
@@ -659,14 +659,14 @@ class STKTutorial:
         gfxInterval = customAtt.Intervals.Add(
             "1 Jul 2023 11:30:00.000", "1 Jul 2023 12:00:00.000"
         )
-        gfxInterval.GfxAttributes.Color = Colors.FromRGB(156, 49, 24)
+        gfxInterval.GfxAttributes.Color = Colors.from_rgb(156, 49, 24)
         gfxInterval.GfxAttributes.IsVisible = True
         gfxInterval.GfxAttributes.Inherit = True
 
         gfxInterval = customAtt.Intervals.Add(
             "1 Jul 2023 23:30:00.000", "1 Jul 2023 24:00:00.000"
         )
-        gfxInterval.GfxAttributes.Color = Colors.FromRGB(116, 80, 94)
+        gfxInterval.GfxAttributes.Color = Colors.from_rgb(116, 80, 94)
         gfxInterval.GfxAttributes.IsVisible = True
         gfxInterval.GfxAttributes.Inherit = True
         self.root.rewind()

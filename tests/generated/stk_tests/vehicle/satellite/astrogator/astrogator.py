@@ -7,6 +7,7 @@ from gator_helper import *
 from logger import *
 from math2 import *
 from stk_util_helper import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
@@ -141,7 +142,7 @@ class EarlyBoundTests(TestBase):
 
         # all properties are readonly when show graph value = false;
         try:
-            active.line_color = Color.Green
+            active.line_color = Colors.Green
             Assert.fail("Read only.")
 
         except AssertionError as e:
@@ -174,7 +175,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.show_graph_value = True
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                active.line_color = Color.Blue
+                active.line_color = Colors.Blue
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 active.point_style = "Square"
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -184,8 +185,8 @@ class EarlyBoundTests(TestBase):
             Assert.assertFalse(active.show_graph_value)
             active.show_graph_value = True
             Assert.assertTrue(active.show_graph_value)
-            active.line_color = Color.Blue
-            AssertEx.AreEqual(Color.Blue, active.line_color)
+            active.line_color = Colors.Blue
+            AssertEx.AreEqual(Colors.Blue, active.line_color)
             active.point_style = "Square"
             Assert.assertEqual("Square", active.point_style)
             active.y_axis = "Y2"
@@ -209,11 +210,11 @@ class EarlyBoundTests(TestBase):
             result.show_desired_value = True
         if not TestBase.NoGraphicsMode:
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                result.line_color = Color.Green
+                result.line_color = Colors.Green
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                result.line_color = Color.Green
+                result.line_color = Colors.Green
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             result.point_style = "Plus"
@@ -241,12 +242,12 @@ class EarlyBoundTests(TestBase):
             Console.WriteLine(str(e))
 
         if not TestBase.NoGraphicsMode:
-            result.line_color = Color.Yellow
-            AssertEx.AreEqual(Color.Yellow, result.line_color)
+            result.line_color = Colors.Yellow
+            AssertEx.AreEqual(Colors.Yellow, result.line_color)
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                result.line_color = Color.Yellow
+                result.line_color = Colors.Yellow
 
         result.point_style = "Diamond"
         Assert.assertEqual("Diamond", result.point_style)

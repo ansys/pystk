@@ -15,20 +15,20 @@ INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
 DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
 if os.name != "nt":
-    class agutillib:
+    class UtilLib:
         _handle = None
-        AgUtSetTimerCallbacks = None
-        AgUtInitializeLibrtTimers = None
-        AgUtUninitializeLibrtTimers = None
-        AgUtFireLibrtTimerCallbacks = None
+        set_timer_callbacks = None
+        initialize_librt_timers = None
+        uninitialize_librt_timers = None
+        fire_librt_timer_callbacks = None
 
         def initialize():
-            if agutillib._handle is None:
-                agutillib._handle = cdll.LoadLibrary("libagutil.so")
-                agutillib.AgUtSetTimerCallbacks = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)(("AgUtSetTimerCallbacks", agutillib._handle), ((1, "pInstallTimer"), (1, "pDeleteTimer"), (1, "pCallbackData")))
-                agutillib.AgUtInitializeLibrtTimers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", agutillib._handle), ((1, "signo"),))
-                agutillib.AgUtUninitializeLibrtTimers = CFUNCTYPE(None)(("AgUtUninitializeLibrtTimers", agutillib._handle))
-                agutillib.AgUtFireLibrtTimerCallbacks = CFUNCTYPE(None)(("AgUtFireLibrtTimerCallbacks", agutillib._handle))
+            if UtilLib._handle is None:
+                UtilLib._handle = cdll.LoadLibrary("libagutil.so")
+                UtilLib.set_timer_callbacks = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)(("AgUtSetTimerCallbacks", UtilLib._handle), ((1, "pInstallTimer"), (1, "pDeleteTimer"), (1, "pCallbackData")))
+                UtilLib.initialize_librt_timers = CFUNCTYPE(None, c_int)(("AgUtInitializeLibrtTimers", UtilLib._handle), ((1, "signo"),))
+                UtilLib.uninitialize_librt_timers = CFUNCTYPE(None)(("AgUtUninitializeLibrtTimers", UtilLib._handle))
+                UtilLib.fire_librt_timer_callbacks = CFUNCTYPE(None)(("AgUtFireLibrtTimerCallbacks", UtilLib._handle))
 
 class _ClockTimer(object):
     def __init__(self, id, milliseconds, TIMERPROC, callbackData):
@@ -47,7 +47,7 @@ class _ClockTimer(object):
             self._reset()
             
     @staticmethod
-    def NextTimerProc(timers:dict):
+    def next_time_proc(timers:dict):
         """Return time in sec until next timer proc"""
         if len(timers) == 0:
             return 0.050
@@ -64,20 +64,20 @@ class _ClockTimer(object):
 class NullTimer(object):
     def __init__(self):
         if os.name != "nt":
-            self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
-            self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            agutillib.initialize()
-            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
+            self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
+            UtilLib.initialize()
+            UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
         else:
             pass
         
-    def Terminate(self):
+    def terminate(self):
         pass
         
-    def __InstallTimer(self, milliseconds, TIMERPROC, callbackData):
+    def __install_timer(self, milliseconds, TIMERPROC, callbackData):
         return 0
 
-    def __DeleteTimer(self, timerID, callbackData):
+    def __delete_timer(self, timerID, callbackData):
         return 0
     
 if os.name != "nt":
@@ -92,82 +92,82 @@ if os.name != "nt":
         def __init__(self):
             self._next_id = 1
             self._timers = dict()
-            self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
-            self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            agutillib.initialize()
-            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
+            self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
+            UtilLib.initialize()
+            UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
             self._tcl = Tcl()
-            self._tcl.after(self._NextTimerProc(), self._LoopTimers)
+            self._tcl.after(self._next_timer_proc(), self._loop_timers)
             
-        def Terminate(self):
+        def terminate(self):
             del(self._tcl)
             
-        def __InstallTimer(self, milliseconds, TIMERPROC, callbackData):
+        def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
             self._next_id = id + 1
             self._timers[id] = _ClockTimer(id, milliseconds, TIMERPROC, callbackData)
             return id
 
-        def __DeleteTimer(self, timerID, callbackData):
+        def __delete_timer(self, timerID, callbackData):
             if timerID in self._timers:
                 del(self._timers[timerID])
             return 0
             
-        def _FireTimers(self):
+        def _fire_timers(self):
             timers = self._timers.copy()
             for timerid in timers:
                 timers[timerid].fire()
             
-        def _NextTimerProc(self):
+        def _next_timer_proc(self):
             """Return time in ms until next timer proc"""
-            return int(_ClockTimer.NextTimerProc(self._timers.copy())*1000)
+            return int(_ClockTimer.next_time_proc(self._timers.copy())*1000)
                     
-        def _LoopTimers(self):
-            self._FireTimers()
-            self._tcl.after(self._NextTimerProc(), self._LoopTimers)
+        def _loop_timers(self):
+            self._fire_timers()
+            self._tcl.after(self._next_timer_proc(), self._loop_timers)
         
     class SigAlarmTimer(object):
         def __init__(self):
             self._next_id = 1
             self._timers = dict()
-            self._install_timer_cfunc = INSTALLTIMER(self.__InstallTimer)
-            self._delete_timer_cfunc = DELETETIMER(self.__DeleteTimer)
-            agutillib.initialize()
-            agutillib.AgUtSetTimerCallbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
-            self.previous_sighandler = signal.signal(signal.SIGALRM, self._FireTimers)
+            self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
+            self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
+            UtilLib.initialize()
+            UtilLib.set_timer_callbacks(self._install_timer_cfunc, self._delete_timer_cfunc, c_void_p())
+            self.previous_sighandler = signal.signal(signal.SIGALRM, self._fire_timers)
         
-        def Terminate(self):
+        def terminate(self):
             signal.setitimer(signal.ITIMER_REAL, 0, 0)
             try:
                 signal.signal(signal.SIGALRM, self.previous_sighandler)
             except:
                 pass
                 
-        def __InstallTimer(self, milliseconds, TIMERPROC, callbackData):
+        def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
             self._next_id = id + 1
             self._timers[id] = _ClockTimer(id, milliseconds, TIMERPROC, callbackData)
-            self._SetAlarmForNextTimerProc()
+            self._set_alarm_for_next_timer_proc()
             return id
 
-        def __DeleteTimer(self, timerID, callbackData):
+        def __delete_timer(self, timerID, callbackData):
             if timerID in self._timers:
                 del(self._timers[timerID])
             return 0
             
-        def _FireTimers(self, signo, frame):
+        def _fire_timers(self, signo, frame):
             timers = self._timers.copy()
             for timerid in timers:
                 timers[timerid].fire()
-            self._SetAlarmForNextTimerProc()
+            self._set_alarm_for_next_timer_proc()
                     
-        def _SetAlarmForNextTimerProc(self):
-            next_proc = _ClockTimer.NextTimerProc(self._timers.copy())
+        def _set_alarm_for_next_timer_proc(self):
+            next_proc = _ClockTimer.next_time_proc(self._timers.copy())
             if next_proc > 0:
                 signal.setitimer(signal.ITIMER_REAL, next_proc, 0)
             else:
-                self._FireTimers(signal.SIGALRM, None)
-                self._SetAlarmForNextTimerProc()
+                self._fire_timers(signal.SIGALRM, None)
+                self._set_alarm_for_next_timer_proc()
             
             
     class SigRtTimer(object):
@@ -175,19 +175,19 @@ if os.name != "nt":
             self._next_id = 1
             self._timers = dict()
             self._signo = signo
-            self.previous_sighandler = signal.signal(self._signo, self._FireTimers)
-            agutillib.initialize()
-            agutillib.AgUtInitializeLibrtTimers(self._signo)
+            self.previous_sighandler = signal.signal(self._signo, self._fire_timers)
+            UtilLib.initialize()
+            UtilLib.initialize_librt_timers(self._signo)
             
-        def Terminate(self):
-            agutillib.AgUtUninitializeLibrtTimers()
+        def terminate(self):
+            UtilLib.uninitialize_librt_timers()
             try:
                 signal.signal(self._signo, self.previous_sighandler)
             except:
                 pass
             
-        def _FireTimers(self, signo, frame):
-            agutillib.AgUtFireLibrtTimerCallbacks()
+        def _fire_timers(self, signo, frame):
+            UtilLib.fire_librt_timer_callbacks()
 
     
 
