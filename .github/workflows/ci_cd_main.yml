@@ -37,7 +37,7 @@ jobs:
       - name: "Include 'API' and 'Examples' sections from nightly build docs"
         run: |
           cp -r gh-pages/version/dev/api doc/_build/html/api
-          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
+          cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Upload combined artifacts"
