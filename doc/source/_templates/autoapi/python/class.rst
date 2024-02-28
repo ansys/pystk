@@ -60,7 +60,7 @@ Bases: {% for base in obj.bases %}{{ base | fixbase | link_objs }}{% if not loop
 {% endif %}
 
 {% for klass in visible_classes %}
-{{ klass.render()|indent(3) }}
+{{ klass.render(own_page_types=[])|indent(3) }}
 {% endfor %}
 
 {% if "inherited-members" in autoapi_options %}
