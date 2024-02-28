@@ -5,6 +5,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
@@ -109,7 +110,7 @@ class VOAttributesBasicHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oBasic.color = Color.FromArgb(16711935)
+            oBasic.color = Colors.from_argb(16711935)
 
         except Exception as e:
             bCaught = True
@@ -134,9 +135,9 @@ class VOAttributesBasicHelper(object):
         Assert.assertEqual(True, oBasic.is_visible)
         # Color
         self.m_logger.WriteLine6("\tCurrent Color is: {0}", oBasic.color)
-        oBasic.color = Color.FromArgb(16711935)
+        oBasic.color = Colors.from_argb(16711935)
         self.m_logger.WriteLine6("\tNew Color is: {0}", oBasic.color)
-        AssertEx.AreEqual(Color.FromArgb(16711935), oBasic.color)
+        AssertEx.AreEqual(Colors.from_argb(16711935), oBasic.color)
 
         # LineWidth
         self.m_logger.WriteLine6("\tCurrent LineWidth is: {0}", oBasic.line_width)
@@ -175,9 +176,9 @@ class VOAttributesIntervalsHelper(object):
         Assert.assertEqual(False, oDefault.is_visible)
         # Color
         self.m_logger.WriteLine6("\tCurrent Color is: {0}", oDefault.color)
-        oDefault.color = Color.FromArgb(65535)
+        oDefault.color = Colors.from_argb(65535)
         self.m_logger.WriteLine6("\tNew Color is: {0}", oDefault.color)
-        AssertEx.AreEqual(Color.FromArgb(65535), oDefault.color)
+        AssertEx.AreEqual(Colors.from_argb(65535), oDefault.color)
         # LineWidth
         self.m_logger.WriteLine6("\tCurrent LineWidth is: {0}", oDefault.line_width)
         oDefault.line_width = LINE_WIDTH.WIDTH2
@@ -186,9 +187,9 @@ class VOAttributesIntervalsHelper(object):
         oDefault.is_visible = True
         self.m_logger.WriteLine4("\tNew Visible flag is: {0}", oDefault.is_visible)
         Assert.assertEqual(True, oDefault.is_visible)
-        oDefault.color = Color.FromArgb(255)
+        oDefault.color = Colors.from_argb(255)
         self.m_logger.WriteLine6("\tNew Color is: {0}", oDefault.color)
-        AssertEx.AreEqual(Color.FromArgb(255), oDefault.color)
+        AssertEx.AreEqual(Colors.from_argb(255), oDefault.color)
         oDefault.line_width = LINE_WIDTH.WIDTH4
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oDefault.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH4, oDefault.line_width)
@@ -288,7 +289,7 @@ class VOAttributesIntervalsHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            intervalsElement.color = Color.FromArgb(6636321)
+            intervalsElement.color = Colors.from_argb(6636321)
 
         except Exception as e:
             bCaught = True
@@ -727,7 +728,7 @@ class VODropLinePosItemCollectionHelper(object):
                 dropLinePosItem.use_2d_color = False
             # Color
             with pytest.raises(Exception):
-                dropLinePosItem.color = Color.FromArgb(16448250)
+                dropLinePosItem.color = Colors.from_argb(16448250)
             # LineWidth
             with pytest.raises(Exception):
                 dropLinePosItem.line_width = LINE_WIDTH.WIDTH3
@@ -745,16 +746,16 @@ class VODropLinePosItemCollectionHelper(object):
             Assert.assertEqual(True, dropLinePosItem.use_2d_color)
             # Color
             with pytest.raises(Exception):
-                dropLinePosItem.color = Color.FromArgb(16448250)
+                dropLinePosItem.color = Colors.from_argb(16448250)
             # Use2DColor (false)
             dropLinePosItem.use_2d_color = False
             self.m_logger.WriteLine4("\tThe new Use2DColor flag is: {0}", dropLinePosItem.use_2d_color)
             Assert.assertEqual(False, dropLinePosItem.use_2d_color)
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: {0}", dropLinePosItem.color)
-            dropLinePosItem.color = Color.FromArgb(16448175)
+            dropLinePosItem.color = Colors.from_argb(16448175)
             self.m_logger.WriteLine6("\tThe new Color is: {0}", dropLinePosItem.color)
-            AssertEx.AreEqual(Color.FromArgb(16448175), dropLinePosItem.color)
+            AssertEx.AreEqual(Colors.from_argb(16448175), dropLinePosItem.color)
             # LineWidth
             self.m_logger.WriteLine6("\tThe current LineWidth  is: {0}", dropLinePosItem.line_width)
             dropLinePosItem.line_width = LINE_WIDTH.WIDTH3
@@ -806,7 +807,7 @@ class VODropLinePathItemCollectionHelper(object):
                 dropLinePathItem.use_2d_color = False
             # Color
             with pytest.raises(Exception):
-                dropLinePathItem.color = Color.FromArgb(16448250)
+                dropLinePathItem.color = Colors.from_argb(16448250)
             # LineWidth
             with pytest.raises(Exception):
                 dropLinePathItem.line_width = LINE_WIDTH.WIDTH3
@@ -827,16 +828,16 @@ class VODropLinePathItemCollectionHelper(object):
             Assert.assertEqual(True, dropLinePathItem.use_2d_color)
             # Color
             with pytest.raises(Exception):
-                dropLinePathItem.color = Color.FromArgb(16448250)
+                dropLinePathItem.color = Colors.from_argb(16448250)
             # Use2DColor (false)
             dropLinePathItem.use_2d_color = False
             self.m_logger.WriteLine4("\tThe new Use2DColor flag is: {0}", dropLinePathItem.use_2d_color)
             Assert.assertEqual(False, dropLinePathItem.use_2d_color)
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: {0}", dropLinePathItem.color)
-            dropLinePathItem.color = Color.FromArgb(16448018)
+            dropLinePathItem.color = Colors.from_argb(16448018)
             self.m_logger.WriteLine6("\tThe new Color is: {0}", dropLinePathItem.color)
-            AssertEx.AreEqual(Color.FromArgb(16448018), dropLinePathItem.color)
+            AssertEx.AreEqual(Colors.from_argb(16448018), dropLinePathItem.color)
             # LineWidth
             self.m_logger.WriteLine6("\tThe current LineWidth  is: {0}", dropLinePathItem.line_width)
             dropLinePathItem.line_width = LINE_WIDTH.WIDTH3
@@ -2586,7 +2587,7 @@ class VOProximityHelper(object):
         Assert.assertEqual(False, oAreaObject.is_visible)
         # Color (readonly)
         with pytest.raises(Exception):
-            oAreaObject.color = Color.FromArgb(12414)
+            oAreaObject.color = Colors.from_argb(12414)
         # IsLabelVisible (readonly)
         with pytest.raises(Exception):
             oAreaObject.is_label_visible = True
@@ -2607,7 +2608,7 @@ class VOProximityHelper(object):
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oAreaObject.is_visible)
         Assert.assertEqual(True, oAreaObject.is_visible)
         # Color
-        color = Color.Red
+        color: Color = Colors.Red
         self.m_logger.WriteLine6("\tThe current Color is: {0}", oAreaObject.color)
         oAreaObject.color = color
         self.m_logger.WriteLine6("\tThe new Color is: {0}", oAreaObject.color)
@@ -2991,7 +2992,7 @@ class VOProximityHelper(object):
             oBox.bearing_error = 123.456789
         # ErrorColor (readonly)
         with pytest.raises(Exception):
-            oBox.error_color = Color.FromArgb(9991764)
+            oBox.error_color = Colors.from_argb(9991764)
         # ErrorLineWidth (readonly)
         with pytest.raises(Exception):
             oBox.error_line_width = LINE_WIDTH.WIDTH5
@@ -3039,9 +3040,9 @@ class VOProximityHelper(object):
             oBox.bearing_error = -1
         # ErrorColor
         self.m_logger.WriteLine6("\tThe current ErrorColor is: {0}", oBox.error_color)
-        oBox.error_color = Color.FromArgb(11259375)
+        oBox.error_color = Colors.from_argb(11259375)
         self.m_logger.WriteLine6("\tThe new ErrorColor is: {0}", oBox.error_color)
-        AssertEx.AreEqual(Color.FromArgb(11259375), oBox.error_color)
+        AssertEx.AreEqual(Colors.from_argb(11259375), oBox.error_color)
         # ErrorLineWidth
         self.m_logger.WriteLine6("\tThe current ErrorLineWidth is: {0}", oBox.error_line_width)
         oBox.error_line_width = LINE_WIDTH.WIDTH4
@@ -3118,7 +3119,7 @@ class VOOrbitProximityHelper(VOProximityHelper):
             oGeoBox.radius = 123.456
         # Color
         with pytest.raises(Exception):
-            oGeoBox.color = Color.FromArgb(16702650)
+            oGeoBox.color = Colors.from_argb(16702650)
         # Reposition
         oGeoBox.reposition()
         # IsVisible
@@ -3147,9 +3148,9 @@ class VOOrbitProximityHelper(VOProximityHelper):
         Assert.assertAlmostEqual(54321.09, oGeoBox.radius, delta=0.001)
         # Color
         self.m_logger.WriteLine6("\t\tThe current Color flag is: {0}", oGeoBox.color)
-        oGeoBox.color = Color.FromArgb(16702650)
+        oGeoBox.color = Colors.from_argb(16702650)
         self.m_logger.WriteLine6("\t\tThe new Color flag is: {0}", oGeoBox.color)
-        AssertEx.AreEqual(Color.FromArgb(16702650), oGeoBox.color)
+        AssertEx.AreEqual(Colors.from_argb(16702650), oGeoBox.color)
         # Reposition
         oGeoBox.reposition()
         # range test
@@ -4812,7 +4813,7 @@ class VOSystemsHelper(object):
                 oVeVOSystemsElementBase.inherit = False
             # Color
             with pytest.raises(Exception):
-                oVeVOSystemsElementBase.color = Color.FromArgb(4660)
+                oVeVOSystemsElementBase.color = Colors.from_argb(4660)
             # VOWindow
             with pytest.raises(Exception):
                 oVeVOSystemsElementBase.graphics_3d_window = oVeVOSystemsElementBase.graphics_3d_window
@@ -4824,16 +4825,16 @@ class VOSystemsHelper(object):
             self.m_logger.WriteLine4("\tThe new Inherit flag is: {0}", oVeVOSystemsElementBase.inherit)
             Assert.assertEqual(True, oVeVOSystemsElementBase.inherit)
             with pytest.raises(Exception):
-                oVeVOSystemsElementBase.color = Color.FromArgb(4660)
+                oVeVOSystemsElementBase.color = Colors.from_argb(4660)
             oVeVOSystemsElementBase.inherit = False
             self.m_logger.WriteLine4("\tThe new Inherit flag is: {0}", oVeVOSystemsElementBase.inherit)
             Assert.assertEqual(False, oVeVOSystemsElementBase.inherit)
 
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: 0x{0:X}", oVeVOSystemsElementBase.color)
-            oVeVOSystemsElementBase.color = Color.Red
+            oVeVOSystemsElementBase.color = Colors.Red
             self.m_logger.WriteLine6("\tThe new Color is: 0x{0:X}", oVeVOSystemsElementBase.color)
-            AssertEx.AreEqual(Color.Red, oVeVOSystemsElementBase.color)
+            AssertEx.AreEqual(Colors.Red, oVeVOSystemsElementBase.color)
 
             # PersistForAllPasses
             oVeVOSystemsElementBase.persist_for_all_passes = True
@@ -5119,7 +5120,7 @@ class VOVectorsHelper(object):
             bCaught: bool = False
             try:
                 bCaught = False
-                refCrdn.color = Color.FromArgb(52)
+                refCrdn.color = Colors.from_argb(52)
 
             except Exception as e:
                 bCaught = True
@@ -5159,9 +5160,9 @@ class VOVectorsHelper(object):
 
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: {0}", refCrdn.color)
-            refCrdn.color = Color.FromArgb(9990945)
+            refCrdn.color = Colors.from_argb(9990945)
             self.m_logger.WriteLine6("\tThe new Color is: {0}", refCrdn.color)
-            AssertEx.AreEqual(Color.FromArgb(9990945), refCrdn.color)
+            AssertEx.AreEqual(Colors.from_argb(9990945), refCrdn.color)
 
             # LabelVisible
             self.m_logger.WriteLine4("\tThe current LabelVisible flag is: {0}", refCrdn.label_visible)
@@ -6171,7 +6172,7 @@ class VOVaporTrailHelper(object):
             oVaporTrail.radius = 34.56
         # Color (read only)
         with pytest.raises(Exception):
-            oVaporTrail.color = Color.FromArgb(1218646)
+            oVaporTrail.color = Colors.from_argb(1218646)
         # ImageFile (read only)
         with pytest.raises(Exception):
             oVaporTrail.image_file = strDataPath + r"\STKData\VO/Textures/smoke.pgm"
@@ -6216,9 +6217,9 @@ class VOVaporTrailHelper(object):
         Assert.assertEqual("13 Jul 1999 15:00:00.000", oVaporTrail.display_interval.get_stop_epoch().time_instant)
         # Color
         self.m_logger.WriteLine6("\tThe current Color is: {0}", oVaporTrail.color)
-        oVaporTrail.color = Color.FromArgb(4660)
+        oVaporTrail.color = Colors.from_argb(4660)
         self.m_logger.WriteLine6("\tThe new Color is: {0}", oVaporTrail.color)
-        AssertEx.AreEqual(Color.FromArgb(4660), oVaporTrail.color)
+        AssertEx.AreEqual(Colors.from_argb(4660), oVaporTrail.color)
         # ImageFile
         self.m_logger.WriteLine5("\tThe current ImageFile is: {0}", oVaporTrail.image_file)
         oVaporTrail.image_file = strDataPath + r"\STKData\VO\Textures\smoke.pgm"

@@ -3,6 +3,7 @@ from test_util import *
 from assert_extension import *
 from assertion_harness import *
 from logger import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -1367,7 +1368,7 @@ class VODataDisplayHelper(object):
             oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
         # FontColor
         with pytest.raises(Exception):
-            oVODataDisplayElement.font_color = Color.FromArgb(11254443)
+            oVODataDisplayElement.font_color = Colors.from_argb(11254443)
         # XOrigin
         with pytest.raises(Exception):
             oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
@@ -1403,7 +1404,7 @@ class VODataDisplayHelper(object):
             oVODataDisplayElement.bg_height = 43
         # BgColor
         with pytest.raises(Exception):
-            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
+            oVODataDisplayElement.bg_color = Colors.from_argb(13491405)
 
     # endregion
 
@@ -1438,9 +1439,9 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(GRAPHICS_3D_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
         # Font Color
         self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
-        oVODataDisplayElement.font_color = Color.FromArgb(65280)
+        oVODataDisplayElement.font_color = Colors.from_argb(65280)
         self.m_logger.WriteLine6("\t\t\tThe new Font Color is: {0}", oVODataDisplayElement.font_color)
-        AssertEx.AreEqual(Color.FromArgb(65280), oVODataDisplayElement.font_color)
+        AssertEx.AreEqual(Colors.from_argb(65280), oVODataDisplayElement.font_color)
         # XOrigin
         self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
         oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
@@ -1520,7 +1521,7 @@ class VODataDisplayHelper(object):
             oVODataDisplayElement.use_background_border = True
         # BackgroundBorderColor
         with pytest.raises(Exception):
-            oVODataDisplayElement.background_border_color = Color.FromArgb(13491405)
+            oVODataDisplayElement.background_border_color = Colors.from_argb(13491405)
         # UseAutoSizeWidth
         with pytest.raises(Exception):
             oVODataDisplayElement.use_auto_size_width = True
@@ -1529,7 +1530,7 @@ class VODataDisplayHelper(object):
             oVODataDisplayElement.use_auto_size_height = True
         # BgColor
         with pytest.raises(Exception):
-            oVODataDisplayElement.bg_color = Color.FromArgb(13491405)
+            oVODataDisplayElement.bg_color = Colors.from_argb(13491405)
 
     # endregion
 
@@ -1574,9 +1575,9 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(12, oVODataDisplayElement.bg_height)
         # BgColor
         self.m_logger.WriteLine6("\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.bg_color)
-        oVODataDisplayElement.bg_color = Color.FromArgb(255)
+        oVODataDisplayElement.bg_color = Colors.from_argb(255)
         self.m_logger.WriteLine6("\t\t\tThe new Background Color is: {0}", oVODataDisplayElement.bg_color)
-        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.bg_color)
+        AssertEx.AreEqual(Colors.from_argb(255), oVODataDisplayElement.bg_color)
         # UseBackgroundBorder
         self.m_logger.WriteLine4("\t\t\tThe new Background Border is: {0}", oVODataDisplayElement.use_background_border)
         Assert.assertEqual(False, oVODataDisplayElement.use_background_border)
@@ -1587,11 +1588,11 @@ class VODataDisplayHelper(object):
         self.m_logger.WriteLine6(
             "\t\t\tThe current Background Color is: {0}", oVODataDisplayElement.background_border_color
         )
-        oVODataDisplayElement.background_border_color = Color.FromArgb(255)
+        oVODataDisplayElement.background_border_color = Colors.from_argb(255)
         self.m_logger.WriteLine6(
             "\t\t\tThe new Background Border Color is: {0}", oVODataDisplayElement.background_border_color
         )
-        AssertEx.AreEqual(Color.FromArgb(255), oVODataDisplayElement.background_border_color)
+        AssertEx.AreEqual(Colors.from_argb(255), oVODataDisplayElement.background_border_color)
         # UseBackgroundTexture
         self.m_logger.WriteLine4(
             "\t\t\tThe new Background Texture is: {0}", oVODataDisplayElement.use_background_texture
@@ -1679,7 +1680,7 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oDataDisplayElement)
         # BackgroundBorderColor
         with pytest.raises(Exception):
-            oDataDisplayElement.background_border_color = Color.Black
+            oDataDisplayElement.background_border_color = Colors.Black
 
     # endregion
 
@@ -1690,11 +1691,11 @@ class VODataDisplayHelper(object):
         self.m_logger.WriteLine6(
             "\t\t\tThe current BackgroundBorderColor is: {0}", oDataDisplayElement.background_border_color
         )
-        oDataDisplayElement.background_border_color = Color.Black
+        oDataDisplayElement.background_border_color = Colors.Black
         self.m_logger.WriteLine6(
             "\t\t\tThe new BackgroundBorderColor is: {0}", oDataDisplayElement.background_border_color
         )
-        Assert.assertEqual(Color.Black, oDataDisplayElement.background_border_color)
+        Assert.assertEqual(Colors.Black, oDataDisplayElement.background_border_color)
 
     # endregion
 

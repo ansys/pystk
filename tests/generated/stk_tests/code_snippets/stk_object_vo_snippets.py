@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.vgt import *
@@ -228,7 +229,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             ),
             Graphics3DReferenceVectorGeometryToolVector,
         )
-        (clr.Convert(body, IGraphics3DReferenceAnalysisWorkbenchComponent)).color = Color.Yellow
+        (clr.Convert(body, IGraphics3DReferenceAnalysisWorkbenchComponent)).color = Colors.Yellow
         body.draw_at_cb = True
         body.axes = "CentralBody/Earth Fixed Axes"
 
@@ -259,10 +260,10 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         displayElement.title_text = "Sol. Intensity"
         displayElement.is_visible = True
         displayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
-        displayElement.font_color = Color.White
+        displayElement.font_color = Colors.White
         displayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
         displayElement.use_background = True
-        displayElement.bg_color = Color.Orange
+        displayElement.bg_color = Colors.Orange
         displayElement.use_auto_size_width = False
         displayElement.use_auto_size_height = False
         displayElement.bg_height = 55
@@ -270,6 +271,6 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         displayElement.background_translucency = 0.5
         displayElement.use_background_texture = False
         displayElement.use_background_border = True
-        displayElement.background_border_color = Color.White
+        displayElement.background_border_color = Colors.White
 
     # endregion
