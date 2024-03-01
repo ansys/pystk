@@ -6,7 +6,7 @@
 
 # Dependencies: jupyter_rfb, pillow, imageio, simplejpeg, ipycanvas
 
-__all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
+__all__ = ["GlobeWidget", "MapWidget", "GfxAnalysisWidget"]
 
 import asyncio
 from ctypes import POINTER
@@ -32,25 +32,46 @@ INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
 DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
 
-class AsyncioTimerManager(object):
+class TimerInfo(object):
+    """Timer information."""
 
-    class TimerInfo(object):
-        def __init__(self, id, milliseconds, TIMERPROC, callbackData):
-            self.id = id
-            self.interval = milliseconds/1000
-            self.callback = TIMERPROC
-            self.callback_data = callbackData
+    def __init__(self, id: int, milliseconds: int, TIMERPROC, callbackData):
+        """
+        Initialize the timer.
+
+        Parameters
+        ----------
+        id : int
+            The timer ID.
+        milliseconds : int
+            The interval in milliseconds.
+        TIMERPROC : function
+            The callback function.
+        callbackData : c_void_p
+            The callback data.
+        
+        """
+        self.id = id
+        self.interval = milliseconds/1000
+        self.callback = TIMERPROC
+        self.callback_data = callbackData
+        self._reset()
+
+    def _reset(self):
+        """Reset the timer."""
+        self.next_proc = time.perf_counter() + self.interval
+
+    def fire(self):
+        """Fire the timer."""
+        if time.perf_counter() >= self.next_proc:
+            self.callback(self.id)
             self._reset()
 
-        def _reset(self):
-            self.next_proc = time.perf_counter() + self.interval
-
-        def fire(self):
-            if time.perf_counter() >= self.next_proc:
-                self.callback(self.id)
-                self._reset()
+class AsyncioTimerManager(object):
+    """Asyncio timer manager."""
 
     def __init__(self):
+        """Initialize the timer manager."""
         if os.name != 'nt':
             agutillib = cdll.LoadLibrary("libagutil.so")
         else:
@@ -75,17 +96,42 @@ class AsyncioTimerManager(object):
             self._delete_timer_cfunc, c_void_p())
 
     def terminate(self):
+        """Terminate the timer manager."""
         self._timers.clear()
 
     def __install_timer(self, milliseconds, TIMERPROC, callbackData):
+        """
+        Install a timer.
+
+        Parameters
+        ----------
+        milliseconds : int
+            The interval in milliseconds.
+        TIMERPROC : function
+            The callback function.
+        callbackData : c_void_p
+            The callback data.
+
+        """
         id = self._next_id
         self._next_id = id + 1
-        self._timers[id] = AsyncioTimerManager.TimerInfo(
+        self._timers[id] = TimerInfo(
             id, milliseconds, TIMERPROC, callbackData)
         self._set_alarm_for_next_timer_proc()
         return id
 
-    def __delete_timer(self, timerID, callbackData):
+    def __delete_timer(self, timerID: int, callbackData: c_void_p):
+        """
+        Delete a timer.
+
+        Parameters
+        ----------
+        timerID : int
+            The timer ID.
+        callbackData : c_void_p
+            The callback data.
+
+        """
         if timerID in self._timers:
             del(self._timers[timerID])
         return 0
@@ -377,25 +423,42 @@ class WidgetBase(RemoteFrameBuffer):
             return canvas
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
-    '''
-    The 3D Globe widget for jupyter.
-    '''
-
-    # Example:
-    #   from ansys.stk.core.stkengine import *
-    #   from ansys.stk.core.stkengine.jupyterwidgets import GlobeWidget
-
-    #   stk = STKEngine.StartApplication(noGraphics=False)
-    #   root = stk.NewObjectRoot()
-    #   g = GlobeWidget(root, 600, 400)
-    #   root.NewScenario("RemoteFrameBuffer")
-    #   root.ExecuteCommand('Animate * Start Loop')
-    #   g
+    """The 3D Globe widget for jupyter."""
 
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        """
+        Initialize the Globe widget.
+
+        Parameters
+        ----------
+        root : StkObjectRoot
+            The STK object root.
+        w : int
+            The width of the widget.
+        h : int
+            The height of the widget.
+        title : str, optional
+            The title of the widget.
+
+        Examples
+        --------
+        The following example demonstrates how to create a GlobeWidget: 
+
+        >>> from ansys.stk.core.stkengine import STKEngine
+        >>> from ansys.stk.core.stkengine.jupyterwidgets import GlobeWidget
+        >>> 
+        >>> stk = STKEngine.StartApplication(noGraphics=False)
+        >>> 
+        >>> root = stk.NewObjectRoot()
+        >>> root.new_sceanrio("HelloScenario")
+        >>> 
+        >>> plotter = GlobeWidget(root, 600, 400)
+        >>> plotter.show()
+
+        """
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
