@@ -271,7 +271,8 @@ class WidgetBase(RemoteFrameBuffer):
 
         self.root = root
         self.title = title or self.root.current_scenario.instance_name
-        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
+        self.scene = self.root.current_scenario.scene_manager.scenes.item(0)
+        self.camera = self.scene.camera
 
     def __del__(self):
         del self._rfb
@@ -364,7 +365,8 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
     
-    def animate(self):
+    def animate(self, time_step):
+        self.root.current_scenario.animation.anim_step_value = time_step
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
