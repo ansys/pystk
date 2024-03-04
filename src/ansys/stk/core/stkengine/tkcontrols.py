@@ -192,9 +192,11 @@ class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
     _interface = UiAxGraphics3DCntrl
 
     def __init__(self, parent, *args, **kwargs):
+        """Construct an object of type GlobeControl."""
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
 class MapControl(UiAx2DCntrl, ControlBase):
@@ -204,9 +206,11 @@ class MapControl(UiAx2DCntrl, ControlBase):
     _interface = UiAx2DCntrl
 
     def __init__(self, parent, *args, **kwargs):
+        """Construct an object of type MapControl."""
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
 class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
@@ -216,7 +220,9 @@ class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
     _interface = UiAxGraphics2DAnalysisCntrl
 
     def __init__(self, parent, *args, **kwargs):
+        """Construct an object of type GfxAnalysisControl."""
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)

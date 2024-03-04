@@ -127,6 +127,7 @@ class IUiToolbar(object):
                              "set_float_state" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiToolbar."""
         initialize_from_source_object(self, sourceObject, IUiToolbar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -136,6 +137,7 @@ class IUiToolbar(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiToolbar)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiToolbar, None)
     
     _get_id_metadata = { "name" : "id",
@@ -204,6 +206,7 @@ class IUiToolbarCollection(object):
                              "get_item_by_name" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiToolbarCollection."""
         initialize_from_source_object(self, sourceObject, IUiToolbarCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -214,12 +217,15 @@ class IUiToolbarCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiToolbarCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiToolbarCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUiToolbarCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUiToolbar":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -312,6 +318,7 @@ class IUiWindow(object):
                              "get_service_by_type" : 24, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiWindow."""
         initialize_from_source_object(self, sourceObject, IUiWindow)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -321,6 +328,7 @@ class IUiWindow(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindow)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiWindow, None)
     
     _get_caption_metadata = { "name" : "caption",
@@ -524,6 +532,7 @@ class IUiWindowsCollection(object):
                              "get_item_by_name" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiWindowsCollection."""
         initialize_from_source_object(self, sourceObject, IUiWindowsCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -534,12 +543,15 @@ class IUiWindowsCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowsCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiWindowsCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUiWindowsCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUiWindow":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -616,6 +628,7 @@ class IUiWindowMapObject(object):
         "method_offsets" : { "get_map_id" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiWindowMapObject."""
         initialize_from_source_object(self, sourceObject, IUiWindowMapObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -625,6 +638,7 @@ class IUiWindowMapObject(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowMapObject)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiWindowMapObject, None)
     
     _get_map_id_metadata = { "name" : "map_id",
@@ -650,6 +664,7 @@ class IUiWindowGlobeObject(object):
         "method_offsets" : { "get_scene_id" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiWindowGlobeObject."""
         initialize_from_source_object(self, sourceObject, IUiWindowGlobeObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -659,6 +674,7 @@ class IUiWindowGlobeObject(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiWindowGlobeObject)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiWindowGlobeObject, None)
     
     _get_scene_id_metadata = { "name" : "scene_id",
@@ -679,6 +695,7 @@ class UiWindowsCollection(IUiWindowsCollection):
     """Provide methods and properties to manage the windows."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiWindowsCollection."""
         IUiWindowsCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -687,6 +704,7 @@ class UiWindowsCollection(IUiWindowsCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiWindowsCollection, [IUiWindowsCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{82F7DB8A-A761-4C3E-95DF-37300A3738CB}", UiWindowsCollection)
@@ -696,6 +714,7 @@ class UiWindow(IUiWindow):
     """Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiWindow."""
         IUiWindow.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -704,6 +723,7 @@ class UiWindow(IUiWindow):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiWindow, [IUiWindow])
 
 agcls.AgClassCatalog.add_catalog_entry("{BD72ECC3-A4A2-42FB-95AC-AE25633BB9F6}", UiWindow)
@@ -713,6 +733,7 @@ class UiToolbar(IUiToolbar):
     """Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiToolbar."""
         IUiToolbar.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -721,6 +742,7 @@ class UiToolbar(IUiToolbar):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiToolbar, [IUiToolbar])
 
 agcls.AgClassCatalog.add_catalog_entry("{C20AB584-ABCC-4BF3-96D4-D2A4AA880FBB}", UiToolbar)
@@ -730,6 +752,7 @@ class UiToolbarCollection(IUiToolbarCollection):
     """Provide methods and properties to manage the toolbars."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiToolbarCollection."""
         IUiToolbarCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -738,6 +761,7 @@ class UiToolbarCollection(IUiToolbarCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiToolbarCollection, [IUiToolbarCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{28F000E7-D13E-485E-8484-0BCB359BBC55}", UiToolbarCollection)
@@ -747,6 +771,7 @@ class UiWindowMapObject(IUiWindowMapObject):
     """Provide methods and properties to manipulate the 2D map."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiWindowMapObject."""
         IUiWindowMapObject.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -755,6 +780,7 @@ class UiWindowMapObject(IUiWindowMapObject):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiWindowMapObject, [IUiWindowMapObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{D20C704C-0763-4CC9-9485-A2EA23C84E6B}", UiWindowMapObject)
@@ -764,6 +790,7 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
     """Provide methods and properties to manipulate the 3D globe."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiWindowGlobeObject."""
         IUiWindowGlobeObject.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -772,6 +799,7 @@ class UiWindowGlobeObject(IUiWindowGlobeObject):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiWindowGlobeObject, [IUiWindowGlobeObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{4F69FA5F-30E8-4A07-9D8C-1AD163A3DE0D}", UiWindowGlobeObject)

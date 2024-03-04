@@ -2,7 +2,7 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
-"""This library contains Object Model components specifically designed to support STK Aviator."""
+"""Object Model components specifically designed to support STK Aviator."""
 
 __all__ = ["ACCELERATION_ADVANCED_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
 "ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", "ADDS_MISSING_MSG_TYPE", "ADDS_MSG_EXTRAP_TYPE", "ADDS_MSG_INTERP_TYPE", 
@@ -1707,7 +1707,7 @@ HOLDING_DIRECTION.OUTBOUND_RIGHT_TURN.__doc__ = "Turn right on the way outbound 
 agcls.AgTypeNameMap["HOLDING_DIRECTION"] = HOLDING_DIRECTION
 
 class HOLD_REFUEL_DUMP_MODE(IntEnum):
-    """Defines when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
+    """Define when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel."""
    
     FULL_NUMER_OF_TURNS = 0
     """Turn left on the way inbound to the site."""
@@ -1723,7 +1723,7 @@ HOLD_REFUEL_DUMP_MODE.IMMEDIATE_EXIT.__doc__ = "Turn left on the way outbound fr
 agcls.AgTypeNameMap["HOLD_REFUEL_DUMP_MODE"] = HOLD_REFUEL_DUMP_MODE
 
 class HOLDING_ENTRY_MANEUVER(IntEnum):
-    """Defines how the aircraft will enter the holding pattern."""
+    """Define how the aircraft will enter the holding pattern."""
    
     HOLD_ENTRY_NO_MANEUVER = 0
     """The aircraft will enter the holding pattern at the normal holding point."""
@@ -2674,6 +2674,7 @@ class ISite(object):
                              "set_name" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISite."""
         initialize_from_source_object(self, sourceObject, ISite)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2683,6 +2684,7 @@ class ISite(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISite)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISite, None)
     
     _get_name_metadata = { "name" : "name",
@@ -2725,6 +2727,7 @@ class IWindModel(object):
                              "paste" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IWindModel."""
         initialize_from_source_object(self, sourceObject, IWindModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2734,6 +2737,7 @@ class IWindModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWindModel, None)
     
     _get_wind_model_type_metadata = { "name" : "wind_model_type",
@@ -2833,6 +2837,7 @@ class IADDSMessage(object):
                              "get_source" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IADDSMessage."""
         initialize_from_source_object(self, sourceObject, IADDSMessage)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2842,6 +2847,7 @@ class IADDSMessage(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IADDSMessage)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IADDSMessage, None)
     
     _get_start_time_metadata = { "name" : "start_time",
@@ -2910,6 +2916,7 @@ class IFuelTankInternal(object):
                              "set_position" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFuelTankInternal."""
         initialize_from_source_object(self, sourceObject, IFuelTankInternal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2919,6 +2926,7 @@ class IFuelTankInternal(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelTankInternal)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFuelTankInternal, None)
     
     _get_name_metadata = { "name" : "name",
@@ -3042,6 +3050,7 @@ class IFuelTankExternal(object):
                              "set_drag_index" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFuelTankExternal."""
         initialize_from_source_object(self, sourceObject, IFuelTankExternal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3051,6 +3060,7 @@ class IFuelTankExternal(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelTankExternal)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFuelTankExternal, None)
     
     _get_name_metadata = { "name" : "name",
@@ -3172,6 +3182,7 @@ class IPayloadStation(object):
                              "get_external_fuel_tank" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPayloadStation."""
         initialize_from_source_object(self, sourceObject, IPayloadStation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3181,6 +3192,7 @@ class IPayloadStation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPayloadStation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPayloadStation, None)
     
     _get_name_metadata = { "name" : "name",
@@ -3277,6 +3289,7 @@ class IAircraftModel(object):
                              "get_terrain_follow" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftModel."""
         initialize_from_source_object(self, sourceObject, IAircraftModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3286,6 +3299,7 @@ class IAircraftModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftModel, None)
     
     _get_perf_model_types_metadata = { "name" : "perf_model_types",
@@ -3405,6 +3419,7 @@ class IAircraftSimpleAero(object):
                              "set_cd" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftSimpleAero."""
         initialize_from_source_object(self, sourceObject, IAircraftSimpleAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3414,6 +3429,7 @@ class IAircraftSimpleAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftSimpleAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftSimpleAero, None)
     
     _get_operating_mode_metadata = { "name" : "operating_mode",
@@ -3504,6 +3520,7 @@ class ILevelTurns(object):
                              "get_maneuver_mode_helper" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILevelTurns."""
         initialize_from_source_object(self, sourceObject, ILevelTurns)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3513,6 +3530,7 @@ class ILevelTurns(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelTurns)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILevelTurns, None)
     
     _get_turn_mode_metadata = { "name" : "turn_mode",
@@ -3560,7 +3578,7 @@ class ILevelTurns(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def turn_rate(self) -> float:
-        """get the turn rate."""
+        """Get the turn rate."""
         return self._intf.get_property(ILevelTurns._metadata, ILevelTurns._get_turn_rate_metadata)
 
     _set_level_turn_metadata = { "name" : "set_level_turn",
@@ -3614,6 +3632,7 @@ class IAttitudeTransitions(object):
                              "set_yaw_rate" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAttitudeTransitions."""
         initialize_from_source_object(self, sourceObject, IAttitudeTransitions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3623,6 +3642,7 @@ class IAttitudeTransitions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAttitudeTransitions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAttitudeTransitions, None)
     
     _get_roll_rate_metadata = { "name" : "roll_rate",
@@ -3696,6 +3716,7 @@ class IClimbAndDescentTransitions(object):
                              "get_maneuver_mode_helper" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IClimbAndDescentTransitions."""
         initialize_from_source_object(self, sourceObject, IClimbAndDescentTransitions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3705,6 +3726,7 @@ class IClimbAndDescentTransitions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IClimbAndDescentTransitions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IClimbAndDescentTransitions, None)
     
     _get_max_pull_up_g_metadata = { "name" : "max_pull_up_g",
@@ -3806,6 +3828,7 @@ class ICatalogItem(object):
                              "contains_child_item" : 13, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogItem."""
         initialize_from_source_object(self, sourceObject, ICatalogItem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3815,6 +3838,7 @@ class ICatalogItem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogItem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogItem, None)
     
     _get_name_metadata = { "name" : "name",
@@ -3946,6 +3970,7 @@ class IAircraftBasicClimbModel(object):
                              "get_as_catalog_item" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicClimbModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicClimbModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3955,6 +3980,7 @@ class IAircraftBasicClimbModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicClimbModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicClimbModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
@@ -4119,6 +4145,7 @@ class IAircraftBasicAccelerationModel(object):
                              "get_as_catalog_item" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicAccelerationModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicAccelerationModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4128,6 +4155,7 @@ class IAircraftBasicAccelerationModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicAccelerationModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicAccelerationModel, None)
     
     _get_level_turns_metadata = { "name" : "level_turns",
@@ -4194,6 +4222,7 @@ class IAircraftCategory(object):
                              "get_rotorcraft_models" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftCategory."""
         initialize_from_source_object(self, sourceObject, IAircraftCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4203,6 +4232,7 @@ class IAircraftCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftCategory, None)
     
     _get_aircraft_models_metadata = { "name" : "aircraft_models",
@@ -4246,6 +4276,7 @@ class IRunwayCategory(object):
                              "get_dafif_runways" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRunwayCategory."""
         initialize_from_source_object(self, sourceObject, IRunwayCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4255,6 +4286,7 @@ class IRunwayCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRunwayCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRunwayCategory, None)
     
     _get_user_runways_metadata = { "name" : "user_runways",
@@ -4296,6 +4328,7 @@ class IBasicManeuverStrategy(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategy."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4305,6 +4338,7 @@ class IBasicManeuverStrategy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategy, None)
     
 
@@ -4323,6 +4357,7 @@ class IAircraftVTOL(object):
                              "get_as_catalog_item" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftVTOL."""
         initialize_from_source_object(self, sourceObject, IAircraftVTOL)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4332,6 +4367,7 @@ class IAircraftVTOL(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftVTOL)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftVTOL, None)
     
     _get_vtol_by_name_metadata = { "name" : "get_vtol_by_name",
@@ -4376,6 +4412,7 @@ class IAircraftExternalAero(object):
                              "get_is_takeoff_landing_valid" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftExternalAero."""
         initialize_from_source_object(self, sourceObject, IAircraftExternalAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4385,6 +4422,7 @@ class IAircraftExternalAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftExternalAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftExternalAero, None)
     
     _get_forward_flight_filepath_metadata = { "name" : "forward_flight_filepath",
@@ -4516,6 +4554,7 @@ class IAircraftSimpleProp(object):
                              "set_density_scaling" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftSimpleProp."""
         initialize_from_source_object(self, sourceObject, IAircraftSimpleProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4525,6 +4564,7 @@ class IAircraftSimpleProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftSimpleProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftSimpleProp, None)
     
     _get_max_thrust_accel_metadata = { "name" : "max_thrust_accel",
@@ -4608,6 +4648,7 @@ class IAircraftExternalProp(object):
                              "set_density_scaling" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftExternalProp."""
         initialize_from_source_object(self, sourceObject, IAircraftExternalProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4617,6 +4658,7 @@ class IAircraftExternalProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftExternalProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftExternalProp, None)
     
     _get_prop_filepath_metadata = { "name" : "prop_filepath",
@@ -4749,6 +4791,7 @@ class IAircraftBasicFixedWingProp(object):
                              "set_density_scaling" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicFixedWingProp."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicFixedWingProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4758,6 +4801,7 @@ class IAircraftBasicFixedWingProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicFixedWingProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicFixedWingProp, None)
     
     _get_propulsion_mode_metadata = { "name" : "propulsion_mode",
@@ -4978,6 +5022,7 @@ class IAircraftAdvancedClimbModel(object):
                              "get_as_catalog_item" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedClimbModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedClimbModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4987,6 +5032,7 @@ class IAircraftAdvancedClimbModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedClimbModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedClimbModel, None)
     
     _get_climb_speed_type_metadata = { "name" : "climb_speed_type",
@@ -5198,6 +5244,7 @@ class IAircraftBasicCruiseModel(object):
                              "get_as_catalog_item" : 31, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicCruiseModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicCruiseModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5207,6 +5254,7 @@ class IAircraftBasicCruiseModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicCruiseModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicCruiseModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
@@ -5484,6 +5532,7 @@ class IAircraftAdvancedCruiseModel(object):
                              "get_as_catalog_item" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedCruiseModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedCruiseModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5493,6 +5542,7 @@ class IAircraftAdvancedCruiseModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedCruiseModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedCruiseModel, None)
     
     _get_default_cruise_altitude_metadata = { "name" : "default_cruise_altitude",
@@ -5637,6 +5687,7 @@ class IAircraftBasicDescentModel(object):
                              "get_as_catalog_item" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicDescentModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicDescentModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5646,6 +5697,7 @@ class IAircraftBasicDescentModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicDescentModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicDescentModel, None)
     
     _get_ceiling_altitude_metadata = { "name" : "ceiling_altitude",
@@ -5823,6 +5875,7 @@ class IAircraftAdvancedDescentModel(object):
                              "get_as_catalog_item" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedDescentModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedDescentModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5832,6 +5885,7 @@ class IAircraftAdvancedDescentModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedDescentModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedDescentModel, None)
     
     _get_descent_speed_type_metadata = { "name" : "descent_speed_type",
@@ -6009,6 +6063,7 @@ class IAircraftBasicLandingModel(object):
                              "get_as_catalog_item" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicLandingModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicLandingModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6018,6 +6073,7 @@ class IAircraftBasicLandingModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicLandingModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicLandingModel, None)
     
     _get_landing_speed_metadata = { "name" : "landing_speed",
@@ -6141,6 +6197,7 @@ class IAircraftAdvancedLandingModel(object):
                              "get_as_catalog_item" : 13, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedLandingModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedLandingModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6150,6 +6207,7 @@ class IAircraftAdvancedLandingModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedLandingModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedLandingModel, None)
     
     _get_landing_speed_mode_metadata = { "name" : "landing_speed_mode",
@@ -6284,6 +6342,7 @@ class IAircraftBasicTakeoffModel(object):
                              "get_as_catalog_item" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicTakeoffModel."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicTakeoffModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6293,6 +6352,7 @@ class IAircraftBasicTakeoffModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicTakeoffModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicTakeoffModel, None)
     
     _get_takeoff_speed_metadata = { "name" : "takeoff_speed",
@@ -6458,6 +6518,7 @@ class IAircraftAdvancedTakeoffModel(object):
                              "get_as_catalog_item" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedTakeoffModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedTakeoffModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6467,6 +6528,7 @@ class IAircraftAdvancedTakeoffModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedTakeoffModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedTakeoffModel, None)
     
     _get_takeoff_speed_mode_metadata = { "name" : "takeoff_speed_mode",
@@ -6632,6 +6694,7 @@ class IAircraftVTOLModel(object):
                              "set_forward_flight_transition_time" : 25, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftVTOLModel."""
         initialize_from_source_object(self, sourceObject, IAircraftVTOLModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6641,6 +6704,7 @@ class IAircraftVTOLModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftVTOLModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftVTOLModel, None)
     
     _get_max_hover_altitude_metadata = { "name" : "max_hover_altitude",
@@ -6858,6 +6922,7 @@ class IAircraftTerrainFollow(object):
                              "get_as_catalog_item" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftTerrainFollow."""
         initialize_from_source_object(self, sourceObject, IAircraftTerrainFollow)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6867,6 +6932,7 @@ class IAircraftTerrainFollow(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTerrainFollow)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftTerrainFollow, None)
     
     _get_terrain_follow_by_name_metadata = { "name" : "get_terrain_follow_by_name",
@@ -6905,6 +6971,7 @@ class IPerformanceModelOptions(object):
                              "get_properties" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPerformanceModelOptions."""
         initialize_from_source_object(self, sourceObject, IPerformanceModelOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6914,6 +6981,7 @@ class IPerformanceModelOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPerformanceModelOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPerformanceModelOptions, None)
     
     _link_to_catalog_metadata = { "name" : "link_to_catalog",
@@ -7030,6 +7098,7 @@ class IAdvancedFixedWingTool(object):
                              "get_powerplant_mode_as_sub_super_hypersonic" : 41, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTool."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTool)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7039,6 +7108,7 @@ class IAdvancedFixedWingTool(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTool)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTool, None)
     
     _get_wing_area_metadata = { "name" : "wing_area",
@@ -7385,6 +7455,7 @@ class IAdvancedFixedWingExternalAero(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingExternalAero."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingExternalAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7394,6 +7465,7 @@ class IAdvancedFixedWingExternalAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingExternalAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingExternalAero, None)
     
     _get_filepath_metadata = { "name" : "filepath",
@@ -7445,6 +7517,7 @@ class IAdvancedFixedWingSubsonicAero(object):
                              "set_transonic_mach_drag_factor" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingSubsonicAero."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubsonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7454,6 +7527,7 @@ class IAdvancedFixedWingSubsonicAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingSubsonicAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubsonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
@@ -7582,6 +7656,7 @@ class IAdvancedFixedWingSubSuperHypersonicAero(object):
                              "set_wave_drag_factor" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingSubSuperHypersonicAero."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubSuperHypersonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7591,6 +7666,7 @@ class IAdvancedFixedWingSubSuperHypersonicAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingSubSuperHypersonicAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubSuperHypersonicAero, None)
     
     _get_max_aoa_metadata = { "name" : "max_aoa",
@@ -7760,6 +7836,7 @@ class IAdvancedFixedWingSubSuperHypersonicProp(object):
                              "set_max_ram_scram_burner_total_temperature" : 25, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingSubSuperHypersonicProp."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSubSuperHypersonicProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7769,6 +7846,7 @@ class IAdvancedFixedWingSubSuperHypersonicProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingSubSuperHypersonicProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingSubSuperHypersonicProp, None)
     
     _get_turbine_mode_metadata = { "name" : "turbine_mode",
@@ -8005,6 +8083,7 @@ class IAdvancedFixedWingSupersonicAero(object):
                              "set_leading_edge_suction_efficiency" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingSupersonicAero."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingSupersonicAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8014,6 +8093,7 @@ class IAdvancedFixedWingSupersonicAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingSupersonicAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingSupersonicAero, None)
     
     _get_geometry_type_metadata = { "name" : "geometry_type",
@@ -8194,6 +8274,7 @@ class IAdvancedFixedWingGeometryBasic(object):
                              "set_wing_sweep" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingGeometryBasic."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometryBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8203,6 +8284,7 @@ class IAdvancedFixedWingGeometryBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingGeometryBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometryBasic, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
@@ -8260,6 +8342,7 @@ class IAdvancedFixedWingGeometryVariable(object):
                              "set_max_sweep_angle" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingGeometryVariable."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometryVariable)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8269,6 +8352,7 @@ class IAdvancedFixedWingGeometryVariable(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingGeometryVariable)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometryVariable, None)
     
     _get_aspect_ratio_metadata = { "name" : "aspect_ratio",
@@ -8370,6 +8454,7 @@ class IAdvancedFixedWingElectricPowerplant(object):
                              "set_propeller_diameter" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingElectricPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingElectricPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8379,6 +8464,7 @@ class IAdvancedFixedWingElectricPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingElectricPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingElectricPowerplant, None)
     
     _get_max_power_metadata = { "name" : "max_power",
@@ -8446,6 +8532,7 @@ class IAdvancedFixedWingExternalProp(object):
                              "get_is_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingExternalProp."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingExternalProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8455,6 +8542,7 @@ class IAdvancedFixedWingExternalProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingExternalProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingExternalProp, None)
     
     _get_filepath_metadata = { "name" : "filepath",
@@ -8504,6 +8592,7 @@ class IAdvancedFixedWingPistonPowerplant(object):
                              "set_fuel_flow" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingPistonPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingPistonPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8513,6 +8602,7 @@ class IAdvancedFixedWingPistonPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingPistonPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingPistonPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
@@ -8617,6 +8707,7 @@ class IAdvancedFixedWingTurbopropPowerplant(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTurbopropPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbopropPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8626,6 +8717,7 @@ class IAdvancedFixedWingTurbopropPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTurbopropPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbopropPowerplant, None)
     
     _get_max_sea_level_static_power_metadata = { "name" : "max_sea_level_static_power",
@@ -8714,6 +8806,7 @@ class IAdvancedFixedWingEmpiricalJetEngine(object):
                              "set_fuel_flow" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingEmpiricalJetEngine."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingEmpiricalJetEngine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8723,6 +8816,7 @@ class IAdvancedFixedWingEmpiricalJetEngine(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingEmpiricalJetEngine)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingEmpiricalJetEngine, None)
     
     _get_max_sea_level_static_thrust_metadata = { "name" : "max_sea_level_static_thrust",
@@ -8828,6 +8922,7 @@ class IAdvancedFixedWingTurbojetBasicABProp(object):
                              "get_fuel_mode_as_cea" : 25, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTurbojetBasicABProp."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbojetBasicABProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8837,6 +8932,7 @@ class IAdvancedFixedWingTurbojetBasicABProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTurbojetBasicABProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbojetBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
@@ -9080,6 +9176,7 @@ class IAdvancedFixedWingTurbofanBasicABProp(object):
                              "get_fuel_mode_as_cea" : 27, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTurbofanBasicABProp."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbofanBasicABProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9089,6 +9186,7 @@ class IAdvancedFixedWingTurbofanBasicABProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTurbofanBasicABProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbofanBasicABProp, None)
     
     _get_can_use_afterburner_metadata = { "name" : "can_use_afterburner",
@@ -9322,6 +9420,7 @@ class IAviatorVehicle(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAviatorVehicle."""
         initialize_from_source_object(self, sourceObject, IAviatorVehicle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9331,6 +9430,7 @@ class IAviatorVehicle(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAviatorVehicle)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAviatorVehicle, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -9401,6 +9501,7 @@ class IMissileModel(object):
                              "get_as_catalog_item" : 47, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileModel."""
         initialize_from_source_object(self, sourceObject, IMissileModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9410,6 +9511,7 @@ class IMissileModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileModel, None)
     
     _get_max_load_factor_metadata = { "name" : "max_load_factor",
@@ -9803,6 +9905,7 @@ class IMissileAero(object):
                              "get_mode_as_advanced" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileAero."""
         initialize_from_source_object(self, sourceObject, IMissileAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9812,6 +9915,7 @@ class IMissileAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileAero, None)
     
     _get_aero_strategy_metadata = { "name" : "aero_strategy",
@@ -9875,6 +9979,7 @@ class IMissileProp(object):
                              "get_mode_as_rocket" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileProp."""
         initialize_from_source_object(self, sourceObject, IMissileProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9884,6 +9989,7 @@ class IMissileProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileProp, None)
     
     _get_prop_strategy_metadata = { "name" : "prop_strategy",
@@ -9965,6 +10071,7 @@ class IMissileSimpleAero(object):
                              "set_max_aoa" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileSimpleAero."""
         initialize_from_source_object(self, sourceObject, IMissileSimpleAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9974,6 +10081,7 @@ class IMissileSimpleAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileSimpleAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileSimpleAero, None)
     
     _get_s_reference_metadata = { "name" : "s_reference",
@@ -10067,6 +10175,7 @@ class IMissileSimpleProp(object):
                              "set_no_thrust_when_no_fuel" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileSimpleProp."""
         initialize_from_source_object(self, sourceObject, IMissileSimpleProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10076,6 +10185,7 @@ class IMissileSimpleProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileSimpleProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileSimpleProp, None)
     
     _get_max_thrust_metadata = { "name" : "max_thrust",
@@ -10147,6 +10257,7 @@ class IMissileExternalAero(object):
                              "get_is_valid" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileExternalAero."""
         initialize_from_source_object(self, sourceObject, IMissileExternalAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10156,6 +10267,7 @@ class IMissileExternalAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileExternalAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileExternalAero, None)
     
     _get_filepath_metadata = { "name" : "filepath",
@@ -10232,6 +10344,7 @@ class IMissileExternalProp(object):
                              "get_is_valid" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileExternalProp."""
         initialize_from_source_object(self, sourceObject, IMissileExternalProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10241,6 +10354,7 @@ class IMissileExternalProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileExternalProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileExternalProp, None)
     
     _get_filepath_metadata = { "name" : "filepath",
@@ -10351,6 +10465,7 @@ class IMissileAdvancedAero(object):
                              "set_tail_lift_fraction" : 48, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileAdvancedAero."""
         initialize_from_source_object(self, sourceObject, IMissileAdvancedAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10360,6 +10475,7 @@ class IMissileAdvancedAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileAdvancedAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileAdvancedAero, None)
     
     _get_body_width_metadata = { "name" : "body_width",
@@ -10782,6 +10898,7 @@ class IMissileRamjetProp(object):
                              "set_no_thrust_when_no_fuel" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileRamjetProp."""
         initialize_from_source_object(self, sourceObject, IMissileRamjetProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10791,6 +10908,7 @@ class IMissileRamjetProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileRamjetProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileRamjetProp, None)
     
     _get_design_mach_metadata = { "name" : "design_mach",
@@ -11001,6 +11119,7 @@ class IMissileRocketProp(object):
                              "set_no_thrust_when_no_fuel" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileRocketProp."""
         initialize_from_source_object(self, sourceObject, IMissileRocketProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11010,6 +11129,7 @@ class IMissileRocketProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileRocketProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileRocketProp, None)
     
     _get_nozzle_expansion_ratio_metadata = { "name" : "nozzle_expansion_ratio",
@@ -11200,6 +11320,7 @@ class IMissileTurbojetProp(object):
                              "set_no_thrust_when_no_fuel" : 30, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileTurbojetProp."""
         initialize_from_source_object(self, sourceObject, IMissileTurbojetProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11209,6 +11330,7 @@ class IMissileTurbojetProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileTurbojetProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileTurbojetProp, None)
     
     _get_design_mach_metadata = { "name" : "design_mach",
@@ -11509,6 +11631,7 @@ class IRotorcraftModel(object):
                              "get_as_catalog_item" : 44, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotorcraftModel."""
         initialize_from_source_object(self, sourceObject, IRotorcraftModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11518,6 +11641,7 @@ class IRotorcraftModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotorcraftModel, None)
     
     _get_max_altitude_metadata = { "name" : "max_altitude",
@@ -11905,6 +12029,7 @@ class IRotorcraftAero(object):
                              "set_induced_power_correction_factor" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotorcraftAero."""
         initialize_from_source_object(self, sourceObject, IRotorcraftAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11914,6 +12039,7 @@ class IRotorcraftAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotorcraftAero, None)
     
     _get_rotor_count_metadata = { "name" : "rotor_count",
@@ -12112,6 +12238,7 @@ class IRotorcraftProp(object):
                              "set_max_sl_fuel_flow" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotorcraftProp."""
         initialize_from_source_object(self, sourceObject, IRotorcraftProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12121,6 +12248,7 @@ class IRotorcraftProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotorcraftProp, None)
     
     _get_powerplant_type_metadata = { "name" : "powerplant_type",
@@ -12188,6 +12316,7 @@ class IUserRunwaySource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserRunwaySource."""
         initialize_from_source_object(self, sourceObject, IUserRunwaySource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12197,6 +12326,7 @@ class IUserRunwaySource(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserRunwaySource)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserRunwaySource, None)
     
     _get_user_runway_metadata = { "name" : "get_user_runway",
@@ -12252,6 +12382,7 @@ class IUserRunway(object):
                              "paste_site" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserRunway."""
         initialize_from_source_object(self, sourceObject, IUserRunway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12261,6 +12392,7 @@ class IUserRunway(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserRunway)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserRunway, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -12422,6 +12554,7 @@ class IARINC424Item(object):
                              "copy_site" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IARINC424Item."""
         initialize_from_source_object(self, sourceObject, IARINC424Item)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12431,6 +12564,7 @@ class IARINC424Item(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Item)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IARINC424Item, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -12490,6 +12624,7 @@ class IARINC424Source(object):
                              "get_as_catalog_source" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IARINC424Source."""
         initialize_from_source_object(self, sourceObject, IARINC424Source)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12499,6 +12634,7 @@ class IARINC424Source(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Source)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IARINC424Source, None)
     
     _get_arinc424_item_metadata = { "name" : "get_arinc424_item",
@@ -12584,6 +12720,7 @@ class IDAFIFSource(object):
                              "get_as_catalog_source" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDAFIFSource."""
         initialize_from_source_object(self, sourceObject, IDAFIFSource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12593,6 +12730,7 @@ class IDAFIFSource(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDAFIFSource)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDAFIFSource, None)
     
     _get_dafif_item_metadata = { "name" : "get_dafif_item",
@@ -12673,6 +12811,7 @@ class IUserVTOLPoint(object):
                              "get_as_catalog_item" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserVTOLPoint."""
         initialize_from_source_object(self, sourceObject, IUserVTOLPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12682,6 +12821,7 @@ class IUserVTOLPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserVTOLPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserVTOLPoint, None)
     
     _get_altitude_metadata = { "name" : "altitude",
@@ -12777,6 +12917,7 @@ class IUserVTOLPointSource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserVTOLPointSource."""
         initialize_from_source_object(self, sourceObject, IUserVTOLPointSource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12786,6 +12927,7 @@ class IUserVTOLPointSource(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserVTOLPointSource)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserVTOLPointSource, None)
     
     _get_user_vtol_point_metadata = { "name" : "get_user_vtol_point",
@@ -12830,6 +12972,7 @@ class IUserWaypoint(object):
                              "get_as_catalog_item" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserWaypoint."""
         initialize_from_source_object(self, sourceObject, IUserWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12839,6 +12982,7 @@ class IUserWaypoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserWaypoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserWaypoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
@@ -12911,6 +13055,7 @@ class IUserWaypointSource(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUserWaypointSource."""
         initialize_from_source_object(self, sourceObject, IUserWaypointSource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12920,6 +13065,7 @@ class IUserWaypointSource(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUserWaypointSource)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUserWaypointSource, None)
     
     _get_user_waypoint_metadata = { "name" : "get_user_waypoint",
@@ -12965,6 +13111,7 @@ class IPropulsionEfficiencies(object):
                              "set_exhaust_nozzle_type" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropulsionEfficiencies."""
         initialize_from_source_object(self, sourceObject, IPropulsionEfficiencies)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12974,6 +13121,7 @@ class IPropulsionEfficiencies(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropulsionEfficiencies)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropulsionEfficiencies, None)
     
     _get_technology_level_metadata = { "name" : "technology_level",
@@ -13058,6 +13206,7 @@ class IFuelModelKeroseneAFPROP(object):
                              "set_specific_energy" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFuelModelKeroseneAFPROP."""
         initialize_from_source_object(self, sourceObject, IFuelModelKeroseneAFPROP)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13067,6 +13216,7 @@ class IFuelModelKeroseneAFPROP(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelModelKeroseneAFPROP)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFuelModelKeroseneAFPROP, None)
     
     _get_subtype_metadata = { "name" : "subtype",
@@ -13119,6 +13269,7 @@ class IFuelModelKeroseneCEA(object):
                              "set_specific_energy" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFuelModelKeroseneCEA."""
         initialize_from_source_object(self, sourceObject, IFuelModelKeroseneCEA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13128,6 +13279,7 @@ class IFuelModelKeroseneCEA(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFuelModelKeroseneCEA)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFuelModelKeroseneCEA, None)
     
     _get_subtype_metadata = { "name" : "subtype",
@@ -13191,6 +13343,7 @@ class IAdvancedFixedWingRamjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingRamjetBasic."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingRamjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13200,6 +13353,7 @@ class IAdvancedFixedWingRamjetBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingRamjetBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingRamjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
@@ -13351,6 +13505,7 @@ class IAdvancedFixedWingScramjetBasic(object):
                              "get_efficiencies_and_losses" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingScramjetBasic."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingScramjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13360,6 +13515,7 @@ class IAdvancedFixedWingScramjetBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingScramjetBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingScramjetBasic, None)
     
     _get_design_altitude_metadata = { "name" : "design_altitude",
@@ -13506,6 +13662,7 @@ class IRefuelDumpProperties(object):
                              "set_use_end_of_enroute_segment_as_epoch" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRefuelDumpProperties."""
         initialize_from_source_object(self, sourceObject, IRefuelDumpProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13515,6 +13672,7 @@ class IRefuelDumpProperties(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRefuelDumpProperties)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRefuelDumpProperties, None)
     
     _get_refuel_dump_mode_metadata = { "name" : "refuel_dump_mode",
@@ -13615,6 +13773,7 @@ class IProcedureFastTimeOptions(object):
                              "set_stop_time" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureFastTimeOptions."""
         initialize_from_source_object(self, sourceObject, IProcedureFastTimeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13624,6 +13783,7 @@ class IProcedureFastTimeOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFastTimeOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureFastTimeOptions, None)
     
     _get_start_time_metadata = { "name" : "start_time",
@@ -13688,6 +13848,7 @@ class IAtmosphereModelBasic(object):
                              "get_density_altitude" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAtmosphereModelBasic."""
         initialize_from_source_object(self, sourceObject, IAtmosphereModelBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13697,6 +13858,7 @@ class IAtmosphereModelBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAtmosphereModelBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphereModelBasic, None)
     
     _get_name_metadata = { "name" : "name",
@@ -13808,6 +13970,7 @@ class IAtmosphereModel(object):
                              "paste" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAtmosphereModel."""
         initialize_from_source_object(self, sourceObject, IAtmosphereModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13817,6 +13980,7 @@ class IAtmosphereModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAtmosphereModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAtmosphereModel, None)
     
     _get_atmosphere_model_type_string_metadata = { "name" : "atmosphere_model_type_string",
@@ -13892,6 +14056,7 @@ class IADDSMessageCollection(object):
                              "clear_messages" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IADDSMessageCollection."""
         initialize_from_source_object(self, sourceObject, IADDSMessageCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -13902,12 +14067,15 @@ class IADDSMessageCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IADDSMessageCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IADDSMessageCollection, None)
     def __iter__(self):
+        """Create an iterator for the IADDSMessageCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IADDSMessage":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -13983,6 +14151,7 @@ class IWindModelADDS(object):
                              "get_messages" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IWindModelADDS."""
         initialize_from_source_object(self, sourceObject, IWindModelADDS)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13992,6 +14161,7 @@ class IWindModelADDS(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModelADDS)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWindModelADDS, None)
     
     _get_name_metadata = { "name" : "name",
@@ -14127,6 +14297,7 @@ class IWindModelConstant(object):
                              "set_wind_bearing" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IWindModelConstant."""
         initialize_from_source_object(self, sourceObject, IWindModelConstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14136,6 +14307,7 @@ class IWindModelConstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWindModelConstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWindModelConstant, None)
     
     _get_name_metadata = { "name" : "name",
@@ -14217,6 +14389,7 @@ class IStation(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStation."""
         initialize_from_source_object(self, sourceObject, IStation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14226,6 +14399,7 @@ class IStation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStation, None)
     
 
@@ -14253,6 +14427,7 @@ class IStationCollection(object):
                              "get_station_names" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStationCollection."""
         initialize_from_source_object(self, sourceObject, IStationCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -14263,12 +14438,15 @@ class IStationCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStationCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStationCollection, None)
     def __iter__(self):
+        """Create an iterator for the IStationCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IStation":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -14394,6 +14572,7 @@ class IConfiguration(object):
                              "save" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConfiguration."""
         initialize_from_source_object(self, sourceObject, IConfiguration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14403,6 +14582,7 @@ class IConfiguration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConfiguration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConfiguration, None)
     
     _get_empty_weight_metadata = { "name" : "empty_weight",
@@ -14587,6 +14767,7 @@ class ICatalogSource(object):
                              "save" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogSource."""
         initialize_from_source_object(self, sourceObject, ICatalogSource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14596,6 +14777,7 @@ class ICatalogSource(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogSource)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogSource, None)
     
     _get_child_names_metadata = { "name" : "child_names",
@@ -14644,6 +14826,7 @@ class IAircraftModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftModels."""
         initialize_from_source_object(self, sourceObject, IAircraftModels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14653,6 +14836,7 @@ class IAircraftModels(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftModels)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftModels, None)
     
     _get_aircraft_metadata = { "name" : "get_aircraft",
@@ -14693,6 +14877,7 @@ class IMissileModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMissileModels."""
         initialize_from_source_object(self, sourceObject, IMissileModels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14702,6 +14887,7 @@ class IMissileModels(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMissileModels)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMissileModels, None)
     
     _get_missile_metadata = { "name" : "get_missile",
@@ -14742,6 +14928,7 @@ class IRotorcraftModels(object):
                              "get_as_catalog_source" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotorcraftModels."""
         initialize_from_source_object(self, sourceObject, IRotorcraftModels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14751,6 +14938,7 @@ class IRotorcraftModels(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotorcraftModels)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotorcraftModels, None)
     
     _get_rotorcraft_metadata = { "name" : "get_rotorcraft",
@@ -14789,6 +14977,7 @@ class IBasicFixedWingLiftHelper(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicFixedWingLiftHelper."""
         initialize_from_source_object(self, sourceObject, IBasicFixedWingLiftHelper)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14798,6 +14987,7 @@ class IBasicFixedWingLiftHelper(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicFixedWingLiftHelper)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicFixedWingLiftHelper, None)
     
 
@@ -14846,6 +15036,7 @@ class IAircraftBasicFixedWingAero(object):
                              "set_takeoff_landing_k" : 32, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftBasicFixedWingAero."""
         initialize_from_source_object(self, sourceObject, IAircraftBasicFixedWingAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14855,6 +15046,7 @@ class IAircraftBasicFixedWingAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftBasicFixedWingAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftBasicFixedWingAero, None)
     
     _get_forward_flight_reference_area_metadata = { "name" : "forward_flight_reference_area",
@@ -15137,6 +15329,7 @@ class IAircraftAero(object):
                              "set_drag_factor" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAero."""
         initialize_from_source_object(self, sourceObject, IAircraftAero)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15146,6 +15339,7 @@ class IAircraftAero(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAero)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAero, None)
     
     _get_aero_strategy_metadata = { "name" : "aero_strategy",
@@ -15254,6 +15448,7 @@ class IAircraftProp(object):
                              "get_mode_as_rocket" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftProp."""
         initialize_from_source_object(self, sourceObject, IAircraftProp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15263,6 +15458,7 @@ class IAircraftProp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftProp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftProp, None)
     
     _get_prop_strategy_metadata = { "name" : "prop_strategy",
@@ -15379,6 +15575,7 @@ class IAircraftAccelerationMode(object):
                              "set_accel_g" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAccelerationMode."""
         initialize_from_source_object(self, sourceObject, IAircraftAccelerationMode)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15388,6 +15585,7 @@ class IAircraftAccelerationMode(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAccelerationMode)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAccelerationMode, None)
     
     _get_accel_mode_metadata = { "name" : "accel_mode",
@@ -15441,6 +15639,7 @@ class IAircraftAdvancedAccelerationModel(object):
                              "get_as_catalog_item" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAdvancedAccelerationModel."""
         initialize_from_source_object(self, sourceObject, IAircraftAdvancedAccelerationModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15450,6 +15649,7 @@ class IAircraftAdvancedAccelerationModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAdvancedAccelerationModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAdvancedAccelerationModel, None)
     
     _get_level_turns_metadata = { "name" : "level_turns",
@@ -15524,6 +15724,7 @@ class IAeroPropManeuverModeHelper(object):
                              "get_status_msg" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAeroPropManeuverModeHelper."""
         initialize_from_source_object(self, sourceObject, IAeroPropManeuverModeHelper)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15533,6 +15734,7 @@ class IAeroPropManeuverModeHelper(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAeroPropManeuverModeHelper)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAeroPropManeuverModeHelper, None)
     
     _get_mode_metadata = { "name" : "mode",
@@ -15701,6 +15903,7 @@ class ICatalogRunway(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogRunway."""
         initialize_from_source_object(self, sourceObject, ICatalogRunway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15710,6 +15913,7 @@ class ICatalogRunway(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogRunway)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogRunway, None)
     
 
@@ -15727,6 +15931,7 @@ class ICatalogAirport(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogAirport."""
         initialize_from_source_object(self, sourceObject, ICatalogAirport)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15736,6 +15941,7 @@ class ICatalogAirport(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogAirport)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogAirport, None)
     
 
@@ -15753,6 +15959,7 @@ class ICatalogNavaid(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogNavaid."""
         initialize_from_source_object(self, sourceObject, ICatalogNavaid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15762,6 +15969,7 @@ class ICatalogNavaid(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogNavaid)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogNavaid, None)
     
 
@@ -15779,6 +15987,7 @@ class ICatalogVTOLPoint(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogVTOLPoint."""
         initialize_from_source_object(self, sourceObject, ICatalogVTOLPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15788,6 +15997,7 @@ class ICatalogVTOLPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogVTOLPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogVTOLPoint, None)
     
 
@@ -15805,6 +16015,7 @@ class ICatalogWaypoint(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalogWaypoint."""
         initialize_from_source_object(self, sourceObject, ICatalogWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15814,6 +16025,7 @@ class ICatalogWaypoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalogWaypoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalogWaypoint, None)
     
 
@@ -15821,7 +16033,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a3a67fca-89f4-4cc8-9ef0-194707369ef9}",
 agcls.AgTypeNameMap["ICatalogWaypoint"] = ICatalogWaypoint
 
 class IARINC424Airport(object):
-    """This interface is deprecated. Use IARINC424Item instead."""
+    """Do not use this interface, as it is deprecated. Use IARINC424Item instead."""
 
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15831,6 +16043,7 @@ class IARINC424Airport(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IARINC424Airport."""
         initialize_from_source_object(self, sourceObject, IARINC424Airport)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15840,6 +16053,7 @@ class IARINC424Airport(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Airport)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IARINC424Airport, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -15868,6 +16082,7 @@ class IDAFIFItem(object):
                              "get_as_catalog_item" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDAFIFItem."""
         initialize_from_source_object(self, sourceObject, IDAFIFItem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15877,6 +16092,7 @@ class IDAFIFItem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDAFIFItem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDAFIFItem, None)
     
     _get_value_metadata = { "name" : "get_value",
@@ -15919,7 +16135,7 @@ agcls.AgClassCatalog.add_catalog_entry("{5725c989-94a3-47c9-8115-6d5b88b992aa}",
 agcls.AgTypeNameMap["IDAFIFItem"] = IDAFIFItem
 
 class IARINC424Runway(object):
-    """This interface is deprecated. Use IARINC424Item instead."""
+    """Do not use this interface, as it is deprecated. Use IARINC424Item instead."""
 
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15929,6 +16145,7 @@ class IARINC424Runway(object):
         "method_offsets" : { "get_as_catalog_item" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IARINC424Runway."""
         initialize_from_source_object(self, sourceObject, IARINC424Runway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15938,6 +16155,7 @@ class IARINC424Runway(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IARINC424Runway)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IARINC424Runway, None)
     
     _get_as_catalog_item_metadata = { "name" : "get_as_catalog_item",
@@ -15962,6 +16180,7 @@ class IAirportCategory(object):
         "method_offsets" : { "get_arinc424_airports" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAirportCategory."""
         initialize_from_source_object(self, sourceObject, IAirportCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15971,6 +16190,7 @@ class IAirportCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAirportCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAirportCategory, None)
     
     _get_arinc424_airports_metadata = { "name" : "arinc424_airports",
@@ -15996,6 +16216,7 @@ class INavaidCategory(object):
         "method_offsets" : { "get_arinc424_navaids" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type INavaidCategory."""
         initialize_from_source_object(self, sourceObject, INavaidCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16005,6 +16226,7 @@ class INavaidCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, INavaidCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, INavaidCategory, None)
     
     _get_arinc424_navaids_metadata = { "name" : "arinc424_navaids",
@@ -16032,6 +16254,7 @@ class IVTOLPointCategory(object):
                              "get_dafif_helipads" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVTOLPointCategory."""
         initialize_from_source_object(self, sourceObject, IVTOLPointCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16041,6 +16264,7 @@ class IVTOLPointCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVTOLPointCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVTOLPointCategory, None)
     
     _get_user_vtol_points_metadata = { "name" : "user_vtol_points",
@@ -16092,6 +16316,7 @@ class IWaypointCategory(object):
                              "get_dafif_waypoints" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IWaypointCategory."""
         initialize_from_source_object(self, sourceObject, IWaypointCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16101,6 +16326,7 @@ class IWaypointCategory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWaypointCategory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWaypointCategory, None)
     
     _get_user_waypoints_metadata = { "name" : "user_waypoints",
@@ -16209,6 +16435,7 @@ class IAircraftClimb(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftClimb."""
         initialize_from_source_object(self, sourceObject, IAircraftClimb)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16218,6 +16445,7 @@ class IAircraftClimb(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftClimb)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftClimb, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16266,6 +16494,7 @@ class IAircraftCruise(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftCruise."""
         initialize_from_source_object(self, sourceObject, IAircraftCruise)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16275,6 +16504,7 @@ class IAircraftCruise(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftCruise)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftCruise, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16323,6 +16553,7 @@ class IAircraftDescent(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftDescent."""
         initialize_from_source_object(self, sourceObject, IAircraftDescent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16332,6 +16563,7 @@ class IAircraftDescent(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftDescent)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftDescent, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16380,6 +16612,7 @@ class IAircraftLanding(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftLanding."""
         initialize_from_source_object(self, sourceObject, IAircraftLanding)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16389,6 +16622,7 @@ class IAircraftLanding(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftLanding)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftLanding, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16437,6 +16671,7 @@ class IAircraftTakeoff(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftTakeoff."""
         initialize_from_source_object(self, sourceObject, IAircraftTakeoff)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16446,6 +16681,7 @@ class IAircraftTakeoff(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTakeoff)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftTakeoff, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16494,6 +16730,7 @@ class IAircraftAcceleration(object):
                              "get_as_catalog_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftAcceleration."""
         initialize_from_source_object(self, sourceObject, IAircraftAcceleration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16503,6 +16740,7 @@ class IAircraftAcceleration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftAcceleration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftAcceleration, None)
     
     _get_built_in_model_metadata = { "name" : "get_built_in_model",
@@ -16553,6 +16791,7 @@ class ICatalog(object):
                              "get_waypoint_category" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICatalog."""
         initialize_from_source_object(self, sourceObject, ICatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16562,6 +16801,7 @@ class ICatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICatalog, None)
     
     _get_aircraft_category_metadata = { "name" : "aircraft_category",
@@ -16641,6 +16881,7 @@ class IProcedureTimeOptions(object):
                              "set_stop_time" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureTimeOptions."""
         initialize_from_source_object(self, sourceObject, IProcedureTimeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16650,6 +16891,7 @@ class IProcedureTimeOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTimeOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureTimeOptions, None)
     
     _get_start_time_enabled_metadata = { "name" : "start_time_enabled",
@@ -16797,6 +17039,7 @@ class ICalculationOptions(object):
                              "set_integrator_type_string" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationOptions."""
         initialize_from_source_object(self, sourceObject, ICalculationOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16806,6 +17049,7 @@ class ICalculationOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationOptions, None)
     
     _get_max_rel_motion_factor_metadata = { "name" : "max_rel_motion_factor",
@@ -16944,6 +17188,7 @@ class INavigationOptions(object):
                              "set_enroute_second_turn" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type INavigationOptions."""
         initialize_from_source_object(self, sourceObject, INavigationOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16953,6 +17198,7 @@ class INavigationOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, INavigationOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, INavigationOptions, None)
     
     _get_nav_mode_metadata = { "name" : "nav_mode",
@@ -17057,6 +17303,7 @@ class IAltitudeMSLAndLevelOffOptions(object):
                              "set_level_off_mode" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAltitudeMSLAndLevelOffOptions."""
         initialize_from_source_object(self, sourceObject, IAltitudeMSLAndLevelOffOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17066,6 +17313,7 @@ class IAltitudeMSLAndLevelOffOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeMSLAndLevelOffOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAltitudeMSLAndLevelOffOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
@@ -17150,6 +17398,7 @@ class IAltitudeMSLOptions(object):
                              "set_msl_altitude" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAltitudeMSLOptions."""
         initialize_from_source_object(self, sourceObject, IAltitudeMSLOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17159,6 +17408,7 @@ class IAltitudeMSLOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeMSLOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAltitudeMSLOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
@@ -17213,6 +17463,7 @@ class IAltitudeOptions(object):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAltitudeOptions."""
         initialize_from_source_object(self, sourceObject, IAltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17222,6 +17473,7 @@ class IAltitudeOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAltitudeOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
@@ -17292,6 +17544,7 @@ class IHoverAltitudeOptions(object):
                              "set_final_altitude_rate" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IHoverAltitudeOptions."""
         initialize_from_source_object(self, sourceObject, IHoverAltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17301,6 +17554,7 @@ class IHoverAltitudeOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IHoverAltitudeOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IHoverAltitudeOptions, None)
     
     _get_altitude_reference_metadata = { "name" : "altitude_reference",
@@ -17371,6 +17625,7 @@ class IArcAltitudeOptions(object):
                              "set_stop_arc_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IArcAltitudeOptions."""
         initialize_from_source_object(self, sourceObject, IArcAltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17380,6 +17635,7 @@ class IArcAltitudeOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcAltitudeOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IArcAltitudeOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
@@ -17452,6 +17708,7 @@ class IArcAltitudeAndDelayOptions(object):
                              "set_stop_arc_altitude" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IArcAltitudeAndDelayOptions."""
         initialize_from_source_object(self, sourceObject, IArcAltitudeAndDelayOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17461,6 +17718,7 @@ class IArcAltitudeAndDelayOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcAltitudeAndDelayOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IArcAltitudeAndDelayOptions, None)
     
     _get_use_default_cruise_altitude_metadata = { "name" : "use_default_cruise_altitude",
@@ -17555,6 +17813,7 @@ class IArcOptions(object):
                              "set_exit_arc" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IArcOptions."""
         initialize_from_source_object(self, sourceObject, IArcOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17564,6 +17823,7 @@ class IArcOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IArcOptions, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
@@ -17698,6 +17958,7 @@ class IVerticalPlaneOptions(object):
                              "set_max_vert_plane_radius_factor" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVerticalPlaneOptions."""
         initialize_from_source_object(self, sourceObject, IVerticalPlaneOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17707,6 +17968,7 @@ class IVerticalPlaneOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVerticalPlaneOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVerticalPlaneOptions, None)
     
     _get_min_enroute_flight_path_angle_metadata = { "name" : "min_enroute_flight_path_angle",
@@ -17779,6 +18041,7 @@ class IVerticalPlaneAndFlightPathOptions(object):
                              "set_max_vert_plane_radius_factor" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVerticalPlaneAndFlightPathOptions."""
         initialize_from_source_object(self, sourceObject, IVerticalPlaneAndFlightPathOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17788,6 +18051,7 @@ class IVerticalPlaneAndFlightPathOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVerticalPlaneAndFlightPathOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVerticalPlaneAndFlightPathOptions, None)
     
     _get_final_flight_path_angle_metadata = { "name" : "final_flight_path_angle",
@@ -17878,6 +18142,7 @@ class IArcVerticalPlaneOptions(object):
                              "set_max_vert_plane_radius_factor" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IArcVerticalPlaneOptions."""
         initialize_from_source_object(self, sourceObject, IArcVerticalPlaneOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17887,6 +18152,7 @@ class IArcVerticalPlaneOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IArcVerticalPlaneOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IArcVerticalPlaneOptions, None)
     
     _get_start_arc_flight_path_angle_metadata = { "name" : "start_arc_flight_path_angle",
@@ -17987,6 +18253,7 @@ class IEnrouteOptions(object):
                              "set_max_turn_radius_factor" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEnrouteOptions."""
         initialize_from_source_object(self, sourceObject, IEnrouteOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17996,6 +18263,7 @@ class IEnrouteOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEnrouteOptions, None)
     
     _get_use_max_speed_turns_metadata = { "name" : "use_max_speed_turns",
@@ -18050,6 +18318,7 @@ class IEnrouteAndDelayOptions(object):
                              "set_max_turn_radius_factor" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEnrouteAndDelayOptions."""
         initialize_from_source_object(self, sourceObject, IEnrouteAndDelayOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18059,6 +18328,7 @@ class IEnrouteAndDelayOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteAndDelayOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEnrouteAndDelayOptions, None)
     
     _get_delay_enroute_climb_descents_metadata = { "name" : "delay_enroute_climb_descents",
@@ -18127,6 +18397,7 @@ class IEnrouteTurnDirectionOptions(object):
                              "set_enroute_second_turn" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEnrouteTurnDirectionOptions."""
         initialize_from_source_object(self, sourceObject, IEnrouteTurnDirectionOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18136,6 +18407,7 @@ class IEnrouteTurnDirectionOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEnrouteTurnDirectionOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEnrouteTurnDirectionOptions, None)
     
     _get_enroute_first_turn_metadata = { "name" : "enroute_first_turn",
@@ -18189,6 +18461,7 @@ class ICruiseAirspeedOptions(object):
                              "set_other_airspeed" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICruiseAirspeedOptions."""
         initialize_from_source_object(self, sourceObject, ICruiseAirspeedOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18198,6 +18471,7 @@ class ICruiseAirspeedOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICruiseAirspeedOptions, None)
     
     _get_cruise_speed_type_metadata = { "name" : "cruise_speed_type",
@@ -18255,6 +18529,7 @@ class ICruiseAirspeedProfile(object):
                              "set_fly_cruise_airspeed_profile" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICruiseAirspeedProfile."""
         initialize_from_source_object(self, sourceObject, ICruiseAirspeedProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18264,6 +18539,7 @@ class ICruiseAirspeedProfile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedProfile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICruiseAirspeedProfile, None)
     
     _get_fly_cruise_airspeed_profile_metadata = { "name" : "fly_cruise_airspeed_profile",
@@ -18303,6 +18579,7 @@ class ICruiseAirspeedAndProfileOptions(object):
                              "set_fly_cruise_airspeed_profile" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICruiseAirspeedAndProfileOptions."""
         initialize_from_source_object(self, sourceObject, ICruiseAirspeedAndProfileOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18312,6 +18589,7 @@ class ICruiseAirspeedAndProfileOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICruiseAirspeedAndProfileOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICruiseAirspeedAndProfileOptions, None)
     
     _get_cruise_speed_type_metadata = { "name" : "cruise_speed_type",
@@ -18384,6 +18662,7 @@ class IAutomationStrategyFactory(object):
         "method_offsets" : { "construct_strategy" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAutomationStrategyFactory."""
         initialize_from_source_object(self, sourceObject, IAutomationStrategyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18393,6 +18672,7 @@ class IAutomationStrategyFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAutomationStrategyFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAutomationStrategyFactory, None)
     
     _construct_strategy_metadata = { "name" : "construct_strategy",
@@ -18417,6 +18697,7 @@ class IConnect(object):
         "method_offsets" : { "execute_command" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConnect."""
         initialize_from_source_object(self, sourceObject, IConnect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18426,6 +18707,7 @@ class IConnect(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConnect)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConnect, None)
     
     _execute_command_metadata = { "name" : "execute_command",
@@ -18451,6 +18733,7 @@ class IRunwayHeadingOptions(object):
                              "set_runway_mode" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRunwayHeadingOptions."""
         initialize_from_source_object(self, sourceObject, IRunwayHeadingOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18460,6 +18743,7 @@ class IRunwayHeadingOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRunwayHeadingOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRunwayHeadingOptions, None)
     
     _get_runway_mode_metadata = { "name" : "runway_mode",
@@ -18502,6 +18786,7 @@ class IProcedure(object):
                              "get_fast_time_options" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedure."""
         initialize_from_source_object(self, sourceObject, IProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18511,6 +18796,7 @@ class IProcedure(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedure)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedure, None)
     
     _get_name_metadata = { "name" : "name",
@@ -18616,6 +18902,7 @@ class IProcedureCollection(object):
                              "disable_auto_propagate" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureCollection."""
         initialize_from_source_object(self, sourceObject, IProcedureCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -18626,12 +18913,15 @@ class IProcedureCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureCollection, None)
     def __iter__(self):
+        """Create an iterator for the IProcedureCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IProcedure":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -18728,6 +19018,7 @@ class IPhase(object):
                              "paste_performance_models" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPhase."""
         initialize_from_source_object(self, sourceObject, IPhase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18737,6 +19028,7 @@ class IPhase(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPhase)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPhase, None)
     
     _get_procedures_metadata = { "name" : "procedures",
@@ -18812,6 +19104,7 @@ class IPhaseCollection(object):
                              "remove_at_index" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPhaseCollection."""
         initialize_from_source_object(self, sourceObject, IPhaseCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -18822,12 +19115,15 @@ class IPhaseCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPhaseCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPhaseCollection, None)
     def __iter__(self):
+        """Create an iterator for the IPhaseCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPhase":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -18911,6 +19207,7 @@ class IMission(object):
                              "get_first_invalid_procedure" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMission."""
         initialize_from_source_object(self, sourceObject, IMission)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18920,6 +19217,7 @@ class IMission(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMission)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMission, None)
     
     _get_phases_metadata = { "name" : "phases",
@@ -19004,6 +19302,7 @@ class IAviatorPropagator(object):
                              "get_avtr_catalog" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAviatorPropagator."""
         initialize_from_source_object(self, sourceObject, IAviatorPropagator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19013,6 +19312,7 @@ class IAviatorPropagator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAviatorPropagator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAviatorPropagator, None)
     
     _get_avtr_mission_metadata = { "name" : "avtr_mission",
@@ -19069,6 +19369,7 @@ class IPerformanceModel(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPerformanceModel."""
         initialize_from_source_object(self, sourceObject, IPerformanceModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19078,6 +19379,7 @@ class IPerformanceModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPerformanceModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPerformanceModel, None)
     
 
@@ -19095,6 +19397,7 @@ class IAdvancedFixedWingGeometry(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingGeometry."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometry)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19104,6 +19407,7 @@ class IAdvancedFixedWingGeometry(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingGeometry)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingGeometry, None)
     
 
@@ -19111,7 +19415,7 @@ agcls.AgClassCatalog.add_catalog_entry("{d3b3af6e-7b5a-4491-aaca-c05eb901afa0}",
 agcls.AgTypeNameMap["IAdvancedFixedWingGeometry"] = IAdvancedFixedWingGeometry
 
 class IAdvancedFixedWingTurbofanBasicABPowerplant(object):
-    """This interface is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
+    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19121,6 +19425,7 @@ class IAdvancedFixedWingTurbofanBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTurbofanBasicABPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbofanBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19130,6 +19435,7 @@ class IAdvancedFixedWingTurbofanBasicABPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTurbofanBasicABPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbofanBasicABPowerplant, None)
     
 
@@ -19137,7 +19443,7 @@ agcls.AgClassCatalog.add_catalog_entry("{9bc7e978-48ec-487d-8460-014c8fe376bd}",
 agcls.AgTypeNameMap["IAdvancedFixedWingTurbofanBasicABPowerplant"] = IAdvancedFixedWingTurbofanBasicABPowerplant
 
 class IAdvancedFixedWingTurbojetBasicABPowerplant(object):
-    """This interface is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
+    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19147,6 +19453,7 @@ class IAdvancedFixedWingTurbojetBasicABPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingTurbojetBasicABPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingTurbojetBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19156,6 +19463,7 @@ class IAdvancedFixedWingTurbojetBasicABPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingTurbojetBasicABPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingTurbojetBasicABPowerplant, None)
     
 
@@ -19173,6 +19481,7 @@ class IAdvancedFixedWingPowerplant(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAdvancedFixedWingPowerplant."""
         initialize_from_source_object(self, sourceObject, IAdvancedFixedWingPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19182,6 +19491,7 @@ class IAdvancedFixedWingPowerplant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAdvancedFixedWingPowerplant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAdvancedFixedWingPowerplant, None)
     
 
@@ -19199,6 +19509,7 @@ class ISiteUnknown(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteUnknown."""
         initialize_from_source_object(self, sourceObject, ISiteUnknown)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19208,6 +19519,7 @@ class ISiteUnknown(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteUnknown)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteUnknown, None)
     
 
@@ -19255,6 +19567,7 @@ class IAircraftTerrainFollowModel(object):
                              "get_max_load_factor" : 31, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAircraftTerrainFollowModel."""
         initialize_from_source_object(self, sourceObject, IAircraftTerrainFollowModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19264,6 +19577,7 @@ class IAircraftTerrainFollowModel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAircraftTerrainFollowModel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAircraftTerrainFollowModel, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
@@ -19536,6 +19850,7 @@ class IBasicManeuverTargetPositionVel(object):
                              "cancel_position_vel" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverTargetPositionVel."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19545,6 +19860,7 @@ class IBasicManeuverTargetPositionVel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVel, None)
     
     _get_target_position_vel_type_metadata = { "name" : "target_position_vel_type",
@@ -19641,6 +19957,7 @@ class IPropulsionThrust(object):
                              "set_max_airspeed" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropulsionThrust."""
         initialize_from_source_object(self, sourceObject, IPropulsionThrust)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19650,6 +19967,7 @@ class IPropulsionThrust(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropulsionThrust)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropulsionThrust, None)
     
     _get_use_constant_thrust_metadata = { "name" : "use_constant_thrust",
@@ -19843,6 +20161,7 @@ class IBasicManeuverAirspeedOptions(object):
                              "get_thrust" : 35, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverAirspeedOptions."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverAirspeedOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19852,6 +20171,7 @@ class IBasicManeuverAirspeedOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverAirspeedOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverAirspeedOptions, None)
     
     _get_airspeed_mode_metadata = { "name" : "airspeed_mode",
@@ -20163,6 +20483,7 @@ class IBasicManeuverStrategyAileronRoll(object):
                              "get_airspeed_options" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyAileronRoll."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAileronRoll)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20172,6 +20493,7 @@ class IBasicManeuverStrategyAileronRoll(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAileronRoll)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAileronRoll, None)
     
     _get_flight_path_option_metadata = { "name" : "flight_path_option",
@@ -20323,6 +20645,7 @@ class IBasicManeuverStrategyAutopilotNav(object):
                              "set_stop_when_conditions_met" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyAutopilotNav."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAutopilotNav)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20332,6 +20655,7 @@ class IBasicManeuverStrategyAutopilotNav(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAutopilotNav)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAutopilotNav, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
@@ -20495,6 +20819,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
                              "set_stop_when_conditions_met" : 29, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyAutopilotProf."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyAutopilotProf)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20504,6 +20829,7 @@ class IBasicManeuverStrategyAutopilotProf(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyAutopilotProf)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyAutopilotProf, None)
     
     _get_altitude_mode_metadata = { "name" : "altitude_mode",
@@ -20767,6 +21093,7 @@ class IBasicManeuverStrategyBarrelRoll(object):
                              "set_airspeeds" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyBarrelRoll."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBarrelRoll)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20776,6 +21103,7 @@ class IBasicManeuverStrategyBarrelRoll(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBarrelRoll)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBarrelRoll, None)
     
     _get_helix_angle_metadata = { "name" : "helix_angle",
@@ -20933,6 +21261,7 @@ class IBasicManeuverStrategyLoop(object):
                              "set_airspeeds" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyLoop."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyLoop)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20942,6 +21271,7 @@ class IBasicManeuverStrategyLoop(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyLoop)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyLoop, None)
     
     _get_loop_angle_metadata = { "name" : "loop_angle",
@@ -21093,6 +21423,7 @@ class IBasicManeuverStrategyLTAHover(object):
                              "set_parachute_cd" : 24, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyLTAHover."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyLTAHover)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21102,6 +21433,7 @@ class IBasicManeuverStrategyLTAHover(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyLTAHover)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyLTAHover, None)
     
     _get_heading_mode_metadata = { "name" : "heading_mode",
@@ -21327,6 +21659,7 @@ class IBasicManeuverStrategyFlyAOA(object):
                              "get_airspeed_options" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyFlyAOA."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyFlyAOA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21336,6 +21669,7 @@ class IBasicManeuverStrategyFlyAOA(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyFlyAOA)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyFlyAOA, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
@@ -21497,6 +21831,7 @@ class IBasicManeuverStrategyPull(object):
                              "get_airspeed_options" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyPull."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPull)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21506,6 +21841,7 @@ class IBasicManeuverStrategyPull(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPull)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPull, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
@@ -21611,6 +21947,7 @@ class IBasicManeuverStrategyRollingPull(object):
                              "get_airspeed_options" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRollingPull."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRollingPull)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21620,6 +21957,7 @@ class IBasicManeuverStrategyRollingPull(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRollingPull)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRollingPull, None)
     
     _get_active_mode_metadata = { "name" : "active_mode",
@@ -21801,6 +22139,7 @@ class IBasicManeuverStrategySmoothAccel(object):
                              "get_airspeed_options" : 29, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategySmoothAccel."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySmoothAccel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21810,6 +22149,7 @@ class IBasicManeuverStrategySmoothAccel(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySmoothAccel)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategySmoothAccel, None)
     
     _get_turn_direction_metadata = { "name" : "turn_direction",
@@ -22077,6 +22417,7 @@ class IBasicManeuverStrategySmoothTurn(object):
                              "set_fpa_mode" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategySmoothTurn."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySmoothTurn)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22086,6 +22427,7 @@ class IBasicManeuverStrategySmoothTurn(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySmoothTurn)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategySmoothTurn, None)
     
     _get_heading_change_metadata = { "name" : "heading_change",
@@ -22262,6 +22604,7 @@ class IBasicManeuverStrategySimpleTurn(object):
                              "set_compensate_for_coriolis_accel" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategySimpleTurn."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategySimpleTurn)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22271,6 +22614,7 @@ class IBasicManeuverStrategySimpleTurn(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategySimpleTurn)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategySimpleTurn, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -22384,6 +22728,7 @@ class IBasicManeuverStrategyIntercept(object):
                              "cancel_tgt_position_vel" : 34, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyIntercept."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyIntercept)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22393,6 +22738,7 @@ class IBasicManeuverStrategyIntercept(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyIntercept)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyIntercept, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -22694,6 +23040,7 @@ class IBasicManeuverStrategyRelativeBearing(object):
                              "cancel_tgt_position_vel" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRelativeBearing."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeBearing)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22703,6 +23050,7 @@ class IBasicManeuverStrategyRelativeBearing(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeBearing)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeBearing, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -22894,6 +23242,7 @@ class IBasicManeuverStrategyRelativeCourse(object):
                              "cancel_tgt_position_vel" : 34, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRelativeCourse."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeCourse)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22903,6 +23252,7 @@ class IBasicManeuverStrategyRelativeCourse(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeCourse)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeCourse, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -23227,6 +23577,7 @@ class IBasicManeuverStrategyRendezvous(object):
                              "cancel_tgt_position_vel" : 39, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRendezvous."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRendezvous)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23236,6 +23587,7 @@ class IBasicManeuverStrategyRendezvous(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRendezvous)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRendezvous, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -23599,6 +23951,7 @@ class IBasicManeuverStrategyStationkeeping(object):
                              "cancel_tgt_position_vel" : 38, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyStationkeeping."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyStationkeeping)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23608,6 +23961,7 @@ class IBasicManeuverStrategyStationkeeping(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyStationkeeping)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyStationkeeping, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -23949,6 +24303,7 @@ class IBasicManeuverStrategyRelativeFPA(object):
                              "set_compensate_for_coriolis_accel" : 24, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRelativeFPA."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelativeFPA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23958,6 +24313,7 @@ class IBasicManeuverStrategyRelativeFPA(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelativeFPA)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelativeFPA, None)
     
     _get_fpa_metadata = { "name" : "fpa",
@@ -24198,6 +24554,7 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
                              "cancel_tgt_position_vel" : 38, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyRelSpeedAltitude."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyRelSpeedAltitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24207,6 +24564,7 @@ class IBasicManeuverStrategyRelSpeedAltitude(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyRelSpeedAltitude)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyRelSpeedAltitude, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -24544,6 +24902,7 @@ class IBasicManeuverStrategyBezier(object):
                              "set_compensate_for_coriolis_accel" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyBezier."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBezier)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24553,6 +24912,7 @@ class IBasicManeuverStrategyBezier(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBezier)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBezier, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -24767,6 +25127,7 @@ class IBasicManeuverStrategyPushPull(object):
                              "set_compensate_for_coriolis_accel" : 27, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyPushPull."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPushPull)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24776,6 +25137,7 @@ class IBasicManeuverStrategyPushPull(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPushPull)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPushPull, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -25025,6 +25387,7 @@ class IBasicManeuverStrategyGlideProfile(object):
                              "set_glide_speed_control_mode" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyGlideProfile."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyGlideProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25034,6 +25397,7 @@ class IBasicManeuverStrategyGlideProfile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyGlideProfile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyGlideProfile, None)
     
     _get_hold_initial_airspeed_metadata = { "name" : "hold_initial_airspeed",
@@ -25222,6 +25586,7 @@ class IBasicManeuverStrategyCruiseProfile(object):
                              "set_compensate_for_coriolis_accel" : 13, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyCruiseProfile."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyCruiseProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25231,6 +25596,7 @@ class IBasicManeuverStrategyCruiseProfile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyCruiseProfile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyCruiseProfile, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -25349,6 +25715,7 @@ class IBasicManeuverStrategyStraightAhead(object):
                              "set_compensate_for_coriolis_accel" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyStraightAhead."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyStraightAhead)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25358,6 +25725,7 @@ class IBasicManeuverStrategyStraightAhead(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyStraightAhead)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyStraightAhead, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -25417,6 +25785,7 @@ class IBasicManeuverStrategyWeave(object):
                              "set_compensate_for_coriolis_accel" : 13, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyWeave."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyWeave)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25426,6 +25795,7 @@ class IBasicManeuverStrategyWeave(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyWeave)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyWeave, None)
     
     _get_heading_change_metadata = { "name" : "heading_change",
@@ -25550,6 +25920,7 @@ class IBasicManeuverStrategyBallistic3D(object):
                              "set_wind_force_effective_area" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyBallistic3D."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyBallistic3D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25559,6 +25930,7 @@ class IBasicManeuverStrategyBallistic3D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyBallistic3D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyBallistic3D, None)
     
     _get_control_mode_metadata = { "name" : "control_mode",
@@ -25658,6 +26030,7 @@ class IBasicManeuverStrategyPitch3D(object):
                              "set_wind_force_effective_area" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverStrategyPitch3D."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverStrategyPitch3D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25667,6 +26040,7 @@ class IBasicManeuverStrategyPitch3D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverStrategyPitch3D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverStrategyPitch3D, None)
     
     _get_control_mode_metadata = { "name" : "control_mode",
@@ -25780,6 +26154,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
                              "set_range_error_std_dev" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverTargetPositionVelNoisyBrnRng."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVelNoisyBrnRng)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25789,6 +26164,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisyBrnRng)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVelNoisyBrnRng, None)
     
     _new_random_engine_seed_metadata = { "name" : "new_random_engine_seed",
@@ -25803,7 +26179,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def smoothing_constant(self) -> float:
-        """property SmoothingConstant."""
+        """Get or set the smoothing constant property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_smoothing_constant_metadata)
 
     _set_smoothing_constant_metadata = { "name" : "smoothing_constant",
@@ -25811,7 +26187,6 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @smoothing_constant.setter
     def smoothing_constant(self, newVal:float) -> None:
-        """property SmoothingConstant."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_smoothing_constant_metadata, newVal)
 
     _get_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -25819,7 +26194,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def velocity_time_step(self) -> float:
-        """property VelocityTimeStep."""
+        """Get or set the velocity time step property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_velocity_time_step_metadata)
 
     _set_velocity_time_step_metadata = { "name" : "velocity_time_step",
@@ -25827,7 +26202,6 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @velocity_time_step.setter
     def velocity_time_step(self, newVal:float) -> None:
-        """property VelocityTimeStep."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_velocity_time_step_metadata, newVal)
 
     _get_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -25835,7 +26209,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def angle_error_std_dev(self) -> float:
-        """property AngleErrorStdDev."""
+        """Get or set the angle error standard deviation property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_angle_error_std_dev_metadata)
 
     _set_angle_error_std_dev_metadata = { "name" : "angle_error_std_dev",
@@ -25843,7 +26217,6 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @angle_error_std_dev.setter
     def angle_error_std_dev(self, newVal:float) -> None:
-        """property AngleErrorStdDev."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_angle_error_std_dev_metadata, newVal)
 
     _get_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -25851,7 +26224,7 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def range_error_std_dev(self) -> float:
-        """property RangeErrorStdDev."""
+        """Get or set the range error standard deviation property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._get_range_error_std_dev_metadata)
 
     _set_range_error_std_dev_metadata = { "name" : "range_error_std_dev",
@@ -25859,7 +26232,6 @@ class IBasicManeuverTargetPositionVelNoisyBrnRng(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @range_error_std_dev.setter
     def range_error_std_dev(self, newVal:float) -> None:
-        """property RangeErrorStdDev."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisyBrnRng._metadata, IBasicManeuverTargetPositionVelNoisyBrnRng._set_range_error_std_dev_metadata, newVal)
 
 
@@ -25885,6 +26257,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
                              "set_speed_error" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBasicManeuverTargetPositionVelNoisySurfTgt."""
         initialize_from_source_object(self, sourceObject, IBasicManeuverTargetPositionVelNoisySurfTgt)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25894,6 +26267,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBasicManeuverTargetPositionVelNoisySurfTgt)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBasicManeuverTargetPositionVelNoisySurfTgt, None)
     
     _new_random_engine_seed_metadata = { "name" : "new_random_engine_seed",
@@ -25908,7 +26282,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def measurement_time_step(self) -> float:
-        """property MeasurementTimeStep."""
+        """Get or set the measurement time step property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_measurement_time_step_metadata)
 
     _set_measurement_time_step_metadata = { "name" : "measurement_time_step",
@@ -25916,7 +26290,6 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @measurement_time_step.setter
     def measurement_time_step(self, newVal:float) -> None:
-        """property MeasurementTimeStep."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_measurement_time_step_metadata, newVal)
 
     _get_position_cep_metadata = { "name" : "position_cep",
@@ -25924,7 +26297,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def position_cep(self) -> float:
-        """property PositionCEP."""
+        """Get or set the position CEP property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_position_cep_metadata)
 
     _set_position_cep_metadata = { "name" : "position_cep",
@@ -25932,7 +26305,6 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @position_cep.setter
     def position_cep(self, newVal:float) -> None:
-        """property PositionCEP."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_position_cep_metadata, newVal)
 
     _get_course_error_metadata = { "name" : "course_error",
@@ -25940,7 +26312,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def course_error(self) -> float:
-        """property CourseError."""
+        """Get or set the course error property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_course_error_metadata)
 
     _set_course_error_metadata = { "name" : "course_error",
@@ -25948,7 +26320,6 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @course_error.setter
     def course_error(self, newVal:float) -> None:
-        """property CourseError."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_course_error_metadata, newVal)
 
     _get_speed_error_metadata = { "name" : "speed_error",
@@ -25956,7 +26327,7 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def speed_error(self) -> float:
-        """property SpeedError."""
+        """Get or set the speed error property."""
         return self._intf.get_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._get_speed_error_metadata)
 
     _set_speed_error_metadata = { "name" : "speed_error",
@@ -25964,7 +26335,6 @@ class IBasicManeuverTargetPositionVelNoisySurfTgt(object):
             "marshallers" : (agmarshall.DoubleArg,) }
     @speed_error.setter
     def speed_error(self, newVal:float) -> None:
-        """property SpeedError."""
         return self._intf.set_property(IBasicManeuverTargetPositionVelNoisySurfTgt._metadata, IBasicManeuverTargetPositionVelNoisySurfTgt._set_speed_error_metadata, newVal)
 
 
@@ -25991,6 +26361,7 @@ class ITakeoffNormal(object):
                              "set_hold_on_deck" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITakeoffNormal."""
         initialize_from_source_object(self, sourceObject, ITakeoffNormal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26000,6 +26371,7 @@ class ITakeoffNormal(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffNormal)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITakeoffNormal, None)
     
     _get_takeoff_climb_angle_metadata = { "name" : "takeoff_climb_angle",
@@ -26108,6 +26480,7 @@ class ITakeoffDeparturePoint(object):
                              "set_hold_on_deck" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITakeoffDeparturePoint."""
         initialize_from_source_object(self, sourceObject, ITakeoffDeparturePoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26117,6 +26490,7 @@ class ITakeoffDeparturePoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffDeparturePoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITakeoffDeparturePoint, None)
     
     _get_takeoff_climb_angle_metadata = { "name" : "takeoff_climb_angle",
@@ -26235,6 +26609,7 @@ class ITakeoffLowTransition(object):
                              "set_hold_on_deck" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITakeoffLowTransition."""
         initialize_from_source_object(self, sourceObject, ITakeoffLowTransition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26244,6 +26619,7 @@ class ITakeoffLowTransition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITakeoffLowTransition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITakeoffLowTransition, None)
     
     _get_use_runway_terrain_metadata = { "name" : "use_runway_terrain",
@@ -26341,6 +26717,7 @@ class IReferenceStateForwardFlightOptions(object):
                              "set_attitude_rate" : 33, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IReferenceStateForwardFlightOptions."""
         initialize_from_source_object(self, sourceObject, IReferenceStateForwardFlightOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26350,6 +26727,7 @@ class IReferenceStateForwardFlightOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateForwardFlightOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReferenceStateForwardFlightOptions, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
@@ -26654,6 +27032,7 @@ class IReferenceStateHoverOptions(object):
                              "set_attitude_rate" : 28, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IReferenceStateHoverOptions."""
         initialize_from_source_object(self, sourceObject, IReferenceStateHoverOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26663,6 +27042,7 @@ class IReferenceStateHoverOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateHoverOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReferenceStateHoverOptions, None)
     
     _get_groundspeed_metadata = { "name" : "groundspeed",
@@ -26915,6 +27295,7 @@ class IReferenceStateWeightOnWheelsOptions(object):
                              "set_lateral_accel" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IReferenceStateWeightOnWheelsOptions."""
         initialize_from_source_object(self, sourceObject, IReferenceStateWeightOnWheelsOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26924,6 +27305,7 @@ class IReferenceStateWeightOnWheelsOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateWeightOnWheelsOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReferenceStateWeightOnWheelsOptions, None)
     
     _get_groundspeed_metadata = { "name" : "groundspeed",
@@ -27083,6 +27465,7 @@ class IReferenceStateTakeoffLandingOptions(object):
                              "set_attitude_rate" : 33, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IReferenceStateTakeoffLandingOptions."""
         initialize_from_source_object(self, sourceObject, IReferenceStateTakeoffLandingOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27092,6 +27475,7 @@ class IReferenceStateTakeoffLandingOptions(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IReferenceStateTakeoffLandingOptions)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IReferenceStateTakeoffLandingOptions, None)
     
     _get_airspeed_type_metadata = { "name" : "airspeed_type",
@@ -27386,6 +27770,7 @@ class ILandingEnterDownwindPattern(object):
                              "set_touch_and_go" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILandingEnterDownwindPattern."""
         initialize_from_source_object(self, sourceObject, ILandingEnterDownwindPattern)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27395,6 +27780,7 @@ class ILandingEnterDownwindPattern(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingEnterDownwindPattern)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILandingEnterDownwindPattern, None)
     
     _get_approach_fix_range_metadata = { "name" : "approach_fix_range",
@@ -27567,6 +27953,7 @@ class ILandingInterceptGlideslope(object):
                              "set_touch_and_go" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILandingInterceptGlideslope."""
         initialize_from_source_object(self, sourceObject, ILandingInterceptGlideslope)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27576,6 +27963,7 @@ class ILandingInterceptGlideslope(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingInterceptGlideslope)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILandingInterceptGlideslope, None)
     
     _get_approach_fix_range_metadata = { "name" : "approach_fix_range",
@@ -27704,6 +28092,7 @@ class ILandingStandardInstrumentApproach(object):
                              "set_touch_and_go" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILandingStandardInstrumentApproach."""
         initialize_from_source_object(self, sourceObject, ILandingStandardInstrumentApproach)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27713,6 +28102,7 @@ class ILandingStandardInstrumentApproach(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILandingStandardInstrumentApproach)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILandingStandardInstrumentApproach, None)
     
     _get_approach_altitude_metadata = { "name" : "approach_altitude",
@@ -27894,6 +28284,7 @@ class IProcedureBasicManeuver(object):
                              "get_as_procedure" : 37, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureBasicManeuver."""
         initialize_from_source_object(self, sourceObject, IProcedureBasicManeuver)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27903,6 +28294,7 @@ class IProcedureBasicManeuver(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureBasicManeuver)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureBasicManeuver, None)
     
     _get_max_time_of_flight_metadata = { "name" : "max_time_of_flight",
@@ -28213,6 +28605,7 @@ class ISiteWaypoint(object):
                              "get_as_site" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteWaypoint."""
         initialize_from_source_object(self, sourceObject, ISiteWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28222,6 +28615,7 @@ class ISiteWaypoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteWaypoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteWaypoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
@@ -28278,6 +28672,7 @@ class ISiteEndOfPrevProcedure(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteEndOfPrevProcedure."""
         initialize_from_source_object(self, sourceObject, ISiteEndOfPrevProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28287,6 +28682,7 @@ class ISiteEndOfPrevProcedure(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteEndOfPrevProcedure)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteEndOfPrevProcedure, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -28319,6 +28715,7 @@ class ISiteVTOLPoint(object):
                              "get_as_site" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteVTOLPoint."""
         initialize_from_source_object(self, sourceObject, ISiteVTOLPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28328,6 +28725,7 @@ class ISiteVTOLPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteVTOLPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteVTOLPoint, None)
     
     _get_latitude_metadata = { "name" : "latitude",
@@ -28419,6 +28817,7 @@ class ISiteSTKVehicle(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteSTKVehicle."""
         initialize_from_source_object(self, sourceObject, ISiteSTKVehicle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28428,6 +28827,7 @@ class ISiteSTKVehicle(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKVehicle)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteSTKVehicle, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -28476,6 +28876,7 @@ class ISiteReferenceState(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteReferenceState."""
         initialize_from_source_object(self, sourceObject, ISiteReferenceState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28485,6 +28886,7 @@ class ISiteReferenceState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteReferenceState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteReferenceState, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -28509,6 +28911,7 @@ class ISiteSuperProcedure(object):
         "method_offsets" : { "get_as_site" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteSuperProcedure."""
         initialize_from_source_object(self, sourceObject, ISiteSuperProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28518,6 +28921,7 @@ class ISiteSuperProcedure(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSuperProcedure)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteSuperProcedure, None)
     
     _get_as_site_metadata = { "name" : "get_as_site",
@@ -28548,6 +28952,7 @@ class ISiteRelToPrevProcedure(object):
                              "get_as_site" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteRelToPrevProcedure."""
         initialize_from_source_object(self, sourceObject, ISiteRelToPrevProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28557,6 +28962,7 @@ class ISiteRelToPrevProcedure(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRelToPrevProcedure)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteRelToPrevProcedure, None)
     
     _get_bearing_mode_metadata = { "name" : "bearing_mode",
@@ -28648,6 +29054,7 @@ class ISiteSTKObjectWaypoint(object):
                              "get_as_site" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteSTKObjectWaypoint."""
         initialize_from_source_object(self, sourceObject, ISiteSTKObjectWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28657,6 +29064,7 @@ class ISiteSTKObjectWaypoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKObjectWaypoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteSTKObjectWaypoint, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -28836,6 +29244,7 @@ class ISiteSTKStaticObject(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteSTKStaticObject."""
         initialize_from_source_object(self, sourceObject, ISiteSTKStaticObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28845,6 +29254,7 @@ class ISiteSTKStaticObject(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKStaticObject)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteSTKStaticObject, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -28902,6 +29312,7 @@ class ISiteRelToSTKObject(object):
                              "get_as_site" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteRelToSTKObject."""
         initialize_from_source_object(self, sourceObject, ISiteRelToSTKObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28911,6 +29322,7 @@ class ISiteRelToSTKObject(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRelToSTKObject)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteRelToSTKObject, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -29010,6 +29422,7 @@ class ISiteSTKAreaTarget(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteSTKAreaTarget."""
         initialize_from_source_object(self, sourceObject, ISiteSTKAreaTarget)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29019,6 +29432,7 @@ class ISiteSTKAreaTarget(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteSTKAreaTarget)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteSTKAreaTarget, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -29085,6 +29499,7 @@ class ISiteRunway(object):
                              "get_as_site" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteRunway."""
         initialize_from_source_object(self, sourceObject, ISiteRunway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29094,6 +29509,7 @@ class ISiteRunway(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRunway)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteRunway, None)
     
     _get_altitude_metadata = { "name" : "altitude",
@@ -29270,6 +29686,7 @@ class IProcedureLanding(object):
                              "get_as_procedure" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureLanding."""
         initialize_from_source_object(self, sourceObject, IProcedureLanding)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29279,6 +29696,7 @@ class IProcedureLanding(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLanding)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureLanding, None)
     
     _get_mode_as_standard_instrument_approach_metadata = { "name" : "mode_as_standard_instrument_approach",
@@ -29387,6 +29805,7 @@ class IProcedureEnroute(object):
                              "get_as_procedure" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureEnroute."""
         initialize_from_source_object(self, sourceObject, IProcedureEnroute)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29396,6 +29815,7 @@ class IProcedureEnroute(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureEnroute)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureEnroute, None)
     
     _get_altitude_msl_options_metadata = { "name" : "altitude_msl_options",
@@ -29463,6 +29883,7 @@ class IProcedureExtEphem(object):
                              "get_as_procedure" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureExtEphem."""
         initialize_from_source_object(self, sourceObject, IProcedureExtEphem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29472,6 +29893,7 @@ class IProcedureExtEphem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureExtEphem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureExtEphem, None)
     
     _get_ephemeris_file_metadata = { "name" : "ephemeris_file",
@@ -29600,6 +30022,7 @@ class IProcedureFormationFlyer(object):
                              "get_as_procedure" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureFormationFlyer."""
         initialize_from_source_object(self, sourceObject, IProcedureFormationFlyer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29609,6 +30032,7 @@ class IProcedureFormationFlyer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFormationFlyer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureFormationFlyer, None)
     
     _get_min_time_step_metadata = { "name" : "min_time_step",
@@ -29766,6 +30190,7 @@ class IProcedureBasicPointToPoint(object):
                              "get_as_procedure" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureBasicPointToPoint."""
         initialize_from_source_object(self, sourceObject, IProcedureBasicPointToPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29775,6 +30200,7 @@ class IProcedureBasicPointToPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureBasicPointToPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureBasicPointToPoint, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -29847,6 +30273,7 @@ class IProcedureDelay(object):
                              "set_turn_radius_factor" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureDelay."""
         initialize_from_source_object(self, sourceObject, IProcedureDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29856,6 +30283,7 @@ class IProcedureDelay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureDelay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureDelay, None)
     
     _get_altitude_mode_metadata = { "name" : "altitude_mode",
@@ -29951,6 +30379,7 @@ class IProcedureTakeoff(object):
                              "get_as_procedure" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureTakeoff."""
         initialize_from_source_object(self, sourceObject, IProcedureTakeoff)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29960,6 +30389,7 @@ class IProcedureTakeoff(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTakeoff)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureTakeoff, None)
     
     _get_runway_heading_options_metadata = { "name" : "runway_heading_options",
@@ -30038,6 +30468,7 @@ class IProcedureArcEnroute(object):
                              "get_as_procedure" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureArcEnroute."""
         initialize_from_source_object(self, sourceObject, IProcedureArcEnroute)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30047,6 +30478,7 @@ class IProcedureArcEnroute(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureArcEnroute)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureArcEnroute, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -30128,6 +30560,7 @@ class IProcedureArcPointToPoint(object):
                              "get_as_procedure" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureArcPointToPoint."""
         initialize_from_source_object(self, sourceObject, IProcedureArcPointToPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30137,6 +30570,7 @@ class IProcedureArcPointToPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureArcPointToPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureArcPointToPoint, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -30252,6 +30686,7 @@ class IProcedureFlightLine(object):
                              "get_as_procedure" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureFlightLine."""
         initialize_from_source_object(self, sourceObject, IProcedureFlightLine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30261,6 +30696,7 @@ class IProcedureFlightLine(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFlightLine)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureFlightLine, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -30463,6 +30899,7 @@ class IProcedureHoldingCircular(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureHoldingCircular."""
         initialize_from_source_object(self, sourceObject, IProcedureHoldingCircular)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30472,6 +30909,7 @@ class IProcedureHoldingCircular(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingCircular)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureHoldingCircular, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -30729,6 +31167,7 @@ class IProcedureHoldingFigure8(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureHoldingFigure8."""
         initialize_from_source_object(self, sourceObject, IProcedureHoldingFigure8)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30738,6 +31177,7 @@ class IProcedureHoldingFigure8(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingFigure8)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureHoldingFigure8, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -30995,6 +31435,7 @@ class IProcedureHoldingRacetrack(object):
                              "get_as_procedure" : 27, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureHoldingRacetrack."""
         initialize_from_source_object(self, sourceObject, IProcedureHoldingRacetrack)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31004,6 +31445,7 @@ class IProcedureHoldingRacetrack(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoldingRacetrack)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureHoldingRacetrack, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -31249,6 +31691,7 @@ class IProcedureTransitionToHover(object):
                              "get_as_procedure" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureTransitionToHover."""
         initialize_from_source_object(self, sourceObject, IProcedureTransitionToHover)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31258,6 +31701,7 @@ class IProcedureTransitionToHover(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTransitionToHover)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureTransitionToHover, None)
     
     _get_altitude_reference_metadata = { "name" : "altitude_reference",
@@ -31400,6 +31844,7 @@ class IProcedureTerrainFollow(object):
                              "get_as_procedure" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureTerrainFollow."""
         initialize_from_source_object(self, sourceObject, IProcedureTerrainFollow)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31409,6 +31854,7 @@ class IProcedureTerrainFollow(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTerrainFollow)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureTerrainFollow, None)
     
     _get_altitude_agl_metadata = { "name" : "altitude_agl",
@@ -31527,6 +31973,7 @@ class IProcedureHover(object):
                              "get_as_procedure" : 31, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureHover."""
         initialize_from_source_object(self, sourceObject, IProcedureHover)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31536,6 +31983,7 @@ class IProcedureHover(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHover)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureHover, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -31815,6 +32263,7 @@ class IProcedureHoverTranslate(object):
                              "get_as_procedure" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureHoverTranslate."""
         initialize_from_source_object(self, sourceObject, IProcedureHoverTranslate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31824,6 +32273,7 @@ class IProcedureHoverTranslate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureHoverTranslate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureHoverTranslate, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -31998,6 +32448,7 @@ class IProcedureTransitionToForwardFlight(object):
                              "get_as_procedure" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureTransitionToForwardFlight."""
         initialize_from_source_object(self, sourceObject, IProcedureTransitionToForwardFlight)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32007,6 +32458,7 @@ class IProcedureTransitionToForwardFlight(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureTransitionToForwardFlight)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureTransitionToForwardFlight, None)
     
     _get_transition_course_mode_metadata = { "name" : "transition_course_mode",
@@ -32113,6 +32565,7 @@ class IProcedureVerticalTakeoff(object):
                              "get_as_procedure" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureVerticalTakeoff."""
         initialize_from_source_object(self, sourceObject, IProcedureVerticalTakeoff)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32122,6 +32575,7 @@ class IProcedureVerticalTakeoff(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVerticalTakeoff)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureVerticalTakeoff, None)
     
     _get_altitude_above_point_metadata = { "name" : "altitude_above_point",
@@ -32262,6 +32716,7 @@ class IProcedureVerticalLanding(object):
                              "get_as_procedure" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureVerticalLanding."""
         initialize_from_source_object(self, sourceObject, IProcedureVerticalLanding)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32271,6 +32726,7 @@ class IProcedureVerticalLanding(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVerticalLanding)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureVerticalLanding, None)
     
     _get_altitude_above_point_metadata = { "name" : "altitude_above_point",
@@ -32418,6 +32874,7 @@ class IProcedureReferenceState(object):
                              "get_mode_as_weight_on_wheels" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureReferenceState."""
         initialize_from_source_object(self, sourceObject, IProcedureReferenceState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32427,6 +32884,7 @@ class IProcedureReferenceState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureReferenceState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureReferenceState, None)
     
     _get_start_time_metadata = { "name" : "start_time",
@@ -32613,6 +33071,7 @@ class IProcedureSuperProcedure(object):
                              "load_procedures_from_file" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureSuperProcedure."""
         initialize_from_source_object(self, sourceObject, IProcedureSuperProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32622,6 +33081,7 @@ class IProcedureSuperProcedure(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureSuperProcedure)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureSuperProcedure, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -32681,6 +33141,7 @@ class IProcedureLaunch(object):
                              "set_true_course_hint" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureLaunch."""
         initialize_from_source_object(self, sourceObject, IProcedureLaunch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32690,6 +33151,7 @@ class IProcedureLaunch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureLaunch, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
@@ -32898,6 +33360,7 @@ class IProcedureAirway(object):
                              "copy_procedures" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureAirway."""
         initialize_from_source_object(self, sourceObject, IProcedureAirway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -32907,6 +33370,7 @@ class IProcedureAirway(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAirway)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureAirway, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -33081,6 +33545,7 @@ class IProcedureAirwayRouter(object):
                              "copy_procedures" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureAirwayRouter."""
         initialize_from_source_object(self, sourceObject, IProcedureAirwayRouter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -33090,6 +33555,7 @@ class IProcedureAirwayRouter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAirwayRouter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureAirwayRouter, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -33274,6 +33740,7 @@ class IProcedureAreaTargetSearch(object):
                              "copy_procedures" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureAreaTargetSearch."""
         initialize_from_source_object(self, sourceObject, IProcedureAreaTargetSearch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -33283,6 +33750,7 @@ class IProcedureAreaTargetSearch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureAreaTargetSearch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureAreaTargetSearch, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -33503,6 +33971,7 @@ class IProcedureFormationRecover(object):
                              "set_delay_turn_direction" : 38, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureFormationRecover."""
         initialize_from_source_object(self, sourceObject, IProcedureFormationRecover)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -33512,6 +33981,7 @@ class IProcedureFormationRecover(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureFormationRecover)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureFormationRecover, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -33848,6 +34318,7 @@ class IProcedureInFormation(object):
                              "set_consider_accel_for_fuel_flow" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureInFormation."""
         initialize_from_source_object(self, sourceObject, IProcedureInFormation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -33857,6 +34328,7 @@ class IProcedureInFormation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureInFormation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureInFormation, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -34043,6 +34515,7 @@ class IProcedureParallelFlightLine(object):
                              "get_as_procedure" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureParallelFlightLine."""
         initialize_from_source_object(self, sourceObject, IProcedureParallelFlightLine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34052,6 +34525,7 @@ class IProcedureParallelFlightLine(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureParallelFlightLine)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureParallelFlightLine, None)
     
     _get_altitude_options_metadata = { "name" : "altitude_options",
@@ -34242,6 +34716,7 @@ class IProcedureVGTPoint(object):
                              "set_display_step_time" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureVGTPoint."""
         initialize_from_source_object(self, sourceObject, IProcedureVGTPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34251,6 +34726,7 @@ class IProcedureVGTPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureVGTPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureVGTPoint, None)
     
     _get_as_procedure_metadata = { "name" : "get_as_procedure",
@@ -34453,6 +34929,7 @@ class ISiteRunwayFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteRunwayFromCatalog."""
         initialize_from_source_object(self, sourceObject, ISiteRunwayFromCatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34462,6 +34939,7 @@ class ISiteRunwayFromCatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteRunwayFromCatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteRunwayFromCatalog, None)
     
     _get_catalog_runway_metadata = { "name" : "get_catalog_runway",
@@ -34502,6 +34980,7 @@ class ISiteAirportFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteAirportFromCatalog."""
         initialize_from_source_object(self, sourceObject, ISiteAirportFromCatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34511,6 +34990,7 @@ class ISiteAirportFromCatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteAirportFromCatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteAirportFromCatalog, None)
     
     _get_catalog_airport_metadata = { "name" : "get_catalog_airport",
@@ -34551,6 +35031,7 @@ class ISiteNavaidFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteNavaidFromCatalog."""
         initialize_from_source_object(self, sourceObject, ISiteNavaidFromCatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34560,6 +35041,7 @@ class ISiteNavaidFromCatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteNavaidFromCatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteNavaidFromCatalog, None)
     
     _get_catalog_navaid_metadata = { "name" : "get_catalog_navaid",
@@ -34600,6 +35082,7 @@ class ISiteVTOLPointFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteVTOLPointFromCatalog."""
         initialize_from_source_object(self, sourceObject, ISiteVTOLPointFromCatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34609,6 +35092,7 @@ class ISiteVTOLPointFromCatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteVTOLPointFromCatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteVTOLPointFromCatalog, None)
     
     _get_catalog_vtol_point_metadata = { "name" : "get_catalog_vtol_point",
@@ -34649,6 +35133,7 @@ class ISiteWaypointFromCatalog(object):
                              "get_as_site" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteWaypointFromCatalog."""
         initialize_from_source_object(self, sourceObject, ISiteWaypointFromCatalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34658,6 +35143,7 @@ class ISiteWaypointFromCatalog(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteWaypointFromCatalog)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteWaypointFromCatalog, None)
     
     _get_catalog_waypoint_metadata = { "name" : "get_catalog_waypoint",
@@ -34721,6 +35207,7 @@ class IProcedureLaunchDynState(object):
                              "get_as_procedure" : 26, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureLaunchDynState."""
         initialize_from_source_object(self, sourceObject, IProcedureLaunchDynState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34730,6 +35217,7 @@ class IProcedureLaunchDynState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunchDynState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureLaunchDynState, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
@@ -34972,6 +35460,7 @@ class IProcedureLaunchWaypoint(object):
                              "get_as_procedure" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProcedureLaunchWaypoint."""
         initialize_from_source_object(self, sourceObject, IProcedureLaunchWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -34981,6 +35470,7 @@ class IProcedureLaunchWaypoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProcedureLaunchWaypoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProcedureLaunchWaypoint, None)
     
     _get_launch_time_metadata = { "name" : "launch_time",
@@ -35159,6 +35649,7 @@ class ISiteDynState(object):
                              "get_as_site" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISiteDynState."""
         initialize_from_source_object(self, sourceObject, ISiteDynState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35168,6 +35659,7 @@ class ISiteDynState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISiteDynState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISiteDynState, None)
     
     _get_object_name_metadata = { "name" : "object_name",
@@ -35211,6 +35703,7 @@ class SiteWaypoint(ISiteWaypoint, ISite):
     """Class defining a waypoint site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteWaypoint."""
         ISiteWaypoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35221,6 +35714,7 @@ class SiteWaypoint(ISiteWaypoint, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteWaypoint, [ISiteWaypoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{6d98e9b3-6766-46e5-98e2-b1f859b2ce92}", SiteWaypoint)
@@ -35230,6 +35724,7 @@ class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
     """Class defining an End of Previous Procedure site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteEndOfPrevProcedure."""
         ISiteEndOfPrevProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35240,6 +35735,7 @@ class SiteEndOfPrevProcedure(ISiteEndOfPrevProcedure, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteEndOfPrevProcedure, [ISiteEndOfPrevProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{24d8e613-5ce5-4e04-9251-fe44414caa14}", SiteEndOfPrevProcedure)
@@ -35249,6 +35745,7 @@ class SiteVTOLPoint(ISiteVTOLPoint, ISite):
     """Class defining a VTOL Point site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteVTOLPoint."""
         ISiteVTOLPoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35259,6 +35756,7 @@ class SiteVTOLPoint(ISiteVTOLPoint, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteVTOLPoint, [ISiteVTOLPoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{4f9d9e04-fa7e-4335-b1f4-15788a01c7ea}", SiteVTOLPoint)
@@ -35268,6 +35766,7 @@ class SiteReferenceState(ISiteReferenceState, ISite):
     """Class defining a Reference State site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteReferenceState."""
         ISiteReferenceState.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35278,6 +35777,7 @@ class SiteReferenceState(ISiteReferenceState, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteReferenceState, [ISiteReferenceState, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{978180ff-3f87-4ead-9405-e12e915c27e1}", SiteReferenceState)
@@ -35287,6 +35787,7 @@ class SiteSTKVehicle(ISiteSTKVehicle, ISite):
     """Class defining a STK Vehicle site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteSTKVehicle."""
         ISiteSTKVehicle.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35297,6 +35798,7 @@ class SiteSTKVehicle(ISiteSTKVehicle, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKVehicle, [ISiteSTKVehicle, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{01b272ac-3b19-4daf-825f-88c0ff0e10bb}", SiteSTKVehicle)
@@ -35306,6 +35808,7 @@ class SiteSuperProcedure(ISiteSuperProcedure, ISite):
     """Class defining a Super Procedure site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteSuperProcedure."""
         ISiteSuperProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35316,6 +35819,7 @@ class SiteSuperProcedure(ISiteSuperProcedure, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSuperProcedure, [ISiteSuperProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0faf9c77-17bc-4a8d-b490-d4dcd2326ca9}", SiteSuperProcedure)
@@ -35325,6 +35829,7 @@ class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
     """Class defining a Relative to Previous Procedure site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteRelToPrevProcedure."""
         ISiteRelToPrevProcedure.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35335,6 +35840,7 @@ class SiteRelToPrevProcedure(ISiteRelToPrevProcedure, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRelToPrevProcedure, [ISiteRelToPrevProcedure, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa8dc548-3b50-44d0-b340-f1fca98283ee}", SiteRelToPrevProcedure)
@@ -35344,6 +35850,7 @@ class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
     """Class defining a STK Object Waypoint site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteSTKObjectWaypoint."""
         ISiteSTKObjectWaypoint.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35354,6 +35861,7 @@ class SiteSTKObjectWaypoint(ISiteSTKObjectWaypoint, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKObjectWaypoint, [ISiteSTKObjectWaypoint, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0b1f12ad-e7be-4158-abb4-39efb21a87d3}", SiteSTKObjectWaypoint)
@@ -35363,6 +35871,7 @@ class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
     """Class defining a STK Static Object site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteSTKStaticObject."""
         ISiteSTKStaticObject.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35373,6 +35882,7 @@ class SiteSTKStaticObject(ISiteSTKStaticObject, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKStaticObject, [ISiteSTKStaticObject, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{16bc1a6a-6cf6-4e2a-b73f-82e6e0928c61}", SiteSTKStaticObject)
@@ -35382,6 +35892,7 @@ class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
     """Class defining a Relative to Stationary STK Object site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteRelToSTKObject."""
         ISiteRelToSTKObject.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35392,6 +35903,7 @@ class SiteRelToSTKObject(ISiteRelToSTKObject, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRelToSTKObject, [ISiteRelToSTKObject, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{0c4677b4-f09b-4f8c-a170-3d4f0e1bf7f9}", SiteRelToSTKObject)
@@ -35401,6 +35913,7 @@ class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
     """Class defining a STK Area Target site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteSTKAreaTarget."""
         ISiteSTKAreaTarget.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35411,6 +35924,7 @@ class SiteSTKAreaTarget(ISiteSTKAreaTarget, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteSTKAreaTarget, [ISiteSTKAreaTarget, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{8ae70236-0185-4072-b230-da6e68e122f1}", SiteSTKAreaTarget)
@@ -35420,6 +35934,7 @@ class SiteRunway(ISiteRunway, ISite):
     """Class defining a runway site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteRunway."""
         ISiteRunway.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35430,6 +35945,7 @@ class SiteRunway(ISiteRunway, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRunway, [ISiteRunway, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{6bbd87f1-83bc-4750-8128-8ba51a48b4ed}", SiteRunway)
@@ -35439,6 +35955,7 @@ class Site(ISite, ISiteUnknown):
     """Class defining an unknown site type."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Site."""
         ISite.__init__(self, sourceObject)
         ISiteUnknown.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35449,6 +35966,7 @@ class Site(ISite, ISiteUnknown):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Site, [ISite, ISiteUnknown])
 
 agcls.AgClassCatalog.add_catalog_entry("{445bad6d-6125-446d-bce6-ac9233f11706}", Site)
@@ -35458,6 +35976,7 @@ class ProcedureLanding(IProcedureLanding, IProcedure):
     """Class defining a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureLanding."""
         IProcedureLanding.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35468,6 +35987,7 @@ class ProcedureLanding(IProcedureLanding, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLanding, [IProcedureLanding, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{bde94020-cc95-4868-b5f1-da680baf4aeb}", ProcedureLanding)
@@ -35477,6 +35997,7 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
     """Class defining an enroute procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureEnroute."""
         IProcedureEnroute.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35487,6 +36008,7 @@ class ProcedureEnroute(IProcedureEnroute, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureEnroute, [IProcedureEnroute, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{f073011a-bfc1-4c9a-bd43-1a99bed41390}", ProcedureEnroute)
@@ -35496,6 +36018,7 @@ class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
     """Class defining an ExtEphem procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureExtEphem."""
         IProcedureExtEphem.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35506,6 +36029,7 @@ class ProcedureExtEphem(IProcedureExtEphem, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureExtEphem, [IProcedureExtEphem, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F39A3ED-4A9E-4893-A061-F73A75ACF910}", ProcedureExtEphem)
@@ -35515,6 +36039,7 @@ class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
     """Class defining an formationflyer procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureFormationFlyer."""
         IProcedureFormationFlyer.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35525,6 +36050,7 @@ class ProcedureFormationFlyer(IProcedureFormationFlyer, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFormationFlyer, [IProcedureFormationFlyer, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{678807EC-D03C-4E14-A068-3C0D14923D72}", ProcedureFormationFlyer)
@@ -35534,6 +36060,7 @@ class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
     """Class defining a basic point to point procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureBasicPointToPoint."""
         IProcedureBasicPointToPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35544,6 +36071,7 @@ class ProcedureBasicPointToPoint(IProcedureBasicPointToPoint, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureBasicPointToPoint, [IProcedureBasicPointToPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{36ce90e9-da71-40a6-aff9-db4aecab63bd}", ProcedureBasicPointToPoint)
@@ -35553,6 +36081,7 @@ class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
     """Class defining a arc enroute procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureArcEnroute."""
         IProcedureArcEnroute.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35563,6 +36092,7 @@ class ProcedureArcEnroute(IProcedureArcEnroute, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureArcEnroute, [IProcedureArcEnroute, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{7466bbc5-38eb-48ee-aec6-d45c69c562c1}", ProcedureArcEnroute)
@@ -35572,6 +36102,7 @@ class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
     """Class defining a arc point to point procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureArcPointToPoint."""
         IProcedureArcPointToPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35582,6 +36113,7 @@ class ProcedureArcPointToPoint(IProcedureArcPointToPoint, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureArcPointToPoint, [IProcedureArcPointToPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8026c77-0b69-413a-9903-bff5e40f44b8}", ProcedureArcPointToPoint)
@@ -35591,6 +36123,7 @@ class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
     """Class defining a flight line procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureFlightLine."""
         IProcedureFlightLine.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35601,6 +36134,7 @@ class ProcedureFlightLine(IProcedureFlightLine, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFlightLine, [IProcedureFlightLine, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{5079d60a-789b-489e-b1ba-749d7a888eba}", ProcedureFlightLine)
@@ -35610,6 +36144,7 @@ class ProcedureDelay(IProcedureDelay, IProcedure):
     """Class defining a delay procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureDelay."""
         IProcedureDelay.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35620,6 +36155,7 @@ class ProcedureDelay(IProcedureDelay, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureDelay, [IProcedureDelay, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{bf773446-cf9e-4f29-8c9e-57d62abbdb09}", ProcedureDelay)
@@ -35629,6 +36165,7 @@ class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
     """Class defining a takeoff procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureTakeoff."""
         IProcedureTakeoff.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35639,6 +36176,7 @@ class ProcedureTakeoff(IProcedureTakeoff, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTakeoff, [IProcedureTakeoff, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{52f322eb-31ca-4026-910d-ce46cc0830ee}", ProcedureTakeoff)
@@ -35648,6 +36186,7 @@ class ProcedureCollection(IProcedureCollection):
     """Class defining the collection of procedures in the phase of an Aviator mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureCollection."""
         IProcedureCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35656,6 +36195,7 @@ class ProcedureCollection(IProcedureCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureCollection, [IProcedureCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{02be4f36-f12f-4df0-86f4-3740e53fafe9}", ProcedureCollection)
@@ -35665,6 +36205,7 @@ class Phase(IPhase):
     """Class defining a phase in an Aviator mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Phase."""
         IPhase.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35673,6 +36214,7 @@ class Phase(IPhase):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Phase, [IPhase])
 
 agcls.AgClassCatalog.add_catalog_entry("{ff7ca84a-39d9-49ee-9629-0e3d46183fbf}", Phase)
@@ -35682,6 +36224,7 @@ class PhaseCollection(IPhaseCollection):
     """Class defining the collection of phases."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PhaseCollection."""
         IPhaseCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35690,6 +36233,7 @@ class PhaseCollection(IPhaseCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PhaseCollection, [IPhaseCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{6518b03b-1889-4b4e-86d0-403939b71a21}", PhaseCollection)
@@ -35699,6 +36243,7 @@ class Mission(IMission):
     """Class defining the Aviator mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Mission."""
         IMission.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35707,6 +36252,7 @@ class Mission(IMission):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Mission, [IMission])
 
 agcls.AgClassCatalog.add_catalog_entry("{26840b17-5789-4690-96be-c8637b15f434}", Mission)
@@ -35716,6 +36262,7 @@ class AviatorPropagator(IAviatorPropagator):
     """Class defining the Aviator propagator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AviatorPropagator."""
         IAviatorPropagator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35724,6 +36271,7 @@ class AviatorPropagator(IAviatorPropagator):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AviatorPropagator, [IAviatorPropagator])
 
 agcls.AgClassCatalog.add_catalog_entry("{e20f6939-fe05-44eb-a175-d63fa503526f}", AviatorPropagator)
@@ -35733,6 +36281,7 @@ class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
     """Class defining a Basic Maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureBasicManeuver."""
         IProcedureBasicManeuver.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35743,6 +36292,7 @@ class ProcedureBasicManeuver(IProcedureBasicManeuver, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureBasicManeuver, [IProcedureBasicManeuver, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{7eb66528-bec8-4b78-a9c7-45333edbda52}", ProcedureBasicManeuver)
@@ -35752,6 +36302,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStra
     """Class defining Weave strategy for a Basic Maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyWeave."""
         IBasicManeuverStrategyWeave.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35762,6 +36313,7 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategyWeave, IBasicManeuverStra
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyWeave, [IBasicManeuverStrategyWeave, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{46876894-f405-41cc-b071-9368b2d615f8}", BasicManeuverStrategyWeave)
@@ -35771,6 +36323,7 @@ class ProcedureTimeOptions(IProcedureTimeOptions):
     """Class defining the time options for the current procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureTimeOptions."""
         IProcedureTimeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35779,6 +36332,7 @@ class ProcedureTimeOptions(IProcedureTimeOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTimeOptions, [IProcedureTimeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{8f9d3e7e-4531-42b5-b066-44a87d6afc8c}", ProcedureTimeOptions)
@@ -35788,6 +36342,7 @@ class CalculationOptions(ICalculationOptions):
     """Class defining the calculation options for a procedure or phase."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationOptions."""
         ICalculationOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35796,6 +36351,7 @@ class CalculationOptions(ICalculationOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationOptions, [ICalculationOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0538ece7-c599-4fc2-9d5b-3750f6712233}", CalculationOptions)
@@ -35805,6 +36361,7 @@ class AircraftCategory(IAircraftCategory):
     """Class defining the aircraft category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftCategory."""
         IAircraftCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35813,6 +36370,7 @@ class AircraftCategory(IAircraftCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftCategory, [IAircraftCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7c68c433-7123-45ec-9e3d-3bc4d999c6f3}", AircraftCategory)
@@ -35822,6 +36380,7 @@ class Catalog(ICatalog):
     """Class defining the Aviator Catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Catalog."""
         ICatalog.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35830,6 +36389,7 @@ class Catalog(ICatalog):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Catalog, [ICatalog])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ac28f35-5412-4419-ac35-24dfd086a210}", Catalog)
@@ -35839,6 +36399,7 @@ class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining an aircraft in Aviator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftModel."""
         IAircraftModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35851,6 +36412,7 @@ class AircraftModel(IAircraftModel, IAviatorVehicle, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftModel, [IAircraftModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{063a922a-36a4-492c-8b6b-7b9cd7c29e8d}", AircraftModel)
@@ -35860,6 +36422,7 @@ class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
     """Class defining a missile in Aviator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileModel."""
         IMissileModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35872,6 +36435,7 @@ class MissileModel(IMissileModel, IAviatorVehicle, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileModel, [IMissileModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{4b46d7a8-3e2b-4cd9-a927-2e49e1b9ab5c}", MissileModel)
@@ -35881,6 +36445,7 @@ class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
     """Class defining a rotorcraft in Aviator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotorcraftModel."""
         IRotorcraftModel.__init__(self, sourceObject)
         IAviatorVehicle.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35893,6 +36458,7 @@ class RotorcraftModel(IRotorcraftModel, IAviatorVehicle, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftModel, [IRotorcraftModel, IAviatorVehicle, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{a10ff662-0083-473b-90c7-5ff75d3144c9}", RotorcraftModel)
@@ -35902,6 +36468,7 @@ class RotorcraftAero(IRotorcraftAero):
     """Class defining the aerodynamic options for a rotorcraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotorcraftAero."""
         IRotorcraftAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35910,6 +36477,7 @@ class RotorcraftAero(IRotorcraftAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftAero, [IRotorcraftAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{df267da7-689f-48eb-bd92-1bdfebc51435}", RotorcraftAero)
@@ -35919,6 +36487,7 @@ class RotorcraftProp(IRotorcraftProp):
     """Class defining the propulsion options for a rotorcraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotorcraftProp."""
         IRotorcraftProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -35927,6 +36496,7 @@ class RotorcraftProp(IRotorcraftProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftProp, [IRotorcraftProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{c0734618-529f-4ff2-9a14-3e4bd14cd601}", RotorcraftProp)
@@ -35936,6 +36506,7 @@ class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
     """Class defining the aircraft acceleration category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAcceleration."""
         IAircraftAcceleration.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35946,6 +36517,7 @@ class AircraftAcceleration(IAircraftAcceleration, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAcceleration, [IAircraftAcceleration, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{574f37f4-4889-4c85-baf5-8359e847acfa}", AircraftAcceleration)
@@ -35955,6 +36527,7 @@ class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerforman
     """Class defining the basic acceleration performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicAccelerationModel."""
         IAircraftBasicAccelerationModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -35967,6 +36540,7 @@ class AircraftBasicAccelerationModel(IAircraftBasicAccelerationModel, IPerforman
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicAccelerationModel, [IAircraftBasicAccelerationModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{e33469ad-d69d-48a2-9fc0-3fce97a2b98e}", AircraftBasicAccelerationModel)
@@ -35976,6 +36550,7 @@ class AircraftClimb(IAircraftClimb, ICatalogItem):
     """Class defining the aircraft climb category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftClimb."""
         IAircraftClimb.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -35986,6 +36561,7 @@ class AircraftClimb(IAircraftClimb, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftClimb, [IAircraftClimb, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{2f0086b2-66d4-4df6-9711-ee2524ba1ed0}", AircraftClimb)
@@ -35995,6 +36571,7 @@ class AircraftCruise(IAircraftCruise, ICatalogItem):
     """Class defining the aircraft cruise category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftCruise."""
         IAircraftCruise.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -36005,6 +36582,7 @@ class AircraftCruise(IAircraftCruise, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftCruise, [IAircraftCruise, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{efe9b334-9261-44bb-9834-8e7207ca6e05}", AircraftCruise)
@@ -36014,6 +36592,7 @@ class AircraftDescent(IAircraftDescent, ICatalogItem):
     """Class defining the aircraft descent category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftDescent."""
         IAircraftDescent.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -36024,6 +36603,7 @@ class AircraftDescent(IAircraftDescent, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftDescent, [IAircraftDescent, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{d76fa881-77b3-486a-976c-8184e9cb91fd}", AircraftDescent)
@@ -36033,6 +36613,7 @@ class AircraftLanding(IAircraftLanding, ICatalogItem):
     """Class defining the aircraft landing category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftLanding."""
         IAircraftLanding.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -36043,6 +36624,7 @@ class AircraftLanding(IAircraftLanding, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftLanding, [IAircraftLanding, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{8371480b-53cf-41ca-b749-41623f6d380a}", AircraftLanding)
@@ -36052,6 +36634,7 @@ class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
     """Class defining the aircraft takeoff category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftTakeoff."""
         IAircraftTakeoff.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -36062,6 +36645,7 @@ class AircraftTakeoff(IAircraftTakeoff, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTakeoff, [IAircraftTakeoff, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{aeef7451-7456-4d8c-aabf-147a466149cd}", AircraftTakeoff)
@@ -36071,6 +36655,7 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
     """Class defining the basic climb performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicClimbModel."""
         IAircraftBasicClimbModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36083,6 +36668,7 @@ class AircraftBasicClimbModel(IAircraftBasicClimbModel, IPerformanceModel, ICata
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicClimbModel, [IAircraftBasicClimbModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{2950de29-1009-4c2a-8db5-378b41c6d48d}", AircraftBasicClimbModel)
@@ -36092,6 +36678,7 @@ class AircraftAdvancedClimbModel(IAircraftAdvancedClimbModel, IPerformanceModel,
     """Class defining the advanced climb performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedClimbModel."""
         IAircraftAdvancedClimbModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36104,6 +36691,7 @@ class AircraftAdvancedClimbModel(IAircraftAdvancedClimbModel, IPerformanceModel,
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedClimbModel, [IAircraftAdvancedClimbModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{C1C87503-2B8E-41BC-8BA9-02B7CC1E02C2}", AircraftAdvancedClimbModel)
@@ -36113,6 +36701,7 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
     """Class defining the basic cruise performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicCruiseModel."""
         IAircraftBasicCruiseModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36125,6 +36714,7 @@ class AircraftBasicCruiseModel(IAircraftBasicCruiseModel, IPerformanceModel, ICa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicCruiseModel, [IAircraftBasicCruiseModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{c6090ace-e557-4bef-adf3-2e56387015a8}", AircraftBasicCruiseModel)
@@ -36134,6 +36724,7 @@ class AircraftAdvancedCruiseModel(IAircraftAdvancedCruiseModel, IPerformanceMode
     """Class defining the advanced cruise performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedCruiseModel."""
         IAircraftAdvancedCruiseModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36146,6 +36737,7 @@ class AircraftAdvancedCruiseModel(IAircraftAdvancedCruiseModel, IPerformanceMode
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedCruiseModel, [IAircraftAdvancedCruiseModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{ead08117-2561-4bb7-a82b-86057f506090}", AircraftAdvancedCruiseModel)
@@ -36155,6 +36747,7 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
     """Class defining the basic descent performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicDescentModel."""
         IAircraftBasicDescentModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36167,6 +36760,7 @@ class AircraftBasicDescentModel(IAircraftBasicDescentModel, IPerformanceModel, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicDescentModel, [IAircraftBasicDescentModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{30cb8d6f-afe5-4275-8479-4ce73b93a758}", AircraftBasicDescentModel)
@@ -36176,6 +36770,7 @@ class AircraftAdvancedDescentModel(IAircraftAdvancedDescentModel, IPerformanceMo
     """Class defining the advanced descent performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedDescentModel."""
         IAircraftAdvancedDescentModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36188,6 +36783,7 @@ class AircraftAdvancedDescentModel(IAircraftAdvancedDescentModel, IPerformanceMo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedDescentModel, [IAircraftAdvancedDescentModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{40ee1832-9491-49e5-bd27-40d40fefb326}", AircraftAdvancedDescentModel)
@@ -36197,6 +36793,7 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
     """Class defining the basic takeoff performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicTakeoffModel."""
         IAircraftBasicTakeoffModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36209,6 +36806,7 @@ class AircraftBasicTakeoffModel(IAircraftBasicTakeoffModel, IPerformanceModel, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicTakeoffModel, [IAircraftBasicTakeoffModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{3d9380c9-1aa0-4dcf-86bb-ded3b6b656e8}", AircraftBasicTakeoffModel)
@@ -36218,6 +36816,7 @@ class AircraftAdvancedTakeoffModel(IAircraftAdvancedTakeoffModel, IPerformanceMo
     """Class defining the advanced takeoff performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedTakeoffModel."""
         IAircraftAdvancedTakeoffModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36230,6 +36829,7 @@ class AircraftAdvancedTakeoffModel(IAircraftAdvancedTakeoffModel, IPerformanceMo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedTakeoffModel, [IAircraftAdvancedTakeoffModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{fc3190a3-fbeb-46bb-8395-22405fbf5b80}", AircraftAdvancedTakeoffModel)
@@ -36239,6 +36839,7 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
     """Class defining the basic landing performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicLandingModel."""
         IAircraftBasicLandingModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36251,6 +36852,7 @@ class AircraftBasicLandingModel(IAircraftBasicLandingModel, IPerformanceModel, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicLandingModel, [IAircraftBasicLandingModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{bd4e5100-7e2c-40ca-815a-02a618a4321d}", AircraftBasicLandingModel)
@@ -36260,6 +36862,7 @@ class AircraftAdvancedLandingModel(IAircraftAdvancedLandingModel, IPerformanceMo
     """Class defining the advanced landing performance model for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedLandingModel."""
         IAircraftAdvancedLandingModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36272,6 +36875,7 @@ class AircraftAdvancedLandingModel(IAircraftAdvancedLandingModel, IPerformanceMo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedLandingModel, [IAircraftAdvancedLandingModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{fb7534d7-1f9b-4133-9712-66728255532b}", AircraftAdvancedLandingModel)
@@ -36281,6 +36885,7 @@ class AirportCategory(IAirportCategory):
     """Class defining the airport category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AirportCategory."""
         IAirportCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36289,6 +36894,7 @@ class AirportCategory(IAirportCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AirportCategory, [IAirportCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{d497aeeb-3c6a-44ad-9f1a-6af1504c9a99}", AirportCategory)
@@ -36298,6 +36904,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
     """Class defining an ARINC424 Airport."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Airport."""
         IARINC424Item.__init__(self, sourceObject)
         ICatalogAirport.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -36312,6 +36919,7 @@ class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalog
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Airport, [IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{1d942d58-5b4d-4784-8ec9-435008352423}", ARINC424Airport)
@@ -36321,6 +36929,7 @@ class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWay
     """Class defining an ARINC424 Runway."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Runway."""
         IARINC424Runway.__init__(self, sourceObject)
         IARINC424Item.__init__(self, sourceObject)
         ICatalogRunway.__init__(self, sourceObject)
@@ -36337,6 +36946,7 @@ class ARINC424Runway(IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWay
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Runway, [IARINC424Runway, IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{20c6f0ee-a2d5-4447-8d9a-3b67fe759266}", ARINC424Runway)
@@ -36346,6 +36956,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Runway."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DAFIFRunway."""
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogRunway.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -36360,6 +36971,7 @@ class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFRunway, [IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{95867fe1-39fa-41cf-aa24-c6068c2cd86a}", DAFIFRunway)
@@ -36369,6 +36981,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
     """Class defining an DAFIF Helipad."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DAFIFHelipad."""
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -36383,6 +36996,7 @@ class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFHelipad, [IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{6973673c-7c51-48c2-8931-614aa2ab1da5}", DAFIFHelipad)
@@ -36392,6 +37006,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
     """Class defining an DAFIF Waypoint."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DAFIFWaypoint."""
         IDAFIFItem.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36404,6 +37019,7 @@ class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFWaypoint, [IDAFIFItem, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{62195e59-a4fc-40f9-ab7d-4229c79c0e8f}", DAFIFWaypoint)
@@ -36413,6 +37029,7 @@ class RunwayCategory(IRunwayCategory):
     """Class defining the runway category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RunwayCategory."""
         IRunwayCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36421,6 +37038,7 @@ class RunwayCategory(IRunwayCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RunwayCategory, [IRunwayCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{69b1b664-f8d4-4be5-bfe9-8760573b2c72}", RunwayCategory)
@@ -36430,6 +37048,7 @@ class UserRunwaySource(IUserRunwaySource, ICatalogSource):
     """Class defining the user runways in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserRunwaySource."""
         IUserRunwaySource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -36440,6 +37059,7 @@ class UserRunwaySource(IUserRunwaySource, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserRunwaySource, [IUserRunwaySource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{7b8c1764-ce59-4e35-940a-24d99c2953ef}", UserRunwaySource)
@@ -36449,6 +37069,7 @@ class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
     """Class defining the user runway in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserRunway."""
         IUserRunway.__init__(self, sourceObject)
         ICatalogRunway.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36463,6 +37084,7 @@ class UserRunway(IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserRunway, [IUserRunway, ICatalogRunway, ICatalogItem, ICatalogWaypoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{693bdacd-4c8d-4efd-bb23-3f14c83d3b04}", UserRunway)
@@ -36472,6 +37094,7 @@ class AltitudeMSLOptions(IAltitudeMSLOptions):
     """Class defining the altitude MSL options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AltitudeMSLOptions."""
         IAltitudeMSLOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36480,6 +37103,7 @@ class AltitudeMSLOptions(IAltitudeMSLOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeMSLOptions, [IAltitudeMSLOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{c866a6dd-1070-4162-bff2-4339ab28f6b2}", AltitudeMSLOptions)
@@ -36489,6 +37113,7 @@ class AltitudeOptions(IAltitudeOptions):
     """Class defining the altitude options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AltitudeOptions."""
         IAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36497,6 +37122,7 @@ class AltitudeOptions(IAltitudeOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeOptions, [IAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{4d5d82b7-e342-4dcb-9af1-7cbfa909fc23}", AltitudeOptions)
@@ -36506,6 +37132,7 @@ class ArcAltitudeOptions(IArcAltitudeOptions):
     """Class defining the altitude options for an arc procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ArcAltitudeOptions."""
         IArcAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36514,6 +37141,7 @@ class ArcAltitudeOptions(IArcAltitudeOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcAltitudeOptions, [IArcAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{1c4f7491-db5d-4e52-ba8e-e64ddfc687fe}", ArcAltitudeOptions)
@@ -36523,6 +37151,7 @@ class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
     """Class defining the altitude and delay options for an arc procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ArcAltitudeAndDelayOptions."""
         IArcAltitudeAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36531,6 +37160,7 @@ class ArcAltitudeAndDelayOptions(IArcAltitudeAndDelayOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcAltitudeAndDelayOptions, [IArcAltitudeAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{fdf04fa7-1588-4e15-a0ab-37b9586c878f}", ArcAltitudeAndDelayOptions)
@@ -36540,6 +37170,7 @@ class ArcOptions(IArcOptions):
     """Class defining the arc options for a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ArcOptions."""
         IArcOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36548,6 +37179,7 @@ class ArcOptions(IArcOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcOptions, [IArcOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{41af67f7-489f-452e-858a-bd8cc0bf782d}", ArcOptions)
@@ -36557,6 +37189,7 @@ class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
     """Class defining the altitude MSL and Level off options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AltitudeMSLAndLevelOffOptions."""
         IAltitudeMSLAndLevelOffOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36565,6 +37198,7 @@ class AltitudeMSLAndLevelOffOptions(IAltitudeMSLAndLevelOffOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeMSLAndLevelOffOptions, [IAltitudeMSLAndLevelOffOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0a38e533-78b2-402b-aed6-0ff04a62fcce}", AltitudeMSLAndLevelOffOptions)
@@ -36574,6 +37208,7 @@ class CruiseAirspeedOptions(ICruiseAirspeedOptions):
     """Class defining the cruise airspeed options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CruiseAirspeedOptions."""
         ICruiseAirspeedOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36582,6 +37217,7 @@ class CruiseAirspeedOptions(ICruiseAirspeedOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedOptions, [ICruiseAirspeedOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{05251788-e43e-4d91-84ad-3d2bcfc2087a}", CruiseAirspeedOptions)
@@ -36591,6 +37227,7 @@ class CruiseAirspeedProfile(ICruiseAirspeedProfile):
     """Class defining the cruise profile options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CruiseAirspeedProfile."""
         ICruiseAirspeedProfile.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36599,6 +37236,7 @@ class CruiseAirspeedProfile(ICruiseAirspeedProfile):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedProfile, [ICruiseAirspeedProfile])
 
 agcls.AgClassCatalog.add_catalog_entry("{5afc99d6-3a02-45f9-b6f5-87690d8f9702}", CruiseAirspeedProfile)
@@ -36608,6 +37246,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CruiseAirspeedAndProfileOptions."""
         ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36616,6 +37255,7 @@ class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{ee439155-cd45-45b5-b7f8-eae4f5e51b8e}", CruiseAirspeedAndProfileOptions)
@@ -36625,6 +37265,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
     """Class defining the cruise airspeed and profile options for a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingCruiseAirspeedAndProfileOptions."""
         ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36633,6 +37274,7 @@ class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingCruiseAirspeedAndProfileOptions, [ICruiseAirspeedAndProfileOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{cb47399c-3316-494f-959c-4f84b4c4936c}", LandingCruiseAirspeedAndProfileOptions)
@@ -36642,6 +37284,7 @@ class EnrouteOptions(IEnrouteOptions):
     """Class defining the enroute options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EnrouteOptions."""
         IEnrouteOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36650,6 +37293,7 @@ class EnrouteOptions(IEnrouteOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteOptions, [IEnrouteOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{cb708621-5036-4dbc-a900-a3b3a3fa7124}", EnrouteOptions)
@@ -36659,6 +37303,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute and delay options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EnrouteAndDelayOptions."""
         IEnrouteAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36667,6 +37312,7 @@ class EnrouteAndDelayOptions(IEnrouteAndDelayOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteAndDelayOptions, [IEnrouteAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{fc46b909-c927-4e2d-9d82-79c6980807d8}", EnrouteAndDelayOptions)
@@ -36676,6 +37322,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions):
     """Class defining the enroute options in a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingEnrouteOptions."""
         IEnrouteAndDelayOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36684,6 +37331,7 @@ class LandingEnrouteOptions(IEnrouteAndDelayOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingEnrouteOptions, [IEnrouteAndDelayOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{42ec119b-2661-4c68-b807-a5ed2a3af018}", LandingEnrouteOptions)
@@ -36693,6 +37341,7 @@ class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
     """Class defining the enroute turn direction options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EnrouteTurnDirectionOptions."""
         IEnrouteTurnDirectionOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36701,6 +37350,7 @@ class EnrouteTurnDirectionOptions(IEnrouteTurnDirectionOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EnrouteTurnDirectionOptions, [IEnrouteTurnDirectionOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{16e895f3-5a65-4caf-960e-691f904ca66c}", EnrouteTurnDirectionOptions)
@@ -36710,6 +37360,7 @@ class NavigationOptions(INavigationOptions):
     """Class defining the navigation options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type NavigationOptions."""
         INavigationOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36718,6 +37369,7 @@ class NavigationOptions(INavigationOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NavigationOptions, [INavigationOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{ce90add8-b152-4984-b864-0f6e61e680d4}", NavigationOptions)
@@ -36727,6 +37379,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VerticalPlaneOptions."""
         IVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36735,6 +37388,7 @@ class VerticalPlaneOptions(IVerticalPlaneOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VerticalPlaneOptions, [IVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{a902b408-0141-4280-b6cf-e1cb18dae4f6}", VerticalPlaneOptions)
@@ -36744,6 +37398,7 @@ class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
     """Class defining the vertical plane options in a procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ArcVerticalPlaneOptions."""
         IArcVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36752,6 +37407,7 @@ class ArcVerticalPlaneOptions(IArcVerticalPlaneOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ArcVerticalPlaneOptions, [IArcVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{eae3a835-4897-408f-91dc-59b9a2fbcb5c}", ArcVerticalPlaneOptions)
@@ -36761,6 +37417,7 @@ class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
     """Class defining the vertical plane options for an arc procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VerticalPlaneAndFlightPathOptions."""
         IVerticalPlaneAndFlightPathOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36769,6 +37426,7 @@ class VerticalPlaneAndFlightPathOptions(IVerticalPlaneAndFlightPathOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VerticalPlaneAndFlightPathOptions, [IVerticalPlaneAndFlightPathOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{7db61c31-a562-43b9-b3fa-76dc120bdd74}", VerticalPlaneAndFlightPathOptions)
@@ -36778,6 +37436,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
     """Class defining the vertical plane options in a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingVerticalPlaneOptions."""
         IVerticalPlaneOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36786,6 +37445,7 @@ class LandingVerticalPlaneOptions(IVerticalPlaneOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingVerticalPlaneOptions, [IVerticalPlaneOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{846a07a8-230c-4036-a43b-c61ccd1bde69}", LandingVerticalPlaneOptions)
@@ -36795,6 +37455,7 @@ class RunwayHeadingOptions(IRunwayHeadingOptions):
     """Class defining the runway heading options in a takeoff or landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RunwayHeadingOptions."""
         IRunwayHeadingOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36803,6 +37464,7 @@ class RunwayHeadingOptions(IRunwayHeadingOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RunwayHeadingOptions, [IRunwayHeadingOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{167457be-4afe-477d-af6d-4e49413f4863}", RunwayHeadingOptions)
@@ -36812,6 +37474,7 @@ class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
     """Class defining the enter downwind pattern options for a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingEnterDownwindPattern."""
         ILandingEnterDownwindPattern.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36820,6 +37483,7 @@ class LandingEnterDownwindPattern(ILandingEnterDownwindPattern):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingEnterDownwindPattern, [ILandingEnterDownwindPattern])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fd1f000-c683-490f-9eea-a30062392898}", LandingEnterDownwindPattern)
@@ -36829,6 +37493,7 @@ class LandingInterceptGlideslope(ILandingInterceptGlideslope):
     """Class defining the intercept glideslope options for a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingInterceptGlideslope."""
         ILandingInterceptGlideslope.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36837,6 +37502,7 @@ class LandingInterceptGlideslope(ILandingInterceptGlideslope):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingInterceptGlideslope, [ILandingInterceptGlideslope])
 
 agcls.AgClassCatalog.add_catalog_entry("{f9735637-159f-4a79-9b1c-05d88d8437ac}", LandingInterceptGlideslope)
@@ -36846,6 +37512,7 @@ class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
     """Class defining the standard instrument approach options for a landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LandingStandardInstrumentApproach."""
         ILandingStandardInstrumentApproach.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36854,6 +37521,7 @@ class LandingStandardInstrumentApproach(ILandingStandardInstrumentApproach):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LandingStandardInstrumentApproach, [ILandingStandardInstrumentApproach])
 
 agcls.AgClassCatalog.add_catalog_entry("{6463a94a-8a78-432d-b155-d9d6d436c748}", LandingStandardInstrumentApproach)
@@ -36863,6 +37531,7 @@ class TakeoffDeparturePoint(ITakeoffDeparturePoint):
     """Class defining the departure point options for a takeoff procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TakeoffDeparturePoint."""
         ITakeoffDeparturePoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36871,6 +37540,7 @@ class TakeoffDeparturePoint(ITakeoffDeparturePoint):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffDeparturePoint, [ITakeoffDeparturePoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{59ebf9c6-d1de-47c0-bd56-b3d455c5c335}", TakeoffDeparturePoint)
@@ -36880,6 +37550,7 @@ class TakeoffLowTransition(ITakeoffLowTransition):
     """Class defining the low transition options for a takeoff procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TakeoffLowTransition."""
         ITakeoffLowTransition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36888,6 +37559,7 @@ class TakeoffLowTransition(ITakeoffLowTransition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffLowTransition, [ITakeoffLowTransition])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8f9161b-97e3-4eab-b5e9-6a5aebaddaea}", TakeoffLowTransition)
@@ -36897,6 +37569,7 @@ class TakeoffNormal(ITakeoffNormal):
     """Class defining the normal options for a takeoff procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TakeoffNormal."""
         ITakeoffNormal.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36905,6 +37578,7 @@ class TakeoffNormal(ITakeoffNormal):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TakeoffNormal, [ITakeoffNormal])
 
 agcls.AgClassCatalog.add_catalog_entry("{4951950f-59cb-4524-a2c6-5d8b6f35922d}", TakeoffNormal)
@@ -36914,6 +37588,7 @@ class LevelTurns(ILevelTurns):
     """Class defining the level turns options for an acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LevelTurns."""
         ILevelTurns.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36922,6 +37597,7 @@ class LevelTurns(ILevelTurns):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelTurns, [ILevelTurns])
 
 agcls.AgClassCatalog.add_catalog_entry("{8c955be7-5999-4332-bb80-4151d864d1d4}", LevelTurns)
@@ -36931,6 +37607,7 @@ class AttitudeTransitions(IAttitudeTransitions):
     """Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AttitudeTransitions."""
         IAttitudeTransitions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36939,6 +37616,7 @@ class AttitudeTransitions(IAttitudeTransitions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AttitudeTransitions, [IAttitudeTransitions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0fc49614-6fbf-4d80-94ae-f8a338d8e7ab}", AttitudeTransitions)
@@ -36948,6 +37626,7 @@ class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
     """Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ClimbAndDescentTransitions."""
         IClimbAndDescentTransitions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36956,6 +37635,7 @@ class ClimbAndDescentTransitions(IClimbAndDescentTransitions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ClimbAndDescentTransitions, [IClimbAndDescentTransitions])
 
 agcls.AgClassCatalog.add_catalog_entry("{c8d87c4a-ee0c-4a96-b7f4-9dbe84a7b2aa}", ClimbAndDescentTransitions)
@@ -36965,6 +37645,7 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
     """Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AeroPropManeuverModeHelper."""
         IAeroPropManeuverModeHelper.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -36973,6 +37654,7 @@ class AeroPropManeuverModeHelper(IAeroPropManeuverModeHelper):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AeroPropManeuverModeHelper, [IAeroPropManeuverModeHelper])
 
 agcls.AgClassCatalog.add_catalog_entry("{854b3e50-7d20-4d15-a58d-b1f36dac5c77}", AeroPropManeuverModeHelper)
@@ -36982,6 +37664,7 @@ class AircraftAdvancedAccelerationModel(IAircraftAdvancedAccelerationModel, IPer
     """Class defining the advanced acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAdvancedAccelerationModel."""
         IAircraftAdvancedAccelerationModel.__init__(self, sourceObject)
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -36994,6 +37677,7 @@ class AircraftAdvancedAccelerationModel(IAircraftAdvancedAccelerationModel, IPer
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAdvancedAccelerationModel, [IAircraftAdvancedAccelerationModel, IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{e55e8521-3091-4a5d-afe0-57f7e7ee698e}", AircraftAdvancedAccelerationModel)
@@ -37003,6 +37687,7 @@ class AircraftAccelerationMode(IAircraftAccelerationMode):
     """Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAccelerationMode."""
         IAircraftAccelerationMode.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37011,6 +37696,7 @@ class AircraftAccelerationMode(IAircraftAccelerationMode):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAccelerationMode, [IAircraftAccelerationMode])
 
 agcls.AgClassCatalog.add_catalog_entry("{551999ee-51a5-4863-a244-0030899884ee}", AircraftAccelerationMode)
@@ -37020,6 +37706,7 @@ class AircraftSimpleAero(IAircraftSimpleAero):
     """Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftSimpleAero."""
         IAircraftSimpleAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37028,6 +37715,7 @@ class AircraftSimpleAero(IAircraftSimpleAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftSimpleAero, [IAircraftSimpleAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{54bb15cb-5b0e-44af-9605-0b646efebaeb}", AircraftSimpleAero)
@@ -37037,6 +37725,7 @@ class AircraftExternalAero(IAircraftExternalAero):
     """Class defining the external file aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftExternalAero."""
         IAircraftExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37045,6 +37734,7 @@ class AircraftExternalAero(IAircraftExternalAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftExternalAero, [IAircraftExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{f79db172-f8c6-4dc9-84c7-dfff374156bc}", AircraftExternalAero)
@@ -37054,6 +37744,7 @@ class AircraftAero(IAircraftAero):
     """Class defining the aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftAero."""
         IAircraftAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37062,6 +37753,7 @@ class AircraftAero(IAircraftAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftAero, [IAircraftAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{6005f6fd-9923-4688-a60f-6179d5cec1f3}", AircraftAero)
@@ -37071,6 +37763,7 @@ class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
     """Class defining the basic fixed wing aerodynamic options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicFixedWingAero."""
         IAircraftBasicFixedWingAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37079,6 +37772,7 @@ class AircraftBasicFixedWingAero(IAircraftBasicFixedWingAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingAero, [IAircraftBasicFixedWingAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{3e05b32c-25ac-400d-ae1c-e1628b2e6ebb}", AircraftBasicFixedWingAero)
@@ -37088,6 +37782,7 @@ class AircraftProp(IAircraftProp):
     """Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftProp."""
         IAircraftProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37096,6 +37791,7 @@ class AircraftProp(IAircraftProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftProp, [IAircraftProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{8773e358-a871-4d66-b7b2-25a473f22bdb}", AircraftProp)
@@ -37105,6 +37801,7 @@ class AircraftSimpleProp(IAircraftSimpleProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftSimpleProp."""
         IAircraftSimpleProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37113,6 +37810,7 @@ class AircraftSimpleProp(IAircraftSimpleProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftSimpleProp, [IAircraftSimpleProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{359cf55e-59da-4f34-93fe-010180c2a415}", AircraftSimpleProp)
@@ -37122,6 +37820,7 @@ class AircraftExternalProp(IAircraftExternalProp):
     """Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftExternalProp."""
         IAircraftExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37130,6 +37829,7 @@ class AircraftExternalProp(IAircraftExternalProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftExternalProp, [IAircraftExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{9a59b51f-6133-446f-9f7c-04bfa1e8c69a}", AircraftExternalProp)
@@ -37139,6 +37839,7 @@ class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
     """Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftBasicFixedWingProp."""
         IAircraftBasicFixedWingProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37147,6 +37848,7 @@ class AircraftBasicFixedWingProp(IAircraftBasicFixedWingProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftBasicFixedWingProp, [IAircraftBasicFixedWingProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{b4158163-51d7-4eb6-956a-14740ae523b3}", AircraftBasicFixedWingProp)
@@ -37156,6 +37858,7 @@ class ARINC424Source(IARINC424Source, ICatalogSource):
     """Class defining an ARINC424 source in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Source."""
         IARINC424Source.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37166,6 +37869,7 @@ class ARINC424Source(IARINC424Source, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Source, [IARINC424Source, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{e4f5b464-d93a-4541-8a1e-737ece8b120c}", ARINC424Source)
@@ -37175,6 +37879,7 @@ class DAFIFSource(IDAFIFSource, ICatalogSource):
     """Class defining an DAFIF source in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DAFIFSource."""
         IDAFIFSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37185,6 +37890,7 @@ class DAFIFSource(IDAFIFSource, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DAFIFSource, [IDAFIFSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{4325ae72-1155-40cd-a708-0cf4da0b653c}", DAFIFSource)
@@ -37194,6 +37900,7 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
     """Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicFixedWingFwdFlightLiftHelper."""
         IBasicFixedWingLiftHelper.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37202,6 +37909,7 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicFixedWingFwdFlightLiftHelper, [IBasicFixedWingLiftHelper])
 
 agcls.AgClassCatalog.add_catalog_entry("{507fa67b-cebe-431c-a109-fb6d77b6b026}", BasicFixedWingFwdFlightLiftHelper)
@@ -37211,6 +37919,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IB
     """Class defining the Straight Ahead strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyStraightAhead."""
         IBasicManeuverStrategyStraightAhead.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37221,6 +37930,7 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategyStraightAhead, IB
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStraightAhead, [IBasicManeuverStrategyStraightAhead, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{beae703c-6b09-4ff9-a7d0-3e6513848c84}", BasicManeuverStrategyStraightAhead)
@@ -37230,6 +37940,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IB
     """Class defining the Cruise profile strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyCruiseProfile."""
         IBasicManeuverStrategyCruiseProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37240,6 +37951,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategyCruiseProfile, IB
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyCruiseProfile, [IBasicManeuverStrategyCruiseProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{00a0e796-7322-478b-9ad6-b8f1d6ef81e1}", BasicManeuverStrategyCruiseProfile)
@@ -37249,6 +37961,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBas
     """Class defining the Glide profile strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyGlideProfile."""
         IBasicManeuverStrategyGlideProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37259,6 +37972,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategyGlideProfile, IBas
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyGlideProfile, [IBasicManeuverStrategyGlideProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{0e60df52-4bb8-40a1-90a8-ecf7a57bca0a}", BasicManeuverStrategyGlideProfile)
@@ -37268,6 +37982,7 @@ class AircraftModels(IAircraftModels, ICatalogSource):
     """Class defining the User Aircraft Models in the Aviator Catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftModels."""
         IAircraftModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37278,6 +37993,7 @@ class AircraftModels(IAircraftModels, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftModels, [IAircraftModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{47dd19b1-0ce7-458b-bdb2-2ec0d337231b}", AircraftModels)
@@ -37287,6 +38003,7 @@ class MissileModels(IMissileModels, ICatalogSource):
     """Class defining the User Missile Models in the Aviator Catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileModels."""
         IMissileModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37297,6 +38014,7 @@ class MissileModels(IMissileModels, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileModels, [IMissileModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{038a565a-efe0-4bc0-8a22-eb1c2d88d87a}", MissileModels)
@@ -37306,6 +38024,7 @@ class RotorcraftModels(IRotorcraftModels, ICatalogSource):
     """Class defining the User Rotorcraft Models in the Aviator Catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotorcraftModels."""
         IRotorcraftModels.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37316,6 +38035,7 @@ class RotorcraftModels(IRotorcraftModels, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotorcraftModels, [IRotorcraftModels, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{f85cc088-0dc1-4436-bc2e-a985bfd4dfb4}", RotorcraftModels)
@@ -37325,6 +38045,7 @@ class Configuration(IConfiguration):
     """Class defining the aircraft configuration for an Aviator mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Configuration."""
         IConfiguration.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37333,6 +38054,7 @@ class Configuration(IConfiguration):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Configuration, [IConfiguration])
 
 agcls.AgClassCatalog.add_catalog_entry("{823e96a0-a485-4c5b-9abc-7d6658432f99}", Configuration)
@@ -37342,6 +38064,7 @@ class FuelTankInternal(IFuelTankInternal, IStation):
     """Class defining an internal fuel tank for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FuelTankInternal."""
         IFuelTankInternal.__init__(self, sourceObject)
         IStation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37352,6 +38075,7 @@ class FuelTankInternal(IFuelTankInternal, IStation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelTankInternal, [IFuelTankInternal, IStation])
 
 agcls.AgClassCatalog.add_catalog_entry("{64fd434a-e313-4f15-a236-f25f10461444}", FuelTankInternal)
@@ -37361,6 +38085,7 @@ class FuelTankExternal(IFuelTankExternal):
     """Class defining an external fuel tank for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FuelTankExternal."""
         IFuelTankExternal.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37369,6 +38094,7 @@ class FuelTankExternal(IFuelTankExternal):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelTankExternal, [IFuelTankExternal])
 
 agcls.AgClassCatalog.add_catalog_entry("{8037f407-784e-469e-b92d-2a0fff148e86}", FuelTankExternal)
@@ -37378,6 +38104,7 @@ class PayloadStation(IPayloadStation, IStation):
     """Class defining a payload station for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PayloadStation."""
         IPayloadStation.__init__(self, sourceObject)
         IStation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37388,6 +38115,7 @@ class PayloadStation(IPayloadStation, IStation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PayloadStation, [IPayloadStation, IStation])
 
 agcls.AgClassCatalog.add_catalog_entry("{13423a45-1732-438b-a96a-502bc40f0827}", PayloadStation)
@@ -37397,6 +38125,7 @@ class StationCollection(IStationCollection):
     """Class defining a collection of payload stations for an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type StationCollection."""
         IStationCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37405,6 +38134,7 @@ class StationCollection(IStationCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StationCollection, [IStationCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{e81ed53f-b172-46c4-85b1-e80fe06e211a}", StationCollection)
@@ -37414,6 +38144,7 @@ class WindModel(IWindModel):
     """Class defining the wind model for a mission, scenario, or procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type WindModel."""
         IWindModel.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37422,6 +38153,7 @@ class WindModel(IWindModel):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModel, [IWindModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{8c0e170c-1818-4bd9-8bbf-e578065ea2a8}", WindModel)
@@ -37431,6 +38163,7 @@ class WindModelConstant(IWindModelConstant):
     """Class defining a constant bearing/speed wind model for a mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type WindModelConstant."""
         IWindModelConstant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37439,6 +38172,7 @@ class WindModelConstant(IWindModelConstant):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModelConstant, [IWindModelConstant])
 
 agcls.AgClassCatalog.add_catalog_entry("{079a1206-8ed3-423d-8f1d-855551f0435c}", WindModelConstant)
@@ -37448,6 +38182,7 @@ class WindModelADDS(IWindModelADDS):
     """Class defining a wind model using the NOAA ADDS service for a mission."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type WindModelADDS."""
         IWindModelADDS.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37456,6 +38191,7 @@ class WindModelADDS(IWindModelADDS):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WindModelADDS, [IWindModelADDS])
 
 agcls.AgClassCatalog.add_catalog_entry("{1e2024ff-d594-49bf-8ea7-a110213078ba}", WindModelADDS)
@@ -37465,6 +38201,7 @@ class ADDSMessage(IADDSMessage):
     """Class defining a message from the NOAA ADDS service."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ADDSMessage."""
         IADDSMessage.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37473,6 +38210,7 @@ class ADDSMessage(IADDSMessage):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ADDSMessage, [IADDSMessage])
 
 agcls.AgClassCatalog.add_catalog_entry("{22e44fa2-cfe7-456a-900c-0916f1d88cec}", ADDSMessage)
@@ -37482,6 +38220,7 @@ class ADDSMessageCollection(IADDSMessageCollection):
     """Class defining a collection of messages from the NOAA ADDS service."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ADDSMessageCollection."""
         IADDSMessageCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37490,6 +38229,7 @@ class ADDSMessageCollection(IADDSMessageCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ADDSMessageCollection, [IADDSMessageCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{f5e634eb-3433-4336-9c0d-73b3d0e9674a}", ADDSMessageCollection)
@@ -37499,6 +38239,7 @@ class Procedure(IProcedure, IConnect):
     """Class defining an unknown procedure type."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Procedure."""
         IProcedure.__init__(self, sourceObject)
         IConnect.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37509,6 +38250,7 @@ class Procedure(IProcedure, IConnect):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Procedure, [IProcedure, IConnect])
 
 agcls.AgClassCatalog.add_catalog_entry("{c744fb3a-e51d-4b87-8006-ed9dd4d48495}", Procedure)
@@ -37518,6 +38260,7 @@ class AtmosphereModel(IAtmosphereModel):
     """Class defining the atmosphere model for a mission, scenario, or procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AtmosphereModel."""
         IAtmosphereModel.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37526,6 +38269,7 @@ class AtmosphereModel(IAtmosphereModel):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AtmosphereModel, [IAtmosphereModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{43ce46bb-52dc-42d7-818a-5bd4d13dd15d}", AtmosphereModel)
@@ -37535,6 +38279,7 @@ class AtmosphereModelBasic(IAtmosphereModelBasic):
     """Class defining the basic atmosphere model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AtmosphereModelBasic."""
         IAtmosphereModelBasic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37543,6 +38288,7 @@ class AtmosphereModelBasic(IAtmosphereModelBasic):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AtmosphereModelBasic, [IAtmosphereModelBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{9c9a3976-e898-4e98-b2ce-26d045ab4d46}", AtmosphereModelBasic)
@@ -37552,6 +38298,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicMa
     """Class defining the simple turn strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategySimpleTurn."""
         IBasicManeuverStrategySimpleTurn.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37562,6 +38309,7 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategySimpleTurn, IBasicMa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySimpleTurn, [IBasicManeuverStrategySimpleTurn, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{5a0fd768-cf78-47cb-8a85-ccb1fbe68cee}", BasicManeuverStrategySimpleTurn)
@@ -37571,6 +38319,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasic
     """Class defining the aileron roll strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyAileronRoll."""
         IBasicManeuverStrategyAileronRoll.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37581,6 +38330,7 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategyAileronRoll, IBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAileronRoll, [IBasicManeuverStrategyAileronRoll, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{b8979539-00bf-46af-a412-9a16ebb57ac7}", BasicManeuverStrategyAileronRoll)
@@ -37590,6 +38340,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverSt
     """Class defining the fly AOA strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyFlyAOA."""
         IBasicManeuverStrategyFlyAOA.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37600,6 +38351,7 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategyFlyAOA, IBasicManeuverSt
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyFlyAOA, [IBasicManeuverStrategyFlyAOA, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{f3c56de2-f58f-4292-a05b-d6e8f2756a55}", BasicManeuverStrategyFlyAOA)
@@ -37609,6 +38361,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrate
     """Class defining the pull strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyPull."""
         IBasicManeuverStrategyPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37619,6 +38372,7 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategyPull, IBasicManeuverStrate
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPull, [IBasicManeuverStrategyPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f14c043-4c1d-46f2-a3fd-112b17a27e82}", BasicManeuverStrategyPull)
@@ -37628,6 +38382,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasic
     """Class defining the rolling pull strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRollingPull."""
         IBasicManeuverStrategyRollingPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37638,6 +38393,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategyRollingPull, IBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRollingPull, [IBasicManeuverStrategyRollingPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{abb3d02b-ae1f-482e-a903-cdc6bcb7bde1}", BasicManeuverStrategyRollingPull)
@@ -37647,6 +38403,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasic
     """Class defining the smooth accel strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategySmoothAccel."""
         IBasicManeuverStrategySmoothAccel.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37657,6 +38414,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategySmoothAccel, IBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAccel, [IBasicManeuverStrategySmoothAccel, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{e5277844-1d1b-49ae-9a08-553e55823581}", BasicManeuverStrategySmoothAccel)
@@ -37666,6 +38424,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicMa
     """Class defining the smooth turn strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategySmoothTurn."""
         IBasicManeuverStrategySmoothTurn.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37676,6 +38435,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategySmoothTurn, IBasicMa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothTurn, [IBasicManeuverStrategySmoothTurn, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{d55e7e13-72e2-4046-b7c7-a0702d951b03}", BasicManeuverStrategySmoothTurn)
@@ -37685,6 +38445,7 @@ class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
     """Class defining the airspeed options for basic maneuver strategies."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverAirspeedOptions."""
         IBasicManeuverAirspeedOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37693,6 +38454,7 @@ class BasicManeuverAirspeedOptions(IBasicManeuverAirspeedOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverAirspeedOptions, [IBasicManeuverAirspeedOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0eb776dc-78a8-42db-b8c0-8c62611d7e44}", BasicManeuverAirspeedOptions)
@@ -37702,6 +38464,7 @@ class PropulsionThrust(IPropulsionThrust):
     """Class defining the the thrust propulsion used in basic maneuver procedures."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropulsionThrust."""
         IPropulsionThrust.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37710,6 +38473,7 @@ class PropulsionThrust(IPropulsionThrust):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropulsionThrust, [IPropulsionThrust])
 
 agcls.AgClassCatalog.add_catalog_entry("{50e5309a-e9f9-4dc0-8296-b3bf43a9b1a5}", PropulsionThrust)
@@ -37719,6 +38483,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBas
     """Class defining the autopilot - horizontal plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyAutopilotNav."""
         IBasicManeuverStrategyAutopilotNav.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37729,6 +38494,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategyAutopilotNav, IBas
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNav, [IBasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{129c0672-05c6-41ae-ae30-3aa82d83783a}", BasicManeuverStrategyAutopilotNav)
@@ -37738,6 +38504,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IB
     """Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyAutopilotProf."""
         IBasicManeuverStrategyAutopilotProf.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37748,6 +38515,7 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategyAutopilotProf, IB
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotProf, [IBasicManeuverStrategyAutopilotProf, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{a86d3f81-6bd4-4f3d-8747-c1b31d7b06e9}", BasicManeuverStrategyAutopilotProf)
@@ -37757,6 +38525,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicMa
     """Class defining the barrel roll strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyBarrelRoll."""
         IBasicManeuverStrategyBarrelRoll.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37767,6 +38536,7 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategyBarrelRoll, IBasicMa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBarrelRoll, [IBasicManeuverStrategyBarrelRoll, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ee92041-1fb9-4a53-ad71-9045d738fe7d}", BasicManeuverStrategyBarrelRoll)
@@ -37776,6 +38546,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrate
     """Class defining the loop strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyLoop."""
         IBasicManeuverStrategyLoop.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37786,6 +38557,7 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategyLoop, IBasicManeuverStrate
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLoop, [IBasicManeuverStrategyLoop, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{77780df4-1f0f-411c-a4eb-edfeb5d44d82}", BasicManeuverStrategyLoop)
@@ -37795,6 +38567,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuv
     """Class defining the lighter than air hover strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyLTAHover."""
         IBasicManeuverStrategyLTAHover.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37805,6 +38578,7 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategyLTAHover, IBasicManeuv
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyLTAHover, [IBasicManeuverStrategyLTAHover, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{5dfffe06-20ce-4e0e-903e-90ca3e60c273}", BasicManeuverStrategyLTAHover)
@@ -37814,6 +38588,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicMane
     """Class defining the Intercept strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyIntercept."""
         IBasicManeuverStrategyIntercept.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37824,6 +38599,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategyIntercept, IBasicMane
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyIntercept, [IBasicManeuverStrategyIntercept, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{015abd40-d52a-479b-b9ef-92aadb650a42}", BasicManeuverStrategyIntercept)
@@ -37833,6 +38609,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing
     """Class defining the Relative Bearing strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRelativeBearing."""
         IBasicManeuverStrategyRelativeBearing.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37843,6 +38620,7 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategyRelativeBearing
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeBearing, [IBasicManeuverStrategyRelativeBearing, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{e2ffd4c9-cab5-4e7d-972f-d7b0f6983a04}", BasicManeuverStrategyRelativeBearing)
@@ -37852,6 +38630,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, 
     """Class defining the Relative Course strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRelativeCourse."""
         IBasicManeuverStrategyRelativeCourse.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37862,6 +38641,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategyRelativeCourse, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeCourse, [IBasicManeuverStrategyRelativeCourse, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{b38ed3c1-d896-476f-8b6d-c5b6d72b4590}", BasicManeuverStrategyRelativeCourse)
@@ -37871,6 +38651,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicMa
     """Class defining the Rendezvous/Formation strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRendezvous."""
         IBasicManeuverStrategyRendezvous.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37881,6 +38662,7 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategyRendezvous, IBasicMa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRendezvous, [IBasicManeuverStrategyRendezvous, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{bb5fdd2b-8e95-40e1-8048-86547b0daff0}", BasicManeuverStrategyRendezvous)
@@ -37890,6 +38672,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, 
     """Class defining the Stationkeeping strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyStationkeeping."""
         IBasicManeuverStrategyStationkeeping.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37900,6 +38683,7 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategyStationkeeping, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyStationkeeping, [IBasicManeuverStrategyStationkeeping, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{949ee147-7b1f-4f22-b721-aea0725b9116}", BasicManeuverStrategyStationkeeping)
@@ -37909,6 +38693,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
     """Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRelativeFPA."""
         IBasicManeuverStrategyRelativeFPA.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37919,6 +38704,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategyRelativeFPA, IBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFPA, [IBasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{dd290505-55b9-48a9-a800-451bcc816dd6}", BasicManeuverStrategyRelativeFPA)
@@ -37928,6 +38714,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitu
     """Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyRelSpeedAltitude."""
         IBasicManeuverStrategyRelSpeedAltitude.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37938,6 +38725,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategyRelSpeedAltitu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyRelSpeedAltitude, [IBasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{72d18bdd-ad36-43ed-a8d6-6c25a7d88078}", BasicManeuverStrategyRelSpeedAltitude)
@@ -37947,6 +38735,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverSt
     """Class defining the Bezier strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyBezier."""
         IBasicManeuverStrategyBezier.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37957,6 +38746,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategyBezier, IBasicManeuverSt
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBezier, [IBasicManeuverStrategyBezier, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{84f1131f-4e28-4879-902c-bf5c2cbfff5b}", BasicManeuverStrategyBezier)
@@ -37966,6 +38756,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuv
     """Class defining the Push/Pull strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyPushPull."""
         IBasicManeuverStrategyPushPull.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37976,6 +38767,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategyPushPull, IBasicManeuv
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPushPull, [IBasicManeuverStrategyPushPull, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{6184d781-4842-4e83-8211-fc4baab53395}", BasicManeuverStrategyPushPull)
@@ -37985,6 +38777,7 @@ class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
     """Class defining a holding circular procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureHoldingCircular."""
         IProcedureHoldingCircular.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37995,6 +38788,7 @@ class ProcedureHoldingCircular(IProcedureHoldingCircular, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingCircular, [IProcedureHoldingCircular, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{dec98be5-d1d2-4a97-bbcd-5a1f7ca5f158}", ProcedureHoldingCircular)
@@ -38004,6 +38798,7 @@ class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
     """Class defining a holding figure 8 procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureHoldingFigure8."""
         IProcedureHoldingFigure8.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38014,6 +38809,7 @@ class ProcedureHoldingFigure8(IProcedureHoldingFigure8, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingFigure8, [IProcedureHoldingFigure8, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{cdd17fce-e24c-45f4-8b7c-b313f490e124}", ProcedureHoldingFigure8)
@@ -38023,6 +38819,7 @@ class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
     """Class defining a holding racetrack procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureHoldingRacetrack."""
         IProcedureHoldingRacetrack.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38033,6 +38830,7 @@ class ProcedureHoldingRacetrack(IProcedureHoldingRacetrack, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoldingRacetrack, [IProcedureHoldingRacetrack, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{d2aa71dd-b167-4eea-be1d-665e4fd586da}", ProcedureHoldingRacetrack)
@@ -38042,6 +38840,7 @@ class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
     """Class defining a transition to hover procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureTransitionToHover."""
         IProcedureTransitionToHover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38052,6 +38851,7 @@ class ProcedureTransitionToHover(IProcedureTransitionToHover, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTransitionToHover, [IProcedureTransitionToHover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{4cc8f381-2118-4c51-a1f4-68db53833efc}", ProcedureTransitionToHover)
@@ -38061,6 +38861,7 @@ class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
     """Class defining a terrain following procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureTerrainFollow."""
         IProcedureTerrainFollow.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38071,6 +38872,7 @@ class ProcedureTerrainFollow(IProcedureTerrainFollow, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTerrainFollow, [IProcedureTerrainFollow, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ab3ca3e-70dd-405c-a470-9bfbdfa23734}", ProcedureTerrainFollow)
@@ -38080,6 +38882,7 @@ class ProcedureHover(IProcedureHover, IProcedure):
     """Class defining a hover procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureHover."""
         IProcedureHover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38090,6 +38893,7 @@ class ProcedureHover(IProcedureHover, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHover, [IProcedureHover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{2af73325-a00b-405c-987c-af5f4e7f60cf}", ProcedureHover)
@@ -38099,6 +38903,7 @@ class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
     """Class defining a hover translate procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureHoverTranslate."""
         IProcedureHoverTranslate.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38109,6 +38914,7 @@ class ProcedureHoverTranslate(IProcedureHoverTranslate, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureHoverTranslate, [IProcedureHoverTranslate, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{fde61d2d-7896-4b38-a0cb-f3a2776c8cfb}", ProcedureHoverTranslate)
@@ -38118,6 +38924,7 @@ class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IP
     """Class defining a transition to forward flight procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureTransitionToForwardFlight."""
         IProcedureTransitionToForwardFlight.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38128,6 +38935,7 @@ class ProcedureTransitionToForwardFlight(IProcedureTransitionToForwardFlight, IP
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureTransitionToForwardFlight, [IProcedureTransitionToForwardFlight, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{f4e5896e-1457-4909-8b6f-0740d9852278}", ProcedureTransitionToForwardFlight)
@@ -38137,6 +38945,7 @@ class HoverAltitudeOptions(IHoverAltitudeOptions):
     """Class defining the altitude options for a VTOL procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type HoverAltitudeOptions."""
         IHoverAltitudeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38145,6 +38954,7 @@ class HoverAltitudeOptions(IHoverAltitudeOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, HoverAltitudeOptions, [IHoverAltitudeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{feb66c2d-f9c7-472d-a389-4764db1d37bf}", HoverAltitudeOptions)
@@ -38154,6 +38964,7 @@ class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
     """Class defining a vertical takeoff procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureVerticalTakeoff."""
         IProcedureVerticalTakeoff.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38164,6 +38975,7 @@ class ProcedureVerticalTakeoff(IProcedureVerticalTakeoff, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVerticalTakeoff, [IProcedureVerticalTakeoff, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{518b6d80-31d5-427e-b55f-8b299ba082b9}", ProcedureVerticalTakeoff)
@@ -38173,6 +38985,7 @@ class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
     """Class defining a vertical landing procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureVerticalLanding."""
         IProcedureVerticalLanding.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38183,6 +38996,7 @@ class ProcedureVerticalLanding(IProcedureVerticalLanding, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVerticalLanding, [IProcedureVerticalLanding, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{68401463-90f1-4a74-9346-6e1e99906906}", ProcedureVerticalLanding)
@@ -38192,6 +39006,7 @@ class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
     """Class defining a reference state procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureReferenceState."""
         IProcedureReferenceState.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38202,6 +39017,7 @@ class ProcedureReferenceState(IProcedureReferenceState, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureReferenceState, [IProcedureReferenceState, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{44f22ac8-6eec-42ca-a433-dbf8b9fdaabf}", ProcedureReferenceState)
@@ -38211,6 +39027,7 @@ class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
     """Class defining a super procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureSuperProcedure."""
         IProcedureSuperProcedure.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38221,6 +39038,7 @@ class ProcedureSuperProcedure(IProcedureSuperProcedure, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureSuperProcedure, [IProcedureSuperProcedure, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{b49011b5-9b02-48df-9ddd-9936e7903017}", ProcedureSuperProcedure)
@@ -38230,6 +39048,7 @@ class ProcedureLaunch(IProcedureLaunch, IProcedure):
     """Class defining a launch procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureLaunch."""
         IProcedureLaunch.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38240,6 +39059,7 @@ class ProcedureLaunch(IProcedureLaunch, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunch, [IProcedureLaunch, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{4121a688-337a-4436-999f-9e1de57aab96}", ProcedureLaunch)
@@ -38249,6 +39069,7 @@ class ProcedureAirway(IProcedureAirway, IProcedure):
     """Class defining an Airway procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureAirway."""
         IProcedureAirway.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38259,6 +39080,7 @@ class ProcedureAirway(IProcedureAirway, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAirway, [IProcedureAirway, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{66c4d604-dac9-4eff-a18d-be1efb81f1f0}", ProcedureAirway)
@@ -38268,6 +39090,7 @@ class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
     """Class defining an Airway Router procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureAirwayRouter."""
         IProcedureAirwayRouter.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38278,6 +39101,7 @@ class ProcedureAirwayRouter(IProcedureAirwayRouter, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAirwayRouter, [IProcedureAirwayRouter, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c240ee52-dee2-42e0-a8c1-17f52b665f39}", ProcedureAirwayRouter)
@@ -38287,6 +39111,7 @@ class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
     """Class defining an Area Target Search procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureAreaTargetSearch."""
         IProcedureAreaTargetSearch.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38297,6 +39122,7 @@ class ProcedureAreaTargetSearch(IProcedureAreaTargetSearch, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureAreaTargetSearch, [IProcedureAreaTargetSearch, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{d065a50b-ba9e-4f25-831e-bb691df5cc71}", ProcedureAreaTargetSearch)
@@ -38306,6 +39132,7 @@ class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
     """Class defining a Formation/Recover procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureFormationRecover."""
         IProcedureFormationRecover.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38316,6 +39143,7 @@ class ProcedureFormationRecover(IProcedureFormationRecover, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFormationRecover, [IProcedureFormationRecover, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c3ca901a-fcb0-407b-a8d7-0f6972ebcd85}", ProcedureFormationRecover)
@@ -38325,6 +39153,7 @@ class ProcedureInFormation(IProcedureInFormation, IProcedure):
     """Class defining an In Formation procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureInFormation."""
         IProcedureInFormation.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38335,6 +39164,7 @@ class ProcedureInFormation(IProcedureInFormation, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureInFormation, [IProcedureInFormation, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{5f09f987-b896-4cc7-b356-732d0c1500b8}", ProcedureInFormation)
@@ -38344,6 +39174,7 @@ class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
     """Class defining a Parallel Flight Line procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureParallelFlightLine."""
         IProcedureParallelFlightLine.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38354,6 +39185,7 @@ class ProcedureParallelFlightLine(IProcedureParallelFlightLine, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureParallelFlightLine, [IProcedureParallelFlightLine, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{3d83878f-7cda-46e8-b93f-9cbdc117244b}", ProcedureParallelFlightLine)
@@ -38363,6 +39195,7 @@ class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
     """Class defining a VGT Point procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureVGTPoint."""
         IProcedureVGTPoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38373,6 +39206,7 @@ class ProcedureVGTPoint(IProcedureVGTPoint, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureVGTPoint, [IProcedureVGTPoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{c1c57b66-ecf6-47f5-be6a-36075f83917a}", ProcedureVGTPoint)
@@ -38382,6 +39216,7 @@ class PerformanceModelOptions(IPerformanceModelOptions):
     """Class defining the options for the active performance model in a phase."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PerformanceModelOptions."""
         IPerformanceModelOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38390,6 +39225,7 @@ class PerformanceModelOptions(IPerformanceModelOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PerformanceModelOptions, [IPerformanceModelOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{d37c0417-9eab-4d38-8a3f-a70e144b5368}", PerformanceModelOptions)
@@ -38399,6 +39235,7 @@ class AdvancedFixedWingTool(IAdvancedFixedWingTool):
     """Class defining the options for the Advanced Fixed Wing Tool of an aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTool."""
         IAdvancedFixedWingTool.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38407,6 +39244,7 @@ class AdvancedFixedWingTool(IAdvancedFixedWingTool):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTool, [IAdvancedFixedWingTool])
 
 agcls.AgClassCatalog.add_catalog_entry("{e250469c-80a2-44d2-b53d-2712363d7b47}", AdvancedFixedWingTool)
@@ -38416,6 +39254,7 @@ class AdvancedFixedWingExternalAero(IAdvancedFixedWingExternalAero):
     """Class defining the External Aero File aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingExternalAero."""
         IAdvancedFixedWingExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38424,6 +39263,7 @@ class AdvancedFixedWingExternalAero(IAdvancedFixedWingExternalAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingExternalAero, [IAdvancedFixedWingExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{0938800e-fa5d-446d-bf7b-3d79283da798}", AdvancedFixedWingExternalAero)
@@ -38433,6 +39273,7 @@ class AdvancedFixedWingSubsonicAero(IAdvancedFixedWingSubsonicAero):
     """Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingSubsonicAero."""
         IAdvancedFixedWingSubsonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38441,6 +39282,7 @@ class AdvancedFixedWingSubsonicAero(IAdvancedFixedWingSubsonicAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubsonicAero, [IAdvancedFixedWingSubsonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{ced4d6ca-5a7e-4640-936f-e0db35949454}", AdvancedFixedWingSubsonicAero)
@@ -38450,6 +39292,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(IAdvancedFixedWingSubSuperHyperson
     """Class defining the Sub/Super/Hypersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingSubSuperHypersonicAero."""
         IAdvancedFixedWingSubSuperHypersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38458,6 +39301,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(IAdvancedFixedWingSubSuperHyperson
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicAero, [IAdvancedFixedWingSubSuperHypersonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa686d0d-7a40-44bb-b340-a5a5470ed81f}", AdvancedFixedWingSubSuperHypersonicAero)
@@ -38467,6 +39311,7 @@ class AdvancedFixedWingSupersonicAero(IAdvancedFixedWingSupersonicAero):
     """Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingSupersonicAero."""
         IAdvancedFixedWingSupersonicAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38475,6 +39320,7 @@ class AdvancedFixedWingSupersonicAero(IAdvancedFixedWingSupersonicAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSupersonicAero, [IAdvancedFixedWingSupersonicAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{00683dc3-fc6d-4ba2-9d0b-306363523e17}", AdvancedFixedWingSupersonicAero)
@@ -38484,6 +39330,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
     """Class defining an unknown performance model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PerformanceModel."""
         IPerformanceModel.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38494,6 +39341,7 @@ class PerformanceModel(IPerformanceModel, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PerformanceModel, [IPerformanceModel, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{07c21222-ddfa-4417-8739-aa7e41a6091a}", PerformanceModel)
@@ -38503,6 +39351,7 @@ class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometryBasic, IAdvancedF
     """Class defining a basic geometry wing in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingGeometryBasic."""
         IAdvancedFixedWingGeometryBasic.__init__(self, sourceObject)
         IAdvancedFixedWingGeometry.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38513,6 +39362,7 @@ class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometryBasic, IAdvancedF
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryBasic, [IAdvancedFixedWingGeometryBasic, IAdvancedFixedWingGeometry])
 
 agcls.AgClassCatalog.add_catalog_entry("{3fccd7b1-9fd7-424e-a251-cadcc2d44a0a}", AdvancedFixedWingGeometryBasic)
@@ -38522,6 +39372,7 @@ class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometryVariable, IAdv
     """Class defining a variable geometry wing in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingGeometryVariable."""
         IAdvancedFixedWingGeometryVariable.__init__(self, sourceObject)
         IAdvancedFixedWingGeometry.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38532,6 +39383,7 @@ class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometryVariable, IAdv
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingGeometryVariable, [IAdvancedFixedWingGeometryVariable, IAdvancedFixedWingGeometry])
 
 agcls.AgClassCatalog.add_catalog_entry("{a7cb26ac-fa5b-416d-b81b-8a5975937740}", AdvancedFixedWingGeometryVariable)
@@ -38541,6 +39393,7 @@ class AdvancedFixedWingElectricPowerplant(IAdvancedFixedWingElectricPowerplant):
     """Class defining an Electric powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingElectricPowerplant."""
         IAdvancedFixedWingElectricPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38549,6 +39402,7 @@ class AdvancedFixedWingElectricPowerplant(IAdvancedFixedWingElectricPowerplant):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingElectricPowerplant, [IAdvancedFixedWingElectricPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{64f956f4-4b87-4b13-b459-efef51191309}", AdvancedFixedWingElectricPowerplant)
@@ -38558,6 +39412,7 @@ class AdvancedFixedWingExternalProp(IAdvancedFixedWingExternalProp):
     """Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingExternalProp."""
         IAdvancedFixedWingExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38566,6 +39421,7 @@ class AdvancedFixedWingExternalProp(IAdvancedFixedWingExternalProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingExternalProp, [IAdvancedFixedWingExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{86d612c4-8537-48d7-912b-931a2c939c8e}", AdvancedFixedWingExternalProp)
@@ -38575,6 +39431,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(IAdvancedFixedWingSubSuperHyperson
     """Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingSubSuperHypersonicProp."""
         IAdvancedFixedWingSubSuperHypersonicProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38583,6 +39440,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(IAdvancedFixedWingSubSuperHyperson
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicProp, [IAdvancedFixedWingSubSuperHypersonicProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{15279d03-0f3b-458d-957c-2cdee97bc0a8}", AdvancedFixedWingSubSuperHypersonicProp)
@@ -38592,6 +39450,7 @@ class AdvancedFixedWingPistonPowerplant(IAdvancedFixedWingPistonPowerplant):
     """Class defining a Piston powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingPistonPowerplant."""
         IAdvancedFixedWingPistonPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38600,6 +39459,7 @@ class AdvancedFixedWingPistonPowerplant(IAdvancedFixedWingPistonPowerplant):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingPistonPowerplant, [IAdvancedFixedWingPistonPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{dd383e2b-f1e9-4afe-9241-4d89e95db034}", AdvancedFixedWingPistonPowerplant)
@@ -38609,6 +39469,7 @@ class AdvancedFixedWingEmpiricalJetEngine(IAdvancedFixedWingEmpiricalJetEngine):
     """Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingEmpiricalJetEngine."""
         IAdvancedFixedWingEmpiricalJetEngine.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38617,15 +39478,17 @@ class AdvancedFixedWingEmpiricalJetEngine(IAdvancedFixedWingEmpiricalJetEngine):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingEmpiricalJetEngine, [IAdvancedFixedWingEmpiricalJetEngine])
 
 agcls.AgClassCatalog.add_catalog_entry("{cf86965f-eacf-47ca-a6b8-5c69a1f9612f}", AdvancedFixedWingEmpiricalJetEngine)
 agcls.AgTypeNameMap["AdvancedFixedWingEmpiricalJetEngine"] = AdvancedFixedWingEmpiricalJetEngine
 
 class AdvancedFixedWingTurbofanBasicABPowerplant(IAdvancedFixedWingTurbofanBasicABPowerplant):
-    """This class is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
+    """Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTurbofanBasicABPowerplant."""
         IAdvancedFixedWingTurbofanBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38634,15 +39497,17 @@ class AdvancedFixedWingTurbofanBasicABPowerplant(IAdvancedFixedWingTurbofanBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABPowerplant, [IAdvancedFixedWingTurbofanBasicABPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{27a6cd0b-bd9b-4af7-9367-9d2ce3fa39cd}", AdvancedFixedWingTurbofanBasicABPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPowerplant"] = AdvancedFixedWingTurbofanBasicABPowerplant
 
 class AdvancedFixedWingTurbojetBasicABPowerplant(IAdvancedFixedWingTurbojetBasicABPowerplant):
-    """This class is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
+    """Do not use this class, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTurbojetBasicABPowerplant."""
         IAdvancedFixedWingTurbojetBasicABPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38651,6 +39516,7 @@ class AdvancedFixedWingTurbojetBasicABPowerplant(IAdvancedFixedWingTurbojetBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABPowerplant, [IAdvancedFixedWingTurbojetBasicABPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{65230337-ecdc-4b80-92aa-107af1bcfdbe}", AdvancedFixedWingTurbojetBasicABPowerplant)
@@ -38660,6 +39526,7 @@ class AdvancedFixedWingTurbofanBasicABProp(IAdvancedFixedWingTurbofanBasicABProp
     """Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTurbofanBasicABProp."""
         IAdvancedFixedWingTurbofanBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38668,6 +39535,7 @@ class AdvancedFixedWingTurbofanBasicABProp(IAdvancedFixedWingTurbofanBasicABProp
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABProp, [IAdvancedFixedWingTurbofanBasicABProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{327e3a7a-ecce-445e-b105-2dbec0239e6d}", AdvancedFixedWingTurbofanBasicABProp)
@@ -38677,6 +39545,7 @@ class AdvancedFixedWingTurbojetBasicABProp(IAdvancedFixedWingTurbojetBasicABProp
     """Class defining the Turbojet - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTurbojetBasicABProp."""
         IAdvancedFixedWingTurbojetBasicABProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38685,6 +39554,7 @@ class AdvancedFixedWingTurbojetBasicABProp(IAdvancedFixedWingTurbojetBasicABProp
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABProp, [IAdvancedFixedWingTurbojetBasicABProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{c60f96fa-5802-4d89-b522-2a1dd5e03ca0}", AdvancedFixedWingTurbojetBasicABProp)
@@ -38694,6 +39564,7 @@ class AdvancedFixedWingTurbopropPowerplant(IAdvancedFixedWingTurbopropPowerplant
     """Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingTurbopropPowerplant."""
         IAdvancedFixedWingTurbopropPowerplant.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38702,6 +39573,7 @@ class AdvancedFixedWingTurbopropPowerplant(IAdvancedFixedWingTurbopropPowerplant
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingTurbopropPowerplant, [IAdvancedFixedWingTurbopropPowerplant])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ac5402a-9b5d-4fc9-94b5-365e9bc1e25e}", AdvancedFixedWingTurbopropPowerplant)
@@ -38711,6 +39583,7 @@ class MissileSimpleAero(IMissileSimpleAero):
     """Class defining the simple aerodynamic options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileSimpleAero."""
         IMissileSimpleAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38719,6 +39592,7 @@ class MissileSimpleAero(IMissileSimpleAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileSimpleAero, [IMissileSimpleAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{99dff5f7-c73c-414d-9c38-2e7b35c93f5e}", MissileSimpleAero)
@@ -38728,6 +39602,7 @@ class MissileExternalAero(IMissileExternalAero):
     """Class defining the external aerodynamic options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileExternalAero."""
         IMissileExternalAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38736,6 +39611,7 @@ class MissileExternalAero(IMissileExternalAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileExternalAero, [IMissileExternalAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{92940e34-6d78-4e39-b774-4a865e9d0bc0}", MissileExternalAero)
@@ -38745,6 +39621,7 @@ class MissileAdvancedAero(IMissileAdvancedAero):
     """Class defining the advanced aerodynamic options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileAdvancedAero."""
         IMissileAdvancedAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38753,6 +39630,7 @@ class MissileAdvancedAero(IMissileAdvancedAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileAdvancedAero, [IMissileAdvancedAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{becfe264-7b70-461f-9f64-b0d23aa59f1e}", MissileAdvancedAero)
@@ -38762,6 +39640,7 @@ class MissileAero(IMissileAero):
     """Class defining the aerodynamic options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileAero."""
         IMissileAero.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38770,6 +39649,7 @@ class MissileAero(IMissileAero):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileAero, [IMissileAero])
 
 agcls.AgClassCatalog.add_catalog_entry("{bc518434-5a42-49e0-8a54-8212a797c728}", MissileAero)
@@ -38779,6 +39659,7 @@ class MissileProp(IMissileProp):
     """Class defining the propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileProp."""
         IMissileProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38787,6 +39668,7 @@ class MissileProp(IMissileProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileProp, [IMissileProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{544b60ce-22da-4e8b-a222-ffd4bc070a01}", MissileProp)
@@ -38796,6 +39678,7 @@ class MissileSimpleProp(IMissileSimpleProp):
     """Class defining the Simple propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileSimpleProp."""
         IMissileSimpleProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38804,6 +39687,7 @@ class MissileSimpleProp(IMissileSimpleProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileSimpleProp, [IMissileSimpleProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{e92e2a28-9614-4afe-97ee-8e0d90e4ee3b}", MissileSimpleProp)
@@ -38813,6 +39697,7 @@ class MissileExternalProp(IMissileExternalProp):
     """Class defining the External propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileExternalProp."""
         IMissileExternalProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38821,6 +39706,7 @@ class MissileExternalProp(IMissileExternalProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileExternalProp, [IMissileExternalProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{4b7a80c7-e7a6-453b-a423-1c53ac68c0bc}", MissileExternalProp)
@@ -38830,6 +39716,7 @@ class MissileRamjetProp(IMissileRamjetProp):
     """Class defining the Ramjet propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileRamjetProp."""
         IMissileRamjetProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38838,6 +39725,7 @@ class MissileRamjetProp(IMissileRamjetProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileRamjetProp, [IMissileRamjetProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{0bef31b2-9f2c-4dea-b475-e2feeb55052e}", MissileRamjetProp)
@@ -38847,6 +39735,7 @@ class MissileRocketProp(IMissileRocketProp):
     """Class defining the Rocket propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileRocketProp."""
         IMissileRocketProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38855,6 +39744,7 @@ class MissileRocketProp(IMissileRocketProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileRocketProp, [IMissileRocketProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{68296bb7-edd5-4305-8b51-3f3d0c7d4428}", MissileRocketProp)
@@ -38864,6 +39754,7 @@ class MissileTurbojetProp(IMissileTurbojetProp):
     """Class defining the Turbojet propulsion options for a missile."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MissileTurbojetProp."""
         IMissileTurbojetProp.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38872,6 +39763,7 @@ class MissileTurbojetProp(IMissileTurbojetProp):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MissileTurbojetProp, [IMissileTurbojetProp])
 
 agcls.AgClassCatalog.add_catalog_entry("{6024d1a7-768e-4015-abb3-e0539d431ff9}", MissileTurbojetProp)
@@ -38881,6 +39773,7 @@ class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
     """Class defining the Forward Flight options for a Reference State procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ReferenceStateForwardFlightOptions."""
         IReferenceStateForwardFlightOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38889,6 +39782,7 @@ class ReferenceStateForwardFlightOptions(IReferenceStateForwardFlightOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateForwardFlightOptions, [IReferenceStateForwardFlightOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{6f60fd0b-6c79-48a5-908b-b5d697552b94}", ReferenceStateForwardFlightOptions)
@@ -38898,6 +39792,7 @@ class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
     """Class defining the Takeoff or Landing options for a Reference State procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ReferenceStateTakeoffLandingOptions."""
         IReferenceStateTakeoffLandingOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38906,6 +39801,7 @@ class ReferenceStateTakeoffLandingOptions(IReferenceStateTakeoffLandingOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateTakeoffLandingOptions, [IReferenceStateTakeoffLandingOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{5a54840f-128e-411c-af24-2e2c49fbd922}", ReferenceStateTakeoffLandingOptions)
@@ -38915,6 +39811,7 @@ class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
     """Class defining the Hover options for a Reference State procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ReferenceStateHoverOptions."""
         IReferenceStateHoverOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38923,6 +39820,7 @@ class ReferenceStateHoverOptions(IReferenceStateHoverOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateHoverOptions, [IReferenceStateHoverOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{0767b34e-3bc9-447d-956e-5e0939cc9bfc}", ReferenceStateHoverOptions)
@@ -38932,6 +39830,7 @@ class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
     """Class defining the Weight on Wheels options for a Reference State procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ReferenceStateWeightOnWheelsOptions."""
         IReferenceStateWeightOnWheelsOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38940,6 +39839,7 @@ class ReferenceStateWeightOnWheelsOptions(IReferenceStateWeightOnWheelsOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ReferenceStateWeightOnWheelsOptions, [IReferenceStateWeightOnWheelsOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{de32d95c-707b-41dd-a7de-072506f171b9}", ReferenceStateWeightOnWheelsOptions)
@@ -38949,6 +39849,7 @@ class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
     """Class defining a runway from catalog site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteRunwayFromCatalog."""
         ISiteRunwayFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38959,6 +39860,7 @@ class SiteRunwayFromCatalog(ISiteRunwayFromCatalog, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteRunwayFromCatalog, [ISiteRunwayFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{9220ceaa-69a7-4b64-8dfe-ec4ca0083d3e}", SiteRunwayFromCatalog)
@@ -38968,6 +39870,7 @@ class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
     """Class defining a airport from catalog site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteAirportFromCatalog."""
         ISiteAirportFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38978,6 +39881,7 @@ class SiteAirportFromCatalog(ISiteAirportFromCatalog, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteAirportFromCatalog, [ISiteAirportFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{b5a44f89-2af4-41bd-8ebc-8e503f43f912}", SiteAirportFromCatalog)
@@ -38987,6 +39891,7 @@ class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
     """Class defining a navaid from catalog site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteNavaidFromCatalog."""
         ISiteNavaidFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -38997,6 +39902,7 @@ class SiteNavaidFromCatalog(ISiteNavaidFromCatalog, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteNavaidFromCatalog, [ISiteNavaidFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{59135b93-5164-4c35-8128-de6a6376a66f}", SiteNavaidFromCatalog)
@@ -39006,6 +39912,7 @@ class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
     """Class defining a VTOL point from catalog site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteVTOLPointFromCatalog."""
         ISiteVTOLPointFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39016,6 +39923,7 @@ class SiteVTOLPointFromCatalog(ISiteVTOLPointFromCatalog, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteVTOLPointFromCatalog, [ISiteVTOLPointFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{189c8c0a-c6a4-424f-b2ff-b1e466c38cd4}", SiteVTOLPointFromCatalog)
@@ -39025,6 +39933,7 @@ class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
     """Class defining a waypoint from catalog site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteWaypointFromCatalog."""
         ISiteWaypointFromCatalog.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39035,6 +39944,7 @@ class SiteWaypointFromCatalog(ISiteWaypointFromCatalog, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteWaypointFromCatalog, [ISiteWaypointFromCatalog, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{d620651a-2526-43c8-8715-122ad6d6eb40}", SiteWaypointFromCatalog)
@@ -39044,6 +39954,7 @@ class NavaidCategory(INavaidCategory):
     """Class defining the navaid category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type NavaidCategory."""
         INavaidCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39052,6 +39963,7 @@ class NavaidCategory(INavaidCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, NavaidCategory, [INavaidCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9cab926c-f92d-4b63-9588-d5e849f047bf}", NavaidCategory)
@@ -39061,6 +39973,7 @@ class VTOLPointCategory(IVTOLPointCategory):
     """Class defining the VTOL point category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VTOLPointCategory."""
         IVTOLPointCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39069,6 +39982,7 @@ class VTOLPointCategory(IVTOLPointCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VTOLPointCategory, [IVTOLPointCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{35a0a9ce-18bd-47b5-927a-1cb825edab22}", VTOLPointCategory)
@@ -39078,6 +39992,7 @@ class WaypointCategory(IWaypointCategory):
     """Class defining the waypoint category in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type WaypointCategory."""
         IWaypointCategory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39086,6 +40001,7 @@ class WaypointCategory(IWaypointCategory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WaypointCategory, [IWaypointCategory])
 
 agcls.AgClassCatalog.add_catalog_entry("{502442da-96cc-4a07-9124-9d4e4c287801}", WaypointCategory)
@@ -39095,6 +40011,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
     """Class defining an ARINC424 Navaid."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Navaid."""
         IARINC424Item.__init__(self, sourceObject)
         ICatalogNavaid.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -39109,6 +40026,7 @@ class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogIt
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Navaid, [IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{18308bdb-0318-4820-87c7-59e4ad432c0f}", ARINC424Navaid)
@@ -39118,6 +40036,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
     """Class defining an ARINC424 Helipad."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Helipad."""
         IARINC424Item.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -39132,6 +40051,7 @@ class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatal
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Helipad, [IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{6cf2bbc6-dcf3-493e-ad3d-bf58879edd2d}", ARINC424Helipad)
@@ -39141,6 +40061,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
     """Class defining an ARINC424 Waypoint."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ARINC424Waypoint."""
         IARINC424Item.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -39153,6 +40074,7 @@ class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ARINC424Waypoint, [IARINC424Item, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{55d1b405-651f-4687-a34a-f0bb64ec8814}", ARINC424Waypoint)
@@ -39162,6 +40084,7 @@ class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
     """Class defining the user VTOL Point source in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserVTOLPointSource."""
         IUserVTOLPointSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39172,6 +40095,7 @@ class UserVTOLPointSource(IUserVTOLPointSource, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVTOLPointSource, [IUserVTOLPointSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{dfc0b12b-f8c4-4d99-bb5c-6aecebe0ea7d}", UserVTOLPointSource)
@@ -39181,6 +40105,7 @@ class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalo
     """Class defining the user VTOL Point in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserVTOLPoint."""
         IUserVTOLPoint.__init__(self, sourceObject)
         ICatalogVTOLPoint.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
@@ -39195,6 +40120,7 @@ class UserVTOLPoint(IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserVTOLPoint, [IUserVTOLPoint, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{748a44bd-4d22-4800-a311-fc8c95901638}", UserVTOLPoint)
@@ -39204,6 +40130,7 @@ class UserWaypointSource(IUserWaypointSource, ICatalogSource):
     """Class defining the user waypoint source in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserWaypointSource."""
         IUserWaypointSource.__init__(self, sourceObject)
         ICatalogSource.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39214,6 +40141,7 @@ class UserWaypointSource(IUserWaypointSource, ICatalogSource):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserWaypointSource, [IUserWaypointSource, ICatalogSource])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f85e32f-b5a1-4d12-b7ac-a817dd7162d0}", UserWaypointSource)
@@ -39223,6 +40151,7 @@ class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
     """Class defining the user waypoint in the Aviator catalog."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UserWaypoint."""
         IUserWaypoint.__init__(self, sourceObject)
         ICatalogWaypoint.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
@@ -39235,6 +40164,7 @@ class UserWaypoint(IUserWaypoint, ICatalogWaypoint, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UserWaypoint, [IUserWaypoint, ICatalogWaypoint, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{ca33c45d-2eba-409b-aa44-b57b5a57e3b3}", UserWaypoint)
@@ -39244,6 +40174,7 @@ class PropulsionEfficiencies(IPropulsionEfficiencies):
     """Class defining the Propulsion Efficiencies and Losses of a jet engine powerplant in the advanced fixed wing tool."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropulsionEfficiencies."""
         IPropulsionEfficiencies.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39252,6 +40183,7 @@ class PropulsionEfficiencies(IPropulsionEfficiencies):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropulsionEfficiencies, [IPropulsionEfficiencies])
 
 agcls.AgClassCatalog.add_catalog_entry("{0af7363a-b62a-4eaf-a4b5-4103197bc6b1}", PropulsionEfficiencies)
@@ -39261,6 +40193,7 @@ class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
     """Class defining the Kerosense - AFPROP fuel type for a thermodynamic jet engine model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FuelModelKeroseneAFPROP."""
         IFuelModelKeroseneAFPROP.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39269,6 +40202,7 @@ class FuelModelKeroseneAFPROP(IFuelModelKeroseneAFPROP):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelModelKeroseneAFPROP, [IFuelModelKeroseneAFPROP])
 
 agcls.AgClassCatalog.add_catalog_entry("{fb23d809-5785-4a45-b914-415015e6d9eb}", FuelModelKeroseneAFPROP)
@@ -39278,6 +40212,7 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
     """Class defining the Kerosense - CEA fuel type for a thermodynamic jet engine model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FuelModelKeroseneCEA."""
         IFuelModelKeroseneCEA.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39286,6 +40221,7 @@ class FuelModelKeroseneCEA(IFuelModelKeroseneCEA):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FuelModelKeroseneCEA, [IFuelModelKeroseneCEA])
 
 agcls.AgClassCatalog.add_catalog_entry("{6df7fa84-6983-4ed2-9447-a11d0fbd0fac}", FuelModelKeroseneCEA)
@@ -39295,6 +40231,7 @@ class AdvancedFixedWingRamjetBasic(IAdvancedFixedWingRamjetBasic):
     """Class defining the basic Ramjet model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingRamjetBasic."""
         IAdvancedFixedWingRamjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39303,6 +40240,7 @@ class AdvancedFixedWingRamjetBasic(IAdvancedFixedWingRamjetBasic):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingRamjetBasic, [IAdvancedFixedWingRamjetBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{9f333e9b-3d22-429d-9880-940122216dde}", AdvancedFixedWingRamjetBasic)
@@ -39312,6 +40250,7 @@ class AdvancedFixedWingScramjetBasic(IAdvancedFixedWingScramjetBasic):
     """Class defining the basic Scramjet model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AdvancedFixedWingScramjetBasic."""
         IAdvancedFixedWingScramjetBasic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39320,6 +40259,7 @@ class AdvancedFixedWingScramjetBasic(IAdvancedFixedWingScramjetBasic):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AdvancedFixedWingScramjetBasic, [IAdvancedFixedWingScramjetBasic])
 
 agcls.AgClassCatalog.add_catalog_entry("{6caec1e6-8cf4-4752-89c6-42b55473f144}", AdvancedFixedWingScramjetBasic)
@@ -39329,6 +40269,7 @@ class AircraftVTOLModel(IAircraftVTOLModel):
     """Class defining the VTOL performance model of an aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftVTOLModel."""
         IAircraftVTOLModel.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39337,6 +40278,7 @@ class AircraftVTOLModel(IAircraftVTOLModel):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftVTOLModel, [IAircraftVTOLModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{5fb18d9d-20cb-408e-a0d0-60f5cdd9dc2c}", AircraftVTOLModel)
@@ -39346,6 +40288,7 @@ class AircraftVTOL(IAircraftVTOL, ICatalogItem):
     """Class defining the VTOL category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftVTOL."""
         IAircraftVTOL.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39356,6 +40299,7 @@ class AircraftVTOL(IAircraftVTOL, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftVTOL, [IAircraftVTOL, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{c1bd235a-6ffc-435c-900d-0ff6a7ca5422}", AircraftVTOL)
@@ -39365,6 +40309,7 @@ class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
     """Class defining the TerrainFollow performance model of an aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftTerrainFollowModel."""
         IAircraftTerrainFollowModel.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39373,6 +40318,7 @@ class AircraftTerrainFollowModel(IAircraftTerrainFollowModel):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTerrainFollowModel, [IAircraftTerrainFollowModel])
 
 agcls.AgClassCatalog.add_catalog_entry("{27d2c971-cdce-4465-a3df-eaf526de6c01}", AircraftTerrainFollowModel)
@@ -39382,6 +40328,7 @@ class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
     """Class defining the TerrainFollow category of an Aviator aircraft."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AircraftTerrainFollow."""
         IAircraftTerrainFollow.__init__(self, sourceObject)
         ICatalogItem.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39392,6 +40339,7 @@ class AircraftTerrainFollow(IAircraftTerrainFollow, ICatalogItem):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AircraftTerrainFollow, [IAircraftTerrainFollow, ICatalogItem])
 
 agcls.AgClassCatalog.add_catalog_entry("{683bec0d-293d-4afa-a1ab-b23b123d62e4}", AircraftTerrainFollow)
@@ -39401,6 +40349,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasic
     """Class defining Ballistic 3D strategy for a Basic Maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyBallistic3D."""
         IBasicManeuverStrategyBallistic3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39411,6 +40360,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategyBallistic3D, IBasic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyBallistic3D, [IBasicManeuverStrategyBallistic3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{ec8f88ae-2944-459b-90aa-f8df3e74bf89}", BasicManeuverStrategyBallistic3D)
@@ -39420,6 +40370,7 @@ class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
     """Class defining a Launch Dyn State procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureLaunchDynState."""
         IProcedureLaunchDynState.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39430,6 +40381,7 @@ class ProcedureLaunchDynState(IProcedureLaunchDynState, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunchDynState, [IProcedureLaunchDynState, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{AA90861B-C8E1-46D1-BA87-47F27D731B84}", ProcedureLaunchDynState)
@@ -39439,6 +40391,7 @@ class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
     """Class defining a Launch Waypoint procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureLaunchWaypoint."""
         IProcedureLaunchWaypoint.__init__(self, sourceObject)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39449,6 +40402,7 @@ class ProcedureLaunchWaypoint(IProcedureLaunchWaypoint, IProcedure):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureLaunchWaypoint, [IProcedureLaunchWaypoint, IProcedure])
 
 agcls.AgClassCatalog.add_catalog_entry("{05730C66-FF4D-4A05-A821-C541134119CE}", ProcedureLaunchWaypoint)
@@ -39458,6 +40412,7 @@ class SiteDynState(ISiteDynState, ISite):
     """Class defining a Dyn State site."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SiteDynState."""
         ISiteDynState.__init__(self, sourceObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39468,6 +40423,7 @@ class SiteDynState(ISiteDynState, ISite):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SiteDynState, [ISiteDynState, ISite])
 
 agcls.AgClassCatalog.add_catalog_entry("{DF907297-E5CC-4346-9E97-95A3AFEE02FD}", SiteDynState)
@@ -39477,6 +40433,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuver
     """Class defining Pitch 3D strategy for a Basic Maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverStrategyPitch3D."""
         IBasicManeuverStrategyPitch3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39487,6 +40444,7 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategyPitch3D, IBasicManeuver
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverStrategyPitch3D, [IBasicManeuverStrategyPitch3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{A10EDD83-CED6-4747-AFBA-948653338437}", BasicManeuverStrategyPitch3D)
@@ -39496,6 +40454,7 @@ class RefuelDumpProperties(IRefuelDumpProperties):
     """Class defining the refuel/dump properties for the current procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RefuelDumpProperties."""
         IRefuelDumpProperties.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39504,6 +40463,7 @@ class RefuelDumpProperties(IRefuelDumpProperties):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RefuelDumpProperties, [IRefuelDumpProperties])
 
 agcls.AgClassCatalog.add_catalog_entry("{9CB1E862-FDED-463D-B449-C39030B149D6}", RefuelDumpProperties)
@@ -39513,6 +40473,7 @@ class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
     """Class defining fast operations (without error or constraint checks) for time options for the current procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProcedureFastTimeOptions."""
         IProcedureFastTimeOptions.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39521,6 +40482,7 @@ class ProcedureFastTimeOptions(IProcedureFastTimeOptions):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProcedureFastTimeOptions, [IProcedureFastTimeOptions])
 
 agcls.AgClassCatalog.add_catalog_entry("{D69CF956-3A04-48F1-B553-7A10412253A0}", ProcedureFastTimeOptions)
@@ -39530,6 +40492,7 @@ class BasicManeuverTargetPositionVel(IBasicManeuverTargetPositionVel):
     """Class defining the target position and velocity strategies for basic maneuvers."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverTargetPositionVel."""
         IBasicManeuverTargetPositionVel.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39538,6 +40501,7 @@ class BasicManeuverTargetPositionVel(IBasicManeuverTargetPositionVel):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVel, [IBasicManeuverTargetPositionVel])
 
 agcls.AgClassCatalog.add_catalog_entry("{4084EB67-0992-4F64-B710-7B5B4E275AC5}", BasicManeuverTargetPositionVel)
@@ -39547,6 +40511,7 @@ class BasicManeuverTargetPositionVelNoisyBrnRng(IBasicManeuverTargetPositionVelN
     """Class defining the position and velocity strategy, Noisy Bearing Range."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverTargetPositionVelNoisyBrnRng."""
         IBasicManeuverTargetPositionVelNoisyBrnRng.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39555,6 +40520,7 @@ class BasicManeuverTargetPositionVelNoisyBrnRng(IBasicManeuverTargetPositionVelN
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBrnRng, [IBasicManeuverTargetPositionVelNoisyBrnRng])
 
 agcls.AgClassCatalog.add_catalog_entry("{B64A8B6B-FA25-47EF-8945-2DA2817D6853}", BasicManeuverTargetPositionVelNoisyBrnRng)
@@ -39564,6 +40530,7 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(IBasicManeuverTargetPositionVel
     """Class defining the position and velocity strategy, Noisy Surface Target."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverTargetPositionVelNoisySurfTgt."""
         IBasicManeuverTargetPositionVelNoisySurfTgt.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39572,6 +40539,7 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(IBasicManeuverTargetPositionVel
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTgt, [IBasicManeuverTargetPositionVelNoisySurfTgt])
 
 agcls.AgClassCatalog.add_catalog_entry("{A04BE0CD-AF3B-4887-A160-F4FCF29B9610}", BasicManeuverTargetPositionVelNoisySurfTgt)
