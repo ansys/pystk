@@ -250,6 +250,11 @@ autoapi_template_dir = "_templates/autoapi"
 autoapi_python_use_implicit_namespaces = True
 autoapi_keep_files = True
 autoapi_own_page_level = "class"
+autoapi_ignore = ["*internal*"]
+nitpick_ignore_regex = [
+    # Ignore xref to internal modules
+    (r"py:.*", "*.internal.*"),
+]
 
 def jinja_filter_interface(klass: str):
     """Filter if a class name matches the naming convention for interfaces."""
