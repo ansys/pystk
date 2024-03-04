@@ -80,15 +80,11 @@ ignore = [
 #    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
     "D101", # Missing docstring in public class
     "D102", # Missing docstring in public method
-    "D105", # Missing docstring in magic method
     "D106", # Missing docstring in public nested class
-    "D107", # Missing docstring in `__init__`
     "D200", # One-line docstring should fit on one line
     "D210", # No whitespaces allowed surrounding docstring text
     "D212", # Multi-line docstring summary should start at the first line
     "D300", # Use triple double quotes `"""`
-    "D403", # First word of the first line should be properly capitalized
-    "D404", # First word of the docstring should not be "This"
     "D417", # Missing argument description in the docstring
 
     # Ignored intentionally
