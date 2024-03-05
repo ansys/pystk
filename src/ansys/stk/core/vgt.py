@@ -215,7 +215,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class CRDN_CALC_SCALAR_TYPE(IntEnum):
-    """Defines available calculation scalar types."""
+    """Define available calculation scalar types."""
    
     UNKNOWN = -1
     """Unknown or unsupported calculation scalar types."""
@@ -273,7 +273,7 @@ CRDN_CALC_SCALAR_TYPE.VECTOR_COMPONENT.__doc__ = "Scalar equal to the specified 
 agcls.AgTypeNameMap["CRDN_CALC_SCALAR_TYPE"] = CRDN_CALC_SCALAR_TYPE
 
 class CRDN_CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
-    """Defines scalar condition combined operation types."""
+    """Define scalar condition combined operation types."""
    
     AND = 1
     """Scalar condition combined AND operation."""
@@ -292,7 +292,7 @@ CRDN_CONDITION_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Scalar condition combine
 agcls.AgTypeNameMap["CRDN_CONDITION_COMBINED_OPERATION_TYPE"] = CRDN_CONDITION_COMBINED_OPERATION_TYPE
 
 class CRDN_CONDITION_SET_TYPE(IntEnum):
-    """Defines available condition set types."""
+    """Define available condition set types."""
    
     UNKNOWN = -1
     """Unknown or unsupported condition set types."""
@@ -324,7 +324,7 @@ CRDN_CONDITION_THRESHOLD_OPTION.OUTSIDE_MIN_MAX.__doc__ = "Bound is outside a mi
 agcls.AgTypeNameMap["CRDN_CONDITION_THRESHOLD_OPTION"] = CRDN_CONDITION_THRESHOLD_OPTION
 
 class CRDN_CONDITION_TYPE(IntEnum):
-    """Defines available condition types."""
+    """Define available condition types."""
    
     UNKNOWN = -1
     """Unknown or unsupported condition type."""
@@ -343,7 +343,7 @@ CRDN_CONDITION_TYPE.POINT_IN_VOLUME.__doc__ = "Condition placing point in volume
 agcls.AgTypeNameMap["CRDN_CONDITION_TYPE"] = CRDN_CONDITION_TYPE
 
 class CRDN_DIMENSION_INHERITANCE(IntEnum):
-    """Defines how dimension is inherited."""
+    """Define how dimension is inherited."""
    
     NONE = 0
     """Do not inherit dimension."""
@@ -375,7 +375,7 @@ CRDN_EVENT_ARRAY_FILTER_TYPE.INTERVALS.__doc__ = "Intervals."
 agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_FILTER_TYPE"] = CRDN_EVENT_ARRAY_FILTER_TYPE
 
 class CRDN_EVENT_ARRAY_TYPE(IntEnum):
-    """Defines available time array types."""
+    """Define available time array types."""
    
     UNKNOWN = -1
     """Unknown or unsupported time array types."""
@@ -409,7 +409,7 @@ CRDN_EVENT_ARRAY_TYPE.FIXED_TIMES.__doc__ = "Time array containing specific time
 agcls.AgTypeNameMap["CRDN_EVENT_ARRAY_TYPE"] = CRDN_EVENT_ARRAY_TYPE
 
 class CRDN_EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
-    """Defines available interval collection types."""
+    """Define available interval collection types."""
    
     UNKNOWN = -1
     """Unknown or unsupported interval collection types."""
@@ -428,7 +428,7 @@ CRDN_EVENT_INTERVAL_COLLECTION_TYPE.CONDITION.__doc__ = "Interval collection con
 agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_COLLECTION_TYPE"] = CRDN_EVENT_INTERVAL_COLLECTION_TYPE
 
 class CRDN_EVENT_INTERVAL_LIST_TYPE(IntEnum):
-    """Defines available interval list types."""
+    """Define available interval list types."""
    
     UNKNOWN = -1
     """Unknown or unsupported interval list types."""
@@ -462,7 +462,7 @@ CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED.__doc__ = "Interval list with individual int
 agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_LIST_TYPE"] = CRDN_EVENT_INTERVAL_LIST_TYPE
 
 class CRDN_EVENT_INTERVAL_TYPE(IntEnum):
-    """Defines available interval types."""
+    """Define available interval types."""
    
     UNKNOWN = -1
     """Unknown or unsupported interval types."""
@@ -496,7 +496,7 @@ CRDN_EVENT_INTERVAL_TYPE.SMART_INTERVAL.__doc__ = "A smart interval."
 agcls.AgTypeNameMap["CRDN_EVENT_INTERVAL_TYPE"] = CRDN_EVENT_INTERVAL_TYPE
 
 class CRDN_EVENT_LIST_MERGE_OPERATION(IntEnum):
-    """Defines merge operations for interval lists."""
+    """Define merge operations for interval lists."""
    
     AND = 0
     """Intervals both in A and B."""
@@ -515,7 +515,7 @@ CRDN_EVENT_LIST_MERGE_OPERATION.MINUS.__doc__ = "Intervals in A and not in B."
 agcls.AgTypeNameMap["CRDN_EVENT_LIST_MERGE_OPERATION"] = CRDN_EVENT_LIST_MERGE_OPERATION
 
 class CRDN_EVENT_TYPE(IntEnum):
-    """Defines available time instant types."""
+    """Define available time instant types."""
    
     UNKNOWN = -1
     """Unknown or unsupported time instant types."""
@@ -597,7 +597,7 @@ CRDN_INTEGRAL_TYPE.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method."
 agcls.AgTypeNameMap["CRDN_INTEGRAL_TYPE"] = CRDN_INTEGRAL_TYPE
 
 class CRDN_INTEGRATION_WINDOW_TYPE(IntEnum):
-    """Defines the interval of times during which an integral is evaluated."""
+    """Define the interval of times during which an integral is evaluated."""
    
     TOTAL = 0
     """Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."""
@@ -673,7 +673,7 @@ CRDN_INTERVAL_SELECTION.SPAN.__doc__ = "Select the interval that is the span of 
 agcls.AgTypeNameMap["CRDN_INTERVAL_SELECTION"] = CRDN_INTERVAL_SELECTION
 
 class CRDN_PARAMETER_SET_TYPE(IntEnum):
-    """Defines parameter set types."""
+    """Define parameter set types."""
    
     UNKNOWN = -1
     """Unknown or unsupported parameter set."""
@@ -748,7 +748,7 @@ CRDN_SAMPLED_REFERENCE_TIME.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of eac
 agcls.AgTypeNameMap["CRDN_SAMPLED_REFERENCE_TIME"] = CRDN_SAMPLED_REFERENCE_TIME
 
 class CRDN_SAMPLING_METHOD(IntEnum):
-    """Defines the Sampling Method."""
+    """Define the Sampling Method."""
    
     UNKNOWN = 0
     """Unknown or unsupported sampling method."""
@@ -853,7 +853,7 @@ CRDN_SMART_INTERVAL_STATE.EXPLICIT_DURATION.__doc__ = "Smart interval is specifi
 agcls.AgTypeNameMap["CRDN_SMART_INTERVAL_STATE"] = CRDN_SMART_INTERVAL_STATE
 
 class CRDN_SPEED_OPTIONS(IntEnum):
-    """Defines various speed options."""
+    """Define various speed options."""
    
     LIGHT_TRANSMISSION_SPEED = 1
     """Light transmission speed."""
@@ -882,7 +882,7 @@ CRDN_START_STOP_OPTION.COUNT_START_STOP.__doc__ = "Use the start time and stop t
 agcls.AgTypeNameMap["CRDN_START_STOP_OPTION"] = CRDN_START_STOP_OPTION
 
 class CRDN_THRESH_CONVERGE_SENSE(IntEnum):
-    """Specifies the desired sense of the results from threshold crossing computations."""
+    """Specify the desired sense of the results from threshold crossing computations."""
    
     SIMPLE = 0
     """Just converge within tolerance."""
@@ -898,7 +898,7 @@ CRDN_THRESH_CONVERGE_SENSE.BELOW.__doc__ = "Result below or at threshold."
 agcls.AgTypeNameMap["CRDN_THRESH_CONVERGE_SENSE"] = CRDN_THRESH_CONVERGE_SENSE
 
 class VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE(IntEnum):
-    """Defines component directions for a vector."""
+    """Define component directions for a vector."""
    
     X = 0
     """X component."""
@@ -923,7 +923,7 @@ VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE.MINUS_Z.__doc__ = "-Z component."
 agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE"] = VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE
 
 class CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE(IntEnum):
-    """Defines volume calc altitude reference types."""
+    """Define volume calc altitude reference types."""
    
     ELLIPSOID = 0
     """Volume calc altitude above reference ellipsoid."""
@@ -939,7 +939,7 @@ CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE.MSL.__doc__ = "Volume calc altitude ref
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE"] = CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE
 
 class CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE(IntEnum):
-    """Defines volume calc angle off vector reference types."""
+    """Define volume calc angle off vector reference types."""
    
     PLANE_SIGNED = 1
     """Volume calc angle off plane signed."""
@@ -961,7 +961,7 @@ CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE.VECTOR.__doc__ = "Volume calc angle off v
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE"] = CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE
 
 class CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE(IntEnum):
-    """Defines volume calc range distance types."""
+    """Define volume calc range distance types."""
    
     FROM_POINT = 0
     """Volume calc range distance type from point."""
@@ -983,7 +983,7 @@ CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE.PLANE_UNSIGNED.__doc__ = "Volume calc range
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE"] = CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE
 
 class CRDN_VOLUME_CALC_RANGE_SPEED_TYPE(IntEnum):
-    """Defines volume calc range distance types."""
+    """Define volume calc range distance types."""
    
     LIGHT = 1
     """Volume calc range distance type from point."""
@@ -996,7 +996,7 @@ CRDN_VOLUME_CALC_RANGE_SPEED_TYPE.CUSTOM.__doc__ = "Volume calc range distance t
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_RANGE_SPEED_TYPE"] = CRDN_VOLUME_CALC_RANGE_SPEED_TYPE
 
 class CRDN_VOLUME_CALC_TYPE(IntEnum):
-    """Defines volume calc types."""
+    """Define volume calc types."""
    
     UNKNOWN = -1
     """Unknown or unsupported volume calc."""
@@ -1030,7 +1030,7 @@ CRDN_VOLUME_CALC_TYPE.DELAY_RANGE.__doc__ = "volume calc type Propagation Delay 
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_TYPE"] = CRDN_VOLUME_CALC_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
-    """Defines volume calc spatial condition accumulation types."""
+    """Define volume calc spatial condition accumulation types."""
    
     UP_TO_CURRENT_TIME = -1
     """Volume calc spatial condition satisfaction accumulation type up to current time."""
@@ -1049,7 +1049,7 @@ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE.TOTAL.__doc__ = "Volume c
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
-    """Defines volume calc spatial condition duration types."""
+    """Define volume calc spatial condition duration types."""
    
     MIN = -1
     """Volume calc spatial condition satisfaction duration type minimum."""
@@ -1065,7 +1065,7 @@ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE.MAX.__doc__ = "Volume calc sp
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
-    """Defines volume calc spatial condition filter types."""
+    """Define volume calc spatial condition filter types."""
    
     FIRST_INTERVALS = -10
     """Volume calc spatial condition satisfaction filter type first intervals."""
@@ -1087,7 +1087,7 @@ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE.INTERVAL_DURATION.__doc__ = "Vo
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE
 
 class CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
-    """Defines volume calc spatial condition satisfaction metric types."""
+    """Define volume calc spatial condition satisfaction metric types."""
    
     NUMBER_OF_GAPS = -2
     """Volume calc spatial condition satisfaction metric type number of gaps."""
@@ -1112,7 +1112,7 @@ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE.GAP_DURATION.__doc__ = "Volume 
 agcls.AgTypeNameMap["CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE"] = CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE
 
 class CRDN_VOLUME_GRID_TYPE(IntEnum):
-    """Defines volume grid types."""
+    """Define volume grid types."""
    
     UNKNOWN = -1
     """Unknown or unsupported volume grid."""
@@ -1140,7 +1140,7 @@ CRDN_VOLUME_GRID_TYPE.BEARING_ALTITUDE.__doc__ = "volume grid type BearingAlt (S
 agcls.AgTypeNameMap["CRDN_VOLUME_GRID_TYPE"] = CRDN_VOLUME_GRID_TYPE
 
 class CRDN_VOLUME_RESULT_VECTOR_REQUEST(IntEnum):
-    """Defines volume result vector request types."""
+    """Define volume result vector request types."""
    
     POSITION = 1
     """volume result vector request pos type."""
@@ -1162,7 +1162,7 @@ CRDN_VOLUME_RESULT_VECTOR_REQUEST.GRADIENT.__doc__ = "volume result vector reque
 agcls.AgTypeNameMap["CRDN_VOLUME_RESULT_VECTOR_REQUEST"] = CRDN_VOLUME_RESULT_VECTOR_REQUEST
 
 class CRDN_VOLUME_TYPE(IntEnum):
-    """Defines volume grid types."""
+    """Define volume grid types."""
    
     UNKNOWN = -1
     """Unknown or unsupported volume."""
@@ -1196,7 +1196,7 @@ CRDN_VOLUME_TYPE.INVIEW.__doc__ = "volume type Inview (Access To Location)."
 agcls.AgTypeNameMap["CRDN_VOLUME_TYPE"] = CRDN_VOLUME_TYPE
 
 class CRDN_VOLUME_ABERRATION_TYPE(IntEnum):
-    """Defines the model of aberration to use."""
+    """Define the model of aberration to use."""
    
     UNKNOWN = -1
     """Aberration type unknown."""
@@ -1215,7 +1215,7 @@ CRDN_VOLUME_ABERRATION_TYPE.NONE.__doc__ = "Aberration type none."
 agcls.AgTypeNameMap["CRDN_VOLUME_ABERRATION_TYPE"] = CRDN_VOLUME_ABERRATION_TYPE
 
 class CRDN_VOLUME_CLOCK_HOST_TYPE(IntEnum):
-    """Defines whether base or target of an Access instance holds the clock for Access times."""
+    """Define whether base or target of an Access instance holds the clock for Access times."""
    
     UNKNOWN = -1
     """Unknown."""
@@ -1231,7 +1231,7 @@ CRDN_VOLUME_CLOCK_HOST_TYPE.TARGET.__doc__ = "Target object holds time instance.
 agcls.AgTypeNameMap["CRDN_VOLUME_CLOCK_HOST_TYPE"] = CRDN_VOLUME_CLOCK_HOST_TYPE
 
 class CRDN_VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
-    """Defines spatial condition combined operation types."""
+    """Define spatial condition combined operation types."""
    
     AND = 1
     """Spatial condition combined AND operation."""
@@ -1250,7 +1250,7 @@ CRDN_VOLUME_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Spatial condition combined 
 agcls.AgTypeNameMap["CRDN_VOLUME_COMBINED_OPERATION_TYPE"] = CRDN_VOLUME_COMBINED_OPERATION_TYPE
 
 class CRDN_VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
-    """Defines spatial condition from grid edge type."""
+    """Define spatial condition from grid edge type."""
    
     MASK_POINTS = 16
     """Spatial condition over time from grid edge type mask points."""
@@ -1263,7 +1263,7 @@ CRDN_VOLUME_FROM_GRID_EDGE_TYPE.MASK_VOXELS.__doc__ = "Spatial condition over ti
 agcls.AgTypeNameMap["CRDN_VOLUME_FROM_GRID_EDGE_TYPE"] = CRDN_VOLUME_FROM_GRID_EDGE_TYPE
 
 class CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE(IntFlag):
-    """Defines spatial condition lighting conditions types."""
+    """Define spatial condition lighting conditions types."""
    
     TYPE_UNDEFINED = 0
     """Spatial condition lighting undefined."""
@@ -1282,7 +1282,7 @@ CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE.TYPE_UMBRA.__doc__ = "Spatial condition lig
 agcls.AgTypeNameMap["CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE"] = CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE
 
 class CRDN_VOLUME_OVER_TIME_DURATION_TYPE(IntEnum):
-    """Defines spatial condition over time duration type."""
+    """Define spatial condition over time duration type."""
    
     STATIC = 0
     """Spatial condition over time duration type Static."""
@@ -1301,7 +1301,7 @@ CRDN_VOLUME_OVER_TIME_DURATION_TYPE.SLIDING_WINDOW.__doc__ = "Spatial condition 
 agcls.AgTypeNameMap["CRDN_VOLUME_OVER_TIME_DURATION_TYPE"] = CRDN_VOLUME_OVER_TIME_DURATION_TYPE
 
 class CRDN_VOLUME_TIME_SENSE_TYPE(IntEnum):
-    """Defines whether object1 or object2 of an Access instance holds the clock for Access times."""
+    """Define whether object1 or object2 of an Access instance holds the clock for Access times."""
    
     UNKNOWN = -1
     """Unklnown."""
@@ -1317,7 +1317,7 @@ CRDN_VOLUME_TIME_SENSE_TYPE.RECEIVE.__doc__ = "Position is computed in Receive S
 agcls.AgTypeNameMap["CRDN_VOLUME_TIME_SENSE_TYPE"] = CRDN_VOLUME_TIME_SENSE_TYPE
 
 class CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE(IntEnum):
-    """Defines volumetric grid values method types."""
+    """Define volumetric grid values method types."""
    
     METHOD_UNKNOWN = -1
     """Unknown or unsupportedgrid values method."""
@@ -1823,7 +1823,7 @@ CRDN_DISPLAY_AXIS_SELECTOR.Z.__doc__ = "Rotate about Axis Z."
 agcls.AgTypeNameMap["CRDN_DISPLAY_AXIS_SELECTOR"] = CRDN_DISPLAY_AXIS_SELECTOR
 
 class CRDN_SIGNED_ANGLE_TYPE(IntEnum):
-    """Defines options for computing an angle."""
+    """Define options for computing an angle."""
    
     NONE = 0
     """Choose the option to use unsigned angle."""
@@ -1952,6 +1952,7 @@ class ITimeToolIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolIntervalCollection."""
         initialize_from_source_object(self, sourceObject, ITimeToolIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1962,12 +1963,15 @@ class ITimeToolIntervalCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolIntervalCollection, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolIntervalCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolInterval":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2017,6 +2021,7 @@ class ITimeToolInterval(object):
                              "get_stop" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolInterval."""
         initialize_from_source_object(self, sourceObject, ITimeToolInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2026,6 +2031,7 @@ class ITimeToolInterval(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolInterval)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolInterval, None)
     
     _get_start_metadata = { "name" : "start",
@@ -2061,6 +2067,7 @@ class IVectorGeometryToolPoint(object):
                              "locate_in_system" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPoint."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2070,6 +2077,7 @@ class IVectorGeometryToolPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPoint, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2111,6 +2119,7 @@ class IVectorGeometryToolVector(object):
                              "find_in_axes_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVector."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2120,6 +2129,7 @@ class IVectorGeometryToolVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVector, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2162,6 +2172,7 @@ class IVectorGeometryToolSystem(object):
                              "transform_with_rate" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystem."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2171,6 +2182,7 @@ class IVectorGeometryToolSystem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystem, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2225,6 +2237,7 @@ class IVectorGeometryToolAxes(object):
                              "transform_with_rate" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2234,6 +2247,7 @@ class IVectorGeometryToolAxes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxes, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2323,6 +2337,7 @@ class IVectorGeometryToolAngle(object):
                              "find_coordinates_with_rate" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngle."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2332,6 +2347,7 @@ class IVectorGeometryToolAngle(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngle)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngle, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2390,6 +2406,7 @@ class IVectorGeometryToolPlane(object):
                              "get_labels" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlane."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2399,6 +2416,7 @@ class IVectorGeometryToolPlane(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlane)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlane, None)
     
     _get_type_metadata = { "name" : "type",
@@ -2460,6 +2478,7 @@ class IAnalysisWorkbenchContext(object):
         "method_offsets" : { "get_is_template" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchContext."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchContext)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2469,6 +2488,7 @@ class IAnalysisWorkbenchContext(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchContext)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchContext, None)
     
     _get_is_template_metadata = { "name" : "is_template",
@@ -2512,6 +2532,7 @@ class IAnalysisWorkbenchComponent(object):
                              "rename" : 19, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchComponent."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2521,6 +2542,7 @@ class IAnalysisWorkbenchComponent(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchComponent)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponent, None)
     
     _get_kind_metadata = { "name" : "kind",
@@ -2685,6 +2707,7 @@ class ICalculationToolEvaluateResult(object):
                              "get_value" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolEvaluateResult."""
         initialize_from_source_object(self, sourceObject, ICalculationToolEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2694,6 +2717,7 @@ class ICalculationToolEvaluateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolEvaluateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolEvaluateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2729,6 +2753,7 @@ class ICalculationToolEvaluateWithRateResult(object):
                              "get_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolEvaluateWithRateResult."""
         initialize_from_source_object(self, sourceObject, ICalculationToolEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2738,6 +2763,7 @@ class ICalculationToolEvaluateWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolEvaluateWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolEvaluateWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2780,6 +2806,7 @@ class ITimeToolEventIntervalResult(object):
                              "get_interval" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2789,6 +2816,7 @@ class ITimeToolEventIntervalResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2823,6 +2851,7 @@ class ITimeToolEventFindOccurrenceResult(object):
                              "get_epoch" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventFindOccurrenceResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventFindOccurrenceResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2832,6 +2861,7 @@ class ITimeToolEventFindOccurrenceResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventFindOccurrenceResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventFindOccurrenceResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2869,6 +2899,7 @@ class ITimeToolFindTimesResult(object):
                              "get_times" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolFindTimesResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolFindTimesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2878,6 +2909,7 @@ class ITimeToolFindTimesResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolFindTimesResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolFindTimesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2936,6 +2968,7 @@ class ITimeToolIntervalsVectorResult(object):
                              "get_interval_collections" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolIntervalsVectorResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolIntervalsVectorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2945,6 +2978,7 @@ class ITimeToolIntervalsVectorResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalsVectorResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolIntervalsVectorResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -2979,6 +3013,7 @@ class ITimeToolEventIntervalCollectionOccurredResult(object):
                              "get_index" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionOccurredResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionOccurredResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2988,6 +3023,7 @@ class ITimeToolEventIntervalCollectionOccurredResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionOccurredResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionOccurredResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -3022,6 +3058,7 @@ class ITimeToolIntervalListResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolIntervalListResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolIntervalListResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3031,6 +3068,7 @@ class ITimeToolIntervalListResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalListResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolIntervalListResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -3066,6 +3104,7 @@ class ITimeToolIntervalVectorCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolIntervalVectorCollection."""
         initialize_from_source_object(self, sourceObject, ITimeToolIntervalVectorCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3076,12 +3115,15 @@ class ITimeToolIntervalVectorCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalVectorCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolIntervalVectorCollection, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolIntervalVectorCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolIntervalCollection":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3138,6 +3180,7 @@ class ITimeToolEventGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventGroup."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3148,12 +3191,15 @@ class ITimeToolEventGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventGroup, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolEventGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolEvent":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3254,6 +3300,7 @@ class ITimeToolEventIntervalGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalGroup."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3264,12 +3311,15 @@ class ITimeToolEventIntervalGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalGroup, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolEventIntervalGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolEventInterval":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3370,6 +3420,7 @@ class ITimeToolEventIntervalListGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListGroup."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3380,12 +3431,15 @@ class ITimeToolEventIntervalListGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListGroup, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolEventIntervalListGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolEventIntervalList":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3486,6 +3540,7 @@ class ITimeToolEventArrayGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayGroup."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3496,12 +3551,15 @@ class ITimeToolEventArrayGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayGroup, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolEventArrayGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolEventArray":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3602,6 +3660,7 @@ class ICalculationToolScalarGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarGroup."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3612,12 +3671,15 @@ class ICalculationToolScalarGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarGroup, None)
     def __iter__(self):
+        """Create an iterator for the ICalculationToolScalarGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolScalar":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3718,6 +3780,7 @@ class ITimeToolEventIntervalCollectionGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionGroup."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3728,12 +3791,15 @@ class ITimeToolEventIntervalCollectionGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionGroup, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolEventIntervalCollectionGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolEventIntervalCollection":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3834,6 +3900,7 @@ class ICalculationToolParameterSetGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetGroup."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3844,12 +3911,15 @@ class ICalculationToolParameterSetGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetGroup, None)
     def __iter__(self):
+        """Create an iterator for the ICalculationToolParameterSetGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolParameterSet":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3950,6 +4020,7 @@ class ICalculationToolConditionGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionGroup."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3960,12 +4031,15 @@ class ICalculationToolConditionGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionGroup, None)
     def __iter__(self):
+        """Create an iterator for the ICalculationToolConditionGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolCondition":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -4066,6 +4140,7 @@ class ICalculationToolConditionSetGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSetGroup."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -4076,12 +4151,15 @@ class ICalculationToolConditionSetGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSetGroup, None)
     def __iter__(self):
+        """Create an iterator for the ICalculationToolConditionSetGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolConditionSet":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -4175,6 +4253,7 @@ class ICalculationToolConditionSetEvaluateResult(object):
                              "get_values" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSetEvaluateResult."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4184,6 +4263,7 @@ class ICalculationToolConditionSetEvaluateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetEvaluateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSetEvaluateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -4219,6 +4299,7 @@ class ICalculationToolConditionSetEvaluateWithRateResult(object):
                              "get_rates" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSetEvaluateWithRateResult."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4228,6 +4309,7 @@ class ICalculationToolConditionSetEvaluateWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetEvaluateWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSetEvaluateWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -4277,6 +4359,7 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridGroup."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -4287,12 +4370,15 @@ class ISpatialAnalysisToolVolumeGridGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridGroup, None)
     def __iter__(self):
+        """Create an iterator for the ISpatialAnalysisToolVolumeGridGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolumeGrid":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -4393,6 +4479,7 @@ class ISpatialAnalysisToolVolumeGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGroup."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -4403,12 +4490,15 @@ class ISpatialAnalysisToolVolumeGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGroup, None)
     def __iter__(self):
+        """Create an iterator for the ISpatialAnalysisToolVolumeGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolume":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -4509,6 +4599,7 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcGroup."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -4519,12 +4610,15 @@ class ISpatialAnalysisToolVolumeCalcGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcGroup, None)
     def __iter__(self):
+        """Create an iterator for the ISpatialAnalysisToolVolumeCalcGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolumeCalc":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -4627,6 +4721,7 @@ class ICalculationToolScalar(object):
                              "quick_evaluate_with_rate_event_array" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalar."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4636,6 +4731,7 @@ class ICalculationToolScalar(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalar)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalar, None)
     
     _get_type_metadata = { "name" : "type",
@@ -4733,6 +4829,7 @@ class ICalculationToolScalarAngle(object):
                              "set_input_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarAngle."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarAngle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4742,6 +4839,7 @@ class ICalculationToolScalarAngle(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarAngle)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarAngle, None)
     
     _get_input_angle_metadata = { "name" : "input_angle",
@@ -4777,6 +4875,7 @@ class ICalculationToolScalarConstant(object):
                              "set_dimension" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarConstant."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarConstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4786,6 +4885,7 @@ class ICalculationToolScalarConstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarConstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarConstant, None)
     
     _get_value_metadata = { "name" : "value",
@@ -4837,6 +4937,7 @@ class ICalculationToolScalarCustom(object):
                              "set_invalidate_on_exec_error" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarCustom."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarCustom)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4846,6 +4947,7 @@ class ICalculationToolScalarCustom(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarCustom)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarCustom, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -4914,6 +5016,7 @@ class ICalculationToolScalarDataElement(object):
                              "set_invalid_data_indicator" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarDataElement."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarDataElement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4923,6 +5026,7 @@ class ICalculationToolScalarDataElement(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDataElement)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarDataElement, None)
     
     _get_data_provider_metadata = { "name" : "data_provider",
@@ -5058,6 +5162,7 @@ class ICalculationToolScalarDerivative(object):
                              "set_force_use_of_numerical_differences" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarDerivative."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarDerivative)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5067,6 +5172,7 @@ class ICalculationToolScalarDerivative(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDerivative)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarDerivative, None)
     
     _get_scalar_metadata = { "name" : "scalar",
@@ -5138,6 +5244,7 @@ class ICalculationToolScalarDotProduct(object):
                              "set_dimension" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarDotProduct."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarDotProduct)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5147,6 +5254,7 @@ class ICalculationToolScalarDotProduct(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarDotProduct)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarDotProduct, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
@@ -5240,6 +5348,7 @@ class ICalculationToolScalarElapsedTime(object):
                              "set_reference_time_instant" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarElapsedTime."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarElapsedTime)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5249,6 +5358,7 @@ class ICalculationToolScalarElapsedTime(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarElapsedTime)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarElapsedTime, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -5300,6 +5410,7 @@ class ICalculationToolScalarFactory(object):
                              "create_calc_scalar_vector_component" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarFactory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5309,6 +5420,7 @@ class ICalculationToolScalarFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarFactory, None)
     
     _get_available_calc_scalar_plugin_display_names_metadata = { "name" : "available_calc_scalar_plugin_display_names",
@@ -5476,6 +5588,7 @@ class ICalculationToolScalarFile(object):
                              "set_use_native_file_interpolation_settings" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarFile."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarFile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5485,6 +5598,7 @@ class ICalculationToolScalarFile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarFile, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -5579,6 +5693,7 @@ class ICalculationToolScalarFixedAtTimeInstant(object):
                              "set_reference_time_instant" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarFixedAtTimeInstant."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarFixedAtTimeInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5588,6 +5703,7 @@ class ICalculationToolScalarFixedAtTimeInstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFixedAtTimeInstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarFixedAtTimeInstant, None)
     
     _get_input_scalar_metadata = { "name" : "input_scalar",
@@ -5665,6 +5781,7 @@ class ICalculationToolScalarFunction(object):
                              "set_convergence" : 31, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarFunction."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarFunction)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5674,6 +5791,7 @@ class ICalculationToolScalarFunction(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFunction)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarFunction, None)
     
     _get_use_scalar_metadata = { "name" : "use_scalar",
@@ -5946,6 +6064,7 @@ class ICalculationToolScalarFunction2Var(object):
                              "set_output_unit" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarFunction2Var."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarFunction2Var)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5955,6 +6074,7 @@ class ICalculationToolScalarFunction2Var(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarFunction2Var)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarFunction2Var, None)
     
     _get_x_metadata = { "name" : "x",
@@ -6169,6 +6289,7 @@ class ICalculationToolScalarIntegral(object):
                              "set_offsets" : 25, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarIntegral."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarIntegral)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6178,6 +6299,7 @@ class ICalculationToolScalarIntegral(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarIntegral)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarIntegral, None)
     
     _get_input_scalar_metadata = { "name" : "input_scalar",
@@ -6387,6 +6509,7 @@ class ICalculationToolScalarPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarPlugin."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarPlugin)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6396,6 +6519,7 @@ class ICalculationToolScalarPlugin(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarPlugin)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
@@ -6465,6 +6589,7 @@ class ICalculationToolScalarSurfaceDistanceBetweenPoints(object):
                              "set_differencing_time_step" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarSurfaceDistanceBetweenPoints."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarSurfaceDistanceBetweenPoints)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6474,6 +6599,7 @@ class ICalculationToolScalarSurfaceDistanceBetweenPoints(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarSurfaceDistanceBetweenPoints)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarSurfaceDistanceBetweenPoints, None)
     
     _get_point1_metadata = { "name" : "point1",
@@ -6556,6 +6682,7 @@ class ICalculationToolScalarVectorComponent(object):
                              "set_component" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarVectorComponent."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarVectorComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6565,6 +6692,7 @@ class ICalculationToolScalarVectorComponent(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarVectorComponent)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarVectorComponent, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
@@ -6628,6 +6756,7 @@ class ICalculationToolScalarVectorMagnitude(object):
                              "set_input_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolScalarVectorMagnitude."""
         initialize_from_source_object(self, sourceObject, ICalculationToolScalarVectorMagnitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6637,6 +6766,7 @@ class ICalculationToolScalarVectorMagnitude(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolScalarVectorMagnitude)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolScalarVectorMagnitude, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
@@ -6671,6 +6801,7 @@ class ICalculationToolCondition(object):
                              "evaluate_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolCondition."""
         initialize_from_source_object(self, sourceObject, ICalculationToolCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6680,6 +6811,7 @@ class ICalculationToolCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolCondition, None)
     
     _get_type_metadata = { "name" : "type",
@@ -6727,6 +6859,7 @@ class ICalculationToolConditionCombined(object):
                              "add_condition" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionCombined."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionCombined)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6736,6 +6869,7 @@ class ICalculationToolConditionCombined(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionCombined)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionCombined, None)
     
     _get_combine_operation_metadata = { "name" : "combine_operation",
@@ -6822,6 +6956,7 @@ class ICalculationToolConditionFactory(object):
                              "create_condition_point_in_volume" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionFactory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6831,6 +6966,7 @@ class ICalculationToolConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -6886,6 +7022,7 @@ class ICalculationToolConditionPointInVolume(object):
                              "set_constraint" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionPointInVolume."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionPointInVolume)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6895,6 +7032,7 @@ class ICalculationToolConditionPointInVolume(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionPointInVolume)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionPointInVolume, None)
     
     _get_point_metadata = { "name" : "point",
@@ -6955,6 +7093,7 @@ class ICalculationToolConditionScalarBounds(object):
                              "set_unitless" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionScalarBounds."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionScalarBounds)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6964,6 +7103,7 @@ class ICalculationToolConditionScalarBounds(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionScalarBounds)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionScalarBounds, None)
     
     _get_scalar_metadata = { "name" : "scalar",
@@ -7083,6 +7223,7 @@ class ICalculationToolConditionSet(object):
                              "evaluate_with_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSet."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7092,6 +7233,7 @@ class ICalculationToolConditionSet(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSet)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSet, None)
     
     _get_type_metadata = { "name" : "type",
@@ -7133,6 +7275,7 @@ class ICalculationToolConditionSetFactory(object):
                              "is_type_supported" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSetFactory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7142,6 +7285,7 @@ class ICalculationToolConditionSetFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSetFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -7188,6 +7332,7 @@ class ICalculationToolConditionSetScalarThresholds(object):
                              "set_thresholds_and_labels" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConditionSetScalarThresholds."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConditionSetScalarThresholds)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7197,6 +7342,7 @@ class ICalculationToolConditionSetScalarThresholds(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConditionSetScalarThresholds)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConditionSetScalarThresholds, None)
     
     _get_scalar_metadata = { "name" : "scalar",
@@ -7282,6 +7428,7 @@ class IAnalysisWorkbenchConverge(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchConverge."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchConverge)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7291,6 +7438,7 @@ class IAnalysisWorkbenchConverge(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchConverge)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchConverge, None)
     
 
@@ -7315,6 +7463,7 @@ class ICalculationToolConvergeBasic(object):
                              "set_relative_tolerance" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolConvergeBasic."""
         initialize_from_source_object(self, sourceObject, ICalculationToolConvergeBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7324,6 +7473,7 @@ class ICalculationToolConvergeBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolConvergeBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolConvergeBasic, None)
     
     _get_sense_metadata = { "name" : "sense",
@@ -7401,6 +7551,7 @@ class IAnalysisWorkbenchDerivative(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchDerivative."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchDerivative)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7410,6 +7561,7 @@ class IAnalysisWorkbenchDerivative(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchDerivative)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchDerivative, None)
     
 
@@ -7428,6 +7580,7 @@ class ICalculationToolDerivativeBasic(object):
                              "set_time_step" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolDerivativeBasic."""
         initialize_from_source_object(self, sourceObject, ICalculationToolDerivativeBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7437,6 +7590,7 @@ class ICalculationToolDerivativeBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolDerivativeBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolDerivativeBasic, None)
     
     _get_time_step_metadata = { "name" : "time_step",
@@ -7475,6 +7629,7 @@ class ITimeToolEvent(object):
                              "occurs_before" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEvent."""
         initialize_from_source_object(self, sourceObject, ITimeToolEvent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7484,6 +7639,7 @@ class ITimeToolEvent(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEvent)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEvent, None)
     
     _get_type_metadata = { "name" : "type",
@@ -7556,6 +7712,7 @@ class ITimeToolEventArray(object):
                              "find_times" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArray."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArray)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7565,6 +7722,7 @@ class ITimeToolEventArray(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArray)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArray, None)
     
     _get_type_metadata = { "name" : "type",
@@ -7610,6 +7768,7 @@ class ITimeToolEventArrayConditionCrossings(object):
                              "set_convergence" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayConditionCrossings."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayConditionCrossings)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7619,6 +7778,7 @@ class ITimeToolEventArrayConditionCrossings(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayConditionCrossings)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayConditionCrossings, None)
     
     _get_satisfaction_crossing_metadata = { "name" : "satisfaction_crossing",
@@ -7756,6 +7916,7 @@ class ITimeToolEventArrayExtrema(object):
                              "set_convergence" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayExtrema."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayExtrema)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7765,6 +7926,7 @@ class ITimeToolEventArrayExtrema(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayExtrema)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayExtrema, None)
     
     _get_extremum_type_metadata = { "name" : "extremum_type",
@@ -7911,6 +8073,7 @@ class ITimeToolEventArrayFactory(object):
                              "create_event_array_fixed_times" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7920,6 +8083,7 @@ class ITimeToolEventArrayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -8018,6 +8182,7 @@ class ITimeToolEventArrayFiltered(object):
                              "set_filter_interval_list" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayFiltered."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFiltered)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8027,6 +8192,7 @@ class ITimeToolEventArrayFiltered(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFiltered)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayFiltered, None)
     
     _get_original_time_array_metadata = { "name" : "original_time_array",
@@ -8143,6 +8309,7 @@ class ITimeToolEventArrayFixedStep(object):
                              "set_reference_time_instant" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayFixedStep."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFixedStep)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8152,6 +8319,7 @@ class ITimeToolEventArrayFixedStep(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFixedStep)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayFixedStep, None)
     
     _get_bounding_interval_list_metadata = { "name" : "bounding_interval_list",
@@ -8245,6 +8413,7 @@ class ITimeToolEventArrayFixedTimes(object):
                              "set_array_times" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayFixedTimes."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayFixedTimes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8254,6 +8423,7 @@ class ITimeToolEventArrayFixedTimes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayFixedTimes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayFixedTimes, None)
     
     _get_array_times_metadata = { "name" : "array_times",
@@ -8289,6 +8459,7 @@ class ITimeToolEventArrayMerged(object):
                              "set_time_array_b" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayMerged."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayMerged)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8298,6 +8469,7 @@ class ITimeToolEventArrayMerged(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayMerged)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayMerged, None)
     
     _get_time_array_a_metadata = { "name" : "time_array_a",
@@ -8354,6 +8526,7 @@ class ITimeToolEventArraySignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArraySignaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArraySignaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8363,6 +8536,7 @@ class ITimeToolEventArraySignaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArraySignaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArraySignaled, None)
     
     _get_original_time_array_metadata = { "name" : "original_time_array",
@@ -8458,6 +8632,7 @@ class ITimeToolEventArrayStartStopTimes(object):
                              "set_reference_intervals" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventArrayStartStopTimes."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventArrayStartStopTimes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8467,6 +8642,7 @@ class ITimeToolEventArrayStartStopTimes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventArrayStartStopTimes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventArrayStartStopTimes, None)
     
     _get_start_stop_option_metadata = { "name" : "start_stop_option",
@@ -8515,6 +8691,7 @@ class ITimeToolEventEpoch(object):
                              "set_epoch" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventEpoch."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventEpoch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8524,6 +8701,7 @@ class ITimeToolEventEpoch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventEpoch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventEpoch, None)
     
     _get_epoch_metadata = { "name" : "epoch",
@@ -8569,6 +8747,7 @@ class ITimeToolEventExtremum(object):
                              "set_convergence" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventExtremum."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventExtremum)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8578,6 +8757,7 @@ class ITimeToolEventExtremum(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventExtremum)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventExtremum, None)
     
     _get_extremum_type_metadata = { "name" : "extremum_type",
@@ -8710,6 +8890,7 @@ class ITimeToolEventFactory(object):
                              "is_type_supported" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8719,6 +8900,7 @@ class ITimeToolEventFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventFactory, None)
     
     _get_today_metadata = { "name" : "today",
@@ -8821,6 +9003,7 @@ class ITimeToolEventInterval(object):
                              "occurred" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventInterval."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8830,6 +9013,7 @@ class ITimeToolEventInterval(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventInterval)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventInterval, None)
     
     _get_type_metadata = { "name" : "type",
@@ -8904,6 +9088,7 @@ class ITimeToolEventIntervalBetweenTimeInstants(object):
                              "set_stop_time_instant" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalBetweenTimeInstants."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalBetweenTimeInstants)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8913,6 +9098,7 @@ class ITimeToolEventIntervalBetweenTimeInstants(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalBetweenTimeInstants)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalBetweenTimeInstants, None)
     
     _get_start_time_instant_metadata = { "name" : "start_time_instant",
@@ -8963,6 +9149,7 @@ class ITimeToolEventIntervalCollection(object):
                              "occurred" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollection."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8972,6 +9159,7 @@ class ITimeToolEventIntervalCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollection, None)
     
     _get_type_metadata = { "name" : "type",
@@ -9030,6 +9218,7 @@ class ITimeToolEventIntervalCollectionCondition(object):
                              "set_convergence" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionCondition."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9039,6 +9228,7 @@ class ITimeToolEventIntervalCollectionCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionCondition, None)
     
     _get_condition_set_metadata = { "name" : "condition_set",
@@ -9150,6 +9340,7 @@ class ITimeToolEventIntervalCollectionFactory(object):
                              "create_event_interval_collection_satisfaction" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9159,6 +9350,7 @@ class ITimeToolEventIntervalCollectionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -9216,6 +9408,7 @@ class ITimeToolEventIntervalCollectionLighting(object):
                              "set_use_object_eclipsing_bodies" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionLighting."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionLighting)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9225,6 +9418,7 @@ class ITimeToolEventIntervalCollectionLighting(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionLighting)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionLighting, None)
     
     _get_location_metadata = { "name" : "location",
@@ -9296,6 +9490,7 @@ class ITimeToolEventIntervalCollectionSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalCollectionSignaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalCollectionSignaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9305,6 +9500,7 @@ class ITimeToolEventIntervalCollectionSignaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalCollectionSignaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalCollectionSignaled, None)
     
     _get_original_collection_metadata = { "name" : "original_collection",
@@ -9405,6 +9601,7 @@ class ITimeToolEventIntervalFactory(object):
                              "is_type_supported" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9414,6 +9611,7 @@ class ITimeToolEventIntervalFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -9496,6 +9694,7 @@ class ITimeToolEventIntervalFixed(object):
                              "set_interval" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalFixed."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFixed)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9505,6 +9704,7 @@ class ITimeToolEventIntervalFixed(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFixed)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFixed, None)
     
     _get_start_time_metadata = { "name" : "start_time",
@@ -9550,6 +9750,7 @@ class ITimeToolEventIntervalFixedDuration(object):
                              "set_stop_offset" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalFixedDuration."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFixedDuration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9559,6 +9760,7 @@ class ITimeToolEventIntervalFixedDuration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFixedDuration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFixedDuration, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -9626,6 +9828,7 @@ class ITimeToolEventIntervalFromIntervalList(object):
                              "set_interval_number" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalFromIntervalList."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalFromIntervalList)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9635,6 +9838,7 @@ class ITimeToolEventIntervalFromIntervalList(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalFromIntervalList)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalFromIntervalList, None)
     
     _get_reference_intervals_metadata = { "name" : "reference_intervals",
@@ -9701,6 +9905,7 @@ class ITimeToolEventIntervalList(object):
                              "occurred" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalList."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalList)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9710,6 +9915,7 @@ class ITimeToolEventIntervalList(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalList)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalList, None)
     
     _get_type_metadata = { "name" : "type",
@@ -9776,6 +9982,7 @@ class ITimeToolEventIntervalListCondition(object):
                              "set_convergence" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListCondition."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9785,6 +9992,7 @@ class ITimeToolEventIntervalListCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListCondition, None)
     
     _get_condition_metadata = { "name" : "condition",
@@ -9901,6 +10109,7 @@ class ITimeToolEventIntervalListFactory(object):
                              "create_event_interval_list_fixed" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9910,6 +10119,7 @@ class ITimeToolEventIntervalListFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -10000,6 +10210,7 @@ class ITimeToolEventIntervalListFile(object):
                              "get_file_span" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListFile."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10009,6 +10220,7 @@ class ITimeToolEventIntervalListFile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFile, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -10059,6 +10271,7 @@ class ITimeToolEventIntervalListFiltered(object):
                              "set_filter" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListFiltered."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFiltered)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10068,6 +10281,7 @@ class ITimeToolEventIntervalListFiltered(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFiltered)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFiltered, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
@@ -10124,6 +10338,7 @@ class ITimeToolEventIntervalListFixed(object):
                              "set_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListFixed."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListFixed)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10133,6 +10348,7 @@ class ITimeToolEventIntervalListFixed(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListFixed)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListFixed, None)
     
     _get_intervals_metadata = { "name" : "get_intervals",
@@ -10178,6 +10394,7 @@ class ITimeToolEventIntervalListMerged(object):
                              "remove_time_component" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListMerged."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListMerged)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10187,6 +10404,7 @@ class ITimeToolEventIntervalListMerged(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListMerged)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListMerged, None)
     
     _get_interval_list_or_interval_a_metadata = { "name" : "interval_list_or_interval_a",
@@ -10319,6 +10537,7 @@ class ITimeToolEventIntervalListScaled(object):
                              "set_use_absolute_increment" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListScaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListScaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10328,6 +10547,7 @@ class ITimeToolEventIntervalListScaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListScaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListScaled, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
@@ -10414,6 +10634,7 @@ class ITimeToolEventIntervalListSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListSignaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListSignaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10423,6 +10644,7 @@ class ITimeToolEventIntervalListSignaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListSignaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListSignaled, None)
     
     _get_original_intervals_metadata = { "name" : "original_intervals",
@@ -10518,6 +10740,7 @@ class ITimeToolEventIntervalListTimeOffset(object):
                              "set_time_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalListTimeOffset."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalListTimeOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10527,6 +10750,7 @@ class ITimeToolEventIntervalListTimeOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalListTimeOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalListTimeOffset, None)
     
     _get_reference_intervals_metadata = { "name" : "reference_intervals",
@@ -10581,6 +10805,7 @@ class ITimeToolEventIntervalScaled(object):
                              "set_use_absolute_increment" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalScaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalScaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10590,6 +10815,7 @@ class ITimeToolEventIntervalScaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalScaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalScaled, None)
     
     _get_original_interval_metadata = { "name" : "original_interval",
@@ -10676,6 +10902,7 @@ class ITimeToolEventIntervalSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalSignaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalSignaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10685,6 +10912,7 @@ class ITimeToolEventIntervalSignaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalSignaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalSignaled, None)
     
     _get_original_interval_metadata = { "name" : "original_interval",
@@ -10793,6 +11021,7 @@ class ITimeToolEventIntervalSmartInterval(object):
                              "set_start_time_and_duration" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalSmartInterval."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalSmartInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10802,6 +11031,7 @@ class ITimeToolEventIntervalSmartInterval(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalSmartInterval)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalSmartInterval, None)
     
     _get_reference_interval_metadata = { "name" : "reference_interval",
@@ -10944,6 +11174,7 @@ class ITimeToolEventIntervalTimeOffset(object):
                              "set_time_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventIntervalTimeOffset."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventIntervalTimeOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10953,6 +11184,7 @@ class ITimeToolEventIntervalTimeOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventIntervalTimeOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventIntervalTimeOffset, None)
     
     _get_reference_interval_metadata = { "name" : "reference_interval",
@@ -11009,6 +11241,7 @@ class ITimeToolEventSignaled(object):
                              "set_signal_delay" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventSignaled."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventSignaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11018,6 +11251,7 @@ class ITimeToolEventSignaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventSignaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventSignaled, None)
     
     _get_original_time_instant_metadata = { "name" : "original_time_instant",
@@ -11115,6 +11349,7 @@ class ITimeToolEventSmartEpoch(object):
                              "set_implicit_time" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventSmartEpoch."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventSmartEpoch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11124,6 +11359,7 @@ class ITimeToolEventSmartEpoch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventSmartEpoch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventSmartEpoch, None)
     
     _get_time_instant_metadata = { "name" : "time_instant",
@@ -11189,6 +11425,7 @@ class ITimeToolEventStartStopTime(object):
                              "set_reference_event_interval" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventStartStopTime."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventStartStopTime)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11198,6 +11435,7 @@ class ITimeToolEventStartStopTime(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventStartStopTime)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventStartStopTime, None)
     
     _get_use_start_metadata = { "name" : "use_start",
@@ -11248,6 +11486,7 @@ class ITimeToolEventTimeOffset(object):
                              "set_time_offset2" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolEventTimeOffset."""
         initialize_from_source_object(self, sourceObject, ITimeToolEventTimeOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11257,6 +11496,7 @@ class ITimeToolEventTimeOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolEventTimeOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolEventTimeOffset, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -11305,6 +11545,7 @@ class ITimeToolFirstIntervalsFilter(object):
                              "set_maximum_number_of_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolFirstIntervalsFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolFirstIntervalsFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11314,6 +11555,7 @@ class ITimeToolFirstIntervalsFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolFirstIntervalsFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolFirstIntervalsFilter, None)
     
     _get_maximum_number_of_intervals_metadata = { "name" : "maximum_number_of_intervals",
@@ -11349,6 +11591,7 @@ class ITimeToolGapsFilter(object):
                              "set_gap_duration" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolGapsFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolGapsFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11358,6 +11601,7 @@ class ITimeToolGapsFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolGapsFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolGapsFilter, None)
     
     _get_duration_kind_metadata = { "name" : "duration_kind",
@@ -11405,6 +11649,7 @@ class IAnalysisWorkbenchIntegral(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchIntegral."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchIntegral)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11414,6 +11659,7 @@ class IAnalysisWorkbenchIntegral(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchIntegral)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchIntegral, None)
     
 
@@ -11436,6 +11682,7 @@ class ICalculationToolIntegralBasic(object):
                              "set_maximum_iterations" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolIntegralBasic."""
         initialize_from_source_object(self, sourceObject, ICalculationToolIntegralBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11445,6 +11692,7 @@ class ICalculationToolIntegralBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolIntegralBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolIntegralBasic, None)
     
     _get_type_metadata = { "name" : "type",
@@ -11507,6 +11755,7 @@ class IAnalysisWorkbenchInterp(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchInterp."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInterp)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11516,6 +11765,7 @@ class IAnalysisWorkbenchInterp(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchInterp)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchInterp, None)
     
 
@@ -11536,6 +11786,7 @@ class ICalculationToolInterpBasic(object):
                              "set_order" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolInterpBasic."""
         initialize_from_source_object(self, sourceObject, ICalculationToolInterpBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11545,6 +11796,7 @@ class ICalculationToolInterpBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolInterpBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolInterpBasic, None)
     
     _get_type_metadata = { "name" : "type",
@@ -11595,6 +11847,7 @@ class ITimeToolIntervalsFilter(object):
                              "set_interval_duration" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolIntervalsFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolIntervalsFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11604,6 +11857,7 @@ class ITimeToolIntervalsFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolIntervalsFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolIntervalsFilter, None)
     
     _get_duration_kind_metadata = { "name" : "duration_kind",
@@ -11652,6 +11906,7 @@ class ITimeToolLastIntervalsFilter(object):
                              "set_maximum_number_of_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolLastIntervalsFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolLastIntervalsFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11661,6 +11916,7 @@ class ITimeToolLastIntervalsFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolLastIntervalsFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolLastIntervalsFilter, None)
     
     _get_maximum_number_of_intervals_metadata = { "name" : "maximum_number_of_intervals",
@@ -11698,6 +11954,7 @@ class ICalculationToolParameterSet(object):
                              "calculate_with_derivative" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSet."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11707,6 +11964,7 @@ class ICalculationToolParameterSet(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSet)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSet, None)
     
     _get_type_metadata = { "name" : "type",
@@ -11773,6 +12031,7 @@ class ICalculationToolParameterSetAttitude(object):
                              "set_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetAttitude."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetAttitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11782,6 +12041,7 @@ class ICalculationToolParameterSetAttitude(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetAttitude)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetAttitude, None)
     
     _get_axes_metadata = { "name" : "axes",
@@ -11835,6 +12095,7 @@ class ICalculationToolParameterSetFactory(object):
                              "is_type_supported" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetFactory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11844,6 +12105,7 @@ class ICalculationToolParameterSetFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -11913,6 +12175,7 @@ class ICalculationToolParameterSetGroundTrajectory(object):
                              "set_central_body" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetGroundTrajectory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetGroundTrajectory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11922,6 +12185,7 @@ class ICalculationToolParameterSetGroundTrajectory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetGroundTrajectory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetGroundTrajectory, None)
     
     _get_location_metadata = { "name" : "location",
@@ -11980,6 +12244,7 @@ class ICalculationToolParameterSetOrbit(object):
                              "set_use_central_body_inertial" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetOrbit."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetOrbit)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11989,6 +12254,7 @@ class ICalculationToolParameterSetOrbit(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetOrbit)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetOrbit, None)
     
     _get_orbiting_point_metadata = { "name" : "orbiting_point",
@@ -12099,6 +12365,7 @@ class ICalculationToolParameterSetTrajectory(object):
                              "set_reference_system" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetTrajectory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetTrajectory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12108,6 +12375,7 @@ class ICalculationToolParameterSetTrajectory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetTrajectory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetTrajectory, None)
     
     _get_point_metadata = { "name" : "point",
@@ -12158,6 +12426,7 @@ class ICalculationToolParameterSetVector(object):
                              "set_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolParameterSetVector."""
         initialize_from_source_object(self, sourceObject, ICalculationToolParameterSetVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12167,6 +12436,7 @@ class ICalculationToolParameterSetVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolParameterSetVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolParameterSetVector, None)
     
     _get_vector_metadata = { "name" : "vector",
@@ -12214,6 +12484,7 @@ class ITimeToolPruneFilter(object):
         "method_offsets" : { "get_filter_type" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolPruneFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolPruneFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12223,6 +12494,7 @@ class ITimeToolPruneFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPruneFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPruneFilter, None)
     
     _get_filter_type_metadata = { "name" : "filter_type",
@@ -12248,6 +12520,7 @@ class ITimeToolPruneFilterFactory(object):
         "method_offsets" : { "create" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolPruneFilterFactory."""
         initialize_from_source_object(self, sourceObject, ITimeToolPruneFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12257,6 +12530,7 @@ class ITimeToolPruneFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPruneFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPruneFilterFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -12286,6 +12560,7 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
                              "set_relative_interval_duration" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolRelativeSatisfactionConditionFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolRelativeSatisfactionConditionFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12295,6 +12570,7 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolRelativeSatisfactionConditionFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolRelativeSatisfactionConditionFilter, None)
     
     _get_condition_metadata = { "name" : "condition",
@@ -12302,7 +12578,7 @@ class ITimeToolRelativeSatisfactionConditionFilter(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def condition(self) -> "ICalculationToolCondition":
-        """This additional condition must be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list."""
+        """Get or set the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list."""
         return self._intf.get_property(ITimeToolRelativeSatisfactionConditionFilter._metadata, ITimeToolRelativeSatisfactionConditionFilter._get_condition_metadata)
 
     _set_condition_metadata = { "name" : "condition",
@@ -12357,6 +12633,7 @@ class IAnalysisWorkbenchSampling(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchSampling."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSampling)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12366,6 +12643,7 @@ class IAnalysisWorkbenchSampling(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchSampling)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSampling, None)
     
 
@@ -12385,6 +12663,7 @@ class ICalculationToolSamplingBasic(object):
                              "get_method_factory" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingBasic."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12394,6 +12673,7 @@ class ICalculationToolSamplingBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingBasic, None)
     
     _get_sampling_method_metadata = { "name" : "sampling_method",
@@ -12445,6 +12725,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
                              "set_curvature_tolerance" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingCurvatureTolerance."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingCurvatureTolerance)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12454,6 +12735,7 @@ class ICalculationToolSamplingCurvatureTolerance(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingCurvatureTolerance)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingCurvatureTolerance, None)
     
     _get_minimum_time_step_metadata = { "name" : "minimum_time_step",
@@ -12562,6 +12844,7 @@ class ICalculationToolSamplingFixedStep(object):
                              "set_time_step" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingFixedStep."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingFixedStep)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12571,6 +12854,7 @@ class ICalculationToolSamplingFixedStep(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingFixedStep)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingFixedStep, None)
     
     _get_time_step_metadata = { "name" : "time_step",
@@ -12603,6 +12887,7 @@ class ICalculationToolSamplingMethod(object):
         "method_offsets" : { "get_method_type" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingMethod."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12612,6 +12897,7 @@ class ICalculationToolSamplingMethod(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingMethod)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingMethod, None)
     
     _get_method_type_metadata = { "name" : "method_type",
@@ -12639,6 +12925,7 @@ class ICalculationToolSamplingMethodFactory(object):
                              "create_relative_tolerance" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingMethodFactory."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethodFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12648,6 +12935,7 @@ class ICalculationToolSamplingMethodFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingMethodFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingMethodFactory, None)
     
     _create_fixed_step_metadata = { "name" : "create_fixed_step",
@@ -12695,6 +12983,7 @@ class ICalculationToolSamplingRelativeTolerance(object):
                              "set_absolute_tolerance" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICalculationToolSamplingRelativeTolerance."""
         initialize_from_source_object(self, sourceObject, ICalculationToolSamplingRelativeTolerance)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12704,6 +12993,7 @@ class ICalculationToolSamplingRelativeTolerance(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICalculationToolSamplingRelativeTolerance)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICalculationToolSamplingRelativeTolerance, None)
     
     _get_minimum_time_step_metadata = { "name" : "minimum_time_step",
@@ -12801,6 +13091,7 @@ class ITimeToolSatisfactionConditionFilter(object):
                              "set_interval_duration" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolSatisfactionConditionFilter."""
         initialize_from_source_object(self, sourceObject, ITimeToolSatisfactionConditionFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12810,6 +13101,7 @@ class ITimeToolSatisfactionConditionFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolSatisfactionConditionFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolSatisfactionConditionFilter, None)
     
     _get_condition_metadata = { "name" : "condition",
@@ -12817,7 +13109,7 @@ class ITimeToolSatisfactionConditionFilter(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def condition(self) -> "ICalculationToolCondition":
-        """This additional condition must be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list."""
+        """Get or set the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list."""
         return self._intf.get_property(ITimeToolSatisfactionConditionFilter._metadata, ITimeToolSatisfactionConditionFilter._get_condition_metadata)
 
     _set_condition_metadata = { "name" : "condition",
@@ -12872,6 +13164,7 @@ class IAnalysisWorkbenchSignalDelay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchSignalDelay."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSignalDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12881,6 +13174,7 @@ class IAnalysisWorkbenchSignalDelay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchSignalDelay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchSignalDelay, None)
     
 
@@ -12907,6 +13201,7 @@ class ITimeToolSignalDelayBasic(object):
                              "set_time_delay_convergence" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolSignalDelayBasic."""
         initialize_from_source_object(self, sourceObject, ITimeToolSignalDelayBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12916,6 +13211,7 @@ class ITimeToolSignalDelayBasic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolSignalDelayBasic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolSignalDelayBasic, None)
     
     _get_signal_path_reference_system_metadata = { "name" : "signal_path_reference_system",
@@ -13017,6 +13313,7 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
                              "create_volume_calc_delay_range" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcFactory."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13026,6 +13323,7 @@ class ISpatialAnalysisToolVolumeCalcFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFactory, None)
     
     _is_type_supported_metadata = { "name" : "is_type_supported",
@@ -13122,6 +13420,7 @@ class ISpatialAnalysisToolVolumeFactory(object):
                              "create_volume_inview" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeFactory."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13131,6 +13430,7 @@ class ISpatialAnalysisToolVolumeFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -13225,6 +13525,7 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
                              "create_volume_grid_bearing_altitude" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridFactory."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13234,6 +13535,7 @@ class ISpatialAnalysisToolVolumeGridFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -13312,6 +13614,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
                              "set_grid_values_fixed_number_of_steps_ex" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolGridCoordinateDefinition."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridCoordinateDefinition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13321,6 +13624,7 @@ class ISpatialAnalysisToolGridCoordinateDefinition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridCoordinateDefinition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridCoordinateDefinition, None)
     
     _get_method_type_metadata = { "name" : "method_type",
@@ -13383,6 +13687,7 @@ class ISpatialAnalysisToolGridValuesCustom(object):
                              "set_values" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolGridValuesCustom."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesCustom)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13392,6 +13697,7 @@ class ISpatialAnalysisToolGridValuesCustom(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesCustom)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesCustom, None)
     
     _get_values_metadata = { "name" : "values",
@@ -13433,6 +13739,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
                              "set_max_ex" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolGridValuesFixedNumberOfSteps."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesFixedNumberOfSteps)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13442,6 +13749,7 @@ class ISpatialAnalysisToolGridValuesFixedNumberOfSteps(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedNumberOfSteps)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesFixedNumberOfSteps, None)
     
     _get_min_metadata = { "name" : "min",
@@ -13543,6 +13851,7 @@ class ISpatialAnalysisToolGridValuesFixedStep(object):
                              "set_step" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolGridValuesFixedStep."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesFixedStep)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13552,6 +13861,7 @@ class ISpatialAnalysisToolGridValuesFixedStep(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesFixedStep)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesFixedStep, None)
     
     _get_min_metadata = { "name" : "min",
@@ -13644,6 +13954,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
         "method_offsets" : { "get_method_type" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolGridValuesMethod."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13653,6 +13964,7 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolGridValuesMethod)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolGridValuesMethod, None)
     
     _get_method_type_metadata = { "name" : "method_type",
@@ -13687,6 +13999,7 @@ class ITimeToolLightTimeDelay(object):
                              "set_time_sense" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolLightTimeDelay."""
         initialize_from_source_object(self, sourceObject, ITimeToolLightTimeDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13696,6 +14009,7 @@ class ITimeToolLightTimeDelay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolLightTimeDelay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolLightTimeDelay, None)
     
     _get_use_light_time_delay_metadata = { "name" : "use_light_time_delay",
@@ -13788,6 +14102,7 @@ class ISpatialAnalysisToolVolume(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolume."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolume)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13797,6 +14112,7 @@ class ISpatialAnalysisToolVolume(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolume)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolume, None)
     
 
@@ -13814,6 +14130,7 @@ class ISpatialAnalysisToolVolumeCalc(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalc."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalc)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13823,6 +14140,7 @@ class ISpatialAnalysisToolVolumeCalc(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalc)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalc, None)
     
 
@@ -13847,6 +14165,7 @@ class ISpatialAnalysisToolVolumeCalcAltitude(object):
                              "set_reference_point" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcAltitude."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcAltitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13856,6 +14175,7 @@ class ISpatialAnalysisToolVolumeCalcAltitude(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAltitude)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcAltitude, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -13942,6 +14262,7 @@ class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
                              "set_about_vector" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcAngleOffVector."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcAngleOffVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13951,6 +14272,7 @@ class ISpatialAnalysisToolVolumeCalcAngleOffVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcAngleOffVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcAngleOffVector, None)
     
     _get_angle_metadata = { "name" : "angle",
@@ -14062,6 +14384,7 @@ class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
                              "set_maximum_duration_time" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcConditionSatMetric."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcConditionSatMetric)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14071,6 +14394,7 @@ class ISpatialAnalysisToolVolumeCalcConditionSatMetric(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcConditionSatMetric)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcConditionSatMetric, None)
     
     _get_spatial_condition_metadata = { "name" : "spatial_condition",
@@ -14249,6 +14573,7 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
                              "set_speed" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcDelayRange."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcDelayRange)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14258,6 +14583,7 @@ class ISpatialAnalysisToolVolumeCalcDelayRange(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcDelayRange)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcDelayRange, None)
     
     _get_distance_metadata = { "name" : "distance",
@@ -14367,6 +14693,7 @@ class ISpatialAnalysisToolVolumeCalcFile(object):
                              "reload" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcFile."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14376,6 +14703,7 @@ class ISpatialAnalysisToolVolumeCalcFile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFile, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -14416,6 +14744,7 @@ class ISpatialAnalysisToolVolumeCalcFromScalar(object):
                              "set_scalar" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcFromScalar."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcFromScalar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14425,6 +14754,7 @@ class ISpatialAnalysisToolVolumeCalcFromScalar(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcFromScalar)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcFromScalar, None)
     
     _get_scalar_metadata = { "name" : "scalar",
@@ -14464,6 +14794,7 @@ class ISpatialAnalysisToolVolumeCalcRange(object):
                              "set_along_vector" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcRange."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcRange)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14473,6 +14804,7 @@ class ISpatialAnalysisToolVolumeCalcRange(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcRange)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcRange, None)
     
     _get_distance_metadata = { "name" : "distance",
@@ -14553,6 +14885,7 @@ class ISpatialAnalysisToolVolumeCalcSolarIntensity(object):
                              "set_use_object_eclipsing_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCalcSolarIntensity."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCalcSolarIntensity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14562,6 +14895,7 @@ class ISpatialAnalysisToolVolumeCalcSolarIntensity(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCalcSolarIntensity)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCalcSolarIntensity, None)
     
     _get_eclipsing_bodies_metadata = { "name" : "eclipsing_bodies",
@@ -14616,6 +14950,7 @@ class ISpatialAnalysisToolVolumeCombined(object):
                              "remove_condition" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeCombined."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeCombined)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14625,6 +14960,7 @@ class ISpatialAnalysisToolVolumeCombined(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeCombined)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeCombined, None)
     
     _get_combine_operation_metadata = { "name" : "combine_operation",
@@ -14708,6 +15044,7 @@ class ISpatialAnalysisToolVolumeFromCalc(object):
                              "set" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeFromCalc."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromCalc)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14717,6 +15054,7 @@ class ISpatialAnalysisToolVolumeFromCalc(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCalc)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromCalc, None)
     
     _get_operation_metadata = { "name" : "operation",
@@ -14808,6 +15146,7 @@ class ISpatialAnalysisToolVolumeFromCondition(object):
                              "set_convergence" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeFromCondition."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14817,6 +15156,7 @@ class ISpatialAnalysisToolVolumeFromCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromCondition, None)
     
     _get_condition_metadata = { "name" : "condition",
@@ -14912,6 +15252,7 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
                              "set_volume_grid" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeFromGrid."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromGrid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14921,6 +15262,7 @@ class ISpatialAnalysisToolVolumeFromGrid(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromGrid)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromGrid, None)
     
     _get_edge_type_metadata = { "name" : "edge_type",
@@ -14969,6 +15311,7 @@ class ISpatialAnalysisToolVolumeFromTimeSatisfaction(object):
                              "set_time_satisfaction" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeFromTimeSatisfaction."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeFromTimeSatisfaction)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14978,6 +15321,7 @@ class ISpatialAnalysisToolVolumeFromTimeSatisfaction(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeFromTimeSatisfaction)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeFromTimeSatisfaction, None)
     
     _get_time_satisfaction_metadata = { "name" : "time_satisfaction",
@@ -15010,6 +15354,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGrid."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGrid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15019,6 +15364,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGrid)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGrid, None)
     
 
@@ -15046,6 +15392,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
                              "set_reference_location" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridBearingAlt."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridBearingAlt)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15055,6 +15402,7 @@ class ISpatialAnalysisToolVolumeGridBearingAlt(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridBearingAlt)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridBearingAlt, None)
     
     _get_reference_central_body_metadata = { "name" : "reference_central_body",
@@ -15160,6 +15508,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
                              "get_z_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridCartesian."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridCartesian)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15169,6 +15518,7 @@ class ISpatialAnalysisToolVolumeGridCartesian(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCartesian)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridCartesian, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
@@ -15228,6 +15578,7 @@ class ISpatialAnalysisToolVolumeGridConstrained(object):
                              "set_constraint" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridConstrained."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridConstrained)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15237,6 +15588,7 @@ class ISpatialAnalysisToolVolumeGridConstrained(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridConstrained)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridConstrained, None)
     
     _get_reference_grid_metadata = { "name" : "reference_grid",
@@ -15288,6 +15640,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
                              "get_height_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridCylindrical."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridCylindrical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15297,6 +15650,7 @@ class ISpatialAnalysisToolVolumeGridCylindrical(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridCylindrical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridCylindrical, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
@@ -15359,6 +15713,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
                              "set_auto_fit_bounds" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridLatLonAlt."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridLatLonAlt)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15368,6 +15723,7 @@ class ISpatialAnalysisToolVolumeGridLatLonAlt(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridLatLonAlt)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridLatLonAlt, None)
     
     _get_reference_central_body_metadata = { "name" : "reference_central_body",
@@ -15446,6 +15802,7 @@ class ISpatialAnalysisToolVolumeGridResult(object):
                              "get_volume_metric_gradient_vector" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridResult."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15455,6 +15812,7 @@ class ISpatialAnalysisToolVolumeGridResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridResult, None)
     
     _get_epoch_metadata = { "name" : "epoch",
@@ -15540,6 +15898,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
                              "get_range_coordinates" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeGridSpherical."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGridSpherical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15549,6 +15908,7 @@ class ISpatialAnalysisToolVolumeGridSpherical(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeGridSpherical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeGridSpherical, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
@@ -15607,6 +15967,7 @@ class ISpatialAnalysisToolVolumeInview(object):
                              "get_light_time_delay" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeInview."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeInview)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15616,6 +15977,7 @@ class ISpatialAnalysisToolVolumeInview(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeInview)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeInview, None)
     
     _get_constraint_object_metadata = { "name" : "constraint_object",
@@ -15661,6 +16023,7 @@ class ISpatialAnalysisToolVolumeLighting(object):
                              "set_lighting_conditions" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeLighting."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeLighting)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15670,6 +16033,7 @@ class ISpatialAnalysisToolVolumeLighting(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeLighting)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeLighting, None)
     
     _get_eclipsing_bodies_metadata = { "name" : "eclipsing_bodies",
@@ -15741,6 +16105,7 @@ class ISpatialAnalysisToolVolumeOverTime(object):
                              "set_stop_offset" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpatialAnalysisToolVolumeOverTime."""
         initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeOverTime)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15750,6 +16115,7 @@ class ISpatialAnalysisToolVolumeOverTime(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpatialAnalysisToolVolumeOverTime)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpatialAnalysisToolVolumeOverTime, None)
     
     _get_duration_type_metadata = { "name" : "duration_type",
@@ -15842,6 +16208,7 @@ class ITimeToolTimeProperties(object):
         "method_offsets" : { "get_availability" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolTimeProperties."""
         initialize_from_source_object(self, sourceObject, ITimeToolTimeProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15851,6 +16218,7 @@ class ITimeToolTimeProperties(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolTimeProperties)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolTimeProperties, None)
     
     _get_availability_metadata = { "name" : "get_availability",
@@ -15877,6 +16245,7 @@ class IAnalysisWorkbenchTypeInfo(object):
                              "get_short_type_description" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchTypeInfo."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchTypeInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15886,6 +16255,7 @@ class IAnalysisWorkbenchTypeInfo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchTypeInfo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchTypeInfo, None)
     
     _get_type_description_metadata = { "name" : "type_description",
@@ -15927,6 +16297,7 @@ class IAnalysisWorkbenchRefTo(object):
         "method_offsets" : { "get_path" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchRefTo."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15936,6 +16307,7 @@ class IAnalysisWorkbenchRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchRefTo, None)
     
     _get_path_metadata = { "name" : "path",
@@ -15961,6 +16333,7 @@ class IAnalysisWorkbenchTemplate(object):
         "method_offsets" : { "get_class_name" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchTemplate."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchTemplate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15970,6 +16343,7 @@ class IAnalysisWorkbenchTemplate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchTemplate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchTemplate, None)
     
     _get_class_name_metadata = { "name" : "class_name",
@@ -15996,6 +16370,7 @@ class IAnalysisWorkbenchInstance(object):
                              "get_template" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchInstance."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInstance)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16005,6 +16380,7 @@ class IAnalysisWorkbenchInstance(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchInstance)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchInstance, None)
     
     _get_instance_path_metadata = { "name" : "instance_path",
@@ -16041,6 +16417,7 @@ class IVectorGeometryToolPointRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16050,6 +16427,7 @@ class IVectorGeometryToolPointRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16098,6 +16476,7 @@ class IVectorGeometryToolVectorRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16107,6 +16486,7 @@ class IVectorGeometryToolVectorRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16155,6 +16535,7 @@ class IVectorGeometryToolAxesRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16164,6 +16545,7 @@ class IVectorGeometryToolAxesRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16212,6 +16594,7 @@ class IVectorGeometryToolAngleRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16221,6 +16604,7 @@ class IVectorGeometryToolAngleRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16269,6 +16653,7 @@ class IVectorGeometryToolSystemRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16278,6 +16663,7 @@ class IVectorGeometryToolSystemRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16326,6 +16712,7 @@ class IVectorGeometryToolPlaneRefTo(object):
                              "has_cyclic_dependency" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneRefTo."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16335,6 +16722,7 @@ class IVectorGeometryToolPlaneRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -16385,6 +16773,7 @@ class IVectorGeometryToolAxesLabels(object):
                              "set_label_z" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesLabels."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16394,6 +16783,7 @@ class IVectorGeometryToolAxesLabels(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesLabels)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesLabels, None)
     
     _get_label_x_metadata = { "name" : "label_x",
@@ -16459,6 +16849,7 @@ class IVectorGeometryToolPlaneLabels(object):
                              "set_y_axis_label" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneLabels."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16468,6 +16859,7 @@ class IVectorGeometryToolPlaneLabels(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneLabels)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneLabels, None)
     
     _get_x_axis_label_metadata = { "name" : "x_axis_label",
@@ -16518,6 +16910,7 @@ class IVectorGeometryToolAxesAlignedAndConstrained(object):
                              "get_constraint_direction" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesAlignedAndConstrained."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAlignedAndConstrained)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16527,6 +16920,7 @@ class IVectorGeometryToolAxesAlignedAndConstrained(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAlignedAndConstrained)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAlignedAndConstrained, None)
     
     _get_alignment_reference_vector_metadata = { "name" : "alignment_reference_vector",
@@ -16580,6 +16974,7 @@ class IVectorGeometryToolAxesAngularOffset(object):
                              "set_fixed_offset_angle" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesAngularOffset."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAngularOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16589,6 +16984,7 @@ class IVectorGeometryToolAxesAngularOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAngularOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAngularOffset, None)
     
     _get_spin_vector_metadata = { "name" : "spin_vector",
@@ -16648,6 +17044,7 @@ class IVectorGeometryToolAxesFixedAtEpoch(object):
                              "set_epoch" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesFixedAtEpoch."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFixedAtEpoch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16657,6 +17054,7 @@ class IVectorGeometryToolAxesFixedAtEpoch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFixedAtEpoch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFixedAtEpoch, None)
     
     _get_source_axes_metadata = { "name" : "source_axes",
@@ -16709,6 +17107,7 @@ class IVectorGeometryToolAxesBPlane(object):
                              "set_direction" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesBPlane."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesBPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16718,6 +17117,7 @@ class IVectorGeometryToolAxesBPlane(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesBPlane)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesBPlane, None)
     
     _get_trajectory_metadata = { "name" : "trajectory",
@@ -16776,6 +17176,7 @@ class IVectorGeometryToolAxesCustomScript(object):
                              "set_filename" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesCustomScript."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesCustomScript)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16785,6 +17186,7 @@ class IVectorGeometryToolAxesCustomScript(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesCustomScript)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesCustomScript, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
@@ -16826,6 +17228,7 @@ class IVectorGeometryToolAxesAttitudeFile(object):
                              "set_filename" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesAttitudeFile."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAttitudeFile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16835,6 +17238,7 @@ class IVectorGeometryToolAxesAttitudeFile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAttitudeFile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAttitudeFile, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -16868,6 +17272,7 @@ class IVectorGeometryToolAxesFixed(object):
                              "get_fixed_orientation" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesFixed."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFixed)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16877,6 +17282,7 @@ class IVectorGeometryToolAxesFixed(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFixed)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFixed, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
@@ -16911,6 +17317,7 @@ class IVectorGeometryToolAxesModelAttach(object):
                              "set_pointable_element_name" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesModelAttach."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesModelAttach)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16920,6 +17327,7 @@ class IVectorGeometryToolAxesModelAttach(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesModelAttach)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
@@ -16959,6 +17367,7 @@ class IVectorGeometryToolAxesSpinning(object):
                              "set_spin_rate" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesSpinning."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesSpinning)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16968,6 +17377,7 @@ class IVectorGeometryToolAxesSpinning(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesSpinning)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesSpinning, None)
     
     _get_spin_vector_metadata = { "name" : "spin_vector",
@@ -17049,6 +17459,7 @@ class IVectorGeometryToolAxesOnSurface(object):
                              "set_use_msl" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesOnSurface."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesOnSurface)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17058,6 +17469,7 @@ class IVectorGeometryToolAxesOnSurface(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesOnSurface)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -17109,6 +17521,7 @@ class IVectorGeometryToolAxesTrajectory(object):
                              "set_trajectory_axes_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesTrajectory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTrajectory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17118,6 +17531,7 @@ class IVectorGeometryToolAxesTrajectory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTrajectory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTrajectory, None)
     
     _get_trajectory_point_metadata = { "name" : "trajectory_point",
@@ -17169,6 +17583,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
                              "get_secondary_central_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesLagrangeLibration."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesLagrangeLibration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17178,6 +17593,7 @@ class IVectorGeometryToolAxesLagrangeLibration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesLagrangeLibration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesLagrangeLibration, None)
     
     _get_primary_central_body_metadata = { "name" : "primary_central_body",
@@ -17229,6 +17645,7 @@ class IVectorGeometryToolAxesCommonTasks(object):
                              "sample" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesCommonTasks."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17238,6 +17655,7 @@ class IVectorGeometryToolAxesCommonTasks(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesCommonTasks)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesCommonTasks, None)
     
     _create_topocentric_axes_quaternion_metadata = { "name" : "create_topocentric_axes_quaternion",
@@ -17288,6 +17706,7 @@ class IVectorGeometryToolAxesAtTimeInstant(object):
                              "set_reference_axes" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesAtTimeInstant."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesAtTimeInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17297,6 +17716,7 @@ class IVectorGeometryToolAxesAtTimeInstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesAtTimeInstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -17364,6 +17784,7 @@ class IVectorGeometryToolAxesPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesPlugin."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesPlugin)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17373,6 +17794,7 @@ class IVectorGeometryToolAxesPlugin(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesPlugin)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
@@ -17436,6 +17858,7 @@ class IVectorGeometryToolAngleBetweenVectors(object):
                              "get_to_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleBetweenVectors."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleBetweenVectors)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17445,6 +17868,7 @@ class IVectorGeometryToolAngleBetweenVectors(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleBetweenVectors)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleBetweenVectors, None)
     
     _get_from_vector_metadata = { "name" : "from_vector",
@@ -17479,6 +17903,7 @@ class IVectorGeometryToolAngleBetweenPlanes(object):
                              "get_to_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleBetweenPlanes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleBetweenPlanes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17488,6 +17913,7 @@ class IVectorGeometryToolAngleBetweenPlanes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleBetweenPlanes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleBetweenPlanes, None)
     
     _get_from_plane_metadata = { "name" : "from_plane",
@@ -17527,6 +17953,7 @@ class IVectorGeometryToolAngleDihedral(object):
                              "set_signed_angle" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleDihedral."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleDihedral)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17536,6 +17963,7 @@ class IVectorGeometryToolAngleDihedral(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleDihedral)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleDihedral, None)
     
     _get_from_vector_metadata = { "name" : "from_vector",
@@ -17610,6 +18038,7 @@ class IVectorGeometryToolAngleRotation(object):
                              "set_reference_direction" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleRotation."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleRotation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17619,6 +18048,7 @@ class IVectorGeometryToolAngleRotation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleRotation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleRotation, None)
     
     _get_from_axes_metadata = { "name" : "from_axes",
@@ -17670,6 +18100,7 @@ class IVectorGeometryToolAngleToPlane(object):
                              "set_signed" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleToPlane."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleToPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17679,6 +18110,7 @@ class IVectorGeometryToolAngleToPlane(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleToPlane)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleToPlane, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
@@ -17729,6 +18161,7 @@ class IVectorGeometryToolPlaneNormal(object):
                              "get_reference_point" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneNormal."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneNormal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17738,6 +18171,7 @@ class IVectorGeometryToolPlaneNormal(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneNormal)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneNormal, None)
     
     _get_normal_vector_metadata = { "name" : "normal_vector",
@@ -17781,6 +18215,7 @@ class IVectorGeometryToolPlaneQuadrant(object):
                              "set_quadrant" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneQuadrant."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneQuadrant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17790,6 +18225,7 @@ class IVectorGeometryToolPlaneQuadrant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneQuadrant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneQuadrant, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
@@ -17833,6 +18269,7 @@ class IVectorGeometryToolPlaneTrajectory(object):
                              "set_rotation_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneTrajectory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTrajectory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17842,6 +18279,7 @@ class IVectorGeometryToolPlaneTrajectory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTrajectory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTrajectory, None)
     
     _get_point_metadata = { "name" : "point",
@@ -17894,6 +18332,7 @@ class IVectorGeometryToolPlaneTriad(object):
                              "set_rotation_offset" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneTriad."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTriad)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17903,6 +18342,7 @@ class IVectorGeometryToolPlaneTriad(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTriad)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTriad, None)
     
     _get_point_a_metadata = { "name" : "point_a",
@@ -17961,6 +18401,7 @@ class IVectorGeometryToolPlaneTwoVector(object):
                              "get_reference_point" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneTwoVector."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneTwoVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17970,6 +18411,7 @@ class IVectorGeometryToolPlaneTwoVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneTwoVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneTwoVector, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
@@ -18016,6 +18458,7 @@ class IVectorGeometryToolPointBPlane(object):
                              "set_direction" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointBPlane."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointBPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18025,6 +18468,7 @@ class IVectorGeometryToolPointBPlane(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointBPlane)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointBPlane, None)
     
     _get_target_body_metadata = { "name" : "target_body",
@@ -18089,6 +18533,7 @@ class IVectorGeometryToolPointFile(object):
                              "set_filename" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointFile."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18098,6 +18543,7 @@ class IVectorGeometryToolPointFile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFile, None)
     
     _get_filename_metadata = { "name" : "filename",
@@ -18131,6 +18577,7 @@ class IVectorGeometryToolPointFixedInSystem(object):
                              "get_fixed_point" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointFixedInSystem."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFixedInSystem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18140,6 +18587,7 @@ class IVectorGeometryToolPointFixedInSystem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFixedInSystem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFixedInSystem, None)
     
     _get_reference_metadata = { "name" : "reference",
@@ -18177,6 +18625,7 @@ class IVectorGeometryToolPointGrazing(object):
                              "set_altitude" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointGrazing."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGrazing)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18186,6 +18635,7 @@ class IVectorGeometryToolPointGrazing(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGrazing)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGrazing, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -18244,6 +18694,7 @@ class IVectorGeometryToolPointGlint(object):
                              "get_observer_point" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointGlint."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGlint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18253,6 +18704,7 @@ class IVectorGeometryToolPointGlint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGlint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGlint, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -18305,6 +18757,7 @@ class IVectorGeometryToolPointCovarianceGrazing(object):
                              "set_use_probability" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointCovarianceGrazing."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCovarianceGrazing)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18314,6 +18767,7 @@ class IVectorGeometryToolPointCovarianceGrazing(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCovarianceGrazing)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCovarianceGrazing, None)
     
     _get_reference_point_metadata = { "name" : "reference_point",
@@ -18424,6 +18878,7 @@ class IVectorGeometryToolPointPlaneIntersection(object):
                              "get_origin_point" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointPlaneIntersection."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlaneIntersection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18433,6 +18888,7 @@ class IVectorGeometryToolPointPlaneIntersection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlaneIntersection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlaneIntersection, None)
     
     _get_direction_vector_metadata = { "name" : "direction_vector",
@@ -18479,6 +18935,7 @@ class IVectorGeometryToolPointOnSurface(object):
                              "set_surface_type" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointOnSurface."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointOnSurface)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18488,6 +18945,7 @@ class IVectorGeometryToolPointOnSurface(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointOnSurface)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -18554,6 +19012,7 @@ class IVectorGeometryToolPointModelAttach(object):
                              "set_use_scale" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointModelAttach."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointModelAttach)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18563,6 +19022,7 @@ class IVectorGeometryToolPointModelAttach(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointModelAttach)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
@@ -18611,6 +19071,7 @@ class IVectorGeometryToolPointSatelliteCollectionEntry(object):
                              "set_entry_name" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointSatelliteCollectionEntry."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointSatelliteCollectionEntry)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18620,6 +19081,7 @@ class IVectorGeometryToolPointSatelliteCollectionEntry(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointSatelliteCollectionEntry)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointSatelliteCollectionEntry, None)
     
     _get_entry_name_metadata = { "name" : "entry_name",
@@ -18653,6 +19115,7 @@ class IVectorGeometryToolPointPlaneProjection(object):
                              "get_reference_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointPlaneProjection."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlaneProjection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18662,6 +19125,7 @@ class IVectorGeometryToolPointPlaneProjection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlaneProjection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlaneProjection, None)
     
     _get_source_point_metadata = { "name" : "source_point",
@@ -18698,6 +19162,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
                              "get_secondary_central_bodies" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointLagrangeLibration."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLagrangeLibration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18707,6 +19172,7 @@ class IVectorGeometryToolPointLagrangeLibration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLagrangeLibration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLagrangeLibration, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -18757,6 +19223,7 @@ class IVectorGeometryToolPointCommonTasks(object):
                              "sample" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointCommonTasks."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18766,6 +19233,7 @@ class IVectorGeometryToolPointCommonTasks(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCommonTasks)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCommonTasks, None)
     
     _create_fixed_in_system_cartographic_metadata = { "name" : "create_fixed_in_system_cartographic",
@@ -18826,6 +19294,7 @@ class IVectorGeometryToolPointCentBodyIntersect(object):
                              "set_allow_intersection_from_below" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointCentBodyIntersect."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCentBodyIntersect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18835,6 +19304,7 @@ class IVectorGeometryToolPointCentBodyIntersect(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCentBodyIntersect)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCentBodyIntersect, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -19029,6 +19499,7 @@ class IVectorGeometryToolPointAtTimeInstant(object):
                              "set_reference_system" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointAtTimeInstant."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointAtTimeInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19038,6 +19509,7 @@ class IVectorGeometryToolPointAtTimeInstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointAtTimeInstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -19105,6 +19577,7 @@ class IVectorGeometryToolPointPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointPlugin."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointPlugin)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19114,6 +19587,7 @@ class IVectorGeometryToolPointPlugin(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointPlugin)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
@@ -19180,6 +19654,7 @@ class IVectorGeometryToolPointCBFixedOffset(object):
                              "get_position" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointCBFixedOffset."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointCBFixedOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19189,6 +19664,7 @@ class IVectorGeometryToolPointCBFixedOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointCBFixedOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointCBFixedOffset, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -19245,6 +19721,7 @@ class IVectorGeometryToolSystemAssembled(object):
                              "get_reference_axes" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemAssembled."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemAssembled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19254,6 +19731,7 @@ class IVectorGeometryToolSystemAssembled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemAssembled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemAssembled, None)
     
     _get_origin_point_metadata = { "name" : "origin_point",
@@ -19292,6 +19770,7 @@ class IVectorGeometryToolSystemOnSurface(object):
                              "get_position" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemOnSurface."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemOnSurface)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19301,6 +19780,7 @@ class IVectorGeometryToolSystemOnSurface(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemOnSurface)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemOnSurface, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -19369,6 +19849,7 @@ class IAnalysisWorkbenchLLAPosition(object):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchLLAPosition."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchLLAPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19378,6 +19859,7 @@ class IAnalysisWorkbenchLLAPosition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchLLAPosition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchLLAPosition, None)
     
     _get_latitude_metadata = { "name" : "latitude",
@@ -19441,6 +19923,7 @@ class IVectorGeometryToolSystemCommonTasks(object):
                              "create_assembled" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemCommonTasks."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19450,6 +19933,7 @@ class IVectorGeometryToolSystemCommonTasks(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemCommonTasks)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemCommonTasks, None)
     
     _create_east_north_up_cartographic_metadata = { "name" : "create_east_north_up_cartographic",
@@ -19483,6 +19967,7 @@ class IVectorGeometryToolVectorAngleRate(object):
                              "set_differencing_time_step" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorAngleRate."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorAngleRate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19492,6 +19977,7 @@ class IVectorGeometryToolVectorAngleRate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorAngleRate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorAngleRate, None)
     
     _get_angle_metadata = { "name" : "angle",
@@ -19535,6 +20021,7 @@ class IVectorGeometryToolVectorApoapsis(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorApoapsis."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorApoapsis)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19544,6 +20031,7 @@ class IVectorGeometryToolVectorApoapsis(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorApoapsis)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorApoapsis, None)
     
     _get_reference_point_metadata = { "name" : "reference_point",
@@ -19595,6 +20083,7 @@ class IVectorGeometryToolVectorFixedAtEpoch(object):
                              "get_reference_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFixedAtEpoch."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedAtEpoch)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19604,6 +20093,7 @@ class IVectorGeometryToolVectorFixedAtEpoch(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtEpoch)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedAtEpoch, None)
     
     _get_epoch_metadata = { "name" : "epoch",
@@ -19655,6 +20145,7 @@ class IVectorGeometryToolVectorAngularVelocity(object):
                              "set_differencing_time_step" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorAngularVelocity."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorAngularVelocity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19664,6 +20155,7 @@ class IVectorGeometryToolVectorAngularVelocity(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorAngularVelocity)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorAngularVelocity, None)
     
     _get_axes_metadata = { "name" : "axes",
@@ -19723,6 +20215,7 @@ class IVectorGeometryToolVectorConing(object):
                              "set_mode" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorConing."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorConing)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19732,6 +20225,7 @@ class IVectorGeometryToolVectorConing(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorConing)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorConing, None)
     
     _get_about_vector_metadata = { "name" : "about_vector",
@@ -19845,6 +20339,7 @@ class IVectorGeometryToolVectorCross(object):
                              "set_dimension" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorCross."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorCross)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19854,6 +20349,7 @@ class IVectorGeometryToolVectorCross(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorCross)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorCross, None)
     
     _get_from_method_metadata = { "name" : "from_method",
@@ -19921,6 +20417,7 @@ class IVectorGeometryToolVectorCustomScript(object):
                              "set_initialization_script_file" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorCustomScript."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorCustomScript)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19930,6 +20427,7 @@ class IVectorGeometryToolVectorCustomScript(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorCustomScript)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorCustomScript, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
@@ -19990,6 +20488,7 @@ class IVectorGeometryToolVectorDerivative(object):
                              "set_force_use_of_numerical_differences" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorDerivative."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDerivative)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19999,6 +20498,7 @@ class IVectorGeometryToolVectorDerivative(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDerivative)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDerivative, None)
     
     _get_vector_metadata = { "name" : "vector",
@@ -20070,6 +20570,7 @@ class IVectorGeometryToolVectorDisplacement(object):
                              "get_reference_system" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorDisplacement."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDisplacement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20079,6 +20580,7 @@ class IVectorGeometryToolVectorDisplacement(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDisplacement)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDisplacement, None)
     
     _get_origin_metadata = { "name" : "origin",
@@ -20166,6 +20668,7 @@ class IVectorGeometryToolVectorTwoPlanesIntersection(object):
                              "get_plane_b" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorTwoPlanesIntersection."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorTwoPlanesIntersection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20175,6 +20678,7 @@ class IVectorGeometryToolVectorTwoPlanesIntersection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorTwoPlanesIntersection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorTwoPlanesIntersection, None)
     
     _get_plane_a_metadata = { "name" : "plane_a",
@@ -20209,6 +20713,7 @@ class IVectorGeometryToolVectorModelAttach(object):
                              "set_pointable_element_name" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorModelAttach."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorModelAttach)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20218,6 +20723,7 @@ class IVectorGeometryToolVectorModelAttach(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorModelAttach)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorModelAttach, None)
     
     _get_pointable_element_name_metadata = { "name" : "pointable_element_name",
@@ -20251,6 +20757,7 @@ class IVectorGeometryToolVectorProjection(object):
                              "get_reference_plane" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorProjection."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorProjection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20260,6 +20767,7 @@ class IVectorGeometryToolVectorProjection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorProjection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorProjection, None)
     
     _get_source_metadata = { "name" : "source",
@@ -20297,6 +20805,7 @@ class IVectorGeometryToolVectorScaled(object):
                              "set_is_normalized" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorScaled."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20306,6 +20815,7 @@ class IVectorGeometryToolVectorScaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScaled, None)
     
     _get_reference_vector_metadata = { "name" : "reference_vector",
@@ -20364,6 +20874,7 @@ class IVectorGeometryToolVectorEccentricity(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorEccentricity."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorEccentricity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20373,6 +20884,7 @@ class IVectorGeometryToolVectorEccentricity(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorEccentricity)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorEccentricity, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -20422,6 +20934,7 @@ class IVectorGeometryToolVectorFixedInAxes(object):
                              "get_direction" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFixedInAxes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedInAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20431,6 +20944,7 @@ class IVectorGeometryToolVectorFixedInAxes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedInAxes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedInAxes, None)
     
     _get_reference_axes_metadata = { "name" : "reference_axes",
@@ -20465,6 +20979,7 @@ class IVectorGeometryToolVectorLineOfNodes(object):
                              "get_reference_point" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorLineOfNodes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorLineOfNodes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20474,6 +20989,7 @@ class IVectorGeometryToolVectorLineOfNodes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorLineOfNodes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorLineOfNodes, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -20510,6 +21026,7 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorOrbitAngularMomentum."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorOrbitAngularMomentum)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20519,6 +21036,7 @@ class IVectorGeometryToolVectorOrbitAngularMomentum(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorOrbitAngularMomentum)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorOrbitAngularMomentum, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -20570,6 +21088,7 @@ class IVectorGeometryToolVectorOrbitNormal(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorOrbitNormal."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorOrbitNormal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20579,6 +21098,7 @@ class IVectorGeometryToolVectorOrbitNormal(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorOrbitNormal)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorOrbitNormal, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -20630,6 +21150,7 @@ class IVectorGeometryToolVectorPeriapsis(object):
                              "set_mean_element_type" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorPeriapsis."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorPeriapsis)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20639,6 +21160,7 @@ class IVectorGeometryToolVectorPeriapsis(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorPeriapsis)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorPeriapsis, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -20694,6 +21216,7 @@ class IVectorGeometryToolVectorReflection(object):
                              "set_scale_factor" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorReflection."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorReflection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20703,6 +21226,7 @@ class IVectorGeometryToolVectorReflection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorReflection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorReflection, None)
     
     _get_incoming_vector_metadata = { "name" : "incoming_vector",
@@ -20784,6 +21308,7 @@ class IVectorGeometryToolVectorRotationVector(object):
                              "set_force_minimum_rotation" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorRotationVector."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorRotationVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20793,6 +21318,7 @@ class IVectorGeometryToolVectorRotationVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorRotationVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorRotationVector, None)
     
     _get_axes_metadata = { "name" : "axes",
@@ -20842,6 +21368,7 @@ class IVectorGeometryToolVectorDirectionToStar(object):
                              "set_selected_star" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorDirectionToStar."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDirectionToStar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20851,6 +21378,7 @@ class IVectorGeometryToolVectorDirectionToStar(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDirectionToStar)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDirectionToStar, None)
     
     _get_selected_star_metadata = { "name" : "selected_star",
@@ -20888,6 +21416,7 @@ class IVectorGeometryToolVectorFixedAtTimeInstant(object):
                              "set_reference_axes" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFixedAtTimeInstant."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFixedAtTimeInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20897,6 +21426,7 @@ class IVectorGeometryToolVectorFixedAtTimeInstant(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFixedAtTimeInstant)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFixedAtTimeInstant, None)
     
     _get_reference_time_instant_metadata = { "name" : "reference_time_instant",
@@ -20974,6 +21504,7 @@ class IVectorGeometryToolVectorLinearCombination(object):
                              "set_output_dimension" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorLinearCombination."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorLinearCombination)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20983,6 +21514,7 @@ class IVectorGeometryToolVectorLinearCombination(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorLinearCombination)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorLinearCombination, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
@@ -21123,6 +21655,7 @@ class IVectorGeometryToolVectorProjectAlongVector(object):
                              "set_along_vector" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorProjectAlongVector."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorProjectAlongVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21132,6 +21665,7 @@ class IVectorGeometryToolVectorProjectAlongVector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorProjectAlongVector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorProjectAlongVector, None)
     
     _get_source_vector_metadata = { "name" : "source_vector",
@@ -21202,6 +21736,7 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
                              "set_output_dimension" : 24, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorScalarLinearCombination."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScalarLinearCombination)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21211,6 +21746,7 @@ class IVectorGeometryToolVectorScalarLinearCombination(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScalarLinearCombination)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScalarLinearCombination, None)
     
     _get_vector_a_metadata = { "name" : "vector_a",
@@ -21419,6 +21955,7 @@ class IVectorGeometryToolVectorScalarScaled(object):
                              "set_dimension" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorScalarScaled."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorScalarScaled)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21428,6 +21965,7 @@ class IVectorGeometryToolVectorScalarScaled(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorScalarScaled)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorScalarScaled, None)
     
     _get_input_vector_metadata = { "name" : "input_vector",
@@ -21540,6 +22078,7 @@ class IVectorGeometryToolVectorVelocityAcceleration(object):
                              "set_differencing_time_step" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorVelocityAcceleration."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorVelocityAcceleration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21549,6 +22088,7 @@ class IVectorGeometryToolVectorVelocityAcceleration(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorVelocityAcceleration)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorVelocityAcceleration, None)
     
     _get_reference_system_metadata = { "name" : "reference_system",
@@ -21616,6 +22156,7 @@ class IVectorGeometryToolVectorPlugin(object):
                              "get_property" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorPlugin."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorPlugin)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21625,6 +22166,7 @@ class IVectorGeometryToolVectorPlugin(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorPlugin)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorPlugin, None)
     
     _get_prog_id_metadata = { "name" : "prog_id",
@@ -21694,6 +22236,7 @@ class IVectorGeometryToolVectorDispSurface(object):
                              "set_differencing_time_step" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorDispSurface."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorDispSurface)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21703,6 +22246,7 @@ class IVectorGeometryToolVectorDispSurface(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorDispSurface)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorDispSurface, None)
     
     _get_origin_point_metadata = { "name" : "origin_point",
@@ -21740,7 +22284,7 @@ class IVectorGeometryToolVectorDispSurface(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def surface_central_body(self) -> str:
-        """surface central body."""
+        """Get or set the surface central body property."""
         return self._intf.get_property(IVectorGeometryToolVectorDispSurface._metadata, IVectorGeometryToolVectorDispSurface._get_surface_central_body_metadata)
 
     _set_surface_central_body_metadata = { "name" : "surface_central_body",
@@ -21785,6 +22329,7 @@ class IVectorGeometryToolVectorFactory(object):
                              "create_cross_product_vector" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21794,6 +22339,7 @@ class IVectorGeometryToolVectorFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -21857,6 +22403,7 @@ class IVectorGeometryToolAxesFactory(object):
                              "create_axes_plugin_from_display_name" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21866,6 +22413,7 @@ class IVectorGeometryToolAxesFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -21913,6 +22461,7 @@ class IVectorGeometryToolSystemFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21922,6 +22471,7 @@ class IVectorGeometryToolSystemFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -21957,6 +22507,7 @@ class IVectorGeometryToolPointFactory(object):
                              "create_point_fixed_on_central_body" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21966,6 +22517,7 @@ class IVectorGeometryToolPointFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -22020,6 +22572,7 @@ class IVectorGeometryToolPlaneFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22029,6 +22582,7 @@ class IVectorGeometryToolPlaneFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -22061,6 +22615,7 @@ class IVectorGeometryToolAngleFactory(object):
                              "is_type_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleFactory."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22070,6 +22625,7 @@ class IVectorGeometryToolAngleFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFactory, None)
     
     _create_metadata = { "name" : "create",
@@ -22109,6 +22665,7 @@ class IVectorGeometryToolVectorGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22119,12 +22676,15 @@ class IVectorGeometryToolVectorGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolVectorGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolVector":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22226,6 +22786,7 @@ class IVectorGeometryToolPointGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22236,12 +22797,15 @@ class IVectorGeometryToolPointGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolPointGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPoint":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22350,6 +22914,7 @@ class IVectorGeometryToolAngleGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22360,12 +22925,15 @@ class IVectorGeometryToolAngleGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolAngleGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAngle":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22467,6 +23035,7 @@ class IVectorGeometryToolAxesGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22477,12 +23046,15 @@ class IVectorGeometryToolAxesGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolAxesGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAxes":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22591,6 +23163,7 @@ class IVectorGeometryToolPlaneGroup(object):
                              "get_item_by_name" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22601,12 +23174,15 @@ class IVectorGeometryToolPlaneGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolPlaneGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPlane":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22708,6 +23284,7 @@ class IVectorGeometryToolSystemGroup(object):
                              "get_item_by_name" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemGroup."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemGroup)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -22718,12 +23295,15 @@ class IVectorGeometryToolSystemGroup(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemGroup)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemGroup, None)
     def __iter__(self):
+        """Create an iterator for the IVectorGeometryToolSystemGroup object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolSystem":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -22845,6 +23425,7 @@ class IAnalysisWorkbenchProvider(object):
                              "get_volume_calcs" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchProvider."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22854,6 +23435,7 @@ class IAnalysisWorkbenchProvider(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchProvider)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchProvider, None)
     
     _get_vectors_metadata = { "name" : "vectors",
@@ -23048,6 +23630,7 @@ class IAnalysisWorkbenchRoot(object):
                              "get_well_known_axes" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchRoot."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchRoot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23057,6 +23640,7 @@ class IAnalysisWorkbenchRoot(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchRoot)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchRoot, None)
     
     _get_template_provider_metadata = { "name" : "get_template_provider",
@@ -23106,6 +23690,7 @@ class IVectorGeometryToolWellKnownEarthSystems(object):
                              "get_inertial" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownEarthSystems."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownEarthSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23115,6 +23700,7 @@ class IVectorGeometryToolWellKnownEarthSystems(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthSystems)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownEarthSystems, None)
     
     _get_fixed_metadata = { "name" : "fixed",
@@ -23159,6 +23745,7 @@ class IVectorGeometryToolWellKnownEarthAxes(object):
                              "get_j2000" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownEarthAxes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownEarthAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23168,6 +23755,7 @@ class IVectorGeometryToolWellKnownEarthAxes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownEarthAxes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownEarthAxes, None)
     
     _get_fixed_metadata = { "name" : "fixed",
@@ -23221,6 +23809,7 @@ class IVectorGeometryToolWellKnownSunSystems(object):
                              "get_barycenter" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownSunSystems."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSunSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23230,6 +23819,7 @@ class IVectorGeometryToolWellKnownSunSystems(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSunSystems)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSunSystems, None)
     
     _get_fixed_metadata = { "name" : "fixed",
@@ -23290,6 +23880,7 @@ class IVectorGeometryToolWellKnownSunAxes(object):
                              "get_j2000" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownSunAxes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSunAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23299,6 +23890,7 @@ class IVectorGeometryToolWellKnownSunAxes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSunAxes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSunAxes, None)
     
     _get_fixed_metadata = { "name" : "fixed",
@@ -23349,6 +23941,7 @@ class IVectorGeometryToolWellKnownSystems(object):
                              "get_sun" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownSystems."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23358,6 +23951,7 @@ class IVectorGeometryToolWellKnownSystems(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownSystems)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownSystems, None)
     
     _get_earth_metadata = { "name" : "earth",
@@ -23392,6 +23986,7 @@ class IVectorGeometryToolWellKnownAxes(object):
                              "get_sun" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolWellKnownAxes."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolWellKnownAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23401,6 +23996,7 @@ class IVectorGeometryToolWellKnownAxes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolWellKnownAxes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolWellKnownAxes, None)
     
     _get_earth_metadata = { "name" : "earth",
@@ -23435,6 +24031,7 @@ class IVectorGeometryToolAngleFindAngleResult(object):
                              "get_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleFindAngleResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindAngleResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23444,6 +24041,7 @@ class IVectorGeometryToolAngleFindAngleResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindAngleResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23479,6 +24077,7 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
                              "get_angle_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleFindAngleWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindAngleWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23488,6 +24087,7 @@ class IVectorGeometryToolAngleFindAngleWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindAngleWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindAngleWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23534,6 +24134,7 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
                              "get_vector_about" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleFindWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23543,6 +24144,7 @@ class IVectorGeometryToolAngleFindWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23612,6 +24214,7 @@ class IVectorGeometryToolAngleFindResult(object):
                              "get_vector_about" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAngleFindResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngleFindResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23621,6 +24224,7 @@ class IVectorGeometryToolAngleFindResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAngleFindResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAngleFindResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23679,6 +24283,7 @@ class IVectorGeometryToolAxesTransformResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesTransformResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTransformResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23688,6 +24293,7 @@ class IVectorGeometryToolAxesTransformResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTransformResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTransformResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23723,6 +24329,7 @@ class IVectorGeometryToolAxesTransformWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesTransformWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesTransformWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23732,6 +24339,7 @@ class IVectorGeometryToolAxesTransformWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesTransformWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesTransformWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23775,6 +24383,7 @@ class IVectorGeometryToolPlaneFindInAxesResult(object):
                              "get_y_axis" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneFindInAxesResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInAxesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23784,6 +24393,7 @@ class IVectorGeometryToolPlaneFindInAxesResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23829,6 +24439,7 @@ class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
                              "get_y_axis_rate" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneFindInAxesWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInAxesWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23838,6 +24449,7 @@ class IVectorGeometryToolPlaneFindInAxesWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23898,6 +24510,7 @@ class IVectorGeometryToolPlaneFindInSystemResult(object):
                              "get_y_axis" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneFindInSystemResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInSystemResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23907,6 +24520,7 @@ class IVectorGeometryToolPlaneFindInSystemResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -23962,6 +24576,7 @@ class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
                              "get_y_axis_rate" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPlaneFindInSystemWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlaneFindInSystemWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23971,6 +24586,7 @@ class IVectorGeometryToolPlaneFindInSystemWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPlaneFindInSystemWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPlaneFindInSystemWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24045,6 +24661,7 @@ class IVectorGeometryToolAxesFindInAxesResult(object):
                              "get_orientation" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesFindInAxesResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFindInAxesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24054,6 +24671,7 @@ class IVectorGeometryToolAxesFindInAxesResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24089,6 +24707,7 @@ class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
                              "get_orientation" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolAxesFindInAxesWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxesFindInAxesWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24098,6 +24717,7 @@ class IVectorGeometryToolAxesFindInAxesWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolAxesFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolAxesFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24140,6 +24760,7 @@ class IVectorGeometryToolPointLocateInSystemResult(object):
                              "get_position" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointLocateInSystemResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLocateInSystemResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24149,6 +24770,7 @@ class IVectorGeometryToolPointLocateInSystemResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLocateInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24184,6 +24806,7 @@ class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolPointLocateInSystemWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolPointLocateInSystemWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24193,6 +24816,7 @@ class IVectorGeometryToolPointLocateInSystemWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolPointLocateInSystemWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolPointLocateInSystemWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24235,6 +24859,7 @@ class IVectorGeometryToolSystemTransformResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemTransformResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemTransformResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24244,6 +24869,7 @@ class IVectorGeometryToolSystemTransformResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemTransformResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemTransformResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24279,6 +24905,7 @@ class IVectorGeometryToolSystemTransformWithRateResult(object):
                              "get_velocity" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemTransformWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemTransformWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24288,6 +24915,7 @@ class IVectorGeometryToolSystemTransformWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemTransformWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemTransformWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24333,6 +24961,7 @@ class IVectorGeometryToolSystemFindInSystemResult(object):
                              "get_orientation" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolSystemFindInSystemResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystemFindInSystemResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24342,6 +24971,7 @@ class IVectorGeometryToolSystemFindInSystemResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolSystemFindInSystemResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolSystemFindInSystemResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24400,6 +25030,7 @@ class IVectorGeometryToolVectorFindInAxesResult(object):
                              "get_vector" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFindInAxesResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFindInAxesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24409,6 +25040,7 @@ class IVectorGeometryToolVectorFindInAxesResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFindInAxesResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24444,6 +25076,7 @@ class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
                              "get_rate" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorGeometryToolVectorFindInAxesWithRateResult."""
         initialize_from_source_object(self, sourceObject, IVectorGeometryToolVectorFindInAxesWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24453,6 +25086,7 @@ class IVectorGeometryToolVectorFindInAxesWithRateResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorGeometryToolVectorFindInAxesWithRateResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorGeometryToolVectorFindInAxesWithRateResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24494,6 +25128,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
         "method_offsets" : { "get_is_valid" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchMethodCallResult."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchMethodCallResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24503,6 +25138,7 @@ class IAnalysisWorkbenchMethodCallResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchMethodCallResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchMethodCallResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24528,6 +25164,7 @@ class IAnalysisWorkbenchCentralBody(object):
         "method_offsets" : { "get_name" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchCentralBody."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBody)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24537,6 +25174,7 @@ class IAnalysisWorkbenchCentralBody(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBody)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBody, None)
     
     _get_name_metadata = { "name" : "name",
@@ -24564,6 +25202,7 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
                              "get_central_body" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchCentralBodyRefTo."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBodyRefTo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24573,6 +25212,7 @@ class IAnalysisWorkbenchCentralBodyRefTo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyRefTo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBodyRefTo, None)
     
     _set_path_metadata = { "name" : "set_path",
@@ -24615,6 +25255,7 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
                              "remove" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchCentralBodyCollection."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCentralBodyCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -24625,12 +25266,15 @@ class IAnalysisWorkbenchCentralBodyCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCentralBodyCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCentralBodyCollection, None)
     def __iter__(self):
+        """Create an iterator for the IAnalysisWorkbenchCentralBodyCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -24698,6 +25342,7 @@ class IAnalysisWorkbenchCollection(object):
                              "get_item_by_name" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAnalysisWorkbenchCollection."""
         initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -24708,12 +25353,15 @@ class IAnalysisWorkbenchCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAnalysisWorkbenchCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAnalysisWorkbenchCollection, None)
     def __iter__(self):
+        """Create an iterator for the IAnalysisWorkbenchCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IAnalysisWorkbenchComponent":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -24784,6 +25432,7 @@ class ITimeToolPointSamplingResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolPointSamplingResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24793,6 +25442,7 @@ class ITimeToolPointSamplingResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPointSamplingResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -24830,6 +25480,7 @@ class ITimeToolPointSamplingInterval(object):
                              "get_stop" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolPointSamplingInterval."""
         initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24839,6 +25490,7 @@ class ITimeToolPointSamplingInterval(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingInterval)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPointSamplingInterval, None)
     
     _get_times_metadata = { "name" : "times",
@@ -24898,6 +25550,7 @@ class ITimeToolPointSamplingIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolPointSamplingIntervalCollection."""
         initialize_from_source_object(self, sourceObject, ITimeToolPointSamplingIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -24908,12 +25561,15 @@ class ITimeToolPointSamplingIntervalCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolPointSamplingIntervalCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolPointSamplingIntervalCollection, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolPointSamplingIntervalCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolPointSamplingInterval":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -24963,6 +25619,7 @@ class ITimeToolAxesSamplingResult(object):
                              "get_intervals" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolAxesSamplingResult."""
         initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24972,6 +25629,7 @@ class ITimeToolAxesSamplingResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingResult, None)
     
     _get_is_valid_metadata = { "name" : "is_valid",
@@ -25009,6 +25667,7 @@ class ITimeToolAxesSamplingInterval(object):
                              "get_stop" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolAxesSamplingInterval."""
         initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25018,6 +25677,7 @@ class ITimeToolAxesSamplingInterval(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingInterval)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingInterval, None)
     
     _get_times_metadata = { "name" : "times",
@@ -25077,6 +25737,7 @@ class ITimeToolAxesSamplingIntervalCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeToolAxesSamplingIntervalCollection."""
         initialize_from_source_object(self, sourceObject, ITimeToolAxesSamplingIntervalCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -25087,12 +25748,15 @@ class ITimeToolAxesSamplingIntervalCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeToolAxesSamplingIntervalCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeToolAxesSamplingIntervalCollection, None)
     def __iter__(self):
+        """Create an iterator for the ITimeToolAxesSamplingIntervalCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolAxesSamplingInterval":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -25136,6 +25800,7 @@ class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
     """Represents the results of evaluating a scalar component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolEvaluateResult."""
         ICalculationToolEvaluateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25144,6 +25809,7 @@ class CalculationToolEvaluateResult(ICalculationToolEvaluateResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolEvaluateResult, [ICalculationToolEvaluateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{94FD0DFF-1DD0-4CA5-A7DB-1CB9CA3E3C93}", CalculationToolEvaluateResult)
@@ -25153,6 +25819,7 @@ class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResu
     """Represents the results of evaluating a scalar component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolEvaluateWithRateResult."""
         ICalculationToolEvaluateWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25161,6 +25828,7 @@ class CalculationToolEvaluateWithRateResult(ICalculationToolEvaluateWithRateResu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolEvaluateWithRateResult, [ICalculationToolEvaluateWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{832CA139-8ECF-4E95-AB67-1BB7713CF9FC}", CalculationToolEvaluateWithRateResult)
@@ -25170,6 +25838,7 @@ class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalResult."""
         ITimeToolEventIntervalResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25178,6 +25847,7 @@ class TimeToolEventIntervalResult(ITimeToolEventIntervalResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalResult, [ITimeToolEventIntervalResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{ACE6C28C-4664-4B7F-8736-91F55C7962A6}", TimeToolEventIntervalResult)
@@ -25187,6 +25857,7 @@ class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
     """Contains the results returned with ITimeToolEvent.FindOccurrence method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventFindOccurrenceResult."""
         ITimeToolEventFindOccurrenceResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25195,6 +25866,7 @@ class TimeToolEventFindOccurrenceResult(ITimeToolEventFindOccurrenceResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventFindOccurrenceResult, [ITimeToolEventFindOccurrenceResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{6A432F58-4CAB-4448-8540-CBBAA9C2B9F0}", TimeToolEventFindOccurrenceResult)
@@ -25204,6 +25876,7 @@ class TimeToolFindTimesResult(ITimeToolFindTimesResult):
     """Return a collection of intervals and an array of times."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolFindTimesResult."""
         ITimeToolFindTimesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25212,6 +25885,7 @@ class TimeToolFindTimesResult(ITimeToolFindTimesResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolFindTimesResult, [ITimeToolFindTimesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{AF246FCF-7FA3-4CD6-878B-E9AC267F017A}", TimeToolFindTimesResult)
@@ -25221,6 +25895,7 @@ class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
     """Contains the results returned with ITimeToolEventIntervalCollection.FindIntervalCollection method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolIntervalsVectorResult."""
         ITimeToolIntervalsVectorResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25229,6 +25904,7 @@ class TimeToolIntervalsVectorResult(ITimeToolIntervalsVectorResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalsVectorResult, [ITimeToolIntervalsVectorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{233B8EB4-0B6A-485F-BACB-C678798FDA21}", TimeToolIntervalsVectorResult)
@@ -25238,6 +25914,7 @@ class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollec
     """Contains the results returned with ITimeToolEventIntervalCollection.Occurred method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionOccurredResult."""
         ITimeToolEventIntervalCollectionOccurredResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25246,6 +25923,7 @@ class TimeToolEventIntervalCollectionOccurredResult(ITimeToolEventIntervalCollec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionOccurredResult, [ITimeToolEventIntervalCollectionOccurredResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D2BD8F6-406D-4BA0-B5CF-C81711C7C344}", TimeToolEventIntervalCollectionOccurredResult)
@@ -25255,6 +25933,7 @@ class TimeToolIntervalListResult(ITimeToolIntervalListResult):
     """Contains the results returned with ITimeToolEventIntervalList.FindIntervals method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolIntervalListResult."""
         ITimeToolIntervalListResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25263,6 +25942,7 @@ class TimeToolIntervalListResult(ITimeToolIntervalListResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalListResult, [ITimeToolIntervalListResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{C24C2EE4-3F75-41E8-BDC3-FE71E863921F}", TimeToolIntervalListResult)
@@ -25272,6 +25952,7 @@ class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
     """A collection of interval collections."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolIntervalVectorCollection."""
         ITimeToolIntervalVectorCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25280,6 +25961,7 @@ class TimeToolIntervalVectorCollection(ITimeToolIntervalVectorCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalVectorCollection, [ITimeToolIntervalVectorCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{99AAE1D2-3C5D-4836-A1BD-6EAD38FC9BC5}", TimeToolIntervalVectorCollection)
@@ -25289,6 +25971,7 @@ class TimeToolEventGroup(ITimeToolEventGroup):
     """Access or create VGT events associated with an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventGroup."""
         ITimeToolEventGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25297,6 +25980,7 @@ class TimeToolEventGroup(ITimeToolEventGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventGroup, [ITimeToolEventGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{D5D83181-A954-4FA9-886E-A917F135C974}", TimeToolEventGroup)
@@ -25306,6 +25990,7 @@ class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
     """Access or create VGT event intervals associated with an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalGroup."""
         ITimeToolEventIntervalGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25314,6 +25999,7 @@ class TimeToolEventIntervalGroup(ITimeToolEventIntervalGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalGroup, [ITimeToolEventIntervalGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{48C9D4D2-2713-4063-8BB1-D6F2E72E1025}", TimeToolEventIntervalGroup)
@@ -25323,6 +26009,7 @@ class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
     """Access or create VGT event interval lists associated with an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListGroup."""
         ITimeToolEventIntervalListGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25331,6 +26018,7 @@ class TimeToolEventIntervalListGroup(ITimeToolEventIntervalListGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListGroup, [ITimeToolEventIntervalListGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{3B2FDEBA-A2B9-4568-8F48-469F604DB966}", TimeToolEventIntervalListGroup)
@@ -25340,6 +26028,7 @@ class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
     """Access or create VGT event arrays associated with an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayGroup."""
         ITimeToolEventArrayGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25348,6 +26037,7 @@ class TimeToolEventArrayGroup(ITimeToolEventArrayGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayGroup, [ITimeToolEventArrayGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{365C4A6E-9C2B-4883-96C6-CF689BCC2943}", TimeToolEventArrayGroup)
@@ -25357,6 +26047,7 @@ class CalculationToolScalarGroup(ICalculationToolScalarGroup):
     """Access or create VGT calculation scalars associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarGroup."""
         ICalculationToolScalarGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25365,6 +26056,7 @@ class CalculationToolScalarGroup(ICalculationToolScalarGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarGroup, [ICalculationToolScalarGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{DFAD8468-4480-460F-993D-74FFADB567B3}", CalculationToolScalarGroup)
@@ -25374,6 +26066,7 @@ class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup
     """Access or create VGT event interval collections associated with an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionGroup."""
         ITimeToolEventIntervalCollectionGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25382,6 +26075,7 @@ class TimeToolEventIntervalCollectionGroup(ITimeToolEventIntervalCollectionGroup
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionGroup, [ITimeToolEventIntervalCollectionGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{16E277E2-E306-40E7-B698-B725BDED5739}", TimeToolEventIntervalCollectionGroup)
@@ -25391,6 +26085,7 @@ class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
     """Access or create VGT parameter sets associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetGroup."""
         ICalculationToolParameterSetGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25399,6 +26094,7 @@ class CalculationToolParameterSetGroup(ICalculationToolParameterSetGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroup, [ICalculationToolParameterSetGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AF3C889-3805-40E2-94E2-3EA11AAFB0D7}", CalculationToolParameterSetGroup)
@@ -25408,6 +26104,7 @@ class CalculationToolConditionGroup(ICalculationToolConditionGroup):
     """Access or create VGT conditions associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionGroup."""
         ICalculationToolConditionGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25416,6 +26113,7 @@ class CalculationToolConditionGroup(ICalculationToolConditionGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionGroup, [ICalculationToolConditionGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{28BCB469-D32F-4FCE-9CC2-76216E3A37CA}", CalculationToolConditionGroup)
@@ -25425,6 +26123,7 @@ class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
     """Allow accessing and creating condition set components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSetGroup."""
         ICalculationToolConditionSetGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25433,6 +26132,7 @@ class CalculationToolConditionSetGroup(ICalculationToolConditionSetGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetGroup, [ICalculationToolConditionSetGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{D82D5C71-102E-4154-9FF6-153C4EDB5A94}", CalculationToolConditionSetGroup)
@@ -25442,6 +26142,7 @@ class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEval
     """Represents the results returned by ConditionSet.Evaluate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSetEvaluateResult."""
         ICalculationToolConditionSetEvaluateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25450,6 +26151,7 @@ class CalculationToolConditionSetEvaluateResult(ICalculationToolConditionSetEval
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateResult, [ICalculationToolConditionSetEvaluateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{13F4EB53-F5AB-487A-BC09-AA186C884744}", CalculationToolConditionSetEvaluateResult)
@@ -25459,6 +26161,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditio
     """Represents the results returned by ConditionSet.EvaluateWithRate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSetEvaluateWithRateResult."""
         ICalculationToolConditionSetEvaluateWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25467,6 +26170,7 @@ class CalculationToolConditionSetEvaluateWithRateResult(ICalculationToolConditio
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetEvaluateWithRateResult, [ICalculationToolConditionSetEvaluateWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{53051D77-87D0-432C-9044-A2AB1E2104BA}", CalculationToolConditionSetEvaluateWithRateResult)
@@ -25476,6 +26180,7 @@ class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
     """Access or create VGT volume grids associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridGroup."""
         ISpatialAnalysisToolVolumeGridGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25484,6 +26189,7 @@ class SpatialAnalysisToolVolumeGridGroup(ISpatialAnalysisToolVolumeGridGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridGroup, [ISpatialAnalysisToolVolumeGridGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{5E471C90-D0F2-4B6B-88AE-D529E9D16D03}", SpatialAnalysisToolVolumeGridGroup)
@@ -25493,6 +26199,7 @@ class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
     """Access or create spatial conditions associated with a volume grid."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGroup."""
         ISpatialAnalysisToolVolumeGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25501,6 +26208,7 @@ class SpatialAnalysisToolVolumeGroup(ISpatialAnalysisToolVolumeGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGroup, [ISpatialAnalysisToolVolumeGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{0055B726-654F-446B-82D7-BCDD744F1D8F}", SpatialAnalysisToolVolumeGroup)
@@ -25510,6 +26218,7 @@ class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
     """Access or create VGT volume calc associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcGroup."""
         ISpatialAnalysisToolVolumeCalcGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25518,6 +26227,7 @@ class SpatialAnalysisToolVolumeCalcGroup(ISpatialAnalysisToolVolumeCalcGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcGroup, [ISpatialAnalysisToolVolumeCalcGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{b10331b7-f8c3-4a59-9e9b-b05dd6599167}", SpatialAnalysisToolVolumeCalcGroup)
@@ -25527,6 +26237,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent)
     """Any scalar calculation that is not constant by construction."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalar."""
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -25537,6 +26248,7 @@ class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent)
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{440E178B-1B34-4896-A25F-2A4F3AD4848E}", CalculationToolScalar)
@@ -25546,6 +26258,7 @@ class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolSc
     """Scalar equal to angular displacement obtained from any angle in VGT."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarAngle."""
         ICalculationToolScalarAngle.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25558,6 +26271,7 @@ class CalculationToolScalarAngle(ICalculationToolScalarAngle, ICalculationToolSc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [ICalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2E2A940D-2656-4410-86B4-D7314B788E47}", CalculationToolScalarAngle)
@@ -25567,6 +26281,7 @@ class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculation
     """Constant scalar value of specified dimension."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarConstant."""
         ICalculationToolScalarConstant.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25579,6 +26294,7 @@ class CalculationToolScalarConstant(ICalculationToolScalarConstant, ICalculation
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [ICalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0725A767-6788-4FF4-B848-EF3D526BD7B0}", CalculationToolScalarConstant)
@@ -25588,6 +26304,7 @@ class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationTool
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarCustom."""
         ICalculationToolScalarCustom.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25600,6 +26317,7 @@ class CalculationToolScalarCustom(ICalculationToolScalarCustom, ICalculationTool
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [ICalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{80114DE9-EF5E-47DB-AC1B-91FD78FCA094}", CalculationToolScalarCustom)
@@ -25609,6 +26327,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalcu
     """Any time-dependent data element from STK data providers available for parent STK object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarDataElement."""
         ICalculationToolScalarDataElement.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25621,6 +26340,7 @@ class CalculationToolScalarDataElement(ICalculationToolScalarDataElement, ICalcu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [ICalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{260D686F-07E2-49DB-8E88-467EF79EFA54}", CalculationToolScalarDataElement)
@@ -25630,6 +26350,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalcula
     """Derivative of an input scalar calculation."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarDerivative."""
         ICalculationToolScalarDerivative.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25642,6 +26363,7 @@ class CalculationToolScalarDerivative(ICalculationToolScalarDerivative, ICalcula
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [ICalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{865CE7A8-F7C3-4B25-AA1D-10CA305C7CF0}", CalculationToolScalarDerivative)
@@ -25651,6 +26373,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalcula
     """Dot product between two vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarDotProduct."""
         ICalculationToolScalarDotProduct.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25663,6 +26386,7 @@ class CalculationToolScalarDotProduct(ICalculationToolScalarDotProduct, ICalcula
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [ICalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{703f009e-faab-4281-8d07-733b1344d42b}", CalculationToolScalarDotProduct)
@@ -25672,6 +26396,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalcu
     """Time elapsed since the reference time instant. Negative if in the past."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarElapsedTime."""
         ICalculationToolScalarElapsedTime.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25684,6 +26409,7 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalarElapsedTime, ICalcu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [ICalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D9FAF22-291A-4348-9EAD-1C8DF06D9C1C}", CalculationToolScalarElapsedTime)
@@ -25693,6 +26419,7 @@ class CalculationToolScalarFactory(ICalculationToolScalarFactory):
     """The factory creates scalar calculation components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarFactory."""
         ICalculationToolScalarFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25701,6 +26428,7 @@ class CalculationToolScalarFactory(ICalculationToolScalarFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFactory, [ICalculationToolScalarFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{47235112-821F-4DC2-9A70-57AB9F1F17E8}", CalculationToolScalarFactory)
@@ -25710,6 +26438,7 @@ class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScal
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarFile."""
         ICalculationToolScalarFile.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25722,6 +26451,7 @@ class CalculationToolScalarFile(ICalculationToolScalarFile, ICalculationToolScal
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFile, [ICalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{75F0039F-B789-4771-BD50-9AEF30F6038E}", CalculationToolScalarFile)
@@ -25731,6 +26461,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeI
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarFixedAtTimeInstant."""
         ICalculationToolScalarFixedAtTimeInstant.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25743,6 +26474,7 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalarFixedAtTimeI
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [ICalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{83E8DC6B-7821-4474-AA5B-29646ECD1EC1}", CalculationToolScalarFixedAtTimeInstant)
@@ -25752,6 +26484,7 @@ class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculation
     """Defined by performing the specified function on the input scalar or time instant."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarFunction."""
         ICalculationToolScalarFunction.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25764,6 +26497,7 @@ class CalculationToolScalarFunction(ICalculationToolScalarFunction, ICalculation
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [ICalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{40158F99-3146-4167-8BB0-A0046BB08EEB}", CalculationToolScalarFunction)
@@ -25773,6 +26507,7 @@ class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICal
     """Defined by performing a function(x,y) on two scalar arguments."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarFunction2Var."""
         ICalculationToolScalarFunction2Var.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25785,6 +26520,7 @@ class CalculationToolScalarFunction2Var(ICalculationToolScalarFunction2Var, ICal
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarFunction2Var, [ICalculationToolScalarFunction2Var, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{05CA07A4-A36F-44EF-99C4-5E0999E79200}", CalculationToolScalarFunction2Var)
@@ -25794,6 +26530,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculation
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarIntegral."""
         ICalculationToolScalarIntegral.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25806,6 +26543,7 @@ class CalculationToolScalarIntegral(ICalculationToolScalarIntegral, ICalculation
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [ICalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C87C787A-BEDA-4AEC-9F88-3D6EE0936A03}", CalculationToolScalarIntegral)
@@ -25815,6 +26553,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationTool
     """Use a scalar calculation plugin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarPlugin."""
         ICalculationToolScalarPlugin.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25827,6 +26566,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalarPlugin, ICalculationTool
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [ICalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E435E30B-EA9B-4EFB-852A-C20427B71484}", CalculationToolScalarPlugin)
@@ -25836,6 +26576,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSu
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarSurfaceDistanceBetweenPoints."""
         ICalculationToolScalarSurfaceDistanceBetweenPoints.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25848,6 +26589,7 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalarSu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [ICalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DEDCB488-6C70-4BC0-A719-68832FB6D30E}", CalculationToolScalarSurfaceDistanceBetweenPoints)
@@ -25857,6 +26599,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent
     """The specified component of a vector when resolved in the specified axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarVectorComponent."""
         ICalculationToolScalarVectorComponent.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25869,6 +26612,7 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalarVectorComponent
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [ICalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0b8e5c9f-de1b-4b6b-9e38-87b16db7bb71}", CalculationToolScalarVectorComponent)
@@ -25878,6 +26622,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude
     """Scalar equal to the magnitude of a specified vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolScalarVectorMagnitude."""
         ICalculationToolScalarVectorMagnitude.__init__(self, sourceObject)
         ICalculationToolScalar.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25890,6 +26635,7 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalarVectorMagnitude
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [ICalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7430CE8-D611-4F5C-B4B4-05531F1E0CC0}", CalculationToolScalarVectorMagnitude)
@@ -25899,6 +26645,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolCondition."""
         ICalculationToolCondition.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -25909,6 +26656,7 @@ class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComp
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1BED244-FFB2-4038-AE76-A9B3194B2E49}", CalculationToolCondition)
@@ -25918,6 +26666,7 @@ class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalcu
     """Define a condition which combines multiple conditions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionCombined."""
         ICalculationToolConditionCombined.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25930,6 +26679,7 @@ class CalculationToolConditionCombined(ICalculationToolConditionCombined, ICalcu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [ICalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{92F4488B-3543-4229-B1FB-447D282199B9}", CalculationToolConditionCombined)
@@ -25939,6 +26689,7 @@ class CalculationToolConditionFactory(ICalculationToolConditionFactory):
     """The factory creates condition components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionFactory."""
         ICalculationToolConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -25947,6 +26698,7 @@ class CalculationToolConditionFactory(ICalculationToolConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionFactory, [ICalculationToolConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{06C627F8-87EA-4552-86E8-7E5049914CDE}", CalculationToolConditionFactory)
@@ -25956,6 +26708,7 @@ class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolu
     """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionPointInVolume."""
         ICalculationToolConditionPointInVolume.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25968,6 +26721,7 @@ class CalculationToolConditionPointInVolume(ICalculationToolConditionPointInVolu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionPointInVolume, [ICalculationToolConditionPointInVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{41532AD9-B30C-44AE-8581-CE74C24846A8}", CalculationToolConditionPointInVolume)
@@ -25977,6 +26731,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionScalarBounds."""
         ICalculationToolConditionScalarBounds.__init__(self, sourceObject)
         ICalculationToolCondition.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -25989,6 +26744,7 @@ class CalculationToolConditionScalarBounds(ICalculationToolConditionScalarBounds
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [ICalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{452E2178-AFB0-4E61-8187-9C6CB4A704A0}", CalculationToolConditionScalarBounds)
@@ -25998,6 +26754,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSet."""
         ICalculationToolConditionSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26008,6 +26765,7 @@ class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkben
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B6407B1B-6858-49FC-845A-F8A6239162C2}", CalculationToolConditionSet)
@@ -26017,6 +26775,7 @@ class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
     """The factory creates condition set components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSetFactory."""
         ICalculationToolConditionSetFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26025,6 +26784,7 @@ class CalculationToolConditionSetFactory(ICalculationToolConditionSetFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetFactory, [ICalculationToolConditionSetFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D2445C98-9EA1-458F-9B6A-607249BF399A}", CalculationToolConditionSetFactory)
@@ -26034,6 +26794,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetSc
     """Condition set based on single scalar calculation compared to set of threshold values."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConditionSetScalarThresholds."""
         ICalculationToolConditionSetScalarThresholds.__init__(self, sourceObject)
         ICalculationToolConditionSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26046,6 +26807,7 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSetSc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [ICalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EED0BF6B-4D96-4D55-B988-0B962DCDBB4E}", CalculationToolConditionSetScalarThresholds)
@@ -26055,6 +26817,7 @@ class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchCo
     """Represents a base class for convergence definitions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchConverge."""
         IAnalysisWorkbenchConverge.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26065,6 +26828,7 @@ class AnalysisWorkbenchConverge(IAnalysisWorkbenchConverge, IAnalysisWorkbenchCo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchConverge, [IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6A13D679-1970-43C2-8D4F-174B08AB04DC}", AnalysisWorkbenchConverge)
@@ -26074,6 +26838,7 @@ class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkb
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolConvergeBasic."""
         ICalculationToolConvergeBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchConverge.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26086,6 +26851,7 @@ class CalculationToolConvergeBasic(ICalculationToolConvergeBasic, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [ICalculationToolConvergeBasic, IAnalysisWorkbenchConverge, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{808F19C3-0E31-4C89-94C8-BBE01E067DFF}", CalculationToolConvergeBasic)
@@ -26095,6 +26861,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
     """Represents a base class for derivative definitions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchDerivative."""
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26105,6 +26872,7 @@ class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkben
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2C7C1DA3-BD86-4D8B-9505-AC796FF1FD45}", AnalysisWorkbenchDerivative)
@@ -26114,6 +26882,7 @@ class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisW
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolDerivativeBasic."""
         ICalculationToolDerivativeBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26126,6 +26895,7 @@ class CalculationToolDerivativeBasic(ICalculationToolDerivativeBasic, IAnalysisW
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [ICalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3CD084C3-0045-4452-9793-AE8DF4073433}", CalculationToolDerivativeBasic)
@@ -26135,6 +26905,7 @@ class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
     """Define an event (time instant)."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEvent."""
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26145,6 +26916,7 @@ class TimeToolEvent(ITimeToolEvent, IAnalysisWorkbenchComponent):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEvent, [ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{A4B75B25-5DAE-4AEC-86EF-512F5E031766}", TimeToolEvent)
@@ -26154,6 +26926,7 @@ class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
     """An ordered array of times, which may or may not be evenly spaced."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArray."""
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26164,6 +26937,7 @@ class TimeToolEventArray(ITimeToolEventArray, IAnalysisWorkbenchComponent):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArray, [ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F5C87B1A-D519-4A01-8649-AA7560CD503A}", TimeToolEventArray)
@@ -26173,6 +26947,7 @@ class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayConditionCrossings."""
         ITimeToolEventArrayConditionCrossings.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26185,6 +26960,7 @@ class TimeToolEventArrayConditionCrossings(ITimeToolEventArrayConditionCrossings
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayConditionCrossings, [ITimeToolEventArrayConditionCrossings, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B6FBC501-3521-4AE3-AFD8-4971F089D14F}", TimeToolEventArrayConditionCrossings)
@@ -26194,6 +26970,7 @@ class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray,
     """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayExtrema."""
         ITimeToolEventArrayExtrema.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26206,6 +26983,7 @@ class TimeToolEventArrayExtrema(ITimeToolEventArrayExtrema, ITimeToolEventArray,
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayExtrema, [ITimeToolEventArrayExtrema, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8FB3F78C-D9F6-43F0-BCAA-5A7DCD035592}", TimeToolEventArrayExtrema)
@@ -26215,6 +26993,7 @@ class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
     """The factory creates event arrays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayFactory."""
         ITimeToolEventArrayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26223,6 +27002,7 @@ class TimeToolEventArrayFactory(ITimeToolEventArrayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayFactory, [ITimeToolEventArrayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{A001EDFD-FAC8-4BBE-9FDC-0C7A5C4BB11C}", TimeToolEventArrayFactory)
@@ -26232,6 +27012,7 @@ class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArra
     """Defined by filtering times from original time array according to specified filtering method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayFiltered."""
         ITimeToolEventArrayFiltered.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26244,6 +27025,7 @@ class TimeToolEventArrayFiltered(ITimeToolEventArrayFiltered, ITimeToolEventArra
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayFiltered, [ITimeToolEventArrayFiltered, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CA0D9FE7-E921-406E-8A1A-EE448A46C03C}", TimeToolEventArrayFiltered)
@@ -26253,6 +27035,7 @@ class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventAr
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayFixedStep."""
         ITimeToolEventArrayFixedStep.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26265,6 +27048,7 @@ class TimeToolEventArrayFixedStep(ITimeToolEventArrayFixedStep, ITimeToolEventAr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayFixedStep, [ITimeToolEventArrayFixedStep, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CDA379CC-7511-496E-874E-14E10F3E2B1A}", TimeToolEventArrayFixedStep)
@@ -26274,6 +27058,7 @@ class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEvent
     """Array defined by time ordered instants each explicitly specified."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayFixedTimes."""
         ITimeToolEventArrayFixedTimes.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26286,6 +27071,7 @@ class TimeToolEventArrayFixedTimes(ITimeToolEventArrayFixedTimes, ITimeToolEvent
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayFixedTimes, [ITimeToolEventArrayFixedTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EA73AECA-23AB-4DA1-B297-E80E19C55C15}", TimeToolEventArrayFixedTimes)
@@ -26295,6 +27081,7 @@ class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, I
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayMerged."""
         ITimeToolEventArrayMerged.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26307,6 +27094,7 @@ class TimeToolEventArrayMerged(ITimeToolEventArrayMerged, ITimeToolEventArray, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayMerged, [ITimeToolEventArrayMerged, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{44FBC83E-D466-425F-ADF5-2003D754F935}", TimeToolEventArrayMerged)
@@ -26316,6 +27104,7 @@ class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArra
     """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArraySignaled."""
         ITimeToolEventArraySignaled.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26328,6 +27117,7 @@ class TimeToolEventArraySignaled(ITimeToolEventArraySignaled, ITimeToolEventArra
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArraySignaled, [ITimeToolEventArraySignaled, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{50E37652-E4D1-4B6F-BA12-2D9B17E5F1AA}", TimeToolEventArraySignaled)
@@ -26337,6 +27127,7 @@ class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeT
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventArrayStartStopTimes."""
         ITimeToolEventArrayStartStopTimes.__init__(self, sourceObject)
         ITimeToolEventArray.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26349,6 +27140,7 @@ class TimeToolEventArrayStartStopTimes(ITimeToolEventArrayStartStopTimes, ITimeT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventArrayStartStopTimes, [ITimeToolEventArrayStartStopTimes, ITimeToolEventArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{1AF5E1AC-97CB-4375-B0AE-AE8B6684432B}", TimeToolEventArrayStartStopTimes)
@@ -26358,6 +27150,7 @@ class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbench
     """Event set at specified date/time."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventEpoch."""
         ITimeToolEventEpoch.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26370,6 +27163,7 @@ class TimeToolEventEpoch(ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbench
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventEpoch, [ITimeToolEventEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{230426D4-438A-4B6E-A9D2-5393F7F87238}", TimeToolEventEpoch)
@@ -26379,6 +27173,7 @@ class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWor
     """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventExtremum."""
         ITimeToolEventExtremum.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26391,6 +27186,7 @@ class TimeToolEventExtremum(ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventExtremum, [ITimeToolEventExtremum, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7D4AD095-F1A4-4ACA-8788-50DEF2F4B604}", TimeToolEventExtremum)
@@ -26400,6 +27196,7 @@ class TimeToolEventFactory(ITimeToolEventFactory):
     """The factory creates events."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventFactory."""
         ITimeToolEventFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26408,6 +27205,7 @@ class TimeToolEventFactory(ITimeToolEventFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventFactory, [ITimeToolEventFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9DEB7422-F9AA-492A-9269-3BDB7B0AF7E4}", TimeToolEventFactory)
@@ -26417,6 +27215,7 @@ class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent)
     """A single time interval."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventInterval."""
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26427,6 +27226,7 @@ class TimeToolEventInterval(ITimeToolEventInterval, IAnalysisWorkbenchComponent)
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventInterval, [ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2CDA6DDC-7412-441A-8F94-0671FD57D16A}", TimeToolEventInterval)
@@ -26436,6 +27236,7 @@ class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTime
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalBetweenTimeInstants."""
         ITimeToolEventIntervalBetweenTimeInstants.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26448,6 +27249,7 @@ class TimeToolEventIntervalBetweenTimeInstants(ITimeToolEventIntervalBetweenTime
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalBetweenTimeInstants, [ITimeToolEventIntervalBetweenTimeInstants, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E84D9CAE-E919-4B84-99D7-553CCB97739C}", TimeToolEventIntervalBetweenTimeInstants)
@@ -26457,6 +27259,7 @@ class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysi
     """A collection of related interval lists."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollection."""
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26467,6 +27270,7 @@ class TimeToolEventIntervalCollection(ITimeToolEventIntervalCollection, IAnalysi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollection, [ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{892BFFEB-D366-49D5-8220-50AC5E4529A1}", TimeToolEventIntervalCollection)
@@ -26476,6 +27280,7 @@ class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionC
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionCondition."""
         ITimeToolEventIntervalCollectionCondition.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26488,6 +27293,7 @@ class TimeToolEventIntervalCollectionCondition(ITimeToolEventIntervalCollectionC
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionCondition, [ITimeToolEventIntervalCollectionCondition, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{05E4AFDD-2917-46BA-84C9-1EE7973F11D7}", TimeToolEventIntervalCollectionCondition)
@@ -26497,6 +27303,7 @@ class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFac
     """The factory creates collections of event interval lists."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionFactory."""
         ITimeToolEventIntervalCollectionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26505,6 +27312,7 @@ class TimeToolEventIntervalCollectionFactory(ITimeToolEventIntervalCollectionFac
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionFactory, [ITimeToolEventIntervalCollectionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C76F8390-6619-47D5-9D33-DD1FBBF19B63}", TimeToolEventIntervalCollectionFactory)
@@ -26514,6 +27322,7 @@ class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLi
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionLighting."""
         ITimeToolEventIntervalCollectionLighting.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26526,6 +27335,7 @@ class TimeToolEventIntervalCollectionLighting(ITimeToolEventIntervalCollectionLi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionLighting, [ITimeToolEventIntervalCollectionLighting, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5457BFBA-3076-4250-B0E0-81FA79D58F19}", TimeToolEventIntervalCollectionLighting)
@@ -26535,6 +27345,7 @@ class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSi
     """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalCollectionSignaled."""
         ITimeToolEventIntervalCollectionSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalCollection.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26547,6 +27358,7 @@ class TimeToolEventIntervalCollectionSignaled(ITimeToolEventIntervalCollectionSi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalCollectionSignaled, [ITimeToolEventIntervalCollectionSignaled, ITimeToolEventIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1ED3869-B0E3-40F6-967A-C539C5D5D630}", TimeToolEventIntervalCollectionSignaled)
@@ -26556,6 +27368,7 @@ class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
     """The factory creates event intervals."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalFactory."""
         ITimeToolEventIntervalFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26564,6 +27377,7 @@ class TimeToolEventIntervalFactory(ITimeToolEventIntervalFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFactory, [ITimeToolEventIntervalFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D5D195D8-DE6D-4926-B743-556B08A827C8}", TimeToolEventIntervalFactory)
@@ -26573,6 +27387,7 @@ class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInte
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalFixed."""
         ITimeToolEventIntervalFixed.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26585,6 +27400,7 @@ class TimeToolEventIntervalFixed(ITimeToolEventIntervalFixed, ITimeToolEventInte
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFixed, [ITimeToolEventIntervalFixed, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4408570B-CE46-4B6A-9A50-F8F6D56D76F1}", TimeToolEventIntervalFixed)
@@ -26594,6 +27410,7 @@ class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, IT
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalFixedDuration."""
         ITimeToolEventIntervalFixedDuration.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26606,6 +27423,7 @@ class TimeToolEventIntervalFixedDuration(ITimeToolEventIntervalFixedDuration, IT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFixedDuration, [ITimeToolEventIntervalFixedDuration, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{84316F31-A3DB-4DF3-B8E3-352673D4E251}", TimeToolEventIntervalFixedDuration)
@@ -26615,6 +27433,7 @@ class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalLi
     """Interval created from specified interval list by using one of several selection methods."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalFromIntervalList."""
         ITimeToolEventIntervalFromIntervalList.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26627,6 +27446,7 @@ class TimeToolEventIntervalFromIntervalList(ITimeToolEventIntervalFromIntervalLi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalFromIntervalList, [ITimeToolEventIntervalFromIntervalList, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E3B57D7-B236-4DCA-82DA-6C4835A6D0F1}", TimeToolEventIntervalFromIntervalList)
@@ -26636,6 +27456,7 @@ class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchCo
     """An ordered list of time intervals."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalList."""
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26646,6 +27467,7 @@ class TimeToolEventIntervalList(ITimeToolEventIntervalList, IAnalysisWorkbenchCo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalList, [ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{050E0A6D-9960-4470-9803-AF58B43FD747}", TimeToolEventIntervalList)
@@ -26655,6 +27477,7 @@ class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, IT
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListCondition."""
         ITimeToolEventIntervalListCondition.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26667,6 +27490,7 @@ class TimeToolEventIntervalListCondition(ITimeToolEventIntervalListCondition, IT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListCondition, [ITimeToolEventIntervalListCondition, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4D1E24FE-BD49-4F09-9C30-523AFD58E02B}", TimeToolEventIntervalListCondition)
@@ -26676,6 +27500,7 @@ class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
     """The factory creates event interval lists."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListFactory."""
         ITimeToolEventIntervalListFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -26684,6 +27509,7 @@ class TimeToolEventIntervalListFactory(ITimeToolEventIntervalListFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFactory, [ITimeToolEventIntervalListFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC3FA659-172B-4C9D-9DCA-EF6AD6CC4A8A}", TimeToolEventIntervalListFactory)
@@ -26693,6 +27519,7 @@ class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEve
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListFile."""
         ITimeToolEventIntervalListFile.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26705,6 +27532,7 @@ class TimeToolEventIntervalListFile(ITimeToolEventIntervalListFile, ITimeToolEve
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFile, [ITimeToolEventIntervalListFile, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5A3BC6C1-559F-448D-946E-3D608C0C59B4}", TimeToolEventIntervalListFile)
@@ -26714,6 +27542,7 @@ class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITim
     """Defined by filtering intervals from original interval list using specified filtering method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListFiltered."""
         ITimeToolEventIntervalListFiltered.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26726,6 +27555,7 @@ class TimeToolEventIntervalListFiltered(ITimeToolEventIntervalListFiltered, ITim
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFiltered, [ITimeToolEventIntervalListFiltered, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7123DA29-BECE-4032-9A81-77CDA69C5B13}", TimeToolEventIntervalListFiltered)
@@ -26735,6 +27565,7 @@ class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolE
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListFixed."""
         ITimeToolEventIntervalListFixed.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26747,6 +27578,7 @@ class TimeToolEventIntervalListFixed(ITimeToolEventIntervalListFixed, ITimeToolE
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListFixed, [ITimeToolEventIntervalListFixed, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{60EF79E3-069B-45E3-A5A6-B49F9F9D618E}", TimeToolEventIntervalListFixed)
@@ -26756,6 +27588,7 @@ class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToo
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListMerged."""
         ITimeToolEventIntervalListMerged.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26768,6 +27601,7 @@ class TimeToolEventIntervalListMerged(ITimeToolEventIntervalListMerged, ITimeToo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListMerged, [ITimeToolEventIntervalListMerged, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{115C7064-1624-4928-B401-2C2B8DA2A2DC}", TimeToolEventIntervalListMerged)
@@ -26777,6 +27611,7 @@ class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToo
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListScaled."""
         ITimeToolEventIntervalListScaled.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26789,6 +27624,7 @@ class TimeToolEventIntervalListScaled(ITimeToolEventIntervalListScaled, ITimeToo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListScaled, [ITimeToolEventIntervalListScaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3A5FDAFA-95C5-4743-A675-B9598AAAA1B9}", TimeToolEventIntervalListScaled)
@@ -26798,6 +27634,7 @@ class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITim
     """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListSignaled."""
         ITimeToolEventIntervalListSignaled.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26810,6 +27647,7 @@ class TimeToolEventIntervalListSignaled(ITimeToolEventIntervalListSignaled, ITim
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListSignaled, [ITimeToolEventIntervalListSignaled, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0C2159AF-FCE5-46AA-A06B-30E49A5B6704}", TimeToolEventIntervalListSignaled)
@@ -26819,6 +27657,7 @@ class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, 
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalListTimeOffset."""
         ITimeToolEventIntervalListTimeOffset.__init__(self, sourceObject)
         ITimeToolEventIntervalList.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26831,6 +27670,7 @@ class TimeToolEventIntervalListTimeOffset(ITimeToolEventIntervalListTimeOffset, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalListTimeOffset, [ITimeToolEventIntervalListTimeOffset, ITimeToolEventIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BA2C1495-B20E-477A-A995-8B5B879DE84C}", TimeToolEventIntervalListTimeOffset)
@@ -26840,6 +27680,7 @@ class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventIn
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalScaled."""
         ITimeToolEventIntervalScaled.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26852,6 +27693,7 @@ class TimeToolEventIntervalScaled(ITimeToolEventIntervalScaled, ITimeToolEventIn
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalScaled, [ITimeToolEventIntervalScaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8BCF947C-8E52-4B0C-9416-520C7CCEAB3E}", TimeToolEventIntervalScaled)
@@ -26861,6 +27703,7 @@ class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEve
     """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalSignaled."""
         ITimeToolEventIntervalSignaled.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26873,6 +27716,7 @@ class TimeToolEventIntervalSignaled(ITimeToolEventIntervalSignaled, ITimeToolEve
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalSignaled, [ITimeToolEventIntervalSignaled, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E2D6BF4-81D9-476D-A4F2-F1882E24B56E}", TimeToolEventIntervalSignaled)
@@ -26882,6 +27726,7 @@ class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, IT
     """A smart interval."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalSmartInterval."""
         ITimeToolEventIntervalSmartInterval.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26894,6 +27739,7 @@ class TimeToolEventIntervalSmartInterval(ITimeToolEventIntervalSmartInterval, IT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalSmartInterval, [ITimeToolEventIntervalSmartInterval, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F3D4E2AC-3845-4719-AD57-EE0C715A584D}", TimeToolEventIntervalSmartInterval)
@@ -26903,6 +27749,7 @@ class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToo
     """Interval defined by shifting specified reference interval by fixed time offset."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventIntervalTimeOffset."""
         ITimeToolEventIntervalTimeOffset.__init__(self, sourceObject)
         ITimeToolEventInterval.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26915,6 +27762,7 @@ class TimeToolEventIntervalTimeOffset(ITimeToolEventIntervalTimeOffset, ITimeToo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventIntervalTimeOffset, [ITimeToolEventIntervalTimeOffset, ITimeToolEventInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DE89BB00-5A89-4DA4-8730-CA2C3495A867}", TimeToolEventIntervalTimeOffset)
@@ -26924,6 +27772,7 @@ class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWor
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventSignaled."""
         ITimeToolEventSignaled.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26936,6 +27785,7 @@ class TimeToolEventSignaled(ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventSignaled, [ITimeToolEventSignaled, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3951EF3D-DAEA-4F04-B78C-22537BD84A2D}", TimeToolEventSignaled)
@@ -26945,6 +27795,7 @@ class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysi
     """A smart epoch."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventSmartEpoch."""
         ITimeToolEventSmartEpoch.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26957,6 +27808,7 @@ class TimeToolEventSmartEpoch(ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventSmartEpoch, [ITimeToolEventSmartEpoch, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F722C253-92DA-4956-983B-B80AB469F192}", TimeToolEventSmartEpoch)
@@ -26966,6 +27818,7 @@ class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IA
     """Event is either start or stop time selected from a reference interval."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventStartStopTime."""
         ITimeToolEventStartStopTime.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26978,6 +27831,7 @@ class TimeToolEventStartStopTime(ITimeToolEventStartStopTime, ITimeToolEvent, IA
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventStartStopTime, [ITimeToolEventStartStopTime, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F0429607-A51C-495C-9902-585429D40D10}", TimeToolEventStartStopTime)
@@ -26987,6 +27841,7 @@ class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysi
     """Event at fixed offset from specified reference event."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolEventTimeOffset."""
         ITimeToolEventTimeOffset.__init__(self, sourceObject)
         ITimeToolEvent.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -26999,6 +27854,7 @@ class TimeToolEventTimeOffset(ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolEventTimeOffset, [ITimeToolEventTimeOffset, ITimeToolEvent, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{EE2C89C8-C148-4044-B0BE-BF137D4B876B}", TimeToolEventTimeOffset)
@@ -27008,6 +27864,7 @@ class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPrune
     """The filter selects a portion of first intervals."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolFirstIntervalsFilter."""
         ITimeToolFirstIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27018,6 +27875,7 @@ class TimeToolFirstIntervalsFilter(ITimeToolFirstIntervalsFilter, ITimeToolPrune
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolFirstIntervalsFilter, [ITimeToolFirstIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{9A044590-5063-4331-9FC2-621221CF7EA9}", TimeToolFirstIntervalsFilter)
@@ -27027,6 +27885,7 @@ class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
     """The filter merges intervals unless they are separated by gaps of at least/most certain duration."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolGapsFilter."""
         ITimeToolGapsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27037,6 +27896,7 @@ class TimeToolGapsFilter(ITimeToolGapsFilter, ITimeToolPruneFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolGapsFilter, [ITimeToolGapsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{C54D3817-6B48-4436-8E1D-323A38DC2BC0}", TimeToolGapsFilter)
@@ -27046,6 +27906,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
     """Represents a base class for integral definitions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchIntegral."""
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27056,6 +27917,7 @@ class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchCo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9C6B1D39-FC48-475A-A888-DA9D459C1906}", AnalysisWorkbenchIntegral)
@@ -27065,6 +27927,7 @@ class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkb
     """Integral definition determines how scalar calculation is numerically integrated."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolIntegralBasic."""
         ICalculationToolIntegralBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27077,6 +27940,7 @@ class CalculationToolIntegralBasic(ICalculationToolIntegralBasic, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [ICalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7FCEE0EE-218C-419E-B5DB-8381B18FAE8A}", CalculationToolIntegralBasic)
@@ -27086,6 +27950,7 @@ class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchCompon
     """Represents a base class for interpolation definitions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchInterp."""
         IAnalysisWorkbenchInterp.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27096,6 +27961,7 @@ class AnalysisWorkbenchInterp(IAnalysisWorkbenchInterp, IAnalysisWorkbenchCompon
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchInterp, [IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F73B3675-6FD4-4050-9566-797DCD695107}", AnalysisWorkbenchInterp)
@@ -27105,6 +27971,7 @@ class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbench
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolInterpBasic."""
         ICalculationToolInterpBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchInterp.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27117,6 +27984,7 @@ class CalculationToolInterpBasic(ICalculationToolInterpBasic, IAnalysisWorkbench
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolInterpBasic, [ICalculationToolInterpBasic, IAnalysisWorkbenchInterp, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AB05143F-6997-4F40-BE86-DCF4D723F31E}", CalculationToolInterpBasic)
@@ -27126,6 +27994,7 @@ class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
     """The filter selects intervals of at least/most certain duration."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolIntervalsFilter."""
         ITimeToolIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27136,6 +28005,7 @@ class TimeToolIntervalsFilter(ITimeToolIntervalsFilter, ITimeToolPruneFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalsFilter, [ITimeToolIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{DA31C4A7-B07C-4DEC-B479-BBEB07234B44}", TimeToolIntervalsFilter)
@@ -27145,6 +28015,7 @@ class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFi
     """The filter selects a portion of last intervals."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolLastIntervalsFilter."""
         ITimeToolLastIntervalsFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27155,6 +28026,7 @@ class TimeToolLastIntervalsFilter(ITimeToolLastIntervalsFilter, ITimeToolPruneFi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolLastIntervalsFilter, [ITimeToolLastIntervalsFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{1FAF4A1D-B0BA-4A86-A0AC-049670C66302}", TimeToolLastIntervalsFilter)
@@ -27164,6 +28036,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
     """Parameter set contains various sets of scalar computations."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSet."""
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27174,6 +28047,7 @@ class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkben
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CD1D82FC-08BF-4854-9295-F90AC87FAE68}", CalculationToolParameterSet)
@@ -27183,6 +28057,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, 
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetAttitude."""
         ICalculationToolParameterSetAttitude.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27195,6 +28070,7 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSetAttitude, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [ICalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7082CB04-052B-46A2-A051-4FF52D0260B0}", CalculationToolParameterSetAttitude)
@@ -27204,6 +28080,7 @@ class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
     """The factory is used to create instances of available parameter set types."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetFactory."""
         ICalculationToolParameterSetFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27212,6 +28089,7 @@ class CalculationToolParameterSetFactory(ICalculationToolParameterSetFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetFactory, [ICalculationToolParameterSetFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{FF399336-197C-480B-98AC-3F07E76FF3BC}", CalculationToolParameterSetFactory)
@@ -27221,6 +28099,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGr
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetGroundTrajectory."""
         ICalculationToolParameterSetGroundTrajectory.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27233,6 +28112,7 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSetGr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [ICalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1972E17-F000-4BFF-80A3-216A91D0E2B1}", CalculationToolParameterSetGroundTrajectory)
@@ -27242,6 +28122,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalcu
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetOrbit."""
         ICalculationToolParameterSetOrbit.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27254,6 +28135,7 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSetOrbit, ICalcu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [ICalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BF4A60A0-68E5-4000-8843-DD7FD76813A9}", CalculationToolParameterSetOrbit)
@@ -27263,6 +28145,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajecto
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetTrajectory."""
         ICalculationToolParameterSetTrajectory.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27275,6 +28158,7 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSetTrajecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [ICalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{542072ED-4073-4F91-8EC8-45F7CC401ED7}", CalculationToolParameterSetTrajectory)
@@ -27284,6 +28168,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICal
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolParameterSetVector."""
         ICalculationToolParameterSetVector.__init__(self, sourceObject)
         ICalculationToolParameterSet.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27296,6 +28181,7 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSetVector, ICal
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [ICalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC7B40D5-7091-4A24-A698-436D2A274DC8}", CalculationToolParameterSetVector)
@@ -27305,6 +28191,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter):
     """A filter used with event interval list pruned class to prune interval lists..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolPruneFilter."""
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27313,6 +28200,7 @@ class TimeToolPruneFilter(ITimeToolPruneFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPruneFilter, [ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{E08D63E9-CC8E-41F8-B3C5-0D062425C025}", TimeToolPruneFilter)
@@ -27322,6 +28210,7 @@ class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
     """The factory creates pruning filters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolPruneFilterFactory."""
         ITimeToolPruneFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27330,6 +28219,7 @@ class TimeToolPruneFilterFactory(ITimeToolPruneFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPruneFilterFactory, [ITimeToolPruneFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{954284C2-3544-4888-9A56-759AA8C7E1F7}", TimeToolPruneFilterFactory)
@@ -27339,6 +28229,7 @@ class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionC
     """The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolRelativeSatisfactionConditionFilter."""
         ITimeToolRelativeSatisfactionConditionFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27349,6 +28240,7 @@ class TimeToolRelativeSatisfactionConditionFilter(ITimeToolRelativeSatisfactionC
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolRelativeSatisfactionConditionFilter, [ITimeToolRelativeSatisfactionConditionFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{93A5C2C0-AABA-4DB3-9359-100604D0BA02}", TimeToolRelativeSatisfactionConditionFilter)
@@ -27358,6 +28250,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
     """Base sampling interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchSampling."""
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27368,6 +28261,7 @@ class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchCo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{17FC40E9-EF68-4FFD-8A16-071054486F6A}", AnalysisWorkbenchSampling)
@@ -27377,6 +28271,7 @@ class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkb
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingBasic."""
         ICalculationToolSamplingBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27389,6 +28284,7 @@ class CalculationToolSamplingBasic(ICalculationToolSamplingBasic, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [ICalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CB786C50-8D9C-4333-A985-FFD2ADD20206}", CalculationToolSamplingBasic)
@@ -27398,6 +28294,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatur
     """Curvature tolerance definition includes parameters that determine how scalar data should be sampled based on limits on slope changes between samples."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingCurvatureTolerance."""
         ICalculationToolSamplingCurvatureTolerance.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27408,6 +28305,7 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingCurvatur
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingCurvatureTolerance, [ICalculationToolSamplingCurvatureTolerance, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{EF49B404-27D2-4AC5-BB5E-EA223A237922}", CalculationToolSamplingCurvatureTolerance)
@@ -27417,6 +28315,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalcu
     """Fixed step definition includes parameters that determine how scalar data should be sampled based on fixed steps between samples."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingFixedStep."""
         ICalculationToolSamplingFixedStep.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27427,6 +28326,7 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingFixedStep, ICalcu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingFixedStep, [ICalculationToolSamplingFixedStep, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{9B7D520F-7835-4E84-BCA4-D748C73CB609}", CalculationToolSamplingFixedStep)
@@ -27436,6 +28336,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
     """A sampling method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingMethod."""
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27444,6 +28345,7 @@ class CalculationToolSamplingMethod(ICalculationToolSamplingMethod):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethod, [ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{D77F1444-C9BC-4C9C-91A2-A5F9DE172AB8}", CalculationToolSamplingMethod)
@@ -27453,6 +28355,7 @@ class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory
     """The factory creates sampling method components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingMethodFactory."""
         ICalculationToolSamplingMethodFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27461,6 +28364,7 @@ class CalculationToolSamplingMethodFactory(ICalculationToolSamplingMethodFactory
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingMethodFactory, [ICalculationToolSamplingMethodFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{E55B6BC9-25B5-46E6-A29A-4E32F9EF3080}", CalculationToolSamplingMethodFactory)
@@ -27470,6 +28374,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeT
     """Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CalculationToolSamplingRelativeTolerance."""
         ICalculationToolSamplingRelativeTolerance.__init__(self, sourceObject)
         ICalculationToolSamplingMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27480,6 +28385,7 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingRelativeT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CalculationToolSamplingRelativeTolerance, [ICalculationToolSamplingRelativeTolerance, ICalculationToolSamplingMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{5FBC3E6B-8097-4482-A1BA-DAA0083FE904}", CalculationToolSamplingRelativeTolerance)
@@ -27489,6 +28395,7 @@ class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, 
     """The filter selects intervals if certain side condition is satisfied at least/most certain duration."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolSatisfactionConditionFilter."""
         ITimeToolSatisfactionConditionFilter.__init__(self, sourceObject)
         ITimeToolPruneFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27499,6 +28406,7 @@ class TimeToolSatisfactionConditionFilter(ITimeToolSatisfactionConditionFilter, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolSatisfactionConditionFilter, [ITimeToolSatisfactionConditionFilter, ITimeToolPruneFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{3DD67B2F-2C0A-4355-A154-08E47A93AFCF}", TimeToolSatisfactionConditionFilter)
@@ -27508,6 +28416,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchSignalDelay."""
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27518,6 +28427,7 @@ class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{71744841-D938-44BE-8336-2B54F06CF443}", AnalysisWorkbenchSignalDelay)
@@ -27527,6 +28437,7 @@ class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSign
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolSignalDelayBasic."""
         ITimeToolSignalDelayBasic.__init__(self, sourceObject)
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27539,6 +28450,7 @@ class TimeToolSignalDelayBasic(ITimeToolSignalDelayBasic, IAnalysisWorkbenchSign
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [ITimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0763A330-475A-4E4E-AB26-8943A8CC1C92}", TimeToolSignalDelayBasic)
@@ -27548,6 +28460,7 @@ class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory
     """The factory is used to create instances of volume calcs."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcFactory."""
         ISpatialAnalysisToolVolumeCalcFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27556,6 +28469,7 @@ class SpatialAnalysisToolVolumeCalcFactory(ISpatialAnalysisToolVolumeCalcFactory
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFactory, [ISpatialAnalysisToolVolumeCalcFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{80956ae5-fb8c-4ce4-930f-56b362d07cec}", SpatialAnalysisToolVolumeCalcFactory)
@@ -27565,6 +28479,7 @@ class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
     """The factory is used to create instances of volumes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeFactory."""
         ISpatialAnalysisToolVolumeFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27573,6 +28488,7 @@ class SpatialAnalysisToolVolumeFactory(ISpatialAnalysisToolVolumeFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFactory, [ISpatialAnalysisToolVolumeFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F9497BD8-A985-4054-8ADE-9042DE66125F}", SpatialAnalysisToolVolumeFactory)
@@ -27582,6 +28498,7 @@ class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory
     """The factory is used to create instances of volume grids."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridFactory."""
         ISpatialAnalysisToolVolumeGridFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27590,6 +28507,7 @@ class SpatialAnalysisToolVolumeGridFactory(ISpatialAnalysisToolVolumeGridFactory
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridFactory, [ISpatialAnalysisToolVolumeGridFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F6359611-FB48-4B00-9017-01A4BE2B76E5}", SpatialAnalysisToolVolumeGridFactory)
@@ -27599,6 +28517,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordi
     """Define a set of coordinate values."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolGridCoordinateDefinition."""
         ISpatialAnalysisToolGridCoordinateDefinition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27607,6 +28526,7 @@ class SpatialAnalysisToolGridCoordinateDefinition(ISpatialAnalysisToolGridCoordi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridCoordinateDefinition, [ISpatialAnalysisToolGridCoordinateDefinition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CCE5BC10-615F-441F-95AE-CB4CC0A7C62A}", SpatialAnalysisToolGridCoordinateDefinition)
@@ -27616,6 +28536,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, 
     """Fixed step grid values."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolGridValuesCustom."""
         ISpatialAnalysisToolGridValuesCustom.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27626,6 +28547,7 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesCustom, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesCustom, [ISpatialAnalysisToolGridValuesCustom, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{B50CCBA5-A969-40E1-86B3-96DAE5D2A3E3}", SpatialAnalysisToolGridValuesCustom)
@@ -27635,6 +28557,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
     """Fixed step grid values."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolGridValuesFixedNumberOfSteps."""
         ISpatialAnalysisToolGridValuesFixedNumberOfSteps.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27645,6 +28568,7 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedNumberOfSteps, [ISpatialAnalysisToolGridValuesFixedNumberOfSteps, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{DDD7F78E-13DC-4417-8AE5-B43BB1511AFC}", SpatialAnalysisToolGridValuesFixedNumberOfSteps)
@@ -27654,6 +28578,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixed
     """Fixed step grid values."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolGridValuesFixedStep."""
         ISpatialAnalysisToolGridValuesFixedStep.__init__(self, sourceObject)
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27664,6 +28589,7 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesFixed
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesFixedStep, [ISpatialAnalysisToolGridValuesFixedStep, ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{0942EA2D-33DE-41B5-98BE-E53E659EC81D}", SpatialAnalysisToolGridValuesFixedStep)
@@ -27673,6 +28599,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
     """A grid values method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolGridValuesMethod."""
         ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27681,6 +28608,7 @@ class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolGridValuesMethod, [ISpatialAnalysisToolGridValuesMethod])
 
 agcls.AgClassCatalog.add_catalog_entry("{D1D242BF-73F3-443A-AB46-64EAA02C5F37}", SpatialAnalysisToolGridValuesMethod)
@@ -27690,6 +28618,7 @@ class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
     """Manage Light Time Delay options.."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolLightTimeDelay."""
         ITimeToolLightTimeDelay.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -27698,6 +28627,7 @@ class TimeToolLightTimeDelay(ITimeToolLightTimeDelay):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolLightTimeDelay, [ITimeToolLightTimeDelay])
 
 agcls.AgClassCatalog.add_catalog_entry("{085E2242-4392-4F35-857E-A46A72EADE70}", TimeToolLightTimeDelay)
@@ -27707,6 +28637,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
     """A volume interface. The methods and properties of the interface provide Volume functions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolume."""
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27717,6 +28648,7 @@ class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchCo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{299D5D3F-7E12-4747-BFD3-2B5CADBAD8EE}", SpatialAnalysisToolVolume)
@@ -27726,6 +28658,7 @@ class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWor
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalc."""
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27736,6 +28669,7 @@ class SpatialAnalysisToolVolumeCalc(ISpatialAnalysisToolVolumeCalc, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalc, [ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{d014bfd1-130d-4dc4-a841-76c75bc08f9c}", SpatialAnalysisToolVolumeCalc)
@@ -27745,6 +28679,7 @@ class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitu
     """A volume calc altitude interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcAltitude."""
         ISpatialAnalysisToolVolumeCalcAltitude.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27757,6 +28692,7 @@ class SpatialAnalysisToolVolumeCalcAltitude(ISpatialAnalysisToolVolumeCalcAltitu
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAltitude, [ISpatialAnalysisToolVolumeCalcAltitude, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4e3c369c-c189-48ce-8e93-f0c6478f0abe}", SpatialAnalysisToolVolumeCalcAltitude)
@@ -27766,6 +28702,7 @@ class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalc
     """A volume calc angle off vector interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcAngleOffVector."""
         ISpatialAnalysisToolVolumeCalcAngleOffVector.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27778,6 +28715,7 @@ class SpatialAnalysisToolVolumeCalcAngleOffVector(ISpatialAnalysisToolVolumeCalc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcAngleOffVector, [ISpatialAnalysisToolVolumeCalcAngleOffVector, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{e37c954b-d3d5-4d2e-91b6-0ae4f8380620}", SpatialAnalysisToolVolumeCalcAngleOffVector)
@@ -27787,6 +28725,7 @@ class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolume
     """A volume calc condition satisfaction interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcConditionSatMetric."""
         ISpatialAnalysisToolVolumeCalcConditionSatMetric.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27799,6 +28738,7 @@ class SpatialAnalysisToolVolumeCalcConditionSatMetric(ISpatialAnalysisToolVolume
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcConditionSatMetric, [ISpatialAnalysisToolVolumeCalcConditionSatMetric, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{589b39d3-7b75-4fe8-8fb2-1c7e5e247fea}", SpatialAnalysisToolVolumeCalcConditionSatMetric)
@@ -27808,6 +28748,7 @@ class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDela
     """A volume calc propagation delay to location interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcDelayRange."""
         ISpatialAnalysisToolVolumeCalcDelayRange.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27820,6 +28761,7 @@ class SpatialAnalysisToolVolumeCalcDelayRange(ISpatialAnalysisToolVolumeCalcDela
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcDelayRange, [ISpatialAnalysisToolVolumeCalcDelayRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{bd9388e8-e5f8-4ba9-9371-4ff8fc1ed33c}", SpatialAnalysisToolVolumeCalcDelayRange)
@@ -27829,6 +28771,7 @@ class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpa
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcFile."""
         ISpatialAnalysisToolVolumeCalcFile.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27841,6 +28784,7 @@ class SpatialAnalysisToolVolumeCalcFile(ISpatialAnalysisToolVolumeCalcFile, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFile, [ISpatialAnalysisToolVolumeCalcFile, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{188f96c6-9568-4609-9944-dfc5fb7247c5}", SpatialAnalysisToolVolumeCalcFile)
@@ -27850,6 +28794,7 @@ class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFrom
     """A volume calc scalar to location interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcFromScalar."""
         ISpatialAnalysisToolVolumeCalcFromScalar.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27862,6 +28807,7 @@ class SpatialAnalysisToolVolumeCalcFromScalar(ISpatialAnalysisToolVolumeCalcFrom
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcFromScalar, [ISpatialAnalysisToolVolumeCalcFromScalar, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{73219623-93c0-4c6e-961a-7fae5dfe9234}", SpatialAnalysisToolVolumeCalcFromScalar)
@@ -27871,6 +28817,7 @@ class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, IS
     """A volume calc distance to location interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcRange."""
         ISpatialAnalysisToolVolumeCalcRange.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27883,6 +28830,7 @@ class SpatialAnalysisToolVolumeCalcRange(ISpatialAnalysisToolVolumeCalcRange, IS
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcRange, [ISpatialAnalysisToolVolumeCalcRange, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7f1aa95f-e8d6-4faf-925b-98785243ba67}", SpatialAnalysisToolVolumeCalcRange)
@@ -27892,6 +28840,7 @@ class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalc
     """A volume calc solar intensityn interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCalcSolarIntensity."""
         ISpatialAnalysisToolVolumeCalcSolarIntensity.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeCalc.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27904,6 +28853,7 @@ class SpatialAnalysisToolVolumeCalcSolarIntensity(ISpatialAnalysisToolVolumeCalc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCalcSolarIntensity, [ISpatialAnalysisToolVolumeCalcSolarIntensity, ISpatialAnalysisToolVolumeCalc, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7796e871-d645-4f65-a3dc-de687b6fbcd5}", SpatialAnalysisToolVolumeCalcSolarIntensity)
@@ -27913,6 +28863,7 @@ class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpa
     """A combined volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeCombined."""
         ISpatialAnalysisToolVolumeCombined.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27925,6 +28876,7 @@ class SpatialAnalysisToolVolumeCombined(ISpatialAnalysisToolVolumeCombined, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeCombined, [ISpatialAnalysisToolVolumeCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ECD2E89-B432-47C3-A80F-AF6429E66746}", SpatialAnalysisToolVolumeCombined)
@@ -27934,6 +28886,7 @@ class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpa
     """An volume from calc volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeFromCalc."""
         ISpatialAnalysisToolVolumeFromCalc.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27946,6 +28899,7 @@ class SpatialAnalysisToolVolumeFromCalc(ISpatialAnalysisToolVolumeFromCalc, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCalc, [ISpatialAnalysisToolVolumeFromCalc, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F2AC0BF-4645-4C7F-9660-A894E267FD59}", SpatialAnalysisToolVolumeFromCalc)
@@ -27955,6 +28909,7 @@ class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondi
     """A volume from conditioninterface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeFromCondition."""
         ISpatialAnalysisToolVolumeFromCondition.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27967,6 +28922,7 @@ class SpatialAnalysisToolVolumeFromCondition(ISpatialAnalysisToolVolumeFromCondi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromCondition, [ISpatialAnalysisToolVolumeFromCondition, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{A2546B12-78BF-4F8F-87C2-31BC73DA265B}", SpatialAnalysisToolVolumeFromCondition)
@@ -27976,6 +28932,7 @@ class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpa
     """An over time volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeFromGrid."""
         ISpatialAnalysisToolVolumeFromGrid.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -27988,6 +28945,7 @@ class SpatialAnalysisToolVolumeFromGrid(ISpatialAnalysisToolVolumeFromGrid, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromGrid, [ISpatialAnalysisToolVolumeFromGrid, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D49FE282-4C05-4097-970C-1282997378E9}", SpatialAnalysisToolVolumeFromGrid)
@@ -27997,6 +28955,7 @@ class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFr
     """An volume from time satisfaction volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeFromTimeSatisfaction."""
         ISpatialAnalysisToolVolumeFromTimeSatisfaction.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28009,6 +28968,7 @@ class SpatialAnalysisToolVolumeFromTimeSatisfaction(ISpatialAnalysisToolVolumeFr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeFromTimeSatisfaction, [ISpatialAnalysisToolVolumeFromTimeSatisfaction, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{29ECFCF5-9E5E-4E17-99AA-0B312227CFBF}", SpatialAnalysisToolVolumeFromTimeSatisfaction)
@@ -28018,6 +28978,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGrid."""
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28028,6 +28989,7 @@ class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B7068C38-74D7-4F22-B0C4-A0DBA06DF373}", SpatialAnalysisToolVolumeGrid)
@@ -28037,6 +28999,7 @@ class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBear
     """A volume grid bearing alt (Surface Bearing) interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridBearingAlt."""
         ISpatialAnalysisToolVolumeGridBearingAlt.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28049,6 +29012,7 @@ class SpatialAnalysisToolVolumeGridBearingAlt(ISpatialAnalysisToolVolumeGridBear
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridBearingAlt, [ISpatialAnalysisToolVolumeGridBearingAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{ED60A16E-82F8-4E0A-9F07-CF8DF05C985A}", SpatialAnalysisToolVolumeGridBearingAlt)
@@ -28058,6 +29022,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCarte
     """A volume grid Cartesian interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridCartesian."""
         ISpatialAnalysisToolVolumeGridCartesian.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28070,6 +29035,7 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGridCarte
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [ISpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AF15D0A4-BB42-4762-A761-9BD11DC948D0}", SpatialAnalysisToolVolumeGridCartesian)
@@ -28079,6 +29045,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridCon
     """A volume grid constrained interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridConstrained."""
         ISpatialAnalysisToolVolumeGridConstrained.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28091,6 +29058,7 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGridCon
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [ISpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{253FC52C-5554-4A53-AE3D-624316ECFFFD}", SpatialAnalysisToolVolumeGridConstrained)
@@ -28100,6 +29068,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCyl
     """A volume grid cylindrical interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridCylindrical."""
         ISpatialAnalysisToolVolumeGridCylindrical.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28112,6 +29081,7 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGridCyl
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [ISpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{55C6A7AA-5354-4DF1-9A0E-F62CB01115C8}", SpatialAnalysisToolVolumeGridCylindrical)
@@ -28121,6 +29091,7 @@ class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLo
     """A volume grid lat lon alt (Cartogrographic) interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridLatLonAlt."""
         ISpatialAnalysisToolVolumeGridLatLonAlt.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28133,6 +29104,7 @@ class SpatialAnalysisToolVolumeGridLatLonAlt(ISpatialAnalysisToolVolumeGridLatLo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatLonAlt, [ISpatialAnalysisToolVolumeGridLatLonAlt, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{89C10FC4-4031-4B63-9C55-E092DDF3839D}", SpatialAnalysisToolVolumeGridLatLonAlt)
@@ -28142,6 +29114,7 @@ class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
     """An interface that generates Volume Grid results."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridResult."""
         ISpatialAnalysisToolVolumeGridResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28150,6 +29123,7 @@ class SpatialAnalysisToolVolumeGridResult(ISpatialAnalysisToolVolumeGridResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridResult, [ISpatialAnalysisToolVolumeGridResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{43B95CA7-5CCA-4477-9F37-63A86CD9DEBB}", SpatialAnalysisToolVolumeGridResult)
@@ -28159,6 +29133,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpher
     """A volume grid spherical interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeGridSpherical."""
         ISpatialAnalysisToolVolumeGridSpherical.__init__(self, sourceObject)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28171,6 +29146,7 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGridSpher
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [ISpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0DFD2937-3181-4895-AB05-A45FFD744964}", SpatialAnalysisToolVolumeGridSpherical)
@@ -28180,6 +29156,7 @@ class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatial
     """An Inview volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeInview."""
         ISpatialAnalysisToolVolumeInview.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28192,6 +29169,7 @@ class SpatialAnalysisToolVolumeInview(ISpatialAnalysisToolVolumeInview, ISpatial
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeInview, [ISpatialAnalysisToolVolumeInview, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC8CB747-2714-4F73-8BD6-ED974F0B03AB}", SpatialAnalysisToolVolumeInview)
@@ -28201,6 +29179,7 @@ class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpa
     """A lighting volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeLighting."""
         ISpatialAnalysisToolVolumeLighting.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28213,6 +29192,7 @@ class SpatialAnalysisToolVolumeLighting(ISpatialAnalysisToolVolumeLighting, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeLighting, [ISpatialAnalysisToolVolumeLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B9ACC019-A8DD-4342-ADE9-1335215F0FAF}", SpatialAnalysisToolVolumeLighting)
@@ -28222,6 +29202,7 @@ class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpa
     """An over time volume interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SpatialAnalysisToolVolumeOverTime."""
         ISpatialAnalysisToolVolumeOverTime.__init__(self, sourceObject)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28234,6 +29215,7 @@ class SpatialAnalysisToolVolumeOverTime(ISpatialAnalysisToolVolumeOverTime, ISpa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeOverTime, [ISpatialAnalysisToolVolumeOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{F5AB68EE-DCC1-435F-A0C3-133095B01D2D}", SpatialAnalysisToolVolumeOverTime)
@@ -28243,6 +29225,7 @@ class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
     """Generic VGT component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchGeneric."""
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28251,6 +29234,7 @@ class AnalysisWorkbenchGeneric(IAnalysisWorkbenchComponent):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchGeneric, [IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2909EDFB-9BE2-4BD2-A678-186C9D136937}", AnalysisWorkbenchGeneric)
@@ -28260,6 +29244,7 @@ class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
     """VGT component info."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchTypeInfo."""
         IAnalysisWorkbenchTypeInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28268,6 +29253,7 @@ class AnalysisWorkbenchTypeInfo(IAnalysisWorkbenchTypeInfo):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchTypeInfo, [IAnalysisWorkbenchTypeInfo])
 
 agcls.AgClassCatalog.add_catalog_entry("{BA26887C-6DFE-4F18-96D8-5694296568D2}", AnalysisWorkbenchTypeInfo)
@@ -28277,6 +29263,7 @@ class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchIns
     """Enable to obtain information about the parent object that owns the VGT component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchInstance."""
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchInstance.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28287,6 +29274,7 @@ class AnalysisWorkbenchInstance(IAnalysisWorkbenchContext, IAnalysisWorkbenchIns
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchInstance, [IAnalysisWorkbenchContext, IAnalysisWorkbenchInstance])
 
 agcls.AgClassCatalog.add_catalog_entry("{28241775-2044-4AD1-BC1D-D5B345437415}", AnalysisWorkbenchInstance)
@@ -28296,6 +29284,7 @@ class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTem
     """Enable to obtain information about the STK class that owns the VGT component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchTemplate."""
         IAnalysisWorkbenchContext.__init__(self, sourceObject)
         IAnalysisWorkbenchTemplate.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28306,6 +29295,7 @@ class AnalysisWorkbenchTemplate(IAnalysisWorkbenchContext, IAnalysisWorkbenchTem
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchTemplate, [IAnalysisWorkbenchContext, IAnalysisWorkbenchTemplate])
 
 agcls.AgClassCatalog.add_catalog_entry("{DB2ABC0D-53EC-43C9-AB85-3ADBDC10CFE3}", AnalysisWorkbenchTemplate)
@@ -28315,6 +29305,7 @@ class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkb
     """Represents a reference to a VGT point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointRefTo."""
         IVectorGeometryToolPointRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28325,6 +29316,7 @@ class VectorGeometryToolPointRefTo(IVectorGeometryToolPointRefTo, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointRefTo, [IVectorGeometryToolPointRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{33A043CD-6D36-414A-B73C-9DA3ABDE4C6F}", VectorGeometryToolPointRefTo)
@@ -28334,6 +29326,7 @@ class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWor
     """Represents a vector reference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorRefTo."""
         IVectorGeometryToolVectorRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28344,6 +29337,7 @@ class VectorGeometryToolVectorRefTo(IVectorGeometryToolVectorRefTo, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorRefTo, [IVectorGeometryToolVectorRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{76ABF2B5-C60E-4B80-84BA-3F2345E357A6}", VectorGeometryToolVectorRefTo)
@@ -28353,6 +29347,7 @@ class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkben
     """Represents a reference to a VGT axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesRefTo."""
         IVectorGeometryToolAxesRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28363,6 +29358,7 @@ class VectorGeometryToolAxesRefTo(IVectorGeometryToolAxesRefTo, IAnalysisWorkben
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesRefTo, [IVectorGeometryToolAxesRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{ABAD0C95-5570-461A-9DA0-FD800B10DB20}", VectorGeometryToolAxesRefTo)
@@ -28372,6 +29368,7 @@ class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkb
     """Represents a reference to a VGT angle."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleRefTo."""
         IVectorGeometryToolAngleRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28382,6 +29379,7 @@ class VectorGeometryToolAngleRefTo(IVectorGeometryToolAngleRefTo, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleRefTo, [IVectorGeometryToolAngleRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{E1C8DFF6-65AA-4A6B-B160-7315BD795133}", VectorGeometryToolAngleRefTo)
@@ -28391,6 +29389,7 @@ class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWor
     """Represents a System reference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemRefTo."""
         IVectorGeometryToolSystemRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28401,6 +29400,7 @@ class VectorGeometryToolSystemRefTo(IVectorGeometryToolSystemRefTo, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemRefTo, [IVectorGeometryToolSystemRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{4C6DEAA3-3DD0-439F-A58F-A2BC329384A8}", VectorGeometryToolSystemRefTo)
@@ -28410,6 +29410,7 @@ class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkb
     """Represents a Plane reference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneRefTo."""
         IVectorGeometryToolPlaneRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28420,6 +29421,7 @@ class VectorGeometryToolPlaneRefTo(IVectorGeometryToolPlaneRefTo, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneRefTo, [IVectorGeometryToolPlaneRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{C24A1C1D-EEF3-43DB-83BF-04F12E85B155}", VectorGeometryToolPlaneRefTo)
@@ -28429,6 +29431,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimePropertie
     """A generic vector class."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVector."""
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28441,6 +29444,7 @@ class VectorGeometryToolVector(IVectorGeometryToolVector, ITimeToolTimePropertie
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{64392436-52D5-4274-9483-E10C56BBD037}", VectorGeometryToolVector)
@@ -28450,6 +29454,7 @@ class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
     """Allow configuring the VGT axes labels."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesLabels."""
         IVectorGeometryToolAxesLabels.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28458,6 +29463,7 @@ class VectorGeometryToolAxesLabels(IVectorGeometryToolAxesLabels):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLabels, [IVectorGeometryToolAxesLabels])
 
 agcls.AgClassCatalog.add_catalog_entry("{AC9F13AD-1E42-4695-AC74-6259D2013E4F}", VectorGeometryToolAxesLabels)
@@ -28467,6 +29473,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, I
     """A generic axes class."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxes."""
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28479,6 +29486,7 @@ class VectorGeometryToolAxes(IVectorGeometryToolAxes, ITimeToolTimeProperties, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{50F5DD10-4D83-4603-94ED-BF7514C26282}", VectorGeometryToolAxes)
@@ -28488,6 +29496,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties,
     """A generic VGT point class."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPoint."""
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28500,6 +29509,7 @@ class VectorGeometryToolPoint(IVectorGeometryToolPoint, ITimeToolTimeProperties,
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0092C129-467E-4B36-B971-C53F65481DA9}", VectorGeometryToolPoint)
@@ -28509,6 +29519,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimePropertie
     """Base class for VGT axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystem."""
         IVectorGeometryToolSystem.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28521,6 +29532,7 @@ class VectorGeometryToolSystem(IVectorGeometryToolSystem, ITimeToolTimePropertie
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{20F29E1B-F72A-4B9C-B13B-04E8F1CCAEA6}", VectorGeometryToolSystem)
@@ -28530,6 +29542,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties,
     """Base class for VGT axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngle."""
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28542,6 +29555,7 @@ class VectorGeometryToolAngle(IVectorGeometryToolAngle, ITimeToolTimeProperties,
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C3F96DA3-00EC-4E20-A66C-B3506100496B}", VectorGeometryToolAngle)
@@ -28551,6 +29565,7 @@ class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
     """Allow configuring the X and Y axes labels."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneLabels."""
         IVectorGeometryToolPlaneLabels.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28559,6 +29574,7 @@ class VectorGeometryToolPlaneLabels(IVectorGeometryToolPlaneLabels):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneLabels, [IVectorGeometryToolPlaneLabels])
 
 agcls.AgClassCatalog.add_catalog_entry("{E40312E9-2D04-4F38-8E35-0C1F5CC66B79}", VectorGeometryToolPlaneLabels)
@@ -28568,6 +29584,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties,
     """Base class for VGT axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlane."""
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
@@ -28580,6 +29597,7 @@ class VectorGeometryToolPlane(IVectorGeometryToolPlane, ITimeToolTimeProperties,
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2E6EAA85-8440-4C4E-97FE-76491E05098A}", VectorGeometryToolPlane)
@@ -28589,6 +29607,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAligned
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesAlignedAndConstrained."""
         IVectorGeometryToolAxesAlignedAndConstrained.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28603,6 +29622,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxesAligned
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [IVectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{46BB7D5B-6593-434F-B288-BF1445920A2C}", VectorGeometryToolAxesAlignedAndConstrained)
@@ -28612,6 +29632,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, 
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesAngularOffset."""
         IVectorGeometryToolAxesAngularOffset.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28626,6 +29647,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxesAngularOffset, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [IVectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{64503F8B-96E7-455B-B589-2578ADE1214B}", VectorGeometryToolAxesAngularOffset)
@@ -28635,6 +29657,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IV
     """Axes based on another set fixed at a specified epoch."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesFixedAtEpoch."""
         IVectorGeometryToolAxesFixedAtEpoch.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28649,6 +29672,7 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxesFixedAtEpoch, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [IVectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BEEE1271-F9F7-4C9E-A6C9-4337AA4F86AC}", VectorGeometryToolAxesFixedAtEpoch)
@@ -28658,6 +29682,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometr
     """B-Plane axes using the selected target body and reference vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesBPlane."""
         IVectorGeometryToolAxesBPlane.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28672,6 +29697,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxesBPlane, IVectorGeometr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [IVectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E0F714EA-31E4-4F92-876F-BDD3183C29B5}", VectorGeometryToolAxesBPlane)
@@ -28681,6 +29707,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IV
     """Customized axes offset with respect to a set of reference Axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesCustomScript."""
         IVectorGeometryToolAxesCustomScript.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28695,6 +29722,7 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxesCustomScript, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [IVectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{BC7A87DC-118E-46ED-8657-90DF42B7B101}", VectorGeometryToolAxesCustomScript)
@@ -28704,6 +29732,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IV
     """Axes specified by data from a file."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesAttitudeFile."""
         IVectorGeometryToolAxesAttitudeFile.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28718,6 +29747,7 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxesAttitudeFile, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [IVectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3505D063-9E1B-4964-9865-FFE41F64C8CF}", VectorGeometryToolAxesAttitudeFile)
@@ -28727,6 +29757,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryT
     """Axes fixed in reference axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesFixed."""
         IVectorGeometryToolAxesFixed.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28741,6 +29772,7 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxesFixed, IVectorGeometryT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [IVectorGeometryToolAxesFixed, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AE41C73-3C82-405B-B7D2-A6D1BE7EE2EE}", VectorGeometryToolAxesFixed)
@@ -28750,6 +29782,7 @@ class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVec
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesModelAttach."""
         IVectorGeometryToolAxesModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28764,6 +29797,7 @@ class VectorGeometryToolAxesModelAttach(IVectorGeometryToolAxesModelAttach, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttach, [IVectorGeometryToolAxesModelAttach, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{816C612A-13DD-4812-BFDE-E3861F8C39FD}", VectorGeometryToolAxesModelAttach)
@@ -28773,6 +29807,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeo
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesSpinning."""
         IVectorGeometryToolAxesSpinning.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28787,6 +29822,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxesSpinning, IVectorGeo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [IVectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C0FB8B6D-84CC-4553-ADA9-2F7D91A83AB6}", VectorGeometryToolAxesSpinning)
@@ -28796,6 +29832,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorG
     """Topocentric axes located at the reference point's projection on the central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesOnSurface."""
         IVectorGeometryToolAxesOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28810,6 +29847,7 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxesOnSurface, IVectorG
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [IVectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CE8C301A-A846-44FD-8871-5AB4CAACEF11}", VectorGeometryToolAxesOnSurface)
@@ -28819,6 +29857,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVecto
     """Axes based on trajectory of the point relative to the reference coordinate system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesTrajectory."""
         IVectorGeometryToolAxesTrajectory.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28833,6 +29872,7 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxesTrajectory, IVecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [IVectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{4038771E-73C1-4989-A9AB-4DC37025FACC}", VectorGeometryToolAxesTrajectory)
@@ -28842,6 +29882,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLib
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesLagrangeLibration."""
         IVectorGeometryToolAxesLagrangeLibration.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28856,6 +29897,7 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxesLagrangeLib
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [IVectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{16315085-7C87-4A20-865C-0F419A5CDA2F}", VectorGeometryToolAxesLagrangeLibration)
@@ -28865,6 +29907,7 @@ class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
     """Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesCommonTasks."""
         IVectorGeometryToolAxesCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -28873,6 +29916,7 @@ class VectorGeometryToolAxesCommonTasks(IVectorGeometryToolAxesCommonTasks):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesCommonTasks, [IVectorGeometryToolAxesCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{07D4865C-78F1-4B3A-9756-D70050613D4A}", VectorGeometryToolAxesCommonTasks)
@@ -28882,6 +29926,7 @@ class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, 
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesAtTimeInstant."""
         IVectorGeometryToolAxesAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28896,6 +29941,7 @@ class VectorGeometryToolAxesAtTimeInstant(IVectorGeometryToolAxesAtTimeInstant, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [IVectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{3845C20A-A6E2-45A0-A748-10E9B565C48D}", VectorGeometryToolAxesAtTimeInstant)
@@ -28905,6 +29951,7 @@ class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkb
     """A VGT axes plugin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesPlugin."""
         IVectorGeometryToolAxesPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28919,6 +29966,7 @@ class VectorGeometryToolAxesPlugin(IVectorGeometryToolAxesPlugin, IAnalysisWorkb
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [IVectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{C494C46D-EBC6-45B9-B2E7-C9FF7E75467D}", VectorGeometryToolAxesPlugin)
@@ -28928,6 +29976,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVecto
     """An angle between two vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleBetweenVectors."""
         IVectorGeometryToolAngleBetweenVectors.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28942,6 +29991,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngleBetweenVecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [IVectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2F0AA430-85D0-4479-9540-B1B64EB3B530}", VectorGeometryToolAngleBetweenVectors)
@@ -28951,6 +30001,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes
     """An angle between two planes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleBetweenPlanes."""
         IVectorGeometryToolAngleBetweenPlanes.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28965,6 +30016,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngleBetweenPlanes
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [IVectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{30C2886F-8792-475D-9E42-975308B1B94E}", VectorGeometryToolAngleBetweenPlanes)
@@ -28974,6 +30026,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorG
     """An angle between two vectors about an axis."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleDihedral."""
         IVectorGeometryToolAngleDihedral.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -28988,6 +30041,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngleDihedral, IVectorG
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [IVectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{550855BB-E8F1-440B-BA5C-024ACE2E2A17}", VectorGeometryToolAngleDihedral)
@@ -28997,6 +30051,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorG
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleRotation."""
         IVectorGeometryToolAngleRotation.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29011,6 +30066,7 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngleRotation, IVectorG
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [IVectorGeometryToolAngleRotation, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AD8B87A3-8407-42AB-B6CA-8E83450C32C1}", VectorGeometryToolAngleRotation)
@@ -29020,6 +30076,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeo
     """An angle between a vector and a plane."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleToPlane."""
         IVectorGeometryToolAngleToPlane.__init__(self, sourceObject)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29034,6 +30091,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngleToPlane, IVectorGeo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [IVectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8CE8877B-1078-41CD-AEE6-B9DDD92F8201}", VectorGeometryToolAngleToPlane)
@@ -29043,6 +30101,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeome
     """A plane normal to a vector at a given point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneNormal."""
         IVectorGeometryToolPlaneNormal.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29057,6 +30116,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlaneNormal, IVectorGeome
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [IVectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0AED319D-7B6C-462B-882B-D363F7A2A86C}", VectorGeometryToolPlaneNormal)
@@ -29066,6 +30126,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorG
     """A plane based on a selected Quadrant of a reference system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneQuadrant."""
         IVectorGeometryToolPlaneQuadrant.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29080,6 +30141,7 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlaneQuadrant, IVectorG
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [IVectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8330CE61-25F6-4F92-AE2E-BDB566BA42F3}", VectorGeometryToolPlaneQuadrant)
@@ -29089,6 +30151,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVec
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneTrajectory."""
         IVectorGeometryToolPlaneTrajectory.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29103,6 +30166,7 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlaneTrajectory, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [IVectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7BD18F79-6788-48B1-AFB5-243D62C01177}", VectorGeometryToolPlaneTrajectory)
@@ -29112,6 +30176,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometr
     """A Plane containing points PointA, PointB and ReferencePont with the first axis aligned with the direction from the ReferencePoint to PointA and the second axis toward the direction from the ReferencePoint to PointB."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneTriad."""
         IVectorGeometryToolPlaneTriad.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29126,6 +30191,7 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlaneTriad, IVectorGeometr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [IVectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{8A4D3940-BD08-4D5C-A171-E0AC90DEB5F4}", VectorGeometryToolPlaneTriad)
@@ -29135,6 +30201,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVecto
     """A plane normal to a vector at a given point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneTwoVector."""
         IVectorGeometryToolPlaneTwoVector.__init__(self, sourceObject)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29149,6 +30216,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlaneTwoVector, IVecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [IVectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{49a61e7a-baba-48fd-9d9d-61f91c520291}", VectorGeometryToolPlaneTwoVector)
@@ -29158,6 +30226,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeome
     """B-Plane point using the selected target body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointBPlane."""
         IVectorGeometryToolPointBPlane.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29172,6 +30241,7 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPointBPlane, IVectorGeome
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [IVectorGeometryToolPointBPlane, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E62329EB-83D1-47CE-8B5B-B795995A2270}", VectorGeometryToolPointBPlane)
@@ -29181,6 +30251,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryT
     """Point specified by data from a file."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointFile."""
         IVectorGeometryToolPointFile.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29195,6 +30266,7 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPointFile, IVectorGeometryT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [IVectorGeometryToolPointFile, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E71C927-09CA-4A90-95F0-CB87E244CE72}", VectorGeometryToolPointFile)
@@ -29204,6 +30276,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem
     """Point fixed in a reference coordinate system using the selected coordinate type."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointFixedInSystem."""
         IVectorGeometryToolPointFixedInSystem.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29218,6 +30291,7 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPointFixedInSystem
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [IVectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{9FA10E06-094A-446C-BE9A-5BA397776778}", VectorGeometryToolPointFixedInSystem)
@@ -29227,6 +30301,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeo
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointGrazing."""
         IVectorGeometryToolPointGrazing.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29241,6 +30316,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPointGrazing, IVectorGeo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [IVectorGeometryToolPointGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7D8A954-B6ED-43A0-8B2C-C58B06DCDFF7}", VectorGeometryToolPointGrazing)
@@ -29250,6 +30326,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometr
     """Point on central body surface that reflects from source to observer."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointGlint."""
         IVectorGeometryToolPointGlint.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29264,6 +30341,7 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPointGlint, IVectorGeometr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [IVectorGeometryToolPointGlint, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{68F85553-0FA2-459D-93AC-BD4D68A01F6F}", VectorGeometryToolPointGlint)
@@ -29273,6 +30351,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianc
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointCovarianceGrazing."""
         IVectorGeometryToolPointCovarianceGrazing.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29287,6 +30366,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPointCovarianc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [IVectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{84D91807-716E-46F4-AB70-53C73FA21C20}", VectorGeometryToolPointCovarianceGrazing)
@@ -29296,6 +30376,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneInte
     """Point on a plane located along a given direction looking from a given origin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointPlaneIntersection."""
         IVectorGeometryToolPointPlaneIntersection.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29310,6 +30391,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPointPlaneInte
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [IVectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{63F785C4-EC8E-4BCA-AF05-D57BD357D06C}", VectorGeometryToolPointPlaneIntersection)
@@ -29319,6 +30401,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVecto
     """The detic subpoint of the reference point as projected onto the central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointOnSurface."""
         IVectorGeometryToolPointOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29333,6 +30416,7 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPointOnSurface, IVecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [IVectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{03ECCFD1-B058-4817-826F-EDE2A6880757}", VectorGeometryToolPointOnSurface)
@@ -29342,6 +30426,7 @@ class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IV
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointModelAttach."""
         IVectorGeometryToolPointModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29356,6 +30441,7 @@ class VectorGeometryToolPointModelAttach(IVectorGeometryToolPointModelAttach, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttach, [IVectorGeometryToolPointModelAttach, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{15958616-F779-4772-9E54-9B134B69BE89}", VectorGeometryToolPointModelAttach)
@@ -29365,6 +30451,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSa
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointSatelliteCollectionEntry."""
         IVectorGeometryToolPointSatelliteCollectionEntry.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29379,6 +30466,7 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPointSa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [IVectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{d0dacbed-0c16-4de5-b32a-9c7624297014}", VectorGeometryToolPointSatelliteCollectionEntry)
@@ -29388,6 +30476,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjec
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointPlaneProjection."""
         IVectorGeometryToolPointPlaneProjection.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29402,6 +30491,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPointPlaneProjec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [IVectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C750AD99-2498-42F6-BBBD-CEB1835E8F3A}", VectorGeometryToolPointPlaneProjection)
@@ -29411,6 +30501,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeL
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointLagrangeLibration."""
         IVectorGeometryToolPointLagrangeLibration.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29425,6 +30516,7 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPointLagrangeL
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [IVectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6BF6D976-775A-445D-AD2B-899892F3127E}", VectorGeometryToolPointLagrangeLibration)
@@ -29434,6 +30526,7 @@ class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
     """Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointCommonTasks."""
         IVectorGeometryToolPointCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29442,6 +30535,7 @@ class VectorGeometryToolPointCommonTasks(IVectorGeometryToolPointCommonTasks):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCommonTasks, [IVectorGeometryToolPointCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{9866644C-E731-465E-A7AA-3F4667C1729E}", VectorGeometryToolPointCommonTasks)
@@ -29451,6 +30545,7 @@ class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyI
     """Point on central body surface along direction vector originating at source point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointCentBodyIntersect."""
         IVectorGeometryToolPointCentBodyIntersect.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29465,6 +30560,7 @@ class VectorGeometryToolPointCentBodyIntersect(IVectorGeometryToolPointCentBodyI
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCentBodyIntersect, [IVectorGeometryToolPointCentBodyIntersect, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{882047E8-7CB3-489B-B029-33163CBBA583}", VectorGeometryToolPointCentBodyIntersect)
@@ -29474,6 +30570,7 @@ class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointAtTimeInstant."""
         IVectorGeometryToolPointAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29488,6 +30585,7 @@ class VectorGeometryToolPointAtTimeInstant(IVectorGeometryToolPointAtTimeInstant
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [IVectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{8BFB46DF-C6BC-45DA-BAA7-9C996710CFDA}", VectorGeometryToolPointAtTimeInstant)
@@ -29497,6 +30595,7 @@ class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWor
     """A VGT point plugin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointPlugin."""
         IVectorGeometryToolPointPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29511,6 +30610,7 @@ class VectorGeometryToolPointPlugin(IVectorGeometryToolPointPlugin, IAnalysisWor
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [IVectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{8297DC34-1755-4FE7-BA23-2D9CDE487EF1}", VectorGeometryToolPointPlugin)
@@ -29520,6 +30620,7 @@ class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset
     """Point specified by fixed components with respect to central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointCBFixedOffset."""
         IVectorGeometryToolPointCBFixedOffset.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29534,6 +30635,7 @@ class VectorGeometryToolPointCBFixedOffset(IVectorGeometryToolPointCBFixedOffset
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointCBFixedOffset, [IVectorGeometryToolPointCBFixedOffset, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{0C76BDAE-992E-4D61-8D09-E6B2B6923A5B}", VectorGeometryToolPointCBFixedOffset)
@@ -29543,6 +30645,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVec
     """A system assembled from an origin point and a set of reference axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemAssembled."""
         IVectorGeometryToolSystemAssembled.__init__(self, sourceObject)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29557,6 +30660,7 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystemAssembled, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [IVectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{CE4E84B1-8CCF-467A-A3ED-274D0943407F}", VectorGeometryToolSystemAssembled)
@@ -29566,6 +30670,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVec
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemOnSurface."""
         IVectorGeometryToolSystemOnSurface.__init__(self, sourceObject)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29580,6 +30685,7 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystemOnSurface, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [IVectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{073423F9-A59D-4313-B499-C86A45C63513}", VectorGeometryToolSystemOnSurface)
@@ -29589,6 +30695,7 @@ class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
     """A position represented by the Latitude, longtitude and Latitude."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchLLAPosition."""
         IAnalysisWorkbenchLLAPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29597,6 +30704,7 @@ class AnalysisWorkbenchLLAPosition(IAnalysisWorkbenchLLAPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchLLAPosition, [IAnalysisWorkbenchLLAPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CB962F51-978A-43F9-A88B-AAB62117F93C}", AnalysisWorkbenchLLAPosition)
@@ -29606,6 +30714,7 @@ class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
     """Provide methods to create non-persistent VGT coordinate reference frames (systems). Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemCommonTasks."""
         IVectorGeometryToolSystemCommonTasks.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29614,6 +30723,7 @@ class VectorGeometryToolSystemCommonTasks(IVectorGeometryToolSystemCommonTasks):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemCommonTasks, [IVectorGeometryToolSystemCommonTasks])
 
 agcls.AgClassCatalog.add_catalog_entry("{EBE7AF41-FC7E-4D82-B522-72B4AA551B41}", VectorGeometryToolSystemCommonTasks)
@@ -29623,6 +30733,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVec
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorAngleRate."""
         IVectorGeometryToolVectorAngleRate.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29637,6 +30748,7 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVectorAngleRate, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [IVectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{5769E079-8E9B-40B2-B2EF-14F202AF5666}", VectorGeometryToolVectorAngleRate)
@@ -29646,6 +30758,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVecto
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorApoapsis."""
         IVectorGeometryToolVectorApoapsis.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29660,6 +30773,7 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVectorApoapsis, IVecto
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [IVectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{22E4138C-29C6-4401-91E0-DF0C00422302}", VectorGeometryToolVectorApoapsis)
@@ -29669,6 +30783,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch
     """Based on another vector fixed at a specified epoch."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorFixedAtEpoch."""
         IVectorGeometryToolVectorFixedAtEpoch.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29683,6 +30798,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVectorFixedAtEpoch
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [IVectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{FA8DB5F5-1F28-40E6-9B86-489E06D61523}", VectorGeometryToolVectorFixedAtEpoch)
@@ -29692,6 +30808,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVe
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorAngularVelocity."""
         IVectorGeometryToolVectorAngularVelocity.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29706,6 +30823,7 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVectorAngularVe
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [IVectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2ABC83DB-6F6C-4A91-8597-21BD2715D411}", VectorGeometryToolVectorAngularVelocity)
@@ -29715,6 +30833,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeo
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorConing."""
         IVectorGeometryToolVectorConing.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29729,6 +30848,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVectorConing, IVectorGeo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [IVectorGeometryToolVectorConing, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{74E6F986-E292-4115-84E4-9E9953C163B8}", VectorGeometryToolVectorConing)
@@ -29738,6 +30858,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeome
     """The vector cross product of two vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorCross."""
         IVectorGeometryToolVectorCross.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29752,6 +30873,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVectorCross, IVectorGeome
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [IVectorGeometryToolVectorCross, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{88B6E3B7-51CD-45DE-97C0-DCFE834C0111}", VectorGeometryToolVectorCross)
@@ -29761,6 +30883,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript
     """Customized vector components defined with respect to reference axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorCustomScript."""
         IVectorGeometryToolVectorCustomScript.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29775,6 +30898,7 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVectorCustomScript
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [IVectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{D65CDDC6-21DA-419F-BF72-79C2376648E8}", VectorGeometryToolVectorCustomScript)
@@ -29784,6 +30908,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IV
     """A vector derivative of a vector computed with respect to specified axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorDerivative."""
         IVectorGeometryToolVectorDerivative.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29798,6 +30923,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVectorDerivative, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [IVectorGeometryToolVectorDerivative, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B81ECB39-CF3E-49AE-8622-F454CD0EA7B2}", VectorGeometryToolVectorDerivative)
@@ -29807,6 +30933,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement
     """Vector defined by its start and end points."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorDisplacement."""
         IVectorGeometryToolVectorDisplacement.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29821,6 +30948,7 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVectorDisplacement
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [IVectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{6CAADA67-7238-4705-9F74-95596344DED0}", VectorGeometryToolVectorDisplacement)
@@ -29830,6 +30958,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwo
     """Defined along the intersection of two planes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorTwoPlanesIntersection."""
         IVectorGeometryToolVectorTwoPlanesIntersection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29844,6 +30973,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVectorTwo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [IVectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1145553-76CD-4C1E-AE08-E63E29CF4E46}", VectorGeometryToolVectorTwoPlanesIntersection)
@@ -29853,6 +30983,7 @@ class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, 
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorModelAttach."""
         IVectorGeometryToolVectorModelAttach.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29867,6 +30998,7 @@ class VectorGeometryToolVectorModelAttach(IVectorGeometryToolVectorModelAttach, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttach, [IVectorGeometryToolVectorModelAttach, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{E95BEEB8-C544-4852-9C82-20080343E585}", VectorGeometryToolVectorModelAttach)
@@ -29876,6 +31008,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IV
     """A projection of a vector computed with respect to a reference plane."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorProjection."""
         IVectorGeometryToolVectorProjection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29890,6 +31023,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVectorProjection, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [IVectorGeometryToolVectorProjection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{7306544A-A8B0-477B-B89D-BA711C9ED600}", VectorGeometryToolVectorProjection)
@@ -29899,6 +31033,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeo
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorScaled."""
         IVectorGeometryToolVectorScaled.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29913,6 +31048,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVectorScaled, IVectorGeo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [IVectorGeometryToolVectorScaled, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{92D80C29-251B-436B-9DA0-D5BA4B262185}", VectorGeometryToolVectorScaled)
@@ -29922,6 +31058,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorEccentricity."""
         IVectorGeometryToolVectorEccentricity.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29936,6 +31073,7 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVectorEccentricity
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [IVectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7F157D7-11EB-4779-955F-98530B9C2608}", VectorGeometryToolVectorEccentricity)
@@ -29945,6 +31083,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, 
     """Vector fixed in reference axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorFixedInAxes."""
         IVectorGeometryToolVectorFixedInAxes.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29959,6 +31098,7 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVectorFixedInAxes, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [IVectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{61E9F963-8CFC-4B24-B583-716A64BAE54C}", VectorGeometryToolVectorFixedInAxes)
@@ -29968,6 +31108,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, 
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorLineOfNodes."""
         IVectorGeometryToolVectorLineOfNodes.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -29982,6 +31123,7 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVectorLineOfNodes, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [IVectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{3D6B3FD1-93C2-4F11-AB10-B749DF633C29}", VectorGeometryToolVectorLineOfNodes)
@@ -29991,6 +31133,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbi
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorOrbitAngularMomentum."""
         IVectorGeometryToolVectorOrbitAngularMomentum.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30005,6 +31148,7 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVectorOrbi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [IVectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{2B38A283-7EDA-43E2-9C04-E9964FCA7D91}", VectorGeometryToolVectorOrbitAngularMomentum)
@@ -30014,6 +31158,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, 
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorOrbitNormal."""
         IVectorGeometryToolVectorOrbitNormal.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30028,6 +31173,7 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVectorOrbitNormal, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [IVectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{AFBAED88-891B-4EF7-98BD-DEBAF630C0E1}", VectorGeometryToolVectorOrbitNormal)
@@ -30037,6 +31183,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVec
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorPeriapsis."""
         IVectorGeometryToolVectorPeriapsis.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30051,6 +31198,7 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVectorPeriapsis, IVec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [IVectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{DA81B380-6D7C-48F4-8E7F-472035958B44}", VectorGeometryToolVectorPeriapsis)
@@ -30060,6 +31208,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IV
     """Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorReflection."""
         IVectorGeometryToolVectorReflection.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30074,6 +31223,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVectorReflection, IV
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [IVectorGeometryToolVectorReflection, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{C35F8BF0-ED12-48BF-8770-EE63DAF4A9B1}", VectorGeometryToolVectorReflection)
@@ -30083,6 +31233,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVe
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorRotationVector."""
         IVectorGeometryToolVectorRotationVector.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30097,6 +31248,7 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVectorRotationVe
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [IVectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{c599beae-b6c1-495e-8957-a4b9ffc5cb8e}", VectorGeometryToolVectorRotationVector)
@@ -30106,6 +31258,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirection
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorDirectionToStar."""
         IVectorGeometryToolVectorDirectionToStar.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30120,6 +31273,7 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVectorDirection
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [IVectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, ITimeToolTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry("{147FDFCC-767A-460C-9833-02A582AFCA9C}", VectorGeometryToolVectorDirectionToStar)
@@ -30129,6 +31283,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedA
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorFixedAtTimeInstant."""
         IVectorGeometryToolVectorFixedAtTimeInstant.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30143,6 +31298,7 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IVectorGeometryToolVectorFixedA
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [IVectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{BC8737B3-A94E-4B68-857F-81E780C874FD}", VectorGeometryToolVectorFixedAtTimeInstant)
@@ -30152,6 +31308,7 @@ class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearC
     """Linear combination of two input vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorLinearCombination."""
         IVectorGeometryToolVectorLinearCombination.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30166,6 +31323,7 @@ class VectorGeometryToolVectorLinearCombination(IVectorGeometryToolVectorLinearC
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [IVectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{59E2764C-7920-4CDC-B5FF-2590154E1ABE}", VectorGeometryToolVectorLinearCombination)
@@ -30175,6 +31333,7 @@ class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjec
     """A projection of a source vector in the direction of another vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorProjectAlongVector."""
         IVectorGeometryToolVectorProjectAlongVector.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30189,6 +31348,7 @@ class VectorGeometryToolVectorProjectAlongVector(IVectorGeometryToolVectorProjec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectAlongVector, [IVectorGeometryToolVectorProjectAlongVector, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{7B76B999-135B-4AAF-ADEA-444FD759417D}", VectorGeometryToolVectorProjectAlongVector)
@@ -30198,6 +31358,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorS
     """Linear combination of two input vectors using scalars."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorScalarLinearCombination."""
         IVectorGeometryToolVectorScalarLinearCombination.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30212,6 +31373,7 @@ class VectorGeometryToolVectorScalarLinearCombination(IVectorGeometryToolVectorS
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [IVectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{0FB78FA5-9E5F-4A0F-AD73-FB89A0E523F8}", VectorGeometryToolVectorScalarLinearCombination)
@@ -30221,6 +31383,7 @@ class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled
     """Scaled version of the input vector using scalar."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorScalarScaled."""
         IVectorGeometryToolVectorScalarScaled.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30235,6 +31398,7 @@ class VectorGeometryToolVectorScalarScaled(IVectorGeometryToolVectorScalarScaled
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [IVectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{9C93B992-687F-4311-B339-DE0DA38409AE}", VectorGeometryToolVectorScalarScaled)
@@ -30244,6 +31408,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelo
     """Velocity vector of a point in a coordinate system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorVelocityAcceleration."""
         IVectorGeometryToolVectorVelocityAcceleration.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30258,6 +31423,7 @@ class VectorGeometryToolVectorVelocityAcceleration(IVectorGeometryToolVectorVelo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [IVectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{75A62225-C09F-4F08-B7FE-9216B02DECF2}", VectorGeometryToolVectorVelocityAcceleration)
@@ -30267,6 +31433,7 @@ class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisW
     """A VGT vector plugin."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorPlugin."""
         IVectorGeometryToolVectorPlugin.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30281,6 +31448,7 @@ class VectorGeometryToolVectorPlugin(IVectorGeometryToolVectorPlugin, IAnalysisW
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [IVectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{E105429A-489E-47F6-B827-8E5819FCE917}", VectorGeometryToolVectorPlugin)
@@ -30290,6 +31458,7 @@ class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, 
     """Displacement between origin and destination points using surface distance and altitude difference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorDispSurface."""
         IVectorGeometryToolVectorDispSurface.__init__(self, sourceObject)
         IAnalysisWorkbenchComponent.__init__(self, sourceObject)
         ITimeToolTimeProperties.__init__(self, sourceObject)
@@ -30304,6 +31473,7 @@ class VectorGeometryToolVectorDispSurface(IVectorGeometryToolVectorDispSurface, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorDispSurface, [IVectorGeometryToolVectorDispSurface, IAnalysisWorkbenchComponent, ITimeToolTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry("{ccd4af03-78af-47ae-902a-90860a17daa4}", VectorGeometryToolVectorDispSurface)
@@ -30313,6 +31483,7 @@ class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
     """A Factory object to create vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorFactory."""
         IVectorGeometryToolVectorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30321,6 +31492,7 @@ class VectorGeometryToolVectorFactory(IVectorGeometryToolVectorFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorFactory, [IVectorGeometryToolVectorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{084C11E1-D35D-4F42-83D6-3EF43FEC1E23}", VectorGeometryToolVectorFactory)
@@ -30330,6 +31502,7 @@ class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
     """A Factory object to create axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesFactory."""
         IVectorGeometryToolAxesFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30338,6 +31511,7 @@ class VectorGeometryToolAxesFactory(IVectorGeometryToolAxesFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesFactory, [IVectorGeometryToolAxesFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7B3E2402-1E15-43DC-BB48-6E98D377B107}", VectorGeometryToolAxesFactory)
@@ -30347,6 +31521,7 @@ class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
     """A Factory class to create VGT systems."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemFactory."""
         IVectorGeometryToolSystemFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30355,6 +31530,7 @@ class VectorGeometryToolSystemFactory(IVectorGeometryToolSystemFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemFactory, [IVectorGeometryToolSystemFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{01A37414-BA74-4DF3-A007-6A3395C8A859}", VectorGeometryToolSystemFactory)
@@ -30364,6 +31540,7 @@ class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
     """A Factory object to create points."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointFactory."""
         IVectorGeometryToolPointFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30372,6 +31549,7 @@ class VectorGeometryToolPointFactory(IVectorGeometryToolPointFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointFactory, [IVectorGeometryToolPointFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{6C79F3B2-8AE5-468A-940F-F0988752B309}", VectorGeometryToolPointFactory)
@@ -30381,6 +31559,7 @@ class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
     """A Factory object to create VGT planes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneFactory."""
         IVectorGeometryToolPlaneFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30389,6 +31568,7 @@ class VectorGeometryToolPlaneFactory(IVectorGeometryToolPlaneFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneFactory, [IVectorGeometryToolPlaneFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{6F83DB0C-0AFB-4831-BED0-63AE2F8FEFFB}", VectorGeometryToolPlaneFactory)
@@ -30398,6 +31578,7 @@ class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
     """A Factory object to create angles."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleFactory."""
         IVectorGeometryToolAngleFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30406,6 +31587,7 @@ class VectorGeometryToolAngleFactory(IVectorGeometryToolAngleFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleFactory, [IVectorGeometryToolAngleFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0888F89F-9D77-4FCE-9A08-67FCBE870187}", VectorGeometryToolAngleFactory)
@@ -30415,6 +31597,7 @@ class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
     """Access or create VGT vectors associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolVectorGroup."""
         IVectorGeometryToolVectorGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30423,6 +31606,7 @@ class VectorGeometryToolVectorGroup(IVectorGeometryToolVectorGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorGroup, [IVectorGeometryToolVectorGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{69ABE9EE-BAA4-40A7-8097-06DBE70D71D5}", VectorGeometryToolVectorGroup)
@@ -30432,6 +31616,7 @@ class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
     """Access or create VGT points associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPointGroup."""
         IVectorGeometryToolPointGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30440,6 +31625,7 @@ class VectorGeometryToolPointGroup(IVectorGeometryToolPointGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPointGroup, [IVectorGeometryToolPointGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{0793BE73-C894-4AF7-BFDB-5D61F5C3B6FD}", VectorGeometryToolPointGroup)
@@ -30449,6 +31635,7 @@ class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
     """Access or create VGT angles associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAngleGroup."""
         IVectorGeometryToolAngleGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30457,6 +31644,7 @@ class VectorGeometryToolAngleGroup(IVectorGeometryToolAngleGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAngleGroup, [IVectorGeometryToolAngleGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{CF6C41CC-A02E-424C-8E7E-B5BA05F1FAF3}", VectorGeometryToolAngleGroup)
@@ -30466,6 +31654,7 @@ class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
     """Access or create VGT axes associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolAxesGroup."""
         IVectorGeometryToolAxesGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30474,6 +31663,7 @@ class VectorGeometryToolAxesGroup(IVectorGeometryToolAxesGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolAxesGroup, [IVectorGeometryToolAxesGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{2D792657-9D6E-4B1E-AEAB-B964839C6F94}", VectorGeometryToolAxesGroup)
@@ -30483,6 +31673,7 @@ class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
     """Represents a VGT Plane component."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolPlaneGroup."""
         IVectorGeometryToolPlaneGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30491,6 +31682,7 @@ class VectorGeometryToolPlaneGroup(IVectorGeometryToolPlaneGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolPlaneGroup, [IVectorGeometryToolPlaneGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{15117A82-3EE6-483E-A65E-2A44F60DB355}", VectorGeometryToolPlaneGroup)
@@ -30500,6 +31692,7 @@ class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
     """Access or create VGT systems associated with an object or a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolSystemGroup."""
         IVectorGeometryToolSystemGroup.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30508,6 +31701,7 @@ class VectorGeometryToolSystemGroup(IVectorGeometryToolSystemGroup):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolSystemGroup, [IVectorGeometryToolSystemGroup])
 
 agcls.AgClassCatalog.add_catalog_entry("{65E8F1CC-E68C-4EF6-9A68-443DD01C55E2}", VectorGeometryToolSystemGroup)
@@ -30517,6 +31711,7 @@ class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
     """Allow accessing existing Vector Geometry Tool components."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchProvider."""
         IAnalysisWorkbenchProvider.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30525,6 +31720,7 @@ class AnalysisWorkbenchProvider(IAnalysisWorkbenchProvider):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchProvider, [IAnalysisWorkbenchProvider])
 
 agcls.AgClassCatalog.add_catalog_entry("{D9031FE1-81E1-4818-944D-5F00FC3EC97D}", AnalysisWorkbenchProvider)
@@ -30534,6 +31730,7 @@ class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
     """Represents a VGT root."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchRoot."""
         IAnalysisWorkbenchRoot.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30542,6 +31739,7 @@ class AnalysisWorkbenchRoot(IAnalysisWorkbenchRoot):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchRoot, [IAnalysisWorkbenchRoot])
 
 agcls.AgClassCatalog.add_catalog_entry("{26E18B6F-19CA-4537-B6B3-D307DAADCDBB}", AnalysisWorkbenchRoot)
@@ -30551,6 +31749,7 @@ class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthS
     """Well-known Earth's coordinate systems."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownEarthSystems."""
         IVectorGeometryToolWellKnownEarthSystems.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30559,6 +31758,7 @@ class VectorGeometryToolWellKnownEarthSystems(IVectorGeometryToolWellKnownEarthS
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthSystems, [IVectorGeometryToolWellKnownEarthSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{9CE3EA8C-78D7-4C9E-9D35-4E34DBA9FD19}", VectorGeometryToolWellKnownEarthSystems)
@@ -30568,6 +31768,7 @@ class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes
     """Well-known Earth's axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownEarthAxes."""
         IVectorGeometryToolWellKnownEarthAxes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30576,6 +31777,7 @@ class VectorGeometryToolWellKnownEarthAxes(IVectorGeometryToolWellKnownEarthAxes
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownEarthAxes, [IVectorGeometryToolWellKnownEarthAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{B79CA8BC-D4BA-4F76-9278-AB7C9C537859}", VectorGeometryToolWellKnownEarthAxes)
@@ -30585,6 +31787,7 @@ class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSyste
     """The Sun's well-known coordinate reference systems."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownSunSystems."""
         IVectorGeometryToolWellKnownSunSystems.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30593,6 +31796,7 @@ class VectorGeometryToolWellKnownSunSystems(IVectorGeometryToolWellKnownSunSyste
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunSystems, [IVectorGeometryToolWellKnownSunSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{855EB036-E71F-47F9-B27B-57247345282A}", VectorGeometryToolWellKnownSunSystems)
@@ -30602,6 +31806,7 @@ class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
     """Well-known Sun's axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownSunAxes."""
         IVectorGeometryToolWellKnownSunAxes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30610,6 +31815,7 @@ class VectorGeometryToolWellKnownSunAxes(IVectorGeometryToolWellKnownSunAxes):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSunAxes, [IVectorGeometryToolWellKnownSunAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{7F786A33-8851-4FA4-A0CA-DC353170143E}", VectorGeometryToolWellKnownSunAxes)
@@ -30619,6 +31825,7 @@ class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
     """Well-known coordinate reference systems."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownSystems."""
         IVectorGeometryToolWellKnownSystems.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30627,6 +31834,7 @@ class VectorGeometryToolWellKnownSystems(IVectorGeometryToolWellKnownSystems):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownSystems, [IVectorGeometryToolWellKnownSystems])
 
 agcls.AgClassCatalog.add_catalog_entry("{8C5101B3-3FDD-443D-A59F-B1E801873E0A}", VectorGeometryToolWellKnownSystems)
@@ -30636,6 +31844,7 @@ class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
     """Represents well-known VGT Axes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorGeometryToolWellKnownAxes."""
         IVectorGeometryToolWellKnownAxes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -30644,6 +31853,7 @@ class VectorGeometryToolWellKnownAxes(IVectorGeometryToolWellKnownAxes):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolWellKnownAxes, [IVectorGeometryToolWellKnownAxes])
 
 agcls.AgClassCatalog.add_catalog_entry("{5E24B44A-B46D-4B9B-A22C-615EFAA73A6C}", VectorGeometryToolWellKnownAxes)
@@ -30653,6 +31863,7 @@ class AnalysisWorkbenchMethodCallAngleFindResult(IAnalysisWorkbenchMethodCallRes
     """Represents result returned with IVectorGeometryToolAngle.FindCoordinates method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAngleFindResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30663,6 +31874,7 @@ class AnalysisWorkbenchMethodCallAngleFindResult(IAnalysisWorkbenchMethodCallRes
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{10a2d878-07e8-4a17-86d9-f91267332b29}", AnalysisWorkbenchMethodCallAngleFindResult)
@@ -30672,6 +31884,7 @@ class AnalysisWorkbenchMethodCallAngleFindWithRateResult(IAnalysisWorkbenchMetho
     """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAngleFindWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30682,6 +31895,7 @@ class AnalysisWorkbenchMethodCallAngleFindWithRateResult(IAnalysisWorkbenchMetho
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{b6e274e3-92c4-4ee1-80ee-f5d80cd2bdc6}", AnalysisWorkbenchMethodCallAngleFindWithRateResult)
@@ -30691,6 +31905,7 @@ class AnalysisWorkbenchMethodCallAxesTransformResult(IAnalysisWorkbenchMethodCal
     """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAxesTransformResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesTransformResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30701,6 +31916,7 @@ class AnalysisWorkbenchMethodCallAxesTransformResult(IAnalysisWorkbenchMethodCal
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d5e580c7-4a27-4249-8424-c74b7552d60c}", AnalysisWorkbenchMethodCallAxesTransformResult)
@@ -30710,6 +31926,7 @@ class AnalysisWorkbenchMethodCallAxesTransformWithRateResult(IAnalysisWorkbenchM
     """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAxesTransformWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesTransformWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30720,6 +31937,7 @@ class AnalysisWorkbenchMethodCallAxesTransformWithRateResult(IAnalysisWorkbenchM
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesTransformWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{30590e9a-ff5f-4d09-9282-32617361277f}", AnalysisWorkbenchMethodCallAxesTransformWithRateResult)
@@ -30729,6 +31947,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesResult(IAnalysisWorkbenchMethodCa
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAxesFindInAxesResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30739,6 +31958,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesResult(IAnalysisWorkbenchMethodCa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a03bd5b7-7178-47cf-bad3-a490b325b12e}", AnalysisWorkbenchMethodCallAxesFindInAxesResult)
@@ -30748,6 +31968,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult(IAnalysisWorkbench
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAxesFindInAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30758,6 +31979,7 @@ class AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult(IAnalysisWorkbench
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAxesFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa8fab1e-798b-4fa0-97de-c772db073b01}", AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult)
@@ -30767,6 +31989,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesResult(IAnalysisWorkbenchMethodC
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPlaneFindInAxesResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30777,6 +32000,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesResult(IAnalysisWorkbenchMethodC
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{3ad1d6cb-62bb-4d58-bbfb-42370c82041e}", AnalysisWorkbenchMethodCallPlaneFindInAxesResult)
@@ -30786,6 +32010,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult(IAnalysisWorkbenc
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30796,6 +32021,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult(IAnalysisWorkbenc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{385659fa-76a0-4fd8-ac65-45b9fc375d21}", AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult)
@@ -30805,6 +32031,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemResult(IAnalysisWorkbenchMetho
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPlaneFindInSystemResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30815,6 +32042,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemResult(IAnalysisWorkbenchMetho
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{95a12be5-069b-450e-bec2-acb2dee9e956}", AnalysisWorkbenchMethodCallPlaneFindInSystemResult)
@@ -30824,6 +32052,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult(IAnalysisWorkbe
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPlaneFindInSystemWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30834,6 +32063,7 @@ class AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult(IAnalysisWorkbe
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPlaneFindInSystemWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{57eea690-8b67-4a20-a56a-386b59693b6f}", AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult)
@@ -30843,6 +32073,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemResult(IAnalysisWorkbenchMet
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPointLocateInSystemResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPointLocateInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30853,6 +32084,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemResult(IAnalysisWorkbenchMet
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d1c86686-9f3c-40e1-bad0-f4d7fc4e4b38}", AnalysisWorkbenchMethodCallPointLocateInSystemResult)
@@ -30862,6 +32094,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult(IAnalysisWork
     """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolPointLocateInSystemWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30872,6 +32105,7 @@ class AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult(IAnalysisWork
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolPointLocateInSystemWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fb55c98-4c9b-4236-a8dc-8b645c43efe7}", AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult)
@@ -30881,6 +32115,7 @@ class AnalysisWorkbenchMethodCallSystemTransformResult(IAnalysisWorkbenchMethodC
     """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallSystemTransformResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemTransformResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30891,6 +32126,7 @@ class AnalysisWorkbenchMethodCallSystemTransformResult(IAnalysisWorkbenchMethodC
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{69867a9e-52f7-41ac-9305-1dd6d718dd9f}", AnalysisWorkbenchMethodCallSystemTransformResult)
@@ -30900,6 +32136,7 @@ class AnalysisWorkbenchMethodCallSystemTransformWithRateResult(IAnalysisWorkbenc
     """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallSystemTransformWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemTransformWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30910,6 +32147,7 @@ class AnalysisWorkbenchMethodCallSystemTransformWithRateResult(IAnalysisWorkbenc
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemTransformWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{29682212-7424-423f-8abb-09e337d5a3c5}", AnalysisWorkbenchMethodCallSystemTransformWithRateResult)
@@ -30919,6 +32157,7 @@ class AnalysisWorkbenchMethodCallSystemFindInSystemResult(IAnalysisWorkbenchMeth
     """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallSystemFindInSystemResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolSystemFindInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30929,6 +32168,7 @@ class AnalysisWorkbenchMethodCallSystemFindInSystemResult(IAnalysisWorkbenchMeth
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallSystemFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolSystemFindInSystemResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a58affee-d2b4-4406-bdb4-1644ac88ff2d}", AnalysisWorkbenchMethodCallSystemFindInSystemResult)
@@ -30938,6 +32178,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesResult(IAnalysisWorkbenchMethod
     """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallVectorFindInAxesResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolVectorFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30948,6 +32189,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesResult(IAnalysisWorkbenchMethod
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{d1e45a85-ed27-499f-a507-9bda219f9c2e}", AnalysisWorkbenchMethodCallVectorFindInAxesResult)
@@ -30957,6 +32199,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult(IAnalysisWorkben
     """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolVectorFindInAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30967,6 +32210,7 @@ class AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult(IAnalysisWorkben
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolVectorFindInAxesWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{a2999b36-fde8-4cb2-aef1-fa1928a1b5d4}", AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult)
@@ -30976,6 +32220,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult(IAnalysisWorkbench
     """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindAngleWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30986,6 +32231,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult(IAnalysisWorkbench
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleWithRateResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{93ce2539-4115-4086-9076-e006c49881da}", AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult)
@@ -30995,6 +32241,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleResult(IAnalysisWorkbenchMethodCa
     """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchMethodCallAngleFindAngleResult."""
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
         IVectorGeometryToolAngleFindAngleResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -31005,6 +32252,7 @@ class AnalysisWorkbenchMethodCallAngleFindAngleResult(IAnalysisWorkbenchMethodCa
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchMethodCallAngleFindAngleResult, [IAnalysisWorkbenchMethodCallResult, IVectorGeometryToolAngleFindAngleResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{15dab968-8385-4f28-b60f-9567af54380e}", AnalysisWorkbenchMethodCallAngleFindAngleResult)
@@ -31014,6 +32262,7 @@ class TimeToolInterval(ITimeToolInterval):
     """Represents an interval."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolInterval."""
         ITimeToolInterval.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31022,6 +32271,7 @@ class TimeToolInterval(ITimeToolInterval):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolInterval, [ITimeToolInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{7825007C-4D30-46EC-A047-EAF6683C4187}", TimeToolInterval)
@@ -31031,6 +32281,7 @@ class TimeToolIntervalCollection(ITimeToolIntervalCollection):
     """Represents a collection of intervals."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolIntervalCollection."""
         ITimeToolIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31039,6 +32290,7 @@ class TimeToolIntervalCollection(ITimeToolIntervalCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolIntervalCollection, [ITimeToolIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{908714CE-1D69-4F68-875A-9B584CF8F2A7}", TimeToolIntervalCollection)
@@ -31048,6 +32300,7 @@ class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
     """Represents an central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchCentralBody."""
         IAnalysisWorkbenchCentralBody.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31056,6 +32309,7 @@ class AnalysisWorkbenchCentralBody(IAnalysisWorkbenchCentralBody):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBody, [IAnalysisWorkbenchCentralBody])
 
 agcls.AgClassCatalog.add_catalog_entry("{9A0248DF-B126-4448-A653-CD5C28DC9229}", AnalysisWorkbenchCentralBody)
@@ -31065,6 +32319,7 @@ class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAna
     """Represents a central body reference."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchCentralBodyRefTo."""
         IAnalysisWorkbenchCentralBodyRefTo.__init__(self, sourceObject)
         IAnalysisWorkbenchRefTo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -31075,6 +32330,7 @@ class AnalysisWorkbenchCentralBodyRefTo(IAnalysisWorkbenchCentralBodyRefTo, IAna
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyRefTo, [IAnalysisWorkbenchCentralBodyRefTo, IAnalysisWorkbenchRefTo])
 
 agcls.AgClassCatalog.add_catalog_entry("{AFB22A58-DB60-4A1B-B0D4-44916CACC759}", AnalysisWorkbenchCentralBodyRefTo)
@@ -31084,6 +32340,7 @@ class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollec
     """A collection of central body names."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchCentralBodyCollection."""
         IAnalysisWorkbenchCentralBodyCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31092,6 +32349,7 @@ class AnalysisWorkbenchCentralBodyCollection(IAnalysisWorkbenchCentralBodyCollec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyCollection, [IAnalysisWorkbenchCentralBodyCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{E8951B8F-E457-4289-9125-5381515552C4}", AnalysisWorkbenchCentralBodyCollection)
@@ -31101,6 +32359,7 @@ class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
     """A collection of VGT objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AnalysisWorkbenchCollection."""
         IAnalysisWorkbenchCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31109,6 +32368,7 @@ class AnalysisWorkbenchCollection(IAnalysisWorkbenchCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AnalysisWorkbenchCollection, [IAnalysisWorkbenchCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{24B18D3A-675E-467D-A97C-5CD42EB6DC8D}", AnalysisWorkbenchCollection)
@@ -31118,6 +32378,7 @@ class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
     """Contains tabulated positions and velocities of a point created by Sample method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolPointSamplingResult."""
         ITimeToolPointSamplingResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31126,6 +32387,7 @@ class TimeToolPointSamplingResult(ITimeToolPointSamplingResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingResult, [ITimeToolPointSamplingResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{A3132149-15ED-4D7E-85A6-FD1B2BB80B1E}", TimeToolPointSamplingResult)
@@ -31135,6 +32397,7 @@ class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
     """The interface represents an interval with the time, position and velocity arrays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolPointSamplingInterval."""
         ITimeToolPointSamplingInterval.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31143,6 +32406,7 @@ class TimeToolPointSamplingInterval(ITimeToolPointSamplingInterval):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingInterval, [ITimeToolPointSamplingInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{8B7546E8-0228-4269-92D1-B3C186AF18EF}", TimeToolPointSamplingInterval)
@@ -31152,6 +32416,7 @@ class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalColl
     """A collection of intervals where each interval contains the time, position and velocity arrays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolPointSamplingIntervalCollection."""
         ITimeToolPointSamplingIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31160,6 +32425,7 @@ class TimeToolPointSamplingIntervalCollection(ITimeToolPointSamplingIntervalColl
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolPointSamplingIntervalCollection, [ITimeToolPointSamplingIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{3F6CF6B1-7192-4960-927D-1FC328122E59}", TimeToolPointSamplingIntervalCollection)
@@ -31169,6 +32435,7 @@ class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolAxesSamplingResult."""
         ITimeToolAxesSamplingResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31177,6 +32444,7 @@ class TimeToolAxesSamplingResult(ITimeToolAxesSamplingResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingResult, [ITimeToolAxesSamplingResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{54622168-5440-4C86-9539-A0CA336E554B}", TimeToolAxesSamplingResult)
@@ -31186,6 +32454,7 @@ class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
     """The interface represents an interval with the time, orientation and velocity arrays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolAxesSamplingInterval."""
         ITimeToolAxesSamplingInterval.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31194,6 +32463,7 @@ class TimeToolAxesSamplingInterval(ITimeToolAxesSamplingInterval):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingInterval, [ITimeToolAxesSamplingInterval])
 
 agcls.AgClassCatalog.add_catalog_entry("{069BCA07-B5AB-4A46-A508-AFE218E21B2F}", TimeToolAxesSamplingInterval)
@@ -31203,6 +32473,7 @@ class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollec
     """A collection of intervals where each interval contains the time, orientation and velocity arrays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeToolAxesSamplingIntervalCollection."""
         ITimeToolAxesSamplingIntervalCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -31211,6 +32482,7 @@ class TimeToolAxesSamplingIntervalCollection(ITimeToolAxesSamplingIntervalCollec
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeToolAxesSamplingIntervalCollection, [ITimeToolAxesSamplingIntervalCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{4AD4C296-E643-4CB6-A34A-D33748117EEF}", TimeToolAxesSamplingIntervalCollection)

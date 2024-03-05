@@ -85,6 +85,7 @@ class STKDesktopApplication(UiApplication):
     """
     
     def __init__(self):
+        """Construct an object of type STKDesktopApplication."""
         if os.name != "nt":
             raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
         self.__dict__["_intf"] = InterfaceProxy()
@@ -95,6 +96,7 @@ class STKDesktopApplication(UiApplication):
         UiApplication._private_init(self, intf)
         
     def __del__(self):
+        """Destruct the STKDesktopApplication object after all references to the object are deleted."""
         if self._intf and type(self._intf) == IUnknown:
             CoInitializeManager.uninitialize()
 
