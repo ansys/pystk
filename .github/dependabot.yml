@@ -21,6 +21,7 @@ updates:
           - "myst*"
           - "nbsphinx"
           - "numpy*"
+          - "nbconvert"
           - "*sphinx*"
           - "Pillow"
           - "simplejpeg"
