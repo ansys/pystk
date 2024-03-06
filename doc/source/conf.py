@@ -226,8 +226,9 @@ linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://www.ansys.com/*"
 ]
-linkcheck_anchors_ignore = [
-    "https://help.agi.com/stk/12.8.0/index.htm#stk/importfiles-02.htm"
+linkcheck_anchors_ignore_for_url = [
+    "https://help.agi.com/stk/12.8.0/index.htm*",
+    "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html*",
 ]
 
 
