@@ -159,6 +159,7 @@ else:
     }
     nbsphinx_thumbnails = {
         "examples/stk_engine/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/stk_engine/loading-ephem-from-jpl-horizons": "_static/thumbnails/loading-ephem-from-jpl-horizons.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
