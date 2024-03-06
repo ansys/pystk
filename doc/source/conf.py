@@ -225,6 +225,8 @@ user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://www.ansys.com/*"
+    # TODO: link works as expected despite linkcheck complains
+    "https://help.agi.com/stk/12.7.1/index.htm#stk/importfiles-02.htm"
 ]
 
 
