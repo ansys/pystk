@@ -25,26 +25,24 @@ These include ``pip`` and ``GitHub``.
 
         .. tab-item:: Public PyPI
     
-            .. code-block:: console
+            .. code-block::
+    
+                python -m pip install ansys-stk-core
+   
+        .. tab-item:: Ansys PyPI
+    
+            .. code-block::
     
                 export TWINE_USERNAME="__token__"
                 export TWINE_REPOSITORY_URL="https://pkgs.dev.azure.com/pyansys/_packaging/pyansys/pypi/upload"
                 export TWINE_PASSWORD=***
                 python -m pip install ansys-stk-core
-    
-   
-        .. tab-item:: Ansys PyPI
-    
-            .. code-block:: console
-    
-                python -m pip install ansys-stk-core
-    
 
         .. tab-item:: GitHub
     
-            .. code-block:: console
+            .. code-block::
 
-                python -m pip install git+https://github.com/ansys/pystk.git@v{{ version }}
+                python -m pip install git+https://github.com/ansys/pystk.git@{{ version }}
 
 
 Developer installation
