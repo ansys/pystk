@@ -199,9 +199,16 @@ print(f"Using {stk.version}")
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
+ENABLE_BUG = True
 
 root = stk.new_object_root()
-scenario = root.children.new_on_central_body(STK_OBJECT_TYPE.SCENARIO, "JPLHorizonsEphem", "Sun")
+
+if ENABLE_BUG:
+    root.new_scenario("JPLHorizonsEphem")
+    scenario = root.current_scenario
+else:
+    scenario = root.children.new_on_central_body(STK_OBJECT_TYPE.SCENARIO, "JPLHorizonsEphem", "Sun")
+
 scenario.set_time_period("1 Jan 2017", "1 Jan 2018")
 # -
 
@@ -217,6 +224,7 @@ from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 plotter = GlobeWidget(root, 640, 480)
 plotter.camera.far_plane = 1E12
+plotter.camera.view_central_body("Sun", root.central_bodies.sun.vgt.axes["EclpJ2000ICRF"])
 plotter.show()
 # -
 
@@ -255,9 +263,9 @@ scenario.graphics.sub_planet_points_visible = False
 scenario.graphics.sub_planet_labels_visible = False
 # -
 
-# Next, display the scene to visualize the inner planets. The camera position is updated to have a detailed view of the scene: 
+# Next, display the scene to visualize the inner planets. The J2000 at The camera position is updated to have a detailed view of the scene: 
 
-plotter.camera.position = [-39909210.2975278, -717257963.8657558, -85235906.80896328]
+plotter.camera.position = [-3.65e7, -6.50e8, 2.80e8]
 plotter.show()
 
 # ### Simulating Oumuamua's orbit
