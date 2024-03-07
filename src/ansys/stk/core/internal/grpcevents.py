@@ -437,9 +437,9 @@ class IStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsSceneEvents, events)
-        self._register_iadd_isub_callbacks("Rendering", self._Rendering)
+        self._register_iadd_isub_callbacks("Rendering", self._rendering)
 
-    def _Rendering(self, Sender:typing.Any, Args:"RenderingEventArgs") -> None:
+    def _rendering(self, Sender:typing.Any, Args:"RenderingEventArgs") -> None:
         for callback in self._events["Rendering"]._callbacks:
             try:
                 callback(Sender, Args)
@@ -455,9 +455,9 @@ class IStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsKmlGraphicsEvents, events)
-        self._register_iadd_isub_callbacks("DocumentLoaded", self._DocumentLoaded)
+        self._register_iadd_isub_callbacks("DocumentLoaded", self._document_loaded)
 
-    def _DocumentLoaded(self, Sender:typing.Any, Args:"KmlDocumentLoadedEventArgs") -> None:
+    def _document_loaded(self, Sender:typing.Any, Args:"KmlDocumentLoadedEventArgs") -> None:
         for callback in self._events["DocumentLoaded"]._callbacks:
             try:
                 callback(Sender, Args)
@@ -473,9 +473,9 @@ class IStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsImageCollectionEvents, events)
-        self._register_iadd_isub_callbacks("AddComplete", self._AddComplete)
+        self._register_iadd_isub_callbacks("AddComplete", self._add_complete)
 
-    def _AddComplete(self, Sender:typing.Any, Args:"GlobeImageOverlayAddCompleteEventArgs") -> None:
+    def _add_complete(self, Sender:typing.Any, Args:"GlobeImageOverlayAddCompleteEventArgs") -> None:
         for callback in self._events["AddComplete"]._callbacks:
             try:
                 callback(Sender, Args)
@@ -491,9 +491,9 @@ class IStkGraphicsTerrainCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def __init__(self, interface:GrpcInterface, events:dict):
         GrpcEventHandlerImpl.__init__(self, interface, AgGrpcServices_pb2.EventHandler.eIAgStkGraphicsTerrainCollectionEvents, events)
-        self._register_iadd_isub_callbacks("AddComplete", self._AddComplete)
+        self._register_iadd_isub_callbacks("AddComplete", self._add_complete)
 
-    def _AddComplete(self, Sender:typing.Any, Args:"TerrainOverlayAddCompleteEventArgs") -> None:
+    def _add_complete(self, Sender:typing.Any, Args:"TerrainOverlayAddCompleteEventArgs") -> None:
         for callback in self._events["AddComplete"]._callbacks:
             try:
                 callback(Sender, Args)

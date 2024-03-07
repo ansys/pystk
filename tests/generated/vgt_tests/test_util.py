@@ -21,7 +21,6 @@ from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
-from ansys.stk.core.utilities.colors import Colors
 from ansys.stk.core.utilities.exceptions import *
 from app_provider import TestTarget
 
@@ -487,71 +486,6 @@ class Enum:
 class staticproperty(property):
     def __get__(self, cls, owner):
         return staticmethod(self.fget).__get__(None, owner)()
-
-
-class Color:
-    @staticmethod
-    def FromArgb(*args):
-        if len(args) == 1:  # argb
-            return Colors.FromRGB((args[0] & 0xFF0000) >> 16, (args[0] & 0x00FF00) >> 8, args[0] & 0xFF)
-        elif len(args) == 3:  # r, g, b
-            return Colors.FromRGB(args[0], args[1], args[2])
-        elif len(args) == 4:  # a, r, g, b
-            return Colors.FromRGB(args[1], args[2], args[3])
-        else:
-            raise Exception("unsupported color conversion")
-
-    @staticproperty
-    def Blue():
-        return Colors.Blue
-
-    @staticproperty
-    def Green():
-        return Colors.Green
-
-    @staticproperty
-    def Yellow():
-        return Colors.Yellow
-
-    @staticproperty
-    def Black():
-        return Colors.Black
-
-    @staticproperty
-    def Cyan():
-        return Colors.Cyan
-
-    @staticproperty
-    def Pink():
-        return Colors.Pink
-
-    @staticproperty
-    def Silver():
-        return Colors.Silver
-
-    @staticproperty
-    def Red():
-        return Colors.Red
-
-    @staticproperty
-    def White():
-        return Colors.White
-
-    @staticproperty
-    def Orange():
-        return Colors.Orange
-
-    @staticproperty
-    def RoyalBlue():
-        return Colors.RoyalBlue
-
-    @staticproperty
-    def AliceBlue():
-        return Colors.AliceBlue
-
-    @staticproperty
-    def AntiqueWhite():
-        return Colors.AntiqueWhite
 
 
 class NameValueCollection:
@@ -1111,7 +1045,7 @@ class TestBase(unittest.TestCase):
         TestBase.CodeBaseDir = TestBase.CurrentDirectory
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
-        TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProviders")
+        TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProvidersTests")
 
         TestBase.CheckICRFDataFilesVersion()
 

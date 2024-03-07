@@ -1,5 +1,5 @@
 # Copyright 2020-2020, Ansys Government Initiatives 
-"""This module contains specific exceptions that may be raised from the STK API."""
+"""Contains specific exceptions that may be raised from the STK API."""
 
 
 class STKInitializationError(RuntimeError):

@@ -2,6 +2,43 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""
+STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
+
+The top of the STK X object model presents the following creatable components:
+
+  * The Application component interfaces to the STK analytical engine. It can be used by itself (in a GUI-less mode), or through the Application property on the Globe and Map controls.   
+The main way to communicate with the engine is to send Connect commands.
+Connect is a language for accessing and manipulating STK (see the
+ExecuteCommand method).  
+The Application object also exposes connection points that you can sink to
+receive notification about the state of the STK engine (for instance a
+scenario has been loaded; an animation step is performed, etc.).  
+Notice that you can instantiate many application objects, but they all refer
+to the same unique STK engine.
+
+  * The Globe control enables you to insert a 3D view into your application.  
+You can use several Globe controls if you wish to have different views of the
+same scenario. By default the STK keyboard and mouse interaction mechanism are
+used, but various events are available, allowing your application to implement
+specific keyboard and mouse interactions and modes.
+
+  * The Map control can be used to insert a 2D view into your application.  
+The Map control gives your application a 2D view of the scenario. You can use
+several Map controls if you wish to have different views of the same scenario.
+By default the STK keyboard and mouse interaction mechanism are used, but
+various events are available, allowing your application to implement specific
+keyboard and mouse interactions and modes.
+
+  * The Graphics Analysis control allows you to insert graphics analysis capability into your application. The Graphics Analysis Control can perform various analyses when set in any of the following four analysis modes. 
+    * Area Tool 
+    * AzElMask Tool 
+    * Obscuration Tool 
+    * Solar Panel Tool
+
+.
+"""
+
 __all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
 "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FEATURE_CODES", 
 "GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDS", "IDataObject", "IDataObjectFiles", "IDrawElem", "IDrawElemCollection", 
@@ -190,7 +227,7 @@ BUTTON_VALUES.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
 agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
 
 class OLE_DROP_MODE(IntEnum):
-    """Specifies how to handle OLE drop operations."""
+    """Specify how to handle OLE drop operations."""
    
     NONE = 0
     """None. The control does not accept OLE drops and displays the No Drop cursor."""
@@ -219,7 +256,7 @@ MOUSE_MODE.MANUAL.__doc__ = "None. No default action happens on mouse events. Ev
 agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
 
 class LOGGING_MODE(IntEnum):
-    """Specifies the state of the log file."""
+    """Specify the state of the log file."""
    
     INACTIVE = 0
     """The log file is not created."""
@@ -235,7 +272,7 @@ LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even a
 agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
 
 class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
-    """Specifies the mode of Gfx Analysis Control."""
+    """Specify the mode of Gfx Analysis Control."""
    
     SOLAR_PANEL_TOOL = 1
     """The Solar Panel Tool mode."""
@@ -254,7 +291,7 @@ GRAPHICS_2D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
 
 class GRAPHICS_2D_DRAW_COORDS(IntEnum):
-    """Specifies the draw coordinates for Map Control."""
+    """Specify the draw coordinates for Map Control."""
    
     PIXEL_DRAW_COORDS = 1
     """The draw coordinates values in pixels."""
@@ -267,7 +304,7 @@ GRAPHICS_2D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates value
 agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDS"] = GRAPHICS_2D_DRAW_COORDS
 
 class SHOW_PROGRESS_IMAGE(IntEnum):
-    """Specifies to show progress image."""
+    """Specify to show progress image."""
    
     NONE = 1
     """Do not show any progress Image."""
@@ -296,7 +333,7 @@ FEATURE_CODES.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether 
 agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
 
 class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
-    """Specifies to align progress image X origin."""
+    """Specify to align progress image X origin."""
    
     LEFT = 1
     """Align progress Image from X left."""
@@ -312,7 +349,7 @@ PROGRESS_IMAGE_X_ORIGIN.CENTER.__doc__ = "Align progress Image from X center."
 agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
 
 class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
-    """Specifies to align progress image Y origin."""
+    """Specify to align progress image Y origin."""
    
     TOP = 1
     """Align progress Image from Y top."""
@@ -350,6 +387,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
                              "set_handled" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISTKXSSLCertificateErrorEventArgs."""
         initialize_from_source_object(self, sourceObject, ISTKXSSLCertificateErrorEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -359,6 +397,7 @@ class ISTKXSSLCertificateErrorEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXSSLCertificateErrorEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISTKXSSLCertificateErrorEventArgs, None)
     
     _set_ignore_error_metadata = { "name" : "set_ignore_error",
@@ -471,6 +510,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
                              "set_acknowledge" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISTKXConControlQuitReceivedEventArgs."""
         initialize_from_source_object(self, sourceObject, ISTKXConControlQuitReceivedEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -480,6 +520,7 @@ class ISTKXConControlQuitReceivedEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXConControlQuitReceivedEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISTKXConControlQuitReceivedEventArgs, None)
     
     _get_acknowledge_metadata = { "name" : "acknowledge",
@@ -518,6 +559,7 @@ class IPickInfoData(object):
                              "get_is_lat_lon_altitude_valid" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPickInfoData."""
         initialize_from_source_object(self, sourceObject, IPickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -527,6 +569,7 @@ class IPickInfoData(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickInfoData)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPickInfoData, None)
     
     _get_obj_path_metadata = { "name" : "obj_path",
@@ -592,6 +635,7 @@ class IRubberBandPickInfoData(object):
         "method_offsets" : { "get_obj_paths" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRubberBandPickInfoData."""
         initialize_from_source_object(self, sourceObject, IRubberBandPickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -601,6 +645,7 @@ class IRubberBandPickInfoData(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRubberBandPickInfoData)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRubberBandPickInfoData, None)
     
     _get_obj_paths_metadata = { "name" : "obj_paths",
@@ -653,6 +698,7 @@ class ISTKXApplication(object):
                              "use_software_renderer" : 28, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISTKXApplication."""
         initialize_from_source_object(self, sourceObject, ISTKXApplication)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -662,6 +708,7 @@ class ISTKXApplication(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplication)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISTKXApplication, None)
     def Subscribe(self) -> ISTKXApplicationEventHandler:
         """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of ISTKXApplication."""
@@ -732,7 +779,7 @@ class ISTKXApplication(object):
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def get_licensing_report(self) -> str:
-        """This method is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
+        """Do not use this method, as it is deprecated. Returns a formatted string that contains the license names and their states. The string is formatted as an XML document."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_licensing_report_metadata, OutArg())
 
     _get_vendor_id_metadata = { "name" : "vendor_id",
@@ -740,7 +787,7 @@ class ISTKXApplication(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(ISTKXApplication._metadata, ISTKXApplication._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -757,14 +804,12 @@ class ISTKXApplication(object):
         """Set http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
 
-
     _get_online_options_metadata = { "name" : "get_online_options",
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
     def get_online_options(self) -> typing.Tuple[bool, str, int, str, bool]:
         """Get http proxy online options."""
         return self._intf.invoke(ISTKXApplication._metadata, ISTKXApplication._get_online_options_metadata, OutArg(), OutArg(), OutArg(), OutArg(), OutArg())
-
 
     _set_connect_handler_metadata = { "name" : "set_connect_handler",
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
@@ -901,6 +946,7 @@ class IDataObject(object):
         "method_offsets" : { "get_files" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDataObject."""
         initialize_from_source_object(self, sourceObject, IDataObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -910,6 +956,7 @@ class IDataObject(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObject)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDataObject, None)
     
     _get_files_metadata = { "name" : "files",
@@ -938,6 +985,7 @@ class IObjPathCollection(object):
                              "range" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IObjPathCollection."""
         initialize_from_source_object(self, sourceObject, IObjPathCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -948,12 +996,15 @@ class IObjPathCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IObjPathCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IObjPathCollection, None)
     def __iter__(self):
+        """Create an iterator for the IObjPathCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1010,6 +1061,7 @@ class IDrawElem(object):
                              "set_visible" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDrawElem."""
         initialize_from_source_object(self, sourceObject, IDrawElem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1019,6 +1071,7 @@ class IDrawElem(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElem)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElem, None)
     
     _get_visible_metadata = { "name" : "visible",
@@ -1061,6 +1114,7 @@ class IDrawElemRect(IDrawElem):
                              "set_line_style" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDrawElemRect."""
         initialize_from_source_object(self, sourceObject, IDrawElemRect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1071,6 +1125,7 @@ class IDrawElemRect(IDrawElem):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemRect)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElemRect, IDrawElem)
     
     _get_left_metadata = { "name" : "left",
@@ -1179,6 +1234,7 @@ class IDrawElemCollection(object):
                              "set_visible" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDrawElemCollection."""
         initialize_from_source_object(self, sourceObject, IDrawElemCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1189,12 +1245,15 @@ class IDrawElemCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElemCollection, None)
     def __iter__(self):
+        """Create an iterator for the IDrawElemCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IDrawElem":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1236,7 +1295,7 @@ class IDrawElemCollection(object):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def add(self, elemType:str) -> "IDrawElem":
-        """Factory to create and add a new element to the end of the sequence."""
+        """Create and add a new element to the end of the sequence."""
         return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._add_metadata, elemType, OutArg())
 
     _remove_metadata = { "name" : "remove",
@@ -1281,6 +1340,7 @@ class IWinProjectionPosition(object):
                              "get_is_win_projection_position_valid" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IWinProjectionPosition."""
         initialize_from_source_object(self, sourceObject, IWinProjectionPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1290,6 +1350,7 @@ class IWinProjectionPosition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IWinProjectionPosition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IWinProjectionPosition, None)
     
     _get_x_position_metadata = { "name" : "x_position",
@@ -1341,6 +1402,7 @@ class IDrawElemLine(IDrawElem):
                              "set_line_style" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDrawElemLine."""
         initialize_from_source_object(self, sourceObject, IDrawElemLine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1351,6 +1413,7 @@ class IDrawElemLine(IDrawElem):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDrawElemLine)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDrawElemLine, IDrawElem)
     
     _get_left_metadata = { "name" : "left",
@@ -1456,6 +1519,7 @@ class IExecCmdResult(object):
                              "get_is_succeeded" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1466,12 +1530,15 @@ class IExecCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1537,6 +1604,7 @@ class IExecMultiCmdResult(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecMultiCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecMultiCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1547,12 +1615,15 @@ class IExecMultiCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecMultiCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecMultiCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IExecCmdResult":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1648,6 +1719,7 @@ class IUiAxGraphics3DCntrl(object):
                              "set_picture_from_file" : 48, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiAxGraphics3DCntrl."""
         initialize_from_source_object(self, sourceObject, IUiAxGraphics3DCntrl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1657,6 +1729,7 @@ class IUiAxGraphics3DCntrl(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics3DCntrl)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiAxGraphics3DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
         """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAxGraphics3DCntrl."""
@@ -1770,7 +1843,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2008,7 +2081,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2016,7 +2089,7 @@ class IUiAxGraphics3DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._set_picture_from_file_metadata, pictureFile)
 
 
@@ -2078,6 +2151,7 @@ class IUiAx2DCntrl(object):
                              "set_pan_mode_enabled" : 45, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiAx2DCntrl."""
         initialize_from_source_object(self, sourceObject, IUiAx2DCntrl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2087,6 +2161,7 @@ class IUiAx2DCntrl(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAx2DCntrl)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiAx2DCntrl, None)
     def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
         """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of IUiAx2DCntrl."""
@@ -2207,7 +2282,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2400,7 +2475,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2408,7 +2483,7 @@ class IUiAx2DCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAx2DCntrl._metadata, IUiAx2DCntrl._set_picture_from_file_metadata, pictureFile)
 
     _get_pan_mode_enabled_metadata = { "name" : "pan_mode_enabled",
@@ -2441,6 +2516,7 @@ class ISTKXApplicationPartnerAccess(object):
         "method_offsets" : { "grant_partner_access" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISTKXApplicationPartnerAccess."""
         initialize_from_source_object(self, sourceObject, ISTKXApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2450,6 +2526,7 @@ class ISTKXApplicationPartnerAccess(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISTKXApplicationPartnerAccess, None)
     
     _grant_partner_access_metadata = { "name" : "grant_partner_access",
@@ -2476,6 +2553,7 @@ class IDataObjectFiles(object):
                              "get_count" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDataObjectFiles."""
         initialize_from_source_object(self, sourceObject, IDataObjectFiles)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2486,12 +2564,15 @@ class IDataObjectFiles(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDataObjectFiles)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDataObjectFiles, None)
     def __iter__(self):
+        """Create an iterator for the IDataObjectFiles object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2556,6 +2637,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
                              "set_win_id" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiAxGraphics2DAnalysisCntrl."""
         initialize_from_source_object(self, sourceObject, IUiAxGraphics2DAnalysisCntrl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2565,6 +2647,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiAxGraphics2DAnalysisCntrl)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiAxGraphics2DAnalysisCntrl, None)
     
     _get_back_color_metadata = { "name" : "back_color",
@@ -2623,7 +2706,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def vendor_id(self) -> str:
-        """This property is deprecated. The identifier of the vendor."""
+        """Do not use this property, as it is deprecated. The identifier of the vendor."""
         return self._intf.get_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "name" : "vendor_id",
@@ -2669,7 +2752,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def picture_from_file(self) -> str:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.get_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "name" : "picture_from_file",
@@ -2677,7 +2760,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
     def picture_from_file(self, pictureFile:str) -> None:
-        """The splash logo graphic file to be displayed in the control."""
+        """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._set_picture_from_file_metadata, pictureFile)
 
     _get_win_id_metadata = { "name" : "win_id",
@@ -2705,6 +2788,7 @@ class ExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecCmdResult."""
         IExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2713,6 +2797,7 @@ class ExecCmdResult(IExecCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}", ExecCmdResult)
@@ -2722,6 +2807,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecMultiCmdResult."""
         IExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2730,6 +2816,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{3849A604-DEB9-428C-8A72-D879719277E5}", ExecMultiCmdResult)
@@ -2739,6 +2826,7 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
     """AGI Globe control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiAxGraphics3DCntrl."""
         IUiAxGraphics3DCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2747,6 +2835,7 @@ class UiAxGraphics3DCntrl(IUiAxGraphics3DCntrl):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiAxGraphics3DCntrl, [IUiAxGraphics3DCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{0E939AC2-43D9-456E-9FE7-4C3C687BCDF2}", UiAxGraphics3DCntrl)
@@ -2756,6 +2845,7 @@ class UiAx2DCntrl(IUiAx2DCntrl):
     """AGI Map control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiAx2DCntrl."""
         IUiAx2DCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2764,6 +2854,7 @@ class UiAx2DCntrl(IUiAx2DCntrl):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiAx2DCntrl, [IUiAx2DCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{33FBA419-2BD0-422D-81A7-C5B68A49FB01}", UiAx2DCntrl)
@@ -2773,6 +2864,7 @@ class PickInfoData(IPickInfoData):
     """Single mouse pick result."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PickInfoData."""
         IPickInfoData.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2781,6 +2873,7 @@ class PickInfoData(IPickInfoData):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickInfoData, [IPickInfoData])
 
 agcls.AgClassCatalog.add_catalog_entry("{9B6FCD4D-91A0-4855-A113-F7CC8D774608}", PickInfoData)
@@ -2790,6 +2883,7 @@ class STKXApplication(ISTKXApplication):
     """STK X Application object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type STKXApplication."""
         ISTKXApplication.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2798,6 +2892,7 @@ class STKXApplication(ISTKXApplication):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXApplication, [ISTKXApplication])
 
 agcls.AgClassCatalog.add_catalog_entry("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", STKXApplication)
@@ -2807,6 +2902,7 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
     """STK X Application Partner Access object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type STKXApplicationPartnerAccess."""
         ISTKXApplicationPartnerAccess.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2815,6 +2911,7 @@ class STKXApplicationPartnerAccess(ISTKXApplicationPartnerAccess):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXApplicationPartnerAccess, [ISTKXApplicationPartnerAccess])
 
 agcls.AgClassCatalog.add_catalog_entry("{3E8358E8-6042-4E4C-B89D-1F42164CDE3D}", STKXApplicationPartnerAccess)
@@ -2824,6 +2921,7 @@ class DataObject(IDataObject):
     """Data Object for OLE drag & drop operations."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DataObject."""
         IDataObject.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2832,6 +2930,7 @@ class DataObject(IDataObject):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DataObject, [IDataObject])
 
 agcls.AgClassCatalog.add_catalog_entry("{C58BE31A-8063-46F9-9751-AF13C1101D75}", DataObject)
@@ -2841,6 +2940,7 @@ class DataObjectFiles(IDataObjectFiles):
     """Collection of files for OLE drag & drop operations."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DataObjectFiles."""
         IDataObjectFiles.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2849,6 +2949,7 @@ class DataObjectFiles(IDataObjectFiles):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DataObjectFiles, [IDataObjectFiles])
 
 agcls.AgClassCatalog.add_catalog_entry("{83A2F2F3-3122-4317-8D59-2F43906E4168}", DataObjectFiles)
@@ -2858,6 +2959,7 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
     """Rubber-band mouse pick result."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RubberBandPickInfoData."""
         IRubberBandPickInfoData.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2866,6 +2968,7 @@ class RubberBandPickInfoData(IRubberBandPickInfoData):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RubberBandPickInfoData, [IRubberBandPickInfoData])
 
 agcls.AgClassCatalog.add_catalog_entry("{A7EB5C99-B818-4531-B598-368AA2DD3CF6}", RubberBandPickInfoData)
@@ -2875,6 +2978,7 @@ class ObjPathCollection(IObjPathCollection):
     """Collection of object paths."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ObjPathCollection."""
         IObjPathCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2883,6 +2987,7 @@ class ObjPathCollection(IObjPathCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ObjPathCollection, [IObjPathCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{0B3FFC58-8105-4BE4-9D60-254A142448D5}", ObjPathCollection)
@@ -2892,6 +2997,7 @@ class DrawElemRect(IDrawElemRect):
     """Define a rectangle in window coordinates."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DrawElemRect."""
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2900,6 +3006,7 @@ class DrawElemRect(IDrawElemRect):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElemRect, [IDrawElemRect])
 
 agcls.AgClassCatalog.add_catalog_entry("{55B0A7B5-2508-48BB-90D0-4B8B51DC9178}", DrawElemRect)
@@ -2909,6 +3016,7 @@ class DrawElemCollection(IDrawElemCollection):
     """Collection of elements to draw on the control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DrawElemCollection."""
         IDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2917,6 +3025,7 @@ class DrawElemCollection(IDrawElemCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElemCollection, [IDrawElemCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{97A759F9-49E4-42DE-A8E3-7B670EB3BDAC}", DrawElemCollection)
@@ -2926,6 +3035,7 @@ class Draw2DElemRect(IDrawElemRect):
     """Define a rectangle in window coordinates for map control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Draw2DElemRect."""
         IDrawElemRect.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2934,6 +3044,7 @@ class Draw2DElemRect(IDrawElemRect):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElemRect])
 
 agcls.AgClassCatalog.add_catalog_entry("{C26CEE82-EB4B-4D63-86B0-C5E2BB261E3F}", Draw2DElemRect)
@@ -2943,6 +3054,7 @@ class Draw2DElemCollection(IDrawElemCollection):
     """Collection of elements to draw on map control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Draw2DElemCollection."""
         IDrawElemCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2951,6 +3063,7 @@ class Draw2DElemCollection(IDrawElemCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElemCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{D6B1A826-3ABB-49FD-8C9F-F49ADBE6D2B8}", Draw2DElemCollection)
@@ -2960,6 +3073,7 @@ class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
     """AGI Graphics Analysis Control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiAxGraphics2DAnalysisCntrl."""
         IUiAxGraphics2DAnalysisCntrl.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2968,6 +3082,7 @@ class UiAxGraphics2DAnalysisCntrl(IUiAxGraphics2DAnalysisCntrl):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiAxGraphics2DAnalysisCntrl, [IUiAxGraphics2DAnalysisCntrl])
 
 agcls.AgClassCatalog.add_catalog_entry("{600541C4-8B16-47AD-ABA4-EE8BC5E9FD5F}", UiAxGraphics2DAnalysisCntrl)
@@ -2977,6 +3092,7 @@ class WinProjectionPosition(IWinProjectionPosition):
     """Projected window position result."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type WinProjectionPosition."""
         IWinProjectionPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2985,6 +3101,7 @@ class WinProjectionPosition(IWinProjectionPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, WinProjectionPosition, [IWinProjectionPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{21D08121-9F86-485E-B143-337DACCD5022}", WinProjectionPosition)
@@ -2994,6 +3111,7 @@ class DrawElemLine(IDrawElemLine):
     """Define a line in window coordinates."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DrawElemLine."""
         IDrawElemLine.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3002,6 +3120,7 @@ class DrawElemLine(IDrawElemLine):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DrawElemLine, [IDrawElemLine])
 
 agcls.AgClassCatalog.add_catalog_entry("{A4C86FD0-95FA-4F15-BE04-1FDF0DD6B0B5}", DrawElemLine)
@@ -3011,6 +3130,7 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
     """Provide information about an SSL certificate that is expired or invalid."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type STKXSSLCertificateErrorEventArgs."""
         ISTKXSSLCertificateErrorEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3019,6 +3139,7 @@ class STKXSSLCertificateErrorEventArgs(ISTKXSSLCertificateErrorEventArgs):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXSSLCertificateErrorEventArgs, [ISTKXSSLCertificateErrorEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{2BCBD8EC-2EA5-4D14-855D-BB85A201BCB4}", STKXSSLCertificateErrorEventArgs)
@@ -3028,6 +3149,7 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
     """Arguments for the OnConControlQuitReceived event."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type STKXConControlQuitReceivedEventArgs."""
         ISTKXConControlQuitReceivedEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3036,6 +3158,7 @@ class STKXConControlQuitReceivedEventArgs(ISTKXConControlQuitReceivedEventArgs):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXConControlQuitReceivedEventArgs, [ISTKXConControlQuitReceivedEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{CA9E9226-74BE-4733-B50A-D64703165F4E}", STKXConControlQuitReceivedEventArgs)

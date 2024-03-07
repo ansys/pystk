@@ -469,7 +469,7 @@ class EarlyBoundTests(TestBase):
         name: str = acc.name
         Assert.assertTrue(("Advanced Acceleration Model" in name))
         Assert.assertEqual(False, acc.is_linked_to_catalog)
-        advAcc: "AircraftAdvAccelerationModel" = clr.CastAs(acc.properties, AircraftAdvAccelerationModel)
+        advAcc: "AircraftAdvancedAccelerationModel" = clr.CastAs(acc.properties, AircraftAdvancedAccelerationModel)
 
         acc.rename("Test Rename")
         Assert.assertEqual("Test Rename", acc.name)
@@ -5356,7 +5356,7 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
         advFWT.wing_area = 300
         Assert.assertEqual(300, advFWT.wing_area)
@@ -5387,12 +5387,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, advFWT.cache_fuel_flow)
 
         advFWT.create_all_perf_models("CreateAllPerfModelsTest", True, False)
-        tempAC.acceleration.get_adv_acceleration_by_name("CreateAllPerfModelsTest")
-        tempAC.climb.get_adv_climb_by_name("CreateAllPerfModelsTest")
-        tempAC.cruise.get_adv_cruise_by_name("CreateAllPerfModelsTest")
-        tempAC.descent.get_adv_descent_by_name("CreateAllPerfModelsTest")
-        tempAC.takeoff.get_adv_takeoff_by_name("CreateAllPerfModelsTest")
-        tempAC.landing.get_adv_landing_by_name("CreateAllPerfModelsTest")
+        tempAC.acceleration.get_advanced_acceleration_by_name("CreateAllPerfModelsTest")
+        tempAC.climb.get_advanced_climb_by_name("CreateAllPerfModelsTest")
+        tempAC.cruise.get_advanced_cruise_by_name("CreateAllPerfModelsTest")
+        tempAC.descent.get_advanced_descent_by_name("CreateAllPerfModelsTest")
+        tempAC.takeoff.get_advanced_takeoff_by_name("CreateAllPerfModelsTest")
+        tempAC.landing.get_advanced_landing_by_name("CreateAllPerfModelsTest")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("already exist")):
             advFWT.create_all_perf_models("CreateAllPerfModelsTest", False, False)
@@ -5407,14 +5407,14 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvFixedWingExternalAero" = advFWT.aero_mode_as_external
+            aeroTest: "AdvancedFixedWingExternalAero" = advFWT.aero_mode_as_external
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE
-        aero: "AdvFixedWingExternalAero" = advFWT.aero_mode_as_external
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE
+        aero: "AdvancedFixedWingExternalAero" = advFWT.aero_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.aero")
         with pytest.raises(Exception, match=RegexSubstringMatch("Failed to load the file.")):
@@ -5435,15 +5435,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+            aeroTest: "AdvancedFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO
-        Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO, advFWT.aero_strategy)
-        aero: "AdvFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO
+        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO, advFWT.aero_strategy)
+        aero: "AdvancedFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
 
         aero.transonic_min_mach = 0.81
         Assert.assertEqual(0.81, aero.transonic_min_mach)
@@ -5472,21 +5472,21 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+            aeroTest: "AdvancedFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
-        Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO, advFWT.aero_strategy)
-        aero: "AdvFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO, advFWT.aero_strategy)
+        aero: "AdvancedFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
 
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            basicGeoTest: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
-        basicGeo: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+            basicGeoTest: "AdvancedFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
+        basicGeo: "AdvancedFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         basicGeo.set_aspect_ratio(11)
         Assert.assertEqual(11, basicGeo.aspect_ratio)
@@ -5495,9 +5495,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(22, float(sweep))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            variableGeoTest: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
-        variableGeo: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+            variableGeoTest: "AdvancedFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
+        variableGeo: "AdvancedFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         variableGeo.set_aspect_ratio(12)
         Assert.assertEqual(12, variableGeo.aspect_ratio)
@@ -5531,21 +5531,21 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+            aeroTest: "AdvancedFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
 
-        advFWT.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
-        Assert.assertEqual(ADV_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO, advFWT.aero_strategy)
-        aero: "AdvFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
+        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO, advFWT.aero_strategy)
+        aero: "AdvancedFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
 
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            basicGeoTest: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
-        basicGeo: "AdvFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+            basicGeoTest: "AdvancedFixedWingGeometryBasic" = aero.geometry_mode_as_basic
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.BASIC_GEOMETRY
+        basicGeo: "AdvancedFixedWingGeometryBasic" = aero.geometry_mode_as_basic
 
         basicGeo.set_aspect_ratio(11)
         Assert.assertEqual(11, basicGeo.aspect_ratio)
@@ -5554,9 +5554,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(22, float(sweep))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            variableGeoTest: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
-        aero.geometry_type = ADV_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
-        variableGeo: "AdvFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+            variableGeoTest: "AdvancedFixedWingGeometryVariable" = aero.geometry_mode_as_variable
+        aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
+        variableGeo: "AdvancedFixedWingGeometryVariable" = aero.geometry_mode_as_variable
 
         variableGeo.set_aspect_ratio(12)
         Assert.assertEqual(12, variableGeo.aspect_ratio)
@@ -5598,15 +5598,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
+            propTest: "AdvancedFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
 
         prop.max_power = 111
         Assert.assertEqual(111, prop.max_power)
@@ -5625,15 +5625,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+            propTest: "AdvancedFixedWingExternalProp" = advFWT.powerplant_mode_as_external
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingExternalProp" = advFWT.powerplant_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.prop")
         with pytest.raises(Exception, match=RegexSubstringMatch("Failed to load the file.")):
@@ -5656,15 +5656,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
+            propTest: "AdvancedFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
 
         prop.max_sea_level_static_power = 111
         Assert.assertEqual(111, prop.max_sea_level_static_power)
@@ -5693,15 +5693,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
+            propTest: "AdvancedFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
 
         prop.max_sea_level_static_power = 111
         Assert.assertEqual(111, prop.max_sea_level_static_power)
@@ -5723,15 +5723,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -5745,15 +5745,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -5767,17 +5767,17 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING
         Assert.assertEqual(
-            ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING, advFWT.powerplant_strategy
+            ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_LOW_BYPASS_AFTERBURNING, advFWT.powerplant_strategy
         )
-        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        prop: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -5791,15 +5791,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -5813,15 +5813,15 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+            propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_AFTERBURNING, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
         self.EmpiricalJetEngineOptions(prop)
 
@@ -5835,14 +5835,14 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingTurbojetBasicABProp" = advFWT.powerplant_mode_as_basic_turbojet
+            propTest: "AdvancedFixedWingTurbojetBasicABProp" = advFWT.powerplant_mode_as_basic_turbojet
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB, advFWT.powerplant_strategy)
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB, advFWT.powerplant_strategy)
         self.TestTurbojetBasicAB(advFWT.powerplant_mode_as_basic_turbojet)
 
         tempAC.get_as_catalog_item().remove()
@@ -5855,14 +5855,14 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingTurbofanBasicABProp" = advFWT.powerplant_mode_as_basic_turbofan
+            propTest: "AdvancedFixedWingTurbofanBasicABProp" = advFWT.powerplant_mode_as_basic_turbofan
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB, advFWT.powerplant_strategy)
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB, advFWT.powerplant_strategy)
         self.TestTurbofanBasicAB(advFWT.powerplant_mode_as_basic_turbofan)
 
         tempAC.get_as_catalog_item().remove()
@@ -5875,15 +5875,17 @@ class EarlyBoundTests(TestBase):
         tempAC: "AircraftModel" = clr.CastAs(
             EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item().duplicate(), AircraftModel
         )
-        advFWT: "AdvFixedWingTool" = tempAC.adv_fixed_wing_tool
+        advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+            propTest: "AdvancedFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
-        advFWT.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT
-        Assert.assertEqual(ADV_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT, advFWT.powerplant_strategy)
-        prop: "AdvFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT
+        Assert.assertEqual(
+            ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT, advFWT.powerplant_strategy
+        )
+        prop: "AdvancedFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, prop.max_turbine_compression_temp)
@@ -5901,19 +5903,19 @@ class EarlyBoundTests(TestBase):
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_DISABLED
         Assert.assertEqual(TURBINE_MODE.TURBINE_MODE_DISABLED, prop.turbine_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            fanTest: "AdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+            fanTest: "AdvancedFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
         prop.ramjet_mode = RAMJET_MODE.RAMJET_MODE_DISABLED
         Assert.assertEqual(RAMJET_MODE.RAMJET_MODE_DISABLED, prop.ramjet_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            ramTest: "AdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
+            ramTest: "AdvancedFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
         prop.scramjet_mode = SCRAMJET_MODE.SCRAMJET_MODE_DISABLED
         Assert.assertEqual(SCRAMJET_MODE.SCRAMJET_MODE_DISABLED, prop.scramjet_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            scramTest: "AdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
+            scramTest: "AdvancedFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
 
         # /////////////////// Now test the turbojet turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOJET_BASIC_AB
-        turbojet: "AdvFixedWingTurbojetBasicABProp" = prop.turbine_mode_as_turbojet
+        turbojet: "AdvancedFixedWingTurbojetBasicABProp" = prop.turbine_mode_as_turbojet
         self.TestTurbojetBasicAB(turbojet)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbojet.max_compression_temp)
@@ -5922,7 +5924,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the turbofan turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOFAN_BASIC_AB
-        turbofan: "AdvFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+        turbofan: "AdvancedFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
         self.TestTurbofanBasicAB(turbofan)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbofan.max_compression_temp)
@@ -5931,7 +5933,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the ramjet /////////////////////
         prop.ramjet_mode = RAMJET_MODE.RAMJET_MODE_BASIC
-        ramjet: "AdvFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
+        ramjet: "AdvancedFixedWingRamjetBasic" = prop.ramjet_mode_as_basic
 
         ramjet.design_altitude = 60001
         Assert.assertEqual(60001, ramjet.design_altitude)
@@ -5965,7 +5967,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the scramjet /////////////////////
         prop.scramjet_mode = SCRAMJET_MODE.SCRAMJET_MODE_BASIC
-        scramjet: "AdvFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
+        scramjet: "AdvancedFixedWingScramjetBasic" = prop.scramjet_mode_as_basic
 
         scramjet.design_altitude = 90001
         Assert.assertEqual(90001, scramjet.design_altitude)
@@ -6556,9 +6558,9 @@ class EarlyBoundTests(TestBase):
         accAsCatalogItem: "ICatalogItem" = acc.get_as_catalog_item()
         accModelNames = accAsCatalogItem.child_names
         count: int = Array.Length(accModelNames)
-        advAcc: "AircraftAdvAccelerationModel" = clr.CastAs(
+        advAcc: "AircraftAdvancedAccelerationModel" = clr.CastAs(
             accAsCatalogItem.add_child_of_type("Advanced Acceleration Model", "AdvAcceleration Model Name"),
-            AircraftAdvAccelerationModel,
+            AircraftAdvancedAccelerationModel,
         )
 
         accModelNames = accAsCatalogItem.child_names
@@ -6567,7 +6569,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("AdvAcceleration Model Name", accModelNames[0])
 
         accMode: "AircraftAccelerationMode" = advAcc.acceleration_mode
-        accMode.accel_mode = ACCELERATION_ADV_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL
+        accMode.accel_mode = ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
             accMode.accel_g = 1
 
@@ -6641,7 +6643,7 @@ class EarlyBoundTests(TestBase):
         )
         climb: "AircraftClimb" = newAC.climb
         climb.get_as_catalog_item().add_child_of_type("Advanced Climb Model", "Adv Climb")
-        advClimb: "AircraftAdvClimbModel" = climb.get_adv_climb_by_name("Adv Climb")
+        advClimb: "AircraftAdvancedClimbModel" = climb.get_advanced_climb_by_name("Adv Climb")
 
         advClimb.climb_speed_type = CLIMB_SPEED_TYPE.CLIMB_SPEED_MIN_FUEL
         Assert.assertEqual(CLIMB_SPEED_TYPE.CLIMB_SPEED_MIN_FUEL, advClimb.climb_speed_type)
@@ -6783,7 +6785,7 @@ class EarlyBoundTests(TestBase):
         )
         cruise: "AircraftCruise" = newAC.cruise
         cruise.get_as_catalog_item().add_child_of_type("Advanced Cruise Model", "Adv Cruise")
-        advCruise: "AircraftAdvCruiseModel" = cruise.get_adv_cruise_by_name("Adv Cruise")
+        advCruise: "AircraftAdvancedCruiseModel" = cruise.get_advanced_cruise_by_name("Adv Cruise")
 
         advCruise.default_cruise_altitude = 10001
         Assert.assertEqual(10001, advCruise.default_cruise_altitude)
@@ -6877,7 +6879,7 @@ class EarlyBoundTests(TestBase):
         )
         descent: "AircraftDescent" = newAC.descent
         descent.get_as_catalog_item().add_child_of_type("Advanced Descent Model", "Adv Descent")
-        advDescent: "AircraftAdvDescentModel" = descent.get_adv_descent_by_name("Adv Descent")
+        advDescent: "AircraftAdvancedDescentModel" = descent.get_advanced_descent_by_name("Adv Descent")
 
         advDescent.descent_speed_type = DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE
         Assert.assertEqual(DESCENT_SPEED_TYPE.DESCENT_MAX_RANGE_CRUISE, advDescent.descent_speed_type)
@@ -6974,7 +6976,7 @@ class EarlyBoundTests(TestBase):
         )
         landing: "AircraftLanding" = newAC.landing
         landing.get_as_catalog_item().add_child_of_type("Advanced Landing Model", "Adv Landing")
-        advLanding: "AircraftAdvLandingModel" = landing.get_adv_landing_by_name("Adv Landing")
+        advLanding: "AircraftAdvancedLandingModel" = landing.get_advanced_landing_by_name("Adv Landing")
 
         advLanding.landing_speed_mode = TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK
         Assert.assertEqual(TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK, advLanding.landing_speed_mode)
@@ -7061,7 +7063,7 @@ class EarlyBoundTests(TestBase):
         )
         takeoff: "AircraftTakeoff" = newAC.takeoff
         takeoff.get_as_catalog_item().add_child_of_type("Advanced Takeoff Model", "Adv Takeoff")
-        advTakeoff: "AircraftAdvTakeoffModel" = takeoff.get_adv_takeoff_by_name("Adv Takeoff")
+        advTakeoff: "AircraftAdvancedTakeoffModel" = takeoff.get_advanced_takeoff_by_name("Adv Takeoff")
 
         advTakeoff.takeoff_speed_mode = TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK
         Assert.assertEqual(TAKEOFF_LANDING_SPEED_MODE.TAKEOFF_LANDING_ANGLE_OF_ATTACK, advTakeoff.takeoff_speed_mode)
@@ -8386,7 +8388,7 @@ class EarlyBoundTests(TestBase):
         advancedAero.tail_max_thickness_along_mac = 0.008
         Assert.assertEqual(0.008, advancedAero.tail_max_thickness_along_mac)
 
-    def EmpiricalJetEngineOptions(self, prop: "AdvFixedWingEmpiricalJetEngine"):
+    def EmpiricalJetEngineOptions(self, prop: "AdvancedFixedWingEmpiricalJetEngine"):
         tolerance: float = 1e-09
 
         prop.max_sea_level_static_thrust = 65000
@@ -8518,7 +8520,7 @@ class EarlyBoundTests(TestBase):
         cea.specific_energy = 43.21
         Assert.assertEqual(43.21, cea.specific_energy)
 
-    def TestTurbofanBasicAB(self, prop: "AdvFixedWingTurbofanBasicABProp"):
+    def TestTurbofanBasicAB(self, prop: "AdvancedFixedWingTurbofanBasicABProp"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -8563,7 +8565,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestPropulsionEfficiencies(prop.efficiencies_and_losses)
 
-    def TestTurbojetBasicAB(self, prop: "AdvFixedWingTurbojetBasicABProp"):
+    def TestTurbojetBasicAB(self, prop: "AdvancedFixedWingTurbojetBasicABProp"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):

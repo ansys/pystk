@@ -412,29 +412,29 @@ class _CreateAgObjectLifetimeManager(object):
         self._applications = list()
         
     @staticmethod
-    def _ReleaseImpl(pUnk:"IUnknown"):
+    def _release_impl(pUnk:"IUnknown"):
         """Call Release in STK."""
-        _CreateAgObjectLifetimeManager._Release(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
+        _CreateAgObjectLifetimeManager._Release(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._ReleaseIndex))(pUnk.p)
         
     @staticmethod
-    def _AddRefImpl(pUnk:"IUnknown"):
+    def _add_ref_impl(pUnk:"IUnknown"):
         """Call AddRef in STK."""
-        _CreateAgObjectLifetimeManager._AddRef(pUnk._getVtblEntry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
+        _CreateAgObjectLifetimeManager._AddRef(pUnk._get_vtbl_entry(_CreateAgObjectLifetimeManager._AddRefIndex))(pUnk.p)
                 
     def create_ownership(self, pUnk:"IUnknown"):
         """
-        Adds pUnk to the reference manager and calls AddRef in STK.
+        Add pUnk to the reference manager and call AddRef in STK.
 
         Use if pUnk has a ref-count of 0.
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            _CreateAgObjectLifetimeManager._AddRefImpl(pUnk)
+            _CreateAgObjectLifetimeManager._add_ref_impl(pUnk)
             self.take_ownership(pUnk, False)
                 
     def take_ownership(self, pUnk:"IUnknown", isApplication=False):
         """
-        Adds pUnk to the reference manager; does not call AddRef in STK.
+        Add pUnk to the reference manager; does not call AddRef in STK.
 
         Use if pUnk has a ref-count of 1.
         """
@@ -444,19 +444,19 @@ class _CreateAgObjectLifetimeManager(object):
                 if isApplication:
                     self._applications.append(ptraddress)
                 if ptraddress in self._ref_counts:
-                    _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
-                    self.InternalAddRef(pUnk)
+                    _CreateAgObjectLifetimeManager._release_impl(pUnk)
+                    self.internal_add_ref(pUnk)
                 else:
                     self._ref_counts[ptraddress] = 1
                 
-    def InternalAddRef(self, pUnk:"IUnknown"):
+    def internal_add_ref(self, pUnk:"IUnknown"):
         """Increment the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
         with _GCDisabler() as gc_lock:
             if ptraddress in self._ref_counts:
                 self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
 
-    def Release(self, pUnk:"IUnknown"):
+    def release(self, pUnk:"IUnknown"):
         """
         Decrements the internal reference count of pUnk.
         
@@ -467,12 +467,12 @@ class _CreateAgObjectLifetimeManager(object):
             with _GCDisabler() as gc_lock:
                 if ptraddress in self._ref_counts:
                     if self._ref_counts[ptraddress] == 1:
-                        _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                        _CreateAgObjectLifetimeManager._release_impl(pUnk)
                         del(self._ref_counts[ptraddress])
                     else:
                         self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
                 
-    def ReleaseAll(self, releaseApplication=True):
+    def release_all(self, releaseApplication=True):
         with _GCDisabler() as gc_lock:
             preserved_app_ref_counts = dict()
             while len(self._ref_counts) > 0:
@@ -483,7 +483,7 @@ class _CreateAgObjectLifetimeManager(object):
                     continue
                 pUnk = IUnknown()
                 pUnk.p = c_void_p(ptraddress)
-                _CreateAgObjectLifetimeManager._ReleaseImpl(pUnk)
+                _CreateAgObjectLifetimeManager._release_impl(pUnk)
                 pUnk.p = c_void_p(0)
             self._ref_counts = preserved_app_ref_counts
 
@@ -509,7 +509,7 @@ class _CreateCoInitializeManager(object):
 CoInitializeManager = _CreateCoInitializeManager()
 
 def _initialize_embedded():
-    """Called by STK during plugin initialization."""
+    """Initialize OLE libraries for STK plugin initialization."""
     OLE32Lib._initialize()
     OLEAut32Lib._initialize()
 
@@ -528,26 +528,26 @@ class IUnknown(object):
     def __init__(self, pUnk=None):
         if pUnk is not None:
             self.p = pUnk.p
-            self.AddRef()
+            self.add_ref()
         else:
             self.p = c_void_p()
     def __del__(self):
         if self:
-            self.Release()
+            self.release()
     def __eq__(self, other):
         return self.p.value == other.p.value
     def __hash__(self):
         return self.p.value
     def __bool__(self):
         return self.p.value is not None and self.p.value > 0
-    def _getVtblEntry(self, index):
+    def _get_vtbl_entry(self, index):
         vptr = cast(self.p, POINTER(c_void_p))
         vtbl = cast(vptr.contents, POINTER(c_void_p))
         return vtbl[index]
     def query_interface(self, iid:GUID|str) -> "IUnknown":
         pIntf = IUnknown()
         if isinstance(iid, str): iid=GUID(iid)
-        hr = IUnknown._QueryInterface(self._getVtblEntry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
+        hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
         if not Succeeded(hr):
             return None
         pIntf.take_ownership()
@@ -558,18 +558,18 @@ class IUnknown(object):
     def take_ownership(self, isApplication=False):
         """Register the pointer to be Released when the ref count goes to zero but does not call AddRef."""
         ObjectLifetimeManager.take_ownership(self, isApplication) 
-    def AddRef(self):
+    def add_ref(self):
         """Increment the ref count if the pointer was registered.
         
         Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.InternalAddRef(self)  
-    def Release(self):
+        ObjectLifetimeManager.internal_add_ref(self)  
+    def release(self):
         """Decrement the ref count if the pointer was registered. Calls Release if the ref count goes to zero.
         
         Pointer registration must be done by create_ownership or take_ownership.
         """
-        ObjectLifetimeManager.Release(self)   
+        ObjectLifetimeManager.release(self)   
 
     def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
         method_offset = intf_metatdata["method_offsets"][method_metadata["name"]]
@@ -601,9 +601,9 @@ class IUnknown(object):
         call_args = []
         for marshaller, arg_type in zip(marshallers, arg_types):
             if type(arg_type) == type(POINTER(PVOID)): # type(POINTER(X)) == type(POINTER(Y)) for all X,Y. the choice of PVOID was arbitrary
-                call_args.append(byref(marshaller.COM_val))
+                call_args.append(byref(marshaller.com_val))
             else:
-                call_args.append(marshaller.COM_val)
+                call_args.append(marshaller.com_val)
         evaluate_hresult(method(*call_args))
         return_vals = []
         for arg, marshaller in zip(args, marshallers):
@@ -659,7 +659,7 @@ class IFuncType(object):
         self.index = method_index
         self.method = WINFUNCTYPE(HRESULT, LPVOID, *argtypes)
     def __call__(self, *args):
-        pIntf = self.pUnk.query_interface(self.iid)
-        ret = self.method(pIntf._getVtblEntry(self.index))(pIntf.p, *args)
+        pIntf: IUnknown = self.pUnk.query_interface(self.iid)
+        ret = self.method(pIntf._get_vtbl_entry(self.index))(pIntf.p, *args)
         del(pIntf)
         return ret

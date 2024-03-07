@@ -196,7 +196,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def SetupAdvancedFixedWingTool(self, aviatorAircraft: "AircraftModel"):
         # Get the advanced fixed wing tool
-        advFixedWingTool: "AdvFixedWingTool" = aviatorAircraft.adv_fixed_wing_tool
+        advFixedWingTool: "AdvancedFixedWingTool" = aviatorAircraft.advanced_fixed_wing_tool
         # Set the basic geometry
         advFixedWingTool.wing_area = 300
         advFixedWingTool.flaps_area = 50
@@ -213,11 +213,11 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         advFixedWingTool.max_temperature = 900
 
         # Use a subsonic aerodynamic strategy
-        advFixedWingTool.aero_strategy = ADV_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFixedWingTool.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
         # Cache the aerodynamic data to improve calculation speed
         advFixedWingTool.cache_aero_data = True
         # Use a high bypass turbofan
-        advFixedWingTool.powerplant_strategy = ADV_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
+        advFixedWingTool.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_HIGH_BYPASS
         # Cache the fuel flow data to improve calculation speed
         advFixedWingTool.cache_fuel_flow = True
 

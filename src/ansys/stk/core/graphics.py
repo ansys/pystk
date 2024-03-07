@@ -2,6 +2,16 @@
 #          Copyright 2020-2023, Ansys Government Initiatives
 ################################################################################ 
 
+"""
+Access and manipulate visual elements in STK.
+
+These include STK globe terrain
+and imagery, camera control, 3D models, triangle meshes, surface polygons and
+polylines, text batches, screen overlays, scene lighting, and raster and
+projection streaming. STK Graphics is available in STK, using UI plugins, as
+well as in STK Engine custom applications.
+"""
+
 __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
 "AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
 "ANTI_ALIASING", "AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", 
@@ -146,7 +156,7 @@ CYLINDER_FILL.ALL.__doc__ = "Completely fill the cylinder, including its wall, b
 agcls.AgTypeNameMap["CYLINDER_FILL"] = CYLINDER_FILL
 
 class WINDING_ORDER(IntEnum):
-    """Specifies the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
+    """Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
    
     COUNTER_CLOCKWISE = 0
     """Positions or triangles are defined in counter-clockwise order."""
@@ -257,7 +267,7 @@ INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial 
 agcls.AgTypeNameMap["INDICES_ORDER_HINT"] = INDICES_ORDER_HINT
 
 class MAINTAIN_ASPECT_RATIO(IntEnum):
-    """Specifies whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
+    """Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
    
     NONE = 0
     """The aspect ratio of the texture is not maintained during sizing of the screen overlay."""
@@ -321,7 +331,7 @@ MARKER_BATCH_RENDER_PASS.BASED_ON_TRANSLUCENCY.__doc__ = "The marker batch rende
 agcls.AgTypeNameMap["MARKER_BATCH_RENDER_PASS"] = MARKER_BATCH_RENDER_PASS
 
 class MARKER_BATCH_SIZE_SOURCE(IntEnum):
-    """Determines which marker batch property is used to size each marker in a marker batch."""
+    """Determine which marker batch property is used to size each marker in a marker batch."""
    
     FROM_TEXTURE = 0
     """The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."""
@@ -553,7 +563,7 @@ RENDER_PASS_HINT.UNKNOWN.__doc__ = "It is unknown if the collection of colors co
 agcls.AgTypeNameMap["RENDER_PASS_HINT"] = RENDER_PASS_HINT
 
 class SCREEN_OVERLAY_ORIGIN(IntEnum):
-    """Specifies the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
+    """Specify the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
    
     BOTTOM_LEFT = 0
     """When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."""
@@ -587,7 +597,7 @@ SCREEN_OVERLAY_ORIGIN.TOP_RIGHT.__doc__ = "When the X and Y position are both se
 agcls.AgTypeNameMap["SCREEN_OVERLAY_ORIGIN"] = SCREEN_OVERLAY_ORIGIN
 
 class SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
-    """Specifies the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
+    """Specify the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
    
     BOTTOM_LEFT = 0
     """When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."""
@@ -801,7 +811,7 @@ GRADIENT_DETECT_METHOD.SOUTH_WEST.__doc__ = "Detects south west gradients."
 agcls.AgTypeNameMap["GRADIENT_DETECT_METHOD"] = GRADIENT_DETECT_METHOD
 
 class JPEG2000_COMPRESSION_PROFILE(IntEnum):
-    """Defines the profile used when encoding a JPEG 2000 file."""
+    """Define the profile used when encoding a JPEG 2000 file."""
    
     DEFAULT = 0
     """This is the default profile, which is recommended for those unfamiliar with the others."""
@@ -933,7 +943,7 @@ SHARPEN_METHOD.BASIC.__doc__ = "Provide basic sharpening."
 agcls.AgTypeNameMap["SHARPEN_METHOD"] = SHARPEN_METHOD
 
 class VIDEO_PLAYBACK(IntEnum):
-    """Specifies how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
+    """Specify how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
    
     REAL_TIME = 0
     """The video will playback in realtime."""
@@ -946,7 +956,7 @@ VIDEO_PLAYBACK.TIME_INTERVAL.__doc__ = "The video will playback in coincidence w
 agcls.AgTypeNameMap["VIDEO_PLAYBACK"] = VIDEO_PLAYBACK
 
 class KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
-    """Defines the options available for a KmlNetworkLink's RefreshMode property."""
+    """Define the options available for a KmlNetworkLink's RefreshMode property."""
    
     ON_CHANGE = 0
     """Refresh when the document is loaded and whenever the Link parameters change (the default)."""
@@ -962,7 +972,7 @@ KML_NETWORK_LINK_REFRESH_MODE.ON_EXPIRE.__doc__ = "Refresh the network link when
 agcls.AgTypeNameMap["KML_NETWORK_LINK_REFRESH_MODE"] = KML_NETWORK_LINK_REFRESH_MODE
 
 class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
-    """Defines the options available for a KmlNetworkLink's ViewRefreshMode property."""
+    """Define the options available for a KmlNetworkLink's ViewRefreshMode property."""
    
     NEVER = 0
     """Do not refresh the network link when the camera's view changes."""
@@ -1346,6 +1356,7 @@ class IPathPoint(object):
                              "get_is_translucent" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPoint."""
         initialize_from_source_object(self, sourceObject, IPathPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1355,6 +1366,7 @@ class IPathPoint(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPoint)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPoint, None)
     
     _get_position_metadata = { "name" : "position",
@@ -1467,6 +1479,7 @@ class IPathPointFactory(object):
                              "initialize_with_date_position_color_and_translucency" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPointFactory."""
         initialize_from_source_object(self, sourceObject, IPathPointFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1476,6 +1489,7 @@ class IPathPointFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPointFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPointFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -1529,6 +1543,7 @@ class IBoundingSphere(object):
                              "get_radius" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBoundingSphere."""
         initialize_from_source_object(self, sourceObject, IBoundingSphere)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1538,6 +1553,7 @@ class IBoundingSphere(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoundingSphere)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBoundingSphere, None)
     
     _get_center_metadata = { "name" : "center",
@@ -1572,6 +1588,7 @@ class IBoundingSphereFactory(object):
                              "get_maximum_radius_bounding_sphere" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBoundingSphereFactory."""
         initialize_from_source_object(self, sourceObject, IBoundingSphereFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1581,6 +1598,7 @@ class IBoundingSphereFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoundingSphereFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBoundingSphereFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -1620,6 +1638,7 @@ class ITextureFilter2D(object):
                              "get_linear_repeat" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureFilter2D."""
         initialize_from_source_object(self, sourceObject, ITextureFilter2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1629,6 +1648,7 @@ class ITextureFilter2D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureFilter2D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureFilter2D, None)
     
     _get_minification_filter_metadata = { "name" : "minification_filter",
@@ -1716,6 +1736,7 @@ class ITextureFilter2DFactory(object):
                              "initialize_with_minification_and_magnification" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureFilter2DFactory."""
         initialize_from_source_object(self, sourceObject, ITextureFilter2DFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1725,6 +1746,7 @@ class ITextureFilter2DFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureFilter2DFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureFilter2DFactory, None)
     
     _get_nearest_clamp_to_edge_metadata = { "name" : "nearest_clamp_to_edge",
@@ -1795,6 +1817,7 @@ class IRendererTexture2D(object):
         "method_offsets" : { "get_template" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRendererTexture2D."""
         initialize_from_source_object(self, sourceObject, IRendererTexture2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1804,6 +1827,7 @@ class IRendererTexture2D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRendererTexture2D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRendererTexture2D, None)
     
     _get_template_metadata = { "name" : "template",
@@ -1831,6 +1855,7 @@ class IRendererTextureTemplate2D(object):
                              "get_height" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRendererTextureTemplate2D."""
         initialize_from_source_object(self, sourceObject, IRendererTextureTemplate2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1840,6 +1865,7 @@ class IRendererTextureTemplate2D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRendererTextureTemplate2D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRendererTextureTemplate2D, None)
     
     _get_internal_format_metadata = { "name" : "internal_format",
@@ -1883,6 +1909,7 @@ class IPathPointCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPointCollection."""
         initialize_from_source_object(self, sourceObject, IPathPointCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1893,12 +1920,15 @@ class IPathPointCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPointCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPointCollection, None)
     def __iter__(self):
+        """Create an iterator for the IPathPointCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPathPoint":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1948,6 +1978,7 @@ class IObjectCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IObjectCollection."""
         initialize_from_source_object(self, sourceObject, IObjectCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -1958,12 +1989,15 @@ class IObjectCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IObjectCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IObjectCollection, None)
     def __iter__(self):
+        """Create an iterator for the IObjectCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -1983,7 +2017,7 @@ class IObjectCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.LongArg, agmarshall.VariantArg,) }
     def item(self, index:int) -> typing.Any:
-        """An item in the collection at the specified index."""
+        """Return an item in the collection at the specified index."""
         return self._intf.invoke(IObjectCollection._metadata, IObjectCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -2013,6 +2047,7 @@ class ISceneCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneCollection."""
         initialize_from_source_object(self, sourceObject, ISceneCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2023,12 +2058,15 @@ class ISceneCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneCollection, None)
     def __iter__(self):
+        """Create an iterator for the ISceneCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IScene":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2048,7 +2086,7 @@ class ISceneCollection(object):
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "Scene":
-        """A scene in the collection at a specified index."""
+        """Return a scene in the collection at a specified index."""
         return self._intf.invoke(ISceneCollection._metadata, ISceneCollection._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "name" : "_NewEnum",
@@ -2080,6 +2118,7 @@ class IScreenOverlayContainer(object):
                              "set_display" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayContainer."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayContainer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2089,6 +2128,7 @@ class IScreenOverlayContainer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayContainer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayContainer, None)
     
     _get_overlays_metadata = { "name" : "overlays",
@@ -2146,6 +2186,7 @@ class IScreenOverlayPickResultCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayPickResultCollection."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayPickResultCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2156,12 +2197,15 @@ class IScreenOverlayPickResultCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayPickResultCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayPickResultCollection, None)
     def __iter__(self):
+        """Create an iterator for the IScreenOverlayPickResultCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IScreenOverlayPickResult":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2209,6 +2253,7 @@ class IGlobeImageOverlayAddCompleteEventArgs(object):
         "method_offsets" : { "get_overlay" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGlobeImageOverlayAddCompleteEventArgs."""
         initialize_from_source_object(self, sourceObject, IGlobeImageOverlayAddCompleteEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2218,6 +2263,7 @@ class IGlobeImageOverlayAddCompleteEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlayAddCompleteEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeImageOverlayAddCompleteEventArgs, None)
     
     _get_overlay_metadata = { "name" : "overlay",
@@ -2243,6 +2289,7 @@ class ITerrainOverlayAddCompleteEventArgs(object):
         "method_offsets" : { "get_overlay" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITerrainOverlayAddCompleteEventArgs."""
         initialize_from_source_object(self, sourceObject, ITerrainOverlayAddCompleteEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2252,6 +2299,7 @@ class ITerrainOverlayAddCompleteEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayAddCompleteEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainOverlayAddCompleteEventArgs, None)
     
     _get_overlay_metadata = { "name" : "overlay",
@@ -2279,6 +2327,7 @@ class IPickResultCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPickResultCollection."""
         initialize_from_source_object(self, sourceObject, IPickResultCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2289,12 +2338,15 @@ class IPickResultCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickResultCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPickResultCollection, None)
     def __iter__(self):
+        """Create an iterator for the IPickResultCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPickResult":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2343,6 +2395,7 @@ class IRenderingEventArgs(object):
                              "get_time_in_ep_secs" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRenderingEventArgs."""
         initialize_from_source_object(self, sourceObject, IRenderingEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2352,6 +2405,7 @@ class IRenderingEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRenderingEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRenderingEventArgs, None)
     
     _get_time_metadata = { "name" : "time",
@@ -2386,6 +2440,7 @@ class IBatchPrimitiveIndex(object):
                              "get_primitive" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBatchPrimitiveIndex."""
         initialize_from_source_object(self, sourceObject, IBatchPrimitiveIndex)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2395,6 +2450,7 @@ class IBatchPrimitiveIndex(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBatchPrimitiveIndex)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBatchPrimitiveIndex, None)
     
     _get_index_metadata = { "name" : "index",
@@ -2430,6 +2486,7 @@ class IKmlDocumentCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlDocumentCollection."""
         initialize_from_source_object(self, sourceObject, IKmlDocumentCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2440,12 +2497,15 @@ class IKmlDocumentCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocumentCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlDocumentCollection, None)
     def __iter__(self):
+        """Create an iterator for the IKmlDocumentCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IKmlDocument":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2495,6 +2555,7 @@ class IKmlFeatureCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlFeatureCollection."""
         initialize_from_source_object(self, sourceObject, IKmlFeatureCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2505,12 +2566,15 @@ class IKmlFeatureCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFeatureCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlFeatureCollection, None)
     def __iter__(self):
+        """Create an iterator for the IKmlFeatureCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IKmlFeature":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2559,6 +2623,7 @@ class IKmlDocumentLoadedEventArgs(object):
                              "get_exception" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlDocumentLoadedEventArgs."""
         initialize_from_source_object(self, sourceObject, IKmlDocumentLoadedEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2568,6 +2633,7 @@ class IKmlDocumentLoadedEventArgs(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocumentLoadedEventArgs)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlDocumentLoadedEventArgs, None)
     
     _get_document_metadata = { "name" : "document",
@@ -2683,6 +2749,7 @@ class IFactoryAndInitializers(object):
                              "get_point_batch_primitive_optional_parameters" : 83, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFactoryAndInitializers."""
         initialize_from_source_object(self, sourceObject, IFactoryAndInitializers)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2692,6 +2759,7 @@ class IFactoryAndInitializers(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFactoryAndInitializers)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFactoryAndInitializers, None)
     
     _get_box_triangulator_metadata = { "name" : "box_triangulator",
@@ -3375,6 +3443,7 @@ class IExtrudedPolylineTriangulatorResult(object):
                              "get_boundary_positions_winding_order" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExtrudedPolylineTriangulatorResult."""
         initialize_from_source_object(self, sourceObject, IExtrudedPolylineTriangulatorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3384,6 +3453,7 @@ class IExtrudedPolylineTriangulatorResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExtrudedPolylineTriangulatorResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExtrudedPolylineTriangulatorResult, None)
     
     _get_top_boundary_positions_metadata = { "name" : "top_boundary_positions",
@@ -3428,6 +3498,7 @@ class ISolidTriangulatorResult(object):
                              "get_closed" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISolidTriangulatorResult."""
         initialize_from_source_object(self, sourceObject, ISolidTriangulatorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3437,6 +3508,7 @@ class ISolidTriangulatorResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidTriangulatorResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISolidTriangulatorResult, None)
     
     _get_outline_indices_metadata = { "name" : "outline_indices",
@@ -3488,6 +3560,7 @@ class ISurfaceShapesResult(object):
                              "get_polyline_type" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceShapesResult."""
         initialize_from_source_object(self, sourceObject, ISurfaceShapesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3497,6 +3570,7 @@ class ISurfaceShapesResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceShapesResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceShapesResult, None)
     
     _get_positions_metadata = { "name" : "positions",
@@ -3542,6 +3616,7 @@ class ISurfaceTriangulatorResult(object):
                              "get_boundary_polyline_type" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceTriangulatorResult."""
         initialize_from_source_object(self, sourceObject, ISurfaceTriangulatorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3551,6 +3626,7 @@ class ISurfaceTriangulatorResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceTriangulatorResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceTriangulatorResult, None)
     
     _get_granularity_metadata = { "name" : "granularity",
@@ -3612,6 +3688,7 @@ class ITriangulatorResult(object):
                              "get_bounding_sphere" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITriangulatorResult."""
         initialize_from_source_object(self, sourceObject, ITriangulatorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3621,6 +3698,7 @@ class ITriangulatorResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangulatorResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangulatorResult, None)
     
     _get_positions_metadata = { "name" : "positions",
@@ -3678,6 +3756,7 @@ class IAGICustomTerrainOverlay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGICustomTerrainOverlay."""
         initialize_from_source_object(self, sourceObject, IAGICustomTerrainOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3687,6 +3766,7 @@ class IAGICustomTerrainOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGICustomTerrainOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGICustomTerrainOverlay, None)
     
 
@@ -3704,6 +3784,7 @@ class IAGIProcessedImageGlobeOverlay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIProcessedImageGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, IAGIProcessedImageGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3713,6 +3794,7 @@ class IAGIProcessedImageGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedImageGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIProcessedImageGlobeOverlay, None)
     
 
@@ -3730,6 +3812,7 @@ class IAGIProcessedTerrainOverlay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIProcessedTerrainOverlay."""
         initialize_from_source_object(self, sourceObject, IAGIProcessedTerrainOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3739,6 +3822,7 @@ class IAGIProcessedTerrainOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedTerrainOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIProcessedTerrainOverlay, None)
     
 
@@ -3756,6 +3840,7 @@ class IAGIRoamImageGlobeOverlay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIRoamImageGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, IAGIRoamImageGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3765,6 +3850,7 @@ class IAGIRoamImageGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIRoamImageGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIRoamImageGlobeOverlay, None)
     
 
@@ -3786,6 +3872,7 @@ class ICameraSnapshot(object):
                              "save_to_texture" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICameraSnapshot."""
         initialize_from_source_object(self, sourceObject, ICameraSnapshot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3795,6 +3882,7 @@ class ICameraSnapshot(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICameraSnapshot)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICameraSnapshot, None)
     
     _save_to_file_metadata = { "name" : "save_to_file",
@@ -3851,6 +3939,7 @@ class ICameraVideoRecording(object):
                              "start_recording_video" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICameraVideoRecording."""
         initialize_from_source_object(self, sourceObject, ICameraVideoRecording)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3860,6 +3949,7 @@ class ICameraVideoRecording(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICameraVideoRecording)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICameraVideoRecording, None)
     
     _get_is_recording_metadata = { "name" : "is_recording",
@@ -3874,7 +3964,7 @@ class ICameraVideoRecording(object):
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def start_recording(self, wmvFilename:str, videoBitRate:int, videoFrameRate:int) -> None:
-        """This method is deprecated. Use StartRecordingVideo instead. Starts recording a file in the WMV format at the specified bit and frame rate."""
+        """Do not use this method, as it is deprecated. Use StartRecordingVideo instead. Starts recording a file in the WMV format at the specified bit and frame rate."""
         return self._intf.invoke(ICameraVideoRecording._metadata, ICameraVideoRecording._start_recording_metadata, wmvFilename, videoBitRate, videoFrameRate)
 
     _start_recording_frame_stack_metadata = { "name" : "start_recording_frame_stack",
@@ -3917,6 +4007,7 @@ class ICentralBodyGraphicsIndexer(object):
                              "get_by_name" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICentralBodyGraphicsIndexer."""
         initialize_from_source_object(self, sourceObject, ICentralBodyGraphicsIndexer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3926,6 +4017,7 @@ class ICentralBodyGraphicsIndexer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICentralBodyGraphicsIndexer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyGraphicsIndexer, None)
     
     _get_earth_metadata = { "name" : "earth",
@@ -3991,6 +4083,7 @@ class ICustomImageGlobeOverlay(object):
                              "read" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICustomImageGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, ICustomImageGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4000,6 +4093,7 @@ class ICustomImageGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICustomImageGlobeOverlay, None)
     
     _get_is_translucent_metadata = { "name" : "is_translucent",
@@ -4030,14 +4124,14 @@ class ICustomImageGlobeOverlay(object):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IScene"),) }
     def start_up(self, scene:"IScene") -> None:
-        """Called automatically when imagery is being added to the globe."""
+        """Initiate start-up when imagery is being added to the globe."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._start_up_metadata, scene)
 
     _shut_down_metadata = { "name" : "shut_down",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IScene"),) }
     def shut_down(self, scene:"IScene") -> None:
-        """Called automatically when imagery is being removed from the globe."""
+        """Initiate shutdown when imagery is being removed from the globe."""
         return self._intf.invoke(ICustomImageGlobeOverlay._metadata, ICustomImageGlobeOverlay._shut_down_metadata, scene)
 
     _clear_cache_metadata = { "name" : "clear_cache",
@@ -4077,6 +4171,7 @@ class ICustomImageGlobeOverlayPluginActivator(object):
                              "get_available_display_names" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICustomImageGlobeOverlayPluginActivator."""
         initialize_from_source_object(self, sourceObject, ICustomImageGlobeOverlayPluginActivator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4086,6 +4181,7 @@ class ICustomImageGlobeOverlayPluginActivator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginActivator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICustomImageGlobeOverlayPluginActivator, None)
     
     _create_from_display_name_metadata = { "name" : "create_from_display_name",
@@ -4119,6 +4215,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
                              "get_real_plugin_object" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICustomImageGlobeOverlayPluginProxy."""
         initialize_from_source_object(self, sourceObject, ICustomImageGlobeOverlayPluginProxy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4128,6 +4225,7 @@ class ICustomImageGlobeOverlayPluginProxy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginProxy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICustomImageGlobeOverlayPluginProxy, None)
     
     _get_custom_image_globe_overlay_metadata = { "name" : "custom_image_globe_overlay",
@@ -4172,6 +4270,7 @@ class IGeospatialImageGlobeOverlay(object):
                              "set_transparent_color" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeospatialImageGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, IGeospatialImageGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4181,6 +4280,7 @@ class IGeospatialImageGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeospatialImageGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeospatialImageGlobeOverlay, None)
     
     _get_use_transparent_color_metadata = { "name" : "use_transparent_color",
@@ -4234,6 +4334,7 @@ class IGlobeOverlay(object):
                              "set_display_condition" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, IGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4243,6 +4344,7 @@ class IGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeOverlay, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -4320,6 +4422,7 @@ class IGlobeOverlaySettings(object):
                              "set_preload_terrain_and_imagery" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGlobeOverlaySettings."""
         initialize_from_source_object(self, sourceObject, IGlobeOverlaySettings)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4329,6 +4432,7 @@ class IGlobeOverlaySettings(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeOverlaySettings)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeOverlaySettings, None)
     
     _get_terrain_cache_size_metadata = { "name" : "terrain_cache_size",
@@ -4398,6 +4502,7 @@ class ILighting(object):
                              "set_night_lights_intensity" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILighting."""
         initialize_from_source_object(self, sourceObject, ILighting)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4407,6 +4512,7 @@ class ILighting(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILighting)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILighting, None)
     
     _get_enabled_metadata = { "name" : "enabled",
@@ -4484,6 +4590,7 @@ class IPathPrimitiveUpdatePolicy(object):
         "method_offsets" : { "update" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPrimitiveUpdatePolicy."""
         initialize_from_source_object(self, sourceObject, IPathPrimitiveUpdatePolicy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4493,6 +4600,7 @@ class IPathPrimitiveUpdatePolicy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitiveUpdatePolicy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPrimitiveUpdatePolicy, None)
     
     _update_metadata = { "name" : "update",
@@ -4552,6 +4660,7 @@ class IProjectedRasterOverlay(object):
                              "get_supported" : 36, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectedRasterOverlay."""
         initialize_from_source_object(self, sourceObject, IProjectedRasterOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4561,6 +4670,7 @@ class IProjectedRasterOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectedRasterOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectedRasterOverlay, None)
     
     _get_raster_metadata = { "name" : "raster",
@@ -4860,6 +4970,7 @@ class IProjection(object):
                              "set_far_plane" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjection."""
         initialize_from_source_object(self, sourceObject, IProjection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4869,6 +4980,7 @@ class IProjection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjection, None)
     
     _get_position_metadata = { "name" : "position",
@@ -4978,6 +5090,7 @@ class IProjectionStream(object):
                              "update" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectionStream."""
         initialize_from_source_object(self, sourceObject, IProjectionStream)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4987,6 +5100,7 @@ class IProjectionStream(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionStream)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectionStream, None)
     
     _get_update_delta_metadata = { "name" : "update_delta",
@@ -5033,6 +5147,7 @@ class ISceneGlobeOverlaySettings(object):
                              "set_projected_raster_model_projection" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneGlobeOverlaySettings."""
         initialize_from_source_object(self, sourceObject, ISceneGlobeOverlaySettings)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5042,6 +5157,7 @@ class ISceneGlobeOverlaySettings(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneGlobeOverlaySettings)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneGlobeOverlaySettings, None)
     
     _get_anti_alias_imagery_metadata = { "name" : "anti_alias_imagery",
@@ -5126,6 +5242,7 @@ class IScreenOverlayCollectionBase(object):
                              "add" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayCollectionBase."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayCollectionBase)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -5136,12 +5253,15 @@ class IScreenOverlayCollectionBase(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayCollectionBase)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayCollectionBase, None)
     def __iter__(self):
+        """Create an iterator for the IScreenOverlayCollectionBase object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IScreenOverlay":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -5227,6 +5347,7 @@ class ITexture2DFactory(object):
                              "from_raster" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITexture2DFactory."""
         initialize_from_source_object(self, sourceObject, ITexture2DFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5236,6 +5357,7 @@ class ITexture2DFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITexture2DFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITexture2DFactory, None)
     
     _load_from_string_uri_metadata = { "name" : "load_from_string_uri",
@@ -5272,6 +5394,7 @@ class IVisualEffects(object):
                              "set_vignette_strength" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVisualEffects."""
         initialize_from_source_object(self, sourceObject, IVisualEffects)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5281,6 +5404,7 @@ class IVisualEffects(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVisualEffects)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVisualEffects, None)
     
     _get_lens_flare_enabled_metadata = { "name" : "lens_flare_enabled",
@@ -5348,6 +5472,7 @@ class IAltitudeDisplayCondition(object):
                              "set_central_body" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAltitudeDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IAltitudeDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5357,6 +5482,7 @@ class IAltitudeDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAltitudeDisplayCondition, None)
     
     _get_minimum_altitude_metadata = { "name" : "minimum_altitude",
@@ -5440,6 +5566,7 @@ class IAxesPrimitive(object):
                              "set_width" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAxesPrimitive."""
         initialize_from_source_object(self, sourceObject, IAxesPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5449,6 +5576,7 @@ class IAxesPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAxesPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAxesPrimitive, None)
     
     _get_lighting_metadata = { "name" : "lighting",
@@ -5680,6 +5808,7 @@ class ICamera(object):
                              "view_offset_direction" : 50, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICamera."""
         initialize_from_source_object(self, sourceObject, ICamera)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -5689,6 +5818,7 @@ class ICamera(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICamera)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICamera, None)
     
     _get_position_metadata = { "name" : "position",
@@ -6099,6 +6229,7 @@ class ICentralBodyGraphics(object):
                              "get_kml" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICentralBodyGraphics."""
         initialize_from_source_object(self, sourceObject, ICentralBodyGraphics)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6108,6 +6239,7 @@ class ICentralBodyGraphics(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICentralBodyGraphics)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICentralBodyGraphics, None)
     
     _get_color_metadata = { "name" : "color",
@@ -6307,6 +6439,7 @@ class IClouds(object):
                              "get_is_valid" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IClouds."""
         initialize_from_source_object(self, sourceObject, IClouds)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6316,6 +6449,7 @@ class IClouds(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IClouds)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IClouds, None)
     
     _get_show_metadata = { "name" : "show",
@@ -6418,6 +6552,7 @@ class ICompositeDisplayCondition(object):
                              "set_negate_at" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICompositeDisplayCondition."""
         initialize_from_source_object(self, sourceObject, ICompositeDisplayCondition)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -6428,12 +6563,15 @@ class ICompositeDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositeDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICompositeDisplayCondition, None)
     def __iter__(self):
+        """Create an iterator for the ICompositeDisplayCondition object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IDisplayCondition":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -6596,6 +6734,7 @@ class ICompositePrimitive(object):
                              "get__NewEnum" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICompositePrimitive."""
         initialize_from_source_object(self, sourceObject, ICompositePrimitive)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -6606,12 +6745,15 @@ class ICompositePrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositePrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICompositePrimitive, None)
     def __iter__(self):
+        """Create an iterator for the ICompositePrimitive object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -6694,6 +6836,7 @@ class IConstantDisplayCondition(object):
                              "set_display" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConstantDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IConstantDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6703,6 +6846,7 @@ class IConstantDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConstantDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConstantDisplayCondition, None)
     
     _get_display_metadata = { "name" : "display",
@@ -6735,6 +6879,7 @@ class IDisplayCondition(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6744,6 +6889,7 @@ class IDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDisplayCondition, None)
     
 
@@ -6766,6 +6912,7 @@ class IDistanceDisplayCondition(object):
                              "get_maximum_distance_squared" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IDistanceDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6775,6 +6922,7 @@ class IDistanceDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceDisplayCondition, None)
     
     _get_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -6845,6 +6993,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
                              "get_maximum_distance_squared" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToGlobeOverlayDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IDistanceToGlobeOverlayDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6854,6 +7003,7 @@ class IDistanceToGlobeOverlayDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToGlobeOverlayDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToGlobeOverlayDisplayCondition, None)
     
     _get_globe_overlay_metadata = { "name" : "globe_overlay",
@@ -6941,6 +7091,7 @@ class IDistanceToPositionDisplayCondition(object):
                              "set_reference_frame" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToPositionDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IDistanceToPositionDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -6950,6 +7101,7 @@ class IDistanceToPositionDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPositionDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToPositionDisplayCondition, None)
     
     _get_minimum_distance_metadata = { "name" : "minimum_distance",
@@ -7050,6 +7202,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
                              "get_maximum_distance_squared" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToPrimitiveDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IDistanceToPrimitiveDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7059,6 +7212,7 @@ class IDistanceToPrimitiveDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPrimitiveDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToPrimitiveDisplayCondition, None)
     
     _get_primitive_metadata = { "name" : "primitive",
@@ -7140,6 +7294,7 @@ class IDurationPathPrimitiveUpdatePolicy(object):
                              "set_remove_location" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDurationPathPrimitiveUpdatePolicy."""
         initialize_from_source_object(self, sourceObject, IDurationPathPrimitiveUpdatePolicy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7149,6 +7304,7 @@ class IDurationPathPrimitiveUpdatePolicy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDurationPathPrimitiveUpdatePolicy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDurationPathPrimitiveUpdatePolicy, None)
     
     _get_duration_metadata = { "name" : "duration",
@@ -7199,6 +7355,7 @@ class IFrameRate(object):
                              "reset" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFrameRate."""
         initialize_from_source_object(self, sourceObject, IFrameRate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7208,6 +7365,7 @@ class IFrameRate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFrameRate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFrameRate, None)
     
     _get_frames_per_second_metadata = { "name" : "frames_per_second",
@@ -7237,7 +7395,7 @@ class IFrameRate(object):
             "arg_types" : (),
             "marshallers" : () }
     def reset(self) -> None:
-        """This resets the frame rate counter back to zero. The frame rate computation begins anew."""
+        """Reset the frame rate counter back to zero. The frame rate computation begins anew."""
         return self._intf.invoke(IFrameRate._metadata, IFrameRate._reset_metadata, )
 
 
@@ -7267,6 +7425,7 @@ class IGlobeImageOverlay(object):
                              "get_more_than_one_image_globe_overlay_supported" : 13, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGlobeImageOverlay."""
         initialize_from_source_object(self, sourceObject, IGlobeImageOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7276,6 +7435,7 @@ class IGlobeImageOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeImageOverlay, None)
     
     _get_translucency_metadata = { "name" : "translucency",
@@ -7399,6 +7559,7 @@ class IGraphicsFont(object):
                              "get_antialias" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGraphicsFont."""
         initialize_from_source_object(self, sourceObject, IGraphicsFont)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7408,6 +7569,7 @@ class IGraphicsFont(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGraphicsFont)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphicsFont, None)
     
     _get_name_metadata = { "name" : "name",
@@ -7500,6 +7662,7 @@ class IGreatArcInterpolator(object):
                              "set_granularity" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGreatArcInterpolator."""
         initialize_from_source_object(self, sourceObject, IGreatArcInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7509,6 +7672,7 @@ class IGreatArcInterpolator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGreatArcInterpolator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGreatArcInterpolator, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -7575,6 +7739,7 @@ class IImageCollection(object):
                              "send_to_back" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IImageCollection."""
         initialize_from_source_object(self, sourceObject, IImageCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -7585,12 +7750,15 @@ class IImageCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IImageCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IImageCollection, None)
     def __iter__(self):
+        """Create an iterator for the IImageCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IGlobeImageOverlay":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -7762,6 +7930,7 @@ class IAlphaFromLuminanceFilter(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromLuminanceFilter."""
         initialize_from_source_object(self, sourceObject, IAlphaFromLuminanceFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7771,6 +7940,7 @@ class IAlphaFromLuminanceFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromLuminanceFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromLuminanceFilter, None)
     
 
@@ -7788,6 +7958,7 @@ class IAlphaFromPixelFilter(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromPixelFilter."""
         initialize_from_source_object(self, sourceObject, IAlphaFromPixelFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7797,6 +7968,7 @@ class IAlphaFromPixelFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromPixelFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromPixelFilter, None)
     
 
@@ -7815,6 +7987,7 @@ class IAlphaFromRasterFilter(object):
                              "set_raster" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromRasterFilter."""
         initialize_from_source_object(self, sourceObject, IAlphaFromRasterFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7824,6 +7997,7 @@ class IAlphaFromRasterFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromRasterFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromRasterFilter, None)
     
     _get_raster_metadata = { "name" : "raster",
@@ -7857,6 +8031,7 @@ class IBandExtractFilter(object):
                              "set_extract_format" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBandExtractFilter."""
         initialize_from_source_object(self, sourceObject, IBandExtractFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7866,6 +8041,7 @@ class IBandExtractFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandExtractFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBandExtractFilter, None)
     
     _get_extract_format_metadata = { "name" : "extract_format",
@@ -7901,6 +8077,7 @@ class IBandOrderFilter(object):
                              "set_maintain_raster_format" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBandOrderFilter."""
         initialize_from_source_object(self, sourceObject, IBandOrderFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7910,6 +8087,7 @@ class IBandOrderFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandOrderFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBandOrderFilter, None)
     
     _get_band_order_metadata = { "name" : "band_order",
@@ -7958,6 +8136,7 @@ class IBlurFilter(object):
                              "set_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBlurFilter."""
         initialize_from_source_object(self, sourceObject, IBlurFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -7967,6 +8146,7 @@ class IBlurFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBlurFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBlurFilter, None)
     
     _get_method_metadata = { "name" : "method",
@@ -8000,6 +8180,7 @@ class IBrightnessFilter(object):
                              "set_adjustment" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBrightnessFilter."""
         initialize_from_source_object(self, sourceObject, IBrightnessFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8009,6 +8190,7 @@ class IBrightnessFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBrightnessFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBrightnessFilter, None)
     
     _get_adjustment_metadata = { "name" : "adjustment",
@@ -8041,6 +8223,7 @@ class IColorToLuminanceFilter(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IColorToLuminanceFilter."""
         initialize_from_source_object(self, sourceObject, IColorToLuminanceFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8050,6 +8233,7 @@ class IColorToLuminanceFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IColorToLuminanceFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IColorToLuminanceFilter, None)
     
 
@@ -8068,6 +8252,7 @@ class IContrastFilter(object):
                              "set_adjustment" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IContrastFilter."""
         initialize_from_source_object(self, sourceObject, IContrastFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8077,6 +8262,7 @@ class IContrastFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IContrastFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IContrastFilter, None)
     
     _get_adjustment_metadata = { "name" : "adjustment",
@@ -8114,6 +8300,7 @@ class IConvolutionFilter(object):
                              "set_kernel" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConvolutionFilter."""
         initialize_from_source_object(self, sourceObject, IConvolutionFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8123,6 +8310,7 @@ class IConvolutionFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConvolutionFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConvolutionFilter, None)
     
     _get_divisor_metadata = { "name" : "divisor",
@@ -8186,6 +8374,7 @@ class IEdgeDetectFilter(object):
                              "set_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEdgeDetectFilter."""
         initialize_from_source_object(self, sourceObject, IEdgeDetectFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8195,6 +8384,7 @@ class IEdgeDetectFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEdgeDetectFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEdgeDetectFilter, None)
     
     _get_method_metadata = { "name" : "method",
@@ -8228,6 +8418,7 @@ class IFilteringRasterStream(object):
                              "get_stream" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFilteringRasterStream."""
         initialize_from_source_object(self, sourceObject, IFilteringRasterStream)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8237,6 +8428,7 @@ class IFilteringRasterStream(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFilteringRasterStream)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFilteringRasterStream, None)
     
     _get_filter_metadata = { "name" : "filter",
@@ -8271,6 +8463,7 @@ class IFlipFilter(object):
                              "set_flip_axis" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFlipFilter."""
         initialize_from_source_object(self, sourceObject, IFlipFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8280,6 +8473,7 @@ class IFlipFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFlipFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFlipFilter, None)
     
     _get_flip_axis_metadata = { "name" : "flip_axis",
@@ -8313,6 +8507,7 @@ class IGammaCorrectionFilter(object):
                              "set_gamma" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGammaCorrectionFilter."""
         initialize_from_source_object(self, sourceObject, IGammaCorrectionFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8322,6 +8517,7 @@ class IGammaCorrectionFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGammaCorrectionFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGammaCorrectionFilter, None)
     
     _get_gamma_metadata = { "name" : "gamma",
@@ -8354,6 +8550,7 @@ class IGaussianBlurFilter(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGaussianBlurFilter."""
         initialize_from_source_object(self, sourceObject, IGaussianBlurFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8363,6 +8560,7 @@ class IGaussianBlurFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGaussianBlurFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGaussianBlurFilter, None)
     
 
@@ -8381,6 +8579,7 @@ class IGradientDetectFilter(object):
                              "set_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGradientDetectFilter."""
         initialize_from_source_object(self, sourceObject, IGradientDetectFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8390,6 +8589,7 @@ class IGradientDetectFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGradientDetectFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGradientDetectFilter, None)
     
     _get_method_metadata = { "name" : "method",
@@ -8423,6 +8623,7 @@ class ILevelsFilter(object):
                              "clear_adjustments" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILevelsFilter."""
         initialize_from_source_object(self, sourceObject, ILevelsFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8432,6 +8633,7 @@ class ILevelsFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelsFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILevelsFilter, None)
     
     _set_level_adjustment_metadata = { "name" : "set_level_adjustment",
@@ -8464,6 +8666,7 @@ class IProjectionRasterStreamPluginActivator(object):
                              "get_available_display_names" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectionRasterStreamPluginActivator."""
         initialize_from_source_object(self, sourceObject, IProjectionRasterStreamPluginActivator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8473,6 +8676,7 @@ class IProjectionRasterStreamPluginActivator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginActivator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectionRasterStreamPluginActivator, None)
     
     _create_from_display_name_metadata = { "name" : "create_from_display_name",
@@ -8508,6 +8712,7 @@ class IProjectionRasterStreamPluginProxy(object):
                              "get_real_plugin_object" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectionRasterStreamPluginProxy."""
         initialize_from_source_object(self, sourceObject, IProjectionRasterStreamPluginProxy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8517,6 +8722,7 @@ class IProjectionRasterStreamPluginProxy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginProxy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectionRasterStreamPluginProxy, None)
     
     _get_raster_stream_metadata = { "name" : "raster_stream",
@@ -8583,6 +8789,7 @@ class IRaster(object):
                              "copy_from_raster" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRaster."""
         initialize_from_source_object(self, sourceObject, IRaster)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8592,6 +8799,7 @@ class IRaster(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRaster)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRaster, None)
     
     _get_attributes_metadata = { "name" : "attributes",
@@ -8692,6 +8900,7 @@ class IRasterAttributes(object):
                              "has_band" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterAttributes."""
         initialize_from_source_object(self, sourceObject, IRasterAttributes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8701,6 +8910,7 @@ class IRasterAttributes(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterAttributes)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterAttributes, None)
     
     _get_format_metadata = { "name" : "format",
@@ -8805,6 +9015,7 @@ class IRasterFilter(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterFilter."""
         initialize_from_source_object(self, sourceObject, IRasterFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8814,6 +9025,7 @@ class IRasterFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterFilter, None)
     
 
@@ -8833,6 +9045,7 @@ class IRasterStream(object):
                              "update" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterStream."""
         initialize_from_source_object(self, sourceObject, IRasterStream)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8842,6 +9055,7 @@ class IRasterStream(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterStream)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterStream, None)
     
     _get_update_delta_metadata = { "name" : "update_delta",
@@ -8882,6 +9096,7 @@ class IRotateFilter(object):
                              "set_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotateFilter."""
         initialize_from_source_object(self, sourceObject, IRotateFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8891,6 +9106,7 @@ class IRotateFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotateFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotateFilter, None)
     
     _get_angle_metadata = { "name" : "angle",
@@ -8929,6 +9145,7 @@ class ISequenceFilter(object):
                              "contains" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISequenceFilter."""
         initialize_from_source_object(self, sourceObject, ISequenceFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -8938,6 +9155,7 @@ class ISequenceFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISequenceFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISequenceFilter, None)
     
     _get_continue_on_failure_metadata = { "name" : "continue_on_failure",
@@ -9007,6 +9225,7 @@ class ISharpenFilter(object):
                              "set_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISharpenFilter."""
         initialize_from_source_object(self, sourceObject, ISharpenFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9016,6 +9235,7 @@ class ISharpenFilter(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISharpenFilter)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISharpenFilter, None)
     
     _get_method_metadata = { "name" : "method",
@@ -9082,6 +9302,7 @@ class IVideoStream(object):
                              "get_audio_uri" : 35, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVideoStream."""
         initialize_from_source_object(self, sourceObject, IVideoStream)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9091,6 +9312,7 @@ class IVideoStream(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVideoStream)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVideoStream, None)
     
     _get_uri_metadata = { "name" : "uri",
@@ -9369,6 +9591,7 @@ class IKmlContainer(object):
         "method_offsets" : { "get_children" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlContainer."""
         initialize_from_source_object(self, sourceObject, IKmlContainer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9378,6 +9601,7 @@ class IKmlContainer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlContainer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlContainer, None)
     
     _get_children_metadata = { "name" : "children",
@@ -9403,6 +9627,7 @@ class IKmlDocument(object):
         "method_offsets" : { "get_uri" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlDocument."""
         initialize_from_source_object(self, sourceObject, IKmlDocument)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9412,6 +9637,7 @@ class IKmlDocument(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlDocument)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlDocument, None)
     
     _get_uri_metadata = { "name" : "uri",
@@ -9445,6 +9671,7 @@ class IKmlFeature(object):
                              "fly_to" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlFeature."""
         initialize_from_source_object(self, sourceObject, IKmlFeature)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9454,6 +9681,7 @@ class IKmlFeature(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFeature)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlFeature, None)
     
     _get_is_loaded_metadata = { "name" : "is_loaded",
@@ -9541,6 +9769,7 @@ class IKmlFolder(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlFolder."""
         initialize_from_source_object(self, sourceObject, IKmlFolder)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9550,6 +9779,7 @@ class IKmlFolder(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlFolder)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlFolder, None)
     
 
@@ -9575,6 +9805,7 @@ class IKmlGraphics(object):
                              "unload_all" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlGraphics."""
         initialize_from_source_object(self, sourceObject, IKmlGraphics)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9584,6 +9815,7 @@ class IKmlGraphics(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlGraphics)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlGraphics, None)
     def Subscribe(self) -> IKmlGraphicsEventHandler:
         """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of IKmlGraphics."""
@@ -9684,6 +9916,7 @@ class IKmlNetworkLink(object):
                              "refresh" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IKmlNetworkLink."""
         initialize_from_source_object(self, sourceObject, IKmlNetworkLink)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9693,6 +9926,7 @@ class IKmlNetworkLink(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IKmlNetworkLink)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IKmlNetworkLink, None)
     
     _get_uri_metadata = { "name" : "uri",
@@ -9830,7 +10064,7 @@ agcls.AgClassCatalog.add_catalog_entry("{0b66ea82-dd0d-444f-b097-dda9427e1b87}",
 agcls.AgTypeNameMap["IKmlNetworkLink"] = IKmlNetworkLink
 
 class IMarkerBatchPrimitive(object):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     _num_methods = 54
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9893,6 +10127,7 @@ class IMarkerBatchPrimitive(object):
                              "align_to_axis" : 54, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMarkerBatchPrimitive."""
         initialize_from_source_object(self, sourceObject, IMarkerBatchPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -9902,6 +10137,7 @@ class IMarkerBatchPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMarkerBatchPrimitive, None)
     
     _get_size_source_metadata = { "name" : "size_source",
@@ -10326,6 +10562,7 @@ class IMarkerBatchPrimitiveOptionalParameters(object):
                              "set_displays" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMarkerBatchPrimitiveOptionalParameters."""
         initialize_from_source_object(self, sourceObject, IMarkerBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10335,6 +10572,7 @@ class IMarkerBatchPrimitiveOptionalParameters(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveOptionalParameters)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMarkerBatchPrimitiveOptionalParameters, None)
     
     _set_textures_metadata = { "name" : "set_textures",
@@ -10425,6 +10663,7 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
                              "set_remove_location" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMaximumCountPathPrimitiveUpdatePolicy."""
         initialize_from_source_object(self, sourceObject, IMaximumCountPathPrimitiveUpdatePolicy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10434,6 +10673,7 @@ class IMaximumCountPathPrimitiveUpdatePolicy(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMaximumCountPathPrimitiveUpdatePolicy)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMaximumCountPathPrimitiveUpdatePolicy, None)
     
     _get_maximum_count_metadata = { "name" : "maximum_count",
@@ -10487,6 +10727,7 @@ class IModelArticulation(object):
                              "get__NewEnum" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IModelArticulation."""
         initialize_from_source_object(self, sourceObject, IModelArticulation)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -10497,12 +10738,15 @@ class IModelArticulation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelArticulation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModelArticulation, None)
     def __iter__(self):
+        """Create an iterator for the IModelArticulation object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IModelTransformation":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -10585,6 +10829,7 @@ class IModelArticulationCollection(object):
                              "get__NewEnum" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IModelArticulationCollection."""
         initialize_from_source_object(self, sourceObject, IModelArticulationCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -10595,12 +10840,15 @@ class IModelArticulationCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelArticulationCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModelArticulationCollection, None)
     def __iter__(self):
+        """Create an iterator for the IModelArticulationCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IModelArticulation":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -10680,6 +10928,7 @@ class IModelPrimitive(object):
                              "set_position_cartographic" : 11, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IModelPrimitive."""
         initialize_from_source_object(self, sourceObject, IModelPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10689,6 +10938,7 @@ class IModelPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModelPrimitive, None)
     
     _get_uri_as_string_metadata = { "name" : "uri_as_string",
@@ -10795,6 +11045,7 @@ class IModelTransformation(object):
                              "get_type" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IModelTransformation."""
         initialize_from_source_object(self, sourceObject, IModelTransformation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10804,6 +11055,7 @@ class IModelTransformation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelTransformation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModelTransformation, None)
     
     _get_current_value_metadata = { "name" : "current_value",
@@ -10959,6 +11211,7 @@ class IOverlay(object):
                              "set_tag" : 76, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOverlay."""
         initialize_from_source_object(self, sourceObject, IOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -10968,6 +11221,7 @@ class IOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOverlay, None)
     
     _get_position_metadata = { "name" : "position",
@@ -11586,6 +11840,7 @@ class IPathPrimitive(object):
                              "set_central_body_clipped" : 31, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPrimitive."""
         initialize_from_source_object(self, sourceObject, IPathPrimitive)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -11596,12 +11851,15 @@ class IPathPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPrimitive, None)
     def __iter__(self):
+        """Create an iterator for the IPathPrimitive object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPathPoint":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -11858,6 +12116,7 @@ class IPickResult(object):
                              "get_position" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPickResult."""
         initialize_from_source_object(self, sourceObject, IPickResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11867,6 +12126,7 @@ class IPickResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPickResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPickResult, None)
     
     _get_objects_metadata = { "name" : "objects",
@@ -11911,6 +12171,7 @@ class IPixelSizeDisplayCondition(object):
                              "set_maximum_pixel_size" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPixelSizeDisplayCondition."""
         initialize_from_source_object(self, sourceObject, IPixelSizeDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -11920,6 +12181,7 @@ class IPixelSizeDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPixelSizeDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPixelSizeDisplayCondition, None)
     
     _get_minimum_pixel_size_metadata = { "name" : "minimum_pixel_size",
@@ -11957,7 +12219,7 @@ agcls.AgClassCatalog.add_catalog_entry("{e5ccd610-a3b3-4f0c-9d51-e367a9ea5abf}",
 agcls.AgTypeNameMap["IPixelSizeDisplayCondition"] = IPixelSizeDisplayCondition
 
 class IPointBatchPrimitive(object):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -12000,6 +12262,7 @@ class IPointBatchPrimitive(object):
                              "set_with_optional_parameters" : 34, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPointBatchPrimitive."""
         initialize_from_source_object(self, sourceObject, IPointBatchPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12009,6 +12272,7 @@ class IPointBatchPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPointBatchPrimitive, None)
     
     _get_display_outline_metadata = { "name" : "display_outline",
@@ -12275,6 +12539,7 @@ class IPointBatchPrimitiveOptionalParameters(object):
         "method_offsets" : { "set_pixel_sizes" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPointBatchPrimitiveOptionalParameters."""
         initialize_from_source_object(self, sourceObject, IPointBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12284,6 +12549,7 @@ class IPointBatchPrimitiveOptionalParameters(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveOptionalParameters)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPointBatchPrimitiveOptionalParameters, None)
     
     _set_pixel_sizes_metadata = { "name" : "set_pixel_sizes",
@@ -12349,6 +12615,7 @@ class IPolylinePrimitive(object):
                              "set_partial_cartographic_with_optional_parameters" : 42, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPolylinePrimitive."""
         initialize_from_source_object(self, sourceObject, IPolylinePrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12358,6 +12625,7 @@ class IPolylinePrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolylinePrimitive, None)
     
     _get_width_metadata = { "name" : "width",
@@ -12681,6 +12949,7 @@ class IPolylinePrimitiveOptionalParameters(object):
         "method_offsets" : { "set_time_intervals" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPolylinePrimitiveOptionalParameters."""
         initialize_from_source_object(self, sourceObject, IPolylinePrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12690,6 +12959,7 @@ class IPolylinePrimitiveOptionalParameters(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveOptionalParameters)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolylinePrimitiveOptionalParameters, None)
     
     _set_time_intervals_metadata = { "name" : "set_time_intervals",
@@ -12715,6 +12985,7 @@ class IPositionInterpolator(object):
                              "interpolate" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPositionInterpolator."""
         initialize_from_source_object(self, sourceObject, IPositionInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12724,6 +12995,7 @@ class IPositionInterpolator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPositionInterpolator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPositionInterpolator, None)
     
     _get_polyline_type_metadata = { "name" : "polyline_type",
@@ -12771,6 +13043,7 @@ class IPrimitive(object):
                              "set_tag" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPrimitive."""
         initialize_from_source_object(self, sourceObject, IPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -12780,6 +13053,7 @@ class IPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPrimitive, None)
     
     _get_reference_frame_metadata = { "name" : "reference_frame",
@@ -12926,6 +13200,7 @@ class IPrimitiveManager(object):
                              "get__NewEnum" : 10, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPrimitiveManager."""
         initialize_from_source_object(self, sourceObject, IPrimitiveManager)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -12936,12 +13211,15 @@ class IPrimitiveManager(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPrimitiveManager)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPrimitiveManager, None)
     def __iter__(self):
+        """Create an iterator for the IPrimitiveManager object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -12962,7 +13240,7 @@ class IPrimitiveManager(object):
             "marshallers" : (agmarshall.IntArg,) }
     @property
     def precision_exponent(self) -> int:
-        """This property is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis..."""
+        """Do not use this property, as it is deprecated. This property is no longer in use Gets or sets the exponent used to compute the maximum precision for primitive rendering. For example, a value of -3 indicates the maximum precision of 2^-3, 0.125 m along the x, y, or z axis..."""
         return self._intf.get_property(IPrimitiveManager._metadata, IPrimitiveManager._get_precision_exponent_metadata)
 
     _set_precision_exponent_metadata = { "name" : "precision_exponent",
@@ -13041,6 +13319,7 @@ class IRasterImageGlobeOverlay(object):
                              "set_transparent_color" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterImageGlobeOverlay."""
         initialize_from_source_object(self, sourceObject, IRasterImageGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13050,6 +13329,7 @@ class IRasterImageGlobeOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterImageGlobeOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterImageGlobeOverlay, None)
     
     _get_use_transparent_color_metadata = { "name" : "use_transparent_color",
@@ -13100,6 +13380,7 @@ class IRhumbLineInterpolator(object):
                              "set_granularity" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRhumbLineInterpolator."""
         initialize_from_source_object(self, sourceObject, IRhumbLineInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13109,6 +13390,7 @@ class IRhumbLineInterpolator(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRhumbLineInterpolator)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRhumbLineInterpolator, None)
     
     _get_central_body_metadata = { "name" : "central_body",
@@ -13178,6 +13460,7 @@ class IScene(object):
                              "get_clouds" : 23, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScene."""
         initialize_from_source_object(self, sourceObject, IScene)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13187,6 +13470,7 @@ class IScene(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScene)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScene, None)
     def Subscribe(self) -> ISceneEventHandler:
         """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of IScene."""
@@ -13383,6 +13667,7 @@ class ISceneDisplayCondition(object):
                              "display_only_in_scene" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneDisplayCondition."""
         initialize_from_source_object(self, sourceObject, ISceneDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13392,6 +13677,7 @@ class ISceneDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneDisplayCondition, None)
     
     _set_display_in_scene_metadata = { "name" : "set_display_in_scene",
@@ -13437,6 +13723,7 @@ class ISceneManager(object):
                              "get_frame_rate" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneManager."""
         initialize_from_source_object(self, sourceObject, ISceneManager)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13446,6 +13733,7 @@ class ISceneManager(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneManager)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneManager, None)
     
     _get_primitives_metadata = { "name" : "primitives",
@@ -13526,6 +13814,7 @@ class IScreenOverlay(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlay."""
         initialize_from_source_object(self, sourceObject, IScreenOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13535,6 +13824,7 @@ class IScreenOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlay, None)
     
 
@@ -13552,6 +13842,7 @@ class IScreenOverlayCollection(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayCollection."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13561,6 +13852,7 @@ class IScreenOverlayCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayCollection, None)
     
 
@@ -13583,6 +13875,7 @@ class IScreenOverlayManager(object):
                              "set_display" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayManager."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayManager)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13592,6 +13885,7 @@ class IScreenOverlayManager(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayManager)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayManager, None)
     
     _get_bounds_metadata = { "name" : "bounds",
@@ -13657,6 +13951,7 @@ class IScreenOverlayPickResult(object):
                              "get_overlay" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayPickResult."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayPickResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13666,6 +13961,7 @@ class IScreenOverlayPickResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayPickResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayPickResult, None)
     
     _get_position_metadata = { "name" : "position",
@@ -13745,6 +14041,7 @@ class ISolidPrimitive(object):
                              "set" : 39, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISolidPrimitive."""
         initialize_from_source_object(self, sourceObject, ISolidPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -13754,6 +14051,7 @@ class ISolidPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISolidPrimitive, None)
     
     _get_affected_by_lighting_metadata = { "name" : "affected_by_lighting",
@@ -14071,6 +14369,7 @@ class IStereoscopic(object):
                              "set_eye_separation_factor" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStereoscopic."""
         initialize_from_source_object(self, sourceObject, IStereoscopic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14080,6 +14379,7 @@ class IStereoscopic(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStereoscopic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStereoscopic, None)
     
     _get_display_mode_metadata = { "name" : "display_mode",
@@ -14173,6 +14473,7 @@ class ISurfaceMeshPrimitive(object):
                              "supported_with_default_rendering_method" : 17, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceMeshPrimitive."""
         initialize_from_source_object(self, sourceObject, ISurfaceMeshPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14182,6 +14483,7 @@ class ISurfaceMeshPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceMeshPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceMeshPrimitive, None)
     
     _get_texture_metadata = { "name" : "texture",
@@ -14345,6 +14647,7 @@ class ITerrainOverlayCollection(object):
                              "send_to_back" : 20, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITerrainOverlayCollection."""
         initialize_from_source_object(self, sourceObject, ITerrainOverlayCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -14355,12 +14658,15 @@ class ITerrainOverlayCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainOverlayCollection, None)
     def __iter__(self):
+        """Create an iterator for the ITerrainOverlayCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITerrainOverlay":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -14536,6 +14842,7 @@ class ITerrainOverlay(object):
                              "get_supported" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITerrainOverlay."""
         initialize_from_source_object(self, sourceObject, ITerrainOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14545,6 +14852,7 @@ class ITerrainOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainOverlay, None)
     
     _get_altitude_offset_metadata = { "name" : "altitude_offset",
@@ -14590,7 +14898,7 @@ agcls.AgClassCatalog.add_catalog_entry("{dfe57e34-7b31-4360-a7a8-8db856882670}",
 agcls.AgTypeNameMap["ITerrainOverlay"] = ITerrainOverlay
 
 class ITextBatchPrimitive(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14631,6 +14939,7 @@ class ITextBatchPrimitive(object):
                              "set_render_in_screen_space" : 32, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextBatchPrimitive."""
         initialize_from_source_object(self, sourceObject, ITextBatchPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14640,6 +14949,7 @@ class ITextBatchPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextBatchPrimitive, None)
     
     _get_set_hint_metadata = { "name" : "set_hint",
@@ -14904,6 +15214,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
                              "set_screen_space_rendering" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextBatchPrimitiveOptionalParameters."""
         initialize_from_source_object(self, sourceObject, ITextBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -14913,6 +15224,7 @@ class ITextBatchPrimitiveOptionalParameters(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveOptionalParameters)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextBatchPrimitiveOptionalParameters, None)
     
     _get_origin_metadata = { "name" : "origin",
@@ -15038,6 +15350,7 @@ class ITextOverlay(object):
                              "set_font" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextOverlay."""
         initialize_from_source_object(self, sourceObject, ITextOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15047,6 +15360,7 @@ class ITextOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextOverlay, None)
     
     _get_text_metadata = { "name" : "text",
@@ -15124,6 +15438,7 @@ class ITextureMatrix(object):
                              "get_m44" : 16, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureMatrix."""
         initialize_from_source_object(self, sourceObject, ITextureMatrix)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15133,6 +15448,7 @@ class ITextureMatrix(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureMatrix)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureMatrix, None)
     
     _get_m11_metadata = { "name" : "m11",
@@ -15283,6 +15599,7 @@ class ITextureScreenOverlay(object):
                              "set_maintain_aspect_ratio" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureScreenOverlay."""
         initialize_from_source_object(self, sourceObject, ITextureScreenOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15292,6 +15609,7 @@ class ITextureScreenOverlay(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureScreenOverlay)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureScreenOverlay, None)
     
     _get_texture_metadata = { "name" : "texture",
@@ -15357,6 +15675,7 @@ class ITimeIntervalDisplayCondition(object):
                              "set_maximum_time" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeIntervalDisplayCondition."""
         initialize_from_source_object(self, sourceObject, ITimeIntervalDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15366,6 +15685,7 @@ class ITimeIntervalDisplayCondition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeIntervalDisplayCondition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeIntervalDisplayCondition, None)
     
     _get_minimum_time_metadata = { "name" : "minimum_time",
@@ -15434,6 +15754,7 @@ class ITriangleMeshPrimitive(object):
                              "set_central_body_clipped" : 22, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITriangleMeshPrimitive."""
         initialize_from_source_object(self, sourceObject, ITriangleMeshPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15443,6 +15764,7 @@ class ITriangleMeshPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangleMeshPrimitive, None)
     
     _get_wireframe_metadata = { "name" : "wireframe",
@@ -15625,6 +15947,7 @@ class ITriangleMeshPrimitiveOptionalParameters(object):
                              "set_per_vertex_colors" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITriangleMeshPrimitiveOptionalParameters."""
         initialize_from_source_object(self, sourceObject, ITriangleMeshPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15634,6 +15957,7 @@ class ITriangleMeshPrimitiveOptionalParameters(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveOptionalParameters)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangleMeshPrimitiveOptionalParameters, None)
     
     _set_texture_coordinates_metadata = { "name" : "set_texture_coordinates",
@@ -15692,6 +16016,7 @@ class IVectorPrimitive(object):
                              "set_true_scale" : 28, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorPrimitive."""
         initialize_from_source_object(self, sourceObject, IVectorPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15701,6 +16026,7 @@ class IVectorPrimitive(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorPrimitive)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorPrimitive, None)
     
     _get_lighting_metadata = { "name" : "lighting",
@@ -15928,6 +16254,7 @@ class IBoxTriangulatorInitializer(object):
         "method_offsets" : { "compute" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBoxTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, IBoxTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15937,6 +16264,7 @@ class IBoxTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBoxTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBoxTriangulatorInitializer, None)
     
     _compute_metadata = { "name" : "compute",
@@ -15962,6 +16290,7 @@ class ICylinderTriangulatorInitializer(object):
                              "compute" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICylinderTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, ICylinderTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -15971,6 +16300,7 @@ class ICylinderTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICylinderTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICylinderTriangulatorInitializer, None)
     
     _create_simple_metadata = { "name" : "create_simple",
@@ -16003,6 +16333,7 @@ class IEllipsoidTriangulatorInitializer(object):
                              "compute" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEllipsoidTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, IEllipsoidTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16012,6 +16343,7 @@ class IEllipsoidTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEllipsoidTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEllipsoidTriangulatorInitializer, None)
     
     _compute_simple_metadata = { "name" : "compute_simple",
@@ -16054,6 +16386,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
                              "compute_single_constant_altitude_cartographic_with_winding_order" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExtrudedPolylineTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, IExtrudedPolylineTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16063,6 +16396,7 @@ class IExtrudedPolylineTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExtrudedPolylineTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExtrudedPolylineTriangulatorInitializer, None)
     
     _compute_metadata = { "name" : "compute",
@@ -16165,6 +16499,7 @@ class ISurfaceExtentTriangulatorInitializer(object):
                              "compute" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceExtentTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, ISurfaceExtentTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16174,6 +16509,7 @@ class ISurfaceExtentTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceExtentTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceExtentTriangulatorInitializer, None)
     
     _compute_simple_metadata = { "name" : "compute_simple",
@@ -16210,6 +16546,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
                              "compute_cartographic_with_altitude_and_granularity" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfacePolygonTriangulatorInitializer."""
         initialize_from_source_object(self, sourceObject, ISurfacePolygonTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16219,6 +16556,7 @@ class ISurfacePolygonTriangulatorInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfacePolygonTriangulatorInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfacePolygonTriangulatorInitializer, None)
     
     _compute_metadata = { "name" : "compute",
@@ -16289,6 +16627,7 @@ class ISurfaceShapesInitializer(object):
                              "compute_sector_cartographic" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceShapesInitializer."""
         initialize_from_source_object(self, sourceObject, ISurfaceShapesInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16298,6 +16637,7 @@ class ISurfaceShapesInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceShapesInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceShapesInitializer, None)
     
     _compute_circle_with_granularity_metadata = { "name" : "compute_circle_with_granularity",
@@ -16399,6 +16739,7 @@ class IAGICustomTerrainOverlayFactory(object):
         "method_offsets" : { "initialize_with_string" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGICustomTerrainOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IAGICustomTerrainOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16408,6 +16749,7 @@ class IAGICustomTerrainOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGICustomTerrainOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGICustomTerrainOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -16432,6 +16774,7 @@ class IAGIProcessedImageGlobeOverlayFactory(object):
         "method_offsets" : { "initialize_with_string" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIProcessedImageGlobeOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IAGIProcessedImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16441,6 +16784,7 @@ class IAGIProcessedImageGlobeOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedImageGlobeOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIProcessedImageGlobeOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -16465,6 +16809,7 @@ class IAGIProcessedTerrainOverlayFactory(object):
         "method_offsets" : { "initialize_with_string" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIProcessedTerrainOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IAGIProcessedTerrainOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16474,6 +16819,7 @@ class IAGIProcessedTerrainOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIProcessedTerrainOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIProcessedTerrainOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -16498,6 +16844,7 @@ class IAGIRoamImageGlobeOverlayFactory(object):
         "method_offsets" : { "initialize_with_string" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAGIRoamImageGlobeOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IAGIRoamImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16507,6 +16854,7 @@ class IAGIRoamImageGlobeOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAGIRoamImageGlobeOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAGIRoamImageGlobeOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -16531,6 +16879,7 @@ class ICustomImageGlobeOverlayPluginActivatorFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICustomImageGlobeOverlayPluginActivatorFactory."""
         initialize_from_source_object(self, sourceObject, ICustomImageGlobeOverlayPluginActivatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16540,6 +16889,7 @@ class ICustomImageGlobeOverlayPluginActivatorFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICustomImageGlobeOverlayPluginActivatorFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICustomImageGlobeOverlayPluginActivatorFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16564,6 +16914,7 @@ class IGeospatialImageGlobeOverlayFactory(object):
         "method_offsets" : { "initialize_with_string" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeospatialImageGlobeOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IGeospatialImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16573,6 +16924,7 @@ class IGeospatialImageGlobeOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeospatialImageGlobeOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeospatialImageGlobeOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -16598,6 +16950,7 @@ class IProjectedRasterOverlayFactory(object):
                              "get_supported" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectedRasterOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IProjectedRasterOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16607,6 +16960,7 @@ class IProjectedRasterOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectedRasterOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectedRasterOverlayFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16641,6 +16995,7 @@ class IProjectionFactory(object):
                              "initialize_from_projection" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectionFactory."""
         initialize_from_source_object(self, sourceObject, IProjectionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16650,6 +17005,7 @@ class IProjectionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16690,6 +17046,7 @@ class IAltitudeDisplayConditionFactory(object):
                              "initialize_with_central_body_and_altitudes" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAltitudeDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IAltitudeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16699,6 +17056,7 @@ class IAltitudeDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAltitudeDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAltitudeDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16737,6 +17095,7 @@ class IAxesPrimitiveFactory(object):
         "method_offsets" : { "initialize_with_direction" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAxesPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IAxesPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16746,6 +17105,7 @@ class IAxesPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAxesPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAxesPrimitiveFactory, None)
     
     _initialize_with_direction_metadata = { "name" : "initialize_with_direction",
@@ -16770,6 +17130,7 @@ class ICompositeDisplayConditionFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICompositeDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, ICompositeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16779,6 +17140,7 @@ class ICompositeDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositeDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICompositeDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16803,6 +17165,7 @@ class ICompositePrimitiveFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICompositePrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, ICompositePrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16812,6 +17175,7 @@ class ICompositePrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICompositePrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICompositePrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16837,6 +17201,7 @@ class IConstantDisplayConditionFactory(object):
                              "initialize_display" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConstantDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IConstantDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16846,6 +17211,7 @@ class IConstantDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConstantDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConstantDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16878,6 +17244,7 @@ class IDistanceDisplayConditionFactory(object):
                              "initialize_with_distances" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IDistanceDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16887,6 +17254,7 @@ class IDistanceDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16919,6 +17287,7 @@ class IDistanceToGlobeOverlayDisplayConditionFactory(object):
                              "initialize_with_distances" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToGlobeOverlayDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IDistanceToGlobeOverlayDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16928,6 +17297,7 @@ class IDistanceToGlobeOverlayDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToGlobeOverlayDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToGlobeOverlayDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -16961,6 +17331,7 @@ class IDistanceToPositionDisplayConditionFactory(object):
                              "initialize_with_reference_frame_and_distances" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToPositionDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IDistanceToPositionDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -16970,6 +17341,7 @@ class IDistanceToPositionDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPositionDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToPositionDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17009,6 +17381,7 @@ class IDistanceToPrimitiveDisplayConditionFactory(object):
                              "initialize_with_distances" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDistanceToPrimitiveDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IDistanceToPrimitiveDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17018,6 +17391,7 @@ class IDistanceToPrimitiveDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDistanceToPrimitiveDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDistanceToPrimitiveDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17050,6 +17424,7 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
                              "initialize_with_parameters" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDurationPathPrimitiveUpdatePolicyFactory."""
         initialize_from_source_object(self, sourceObject, IDurationPathPrimitiveUpdatePolicyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17059,6 +17434,7 @@ class IDurationPathPrimitiveUpdatePolicyFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDurationPathPrimitiveUpdatePolicyFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDurationPathPrimitiveUpdatePolicyFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17090,6 +17466,7 @@ class IGlobeImageOverlayInitializer(object):
         "method_offsets" : { "get_more_than_one_image_globe_overlay_supported" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGlobeImageOverlayInitializer."""
         initialize_from_source_object(self, sourceObject, IGlobeImageOverlayInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17099,6 +17476,7 @@ class IGlobeImageOverlayInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGlobeImageOverlayInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGlobeImageOverlayInitializer, None)
     
     _get_more_than_one_image_globe_overlay_supported_metadata = { "name" : "more_than_one_image_globe_overlay_supported",
@@ -17125,6 +17503,7 @@ class IGraphicsFontFactory(object):
                              "initialize_with_name_size" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGraphicsFontFactory."""
         initialize_from_source_object(self, sourceObject, IGraphicsFontFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17134,6 +17513,7 @@ class IGraphicsFontFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGraphicsFontFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGraphicsFontFactory, None)
     
     _initialize_with_name_size_font_style_outline_metadata = { "name" : "initialize_with_name_size_font_style_outline",
@@ -17167,6 +17547,7 @@ class IGreatArcInterpolatorFactory(object):
                              "initialize_with_central_body_and_granularity" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGreatArcInterpolatorFactory."""
         initialize_from_source_object(self, sourceObject, IGreatArcInterpolatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17176,6 +17557,7 @@ class IGreatArcInterpolatorFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGreatArcInterpolatorFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGreatArcInterpolatorFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17214,6 +17596,7 @@ class IAlphaFromLuminanceFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromLuminanceFilterFactory."""
         initialize_from_source_object(self, sourceObject, IAlphaFromLuminanceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17223,6 +17606,7 @@ class IAlphaFromLuminanceFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromLuminanceFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromLuminanceFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17247,6 +17631,7 @@ class IAlphaFromPixelFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromPixelFilterFactory."""
         initialize_from_source_object(self, sourceObject, IAlphaFromPixelFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17256,6 +17641,7 @@ class IAlphaFromPixelFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromPixelFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromPixelFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17281,6 +17667,7 @@ class IAlphaFromRasterFilterFactory(object):
                              "initialize_with_raster" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IAlphaFromRasterFilterFactory."""
         initialize_from_source_object(self, sourceObject, IAlphaFromRasterFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17290,6 +17677,7 @@ class IAlphaFromRasterFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IAlphaFromRasterFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IAlphaFromRasterFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17323,6 +17711,7 @@ class IBandExtractFilterFactory(object):
                              "initialize_with_format" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBandExtractFilterFactory."""
         initialize_from_source_object(self, sourceObject, IBandExtractFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17332,6 +17721,7 @@ class IBandExtractFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandExtractFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBandExtractFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17372,6 +17762,7 @@ class IBandOrderFilterFactory(object):
                              "initialize_with_order_and_bool" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBandOrderFilterFactory."""
         initialize_from_source_object(self, sourceObject, IBandOrderFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17381,6 +17772,7 @@ class IBandOrderFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBandOrderFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBandOrderFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17420,6 +17812,7 @@ class IBlurFilterFactory(object):
                              "initialize_with_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBlurFilterFactory."""
         initialize_from_source_object(self, sourceObject, IBlurFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17429,6 +17822,7 @@ class IBlurFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBlurFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBlurFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17461,6 +17855,7 @@ class IBrightnessFilterFactory(object):
                              "initialize_with_adjustment" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IBrightnessFilterFactory."""
         initialize_from_source_object(self, sourceObject, IBrightnessFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17470,6 +17865,7 @@ class IBrightnessFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IBrightnessFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IBrightnessFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17501,6 +17897,7 @@ class IColorToLuminanceFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IColorToLuminanceFilterFactory."""
         initialize_from_source_object(self, sourceObject, IColorToLuminanceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17510,6 +17907,7 @@ class IColorToLuminanceFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IColorToLuminanceFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IColorToLuminanceFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17535,6 +17933,7 @@ class IContrastFilterFactory(object):
                              "initialize_with_adjustment" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IContrastFilterFactory."""
         initialize_from_source_object(self, sourceObject, IContrastFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17544,6 +17943,7 @@ class IContrastFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IContrastFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IContrastFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17578,6 +17978,7 @@ class IConvolutionFilterFactory(object):
                              "initialize_with_kernel_divisor_and_offset" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConvolutionFilterFactory."""
         initialize_from_source_object(self, sourceObject, IConvolutionFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17587,6 +17988,7 @@ class IConvolutionFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConvolutionFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConvolutionFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17633,6 +18035,7 @@ class IEdgeDetectFilterFactory(object):
                              "initialize_with_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IEdgeDetectFilterFactory."""
         initialize_from_source_object(self, sourceObject, IEdgeDetectFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17642,6 +18045,7 @@ class IEdgeDetectFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IEdgeDetectFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IEdgeDetectFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17673,6 +18077,7 @@ class IFilteringRasterStreamFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFilteringRasterStreamFactory."""
         initialize_from_source_object(self, sourceObject, IFilteringRasterStreamFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17682,6 +18087,7 @@ class IFilteringRasterStreamFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFilteringRasterStreamFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFilteringRasterStreamFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17707,6 +18113,7 @@ class IFlipFilterFactory(object):
                              "initialize_with_flip_axis" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IFlipFilterFactory."""
         initialize_from_source_object(self, sourceObject, IFlipFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17716,6 +18123,7 @@ class IFlipFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IFlipFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IFlipFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17748,6 +18156,7 @@ class IGammaCorrectionFilterFactory(object):
                              "initialize_with_gamma" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGammaCorrectionFilterFactory."""
         initialize_from_source_object(self, sourceObject, IGammaCorrectionFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17757,6 +18166,7 @@ class IGammaCorrectionFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGammaCorrectionFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGammaCorrectionFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17788,6 +18198,7 @@ class IGaussianBlurFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGaussianBlurFilterFactory."""
         initialize_from_source_object(self, sourceObject, IGaussianBlurFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17797,6 +18208,7 @@ class IGaussianBlurFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGaussianBlurFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGaussianBlurFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17822,6 +18234,7 @@ class IGradientDetectFilterFactory(object):
                              "initialize_with_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGradientDetectFilterFactory."""
         initialize_from_source_object(self, sourceObject, IGradientDetectFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17831,6 +18244,7 @@ class IGradientDetectFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGradientDetectFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGradientDetectFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17865,6 +18279,7 @@ class IJpeg2000WriterInitializer(object):
                              "write_extent_and_sub_extent_transparent_color_string" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IJpeg2000WriterInitializer."""
         initialize_from_source_object(self, sourceObject, IJpeg2000WriterInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17874,6 +18289,7 @@ class IJpeg2000WriterInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IJpeg2000WriterInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IJpeg2000WriterInitializer, None)
     
     _write_string_metadata = { "name" : "write_string",
@@ -17919,6 +18335,7 @@ class ILevelsFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILevelsFilterFactory."""
         initialize_from_source_object(self, sourceObject, ILevelsFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17928,6 +18345,7 @@ class ILevelsFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILevelsFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILevelsFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17952,6 +18370,7 @@ class IProjectionRasterStreamPluginActivatorFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IProjectionRasterStreamPluginActivatorFactory."""
         initialize_from_source_object(self, sourceObject, IProjectionRasterStreamPluginActivatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17961,6 +18380,7 @@ class IProjectionRasterStreamPluginActivatorFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IProjectionRasterStreamPluginActivatorFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IProjectionRasterStreamPluginActivatorFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -17987,6 +18407,7 @@ class IRasterFactory(object):
                              "initialize_with_raster" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterFactory."""
         initialize_from_source_object(self, sourceObject, IRasterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -17996,6 +18417,7 @@ class IRasterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterFactory, None)
     
     _initialize_with_string_uri_metadata = { "name" : "initialize_with_string_uri",
@@ -18039,6 +18461,7 @@ class IRasterAttributesFactory(object):
                              "initialize_with_raster" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterAttributesFactory."""
         initialize_from_source_object(self, sourceObject, IRasterAttributesFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18048,6 +18471,7 @@ class IRasterAttributesFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterAttributesFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterAttributesFactory, None)
     
     _initialize_with_format_metadata = { "name" : "initialize_with_format",
@@ -18108,6 +18532,7 @@ class IRotateFilterFactory(object):
                              "initialize_with_angle" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRotateFilterFactory."""
         initialize_from_source_object(self, sourceObject, IRotateFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18117,6 +18542,7 @@ class IRotateFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRotateFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRotateFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18148,6 +18574,7 @@ class ISequenceFilterFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISequenceFilterFactory."""
         initialize_from_source_object(self, sourceObject, ISequenceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18157,6 +18584,7 @@ class ISequenceFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISequenceFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISequenceFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18182,6 +18610,7 @@ class ISharpenFilterFactory(object):
                              "initialize_with_method" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISharpenFilterFactory."""
         initialize_from_source_object(self, sourceObject, ISharpenFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18191,6 +18620,7 @@ class ISharpenFilterFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISharpenFilterFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISharpenFilterFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18224,6 +18654,7 @@ class IVideoStreamFactory(object):
                              "initialize_audio_video_with_string_uri" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVideoStreamFactory."""
         initialize_from_source_object(self, sourceObject, IVideoStreamFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18233,6 +18664,7 @@ class IVideoStreamFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVideoStreamFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVideoStreamFactory, None)
     
     _initialize_with_string_uri_metadata = { "name" : "initialize_with_string_uri",
@@ -18261,7 +18693,7 @@ agcls.AgClassCatalog.add_catalog_entry("{fbde7847-ccff-4c4e-83cf-5f7b05468709}",
 agcls.AgTypeNameMap["IVideoStreamFactory"] = IVideoStreamFactory
 
 class IMarkerBatchPrimitiveFactory(object):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18277,6 +18709,7 @@ class IMarkerBatchPrimitiveFactory(object):
                              "supported" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMarkerBatchPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IMarkerBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18286,6 +18719,7 @@ class IMarkerBatchPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMarkerBatchPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18352,6 +18786,7 @@ class IMarkerBatchPrimitiveOptionalParametersFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMarkerBatchPrimitiveOptionalParametersFactory."""
         initialize_from_source_object(self, sourceObject, IMarkerBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18361,6 +18796,7 @@ class IMarkerBatchPrimitiveOptionalParametersFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMarkerBatchPrimitiveOptionalParametersFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMarkerBatchPrimitiveOptionalParametersFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18386,6 +18822,7 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
                              "initialize_with_parameters" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMaximumCountPathPrimitiveUpdatePolicyFactory."""
         initialize_from_source_object(self, sourceObject, IMaximumCountPathPrimitiveUpdatePolicyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18395,6 +18832,7 @@ class IMaximumCountPathPrimitiveUpdatePolicyFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMaximumCountPathPrimitiveUpdatePolicyFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMaximumCountPathPrimitiveUpdatePolicyFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18428,6 +18866,7 @@ class IModelPrimitiveFactory(object):
                              "initialize_with_string_uri_and_up_axis" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IModelPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IModelPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18437,6 +18876,7 @@ class IModelPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IModelPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IModelPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18478,6 +18918,7 @@ class IPathPrimitiveFactory(object):
                              "get_maximum_width_supported" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPathPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IPathPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18487,6 +18928,7 @@ class IPathPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPathPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPathPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18535,6 +18977,7 @@ class IPixelSizeDisplayConditionFactory(object):
                              "initialize_with_pixel_sizes" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPixelSizeDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, IPixelSizeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18544,6 +18987,7 @@ class IPixelSizeDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPixelSizeDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPixelSizeDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18565,7 +19009,7 @@ agcls.AgClassCatalog.add_catalog_entry("{2c7bb493-89f9-40f9-b562-feed771d08b7}",
 agcls.AgTypeNameMap["IPixelSizeDisplayConditionFactory"] = IPixelSizeDisplayConditionFactory
 
 class IPointBatchPrimitiveFactory(object):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18578,6 +19022,7 @@ class IPointBatchPrimitiveFactory(object):
                              "get_maximum_pixel_size_supported" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPointBatchPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IPointBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18587,6 +19032,7 @@ class IPointBatchPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPointBatchPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18634,6 +19080,7 @@ class IPointBatchPrimitiveOptionalParametersFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPointBatchPrimitiveOptionalParametersFactory."""
         initialize_from_source_object(self, sourceObject, IPointBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18643,6 +19090,7 @@ class IPointBatchPrimitiveOptionalParametersFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPointBatchPrimitiveOptionalParametersFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPointBatchPrimitiveOptionalParametersFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18674,6 +19122,7 @@ class IPolylinePrimitiveFactory(object):
                              "get_maximum_width_supported" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPolylinePrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IPolylinePrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18683,6 +19132,7 @@ class IPolylinePrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolylinePrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18758,6 +19208,7 @@ class IPolylinePrimitiveOptionalParametersFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPolylinePrimitiveOptionalParametersFactory."""
         initialize_from_source_object(self, sourceObject, IPolylinePrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18767,6 +19218,7 @@ class IPolylinePrimitiveOptionalParametersFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPolylinePrimitiveOptionalParametersFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPolylinePrimitiveOptionalParametersFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18793,6 +19245,7 @@ class IRasterImageGlobeOverlayFactory(object):
                              "initialize_with_raster" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRasterImageGlobeOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IRasterImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18802,6 +19255,7 @@ class IRasterImageGlobeOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRasterImageGlobeOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRasterImageGlobeOverlayFactory, None)
     
     _initialize_with_string_metadata = { "name" : "initialize_with_string",
@@ -18842,6 +19296,7 @@ class IRhumbLineInterpolatorFactory(object):
                              "initialize_with_central_body_and_granularity" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRhumbLineInterpolatorFactory."""
         initialize_from_source_object(self, sourceObject, IRhumbLineInterpolatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18851,6 +19306,7 @@ class IRhumbLineInterpolatorFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRhumbLineInterpolatorFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRhumbLineInterpolatorFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18889,6 +19345,7 @@ class ISceneDisplayConditionFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, ISceneDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18898,6 +19355,7 @@ class ISceneDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -18928,6 +19386,7 @@ class ISceneManagerInitializer(object):
                              "get_frame_rate" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISceneManagerInitializer."""
         initialize_from_source_object(self, sourceObject, ISceneManagerInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -18937,6 +19396,7 @@ class ISceneManagerInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISceneManagerInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISceneManagerInitializer, None)
     
     _get_primitives_metadata = { "name" : "primitives",
@@ -19010,6 +19470,7 @@ class IScreenOverlayFactory(object):
                              "initialize_with_position_and_size" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IScreenOverlayFactory."""
         initialize_from_source_object(self, sourceObject, IScreenOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19019,6 +19480,7 @@ class IScreenOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IScreenOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IScreenOverlayFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19053,6 +19515,7 @@ class ISolidPrimitiveFactory(object):
                              "get_maximum_silhouette_width_supported" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISolidPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, ISolidPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19062,6 +19525,7 @@ class ISolidPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISolidPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISolidPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19113,6 +19577,7 @@ class ISurfaceMeshPrimitiveFactory(object):
                              "supported_with_default_rendering_method" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISurfaceMeshPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, ISurfaceMeshPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19122,6 +19587,7 @@ class ISurfaceMeshPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISurfaceMeshPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISurfaceMeshPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19174,6 +19640,7 @@ class ITerrainOverlayInitializer(object):
         "method_offsets" : { "get_supported" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITerrainOverlayInitializer."""
         initialize_from_source_object(self, sourceObject, ITerrainOverlayInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19183,6 +19650,7 @@ class ITerrainOverlayInitializer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITerrainOverlayInitializer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITerrainOverlayInitializer, None)
     
     _get_supported_metadata = { "name" : "supported",
@@ -19198,7 +19666,7 @@ agcls.AgClassCatalog.add_catalog_entry("{74c0acde-8d75-49df-87c1-2c39e3240283}",
 agcls.AgTypeNameMap["ITerrainOverlayInitializer"] = ITerrainOverlayInitializer
 
 class ITextBatchPrimitiveFactory(object):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19210,6 +19678,7 @@ class ITextBatchPrimitiveFactory(object):
                              "initialize_with_graphics_font_and_set_hint_2d" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextBatchPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, ITextBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19219,6 +19688,7 @@ class ITextBatchPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextBatchPrimitiveFactory, None)
     
     _initialize_with_graphics_font_metadata = { "name" : "initialize_with_graphics_font",
@@ -19257,6 +19727,7 @@ class ITextBatchPrimitiveOptionalParametersFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextBatchPrimitiveOptionalParametersFactory."""
         initialize_from_source_object(self, sourceObject, ITextBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19266,6 +19737,7 @@ class ITextBatchPrimitiveOptionalParametersFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextBatchPrimitiveOptionalParametersFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextBatchPrimitiveOptionalParametersFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19293,6 +19765,7 @@ class ITextOverlayFactory(object):
                              "initialize_with_width_height_units" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextOverlayFactory."""
         initialize_from_source_object(self, sourceObject, ITextOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19302,6 +19775,7 @@ class ITextOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextOverlayFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19350,6 +19824,7 @@ class ITextureMatrixFactory(object):
                              "initialize_with_rectangles" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureMatrixFactory."""
         initialize_from_source_object(self, sourceObject, ITextureMatrixFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19359,6 +19834,7 @@ class ITextureMatrixFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureMatrixFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureMatrixFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19408,6 +19884,7 @@ class ITextureScreenOverlayFactory(object):
                              "initialize_with_position_texture" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITextureScreenOverlayFactory."""
         initialize_from_source_object(self, sourceObject, ITextureScreenOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19417,6 +19894,7 @@ class ITextureScreenOverlayFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITextureScreenOverlayFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITextureScreenOverlayFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19471,6 +19949,7 @@ class ITimeIntervalDisplayConditionFactory(object):
                              "initialize_with_time_interval" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITimeIntervalDisplayConditionFactory."""
         initialize_from_source_object(self, sourceObject, ITimeIntervalDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19480,6 +19959,7 @@ class ITimeIntervalDisplayConditionFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITimeIntervalDisplayConditionFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITimeIntervalDisplayConditionFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19519,6 +19999,7 @@ class ITriangleMeshPrimitiveFactory(object):
                              "initialize_with_set_hint" : 2, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITriangleMeshPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, ITriangleMeshPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19528,6 +20009,7 @@ class ITriangleMeshPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangleMeshPrimitiveFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19559,6 +20041,7 @@ class ITriangleMeshPrimitiveOptionalParametersFactory(object):
         "method_offsets" : { "initialize" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ITriangleMeshPrimitiveOptionalParametersFactory."""
         initialize_from_source_object(self, sourceObject, ITriangleMeshPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19568,6 +20051,7 @@ class ITriangleMeshPrimitiveOptionalParametersFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ITriangleMeshPrimitiveOptionalParametersFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ITriangleMeshPrimitiveOptionalParametersFactory, None)
     
     _initialize_metadata = { "name" : "initialize",
@@ -19592,6 +20076,7 @@ class IVectorPrimitiveFactory(object):
         "method_offsets" : { "initialize_with_direction" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IVectorPrimitiveFactory."""
         initialize_from_source_object(self, sourceObject, IVectorPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19601,6 +20086,7 @@ class IVectorPrimitiveFactory(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IVectorPrimitiveFactory)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IVectorPrimitiveFactory, None)
     
     _initialize_with_direction_metadata = { "name" : "initialize_with_direction",
@@ -19620,6 +20106,7 @@ class PathPoint(IPathPoint):
     """Represents a path point used in conjunction with the Path Primitive."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPoint."""
         IPathPoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19628,6 +20115,7 @@ class PathPoint(IPathPoint):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPoint, [IPathPoint])
 
 agcls.AgClassCatalog.add_catalog_entry("{4C86EAB3-9C30-4D1B-9391-A27010590176}", PathPoint)
@@ -19637,6 +20125,7 @@ class PathPointFactory(IPathPointFactory):
     """Factory creates path points."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPointFactory."""
         IPathPointFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19645,6 +20134,7 @@ class PathPointFactory(IPathPointFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPointFactory, [IPathPointFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{997C56C5-C114-4C2E-A25A-4D4860FA913F}", PathPointFactory)
@@ -19654,6 +20144,7 @@ class BoundingSphere(IBoundingSphere):
     """A sphere that encapsulates an object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BoundingSphere."""
         IBoundingSphere.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19662,6 +20153,7 @@ class BoundingSphere(IBoundingSphere):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoundingSphere, [IBoundingSphere])
 
 agcls.AgClassCatalog.add_catalog_entry("{40BA7967-5508-4D2C-9048-76EA16351F61}", BoundingSphere)
@@ -19671,6 +20163,7 @@ class BoundingSphereFactory(IBoundingSphereFactory):
     """Create bounding spheres."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BoundingSphereFactory."""
         IBoundingSphereFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19679,6 +20172,7 @@ class BoundingSphereFactory(IBoundingSphereFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoundingSphereFactory, [IBoundingSphereFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{4CAEE1FD-33BB-4928-8363-39237A62C150}", BoundingSphereFactory)
@@ -19688,6 +20182,7 @@ class TextureFilter2D(ITextureFilter2D):
     """A texture filter."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureFilter2D."""
         ITextureFilter2D.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19696,6 +20191,7 @@ class TextureFilter2D(ITextureFilter2D):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureFilter2D, [ITextureFilter2D])
 
 agcls.AgClassCatalog.add_catalog_entry("{DAE13DA7-D678-4F1F-9F87-F584DF78B8FE}", TextureFilter2D)
@@ -19705,6 +20201,7 @@ class TextureFilter2DFactory(ITextureFilter2DFactory):
     """Create texture filters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureFilter2DFactory."""
         ITextureFilter2DFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19713,6 +20210,7 @@ class TextureFilter2DFactory(ITextureFilter2DFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureFilter2DFactory, [ITextureFilter2DFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C17EDE04-6594-4662-975E-795B7623414B}", TextureFilter2DFactory)
@@ -19722,6 +20220,7 @@ class RendererTexture2D(IRendererTexture2D):
     """A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RendererTexture2D."""
         IRendererTexture2D.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19730,6 +20229,7 @@ class RendererTexture2D(IRendererTexture2D):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RendererTexture2D, [IRendererTexture2D])
 
 agcls.AgClassCatalog.add_catalog_entry("{295B9996-B4D8-4AAD-B612-CB0348444732}", RendererTexture2D)
@@ -19739,6 +20239,7 @@ class RendererTextureTemplate2D(IRendererTextureTemplate2D):
     """Template object containing attributes required to create a 2D texture."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RendererTextureTemplate2D."""
         IRendererTextureTemplate2D.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19747,6 +20248,7 @@ class RendererTextureTemplate2D(IRendererTextureTemplate2D):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RendererTextureTemplate2D, [IRendererTextureTemplate2D])
 
 agcls.AgClassCatalog.add_catalog_entry("{0192E348-0FD1-440D-881D-EF3B882D7190}", RendererTextureTemplate2D)
@@ -19756,6 +20258,7 @@ class PathPointCollection(IPathPointCollection):
     """A collection of path points."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPointCollection."""
         IPathPointCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19764,6 +20267,7 @@ class PathPointCollection(IPathPointCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPointCollection, [IPathPointCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1EBC1AA-0D8C-417B-BD4B-3A1489C8D39E}", PathPointCollection)
@@ -19773,6 +20277,7 @@ class ObjectCollection(IObjectCollection):
     """A collection of objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ObjectCollection."""
         IObjectCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19781,6 +20286,7 @@ class ObjectCollection(IObjectCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ObjectCollection, [IObjectCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{EEFF034B-5D72-4EF4-A76D-A25AEBD04B1E}", ObjectCollection)
@@ -19790,6 +20296,7 @@ class SceneCollection(ISceneCollection):
     """A collection of scenes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneCollection."""
         ISceneCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19798,6 +20305,7 @@ class SceneCollection(ISceneCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneCollection, [ISceneCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{1F9129CC-D135-4993-8E14-0AA4B8402AC8}", SceneCollection)
@@ -19807,6 +20315,7 @@ class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
     """A collection of pick results."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayPickResultCollection."""
         IScreenOverlayPickResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19815,6 +20324,7 @@ class ScreenOverlayPickResultCollection(IScreenOverlayPickResultCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayPickResultCollection, [IScreenOverlayPickResultCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{566B0B55-437E-40E9-BB0C-1119BC58C3A4}", ScreenOverlayPickResultCollection)
@@ -19824,6 +20334,7 @@ class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventAr
     """The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GlobeImageOverlayAddCompleteEventArgs."""
         IGlobeImageOverlayAddCompleteEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19832,6 +20343,7 @@ class GlobeImageOverlayAddCompleteEventArgs(IGlobeImageOverlayAddCompleteEventAr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlayAddCompleteEventArgs, [IGlobeImageOverlayAddCompleteEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{817BEFE9-18ED-489B-952E-8088AF90331D}", GlobeImageOverlayAddCompleteEventArgs)
@@ -19841,6 +20353,7 @@ class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
     """The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TerrainOverlayAddCompleteEventArgs."""
         ITerrainOverlayAddCompleteEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19849,6 +20362,7 @@ class TerrainOverlayAddCompleteEventArgs(ITerrainOverlayAddCompleteEventArgs):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayAddCompleteEventArgs, [ITerrainOverlayAddCompleteEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{589B5FC6-D8FE-4387-8E3E-188F6C6704C8}", TerrainOverlayAddCompleteEventArgs)
@@ -19858,6 +20372,7 @@ class PickResultCollection(IPickResultCollection):
     """A collection of picked objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PickResultCollection."""
         IPickResultCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19866,6 +20381,7 @@ class PickResultCollection(IPickResultCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickResultCollection, [IPickResultCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{E6DDBF58-AB3C-4F46-AA2F-4D9A2E0884F8}", PickResultCollection)
@@ -19875,6 +20391,7 @@ class RenderingEventArgs(IRenderingEventArgs):
     """The event is raised when the scene is rendered."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RenderingEventArgs."""
         IRenderingEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19883,6 +20400,7 @@ class RenderingEventArgs(IRenderingEventArgs):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RenderingEventArgs, [IRenderingEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{46B2FD61-672F-4AD5-8588-F635D1EFB00C}", RenderingEventArgs)
@@ -19892,6 +20410,7 @@ class BatchPrimitiveIndex(IBatchPrimitiveIndex):
     """Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BatchPrimitiveIndex."""
         IBatchPrimitiveIndex.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19900,6 +20419,7 @@ class BatchPrimitiveIndex(IBatchPrimitiveIndex):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BatchPrimitiveIndex, [IBatchPrimitiveIndex])
 
 agcls.AgClassCatalog.add_catalog_entry("{1AC81969-B283-482A-89A3-AE66819F864E}", BatchPrimitiveIndex)
@@ -19909,6 +20429,7 @@ class KmlDocumentCollection(IKmlDocumentCollection):
     """A collection of KML documents."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlDocumentCollection."""
         IKmlDocumentCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19917,6 +20438,7 @@ class KmlDocumentCollection(IKmlDocumentCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocumentCollection, [IKmlDocumentCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{2FB2F974-55DD-4862-B78F-8D9AA8B9167C}", KmlDocumentCollection)
@@ -19926,6 +20448,7 @@ class KmlFeatureCollection(IKmlFeatureCollection):
     """A collection of KML features."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlFeatureCollection."""
         IKmlFeatureCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19934,6 +20457,7 @@ class KmlFeatureCollection(IKmlFeatureCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFeatureCollection, [IKmlFeatureCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{11C36E9E-AB1B-4F7A-B5CD-75B5E1F9DCA7}", KmlFeatureCollection)
@@ -19943,6 +20467,7 @@ class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
     """The event is raised when a KML document has been loaded."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlDocumentLoadedEventArgs."""
         IKmlDocumentLoadedEventArgs.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19951,6 +20476,7 @@ class KmlDocumentLoadedEventArgs(IKmlDocumentLoadedEventArgs):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocumentLoadedEventArgs, [IKmlDocumentLoadedEventArgs])
 
 agcls.AgClassCatalog.add_catalog_entry("{77E26868-F894-4E5D-AE27-3D259B9763E3}", KmlDocumentLoadedEventArgs)
@@ -19960,6 +20486,7 @@ class FactoryAndInitializers(IFactoryAndInitializers):
     """Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FactoryAndInitializers."""
         IFactoryAndInitializers.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -19968,6 +20495,7 @@ class FactoryAndInitializers(IFactoryAndInitializers):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FactoryAndInitializers, [IFactoryAndInitializers])
 
 agcls.AgClassCatalog.add_catalog_entry("{06756FC9-1EF3-45CD-8A1F-CE6652BEA6C1}", FactoryAndInitializers)
@@ -19977,6 +20505,7 @@ class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, IT
     """The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExtrudedPolylineTriangulatorResult."""
         IExtrudedPolylineTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -19987,6 +20516,7 @@ class ExtrudedPolylineTriangulatorResult(IExtrudedPolylineTriangulatorResult, IT
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorResult, [IExtrudedPolylineTriangulatorResult, ITriangulatorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{BD7096DB-7447-43A4-B1D7-7E831565C909}", ExtrudedPolylineTriangulatorResult)
@@ -19996,6 +20526,7 @@ class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
     """The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SolidTriangulatorResult."""
         ISolidTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20006,6 +20537,7 @@ class SolidTriangulatorResult(ISolidTriangulatorResult, ITriangulatorResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidTriangulatorResult, [ISolidTriangulatorResult, ITriangulatorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{D97A5AF7-129F-4972-9DFB-B894D917B328}", SolidTriangulatorResult)
@@ -20015,6 +20547,7 @@ class SurfaceShapesResult(ISurfaceShapesResult):
     """Represents the boundary positions of a shape on the surface computed from by a surface shapes method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceShapesResult."""
         ISurfaceShapesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20023,6 +20556,7 @@ class SurfaceShapesResult(ISurfaceShapesResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceShapesResult, [ISurfaceShapesResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{627EC36E-26FE-4D33-81B1-3A4CE5955DED}", SurfaceShapesResult)
@@ -20032,6 +20566,7 @@ class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult)
     """The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceTriangulatorResult."""
         ISurfaceTriangulatorResult.__init__(self, sourceObject)
         ITriangulatorResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20042,6 +20577,7 @@ class SurfaceTriangulatorResult(ISurfaceTriangulatorResult, ITriangulatorResult)
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceTriangulatorResult, [ISurfaceTriangulatorResult, ITriangulatorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{484F03DF-F617-49CC-A3AD-6AB09C86C400}", SurfaceTriangulatorResult)
@@ -20051,6 +20587,7 @@ class TriangulatorResult(ITriangulatorResult):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TriangulatorResult."""
         ITriangulatorResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20059,6 +20596,7 @@ class TriangulatorResult(ITriangulatorResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangulatorResult, [ITriangulatorResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{1981E859-F957-4752-9B11-76A77512222B}", TriangulatorResult)
@@ -20068,6 +20606,7 @@ class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeO
     """A terrain overlay for handling AGI Cesium Terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGICustomTerrainOverlay."""
         IAGICustomTerrainOverlay.__init__(self, sourceObject)
         ITerrainOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20080,6 +20619,7 @@ class AGICustomTerrainOverlay(IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeO
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlay, [IAGICustomTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{474FD730-8942-48A2-B5C1-F84E6E5B112E}", AGICustomTerrainOverlay)
@@ -20089,6 +20629,7 @@ class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageO
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIProcessedImageGlobeOverlay."""
         IAGIProcessedImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20101,6 +20642,7 @@ class AGIProcessedImageGlobeOverlay(IAGIProcessedImageGlobeOverlay, IGlobeImageO
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlay, [IAGIProcessedImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{26895086-F748-4134-8B1E-E51EF358363D}", AGIProcessedImageGlobeOverlay)
@@ -20110,6 +20652,7 @@ class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, I
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIProcessedTerrainOverlay."""
         IAGIProcessedTerrainOverlay.__init__(self, sourceObject)
         ITerrainOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20122,6 +20665,7 @@ class AGIProcessedTerrainOverlay(IAGIProcessedTerrainOverlay, ITerrainOverlay, I
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlay, [IAGIProcessedTerrainOverlay, ITerrainOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{8B835120-12BD-4D18-AD78-2C507068F582}", AGIProcessedTerrainOverlay)
@@ -20131,6 +20675,7 @@ class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IG
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIRoamImageGlobeOverlay."""
         IAGIRoamImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20143,6 +20688,7 @@ class AGIRoamImageGlobeOverlay(IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IG
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlay, [IAGIRoamImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{278C21A7-3D85-48C1-B934-BE89B25019CE}", AGIRoamImageGlobeOverlay)
@@ -20152,6 +20698,7 @@ class CameraSnapshot(ICameraSnapshot):
     """Takes snapshots of the 3D window."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CameraSnapshot."""
         ICameraSnapshot.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20160,6 +20707,7 @@ class CameraSnapshot(ICameraSnapshot):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CameraSnapshot, [ICameraSnapshot])
 
 agcls.AgClassCatalog.add_catalog_entry("{27A8C9DC-6AF7-436A-80B0-7B426D85EAB1}", CameraSnapshot)
@@ -20169,6 +20717,7 @@ class CameraVideoRecording(ICameraVideoRecording):
     """Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CameraVideoRecording."""
         ICameraVideoRecording.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20177,6 +20726,7 @@ class CameraVideoRecording(ICameraVideoRecording):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CameraVideoRecording, [ICameraVideoRecording])
 
 agcls.AgClassCatalog.add_catalog_entry("{BBACA9D4-20A3-44B1-BF0F-174652805D72}", CameraVideoRecording)
@@ -20186,6 +20736,7 @@ class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
     """An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CentralBodyGraphicsIndexer."""
         ICentralBodyGraphicsIndexer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20194,6 +20745,7 @@ class CentralBodyGraphicsIndexer(ICentralBodyGraphicsIndexer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyGraphicsIndexer, [ICentralBodyGraphicsIndexer])
 
 agcls.AgClassCatalog.add_catalog_entry("{55BA55ED-B236-40BB-9F77-F7C32F3679FD}", CentralBodyGraphicsIndexer)
@@ -20203,6 +20755,7 @@ class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlo
     """A globe image overlay that allows for a user defined image to be specified."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CustomImageGlobeOverlay."""
         ICustomImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20215,6 +20768,7 @@ class CustomImageGlobeOverlay(ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlay, [ICustomImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{FAFB3856-9989-4712-8355-8047D169B49F}", CustomImageGlobeOverlay)
@@ -20224,6 +20778,7 @@ class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActiv
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CustomImageGlobeOverlayPluginActivator."""
         ICustomImageGlobeOverlayPluginActivator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20232,6 +20787,7 @@ class CustomImageGlobeOverlayPluginActivator(ICustomImageGlobeOverlayPluginActiv
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivator, [ICustomImageGlobeOverlayPluginActivator])
 
 agcls.AgClassCatalog.add_catalog_entry("{06EE5B12-485C-4AFE-8D16-B1516F3D6BFE}", CustomImageGlobeOverlayPluginActivator)
@@ -20241,6 +20797,7 @@ class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
     """A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CustomImageGlobeOverlayPluginProxy."""
         ICustomImageGlobeOverlayPluginProxy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20249,6 +20806,7 @@ class CustomImageGlobeOverlayPluginProxy(ICustomImageGlobeOverlayPluginProxy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginProxy, [ICustomImageGlobeOverlayPluginProxy])
 
 agcls.AgClassCatalog.add_catalog_entry("{1A2C5F92-FEFD-4961-B840-D940D30D3637}", CustomImageGlobeOverlayPluginProxy)
@@ -20258,6 +20816,7 @@ class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverl
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GeospatialImageGlobeOverlay."""
         IGeospatialImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20270,6 +20829,7 @@ class GeospatialImageGlobeOverlay(IGeospatialImageGlobeOverlay, IGlobeImageOverl
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlay, [IGeospatialImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{B2C72817-48CC-498A-BAF5-71CBDEEE4BD2}", GeospatialImageGlobeOverlay)
@@ -20279,6 +20839,7 @@ class GlobeOverlay(IGlobeOverlay):
     """The base class of all terrain overlay and globe image overlay objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GlobeOverlay."""
         IGlobeOverlay.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20287,6 +20848,7 @@ class GlobeOverlay(IGlobeOverlay):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeOverlay, [IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{4D2E94A8-DE1F-4382-AF9D-5664313F3E49}", GlobeOverlay)
@@ -20296,6 +20858,7 @@ class GlobeOverlaySettings(IGlobeOverlaySettings):
     """Settings used by globe overlay objects. These setting affect all scenes."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GlobeOverlaySettings."""
         IGlobeOverlaySettings.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20304,6 +20867,7 @@ class GlobeOverlaySettings(IGlobeOverlaySettings):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeOverlaySettings, [IGlobeOverlaySettings])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F326F62-7A92-46B9-8CD4-F73A14B32A42}", GlobeOverlaySettings)
@@ -20313,6 +20877,7 @@ class Lighting(ILighting):
     """Lighting in the 3D scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Lighting."""
         ILighting.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20321,6 +20886,7 @@ class Lighting(ILighting):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Lighting, [ILighting])
 
 agcls.AgClassCatalog.add_catalog_entry("{29C20830-2D8B-4E6B-854A-FDE514F4396A}", Lighting)
@@ -20330,6 +20896,7 @@ class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPrimitiveUpdatePolicy."""
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20338,6 +20905,7 @@ class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitiveUpdatePolicy, [IPathPrimitiveUpdatePolicy])
 
 agcls.AgClassCatalog.add_catalog_entry("{E1D3DA5F-ABD5-4C2D-891B-AB5A0FCE78A6}", PathPrimitiveUpdatePolicy)
@@ -20347,6 +20915,7 @@ class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobe
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectedRasterOverlay."""
         IProjectedRasterOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -20359,6 +20928,7 @@ class ProjectedRasterOverlay(IProjectedRasterOverlay, IGlobeImageOverlay, IGlobe
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectedRasterOverlay, [IProjectedRasterOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{ED508BB0-4EF1-412D-BEC2-46CF8F9BC5E2}", ProjectedRasterOverlay)
@@ -20368,6 +20938,7 @@ class Projection(IProjection):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Projection."""
         IProjection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20376,6 +20947,7 @@ class Projection(IProjection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Projection, [IProjection])
 
 agcls.AgClassCatalog.add_catalog_entry("{3C06C59D-E24C-4145-9634-15ABB16CF69F}", Projection)
@@ -20385,6 +20957,7 @@ class ProjectionStream(IProjectionStream, IProjection):
     """A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectionStream."""
         IProjectionStream.__init__(self, sourceObject)
         IProjection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20395,6 +20968,7 @@ class ProjectionStream(IProjectionStream, IProjection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionStream, [IProjectionStream, IProjection])
 
 agcls.AgClassCatalog.add_catalog_entry("{02371735-0B2F-48AA-A51E-53DAEC21903D}", ProjectionStream)
@@ -20404,6 +20978,7 @@ class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
     """Settings used by globe overlay objects. These settings only affect the scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneGlobeOverlaySettings."""
         ISceneGlobeOverlaySettings.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20412,6 +20987,7 @@ class SceneGlobeOverlaySettings(ISceneGlobeOverlaySettings):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneGlobeOverlaySettings, [ISceneGlobeOverlaySettings])
 
 agcls.AgClassCatalog.add_catalog_entry("{AA19929F-DE78-4CDB-90C5-12D89532D4C4}", SceneGlobeOverlaySettings)
@@ -20421,6 +20997,7 @@ class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayCollectionBase."""
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20429,6 +21006,7 @@ class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayCollectionBase, [IScreenOverlayCollectionBase])
 
 agcls.AgClassCatalog.add_catalog_entry("{B1764146-8986-45CB-A5B9-426988A9F289}", ScreenOverlayCollectionBase)
@@ -20438,6 +21016,7 @@ class Texture2DFactory(ITexture2DFactory):
     """A factory for creating texture 2d objects from various sources."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Texture2DFactory."""
         ITexture2DFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20446,6 +21025,7 @@ class Texture2DFactory(ITexture2DFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Texture2DFactory, [ITexture2DFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{1BA44C8C-0CFB-4A7C-B687-788BD4D49AB2}", Texture2DFactory)
@@ -20455,6 +21035,7 @@ class VisualEffects(IVisualEffects):
     """Control various post processing effects that can be applied to the scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VisualEffects."""
         IVisualEffects.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20463,6 +21044,7 @@ class VisualEffects(IVisualEffects):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VisualEffects, [IVisualEffects])
 
 agcls.AgClassCatalog.add_catalog_entry("{901f26d9-644b-4513-a3e9-d4d1f4c3df48}", VisualEffects)
@@ -20472,6 +21054,7 @@ class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AltitudeDisplayCondition."""
         IAltitudeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20482,6 +21065,7 @@ class AltitudeDisplayCondition(IAltitudeDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeDisplayCondition, [IAltitudeDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{E5AFCA9A-2850-44C4-BE11-930BB559872B}", AltitudeDisplayCondition)
@@ -20491,6 +21075,7 @@ class AxesPrimitive(IAxesPrimitive, IPrimitive):
     """Render an axes in the 3D scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AxesPrimitive."""
         IAxesPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20501,6 +21086,7 @@ class AxesPrimitive(IAxesPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AxesPrimitive, [IAxesPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{AE8A4146-1A03-4D94-95E4-4D1C67D5501F}", AxesPrimitive)
@@ -20510,6 +21096,7 @@ class Camera(ICamera):
     """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Camera."""
         ICamera.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20518,6 +21105,7 @@ class Camera(ICamera):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Camera, [ICamera])
 
 agcls.AgClassCatalog.add_catalog_entry("{B11DEE46-76FD-46E6-9476-AEA896C1E2AF}", Camera)
@@ -20527,6 +21115,7 @@ class CentralBodyGraphics(ICentralBodyGraphics):
     """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CentralBodyGraphics."""
         ICentralBodyGraphics.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20535,6 +21124,7 @@ class CentralBodyGraphics(ICentralBodyGraphics):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CentralBodyGraphics, [ICentralBodyGraphics])
 
 agcls.AgClassCatalog.add_catalog_entry("{47858749-2CF1-48AF-ADCA-426C6E87B7EB}", CentralBodyGraphics)
@@ -20544,6 +21134,7 @@ class Clouds(IClouds):
     """Load, show and hide clouds in the scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Clouds."""
         IClouds.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20552,6 +21143,7 @@ class Clouds(IClouds):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Clouds, [IClouds])
 
 agcls.AgClassCatalog.add_catalog_entry("{a98d31c3-daf0-40dd-ba64-0ceb18f0e522}", Clouds)
@@ -20561,6 +21153,7 @@ class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CompositeDisplayCondition."""
         ICompositeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20571,6 +21164,7 @@ class CompositeDisplayCondition(ICompositeDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositeDisplayCondition, [ICompositeDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{B59D2316-7712-462C-BB2F-3C882D18388E}", CompositeDisplayCondition)
@@ -20580,6 +21174,7 @@ class CompositePrimitive(ICompositePrimitive, IPrimitive):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CompositePrimitive."""
         ICompositePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20590,6 +21185,7 @@ class CompositePrimitive(ICompositePrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositePrimitive, [ICompositePrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{8F6F69B8-80C9-40F2-BC5B-BCEE656C8917}", CompositePrimitive)
@@ -20599,6 +21195,7 @@ class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConstantDisplayCondition."""
         IConstantDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20609,6 +21206,7 @@ class ConstantDisplayCondition(IConstantDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConstantDisplayCondition, [IConstantDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{C21814A8-7591-412D-9390-A6CE73468CA3}", ConstantDisplayCondition)
@@ -20618,6 +21216,7 @@ class DisplayCondition(IDisplayCondition):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DisplayCondition."""
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20626,6 +21225,7 @@ class DisplayCondition(IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DisplayCondition, [IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CEC5D5EB-5AF8-4CCD-BD3D-EFF95DC04F26}", DisplayCondition)
@@ -20635,6 +21235,7 @@ class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceDisplayCondition."""
         IDistanceDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20645,6 +21246,7 @@ class DistanceDisplayCondition(IDistanceDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceDisplayCondition, [IDistanceDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{0B5589C8-51E7-4191-BD54-8326BFF56CE2}", DistanceDisplayCondition)
@@ -20654,6 +21256,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondi
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToGlobeOverlayDisplayCondition."""
         IDistanceToGlobeOverlayDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20664,6 +21267,7 @@ class DistanceToGlobeOverlayDisplayCondition(IDistanceToGlobeOverlayDisplayCondi
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayCondition, [IDistanceToGlobeOverlayDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{E9C27719-711F-4E36-9FF9-DEF15D35581E}", DistanceToGlobeOverlayDisplayCondition)
@@ -20673,6 +21277,7 @@ class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, ID
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToPositionDisplayCondition."""
         IDistanceToPositionDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20683,6 +21288,7 @@ class DistanceToPositionDisplayCondition(IDistanceToPositionDisplayCondition, ID
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayCondition, [IDistanceToPositionDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{ACD2A88B-E930-4994-AA0A-D37AEDB51182}", DistanceToPositionDisplayCondition)
@@ -20692,6 +21298,7 @@ class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, 
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToPrimitiveDisplayCondition."""
         IDistanceToPrimitiveDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20702,6 +21309,7 @@ class DistanceToPrimitiveDisplayCondition(IDistanceToPrimitiveDisplayCondition, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayCondition, [IDistanceToPrimitiveDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{90A5B7AD-6FE1-4387-96B1-66A17A54FDA2}", DistanceToPrimitiveDisplayCondition)
@@ -20711,6 +21319,7 @@ class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPat
     """path primitive update policy that removes points from remove location after a given duration."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DurationPathPrimitiveUpdatePolicy."""
         IDurationPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20721,6 +21330,7 @@ class DurationPathPrimitiveUpdatePolicy(IDurationPathPrimitiveUpdatePolicy, IPat
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicy, [IDurationPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
 
 agcls.AgClassCatalog.add_catalog_entry("{8628CCF8-7803-4528-B013-66116C059454}", DurationPathPrimitiveUpdatePolicy)
@@ -20730,6 +21340,7 @@ class FrameRate(IFrameRate):
     """Keeps track of how many times the scenes are rendered per second."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FrameRate."""
         IFrameRate.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20738,6 +21349,7 @@ class FrameRate(IFrameRate):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FrameRate, [IFrameRate])
 
 agcls.AgClassCatalog.add_catalog_entry("{EB82B58B-6E32-4E91-92A8-E8008A5C4B77}", FrameRate)
@@ -20747,6 +21359,7 @@ class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
     """A globe overlay that shows an image."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GlobeImageOverlay."""
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20757,6 +21370,7 @@ class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlay, [IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{5316E632-3018-4625-866F-E56F29FFBC05}", GlobeImageOverlay)
@@ -20766,6 +21380,7 @@ class GraphicsFont(IGraphicsFont):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GraphicsFont."""
         IGraphicsFont.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20774,6 +21389,7 @@ class GraphicsFont(IGraphicsFont):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GraphicsFont, [IGraphicsFont])
 
 agcls.AgClassCatalog.add_catalog_entry("{C48AD7DF-40C9-4A57-86CD-E7B0E4BFCF52}", GraphicsFont)
@@ -20783,6 +21399,7 @@ class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GreatArcInterpolator."""
         IGreatArcInterpolator.__init__(self, sourceObject)
         IPositionInterpolator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20793,6 +21410,7 @@ class GreatArcInterpolator(IGreatArcInterpolator, IPositionInterpolator):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GreatArcInterpolator, [IGreatArcInterpolator, IPositionInterpolator])
 
 agcls.AgClassCatalog.add_catalog_entry("{A91AC76D-7326-4103-996E-DE20EB349A61}", GreatArcInterpolator)
@@ -20802,6 +21420,7 @@ class ImageCollection(IImageCollection):
     """A collection of globe image overlay objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ImageCollection."""
         IImageCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20810,6 +21429,7 @@ class ImageCollection(IImageCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ImageCollection, [IImageCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{26812ED6-0AB2-4554-A01F-A1E52687763D}", ImageCollection)
@@ -20819,6 +21439,7 @@ class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromLuminanceFilter."""
         IAlphaFromLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20829,6 +21450,7 @@ class AlphaFromLuminanceFilter(IAlphaFromLuminanceFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilter, [IAlphaFromLuminanceFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{7D660FC7-F1D2-4189-A5C7-B2BFD97E1B4E}", AlphaFromLuminanceFilter)
@@ -20838,6 +21460,7 @@ class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromPixelFilter."""
         IAlphaFromPixelFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20848,6 +21471,7 @@ class AlphaFromPixelFilter(IAlphaFromPixelFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromPixelFilter, [IAlphaFromPixelFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{B2D2B3A3-9FA8-4B58-9CA5-89705663DEDB}", AlphaFromPixelFilter)
@@ -20857,6 +21481,7 @@ class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromRasterFilter."""
         IAlphaFromRasterFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20867,6 +21492,7 @@ class AlphaFromRasterFilter(IAlphaFromRasterFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromRasterFilter, [IAlphaFromRasterFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{5E83A2AD-0A40-4CFC-823A-311AC8B034B3}", AlphaFromRasterFilter)
@@ -20876,6 +21502,7 @@ class BandExtractFilter(IBandExtractFilter, IRasterFilter):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BandExtractFilter."""
         IBandExtractFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20886,6 +21513,7 @@ class BandExtractFilter(IBandExtractFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandExtractFilter, [IBandExtractFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{DC9176BE-3DBD-40D1-A0BC-CEDE39C747E2}", BandExtractFilter)
@@ -20895,6 +21523,7 @@ class BandOrderFilter(IBandOrderFilter, IRasterFilter):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BandOrderFilter."""
         IBandOrderFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20905,6 +21534,7 @@ class BandOrderFilter(IBandOrderFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandOrderFilter, [IBandOrderFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{91749CD4-8503-4C71-AD42-DB5AAF1BC240}", BandOrderFilter)
@@ -20914,6 +21544,7 @@ class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BlurFilter."""
         IBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -20926,6 +21557,7 @@ class BlurFilter(IBlurFilter, IConvolutionFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BlurFilter, [IBlurFilter, IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{A3E1128F-DE2D-4A57-AC68-C7C938480BF2}", BlurFilter)
@@ -20935,6 +21567,7 @@ class BrightnessFilter(IBrightnessFilter, IRasterFilter):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BrightnessFilter."""
         IBrightnessFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20945,6 +21578,7 @@ class BrightnessFilter(IBrightnessFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BrightnessFilter, [IBrightnessFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{E6FF496E-64E8-41CA-BED7-8FEBDDB6B9C9}", BrightnessFilter)
@@ -20954,6 +21588,7 @@ class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
     """Extract a luminance band derived from the color bands of the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ColorToLuminanceFilter."""
         IColorToLuminanceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20964,6 +21599,7 @@ class ColorToLuminanceFilter(IColorToLuminanceFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ColorToLuminanceFilter, [IColorToLuminanceFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{BE472786-A17B-490A-8DE7-4831AC3FEEDE}", ColorToLuminanceFilter)
@@ -20973,6 +21609,7 @@ class ContrastFilter(IContrastFilter, IRasterFilter):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ContrastFilter."""
         IContrastFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20983,6 +21620,7 @@ class ContrastFilter(IContrastFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ContrastFilter, [IContrastFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{20FA2A78-30D4-4DDE-84D7-EBF001730166}", ContrastFilter)
@@ -20992,6 +21630,7 @@ class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConvolutionFilter."""
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21002,6 +21641,7 @@ class ConvolutionFilter(IConvolutionFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConvolutionFilter, [IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{113D939E-C5B0-49BD-A38B-53DD961CAC5B}", ConvolutionFilter)
@@ -21011,6 +21651,7 @@ class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to detect edges in the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EdgeDetectFilter."""
         IEdgeDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -21023,6 +21664,7 @@ class EdgeDetectFilter(IEdgeDetectFilter, IConvolutionFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EdgeDetectFilter, [IEdgeDetectFilter, IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{04E73117-38A1-4EE3-854D-253934DE9B54}", EdgeDetectFilter)
@@ -21032,6 +21674,7 @@ class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FilteringRasterStream."""
         IFilteringRasterStream.__init__(self, sourceObject)
         IRasterStream.__init__(self, sourceObject)
         IRaster.__init__(self, sourceObject)
@@ -21044,6 +21687,7 @@ class FilteringRasterStream(IFilteringRasterStream, IRasterStream, IRaster):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FilteringRasterStream, [IFilteringRasterStream, IRasterStream, IRaster])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D59ED29-9EF8-4D85-BE0F-9E244736C814}", FilteringRasterStream)
@@ -21053,6 +21697,7 @@ class FlipFilter(IFlipFilter, IRasterFilter):
     """Flips the source raster along the given flip axis."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FlipFilter."""
         IFlipFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21063,6 +21708,7 @@ class FlipFilter(IFlipFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FlipFilter, [IFlipFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{08E0C45D-A187-4B74-93AE-BF29B39D50C3}", FlipFilter)
@@ -21072,6 +21718,7 @@ class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GammaCorrectionFilter."""
         IGammaCorrectionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21082,6 +21729,7 @@ class GammaCorrectionFilter(IGammaCorrectionFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GammaCorrectionFilter, [IGammaCorrectionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{A560ACC2-4642-44FD-A5FC-BD3AB7A0FC2F}", GammaCorrectionFilter)
@@ -21091,6 +21739,7 @@ class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter)
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GaussianBlurFilter."""
         IGaussianBlurFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -21103,6 +21752,7 @@ class GaussianBlurFilter(IGaussianBlurFilter, IConvolutionFilter, IRasterFilter)
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GaussianBlurFilter, [IGaussianBlurFilter, IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{BCEE5F1C-66D8-48C6-8485-8435260855DE}", GaussianBlurFilter)
@@ -21112,6 +21762,7 @@ class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFil
     """Apply a convolution filter to detect gradients in the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GradientDetectFilter."""
         IGradientDetectFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -21124,6 +21775,7 @@ class GradientDetectFilter(IGradientDetectFilter, IConvolutionFilter, IRasterFil
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GradientDetectFilter, [IGradientDetectFilter, IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{7F410D2F-C209-4F22-A906-5F8BA0C8CA40}", GradientDetectFilter)
@@ -21133,6 +21785,7 @@ class LevelsFilter(ILevelsFilter, IRasterFilter):
     """Adjusts the band levels of the source raster linearly."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LevelsFilter."""
         ILevelsFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21143,6 +21796,7 @@ class LevelsFilter(ILevelsFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelsFilter, [ILevelsFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{C21CE0FC-3E94-47C9-9E21-C8478A46E75C}", LevelsFilter)
@@ -21152,6 +21806,7 @@ class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivat
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectionRasterStreamPluginActivator."""
         IProjectionRasterStreamPluginActivator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21160,6 +21815,7 @@ class ProjectionRasterStreamPluginActivator(IProjectionRasterStreamPluginActivat
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivator, [IProjectionRasterStreamPluginActivator])
 
 agcls.AgClassCatalog.add_catalog_entry("{5365D424-8630-4D9D-B209-F946D5116080}", ProjectionRasterStreamPluginActivator)
@@ -21169,6 +21825,7 @@ class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
     """A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectionRasterStreamPluginProxy."""
         IProjectionRasterStreamPluginProxy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21177,6 +21834,7 @@ class ProjectionRasterStreamPluginProxy(IProjectionRasterStreamPluginProxy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginProxy, [IProjectionRasterStreamPluginProxy])
 
 agcls.AgClassCatalog.add_catalog_entry("{82E6B1F4-DC2D-40C3-8251-8207F218B820}", ProjectionRasterStreamPluginProxy)
@@ -21186,6 +21844,7 @@ class Raster(IRaster):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Raster."""
         IRaster.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21194,6 +21853,7 @@ class Raster(IRaster):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Raster, [IRaster])
 
 agcls.AgClassCatalog.add_catalog_entry("{50AB6A3A-54CA-4619-9B99-FB7BD497EA92}", Raster)
@@ -21203,6 +21863,7 @@ class RasterAttributes(IRasterAttributes):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterAttributes."""
         IRasterAttributes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21211,6 +21872,7 @@ class RasterAttributes(IRasterAttributes):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterAttributes, [IRasterAttributes])
 
 agcls.AgClassCatalog.add_catalog_entry("{32DEB10A-1039-43AF-AA36-BA94F8CC8531}", RasterAttributes)
@@ -21220,6 +21882,7 @@ class RasterFilter(IRasterFilter):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterFilter."""
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21228,6 +21891,7 @@ class RasterFilter(IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterFilter, [IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{0345FD5E-C6A6-42D3-AEA9-57A7444BFF42}", RasterFilter)
@@ -21237,6 +21901,7 @@ class RasterStream(IRasterStream, IRaster):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterStream."""
         IRasterStream.__init__(self, sourceObject)
         IRaster.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21247,6 +21912,7 @@ class RasterStream(IRasterStream, IRaster):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterStream, [IRasterStream, IRaster])
 
 agcls.AgClassCatalog.add_catalog_entry("{CAFADC5E-933C-46AC-BD09-18B089E86346}", RasterStream)
@@ -21256,6 +21922,7 @@ class RotateFilter(IRotateFilter, IRasterFilter):
     """Rotate the source raster clockwise by the specified angle."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotateFilter."""
         IRotateFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21266,6 +21933,7 @@ class RotateFilter(IRotateFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotateFilter, [IRotateFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{AEDFA944-E740-4D19-9819-CB179C43E060}", RotateFilter)
@@ -21275,6 +21943,7 @@ class SequenceFilter(ISequenceFilter, IRasterFilter):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SequenceFilter."""
         ISequenceFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21285,6 +21954,7 @@ class SequenceFilter(ISequenceFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SequenceFilter, [ISequenceFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{37330024-90FE-47DD-9548-C13089A085FC}", SequenceFilter)
@@ -21294,6 +21964,7 @@ class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
     """Apply a convolution filter to increase the sharpness of the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SharpenFilter."""
         ISharpenFilter.__init__(self, sourceObject)
         IConvolutionFilter.__init__(self, sourceObject)
         IRasterFilter.__init__(self, sourceObject)
@@ -21306,6 +21977,7 @@ class SharpenFilter(ISharpenFilter, IConvolutionFilter, IRasterFilter):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SharpenFilter, [ISharpenFilter, IConvolutionFilter, IRasterFilter])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F6FC309-D30E-41AD-A7B6-E70039313B6E}", SharpenFilter)
@@ -21315,6 +21987,7 @@ class VideoStream(IVideoStream, IRasterStream, IRaster):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VideoStream."""
         IVideoStream.__init__(self, sourceObject)
         IRasterStream.__init__(self, sourceObject)
         IRaster.__init__(self, sourceObject)
@@ -21327,6 +22000,7 @@ class VideoStream(IVideoStream, IRasterStream, IRaster):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VideoStream, [IVideoStream, IRasterStream, IRaster])
 
 agcls.AgClassCatalog.add_catalog_entry("{80D82D96-D87B-4910-B8BB-1FBE9E121A4F}", VideoStream)
@@ -21336,6 +22010,7 @@ class KmlContainer(IKmlContainer, IKmlFeature):
     """A KmlContainer contains a collection of children kml features."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlContainer."""
         IKmlContainer.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21346,6 +22021,7 @@ class KmlContainer(IKmlContainer, IKmlFeature):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlContainer, [IKmlContainer, IKmlFeature])
 
 agcls.AgClassCatalog.add_catalog_entry("{24AA1395-417E-4845-A9D2-61C4D59BCABF}", KmlContainer)
@@ -21355,6 +22031,7 @@ class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
     """A KML document."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlDocument."""
         IKmlDocument.__init__(self, sourceObject)
         IKmlContainer.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
@@ -21367,6 +22044,7 @@ class KmlDocument(IKmlDocument, IKmlContainer, IKmlFeature):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlDocument, [IKmlDocument, IKmlContainer, IKmlFeature])
 
 agcls.AgClassCatalog.add_catalog_entry("{130689C0-43C6-4C34-9AC7-252E155E9F66}", KmlDocument)
@@ -21376,6 +22054,7 @@ class KmlFeature(IKmlFeature):
     """A KML feature."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlFeature."""
         IKmlFeature.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21384,6 +22063,7 @@ class KmlFeature(IKmlFeature):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFeature, [IKmlFeature])
 
 agcls.AgClassCatalog.add_catalog_entry("{20C290F8-9102-4960-AD19-F5EFC321F796}", KmlFeature)
@@ -21393,6 +22073,7 @@ class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
     """A KML folder."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlFolder."""
         IKmlFolder.__init__(self, sourceObject)
         IKmlContainer.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
@@ -21405,6 +22086,7 @@ class KmlFolder(IKmlFolder, IKmlContainer, IKmlFeature):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlFolder, [IKmlFolder, IKmlContainer, IKmlFeature])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7BE1A8D-28BF-4298-AE7D-656B40FFB3D0}", KmlFolder)
@@ -21414,6 +22096,7 @@ class KmlGraphics(IKmlGraphics):
     """Provide loading and unloading of kml documents for a particular central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlGraphics."""
         IKmlGraphics.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21422,6 +22105,7 @@ class KmlGraphics(IKmlGraphics):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlGraphics, [IKmlGraphics])
 
 agcls.AgClassCatalog.add_catalog_entry("{A094F5DE-8BF2-4079-8009-0450D2E4EF11}", KmlGraphics)
@@ -21431,6 +22115,7 @@ class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
     """A KML network link."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type KmlNetworkLink."""
         IKmlNetworkLink.__init__(self, sourceObject)
         IKmlFeature.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21441,15 +22126,17 @@ class KmlNetworkLink(IKmlNetworkLink, IKmlFeature):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, KmlNetworkLink, [IKmlNetworkLink, IKmlFeature])
 
 agcls.AgClassCatalog.add_catalog_entry("{BD2ECA7D-919B-4C64-8AA1-E503A80EF3EA}", KmlNetworkLink)
 agcls.AgTypeNameMap["KmlNetworkLink"] = KmlNetworkLink
 
 class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MarkerBatchPrimitive."""
         IMarkerBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21460,6 +22147,7 @@ class MarkerBatchPrimitive(IMarkerBatchPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitive, [IMarkerBatchPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{C7F4992D-BBE2-4C68-BB4E-51BB8CD2D124}", MarkerBatchPrimitive)
@@ -21469,6 +22157,7 @@ class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParame
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MarkerBatchPrimitiveOptionalParameters."""
         IMarkerBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21477,6 +22166,7 @@ class MarkerBatchPrimitiveOptionalParameters(IMarkerBatchPrimitiveOptionalParame
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParameters, [IMarkerBatchPrimitiveOptionalParameters])
 
 agcls.AgClassCatalog.add_catalog_entry("{24750753-2036-4221-83F0-F9045DCA0A5D}", MarkerBatchPrimitiveOptionalParameters)
@@ -21486,6 +22176,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePoli
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MaximumCountPathPrimitiveUpdatePolicy."""
         IMaximumCountPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
         IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21496,6 +22187,7 @@ class MaximumCountPathPrimitiveUpdatePolicy(IMaximumCountPathPrimitiveUpdatePoli
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicy, [IMaximumCountPathPrimitiveUpdatePolicy, IPathPrimitiveUpdatePolicy])
 
 agcls.AgClassCatalog.add_catalog_entry("{4D41C220-2CE4-4CA1-942A-9AF4F7F34C4A}", MaximumCountPathPrimitiveUpdatePolicy)
@@ -21505,6 +22197,7 @@ class ModelArticulation(IModelArticulation):
     """A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ModelArticulation."""
         IModelArticulation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21513,6 +22206,7 @@ class ModelArticulation(IModelArticulation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelArticulation, [IModelArticulation])
 
 agcls.AgClassCatalog.add_catalog_entry("{A9E72E72-17D6-4D7C-A4EF-5A970232ED93}", ModelArticulation)
@@ -21522,6 +22216,7 @@ class ModelArticulationCollection(IModelArticulationCollection):
     """A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ModelArticulationCollection."""
         IModelArticulationCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21530,6 +22225,7 @@ class ModelArticulationCollection(IModelArticulationCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelArticulationCollection, [IModelArticulationCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{ACC4920A-6D6B-4374-937F-2469F439ABA8}", ModelArticulationCollection)
@@ -21539,6 +22235,7 @@ class ModelPrimitive(IModelPrimitive, IPrimitive):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ModelPrimitive."""
         IModelPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21549,6 +22246,7 @@ class ModelPrimitive(IModelPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelPrimitive, [IModelPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{FD89B6D8-F106-4929-889A-3304A9CDBE97}", ModelPrimitive)
@@ -21558,6 +22256,7 @@ class ModelTransformation(IModelTransformation):
     """A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ModelTransformation."""
         IModelTransformation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21566,6 +22265,7 @@ class ModelTransformation(IModelTransformation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelTransformation, [IModelTransformation])
 
 agcls.AgClassCatalog.add_catalog_entry("{BC56F0E9-D0F3-4C3E-9AAA-AB5AB255927C}", ModelTransformation)
@@ -21575,6 +22275,7 @@ class Overlay(IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Overlay."""
         IOverlay.__init__(self, sourceObject)
         IScreenOverlayContainer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21585,6 +22286,7 @@ class Overlay(IOverlay, IScreenOverlayContainer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Overlay, [IOverlay, IScreenOverlayContainer])
 
 agcls.AgClassCatalog.add_catalog_entry("{6D9C8A3B-0EC8-428F-BC05-1F30315E92DC}", Overlay)
@@ -21594,6 +22296,7 @@ class PathPrimitive(IPathPrimitive, IPrimitive):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPrimitive."""
         IPathPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21604,6 +22307,7 @@ class PathPrimitive(IPathPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitive, [IPathPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{AFDCAA13-BE39-4E17-9AC5-06C08933A910}", PathPrimitive)
@@ -21613,6 +22317,7 @@ class PickResult(IPickResult):
     """A single result from Pick."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PickResult."""
         IPickResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21621,6 +22326,7 @@ class PickResult(IPickResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PickResult, [IPickResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{E007C42E-13D7-4006-992A-B996CEA3BE49}", PickResult)
@@ -21630,6 +22336,7 @@ class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PixelSizeDisplayCondition."""
         IPixelSizeDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21640,15 +22347,17 @@ class PixelSizeDisplayCondition(IPixelSizeDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PixelSizeDisplayCondition, [IPixelSizeDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{26B1DA4F-DA20-4E44-A98D-D54CC67821B8}", PixelSizeDisplayCondition)
 agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PointBatchPrimitive."""
         IPointBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21659,6 +22368,7 @@ class PointBatchPrimitive(IPointBatchPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitive, [IPointBatchPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{D8019323-F9C3-4238-BB4C-CD917C83E0F6}", PointBatchPrimitive)
@@ -21668,6 +22378,7 @@ class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParamete
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PointBatchPrimitiveOptionalParameters."""
         IPointBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21676,6 +22387,7 @@ class PointBatchPrimitiveOptionalParameters(IPointBatchPrimitiveOptionalParamete
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParameters, [IPointBatchPrimitiveOptionalParameters])
 
 agcls.AgClassCatalog.add_catalog_entry("{944f2ade-d0e5-4896-a1e2-28b1c9e74f08}", PointBatchPrimitiveOptionalParameters)
@@ -21685,6 +22397,7 @@ class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PolylinePrimitive."""
         IPolylinePrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21695,6 +22408,7 @@ class PolylinePrimitive(IPolylinePrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitive, [IPolylinePrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{F6E930C1-39F1-471B-A6F3-AFE651B00A95}", PolylinePrimitive)
@@ -21704,6 +22418,7 @@ class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PolylinePrimitiveOptionalParameters."""
         IPolylinePrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21712,6 +22427,7 @@ class PolylinePrimitiveOptionalParameters(IPolylinePrimitiveOptionalParameters):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParameters, [IPolylinePrimitiveOptionalParameters])
 
 agcls.AgClassCatalog.add_catalog_entry("{eee51ba6-73ae-4626-9fac-62a0f82cb3d1}", PolylinePrimitiveOptionalParameters)
@@ -21721,6 +22437,7 @@ class PositionInterpolator(IPositionInterpolator):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PositionInterpolator."""
         IPositionInterpolator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21729,6 +22446,7 @@ class PositionInterpolator(IPositionInterpolator):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PositionInterpolator, [IPositionInterpolator])
 
 agcls.AgClassCatalog.add_catalog_entry("{3D14E044-4128-4F60-9F08-797AA09205B5}", PositionInterpolator)
@@ -21738,6 +22456,7 @@ class Primitive(IPrimitive):
     """Primitives represent objects rendered in the 3D scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Primitive."""
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21746,6 +22465,7 @@ class Primitive(IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Primitive, [IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{0BE64D00-03FF-41C1-8F8E-DCDB5D260FCE}", Primitive)
@@ -21755,6 +22475,7 @@ class PrimitiveManager(IPrimitiveManager):
     """The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PrimitiveManager."""
         IPrimitiveManager.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21763,6 +22484,7 @@ class PrimitiveManager(IPrimitiveManager):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PrimitiveManager, [IPrimitiveManager])
 
 agcls.AgClassCatalog.add_catalog_entry("{29884E1F-F498-4FED-9B83-AFC57A4BB09B}", PrimitiveManager)
@@ -21772,6 +22494,7 @@ class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlo
     """A globe image overlay for handling rasters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterImageGlobeOverlay."""
         IRasterImageGlobeOverlay.__init__(self, sourceObject)
         IGlobeImageOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
@@ -21784,6 +22507,7 @@ class RasterImageGlobeOverlay(IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlay, [IRasterImageGlobeOverlay, IGlobeImageOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{49EC3E96-9494-4D95-A9C2-C722C46197FC}", RasterImageGlobeOverlay)
@@ -21793,6 +22517,7 @@ class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RhumbLineInterpolator."""
         IRhumbLineInterpolator.__init__(self, sourceObject)
         IPositionInterpolator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21803,6 +22528,7 @@ class RhumbLineInterpolator(IRhumbLineInterpolator, IPositionInterpolator):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RhumbLineInterpolator, [IRhumbLineInterpolator, IPositionInterpolator])
 
 agcls.AgClassCatalog.add_catalog_entry("{E791A602-85BA-4413-9C8D-479D1692254C}", RhumbLineInterpolator)
@@ -21812,6 +22538,7 @@ class Scene(IScene):
     """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Scene."""
         IScene.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21820,6 +22547,7 @@ class Scene(IScene):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Scene, [IScene])
 
 agcls.AgClassCatalog.add_catalog_entry("{E664A9F1-8A89-4B4C-9AA2-E5BEB603AF3C}", Scene)
@@ -21829,6 +22557,7 @@ class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneDisplayCondition."""
         ISceneDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21839,6 +22568,7 @@ class SceneDisplayCondition(ISceneDisplayCondition, IDisplayCondition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneDisplayCondition, [ISceneDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{8074B463-1740-4C65-870C-E231589EE5CE}", SceneDisplayCondition)
@@ -21848,6 +22578,7 @@ class SceneManager(ISceneManager):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneManager."""
         ISceneManager.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21856,6 +22587,7 @@ class SceneManager(ISceneManager):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneManager, [ISceneManager])
 
 agcls.AgClassCatalog.add_catalog_entry("{B671433F-CA75-4628-B84D-4878A247AFC3}", SceneManager)
@@ -21865,6 +22597,7 @@ class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlay."""
         IScreenOverlay.__init__(self, sourceObject)
         IOverlay.__init__(self, sourceObject)
         IScreenOverlayContainer.__init__(self, sourceObject)
@@ -21877,6 +22610,7 @@ class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlay, [IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
 agcls.AgClassCatalog.add_catalog_entry("{B50A73BA-5299-4746-B30B-EEB80699546E}", ScreenOverlay)
@@ -21886,6 +22620,7 @@ class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollection
     """A collection of screen overlays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayCollection."""
         IScreenOverlayCollection.__init__(self, sourceObject)
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21896,6 +22631,7 @@ class ScreenOverlayCollection(IScreenOverlayCollection, IScreenOverlayCollection
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayCollection, [IScreenOverlayCollection, IScreenOverlayCollectionBase])
 
 agcls.AgClassCatalog.add_catalog_entry("{F75B7693-A40E-4B54-AB6F-EE8F974D2E6C}", ScreenOverlayCollection)
@@ -21905,6 +22641,7 @@ class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, 
     """The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayManager."""
         IScreenOverlayManager.__init__(self, sourceObject)
         IScreenOverlayCollectionBase.__init__(self, sourceObject)
         IScreenOverlayContainer.__init__(self, sourceObject)
@@ -21917,6 +22654,7 @@ class ScreenOverlayManager(IScreenOverlayManager, IScreenOverlayCollectionBase, 
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayManager, [IScreenOverlayManager, IScreenOverlayCollectionBase, IScreenOverlayContainer])
 
 agcls.AgClassCatalog.add_catalog_entry("{9853EC1E-531C-4494-B308-BC6644CF672C}", ScreenOverlayManager)
@@ -21926,6 +22664,7 @@ class ScreenOverlayPickResult(IScreenOverlayPickResult):
     """Describes a picked screen overlay as a result of a call to pick screen overlays."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayPickResult."""
         IScreenOverlayPickResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21934,6 +22673,7 @@ class ScreenOverlayPickResult(IScreenOverlayPickResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayPickResult, [IScreenOverlayPickResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{6E7F318E-F7E5-4B19-A532-50EC60EF09FA}", ScreenOverlayPickResult)
@@ -21943,6 +22683,7 @@ class SolidPrimitive(ISolidPrimitive, IPrimitive):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SolidPrimitive."""
         ISolidPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21953,6 +22694,7 @@ class SolidPrimitive(ISolidPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidPrimitive, [ISolidPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{12343DC0-99FF-48B6-9D93-9B7A2CE34DB9}", SolidPrimitive)
@@ -21962,6 +22704,7 @@ class Stereoscopic(IStereoscopic):
     """Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Stereoscopic."""
         IStereoscopic.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21970,6 +22713,7 @@ class Stereoscopic(IStereoscopic):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Stereoscopic, [IStereoscopic])
 
 agcls.AgClassCatalog.add_catalog_entry("{5FDA997C-0450-4574-BFD9-D803A3AA6167}", Stereoscopic)
@@ -21979,6 +22723,7 @@ class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceMeshPrimitive."""
         ISurfaceMeshPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21989,6 +22734,7 @@ class SurfaceMeshPrimitive(ISurfaceMeshPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitive, [ISurfaceMeshPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{C4B2DB74-EBA8-4B18-8BE4-372FCA665F5D}", SurfaceMeshPrimitive)
@@ -21998,6 +22744,7 @@ class TerrainOverlayCollection(ITerrainOverlayCollection):
     """A collection of terrain overlay objects."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TerrainOverlayCollection."""
         ITerrainOverlayCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22006,6 +22753,7 @@ class TerrainOverlayCollection(ITerrainOverlayCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayCollection, [ITerrainOverlayCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{168D1247-7208-45C3-AF31-7E4009DE2EA7}", TerrainOverlayCollection)
@@ -22015,6 +22763,7 @@ class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
     """A globe overlay which shows terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TerrainOverlay."""
         ITerrainOverlay.__init__(self, sourceObject)
         IGlobeOverlay.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -22025,15 +22774,17 @@ class TerrainOverlay(ITerrainOverlay, IGlobeOverlay):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlay, [ITerrainOverlay, IGlobeOverlay])
 
 agcls.AgClassCatalog.add_catalog_entry("{C1640FF1-07BB-4584-940C-50BDD48CFE14}", TerrainOverlay)
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextBatchPrimitive."""
         ITextBatchPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -22044,6 +22795,7 @@ class TextBatchPrimitive(ITextBatchPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitive, [ITextBatchPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{EEE49615-F2F3-4810-B877-4C7729F56DD1}", TextBatchPrimitive)
@@ -22053,6 +22805,7 @@ class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters
     """Optional per-string and per-batch parameters for text batch primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextBatchPrimitiveOptionalParameters."""
         ITextBatchPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22061,6 +22814,7 @@ class TextBatchPrimitiveOptionalParameters(ITextBatchPrimitiveOptionalParameters
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParameters, [ITextBatchPrimitiveOptionalParameters])
 
 agcls.AgClassCatalog.add_catalog_entry("{D68422E0-31FC-4E61-9A7C-6E4BCB261A9D}", TextBatchPrimitiveOptionalParameters)
@@ -22070,6 +22824,7 @@ class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContaine
     """A rectangular overlay that contains text."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextOverlay."""
         ITextOverlay.__init__(self, sourceObject)
         IScreenOverlay.__init__(self, sourceObject)
         IOverlay.__init__(self, sourceObject)
@@ -22084,6 +22839,7 @@ class TextOverlay(ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContaine
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextOverlay, [ITextOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
 agcls.AgClassCatalog.add_catalog_entry("{46BE31F3-1A5B-4B51-AA77-27CCA844F5CD}", TextOverlay)
@@ -22093,6 +22849,7 @@ class TextureMatrix(ITextureMatrix):
     """A 4 by 4 matrix applied to a texture coordinate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureMatrix."""
         ITextureMatrix.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22101,6 +22858,7 @@ class TextureMatrix(ITextureMatrix):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureMatrix, [ITextureMatrix])
 
 agcls.AgClassCatalog.add_catalog_entry("{E05D3E06-18C5-49DE-B9AC-B2245C83E62B}", TextureMatrix)
@@ -22110,6 +22868,7 @@ class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScr
     """A rectangular overlay that can be assigned a texture."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureScreenOverlay."""
         ITextureScreenOverlay.__init__(self, sourceObject)
         IScreenOverlay.__init__(self, sourceObject)
         IOverlay.__init__(self, sourceObject)
@@ -22124,6 +22883,7 @@ class TextureScreenOverlay(ITextureScreenOverlay, IScreenOverlay, IOverlay, IScr
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureScreenOverlay, [ITextureScreenOverlay, IScreenOverlay, IOverlay, IScreenOverlayContainer])
 
 agcls.AgClassCatalog.add_catalog_entry("{51136098-508C-4DD3-B39C-D342235E58BD}", TextureScreenOverlay)
@@ -22133,6 +22893,7 @@ class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondit
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeIntervalDisplayCondition."""
         ITimeIntervalDisplayCondition.__init__(self, sourceObject)
         IDisplayCondition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -22143,6 +22904,7 @@ class TimeIntervalDisplayCondition(ITimeIntervalDisplayCondition, IDisplayCondit
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeIntervalDisplayCondition, [ITimeIntervalDisplayCondition, IDisplayCondition])
 
 agcls.AgClassCatalog.add_catalog_entry("{256AACC3-3E56-4BA6-80F9-15BD968C3863}", TimeIntervalDisplayCondition)
@@ -22152,6 +22914,7 @@ class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TriangleMeshPrimitive."""
         ITriangleMeshPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -22162,6 +22925,7 @@ class TriangleMeshPrimitive(ITriangleMeshPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitive, [ITriangleMeshPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{DA3D4743-D0D9-49B8-8037-3DDC3075170E}", TriangleMeshPrimitive)
@@ -22171,6 +22935,7 @@ class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalPara
     """Optional parameters for triangle mesh primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TriangleMeshPrimitiveOptionalParameters."""
         ITriangleMeshPrimitiveOptionalParameters.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22179,6 +22944,7 @@ class TriangleMeshPrimitiveOptionalParameters(ITriangleMeshPrimitiveOptionalPara
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParameters, [ITriangleMeshPrimitiveOptionalParameters])
 
 agcls.AgClassCatalog.add_catalog_entry("{07985409-9BA1-406C-8A91-D4E99DDB406F}", TriangleMeshPrimitiveOptionalParameters)
@@ -22188,6 +22954,7 @@ class VectorPrimitive(IVectorPrimitive, IPrimitive):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorPrimitive."""
         IVectorPrimitive.__init__(self, sourceObject)
         IPrimitive.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -22198,6 +22965,7 @@ class VectorPrimitive(IVectorPrimitive, IPrimitive):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorPrimitive, [IVectorPrimitive, IPrimitive])
 
 agcls.AgClassCatalog.add_catalog_entry("{8DE433D5-0E13-44ED-B3CF-DF380B8BEA7D}", VectorPrimitive)
@@ -22207,6 +22975,7 @@ class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
     """Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BoxTriangulatorInitializer."""
         IBoxTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22215,6 +22984,7 @@ class BoxTriangulatorInitializer(IBoxTriangulatorInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BoxTriangulatorInitializer, [IBoxTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{F5AA6E13-2989-46FD-8BA7-341870EE56CB}", BoxTriangulatorInitializer)
@@ -22224,6 +22994,7 @@ class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
     """Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CylinderTriangulatorInitializer."""
         ICylinderTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22232,6 +23003,7 @@ class CylinderTriangulatorInitializer(ICylinderTriangulatorInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CylinderTriangulatorInitializer, [ICylinderTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{351F63E3-5430-4B7C-8811-1353D7FDBA79}", CylinderTriangulatorInitializer)
@@ -22241,6 +23013,7 @@ class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
     """Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EllipsoidTriangulatorInitializer."""
         IEllipsoidTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22249,6 +23022,7 @@ class EllipsoidTriangulatorInitializer(IEllipsoidTriangulatorInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EllipsoidTriangulatorInitializer, [IEllipsoidTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{DEBC2954-C0E9-4562-8AD6-A93E7EDD3E82}", EllipsoidTriangulatorInitializer)
@@ -22258,6 +23032,7 @@ class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorIniti
     """Triangulates a polyline into an extrusion with bottom and top boundaries."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExtrudedPolylineTriangulatorInitializer."""
         IExtrudedPolylineTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22266,6 +23041,7 @@ class ExtrudedPolylineTriangulatorInitializer(IExtrudedPolylineTriangulatorIniti
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExtrudedPolylineTriangulatorInitializer, [IExtrudedPolylineTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{9DD61791-420A-401D-8C10-251999CA274B}", ExtrudedPolylineTriangulatorInitializer)
@@ -22275,6 +23051,7 @@ class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer
     """Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceExtentTriangulatorInitializer."""
         ISurfaceExtentTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22283,6 +23060,7 @@ class SurfaceExtentTriangulatorInitializer(ISurfaceExtentTriangulatorInitializer
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceExtentTriangulatorInitializer, [ISurfaceExtentTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{F86CAF5F-4B95-4CD0-9E8A-7C04AF8B7E9B}", SurfaceExtentTriangulatorInitializer)
@@ -22292,6 +23070,7 @@ class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializ
     """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfacePolygonTriangulatorInitializer."""
         ISurfacePolygonTriangulatorInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22300,6 +23079,7 @@ class SurfacePolygonTriangulatorInitializer(ISurfacePolygonTriangulatorInitializ
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfacePolygonTriangulatorInitializer, [ISurfacePolygonTriangulatorInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{FB4D2919-C9DB-4C93-A64B-35A9EB884E6B}", SurfacePolygonTriangulatorInitializer)
@@ -22309,6 +23089,7 @@ class SurfaceShapesInitializer(ISurfaceShapesInitializer):
     """Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceShapesInitializer."""
         ISurfaceShapesInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22317,6 +23098,7 @@ class SurfaceShapesInitializer(ISurfaceShapesInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceShapesInitializer, [ISurfaceShapesInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{2B227F07-5BB0-43E5-9AE2-7288A73856BC}", SurfaceShapesInitializer)
@@ -22326,6 +23108,7 @@ class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
     """A terrain overlay for handling AGI Cesium Terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGICustomTerrainOverlayFactory."""
         IAGICustomTerrainOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22334,6 +23117,7 @@ class AGICustomTerrainOverlayFactory(IAGICustomTerrainOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGICustomTerrainOverlayFactory, [IAGICustomTerrainOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{3B6233AF-5A82-45AB-8371-0C1430585060}", AGICustomTerrainOverlayFactory)
@@ -22343,6 +23127,7 @@ class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory
     """A globe image overlay for handling AGI Processed Image (PDTTX) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIProcessedImageGlobeOverlayFactory."""
         IAGIProcessedImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22351,6 +23136,7 @@ class AGIProcessedImageGlobeOverlayFactory(IAGIProcessedImageGlobeOverlayFactory
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedImageGlobeOverlayFactory, [IAGIProcessedImageGlobeOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{668251C7-6113-4243-B563-8F58F25A9281}", AGIProcessedImageGlobeOverlayFactory)
@@ -22360,6 +23146,7 @@ class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
     """A terrain overlay for handling AGI Processed Terrain (PDTT) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIProcessedTerrainOverlayFactory."""
         IAGIProcessedTerrainOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22368,6 +23155,7 @@ class AGIProcessedTerrainOverlayFactory(IAGIProcessedTerrainOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIProcessedTerrainOverlayFactory, [IAGIProcessedTerrainOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{AD84EB3C-79EC-43F8-B042-0B9180B94D75}", AGIProcessedTerrainOverlayFactory)
@@ -22377,6 +23165,7 @@ class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
     """A globe image overlay for handling ROAM (TXM/TXB) files."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AGIRoamImageGlobeOverlayFactory."""
         IAGIRoamImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22385,6 +23174,7 @@ class AGIRoamImageGlobeOverlayFactory(IAGIRoamImageGlobeOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AGIRoamImageGlobeOverlayFactory, [IAGIRoamImageGlobeOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{BB6E5A38-778A-4E22-91FB-7B4E63F40D6E}", AGIRoamImageGlobeOverlayFactory)
@@ -22394,6 +23184,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPlug
     """The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CustomImageGlobeOverlayPluginActivatorFactory."""
         ICustomImageGlobeOverlayPluginActivatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22402,6 +23193,7 @@ class CustomImageGlobeOverlayPluginActivatorFactory(ICustomImageGlobeOverlayPlug
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CustomImageGlobeOverlayPluginActivatorFactory, [ICustomImageGlobeOverlayPluginActivatorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{2B0D7F25-8A54-40C5-BD10-75EB00788704}", CustomImageGlobeOverlayPluginActivatorFactory)
@@ -22411,6 +23203,7 @@ class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
     """A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GeospatialImageGlobeOverlayFactory."""
         IGeospatialImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22419,6 +23212,7 @@ class GeospatialImageGlobeOverlayFactory(IGeospatialImageGlobeOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GeospatialImageGlobeOverlayFactory, [IGeospatialImageGlobeOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{636E2A9D-49B9-4673-8BD5-4DF7E06A696E}", GeospatialImageGlobeOverlayFactory)
@@ -22428,6 +23222,7 @@ class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
     """A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectedRasterOverlayFactory."""
         IProjectedRasterOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22436,6 +23231,7 @@ class ProjectedRasterOverlayFactory(IProjectedRasterOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectedRasterOverlayFactory, [IProjectedRasterOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{FDAAFAF9-B61B-4DB8-8157-96EF4D476457}", ProjectedRasterOverlayFactory)
@@ -22445,6 +23241,7 @@ class ProjectionFactory(IProjectionFactory):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectionFactory."""
         IProjectionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22453,6 +23250,7 @@ class ProjectionFactory(IProjectionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionFactory, [IProjectionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C22AAF01-98CE-41E1-8A98-E164A61D40CC}", ProjectionFactory)
@@ -22462,6 +23260,7 @@ class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
     """Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AltitudeDisplayConditionFactory."""
         IAltitudeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22470,6 +23269,7 @@ class AltitudeDisplayConditionFactory(IAltitudeDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AltitudeDisplayConditionFactory, [IAltitudeDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{75D5CF9A-FBCE-482C-9520-7811D9E71EC1}", AltitudeDisplayConditionFactory)
@@ -22479,6 +23279,7 @@ class AxesPrimitiveFactory(IAxesPrimitiveFactory):
     """Render an axes in the 3D scene."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AxesPrimitiveFactory."""
         IAxesPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22487,6 +23288,7 @@ class AxesPrimitiveFactory(IAxesPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AxesPrimitiveFactory, [IAxesPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{166D78CD-1000-4EDC-B031-AAB1B1B45E8D}", AxesPrimitiveFactory)
@@ -22496,6 +23298,7 @@ class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
     """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CompositeDisplayConditionFactory."""
         ICompositeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22504,6 +23307,7 @@ class CompositeDisplayConditionFactory(ICompositeDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositeDisplayConditionFactory, [ICompositeDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{375A535B-557C-4E7B-A2AD-0905381BA46F}", CompositeDisplayConditionFactory)
@@ -22513,6 +23317,7 @@ class CompositePrimitiveFactory(ICompositePrimitiveFactory):
     """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CompositePrimitiveFactory."""
         ICompositePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22521,6 +23326,7 @@ class CompositePrimitiveFactory(ICompositePrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CompositePrimitiveFactory, [ICompositePrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7F9D1191-7973-4B59-B2E6-9A4D4F19A222}", CompositePrimitiveFactory)
@@ -22530,6 +23336,7 @@ class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
     """A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConstantDisplayConditionFactory."""
         IConstantDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22538,6 +23345,7 @@ class ConstantDisplayConditionFactory(IConstantDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConstantDisplayConditionFactory, [IConstantDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{84B6B505-833D-4A3B-BD6B-99266C8C5284}", ConstantDisplayConditionFactory)
@@ -22547,6 +23355,7 @@ class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceDisplayConditionFactory."""
         IDistanceDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22555,6 +23364,7 @@ class DistanceDisplayConditionFactory(IDistanceDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceDisplayConditionFactory, [IDistanceDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F8A027DC-AE3B-464A-A5C4-39AA37368ED7}", DistanceDisplayConditionFactory)
@@ -22564,6 +23374,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDispl
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToGlobeOverlayDisplayConditionFactory."""
         IDistanceToGlobeOverlayDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22572,6 +23383,7 @@ class DistanceToGlobeOverlayDisplayConditionFactory(IDistanceToGlobeOverlayDispl
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToGlobeOverlayDisplayConditionFactory, [IDistanceToGlobeOverlayDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0BF7DA00-8B06-41FA-A580-15D898A0837F}", DistanceToGlobeOverlayDisplayConditionFactory)
@@ -22581,6 +23393,7 @@ class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayCondit
     """Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToPositionDisplayConditionFactory."""
         IDistanceToPositionDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22589,6 +23402,7 @@ class DistanceToPositionDisplayConditionFactory(IDistanceToPositionDisplayCondit
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPositionDisplayConditionFactory, [IDistanceToPositionDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F19A2CB9-BF83-4F3F-9B76-82794467A872}", DistanceToPositionDisplayConditionFactory)
@@ -22598,6 +23412,7 @@ class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayCond
     """Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DistanceToPrimitiveDisplayConditionFactory."""
         IDistanceToPrimitiveDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22606,6 +23421,7 @@ class DistanceToPrimitiveDisplayConditionFactory(IDistanceToPrimitiveDisplayCond
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DistanceToPrimitiveDisplayConditionFactory, [IDistanceToPrimitiveDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{8D977F6C-359B-4353-AD7A-B1317BE7136E}", DistanceToPrimitiveDisplayConditionFactory)
@@ -22615,6 +23431,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolic
     """path primitive update policy that removes points from remove location after a given duration."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DurationPathPrimitiveUpdatePolicyFactory."""
         IDurationPathPrimitiveUpdatePolicyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22623,6 +23440,7 @@ class DurationPathPrimitiveUpdatePolicyFactory(IDurationPathPrimitiveUpdatePolic
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DurationPathPrimitiveUpdatePolicyFactory, [IDurationPathPrimitiveUpdatePolicyFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D10A5794-C75B-43DA-8277-FAA18D9C988A}", DurationPathPrimitiveUpdatePolicyFactory)
@@ -22632,6 +23450,7 @@ class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
     """A globe overlay that shows an image."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GlobeImageOverlayInitializer."""
         IGlobeImageOverlayInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22640,6 +23459,7 @@ class GlobeImageOverlayInitializer(IGlobeImageOverlayInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GlobeImageOverlayInitializer, [IGlobeImageOverlayInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{6CA56657-186B-4768-B747-AB0071E02C05}", GlobeImageOverlayInitializer)
@@ -22649,6 +23469,7 @@ class GraphicsFontFactory(IGraphicsFontFactory):
     """A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GraphicsFontFactory."""
         IGraphicsFontFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22657,6 +23478,7 @@ class GraphicsFontFactory(IGraphicsFontFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GraphicsFontFactory, [IGraphicsFontFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{4890C7DD-6EAC-4F44-94DB-A72E75BEDAF0}", GraphicsFontFactory)
@@ -22666,6 +23488,7 @@ class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
     """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GreatArcInterpolatorFactory."""
         IGreatArcInterpolatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22674,6 +23497,7 @@ class GreatArcInterpolatorFactory(IGreatArcInterpolatorFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GreatArcInterpolatorFactory, [IGreatArcInterpolatorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{6882FDC8-B958-498D-A274-46AE40AE78D5}", GreatArcInterpolatorFactory)
@@ -22683,6 +23507,7 @@ class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
     """Add an alpha band to the source raster derived from the luminance of the raster's color bands."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromLuminanceFilterFactory."""
         IAlphaFromLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22691,6 +23516,7 @@ class AlphaFromLuminanceFilterFactory(IAlphaFromLuminanceFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromLuminanceFilterFactory, [IAlphaFromLuminanceFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{1190FF7A-66F4-4B54-B35B-57BBBEDD35AA}", AlphaFromLuminanceFilterFactory)
@@ -22700,6 +23526,7 @@ class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
     """Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromPixelFilterFactory."""
         IAlphaFromPixelFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22708,6 +23535,7 @@ class AlphaFromPixelFilterFactory(IAlphaFromPixelFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromPixelFilterFactory, [IAlphaFromPixelFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{72AEEA38-C86F-48DE-A8D7-F993011E6466}", AlphaFromPixelFilterFactory)
@@ -22717,6 +23545,7 @@ class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
     """Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type AlphaFromRasterFilterFactory."""
         IAlphaFromRasterFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22725,6 +23554,7 @@ class AlphaFromRasterFilterFactory(IAlphaFromRasterFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, AlphaFromRasterFilterFactory, [IAlphaFromRasterFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F578725F-3B1F-4B45-AA36-FADF0AA5516F}", AlphaFromRasterFilterFactory)
@@ -22734,6 +23564,7 @@ class BandExtractFilterFactory(IBandExtractFilterFactory):
     """Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BandExtractFilterFactory."""
         IBandExtractFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22742,6 +23573,7 @@ class BandExtractFilterFactory(IBandExtractFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandExtractFilterFactory, [IBandExtractFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{52C5D954-F113-46CA-BF7C-3BFCA6637B6D}", BandExtractFilterFactory)
@@ -22751,6 +23583,7 @@ class BandOrderFilterFactory(IBandOrderFilterFactory):
     """Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BandOrderFilterFactory."""
         IBandOrderFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22759,6 +23592,7 @@ class BandOrderFilterFactory(IBandOrderFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BandOrderFilterFactory, [IBandOrderFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{F238EFB7-84AC-4648-AB58-42C01DADA9A9}", BandOrderFilterFactory)
@@ -22768,6 +23602,7 @@ class BlurFilterFactory(IBlurFilterFactory):
     """Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BlurFilterFactory."""
         IBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22776,6 +23611,7 @@ class BlurFilterFactory(IBlurFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BlurFilterFactory, [IBlurFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{8FE6B4C1-2607-4213-A2C6-EBD012D3A51F}", BlurFilterFactory)
@@ -22785,6 +23621,7 @@ class BrightnessFilterFactory(IBrightnessFilterFactory):
     """Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BrightnessFilterFactory."""
         IBrightnessFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22793,6 +23630,7 @@ class BrightnessFilterFactory(IBrightnessFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BrightnessFilterFactory, [IBrightnessFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C03BF579-ED2C-480E-835C-A2F17B7B1E02}", BrightnessFilterFactory)
@@ -22802,6 +23640,7 @@ class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
     """Extract a luminance band derived from the color bands of the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ColorToLuminanceFilterFactory."""
         IColorToLuminanceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22810,6 +23649,7 @@ class ColorToLuminanceFilterFactory(IColorToLuminanceFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ColorToLuminanceFilterFactory, [IColorToLuminanceFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{7311B5AA-FC01-4B35-A1A3-76DE69555938}", ColorToLuminanceFilterFactory)
@@ -22819,6 +23659,7 @@ class ContrastFilterFactory(IContrastFilterFactory):
     """Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ContrastFilterFactory."""
         IContrastFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22827,6 +23668,7 @@ class ContrastFilterFactory(IContrastFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ContrastFilterFactory, [IContrastFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9B1023F6-67C4-4DC9-8EA1-9171564EFA42}", ContrastFilterFactory)
@@ -22836,6 +23678,7 @@ class ConvolutionFilterFactory(IConvolutionFilterFactory):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConvolutionFilterFactory."""
         IConvolutionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22844,6 +23687,7 @@ class ConvolutionFilterFactory(IConvolutionFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConvolutionFilterFactory, [IConvolutionFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{64B119DD-A78C-4815-A9DD-4D77B310D28D}", ConvolutionFilterFactory)
@@ -22853,6 +23697,7 @@ class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
     """Apply a convolution filter to detect edges in the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type EdgeDetectFilterFactory."""
         IEdgeDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22861,6 +23706,7 @@ class EdgeDetectFilterFactory(IEdgeDetectFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, EdgeDetectFilterFactory, [IEdgeDetectFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{E14D1269-91FA-4A83-92A7-F5117E1E9DE9}", EdgeDetectFilterFactory)
@@ -22870,6 +23716,7 @@ class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
     """A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FilteringRasterStreamFactory."""
         IFilteringRasterStreamFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22878,6 +23725,7 @@ class FilteringRasterStreamFactory(IFilteringRasterStreamFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FilteringRasterStreamFactory, [IFilteringRasterStreamFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{8B9D2671-491B-4D5B-8410-B8A8ED881970}", FilteringRasterStreamFactory)
@@ -22887,6 +23735,7 @@ class FlipFilterFactory(IFlipFilterFactory):
     """Flips the source raster along the given flip axis."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type FlipFilterFactory."""
         IFlipFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22895,6 +23744,7 @@ class FlipFilterFactory(IFlipFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, FlipFilterFactory, [IFlipFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0C012B18-9467-42CE-8EC5-E7B70012BA73}", FlipFilterFactory)
@@ -22904,6 +23754,7 @@ class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
     """Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GammaCorrectionFilterFactory."""
         IGammaCorrectionFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22912,6 +23763,7 @@ class GammaCorrectionFilterFactory(IGammaCorrectionFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GammaCorrectionFilterFactory, [IGammaCorrectionFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{E09D6B71-6E82-45A1-A208-B761D82266E9}", GammaCorrectionFilterFactory)
@@ -22921,6 +23773,7 @@ class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
     """Apply a convolution filter to blur the source raster using the Gaussian function."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GaussianBlurFilterFactory."""
         IGaussianBlurFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22929,6 +23782,7 @@ class GaussianBlurFilterFactory(IGaussianBlurFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GaussianBlurFilterFactory, [IGaussianBlurFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{B98AC54E-10BB-4E81-9766-806A2F0EA8C4}", GaussianBlurFilterFactory)
@@ -22938,6 +23792,7 @@ class GradientDetectFilterFactory(IGradientDetectFilterFactory):
     """Apply a convolution filter to detect gradients in the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type GradientDetectFilterFactory."""
         IGradientDetectFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22946,6 +23801,7 @@ class GradientDetectFilterFactory(IGradientDetectFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, GradientDetectFilterFactory, [IGradientDetectFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{B88D6D7C-4807-4905-B52F-DF054A4AD186}", GradientDetectFilterFactory)
@@ -22955,6 +23811,7 @@ class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
     """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Jpeg2000WriterInitializer."""
         IJpeg2000WriterInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22963,6 +23820,7 @@ class Jpeg2000WriterInitializer(IJpeg2000WriterInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Jpeg2000WriterInitializer, [IJpeg2000WriterInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{0F29EA41-17E7-4252-B419-B2573C015DC6}", Jpeg2000WriterInitializer)
@@ -22972,6 +23830,7 @@ class LevelsFilterFactory(ILevelsFilterFactory):
     """Adjusts the band levels of the source raster linearly."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type LevelsFilterFactory."""
         ILevelsFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22980,6 +23839,7 @@ class LevelsFilterFactory(ILevelsFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, LevelsFilterFactory, [ILevelsFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{69CBD183-936F-480E-B0FF-4D140DDC9232}", LevelsFilterFactory)
@@ -22989,6 +23849,7 @@ class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPlugin
     """The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ProjectionRasterStreamPluginActivatorFactory."""
         IProjectionRasterStreamPluginActivatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -22997,6 +23858,7 @@ class ProjectionRasterStreamPluginActivatorFactory(IProjectionRasterStreamPlugin
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ProjectionRasterStreamPluginActivatorFactory, [IProjectionRasterStreamPluginActivatorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{51F36FBA-E366-4A66-A452-FEE99786ED2E}", ProjectionRasterStreamPluginActivatorFactory)
@@ -23006,6 +23868,7 @@ class RasterFactory(IRasterFactory):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterFactory."""
         IRasterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23014,6 +23877,7 @@ class RasterFactory(IRasterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterFactory, [IRasterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{390E63D5-4C79-48B3-98CD-55B1983F859A}", RasterFactory)
@@ -23023,6 +23887,7 @@ class RasterAttributesFactory(IRasterAttributesFactory):
     """The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterAttributesFactory."""
         IRasterAttributesFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23031,6 +23896,7 @@ class RasterAttributesFactory(IRasterAttributesFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterAttributesFactory, [IRasterAttributesFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{94CA0CCD-4D74-47BD-8E5F-E2D96403DACF}", RasterAttributesFactory)
@@ -23040,6 +23906,7 @@ class RotateFilterFactory(IRotateFilterFactory):
     """Rotate the source raster clockwise by the specified angle."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RotateFilterFactory."""
         IRotateFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23048,6 +23915,7 @@ class RotateFilterFactory(IRotateFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RotateFilterFactory, [IRotateFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{12C8E395-4E61-4484-A97D-33742C841A6D}", RotateFilterFactory)
@@ -23057,6 +23925,7 @@ class SequenceFilterFactory(ISequenceFilterFactory):
     """Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SequenceFilterFactory."""
         ISequenceFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23065,6 +23934,7 @@ class SequenceFilterFactory(ISequenceFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SequenceFilterFactory, [ISequenceFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{4CC16FDF-B6CE-4C06-B47F-AD7812566215}", SequenceFilterFactory)
@@ -23074,6 +23944,7 @@ class SharpenFilterFactory(ISharpenFilterFactory):
     """Apply a convolution filter to increase the sharpness of the source raster."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SharpenFilterFactory."""
         ISharpenFilterFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23082,6 +23953,7 @@ class SharpenFilterFactory(ISharpenFilterFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SharpenFilterFactory, [ISharpenFilterFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{98011831-2D99-4FED-AC53-DFB4090D132C}", SharpenFilterFactory)
@@ -23091,6 +23963,7 @@ class VideoStreamFactory(IVideoStreamFactory):
     """A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VideoStreamFactory."""
         IVideoStreamFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23099,15 +23972,17 @@ class VideoStreamFactory(IVideoStreamFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VideoStreamFactory, [IVideoStreamFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{A977E2D9-785B-4AB0-B01F-927486E3170B}", VideoStreamFactory)
 agcls.AgTypeNameMap["VideoStreamFactory"] = VideoStreamFactory
 
 class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
-    """ Renders one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
+    """Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MarkerBatchPrimitiveFactory."""
         IMarkerBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23116,6 +23991,7 @@ class MarkerBatchPrimitiveFactory(IMarkerBatchPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveFactory, [IMarkerBatchPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{E2AC5708-26C2-469F-AE1C-C48AED18565E}", MarkerBatchPrimitiveFactory)
@@ -23125,6 +24001,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptiona
     """Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MarkerBatchPrimitiveOptionalParametersFactory."""
         IMarkerBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23133,6 +24010,7 @@ class MarkerBatchPrimitiveOptionalParametersFactory(IMarkerBatchPrimitiveOptiona
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MarkerBatchPrimitiveOptionalParametersFactory, [IMarkerBatchPrimitiveOptionalParametersFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{120D8907-DB34-481B-93B1-C61A4C5C61EF}", MarkerBatchPrimitiveOptionalParametersFactory)
@@ -23142,6 +24020,7 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpd
     """path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MaximumCountPathPrimitiveUpdatePolicyFactory."""
         IMaximumCountPathPrimitiveUpdatePolicyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23150,6 +24029,7 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(IMaximumCountPathPrimitiveUpd
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MaximumCountPathPrimitiveUpdatePolicyFactory, [IMaximumCountPathPrimitiveUpdatePolicyFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C3F59BCB-635A-4E50-B5AA-269CD0380069}", MaximumCountPathPrimitiveUpdatePolicyFactory)
@@ -23159,6 +24039,7 @@ class ModelPrimitiveFactory(IModelPrimitiveFactory):
     """The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ModelPrimitiveFactory."""
         IModelPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23167,6 +24048,7 @@ class ModelPrimitiveFactory(IModelPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ModelPrimitiveFactory, [IModelPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{90BABAB0-7D1E-420F-B91F-46E2E5B31763}", ModelPrimitiveFactory)
@@ -23176,6 +24058,7 @@ class PathPrimitiveFactory(IPathPrimitiveFactory):
     """Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PathPrimitiveFactory."""
         IPathPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23184,6 +24067,7 @@ class PathPrimitiveFactory(IPathPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PathPrimitiveFactory, [IPathPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{1847AEAB-C6B6-4561-BBDB-D979A443CCF0}", PathPrimitiveFactory)
@@ -23193,6 +24077,7 @@ class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
     """Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PixelSizeDisplayConditionFactory."""
         IPixelSizeDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23201,15 +24086,17 @@ class PixelSizeDisplayConditionFactory(IPixelSizeDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PixelSizeDisplayConditionFactory, [IPixelSizeDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{52EC4EAD-B9A0-4940-BAE8-BD115805BB46}", PixelSizeDisplayConditionFactory)
 agcls.AgTypeNameMap["PixelSizeDisplayConditionFactory"] = PixelSizeDisplayConditionFactory
 
 class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
-    """ Renders one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PointBatchPrimitiveFactory."""
         IPointBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23218,6 +24105,7 @@ class PointBatchPrimitiveFactory(IPointBatchPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveFactory, [IPointBatchPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{B497A3DE-DF9F-4EFD-8CB8-2767415F4889}", PointBatchPrimitiveFactory)
@@ -23227,6 +24115,7 @@ class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalP
     """Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PointBatchPrimitiveOptionalParametersFactory."""
         IPointBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23235,6 +24124,7 @@ class PointBatchPrimitiveOptionalParametersFactory(IPointBatchPrimitiveOptionalP
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PointBatchPrimitiveOptionalParametersFactory, [IPointBatchPrimitiveOptionalParametersFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{aa54a6e1-f927-48b6-8a29-7b718bb0cb7b}", PointBatchPrimitiveOptionalParametersFactory)
@@ -23244,6 +24134,7 @@ class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
     """Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PolylinePrimitiveFactory."""
         IPolylinePrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23252,6 +24143,7 @@ class PolylinePrimitiveFactory(IPolylinePrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveFactory, [IPolylinePrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{825E24B9-F4B9-4EF4-8F98-A8BD8F7A6C4B}", PolylinePrimitiveFactory)
@@ -23261,6 +24153,7 @@ class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParam
     """Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PolylinePrimitiveOptionalParametersFactory."""
         IPolylinePrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23269,6 +24162,7 @@ class PolylinePrimitiveOptionalParametersFactory(IPolylinePrimitiveOptionalParam
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PolylinePrimitiveOptionalParametersFactory, [IPolylinePrimitiveOptionalParametersFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{2ff372bc-ad1c-4fa2-82e9-75c9b407f19c}", PolylinePrimitiveOptionalParametersFactory)
@@ -23278,6 +24172,7 @@ class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
     """A globe image overlay for handling rasters."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RasterImageGlobeOverlayFactory."""
         IRasterImageGlobeOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23286,6 +24181,7 @@ class RasterImageGlobeOverlayFactory(IRasterImageGlobeOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RasterImageGlobeOverlayFactory, [IRasterImageGlobeOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{73782D85-0307-4B70-B793-2930A8880AEE}", RasterImageGlobeOverlayFactory)
@@ -23295,6 +24191,7 @@ class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
     """The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RhumbLineInterpolatorFactory."""
         IRhumbLineInterpolatorFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23303,6 +24200,7 @@ class RhumbLineInterpolatorFactory(IRhumbLineInterpolatorFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RhumbLineInterpolatorFactory, [IRhumbLineInterpolatorFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0B6D54BD-A46B-4770-A936-23F247B6F038}", RhumbLineInterpolatorFactory)
@@ -23312,6 +24210,7 @@ class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
     """A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneDisplayConditionFactory."""
         ISceneDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23320,6 +24219,7 @@ class SceneDisplayConditionFactory(ISceneDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneDisplayConditionFactory, [ISceneDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{19159366-8E64-467F-922B-739678DA01C2}", SceneDisplayConditionFactory)
@@ -23329,6 +24229,7 @@ class SceneManagerInitializer(ISceneManagerInitializer):
     """The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SceneManagerInitializer."""
         ISceneManagerInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23337,6 +24238,7 @@ class SceneManagerInitializer(ISceneManagerInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SceneManagerInitializer, [ISceneManagerInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{956AD97D-96ED-4898-89BE-08AF68BF1EA6}", SceneManagerInitializer)
@@ -23346,6 +24248,7 @@ class ScreenOverlayFactory(IScreenOverlayFactory):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ScreenOverlayFactory."""
         IScreenOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23354,6 +24257,7 @@ class ScreenOverlayFactory(IScreenOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ScreenOverlayFactory, [IScreenOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C2F5A068-E483-4CCF-819D-FBB25DC85A71}", ScreenOverlayFactory)
@@ -23363,6 +24267,7 @@ class SolidPrimitiveFactory(ISolidPrimitiveFactory):
     """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SolidPrimitiveFactory."""
         ISolidPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23371,6 +24276,7 @@ class SolidPrimitiveFactory(ISolidPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SolidPrimitiveFactory, [ISolidPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9F23AC4E-DCB0-45B1-BE07-E4BEBA9B4AFF}", SolidPrimitiveFactory)
@@ -23380,6 +24286,7 @@ class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
     """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type SurfaceMeshPrimitiveFactory."""
         ISurfaceMeshPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23388,6 +24295,7 @@ class SurfaceMeshPrimitiveFactory(ISurfaceMeshPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, SurfaceMeshPrimitiveFactory, [ISurfaceMeshPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{A9B40191-F8D7-46D8-B217-30C1C41E2369}", SurfaceMeshPrimitiveFactory)
@@ -23397,6 +24305,7 @@ class TerrainOverlayInitializer(ITerrainOverlayInitializer):
     """A globe overlay which shows terrain."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TerrainOverlayInitializer."""
         ITerrainOverlayInitializer.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23405,15 +24314,17 @@ class TerrainOverlayInitializer(ITerrainOverlayInitializer):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TerrainOverlayInitializer, [ITerrainOverlayInitializer])
 
 agcls.AgClassCatalog.add_catalog_entry("{8D76F5E3-BACE-4CA4-9C4D-9F14464ACAFD}", TerrainOverlayInitializer)
 agcls.AgTypeNameMap["TerrainOverlayInitializer"] = TerrainOverlayInitializer
 
 class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
-    """ Renders one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """Render one or more strings in the 3D scene.  For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextBatchPrimitiveFactory."""
         ITextBatchPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23422,6 +24333,7 @@ class TextBatchPrimitiveFactory(ITextBatchPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveFactory, [ITextBatchPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{246D4DAA-4CD0-4E10-98C7-791A17E5A736}", TextBatchPrimitiveFactory)
@@ -23431,6 +24343,7 @@ class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalPar
     """Optional per-string and per-batch parameters for text batch primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextBatchPrimitiveOptionalParametersFactory."""
         ITextBatchPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23439,6 +24352,7 @@ class TextBatchPrimitiveOptionalParametersFactory(ITextBatchPrimitiveOptionalPar
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextBatchPrimitiveOptionalParametersFactory, [ITextBatchPrimitiveOptionalParametersFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{A3C12306-7202-468F-B0A5-306D98A7E2BC}", TextBatchPrimitiveOptionalParametersFactory)
@@ -23448,6 +24362,7 @@ class TextOverlayFactory(ITextOverlayFactory):
     """A rectangular overlay that contains text."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextOverlayFactory."""
         ITextOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23456,6 +24371,7 @@ class TextOverlayFactory(ITextOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextOverlayFactory, [ITextOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{5DFA35A5-B53D-4B58-A32E-B2B2690D3104}", TextOverlayFactory)
@@ -23465,6 +24381,7 @@ class TextureMatrixFactory(ITextureMatrixFactory):
     """A 4 by 4 matrix applied to a texture coordinate."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureMatrixFactory."""
         ITextureMatrixFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23473,6 +24390,7 @@ class TextureMatrixFactory(ITextureMatrixFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureMatrixFactory, [ITextureMatrixFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{0169DB20-811D-4DF6-8EDF-51C47B485D6B}", TextureMatrixFactory)
@@ -23482,6 +24400,7 @@ class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
     """A rectangular overlay that can be assigned a texture."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TextureScreenOverlayFactory."""
         ITextureScreenOverlayFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23490,6 +24409,7 @@ class TextureScreenOverlayFactory(ITextureScreenOverlayFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TextureScreenOverlayFactory, [ITextureScreenOverlayFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{C4060E65-DD40-40CE-B462-55E08E6D63AF}", TextureScreenOverlayFactory)
@@ -23499,6 +24419,7 @@ class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
     """Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time ."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TimeIntervalDisplayConditionFactory."""
         ITimeIntervalDisplayConditionFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23507,6 +24428,7 @@ class TimeIntervalDisplayConditionFactory(ITimeIntervalDisplayConditionFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TimeIntervalDisplayConditionFactory, [ITimeIntervalDisplayConditionFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{526637D4-DD61-4B7D-BAE9-6FEF3673BF5D}", TimeIntervalDisplayConditionFactory)
@@ -23516,6 +24438,7 @@ class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
     """Render a triangle mesh in the 3D scene. Examples of triangle meshes includes polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TriangleMeshPrimitiveFactory."""
         ITriangleMeshPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23524,6 +24447,7 @@ class TriangleMeshPrimitiveFactory(ITriangleMeshPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveFactory, [ITriangleMeshPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{D904C0D6-FEAE-4E13-9BBC-98F22CC2F0AF}", TriangleMeshPrimitiveFactory)
@@ -23533,6 +24457,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptio
     """Optional parameters for triangle mesh primitive..."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type TriangleMeshPrimitiveOptionalParametersFactory."""
         ITriangleMeshPrimitiveOptionalParametersFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23541,6 +24466,7 @@ class TriangleMeshPrimitiveOptionalParametersFactory(ITriangleMeshPrimitiveOptio
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, TriangleMeshPrimitiveOptionalParametersFactory, [ITriangleMeshPrimitiveOptionalParametersFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D9FB947-B9EB-4964-8FD8-6FF54D734BD8}", TriangleMeshPrimitiveOptionalParametersFactory)
@@ -23550,6 +24476,7 @@ class VectorPrimitiveFactory(IVectorPrimitiveFactory):
     """Render a vector in the 3D scene. A vector is defined by a source (given by an ISystem) and a direction (given by an IVector or IPoint). Length is auto-calculated or can be set separately."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type VectorPrimitiveFactory."""
         IVectorPrimitiveFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -23558,6 +24485,7 @@ class VectorPrimitiveFactory(IVectorPrimitiveFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorPrimitiveFactory, [IVectorPrimitiveFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{380CA28E-1D09-4F5B-9341-6E96BA4CACCE}", VectorPrimitiveFactory)

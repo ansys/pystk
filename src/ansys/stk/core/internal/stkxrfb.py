@@ -30,6 +30,7 @@ class IRemoteFrameBufferHost(object):
         "method_offsets" : { "refresh" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRemoteFrameBufferHost."""
         initialize_from_source_object(self, sourceObject, IRemoteFrameBufferHost)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39,13 +40,14 @@ class IRemoteFrameBufferHost(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBufferHost)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBufferHost, None)
     
     _refresh_metadata = { "name" : "refresh",
             "arg_types" : (),
             "marshallers" : () }
     def refresh(self) -> None:
-        """A new frame is ready to be displayed."""
+        """Request a new frame to be displayed."""
         return self._intf.invoke(IRemoteFrameBufferHost._metadata, IRemoteFrameBufferHost._refresh_metadata, )
 
 
@@ -77,6 +79,7 @@ class IRemoteFrameBuffer(object):
                              "update_direct_x_rendering_texture" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRemoteFrameBuffer."""
         initialize_from_source_object(self, sourceObject, IRemoteFrameBuffer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -86,13 +89,14 @@ class IRemoteFrameBuffer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBuffer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBuffer, None)
     
     _snap_to_rbg_raster_metadata = { "name" : "snap_to_rbg_raster",
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.PVoidArg,) }
     def snap_to_rbg_raster(self, rbgRasterPtr:agcom.PVOID) -> None:
-        """Captures the current scene to a raster."""
+        """Capture the current scene to a raster."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._snap_to_rbg_raster_metadata, rbgRasterPtr)
 
     _set_to_off_screen_rendering_metadata = { "name" : "set_to_off_screen_rendering",
@@ -155,14 +159,14 @@ class IRemoteFrameBuffer(object):
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_move(self, x:int, y:int, buttons:int, keyState:int) -> None:
-        """Called by the client on a mouse move event."""
+        """Notifies that a mouse move event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_move_metadata, x, y, buttons, keyState)
 
     _notify_mouse_wheel_metadata = { "name" : "notify_mouse_wheel",
             "arg_types" : (agcom.INT, agcom.INT, agcom.INT, agcom.INT,),
             "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg, agmarshall.IntArg,) }
     def notify_mouse_wheel(self, x:int, y:int, steps:int, keyState:int) -> None:
-        """Called by the client on a mouse wheel event."""
+        """Notifies that a mouse wheel event occurred."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._notify_mouse_wheel_metadata, x, y, steps, keyState)
 
     _set_host_metadata = { "name" : "set_host",

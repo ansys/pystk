@@ -96,7 +96,7 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.Variant:
             union_val.dblVal = agcom.DOUBLE(data)
         elif var.vt == agcom.VT_UNKNOWN:
             union_val.punkVal = data._intf.p
-            agcom._CreateAgObjectLifetimeManager._AddRefImpl(data._intf)
+            agcom._CreateAgObjectLifetimeManager._add_ref_impl(data._intf)
         elif var.vt & agcom.VT_ARRAY:
             union_val.parray = SAFEARRAY_from_list(data, True)
         var.buffer = union_val.buffer
@@ -440,7 +440,7 @@ class LongArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.LONG:
+    def com_val(self) -> agcom.LONG:
         return self.LONG
     @property
     def python_val(self) -> int:
@@ -457,7 +457,7 @@ class ULongArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.ULONG:
+    def com_val(self) -> agcom.ULONG:
         return self.ULONG
     @property
     def python_val(self) -> int:
@@ -474,7 +474,7 @@ class LongLongArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.LONGLONG:
+    def com_val(self) -> agcom.LONGLONG:
         return self.LONGLONG
     @property
     def python_val(self) -> int:
@@ -491,7 +491,7 @@ class ULongLongArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.ULONGLONG:
+    def com_val(self) -> agcom.ULONGLONG:
         return self.ULONGLONG
     @property
     def python_val(self) -> int:
@@ -508,7 +508,7 @@ class IntArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.INT:
+    def com_val(self) -> agcom.INT:
         return self.INT
     @property
     def python_val(self) -> int:
@@ -525,7 +525,7 @@ class UIntArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.UINT:
+    def com_val(self) -> agcom.UINT:
         return self.UINT
     @property
     def python_val(self) -> int:
@@ -542,7 +542,7 @@ class ShortArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.SHORT:
+    def com_val(self) -> agcom.SHORT:
         return self.SHORT
     @property
     def python_val(self) -> int:
@@ -559,7 +559,7 @@ class UShortArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.USHORT:
+    def com_val(self) -> agcom.USHORT:
         return self.USHORT
     @property
     def python_val(self) -> int:
@@ -576,7 +576,7 @@ class HResultArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.HRESULT:
+    def com_val(self) -> agcom.HRESULT:
         return self.HRESULT
     @property
     def python_val(self) -> int:
@@ -589,18 +589,18 @@ class OLEColorArg(object):
         else:
             if type(val) == agcolor.ColorRGBA:
                 raise STKColorError("Argument type is RGB only, use Color class instead of ColorRGBA.")
-            self.OLE_COLOR = agcom.OLE_COLOR(val._ToOLECOLOR())
+            self.OLE_COLOR = agcom.OLE_COLOR(val._to_ole_color())
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.OLE_COLOR:
+    def com_val(self) -> agcom.OLE_COLOR:
         return self.OLE_COLOR
     @property
     def python_val(self) -> agcolor.Color:
         c = agcolor.Color()
-        c._FromOLECOLOR(self.OLE_COLOR.value)
+        c._from_ole_color(self.OLE_COLOR.value)
         return c
 
 class VariantBoolArg(object):
@@ -614,7 +614,7 @@ class VariantBoolArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.VARIANT_BOOL:
+    def com_val(self) -> agcom.VARIANT_BOOL:
         return self.vb
     @property
     def python_val(self) -> bool:
@@ -631,7 +631,7 @@ class DoubleArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.DOUBLE:
+    def com_val(self) -> agcom.DOUBLE:
         return self.DOUBLE
     @property
     def python_val(self) -> float:
@@ -648,7 +648,7 @@ class FloatArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.FLOAT:
+    def com_val(self) -> agcom.FLOAT:
         return self.FLOAT
     @property
     def python_val(self) -> float:
@@ -670,7 +670,7 @@ class BStrArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.BSTR:
+    def com_val(self) -> agcom.BSTR:
         return self.bstr
     @property
     def python_val(self) -> str:
@@ -693,7 +693,7 @@ class ByteArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.BYTE:
+    def com_val(self) -> agcom.BYTE:
         return self.BYTE
     @property
     def python_val(self) -> bytes:
@@ -715,7 +715,7 @@ class CharArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.CHAR:
+    def com_val(self) -> agcom.CHAR:
         return self.CHAR
     @property
     def python_val(self) -> bytes:
@@ -738,7 +738,7 @@ class VariantArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.Variant:
+    def com_val(self) -> agcom.Variant:
         return self.var
     @property
     def python_val(self) -> typing.Any:
@@ -787,7 +787,7 @@ class InterfaceInArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         if hasattr(self.rawptr, "value"):
             return agcom.PVOID(self.rawptr.value)
         else:
@@ -809,7 +809,7 @@ class InterfaceOutArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         return self.ptr.p
     @property
     def python_val(self) -> typing.Any:
@@ -830,7 +830,7 @@ class PVoidArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         return self.p
     @property
     def python_val(self) -> agcom.PVOID:
@@ -855,7 +855,7 @@ class InterfaceEventCallbackArg(object):
         del(self.intf)
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         return self.intf.__dict__["_intf"].p
     @property
     def python_val(self) -> typing.Any:
@@ -874,7 +874,7 @@ class IEnumVariantArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         return self.ptr.p
     @property
     def python_val(self) -> agcom.IEnumVariant:
@@ -900,7 +900,7 @@ class EnumArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.LONG:
+    def com_val(self) -> agcom.LONG:
         return self.val
     @property
     def python_val(self) -> IntEnum:
@@ -922,7 +922,7 @@ class LPSafearrayArg(object):
         self._cleanup()
         return False
     @property
-    def COM_val(self) -> agcom.LPSAFEARRAY:
+    def com_val(self) -> agcom.LPSAFEARRAY:
         return self.sa
     @property
     def python_val(self) -> list:
@@ -940,7 +940,7 @@ class IPictureDispArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.PVOID:
+    def com_val(self) -> agcom.PVOID:
         return agcom.PVOID()
     @property
     def python_val(self) -> agcom.IPictureDisp:
@@ -957,7 +957,7 @@ class DateArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.DATE:
+    def com_val(self) -> agcom.DATE:
         return self.date
     @property
     def python_val(self) -> datetime:
@@ -974,7 +974,7 @@ class OLEHandleArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.OLE_HANDLE:
+    def com_val(self) -> agcom.OLE_HANDLE:
         return self.OLE_HANDLE
     @property
     def python_val(self) -> int:
@@ -991,7 +991,7 @@ class OLEXPosPixelsArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.OLE_XPOS_PIXELS:
+    def com_val(self) -> agcom.OLE_XPOS_PIXELS:
         return self.OLE_XPOS_PIXELS
     @property
     def python_val(self) -> int:
@@ -1008,7 +1008,7 @@ class OLEYPosPixelsArg(object):
     def __exit__(self, type, value, tb):
         return False
     @property
-    def COM_val(self) -> agcom.OLE_YPOS_PIXELS:
+    def com_val(self) -> agcom.OLE_YPOS_PIXELS:
         return self.OLE_YPOS_PIXELS
     @property
     def python_val(self) -> int:

@@ -68,7 +68,7 @@ def _grpc_post_process_return_vals(return_vals, marshallers, *input_args):
                 temp_return_list.append(marshaller(return_val).python_val)
             elif marshaller is OLEColorArg:
                 c = Color()
-                c._FromOLECOLOR(return_val)
+                c._from_ole_color(return_val)
                 temp_return_list.append(c)
             else:
                 temp_return_list.append(return_val)
@@ -188,7 +188,7 @@ class GrpcClient(object):
        }
 
     def __del__(self):
-        self.TerminateConnection()
+        self.terminate_connection()
 
     def __eq__(self, other):
         return self._addr == other._addr
@@ -204,11 +204,11 @@ class GrpcClient(object):
 
     def _release_all_objects(self):
         while len(self._objects) > 0:
-            self.Release(self._objects.pop())
+            self.release(self._objects.pop())
 
     def _release_obj(self, obj:AgGrpcServices_pb2.STKObject):
         if obj in self._objects:
-            self.Release(obj)
+            self.release(obj)
             self._objects.remove(obj)
             
     def _initialize_connection(self):
@@ -237,9 +237,9 @@ class GrpcClient(object):
     def set_shutdown_stkruntime(self, shutdown_stkruntime:bool):
         self._shutdown_stkruntime = shutdown_stkruntime
         
-    def TerminateConnection(self):
+    def terminate_connection(self):
         if self.active():
-            self.StopEventLoop()
+            self.stop_event_loop()
             self._executor.shutdown(wait=True)
             self._release_all_objects()
             shutdown_request = AgGrpcServices_pb2.ShutDownRequest()
@@ -253,14 +253,14 @@ class GrpcClient(object):
     def active(self) -> bool:
         return self.stub is not None
         
-    def AddRef(self, obj:AgGrpcServices_pb2.STKObject) -> int:
+    def add_ref(self, obj:AgGrpcServices_pb2.STKObject) -> int:
         request = AgGrpcServices_pb2.RefCountRequest()
         request.obj.value = obj.value
         response = self.stub.AddRef(request)
         ret = response.count
         return ret
     
-    def Release(self, obj:AgGrpcServices_pb2.STKObject) -> int:
+    def release(self, obj:AgGrpcServices_pb2.STKObject) -> int:
         if self.active():
             request = AgGrpcServices_pb2.RefCountRequest()
             request.obj.value = obj.value
@@ -268,7 +268,7 @@ class GrpcClient(object):
             ret = response.count
             return ret
         
-    def SupportsInterface(self, obj:AgGrpcServices_pb2.STKObject, guid:str) -> bool:
+    def supports_interface(self, obj:AgGrpcServices_pb2.STKObject, guid:str) -> bool:
         if self.active():
             request = AgGrpcServices_pb2.SupportsInterfaceRequest()
             request.obj.value = obj.value
@@ -292,21 +292,21 @@ class GrpcClient(object):
         elif clsid == IID_IEnumVARIANT:
             return GrpcEnumerator(obj=obj, client=self)
         else:
-            self.Release(obj)
+            self.release(obj)
             return None
         
-    def GetStkApplicationInterface(self) -> GrpcInterface:
+    def get_stk_application_interface(self) -> GrpcInterface:
         grpc_app_request = AgGrpcServices_pb2.EmptyMessage()
         grpc_app_response = self.stub.GetStkApplication(grpc_app_request)
         intf = GrpcApplication(obj=grpc_app_response.obj, client=self)
         return intf
         
-    def NewObjectRoot(self) -> GrpcInterface:
+    def new_object_root(self) -> GrpcInterface:
         grpc_response = self.stub.EngineNewRoot(AgGrpcServices_pb2.EmptyMessage())
         intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
         
-    def NewObjectModelContext(self) -> GrpcInterface:
+    def new_object_model_context(self) -> GrpcInterface:
         grpc_response = self.stub.EngineNewRootContext(AgGrpcServices_pb2.EmptyMessage())
         intf = GrpcInterface(obj=grpc_response.obj, client=self)
         return intf
@@ -374,10 +374,10 @@ class GrpcClient(object):
             elif val is None:
                 rpc_val.null.SetInParent()
             elif type(val) == Color:
-                rpc_val.unsigned_int_val = val._ToOLECOLOR()
+                rpc_val.unsigned_int_val = val._to_ole_color()
             dest_grpc_arg.values.append(rpc_val)
         
-    def Invoke(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset, *args) -> typing.Any:
+    def invoke(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset, *args) -> typing.Any:
         request = AgGrpcServices_pb2.InvokeRequest()
         request.obj.MergeFrom(p)
         request.index = method_offset
@@ -398,7 +398,7 @@ class GrpcClient(object):
         else:
             return tuple([self._marshall_return_arg(arg) for arg in response.return_vals])
                 
-    def GetProperty(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset) -> typing.Any:
+    def get_property(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset) -> typing.Any:
         request = AgGrpcServices_pb2.GetPropertyRequest()
         request.obj.MergeFrom(p)
         request.index = method_offset
@@ -409,7 +409,7 @@ class GrpcClient(object):
             self._handle_rpc_error(rpc_error)
         return self._marshall_return_arg(response.variant)
             
-    def SetProperty(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset, *args) -> None:
+    def set_property(self, p:AgGrpcServices_pb2.STKObject, guid:str, method_offset, *args) -> None:
         request = AgGrpcServices_pb2.SetPropertyRequest()
         request.obj.MergeFrom(p)
         request.index = method_offset
@@ -433,7 +433,7 @@ class GrpcClient(object):
                 raise STKRuntimeError(msg) from None
         raise # rethrow last exception that occurred, which is rpc_error 
 
-    def AcknowledgeEvent(self, event_id:int) -> None:
+    def acknowledge_event(self, event_id:int) -> None:
         request = AgGrpcServices_pb2.EventLoopData()
         request.event_loop_id = self._event_loop_id
         request.event_id = event_id
@@ -443,7 +443,7 @@ class GrpcClient(object):
         if callbacks is not None:
             for callback in callbacks:
                 callback(*args)
-        self.AcknowledgeEvent(event_id)
+        self.acknowledge_event(event_id)
 
     def _consume_events(self, stream):
         try:
@@ -457,14 +457,14 @@ class GrpcClient(object):
         except:
             pass
 
-    def StartEventLoop(self):
+    def start_event_loop(self):
         if self._event_loop_id is None:
             event_stream = self.stub.StartEventLoop(AgGrpcServices_pb2.EmptyMessage())
             metadata = event_stream.next()
             self._event_loop_id = metadata.subscription.event_loop_id
             self._consumer_future = self._executor.submit(self._consume_events, event_stream)
 
-    def StopEventLoop(self):
+    def stop_event_loop(self):
         if self._event_loop_id is not None:
             request = AgGrpcServices_pb2.EventLoopData()
             request.event_loop_id = self._event_loop_id
@@ -481,9 +481,9 @@ class GrpcClient(object):
                             return True
         return False
 
-    def Subscribe(self, p:AgGrpcServices_pb2.STKObject, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
+    def subscribe(self, p:AgGrpcServices_pb2.STKObject, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
         if self._event_loop_id is None:
-            self.StartEventLoop()
+            self.start_event_loop()
         request = AgGrpcServices_pb2.SubscriptionData()
         request.event_loop_id = self._event_loop_id
         request.obj.MergeFrom(p)
@@ -496,7 +496,7 @@ class GrpcClient(object):
             self._event_callbacks[event_handler][event][p.value] = []
         self._event_callbacks[event_handler][event][p.value].append(callback)
 
-    def Unsubscribe(self, p:AgGrpcServices_pb2.STKObject, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
+    def unsubscribe(self, p:AgGrpcServices_pb2.STKObject, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
         if self._event_loop_id is not None:
             request = AgGrpcServices_pb2.SubscriptionData()
             request.event_loop_id = self._event_loop_id
@@ -510,4 +510,4 @@ class GrpcClient(object):
             else:
                 self._event_callbacks[event_handler][event][p.value].remove(callback)
             if not self._has_subscriptions():
-                self.StopEventLoop()
+                self.stop_event_loop()

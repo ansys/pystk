@@ -1153,7 +1153,7 @@ Interfaces
     IAdvCATAvailableObjectCollection
     IAdvCATChosenObjectCollection
     IAdvCATPreFilters
-    IAdvCATAdvEllipsoid
+    IAdvCATAdvancedEllipsoid
     IAdvCATAdvanced
     IAdvCATGraphics3D
     IAdvCAT
@@ -2685,7 +2685,7 @@ Classes
     AdvCATChosenObject
     AdvCATChosenObjectCollection
     AdvCATPreFilters
-    AdvCATAdvEllipsoid
+    AdvCATAdvancedEllipsoid
     AdvCATAdvanced
     AdvCATGraphics3D
     EOIRShapeObject
@@ -6150,7 +6150,7 @@ Interfaces
 .. autoclass:: IAdvCATPreFilters
     :members:
     :exclude-members: __init__
-.. autoclass:: IAdvCATAdvEllipsoid
+.. autoclass:: IAdvCATAdvancedEllipsoid
     :members:
     :exclude-members: __init__
 .. autoclass:: IAdvCATAdvanced
@@ -10361,7 +10361,7 @@ Classes
 .. autoclass:: AdvCATPreFilters
     :members:
     :exclude-members: __init__
-.. autoclass:: AdvCATAdvEllipsoid
+.. autoclass:: AdvCATAdvancedEllipsoid
     :members:
     :exclude-members: __init__
 .. autoclass:: AdvCATAdvanced

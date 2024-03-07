@@ -9,6 +9,7 @@ from interfaces.stk_objects import *
 from orientation_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -515,18 +516,18 @@ class EarlyBoundTests(TestBase):
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
         Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, antennaContour.color_method)
 
-        antennaContour.start_color = Color.Red
-        Assert.assertEqual(Color.Red, antennaContour.start_color)
-        antennaContour.stop_color = Color.Blue
-        Assert.assertEqual(Color.Blue, antennaContour.stop_color)
+        antennaContour.start_color = Colors.Red
+        Assert.assertEqual(Colors.Red, antennaContour.start_color)
+        antennaContour.stop_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, antennaContour.stop_color)
 
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
         Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, antennaContour.color_method)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaContour.start_color = Color.Red
+            antennaContour.start_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaContour.stop_color = Color.Red
+            antennaContour.stop_color = Colors.Red
 
     # endregion
 
@@ -578,12 +579,12 @@ class EarlyBoundTests(TestBase):
         level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-        level4.color = Color.Red
-        Assert.assertEqual(Color.Red, level4.color)
+        level4.color = Colors.Red
+        Assert.assertEqual(Colors.Red, level4.color)
         antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
-        color = level4.color
+        color: Color = level4.color
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            level4.color = Color.Red
+            level4.color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("Unable to find")):
             level8: "AntennaContourLevel" = levelCollection.get_level(8.0)
 
@@ -1177,7 +1178,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Color.Red
+            EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style = LINE_STYLE.DASHED
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -1186,10 +1187,10 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target = True
         Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target)
 
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
+        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
+        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
 
         EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style = LINE_STYLE.DASHED
         Assert.assertEqual(LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style)
@@ -1210,7 +1211,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Color.Red
+            EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style = LINE_STYLE.DASHED
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -1219,10 +1220,10 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr = True
         Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr)
 
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
+        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
+        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
 
         EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style = LINE_STYLE.DASHED
         Assert.assertEqual(LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style)
@@ -1243,25 +1244,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.accessGraphics.show_clutter)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.clutter_color = Color.Red
+            EarlyBoundTests.accessGraphics.clutter_color = Colors.Red
 
         EarlyBoundTests.accessGraphics.show_clutter = True
         Assert.assertTrue(EarlyBoundTests.accessGraphics.show_clutter)
 
-        EarlyBoundTests.accessGraphics.clutter_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.accessGraphics.clutter_color)
-        EarlyBoundTests.accessGraphics.clutter_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.accessGraphics.clutter_color)
+        EarlyBoundTests.accessGraphics.clutter_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.clutter_color)
+        EarlyBoundTests.accessGraphics.clutter_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.clutter_color)
 
     # endregion
 
     # region IAgRadarAccessGraphics_RadarTGTGraphics
     @category("Graphics Tests")
     def test_IAgRadarAccessGraphics_RadarTGTGraphics(self):
-        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
-        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
+        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
+        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
 
     # endregion
 
@@ -1300,10 +1301,10 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarGraphics_BoresightColor
     @category("Graphics Tests")
     def test_IAgRadarGraphics_BoresightColor(self):
-        EarlyBoundTests.radarGraphics.boresight_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.radarGraphics.boresight_color)
-        EarlyBoundTests.radarGraphics.boresight_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.radarGraphics.boresight_color)
+        EarlyBoundTests.radarGraphics.boresight_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.radarGraphics.boresight_color)
+        EarlyBoundTests.radarGraphics.boresight_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.radarGraphics.boresight_color)
 
     # endregion
 
@@ -1349,17 +1350,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Color.Red
+            EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style = "Plus"
 
         EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp = True
         Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp)
 
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
 
         EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style = "Plus"
         Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style)
@@ -1375,17 +1376,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Color.Red
+            EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style = "Plus"
 
         EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp = True
         Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
 
         EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style = "Plus"
         Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style)
@@ -1401,17 +1402,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Color.Red
+            EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style = "Plus"
 
         EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp = True
         Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Color.Red
-        Assert.assertEqual(Color.Red, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Color.Blue
-        Assert.assertEqual(Color.Blue, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
 
         EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style = "Plus"
         Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style)

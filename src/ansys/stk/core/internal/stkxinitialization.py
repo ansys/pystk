@@ -32,6 +32,7 @@ class ISTKXInitialize(object):
                              "initialize_data_ex" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISTKXInitialize."""
         initialize_from_source_object(self, sourceObject, ISTKXInitialize)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -41,6 +42,7 @@ class ISTKXInitialize(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISTKXInitialize)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISTKXInitialize, None)
     
     _initialize_activation_context_metadata = { "name" : "initialize_activation_context",
@@ -74,6 +76,7 @@ class STKXInitialize(ISTKXInitialize):
     """STK X Initialize object."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type STKXInitialize."""
         ISTKXInitialize.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -82,6 +85,7 @@ class STKXInitialize(ISTKXInitialize):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, STKXInitialize, [ISTKXInitialize])
 
 agcls.AgClassCatalog.add_catalog_entry("{3B85901D-FC82-4733-97E6-5BB25CE69379}", STKXInitialize)

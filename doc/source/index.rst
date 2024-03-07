@@ -15,7 +15,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
         :link: getting_started/index
         :link-type: doc
 
-        Step by step guidelines on how to set up your environment to work with
+        Step-by-step guidelines on how to set up your environment to work with
         PySTK. Build your own Docker image for STK, install PySTK, and verify
         your environment.
 
@@ -37,13 +37,13 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
            :link-type: doc
     
            A detailed guide describing the PySTK API. This guide documents all the
-           methods and properties for each one of the interfaces, classes and
-           enumerations of each one of the modules in PySTK.
+           methods and properties for each interface, class, and
+           enumerations of each PySTK module.
         {% endif %}
       
        {% if build_examples %}
        .. grid-item-card:: Gallery of examples :fa:`laptop-code`
-           :link: examples
+           :link: examples/index
            :link-type: doc
     
            Learn how to use PySTK for creating custom applications and automating
@@ -63,7 +63,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
        getting_started/index
        user_guide/index
        {% if build_examples %}
-       examples
+       examples/index
        {% endif %}
        {% if build_api %}
        api/index
