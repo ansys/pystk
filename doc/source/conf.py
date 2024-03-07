@@ -201,7 +201,7 @@ jinja_contexts = {
         "linux_images": get_images_directories_from_path(LINUX_IMAGES),
     },
     "install_guide": {
-        "version": version if not version.endswith("dev0") else "main",
+        "version": f"v{version}" if not version.endswith("dev0") else "main",
     },
     "main_toctree": {
         "build_api": BUILD_API,
