@@ -1,0 +1,20 @@
+{
+    "extends": "../../external/pyright/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./out",
+        "paths": {
+            "pyright-internal/*": [
+                "../../external/pyright/packages/pyright-internal/src/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*",
+        "**/*.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "out"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "API Migration Tool CLI",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/packages/api_migration_tool/index.js",
+            "preLaunchTask": "npm: build:cli:dev",
+            "args": [
+                "--root-dir=${env:PYSTK_TEST_BASE}\\temp",
+                "--xml-mappings-dir=${env:PYSTK_TEST_BASE}\\pystk\\mappings",
+                "--skip-dir=${env:PYSTK_TEST_BASE}\\temp\\agi\\stk12"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "outFiles": [
+                "${workspaceRoot}/packages/api_migration_tool/dist/**/*.js"
+            ]
+        }
+    ]
+}
