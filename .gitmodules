@@ -1,0 +1,3 @@
+[submodule "tools/api_migration_tool/external/pyright"]
+	path = tools/api_migration_tool/external/pyright
+	url = https://github.com/microsoft/pyright
