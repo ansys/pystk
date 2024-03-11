@@ -20,7 +20,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
         your environment.
 
     .. grid-item-card:: User guide :fa:`book-open-reader`
-        :link: user_guide/index
+        :link: user-guide/index
         :link-type: doc
 
         Learn about the capabilities, features, and key topics in PySTK. This
@@ -61,7 +61,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
        :maxdepth: 3
     
        getting-started/index
-       user_guide/index
+       user-guide/index
        {% if build_examples %}
        examples/index
        {% endif %}
