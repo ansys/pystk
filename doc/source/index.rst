@@ -12,7 +12,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
 .. grid:: 2
 
     .. grid-item-card:: Getting started :fa:`person-running`
-        :link: getting_started/index
+        :link: getting-started/index
         :link-type: doc
 
         Step-by-step guidelines on how to set up your environment to work with
@@ -60,7 +60,7 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
        :hidden:
        :maxdepth: 3
     
-       getting_started/index
+       getting-started/index
        user_guide/index
        {% if build_examples %}
        examples/index
