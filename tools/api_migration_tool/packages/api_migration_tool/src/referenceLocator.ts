@@ -1,7 +1,8 @@
-import { SourceFileInfo } from "pyright-internal/analyzer/sourceFileInfo";
 import { ConsoleInterface } from "pyright-internal/common/console";
-import { ProgramView } from "pyright-internal/common/extensibility";
-import { Uri } from "pyright-internal/common/uri/uri";
+import {
+  ProgramView,
+  SourceFileInfo,
+} from "pyright-internal/common/extensibility";
 import { ReferencesProvider } from "pyright-internal/languageService/referencesProvider";
 import { CancellationTokenSource } from "vscode-jsonrpc";
 
@@ -36,7 +37,7 @@ export class ReferenceLocator {
       let initialCount = symbol.referencesResult.locations.length;
 
       this.referenceProvider.addReferencesToResult(
-        Uri.file(sourceFileInfo.sourceFile.getUri().getFilePath()),
+        sourceFileInfo.sourceFile.getFilePath(),
         /* includeDeclaration */ false,
         symbol.referencesResult
       );

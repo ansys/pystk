@@ -9,11 +9,8 @@ import { StandardConsole } from "pyright-internal/common/console";
 import { FullAccessHost } from "pyright-internal/common/fullAccessHost";
 import { getHeapStatistics } from "pyright-internal/common/memUtils";
 import { createFromRealFileSystem } from "pyright-internal/common/realFileSystem";
-import { createServiceProvider } from "pyright-internal/common/serviceProviderExtensions";
 
 import { CancellationTokenSource } from "vscode-jsonrpc";
-
-import { Uri } from "pyright-internal/common/uri/uri";
 
 import Path from "path";
 
@@ -70,14 +67,14 @@ export function main() {
 
   const fs = createFromRealFileSystem(output);
 
-  const pythonFileList: Uri[] = findFiles(fs, rootDirectory, ".py", output);
+  const pythonFileList: string[] = findFiles(fs, rootDirectory, ".py", output);
 
   output.info(
     `Found ${pythonFileList.length} ` +
       `source ${pythonFileList.length === 1 ? "file" : "files"}`
   );
 
-  const xmlMappingFileList: Uri[] = findFiles(
+  const xmlMappingFileList: string[] = findFiles(
     fs,
     xmlMappingsDir,
     ".xml",
@@ -90,23 +87,23 @@ export function main() {
   );
 
   const cacheManager = new CacheManager();
-  const serviceProvider = createServiceProvider(fs, output, cacheManager);
+  //const serviceProvider = createServiceProvider(fs, output, cacheManager);
   const configOptions = new ConfigOptions(
-    Uri.file(rootDirectory),
+    rootDirectory,
     commandLineOptions.strict ? "strict" : undefined
   );
 
   configOptions.defaultPythonPlatform = commandLineOptions.pythonPlatform;
 
   const importResolver = new ImportResolver(
-    serviceProvider,
+    fs,
     configOptions,
-    new FullAccessHost(serviceProvider)
+    new FullAccessHost(fs)
   );
 
   const cancellationTokenSource = new CancellationTokenSource();
 
-  const program = new Program(importResolver, configOptions, serviceProvider);
+  const program = new Program(importResolver, configOptions, output);
   program.setTrackedFiles(pythonFileList);
 
   const symbolsToRename: SymbolRenameRecord[] = [];
@@ -155,19 +152,21 @@ export function main() {
   );
 
   for (const curSourceFileInfo of program.getSourceFileInfoList()) {
-    const currentSourceFilePath = curSourceFileInfo.sourceFile
-      .getUri()
-      .getFilePath();
-    const isExcluded = commandLineOptions.skipDirectories.some((element) =>
-      Uri.file(currentSourceFilePath).isChild(Uri.file(element))
-    );
-    if (isExcluded || Path.extname(currentSourceFilePath) !== ".py") {
+    const currentSourceFilePath = curSourceFileInfo.sourceFile.getFilePath();
+    const isExcluded = false;
+    //commandLineOptions.skipDirectories.some((element) =>  Uri.file(currentSourceFilePath).isChild(Uri.file(element)));
+    if (
+      isExcluded ||
+      Path.extname(currentSourceFilePath) !== ".py" ||
+      (Path.basename(currentSourceFilePath) !== "aviator.py" &&
+        Path.basename(currentSourceFilePath) !== "area_target.py")
+    ) {
       continue;
     }
 
     output.info(
       `Processing ${getPathRelativeToRoot(
-        curSourceFileInfo.sourceFile.getUri().getFilePath()
+        curSourceFileInfo.sourceFile.getFilePath()
       )}`
     );
 
@@ -191,11 +190,7 @@ export function main() {
 
   for (const symbolToRename of symbolsToRename) {
     symbolToRename.referencesResult.locations.forEach((loc) => {
-      codeEditor.recordEdit(
-        loc.uri.getFilePath(),
-        loc.range,
-        symbolToRename.newName
-      );
+      codeEditor.recordEdit(loc.path, loc.range, symbolToRename.newName);
     });
   }
 
