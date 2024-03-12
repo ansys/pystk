@@ -142,10 +142,10 @@ categorized by version, along with brief descriptions of each change.
 
 .. _official documentation: https://stk.docs.pyansys.com
 .. _project documentation: https://stk.docs.pyansys.com
-.. _official installation guidelines: https://stk.docs.pyansys.com/getting_started/installing_pystk.html
-.. _getting started: https://stk.docs.pyansys.com/getting_started/index.html
-.. _user guide: https://stk.docs.pyansys.com/user_guide/index.html
-.. _api reference: https://stk.docs.pyansys.com/api/index.html
-.. _examples: https://stk.docs.pyansys.com/examples/index.html
+.. _official installation guidelines: https://stk.docs.pyansys.com/version/stable/getting-started/installing-pystk.html
+.. _getting started: https://stk.docs.pyansys.com/version/stable/getting-started/
+.. _user guide: https://stk.docs.pyansys.com/version/stable/user-guide/
+.. _api reference: https://stk.docs.pyansys.com/version/stable/api/
+.. _examples: https://stk.docs.pyansys.com/version/stable/examples/
 
-.. _ CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md
+.. _CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md
