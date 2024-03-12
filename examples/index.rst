@@ -10,5 +10,6 @@ This series of tutorials explain how to create custom applications based on
 
 .. nbgallery::
 
-    stk_engine/hohmann_transfer_using_targeter
-    stk_engine/loading-ephem-from-jpl-horizons
+    hohmann_transfer_using_targeter
+    loading-ephem-from-jpl-horizons
+    lambert-transfer
