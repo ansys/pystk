@@ -232,7 +232,7 @@ linkcheck_ignore = [
 
 # -- Sphinx application setup ------------------------------------------------
 
-def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
+def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     """
     Copy the examples directory to the source directory of the documentation.
 
@@ -247,17 +247,19 @@ def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
         SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
-    examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
-    for example in status_iterator(
-            examples, 
-            "Copying examples...", 
+    index = EXAMPLES_DIRECTORY / "index.rst"
+    files = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    files.append(index)
+    for file in status_iterator(
+            files, 
+            "Copying examples file...", 
             "green", 
-            len(examples),
+            len(files),
             verbosity=1,
-            stringify_func=(lambda x: x.name),
+            stringify_func=(lambda file: file.name),
     ):
-        destination_file = SOURCE_EXAMPLES / example.name
-        destination_file.write_text(example.read_text())
+        destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text())
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -317,6 +319,6 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     if BUILD_EXAMPLES:
-        app.connect("builder-inited", copy_examples_to_source_dir)
+        app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
