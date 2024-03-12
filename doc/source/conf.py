@@ -104,7 +104,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["examples/stk_engine/solar_panel_tool.py", "examples/stk_engine/stk_tutorial.py", "examples/stk_engine/stk_vgt_tutorial.py"]
+exclude_examples = ["examples/solar_panel_tool.py", "examples/stk_tutorial.py", "examples/stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
