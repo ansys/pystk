@@ -98,3 +98,12 @@ export function getPathRelativeToRoot(path: string): string {
   }
   return result;
 }
+
+export function pathIsChild(childPath: string, parentPath: string): boolean {
+  const relative = Path.relative(parentPath, childPath);
+  return (
+    relative !== undefined &&
+    !relative.startsWith("..") &&
+    !Path.isAbsolute(relative)
+  );
+}

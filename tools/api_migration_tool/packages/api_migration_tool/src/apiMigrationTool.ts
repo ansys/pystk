@@ -1,7 +1,6 @@
 /* eslint-disable */
 /* eslint-enable */
 
-import { CacheManager } from "pyright-internal/analyzer/cacheManager";
 import { ImportResolver } from "pyright-internal/analyzer/importResolver";
 import { Program } from "pyright-internal/analyzer/program";
 import { ConfigOptions } from "pyright-internal/common/configOptions";
@@ -19,6 +18,7 @@ import { DeclarationLocator } from "./declarationLocator";
 import {
   findFiles,
   getPathRelativeToRoot,
+  pathIsChild,
   readMappingFileDirectory,
   setRootDirectory,
 } from "./fileUtilities";
@@ -86,8 +86,6 @@ export function main() {
       `mapping ${xmlMappingFileList.length === 1 ? "file" : "files"}`
   );
 
-  const cacheManager = new CacheManager();
-  //const serviceProvider = createServiceProvider(fs, output, cacheManager);
   const configOptions = new ConfigOptions(
     rootDirectory,
     commandLineOptions.strict ? "strict" : undefined
@@ -153,13 +151,25 @@ export function main() {
 
   for (const curSourceFileInfo of program.getSourceFileInfoList()) {
     const currentSourceFilePath = curSourceFileInfo.sourceFile.getFilePath();
-    const isExcluded = false;
-    //commandLineOptions.skipDirectories.some((element) =>  Uri.file(currentSourceFilePath).isChild(Uri.file(element)));
+    const isExcluded =
+      commandLineOptions.skipDirectories.some((element) =>
+        pathIsChild(currentSourceFilePath, element)
+      ) ||
+      !pathIsChild(currentSourceFilePath, commandLineOptions.rootDirectory);
+
+    let regex = undefined;
+    if (commandLineOptions.fileFilter !== undefined) {
+      let filter = commandLineOptions.fileFilter;
+      if (filter.startsWith('"') && filter.endsWith('"')) {
+        filter = filter.slice(1, -1);
+      }
+      regex = new RegExp(filter);
+    }
+
     if (
       isExcluded ||
       Path.extname(currentSourceFilePath) !== ".py" ||
-      (Path.basename(currentSourceFilePath) !== "aviator.py" &&
-        Path.basename(currentSourceFilePath) !== "area_target.py")
+      (regex !== undefined && !regex.test(currentSourceFilePath))
     ) {
       continue;
     }

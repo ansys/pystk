@@ -28,6 +28,7 @@ export class CommandLineOptions {
   rootDirectory?: string | undefined;
   skipDirectories: string[] = [];
   xmlMappingsDirectory?: string | undefined;
+  fileFilter: string | undefined;
   log: string | undefined;
   help: string | undefined;
   pythonPath: string | undefined;
@@ -52,6 +53,7 @@ export function processArgs(): Args {
     { name: "root-dir", type: String },
     { name: "xml-mappings-dir", type: String },
     { name: "skip-dir", type: String, multiple: true },
+    { name: "file-filter", type: String },
     { name: "log", type: String },
     { name: "help", alias: "h", type: Boolean },
     { name: "level", type: String },
@@ -118,6 +120,10 @@ export function processArgs(): Args {
 
   if (args["skip-dir"] !== undefined) {
     options.skipDirectories = args["skip-dir"];
+  }
+
+  if (args["file-filter"] !== undefined) {
+    options.fileFilter = args["file-filter"];
   }
 
   options.strict = args.strict && !args["no-strict"];
@@ -211,6 +217,7 @@ function printUsage() {
       "  --root-dir <DIRECTORY>             Required: directory containing the files to migrate\n" +
       "  --xml-mappings-dir <DIRECTORY>     Required: directory containing the XML mapping files to apply\n" +
       "  --skip-dir <DIRECTORY>             Directory containing files that should not be migrated\n" +
+      "  --file-filter <REGEX>              Only process the file names that match the regular expression\n" +
       "  --level <LEVEL>                    Minimum diagnostic level (error, warn, info or trace)\n" +
       "  --pythonplatform <PLATFORM>        Analyze for a specific platform (Darwin, Linux, Windows)\n" +
       "  --pythonpath <FILE>                Path to the Python interpreter\n" +
