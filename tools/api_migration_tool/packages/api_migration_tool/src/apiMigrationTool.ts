@@ -1,30 +1,10 @@
 /* eslint-disable */
 /* eslint-enable */
 
-import { ImportResolver } from "pyright-internal/analyzer/importResolver";
-import { Program } from "pyright-internal/analyzer/program";
-import { ConfigOptions } from "pyright-internal/common/configOptions";
 import { StandardConsole } from "pyright-internal/common/console";
-import { FullAccessHost } from "pyright-internal/common/fullAccessHost";
-import { getHeapStatistics } from "pyright-internal/common/memUtils";
-import { createFromRealFileSystem } from "pyright-internal/common/realFileSystem";
-
-import { CancellationTokenSource } from "vscode-jsonrpc";
-
-import Path from "path";
-
-import { CodeEditor } from "./codeEditor";
-import { DeclarationLocator } from "./declarationLocator";
-import {
-  findFiles,
-  getPathRelativeToRoot,
-  pathIsChild,
-  readMappingFileDirectory,
-  setRootDirectory,
-} from "./fileUtilities";
+import { CodeEdit, CodeEditor } from "./codeEditor";
+import { CodeScanner } from "./codeScanner";
 import { CommandLineStatus, processArgs } from "./options";
-import { ReferenceLocator } from "./referenceLocator";
-import { SymbolRenameRecord } from "./symbolRenameRecord";
 
 // Increase the default stack trace limit from 16 to 64 to help diagnose
 // crashes with deep stack traces.
@@ -45,164 +25,18 @@ export function main() {
     return;
   }
 
-  const commandLineOptions = args.commandLineOptions;
+  const output = new StandardConsole(args.commandLineOptions.logLevel);
 
-  if (
-    commandLineOptions.rootDirectory === undefined ||
-    commandLineOptions.xmlMappingsDirectory === undefined
-  ) {
-    return;
-  }
-
-  console.log(`Global root directory: ${(global as any).__rootDirectory}`);
-
-  const rootDirectory = commandLineOptions.rootDirectory;
-  const xmlMappingsDir = commandLineOptions.xmlMappingsDirectory;
-
-  setRootDirectory(rootDirectory);
-
-  const output = new StandardConsole(commandLineOptions.logLevel);
-
-  output.info(`Root directory: ${rootDirectory}`);
-
-  const fs = createFromRealFileSystem(output);
-
-  const pythonFileList: string[] = findFiles(fs, rootDirectory, ".py", output);
-
-  output.info(
-    `Found ${pythonFileList.length} ` +
-      `source ${pythonFileList.length === 1 ? "file" : "files"}`
-  );
-
-  const xmlMappingFileList: string[] = findFiles(
-    fs,
-    xmlMappingsDir,
-    ".xml",
+  let codeScanner: CodeScanner = new CodeScanner(
+    args.commandLineOptions,
     output
   );
-
-  output.info(
-    `Found ${xmlMappingFileList.length} ` +
-      `mapping ${xmlMappingFileList.length === 1 ? "file" : "files"}`
-  );
-
-  const configOptions = new ConfigOptions(
-    rootDirectory,
-    commandLineOptions.strict ? "strict" : undefined
-  );
-
-  configOptions.defaultPythonPlatform = commandLineOptions.pythonPlatform;
-
-  const importResolver = new ImportResolver(
-    fs,
-    configOptions,
-    new FullAccessHost(fs)
-  );
-
-  const cancellationTokenSource = new CancellationTokenSource();
-
-  const program = new Program(importResolver, configOptions, output);
-  program.setTrackedFiles(pythonFileList);
-
-  const symbolsToRename: SymbolRenameRecord[] = [];
-
-  output.info("Processing XML input files and finding declarations...");
-
-  readMappingFileDirectory(
-    xmlMappingsDir,
-    fs,
-    rootDirectory,
-    output,
-    (pythonFilePath: string, mappings: any) => {
-      let declarationLocator = new DeclarationLocator(
-        pythonFilePath,
-        program,
-        cancellationTokenSource
-      );
-
-      for (const mapping of mappings) {
-        let declaration = declarationLocator.findDeclaration(
-          mapping.oldName,
-          mapping.parentScope,
-          mapping.category
-        );
-
-        if (declaration) {
-          output.log(`${mapping.oldName} -> ${mapping.newName}`);
-          symbolsToRename.push(
-            new SymbolRenameRecord(
-              mapping.oldName,
-              mapping.newName,
-              declaration
-            )
-          );
-        }
-      }
-    }
-  );
-
-  output.info("Finding references...");
-
-  let referenceLocator = new ReferenceLocator(
-    program,
-    cancellationTokenSource,
-    output
-  );
-
-  for (const curSourceFileInfo of program.getSourceFileInfoList()) {
-    const currentSourceFilePath = curSourceFileInfo.sourceFile.getFilePath();
-    const isExcluded =
-      commandLineOptions.skipDirectories.some((element) =>
-        pathIsChild(currentSourceFilePath, element)
-      ) ||
-      !pathIsChild(currentSourceFilePath, commandLineOptions.rootDirectory);
-
-    let regex = undefined;
-    if (commandLineOptions.fileFilter !== undefined) {
-      let filter = commandLineOptions.fileFilter;
-      if (filter.startsWith('"') && filter.endsWith('"')) {
-        filter = filter.slice(1, -1);
-      }
-      regex = new RegExp(filter);
-    }
-
-    if (
-      isExcluded ||
-      Path.extname(currentSourceFilePath) !== ".py" ||
-      (regex !== undefined && !regex.test(currentSourceFilePath))
-    ) {
-      continue;
-    }
-
-    output.info(
-      `Processing ${getPathRelativeToRoot(
-        curSourceFileInfo.sourceFile.getFilePath()
-      )}`
-    );
-
-    referenceLocator.populateReferences(symbolsToRename, curSourceFileInfo);
-
-    // This operation can consume significant memory, so check
-    // for situations where we need to discard the type cache.
-    //program.handleMemoryHighUsage();
-
-    if (global.gc) {
-      const heapStats = getHeapStatistics();
-      if (heapStats.malloced_memory > 4192 * 1024 * 1024) {
-        global.gc();
-      }
-    }
-  }
+  let codeEdits: CodeEdit[] = codeScanner.scan();
 
   output.info("Creating code edits...");
 
   const codeEditor = new CodeEditor(output);
-
-  for (const symbolToRename of symbolsToRename) {
-    symbolToRename.referencesResult.locations.forEach((loc) => {
-      codeEditor.recordEdit(loc.path, loc.range, symbolToRename.newName);
-    });
-  }
+  codeEditor.recordEdits(codeEdits);
 
   output.info("Applying migrations");
 
