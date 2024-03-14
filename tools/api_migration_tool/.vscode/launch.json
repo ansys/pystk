@@ -10,7 +10,9 @@
             "args": [
                 "--root-dir=${env:PYSTK_TEST_BASE}\\temp",
                 "--xml-mappings-dir=${env:PYSTK_TEST_BASE}\\pystk\\mappings",
-                "--skip-dir=${env:PYSTK_TEST_BASE}\\temp\\agi\\stk12"
+                "--skip-dir=${env:PYSTK_TEST_BASE}\\temp\\agi\\stk12",
+                "--jobs=2",
+                "--file-filter=\"area_target\\.py|aviator\\.py\"",
             ],
             "internalConsoleOptions": "openOnSessionStart",
             "outFiles": [

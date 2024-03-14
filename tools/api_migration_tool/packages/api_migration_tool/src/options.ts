@@ -2,6 +2,7 @@ import commandLineArgs, {
   OptionDefinition,
   CommandLineOptions as RawCommandLineOptions,
 } from "command-line-args";
+import { cpus, freemem } from "os";
 import {
   ConsoleInterface,
   LogLevel,
@@ -29,6 +30,7 @@ export class CommandLineOptions {
   skipDirectories: string[] = [];
   xmlMappingsDirectory?: string | undefined;
   fileFilter: string | undefined;
+  numberOfJobs: number = 0;
   log: string | undefined;
   help: string | undefined;
   pythonPath: string | undefined;
@@ -54,6 +56,7 @@ export function processArgs(): Args {
     { name: "xml-mappings-dir", type: String },
     { name: "skip-dir", type: String, multiple: true },
     { name: "file-filter", type: String },
+    { name: "jobs", alias: "j", type: Number },
     { name: "log", type: String },
     { name: "help", alias: "h", type: Boolean },
     { name: "level", type: String },
@@ -96,7 +99,7 @@ export function processArgs(): Args {
   }
 
   for (const [arg, value] of Object.entries(args)) {
-    if (value === null) {
+    if (value === null && arg != "jobs") {
       console.error(`'${arg}' option requires a value`);
       return new Args(CommandLineStatus.ParameterError);
     }
@@ -127,6 +130,17 @@ export function processArgs(): Args {
   }
 
   options.strict = args.strict && !args["no-strict"];
+
+  if (args.jobs === null) {
+    // -j passed without an explicit value, use num cpus -1 or RAM/4GB
+    const fourGb = 4096 * 1024 * 1024; // assume each process requires 4GB
+    options.numberOfJobs = Math.floor(
+      Math.min(cpus().length - 1, freemem() / fourGb)
+    );
+  } else if (args.jobs !== undefined) {
+    // -j count, use specified count
+    options.numberOfJobs = args.jobs;
+  }
 
   if (args.pythonplatform) {
     if (
@@ -218,6 +232,7 @@ function printUsage() {
       "  --xml-mappings-dir <DIRECTORY>     Required: directory containing the XML mapping files to apply\n" +
       "  --skip-dir <DIRECTORY>             Directory containing files that should not be migrated\n" +
       "  --file-filter <REGEX>              Only process the file names that match the regular expression\n" +
+      "  -j,--jobs [NUMBER]                 Number of parallel processes to spawn\n" +
       "  --level <LEVEL>                    Minimum diagnostic level (error, warn, info or trace)\n" +
       "  --pythonplatform <PLATFORM>        Analyze for a specific platform (Darwin, Linux, Windows)\n" +
       "  --pythonpath <FILE>                Path to the Python interpreter\n" +
