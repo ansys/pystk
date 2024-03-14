@@ -35,7 +35,7 @@ tests = [
     "parameterized==0.9.0",
 ]
 doc = [
-    "ansys-sphinx-theme==0.14.0",
+    "ansys-sphinx-theme==0.14.1",
     "enum-tools[sphinx]==0.11.0",
     "httpx==0.27.0",
     "jupytext==1.16.1",
@@ -48,7 +48,7 @@ doc = [
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "jupyterlab==4.1.4",
+    "jupyterlab==4.1.5",
 ]
 visualization = [
     "numpy==1.26.4",
