@@ -50,6 +50,17 @@ export class CodeEditor {
             return a.line - b.line;
           }
         })
+        .filter((a: CodeEdit, index: number, arr: CodeEdit[]) => {
+          return (
+            arr.findIndex(
+              (b: CodeEdit) =>
+                a.filepath === b.filepath &&
+                a.line === b.line &&
+                a.startPosition === b.startPosition &&
+                a.endPosition === b.endPosition
+            ) === index
+          );
+        })
         .reverse();
 
       const content: string = fs.readFileSync(filePath).toString();
