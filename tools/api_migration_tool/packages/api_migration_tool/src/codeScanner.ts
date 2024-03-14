@@ -20,7 +20,7 @@ import {
   setRootDirectory,
 } from "./fileUtilities";
 import { CommandLineOptions } from "./options";
-import { ReferenceLocator } from "./referenceLocator";
+import { Reference, ReferenceLocator } from "./referenceLocator";
 import { SymbolRenameRecord } from "./symbolRenameRecord";
 
 export class CodeScanner {
@@ -28,20 +28,28 @@ export class CodeScanner {
   private rootDirectory: string;
   private pythonFileList: string[];
   private filesToScan: string[];
+  private cancellationTokenSource: CancellationTokenSource;
+  private program: Program | undefined;
+  private symbolsToRename: SymbolRenameRecord[] = [];
 
   constructor(
     private options: CommandLineOptions,
-    private output: ConsoleInterface
+    private output: ConsoleInterface,
+    private silent: boolean = false
   ) {
-    this.output.info(
-      `Global root directory: ${(global as any).__rootDirectory}`
-    );
+    if (!silent) {
+      this.output.info(
+        `Global root directory: ${(global as any).__rootDirectory}`
+      );
+    }
 
     this.rootDirectory = this.options.rootDirectory!;
 
     setRootDirectory(this.rootDirectory);
 
-    this.output.info(`Root directory: ${this.rootDirectory}`);
+    if (!silent) {
+      this.output.info(`Root directory: ${this.rootDirectory}`);
+    }
 
     this.fs = createFromRealFileSystem(this.output);
 
@@ -56,12 +64,24 @@ export class CodeScanner {
       (path) => !this.isFileExcluded(path)
     );
 
-    this.output.info(
-      `Found ${this.pythonFileList.length} ` +
-        `source ${this.pythonFileList.length === 1 ? "file" : "files"}, ${
-          this.filesToScan.length
-        } ${this.filesToScan.length === 1 ? "file" : "files"} to migrate`
-    );
+    // Sort the files by size so the largest files are
+    // processed first
+    // This helps with load balancing when splitting
+    // work across multiple worker processes
+    this.filesToScan.sort((a, b) => {
+      return this.fs.statSync(b).size - this.fs.statSync(a).size;
+    });
+
+    if (!silent) {
+      this.output.info(
+        `Found ${this.pythonFileList.length} ` +
+          `source ${this.pythonFileList.length === 1 ? "file" : "files"}, ${
+            this.filesToScan.length
+          } ${this.filesToScan.length === 1 ? "file" : "files"} to migrate`
+      );
+    }
+
+    this.cancellationTokenSource = new CancellationTokenSource();
   }
 
   public getFilesToScan(): string[] {
@@ -94,12 +114,7 @@ export class CodeScanner {
     return false;
   }
 
-  public scan(
-    begin: number | undefined = undefined,
-    end: number | undefined = undefined
-  ): CodeEdit[] {
-    let result: CodeEdit[] = [];
-
+  public prepareScan() {
     const xmlMappingsDir = this.options.xmlMappingsDirectory!;
 
     const xmlMappingFileList: string[] = findFiles(
@@ -109,10 +124,12 @@ export class CodeScanner {
       this.output
     );
 
-    this.output.info(
-      `Found ${xmlMappingFileList.length} ` +
-        `mapping ${xmlMappingFileList.length === 1 ? "file" : "files"}`
-    );
+    if (!this.silent) {
+      this.output.info(
+        `Found ${xmlMappingFileList.length} ` +
+          `mapping ${xmlMappingFileList.length === 1 ? "file" : "files"}`
+      );
+    }
 
     const configOptions = new ConfigOptions(
       this.rootDirectory!,
@@ -127,14 +144,14 @@ export class CodeScanner {
       new FullAccessHost(this.fs)
     );
 
-    const cancellationTokenSource = new CancellationTokenSource();
+    this.program = new Program(importResolver, configOptions, this.output);
+    this.program.setTrackedFiles(this.pythonFileList);
 
-    const program = new Program(importResolver, configOptions, this.output);
-    program.setTrackedFiles(this.pythonFileList);
-
-    const symbolsToRename: SymbolRenameRecord[] = [];
-
-    this.output.info("Processing XML input files and finding declarations...");
+    if (!this.silent) {
+      this.output.info(
+        "Processing XML input files and finding declarations..."
+      );
+    }
 
     readMappingFileDirectory(
       xmlMappingsDir,
@@ -144,8 +161,8 @@ export class CodeScanner {
       (pythonFilePath: string, mappings: any) => {
         let declarationLocator = new DeclarationLocator(
           pythonFilePath,
-          program,
-          cancellationTokenSource
+          this.program!,
+          this.cancellationTokenSource
         );
 
         for (const mapping of mappings) {
@@ -157,7 +174,7 @@ export class CodeScanner {
 
           if (declaration) {
             this.output.log(`${mapping.oldName} -> ${mapping.newName}`);
-            symbolsToRename.push(
+            this.symbolsToRename.push(
               new SymbolRenameRecord(
                 mapping.oldName,
                 mapping.newName,
@@ -168,24 +185,40 @@ export class CodeScanner {
         }
       }
     );
+  }
 
-    this.output.info("Finding references...");
+  public scan(
+    begin: number | undefined = undefined,
+    end: number | undefined = undefined
+  ): CodeEdit[] {
+    let result: CodeEdit[] = [];
+
+    if (this.program === undefined) {
+      throw new Error("prepareScan() must be called first");
+    }
+
+    if (!this.silent) {
+      this.output.info("Finding references...");
+    }
 
     let referenceLocator = new ReferenceLocator(
-      program,
-      cancellationTokenSource,
+      this.program,
+      this.cancellationTokenSource,
       this.output
     );
 
+    const allSymbolReferences: Reference[] = [];
     const sliceToScan = this.filesToScan.slice(begin, end);
     for (const currentSourceFilePath of sliceToScan) {
       this.output.info(
         `Processing ${getPathRelativeToRoot(currentSourceFilePath)}`
       );
 
-      referenceLocator.populateReferences(
-        symbolsToRename,
-        program.getSourceFileInfo(currentSourceFilePath)!
+      allSymbolReferences.push(
+        ...referenceLocator.getReferences(
+          this.symbolsToRename,
+          this.program.getSourceFileInfo(currentSourceFilePath)!
+        )
       );
 
       // This operation can consume significant memory, so check
@@ -200,18 +233,18 @@ export class CodeScanner {
       }
     }
 
-    for (const symbolToRename of symbolsToRename) {
-      symbolToRename.referencesResult.locations.forEach((loc) => {
+    for (const symbolReference of allSymbolReferences) {
+      for (const symbolOccurence of symbolReference.occurences) {
         result.push(
           new CodeEdit(
-            loc.path,
-            loc.range.start.line,
-            loc.range.start.character,
-            loc.range.end.character,
-            symbolToRename.newName
+            symbolOccurence.path,
+            symbolOccurence.range.start.line,
+            symbolOccurence.range.start.character,
+            symbolOccurence.range.end.character,
+            symbolReference.newName
           )
         );
-      });
+      }
     }
 
     return result;

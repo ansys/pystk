@@ -3,29 +3,33 @@ import {
   ProgramView,
   SourceFileInfo,
 } from "pyright-internal/common/extensibility";
-import { ReferencesProvider } from "pyright-internal/languageService/referencesProvider";
+import { DocumentRange } from "pyright-internal/common/textRange";
+import { FindReferencesTreeWalker } from "pyright-internal/languageService/referencesProvider";
 import { CancellationTokenSource } from "vscode-jsonrpc";
 
 import { SymbolRenameRecord } from "./symbolRenameRecord";
 
-export class ReferenceLocator {
-  private referenceProvider: ReferencesProvider;
+export class Reference {
+  constructor(
+    readonly oldName: string,
+    readonly newName: string,
+    readonly occurences: DocumentRange[]
+  ) {}
+}
 
+export class ReferenceLocator {
   constructor(
     private program: ProgramView,
     private cancellationTokenSource: CancellationTokenSource,
     private output: ConsoleInterface
-  ) {
-    this.referenceProvider = new ReferencesProvider(
-      program,
-      cancellationTokenSource.token
-    );
-  }
+  ) {}
 
-  public populateReferences(
+  public getReferences(
     symbolRenameRecords: SymbolRenameRecord[],
     sourceFileInfo: SourceFileInfo
-  ): void {
+  ): Reference[] {
+    const result: Reference[] = [];
+
     const content = sourceFileInfo.sourceFile.getFileContent() ?? "";
 
     for (const symbol of symbolRenameRecords) {
@@ -34,19 +38,22 @@ export class ReferenceLocator {
         continue;
       }
 
-      let initialCount = symbol.referencesResult.locations.length;
-
-      this.referenceProvider.addReferencesToResult(
+      const refTreeWalker = new FindReferencesTreeWalker(
+        this.program,
         sourceFileInfo.sourceFile.getFilePath(),
+        symbol.referencesResult,
         /* includeDeclaration */ false,
-        symbol.referencesResult
+        this.cancellationTokenSource.token
       );
+
+      let references = refTreeWalker.findReferences();
+      result.push(new Reference(symbol.oldName, symbol.newName, references));
 
       this.output.log(
-        `Found ${
-          symbol.referencesResult.locations.length - initialCount
-        } references to ${symbol.oldName}`
+        `Found ${references.length} references to ${symbol.oldName}`
       );
     }
+
+    return result;
   }
 }

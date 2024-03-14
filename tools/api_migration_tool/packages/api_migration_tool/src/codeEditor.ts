@@ -16,6 +16,7 @@ export class CodeEdit {
 
 export class CodeEditor {
   replacements: { [file: string]: CodeEdit[] } = {};
+  numberOfEdits: number = 0;
 
   constructor(private output: ConsoleInterface) {}
 
@@ -26,11 +27,17 @@ export class CodeEditor {
   }
 
   recordEdit(edit: CodeEdit) {
+    ++this.numberOfEdits;
+
     if (!(edit.filepath in this.replacements)) {
       this.replacements[edit.filepath] = [];
     }
 
     this.replacements[edit.filepath].push(edit);
+  }
+
+  public getNumberOfEdits() {
+    return this.numberOfEdits;
   }
 
   public applyEdits() {

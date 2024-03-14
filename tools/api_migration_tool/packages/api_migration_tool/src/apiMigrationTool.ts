@@ -6,6 +6,7 @@ import { CodeScanner } from "./codeScanner";
 import { CommandLineOptions, CommandLineStatus, processArgs } from "./options";
 
 interface IWorkerMessage {
+  cmd: string;
   commandLineOptions: CommandLineOptions | undefined;
   begin: number | undefined;
   end: number | undefined;
@@ -48,6 +49,7 @@ export function main() {
         args.commandLineOptions,
         output
       );
+      codeScanner.prepareScan();
       let codeEdits: CodeEdit[] = codeScanner.scan();
 
       output.info("Creating code edits...");
@@ -55,7 +57,7 @@ export function main() {
       const codeEditor = new CodeEditor(output);
       codeEditor.recordEdits(codeEdits);
 
-      output.info("Applying migrations");
+      output.info(`Applying ${codeEditor.getNumberOfEdits()} migrations`);
 
       codeEditor.applyEdits();
     } else {
@@ -66,40 +68,84 @@ export function main() {
         output
       );
 
-      let workers: Worker[] = [];
-      for (let i = 0; i < numJobs; i++) {
-        workers.push(cluster.fork());
-      }
-
-      const numFilesToScan = codeScanner.getFilesToScan().length;
-      let sliceCount = Math.floor(numFilesToScan / numJobs);
-
       const codeEditor = new CodeEditor(output);
 
+      let numChunksPerWorker = 128;
+      if (args.commandLineOptions.numberOfChunksPerWorker > 0) {
+        numChunksPerWorker = args.commandLineOptions.numberOfChunksPerWorker;
+      }
+      output.info(`Using ${numChunksPerWorker} chunks per worker`);
+      const numFilesToScan = codeScanner.getFilesToScan().length;
+      const chunkSize = Math.max(
+        Math.floor(numFilesToScan / numJobs / numChunksPerWorker),
+        1
+      );
+
+      let index = 0;
+
+      function endReached(): boolean {
+        return index >= numFilesToScan;
+      }
+
+      function getNextChunk(): [number, number] {
+        const begin = index;
+        let end = Math.min(index + chunkSize, numFilesToScan);
+        const result: [number, number] = [begin, end];
+        index = end;
+        return result;
+      }
+
+      let workers: Worker[] = [];
       for (let i = 0; i < numJobs; i++) {
-        const begin = i * sliceCount;
-        let end = (i + 1) * sliceCount;
-        if (i == numJobs - 1) {
-          // Adjust last slice
-          end = numFilesToScan;
-        }
-        workers[i].send({
-          cmd: "slice",
-          begin,
-          end,
+        let [begin, end] = getNextChunk();
+
+        const newWorker = cluster.fork();
+        workers.push(newWorker);
+
+        newWorker.send({
+          cmd: "init",
           commandLineOptions: args.commandLineOptions,
         });
+
+        newWorker.send({
+          cmd: "scan",
+          begin,
+          end,
+        });
+
+        if (endReached()) {
+          break;
+        }
       }
 
       cluster.on("message", (worker: Worker, msg: IWorkerResult) => {
-        output.log(`Worker ${worker.process.pid} done`);
+        output.log(`Worker ${worker.process.pid} chunk done`);
         codeEditor.recordEdits(msg.codeEdits!);
+
+        if (!endReached()) {
+          let [begin, end] = getNextChunk();
+          worker.send({
+            cmd: "scan",
+            begin,
+            end,
+          });
+        } else {
+          worker.send({
+            cmd: "terminate",
+          });
+        }
       });
 
       cluster.on("exit", (worker, code) => {
-        output.error(
-          `Worker ${worker.process.pid} exited (exit code: ${code})`
-        );
+        if (code != 0) {
+          output.error(
+            `Worker ${worker.process.pid} exited (exit code: ${code})`
+          );
+        } else {
+          output.log(
+            `Worker ${worker.process.pid} exited (exit code: ${code})`
+          );
+        }
       });
 
       cluster.on("fork", (worker) => {
@@ -109,14 +155,12 @@ export function main() {
       const timerPeriod = 1000;
       const timerCallback = () => {
         const stillAlive = workers.some((worker) => {
-          //console.log(worker);
-          //console.log(worker.isDead());
           return !worker.isDead();
         });
 
         if (!stillAlive) {
           clearInterval(interval);
-          output.info("Applying migrations");
+          output.info(`Applying ${codeEditor.getNumberOfEdits()} migrations`);
 
           codeEditor.applyEdits();
         }
@@ -126,19 +170,21 @@ export function main() {
     }
   } else {
     // worker process
-    console.log(`Worker ${process.pid} started`);
+    let output: StandardConsole | undefined;
+    let codeScanner: CodeScanner | undefined;
     process.on("message", (msg: IWorkerMessage) => {
-      const output = new StandardConsole(msg.commandLineOptions!.logLevel);
-
-      let codeScanner: CodeScanner = new CodeScanner(
-        msg.commandLineOptions!,
-        output
-      );
-      let codeEdits: CodeEdit[] = codeScanner.scan(msg.begin!, msg.end);
-
-      process.send!({ codeEdits: codeEdits });
-      console.log(`Worker ${process.pid} exiting`);
-      process.exit();
+      if (msg.cmd === "init") {
+        output = new StandardConsole(msg.commandLineOptions!.logLevel);
+        output.log(`Worker ${process.pid} started`);
+        codeScanner = new CodeScanner(msg.commandLineOptions!, output!, true);
+        codeScanner!.prepareScan();
+      } else if (msg.cmd === "scan") {
+        let codeEdits: CodeEdit[] = codeScanner!.scan(msg.begin!, msg.end);
+        process.send!({ codeEdits: codeEdits });
+      } else if (msg.cmd === "terminate") {
+        output!.log(`Worker ${process.pid} exiting`);
+        process.exit();
+      }
     });
   }
 }

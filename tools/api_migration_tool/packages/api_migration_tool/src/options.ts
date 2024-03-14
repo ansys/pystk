@@ -31,6 +31,7 @@ export class CommandLineOptions {
   xmlMappingsDirectory?: string | undefined;
   fileFilter: string | undefined;
   numberOfJobs: number = 0;
+  numberOfChunksPerWorker: number = 0;
   log: string | undefined;
   help: string | undefined;
   pythonPath: string | undefined;
@@ -57,6 +58,7 @@ export function processArgs(): Args {
     { name: "skip-dir", type: String, multiple: true },
     { name: "file-filter", type: String },
     { name: "jobs", alias: "j", type: Number },
+    { name: "chunks-per-worker", type: Number },
     { name: "log", type: String },
     { name: "help", alias: "h", type: Boolean },
     { name: "level", type: String },
@@ -127,6 +129,10 @@ export function processArgs(): Args {
 
   if (args["file-filter"] !== undefined) {
     options.fileFilter = args["file-filter"];
+  }
+
+  if (args["chunks-per-worker"] !== undefined) {
+    options.numberOfChunksPerWorker = args["chunks-per-worker"];
   }
 
   options.strict = args.strict && !args["no-strict"];
