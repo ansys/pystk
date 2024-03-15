@@ -42,7 +42,7 @@ export class ReferenceLocator {
         this.program,
         sourceFileInfo.sourceFile.getFilePath(),
         symbol.referencesResult,
-        /* includeDeclaration */ false,
+        /* includeDeclaration */ true,
         this.cancellationTokenSource.token
       );
 
