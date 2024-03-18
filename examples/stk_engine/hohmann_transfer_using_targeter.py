@@ -1,6 +1,6 @@
 # # Hohmann transfer using targeter
 #
-# This example provides a practical example of how to use PySTK to solve for a Hohmann transfer problem. The the satellite presents an circular and equatorial orbit with a periapsis radius of 6700 kilometers. Its desired final orbit has an apoapsis radius of 42238 kilometers.
+# This example provides a practical example of how to use PySTK to solve for a Hohmann transfer problem. The satellite presents an circular and equatorial orbit with a periapsis radius of 6700 kilometers. Its desired final orbit has an apoapsis radius of 42238 kilometers.
 #
 # ## What is a Hohmann transfer?
 #

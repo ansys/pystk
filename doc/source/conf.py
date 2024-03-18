@@ -2,9 +2,11 @@
 from datetime import datetime
 import os
 import pathlib
+import shutil
 
 import sphinx
 from sphinx.util import logging
+from sphinx.util.display import status_iterator
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -102,7 +104,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["examples/stk_engine/solar_panel_tool.py", "examples/stk_engine/stk_tutorial.py", "examples/stk_engine/stk_vgt_tutorial.py"]
+exclude_examples = ["examples/solar_panel_tool.py", "examples/stk_tutorial.py", "examples/stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
@@ -158,8 +160,8 @@ else:
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
     nbsphinx_thumbnails = {
-        "examples/stk_engine/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
-        "examples/stk_engine/loading-ephem-from-jpl-horizons": "_static/thumbnails/loading-ephem-from-jpl-horizons.png",
+        "examples/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/loading-ephem-from-jpl-horizons": "_static/thumbnails/loading-ephem-from-jpl-horizons.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
@@ -201,7 +203,7 @@ jinja_contexts = {
         "linux_images": get_images_directories_from_path(LINUX_IMAGES),
     },
     "install_guide": {
-        "version": version if not version.endswith("dev0") else "main",
+        "version": f"v{version}" if not version.endswith("dev0") else "main",
     },
     "main_toctree": {
         "build_api": BUILD_API,
@@ -233,78 +235,9 @@ linkcheck_anchors_ignore_for_url = [
 ]
 
 
-# -- Sphinx configuration ----------------------------------------------------
+# -- Sphinx application setup ------------------------------------------------
 
-def copy_directory_recursive(source_path: pathlib.Path, destination_path: pathlib.Path):
-    """
-    Copy a directory from a source to a destination path.
-
-    Parameters
-    ----------
-    source_path : pathlib.Path
-        Source directory to be copied.
-    destination_path : pathlib.Path
-        Destination directory.
-
-    """
-    logger = logging.getLogger(__name__)
-
-    if source_path.is_dir():
-        destination_path.mkdir(parents=True, exist_ok=True)
-
-        for file in source_path.iterdir():
-            if file.is_dir():
-                logger.info(f"Copying directory {file.name}/...")
-                copy_directory_recursive(file, destination_path / file.name)
-            else:
-                logger.info(f"Copying file {file.name}...")
-                destination_file = destination_path / file.name
-                destination_file.write_text(file.read_text())
-
-
-def remove_directory_recursive(directory_path: pathlib.Path):
-    """
-    Revemo a directory given its path.
-
-    Parameters
-    ----------
-    directory_path : pathlib.Path
-       Path instance representing the path to the directory. 
-
-    """
-    logger = logging.getLogger(__name__)
-
-    if not directory_path.exists():
-        return
-
-    for file in directory_path.iterdir():
-        if file.is_file():
-            logger.info(f"Removing directory {file.name}/...")
-            file.unlink()
-        elif file.is_dir():
-            remove_directory_recursive(file)
-
-    logger.info(f"Removing directory {directory_path.name}/...")
-    directory_path.rmdir()
-
-
-def copy_directory(origin: pathlib.Path, destination: pathlib.Path):
-    """
-    Copy a directory from an origin to a desired destination.
-
-    Parameters
-    ----------
-    origin : pathlib.Path
-        Desired location of the directory to be copied.
-    destination : pathlib.Path
-        Destination directory path.
-
-    """
-    logger = logging.getLogger(__name__)
-    logger.info(f"\nCopying {origin}/ to {destination}/...")
-    copy_directory_recursive(origin, destination)
-
-def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
+def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     """
     Copy the examples directory to the source directory of the documentation.
 
@@ -315,8 +248,23 @@ def copy_examples_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
-    copy_directory(EXAMPLES_DIRECTORY, SOURCE_EXAMPLES)
+    if not SOURCE_EXAMPLES.exists():
+        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+
+    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    index = EXAMPLES_DIRECTORY / "index.rst"
+    files = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    files.append(index)
+    for file in status_iterator(
+            files, 
+            "Copying examples file...", 
+            "green", 
+            len(files),
+            verbosity=1,
+            stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text())
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -329,8 +277,19 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
 
     """
     OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
-    EXAMPLES_DIRECTORY = pathlib.Path().parent.parent / "examples"
-    copy_directory(EXAMPLES_DIRECTORY, OUTPUT_DIRECTORY)
+    EXAMPLES_DIRECTORY = OUTPUT_DIRECTORY.parent.parent.parent / "examples"
+    examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    for example in status_iterator(
+            examples, 
+            "Adding example in output directory...", 
+            "green", 
+            len(examples),
+            verbosity=1,
+            stringify_func=(lambda x: x.name),
+    ):
+        destination_file = OUTPUT_DIRECTORY / example.name
+        destination_file.write_text(example.read_text())
+    
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -347,7 +306,7 @@ def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: E
     EXAMPLES_DIRECTORY = pathlib.Path(app.srcdir) / "examples"
     logger = logging.getLogger(__name__)
     logger.info(f"\nRemoving {EXAMPLES_DIRECTORY} directory...")
-    remove_directory_recursive(EXAMPLES_DIRECTORY)
+    shutil.rmtree(EXAMPLES_DIRECTORY)
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -365,6 +324,6 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     if BUILD_EXAMPLES:
-        app.connect("builder-inited", copy_examples_to_source_dir)
+        app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
