@@ -110,6 +110,7 @@ class IMRUCollection(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IMRUCollection."""
         initialize_from_source_object(self, sourceObject, IMRUCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -120,12 +121,15 @@ class IMRUCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IMRUCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IMRUCollection, None)
     def __iter__(self):
+        """Create an iterator for the IMRUCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -179,6 +183,7 @@ class IUiFileOpenExt(object):
                              "set_filter_pattern" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiFileOpenExt."""
         initialize_from_source_object(self, sourceObject, IUiFileOpenExt)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -188,6 +193,7 @@ class IUiFileOpenExt(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiFileOpenExt)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiFileOpenExt, None)
     
     _get_file_name_metadata = { "name" : "file_name",
@@ -289,6 +295,7 @@ class IUiApplication(object):
                              "get_process_id" : 37, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiApplication."""
         initialize_from_source_object(self, sourceObject, IUiApplication)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -298,6 +305,7 @@ class IUiApplication(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiApplication)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiApplication, None)
     
     _load_personality_metadata = { "name" : "load_personality",
@@ -600,6 +608,7 @@ class IUiApplicationPartnerAccess(object):
         "method_offsets" : { "grant_partner_access" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiApplicationPartnerAccess."""
         initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -609,6 +618,7 @@ class IUiApplicationPartnerAccess(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiApplicationPartnerAccess, None)
     
     _grant_partner_access_metadata = { "name" : "grant_partner_access",
@@ -635,6 +645,7 @@ class IUiFileOpenExtCollection(object):
                              "item" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUiFileOpenExtCollection."""
         initialize_from_source_object(self, sourceObject, IUiFileOpenExtCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -645,12 +656,15 @@ class IUiFileOpenExtCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUiFileOpenExtCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUiFileOpenExtCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUiFileOpenExtCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -694,6 +708,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
     """A root object of the Application Model."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiApplication."""
         IUiApplication.__init__(self, sourceObject)
         IUiApplicationPartnerAccess.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -704,6 +719,7 @@ class UiApplication(IUiApplication, IUiApplicationPartnerAccess):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiApplication, [IUiApplication, IUiApplicationPartnerAccess])
 
 agcls.AgClassCatalog.add_catalog_entry("{7ADA6C22-FA34-4578-8BE8-65405A55EE15}", UiApplication)
@@ -713,6 +729,7 @@ class MRUCollection(IMRUCollection):
     """Provide information about most recently used (MRU) list."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type MRUCollection."""
         IMRUCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -721,6 +738,7 @@ class MRUCollection(IMRUCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, MRUCollection, [IMRUCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{8033C4FF-4A7D-4416-9B07-6807EA9C794E}", MRUCollection)
@@ -730,6 +748,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
     """Multiple file open collection."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiFileOpenExtCollection."""
         IUiFileOpenExtCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -738,6 +757,7 @@ class UiFileOpenExtCollection(IUiFileOpenExtCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiFileOpenExtCollection, [IUiFileOpenExtCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{A733AF99-E82E-42D8-AD9A-29BB005B3703}", UiFileOpenExtCollection)
@@ -747,6 +767,7 @@ class UiFileOpenExt(IUiFileOpenExt):
     """Access to file open dialog that allows multiple file specifications."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UiFileOpenExt."""
         IUiFileOpenExt.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -755,6 +776,7 @@ class UiFileOpenExt(IUiFileOpenExt):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UiFileOpenExt, [IUiFileOpenExt])
 
 agcls.AgClassCatalog.add_catalog_entry("{26A2C933-DB59-434E-85FD-2D92A97AA8AD}", UiFileOpenExt)

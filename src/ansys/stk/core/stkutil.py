@@ -3,10 +3,11 @@
 ################################################################################ 
 
 """
-This library contains objects and enumerations shared by the STK X and STK Objects libraries.
+Objects and enumerations shared by the STK X and STK Objects libraries.
 
-The types provided by STK Util are used indirectly through
-methods and properties in the STK X and STK Objects libraries.
+The
+types provided by STK Util are used indirectly through methods and properties
+in the STK X and STK Objects libraries.
 """
 
 __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
@@ -568,6 +569,7 @@ class ILocationData(object):
         "method_offsets" : {  }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILocationData."""
         initialize_from_source_object(self, sourceObject, ILocationData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -577,6 +579,7 @@ class ILocationData(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILocationData)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILocationData, None)
     
 
@@ -614,6 +617,7 @@ class IPosition(object):
                              "query_cartesian_array" : 21, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPosition."""
         initialize_from_source_object(self, sourceObject, IPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -623,6 +627,7 @@ class IPosition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPosition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPosition, None)
     
     _convert_to_metadata = { "name" : "convert_to",
@@ -794,6 +799,7 @@ class IPlanetocentric(IPosition):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPlanetocentric."""
         initialize_from_source_object(self, sourceObject, IPlanetocentric)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -804,6 +810,7 @@ class IPlanetocentric(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetocentric)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPlanetocentric, IPosition)
     
     _get_lat_metadata = { "name" : "lat",
@@ -871,6 +878,7 @@ class IGeocentric(IPosition):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeocentric."""
         initialize_from_source_object(self, sourceObject, IGeocentric)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -881,6 +889,7 @@ class IGeocentric(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeocentric)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeocentric, IPosition)
     
     _get_lat_metadata = { "name" : "lat",
@@ -948,6 +957,7 @@ class ISpherical(IPosition):
                              "set_radius" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpherical."""
         initialize_from_source_object(self, sourceObject, ISpherical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -958,6 +968,7 @@ class ISpherical(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpherical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpherical, IPosition)
     
     _get_lat_metadata = { "name" : "lat",
@@ -1025,6 +1036,7 @@ class ICylindrical(IPosition):
                              "set_lon" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICylindrical."""
         initialize_from_source_object(self, sourceObject, ICylindrical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1035,6 +1047,7 @@ class ICylindrical(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICylindrical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICylindrical, IPosition)
     
     _get_radius_metadata = { "name" : "radius",
@@ -1102,6 +1115,7 @@ class ICartesian(IPosition):
                              "set_z" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian."""
         initialize_from_source_object(self, sourceObject, ICartesian)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1112,6 +1126,7 @@ class ICartesian(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian, IPosition)
     
     _get_x_metadata = { "name" : "x",
@@ -1179,6 +1194,7 @@ class IGeodetic(IPosition):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeodetic."""
         initialize_from_source_object(self, sourceObject, IGeodetic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1189,6 +1205,7 @@ class IGeodetic(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeodetic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeodetic, IPosition)
     
     _get_lat_metadata = { "name" : "lat",
@@ -1256,6 +1273,7 @@ class IPlanetodetic(IPosition):
                              "set_altitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPlanetodetic."""
         initialize_from_source_object(self, sourceObject, IPlanetodetic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1266,6 +1284,7 @@ class IPlanetodetic(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetodetic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPlanetodetic, IPosition)
     
     _get_lat_metadata = { "name" : "lat",
@@ -1342,6 +1361,7 @@ class IDirection(object):
                              "query_xyz_array" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirection."""
         initialize_from_source_object(self, sourceObject, IDirection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1351,6 +1371,7 @@ class IDirection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirection, None)
     
     _convert_to_metadata = { "name" : "convert_to",
@@ -1479,6 +1500,7 @@ class IDirectionEuler(IDirection):
                              "set_sequence" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionEuler."""
         initialize_from_source_object(self, sourceObject, IDirectionEuler)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1489,6 +1511,7 @@ class IDirectionEuler(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionEuler)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionEuler, IDirection)
     
     _get_b_metadata = { "name" : "b",
@@ -1556,6 +1579,7 @@ class IDirectionPR(IDirection):
                              "set_sequence" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionPR."""
         initialize_from_source_object(self, sourceObject, IDirectionPR)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1566,6 +1590,7 @@ class IDirectionPR(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionPR)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionPR, IDirection)
     
     _get_pitch_metadata = { "name" : "pitch",
@@ -1633,6 +1658,7 @@ class IDirectionRADec(IDirection):
                              "set_magnitude" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionRADec."""
         initialize_from_source_object(self, sourceObject, IDirectionRADec)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1643,6 +1669,7 @@ class IDirectionRADec(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionRADec)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionRADec, IDirection)
     
     _get_dec_metadata = { "name" : "dec",
@@ -1710,6 +1737,7 @@ class IDirectionXYZ(IDirection):
                              "set_z" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionXYZ."""
         initialize_from_source_object(self, sourceObject, IDirectionXYZ)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1720,6 +1748,7 @@ class IDirectionXYZ(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionXYZ)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionXYZ, IDirection)
     
     _get_x_metadata = { "name" : "x",
@@ -1790,6 +1819,7 @@ class ICartesian3Vector(object):
                              "to_array" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian3Vector."""
         initialize_from_source_object(self, sourceObject, ICartesian3Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1799,6 +1829,7 @@ class ICartesian3Vector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian3Vector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian3Vector, None)
     
     _get_x_metadata = { "name" : "x",
@@ -1896,6 +1927,7 @@ class IOrientation(object):
                              "query_ypr_angles_array" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientation."""
         initialize_from_source_object(self, sourceObject, IOrientation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1905,6 +1937,7 @@ class IOrientation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientation, None)
     
     _convert_to_metadata = { "name" : "convert_to",
@@ -2033,6 +2066,7 @@ class IOrientationAzEl(IOrientation):
                              "set_about_boresight" : 6, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationAzEl."""
         initialize_from_source_object(self, sourceObject, IOrientationAzEl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2043,6 +2077,7 @@ class IOrientationAzEl(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationAzEl)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationAzEl, IOrientation)
     
     _get_azimuth_metadata = { "name" : "azimuth",
@@ -2112,6 +2147,7 @@ class IOrientationEulerAngles(IOrientation):
                              "set_c" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationEulerAngles."""
         initialize_from_source_object(self, sourceObject, IOrientationEulerAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2122,6 +2158,7 @@ class IOrientationEulerAngles(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationEulerAngles)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationEulerAngles, IOrientation)
     
     _get_sequence_metadata = { "name" : "sequence",
@@ -2206,6 +2243,7 @@ class IOrientationQuaternion(IOrientation):
                              "set_qs" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationQuaternion."""
         initialize_from_source_object(self, sourceObject, IOrientationQuaternion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2216,6 +2254,7 @@ class IOrientationQuaternion(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationQuaternion)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationQuaternion, IOrientation)
     
     _get_qx_metadata = { "name" : "qx",
@@ -2300,6 +2339,7 @@ class IOrientationYPRAngles(IOrientation):
                              "set_roll" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationYPRAngles."""
         initialize_from_source_object(self, sourceObject, IOrientationYPRAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2310,6 +2350,7 @@ class IOrientationYPRAngles(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationYPRAngles)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationYPRAngles, IOrientation)
     
     _get_sequence_metadata = { "name" : "sequence",
@@ -2387,6 +2428,7 @@ class IOrientationPositionOffset(object):
         "method_offsets" : { "get_position_offset" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationPositionOffset."""
         initialize_from_source_object(self, sourceObject, IOrientationPositionOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2396,6 +2438,7 @@ class IOrientationPositionOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationPositionOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationPositionOffset, None)
     
     _get_position_offset_metadata = { "name" : "position_offset",
@@ -2434,6 +2477,7 @@ class IOrbitState(object):
                              "assign_delaunay" : 14, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrbitState."""
         initialize_from_source_object(self, sourceObject, IOrbitState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2443,6 +2487,7 @@ class IOrbitState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrbitState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrbitState, None)
     
     _convert_to_metadata = { "name" : "convert_to",
@@ -2567,6 +2612,7 @@ class ICartesian2Vector(object):
                              "to_array" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian2Vector."""
         initialize_from_source_object(self, sourceObject, ICartesian2Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2576,6 +2622,7 @@ class ICartesian2Vector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian2Vector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian2Vector, None)
     
     _get_x_metadata = { "name" : "x",
@@ -2648,6 +2695,7 @@ class IUnitPreferencesDimension(object):
                              "set_current_unit" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesDimension."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesDimension)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2657,6 +2705,7 @@ class IUnitPreferencesDimension(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimension)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesDimension, None)
     
     _get_id_metadata = { "name" : "id",
@@ -2720,6 +2769,7 @@ class IPropertyInfo(object):
                              "get_max" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropertyInfo."""
         initialize_from_source_object(self, sourceObject, IPropertyInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2729,6 +2779,7 @@ class IPropertyInfo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropertyInfo, None)
     
     _get_name_metadata = { "name" : "name",
@@ -2812,6 +2863,7 @@ class IPropertyInfoCollection(object):
                              "get_item_by_name" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropertyInfoCollection."""
         initialize_from_source_object(self, sourceObject, IPropertyInfoCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2822,12 +2874,15 @@ class IPropertyInfoCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfoCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropertyInfoCollection, None)
     def __iter__(self):
+        """Create an iterator for the IPropertyInfoCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPropertyInfo":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2893,6 +2948,7 @@ class IRuntimeTypeInfo(object):
                              "get_item" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRuntimeTypeInfo."""
         initialize_from_source_object(self, sourceObject, IRuntimeTypeInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2902,6 +2958,7 @@ class IRuntimeTypeInfo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRuntimeTypeInfo, None)
     
     _get_properties_metadata = { "name" : "properties",
@@ -2950,6 +3007,7 @@ class IRuntimeTypeInfoProvider(object):
         "method_offsets" : { "get_provide_runtime_type_info" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRuntimeTypeInfoProvider."""
         initialize_from_source_object(self, sourceObject, IRuntimeTypeInfoProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2959,6 +3017,7 @@ class IRuntimeTypeInfoProvider(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfoProvider)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRuntimeTypeInfoProvider, None)
     
     _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
@@ -2988,6 +3047,7 @@ class IExecCmdResult(object):
                              "get_is_succeeded" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2998,12 +3058,15 @@ class IExecCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3069,6 +3132,7 @@ class IExecMultiCmdResult(object):
                              "get__NewEnum" : 3, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecMultiCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecMultiCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3079,12 +3143,15 @@ class IExecMultiCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecMultiCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecMultiCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IExecCmdResult":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3136,6 +3203,7 @@ class IUnitPreferencesUnit(object):
                              "get_dimension" : 4, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesUnit."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesUnit)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3145,6 +3213,7 @@ class IUnitPreferencesUnit(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnit)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesUnit, None)
     
     _get_full_name_metadata = { "name" : "full_name",
@@ -3198,6 +3267,7 @@ class IUnitPreferencesUnitCollection(object):
                              "get_item_by_name" : 5, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesUnitCollection."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesUnitCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3208,12 +3278,15 @@ class IUnitPreferencesUnitCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnitCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesUnitCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUnitPreferencesUnitCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUnitPreferencesUnit":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3287,6 +3360,7 @@ class IUnitPreferencesDimensionCollection(object):
                              "get_item_by_name" : 12, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesDimensionCollection."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesDimensionCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3297,12 +3371,15 @@ class IUnitPreferencesDimensionCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimensionCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesDimensionCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUnitPreferencesDimensionCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUnitPreferencesDimension":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3424,6 +3501,7 @@ class IQuantity(object):
                              "divide_qty" : 9, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IQuantity."""
         initialize_from_source_object(self, sourceObject, IQuantity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3433,6 +3511,7 @@ class IQuantity(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IQuantity)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IQuantity, None)
     
     _get_dimension_metadata = { "name" : "dimension",
@@ -3530,6 +3609,7 @@ class IDate(object):
                              "span" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDate."""
         initialize_from_source_object(self, sourceObject, IDate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3539,6 +3619,7 @@ class IDate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDate, None)
     
     _format_metadata = { "name" : "format",
@@ -3683,6 +3764,7 @@ class IConversionUtility(object):
                              "new_cartesian3_vector_from_position" : 18, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConversionUtility."""
         initialize_from_source_object(self, sourceObject, IConversionUtility)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3692,6 +3774,7 @@ class IConversionUtility(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConversionUtility)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConversionUtility, None)
     
     _convert_quantity_metadata = { "name" : "convert_quantity",
@@ -3842,6 +3925,7 @@ class IDoublesCollection(object):
                              "set_at" : 8, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDoublesCollection."""
         initialize_from_source_object(self, sourceObject, IDoublesCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3852,12 +3936,15 @@ class IDoublesCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDoublesCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDoublesCollection, None)
     def __iter__(self):
+        """Create an iterator for the IDoublesCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> float:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3936,6 +4023,7 @@ class ExecCmdResult(IExecCmdResult):
     """Collection of strings returned by the ExecuteCommand."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecCmdResult."""
         IExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3944,6 +4032,7 @@ class ExecCmdResult(IExecCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", ExecCmdResult)
@@ -3953,6 +4042,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
     """Collection of objects returned by the ExecuteMultipleCommands."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecMultiCmdResult."""
         IExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3961,6 +4051,7 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
 
 agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", ExecMultiCmdResult)
@@ -3970,6 +4061,7 @@ class UnitPreferencesUnit(IUnitPreferencesUnit):
     """Object that contains info on the unit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesUnit."""
         IUnitPreferencesUnit.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3978,6 +4070,7 @@ class UnitPreferencesUnit(IUnitPreferencesUnit):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnit, [IUnitPreferencesUnit])
 
 agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPreferencesUnit)
@@ -3987,6 +4080,7 @@ class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
     """Object that contains a collection of UnitPreferencesUnit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesUnitCollection."""
         IUnitPreferencesUnitCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3995,6 +4089,7 @@ class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnitCollection, [IUnitPreferencesUnitCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPreferencesUnitCollection)
@@ -4004,6 +4099,7 @@ class UnitPreferencesDimension(IUnitPreferencesDimension):
     """Object that contains info on the Dimension."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesDimension."""
         IUnitPreferencesDimension.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4012,6 +4108,7 @@ class UnitPreferencesDimension(IUnitPreferencesDimension):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimension, [IUnitPreferencesDimension])
 
 agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPreferencesDimension)
@@ -4021,6 +4118,7 @@ class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
     """Object that contains a collection of dimensions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesDimensionCollection."""
         IUnitPreferencesDimensionCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4029,6 +4127,7 @@ class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimensionCollection, [IUnitPreferencesDimensionCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPreferencesDimensionCollection)
@@ -4038,6 +4137,7 @@ class ConversionUtility(IConversionUtility):
     """Object that contains a unit conversion utility."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConversionUtility."""
         IConversionUtility.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4046,6 +4146,7 @@ class ConversionUtility(IConversionUtility):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConversionUtility, [IConversionUtility])
 
 agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", ConversionUtility)
@@ -4055,6 +4156,7 @@ class Quantity(IQuantity):
     """Object that contains a quantity."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Quantity."""
         IQuantity.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4063,6 +4165,7 @@ class Quantity(IQuantity):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Quantity, [IQuantity])
 
 agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", Quantity)
@@ -4072,6 +4175,7 @@ class Date(IDate):
     """Object that contains a date."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Date."""
         IDate.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4080,6 +4184,7 @@ class Date(IDate):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Date, [IDate])
 
 agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", Date)
@@ -4089,6 +4194,7 @@ class Position(ILocationData, IPosition):
     """The Position class."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Position."""
         ILocationData.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4099,6 +4205,7 @@ class Position(ILocationData, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Position, [ILocationData, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", Position)
@@ -4108,6 +4215,7 @@ class Cartesian(ICartesian, IPosition):
     """Class used to access a position using Cartesian Coordinates."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian."""
         ICartesian.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4118,6 +4226,7 @@ class Cartesian(ICartesian, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian, [ICartesian, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", Cartesian)
@@ -4127,6 +4236,7 @@ class Geodetic(IGeodetic, IPosition):
     """Class defining Geodetic position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Geodetic."""
         IGeodetic.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4137,6 +4247,7 @@ class Geodetic(IGeodetic, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geodetic, [IGeodetic, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", Geodetic)
@@ -4146,6 +4257,7 @@ class Geocentric(IGeocentric, IPosition):
     """Class defining Geocentric position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Geocentric."""
         IGeocentric.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4156,6 +4268,7 @@ class Geocentric(IGeocentric, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geocentric, [IGeocentric, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", Geocentric)
@@ -4165,6 +4278,7 @@ class Planetodetic(IPlanetodetic, IPosition):
     """Class defining Planetodetic position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Planetodetic."""
         IPlanetodetic.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4175,6 +4289,7 @@ class Planetodetic(IPlanetodetic, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetodetic, [IPlanetodetic, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", Planetodetic)
@@ -4184,6 +4299,7 @@ class Planetocentric(IPlanetocentric, IPosition):
     """Class defining Planetocentric position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Planetocentric."""
         IPlanetocentric.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4194,6 +4310,7 @@ class Planetocentric(IPlanetocentric, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetocentric, [IPlanetocentric, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", Planetocentric)
@@ -4203,6 +4320,7 @@ class Spherical(ISpherical, IPosition):
     """Class defining spherical position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Spherical."""
         ISpherical.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4213,6 +4331,7 @@ class Spherical(ISpherical, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Spherical, [ISpherical, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", Spherical)
@@ -4222,6 +4341,7 @@ class Cylindrical(ICylindrical, IPosition):
     """Class defining cylindrical position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cylindrical."""
         ICylindrical.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4232,6 +4352,7 @@ class Cylindrical(ICylindrical, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cylindrical, [ICylindrical, IPosition])
 
 agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", Cylindrical)
@@ -4241,6 +4362,7 @@ class Direction(IDirection):
     """Class defining direction options for aligned and constrained vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Direction."""
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4249,6 +4371,7 @@ class Direction(IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Direction, [IDirection])
 
 agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", Direction)
@@ -4258,6 +4381,7 @@ class DirectionEuler(IDirectionEuler, IDirection):
     """Euler direction sequence."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionEuler."""
         IDirectionEuler.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4268,6 +4392,7 @@ class DirectionEuler(IDirectionEuler, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionEuler, [IDirectionEuler, IDirection])
 
 agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", DirectionEuler)
@@ -4277,6 +4402,7 @@ class DirectionPR(IDirectionPR, IDirection):
     """Pitch-Roll (PR) direction sequence."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionPR."""
         IDirectionPR.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4287,6 +4413,7 @@ class DirectionPR(IDirectionPR, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionPR, [IDirectionPR, IDirection])
 
 agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", DirectionPR)
@@ -4296,6 +4423,7 @@ class DirectionRADec(IDirectionRADec, IDirection):
     """Spherical direction (Right Ascension and Declination)."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionRADec."""
         IDirectionRADec.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4306,6 +4434,7 @@ class DirectionRADec(IDirectionRADec, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionRADec, [IDirectionRADec, IDirection])
 
 agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", DirectionRADec)
@@ -4315,6 +4444,7 @@ class DirectionXYZ(IDirectionXYZ, IDirection):
     """Cartesian direction."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionXYZ."""
         IDirectionXYZ.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4325,6 +4455,7 @@ class DirectionXYZ(IDirectionXYZ, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionXYZ, [IDirectionXYZ, IDirection])
 
 agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", DirectionXYZ)
@@ -4334,6 +4465,7 @@ class Orientation(IOrientation):
     """Class defining the orientation of an orbit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Orientation."""
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4342,6 +4474,7 @@ class Orientation(IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Orientation, [IOrientation])
 
 agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", Orientation)
@@ -4351,6 +4484,7 @@ class OrientationAzEl(IOrientationAzEl, IOrientation):
     """AzEl orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationAzEl."""
         IOrientationAzEl.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4361,6 +4495,7 @@ class OrientationAzEl(IOrientationAzEl, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationAzEl, [IOrientationAzEl, IOrientation])
 
 agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", OrientationAzEl)
@@ -4370,6 +4505,7 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
     """Euler Angles orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationEulerAngles."""
         IOrientationEulerAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4380,6 +4516,7 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationEulerAngles, [IOrientationEulerAngles, IOrientation])
 
 agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", OrientationEulerAngles)
@@ -4389,6 +4526,7 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation):
     """Quaternion orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationQuaternion."""
         IOrientationQuaternion.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4399,6 +4537,7 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationQuaternion, [IOrientationQuaternion, IOrientation])
 
 agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", OrientationQuaternion)
@@ -4408,6 +4547,7 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationYPRAngles."""
         IOrientationYPRAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4418,6 +4558,7 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationYPRAngles, [IOrientationYPRAngles, IOrientation])
 
 agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", OrientationYPRAngles)
@@ -4427,6 +4568,7 @@ class DoublesCollection(IDoublesCollection):
     """A collection of doubles."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DoublesCollection."""
         IDoublesCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4435,6 +4577,7 @@ class DoublesCollection(IDoublesCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DoublesCollection, [IDoublesCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", DoublesCollection)
@@ -4444,6 +4587,7 @@ class Cartesian3Vector(ICartesian3Vector):
     """A 3-D cartesian vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian3Vector."""
         ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4452,6 +4596,7 @@ class Cartesian3Vector(ICartesian3Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian3Vector, [ICartesian3Vector])
 
 agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", Cartesian3Vector)
@@ -4461,6 +4606,7 @@ class Cartesian2Vector(ICartesian2Vector):
     """A 2-D cartesian vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian2Vector."""
         ICartesian2Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4469,6 +4615,7 @@ class Cartesian2Vector(ICartesian2Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian2Vector, [ICartesian2Vector])
 
 agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", Cartesian2Vector)
@@ -4478,6 +4625,7 @@ class PropertyInfo(IPropertyInfo):
     """Property Information coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropertyInfo."""
         IPropertyInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4486,6 +4634,7 @@ class PropertyInfo(IPropertyInfo):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfo, [IPropertyInfo])
 
 agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", PropertyInfo)
@@ -4495,6 +4644,7 @@ class PropertyInfoCollection(IPropertyInfoCollection):
     """Property Information Collection coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropertyInfoCollection."""
         IPropertyInfoCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4503,6 +4653,7 @@ class PropertyInfoCollection(IPropertyInfoCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfoCollection, [IPropertyInfoCollection])
 
 agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", PropertyInfoCollection)
@@ -4512,6 +4663,7 @@ class RuntimeTypeInfo(IRuntimeTypeInfo):
     """Runtime Type info coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RuntimeTypeInfo."""
         IRuntimeTypeInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4520,6 +4672,7 @@ class RuntimeTypeInfo(IRuntimeTypeInfo):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RuntimeTypeInfo, [IRuntimeTypeInfo])
 
 agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", RuntimeTypeInfo)
@@ -4529,6 +4682,7 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
     """AzEl orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationAzEl."""
         IOrientationAzEl.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4541,6 +4695,7 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
 
 agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", CROrientationAzEl)
@@ -4550,6 +4705,7 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
     """Euler Angles orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationEulerAngles."""
         IOrientationEulerAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4562,6 +4718,7 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
 
 agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", CROrientationEulerAngles)
@@ -4571,6 +4728,7 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
     """Quaternion orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationQuaternion."""
         IOrientationQuaternion.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4583,6 +4741,7 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
 
 agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", CROrientationQuaternion)
@@ -4592,6 +4751,7 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationYPRAngles."""
         IOrientationYPRAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4604,6 +4764,7 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
 
 agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", CROrientationYPRAngles)
@@ -4613,6 +4774,7 @@ class CROrientationOffsetCart(ICartesian3Vector):
     """Orientation offset cartesian."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationOffsetCart."""
         ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4621,6 +4783,7 @@ class CROrientationOffsetCart(ICartesian3Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationOffsetCart, [ICartesian3Vector])
 
 agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", CROrientationOffsetCart)

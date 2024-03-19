@@ -1,5 +1,5 @@
 # Copyright 2020-2020, Ansys Government Initiatives 
-"""This module contains a wrapper for a raw COM object that is not part of the STK Object Model."""
+"""Contains a wrapper for a raw COM object that is not part of the STK Object Model."""
 
 from ctypes import c_void_p
 
@@ -11,6 +11,7 @@ class COMObject(object):
     """
     
     def __init__(self):
+        """Construct an object of type COMObject."""
         self._pUnk = None
         
     def get_pointer(self) -> c_void_p:

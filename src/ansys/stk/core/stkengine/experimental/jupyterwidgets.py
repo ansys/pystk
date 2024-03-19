@@ -35,6 +35,7 @@ class AsyncioTimerManager(object):
 
     class TimerInfo(object):
         def __init__(self, id, milliseconds, TIMERPROC, callbackData):
+            """Construct an object of type TimerInfo."""
             self.id = id
             self.interval = milliseconds/1000
             self.callback = TIMERPROC
@@ -50,6 +51,7 @@ class AsyncioTimerManager(object):
                 self._reset()
 
     def __init__(self):
+        """Construct an object of type AsyncioTimerManager."""
         if os.name != 'nt':
             agutillib = cdll.LoadLibrary("libagutil.so")
         else:
@@ -147,6 +149,7 @@ class RemoteFrameBufferHost(object):
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
     def __init__(self, owner):
+        """Construct an object of type RemoteFrameBufferHost."""
         self.owner = owner
         self._init_vtable()
 
@@ -219,7 +222,7 @@ class WidgetBase(RemoteFrameBuffer):
                  h: int = 600,
                  title: str = None,
                  resizable: bool = True):
-
+        """Construct an object of type WidgetBase."""
         super().__init__()
 
         self.frame = None
@@ -360,7 +363,7 @@ class WidgetBase(RemoteFrameBuffer):
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
-
+    
     def animate(self):
         self.root.execute_command("Animate * Start Loop")
         self.show()
@@ -374,6 +377,7 @@ class WidgetBase(RemoteFrameBuffer):
                 display(canvas)
         else:
             return canvas
+
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     '''
@@ -395,9 +399,11 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _interface = UiAxGraphics3DCntrl
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        """Construct an object of type GlobeWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         WidgetBase.__setattr__(self, attrname, value)
 
 
@@ -410,9 +416,11 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _interface = UiAx2DCntrl
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        """Construct an object of type MapWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         WidgetBase.__setattr__(self, attrname, value)
 
 
@@ -425,7 +433,9 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     _interface = UiAxGraphics2DAnalysisCntrl
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+        """Construct an object of type GfxAnalysisWidget."""
         WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         WidgetBase.__setattr__(self, attrname, value)

@@ -3,11 +3,10 @@
 ################################################################################ 
 
 """
-This library contains Object Model components to support the MATLAB strategies found in the Basic Maneuver Procedure.
+Object Model components to support the MATLAB strategies found in the Basic Maneuver Procedure.
 
-MATLAB strategies allow the users to
-utilize MATLAB Aerospace Toolbox functions to define the force modeling of the
-aircraft.
+MATLAB strategies allow the users to utilize MATLAB
+Aerospace Toolbox functions to define the force modeling of the aircraft.
 """
 
 __all__ = ["BasicManeuverMATLABFactory", "IStrategyMATLAB3DGuidance", "IStrategyMATLABFull3D", "IStrategyMATLABNav", "IStrategyMATLABProfile", 
@@ -49,6 +48,7 @@ class IStrategyMATLABNav(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStrategyMATLABNav."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABNav)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -58,6 +58,7 @@ class IStrategyMATLABNav(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABNav)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABNav, None)
     
     _get_function_name_metadata = { "name" : "function_name",
@@ -136,6 +137,7 @@ class IStrategyMATLABProfile(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStrategyMATLABProfile."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -145,6 +147,7 @@ class IStrategyMATLABProfile(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABProfile)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABProfile, None)
     
     _get_function_name_metadata = { "name" : "function_name",
@@ -223,6 +226,7 @@ class IStrategyMATLABFull3D(object):
                              "set_display_output" : 7, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStrategyMATLABFull3D."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABFull3D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -232,6 +236,7 @@ class IStrategyMATLABFull3D(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLABFull3D)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABFull3D, None)
     
     _get_function_name_metadata = { "name" : "function_name",
@@ -332,6 +337,7 @@ class IStrategyMATLAB3DGuidance(object):
                              "cancel_tgt_position_vel" : 29, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IStrategyMATLAB3DGuidance."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLAB3DGuidance)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -341,6 +347,7 @@ class IStrategyMATLAB3DGuidance(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IStrategyMATLAB3DGuidance)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLAB3DGuidance, None)
     
     _get_target_name_metadata = { "name" : "target_name",
@@ -581,6 +588,7 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
     """Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type StrategyMATLABNav."""
         IStrategyMATLABNav.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -591,6 +599,7 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABNav, [IStrategyMATLABNav, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", StrategyMATLABNav)
@@ -600,6 +609,7 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
     """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type StrategyMATLABProfile."""
         IStrategyMATLABProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -610,6 +620,7 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABProfile, [IStrategyMATLABProfile, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", StrategyMATLABProfile)
@@ -619,6 +630,7 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
     """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type StrategyMATLABFull3D."""
         IStrategyMATLABFull3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -629,6 +641,7 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABFull3D, [IStrategyMATLABFull3D, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", StrategyMATLABFull3D)
@@ -638,6 +651,7 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
     """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type StrategyMATLAB3DGuidance."""
         IStrategyMATLAB3DGuidance.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -648,6 +662,7 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLAB3DGuidance, [IStrategyMATLAB3DGuidance, IBasicManeuverStrategy])
 
 agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", StrategyMATLAB3DGuidance)
@@ -657,6 +672,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type BasicManeuverMATLABFactory."""
         IAutomationStrategyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -665,6 +681,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverMATLABFactory, [IAutomationStrategyFactory])
 
 agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", BasicManeuverMATLABFactory)

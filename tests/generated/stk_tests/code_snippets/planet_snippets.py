@@ -1,5 +1,6 @@
 from test_util import *
 from code_snippets.code_snippets_test_base import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
@@ -85,7 +86,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
     def ConfigurePlanetGraphics(self, graphics: "PlanetGraphics"):
         graphics.inherit = False
 
-        graphics.color = Color.Red
+        graphics.color = Colors.Red
         graphics.marker_style = "Circle"
         graphics.line_style = LINE_STYLE.M_DASH_DOT
         graphics.line_width = LINE_WIDTH.WIDTH4

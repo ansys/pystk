@@ -3,6 +3,7 @@ from test_util import *
 from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
+from ansys.stk.core.utilities.colors import *
 
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
@@ -373,7 +374,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.show_desired_links = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.desired_links_color = Color.Red
+            graphics.desired_links_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.desired_links_line_width = LINE_WIDTH.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -382,7 +383,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.show_interference_links = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.interference_links_color = Color.Red
+            graphics.interference_links_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.interference_links_line_width = LINE_WIDTH.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -391,7 +392,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.show_primary_interferer_link = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.primary_interferer_link_color = Color.Red
+            graphics.primary_interferer_link_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -405,10 +406,10 @@ class EarlyBoundTests(TestBase):
         graphics.show_desired_links = True
         Assert.assertTrue(graphics.show_desired_links)
 
-        graphics.desired_links_color = Color.Red
-        Assert.assertEqual(Color.Red, graphics.desired_links_color)
-        graphics.desired_links_color = Color.Blue
-        Assert.assertEqual(Color.Blue, graphics.desired_links_color)
+        graphics.desired_links_color = Colors.Red
+        Assert.assertEqual(Colors.Red, graphics.desired_links_color)
+        graphics.desired_links_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, graphics.desired_links_color)
 
         graphics.desired_links_line_width = LINE_WIDTH.WIDTH1
         Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.desired_links_line_width)
@@ -427,10 +428,10 @@ class EarlyBoundTests(TestBase):
         graphics.show_interference_links = True
         Assert.assertTrue(graphics.show_interference_links)
 
-        graphics.interference_links_color = Color.Red
-        Assert.assertEqual(Color.Red, graphics.interference_links_color)
-        graphics.interference_links_color = Color.Blue
-        Assert.assertEqual(Color.Blue, graphics.interference_links_color)
+        graphics.interference_links_color = Colors.Red
+        Assert.assertEqual(Colors.Red, graphics.interference_links_color)
+        graphics.interference_links_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, graphics.interference_links_color)
 
         graphics.interference_links_line_width = LINE_WIDTH.WIDTH1
         Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.interference_links_line_width)
@@ -449,10 +450,10 @@ class EarlyBoundTests(TestBase):
         graphics.show_primary_interferer_link = True
         Assert.assertTrue(graphics.show_primary_interferer_link)
 
-        graphics.primary_interferer_link_color = Color.Red
-        Assert.assertEqual(Color.Red, graphics.primary_interferer_link_color)
-        graphics.primary_interferer_link_color = Color.Blue
-        Assert.assertEqual(Color.Blue, graphics.primary_interferer_link_color)
+        graphics.primary_interferer_link_color = Colors.Red
+        Assert.assertEqual(Colors.Red, graphics.primary_interferer_link_color)
+        graphics.primary_interferer_link_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, graphics.primary_interferer_link_color)
 
         graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH1
         Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.primary_interferer_link_line_width)

@@ -27,6 +27,7 @@ class STKRuntimeApplication(STKXApplication):
     """
 
     def __init__(self):
+        """Construct an object of type STKRuntimeApplication."""
         self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
@@ -35,6 +36,7 @@ class STKRuntimeApplication(STKXApplication):
         STKXApplication._private_init(self, intf)
         
     def __del__(self):
+        """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
             self._intf.client.TerminateConnection(False)
         

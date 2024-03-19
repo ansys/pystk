@@ -589,7 +589,7 @@ class OLEColorArg(object):
         else:
             if type(val) == agcolor.ColorRGBA:
                 raise STKColorError("Argument type is RGB only, use Color class instead of ColorRGBA.")
-            self.OLE_COLOR = agcom.OLE_COLOR(val._ToOLECOLOR())
+            self.OLE_COLOR = agcom.OLE_COLOR(val._to_ole_color())
     def __enter__(self):
         return self
     def __exit__(self, type, value, tb):
@@ -600,7 +600,7 @@ class OLEColorArg(object):
     @property
     def python_val(self) -> agcolor.Color:
         c = agcolor.Color()
-        c._FromOLECOLOR(self.OLE_COLOR.value)
+        c._from_ole_color(self.OLE_COLOR.value)
         return c
 
 class VariantBoolArg(object):

@@ -8,6 +8,24 @@ updates:
       - "dependencies:pyproject"
     commit-message:
       prefix: "maint"
+    groups:
+      tests:
+        patterns:
+          - "pytest*"
+          - "pytz"
+          - "parametrized"
+      doc:
+        patterns:
+          - "jupyter*"
+          - "jupytext"
+          - "myst*"
+          - "nbsphinx"
+          - "numpy*"
+          - "nbconvert"
+          - "*sphinx*"
+          - "Pillow"
+          - "simplejpeg"
+          - "sidecar"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -17,3 +35,7 @@ updates:
       - "dependencies:ci"
     commit-message:
       prefix: "maint"
+    groups:
+      actions:
+        patterns:
+          - "*"

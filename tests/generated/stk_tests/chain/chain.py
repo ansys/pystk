@@ -6,6 +6,7 @@ from display_times_helper import *
 from interfaces.stk_objects import *
 from logger import *
 from vehicle.vehicle_basic import *
+from ansys.stk.core.utilities.colors import *
 from ansys.stk.core.stkobjects import *
 
 
@@ -253,7 +254,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.is_visible)
         Assert.assertFalse(oStatic.is_visible)
         with pytest.raises(Exception):
-            oStatic.color = Color.FromArgb(1122867)
+            oStatic.color = Colors.from_argb(1122867)
         with pytest.raises(Exception):
             oStatic.line_width = LINE_WIDTH.WIDTH4
         # IsVisible (true)
@@ -262,9 +263,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oStatic.is_visible)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oStatic.color)
-        oStatic.color = Color.FromArgb(11189196)
+        oStatic.color = Colors.from_argb(11189196)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oStatic.color)
-        AssertEx.AreEqual(Color.FromArgb(11189196), oStatic.color)
+        AssertEx.AreEqual(Colors.from_argb(11189196), oStatic.color)
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", oStatic.line_width)
@@ -290,13 +291,13 @@ class EarlyBoundTests(TestBase):
 
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oAnimation.color)
-        oAnimation.color = Color.FromArgb(14544639)
+        oAnimation.color = Colors.from_argb(14544639)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAnimation.color)
-        AssertEx.AreEqual(Color.FromArgb(14544639), oAnimation.color)
+        AssertEx.AreEqual(Colors.from_argb(14544639), oAnimation.color)
         TestBase.logger.WriteLine6("\tThe current OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        oAnimation.optimal_path_color = Color.FromArgb(16772829)
+        oAnimation.optimal_path_color = Colors.from_argb(16772829)
         TestBase.logger.WriteLine6("\tThe new OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
-        AssertEx.AreEqual(Color.FromArgb(16772829), oAnimation.optimal_path_color)
+        AssertEx.AreEqual(Colors.from_argb(16772829), oAnimation.optimal_path_color)
 
         # IsLineVisible (false)
         TestBase.logger.WriteLine4("\tThe current IsLineVisible is: {0}", oAnimation.is_line_visible)

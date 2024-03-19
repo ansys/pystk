@@ -30,6 +30,7 @@ class IRemoteFrameBufferHost(object):
         "method_offsets" : { "refresh" : 1, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRemoteFrameBufferHost."""
         initialize_from_source_object(self, sourceObject, IRemoteFrameBufferHost)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -39,6 +40,7 @@ class IRemoteFrameBufferHost(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBufferHost)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBufferHost, None)
     
     _refresh_metadata = { "name" : "refresh",
@@ -77,6 +79,7 @@ class IRemoteFrameBuffer(object):
                              "update_direct_x_rendering_texture" : 15, }
     }
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRemoteFrameBuffer."""
         initialize_from_source_object(self, sourceObject, IRemoteFrameBuffer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -86,6 +89,7 @@ class IRemoteFrameBuffer(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRemoteFrameBuffer)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRemoteFrameBuffer, None)
     
     _snap_to_rbg_raster_metadata = { "name" : "snap_to_rbg_raster",
