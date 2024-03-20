@@ -23,7 +23,6 @@ from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
 root = stk.new_object_root()
 scenario = root.children.new_on_central_body(STK_OBJECT_TYPE.SCENARIO, "LambertTransfer", "Sun")
-#https://help.agi.com/stk/#training/Astro_LambertProfile.htm?TocPath=Training%257CLevel%25203%2520-%2520Focused%257CFeature%2520Specific%257CAstrogator%257C_____16
 # -
 
 # Set the time period for the scenario:
@@ -82,7 +81,7 @@ plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.8573
 plotter.show()
 
 
-# ## Solving for the initial and final position vectors
+# ## Solving for the initial and final state vectors
 
 def from_data_result_to_dict(data_result):
     return {
@@ -185,7 +184,7 @@ last_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Imp
 # Remove any existing profiles
 lambert_transfer.profiles.remove_all()
 
-# Configure previous segments
+# TODO: removing this does not show the orbit in the plotter
 first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 propagate.propagator_name = "Sun Point Mass"
 last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
@@ -255,7 +254,7 @@ lambert_transfer.reset_inner_targeters = False
 lambert.mode = PROFILE_MODE.ACTIVE
 satellite.propagator.run_mission_control_sequence()
 satellite.propagator.apply_all_profile_changes()
-lambert_transfer.apply_profiles()
+#lambert_transfer.apply_profiles()
 # -
 
 # ## Results
