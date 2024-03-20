@@ -1,12 +1,4 @@
-# # Hohmann transfer using targeter
-#
-# This example provides a practical example of how to use PySTK to solve for a Hohmann transfer problem. The the satellite presents an circular and equatorial orbit with a periapsis radius of 6700 kilometers. Its desired final orbit has an apoapsis radius of 42238 kilometers.
-#
-# ## What is a Hohmann transfer?
-#
-# A Hohmann transfer is a fuel-efficient orbital maneuver used in spaceflight to transfer a spacecraft from one circular orbit to another circular orbit at a different altitude or around a different celestial body. It was developed by German engineer Walter Hohmann in 1925 and is often referred to as the Hohmann transfer orbit or Hohmann ellipse. This maneuver is commonly used for missions within our solar system, including transfers between planets or moons.
-#
-# The transfer is typically modeled under the two-body assumption. This means that it assumes a simplified scenario where only two significant gravitational bodies are considered: the spacecraft and the central body (e.g., a planet or a moon).
+# # Lambert transfer
 #
 # ## Launch a new STK instance
 #
@@ -50,6 +42,7 @@ from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
+plotter.camera.far_plane = 1E12
 plotter.show()
 # -
 
@@ -65,7 +58,7 @@ colors = [Colors.RoyalBlue, Colors.Salmon]
 planets = []
 
 for planet_name, color in zip(planet_names, colors):
-    planet = scenario.children.new(STK_OBJECT_TYPE.PLANET, planet_name)
+    planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, planet_name, "Sun")
     planet.common_tasks.set_position_source_central_body(planet_name, EPHEM_SOURCE_TYPE.DEFAULT)
     planet.graphics.color = color
     planets.append(planet)
@@ -158,8 +151,7 @@ from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
 
 initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
 
-# TODO: if the central body for this sat was set to "Sun", why does the coord system still points to Earth Interial?
-initial_state.coord_system_name = "CentralBody/Sun ICRF"
+initial_state.coord_system_name = "CentralBody/Sun Inertial"
 initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
 initial_state.orbit_epoch = START_TIME
 
@@ -171,33 +163,33 @@ initial_state.element.vy = v0_vec[1]
 initial_state.element.vz = v0_vec[2]
 # -
 
+print(initial_state.element.x)
+print(initial_state.element.y)
+print(initial_state.element.z)
+print(initial_state.element.vx)
+print(initial_state.element.vy)
+print(initial_state.element.vz)
+
 # ## Set up the transfer sequence
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION, MANEUVER_TYPE
 
 lambert_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-")
-lambert_transfer.profiles.remove_all()
 
 # TODO: ensure desired propagator type in each segment
 first_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
 propagate = lambert_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
 last_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
 
+# Remove any existing profiles
+lambert_transfer.profiles.remove_all()
+
 # Configure previous segments
 first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-
-
-
-
 propagate.propagator_name = "Sun Point Mass"
-
-
-
 last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 # -
-dir(first_impulse)
-
 # ## Configure the lambert profile
 
 # +
@@ -205,8 +197,9 @@ from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE, LAMB
 
 
 lambert = lambert_transfer.profiles.add("Lambert Profile")
+
 lambert.coord_system_name = "CentralBody/Sun Inertial"
-#lambert.set_target_coord_type = LAMBERT_TARGET_COORD_TYPE.CARTESIAN
+lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
 
 lambert.enable_second_maneuver = True
 lambert.target_position_x = rf_vec[0]
@@ -217,7 +210,7 @@ lambert.target_velocity_y = vf_vec[1]
 lambert.target_velocity_z = vf_vec[2]
 
 lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
-lambert.time_of_flight = 212 * 24 * 3600
+lambert.time_of_flight = 212 * 24 * 3600 # day * (hour / day) * (seconds / hour)
 lambert.revolutions = 0
 lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
 lambert.central_body_collision_altitude_padding = 200
@@ -235,29 +228,37 @@ lambert.second_maneuver_segment = last_impulse.name
 lambert.mode = PROFILE_MODE.ACTIVE
 # -
 
+# ## Show the MCS layout
+
+for control_sequence in satellite.propagator.main_sequence:
+    try:
+        print(f"{control_sequence.name}")
+        for segment in control_sequence.segments:
+            print(f"    {segment.name}")
+    except:
+        continue
+
 # ## Run the MCS and apply all profiles
 
 # +
 from ansys.stk.core.stkobjects.astrogator import PROFILES_FINISH
 
+# The following profile is inactive but even with this attribute it can not be removed
+# propagate.stopping_conditions.remove("Duration")
 
 lambert_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-
 lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
+
 lambert_transfer.continue_on_failure = False
 lambert_transfer.reset_inner_targeters = False
 
+lambert.mode = PROFILE_MODE.ACTIVE
 satellite.propagator.run_mission_control_sequence()
+satellite.propagator.apply_all_profile_changes()
 lambert_transfer.apply_profiles()
 # -
 
 # ## Results
-
-dir(lambert_transfer)
-
-
-
-
 
 print(f"First impulse: {[coord / 1000 for coord in first_impulse.maneuver.attitude_control.query_cartesian()]} km/s")
 print(f"Last impulse:  {[coord / 1000 for coord in last_impulse.maneuver.attitude_control.query_cartesian()]} km/s")
@@ -266,6 +267,5 @@ print(f"Last impulse:  {[coord / 1000 for coord in last_impulse.maneuver.attitud
 
 satellite.propagator.options.draw_trajectory_in_3d = True
 satellite.graphics_3d.model.detail_threshold.all = 1E12
-plotter.camera.far_plane = 1E12
 
 plotter.show()
