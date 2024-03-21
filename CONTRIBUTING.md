@@ -42,7 +42,7 @@ You can build all the Docker images for STK. Currently only Linux containers are
 Use the following command to build the images:
 
 ```console
-tox -e docker-build-linux_images
+tox -e docker-build-centos_images
 ```
 
 This will result in the following images:
@@ -66,57 +66,57 @@ Once the images are built, you can create a new container targeting a specific P
 >Make sure that the ANSYSLMD_LICENSE_FILE environment variable is properly configured before starting the container.
 
 ```console
-tox -f docker-run-linux_container-{py38,py39,py310}
+tox -f docker-run-centos_container-{py38,py39,py310}
 ```
 
 This will start a new virtual environment inside the container and install all the dependencies required to run the tests and generate the project documentation. This will also install Jupyter Lab and its dependencies in that virtual environment.
 
 In the previous command, you need to select the Python version you want to
-use, for instance `tox -f docker-run-linux_container-py310` will start a Linux container configured with Python 3.10.
+use, for instance `tox -f docker-run-centos_container-py310` will start a Linux container configured with Python 3.10.
 
 ## Executing a command inside an STK container with Tox
 
 After building the images and running a container, you can execute a command inside the container using:
 
 ```console
-tox -f docker-exec-linux_container-{py38,py39,py310} -- {command}
+tox -f docker-exec-centos_container-{py38,py39,py310} -- {command}
 ```
 
 For instance, to run `ls -la` inside a previously started Linux Python 3.10 container, use:
 
 ```console
-tox -f docker-exec-linux_container-py310 -- ls -la
+tox -f docker-exec-centos_container-py310 -- ls -la
 ```
 
 Here are a few additional examples:
 
 - Starting a interactive shell inside the container:
     ```
-    tox -f docker-exec-linux_container-py310 -- /bin/bash
+    tox -f docker-exec-centos_container-py310 -- /bin/bash
     ```
 - Running the Aviator tests in no graphics mode inside the container:
     ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the Aviator tests with graphics:
     ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
 - Running the VGT tests in no graphics mode:
     ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the VGT tests with graphics:
     ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
     ```
 - Running the STK tests with graphics:
     ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
 
 ## Launching Jupyter Lab with Tox
@@ -124,11 +124,11 @@ Here are a few additional examples:
 After building the images and running a container, you can also start Jupyter Lab inside the container using:
 
 ```
-tox -f docker-lab-linux_container-{py38,py39,py310}
+tox -f docker-lab-centos_container-{py38,py39,py310}
 ```
 
 In the previous command, you need to select the Python version you want to
-use, for instance `tox -f docker-lab-linux_container-py310` will start a Linux container configured with Python 3.10.
+use, for instance `tox -f docker-lab-centos_container-py310` will start a Linux container configured with Python 3.10.
 
 Once Jupyter Lab is running, use your browser to navigate to http://127.0.0.1:8888/lab?token=pystk.
 
@@ -139,7 +139,7 @@ After building the images and running a container, you can also start a desktop 
 To start the container in User Interface mode, run the following command:
 
 ```
-tox -f docker-novnc-linux_container-{py38,py39,py310}
+tox -f docker-novnc-centos_container-{py38,py39,py310}
 ```
 
 Once the container is ready, use your browser to navigate to http://127.0.0.1:8888/vnc_auto.html. This will give you access to a simple X11 desktop based on [fluxbox](http://fluxbox.org/), a lightweight windows manager. The user interface is served to your browser using VNC and [novnc](https://novnc.com/info.html). An xterm is also opened on the desktop, with the virtual environment required to run the Python tests activated.
@@ -151,7 +151,7 @@ In addition to running the UI, this configuration also enables `sudo` for the st
 You can stop a running container using:
 
 ```
-tox -f docker-stop-linux_container-{py38,py39,py310}
+tox -f docker-stop-centos_container-{py38,py39,py310}
 ```
 
 ## Removing an STK container with Tox
@@ -159,7 +159,7 @@ tox -f docker-stop-linux_container-{py38,py39,py310}
 You can remove a container using:
 
 ```
-tox -f docker-rm-linux_container-{py38,py39,py310}
+tox -f docker-rm-centos_container-{py38,py39,py310}
 ```
 
 ## Additional documentation
