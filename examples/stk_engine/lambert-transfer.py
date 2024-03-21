@@ -16,7 +16,7 @@
 
 # ## Proposed problem
 #
-# The objective is to determine the transfer orbit from Earth to Mars, commencing on August 1, 2005, and reaching its destination by March 1, 2006. A Sun point mass force model is assumed for the transfer, ignoring the gravity influence of the Earth and Mars.
+# The objective is to determine the transfer orbit from Earth to Mars, commencing on August 1, 2005, and reaching its destination by March 1, 2006. A Sun point mass force model is assumed for the transfer, ignoring the gravity influence of the Earth and Mars. Despite visualizing the planets with a finite volume, these objects are assumed to be points during the whole analysis.
 
 # ## Launch a new STK instance
 #
@@ -109,17 +109,35 @@ plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.8573
 plotter.show()
 
 
-# ## Solving for the initial and final state vectors
+# ## Solve the initial and final state vectors
+#
+# The initial and final state vectors are required to solve for the transfer orbit. These state vectors can be computed using the [data providers](https://help.agi.com/stk/Subsystems/dataProviders/dataProviders.htm#html/dataProviders/Data_Provider_Summary.htm).
 
-def from_data_result_to_dict(data_result):
-    """Convert an IResult
+# First, a utility function for converting a [DataProviderResult](https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/index.html#ansys.stk.core.stkobjects.DataProviderResult) instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
+
+def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
+    """Convert a data provider result to a dictionary.
+
+    Parameters
+    ----------
+    data_result : DataProviderResult
+        Data result instance to be converted.
+
+    Returns
+    -------
+    dict
+        Dictionary representing the elements and values of the data provider.
+
+    """
     return {
         key: data_result.data_sets.item(key_id).get_values() 
         for key_id, key in enumerate(data_result.data_sets.element_names)
     }
 
 
-def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name: str):
+# Next, a second utility function is declared. Its goal is to ease the retrieval of the state vector (position and velocity) for an object in the scenario at a given epoch and in the desired reference frame.
+
+def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name: str) -> tuple:
     """Compute the position and velocity vectors of an object in the desired reference frame.
 
     Parameters
@@ -140,114 +158,114 @@ def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name:
     state = {"Position": None, "Velocity": None}
     for path in state:
         data_provider = stk_object.data_providers.get_data_provider_time_varying_from_path(f"Cartesian {path}/{frame_name}")
-        data = from_data_result_to_dict(position_provider.exec_single_elements(epoch, ["x", "y", "z"]))
+        data = from_data_result_to_dict(data_provider.exec_single_elements(epoch, ["x", "y", "z"]))
         state[path] = [coord[0] for coord in data.values()]
     return tuple(state.values())
 
 
-pos, vel = get_object_pos_vel_at_epoch(planet, STOP_TIME, "ICRF")
-
-pos
+# Now, it is possible to solve for the initial state:
 
 # +
-positions = []
-for planet, time in zip(planets, [START_TIME, STOP_TIME]):
-    position_provider = planet.data_providers.get_data_provider_time_varying_from_path("Cartesian Position/ICRF")
-    position_data = from_data_result_to_dict(position_provider.exec_single_elements(time, ["x", "y", "z"]))
-    position = [value[0] for value in position_data.values()]
-    positions.append(position)
+initial_position, initial_velocity = get_object_pos_vel_at_epoch(earth, START_TIME, "ICRF")
 
-r0_vec, rf_vec = positions
-
-# +
-velocities = []
-for planet, time in zip(planets, [START_TIME, STOP_TIME]):
-    velocity_provider = planet.data_providers.get_data_provider_time_varying_from_path("Cartesian Velocity/ICRF")
-    velocity_data = from_data_result_to_dict(velocity_provider.exec_single_elements(time, ["x", "y", "z"]))
-    velocity = [value[0] for value in velocity_data.values()]
-    velocities.append(velocity)
-
-v0_vec, vf_vec = velocities
+print(f"Initial position: {initial_position} km")
+print(f"Initial velocity: {initial_velocity} km/s\n")
 # -
 
-initial_state = []
-initial_state.extend(r0_vec)
-initial_state.extend(v0_vec)
-for coord in initial_state:
-    print(coord)
+# And the final state:
 
-final_state = []
-final_state.extend(rf_vec)
-final_state.extend(vf_vec)
-for coord in final_state:
-    print(coord)
+# +
+final_position, final_velocity = get_object_pos_vel_at_epoch(mars, STOP_TIME, "ICRF")
 
-# ## Adding a satellite to the scenario
+print(f"Final position: {initial_position} km")
+print(f"Final velocity: {initial_velocity} km/s")
+# -
+
+# ## Add a satellite to the scenario
 #
-# Now that a new scenario is available, add a new satellite:
+# Once the initial and final states are known, it is time to add a new satellite to the scenario. This object is used to simulate the transfer orbit between Earth and Mars at the desired launch and arrival dates.
+#
+# The central body for the satellite must be the Sun to be compliant with the Kepelrian assumption of the Lambert transfer. Remember that the gravity for Earth and Mars are ignored in this example.
 
 satellite = root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun")
 
-# Then, declare the type of propagator used for the satellite:
+# Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
 
 # +
 from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
 
 
 satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-satellite.propagator.main_sequence.remove_all()
 # -
 
-# Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.
+# Remove all the main sequence to ensure no prior segments lead to wrong results during the simulation.
 
-# ## Set up the initial state of the satellite
+satellite.propagator.main_sequence.remove_all()
 
-# An initial state segment is required to specify the initial state of the satellite. To see the list of different segment types, run:
+# ## Declare the initial state of the satellite
+#
+# Now, declare the initial state of the satellite by using an initial state segment.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
 
+
 initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
-
-initial_state.coord_system_name = "CentralBody/Sun Inertial"
-initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
-initial_state.orbit_epoch = START_TIME
-
-initial_state.element.x = r0_vec[0]
-initial_state.element.y = r0_vec[1]
-initial_state.element.z = r0_vec[2]
-initial_state.element.vx = v0_vec[0]
-initial_state.element.vy = v0_vec[1]
-initial_state.element.vz = v0_vec[2]
 # -
 
-print(initial_state.element.x)
-print(initial_state.element.y)
-print(initial_state.element.z)
-print(initial_state.element.vx)
-print(initial_state.element.vy)
-print(initial_state.element.vz)
+# Use an inertial reference frame when declaring the initial state. Also, ensure that the epoch matches the launch date.
 
-# ## Set up the transfer sequence
+initial_state.coord_system_name = "CentralBody/Sun Inertial"
+initial_state.orbit_epoch = START_TIME
+
+#  The value of the initial state must match the initial state of the Earth. Cartesian elements are used in this case.
+
+# +
+initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
+
+initial_state.element.x = initial_position[0]
+initial_state.element.y = initial_position[1]
+initial_state.element.z = initial_position[2]
+
+initial_state.element.vx = initial_velocity[0]
+initial_state.element.vy = initial_velocity[1]
+initial_state.element.vz = initial_velocity[2]
+# -
+
+# ## Construct the transfer sequence
+#
+# The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION, MANEUVER_TYPE
 
+
 lambert_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-")
 
-# TODO: ensure desired propagator type in each segment
 first_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
 propagate = lambert_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
 last_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
+# -
 
-# Remove any existing profiles
-lambert_transfer.profiles.remove_all()
+# Next, configure the maneuvers to be impulsive and ensure the propagation models the Sun as a point mass.
 
-# TODO: removing this does not show the orbit in the plotter
 first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 propagate.propagator_name = "Sun Point Mass"
 last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-# -
+# Then, remove any previous profiles that could be present in the target sequence:
+
+lambert_transfer.profiles.remove_all()
+
+# Finally, it is possible to visualize the layout for the main sequence by running:
+
+for control_sequence in satellite.propagator.main_sequence:
+    try:
+        print(f"{control_sequence.name}")
+        for segment in control_sequence.segments:
+            print(f"    {segment.name}")
+    except:
+        continue
+
 # ## Configure the lambert profile
 
 # +
@@ -288,13 +306,7 @@ lambert.mode = PROFILE_MODE.ACTIVE
 
 # ## Show the MCS layout
 
-for control_sequence in satellite.propagator.main_sequence:
-    try:
-        print(f"{control_sequence.name}")
-        for segment in control_sequence.segments:
-            print(f"    {segment.name}")
-    except:
-        continue
+
 
 # ## Run the MCS and apply all profiles
 
