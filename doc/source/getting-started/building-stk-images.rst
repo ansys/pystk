@@ -14,12 +14,12 @@ either Windows or Linux.
 
 .. grid:: 2
 
-    .. grid-item-card:: Dockefiles for Windows :fab:`windows`
+    .. grid-item-card:: Dockerfiles for Windows :fab:`windows`
         :link: https://github.com/ansys-internal/pystk/tree/main/docker/windows
         
         STKEngine and STKDesktop are supported.
 
-    .. grid-item-card:: Dockefiles for Linux :fab:`linux`
+    .. grid-item-card:: Dockerfiles for Linux :fab:`linux`
         :link: https://github.com/ansys-internal/pystk/tree/main/docker/linux
         
 
