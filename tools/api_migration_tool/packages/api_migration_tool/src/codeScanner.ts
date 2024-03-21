@@ -234,7 +234,7 @@ export class CodeScanner {
     }
 
     for (const symbolReference of allSymbolReferences) {
-      for (const symbolOccurence of symbolReference.occurences) {
+      for (const symbolOccurence of symbolReference.occurrences) {
         result.push(
           new CodeEdit(
             symbolOccurence.path,

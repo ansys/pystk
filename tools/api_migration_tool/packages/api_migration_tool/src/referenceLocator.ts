@@ -13,7 +13,7 @@ export class Reference {
   constructor(
     readonly oldName: string,
     readonly newName: string,
-    readonly occurences: DocumentRange[]
+    readonly occurrences: DocumentRange[]
   ) {}
 }
 
