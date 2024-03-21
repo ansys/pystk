@@ -267,30 +267,73 @@ for control_sequence in satellite.propagator.main_sequence:
         continue
 
 # ## Configure the lambert profile
+#
+# To ease the creation of a Lambert's transfer, STK provides a profile named `Lambert Profile`. This profile can be added to a target sequence. Later, it can be configured to solved for the desired transfer requirements such as the time of flight and the final state vector.
+#
+# Additional configuration parameters exist, such us the number of revolutions or the direction of motion. However, since this examples covers a direct transfer arc, these options are not explored.
 
-# +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE, LAMBERT_SOLUTION_OPTION_TYPE, LAMBERT_DIRECTION_OF_MOTION_TYPE, PROFILE_MODE
-
+# Start by adding a Lambert profile to the target sequence:
 
 lambert = lambert_transfer.profiles.add("Lambert Profile")
+
+# Next, declare the target state vector. In this case, the target state vector is the final state vector. This vector is defined in an inertial reference frame centered at the Sun. Cartesian coordinates are used for the components of the position and velocity.
+#
+# It is also important to enable the second maneuver property. This allows to specify the target velocity.
+
+# +
+from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE
+
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
 lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
 
 lambert.enable_second_maneuver = True
-lambert.target_position_x = rf_vec[0] * 1000
-lambert.target_position_y = rf_vec[1] * 1000
-lambert.target_position_z = rf_vec[2] * 1000
-lambert.target_velocity_x = vf_vec[0] * 1000
-lambert.target_velocity_y = vf_vec[1] * 1000
-lambert.target_velocity_z = vf_vec[2] * 1000
+
+# FIXME: the Lambert Profile does not respect user defined units.
+#        forcing conversion to meters here by multiplying by a 
+#        factor of 1e3.
+lambert.target_position_x = final_position[0] * 1000
+lambert.target_position_y = final_position[1] * 1000
+lambert.target_position_z = final_position[2] * 1000
+
+lambert.target_velocity_x = final_velocity[0] * 1000
+lambert.target_velocity_y = final_velocity[1] * 1000
+lambert.target_velocity_z = final_velocity[2] * 1000
+# -
+
+# Next, the time of flight can be computed. Using the `datetime` module allows for the computation of the time of flight, which is assigned later to the lamber profile.
+
+# +
+from datetime import datetime
+
+
+launch_date = datetime.strptime(START_TIME, '%d %b %Y')
+arrival_date = datetime.strptime(STOP_TIME, '%d %b %Y')
+
+lambert.time_of_flight = (arrival_date - launch_date).total_seconds()
+# -
+
+# Then, other parameters for the transfer can be configured. These include the type of solution, the direction of motion, and the padding altitude for the collision with the central body.
+#
+# Since planets are modeled as points, the value for the altitude padding for the central body collision is 0 km.
+
+# +
+from ansys.stk.core.stkobjects.astrogator import LAMBERT_SOLUTION_OPTION_TYPE, LAMBERT_DIRECTION_OF_MOTION_TYPE
+
 
 lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
-lambert.time_of_flight = 212 * 24 * 3600 # day * (hour / day) * (seconds / hour)
 lambert.revolutions = 0
 lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
-lambert.central_body_collision_altitude_padding = 200
 
+# FIXME: the Lambert Profile does not respect user defined units.
+#        forcing conversion to meters here by multiplying by a 
+#        factor of 1e3.
+lambert.central_body_collision_altitude_padding = 0
+# -
+
+# It is required to enable writing access to the lambert profile to the segments of the target sequence. This ensures that the control parameter values are modified to match the target values.
+
+# +
 lambert.enable_write_to_first_maneuver = True
 lambert.first_maneuver_segment = first_impulse.name
 
@@ -300,42 +343,70 @@ lambert.propagate_segment = propagate.name
 
 lambert.enable_write_to_second_maneuver = True
 lambert.second_maneuver_segment = last_impulse.name
+# -
+
+# Finally, ensure the lambert profile is active so that it gets executed when running the main control sequence.
+
+# +
+from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE
+
 
 lambert.mode = PROFILE_MODE.ACTIVE
 # -
 
-# ## Show the MCS layout
-
-
-
-# ## Run the MCS and apply all profiles
+# ## Run the main control sequence
+#
+# Once the whole control sequence is declared and the lambert profile active, the simulation can be performed. Ensure the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
 
 # +
 from ansys.stk.core.stkobjects.astrogator import PROFILES_FINISH
-
-# The following profile is inactive but even with this attribute it can not be removed
-# propagate.stopping_conditions.remove("Duration")
 
 lambert_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
 
 lambert_transfer.continue_on_failure = False
 lambert_transfer.reset_inner_targeters = False
-
-lambert.mode = PROFILE_MODE.ACTIVE
-satellite.propagator.run_mission_control_sequence()
-satellite.propagator.apply_all_profile_changes()
-#lambert_transfer.apply_profiles()
 # -
 
-# ## Results
+# Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
 
-print(f"First impulse: {[coord / 1000 for coord in first_impulse.maneuver.attitude_control.query_cartesian()]} km/s")
-print(f"Last impulse:  {[coord / 1000 for coord in last_impulse.maneuver.attitude_control.query_cartesian()]} km/s")
+satellite.propagator.run_mission_control_sequence()
+satellite.propagator.apply_all_profile_changes()
 
-# ## Draw the transfer trajectory
+# ## Retrieve the results
 
+# Now, it is results can be retrieved. The value of the increment in velocity magnitude for the first and last impulse are computed. Also, the $C_{3}$ values for the characteristic departure and arrival energy are solved.
+
+# +
+# FIXME: the Lambert Profile does not respect user defined units.
+#        forcing conversion to meters here by multiplying by a 
+#        factor of 1e3.
+delta_v1 = first_impulse.maneuver.attitude_control.magnitude / 1000
+c3_launch = delta_v1 ** 2
+
+print(f"First impulse: {delta_v1:.2f} km/s")
+print(f"C3 at launch: {c3_launch:.2f} km2/s2")
+
+# +
+# FIXME: the Lambert Profile does not respect user defined units.
+#        forcing conversion to meters here by multiplying by a 
+#        factor of 1e3.
+delta_v2 = last_impulse.maneuver.attitude_control.magnitude / 1000
+c3_arrival = delta_v2 ** 2
+
+print(f"Last impulse:  {delta_v2:.2f} km/s")
+print(f"C3 at arrival: {c3_arrival:.2f} km2/s2")
+# -
+
+# ## Visualize the transfer
+#
+# Finally, show the scene one last time to visualize the Lambert's transfer orbit. Ensure the satellite is visible by updating the detail threshold of its three-dimensional model and forcing STK to draw its trajectory:
+
+# +
 satellite.propagator.options.draw_trajectory_in_3d = True
 satellite.graphics_3d.model.detail_threshold.all = 1E12
 
 plotter.show()
+# -
+
+plotter.animate(time_step=14000)
