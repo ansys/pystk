@@ -1,9 +1,26 @@
 # # Lambert transfer
 #
+# This example provides a practical example of how to use PySTK to solve for a Lambert transfer problem. A direct transfer arc between the Earth and Mars is solved by using the [Lamber Profile](https://help.agi.com/stk/index.htm#gator/ab-lambertprofile.htm) in astrogator.
+
+
+# ### What is a Lamber transfer?
+#
+# The two-body boundary value problem in the framework of orbital mechanics and astrodynamics is known as the Lambert’s problem. Solutions to this problem find the orbit which connects two known position vectors over a finite time of flight.
+#
+# Lambert’s problem states to find for the Keplerian orbit which connects two known position vectors, $\vec{r_{1}}$ 1 and $\vec{r_{2}}$, over a finite amount of time, $\Delta t$, under a gravity field of gravitational parameter $\mu$. This problem is usually named the direct-arc transfer problem and it was posed by Johann Heinrich Lambert in a letter to Leonhard Euler.
+#
+# The direct transfer problem is the most common one when addressing the Lambert’s problem. However, it is also possible to specify the number of revolutions of
+# the orbiting body before reaching the final position vector. This type of problem is known as the multi-revolution problem.
+#
+# It is important to say that perturbations are not considered in this noteboo. Only the Keplerian Lambert’s problem is studied. Despite this, STK is capable of using different force models during the propagation of the orbit, allowing for solving the so-called perturbed Lambert's problem.
+
+# ## Proposed problem
+#
+# The objective is to determine the transfer orbit from Earth to Mars, commencing on August 1, 2005, and reaching its destination by March 1, 2006. A Sun point mass force model is assumed for the transfer, ignoring the gravity influence of the Earth and Mars.
+
 # ## Launch a new STK instance
 #
 # Start by launching a new STK instance. In this example, STKEngine is used in noGraphics mode. This means that the graphic user interface (GUI) of the product is not launched:
-
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -15,7 +32,7 @@ print(f"Using {stk.version}")
 
 # ## Create a new scenario
 #
-# Start by creating a new scenario in STK by running:
+# Next, create a new scenario. The central body for this scenario must be the Sun.
 
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
@@ -34,7 +51,7 @@ scenario.set_time_period(START_TIME, STOP_TIME)
 
 root.rewind()
 
-# Once created, it is possible to show a 3D graphics window by running:
+# Once created, you can visualize the scenario in a 3D graphics window. Update the value of the far plane of the camera to ensure that distant objects are represented in the scene.
 
 # +
 from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
@@ -45,22 +62,31 @@ plotter.camera.far_plane = 1E12
 plotter.show()
 # -
 
-# ## Adding the planets to the scenario
+# ## Add the planets to the scenario
+#
+# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the [EPHEM_SOURCE_TYPE](https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/index.html#ansys.stk.core.stkobjects.EPHEM_SOURCE_TYPE) enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_TYPE
 from ansys.stk.core.utilities.colors import Colors
 
 
-planet_names = ["Earth", "Mars"]
-colors = [Colors.RoyalBlue, Colors.Salmon]
-planets = []
+planet_names_and_colors = {
+    "Earth": Colors.RoyalBlue,
+    "Mars": Colors.Salmon,
+}
 
-for planet_name, color in zip(planet_names, colors):
+for planet_name, color in planet_names_and_colors.items():
     planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, planet_name, "Sun")
     planet.common_tasks.set_position_source_central_body(planet_name, EPHEM_SOURCE_TYPE.DEFAULT)
     planet.graphics.color = color
-    planets.append(planet)
+# -
+
+# Retrieve the instances created for each planet. These will be used later for finding the start and final state vectors at the desired epoch.
+
+earth, mars = [scenario.children[object_name] for object_name in planet_names_and_colors]
+
+# Next, the scenario graphics are updated to ensure a nice visualization of the planets.
 
 # +
 # General graphics configuration
@@ -77,6 +103,8 @@ scenario.graphics.sub_planet_points_visible = False
 scenario.graphics.sub_planet_labels_visible = False
 # -
 
+# Finally, the camera position is updated to provite a better overview of the scene with the planets orbiting the Sun.
+
 plotter.camera.position = [402322147.89965045, -554001077.0502352, 31332205.857333962]
 plotter.show()
 
@@ -84,11 +112,42 @@ plotter.show()
 # ## Solving for the initial and final state vectors
 
 def from_data_result_to_dict(data_result):
+    """Convert an IResult
     return {
         key: data_result.data_sets.item(key_id).get_values() 
         for key_id, key in enumerate(data_result.data_sets.element_names)
     }
 
+
+def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name: str):
+    """Compute the position and velocity vectors of an object in the desired reference frame.
+
+    Parameters
+    ----------
+    stk_object : StkObject
+        Name of the object.
+    epoch : str
+        Epoch in the form of a string.
+    frame_name : str
+        Reference frame name.
+
+    Returns
+    -------
+    tuple(list[float, float, float], list[float, float, float])
+        Tuple containing the position and velocity vectors as a list.
+
+    """
+    state = {"Position": None, "Velocity": None}
+    for path in state:
+        data_provider = stk_object.data_providers.get_data_provider_time_varying_from_path(f"Cartesian {path}/{frame_name}")
+        data = from_data_result_to_dict(position_provider.exec_single_elements(epoch, ["x", "y", "z"]))
+        state[path] = [coord[0] for coord in data.values()]
+    return tuple(state.values())
+
+
+pos, vel = get_object_pos_vel_at_epoch(planet, STOP_TIME, "ICRF")
+
+pos
 
 # +
 positions = []
@@ -201,12 +260,12 @@ lambert.coord_system_name = "CentralBody/Sun Inertial"
 lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
 
 lambert.enable_second_maneuver = True
-lambert.target_position_x = rf_vec[0]
-lambert.target_position_y = rf_vec[1]
-lambert.target_position_z = rf_vec[2]
-lambert.target_velocity_x = vf_vec[0]
-lambert.target_velocity_y = vf_vec[1]
-lambert.target_velocity_z = vf_vec[2]
+lambert.target_position_x = rf_vec[0] * 1000
+lambert.target_position_y = rf_vec[1] * 1000
+lambert.target_position_z = rf_vec[2] * 1000
+lambert.target_velocity_x = vf_vec[0] * 1000
+lambert.target_velocity_y = vf_vec[1] * 1000
+lambert.target_velocity_z = vf_vec[2] * 1000
 
 lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
 lambert.time_of_flight = 212 * 24 * 3600 # day * (hour / day) * (seconds / hour)
