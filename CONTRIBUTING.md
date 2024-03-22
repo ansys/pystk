@@ -108,7 +108,7 @@ tox -f docker-exec-centos_container-py310 -- ls -la
 Here are a few additional examples:
 
 - Starting a interactive shell inside the container:
-    ```
+    ```console
     tox -f docker-exec-centos_container-py310 -- /bin/bash
     ```
 - Running the Aviator tests in no graphics mode inside the container:
@@ -126,7 +126,7 @@ Here are a few additional examples:
 - Running the VGT tests with graphics:
     ```console
     tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
-    ```
+    ```console
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```
     tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
@@ -140,7 +140,7 @@ Here are a few additional examples:
 
 After building the images and running a container, you can also start Jupyter Lab inside the container using:
 
-```
+```console
 tox -f docker-lab-{centos,ubuntu}_container-{py38,py39,py310}
 ```
 
@@ -155,7 +155,7 @@ After building the images and running a container, you can also start a desktop 
 
 To start the container in User Interface mode, run the following command:
 
-```
+```console
 tox -f docker-novnc-{centos,ubuntu}_container-{py38,py39,py310}
 ```
 
@@ -167,7 +167,7 @@ In addition to running the UI, this configuration also enables `sudo` for the st
 
 You can stop a running container using:
 
-```
+```console
 tox -f docker-stop-{centos,ubuntu}_container-{py38,py39,py310}
 ```
 
@@ -175,7 +175,7 @@ tox -f docker-stop-{centos,ubuntu}_container-{py38,py39,py310}
 
 You can remove a container using:
 
-```
+```console
 tox -f docker-rm-{centos,ubuntu}_container-{py38,py39,py310}
 ```
 
