@@ -1,4 +1,4 @@
-ARG baseImage=ubuntu:latest
+ARG baseImage=ubuntu:22.04
 FROM ${baseImage} AS builder
 
 # Add the engine packages to the builder stage
