@@ -20,7 +20,7 @@ either Windows or Linux.
         STKEngine and STKDesktop are supported.
 
     .. grid-item-card:: Dockerfiles for Linux :fab:`linux` :fab:`centos` :fab:`ubuntu`
-        :link: https://github.com/ansys-internal/pystk/tree/main/docker
+        :link: https://github.com/ansys-internal/pystk/tree/main/docker/linux
 
         Only STKEngine is supported.
 

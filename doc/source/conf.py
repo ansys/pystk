@@ -127,7 +127,7 @@ with open(links_filepath) as links_file:
 # Read available Docker images for Windows and Linux
 DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
 WINDOWS_IMAGES, CENTOS_IMAGES, UBUNTU_IMAGES = [
-    DOCKER_DIR / path for path in ["windows", "centos", "ubuntu"]
+    DOCKER_DIR / path for path in ["windows", "linux/centos", "linux/ubuntu"]
 ]
 
 
