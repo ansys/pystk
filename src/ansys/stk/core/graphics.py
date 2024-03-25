@@ -6717,7 +6717,7 @@ agcls.AgClassCatalog.add_catalog_entry("{afe0e66f-0fc5-46ad-801f-22670cfe99a9}",
 agcls.AgTypeNameMap["ICompositeDisplayCondition"] = ICompositeDisplayCondition
 
 class ICompositePrimitive(object):
-    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17155,7 +17155,7 @@ agcls.AgClassCatalog.add_catalog_entry("{a2ca541e-a860-4e47-b0e9-f0e973733e67}",
 agcls.AgTypeNameMap["ICompositeDisplayConditionFactory"] = ICompositeDisplayConditionFactory
 
 class ICompositePrimitiveFactory(object):
-    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -21171,7 +21171,7 @@ agcls.AgClassCatalog.add_catalog_entry("{B59D2316-7712-462C-BB2F-3C882D18388E}",
 agcls.AgTypeNameMap["CompositeDisplayCondition"] = CompositeDisplayCondition
 
 class CompositePrimitive(ICompositePrimitive, IPrimitive):
-    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type CompositePrimitive."""
@@ -23314,7 +23314,7 @@ agcls.AgClassCatalog.add_catalog_entry("{375A535B-557C-4E7B-A2AD-0905381BA46F}",
 agcls.AgTypeNameMap["CompositeDisplayConditionFactory"] = CompositeDisplayConditionFactory
 
 class CompositePrimitiveFactory(ICompositePrimitiveFactory):
-    """ A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
+    """A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions..."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type CompositePrimitiveFactory."""

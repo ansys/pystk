@@ -30,11 +30,18 @@ from ..stkx                        import *
 from ..vgt                         import *
 
 class STK_ENGINE_TIMER_TYPE(IntEnum):
+    """Specify the timer to use for STK Engine."""
+
     DISABLE_TIMERS     = 1
+    """Do not use Timers, the default for Windows."""
     TKINTER_MAIN_LOOP   = 2
+    """Tkinter TCL timer for tkinter main loop."""
     INTERACTIVE_PYTHON = 3
+    """Tkinter TCL timer for interactive python."""
     SIG_ALARM          = 4
+    """SIG_ALARM timer."""
     SIG_RT             = 5
+    """SIG_RT timer."""
 
 class STKEngineApplication(STKXApplication):
     """

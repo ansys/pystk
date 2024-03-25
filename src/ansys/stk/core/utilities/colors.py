@@ -110,6 +110,7 @@ class Colors(object):
 
     @staticmethod
     def from_argb(*args):
+        """Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided."""
         if len(args) == 1: # argb
             return _ColorsImpl.from_rgb((args[0] & 0xFF0000) >> 16, (args[0] & 0x00FF00) >> 8, args[0] & 0xFF)
         elif len(args) == 3: # r, g, b
