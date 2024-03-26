@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-ubuntu22.04
-ARG basePythonImage=ansys/stk:latest-ubuntu22.04-pybase
+ARG baseImage=ansys/stk:dev-ubuntu22.04
+ARG basePythonImage=ansys/stk:dev-ubuntu22.04-pybase
 FROM ${basePythonImage} as builder
 
 ##############################################
@@ -11,21 +11,21 @@ FROM ${basePythonImage} as builder
 USER root
 WORKDIR /tmp
 RUN wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
-    tar xf Python-3.8.16.tar.xz && \
-    cd Python-3.8.16 && \
-    ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
+    tar xf Python-3.8.16.tar.xz
+WORKDIR /tmp/Python-3.8.16
+RUN ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
     make altinstall
 
 #############################################################
 # 2) Copy the Python build to the system in the second stage
 #############################################################
 
-# Switch back to non-root user
 FROM ${baseImage}
 USER root
 
 # Install required packages for X Window System and MESA graphics
-RUN apt-get install --no-install-recommends -y xserver-xorg xvfb xauth; \
+RUN apt-get update -y; \
+    apt-get install --no-install-recommends -y xserver-xorg xvfb xauth; \
     apt-get install --no-install-recommends -y mesa-utils libgl1-mesa-dri libglu1-mesa; \
     apt-get install --no-install-recommends -y tk; \
     apt-get install --no-install-recommends -y dos2unix; \

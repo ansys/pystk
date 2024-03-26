@@ -50,12 +50,12 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY   TAG                         IMAGE ID       CREATED          SIZE
-    ansys/stk    latest-centos7-python3.8    bffb1a81b5ba   31 seconds ago   2.75GB
-    ansys/stk    latest-centos7-python3.10   f045f5453c31   43 seconds ago   2.77GB
-    ansys/stk    latest-centos7-python3.9    48c6275abedb   49 seconds ago   2.76GB
-    ansys/stk    latest-centos7-pybase       85117878fee1   2 minutes ago    3.22GB
-    ansys/stk    latest-centos7              bf55f684403c   6 minutes ago    2.37GB
-    centos       7                           f87a3c43c945   10 minutes ago   205MB
+    ansys/stk    dev-centos7-python3.8    bffb1a81b5ba   31 seconds ago   2.75GB
+    ansys/stk    dev-centos7-python3.10   f045f5453c31   43 seconds ago   2.77GB
+    ansys/stk    dev-centos7-python3.9    48c6275abedb   49 seconds ago   2.76GB
+    ansys/stk    dev-centos7-pybase       85117878fee1   2 minutes ago    3.22GB
+    ansys/stk    dev-centos7              bf55f684403c   6 minutes ago    2.37GB
+    centos       7                        f87a3c43c945   10 minutes ago   205MB
     ```
 - **ubuntu**
     ```console
@@ -67,12 +67,12 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY   TAG                             IMAGE ID       CREATED          SIZE
-    ansys/stk    latest-ubuntu22.04-python3.10   b73373a4f70f   11 seconds ago   3.75GB
-    ansys/stk    latest-ubuntu22.04-python3.9    da1e30388a60   15 seconds ago   3.74GB
-    ansys/stk    latest-ubuntu22.04-python3.8    7492f6675ae8   22 seconds ago   3.74GB
-    ansys/stk    latest-ubuntu22.04-pybase       e2207493249c   2 minutes ago    4.15GB
-    ansys/stk    latest-ubuntu22.04              4fa0a28358bd   7 minutes ago    3.13GB
-    ubuntu       22.04                           1c6025966a65   8 minutes ago    133MB
+    ansys/stk    dev-ubuntu22.04-python3.10   b73373a4f70f   11 seconds ago   3.75GB
+    ansys/stk    dev-ubuntu22.04-python3.9    da1e30388a60   15 seconds ago   3.74GB
+    ansys/stk    dev-ubuntu22.04-python3.8    7492f6675ae8   22 seconds ago   3.74GB
+    ansys/stk    dev-ubuntu22.04-pybase       e2207493249c   2 minutes ago    4.15GB
+    ansys/stk    dev-ubuntu22.04              4fa0a28358bd   7 minutes ago    3.13GB
+    ubuntu       22.04                        1c6025966a65   8 minutes ago    133MB
     ```
 
 ## Running an STK container with Tox

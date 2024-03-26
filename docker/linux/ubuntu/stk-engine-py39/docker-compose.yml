@@ -1,12 +1,12 @@
 version: '3.8'
 services:
   stk-python3.9:
-    image: ansys/stk:latest-ubuntu22.04-python3.9
+    image: ansys/stk:dev-ubuntu22.04-python3.9
     container_name: stk-python3.9
     build: 
       context: .
       args:
-        baseImage: ansys/stk:latest-ubuntu22.04
-        basePythonImage: ansys/stk:latest-ubuntu22.04-pybase
+        baseImage: ansys/stk:dev-ubuntu22.04
+        basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

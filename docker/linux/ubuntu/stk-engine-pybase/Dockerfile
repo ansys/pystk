@@ -1,13 +1,14 @@
 # By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:latest-ubuntu22.04
+ARG baseImage=ansys/stk:dev-ubuntu22.04
 FROM ${baseImage}
 
 # Install system dependencies
 USER root
 RUN set -e; \
+    apt-get update -y; \
     # Install basic development utilities
-    apt-get install -y build-essential; \
-    apt-get install -y tar wget; \
+    apt-get install --no-install-recommends -y build-essential; \
+    apt-get install --no-install-recommends -y tar wget; \
     # Install OpenSSL 1.1 dependencies
     # Install required dependencies for Python 3.X
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install --no-install-recommends -y \
@@ -26,6 +27,6 @@ RUN set -e; \
    ./config --prefix=/tmp/openssl no-shared zlib-dynamic; \
    make && make install_sw;
 
-CMD echo 'Extend this container by installing Python.'
+CMD ["echo", "Extend this container by installing Python."]
 
 USER stk

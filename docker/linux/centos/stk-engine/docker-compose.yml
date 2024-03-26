@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   stk:
-    image: ansys/stk:latest-centos7
+    image: ansys/stk:dev-centos7
     container_name: stk
     build: 
       context: .

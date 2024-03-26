@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-centos7
-ARG basePythonImage=ansys/stk:latest-centos7-pybase
+ARG baseImage=ansys/stk:dev-centos7
+ARG basePythonImage=ansys/stk:dev-centos7-pybase
 FROM ${basePythonImage} as builder
 
 ##############################################
@@ -12,9 +12,9 @@ FROM ${basePythonImage} as builder
 USER root
 WORKDIR /tmp
 RUN wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
-    tar xf Python-3.8.16.tar.xz && \
-    cd Python-3.8.16 && \
-    ./configure --enable-optimizations && \
+    tar xf Python-3.8.16.tar.xz
+WORKDIR /tmp/Python-3.8.16
+RUN ./configure --enable-optimizations && \
     make altinstall
 
 #############################################################

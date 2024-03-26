@@ -45,7 +45,9 @@ ENV STK_USER_HOME=/home/stk
 # Setup non-root STK user
 RUN set -e; \
     useradd -ms /bin/bash stk; \
-    apt-get install --no-install-recommends -y libgfortran5
+    apt-get install --no-install-recommends -y libgfortran5; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
 
 # Switch to STK user
 WORKDIR "${STK_USER_HOME}"
@@ -63,4 +65,4 @@ ENV LD_LIBRARY_PATH="${STK_USER_HOME}/bin" \
 # Run new user install
 RUN stkxnewuser /force /allowOnline=yes
 
-CMD echo 'STK Engine requires a host application to run. Shutting down this container.'
+CMD ["echo", "STK Engine requires a host application to run. Shutting down this container."]
