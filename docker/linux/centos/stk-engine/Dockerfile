@@ -52,7 +52,7 @@ WORKDIR "${STK_USER_HOME}"
 USER stk
 
 # Copy files from the builder stage
-COPY --from=builder --chown=stk /stk/ "${STK_USER_HOME}"/
+COPY --from=builder /stk/ "${STK_USER_HOME}"/
 
 # Configure environment
 ENV LD_LIBRARY_PATH="${STK_USER_HOME}/bin" \

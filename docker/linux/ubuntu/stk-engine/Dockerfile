@@ -45,14 +45,14 @@ ENV STK_USER_HOME=/home/stk
 # Setup non-root STK user
 RUN set -e; \
     useradd -ms /bin/bash stk; \
-    apt-get install -y libgfortran5
+    apt-get install --no-install-recommends -y libgfortran5
 
 # Switch to STK user
 WORKDIR "${STK_USER_HOME}"
 USER stk
 
 # Copy files from the builder stage
-COPY --from=builder --chown=stk /stk/ "${STK_USER_HOME}"/
+COPY --from=builder /stk/ "${STK_USER_HOME}"/
 
 # Configure environment
 ENV LD_LIBRARY_PATH="${STK_USER_HOME}/bin" \

@@ -10,12 +10,13 @@ RUN set -e; \
     apt-get install -y tar wget; \
     # Install OpenSSL 1.1 dependencies
     # Install required dependencies for Python 3.X
-    DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y pkg-config \
-          libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
-            libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-            lzma lzma-dev tk-dev uuid-dev zlib1g-dev; \
+    DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install --no-install-recommends -y \
+          pkg-config libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
+          libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
+          lzma lzma-dev tk-dev uuid-dev zlib1g-dev; \
     # Clean all unnecessary files
-    apt-get clean;
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
 
 # Install OpenSSL 1.1
 RUN set -e; \
@@ -26,3 +27,5 @@ RUN set -e; \
    make && make install_sw;
 
 CMD echo 'Extend this container by installing Python.'
+
+USER stk

@@ -34,3 +34,5 @@ RUN set -e; \
 
 
 CMD echo 'Extend this container by installing Python.'
+
+USER stk

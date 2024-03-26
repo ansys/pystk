@@ -9,8 +9,8 @@ FROM ${basePythonImage} as builder
 
 # Install Python 3.8 and create a symbolic link named "python".
 USER root
-RUN cd /tmp && \
-    wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
+WORKDIR /tmp
+RUN wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
     tar xf Python-3.8.16.tar.xz && \
     cd Python-3.8.16 && \
     ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
@@ -25,11 +25,12 @@ FROM ${baseImage}
 USER root
 
 # Install required packages for X Window System and MESA graphics
-RUN apt-get install -y xserver-xorg xvfb xauth; \
-    apt-get install -y mesa-utils libgl1-mesa-dri libglu1-mesa; \
-    apt-get install -y tk; \
-    apt-get install -y dos2unix; \
-    apt-get clean;
+RUN apt-get install --no-install-recommends -y xserver-xorg xvfb xauth; \
+    apt-get install --no-install-recommends -y mesa-utils libgl1-mesa-dri libglu1-mesa; \
+    apt-get install --no-install-recommends -y tk; \
+    apt-get install --no-install-recommends -y dos2unix; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
 
 # Set the display environment variable to allow GUI applications
 ENV DISPLAY=:0
@@ -42,6 +43,10 @@ COPY --from=builder /usr/local/bin/pip3.8 /usr/local/bin/pip3.8
 RUN ln -sfn /usr/local/bin/python3.8 /usr/local/bin/python && \
     ln -sfn /usr/local/bin/pip3.8 /usr/local/bin/pip
 
+COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
+    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+
 # Switch back to non-root user
 USER stk
 
@@ -51,7 +56,4 @@ ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_RETRY=50
 
 # Use the entrypoint script
-COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
-    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 ENTRYPOINT [ "docker-entrypoint.sh" ]

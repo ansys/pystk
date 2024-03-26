@@ -10,8 +10,8 @@ FROM ${basePythonImage} as builder
 # Install Python 3.9 and create a symbolic link named "python".
 # This overrides the default Python 2.7 in CentOS7.
 USER root
-RUN cd /tmp && \
-    wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz && \
+WORKDIR /tmp
+RUN wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz && \
     tar xf Python-3.9.16.tar.xz && \
     cd Python-3.9.16 && \
     ./configure --enable-optimizations && \
@@ -44,6 +44,10 @@ COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9
 RUN ln -sfn /usr/local/bin/python3.9 /usr/local/bin/python && \
     ln -sfn /usr/local/bin/pip3.9 /usr/local/bin/pip
 
+COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
+    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+
 # Switch back to non-root user
 USER stk
 
@@ -53,7 +57,4 @@ ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_RETRY=50
 
 # Use the entrypoint script
-COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
-    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 ENTRYPOINT [ "docker-entrypoint.sh" ]
