@@ -247,9 +247,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
-    index = EXAMPLES_DIRECTORY / "index.rst"
     files = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
-    files.append(index)
     for file in status_iterator(
             files, 
             "Copying examples file...", 
