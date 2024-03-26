@@ -13,12 +13,11 @@ USER ContainerUser
 WORKDIR "C:/Program Files/AGI/STK 12/bin"
 RUN [ "C:/Program Files/AGI/STK 12/bin/AgNewUserSetup.exe", "force", "showDlg=Off", "allowOnline" ]
 
-CMD echo 'STK Engine requires a host application to run.  Shutting down this container.'
+CMD echo 'STK Engine requires a host application to run. Shutting down this container.'
 
 # Copy shared library to enable Code 500 Ephemeris file format support
 # which is used by some of the tests
-RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
-
+RUN (mkdir -p /stk/Modules) -and (cp -Force /stk/bin/libagascode500.so /stk/Modules/)
 
 # Set the base image for the next stage
 FROM ${baseImage}
