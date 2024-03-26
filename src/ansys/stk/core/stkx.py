@@ -1762,6 +1762,7 @@ class IUiAxGraphics3DCntrl(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+        """Set a reference to the splash logo graphic to be displayed in the control."""
         return self._intf.invoke(IUiAxGraphics3DCntrl._metadata, IUiAxGraphics3DCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
@@ -2194,6 +2195,7 @@ class IUiAx2DCntrl(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+        """Set a reference to the splash logo graphic to be displayed in the control."""
         return self._intf.invoke(IUiAx2DCntrl._metadata, IUiAx2DCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
@@ -2677,6 +2679,7 @@ class IUiAxGraphics2DAnalysisCntrl(object):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+        """Set a reference to the splash logo graphic to be displayed in the control."""
         return self._intf.invoke(IUiAxGraphics2DAnalysisCntrl._metadata, IUiAxGraphics2DAnalysisCntrl._picture_put_reference_metadata, pPicture)
 
     _set_picture_metadata = { "name" : "picture",
