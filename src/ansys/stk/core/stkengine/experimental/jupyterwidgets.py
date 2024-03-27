@@ -102,7 +102,7 @@ class AsyncioTimerManager(object):
         self._fire_timers()
 
     def _next_timer_proc(self):
-        ''' Return time in sec until next timer proc.'''
+        """Return time in sec until next timer proc."""
         tempTimers = self._timers.copy()
         if len(tempTimers) == 0:
             return 0.050
@@ -128,9 +128,7 @@ asyncioTimerManager = None
 
 
 class RemoteFrameBufferHostVTable(Structure):
-    '''
-    Structure of the vtable for IRemoteFrameBufferHost.
-    '''
+    """Structure of the vtable for IRemoteFrameBufferHost."""
     
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
@@ -139,11 +137,11 @@ class RemoteFrameBufferHostVTable(Structure):
 
 
 class RemoteFrameBufferHost(object):
-    '''
+    """
     Implements IRemoteFrameBufferHost.
     
     Assemble a vtable following the layout of that interface
-    '''
+    """
     
     _IID_IUnknown = GUID(IUnknown._guid)
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
@@ -204,9 +202,7 @@ class RemoteFrameBufferHost(object):
 
 
 class WidgetBase(RemoteFrameBuffer):
-    '''
-    Base class for Jupyter controls.
-    '''
+    """Base class for Jupyter controls."""
     
     _shift = 0x0001
     _control = 0x0004
@@ -382,9 +378,7 @@ class WidgetBase(RemoteFrameBuffer):
 
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
-    '''
-    The 3D Globe widget for jupyter.
-    '''
+    """The 3D Globe widget for jupyter."""
 
     # Example:
     #   from ansys.stk.core.stkengine import *
@@ -410,9 +404,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
 
 class MapWidget(UiAx2DCntrl, WidgetBase):
-    '''
-    The 2D Map widget for jupyter.
-    '''
+    """The 2D Map widget for jupyter."""
     
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
@@ -427,9 +419,7 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
 
 
 class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
-    '''
-    The Graphics Analysis widget for jupyter.
-    '''
+    """The Graphics Analysis widget for jupyter."""
     
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl

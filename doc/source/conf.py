@@ -274,6 +274,8 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     ----------
     app : sphinx.application.Sphinx
         Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
 
     """
     OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"

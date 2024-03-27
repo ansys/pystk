@@ -112,7 +112,7 @@ class STKDesktopApplication(UiApplication):
             return self.__dict__["_root"]
             
     def new_object_model_context(self) -> StkObjectModelContext:
-        '''Create a new object model context for the STK Desktop application.'''
+        """Create a new object model context for the STK Desktop application."""
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
     
     def shutdown(self) -> None:
