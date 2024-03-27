@@ -161,6 +161,7 @@ else:
     }
     nbsphinx_thumbnails = {
         "examples/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/loading-ephem-from-jpl-horizons": "_static/thumbnails/loading-ephem-from-jpl-horizons.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
@@ -227,6 +228,10 @@ user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://www.ansys.com/*"
+]
+linkcheck_anchors_ignore_for_url = [
+    "https://help.agi.com/stk/12.8.0/index.htm*",
+    "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html*",
 ]
 
 
