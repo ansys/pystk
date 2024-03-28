@@ -30,11 +30,23 @@ from ..stkx                        import *
 from ..vgt                         import *
 
 class STK_ENGINE_TIMER_TYPE(IntEnum):
+    """
+    Specify the timer implementation to use.
+    
+    Timers are needed for events on Linux applications.
+    May be overridden by specifying environment variable STK_PYTHONAPI_TIMERTYPE.
+    """
+
     DISABLE_TIMERS     = 1
+    """Disable timers. This option is always selected on Windows applications."""
     TKINTER_MAIN_LOOP   = 2
+    """Tkinter TCL timer dependent on the tkinter main loop. Default for tkinter applications."""
     INTERACTIVE_PYTHON = 3
+    """Tkinter TCL timer dependent on the interactive Python environment. Default for interactive Python applications."""
     SIG_ALARM          = 4
+    """Use the standard signal SIGALRM for timer notifications. Default when not using tkinter or interactice Python."""
     SIG_RT             = 5
+    """Use a real-time signal for timer notifications. Default signal is SIGRTMIN. May be overridden by specifying environment variable STK_PYHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET."""
 
 class STKEngineApplication(STKXApplication):
     """
