@@ -37,9 +37,9 @@ tox list
 
 ## Building the STK container images with Tox
 
-You can build all the Docker images for STK. Currently only Linux containers are implemented. Support for Windows containers will come later. 
+Use the following commands to build the images:
 
-Use the following command to build the images:
+### Linux
 
 ```console
 tox -e docker-build-linux_images
@@ -58,6 +58,27 @@ ansys/stk    latest-centos7-pybase       85117878fee1   2 minutes ago    3.22GB
 ansys/stk    latest-centos7              bf55f684403c   6 minutes ago    2.37GB
 centos       7                           f87a3c43c945   10 minutes ago   205MB
 ```
+
+### Windows
+
+```console
+tox -e docker-build-windows_images
+```
+
+This will result in the following images:
+
+
+```bash
+~$ docker images
+
+
+REPOSITORY                                         TAG                                         IMAGE ID       CREATED        SIZE
+ansys/stk                                          dev-windowsservercore-ltsc2019-python3.10   da112bee5232   13 hours ago   11.1GB
+ansys/stk                                          dev-windowsservercore-ltsc2019-pybase       6386ed51b256   13 hours ago   10.9GB
+ansys/stk                                          dev-windowsservercore-ltsc2019              59ab48f41f9c   13 hours ago   10.8GB
+mcr.artifactory.stk.com/dotnet/framework/runtime   4.8-windowsservercore-ltsc2019              6b8d98588f15   6 weeks ago    6.91GB
+mcr.microsoft.com/dotnet/framework/runtime         4.8-windowsservercore-ltsc2019              6b8d98588f15   6 weeks ago    6.91GB
+```
 ## Running an STK container with Tox
 
 Once the images are built, you can create a new container targeting a specific Python version using the following command:
@@ -66,12 +87,12 @@ Once the images are built, you can create a new container targeting a specific P
 >Make sure that the ANSYSLMD_LICENSE_FILE environment variable is properly configured before starting the container.
 
 ```console
-tox -f docker-run-linux_container-{py38,py39,py310}
+tox -f docker-run-{linux_container,windows_container}-{py38,py39,py310}
 ```
 
 This will start a new virtual environment inside the container and install all the dependencies required to run the tests and generate the project documentation. This will also install Jupyter Lab and its dependencies in that virtual environment.
 
-In the previous command, you need to select the Python version you want to
+In the previous command, you need to select the OS and Python version you want to
 use, for instance `tox -f docker-run-linux_container-py310` will start a Linux container configured with Python 3.10.
 
 ## Executing a command inside an STK container with Tox
@@ -79,7 +100,7 @@ use, for instance `tox -f docker-run-linux_container-py310` will start a Linux c
 After building the images and running a container, you can execute a command inside the container using:
 
 ```console
-tox -f docker-exec-linux_container-{py38,py39,py310} -- {command}
+tox -f docker-exec-{linux_container,windows_container}-{py38,py39,py310} -- {command}
 ```
 
 For instance, to run `ls -la` inside a previously started Linux Python 3.10 container, use:
@@ -91,32 +112,67 @@ tox -f docker-exec-linux_container-py310 -- ls -la
 Here are a few additional examples:
 
 - Starting a interactive shell inside the container:
-    ```
+    #### Linux
+    ```console
     tox -f docker-exec-linux_container-py310 -- /bin/bash
     ```
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- cmd
+    ```
 - Running the Aviator tests in no graphics mode inside the container:
+    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
 - Running the Aviator tests with graphics:
+    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude SEET --exclude PluginTests -vv
+    ```
 - Running the VGT tests in no graphics mode:
+    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
+    #### Windows
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
 - Running the VGT tests with graphics:
+    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
-- Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude SEET --exclude PluginTests -vv
     ```
+- Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
+    #### Linux
+    ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
     ```
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    ```
 - Running the STK tests with graphics:
+    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
+    #### Windows
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude SEET --exclude PluginTests -vv
     ```
 
 ## Launching Jupyter Lab with Tox
