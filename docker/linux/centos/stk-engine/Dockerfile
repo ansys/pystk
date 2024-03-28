@@ -52,7 +52,7 @@ WORKDIR "${STK_USER_HOME}"
 USER stk
 
 # Copy files from the builder stage
-COPY --from=builder --chown=stk /stk/ "${STK_USER_HOME}"/
+COPY --from=builder /stk/ "${STK_USER_HOME}"/
 
 # Configure environment
 ENV LD_LIBRARY_PATH="${STK_USER_HOME}/bin" \
@@ -63,4 +63,4 @@ ENV LD_LIBRARY_PATH="${STK_USER_HOME}/bin" \
 # Run new user install
 RUN stkxnewuser /force /allowOnline=yes
 
-CMD echo 'STK Engine requires a host application to run. Shutting down this container.'
+CMD ["echo", "STK Engine requires a host application to run. Shutting down this container."]

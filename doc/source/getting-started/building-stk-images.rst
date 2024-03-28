@@ -14,14 +14,13 @@ either Windows or Linux.
 
 .. grid:: 2
 
-    .. grid-item-card:: Dockefiles for Windows :fab:`windows`
+    .. grid-item-card:: Dockerfiles for Windows :fab:`windows`
         :link: https://github.com/ansys-internal/pystk/tree/main/docker/windows
         
         STKEngine and STKDesktop are supported.
 
-    .. grid-item-card:: Dockefiles for Linux :fab:`linux`
+    .. grid-item-card:: Dockerfiles for Linux :fab:`linux` :fab:`centos` :fab:`ubuntu`
         :link: https://github.com/ansys-internal/pystk/tree/main/docker/linux
-        
 
         Only STKEngine is supported.
 
@@ -202,10 +201,10 @@ Usage example
       --env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE \
       --name stk-python3.10 \
       --entrypoint /bin/bash \
-      ansys/stk:latest-centos7-python3.10
+      ansys/stk:dev-centos7-python3.10
 
 In this example, a container is created from the
-``ansys/stk:latest-centos7-python3.10`` Docker image. It runs in detached mode
+``ansys/stk:dev-centos7-python3.10`` Docker image. It runs in detached mode
 with an interactive TTY session, shares the host's network stack, sets the
 ``ANSYSLMD_LICENSE_FILE`` environment variable, and assigns the name
 ``skt-python3.10`` to the container. The container starts by executing the
