@@ -110,67 +110,61 @@ tox -f docker-exec-linux_container-py310 -- ls -la
 ```
 
 Here are a few additional examples:
-
+### Linux
 - Starting a interactive shell inside the container:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- /bin/bash
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-windows_container-py310 -- cmd
     ```
 - Running the Aviator tests in no graphics mode inside the container:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the Aviator tests with graphics:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude SEET --exclude PluginTests -vv
     ```
 - Running the VGT tests in no graphics mode:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
     ```
 - Running the VGT tests with graphics:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude SEET --exclude PluginTests -vv
     ```
 - Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
-    #### Linux
     ```console
     tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
     ```
-    #### Windows
+- Running the STK tests with graphics:
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
+### Windows
+- Starting a interactive shell inside the container:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- cmd
+    ```
+- Running the Aviator tests in no graphics mode inside the container:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the Aviator tests with graphics:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude SEET --exclude PluginTests -vv
+    ```
+- Running the VGT tests in no graphics mode:
+    ```console
+    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the VGT tests with graphics:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude SEET --exclude PluginTests -vv
+    ```
+- Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
     ```console
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
     ```
 - Running the STK tests with graphics:
-    #### Linux
-    ```console
-    tox -f docker-exec-linux_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
-    ```
-    #### Windows
     ```console
     tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude SEET --exclude PluginTests -vv
     ```
