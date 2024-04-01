@@ -44,8 +44,10 @@ Interfaces
     ISpatialAnalysisToolVolumeCalcGroup
     ICalculationToolScalar
     ICalculationToolScalarAngle
+    ICalculationToolScalarAverage
     ICalculationToolScalarConstant
     ICalculationToolScalarCustom
+    ICalculationToolScalarCustomInline
     ICalculationToolScalarDataElement
     ICalculationToolScalarDerivative
     ICalculationToolScalarDotProduct
@@ -57,6 +59,8 @@ Interfaces
     ICalculationToolScalarFunction2Var
     ICalculationToolScalarIntegral
     ICalculationToolScalarPlugin
+    ICalculationToolScalarPointInVolumeCalc
+    ICalculationToolScalarStandardDeviation
     ICalculationToolScalarSurfaceDistanceBetweenPoints
     ICalculationToolScalarVectorComponent
     ICalculationToolScalarVectorMagnitude
@@ -430,8 +434,10 @@ Classes
     SpatialAnalysisToolVolumeCalcGroup
     CalculationToolScalar
     CalculationToolScalarAngle
+    CalculationToolScalarAverage
     CalculationToolScalarConstant
     CalculationToolScalarCustom
+    CalculationToolScalarCustomInline
     CalculationToolScalarDataElement
     CalculationToolScalarDerivative
     CalculationToolScalarDotProduct
@@ -443,6 +449,8 @@ Classes
     CalculationToolScalarFunction2Var
     CalculationToolScalarIntegral
     CalculationToolScalarPlugin
+    CalculationToolScalarPointInVolumeCalc
+    CalculationToolScalarStandardDeviation
     CalculationToolScalarSurfaceDistanceBetweenPoints
     CalculationToolScalarVectorComponent
     CalculationToolScalarVectorMagnitude
@@ -822,10 +830,16 @@ Interfaces
 .. autoclass:: ICalculationToolScalarAngle
     :members:
     :exclude-members: __init__
+.. autoclass:: ICalculationToolScalarAverage
+    :members:
+    :exclude-members: __init__
 .. autoclass:: ICalculationToolScalarConstant
     :members:
     :exclude-members: __init__
 .. autoclass:: ICalculationToolScalarCustom
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ICalculationToolScalarCustomInline
     :members:
     :exclude-members: __init__
 .. autoclass:: ICalculationToolScalarDataElement
@@ -859,6 +873,12 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: ICalculationToolScalarPlugin
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ICalculationToolScalarPointInVolumeCalc
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ICalculationToolScalarStandardDeviation
     :members:
     :exclude-members: __init__
 .. autoclass:: ICalculationToolScalarSurfaceDistanceBetweenPoints
@@ -1874,10 +1894,16 @@ Classes
 .. autoclass:: CalculationToolScalarAngle
     :members:
     :exclude-members: __init__
+.. autoclass:: CalculationToolScalarAverage
+    :members:
+    :exclude-members: __init__
 .. autoclass:: CalculationToolScalarConstant
     :members:
     :exclude-members: __init__
 .. autoclass:: CalculationToolScalarCustom
+    :members:
+    :exclude-members: __init__
+.. autoclass:: CalculationToolScalarCustomInline
     :members:
     :exclude-members: __init__
 .. autoclass:: CalculationToolScalarDataElement
@@ -1911,6 +1937,12 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: CalculationToolScalarPlugin
+    :members:
+    :exclude-members: __init__
+.. autoclass:: CalculationToolScalarPointInVolumeCalc
+    :members:
+    :exclude-members: __init__
+.. autoclass:: CalculationToolScalarStandardDeviation
     :members:
     :exclude-members: __init__
 .. autoclass:: CalculationToolScalarSurfaceDistanceBetweenPoints

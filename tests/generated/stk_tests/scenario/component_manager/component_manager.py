@@ -720,14 +720,8 @@ class EarlyBoundTests(TestBase):
         comp: "IComponentInfo" = None
 
         i: int = 0
-        while i < components.count:
-            comp = components[i]
-            self.TestComponent(comp, True)
-
-            i += 1
-
-        i: int = 0
         while i < components.folder_count:
+            # Console.WriteLine("Procesing folder: " + i.ToString());
             compFolder: "ComponentInfoCollection" = components.get_folder(i)
 
             j: int = 0
@@ -2842,6 +2836,14 @@ class EarlyBoundTests(TestBase):
         decRate.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", decRate.coord_system_name)
         sphericalElems.remove((clr.CastAs(decRate, IComponentInfo)).name)
+
+        rangeRate: "StateCalcRangeRate" = clr.CastAs(
+            (clr.Convert(sphericalElems["Range Rate"], ICloneable)).clone_object(), StateCalcRangeRate
+        )
+        Assert.assertIsNotNone(rangeRate)
+        rangeRate.coord_system_name = "CentralBody/Earth Fixed"
+        Assert.assertEqual("CentralBody/Earth Fixed", rangeRate.coord_system_name)
+        sphericalElems.remove((clr.CastAs(rangeRate, IComponentInfo)).name)
 
         # Target Vector
 

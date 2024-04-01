@@ -192,7 +192,7 @@ Interfaces
     IBasicManeuverStrategyWeave
     IBasicManeuverStrategyBallistic3D
     IBasicManeuverStrategyPitch3D
-    IBasicManeuverTargetPositionVelNoisyBrnRng
+    IBasicManeuverTargetPositionVelNoisyBrgRng
     IBasicManeuverTargetPositionVelNoisySurfTgt
     ITakeoffNormal
     ITakeoffDeparturePoint
@@ -394,6 +394,8 @@ Enumerations
     REFUEL_DUMP_MODE
     BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
     TARGET_POSITION_VEL_TYPE
+    EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
+    EPHEM_SHIFT_ROTATE_COURSE_MODE
 
 
 Classes
@@ -637,7 +639,7 @@ Classes
     RefuelDumpProperties
     ProcedureFastTimeOptions
     BasicManeuverTargetPositionVel
-    BasicManeuverTargetPositionVelNoisyBrnRng
+    BasicManeuverTargetPositionVelNoisyBrgRng
     BasicManeuverTargetPositionVelNoisySurfTgt
 
 
@@ -1196,7 +1198,7 @@ Interfaces
 .. autoclass:: IBasicManeuverStrategyPitch3D
     :members:
     :exclude-members: __init__
-.. autoclass:: IBasicManeuverTargetPositionVelNoisyBrnRng
+.. autoclass:: IBasicManeuverTargetPositionVelNoisyBrgRng
     :members:
     :exclude-members: __init__
 .. autoclass:: IBasicManeuverTargetPositionVelNoisySurfTgt
@@ -1653,6 +1655,10 @@ Enumerations
 .. autoenum:: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
     :members:
 .. autoenum:: TARGET_POSITION_VEL_TYPE
+    :members:
+.. autoenum:: EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
+    :members:
+.. autoenum:: EPHEM_SHIFT_ROTATE_COURSE_MODE
     :members:
 
 
@@ -2367,7 +2373,7 @@ Classes
 .. autoclass:: BasicManeuverTargetPositionVel
     :members:
     :exclude-members: __init__
-.. autoclass:: BasicManeuverTargetPositionVelNoisyBrnRng
+.. autoclass:: BasicManeuverTargetPositionVelNoisyBrgRng
     :members:
     :exclude-members: __init__
 .. autoclass:: BasicManeuverTargetPositionVelNoisySurfTgt
