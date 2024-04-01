@@ -22,8 +22,13 @@ from ..internal.eventutil          import EventSubscriptionManager
 from ..utilities.grpcutilities     import GrpcCallBatcher
 from ..internal.stkxinitialization import STKXInitialize
 from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesException
+from ..graphics                    import *
 from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
+from ..stkobjects.astrogator       import *
+from ..stkobjects.aviator          import *
+from ..stkutil                     import *
 from ..stkx                        import STKXApplication
+from ..vgt                         import *
 
 class STK_ENGINE_TIMER_TYPE(IntEnum):
     """
