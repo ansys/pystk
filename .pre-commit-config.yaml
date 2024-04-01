@@ -1,10 +1,10 @@
 repos:
 
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.1.6
+  rev: v0.3.4
   hooks:
+    # Run the linter
     - id: ruff
-      args: [--fix]
 
 - repo: https://github.com/codespell-project/codespell
   rev: v2.2.6
