@@ -5541,14 +5541,14 @@ class ICalculationToolScalarCustomInline(object):
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def get_all_arguements(self) -> list:
-        """Retursn the list of arguements."""
+        """Return the list of arguments."""
         return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._get_all_arguements_metadata, OutArg())
 
     _set_all_arguements_metadata = { "offset" : _set_all_arguements_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def set_all_arguements(self, calcList:list) -> None:
-        """Set the list of arguements."""
+        """Set the list of arguments."""
         return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._set_all_arguements_metadata, calcList)
 
     _property_names[script_type] = "script_type"

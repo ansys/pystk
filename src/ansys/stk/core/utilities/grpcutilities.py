@@ -1,6 +1,6 @@
 # Copyright 2024-2024, Ansys Government Initiatives 
 """
-This module is used to optimize performance of gRPC communications.
+Optimize performance of gRPC communications.
 
 GrpcCallBatcher may be used to reduce the number of remote communications
 by batching together API commands that do not require return values.
@@ -22,7 +22,7 @@ class GrpcCallBatcher(object):
     A class used to batch together API calls to optimize performance.
     
     Activating batching will cause the normal API exception behavior to be 
-    altered. Exceptions from one command may appear asyncronously. Therefore
+    altered. Exceptions from one command may appear asynchronously. Therefore
     it is not recommended to use call batching while building and debugging,
     but rather as a performance optimization.
     
@@ -59,10 +59,12 @@ class GrpcCallBatcher(object):
             facility1.UseLocalTimeOffset = True
             facility1.ResetAzElMask()
     """
+
     _default_max_batch_size = 10000
     _disable_batching = _DEFAULT_BATCH_DISABLE
 
     def __init__(self, disable_batching=False):
+        """Construct an object of type GrpcCallBatcher."""
         self._initialized = False
         self._max_batch = GrpcCallBatcher._default_max_batch_size
         self._disable_batching = GrpcCallBatcher._disable_batching or disable_batching

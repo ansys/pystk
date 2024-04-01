@@ -27,4 +27,4 @@ class STKColorError(RuntimeError):
     """Raised when a problem is encountered with color classes."""
     
 class GrpcUtilitiesException(SyntaxError):
-    """Raised when using gRPC utilites in an unsupported manner."""
+    """Raised when using gRPC utilities in an unsupported manner."""

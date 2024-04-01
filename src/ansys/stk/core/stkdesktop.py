@@ -124,7 +124,7 @@ class STKDesktopApplication(UiApplication):
             
     def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
-        Constructs a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+        Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
         If gRPC is not active, the batcher will be disabled.
         max_batch is the maximum number of calls to batch together.

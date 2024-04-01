@@ -73,7 +73,7 @@ class STKRuntimeApplication(STKXApplication):
             
     def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
-        Constructs a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+        Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
         max_batch is the maximum number of calls to batch together.
         Set disable_batching=True to disable batching operations for this batcher.

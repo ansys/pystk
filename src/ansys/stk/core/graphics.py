@@ -15742,7 +15742,7 @@ agcls.AgClassCatalog.add_catalog_entry((4855015852445367860, 8081296487407790247
 agcls.AgTypeNameMap["ITerrainOverlay"] = ITerrainOverlay
 
 class ITextBatchPrimitive(object):
-    """Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20704,7 +20704,7 @@ agcls.AgClassCatalog.add_catalog_entry((5323128820184689886, 9440148327257391495
 agcls.AgTypeNameMap["ITerrainOverlayInitializer"] = ITerrainOverlayInitializer
 
 class ITextBatchPrimitiveFactory(object):
-    """Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview. """
+    """Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods

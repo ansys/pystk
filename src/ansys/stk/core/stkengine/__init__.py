@@ -165,9 +165,7 @@ class STKEngineApplication(STKXApplication):
             raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
             
     def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=True) -> GrpcCallBatcher:
-        """
-        Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
-        """
+        """Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop."""
         if self._grpc_exceptions:
             raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
         return GrpcCallBatcher(disable_batching=True)

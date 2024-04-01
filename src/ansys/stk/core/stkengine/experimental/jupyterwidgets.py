@@ -218,7 +218,6 @@ class WidgetBase(RemoteFrameBuffer):
                  h: int = 600,
                  resizable: bool = True):
         """Construct an object of type WidgetBase."""
-
         super().__init__()
 
         self.frame = None
