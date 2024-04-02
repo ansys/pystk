@@ -1,6 +1,6 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-centos7
-ARG basePythonImage=ansys/stk:latest-centos7-pybase
+ARG baseImage=ansys/stk:dev-centos7
+ARG basePythonImage=ansys/stk:dev-centos7-pybase
 FROM ${basePythonImage} as builder
 
 ##############################################
@@ -10,11 +10,11 @@ FROM ${basePythonImage} as builder
 # Install Python 3.8 and create a symbolic link named "python".
 # This overrides the default Python 2.7 in CentOS7.
 USER root
-RUN cd /tmp && \
-    wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
-    tar xf Python-3.8.16.tar.xz && \
-    cd Python-3.8.16 && \
-    ./configure --enable-optimizations && \
+WORKDIR /tmp
+RUN wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
+    tar xf Python-3.8.16.tar.xz
+WORKDIR /tmp/Python-3.8.16
+RUN ./configure --enable-optimizations && \
     make altinstall
 
 #############################################################
@@ -44,6 +44,10 @@ COPY --from=builder /usr/local/bin/pip3.8 /usr/local/bin/pip3.8
 RUN ln -sfn /usr/local/bin/python3.8 /usr/local/bin/python && \
     ln -sfn /usr/local/bin/pip3.8 /usr/local/bin/pip
 
+COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
+    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
+
 # Switch back to non-root user
 USER stk
 
@@ -53,7 +57,4 @@ ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
     PIP_RETRY=50
 
 # Use the entrypoint script
-COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
-    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 ENTRYPOINT [ "docker-entrypoint.sh" ]

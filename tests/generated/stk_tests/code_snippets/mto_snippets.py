@@ -108,7 +108,7 @@ class MtoSnippets(CodeSnippetsTestBase):
             element.marker.set_marker_image_file(r"STKData\VO\Markers\Fire.ppm")
 
             element.model.is_visible = True
-            element.model.filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
+            element.model.filename = r"STKData\VO\Models\Land\ariane-lp.glb"
             element.model.initial_bearing = 3.0
             element.model.scale_value = 2.0
             element.model.z_points_nadir = True
@@ -132,7 +132,7 @@ class MtoSnippets(CodeSnippetsTestBase):
     def ConfigureMtoTrackModel(self, track: "MtoGraphics3DTrack"):
         model: "MtoGraphics3DModel" = track.model
         model.is_visible = True
-        model.filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
+        model.filename = r"STKData\VO\Models\Land\ariane-lp.glb"
         model.initial_bearing = 3.0
         model.scale_value = 2.0
         model.z_points_nadir = True

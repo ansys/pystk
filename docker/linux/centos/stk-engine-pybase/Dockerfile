@@ -1,5 +1,5 @@
 # By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:latest-centos7
+ARG baseImage=ansys/stk:dev-centos7
 FROM ${baseImage}
 
 # Install system dependencies
@@ -33,4 +33,6 @@ RUN set -e; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" >> .bashrc
 
 
-CMD echo 'Extend this container by installing Python.'
+CMD ["echo", "Extend this container by installing Python."]
+
+USER stk

@@ -4765,7 +4765,6 @@ longitude = 121;"""
 
     # region CompBrowsCutCopyPaste
     @category("NUNITTestFails")
-    @category("ExcludeWithGrpc")
     def test_CompBrowsCutCopyPaste(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
         sat: "Satellite" = clr.CastAs(
