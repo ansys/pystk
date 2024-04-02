@@ -133,7 +133,14 @@ class VOAttributesBasicHelper(object):
         oBasic.is_visible = True
         self.m_logger.WriteLine4("\tNew Visible flag is: {0}", oBasic.is_visible)
         Assert.assertEqual(True, oBasic.is_visible)
+
         # Color
+        useCustomColor: bool = oBasic.use_custom_color
+        self.m_logger.WriteLine4("\tCurrent UseCustomColor is: {0}", oBasic.use_custom_color)
+        oBasic.use_custom_color = not oBasic.use_custom_color
+        self.m_logger.WriteLine4("\tNew UseCustomColor is: {0}", oBasic.use_custom_color)
+        Assert.assertEqual(oBasic.use_custom_color, (not useCustomColor))
+        oBasic.use_custom_color = True
         self.m_logger.WriteLine6("\tCurrent Color is: {0}", oBasic.color)
         oBasic.color = Colors.from_argb(16711935)
         self.m_logger.WriteLine6("\tNew Color is: {0}", oBasic.color)
@@ -1057,11 +1064,14 @@ class VORouteModelHelper(object):
 
         # GLTF
 
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = Path.Combine(
+            TestBase.ModelDirectory, "scaling_sphere.mdl"
+        )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
+        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1382,7 +1392,7 @@ class VOModelHelper(object):
         try:
             oModel.model_type = MODEL_TYPE.FILE
             modelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
-            modelFile.filename = "\\STKData\\VO\\Models\\Space\\hubble.mdl"
+            modelFile.filename = Path.Combine(TestBase.ModelDirectory, "hubble.glb")
 
             oModel.articulation.set_transformation_value(0, "HGA_Arm_1", "Fold", 90)
 
@@ -1399,7 +1409,7 @@ class VOModelHelper(object):
 
         self._root.begin_update()
         try:
-            modelList[0].graphics_3d_model_file.filename = "\\STKData\\VO\\Models\\Space\\hubble.mdl"
+            modelList[0].graphics_3d_model_file.filename = Path.Combine(TestBase.ModelDirectory, "hubble.glb")
             oModel.articulation.set_transformation_value(0, "HGA_Arm_1", "Fold", 90)
 
         finally:
@@ -1719,11 +1729,14 @@ class VOTargetModelHelper(object):
 
         # GLTF
 
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = Path.Combine(
+            TestBase.ModelDirectory, "scaling_sphere.mdl"
+        )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
+        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1786,13 +1799,17 @@ class VOTrajectoryModelHelper(object):
         Assert.assertAlmostEqual(12.3456, float(oModel.point_size), delta=0.0001)
         with pytest.raises(Exception):
             oModel.point_size = 123.456
-        if not IsLaunchVehicle:
-            with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
-                oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
 
+        # GLTF
+
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = Path.Combine(
+            TestBase.ModelDirectory, "scaling_sphere.mdl"
+        )  # need a model that does not support GLTF settings
+        with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
+            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
+        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -1868,11 +1885,14 @@ class VOSatelliteModelHelper(object):
 
         # GLTF
 
+        (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename = Path.Combine(
+            TestBase.ModelDirectory, "scaling_sphere.mdl"
+        )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
             oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
-        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF
+        ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
         oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
         Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
@@ -3078,106 +3098,80 @@ class VOOrbitProximityHelper(VOProximityHelper):
 
     # region GeoBox method
     def GeoBox(self, oGeoBox: "VehicleGraphics3DGeoBox"):
-        self.m_logger.WriteLine("Geostationary Box test:")
-        Assert.assertIsNotNone(oGeoBox)
-        # set DistanceUnit
-        strDistanceUnit: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
-        self.m_logger.WriteLine5("\tThe current DistanceUnit is: {0}", strDistanceUnit)
-        self.m_oUnits.set_current_unit("DistanceUnit", "mi")
-        self.m_logger.WriteLine5("\tThe new DistanceUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-        Assert.assertEqual("mi", self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-        # set AngleUnit
-        strAngleUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
-        self.m_logger.WriteLine5("\tThe current AngleUnit is: {0}", strAngleUnit)
-        self.m_oUnits.set_current_unit("AngleUnit", "rad")
-        self.m_logger.WriteLine5("\tThe new AngleUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        # set LongitudeUnit
-        strLongitudeUnit: str = self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
-        self.m_logger.WriteLine5("\tThe current LongitudeUnit is: {0}", strLongitudeUnit)
-        self.m_oUnits.set_current_unit("LongitudeUnit", "rad")
-        self.m_logger.WriteLine5(
-            "\tThe new LongitudeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit")
-        )
-        Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
-        # Visible flag
-        self.m_logger.WriteLine4("\tThe current Visible flag is: {0}", oGeoBox.is_visible)
+        # Hold original values
+        holdLongitude: float = oGeoBox.longitude
+        holdNorthSouth: float = oGeoBox.north_south
+        holdEastWest: float = oGeoBox.east_west
+        holdRadius: float = oGeoBox.radius
+        holdColor: Color = oGeoBox.color
+
         oGeoBox.is_visible = False
-        self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oGeoBox.is_visible)
-        Assert.assertEqual(False, oGeoBox.is_visible)
-        # Longitude
-        with pytest.raises(Exception):
-            oGeoBox.longitude = 3.21
-        # NorthSouth
-        with pytest.raises(Exception):
-            oGeoBox.north_south = 0.123
-        # EastWest
-        with pytest.raises(Exception):
-            oGeoBox.east_west = 0.321
-        # Radius
-        with pytest.raises(Exception):
-            oGeoBox.radius = 123.456
-        # Color
-        with pytest.raises(Exception):
-            oGeoBox.color = Colors.from_argb(16702650)
-        # Reposition
-        oGeoBox.reposition()
-        # IsVisible
+        Assert.assertFalse(oGeoBox.is_visible)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oGeoBox.longitude = 10
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oGeoBox.north_south = 10
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oGeoBox.east_west = 10
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            oGeoBox.radius = 10
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            oGeoBox.color = Colors.Red
+        # BUG STK-77 TryCatchAssertBlock.ExpectedException("read only", delegate () { oGeoBox.Reposition(); });
+
         oGeoBox.is_visible = True
-        self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oGeoBox.is_visible)
         Assert.assertTrue(oGeoBox.is_visible)
-        # Longitude
-        self.m_logger.WriteLine6("\t\tThe current Longitude flag is: {0}", oGeoBox.longitude)
-        oGeoBox.longitude = 5.4321
-        self.m_logger.WriteLine6("\t\tThe new Longitude flag is: {0}", oGeoBox.longitude)
-        Assert.assertEqual(5.4321, oGeoBox.longitude)
-        # NorthSouth
-        self.m_logger.WriteLine6("\t\tThe current NorthSouth flag is: {0}", oGeoBox.north_south)
-        oGeoBox.north_south = 0.4321
-        self.m_logger.WriteLine6("\t\tThe new NorthSouth flag is: {0}", oGeoBox.north_south)
-        Assert.assertEqual(0.4321, oGeoBox.north_south)
-        # EastWest
-        self.m_logger.WriteLine6("\t\tThe current EastWest flag is: {0}", oGeoBox.east_west)
-        oGeoBox.east_west = 0.4321
-        self.m_logger.WriteLine6("\t\tThe new EastWest flag is: {0}", oGeoBox.east_west)
-        Assert.assertEqual(0.4321, oGeoBox.east_west)
-        # Radius
-        self.m_logger.WriteLine6("\t\tThe current Radius flag is: {0}", oGeoBox.radius)
-        oGeoBox.radius = 54321.09
-        self.m_logger.WriteLine6("\t\tThe new Radius flag is: {0}", oGeoBox.radius)
-        Assert.assertAlmostEqual(54321.09, oGeoBox.radius, delta=0.001)
-        # Color
-        self.m_logger.WriteLine6("\t\tThe current Color flag is: {0}", oGeoBox.color)
-        oGeoBox.color = Colors.from_argb(16702650)
-        self.m_logger.WriteLine6("\t\tThe new Color flag is: {0}", oGeoBox.color)
-        AssertEx.AreEqual(Colors.from_argb(16702650), oGeoBox.color)
-        # Reposition
+
+        oGeoBox.longitude = -360
+        Assert.assertEqual(-360, oGeoBox.longitude)
+        oGeoBox.longitude = 360
+        Assert.assertEqual(360, oGeoBox.longitude)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.longitude = -361
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.longitude = 361
+
+        oGeoBox.north_south = 0
+        Assert.assertEqual(0, oGeoBox.north_south)
+        oGeoBox.north_south = 45
+        Assert.assertEqual(45, oGeoBox.north_south)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.north_south = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.north_south = 46
+
+        oGeoBox.east_west = 0
+        Assert.assertEqual(0, oGeoBox.east_west)
+        oGeoBox.east_west = 45
+        Assert.assertEqual(45, oGeoBox.east_west)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.east_west = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.east_west = 46
+
+        oGeoBox.radius = 0.001
+        Assert.assertEqual(0.001, oGeoBox.radius)
+        oGeoBox.radius = 10000000000.0
+        Assert.assertEqual(10000000000.0, oGeoBox.radius)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            oGeoBox.radius = 0
+
+        oGeoBox.color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, oGeoBox.color)
+
+        # BUG STK-77 - Need support for "Use animation time" checkbox, and different "Recenter..." buttons.
+
         oGeoBox.reposition()
-        # range test
-        # Longitude
-        with pytest.raises(Exception):
-            oGeoBox.longitude = 32.1
-        # NorthSouth
-        with pytest.raises(Exception):
-            oGeoBox.north_south = 12.3
-        # EastWest
-        with pytest.raises(Exception):
-            oGeoBox.east_west = 3.21
-        # Radius
-        with pytest.raises(Exception):
-            oGeoBox.radius = -123.456
-        # restore LongitudeUnit
-        self.m_oUnits.set_current_unit("LongitudeUnit", strLongitudeUnit)
-        self.m_logger.WriteLine5("\tThe new LongitudeUnit (restored) is: {0}", strLongitudeUnit)
-        Assert.assertEqual(strLongitudeUnit, self.m_oUnits.get_current_unit_abbrv("LongitudeUnit"))
-        # restore AngleUnit
-        self.m_oUnits.set_current_unit("AngleUnit", strAngleUnit)
-        self.m_logger.WriteLine5("\tThe new AngleUnit (restored) is: {0}", strAngleUnit)
-        Assert.assertEqual(strAngleUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        # restore DistanceUnit
-        self.m_oUnits.set_current_unit("DistanceUnit", strDistanceUnit)
-        self.m_logger.WriteLine5("\tThe new DistanceUnit (restored) is: {0}", strDistanceUnit)
-        Assert.assertEqual(strDistanceUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
+
+        # Restore original values
+        oGeoBox.longitude = holdLongitude
+        oGeoBox.north_south = holdNorthSouth
+        oGeoBox.east_west = holdEastWest
+        oGeoBox.radius = holdRadius
+        oGeoBox.color = holdColor
+
+        oGeoBox.reposition()
 
     # endregion
 
@@ -6234,10 +6228,10 @@ class VOVaporTrailHelper(object):
         self.m_logger.WriteLine3(
             "\tThe current model contains: {0} available attach points.", Array.Length(arAvailablePoints)
         )
-        if file.filename.endswith("launchvehicle.dae") or file.filename.endswith("missile.mdl"):
-            Assert.assertEqual(3, Array.Length(arAvailablePoints))
+        if file.filename.endswith("aircraft.glb"):
+            Assert.assertEqual(2, Array.Length(arAvailablePoints))
 
-        else:
+        elif file.filename.endswith("facility.glb"):
             Assert.assertEqual(0, Array.Length(arAvailablePoints))
             with pytest.raises(Exception):
                 oVaporTrail.use_attach_point = False
@@ -6253,9 +6247,9 @@ class VOVaporTrailHelper(object):
         oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.filename)
-        oModelFile.filename = strDataPath + r"\STKData\VO\Models\Space\pegasus.mdl"
+        oModelFile.filename = strDataPath + r"\STKData\VO\Models\Space\pegasus.glb"
         self.m_logger.WriteLine5("\tThe new VOModel file is: {0}", oModelFile.filename)
-        Assert.assertEqual(TestBase.PathCombine("STKData", "VO", "Models", "Space", "pegasus.mdl"), oModelFile.filename)
+        Assert.assertEqual(TestBase.PathCombine("STKData", "VO", "Models", "Space", "pegasus.glb"), oModelFile.filename)
         arAvailablePoints = oVaporTrail.available_attach_points
         self.m_logger.WriteLine3(
             "\tThe current model contains: {0} available attach points.", Array.Length(arAvailablePoints)

@@ -570,12 +570,12 @@ class AccessConstraintHelper(object):
         while iIndex < Array.Length(arProperties):
             strName: str = str(arProperties[iIndex])
             # GetProperty
-            strValue: str = str(oPlugin.get_property(strName))
+            value: typing.Any = oPlugin.get_property(strName)
 
             # SetProperty
-            oPlugin.set_property(strName, strValue)
+            oPlugin.set_property(strName, value)
             with pytest.raises(Exception):
-                oPlugin.set_property("bogus", strValue)
+                oPlugin.set_property("bogus", value)
 
             iIndex += 1
 

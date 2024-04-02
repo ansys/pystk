@@ -6068,6 +6068,40 @@ class GatorHelper(object):
         mixedSpherical.velocity_magnitude = 7.9
         Assert.assertAlmostEqual(7.9, float(mixedSpherical.velocity_magnitude), delta=0.0001)
 
+        initState.set_element_type(ELEMENT_TYPE.SPHERICAL_RANGE_RATE)
+        Assert.assertEqual(ELEMENT_TYPE.SPHERICAL_RANGE_RATE, initState.element_type)
+        sphericalRangeRate: "ElementSphericalRangeRate" = clr.CastAs(initState.element, ElementSphericalRangeRate)
+
+        sphericalRangeRate.right_ascension = 10.0
+        Assert.assertAlmostEqual(10, float(sphericalRangeRate.right_ascension), delta=0.0001)
+
+        sphericalRangeRate.declination = -90
+        Assert.assertAlmostEqual(-90, float(sphericalRangeRate.declination), delta=0.0001)
+        sphericalRangeRate.declination = 90
+        Assert.assertAlmostEqual(90, float(sphericalRangeRate.declination), delta=0.0001)
+        sphericalRangeRate.declination = 80
+        Assert.assertAlmostEqual(80, float(sphericalRangeRate.declination), delta=0.0001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.declination = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.declination = 91
+
+        sphericalRangeRate.range = 1e-13
+        Assert.assertAlmostEqual(1e-13, sphericalRangeRate.range, delta=0.0001)
+        sphericalRangeRate.range = 100
+        Assert.assertAlmostEqual(100, sphericalRangeRate.range, delta=0.0001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.range = 0
+
+        sphericalRangeRate.right_ascension_rate = 110
+        Assert.assertAlmostEqual(110, float(sphericalRangeRate.right_ascension_rate), delta=0.0001)
+
+        sphericalRangeRate.declination_rate = 120
+        Assert.assertAlmostEqual(120, float(sphericalRangeRate.declination_rate), delta=0.0001)
+
+        sphericalRangeRate.range_rate = 130
+        Assert.assertAlmostEqual(130, sphericalRangeRate.range_rate, delta=0.0001)
+
         # //////////////////////////////////////////////////////////////////////////////////
 
         oSat: "Satellite" = clr.CastAs(

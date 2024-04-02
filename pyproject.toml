@@ -85,15 +85,15 @@ select = [
 ]
 ignore = [
 #    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-
-    # Ignored intentionally
-    "D203", # 1 blank line required before class docstring - Incompatible with D211: `one-blank-line-before-class`.
-    "D212", # Multi-line docstring summary should start at the first line - Incompatible with D213: `multi-line-summary-second-line`.
-    "D400", # First line should end with a period - This check is redundant, D415 checks this and allows for other punctuation.
+    "D212", # Multi-line docstring summary should start at the first line
 ]
 
+[tool.ruff.lint.pydocstyle]
+# Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
+convention = "google"
+
 # [tool.ruff.format]
-# quote-style = "single"
+# quote-style = "double"
 # indent-style = "tab"
 
 # [tool.ruff.isort]

@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2020, Ansys Government Initiatives
+#          Copyright 2020-2024, Ansys Government Initiatives
 ################################################################################
 
 """Starts STK Engine and provides access to the Object Model root."""
@@ -13,20 +13,21 @@ from enum import IntEnum
 from ..internal.timerutil import *
 
 if os.name != "nt":
-    from ctypes                       import CFUNCTYPE, cdll
-    from ctypes.util                  import find_library
+    from ctypes import CFUNCTYPE, cdll
+    from ctypes.util import find_library
 
 from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
 from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
 from ..internal.eventutil          import EventSubscriptionManager
-from ..internal.stkxinitialization import *
-from ..utilities.exceptions        import *
+from ..utilities.grpcutilities     import GrpcCallBatcher
+from ..internal.stkxinitialization import STKXInitialize
+from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesException
 from ..graphics                    import *
-from ..stkobjects                  import *
+from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
 from ..stkobjects.astrogator       import *
 from ..stkobjects.aviator          import *
 from ..stkutil                     import *
-from ..stkx                        import *
+from ..stkx                        import STKXApplication
 from ..vgt                         import *
 
 class STK_ENGINE_TIMER_TYPE(IntEnum):
@@ -59,6 +60,7 @@ class STKEngineApplication(STKXApplication):
         """Construct an object of type STKEngineApplication."""
         STKXApplication.__init__(self)
         self.__dict__["_initialized"] = False
+        self.__dict__["_grpc_exceptions"] = True
 
     def _private_init(self, pUnk:IUnknown, noGraphics):
         STKXApplication._private_init(self, pUnk)
@@ -129,7 +131,7 @@ class STKEngineApplication(STKXApplication):
     def new_object_root(self) -> StkObjectRoot:
         """Create a new object model root for the STK Engine application."""
         if not self.__dict__["_initialized"]:
-            raise RuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
+            raise STKRuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
         CLSID_AgStkObjectRoot = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
             IID_IUnknown = GUID(IUnknown._guid)
@@ -143,7 +145,7 @@ class STKEngineApplication(STKXApplication):
     def new_object_model_context(self) -> StkObjectModelContext:
         """Create a new object model context for the STK Engine application."""
         if not self.__dict__['_initialized']:
-            raise RuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
+            raise STKRuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
         CLSID_AgStkObjectModelContext = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', CLSID_AgStkObjectModelContext)):
             IID_IUnknown = GUID(IUnknown._guid)
@@ -153,6 +155,25 @@ class STKEngineApplication(STKXApplication):
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
+
+    def SetGrpcOptions(self, options:dict) -> None:
+        """
+        Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
+        
+        Available options include:
+        { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
+        using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.
+        """
+        if "raise exceptions with STK Engine" in options:
+            self.__dict__["_grpc_exceptions"] = options["raise exceptions with STK Engine"]
+        if self._grpc_exceptions:
+            raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
+            
+    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=True) -> GrpcCallBatcher:
+        """Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop."""
+        if self._grpc_exceptions:
+            raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
+        return GrpcCallBatcher(disable_batching=True)
 
     def shutdown(self) -> None:
         """Shut down the STK Engine application."""
@@ -190,7 +211,7 @@ class STKEngine(object):
         Must only be used once per Python process.
         """
         if STKEngine._is_engine_running:
-            raise RuntimeError("Only one STKEngine instance is allowed per Python process.")
+            raise STKRuntimeError("Only one STKEngine instance is allowed per Python process.")
         CoInitializeManager.initialize()
         CLSID_AgSTKXApplication = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
@@ -208,5 +229,5 @@ class STKEngine(object):
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
        
 ################################################################################
-#          Copyright 2020-2020, Ansys Government Initiatives
+#          Copyright 2020-2024, Ansys Government Initiatives
 ################################################################################
