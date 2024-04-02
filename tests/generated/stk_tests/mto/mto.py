@@ -236,20 +236,20 @@ class EarlyBoundTests(TestBase):
         fov.sensor = "Aircraft/Aircraft1/Sensor/Sensor1"
 
         Assert.assertTrue(fov.is_any_track_in_fov("UseTrackTimes"))
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsAnyTrackInFOV("UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsAnyTrackInFOV("UseTrackTimesX"); });
 
         Assert.assertTrue(fov.is_track_in_fov(1, "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("Track id is invalid")):
             fov.is_track_in_fov(4, "UseTrackTimes")
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsTrackInFOV(1, "UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsTrackInFOV(1, "UseTrackTimesX"); });
 
         Assert.assertTrue(fov.are_all_tracks_in_fov("UseTrackTimes"))
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreAllTracksInFOV("UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreAllTracksInFOV("UseTrackTimesX"); });
 
         Assert.assertTrue(fov.are_tracks_in_fov(MTO_TRACK_EVAL.ALL, [1, 2, 3], "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
             fov.are_tracks_in_fov(MTO_TRACK_EVAL.ALL, [1, 2, 3, 4], "UseTrackTimes")
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTO_TRACK_EVAL.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTO_TRACK_EVAL.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
 
         arTracks = fov.compute_all_tracks(MTO_VISIBILITY_MODE.VISIBILITY_MODE_EACH, "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
@@ -1897,6 +1897,10 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
         Assert.assertEqual(75, oGfxTrack.line.translucency)
+        oGfxTrack.line.alway_show_entire_line = True
+        Assert.assertEqual(True, oGfxTrack.line.alway_show_entire_line)
+        oGfxTrack.line.alway_show_entire_line = False
+        Assert.assertEqual(False, oGfxTrack.line.alway_show_entire_line)
 
         oGfxTrack.marker.is_visible = True
         Assert.assertEqual(True, oGfxTrack.marker.is_visible)

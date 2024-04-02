@@ -169,7 +169,6 @@ class VGTTutorial:
         self.globeControl.pack(fill=tk.BOTH, expand=tk.YES, side=tk.TOP)
         self.lowerFrame = tk.Frame(self.window, width=873)
         self.descriptionFrame = tk.LabelFrame(self.lowerFrame, text="Description")
-        self.informationFrame = tk.LabelFrame(self.lowerFrame, text="Information")
         self.descriptionLabel = tk.Label(
             self.descriptionFrame,
             anchor=tk.N,
@@ -179,7 +178,6 @@ class VGTTutorial:
             justify=tk.LEFT,
             wraplength=250,
         )
-
         self.descriptionLabel = tk.Label(
             self.descriptionFrame,
             anchor=tk.N,
@@ -191,7 +189,14 @@ class VGTTutorial:
             justify=tk.LEFT,
             wraplength=250,
         )
-
+        self.descriptionFrame.grid(row=0, column=0, sticky=tk.N + tk.E + tk.S + tk.W)
+        self.informationFrame = tk.LabelFrame(self.lowerFrame, text="Information")
+        self.informationLabel = tk.Label(
+            self.informationFrame,
+            text="Distance from Satellite to Facility:", 
+            anchor=tk.N,
+        )
+        self.informationLabel.pack(side=tk.TOP, padx=6)
         self.distanceEntry = tk.Entry(self.informationFrame)
         self.distanceEntry.pack(side=tk.TOP, fill=tk.X, padx=8)
         self.distanceEntry["state"] = "disabled"

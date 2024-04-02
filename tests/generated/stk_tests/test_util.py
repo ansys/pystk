@@ -1008,6 +1008,7 @@ class TestBase(unittest.TestCase):
     CurrentDirectory = None
     CodeBaseDir = None
     ScenarioDirectory = None
+    ModelDirectory = None
     NonSupportedDirectory = None
     DataProvidersDirectory = None
 
@@ -1046,6 +1047,7 @@ class TestBase(unittest.TestCase):
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProvidersTests")
+        TestBase.ModelDirectory = Path.Combine(TestBase.CurrentDirectory, "data", "VO", "Models")
 
         TestBase.CheckICRFDataFilesVersion()
 

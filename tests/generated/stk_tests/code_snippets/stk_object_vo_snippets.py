@@ -53,7 +53,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         # Set new ModelFile.Filename
         model.model_type = MODEL_TYPE.FILE
         modelFile: "Graphics3DModelFile" = clr.CastAs(model.model_data, Graphics3DModelFile)
-        modelFile.filename = r"\STKData\VO\Models\Space\alexis.mdl"
+        modelFile.filename = r"\STKData\VO\Models\Space\alexis.glb"
 
         # Configure basic settings
         model.visible = True
@@ -72,7 +72,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         # Set new ModelFile.Filename
         model.model_type = MODEL_TYPE.FILE
         modelFile: "Graphics3DModelFile" = clr.CastAs(model.model_data, Graphics3DModelFile)
-        modelFile.filename = r"\STKData\VO\Models\Space\satellite.dae"
+        modelFile.filename = r"\STKData\VO\Models\Space\satellite.glb"
 
         self.ConfigureVOModelArticulations(model)
 

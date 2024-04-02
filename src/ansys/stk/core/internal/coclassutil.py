@@ -16,26 +16,18 @@ from ..utilities.exceptions import *
 ###############################################################################
 
 class _CreateAgClassCatalog(object):
-    """Singleton class for registering STK Object Model classes by clsid"""
+    """Singleton class for registering STK Object Model classes"""
     def __init__(self):
         self.catalog = dict()
-        self.clsid_from_pyclass = dict()
 
-    def set_catalog(self, catalog):
-        self.catalog = catalog
+    def add_catalog_entry(self, class_id, pyclass):
+        self.catalog[class_id] = pyclass
 
-    def add_catalog_entry(self, clsid, pyclass):
-        self.catalog[clsid.upper()] = pyclass
-        self.clsid_from_pyclass[pyclass] = clsid.upper()
+    def check_clsid_available(self, class_id):
+        return class_id in self.catalog
 
-    def check_clsid_available(self, clsid):
-        return clsid.upper() in self.catalog
-
-    def get_class(self, clsid):
-        return self.catalog[clsid.upper()]
-        
-    def get_clsid_from_pyclass(self, pyclass):
-        return self.clsid_from_pyclass[pyclass]
+    def get_class(self, class_id):
+        return self.catalog[class_id]
 
 AgClassCatalog = _CreateAgClassCatalog()
 
@@ -48,7 +40,7 @@ AgTypeNameMap = {}
 class _IErrorInfo(object):
     guid = "{1CF2B120-547D-101B-8E65-08002B2BD119}"
     def __init__(self, pUnk):
-        IID__IErrorInfo = GUID(_IErrorInfo.guid)
+        IID__IErrorInfo = GUID.from_registry_format(_IErrorInfo.guid)
         vtable_offset = IUnknown._num_methods - 1
         #GetGUIDIndex        = 1 (skipping GetGUID as it is not needed)
         #GetSourceIndex      = 2 (skipping GetSource as it is not needed)
@@ -90,8 +82,8 @@ def evaluate_hresult(hr:HRESULT) -> None:
 class _IProvideClassId(object):
     guid = "{C86B17CD-D670-46D8-AC90-CEFAEAE867DC}"
     def __init__(self, pUnk):
-        IID__IAgProvideClassId = GUID(_IProvideClassId.guid)
-        pIntf = pUnk.query_interface(iid=IID__IAgProvideClassId)
+        IID__IAgProvideClassId = GUID.from_registry_format(_IProvideClassId.guid)
+        pIntf = pUnk.query_interface(IID__IAgProvideClassId)
         self.valid = False
         if pIntf is not None:
             self.valid = True
@@ -129,7 +121,7 @@ class _TypeAttr(Structure):
 class _ITypeInfo(object):
     guid = "{00020401-0000-0000-C000-000000000046}"
     def __init__(self, pUnk):
-        IID__ITypeInfo = GUID(_ITypeInfo.guid)
+        IID__ITypeInfo = GUID.from_registry_format(_ITypeInfo.guid)
         vtable_offset = IUnknown._num_methods - 1
         GetTypeAttrIndex            = 1
         #GetTypeCompIndex           = 2   (skipping GetTypeComp as it is not needed)
@@ -164,8 +156,8 @@ class _ITypeInfo(object):
 class _IProvideClassInfo(object):
     guid = "{B196B283-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
-        IID__IProvideClassInfo = GUID(_IProvideClassInfo.guid)
-        pIntf = pUnk.query_interface(iid=IID__IProvideClassInfo)
+        IID__IProvideClassInfo = GUID.from_registry_format(_IProvideClassInfo.guid)
+        pIntf = pUnk.query_interface(IID__IProvideClassInfo)
         self.valid = False
         if pIntf is not None:
             self.valid = True
@@ -208,12 +200,10 @@ def get_concrete_class(punk:IUnknown) -> typing.Any:
             with _IProvideClassInfo(punk) as provideClassInfo:
                 my_clsid = provideClassInfo.get_class_info()
         if my_clsid is not None:
-            p = BSTR()
-            if Succeeded(OLE32Lib.StringFromCLSID(byref(my_clsid), byref(p))):
-                if AgClassCatalog.check_clsid_available(p.value):
-                    coclass = AgClassCatalog.get_class(p.value)()
-                    coclass._private_init(punk)
-                OLE32Lib.CoTaskMemFree(p)
+            guid_data = my_clsid.as_data_pair()
+            if AgClassCatalog.check_clsid_available(guid_data):
+                coclass = AgClassCatalog.get_class(guid_data)()
+                coclass._private_init(punk)
     return coclass
     
 def compare_com_objects(first, second) -> bool:
@@ -223,9 +213,8 @@ def compare_com_objects(first, second) -> bool:
     elif first is None or second is None:
         return False
     if hasattr(first, "_intf") and hasattr(second, "_intf"):
-        iid_IUnknown = GUID(IUnknown._guid)
-        first_pUnk = first._intf.query_interface(iid_IUnknown)
-        second_pUnk = second._intf.query_interface(iid_IUnknown)
+        first_pUnk = first._intf.query_interface(IUnknown._metadata)
+        second_pUnk = second._intf.query_interface(IUnknown._metadata)
         result = (first_pUnk == second_pUnk)
         del(first_pUnk)
         del(second_pUnk)
@@ -239,7 +228,7 @@ def compare_com_objects(first, second) -> bool:
 class IConnectionPoint(object):
     guid = "{B196B286-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
-        IID_IConnectionPoint = GUID(IConnectionPoint.guid)
+        IID_IConnectionPoint = GUID.from_registry_format(IConnectionPoint.guid)
         vtable_offset = IUnknown._num_methods - 1
         GetConnectionInterfaceIndex         = 1 
         #GetConnectionPointContainerIndex   = 2 (skipping GetConnectionPointContainer as it is not needed)
@@ -265,7 +254,7 @@ class IConnectionPoint(object):
 class IConnectionPointContainer(object):
     guid = "{B196B284-BAB4-101A-B69C-00AA00341D07}"
     def __init__(self, pUnk):
-        IID_IConnectionPointContainer = GUID(IConnectionPointContainer.guid)
+        IID_IConnectionPointContainer = GUID.from_registry_format(IConnectionPointContainer.guid)
         vtable_offset = IUnknown._num_methods - 1
         #EnumConnectionPointsIndex = 1 (skipping EnumConnectionPoints as it is not needed)
         FindConnectionPointIndex   = 2
@@ -290,7 +279,7 @@ class _IRunningObjectTable(object):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         self.gettingAnApplication = True
-        IID__IRunningObjectTable = GUID(_IRunningObjectTable.guid)
+        IID__IRunningObjectTable = GUID.from_registry_format(_IRunningObjectTable.guid)
         vtable_offset = IUnknown._num_methods - 1
         #RegisterIndex              = 1 (skipping Register as it is not needed)
         #RevokeIndex                = 2 (skipping Revoke as it is not needed)
@@ -319,7 +308,7 @@ class _IEnumMoniker(object):
     def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
-        IID__IEnumMoniker = GUID(_IEnumMoniker.guid)
+        IID__IEnumMoniker = GUID.from_registry_format(_IEnumMoniker.guid)
         vtable_offset = IUnknown._num_methods - 1
         NextIndex   = 1 
         #SkipIndex  = 2 (skipping Skip as it is not needed)
@@ -348,7 +337,7 @@ class _IMalloc(object):
     def __init__(self, pUnk: "IUnknown"):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
-        IID__IMalloc = GUID(_IMalloc.guid)
+        IID__IMalloc = GUID.from_registry_format(_IMalloc.guid)
         vtable_offset = IUnknown._num_methods - 1
         #AllocIndex          = 1 (skipping Alloc as it is not needed)
         #ReallocIndex        = 2 (skipping Realloc as it is not needed)
@@ -366,7 +355,7 @@ class _IMoniker(object):
         if os.name != "nt":
             raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
         self.pUnk = pUnk
-        IID__IMoniker = GUID(_IMoniker.guid)
+        IID__IMoniker = GUID.from_registry_format(_IMoniker.guid)
         IPersist_num_methods = 1
         IPersistStream_num_methods = 4
         vtable_offset = IUnknown._num_methods + IPersist_num_methods + IPersistStream_num_methods - 1

@@ -269,15 +269,15 @@ class SensorSnippets(CodeSnippetsTestBase):
 
         satellite: "Satellite" = clr.CastAs(SensorSnippets.m_Satellite, Satellite)
         modelFile: "Graphics3DModelFile" = clr.CastAs(satellite.graphics_3d.model.model_data, Graphics3DModelFile)
-        modelFile.filename = r"\STKData\VO\Models\Space\satellite.dae"
+        modelFile.filename = r"\STKData\VO\Models\Space\satellite.glb"
         self.DefineLocationOn3DModel(SensorSnippets.m_Object)
 
     def DefineLocationOn3DModel(self, sensor: "Sensor"):
         # Set pointing type to 3d model
         sensor.set_pointing_type(SENSOR_POINTING.POINT_3D_MODEL)
 
-        # Point to model attach point (in this example: "SolarArrays-000000")
-        model: "SensorPointing3DModel" = sensor.common_tasks.set_pointing_3d_model("Solar_PanelsNode")
+        # Point to model attach point (in this example: "SolarPanels")
+        model: "SensorPointing3DModel" = sensor.common_tasks.set_pointing_3d_model("SolarPanels")
 
     # endregion
 

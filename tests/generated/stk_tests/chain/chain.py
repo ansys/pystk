@@ -280,6 +280,7 @@ class EarlyBoundTests(TestBase):
         # Animation
         oAnimation: "ChainGraphics2DAnimation" = EarlyBoundTests.AG_CH.graphics.animation
         Assert.assertIsNotNone(oAnimation)
+
         # IsHighlightVisible
         TestBase.logger.WriteLine4("\tThe current IsHighlightVisible is: {0}", oAnimation.is_highlight_visible)
         oAnimation.is_highlight_visible = False
@@ -294,10 +295,44 @@ class EarlyBoundTests(TestBase):
         oAnimation.color = Colors.from_argb(14544639)
         TestBase.logger.WriteLine6("\tThe new Color is: 0x{0:X}", oAnimation.color)
         AssertEx.AreEqual(Colors.from_argb(14544639), oAnimation.color)
+
         TestBase.logger.WriteLine6("\tThe current OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
         oAnimation.optimal_path_color = Colors.from_argb(16772829)
         TestBase.logger.WriteLine6("\tThe new OptimalPathColor is: 0x{0:X}", oAnimation.optimal_path_color)
         AssertEx.AreEqual(Colors.from_argb(16772829), oAnimation.optimal_path_color)
+
+        TestBase.logger.WriteLine6(
+            "\tThe current OptimalPathColorRampStartColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_start_color
+        )
+        oAnimation.optimal_path_color_ramp_start_color = Colors.from_argb(16768494)
+        TestBase.logger.WriteLine6(
+            "\tThe new OptimalPathColorRampStartColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_start_color
+        )
+        AssertEx.AreEqual(Colors.from_argb(16768494), oAnimation.optimal_path_color_ramp_start_color)
+
+        TestBase.logger.WriteLine6(
+            "\tThe current OptimalPathColorRampStartEndColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_end_color
+        )
+        oAnimation.optimal_path_color_ramp_end_color = Colors.from_argb(14544639)
+        TestBase.logger.WriteLine6(
+            "\tThe new OptimalPathColorRampStartColor is: 0x{0:X}", oAnimation.optimal_path_color_ramp_end_color
+        )
+        AssertEx.AreEqual(Colors.from_argb(14544639), oAnimation.optimal_path_color_ramp_end_color)
+
+        # NumberOfOptStrandsToDisplay
+        TestBase.logger.WriteLine3(
+            "\tThe current NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+        )
+        oAnimation.number_of_opt_strands_to_display = 5
+        TestBase.logger.WriteLine3(
+            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+        )
+        Assert.assertEqual(oAnimation.number_of_opt_strands_to_display, 5)
+        oAnimation.number_of_opt_strands_to_display = 1
+        TestBase.logger.WriteLine3(
+            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+        )
+        Assert.assertEqual(oAnimation.number_of_opt_strands_to_display, 1)
 
         # IsLineVisible (false)
         TestBase.logger.WriteLine4("\tThe current IsLineVisible is: {0}", oAnimation.is_line_visible)
