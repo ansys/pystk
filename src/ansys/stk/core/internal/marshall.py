@@ -768,8 +768,7 @@ class InterfaceInArg(object):
                 new_inst.pIntf = val._intf.query_interface(agcom.GUID(agcom.IUnknown._guid))
             else:
                 intf_class = agcoclass.AgTypeNameMap[new_inst.as_interface]
-                iid = agcom.GUID(intf_class._metadata["uuid"])
-                new_inst.pIntf = val._intf.query_interface(iid)
+                new_inst.pIntf = val._intf.query_interface(intf_class._metadata)
             new_inst.rawptr = new_inst.pIntf.p
         else:
             new_inst.val = None

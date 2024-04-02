@@ -1315,6 +1315,7 @@ Enumerations
     SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE
     CHAIN_TIME_PERIOD_TYPE
     CHAIN_CONST_CONSTRAINTS_MODE
+    CHAIN_COV_ASSET_MODE
     DATA_SAVE_MODE
     COVERAGE_BOUNDS
     COVERAGE_POINT_LOC_METHOD
@@ -6495,6 +6496,8 @@ Enumerations
 .. autoenum:: CHAIN_TIME_PERIOD_TYPE
     :members:
 .. autoenum:: CHAIN_CONST_CONSTRAINTS_MODE
+    :members:
+.. autoenum:: CHAIN_COV_ASSET_MODE
     :members:
 .. autoenum:: DATA_SAVE_MODE
     :members:
