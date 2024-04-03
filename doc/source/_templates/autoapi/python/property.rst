@@ -1,13 +1,18 @@
-{%- if obj.display %}
-.. py:property:: {{ obj.short_name }}
+{% if obj.display %}
+   {% if is_own_page %}
+:py:property:`{{ obj.id }}`
+==============={{ "=" * obj.id | length }}
+
+   {% endif %}
+.. py:property:: {% if is_own_page %}{{ obj.id}}{% else %}{{ obj.short_name }}{% endif %}
    {% if obj.annotation %}
+
    :type: {{ obj.annotation | fixannotation }}
    {% endif %}
-   {% if obj.properties %}
    {% for property in obj.properties %}
+
    :{{ property }}:
    {% endfor %}
-   {% endif %}
 
    {% if obj.docstring %}
    {{ obj.docstring|indent(3) }}
