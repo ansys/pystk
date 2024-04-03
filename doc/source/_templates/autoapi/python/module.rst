@@ -90,7 +90,7 @@ Summary
     #}
     {% set has_enum_base = [] %}
     {% for base in element.bases %}
-        {% if base.startswith("enum.") %}
+        {% if base | isenum %}
             {% set _ = has_enum_base.append(true) %}
         {% endif %}
     {% endfor %}

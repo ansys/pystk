@@ -249,15 +249,14 @@ autoapi_options = [
     "show-inheritance",
     "show-module-summary",
 ]
-#autoapi_template_dir = "_templates/autoapi"
+autoapi_template_dir = "_templates/autoapi"
 autoapi_python_use_implicit_namespaces = True
 autoapi_keep_files = True
 autoapi_own_page_level = "class"
-autoapi_ignore = ["*internal*"]
-nitpick_ignore_regex = [
-    # Ignore xref to internal modules
-    (r"py:.*", "*.internal.*"),
-]
+#nitpick_ignore_regex = [
+#    # Ignore xref to internal modules
+#    (r"py:.*", "*.internal.*"),
+#]
 
 def jinja_filter_interface(klass: str):
     """Filter if a class name matches the naming convention for interfaces."""
@@ -431,7 +430,7 @@ def autoapi_prepare_jinja_env(jinja_env) -> None:
     See https://jinja.palletsprojects.com/en/latest/api/#jinja2.Environment
 
     """
-    # Filter wrong cross-references in bases
+    # # Filter wrong cross-references in bases
     jinja_env.filters["fixbase"] = fix_typing_xref
     jinja_env.filters["fixargs"] = fix_args_typing_xref
     jinja_env.filters["fixannotation"] = fix_typing_xref
