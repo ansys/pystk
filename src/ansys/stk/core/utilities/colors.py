@@ -1,6 +1,6 @@
 # Copyright 2020-2020, Ansys Government Initiatives 
 """
-This module is used to communicate color information between Python and STK.
+Used to communicate color information between Python and STK.
 
 Color is the color object type and Colors is the factory for creating Color objects.
 """
@@ -13,11 +13,13 @@ class Color(object):
     """An opaque color representation that can be used with the STK Object Model."""
     
     def __init__(self):
+        """Construct an object of type Color."""
         self._r = 0
         self._g = 0
         self._b = 0
         
     def __eq__(self, other):
+        """Check equality of the underlying STK references."""
         return self._r == other._r and self._g == other._g and self._b == other._b
         
     def _to_ole_color(self) -> int:
@@ -55,10 +57,12 @@ class ColorRGBA(object):
     """A variably translucent color representation that can be used with certain methods in the STK Object Model."""
     
     def __init__(self, c:Color, alpha=255):
+        """Construct an object of type ColorRGBA."""
         self._color = c
         self._alpha = alpha
         
     def __eq__(self, other):
+        """Check equality of the underlying STK references."""
         return self._color == other._color and self._alpha == other._alpha
         
     def _to_argb(self) -> int:
@@ -106,6 +110,7 @@ class Colors(object):
 
     @staticmethod
     def from_argb(*args):
+        """Create a new Color from an arbitrary number of values in the range [0, 255], inferred from the arguments provided."""
         if len(args) == 1: # argb
             return _ColorsImpl.from_rgb((args[0] & 0xFF0000) >> 16, (args[0] & 0x00FF00) >> 8, args[0] & 0xFF)
         elif len(args) == 3: # r, g, b

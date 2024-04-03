@@ -1,5 +1,5 @@
 # Copyright 2020-2020, Ansys Government Initiatives 
-"""This module contains specific exceptions that may be raised from the STK API."""
+"""Contains specific exceptions that may be raised from the STK API."""
 
 
 class STKInitializationError(RuntimeError):
@@ -25,3 +25,6 @@ class STKInvalidTimerError(RuntimeError):
     
 class STKColorError(RuntimeError):
     """Raised when a problem is encountered with color classes."""
+    
+class GrpcUtilitiesException(SyntaxError):
+    """Raised when using gRPC utilities in an unsupported manner."""

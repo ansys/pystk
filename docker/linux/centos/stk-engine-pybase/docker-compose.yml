@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  stk-python-common:
+    image: ansys/stk:dev-centos7-python-common
+    container_name: stk-python-common
+    build: 
+      context: .
+      args:
+        baseImage: ansys/stk:dev-centos7
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

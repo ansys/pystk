@@ -808,6 +808,13 @@ class EarlyBoundTests(TestBase):
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
         holdDateFormat: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        placeObj: "IStkObject" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "PlacePreDataTest"), IStkObject
+        )
+        satelliteObj: "IStkObject" = clr.CastAs(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
+            IStkObject,
+        )
 
         try:
             TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
@@ -817,14 +824,6 @@ class EarlyBoundTests(TestBase):
             propagationChannel: "PropagationChannel" = clr.CastAs(rFEnvironment.propagation_channel, PropagationChannel)
             propagationChannel.enable_atmos_absorption = True
             propagationChannel.set_atmos_absorption_model("VOACAP")
-            placeObj: "IStkObject" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "PlacePreDataTest"),
-                IStkObject,
-            )
-            satelliteObj: "IStkObject" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
-                IStkObject,
-            )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             satelliteProp: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)

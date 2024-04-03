@@ -232,52 +232,21 @@ class ExportDataFileHelper(object):
 
     # endregion
 
-    def CompareCCSDSWithOneSecondTolerance(self, omFile: str, connectFile: str):
-        try:
-            Assert.assertEqual(omFile, connectFile)
+    def CompareCCSDSWithoutCreationDate(self, omFile: str, connectFile: str):
+        # The creation date might have spanned a second boundary between the OM run and the Connect run so remove the creation date
 
-        except Exception:
-            # The creation date might have spanned a second boundary between the OM run and the Connect run.
+        # Format:  "CREATION_DATE  = 2010-09-21T14:00:06"
+        pos: int = connectFile.find("CREATION_DATE")
+        oldCreationDate: str = connectFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        s: str = oldCreationDate[17 : (17 + 4)]
+        connectFile = connectFile.replace(oldCreationDate, "")
 
-            # Format:  "CREATION_DATE  = 2010-09-21T14:00:06"
-            pos: int = connectFile.find("CREATION_DATE")
-            oldCreationDate: str = connectFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        pos = omFile.find("CREATION_DATE")
+        oldCreationDate = omFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        s = oldCreationDate[17 : (17 + 4)]
+        omFile = omFile.replace(oldCreationDate, "")
 
-            s: str = oldCreationDate[17 : (17 + 4)]
-
-            year: int = Convert.ToInt16(oldCreationDate[17 : (17 + 4)])
-            mon: int = Convert.ToInt16(oldCreationDate[22 : (22 + 2)])
-            day: int = Convert.ToInt16(oldCreationDate[25 : (25 + 2)])
-            hour: int = Convert.ToInt16(oldCreationDate[28 : (28 + 2)])
-            min: int = Convert.ToInt16(oldCreationDate[31 : (31 + 2)])
-            sec: int = Convert.ToInt16(oldCreationDate[34 : (34 + 2)])
-
-            dt = DateTime(year, mon, day, hour, min, sec)
-            dt2 = dt.AddSeconds(-1)
-
-            newCreationDate: str = (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (((("CREATION_DATE  = " + str(dt2.Year)) + "-") + dt2.Month.ToString("D2")) + "-")
-                                    + dt2.Day.ToString("D2")
-                                )
-                                + "T"
-                            )
-                            + dt2.Hour.ToString("D2")
-                        )
-                        + ":"
-                    )
-                    + dt2.Minute.ToString("D2")
-                )
-                + ":"
-            ) + dt2.Second.ToString("D2")
-
-            connectFile = connectFile.replace(oldCreationDate, newCreationDate)
-
-            Assert.assertEqual(omFile, connectFile)
+        Assert.assertEqual(omFile, connectFile)
 
     # region EphemerisSTKExportTool
     def EphemerisSTKExportTool(self, stkEphem: "VehicleEphemerisStkExportTool", isSat: bool):
@@ -552,7 +521,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile: str = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Test whether the names with ws are handled
         ccsds.originator = "Originator with ws"
@@ -593,7 +565,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # export CCSDS ephemeris using the satellite's center and reference frame
         ccsds.use_satellite_center_and_frame = True
@@ -629,7 +604,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
     # endregion
 
@@ -780,7 +758,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile: str = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Test whether the names with ws are handled
         ccsdsv2.originator = "Originator with ws"
@@ -821,7 +802,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # export CCSDS ephemeris using the satellite's center and reference frame
         ccsdsv2.use_satellite_center_and_frame = True
@@ -857,7 +841,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Properties specific to v2
 
@@ -906,7 +893,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         ccsdsv2.file_format = EPHEM_EXPORT_TOOL_FILE_FORMAT.CCSD_SV2_XML
         Assert.assertEqual(EPHEM_EXPORT_TOOL_FILE_FORMAT.CCSD_SV2_XML, ccsdsv2.file_format)
@@ -943,7 +933,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
     # endregion
 
@@ -2133,6 +2126,18 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual(sc.start_time, oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oTwoBody.ephemeris_interval.find_stop_time())
 
+        arSupportedPropagationFrames = oTwoBody.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oTwoBody.propagation_frame = clr.Convert(int((arSupportedPropagationFrames[2])), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
+        oTwoBody.propagation_frame = clr.Convert(int((arSupportedPropagationFrames[1])), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
+        oTwoBody.propagation_frame = clr.Convert(int((arSupportedPropagationFrames[0])), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
+
         self.m_logger.WriteLine("----- TWO BODY PROPAGATOR TEST ----- END -----")
 
 
@@ -2547,6 +2552,18 @@ class PropagatorJ2PerturbationHelper(object):
         Assert.assertEqual(sc.start_time, oJ2.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oJ2.ephemeris_interval.find_stop_time())
 
+        arSupportedPropagationFrames = oJ2.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oJ2.propagation_frame = clr.Convert((arSupportedPropagationFrames[2]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ2.propagation_frame)
+        oJ2.propagate()
+        oJ2.propagation_frame = clr.Convert((arSupportedPropagationFrames[1]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ2.propagation_frame)
+        oJ2.propagate()
+        oJ2.propagation_frame = clr.Convert((arSupportedPropagationFrames[0]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ2.propagation_frame)
+        oJ2.propagate()
+
         self.m_logger.WriteLine("----- J2 PERTURBATION PROPAGATOR TEST ----- END -----")
 
 
@@ -2637,6 +2654,18 @@ class PropagatorJ4PerturbationHelper(object):
 
         Assert.assertEqual(sc.start_time, oJ4.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oJ4.ephemeris_interval.find_stop_time())
+
+        arSupportedPropagationFrames = oJ4.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oJ4.propagation_frame = clr.Convert((arSupportedPropagationFrames[2]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ4.propagation_frame)
+        oJ4.propagate()
+        oJ4.propagation_frame = clr.Convert((arSupportedPropagationFrames[1]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ4.propagation_frame)
+        oJ4.propagate()
+        oJ4.propagation_frame = clr.Convert((arSupportedPropagationFrames[0]), VEHICLE_PROPAGATION_FRAME)
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ4.propagation_frame)
+        oJ4.propagate()
 
         self.m_logger.WriteLine("----- J4 PERTURBATION PROPAGATOR TEST ----- END -----")
 

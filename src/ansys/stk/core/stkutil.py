@@ -3,27 +3,28 @@
 ################################################################################ 
 
 """
-This library contains objects and enumerations shared by the STK X and STK Objects libraries.
+Objects and enumerations shared by the STK X and STK Objects libraries.
 
-The types provided by STK Util are used indirectly through
-methods and properties in the STK X and STK Objects libraries.
+The
+types provided by STK Util are used indirectly through methods and properties
+in the STK X and STK Objects libraries.
 """
 
 __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
 "CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
-"Cylindrical", "DELAUNAY_G_TYPE_TEMP", "DELAUNAY_H_TYPE_TEMP", "DELAUNAY_L_TYPE_TEMP", "DIRECTION_TYPE", "Date", "Direction", 
-"DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", "DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", 
-"EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian", 
-"ICartesian2Vector", "ICartesian3Vector", "IConversionUtility", "ICylindrical", "IDate", "IDirection", "IDirectionEuler", 
-"IDirectionPR", "IDirectionRADec", "IDirectionXYZ", "IDoublesCollection", "IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", 
-"IGeodetic", "ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", 
-"IOrientationQuaternion", "IOrientationYPRAngles", "IPlanetocentric", "IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", 
-"IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", "ISpherical", "IUnitPreferencesDimension", "IUnitPreferencesDimensionCollection", 
-"IUnitPreferencesUnit", "IUnitPreferencesUnitCollection", "LINE_STYLE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "ORBIT_STATE_TYPE", 
-"ORIENTATION_TYPE", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", 
-"POSITION_TYPE", "PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", 
-"PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
-"UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
+"Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
+"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", 
+"ExecMultiCmdResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian", "ICartesian2Vector", "ICartesian3Vector", "IConversionUtility", 
+"ICylindrical", "IDate", "IDirection", "IDirectionEuler", "IDirectionPR", "IDirectionRADec", "IDirectionXYZ", "IDoublesCollection", 
+"IExecCmdResult", "IExecMultiCmdResult", "IGeocentric", "IGeodetic", "ILocationData", "IOrbitState", "IOrientation", "IOrientationAzEl", 
+"IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", "IPlanetocentric", 
+"IPlanetodetic", "IPosition", "IPropertyInfo", "IPropertyInfoCollection", "IQuantity", "IRuntimeTypeInfo", "IRuntimeTypeInfoProvider", 
+"ISpherical", "IUnitPreferencesDimension", "IUnitPreferencesDimensionCollection", "IUnitPreferencesUnit", "IUnitPreferencesUnitCollection", 
+"LINE_STYLE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", "Orientation", "OrientationAzEl", 
+"OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", "POSITION_TYPE", "PROPERTY_INFO_VALUE_TYPE", 
+"PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", 
+"Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", "UnitPreferencesUnitCollection", 
+"YPR_ANGLES_SEQUENCE"]
 
 import typing
 
@@ -37,7 +38,7 @@ from .internal  import marshall         as agmarshall
 from .internal.comutil     import IUnknown, IDispatch
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute)
+    set_class_attribute, SupportsDeleteCallback)
 from .internal.eventutil   import *
 from .utilities.exceptions import *
 
@@ -328,54 +329,6 @@ COORDINATE_SYSTEM.ECLIPTIC_J2000ICRF.__doc__ = "EclipticJ2000ICRF: An ecliptic s
 
 agcls.AgTypeNameMap["COORDINATE_SYSTEM"] = COORDINATE_SYSTEM
 
-class DELAUNAY_L_TYPE_TEMP(IntEnum):
-    """Select whether to use the default representation of Delaunay L or L/SQRT(mu)."""
-   
-    UNKNOWN_TEMP = -1
-    """Represents a value not supported by the Object Model."""
-    L_TEMP = 0
-    """Use the default representation of L."""
-    L_OVER_SQRT_MU_TEMP = 1
-    """Use L/SQRT(mu)."""
-
-DELAUNAY_L_TYPE_TEMP.UNKNOWN_TEMP.__doc__ = "Represents a value not supported by the Object Model."
-DELAUNAY_L_TYPE_TEMP.L_TEMP.__doc__ = "Use the default representation of L."
-DELAUNAY_L_TYPE_TEMP.L_OVER_SQRT_MU_TEMP.__doc__ = "Use L/SQRT(mu)."
-
-agcls.AgTypeNameMap["DELAUNAY_L_TYPE_TEMP"] = DELAUNAY_L_TYPE_TEMP
-
-class DELAUNAY_H_TYPE_TEMP(IntEnum):
-    """Select whether to use the default representation of Delaunay H or H/SQRT(mu)."""
-   
-    UNKNOWN_TEMP = -1
-    """Represents a value not supported by the Object Model."""
-    H_TEMP = 0
-    """Use the default representation of H."""
-    H_OVER_SQRT_MU_TEMP = 1
-    """H/SQRT(mu)."""
-
-DELAUNAY_H_TYPE_TEMP.UNKNOWN_TEMP.__doc__ = "Represents a value not supported by the Object Model."
-DELAUNAY_H_TYPE_TEMP.H_TEMP.__doc__ = "Use the default representation of H."
-DELAUNAY_H_TYPE_TEMP.H_OVER_SQRT_MU_TEMP.__doc__ = "H/SQRT(mu)."
-
-agcls.AgTypeNameMap["DELAUNAY_H_TYPE_TEMP"] = DELAUNAY_H_TYPE_TEMP
-
-class DELAUNAY_G_TYPE_TEMP(IntEnum):
-    """Select whether to use the default representation of Delaunay G or G/SQRT(mu)."""
-   
-    UNKNOWN_TEMP = -1
-    """Represents a value not supported by the Object Model."""
-    G_TEMP = 0
-    """Use the default representation of G."""
-    G_OVER_SQRT_MU_TEMP = 1
-    """Use G/SQRT(mu)."""
-
-DELAUNAY_G_TYPE_TEMP.UNKNOWN_TEMP.__doc__ = "Represents a value not supported by the Object Model."
-DELAUNAY_G_TYPE_TEMP.G_TEMP.__doc__ = "Use the default representation of G."
-DELAUNAY_G_TYPE_TEMP.G_OVER_SQRT_MU_TEMP.__doc__ = "Use G/SQRT(mu)."
-
-agcls.AgTypeNameMap["DELAUNAY_G_TYPE_TEMP"] = DELAUNAY_G_TYPE_TEMP
-
 class LOG_MSG_TYPE(IntEnum):
     """Log message types."""
    
@@ -563,11 +516,12 @@ class ILocationData(object):
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _metadata = {
-        "uuid" : "{C1E99EDA-C666-4971-AFD0-2259CB7E8452}",
+        "iid_data" : (5292229181779320538, 5946016819874812079),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : {  }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ILocationData."""
         initialize_from_source_object(self, sourceObject, ILocationData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -577,10 +531,11 @@ class ILocationData(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ILocationData)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ILocationData, None)
     
 
-agcls.AgClassCatalog.add_catalog_entry("{C1E99EDA-C666-4971-AFD0-2259CB7E8452}", ILocationData)
+agcls.AgClassCatalog.add_catalog_entry((5292229181779320538, 5946016819874812079), ILocationData)
 agcls.AgTypeNameMap["ILocationData"] = ILocationData
 
 class IPosition(object):
@@ -588,32 +543,34 @@ class IPosition(object):
 
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _convert_to_method_offset = 1
+    _get_position_type_method_offset = 2
+    _assign_method_offset = 3
+    _assign_geocentric_method_offset = 4
+    _assign_geodetic_method_offset = 5
+    _assign_spherical_method_offset = 6
+    _assign_cylindrical_method_offset = 7
+    _assign_cartesian_method_offset = 8
+    _assign_planetocentric_method_offset = 9
+    _assign_planetodetic_method_offset = 10
+    _query_planetocentric_method_offset = 11
+    _query_planetodetic_method_offset = 12
+    _query_spherical_method_offset = 13
+    _query_cylindrical_method_offset = 14
+    _query_cartesian_method_offset = 15
+    _get_central_body_name_method_offset = 16
+    _query_planetocentric_array_method_offset = 17
+    _query_planetodetic_array_method_offset = 18
+    _query_spherical_array_method_offset = 19
+    _query_cylindrical_array_method_offset = 20
+    _query_cartesian_array_method_offset = 21
     _metadata = {
-        "uuid" : "{F25960CE-1D73-4BA0-A429-541DD6D808DE}",
+        "iid_data" : (5449387932942688462, 15999276090360342948),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "convert_to" : 1,
-                             "get_position_type" : 2,
-                             "assign" : 3,
-                             "assign_geocentric" : 4,
-                             "assign_geodetic" : 5,
-                             "assign_spherical" : 6,
-                             "assign_cylindrical" : 7,
-                             "assign_cartesian" : 8,
-                             "assign_planetocentric" : 9,
-                             "assign_planetodetic" : 10,
-                             "query_planetocentric" : 11,
-                             "query_planetodetic" : 12,
-                             "query_spherical" : 13,
-                             "query_cylindrical" : 14,
-                             "query_cartesian" : 15,
-                             "get_central_body_name" : 16,
-                             "query_planetocentric_array" : 17,
-                             "query_planetodetic_array" : 18,
-                             "query_spherical_array" : 19,
-                             "query_cylindrical_array" : 20,
-                             "query_cartesian_array" : 21, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPosition."""
         initialize_from_source_object(self, sourceObject, IPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -623,16 +580,17 @@ class IPosition(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPosition)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPosition, None)
     
-    _convert_to_metadata = { "name" : "convert_to",
+    _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(POSITION_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"POSITION_TYPE") -> "IPosition":
         """Change the position coordinates to type specified."""
         return self._intf.invoke(IPosition._metadata, IPosition._convert_to_metadata, type, OutArg())
 
-    _get_position_type_metadata = { "name" : "position_type",
+    _get_position_type_metadata = { "offset" : _get_position_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(POSITION_TYPE),) }
     @property
@@ -640,98 +598,98 @@ class IPosition(object):
         """Get the type of position currently being used."""
         return self._intf.get_property(IPosition._metadata, IPosition._get_position_type_metadata)
 
-    _assign_metadata = { "name" : "assign",
+    _assign_metadata = { "offset" : _assign_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IPosition"),) }
     def assign(self, pPosition:"IPosition") -> None:
         """Assign the coordinates into the system."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_metadata, pPosition)
 
-    _assign_geocentric_metadata = { "name" : "assign_geocentric",
+    _assign_geocentric_metadata = { "offset" : _assign_geocentric_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_geocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Assign the position using the Geocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_geocentric_metadata, lat, lon, alt)
 
-    _assign_geodetic_metadata = { "name" : "assign_geodetic",
+    _assign_geodetic_metadata = { "offset" : _assign_geodetic_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_geodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Assign the position using the Geodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_geodetic_metadata, lat, lon, alt)
 
-    _assign_spherical_metadata = { "name" : "assign_spherical",
+    _assign_spherical_metadata = { "offset" : _assign_spherical_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_spherical(self, lat:typing.Any, lon:typing.Any, radius:float) -> None:
         """Assign the position using the Spherical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_spherical_metadata, lat, lon, radius)
 
-    _assign_cylindrical_metadata = { "name" : "assign_cylindrical",
+    _assign_cylindrical_metadata = { "offset" : _assign_cylindrical_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.Variant,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg,) }
     def assign_cylindrical(self, radius:float, z:float, lon:typing.Any) -> None:
         """Assign the position using the Cylindrical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_cylindrical_metadata, radius, z, lon)
 
-    _assign_cartesian_metadata = { "name" : "assign_cartesian",
+    _assign_cartesian_metadata = { "offset" : _assign_cartesian_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_cartesian(self, x:float, y:float, z:float) -> None:
         """Assign the position using the Cartesian representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_cartesian_metadata, x, y, z)
 
-    _assign_planetocentric_metadata = { "name" : "assign_planetocentric",
+    _assign_planetocentric_metadata = { "offset" : _assign_planetocentric_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_planetocentric(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Assign the position using the Planetocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_planetocentric_metadata, lat, lon, alt)
 
-    _assign_planetodetic_metadata = { "name" : "assign_planetodetic",
+    _assign_planetodetic_metadata = { "offset" : _assign_planetodetic_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def assign_planetodetic(self, lat:typing.Any, lon:typing.Any, alt:float) -> None:
         """Assign the position using the Planetodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._assign_planetodetic_metadata, lat, lon, alt)
 
-    _query_planetocentric_metadata = { "name" : "query_planetocentric",
+    _query_planetocentric_metadata = { "offset" : _query_planetocentric_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_planetocentric(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Get the position using the Planetocentric representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetocentric_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_planetodetic_metadata = { "name" : "query_planetodetic",
+    _query_planetodetic_metadata = { "offset" : _query_planetodetic_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_planetodetic(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Get the position using the Planetodetic representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetodetic_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_spherical_metadata = { "name" : "query_spherical",
+    _query_spherical_metadata = { "offset" : _query_spherical_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_spherical(self) -> typing.Tuple[typing.Any, typing.Any, float]:
         """Get the position using the Spherical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_spherical_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_cylindrical_metadata = { "name" : "query_cylindrical",
+    _query_cylindrical_metadata = { "offset" : _query_cylindrical_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.Variant), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg,) }
     def query_cylindrical(self) -> typing.Tuple[float, typing.Any, float]:
         """Get the position using the Cylindrical representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cylindrical_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_cartesian_metadata = { "name" : "query_cartesian",
+    _query_cartesian_metadata = { "offset" : _query_cartesian_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_cartesian(self) -> typing.Tuple[float, float, float]:
         """Get the position using the Cartesian representation."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cartesian_metadata, OutArg(), OutArg(), OutArg())
 
-    _get_central_body_name_metadata = { "name" : "central_body_name",
+    _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -739,43 +697,46 @@ class IPosition(object):
         """Get the central body."""
         return self._intf.get_property(IPosition._metadata, IPosition._get_central_body_name_metadata)
 
-    _query_planetocentric_array_metadata = { "name" : "query_planetocentric_array",
+    _query_planetocentric_array_metadata = { "offset" : _query_planetocentric_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_planetocentric_array(self) -> list:
         """Return the Planetocentric elements as an array."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetocentric_array_metadata, OutArg())
 
-    _query_planetodetic_array_metadata = { "name" : "query_planetodetic_array",
+    _query_planetodetic_array_metadata = { "offset" : _query_planetodetic_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_planetodetic_array(self) -> list:
         """Return the Planetodetic elements as an array."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_planetodetic_array_metadata, OutArg())
 
-    _query_spherical_array_metadata = { "name" : "query_spherical_array",
+    _query_spherical_array_metadata = { "offset" : _query_spherical_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_spherical_array(self) -> list:
         """Return the Spherical elements as an array."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_spherical_array_metadata, OutArg())
 
-    _query_cylindrical_array_metadata = { "name" : "query_cylindrical_array",
+    _query_cylindrical_array_metadata = { "offset" : _query_cylindrical_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_cylindrical_array(self) -> list:
         """Return the Cylindrical elements as an array."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cylindrical_array_metadata, OutArg())
 
-    _query_cartesian_array_metadata = { "name" : "query_cartesian_array",
+    _query_cartesian_array_metadata = { "offset" : _query_cartesian_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_cartesian_array(self) -> list:
         """Return the Cartesian elements as an array."""
         return self._intf.invoke(IPosition._metadata, IPosition._query_cartesian_array_metadata, OutArg())
 
+    _property_names[position_type] = "position_type"
+    _property_names[central_body_name] = "central_body_name"
 
-agcls.AgClassCatalog.add_catalog_entry("{F25960CE-1D73-4BA0-A429-541DD6D808DE}", IPosition)
+
+agcls.AgClassCatalog.add_catalog_entry((5449387932942688462, 15999276090360342948), IPosition)
 agcls.AgTypeNameMap["IPosition"] = IPosition
 
 class IPlanetocentric(IPosition):
@@ -783,17 +744,19 @@ class IPlanetocentric(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_lat_method_offset = 1
+    _set_lat_method_offset = 2
+    _get_lon_method_offset = 3
+    _set_lon_method_offset = 4
+    _get_altitude_method_offset = 5
+    _set_altitude_method_offset = 6
     _metadata = {
-        "uuid" : "{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}",
+        "iid_data" : (5442694245436645843, 11671904789978155692),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_lat" : 1,
-                             "set_lat" : 2,
-                             "get_lon" : 3,
-                             "set_lon" : 4,
-                             "get_altitude" : 5,
-                             "set_altitude" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPlanetocentric."""
         initialize_from_source_object(self, sourceObject, IPlanetocentric)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -804,9 +767,10 @@ class IPlanetocentric(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetocentric)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPlanetocentric, IPosition)
     
-    _get_lat_metadata = { "name" : "lat",
+    _get_lat_metadata = { "offset" : _get_lat_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -814,14 +778,14 @@ class IPlanetocentric(IPosition):
         """Uses Latitude Dimension."""
         return self._intf.get_property(IPlanetocentric._metadata, IPlanetocentric._get_lat_metadata)
 
-    _set_lat_metadata = { "name" : "lat",
+    _set_lat_metadata = { "offset" : _set_lat_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lat.setter
     def lat(self, pVal:typing.Any) -> None:
         return self._intf.set_property(IPlanetocentric._metadata, IPlanetocentric._set_lat_metadata, pVal)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -829,14 +793,14 @@ class IPlanetocentric(IPosition):
         """Uses Longitude Dimension."""
         return self._intf.get_property(IPlanetocentric._metadata, IPlanetocentric._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pVal:typing.Any) -> None:
         return self._intf.set_property(IPlanetocentric._metadata, IPlanetocentric._set_lon_metadata, pVal)
 
-    _get_altitude_metadata = { "name" : "altitude",
+    _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -844,15 +808,19 @@ class IPlanetocentric(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(IPlanetocentric._metadata, IPlanetocentric._get_altitude_metadata)
 
-    _set_altitude_metadata = { "name" : "altitude",
+    _set_altitude_metadata = { "offset" : _set_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @altitude.setter
     def altitude(self, pVal:float) -> None:
         return self._intf.set_property(IPlanetocentric._metadata, IPlanetocentric._set_altitude_metadata, pVal)
 
+    _property_names[lat] = "lat"
+    _property_names[lon] = "lon"
+    _property_names[altitude] = "altitude"
 
-agcls.AgClassCatalog.add_catalog_entry("{605061D3-5594-4B88-AC0A-D4EA90EFFAA1}", IPlanetocentric)
+
+agcls.AgClassCatalog.add_catalog_entry((5442694245436645843, 11671904789978155692), IPlanetocentric)
 agcls.AgTypeNameMap["IPlanetocentric"] = IPlanetocentric
 
 class IGeocentric(IPosition):
@@ -860,17 +828,19 @@ class IGeocentric(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_lat_method_offset = 1
+    _set_lat_method_offset = 2
+    _get_lon_method_offset = 3
+    _set_lon_method_offset = 4
+    _get_altitude_method_offset = 5
+    _set_altitude_method_offset = 6
     _metadata = {
-        "uuid" : "{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}",
+        "iid_data" : (4985064436854354632, 18010173850499286698),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_lat" : 1,
-                             "set_lat" : 2,
-                             "get_lon" : 3,
-                             "set_lon" : 4,
-                             "get_altitude" : 5,
-                             "set_altitude" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeocentric."""
         initialize_from_source_object(self, sourceObject, IGeocentric)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -881,9 +851,10 @@ class IGeocentric(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeocentric)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeocentric, IPosition)
     
-    _get_lat_metadata = { "name" : "lat",
+    _get_lat_metadata = { "offset" : _get_lat_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -891,14 +862,14 @@ class IGeocentric(IPosition):
         """Uses Latitude Dimension."""
         return self._intf.get_property(IGeocentric._metadata, IGeocentric._get_lat_metadata)
 
-    _set_lat_metadata = { "name" : "lat",
+    _set_lat_metadata = { "offset" : _set_lat_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lat.setter
     def lat(self, pVal:typing.Any) -> None:
         return self._intf.set_property(IGeocentric._metadata, IGeocentric._set_lat_metadata, pVal)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -906,14 +877,14 @@ class IGeocentric(IPosition):
         """Uses Longitude Dimension."""
         return self._intf.get_property(IGeocentric._metadata, IGeocentric._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pVal:typing.Any) -> None:
         return self._intf.set_property(IGeocentric._metadata, IGeocentric._set_lon_metadata, pVal)
 
-    _get_altitude_metadata = { "name" : "altitude",
+    _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -921,15 +892,19 @@ class IGeocentric(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(IGeocentric._metadata, IGeocentric._get_altitude_metadata)
 
-    _set_altitude_metadata = { "name" : "altitude",
+    _set_altitude_metadata = { "offset" : _set_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @altitude.setter
     def altitude(self, pVal:float) -> None:
         return self._intf.set_property(IGeocentric._metadata, IGeocentric._set_altitude_metadata, pVal)
 
+    _property_names[lat] = "lat"
+    _property_names[lon] = "lon"
+    _property_names[altitude] = "altitude"
 
-agcls.AgClassCatalog.add_catalog_entry("{7D22F2C8-81B1-452E-AA06-0AEEB1FDF0F9}", IGeocentric)
+
+agcls.AgClassCatalog.add_catalog_entry((4985064436854354632, 18010173850499286698), IGeocentric)
 agcls.AgTypeNameMap["IGeocentric"] = IGeocentric
 
 class ISpherical(IPosition):
@@ -937,17 +912,19 @@ class ISpherical(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_lat_method_offset = 1
+    _set_lat_method_offset = 2
+    _get_lon_method_offset = 3
+    _set_lon_method_offset = 4
+    _get_radius_method_offset = 5
+    _set_radius_method_offset = 6
     _metadata = {
-        "uuid" : "{62B93DF1-C615-4363-B4D9-DAA1ACE56204}",
+        "iid_data" : (4855942618388446705, 316067453481966004),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_lat" : 1,
-                             "set_lat" : 2,
-                             "get_lon" : 3,
-                             "set_lon" : 4,
-                             "get_radius" : 5,
-                             "set_radius" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ISpherical."""
         initialize_from_source_object(self, sourceObject, ISpherical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -958,9 +935,10 @@ class ISpherical(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ISpherical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ISpherical, IPosition)
     
-    _get_lat_metadata = { "name" : "lat",
+    _get_lat_metadata = { "offset" : _get_lat_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -968,14 +946,14 @@ class ISpherical(IPosition):
         """Uses Latitude Dimension."""
         return self._intf.get_property(ISpherical._metadata, ISpherical._get_lat_metadata)
 
-    _set_lat_metadata = { "name" : "lat",
+    _set_lat_metadata = { "offset" : _set_lat_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lat.setter
     def lat(self, pVal:typing.Any) -> None:
         return self._intf.set_property(ISpherical._metadata, ISpherical._set_lat_metadata, pVal)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -983,14 +961,14 @@ class ISpherical(IPosition):
         """Uses Longitude Dimension."""
         return self._intf.get_property(ISpherical._metadata, ISpherical._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pVal:typing.Any) -> None:
         return self._intf.set_property(ISpherical._metadata, ISpherical._set_lon_metadata, pVal)
 
-    _get_radius_metadata = { "name" : "radius",
+    _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -998,15 +976,19 @@ class ISpherical(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ISpherical._metadata, ISpherical._get_radius_metadata)
 
-    _set_radius_metadata = { "name" : "radius",
+    _set_radius_metadata = { "offset" : _set_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @radius.setter
     def radius(self, pVal:float) -> None:
         return self._intf.set_property(ISpherical._metadata, ISpherical._set_radius_metadata, pVal)
 
+    _property_names[lat] = "lat"
+    _property_names[lon] = "lon"
+    _property_names[radius] = "radius"
 
-agcls.AgClassCatalog.add_catalog_entry("{62B93DF1-C615-4363-B4D9-DAA1ACE56204}", ISpherical)
+
+agcls.AgClassCatalog.add_catalog_entry((4855942618388446705, 316067453481966004), ISpherical)
 agcls.AgTypeNameMap["ISpherical"] = ISpherical
 
 class ICylindrical(IPosition):
@@ -1014,17 +996,19 @@ class ICylindrical(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_radius_method_offset = 1
+    _set_radius_method_offset = 2
+    _get_z_method_offset = 3
+    _set_z_method_offset = 4
+    _get_lon_method_offset = 5
+    _set_lon_method_offset = 6
     _metadata = {
-        "uuid" : "{36F08499-F7C4-41DE-AB49-794EC65C5165}",
+        "iid_data" : (4746503479402464409, 7300718477734136235),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_radius" : 1,
-                             "set_radius" : 2,
-                             "get_z" : 3,
-                             "set_z" : 4,
-                             "get_lon" : 5,
-                             "set_lon" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICylindrical."""
         initialize_from_source_object(self, sourceObject, ICylindrical)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1035,9 +1019,10 @@ class ICylindrical(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICylindrical)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICylindrical, IPosition)
     
-    _get_radius_metadata = { "name" : "radius",
+    _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1045,14 +1030,14 @@ class ICylindrical(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ICylindrical._metadata, ICylindrical._get_radius_metadata)
 
-    _set_radius_metadata = { "name" : "radius",
+    _set_radius_metadata = { "offset" : _set_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @radius.setter
     def radius(self, pVal:float) -> None:
         return self._intf.set_property(ICylindrical._metadata, ICylindrical._set_radius_metadata, pVal)
 
-    _get_z_metadata = { "name" : "z",
+    _get_z_metadata = { "offset" : _get_z_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1060,14 +1045,14 @@ class ICylindrical(IPosition):
         """Uses Angle Dimension."""
         return self._intf.get_property(ICylindrical._metadata, ICylindrical._get_z_metadata)
 
-    _set_z_metadata = { "name" : "z",
+    _set_z_metadata = { "offset" : _set_z_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @z.setter
     def z(self, pVal:float) -> None:
         return self._intf.set_property(ICylindrical._metadata, ICylindrical._set_z_metadata, pVal)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1075,15 +1060,19 @@ class ICylindrical(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ICylindrical._metadata, ICylindrical._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pVal:typing.Any) -> None:
         return self._intf.set_property(ICylindrical._metadata, ICylindrical._set_lon_metadata, pVal)
 
+    _property_names[radius] = "radius"
+    _property_names[z] = "z"
+    _property_names[lon] = "lon"
 
-agcls.AgClassCatalog.add_catalog_entry("{36F08499-F7C4-41DE-AB49-794EC65C5165}", ICylindrical)
+
+agcls.AgClassCatalog.add_catalog_entry((4746503479402464409, 7300718477734136235), ICylindrical)
 agcls.AgTypeNameMap["ICylindrical"] = ICylindrical
 
 class ICartesian(IPosition):
@@ -1091,17 +1080,19 @@ class ICartesian(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_x_method_offset = 1
+    _set_x_method_offset = 2
+    _get_y_method_offset = 3
+    _set_y_method_offset = 4
+    _get_z_method_offset = 5
+    _set_z_method_offset = 6
     _metadata = {
-        "uuid" : "{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}",
+        "iid_data" : (5065991857659686292, 12086713184993056139),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_x" : 1,
-                             "set_x" : 2,
-                             "get_y" : 3,
-                             "set_y" : 4,
-                             "get_z" : 5,
-                             "set_z" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian."""
         initialize_from_source_object(self, sourceObject, ICartesian)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1112,9 +1103,10 @@ class ICartesian(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian, IPosition)
     
-    _get_x_metadata = { "name" : "x",
+    _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1122,14 +1114,14 @@ class ICartesian(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ICartesian._metadata, ICartesian._get_x_metadata)
 
-    _set_x_metadata = { "name" : "x",
+    _set_x_metadata = { "offset" : _set_x_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @x.setter
     def x(self, pVal:float) -> None:
         return self._intf.set_property(ICartesian._metadata, ICartesian._set_x_metadata, pVal)
 
-    _get_y_metadata = { "name" : "y",
+    _get_y_metadata = { "offset" : _get_y_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1137,14 +1129,14 @@ class ICartesian(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ICartesian._metadata, ICartesian._get_y_metadata)
 
-    _set_y_metadata = { "name" : "y",
+    _set_y_metadata = { "offset" : _set_y_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @y.setter
     def y(self, pVal:float) -> None:
         return self._intf.set_property(ICartesian._metadata, ICartesian._set_y_metadata, pVal)
 
-    _get_z_metadata = { "name" : "z",
+    _get_z_metadata = { "offset" : _get_z_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1152,15 +1144,19 @@ class ICartesian(IPosition):
         """Dimension depends on context."""
         return self._intf.get_property(ICartesian._metadata, ICartesian._get_z_metadata)
 
-    _set_z_metadata = { "name" : "z",
+    _set_z_metadata = { "offset" : _set_z_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @z.setter
     def z(self, pVal:float) -> None:
         return self._intf.set_property(ICartesian._metadata, ICartesian._set_z_metadata, pVal)
 
+    _property_names[x] = "x"
+    _property_names[y] = "y"
+    _property_names[z] = "z"
 
-agcls.AgClassCatalog.add_catalog_entry("{F6D3AD94-04C0-464E-8B95-8A859AA1BCA7}", ICartesian)
+
+agcls.AgClassCatalog.add_catalog_entry((5065991857659686292, 12086713184993056139), ICartesian)
 agcls.AgTypeNameMap["ICartesian"] = ICartesian
 
 class IGeodetic(IPosition):
@@ -1168,17 +1164,19 @@ class IGeodetic(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_lat_method_offset = 1
+    _set_lat_method_offset = 2
+    _get_lon_method_offset = 3
+    _set_lon_method_offset = 4
+    _get_altitude_method_offset = 5
+    _set_altitude_method_offset = 6
     _metadata = {
-        "uuid" : "{93D3322B-C842-48D2-AFCF-BC42B59DB28E}",
+        "iid_data" : (5247476704113537579, 10282454301074575279),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_lat" : 1,
-                             "set_lat" : 2,
-                             "get_lon" : 3,
-                             "set_lon" : 4,
-                             "get_altitude" : 5,
-                             "set_altitude" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IGeodetic."""
         initialize_from_source_object(self, sourceObject, IGeodetic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1189,9 +1187,10 @@ class IGeodetic(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IGeodetic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IGeodetic, IPosition)
     
-    _get_lat_metadata = { "name" : "lat",
+    _get_lat_metadata = { "offset" : _get_lat_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1199,14 +1198,14 @@ class IGeodetic(IPosition):
         """Latitude. Uses Latitude Dimension."""
         return self._intf.get_property(IGeodetic._metadata, IGeodetic._get_lat_metadata)
 
-    _set_lat_metadata = { "name" : "lat",
+    _set_lat_metadata = { "offset" : _set_lat_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lat.setter
     def lat(self, pLat:typing.Any) -> None:
         return self._intf.set_property(IGeodetic._metadata, IGeodetic._set_lat_metadata, pLat)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1214,14 +1213,14 @@ class IGeodetic(IPosition):
         """Longitude. Uses Longitude Dimension."""
         return self._intf.get_property(IGeodetic._metadata, IGeodetic._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pLon:typing.Any) -> None:
         return self._intf.set_property(IGeodetic._metadata, IGeodetic._set_lon_metadata, pLon)
 
-    _get_altitude_metadata = { "name" : "altitude",
+    _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1229,15 +1228,19 @@ class IGeodetic(IPosition):
         """Altitude. Dimension depends on context."""
         return self._intf.get_property(IGeodetic._metadata, IGeodetic._get_altitude_metadata)
 
-    _set_altitude_metadata = { "name" : "altitude",
+    _set_altitude_metadata = { "offset" : _set_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @altitude.setter
     def altitude(self, pAlt:float) -> None:
         return self._intf.set_property(IGeodetic._metadata, IGeodetic._set_altitude_metadata, pAlt)
 
+    _property_names[lat] = "lat"
+    _property_names[lon] = "lon"
+    _property_names[altitude] = "altitude"
 
-agcls.AgClassCatalog.add_catalog_entry("{93D3322B-C842-48D2-AFCF-BC42B59DB28E}", IGeodetic)
+
+agcls.AgClassCatalog.add_catalog_entry((5247476704113537579, 10282454301074575279), IGeodetic)
 agcls.AgTypeNameMap["IGeodetic"] = IGeodetic
 
 class IPlanetodetic(IPosition):
@@ -1245,17 +1248,19 @@ class IPlanetodetic(IPosition):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
+    _get_lat_method_offset = 1
+    _set_lat_method_offset = 2
+    _get_lon_method_offset = 3
+    _set_lon_method_offset = 4
+    _get_altitude_method_offset = 5
+    _set_altitude_method_offset = 6
     _metadata = {
-        "uuid" : "{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}",
+        "iid_data" : (4681345680163832497, 5523404160351816630),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
-        "method_offsets" : { "get_lat" : 1,
-                             "set_lat" : 2,
-                             "get_lon" : 3,
-                             "set_lon" : 4,
-                             "get_altitude" : 5,
-                             "set_altitude" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPlanetodetic."""
         initialize_from_source_object(self, sourceObject, IPlanetodetic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1266,9 +1271,10 @@ class IPlanetodetic(IPosition):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPlanetodetic)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPlanetodetic, IPosition)
     
-    _get_lat_metadata = { "name" : "lat",
+    _get_lat_metadata = { "offset" : _get_lat_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1276,14 +1282,14 @@ class IPlanetodetic(IPosition):
         """Latitude. Uses Latitude Dimension."""
         return self._intf.get_property(IPlanetodetic._metadata, IPlanetodetic._get_lat_metadata)
 
-    _set_lat_metadata = { "name" : "lat",
+    _set_lat_metadata = { "offset" : _set_lat_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lat.setter
     def lat(self, pLat:typing.Any) -> None:
         return self._intf.set_property(IPlanetodetic._metadata, IPlanetodetic._set_lat_metadata, pLat)
 
-    _get_lon_metadata = { "name" : "lon",
+    _get_lon_metadata = { "offset" : _get_lon_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1291,14 +1297,14 @@ class IPlanetodetic(IPosition):
         """Longitude. Uses Longitude Dimension."""
         return self._intf.get_property(IPlanetodetic._metadata, IPlanetodetic._get_lon_metadata)
 
-    _set_lon_metadata = { "name" : "lon",
+    _set_lon_metadata = { "offset" : _set_lon_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @lon.setter
     def lon(self, pLon:typing.Any) -> None:
         return self._intf.set_property(IPlanetodetic._metadata, IPlanetodetic._set_lon_metadata, pLon)
 
-    _get_altitude_metadata = { "name" : "altitude",
+    _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1306,15 +1312,19 @@ class IPlanetodetic(IPosition):
         """Altitude. Dimension depends on context."""
         return self._intf.get_property(IPlanetodetic._metadata, IPlanetodetic._get_altitude_metadata)
 
-    _set_altitude_metadata = { "name" : "altitude",
+    _set_altitude_metadata = { "offset" : _set_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @altitude.setter
     def altitude(self, pAlt:float) -> None:
         return self._intf.set_property(IPlanetodetic._metadata, IPlanetodetic._set_altitude_metadata, pAlt)
 
+    _property_names[lat] = "lat"
+    _property_names[lon] = "lon"
+    _property_names[altitude] = "altitude"
 
-agcls.AgClassCatalog.add_catalog_entry("{E0F982B1-7B17-40F7-B64B-AFD0D112A74C}", IPlanetodetic)
+
+agcls.AgClassCatalog.add_catalog_entry((4681345680163832497, 5523404160351816630), IPlanetodetic)
 agcls.AgTypeNameMap["IPlanetodetic"] = IPlanetodetic
 
 class IDirection(object):
@@ -1322,26 +1332,28 @@ class IDirection(object):
 
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _convert_to_method_offset = 1
+    _get_direction_type_method_offset = 2
+    _assign_method_offset = 3
+    _assign_euler_method_offset = 4
+    _assign_pr_method_offset = 5
+    _assign_ra_dec_method_offset = 6
+    _assign_xyz_method_offset = 7
+    _query_euler_method_offset = 8
+    _query_pr_method_offset = 9
+    _query_ra_dec_method_offset = 10
+    _query_xyz_method_offset = 11
+    _query_euler_array_method_offset = 12
+    _query_pr_array_method_offset = 13
+    _query_ra_dec_array_method_offset = 14
+    _query_xyz_array_method_offset = 15
     _metadata = {
-        "uuid" : "{8304507A-4915-453D-8944-2080659C0257}",
+        "iid_data" : (4989224318937616506, 6269745591008380041),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "convert_to" : 1,
-                             "get_direction_type" : 2,
-                             "assign" : 3,
-                             "assign_euler" : 4,
-                             "assign_pr" : 5,
-                             "assign_ra_dec" : 6,
-                             "assign_xyz" : 7,
-                             "query_euler" : 8,
-                             "query_pr" : 9,
-                             "query_ra_dec" : 10,
-                             "query_xyz" : 11,
-                             "query_euler_array" : 12,
-                             "query_pr_array" : 13,
-                             "query_ra_dec_array" : 14,
-                             "query_xyz_array" : 15, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirection."""
         initialize_from_source_object(self, sourceObject, IDirection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1351,16 +1363,17 @@ class IDirection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirection, None)
     
-    _convert_to_metadata = { "name" : "convert_to",
+    _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(DIRECTION_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"DIRECTION_TYPE") -> "IDirection":
         """Change the direction to the type specified."""
         return self._intf.invoke(IDirection._metadata, IDirection._convert_to_metadata, type, OutArg())
 
-    _get_direction_type_metadata = { "name" : "direction_type",
+    _get_direction_type_metadata = { "offset" : _get_direction_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(DIRECTION_TYPE),) }
     @property
@@ -1368,99 +1381,101 @@ class IDirection(object):
         """Return the type of direction currently being used."""
         return self._intf.get_property(IDirection._metadata, IDirection._get_direction_type_metadata)
 
-    _assign_metadata = { "name" : "assign",
+    _assign_metadata = { "offset" : _assign_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IDirection"),) }
     def assign(self, pDirection:"IDirection") -> None:
         """Assign a new direction."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_metadata, pDirection)
 
-    _assign_euler_metadata = { "name" : "assign_euler",
+    _assign_euler_metadata = { "offset" : _assign_euler_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
     def assign_euler(self, b:typing.Any, c:typing.Any, sequence:"EULER_DIRECTION_SEQUENCE") -> None:
         """Set direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_euler_metadata, b, c, sequence)
 
-    _assign_pr_metadata = { "name" : "assign_pr",
+    _assign_pr_metadata = { "offset" : _assign_pr_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_pr(self, pitch:typing.Any, roll:typing.Any) -> None:
         """Set direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_pr_metadata, pitch, roll)
 
-    _assign_ra_dec_metadata = { "name" : "assign_ra_dec",
+    _assign_ra_dec_metadata = { "offset" : _assign_ra_dec_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_ra_dec(self, ra:typing.Any, dec:typing.Any) -> None:
         """Set direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_ra_dec_metadata, ra, dec)
 
-    _assign_xyz_metadata = { "name" : "assign_xyz",
+    _assign_xyz_metadata = { "offset" : _assign_xyz_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_xyz(self, x:float, y:float, z:float) -> None:
         """Set direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_xyz_metadata, x, y, z)
 
-    _query_euler_metadata = { "name" : "query_euler",
+    _query_euler_metadata = { "offset" : _query_euler_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_euler(self, sequence:"EULER_DIRECTION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
         """Get direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_euler_metadata, sequence, OutArg(), OutArg())
 
-    _query_pr_metadata = { "name" : "query_pr",
+    _query_pr_metadata = { "offset" : _query_pr_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_pr(self, sequence:"PR_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
         """Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_pr_metadata, sequence, OutArg(), OutArg())
 
-    _query_ra_dec_metadata = { "name" : "query_ra_dec",
+    _query_ra_dec_metadata = { "offset" : _query_ra_dec_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_ra_dec(self) -> typing.Tuple[typing.Any, typing.Any]:
         """Get direction using the Right Ascension and Declination representation. Param Dec uses Latitude. Param RA uses Longitude."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_ra_dec_metadata, OutArg(), OutArg())
 
-    _query_xyz_metadata = { "name" : "query_xyz",
+    _query_xyz_metadata = { "offset" : _query_xyz_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_xyz(self) -> typing.Tuple[float, float, float]:
         """Get direction using the Cartesian representation. Params X, Y and Z are dimensionless."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_xyz_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_euler_array_metadata = { "name" : "query_euler_array",
+    _query_euler_array_metadata = { "offset" : _query_euler_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE), agmarshall.LPSafearrayArg,) }
     def query_euler_array(self, sequence:"EULER_DIRECTION_SEQUENCE") -> list:
         """Return the Euler elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_euler_array_metadata, sequence, OutArg())
 
-    _query_pr_array_metadata = { "name" : "query_pr_array",
+    _query_pr_array_metadata = { "offset" : _query_pr_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE), agmarshall.LPSafearrayArg,) }
     def query_pr_array(self, sequence:"PR_SEQUENCE") -> list:
         """Return the PR elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_pr_array_metadata, sequence, OutArg())
 
-    _query_ra_dec_array_metadata = { "name" : "query_ra_dec_array",
+    _query_ra_dec_array_metadata = { "offset" : _query_ra_dec_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_ra_dec_array(self) -> list:
         """Return the RADec elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_ra_dec_array_metadata, OutArg())
 
-    _query_xyz_array_metadata = { "name" : "query_xyz_array",
+    _query_xyz_array_metadata = { "offset" : _query_xyz_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_xyz_array(self) -> list:
         """Return the XYZ elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_xyz_array_metadata, OutArg())
 
+    _property_names[direction_type] = "direction_type"
 
-agcls.AgClassCatalog.add_catalog_entry("{8304507A-4915-453D-8944-2080659C0257}", IDirection)
+
+agcls.AgClassCatalog.add_catalog_entry((4989224318937616506, 6269745591008380041), IDirection)
 agcls.AgTypeNameMap["IDirection"] = IDirection
 
 class IDirectionEuler(IDirection):
@@ -1468,17 +1483,19 @@ class IDirectionEuler(IDirection):
 
     _num_methods = 6
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
+    _get_b_method_offset = 1
+    _set_b_method_offset = 2
+    _get_c_method_offset = 3
+    _set_c_method_offset = 4
+    _get_sequence_method_offset = 5
+    _set_sequence_method_offset = 6
     _metadata = {
-        "uuid" : "{9CBDC138-72D1-4734-8F95-2140266D37B5}",
+        "iid_data" : (5130852120085250360, 13058025655636170127),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
-        "method_offsets" : { "get_b" : 1,
-                             "set_b" : 2,
-                             "get_c" : 3,
-                             "set_c" : 4,
-                             "get_sequence" : 5,
-                             "set_sequence" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionEuler."""
         initialize_from_source_object(self, sourceObject, IDirectionEuler)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1489,9 +1506,10 @@ class IDirectionEuler(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionEuler)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionEuler, IDirection)
     
-    _get_b_metadata = { "name" : "b",
+    _get_b_metadata = { "offset" : _get_b_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1499,14 +1517,14 @@ class IDirectionEuler(IDirection):
         """Euler B angle. Uses Angle Dimension."""
         return self._intf.get_property(IDirectionEuler._metadata, IDirectionEuler._get_b_metadata)
 
-    _set_b_metadata = { "name" : "b",
+    _set_b_metadata = { "offset" : _set_b_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @b.setter
     def b(self, va:typing.Any) -> None:
         return self._intf.set_property(IDirectionEuler._metadata, IDirectionEuler._set_b_metadata, va)
 
-    _get_c_metadata = { "name" : "c",
+    _get_c_metadata = { "offset" : _get_c_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1514,14 +1532,14 @@ class IDirectionEuler(IDirection):
         """Euler C angle. Uses Angle Dimension."""
         return self._intf.get_property(IDirectionEuler._metadata, IDirectionEuler._get_c_metadata)
 
-    _set_c_metadata = { "name" : "c",
+    _set_c_metadata = { "offset" : _set_c_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @c.setter
     def c(self, vb:typing.Any) -> None:
         return self._intf.set_property(IDirectionEuler._metadata, IDirectionEuler._set_c_metadata, vb)
 
-    _get_sequence_metadata = { "name" : "sequence",
+    _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
     @property
@@ -1529,15 +1547,19 @@ class IDirectionEuler(IDirection):
         """Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified."""
         return self._intf.get_property(IDirectionEuler._metadata, IDirectionEuler._get_sequence_metadata)
 
-    _set_sequence_metadata = { "name" : "sequence",
+    _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
     @sequence.setter
     def sequence(self, sequence:"EULER_DIRECTION_SEQUENCE") -> None:
         return self._intf.set_property(IDirectionEuler._metadata, IDirectionEuler._set_sequence_metadata, sequence)
 
+    _property_names[b] = "b"
+    _property_names[c] = "c"
+    _property_names[sequence] = "sequence"
 
-agcls.AgClassCatalog.add_catalog_entry("{9CBDC138-72D1-4734-8F95-2140266D37B5}", IDirectionEuler)
+
+agcls.AgClassCatalog.add_catalog_entry((5130852120085250360, 13058025655636170127), IDirectionEuler)
 agcls.AgTypeNameMap["IDirectionEuler"] = IDirectionEuler
 
 class IDirectionPR(IDirection):
@@ -1545,17 +1567,19 @@ class IDirectionPR(IDirection):
 
     _num_methods = 6
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
+    _get_pitch_method_offset = 1
+    _set_pitch_method_offset = 2
+    _get_roll_method_offset = 3
+    _set_roll_method_offset = 4
+    _get_sequence_method_offset = 5
+    _set_sequence_method_offset = 6
     _metadata = {
-        "uuid" : "{5AC01BF1-2B95-4C13-8B69-09FDC485330E}",
+        "iid_data" : (5481773091912686577, 1023308621448571275),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
-        "method_offsets" : { "get_pitch" : 1,
-                             "set_pitch" : 2,
-                             "get_roll" : 3,
-                             "set_roll" : 4,
-                             "get_sequence" : 5,
-                             "set_sequence" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionPR."""
         initialize_from_source_object(self, sourceObject, IDirectionPR)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1566,9 +1590,10 @@ class IDirectionPR(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionPR)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionPR, IDirection)
     
-    _get_pitch_metadata = { "name" : "pitch",
+    _get_pitch_metadata = { "offset" : _get_pitch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1576,14 +1601,14 @@ class IDirectionPR(IDirection):
         """Pitch angle. Uses Angle Dimension."""
         return self._intf.get_property(IDirectionPR._metadata, IDirectionPR._get_pitch_metadata)
 
-    _set_pitch_metadata = { "name" : "pitch",
+    _set_pitch_metadata = { "offset" : _set_pitch_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @pitch.setter
     def pitch(self, vPitch:typing.Any) -> None:
         return self._intf.set_property(IDirectionPR._metadata, IDirectionPR._set_pitch_metadata, vPitch)
 
-    _get_roll_metadata = { "name" : "roll",
+    _get_roll_metadata = { "offset" : _get_roll_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1591,14 +1616,14 @@ class IDirectionPR(IDirection):
         """Roll angle. Uses Angle Dimension."""
         return self._intf.get_property(IDirectionPR._metadata, IDirectionPR._get_roll_metadata)
 
-    _set_roll_metadata = { "name" : "roll",
+    _set_roll_metadata = { "offset" : _set_roll_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @roll.setter
     def roll(self, vRoll:typing.Any) -> None:
         return self._intf.set_property(IDirectionPR._metadata, IDirectionPR._set_roll_metadata, vRoll)
 
-    _get_sequence_metadata = { "name" : "sequence",
+    _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE),) }
     @property
@@ -1606,15 +1631,19 @@ class IDirectionPR(IDirection):
         """PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified."""
         return self._intf.get_property(IDirectionPR._metadata, IDirectionPR._get_sequence_metadata)
 
-    _set_sequence_metadata = { "name" : "sequence",
+    _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE),) }
     @sequence.setter
     def sequence(self, sequence:"PR_SEQUENCE") -> None:
         return self._intf.set_property(IDirectionPR._metadata, IDirectionPR._set_sequence_metadata, sequence)
 
+    _property_names[pitch] = "pitch"
+    _property_names[roll] = "roll"
+    _property_names[sequence] = "sequence"
 
-agcls.AgClassCatalog.add_catalog_entry("{5AC01BF1-2B95-4C13-8B69-09FDC485330E}", IDirectionPR)
+
+agcls.AgClassCatalog.add_catalog_entry((5481773091912686577, 1023308621448571275), IDirectionPR)
 agcls.AgTypeNameMap["IDirectionPR"] = IDirectionPR
 
 class IDirectionRADec(IDirection):
@@ -1622,17 +1651,19 @@ class IDirectionRADec(IDirection):
 
     _num_methods = 6
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
+    _get_dec_method_offset = 1
+    _set_dec_method_offset = 2
+    _get_ra_method_offset = 3
+    _set_ra_method_offset = 4
+    _get_magnitude_method_offset = 5
+    _set_magnitude_method_offset = 6
     _metadata = {
-        "uuid" : "{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}",
+        "iid_data" : (5701254258584839559, 16705505474005351321),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
-        "method_offsets" : { "get_dec" : 1,
-                             "set_dec" : 2,
-                             "get_ra" : 3,
-                             "set_ra" : 4,
-                             "get_magnitude" : 5,
-                             "set_magnitude" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionRADec."""
         initialize_from_source_object(self, sourceObject, IDirectionRADec)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1643,9 +1674,10 @@ class IDirectionRADec(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionRADec)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionRADec, IDirection)
     
-    _get_dec_metadata = { "name" : "dec",
+    _get_dec_metadata = { "offset" : _get_dec_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1653,14 +1685,14 @@ class IDirectionRADec(IDirection):
         """Declination: angle above the x-y plane. Uses Latitude Dimension."""
         return self._intf.get_property(IDirectionRADec._metadata, IDirectionRADec._get_dec_metadata)
 
-    _set_dec_metadata = { "name" : "dec",
+    _set_dec_metadata = { "offset" : _set_dec_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @dec.setter
     def dec(self, vLat:typing.Any) -> None:
         return self._intf.set_property(IDirectionRADec._metadata, IDirectionRADec._set_dec_metadata, vLat)
 
-    _get_ra_metadata = { "name" : "ra",
+    _get_ra_metadata = { "offset" : _get_ra_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -1668,14 +1700,14 @@ class IDirectionRADec(IDirection):
         """Right Ascension: angle in x-y plane from x towards y. Uses Longitude Dimension."""
         return self._intf.get_property(IDirectionRADec._metadata, IDirectionRADec._get_ra_metadata)
 
-    _set_ra_metadata = { "name" : "ra",
+    _set_ra_metadata = { "offset" : _set_ra_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @ra.setter
     def ra(self, vLon:typing.Any) -> None:
         return self._intf.set_property(IDirectionRADec._metadata, IDirectionRADec._set_ra_metadata, vLon)
 
-    _get_magnitude_metadata = { "name" : "magnitude",
+    _get_magnitude_metadata = { "offset" : _get_magnitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1683,15 +1715,19 @@ class IDirectionRADec(IDirection):
         """A unitless value that represents magnitude."""
         return self._intf.get_property(IDirectionRADec._metadata, IDirectionRADec._get_magnitude_metadata)
 
-    _set_magnitude_metadata = { "name" : "magnitude",
+    _set_magnitude_metadata = { "offset" : _set_magnitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @magnitude.setter
     def magnitude(self, magnitude:float) -> None:
         return self._intf.set_property(IDirectionRADec._metadata, IDirectionRADec._set_magnitude_metadata, magnitude)
 
+    _property_names[dec] = "dec"
+    _property_names[ra] = "ra"
+    _property_names[magnitude] = "magnitude"
 
-agcls.AgClassCatalog.add_catalog_entry("{A921E587-EC8A-4F1E-99BB-6E13B8E0D5E7}", IDirectionRADec)
+
+agcls.AgClassCatalog.add_catalog_entry((5701254258584839559, 16705505474005351321), IDirectionRADec)
 agcls.AgTypeNameMap["IDirectionRADec"] = IDirectionRADec
 
 class IDirectionXYZ(IDirection):
@@ -1699,17 +1735,19 @@ class IDirectionXYZ(IDirection):
 
     _num_methods = 6
     _vtable_offset = IDirection._vtable_offset + IDirection._num_methods
+    _get_x_method_offset = 1
+    _set_x_method_offset = 2
+    _get_y_method_offset = 3
+    _set_y_method_offset = 4
+    _get_z_method_offset = 5
+    _set_z_method_offset = 6
     _metadata = {
-        "uuid" : "{2B499A22-6662-4F20-8B82-AA7701CD87A4}",
+        "iid_data" : (5701669700070119970, 11855669950262444683),
         "vtable_reference" : IDirection._vtable_offset + IDirection._num_methods - 1,
-        "method_offsets" : { "get_x" : 1,
-                             "set_x" : 2,
-                             "get_y" : 3,
-                             "set_y" : 4,
-                             "get_z" : 5,
-                             "set_z" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDirectionXYZ."""
         initialize_from_source_object(self, sourceObject, IDirectionXYZ)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1720,9 +1758,10 @@ class IDirectionXYZ(IDirection):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDirectionXYZ)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDirectionXYZ, IDirection)
     
-    _get_x_metadata = { "name" : "x",
+    _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1730,14 +1769,14 @@ class IDirectionXYZ(IDirection):
         """X component. Dimensionless."""
         return self._intf.get_property(IDirectionXYZ._metadata, IDirectionXYZ._get_x_metadata)
 
-    _set_x_metadata = { "name" : "x",
+    _set_x_metadata = { "offset" : _set_x_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @x.setter
     def x(self, vx:float) -> None:
         return self._intf.set_property(IDirectionXYZ._metadata, IDirectionXYZ._set_x_metadata, vx)
 
-    _get_y_metadata = { "name" : "y",
+    _get_y_metadata = { "offset" : _get_y_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1745,14 +1784,14 @@ class IDirectionXYZ(IDirection):
         """Y component. Dimensionless."""
         return self._intf.get_property(IDirectionXYZ._metadata, IDirectionXYZ._get_y_metadata)
 
-    _set_y_metadata = { "name" : "y",
+    _set_y_metadata = { "offset" : _set_y_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @y.setter
     def y(self, vy:float) -> None:
         return self._intf.set_property(IDirectionXYZ._metadata, IDirectionXYZ._set_y_metadata, vy)
 
-    _get_z_metadata = { "name" : "z",
+    _get_z_metadata = { "offset" : _get_z_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1760,15 +1799,19 @@ class IDirectionXYZ(IDirection):
         """Z component. Dimensionless."""
         return self._intf.get_property(IDirectionXYZ._metadata, IDirectionXYZ._get_z_metadata)
 
-    _set_z_metadata = { "name" : "z",
+    _set_z_metadata = { "offset" : _set_z_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @z.setter
     def z(self, vz:float) -> None:
         return self._intf.set_property(IDirectionXYZ._metadata, IDirectionXYZ._set_z_metadata, vz)
 
+    _property_names[x] = "x"
+    _property_names[y] = "y"
+    _property_names[z] = "z"
 
-agcls.AgClassCatalog.add_catalog_entry("{2B499A22-6662-4F20-8B82-AA7701CD87A4}", IDirectionXYZ)
+
+agcls.AgClassCatalog.add_catalog_entry((5701669700070119970, 11855669950262444683), IDirectionXYZ)
 agcls.AgTypeNameMap["IDirectionXYZ"] = IDirectionXYZ
 
 class ICartesian3Vector(object):
@@ -1776,20 +1819,22 @@ class ICartesian3Vector(object):
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_x_method_offset = 1
+    _set_x_method_offset = 2
+    _get_y_method_offset = 3
+    _set_y_method_offset = 4
+    _get_z_method_offset = 5
+    _set_z_method_offset = 6
+    _get_method_offset = 7
+    _set_method_offset = 8
+    _to_array_method_offset = 9
     _metadata = {
-        "uuid" : "{7B741836-71F9-4115-97F8-EAB30362E5C7}",
+        "iid_data" : (4689779903308240950, 14404026751257344151),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_x" : 1,
-                             "set_x" : 2,
-                             "get_y" : 3,
-                             "set_y" : 4,
-                             "get_z" : 5,
-                             "set_z" : 6,
-                             "get" : 7,
-                             "set" : 8,
-                             "to_array" : 9, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian3Vector."""
         initialize_from_source_object(self, sourceObject, ICartesian3Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1799,9 +1844,10 @@ class ICartesian3Vector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian3Vector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian3Vector, None)
     
-    _get_x_metadata = { "name" : "x",
+    _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1809,14 +1855,14 @@ class ICartesian3Vector(object):
         """X coordinate."""
         return self._intf.get_property(ICartesian3Vector._metadata, ICartesian3Vector._get_x_metadata)
 
-    _set_x_metadata = { "name" : "x",
+    _set_x_metadata = { "offset" : _set_x_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @x.setter
     def x(self, x:float) -> None:
         return self._intf.set_property(ICartesian3Vector._metadata, ICartesian3Vector._set_x_metadata, x)
 
-    _get_y_metadata = { "name" : "y",
+    _get_y_metadata = { "offset" : _get_y_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1824,14 +1870,14 @@ class ICartesian3Vector(object):
         """Y coordinate."""
         return self._intf.get_property(ICartesian3Vector._metadata, ICartesian3Vector._get_y_metadata)
 
-    _set_y_metadata = { "name" : "y",
+    _set_y_metadata = { "offset" : _set_y_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @y.setter
     def y(self, y:float) -> None:
         return self._intf.set_property(ICartesian3Vector._metadata, ICartesian3Vector._set_y_metadata, y)
 
-    _get_z_metadata = { "name" : "z",
+    _get_z_metadata = { "offset" : _get_z_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -1839,36 +1885,40 @@ class ICartesian3Vector(object):
         """Z coordinate."""
         return self._intf.get_property(ICartesian3Vector._metadata, ICartesian3Vector._get_z_metadata)
 
-    _set_z_metadata = { "name" : "z",
+    _set_z_metadata = { "offset" : _set_z_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @z.setter
     def z(self, z:float) -> None:
         return self._intf.set_property(ICartesian3Vector._metadata, ICartesian3Vector._set_z_metadata, z)
 
-    _get_metadata = { "name" : "get",
+    _get_metadata = { "offset" : _get_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def get(self) -> typing.Tuple[float, float, float]:
         """Return cartesian vector."""
         return self._intf.invoke(ICartesian3Vector._metadata, ICartesian3Vector._get_metadata, OutArg(), OutArg(), OutArg())
 
-    _set_metadata = { "name" : "set",
+    _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def set(self, x:float, y:float, z:float) -> None:
         """Set cartesian vector."""
         return self._intf.invoke(ICartesian3Vector._metadata, ICartesian3Vector._set_metadata, x, y, z)
 
-    _to_array_metadata = { "name" : "to_array",
+    _to_array_metadata = { "offset" : _to_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def to_array(self) -> list:
         """Return coordinates as an array."""
         return self._intf.invoke(ICartesian3Vector._metadata, ICartesian3Vector._to_array_metadata, OutArg())
 
+    _property_names[x] = "x"
+    _property_names[y] = "y"
+    _property_names[z] = "z"
 
-agcls.AgClassCatalog.add_catalog_entry("{7B741836-71F9-4115-97F8-EAB30362E5C7}", ICartesian3Vector)
+
+agcls.AgClassCatalog.add_catalog_entry((4689779903308240950, 14404026751257344151), ICartesian3Vector)
 agcls.AgTypeNameMap["ICartesian3Vector"] = ICartesian3Vector
 
 class IOrientation(object):
@@ -1876,26 +1926,28 @@ class IOrientation(object):
 
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _convert_to_method_offset = 1
+    _get_orientation_type_method_offset = 2
+    _assign_method_offset = 3
+    _assign_az_el_method_offset = 4
+    _assign_euler_angles_method_offset = 5
+    _assign_quaternion_method_offset = 6
+    _assign_ypr_angles_method_offset = 7
+    _query_az_el_method_offset = 8
+    _query_euler_angles_method_offset = 9
+    _query_quaternion_method_offset = 10
+    _query_ypr_angles_method_offset = 11
+    _query_az_el_array_method_offset = 12
+    _query_euler_angles_array_method_offset = 13
+    _query_quaternion_array_method_offset = 14
+    _query_ypr_angles_array_method_offset = 15
     _metadata = {
-        "uuid" : "{8467175F-1BD8-4498-90FD-08C67072D120}",
+        "iid_data" : (4942731207787353951, 2364797108030602640),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "convert_to" : 1,
-                             "get_orientation_type" : 2,
-                             "assign" : 3,
-                             "assign_az_el" : 4,
-                             "assign_euler_angles" : 5,
-                             "assign_quaternion" : 6,
-                             "assign_ypr_angles" : 7,
-                             "query_az_el" : 8,
-                             "query_euler_angles" : 9,
-                             "query_quaternion" : 10,
-                             "query_ypr_angles" : 11,
-                             "query_az_el_array" : 12,
-                             "query_euler_angles_array" : 13,
-                             "query_quaternion_array" : 14,
-                             "query_ypr_angles_array" : 15, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientation."""
         initialize_from_source_object(self, sourceObject, IOrientation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1905,16 +1957,17 @@ class IOrientation(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientation)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientation, None)
     
-    _convert_to_metadata = { "name" : "convert_to",
+    _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(ORIENTATION_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"ORIENTATION_TYPE") -> "IOrientation":
         """Change the orientation method to the type specified."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._convert_to_metadata, type, OutArg())
 
-    _get_orientation_type_metadata = { "name" : "orientation_type",
+    _get_orientation_type_metadata = { "offset" : _get_orientation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ORIENTATION_TYPE),) }
     @property
@@ -1922,99 +1975,101 @@ class IOrientation(object):
         """Return the orientation method currently being used."""
         return self._intf.get_property(IOrientation._metadata, IOrientation._get_orientation_type_metadata)
 
-    _assign_metadata = { "name" : "assign",
+    _assign_metadata = { "offset" : _assign_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IOrientation"),) }
     def assign(self, pOrientation:"IOrientation") -> None:
         """Assign a new orientation method."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_metadata, pOrientation)
 
-    _assign_az_el_metadata = { "name" : "assign_az_el",
+    _assign_az_el_metadata = { "offset" : _assign_az_el_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     def assign_az_el(self, azimuth:typing.Any, elevation:typing.Any, aboutBoresight:"AZ_EL_ABOUT_BORESIGHT") -> None:
         """Set orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_az_el_metadata, azimuth, elevation, aboutBoresight)
 
-    _assign_euler_angles_metadata = { "name" : "assign_euler_angles",
+    _assign_euler_angles_metadata = { "offset" : _assign_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
         """Set orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_euler_angles_metadata, sequence, a, b, c)
 
-    _assign_quaternion_metadata = { "name" : "assign_quaternion",
+    _assign_quaternion_metadata = { "offset" : _assign_quaternion_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_quaternion(self, qx:float, qy:float, qz:float, qs:float) -> None:
         """Set orientation using the Quaternion representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_quaternion_metadata, qx, qy, qz, qs)
 
-    _assign_ypr_angles_metadata = { "name" : "assign_ypr_angles",
+    _assign_ypr_angles_metadata = { "offset" : _assign_ypr_angles_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def assign_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
         """Set orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_ypr_angles_metadata, sequence, yaw, pitch, roll)
 
-    _query_az_el_metadata = { "name" : "query_az_el",
+    _query_az_el_metadata = { "offset" : _query_az_el_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     def query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]:
         """Get orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_az_el_metadata, OutArg(), OutArg(), OutArg())
 
-    _query_euler_angles_metadata = { "name" : "query_euler_angles",
+    _query_euler_angles_metadata = { "offset" : _query_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Get orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
-    _query_quaternion_metadata = { "name" : "query_quaternion",
+    _query_quaternion_metadata = { "offset" : _query_quaternion_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def query_quaternion(self) -> typing.Tuple[float, float, float, float]:
         """Get orientation using the Quaternion representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_quaternion_metadata, OutArg(), OutArg(), OutArg(), OutArg())
 
-    _query_ypr_angles_metadata = { "name" : "query_ypr_angles",
+    _query_ypr_angles_metadata = { "offset" : _query_ypr_angles_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def query_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Get orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_ypr_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
-    _query_az_el_array_metadata = { "name" : "query_az_el_array",
+    _query_az_el_array_metadata = { "offset" : _query_az_el_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_az_el_array(self) -> list:
         """Return the AzEl elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_az_el_array_metadata, OutArg())
 
-    _query_euler_angles_array_metadata = { "name" : "query_euler_angles_array",
+    _query_euler_angles_array_metadata = { "offset" : _query_euler_angles_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.LPSafearrayArg,) }
     def query_euler_angles_array(self, sequence:"EULER_ORIENTATION_SEQUENCE") -> list:
         """Return the Euler elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_array_metadata, sequence, OutArg())
 
-    _query_quaternion_array_metadata = { "name" : "query_quaternion_array",
+    _query_quaternion_array_metadata = { "offset" : _query_quaternion_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def query_quaternion_array(self) -> list:
         """Return the Quaternion elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_quaternion_array_metadata, OutArg())
 
-    _query_ypr_angles_array_metadata = { "name" : "query_ypr_angles_array",
+    _query_ypr_angles_array_metadata = { "offset" : _query_ypr_angles_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.LPSafearrayArg,) }
     def query_ypr_angles_array(self, sequence:"YPR_ANGLES_SEQUENCE") -> list:
         """Return the YPR Angles elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_ypr_angles_array_metadata, sequence, OutArg())
 
+    _property_names[orientation_type] = "orientation_type"
 
-agcls.AgClassCatalog.add_catalog_entry("{8467175F-1BD8-4498-90FD-08C67072D120}", IOrientation)
+
+agcls.AgClassCatalog.add_catalog_entry((4942731207787353951, 2364797108030602640), IOrientation)
 agcls.AgTypeNameMap["IOrientation"] = IOrientation
 
 class IOrientationAzEl(IOrientation):
@@ -2022,17 +2077,19 @@ class IOrientationAzEl(IOrientation):
 
     _num_methods = 6
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
+    _get_azimuth_method_offset = 1
+    _set_azimuth_method_offset = 2
+    _get_elevation_method_offset = 3
+    _set_elevation_method_offset = 4
+    _get_about_boresight_method_offset = 5
+    _set_about_boresight_method_offset = 6
     _metadata = {
-        "uuid" : "{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}",
+        "iid_data" : (5238647887040814461, 18345805215225203352),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
-        "method_offsets" : { "get_azimuth" : 1,
-                             "set_azimuth" : 2,
-                             "get_elevation" : 3,
-                             "set_elevation" : 4,
-                             "get_about_boresight" : 5,
-                             "set_about_boresight" : 6, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationAzEl."""
         initialize_from_source_object(self, sourceObject, IOrientationAzEl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2043,9 +2100,10 @@ class IOrientationAzEl(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationAzEl)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationAzEl, IOrientation)
     
-    _get_azimuth_metadata = { "name" : "azimuth",
+    _get_azimuth_metadata = { "offset" : _get_azimuth_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2053,14 +2111,14 @@ class IOrientationAzEl(IOrientation):
         """Measured in the XY plane of the parent reference frame about its Z axis in the right-handed sense for both vehicle-based sensors and facility-based sensors. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationAzEl._metadata, IOrientationAzEl._get_azimuth_metadata)
 
-    _set_azimuth_metadata = { "name" : "azimuth",
+    _set_azimuth_metadata = { "offset" : _set_azimuth_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @azimuth.setter
     def azimuth(self, vAzimuth:typing.Any) -> None:
         return self._intf.set_property(IOrientationAzEl._metadata, IOrientationAzEl._set_azimuth_metadata, vAzimuth)
 
-    _get_elevation_metadata = { "name" : "elevation",
+    _get_elevation_metadata = { "offset" : _get_elevation_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2068,14 +2126,14 @@ class IOrientationAzEl(IOrientation):
         """Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationAzEl._metadata, IOrientationAzEl._get_elevation_metadata)
 
-    _set_elevation_metadata = { "name" : "elevation",
+    _set_elevation_metadata = { "offset" : _set_elevation_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @elevation.setter
     def elevation(self, vElevation:typing.Any) -> None:
         return self._intf.set_property(IOrientationAzEl._metadata, IOrientationAzEl._set_elevation_metadata, vElevation)
 
-    _get_about_boresight_metadata = { "name" : "about_boresight",
+    _get_about_boresight_metadata = { "offset" : _get_about_boresight_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     @property
@@ -2083,15 +2141,19 @@ class IOrientationAzEl(IOrientation):
         """Determine orientation of the X and Y axes with respect to the parent's reference frame."""
         return self._intf.get_property(IOrientationAzEl._metadata, IOrientationAzEl._get_about_boresight_metadata)
 
-    _set_about_boresight_metadata = { "name" : "about_boresight",
+    _set_about_boresight_metadata = { "offset" : _set_about_boresight_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
     @about_boresight.setter
     def about_boresight(self, aboutBoresight:"AZ_EL_ABOUT_BORESIGHT") -> None:
         return self._intf.set_property(IOrientationAzEl._metadata, IOrientationAzEl._set_about_boresight_metadata, aboutBoresight)
 
+    _property_names[azimuth] = "azimuth"
+    _property_names[elevation] = "elevation"
+    _property_names[about_boresight] = "about_boresight"
 
-agcls.AgClassCatalog.add_catalog_entry("{6A6B1D7D-6A7F-48B3-98CA-019CA46499FE}", IOrientationAzEl)
+
+agcls.AgClassCatalog.add_catalog_entry((5238647887040814461, 18345805215225203352), IOrientationAzEl)
 agcls.AgTypeNameMap["IOrientationAzEl"] = IOrientationAzEl
 
 class IOrientationEulerAngles(IOrientation):
@@ -2099,19 +2161,21 @@ class IOrientationEulerAngles(IOrientation):
 
     _num_methods = 8
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
+    _get_sequence_method_offset = 1
+    _set_sequence_method_offset = 2
+    _get_a_method_offset = 3
+    _set_a_method_offset = 4
+    _get_b_method_offset = 5
+    _set_b_method_offset = 6
+    _get_c_method_offset = 7
+    _set_c_method_offset = 8
     _metadata = {
-        "uuid" : "{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}",
+        "iid_data" : (4660640816984016865, 13688688469838857641),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
-        "method_offsets" : { "get_sequence" : 1,
-                             "set_sequence" : 2,
-                             "get_a" : 3,
-                             "set_a" : 4,
-                             "get_b" : 5,
-                             "set_b" : 6,
-                             "get_c" : 7,
-                             "set_c" : 8, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationEulerAngles."""
         initialize_from_source_object(self, sourceObject, IOrientationEulerAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2122,9 +2186,10 @@ class IOrientationEulerAngles(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationEulerAngles)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationEulerAngles, IOrientation)
     
-    _get_sequence_metadata = { "name" : "sequence",
+    _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE),) }
     @property
@@ -2132,14 +2197,14 @@ class IOrientationEulerAngles(IOrientation):
         """Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_sequence_metadata)
 
-    _set_sequence_metadata = { "name" : "sequence",
+    _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE),) }
     @sequence.setter
     def sequence(self, ppVal:"EULER_ORIENTATION_SEQUENCE") -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_sequence_metadata, ppVal)
 
-    _get_a_metadata = { "name" : "a",
+    _get_a_metadata = { "offset" : _get_a_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2147,14 +2212,14 @@ class IOrientationEulerAngles(IOrientation):
         """Euler A angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_a_metadata)
 
-    _set_a_metadata = { "name" : "a",
+    _set_a_metadata = { "offset" : _set_a_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @a.setter
     def a(self, va:typing.Any) -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_a_metadata, va)
 
-    _get_b_metadata = { "name" : "b",
+    _get_b_metadata = { "offset" : _get_b_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2162,14 +2227,14 @@ class IOrientationEulerAngles(IOrientation):
         """Euler b angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_b_metadata)
 
-    _set_b_metadata = { "name" : "b",
+    _set_b_metadata = { "offset" : _set_b_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @b.setter
     def b(self, vb:typing.Any) -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_b_metadata, vb)
 
-    _get_c_metadata = { "name" : "c",
+    _get_c_metadata = { "offset" : _get_c_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2177,35 +2242,42 @@ class IOrientationEulerAngles(IOrientation):
         """Euler C angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_c_metadata)
 
-    _set_c_metadata = { "name" : "c",
+    _set_c_metadata = { "offset" : _set_c_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @c.setter
     def c(self, vc:typing.Any) -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_c_metadata, vc)
 
+    _property_names[sequence] = "sequence"
+    _property_names[a] = "a"
+    _property_names[b] = "b"
+    _property_names[c] = "c"
 
-agcls.AgClassCatalog.add_catalog_entry("{4204C7E1-EC21-40AD-A905-BB35A3FDF7BD}", IOrientationEulerAngles)
+
+agcls.AgClassCatalog.add_catalog_entry((4660640816984016865, 13688688469838857641), IOrientationEulerAngles)
 agcls.AgTypeNameMap["IOrientationEulerAngles"] = IOrientationEulerAngles
 
 class IOrientationQuaternion(IOrientation):
-    """Interface for Quaternion orientation method."""
+    """Quaternion representing orientation between two sets of axes."""
 
     _num_methods = 8
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
+    _get_qx_method_offset = 1
+    _set_qx_method_offset = 2
+    _get_qy_method_offset = 3
+    _set_qy_method_offset = 4
+    _get_qz_method_offset = 5
+    _set_qz_method_offset = 6
+    _get_qs_method_offset = 7
+    _set_qs_method_offset = 8
     _metadata = {
-        "uuid" : "{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}",
+        "iid_data" : (5570827236088458332, 138389395716207516),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
-        "method_offsets" : { "get_qx" : 1,
-                             "set_qx" : 2,
-                             "get_qy" : 3,
-                             "set_qy" : 4,
-                             "get_qz" : 5,
-                             "set_qz" : 6,
-                             "get_qs" : 7,
-                             "set_qs" : 8, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationQuaternion."""
         initialize_from_source_object(self, sourceObject, IOrientationQuaternion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2216,70 +2288,76 @@ class IOrientationQuaternion(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationQuaternion)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationQuaternion, IOrientation)
     
-    _get_qx_metadata = { "name" : "qx",
+    _get_qx_metadata = { "offset" : _get_qx_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qx(self) -> float:
-        """Get or set the first element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx si..."""
+        """Get or set the first element of the vector component of the quaternion. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QX = nx sin(A/2). Dimensionless."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qx_metadata)
 
-    _set_qx_metadata = { "name" : "qx",
+    _set_qx_metadata = { "offset" : _set_qx_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @qx.setter
     def qx(self, vQX:float) -> None:
         return self._intf.set_property(IOrientationQuaternion._metadata, IOrientationQuaternion._set_qx_metadata, vQX)
 
-    _get_qy_metadata = { "name" : "qy",
+    _get_qy_metadata = { "offset" : _get_qy_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qy(self) -> float:
-        """Get or set the second element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny s..."""
+        """Get or set the second element of the vector component of the quaternion. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QY = ny sin(A/2). Dimensionless."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qy_metadata)
 
-    _set_qy_metadata = { "name" : "qy",
+    _set_qy_metadata = { "offset" : _set_qy_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @qy.setter
     def qy(self, vQY:float) -> None:
         return self._intf.set_property(IOrientationQuaternion._metadata, IOrientationQuaternion._set_qy_metadata, vQY)
 
-    _get_qz_metadata = { "name" : "qz",
+    _get_qz_metadata = { "offset" : _get_qz_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qz(self) -> float:
-        """Get or set the third element of the vector component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz si..."""
+        """Get or set the third element of the vector component of the quaternion. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QZ = nz sin(A/2). Dimensionless."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qz_metadata)
 
-    _set_qz_metadata = { "name" : "qz",
+    _set_qz_metadata = { "offset" : _set_qz_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @qz.setter
     def qz(self, vQZ:float) -> None:
         return self._intf.set_property(IOrientationQuaternion._metadata, IOrientationQuaternion._set_qz_metadata, vQZ)
 
-    _get_qs_metadata = { "name" : "qs",
+    _get_qs_metadata = { "offset" : _get_qs_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def qs(self) -> float:
-        """Get or set the scalar component of the quaternion representing orientation between two sets of axes. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
+        """Get or set the scalar component of the quaternion. This quaternion is from the reference axes to the body frame; if n and A are the axis and angle of rotation, respectively, then QS = cos(A/2). Dimensionless."""
         return self._intf.get_property(IOrientationQuaternion._metadata, IOrientationQuaternion._get_qs_metadata)
 
-    _set_qs_metadata = { "name" : "qs",
+    _set_qs_metadata = { "offset" : _set_qs_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @qs.setter
     def qs(self, vQS:float) -> None:
         return self._intf.set_property(IOrientationQuaternion._metadata, IOrientationQuaternion._set_qs_metadata, vQS)
 
+    _property_names[qx] = "qx"
+    _property_names[qy] = "qy"
+    _property_names[qz] = "qz"
+    _property_names[qs] = "qs"
 
-agcls.AgClassCatalog.add_catalog_entry("{101FAC5C-8DDB-4D4F-9C73-58146CA8EB01}", IOrientationQuaternion)
+
+agcls.AgClassCatalog.add_catalog_entry((5570827236088458332, 138389395716207516), IOrientationQuaternion)
 agcls.AgTypeNameMap["IOrientationQuaternion"] = IOrientationQuaternion
 
 class IOrientationYPRAngles(IOrientation):
@@ -2287,19 +2365,21 @@ class IOrientationYPRAngles(IOrientation):
 
     _num_methods = 8
     _vtable_offset = IOrientation._vtable_offset + IOrientation._num_methods
+    _get_sequence_method_offset = 1
+    _set_sequence_method_offset = 2
+    _get_yaw_method_offset = 3
+    _set_yaw_method_offset = 4
+    _get_pitch_method_offset = 5
+    _set_pitch_method_offset = 6
+    _get_roll_method_offset = 7
+    _set_roll_method_offset = 8
     _metadata = {
-        "uuid" : "{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}",
+        "iid_data" : (4754929399406122077, 1946068441090675372),
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
-        "method_offsets" : { "get_sequence" : 1,
-                             "set_sequence" : 2,
-                             "get_yaw" : 3,
-                             "set_yaw" : 4,
-                             "get_pitch" : 5,
-                             "set_pitch" : 6,
-                             "get_roll" : 7,
-                             "set_roll" : 8, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationYPRAngles."""
         initialize_from_source_object(self, sourceObject, IOrientationYPRAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2310,9 +2390,10 @@ class IOrientationYPRAngles(IOrientation):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationYPRAngles)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationYPRAngles, IOrientation)
     
-    _get_sequence_metadata = { "name" : "sequence",
+    _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE),) }
     @property
@@ -2320,14 +2401,14 @@ class IOrientationYPRAngles(IOrientation):
         """YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified."""
         return self._intf.get_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._get_sequence_metadata)
 
-    _set_sequence_metadata = { "name" : "sequence",
+    _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE),) }
     @sequence.setter
     def sequence(self, sequence:"YPR_ANGLES_SEQUENCE") -> None:
         return self._intf.set_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._set_sequence_metadata, sequence)
 
-    _get_yaw_metadata = { "name" : "yaw",
+    _get_yaw_metadata = { "offset" : _get_yaw_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2335,14 +2416,14 @@ class IOrientationYPRAngles(IOrientation):
         """Yaw angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._get_yaw_metadata)
 
-    _set_yaw_metadata = { "name" : "yaw",
+    _set_yaw_metadata = { "offset" : _set_yaw_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @yaw.setter
     def yaw(self, vYaw:typing.Any) -> None:
         return self._intf.set_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._set_yaw_metadata, vYaw)
 
-    _get_pitch_metadata = { "name" : "pitch",
+    _get_pitch_metadata = { "offset" : _get_pitch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2350,14 +2431,14 @@ class IOrientationYPRAngles(IOrientation):
         """Pitch angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._get_pitch_metadata)
 
-    _set_pitch_metadata = { "name" : "pitch",
+    _set_pitch_metadata = { "offset" : _set_pitch_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @pitch.setter
     def pitch(self, vPitch:typing.Any) -> None:
         return self._intf.set_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._set_pitch_metadata, vPitch)
 
-    _get_roll_metadata = { "name" : "roll",
+    _get_roll_metadata = { "offset" : _get_roll_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2365,15 +2446,20 @@ class IOrientationYPRAngles(IOrientation):
         """Roll angle. Uses Angle Dimension."""
         return self._intf.get_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._get_roll_metadata)
 
-    _set_roll_metadata = { "name" : "roll",
+    _set_roll_metadata = { "offset" : _set_roll_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @roll.setter
     def roll(self, vRoll:typing.Any) -> None:
         return self._intf.set_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._set_roll_metadata, vRoll)
 
+    _property_names[sequence] = "sequence"
+    _property_names[yaw] = "yaw"
+    _property_names[pitch] = "pitch"
+    _property_names[roll] = "roll"
 
-agcls.AgClassCatalog.add_catalog_entry("{97A9D45D-E718-41FC-ACD2-CEBBEFD2011B}", IOrientationYPRAngles)
+
+agcls.AgClassCatalog.add_catalog_entry((4754929399406122077, 1946068441090675372), IOrientationYPRAngles)
 agcls.AgTypeNameMap["IOrientationYPRAngles"] = IOrientationYPRAngles
 
 class IOrientationPositionOffset(object):
@@ -2381,12 +2467,14 @@ class IOrientationPositionOffset(object):
 
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_position_offset_method_offset = 1
     _metadata = {
-        "uuid" : "{0DDA686C-559C-4BEA-969B-BF40708242B6}",
+        "iid_data" : (5470278826130565228, 13133202882000034710),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_position_offset" : 1, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrientationPositionOffset."""
         initialize_from_source_object(self, sourceObject, IOrientationPositionOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2396,9 +2484,10 @@ class IOrientationPositionOffset(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrientationPositionOffset)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrientationPositionOffset, None)
     
-    _get_position_offset_metadata = { "name" : "position_offset",
+    _get_position_offset_metadata = { "offset" : _get_position_offset_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -2406,34 +2495,37 @@ class IOrientationPositionOffset(object):
         """Get or set the position offset cartesian vector."""
         return self._intf.get_property(IOrientationPositionOffset._metadata, IOrientationPositionOffset._get_position_offset_metadata)
 
+    _property_names[position_offset] = "position_offset"
 
-agcls.AgClassCatalog.add_catalog_entry("{0DDA686C-559C-4BEA-969B-BF40708242B6}", IOrientationPositionOffset)
+
+agcls.AgClassCatalog.add_catalog_entry((5470278826130565228, 13133202882000034710), IOrientationPositionOffset)
 agcls.AgTypeNameMap["IOrientationPositionOffset"] = IOrientationPositionOffset
 
 class IOrbitState(object):
     """Interface to set and retrieve the coordinate type used to specify the orbit state."""
 
-    _num_methods = 14
+    _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _convert_to_method_offset = 1
+    _get_orbit_state_type_method_offset = 2
+    _assign_method_offset = 3
+    _assign_classical_method_offset = 4
+    _assign_cartesian_method_offset = 5
+    _assign_geodetic_method_offset = 6
+    _assign_equinoctial_posigrade_method_offset = 7
+    _assign_equinoctial_retrograde_method_offset = 8
+    _assign_mixed_spherical_method_offset = 9
+    _assign_spherical_method_offset = 10
+    _get_central_body_name_method_offset = 11
+    _get_epoch_method_offset = 12
+    _set_epoch_method_offset = 13
     _metadata = {
-        "uuid" : "{42342AD2-F6C5-426B-AB2A-3688F05353C8}",
+        "iid_data" : (4786190356090989266, 14434973523195079339),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "convert_to" : 1,
-                             "get_orbit_state_type" : 2,
-                             "assign" : 3,
-                             "assign_classical" : 4,
-                             "assign_cartesian" : 5,
-                             "assign_geodetic" : 6,
-                             "assign_equinoctial_posigrade" : 7,
-                             "assign_equinoctial_retrograde" : 8,
-                             "assign_mixed_spherical" : 9,
-                             "assign_spherical" : 10,
-                             "get_central_body_name" : 11,
-                             "get_epoch" : 12,
-                             "set_epoch" : 13,
-                             "assign_delaunay" : 14, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IOrbitState."""
         initialize_from_source_object(self, sourceObject, IOrbitState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2443,16 +2535,17 @@ class IOrbitState(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IOrbitState)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IOrbitState, None)
     
-    _convert_to_metadata = { "name" : "convert_to",
+    _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(ORBIT_STATE_TYPE), agmarshall.InterfaceOutArg,) }
     def convert_to(self, type:"ORBIT_STATE_TYPE") -> "IOrbitState":
         """Change the coordinate type to the type specified."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._convert_to_metadata, type, OutArg())
 
-    _get_orbit_state_type_metadata = { "name" : "orbit_state_type",
+    _get_orbit_state_type_metadata = { "offset" : _get_orbit_state_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(ORBIT_STATE_TYPE),) }
     @property
@@ -2460,63 +2553,63 @@ class IOrbitState(object):
         """Return the coordinate type currently being used."""
         return self._intf.get_property(IOrbitState._metadata, IOrbitState._get_orbit_state_type_metadata)
 
-    _assign_metadata = { "name" : "assign",
+    _assign_metadata = { "offset" : _assign_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IOrbitState"),) }
     def assign(self, pOrbitState:"IOrbitState") -> None:
         """Assign a new coordinate type."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_metadata, pOrbitState)
 
-    _assign_classical_metadata = { "name" : "assign_classical",
+    _assign_classical_metadata = { "offset" : _assign_classical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_classical(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, eccentricity:float, inclination:float, argOfPerigee:float, rAAN:float, meanAnomaly:float) -> None:
         """Assign a new orbit state using Classical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_classical_metadata, eCoordinateSystem, semiMajorAxis, eccentricity, inclination, argOfPerigee, rAAN, meanAnomaly)
 
-    _assign_cartesian_metadata = { "name" : "assign_cartesian",
+    _assign_cartesian_metadata = { "offset" : _assign_cartesian_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_cartesian(self, eCoordinateSystem:"COORDINATE_SYSTEM", xPosition:float, yPosition:float, zPosition:float, xVelocity:float, yVelocity:float, zVelocity:float) -> None:
         """Assign a new orbit state using Cartesian representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_cartesian_metadata, eCoordinateSystem, xPosition, yPosition, zPosition, xVelocity, yVelocity, zVelocity)
 
-    _assign_geodetic_metadata = { "name" : "assign_geodetic",
+    _assign_geodetic_metadata = { "offset" : _assign_geodetic_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_geodetic(self, eCoordinateSystem:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, latitudeRate:float, longitudeRate:float, altitudeRate:float) -> None:
         """Assign a new orbit state using Geodetic representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_geodetic_metadata, eCoordinateSystem, latitude, longitude, altitude, latitudeRate, longitudeRate, altitudeRate)
 
-    _assign_equinoctial_posigrade_metadata = { "name" : "assign_equinoctial_posigrade",
+    _assign_equinoctial_posigrade_metadata = { "offset" : _assign_equinoctial_posigrade_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_equinoctial_posigrade(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
         """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_posigrade_metadata, eCoordinateSystem, semiMajorAxis, h, k, p, q, meanLon)
 
-    _assign_equinoctial_retrograde_metadata = { "name" : "assign_equinoctial_retrograde",
+    _assign_equinoctial_retrograde_metadata = { "offset" : _assign_equinoctial_retrograde_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_equinoctial_retrograde(self, eCoordinateSystem:"COORDINATE_SYSTEM", semiMajorAxis:float, h:float, k:float, p:float, q:float, meanLon:float) -> None:
         """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_retrograde_metadata, eCoordinateSystem, semiMajorAxis, h, k, p, q, meanLon)
 
-    _assign_mixed_spherical_metadata = { "name" : "assign_mixed_spherical",
+    _assign_mixed_spherical_metadata = { "offset" : _assign_mixed_spherical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_mixed_spherical(self, eCoordinateSystem:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
         """Assign a new orbit state using Mixed Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_mixed_spherical_metadata, eCoordinateSystem, latitude, longitude, altitude, horFlightPathAngle, flightPathAzimuth, velocity)
 
-    _assign_spherical_metadata = { "name" : "assign_spherical",
+    _assign_spherical_metadata = { "offset" : _assign_spherical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def assign_spherical(self, eCoordinateSystem:"COORDINATE_SYSTEM", rightAscension:float, declination:float, radius:float, horFlightPathAngle:float, flightPathAzimuth:float, velocity:float) -> None:
         """Assign a new orbit state using Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_spherical_metadata, eCoordinateSystem, rightAscension, declination, radius, horFlightPathAngle, flightPathAzimuth, velocity)
 
-    _get_central_body_name_metadata = { "name" : "central_body_name",
+    _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -2524,7 +2617,7 @@ class IOrbitState(object):
         """Get the central body."""
         return self._intf.get_property(IOrbitState._metadata, IOrbitState._get_central_body_name_metadata)
 
-    _get_epoch_metadata = { "name" : "epoch",
+    _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2532,22 +2625,19 @@ class IOrbitState(object):
         """Get or set the state epoch."""
         return self._intf.get_property(IOrbitState._metadata, IOrbitState._get_epoch_metadata)
 
-    _set_epoch_metadata = { "name" : "epoch",
+    _set_epoch_metadata = { "offset" : _set_epoch_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @epoch.setter
     def epoch(self, epoch:typing.Any) -> None:
         return self._intf.set_property(IOrbitState._metadata, IOrbitState._set_epoch_metadata, epoch)
 
-    _assign_delaunay_metadata = { "name" : "assign_delaunay",
-            "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.EnumArg(DELAUNAY_L_TYPE_TEMP), agmarshall.EnumArg(DELAUNAY_H_TYPE_TEMP), agmarshall.EnumArg(DELAUNAY_G_TYPE_TEMP), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_delaunay(self, eCoordinateSystem:"COORDINATE_SYSTEM", lType:"DELAUNAY_L_TYPE_TEMP", hType:"DELAUNAY_H_TYPE_TEMP", gType:"DELAUNAY_G_TYPE_TEMP", meanAnomaly:float, argOfPeriapsis:float, rAAN:float) -> None:
-        """Assign a new orbit state using Delaunay representation."""
-        return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_delaunay_metadata, eCoordinateSystem, lType, hType, gType, meanAnomaly, argOfPeriapsis, rAAN)
+    _property_names[orbit_state_type] = "orbit_state_type"
+    _property_names[central_body_name] = "central_body_name"
+    _property_names[epoch] = "epoch"
 
 
-agcls.AgClassCatalog.add_catalog_entry("{42342AD2-F6C5-426B-AB2A-3688F05353C8}", IOrbitState)
+agcls.AgClassCatalog.add_catalog_entry((4786190356090989266, 14434973523195079339), IOrbitState)
 agcls.AgTypeNameMap["IOrbitState"] = IOrbitState
 
 class ICartesian2Vector(object):
@@ -2555,18 +2645,20 @@ class ICartesian2Vector(object):
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_x_method_offset = 1
+    _set_x_method_offset = 2
+    _get_y_method_offset = 3
+    _set_y_method_offset = 4
+    _get_method_offset = 5
+    _set_method_offset = 6
+    _to_array_method_offset = 7
     _metadata = {
-        "uuid" : "{DA459BD7-5810-4B30-8397-21EDA9E52D2B}",
+        "iid_data" : (5417927181131422679, 3111395435573516163),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_x" : 1,
-                             "set_x" : 2,
-                             "get_y" : 3,
-                             "set_y" : 4,
-                             "get" : 5,
-                             "set" : 6,
-                             "to_array" : 7, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type ICartesian2Vector."""
         initialize_from_source_object(self, sourceObject, ICartesian2Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2576,9 +2668,10 @@ class ICartesian2Vector(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ICartesian2Vector)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, ICartesian2Vector, None)
     
-    _get_x_metadata = { "name" : "x",
+    _get_x_metadata = { "offset" : _get_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -2586,14 +2679,14 @@ class ICartesian2Vector(object):
         """X coordinate."""
         return self._intf.get_property(ICartesian2Vector._metadata, ICartesian2Vector._get_x_metadata)
 
-    _set_x_metadata = { "name" : "x",
+    _set_x_metadata = { "offset" : _set_x_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @x.setter
     def x(self, x:float) -> None:
         return self._intf.set_property(ICartesian2Vector._metadata, ICartesian2Vector._set_x_metadata, x)
 
-    _get_y_metadata = { "name" : "y",
+    _get_y_metadata = { "offset" : _get_y_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -2601,36 +2694,39 @@ class ICartesian2Vector(object):
         """Y coordinate."""
         return self._intf.get_property(ICartesian2Vector._metadata, ICartesian2Vector._get_y_metadata)
 
-    _set_y_metadata = { "name" : "y",
+    _set_y_metadata = { "offset" : _set_y_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @y.setter
     def y(self, y:float) -> None:
         return self._intf.set_property(ICartesian2Vector._metadata, ICartesian2Vector._set_y_metadata, y)
 
-    _get_metadata = { "name" : "get",
+    _get_metadata = { "offset" : _get_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE), POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def get(self) -> typing.Tuple[float, float]:
         """Return cartesian vector."""
         return self._intf.invoke(ICartesian2Vector._metadata, ICartesian2Vector._get_metadata, OutArg(), OutArg())
 
-    _set_metadata = { "name" : "set",
+    _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def set(self, x:float, y:float) -> None:
         """Set cartesian vector."""
         return self._intf.invoke(ICartesian2Vector._metadata, ICartesian2Vector._set_metadata, x, y)
 
-    _to_array_metadata = { "name" : "to_array",
+    _to_array_metadata = { "offset" : _to_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def to_array(self) -> list:
         """Return coordinates as an array."""
         return self._intf.invoke(ICartesian2Vector._metadata, ICartesian2Vector._to_array_metadata, OutArg())
 
+    _property_names[x] = "x"
+    _property_names[y] = "y"
 
-agcls.AgClassCatalog.add_catalog_entry("{DA459BD7-5810-4B30-8397-21EDA9E52D2B}", ICartesian2Vector)
+
+agcls.AgClassCatalog.add_catalog_entry((5417927181131422679, 3111395435573516163), ICartesian2Vector)
 agcls.AgTypeNameMap["ICartesian2Vector"] = ICartesian2Vector
 
 class IUnitPreferencesDimension(object):
@@ -2638,16 +2734,18 @@ class IUnitPreferencesDimension(object):
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_id_method_offset = 1
+    _get_name_method_offset = 2
+    _get_available_units_method_offset = 3
+    _get_current_unit_method_offset = 4
+    _set_current_unit_method_offset = 5
     _metadata = {
-        "uuid" : "{AA966FFD-1A99-45D8-9193-C519BBBA99FA}",
+        "iid_data" : (5032801830880833533, 18057669493672743825),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_id" : 1,
-                             "get_name" : 2,
-                             "get_available_units" : 3,
-                             "get_current_unit" : 4,
-                             "set_current_unit" : 5, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesDimension."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesDimension)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2657,9 +2755,10 @@ class IUnitPreferencesDimension(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimension)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesDimension, None)
     
-    _get_id_metadata = { "name" : "id",
+    _get_id_metadata = { "offset" : _get_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -2667,7 +2766,7 @@ class IUnitPreferencesDimension(object):
         """Return the ID of the dimension."""
         return self._intf.get_property(IUnitPreferencesDimension._metadata, IUnitPreferencesDimension._get_id_metadata)
 
-    _get_name_metadata = { "name" : "name",
+    _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -2675,7 +2774,7 @@ class IUnitPreferencesDimension(object):
         """Return the current Dimension's full name."""
         return self._intf.get_property(IUnitPreferencesDimension._metadata, IUnitPreferencesDimension._get_name_metadata)
 
-    _get_available_units_metadata = { "name" : "available_units",
+    _get_available_units_metadata = { "offset" : _get_available_units_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -2683,7 +2782,7 @@ class IUnitPreferencesDimension(object):
         """Return collection of Units."""
         return self._intf.get_property(IUnitPreferencesDimension._metadata, IUnitPreferencesDimension._get_available_units_metadata)
 
-    _get_current_unit_metadata = { "name" : "current_unit",
+    _get_current_unit_metadata = { "offset" : _get_current_unit_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -2691,15 +2790,20 @@ class IUnitPreferencesDimension(object):
         """Return the current unit for this dimension."""
         return self._intf.get_property(IUnitPreferencesDimension._metadata, IUnitPreferencesDimension._get_current_unit_metadata)
 
-    _set_current_unit_metadata = { "name" : "set_current_unit",
+    _set_current_unit_metadata = { "offset" : _set_current_unit_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_current_unit(self, unitAbbrv:str) -> None:
         """Set the Unit for this simple dimension."""
         return self._intf.invoke(IUnitPreferencesDimension._metadata, IUnitPreferencesDimension._set_current_unit_metadata, unitAbbrv)
 
+    _property_names[id] = "id"
+    _property_names[name] = "name"
+    _property_names[available_units] = "available_units"
+    _property_names[current_unit] = "current_unit"
 
-agcls.AgClassCatalog.add_catalog_entry("{AA966FFD-1A99-45D8-9193-C519BBBA99FA}", IUnitPreferencesDimension)
+
+agcls.AgClassCatalog.add_catalog_entry((5032801830880833533, 18057669493672743825), IUnitPreferencesDimension)
 agcls.AgTypeNameMap["IUnitPreferencesDimension"] = IUnitPreferencesDimension
 
 class IPropertyInfo(object):
@@ -2707,19 +2811,21 @@ class IPropertyInfo(object):
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_name_method_offset = 1
+    _get_property_type_method_offset = 2
+    _get_value_method_offset = 3
+    _set_value_method_offset = 4
+    _get_has_min_method_offset = 5
+    _get_has_max_method_offset = 6
+    _get_min_method_offset = 7
+    _get_max_method_offset = 8
     _metadata = {
-        "uuid" : "{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}",
+        "iid_data" : (5736951962975636299, 3080140686805457046),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_name" : 1,
-                             "get_property_type" : 2,
-                             "get_value" : 3,
-                             "set_value" : 4,
-                             "get_has_min" : 5,
-                             "get_has_max" : 6,
-                             "get_min" : 7,
-                             "get_max" : 8, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropertyInfo."""
         initialize_from_source_object(self, sourceObject, IPropertyInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2729,9 +2835,10 @@ class IPropertyInfo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropertyInfo, None)
     
-    _get_name_metadata = { "name" : "name",
+    _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -2739,7 +2846,7 @@ class IPropertyInfo(object):
         """Get the name of the property."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_name_metadata)
 
-    _get_property_type_metadata = { "name" : "property_type",
+    _get_property_type_metadata = { "offset" : _get_property_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(PROPERTY_INFO_VALUE_TYPE),) }
     @property
@@ -2747,21 +2854,21 @@ class IPropertyInfo(object):
         """Get the type of property."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_property_type_metadata)
 
-    _get_value_metadata = { "name" : "get_value",
+    _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     def get_value(self) -> typing.Any:
         """Get the value of the property. Use PropertyType to determine the type to cast to."""
         return self._intf.invoke(IPropertyInfo._metadata, IPropertyInfo._get_value_metadata, OutArg())
 
-    _set_value_metadata = { "name" : "set_value",
+    _set_value_metadata = { "offset" : _set_value_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def set_value(self, propertyInfo:typing.Any) -> None:
         """Set the value of the property. Use PropertyType to determine the type to cast to."""
         return self._intf.invoke(IPropertyInfo._metadata, IPropertyInfo._set_value_metadata, propertyInfo)
 
-    _get_has_min_metadata = { "name" : "has_min",
+    _get_has_min_metadata = { "offset" : _get_has_min_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -2769,7 +2876,7 @@ class IPropertyInfo(object):
         """Determine if the property has a minimum value."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_has_min_metadata)
 
-    _get_has_max_metadata = { "name" : "has_max",
+    _get_has_max_metadata = { "offset" : _get_has_max_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -2777,7 +2884,7 @@ class IPropertyInfo(object):
         """Determine if the property has a maximum value."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_has_max_metadata)
 
-    _get_min_metadata = { "name" : "min",
+    _get_min_metadata = { "offset" : _get_min_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2785,7 +2892,7 @@ class IPropertyInfo(object):
         """Get the minimum value of this property. Use PropertyType to determine the type to cast to."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_min_metadata)
 
-    _get_max_metadata = { "name" : "max",
+    _get_max_metadata = { "offset" : _get_max_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -2793,8 +2900,15 @@ class IPropertyInfo(object):
         """Get the maximum value of this property. Use PropertyType to determine the type to cast to."""
         return self._intf.get_property(IPropertyInfo._metadata, IPropertyInfo._get_max_metadata)
 
+    _property_names[name] = "name"
+    _property_names[property_type] = "property_type"
+    _property_names[has_min] = "has_min"
+    _property_names[has_max] = "has_max"
+    _property_names[min] = "min"
+    _property_names[max] = "max"
 
-agcls.AgClassCatalog.add_catalog_entry("{26A48B4B-BF6A-4F9D-9658-44A7A2DBBE2A}", IPropertyInfo)
+
+agcls.AgClassCatalog.add_catalog_entry((5736951962975636299, 3080140686805457046), IPropertyInfo)
 agcls.AgTypeNameMap["IPropertyInfo"] = IPropertyInfo
 
 class IPropertyInfoCollection(object):
@@ -2802,16 +2916,18 @@ class IPropertyInfoCollection(object):
 
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get__NewEnum_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
     _metadata = {
-        "uuid" : "{198E6280-1D5A-4AED-9DE3-ACE354B95287}",
+        "iid_data" : (5399003801100116608, 9751059917458695069),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "item" : 1,
-                             "get__NewEnum" : 2,
-                             "get_count" : 3,
-                             "get_item_by_index" : 4,
-                             "get_item_by_name" : 5, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IPropertyInfoCollection."""
         initialize_from_source_object(self, sourceObject, IPropertyInfoCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2822,12 +2938,15 @@ class IPropertyInfoCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IPropertyInfoCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IPropertyInfoCollection, None)
     def __iter__(self):
+        """Create an iterator for the IPropertyInfoCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPropertyInfo":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -2835,14 +2954,14 @@ class IPropertyInfoCollection(object):
             raise StopIteration
         return nextval
     
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "PropertyInfo":
         """Allow the user to iterate through the properties."""
         return self._intf.invoke(IPropertyInfoCollection._metadata, IPropertyInfoCollection._item_metadata, indexOrName, OutArg())
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -2850,7 +2969,7 @@ class IPropertyInfoCollection(object):
         """Enumerates through the properties."""
         return self._intf.get_property(IPropertyInfoCollection._metadata, IPropertyInfoCollection._get__NewEnum_metadata)
 
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -2858,14 +2977,14 @@ class IPropertyInfoCollection(object):
         """Get the number of properties available."""
         return self._intf.get_property(IPropertyInfoCollection._metadata, IPropertyInfoCollection._get_count_metadata)
 
-    _get_item_by_index_metadata = { "name" : "get_item_by_index",
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "PropertyInfo":
         """Retrieve a property from the collection by index."""
         return self._intf.invoke(IPropertyInfoCollection._metadata, IPropertyInfoCollection._get_item_by_index_metadata, index, OutArg())
 
-    _get_item_by_name_metadata = { "name" : "get_item_by_name",
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "PropertyInfo":
@@ -2875,8 +2994,11 @@ class IPropertyInfoCollection(object):
     __getitem__ = item
 
 
+    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[count] = "count"
 
-agcls.AgClassCatalog.add_catalog_entry("{198E6280-1D5A-4AED-9DE3-ACE354B95287}", IPropertyInfoCollection)
+
+agcls.AgClassCatalog.add_catalog_entry((5399003801100116608, 9751059917458695069), IPropertyInfoCollection)
 agcls.AgTypeNameMap["IPropertyInfoCollection"] = IPropertyInfoCollection
 
 class IRuntimeTypeInfo(object):
@@ -2884,15 +3006,17 @@ class IRuntimeTypeInfo(object):
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_properties_method_offset = 1
+    _get_is_collection_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_method_offset = 4
     _metadata = {
-        "uuid" : "{01F8872C-9586-4131-A724-F97C6ADD083F}",
+        "iid_data" : (4697700289115359020, 4542123673636119719),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_properties" : 1,
-                             "get_is_collection" : 2,
-                             "get_count" : 3,
-                             "get_item" : 4, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRuntimeTypeInfo."""
         initialize_from_source_object(self, sourceObject, IRuntimeTypeInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2902,9 +3026,10 @@ class IRuntimeTypeInfo(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfo)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRuntimeTypeInfo, None)
     
-    _get_properties_metadata = { "name" : "properties",
+    _get_properties_metadata = { "offset" : _get_properties_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -2912,7 +3037,7 @@ class IRuntimeTypeInfo(object):
         """Get the collection of properties."""
         return self._intf.get_property(IRuntimeTypeInfo._metadata, IRuntimeTypeInfo._get_properties_metadata)
 
-    _get_is_collection_metadata = { "name" : "is_collection",
+    _get_is_collection_metadata = { "offset" : _get_is_collection_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -2920,7 +3045,7 @@ class IRuntimeTypeInfo(object):
         """Determine if the interface is a collection."""
         return self._intf.get_property(IRuntimeTypeInfo._metadata, IRuntimeTypeInfo._get_is_collection_metadata)
 
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -2928,15 +3053,19 @@ class IRuntimeTypeInfo(object):
         """If the interface is a collection, returns the collection count."""
         return self._intf.get_property(IRuntimeTypeInfo._metadata, IRuntimeTypeInfo._get_count_metadata)
 
-    _get_item_metadata = { "name" : "get_item",
+    _get_item_metadata = { "offset" : _get_item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def get_item(self, index:int) -> "PropertyInfo":
         """Return the property of the collection at the given index."""
         return self._intf.invoke(IRuntimeTypeInfo._metadata, IRuntimeTypeInfo._get_item_metadata, index, OutArg())
 
+    _property_names[properties] = "properties"
+    _property_names[is_collection] = "is_collection"
+    _property_names[count] = "count"
 
-agcls.AgClassCatalog.add_catalog_entry("{01F8872C-9586-4131-A724-F97C6ADD083F}", IRuntimeTypeInfo)
+
+agcls.AgClassCatalog.add_catalog_entry((4697700289115359020, 4542123673636119719), IRuntimeTypeInfo)
 agcls.AgTypeNameMap["IRuntimeTypeInfo"] = IRuntimeTypeInfo
 
 class IRuntimeTypeInfoProvider(object):
@@ -2944,12 +3073,14 @@ class IRuntimeTypeInfoProvider(object):
 
     _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_provide_runtime_type_info_method_offset = 1
     _metadata = {
-        "uuid" : "{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}",
+        "iid_data" : (4856983295523357109, 1229146414855014286),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_provide_runtime_type_info" : 1, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IRuntimeTypeInfoProvider."""
         initialize_from_source_object(self, sourceObject, IRuntimeTypeInfoProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -2959,9 +3090,10 @@ class IRuntimeTypeInfoProvider(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IRuntimeTypeInfoProvider)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IRuntimeTypeInfoProvider, None)
     
-    _get_provide_runtime_type_info_metadata = { "name" : "provide_runtime_type_info",
+    _get_provide_runtime_type_info_metadata = { "offset" : _get_provide_runtime_type_info_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -2969,8 +3101,10 @@ class IRuntimeTypeInfoProvider(object):
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(IRuntimeTypeInfoProvider._metadata, IRuntimeTypeInfoProvider._get_provide_runtime_type_info_metadata)
 
+    _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-agcls.AgClassCatalog.add_catalog_entry("{E9AD01B5-7892-4367-8EC7-60EA26CE0E11}", IRuntimeTypeInfoProvider)
+
+agcls.AgClassCatalog.add_catalog_entry((4856983295523357109, 1229146414855014286), IRuntimeTypeInfoProvider)
 agcls.AgTypeNameMap["IRuntimeTypeInfoProvider"] = IRuntimeTypeInfoProvider
 
 class IExecCmdResult(object):
@@ -2978,16 +3112,18 @@ class IExecCmdResult(object):
 
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _get_count_method_offset = 1
+    _item_method_offset = 2
+    _get__NewEnum_method_offset = 3
+    _range_method_offset = 4
+    _get_is_succeeded_method_offset = 5
     _metadata = {
-        "uuid" : "{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}",
+        "iid_data" : (5532952564068017084, 6961682191463635117),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "get_count" : 1,
-                             "item" : 2,
-                             "get__NewEnum" : 3,
-                             "range" : 4,
-                             "get_is_succeeded" : 5, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -2998,12 +3134,15 @@ class IExecCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3011,7 +3150,7 @@ class IExecCmdResult(object):
             raise StopIteration
         return nextval
     
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3019,14 +3158,14 @@ class IExecCmdResult(object):
         """Number of elements contained in the collection."""
         return self._intf.get_property(IExecCmdResult._metadata, IExecCmdResult._get_count_metadata)
 
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -3034,14 +3173,14 @@ class IExecCmdResult(object):
         """Return an object that can be used to iterate through all the strings in the collection."""
         return self._intf.get_property(IExecCmdResult._metadata, IExecCmdResult._get__NewEnum_metadata)
 
-    _range_metadata = { "name" : "range",
+    _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
     def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
         return self._intf.invoke(IExecCmdResult._metadata, IExecCmdResult._range_metadata, startIndex, stopIndex, OutArg())
 
-    _get_is_succeeded_metadata = { "name" : "is_succeeded",
+    _get_is_succeeded_metadata = { "offset" : _get_is_succeeded_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -3052,8 +3191,12 @@ class IExecCmdResult(object):
     __getitem__ = item
 
 
+    _property_names[count] = "count"
+    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[is_succeeded] = "is_succeeded"
 
-agcls.AgClassCatalog.add_catalog_entry("{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}", IExecCmdResult)
+
+agcls.AgClassCatalog.add_catalog_entry((5532952564068017084, 6961682191463635117), IExecCmdResult)
 agcls.AgTypeNameMap["IExecCmdResult"] = IExecCmdResult
 
 class IExecMultiCmdResult(object):
@@ -3061,14 +3204,16 @@ class IExecMultiCmdResult(object):
 
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _get_count_method_offset = 1
+    _item_method_offset = 2
+    _get__NewEnum_method_offset = 3
     _metadata = {
-        "uuid" : "{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}",
+        "iid_data" : (5271171048043179548, 17166981793534785703),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "get_count" : 1,
-                             "item" : 2,
-                             "get__NewEnum" : 3, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IExecMultiCmdResult."""
         initialize_from_source_object(self, sourceObject, IExecMultiCmdResult)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3079,12 +3224,15 @@ class IExecMultiCmdResult(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IExecMultiCmdResult)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IExecMultiCmdResult, None)
     def __iter__(self):
+        """Create an iterator for the IExecMultiCmdResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IExecCmdResult":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3092,7 +3240,7 @@ class IExecMultiCmdResult(object):
             raise StopIteration
         return nextval
     
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3100,14 +3248,14 @@ class IExecMultiCmdResult(object):
         """Number of elements contained in the collection."""
         return self._intf.get_property(IExecMultiCmdResult._metadata, IExecMultiCmdResult._get_count_metadata)
 
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "ExecCmdResult":
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IExecMultiCmdResult._metadata, IExecMultiCmdResult._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -3118,8 +3266,11 @@ class IExecMultiCmdResult(object):
     __getitem__ = item
 
 
+    _property_names[count] = "count"
+    _property_names[_NewEnum] = "_NewEnum"
 
-agcls.AgClassCatalog.add_catalog_entry("{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}", IExecMultiCmdResult)
+
+agcls.AgClassCatalog.add_catalog_entry((5271171048043179548, 17166981793534785703), IExecMultiCmdResult)
 agcls.AgTypeNameMap["IExecMultiCmdResult"] = IExecMultiCmdResult
 
 class IUnitPreferencesUnit(object):
@@ -3127,15 +3278,17 @@ class IUnitPreferencesUnit(object):
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_full_name_method_offset = 1
+    _get_abbrv_method_offset = 2
+    _get_id_method_offset = 3
+    _get_dimension_method_offset = 4
     _metadata = {
-        "uuid" : "{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}",
+        "iid_data" : (5635454554877079377, 14141992965915125166),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_full_name" : 1,
-                             "get_abbrv" : 2,
-                             "get_id" : 3,
-                             "get_dimension" : 4, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesUnit."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesUnit)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3145,9 +3298,10 @@ class IUnitPreferencesUnit(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnit)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesUnit, None)
     
-    _get_full_name_metadata = { "name" : "full_name",
+    _get_full_name_metadata = { "offset" : _get_full_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -3155,7 +3309,7 @@ class IUnitPreferencesUnit(object):
         """Return the fullname of the unit."""
         return self._intf.get_property(IUnitPreferencesUnit._metadata, IUnitPreferencesUnit._get_full_name_metadata)
 
-    _get_abbrv_metadata = { "name" : "abbrv",
+    _get_abbrv_metadata = { "offset" : _get_abbrv_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -3163,7 +3317,7 @@ class IUnitPreferencesUnit(object):
         """Return the abbreviation of the unit."""
         return self._intf.get_property(IUnitPreferencesUnit._metadata, IUnitPreferencesUnit._get_abbrv_metadata)
 
-    _get_id_metadata = { "name" : "id",
+    _get_id_metadata = { "offset" : _get_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3171,7 +3325,7 @@ class IUnitPreferencesUnit(object):
         """Return the ID of the unit."""
         return self._intf.get_property(IUnitPreferencesUnit._metadata, IUnitPreferencesUnit._get_id_metadata)
 
-    _get_dimension_metadata = { "name" : "dimension",
+    _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -3179,8 +3333,13 @@ class IUnitPreferencesUnit(object):
         """Return the Dimension for this unit."""
         return self._intf.get_property(IUnitPreferencesUnit._metadata, IUnitPreferencesUnit._get_dimension_metadata)
 
+    _property_names[full_name] = "full_name"
+    _property_names[abbrv] = "abbrv"
+    _property_names[id] = "id"
+    _property_names[dimension] = "dimension"
 
-agcls.AgClassCatalog.add_catalog_entry("{4B4E2F51-280F-4E35-AEA5-71CDAC7342C4}", IUnitPreferencesUnit)
+
+agcls.AgClassCatalog.add_catalog_entry((5635454554877079377, 14141992965915125166), IUnitPreferencesUnit)
 agcls.AgTypeNameMap["IUnitPreferencesUnit"] = IUnitPreferencesUnit
 
 class IUnitPreferencesUnitCollection(object):
@@ -3188,16 +3347,18 @@ class IUnitPreferencesUnitCollection(object):
 
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get_count_method_offset = 2
+    _get__NewEnum_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
     _metadata = {
-        "uuid" : "{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}",
+        "iid_data" : (5470923714325537781, 12978283017277731717),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "item" : 1,
-                             "get_count" : 2,
-                             "get__NewEnum" : 3,
-                             "get_item_by_index" : 4,
-                             "get_item_by_name" : 5, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesUnitCollection."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesUnitCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3208,12 +3369,15 @@ class IUnitPreferencesUnitCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesUnitCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesUnitCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUnitPreferencesUnitCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUnitPreferencesUnit":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3221,14 +3385,14 @@ class IUnitPreferencesUnitCollection(object):
             raise StopIteration
         return nextval
     
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "UnitPreferencesUnit":
         """Return the specific item in the collection given a unit identifier or an index."""
         return self._intf.invoke(IUnitPreferencesUnitCollection._metadata, IUnitPreferencesUnitCollection._item_metadata, indexOrName, OutArg())
 
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3236,7 +3400,7 @@ class IUnitPreferencesUnitCollection(object):
         """Return the number of items in the collection."""
         return self._intf.get_property(IUnitPreferencesUnitCollection._metadata, IUnitPreferencesUnitCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -3244,14 +3408,14 @@ class IUnitPreferencesUnitCollection(object):
         """Return an enumeration of UnitPreferencesUnit."""
         return self._intf.get_property(IUnitPreferencesUnitCollection._metadata, IUnitPreferencesUnitCollection._get__NewEnum_metadata)
 
-    _get_item_by_index_metadata = { "name" : "get_item_by_index",
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "UnitPreferencesUnit":
         """Retrieve a unit from the collection by index."""
         return self._intf.invoke(IUnitPreferencesUnitCollection._metadata, IUnitPreferencesUnitCollection._get_item_by_index_metadata, index, OutArg())
 
-    _get_item_by_name_metadata = { "name" : "get_item_by_name",
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "UnitPreferencesUnit":
@@ -3261,8 +3425,11 @@ class IUnitPreferencesUnitCollection(object):
     __getitem__ = item
 
 
+    _property_names[count] = "count"
+    _property_names[_NewEnum] = "_NewEnum"
 
-agcls.AgClassCatalog.add_catalog_entry("{C9A263F5-A021-4BEC-85F3-526FA41F1CB4}", IUnitPreferencesUnitCollection)
+
+agcls.AgClassCatalog.add_catalog_entry((5470923714325537781, 12978283017277731717), IUnitPreferencesUnitCollection)
 agcls.AgTypeNameMap["IUnitPreferencesUnitCollection"] = IUnitPreferencesUnitCollection
 
 class IUnitPreferencesDimensionCollection(object):
@@ -3270,23 +3437,25 @@ class IUnitPreferencesDimensionCollection(object):
 
     _num_methods = 12
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get_count_method_offset = 2
+    _set_current_unit_method_offset = 3
+    _get_current_unit_abbrv_method_offset = 4
+    _get_mission_elapsed_time_method_offset = 5
+    _set_mission_elapsed_time_method_offset = 6
+    _get_julian_date_offset_method_offset = 7
+    _set_julian_date_offset_method_offset = 8
+    _get__NewEnum_method_offset = 9
+    _reset_units_method_offset = 10
+    _get_item_by_index_method_offset = 11
+    _get_item_by_name_method_offset = 12
     _metadata = {
-        "uuid" : "{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}",
+        "iid_data" : (4785890395549473833, 4361686517023815598),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "item" : 1,
-                             "get_count" : 2,
-                             "set_current_unit" : 3,
-                             "get_current_unit_abbrv" : 4,
-                             "get_mission_elapsed_time" : 5,
-                             "set_mission_elapsed_time" : 6,
-                             "get_julian_date_offset" : 7,
-                             "set_julian_date_offset" : 8,
-                             "get__NewEnum" : 9,
-                             "reset_units" : 10,
-                             "get_item_by_index" : 11,
-                             "get_item_by_name" : 12, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IUnitPreferencesDimensionCollection."""
         initialize_from_source_object(self, sourceObject, IUnitPreferencesDimensionCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3297,12 +3466,15 @@ class IUnitPreferencesDimensionCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IUnitPreferencesDimensionCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IUnitPreferencesDimensionCollection, None)
     def __iter__(self):
+        """Create an iterator for the IUnitPreferencesDimensionCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IUnitPreferencesDimension":
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3310,14 +3482,14 @@ class IUnitPreferencesDimensionCollection(object):
             raise StopIteration
         return nextval
     
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "UnitPreferencesDimension":
         """Return an UnitPreferencesDimension given a Dimension name or an index."""
         return self._intf.invoke(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._item_metadata, indexOrName, OutArg())
 
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3325,21 +3497,21 @@ class IUnitPreferencesDimensionCollection(object):
         """Return the number of items in the collection."""
         return self._intf.get_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get_count_metadata)
 
-    _set_current_unit_metadata = { "name" : "set_current_unit",
+    _set_current_unit_metadata = { "offset" : _set_current_unit_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_current_unit(self, dimension:str, unitAbbrv:str) -> None:
         """Return the Current unit for a Dimension."""
         return self._intf.invoke(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._set_current_unit_metadata, dimension, unitAbbrv)
 
-    _get_current_unit_abbrv_metadata = { "name" : "get_current_unit_abbrv",
+    _get_current_unit_abbrv_metadata = { "offset" : _get_current_unit_abbrv_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
     def get_current_unit_abbrv(self, indexOrDimName:typing.Any) -> str:
         """Return the Current Unit for a Dimension."""
         return self._intf.invoke(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get_current_unit_abbrv_metadata, indexOrDimName, OutArg())
 
-    _get_mission_elapsed_time_metadata = { "name" : "mission_elapsed_time",
+    _get_mission_elapsed_time_metadata = { "offset" : _get_mission_elapsed_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -3347,14 +3519,14 @@ class IUnitPreferencesDimensionCollection(object):
         """The MissionElapsedTime."""
         return self._intf.get_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get_mission_elapsed_time_metadata)
 
-    _set_mission_elapsed_time_metadata = { "name" : "mission_elapsed_time",
+    _set_mission_elapsed_time_metadata = { "offset" : _set_mission_elapsed_time_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @mission_elapsed_time.setter
     def mission_elapsed_time(self, pMisElapTime:typing.Any) -> None:
         return self._intf.set_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._set_mission_elapsed_time_metadata, pMisElapTime)
 
-    _get_julian_date_offset_metadata = { "name" : "julian_date_offset",
+    _get_julian_date_offset_metadata = { "offset" : _get_julian_date_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -3362,14 +3534,14 @@ class IUnitPreferencesDimensionCollection(object):
         """The JulianDateOffset."""
         return self._intf.get_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get_julian_date_offset_metadata)
 
-    _set_julian_date_offset_metadata = { "name" : "julian_date_offset",
+    _set_julian_date_offset_metadata = { "offset" : _set_julian_date_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @julian_date_offset.setter
     def julian_date_offset(self, pJDateOffset:float) -> None:
         return self._intf.set_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._set_julian_date_offset_metadata, pJDateOffset)
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -3377,21 +3549,21 @@ class IUnitPreferencesDimensionCollection(object):
         """Return a collection of UnitPreferencesDimension."""
         return self._intf.get_property(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get__NewEnum_metadata)
 
-    _reset_units_metadata = { "name" : "reset_units",
+    _reset_units_metadata = { "offset" : _reset_units_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def reset_units(self) -> None:
         """Reset the unitpreferences to the Default units."""
         return self._intf.invoke(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._reset_units_metadata, )
 
-    _get_item_by_index_metadata = { "name" : "get_item_by_index",
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "UnitPreferencesDimension":
         """Retrieve a dimension from the collection by index."""
         return self._intf.invoke(IUnitPreferencesDimensionCollection._metadata, IUnitPreferencesDimensionCollection._get_item_by_index_metadata, index, OutArg())
 
-    _get_item_by_name_metadata = { "name" : "get_item_by_name",
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "UnitPreferencesDimension":
@@ -3401,8 +3573,13 @@ class IUnitPreferencesDimensionCollection(object):
     __getitem__ = item
 
 
+    _property_names[count] = "count"
+    _property_names[mission_elapsed_time] = "mission_elapsed_time"
+    _property_names[julian_date_offset] = "julian_date_offset"
+    _property_names[_NewEnum] = "_NewEnum"
 
-agcls.AgClassCatalog.add_catalog_entry("{40AE1C29-E5F5-426A-AEB7-D02CC7D2873C}", IUnitPreferencesDimensionCollection)
+
+agcls.AgClassCatalog.add_catalog_entry((4785890395549473833, 4361686517023815598), IUnitPreferencesDimensionCollection)
 agcls.AgTypeNameMap["IUnitPreferencesDimensionCollection"] = IUnitPreferencesDimensionCollection
 
 class IQuantity(object):
@@ -3410,20 +3587,22 @@ class IQuantity(object):
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_dimension_method_offset = 1
+    _get_unit_method_offset = 2
+    _convert_to_unit_method_offset = 3
+    _get_value_method_offset = 4
+    _set_value_method_offset = 5
+    _add_method_offset = 6
+    _subtract_method_offset = 7
+    _multiply_qty_method_offset = 8
+    _divide_qty_method_offset = 9
     _metadata = {
-        "uuid" : "{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}",
+        "iid_data" : (4847092431830365084, 7729483638506016434),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_dimension" : 1,
-                             "get_unit" : 2,
-                             "convert_to_unit" : 3,
-                             "get_value" : 4,
-                             "set_value" : 5,
-                             "add" : 6,
-                             "subtract" : 7,
-                             "multiply_qty" : 8,
-                             "divide_qty" : 9, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IQuantity."""
         initialize_from_source_object(self, sourceObject, IQuantity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3433,9 +3612,10 @@ class IQuantity(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IQuantity)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IQuantity, None)
     
-    _get_dimension_metadata = { "name" : "dimension",
+    _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -3443,7 +3623,7 @@ class IQuantity(object):
         """Get the name of the dimension."""
         return self._intf.get_property(IQuantity._metadata, IQuantity._get_dimension_metadata)
 
-    _get_unit_metadata = { "name" : "unit",
+    _get_unit_metadata = { "offset" : _get_unit_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -3451,14 +3631,14 @@ class IQuantity(object):
         """Get the current Unit abbreviation."""
         return self._intf.get_property(IQuantity._metadata, IQuantity._get_unit_metadata)
 
-    _convert_to_unit_metadata = { "name" : "convert_to_unit",
+    _convert_to_unit_metadata = { "offset" : _convert_to_unit_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def convert_to_unit(self, unitAbbrv:str) -> None:
         """Change the value in this quantity to the specified unit."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._convert_to_unit_metadata, unitAbbrv)
 
-    _get_value_metadata = { "name" : "value",
+    _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -3466,43 +3646,47 @@ class IQuantity(object):
         """Get or set the current value."""
         return self._intf.get_property(IQuantity._metadata, IQuantity._get_value_metadata)
 
-    _set_value_metadata = { "name" : "value",
+    _set_value_metadata = { "offset" : _set_value_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @value.setter
     def value(self, value:float) -> None:
         return self._intf.set_property(IQuantity._metadata, IQuantity._set_value_metadata, value)
 
-    _add_metadata = { "name" : "add",
+    _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def add(self, quantity:"IQuantity") -> "Quantity":
         """Add the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._add_metadata, quantity, OutArg())
 
-    _subtract_metadata = { "name" : "subtract",
+    _subtract_metadata = { "offset" : _subtract_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def subtract(self, quantity:"IQuantity") -> "Quantity":
         """Subtracts the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._subtract_metadata, quantity, OutArg())
 
-    _multiply_qty_metadata = { "name" : "multiply_qty",
+    _multiply_qty_metadata = { "offset" : _multiply_qty_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def multiply_qty(self, quantity:"IQuantity") -> "Quantity":
         """Multiplies the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._multiply_qty_metadata, quantity, OutArg())
 
-    _divide_qty_metadata = { "name" : "divide_qty",
+    _divide_qty_metadata = { "offset" : _divide_qty_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def divide_qty(self, quantity:"IQuantity") -> "Quantity":
         """Divides the value from the Quantity interface to this interface. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._divide_qty_metadata, quantity, OutArg())
 
+    _property_names[dimension] = "dimension"
+    _property_names[unit] = "unit"
+    _property_names[value] = "value"
 
-agcls.AgClassCatalog.add_catalog_entry("{C0BBB39C-54E2-4344-B24E-58AA6AA4446B}", IQuantity)
+
+agcls.AgClassCatalog.add_catalog_entry((4847092431830365084, 7729483638506016434), IQuantity)
 agcls.AgTypeNameMap["IQuantity"] = IQuantity
 
 class IDate(object):
@@ -3510,26 +3694,28 @@ class IDate(object):
 
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _format_method_offset = 1
+    _set_date_method_offset = 2
+    _get_ole_date_method_offset = 3
+    _set_ole_date_method_offset = 4
+    _get_whole_days_method_offset = 5
+    _set_whole_days_method_offset = 6
+    _get_sec_into_day_method_offset = 7
+    _set_sec_into_day_method_offset = 8
+    _get_whole_days_utc_method_offset = 9
+    _set_whole_days_utc_method_offset = 10
+    _get_sec_into_day_utc_method_offset = 11
+    _set_sec_into_day_utc_method_offset = 12
+    _add_method_offset = 13
+    _subtract_method_offset = 14
+    _span_method_offset = 15
     _metadata = {
-        "uuid" : "{BFC8EA09-19BD-432A-923D-C553E8E37993}",
+        "iid_data" : (4839709052320147977, 10626775382734749074),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "format" : 1,
-                             "set_date" : 2,
-                             "get_ole_date" : 3,
-                             "set_ole_date" : 4,
-                             "get_whole_days" : 5,
-                             "set_whole_days" : 6,
-                             "get_sec_into_day" : 7,
-                             "set_sec_into_day" : 8,
-                             "get_whole_days_utc" : 9,
-                             "set_whole_days_utc" : 10,
-                             "get_sec_into_day_utc" : 11,
-                             "set_sec_into_day_utc" : 12,
-                             "add" : 13,
-                             "subtract" : 14,
-                             "span" : 15, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDate."""
         initialize_from_source_object(self, sourceObject, IDate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3539,23 +3725,24 @@ class IDate(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDate)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDate, None)
     
-    _format_metadata = { "name" : "format",
+    _format_metadata = { "offset" : _format_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def format(self, unit:str) -> str:
         """Return the value of the date given the unit."""
         return self._intf.invoke(IDate._metadata, IDate._format_metadata, unit, OutArg())
 
-    _set_date_metadata = { "name" : "set_date",
+    _set_date_metadata = { "offset" : _set_date_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_date(self, unit:str, value:str) -> None:
         """Set this date with the given date value and unit type."""
         return self._intf.invoke(IDate._metadata, IDate._set_date_metadata, unit, value)
 
-    _get_ole_date_metadata = { "name" : "ole_date",
+    _get_ole_date_metadata = { "offset" : _get_ole_date_method_offset,
             "arg_types" : (POINTER(agcom.DATE),),
             "marshallers" : (agmarshall.DateArg,) }
     @property
@@ -3563,14 +3750,14 @@ class IDate(object):
         """Get or set the current time in OLE DATE Format."""
         return self._intf.get_property(IDate._metadata, IDate._get_ole_date_metadata)
 
-    _set_ole_date_metadata = { "name" : "ole_date",
+    _set_ole_date_metadata = { "offset" : _set_ole_date_method_offset,
             "arg_types" : (agcom.DATE,),
             "marshallers" : (agmarshall.DateArg,) }
     @ole_date.setter
     def ole_date(self, inVal:datetime) -> None:
         return self._intf.set_property(IDate._metadata, IDate._set_ole_date_metadata, inVal)
 
-    _get_whole_days_metadata = { "name" : "whole_days",
+    _get_whole_days_metadata = { "offset" : _get_whole_days_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3578,14 +3765,14 @@ class IDate(object):
         """Get or set the Julian Day Number of the date of interest."""
         return self._intf.get_property(IDate._metadata, IDate._get_whole_days_metadata)
 
-    _set_whole_days_metadata = { "name" : "whole_days",
+    _set_whole_days_metadata = { "offset" : _set_whole_days_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @whole_days.setter
     def whole_days(self, wholeDays:int) -> None:
         return self._intf.set_property(IDate._metadata, IDate._set_whole_days_metadata, wholeDays)
 
-    _get_sec_into_day_metadata = { "name" : "sec_into_day",
+    _get_sec_into_day_metadata = { "offset" : _get_sec_into_day_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -3593,14 +3780,14 @@ class IDate(object):
         """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0."""
         return self._intf.get_property(IDate._metadata, IDate._get_sec_into_day_metadata)
 
-    _set_sec_into_day_metadata = { "name" : "sec_into_day",
+    _set_sec_into_day_metadata = { "offset" : _set_sec_into_day_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @sec_into_day.setter
     def sec_into_day(self, secIntoDay:float) -> None:
         return self._intf.set_property(IDate._metadata, IDate._set_sec_into_day_metadata, secIntoDay)
 
-    _get_whole_days_utc_metadata = { "name" : "whole_days_utc",
+    _get_whole_days_utc_metadata = { "offset" : _get_whole_days_utc_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3608,14 +3795,14 @@ class IDate(object):
         """Get or set the UTC Day Number of the date of interest."""
         return self._intf.get_property(IDate._metadata, IDate._get_whole_days_utc_metadata)
 
-    _set_whole_days_utc_metadata = { "name" : "whole_days_utc",
+    _set_whole_days_utc_metadata = { "offset" : _set_whole_days_utc_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @whole_days_utc.setter
     def whole_days_utc(self, wholeDays:int) -> None:
         return self._intf.set_property(IDate._metadata, IDate._set_whole_days_utc_metadata, wholeDays)
 
-    _get_sec_into_day_utc_metadata = { "name" : "sec_into_day_utc",
+    _get_sec_into_day_utc_metadata = { "offset" : _get_sec_into_day_utc_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -3623,36 +3810,42 @@ class IDate(object):
         """Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0."""
         return self._intf.get_property(IDate._metadata, IDate._get_sec_into_day_utc_metadata)
 
-    _set_sec_into_day_utc_metadata = { "name" : "sec_into_day_utc",
+    _set_sec_into_day_utc_metadata = { "offset" : _set_sec_into_day_utc_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @sec_into_day_utc.setter
     def sec_into_day_utc(self, secIntoDay:float) -> None:
         return self._intf.set_property(IDate._metadata, IDate._set_sec_into_day_utc_metadata, secIntoDay)
 
-    _add_metadata = { "name" : "add",
+    _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
     def add(self, unit:str, value:float) -> "Date":
         """Add the value in the given unit and returns a new date interface."""
         return self._intf.invoke(IDate._metadata, IDate._add_metadata, unit, value, OutArg())
 
-    _subtract_metadata = { "name" : "subtract",
+    _subtract_metadata = { "offset" : _subtract_method_offset,
             "arg_types" : (agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
     def subtract(self, unit:str, value:float) -> "Date":
         """Subtracts the value in the given unit and returns a new date interface."""
         return self._intf.invoke(IDate._metadata, IDate._subtract_metadata, unit, value, OutArg())
 
-    _span_metadata = { "name" : "span",
+    _span_metadata = { "offset" : _span_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceOutArg,) }
     def span(self, date:"IDate") -> "Quantity":
         """Subtracts the value from the Date interface and returns an Quantity."""
         return self._intf.invoke(IDate._metadata, IDate._span_metadata, date, OutArg())
 
+    _property_names[ole_date] = "ole_date"
+    _property_names[whole_days] = "whole_days"
+    _property_names[sec_into_day] = "sec_into_day"
+    _property_names[whole_days_utc] = "whole_days_utc"
+    _property_names[sec_into_day_utc] = "sec_into_day_utc"
 
-agcls.AgClassCatalog.add_catalog_entry("{BFC8EA09-19BD-432A-923D-C553E8E37993}", IDate)
+
+agcls.AgClassCatalog.add_catalog_entry((4839709052320147977, 10626775382734749074), IDate)
 agcls.AgTypeNameMap["IDate"] = IDate
 
 class IConversionUtility(object):
@@ -3660,29 +3853,31 @@ class IConversionUtility(object):
 
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _convert_quantity_method_offset = 1
+    _convert_date_method_offset = 2
+    _convert_quantity_array_method_offset = 3
+    _convert_date_array_method_offset = 4
+    _new_quantity_method_offset = 5
+    _new_date_method_offset = 6
+    _new_position_on_earth_method_offset = 7
+    _convert_position_array_method_offset = 8
+    _new_direction_method_offset = 9
+    _new_orientation_method_offset = 10
+    _new_orbit_state_on_earth_method_offset = 11
+    _new_position_on_cb_method_offset = 12
+    _new_orbit_state_on_cb_method_offset = 13
+    _query_direction_cosine_matrix_method_offset = 14
+    _query_direction_cosine_matrix_array_method_offset = 15
+    _new_cartesian3_vector_method_offset = 16
+    _new_cartesian3_vector_from_direction_method_offset = 17
+    _new_cartesian3_vector_from_position_method_offset = 18
     _metadata = {
-        "uuid" : "{2B04A4E2-C647-4920-88FF-DE0413252D1C}",
+        "iid_data" : (5269429572990182626, 2030319770630291336),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "convert_quantity" : 1,
-                             "convert_date" : 2,
-                             "convert_quantity_array" : 3,
-                             "convert_date_array" : 4,
-                             "new_quantity" : 5,
-                             "new_date" : 6,
-                             "new_position_on_earth" : 7,
-                             "convert_position_array" : 8,
-                             "new_direction" : 9,
-                             "new_orientation" : 10,
-                             "new_orbit_state_on_earth" : 11,
-                             "new_position_on_cb" : 12,
-                             "new_orbit_state_on_cb" : 13,
-                             "query_direction_cosine_matrix" : 14,
-                             "query_direction_cosine_matrix_array" : 15,
-                             "new_cartesian3_vector" : 16,
-                             "new_cartesian3_vector_from_direction" : 17,
-                             "new_cartesian3_vector_from_position" : 18, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IConversionUtility."""
         initialize_from_source_object(self, sourceObject, IConversionUtility)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3692,128 +3887,129 @@ class IConversionUtility(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IConversionUtility)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IConversionUtility, None)
     
-    _convert_quantity_metadata = { "name" : "convert_quantity",
+    _convert_quantity_metadata = { "offset" : _convert_quantity_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
     def convert_quantity(self, dimensionName:str, fromUnit:str, toUnit:str, fromValue:float) -> float:
         """Convert the specified quantity value from a given unit to another unit."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._convert_quantity_metadata, dimensionName, fromUnit, toUnit, fromValue, OutArg())
 
-    _convert_date_metadata = { "name" : "convert_date",
+    _convert_date_metadata = { "offset" : _convert_date_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def convert_date(self, fromUnit:str, toUnit:str, fromValue:str) -> str:
         """Convert the specified date from a given unit to another unit."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._convert_date_metadata, fromUnit, toUnit, fromValue, OutArg())
 
-    _convert_quantity_array_metadata = { "name" : "convert_quantity_array",
+    _convert_quantity_array_metadata = { "offset" : _convert_quantity_array_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
     def convert_quantity_array(self, dimensionName:str, fromUnit:str, toUnit:str, quantityValues:list) -> list:
         """Convert the specified quantity values from a given unit to another unit."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._convert_quantity_array_metadata, dimensionName, fromUnit, toUnit, quantityValues, OutArg())
 
-    _convert_date_array_metadata = { "name" : "convert_date_array",
+    _convert_date_array_metadata = { "offset" : _convert_date_array_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
     def convert_date_array(self, fromUnit:str, toUnit:str, fromValues:list) -> list:
         """Convert the specified dates from a given unit to another unit."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._convert_date_array_metadata, fromUnit, toUnit, fromValues, OutArg())
 
-    _new_quantity_metadata = { "name" : "new_quantity",
+    _new_quantity_metadata = { "offset" : _new_quantity_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
     def new_quantity(self, dimension:str, unitAbbrv:str, value:float) -> "Quantity":
         """Create an Quantity interface with the given dimension, unit and value."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_quantity_metadata, dimension, unitAbbrv, value, OutArg())
 
-    _new_date_metadata = { "name" : "new_date",
+    _new_date_metadata = { "offset" : _new_date_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def new_date(self, unitAbbrv:str, value:str) -> "Date":
         """Create an Date interface with the given unit and value."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_date_metadata, unitAbbrv, value, OutArg())
 
-    _new_position_on_earth_metadata = { "name" : "new_position_on_earth",
+    _new_position_on_earth_metadata = { "offset" : _new_position_on_earth_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def new_position_on_earth(self) -> "IPosition":
         """Create an IPosition interface with earth as its central body."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_position_on_earth_metadata, OutArg())
 
-    _convert_position_array_metadata = { "name" : "convert_position_array",
+    _convert_position_array_metadata = { "offset" : _convert_position_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.EnumArg(POSITION_TYPE), agmarshall.LPSafearrayArg, agmarshall.EnumArg(POSITION_TYPE), agmarshall.LPSafearrayArg,) }
     def convert_position_array(self, positionType:"POSITION_TYPE", positionArray:list, convertTo:"POSITION_TYPE") -> list:
         """Convert the specified position values from a given position type to another position type."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._convert_position_array_metadata, positionType, positionArray, convertTo, OutArg())
 
-    _new_direction_metadata = { "name" : "new_direction",
+    _new_direction_metadata = { "offset" : _new_direction_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def new_direction(self) -> "IDirection":
         """Create an IDirection interface."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_direction_metadata, OutArg())
 
-    _new_orientation_metadata = { "name" : "new_orientation",
+    _new_orientation_metadata = { "offset" : _new_orientation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def new_orientation(self) -> "IOrientation":
         """Create an IOrientation interface."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_orientation_metadata, OutArg())
 
-    _new_orbit_state_on_earth_metadata = { "name" : "new_orbit_state_on_earth",
+    _new_orbit_state_on_earth_metadata = { "offset" : _new_orbit_state_on_earth_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def new_orbit_state_on_earth(self) -> "IOrbitState":
         """Create an IOrbitState interface with earth as its central body."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_orbit_state_on_earth_metadata, OutArg())
 
-    _new_position_on_cb_metadata = { "name" : "new_position_on_cb",
+    _new_position_on_cb_metadata = { "offset" : _new_position_on_cb_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def new_position_on_cb(self, centralBodyName:str) -> "IPosition":
         """Create an IPosition interface using the supplied central body."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_position_on_cb_metadata, centralBodyName, OutArg())
 
-    _new_orbit_state_on_cb_metadata = { "name" : "new_orbit_state_on_cb",
+    _new_orbit_state_on_cb_metadata = { "offset" : _new_orbit_state_on_cb_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def new_orbit_state_on_cb(self, centralBodyName:str) -> "IOrbitState":
         """Create an IOrbitState interface using the supplied central body."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_orbit_state_on_cb_metadata, centralBodyName, OutArg())
 
-    _query_direction_cosine_matrix_metadata = { "name" : "query_direction_cosine_matrix",
+    _query_direction_cosine_matrix_metadata = { "offset" : _query_direction_cosine_matrix_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID), POINTER(agcom.PVOID), POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IOrientation"), agmarshall.InterfaceOutArg, agmarshall.InterfaceOutArg, agmarshall.InterfaceOutArg,) }
     def query_direction_cosine_matrix(self, inputOrientation:"IOrientation") -> typing.Tuple[ICartesian3Vector, ICartesian3Vector, ICartesian3Vector]:
         """Return a Direction Cosine Matrix (DCM)."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._query_direction_cosine_matrix_metadata, inputOrientation, OutArg(), OutArg(), OutArg())
 
-    _query_direction_cosine_matrix_array_metadata = { "name" : "query_direction_cosine_matrix_array",
+    _query_direction_cosine_matrix_array_metadata = { "offset" : _query_direction_cosine_matrix_array_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.InterfaceInArg("IOrientation"), agmarshall.LPSafearrayArg,) }
     def query_direction_cosine_matrix_array(self, inputOrientation:"IOrientation") -> list:
         """Return a Direction Cosine Matrix (DCM) as an array."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._query_direction_cosine_matrix_array_metadata, inputOrientation, OutArg())
 
-    _new_cartesian3_vector_metadata = { "name" : "new_cartesian3_vector",
+    _new_cartesian3_vector_metadata = { "offset" : _new_cartesian3_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def new_cartesian3_vector(self) -> "ICartesian3Vector":
         """Create a cartesian vector."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_cartesian3_vector_metadata, OutArg())
 
-    _new_cartesian3_vector_from_direction_metadata = { "name" : "new_cartesian3_vector_from_direction",
+    _new_cartesian3_vector_from_direction_metadata = { "offset" : _new_cartesian3_vector_from_direction_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IDirection"), agmarshall.InterfaceOutArg,) }
     def new_cartesian3_vector_from_direction(self, inputDirection:"IDirection") -> "ICartesian3Vector":
         """Convert the direction to cartesian vector."""
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_cartesian3_vector_from_direction_metadata, inputDirection, OutArg())
 
-    _new_cartesian3_vector_from_position_metadata = { "name" : "new_cartesian3_vector_from_position",
+    _new_cartesian3_vector_from_position_metadata = { "offset" : _new_cartesian3_vector_from_position_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IPosition"), agmarshall.InterfaceOutArg,) }
     def new_cartesian3_vector_from_position(self, inputPosition:"IPosition") -> "ICartesian3Vector":
@@ -3821,7 +4017,7 @@ class IConversionUtility(object):
         return self._intf.invoke(IConversionUtility._metadata, IConversionUtility._new_cartesian3_vector_from_position_metadata, inputPosition, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry("{2B04A4E2-C647-4920-88FF-DE0413252D1C}", IConversionUtility)
+agcls.AgClassCatalog.add_catalog_entry((5269429572990182626, 2030319770630291336), IConversionUtility)
 agcls.AgTypeNameMap["IConversionUtility"] = IConversionUtility
 
 class IDoublesCollection(object):
@@ -3829,19 +4025,21 @@ class IDoublesCollection(object):
 
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get_count_method_offset = 2
+    _get__NewEnum_method_offset = 3
+    _add_method_offset = 4
+    _remove_at_method_offset = 5
+    _remove_all_method_offset = 6
+    _to_array_method_offset = 7
+    _set_at_method_offset = 8
     _metadata = {
-        "uuid" : "{DEE2EB74-C19C-44C9-8825-09010A8F60BE}",
+        "iid_data" : (4956705744396413812, 13718121738100352392),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-        "method_offsets" : { "item" : 1,
-                             "get_count" : 2,
-                             "get__NewEnum" : 3,
-                             "add" : 4,
-                             "remove_at" : 5,
-                             "remove_all" : 6,
-                             "to_array" : 7,
-                             "set_at" : 8, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
+        """Construct an object of type IDoublesCollection."""
         initialize_from_source_object(self, sourceObject, IDoublesCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
@@ -3852,12 +4050,15 @@ class IDoublesCollection(object):
     def _get_property(self, attrname):
         return get_interface_property(attrname, IDoublesCollection)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IDoublesCollection, None)
     def __iter__(self):
+        """Create an iterator for the IDoublesCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
     def __next__(self) -> float:
+        """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
         nextval = self._enumerator.next()
@@ -3865,14 +4066,14 @@ class IDoublesCollection(object):
             raise StopIteration
         return nextval
     
-    _item_metadata = { "name" : "item",
+    _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.LongArg, agmarshall.DoubleArg,) }
     def item(self, index:int) -> float:
         """Return a double at a specified position."""
         return self._intf.invoke(IDoublesCollection._metadata, IDoublesCollection._item_metadata, index, OutArg())
 
-    _get_count_metadata = { "name" : "count",
+    _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
@@ -3880,7 +4081,7 @@ class IDoublesCollection(object):
         """Return the number of items in the collection."""
         return self._intf.get_property(IDoublesCollection._metadata, IDoublesCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "name" : "_NewEnum",
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
@@ -3888,35 +4089,35 @@ class IDoublesCollection(object):
         """Return a collection enumerator."""
         return self._intf.get_property(IDoublesCollection._metadata, IDoublesCollection._get__NewEnum_metadata)
 
-    _add_metadata = { "name" : "add",
+    _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     def add(self, value:float) -> None:
         """Add a value to the collection of doubles."""
         return self._intf.invoke(IDoublesCollection._metadata, IDoublesCollection._add_metadata, value)
 
-    _remove_at_metadata = { "name" : "remove_at",
+    _remove_at_metadata = { "offset" : _remove_at_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     def remove_at(self, index:int) -> None:
         """Remove an element from the collection at a specified position."""
         return self._intf.invoke(IDoublesCollection._metadata, IDoublesCollection._remove_at_metadata, index)
 
-    _remove_all_metadata = { "name" : "remove_all",
+    _remove_all_metadata = { "offset" : _remove_all_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
         """Clear the collection."""
         return self._intf.invoke(IDoublesCollection._metadata, IDoublesCollection._remove_all_metadata, )
 
-    _to_array_metadata = { "name" : "to_array",
+    _to_array_metadata = { "offset" : _to_array_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     def to_array(self) -> list:
         """Return an array of the elements in the collection."""
         return self._intf.invoke(IDoublesCollection._metadata, IDoublesCollection._to_array_metadata, OutArg())
 
-    _set_at_metadata = { "name" : "set_at",
+    _set_at_metadata = { "offset" : _set_at_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.LongArg, agmarshall.DoubleArg,) }
     def set_at(self, index:int, value:float) -> None:
@@ -3926,16 +4127,21 @@ class IDoublesCollection(object):
     __getitem__ = item
 
 
+    _property_names[count] = "count"
+    _property_names[_NewEnum] = "_NewEnum"
 
-agcls.AgClassCatalog.add_catalog_entry("{DEE2EB74-C19C-44C9-8825-09010A8F60BE}", IDoublesCollection)
+
+agcls.AgClassCatalog.add_catalog_entry((4956705744396413812, 13718121738100352392), IDoublesCollection)
 agcls.AgTypeNameMap["IDoublesCollection"] = IDoublesCollection
 
 
 
-class ExecCmdResult(IExecCmdResult):
+class ExecCmdResult(IExecCmdResult, SupportsDeleteCallback):
     """Collection of strings returned by the ExecuteCommand."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecCmdResult."""
+        SupportsDeleteCallback.__init__(self)
         IExecCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3944,15 +4150,18 @@ class ExecCmdResult(IExecCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecCmdResult, [IExecCmdResult])
 
-agcls.AgClassCatalog.add_catalog_entry("{92FE4418-FBA3-4D69-8F6E-9F600A1BA5E0}", ExecCmdResult)
+agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecCmdResult)
 agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
-class ExecMultiCmdResult(IExecMultiCmdResult):
+class ExecMultiCmdResult(IExecMultiCmdResult, SupportsDeleteCallback):
     """Collection of objects returned by the ExecuteMultipleCommands."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ExecMultiCmdResult."""
+        SupportsDeleteCallback.__init__(self)
         IExecMultiCmdResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3961,15 +4170,18 @@ class ExecMultiCmdResult(IExecMultiCmdResult):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [IExecMultiCmdResult])
 
-agcls.AgClassCatalog.add_catalog_entry("{4B262721-FD3F-4DAD-BF32-4280752B7FE6}", ExecMultiCmdResult)
+agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecMultiCmdResult)
 agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
-class UnitPreferencesUnit(IUnitPreferencesUnit):
+class UnitPreferencesUnit(IUnitPreferencesUnit, SupportsDeleteCallback):
     """Object that contains info on the unit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesUnit."""
+        SupportsDeleteCallback.__init__(self)
         IUnitPreferencesUnit.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3978,15 +4190,18 @@ class UnitPreferencesUnit(IUnitPreferencesUnit):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnit, [IUnitPreferencesUnit])
 
-agcls.AgClassCatalog.add_catalog_entry("{4EDA384D-4C61-4756-92FF-1CD7C8049B96}", UnitPreferencesUnit)
+agcls.AgClassCatalog.add_catalog_entry((5140380005508462669, 10852272987728314258), UnitPreferencesUnit)
 agcls.AgTypeNameMap["UnitPreferencesUnit"] = UnitPreferencesUnit
 
-class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
+class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection, SupportsDeleteCallback):
     """Object that contains a collection of UnitPreferencesUnit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesUnitCollection."""
+        SupportsDeleteCallback.__init__(self)
         IUnitPreferencesUnitCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -3995,15 +4210,18 @@ class UnitPreferencesUnitCollection(IUnitPreferencesUnitCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesUnitCollection, [IUnitPreferencesUnitCollection])
 
-agcls.AgClassCatalog.add_catalog_entry("{21AEACA4-B79D-455B-8DA4-89402A57A87B}", UnitPreferencesUnitCollection)
+agcls.AgClassCatalog.add_catalog_entry((4997790097000541348, 8910467701735531661), UnitPreferencesUnitCollection)
 agcls.AgTypeNameMap["UnitPreferencesUnitCollection"] = UnitPreferencesUnitCollection
 
-class UnitPreferencesDimension(IUnitPreferencesDimension):
+class UnitPreferencesDimension(IUnitPreferencesDimension, SupportsDeleteCallback):
     """Object that contains info on the Dimension."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesDimension."""
+        SupportsDeleteCallback.__init__(self)
         IUnitPreferencesDimension.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4012,15 +4230,18 @@ class UnitPreferencesDimension(IUnitPreferencesDimension):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimension, [IUnitPreferencesDimension])
 
-agcls.AgClassCatalog.add_catalog_entry("{5DB8F1AE-1240-4929-B7FD-75E0800970EB}", UnitPreferencesDimension)
+agcls.AgClassCatalog.add_catalog_entry((5271764906473484718, 16965070245430951351), UnitPreferencesDimension)
 agcls.AgTypeNameMap["UnitPreferencesDimension"] = UnitPreferencesDimension
 
-class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
+class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection, SupportsDeleteCallback):
     """Object that contains a collection of dimensions."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type UnitPreferencesDimensionCollection."""
+        SupportsDeleteCallback.__init__(self)
         IUnitPreferencesDimensionCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4029,15 +4250,18 @@ class UnitPreferencesDimensionCollection(IUnitPreferencesDimensionCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, UnitPreferencesDimensionCollection, [IUnitPreferencesDimensionCollection])
 
-agcls.AgClassCatalog.add_catalog_entry("{58562305-1D39-4B56-9FA8-AB49FEB68A37}", UnitPreferencesDimensionCollection)
+agcls.AgClassCatalog.add_catalog_entry((5428558532974093061, 4002212422146042015), UnitPreferencesDimensionCollection)
 agcls.AgTypeNameMap["UnitPreferencesDimensionCollection"] = UnitPreferencesDimensionCollection
 
-class ConversionUtility(IConversionUtility):
+class ConversionUtility(IConversionUtility, SupportsDeleteCallback):
     """Object that contains a unit conversion utility."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type ConversionUtility."""
+        SupportsDeleteCallback.__init__(self)
         IConversionUtility.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4046,15 +4270,18 @@ class ConversionUtility(IConversionUtility):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, ConversionUtility, [IConversionUtility])
 
-agcls.AgClassCatalog.add_catalog_entry("{89E0FDC5-4016-47E9-96ED-0C1B05FFDADA}", ConversionUtility)
+agcls.AgClassCatalog.add_catalog_entry((5181743311813148101, 15770197442584964502), ConversionUtility)
 agcls.AgTypeNameMap["ConversionUtility"] = ConversionUtility
 
-class Quantity(IQuantity):
+class Quantity(IQuantity, SupportsDeleteCallback):
     """Object that contains a quantity."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Quantity."""
+        SupportsDeleteCallback.__init__(self)
         IQuantity.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4063,15 +4290,18 @@ class Quantity(IQuantity):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Quantity, [IQuantity])
 
-agcls.AgClassCatalog.add_catalog_entry("{59806B16-8D20-4EC3-8913-9457846AC0E5}", Quantity)
+agcls.AgClassCatalog.add_catalog_entry((5675535125497015062, 16555349346851492745), Quantity)
 agcls.AgTypeNameMap["Quantity"] = Quantity
 
-class Date(IDate):
+class Date(IDate, SupportsDeleteCallback):
     """Object that contains a date."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Date."""
+        SupportsDeleteCallback.__init__(self)
         IDate.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4080,15 +4310,18 @@ class Date(IDate):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Date, [IDate])
 
-agcls.AgClassCatalog.add_catalog_entry("{CC2BA6FD-3A05-46D1-BAA0-68AC2D7896F1}", Date)
+agcls.AgClassCatalog.add_catalog_entry((5102923649362142973, 17408233547208630458), Date)
 agcls.AgTypeNameMap["Date"] = Date
 
-class Position(ILocationData, IPosition):
+class Position(ILocationData, IPosition, SupportsDeleteCallback):
     """The Position class."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Position."""
+        SupportsDeleteCallback.__init__(self)
         ILocationData.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4099,15 +4332,18 @@ class Position(ILocationData, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Position, [ILocationData, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{B3FE87C4-702C-4263-83D8-4E32C993E2D0}", Position)
+agcls.AgClassCatalog.add_catalog_entry((4783790566498273220, 15051755396967356547), Position)
 agcls.AgTypeNameMap["Position"] = Position
 
-class Cartesian(ICartesian, IPosition):
+class Cartesian(ICartesian, IPosition, SupportsDeleteCallback):
     """Class used to access a position using Cartesian Coordinates."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian."""
+        SupportsDeleteCallback.__init__(self)
         ICartesian.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4118,15 +4354,18 @@ class Cartesian(ICartesian, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian, [ICartesian, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{027F342E-5989-43D1-831B-BF2E313A1CBB}", Cartesian)
+agcls.AgClassCatalog.add_catalog_entry((4886785515660981294, 13482715367352507267), Cartesian)
 agcls.AgTypeNameMap["Cartesian"] = Cartesian
 
-class Geodetic(IGeodetic, IPosition):
+class Geodetic(IGeodetic, IPosition, SupportsDeleteCallback):
     """Class defining Geodetic position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Geodetic."""
+        SupportsDeleteCallback.__init__(self)
         IGeodetic.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4137,15 +4376,18 @@ class Geodetic(IGeodetic, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geodetic, [IGeodetic, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{F65DA479-6847-456B-8816-85FF3ECD4469}", Geodetic)
+agcls.AgClassCatalog.add_catalog_entry((5002206469410366585, 7585413342857336456), Geodetic)
 agcls.AgTypeNameMap["Geodetic"] = Geodetic
 
-class Geocentric(IGeocentric, IPosition):
+class Geocentric(IGeocentric, IPosition, SupportsDeleteCallback):
     """Class defining Geocentric position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Geocentric."""
+        SupportsDeleteCallback.__init__(self)
         IGeocentric.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4156,15 +4398,18 @@ class Geocentric(IGeocentric, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Geocentric, [IGeocentric, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{1AC9E304-8DCE-4CD6-A5AA-B82738823556}", Geocentric)
+agcls.AgClassCatalog.add_catalog_entry((5536768708250821380, 6212014438723660453), Geocentric)
 agcls.AgTypeNameMap["Geocentric"] = Geocentric
 
-class Planetodetic(IPlanetodetic, IPosition):
+class Planetodetic(IPlanetodetic, IPosition, SupportsDeleteCallback):
     """Class defining Planetodetic position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Planetodetic."""
+        SupportsDeleteCallback.__init__(self)
         IPlanetodetic.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4175,15 +4420,18 @@ class Planetodetic(IPlanetodetic, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetodetic, [IPlanetodetic, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{E06625DF-EEB4-4384-B142-C1C501F522F8}", Planetodetic)
+agcls.AgClassCatalog.add_catalog_entry((4865275958093293023, 17880122858575839921), Planetodetic)
 agcls.AgTypeNameMap["Planetodetic"] = Planetodetic
 
-class Planetocentric(IPlanetocentric, IPosition):
+class Planetocentric(IPlanetocentric, IPosition, SupportsDeleteCallback):
     """Class defining Planetocentric position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Planetocentric."""
+        SupportsDeleteCallback.__init__(self)
         IPlanetocentric.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4194,15 +4442,18 @@ class Planetocentric(IPlanetocentric, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Planetocentric, [IPlanetocentric, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{DB009F3C-1FA7-4241-8A8D-D55E234CFF02}", Planetocentric)
+agcls.AgClassCatalog.add_catalog_entry((4774131885783686972, 215975021935693194), Planetocentric)
 agcls.AgTypeNameMap["Planetocentric"] = Planetocentric
 
-class Spherical(ISpherical, IPosition):
+class Spherical(ISpherical, IPosition, SupportsDeleteCallback):
     """Class defining spherical position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Spherical."""
+        SupportsDeleteCallback.__init__(self)
         ISpherical.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4213,15 +4464,18 @@ class Spherical(ISpherical, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Spherical, [ISpherical, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{CD809FAC-48DF-46AB-A322-92947F84C7E6}", Spherical)
+agcls.AgClassCatalog.add_catalog_entry((5092243929735143340, 16629405832577163939), Spherical)
 agcls.AgTypeNameMap["Spherical"] = Spherical
 
-class Cylindrical(ICylindrical, IPosition):
+class Cylindrical(ICylindrical, IPosition, SupportsDeleteCallback):
     """Class defining cylindrical position."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cylindrical."""
+        SupportsDeleteCallback.__init__(self)
         ICylindrical.__init__(self, sourceObject)
         IPosition.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4232,15 +4486,18 @@ class Cylindrical(ICylindrical, IPosition):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cylindrical, [ICylindrical, IPosition])
 
-agcls.AgClassCatalog.add_catalog_entry("{FF1B8082-F06B-4F7B-94B2-6D3C4D9A7D51}", Cylindrical)
+agcls.AgClassCatalog.add_catalog_entry((5727435697763876994, 5872019145677976212), Cylindrical)
 agcls.AgTypeNameMap["Cylindrical"] = Cylindrical
 
-class Direction(IDirection):
+class Direction(IDirection, SupportsDeleteCallback):
     """Class defining direction options for aligned and constrained vectors."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Direction."""
+        SupportsDeleteCallback.__init__(self)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4249,15 +4506,18 @@ class Direction(IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Direction, [IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry("{9BC95D30-4E21-4502-ADE6-2AAE9ED89903}", Direction)
+agcls.AgClassCatalog.add_catalog_entry((4972622844825001264, 259476629588993709), Direction)
 agcls.AgTypeNameMap["Direction"] = Direction
 
-class DirectionEuler(IDirectionEuler, IDirection):
+class DirectionEuler(IDirectionEuler, IDirection, SupportsDeleteCallback):
     """Euler direction sequence."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionEuler."""
+        SupportsDeleteCallback.__init__(self)
         IDirectionEuler.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4268,15 +4528,18 @@ class DirectionEuler(IDirectionEuler, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionEuler, [IDirectionEuler, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry("{A14FAC2D-C055-4FB4-9AAD-67314E647717}", DirectionEuler)
+agcls.AgClassCatalog.add_catalog_entry((5743426898815331373, 1690930472100015514), DirectionEuler)
 agcls.AgTypeNameMap["DirectionEuler"] = DirectionEuler
 
-class DirectionPR(IDirectionPR, IDirection):
+class DirectionPR(IDirectionPR, IDirection, SupportsDeleteCallback):
     """Pitch-Roll (PR) direction sequence."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionPR."""
+        SupportsDeleteCallback.__init__(self)
         IDirectionPR.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4287,15 +4550,18 @@ class DirectionPR(IDirectionPR, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionPR, [IDirectionPR, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry("{3EEEDD8D-FB4C-442D-8A1F-28C7A3C2C9A6}", DirectionPR)
+agcls.AgClassCatalog.add_catalog_entry((4912859073423007117, 12018351089291632522), DirectionPR)
 agcls.AgTypeNameMap["DirectionPR"] = DirectionPR
 
-class DirectionRADec(IDirectionRADec, IDirection):
+class DirectionRADec(IDirectionRADec, IDirection, SupportsDeleteCallback):
     """Spherical direction (Right Ascension and Declination)."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionRADec."""
+        SupportsDeleteCallback.__init__(self)
         IDirectionRADec.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4306,15 +4572,18 @@ class DirectionRADec(IDirectionRADec, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionRADec, [IDirectionRADec, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry("{EB70218F-18C4-41FE-90AC-99AFEB243666}", DirectionRADec)
+agcls.AgClassCatalog.add_catalog_entry((4755265490592473487, 7365114835293023376), DirectionRADec)
 agcls.AgTypeNameMap["DirectionRADec"] = DirectionRADec
 
-class DirectionXYZ(IDirectionXYZ, IDirection):
+class DirectionXYZ(IDirectionXYZ, IDirection, SupportsDeleteCallback):
     """Cartesian direction."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DirectionXYZ."""
+        SupportsDeleteCallback.__init__(self)
         IDirectionXYZ.__init__(self, sourceObject)
         IDirection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4325,15 +4594,18 @@ class DirectionXYZ(IDirectionXYZ, IDirection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DirectionXYZ, [IDirectionXYZ, IDirection])
 
-agcls.AgClassCatalog.add_catalog_entry("{E1AB8359-28B7-468F-BD92-378267CA0998}", DirectionXYZ)
+agcls.AgClassCatalog.add_catalog_entry((5084327274554819417, 10955510114470564541), DirectionXYZ)
 agcls.AgTypeNameMap["DirectionXYZ"] = DirectionXYZ
 
-class Orientation(IOrientation):
+class Orientation(IOrientation, SupportsDeleteCallback):
     """Class defining the orientation of an orbit."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Orientation."""
+        SupportsDeleteCallback.__init__(self)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4342,15 +4614,18 @@ class Orientation(IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Orientation, [IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry("{97DF3B0E-D8E0-46B1-88CB-DC7A0AF934AE}", Orientation)
+agcls.AgClassCatalog.add_catalog_entry((5094091112665004814, 12552931884794694536), Orientation)
 agcls.AgTypeNameMap["Orientation"] = Orientation
 
-class OrientationAzEl(IOrientationAzEl, IOrientation):
+class OrientationAzEl(IOrientationAzEl, IOrientation, SupportsDeleteCallback):
     """AzEl orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationAzEl."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationAzEl.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4361,15 +4636,18 @@ class OrientationAzEl(IOrientationAzEl, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationAzEl, [IOrientationAzEl, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry("{3CF365C4-9B79-4B72-A479-16EF921F791C}", OrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry((5436578645205542340, 2051705821180885412), OrientationAzEl)
 agcls.AgTypeNameMap["OrientationAzEl"] = OrientationAzEl
 
-class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
+class OrientationEulerAngles(IOrientationEulerAngles, IOrientation, SupportsDeleteCallback):
     """Euler Angles orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationEulerAngles."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationEulerAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4380,15 +4658,18 @@ class OrientationEulerAngles(IOrientationEulerAngles, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationEulerAngles, [IOrientationEulerAngles, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry("{C3DC0E0A-690B-4C20-9134-D6C57BE46D40}", OrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry((5485499845388799498, 4642618011140109457), OrientationEulerAngles)
 agcls.AgTypeNameMap["OrientationEulerAngles"] = OrientationEulerAngles
 
-class OrientationQuaternion(IOrientationQuaternion, IOrientation):
+class OrientationQuaternion(IOrientationQuaternion, IOrientation, SupportsDeleteCallback):
     """Quaternion orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationQuaternion."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationQuaternion.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4399,15 +4680,18 @@ class OrientationQuaternion(IOrientationQuaternion, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationQuaternion, [IOrientationQuaternion, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry("{8AC57BB2-C7A7-4C05-9E35-7246956759D9}", OrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry((5478004044167740338, 15661663069987288478), OrientationQuaternion)
 agcls.AgTypeNameMap["OrientationQuaternion"] = OrientationQuaternion
 
-class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
+class OrientationYPRAngles(IOrientationYPRAngles, IOrientation, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type OrientationYPRAngles."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationYPRAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4418,15 +4702,18 @@ class OrientationYPRAngles(IOrientationYPRAngles, IOrientation):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, OrientationYPRAngles, [IOrientationYPRAngles, IOrientation])
 
-agcls.AgClassCatalog.add_catalog_entry("{AE398C98-2D0D-4863-8097-9F7648CABC21}", OrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry((5216062330205998232, 2431040311449851776), OrientationYPRAngles)
 agcls.AgTypeNameMap["OrientationYPRAngles"] = OrientationYPRAngles
 
-class DoublesCollection(IDoublesCollection):
+class DoublesCollection(IDoublesCollection, SupportsDeleteCallback):
     """A collection of doubles."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type DoublesCollection."""
+        SupportsDeleteCallback.__init__(self)
         IDoublesCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4435,15 +4722,18 @@ class DoublesCollection(IDoublesCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, DoublesCollection, [IDoublesCollection])
 
-agcls.AgClassCatalog.add_catalog_entry("{ECD576C3-0440-44D9-9D16-B88873C3A816}", DoublesCollection)
+agcls.AgClassCatalog.add_catalog_entry((4961001141423142595, 1632769765904225949), DoublesCollection)
 agcls.AgTypeNameMap["DoublesCollection"] = DoublesCollection
 
-class Cartesian3Vector(ICartesian3Vector):
+class Cartesian3Vector(ICartesian3Vector, SupportsDeleteCallback):
     """A 3-D cartesian vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian3Vector."""
+        SupportsDeleteCallback.__init__(self)
         ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4452,15 +4742,18 @@ class Cartesian3Vector(ICartesian3Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian3Vector, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry("{4A70BA75-BC1A-459D-9DAD-E174F3B94002}", Cartesian3Vector)
+agcls.AgClassCatalog.add_catalog_entry((5016372381064673909, 162334041874476445), Cartesian3Vector)
 agcls.AgTypeNameMap["Cartesian3Vector"] = Cartesian3Vector
 
-class Cartesian2Vector(ICartesian2Vector):
+class Cartesian2Vector(ICartesian2Vector, SupportsDeleteCallback):
     """A 2-D cartesian vector."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type Cartesian2Vector."""
+        SupportsDeleteCallback.__init__(self)
         ICartesian2Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4469,15 +4762,18 @@ class Cartesian2Vector(ICartesian2Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, Cartesian2Vector, [ICartesian2Vector])
 
-agcls.AgClassCatalog.add_catalog_entry("{ECE2E7DF-CBF1-4124-AAAC-33700F16FAE2}", Cartesian2Vector)
+agcls.AgClassCatalog.add_catalog_entry((4694100951548749791, 16355409252312132778), Cartesian2Vector)
 agcls.AgTypeNameMap["Cartesian2Vector"] = Cartesian2Vector
 
-class PropertyInfo(IPropertyInfo):
+class PropertyInfo(IPropertyInfo, SupportsDeleteCallback):
     """Property Information coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropertyInfo."""
+        SupportsDeleteCallback.__init__(self)
         IPropertyInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4486,15 +4782,18 @@ class PropertyInfo(IPropertyInfo):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfo, [IPropertyInfo])
 
-agcls.AgClassCatalog.add_catalog_entry("{92498440-7C87-495C-A8BD-0A70F85D4DC8}", PropertyInfo)
+agcls.AgClassCatalog.add_catalog_entry((5286236984342840384, 14433295702405332392), PropertyInfo)
 agcls.AgTypeNameMap["PropertyInfo"] = PropertyInfo
 
-class PropertyInfoCollection(IPropertyInfoCollection):
+class PropertyInfoCollection(IPropertyInfoCollection, SupportsDeleteCallback):
     """Property Information Collection coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type PropertyInfoCollection."""
+        SupportsDeleteCallback.__init__(self)
         IPropertyInfoCollection.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4503,15 +4802,18 @@ class PropertyInfoCollection(IPropertyInfoCollection):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, PropertyInfoCollection, [IPropertyInfoCollection])
 
-agcls.AgClassCatalog.add_catalog_entry("{113B1CA1-4DD4-4915-8D7F-E1F96E18A985}", PropertyInfoCollection)
+agcls.AgClassCatalog.add_catalog_entry((5266200912497155233, 9631256143026290573), PropertyInfoCollection)
 agcls.AgTypeNameMap["PropertyInfoCollection"] = PropertyInfoCollection
 
-class RuntimeTypeInfo(IRuntimeTypeInfo):
+class RuntimeTypeInfo(IRuntimeTypeInfo, SupportsDeleteCallback):
     """Runtime Type info coclass."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type RuntimeTypeInfo."""
+        SupportsDeleteCallback.__init__(self)
         IRuntimeTypeInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4520,15 +4822,18 @@ class RuntimeTypeInfo(IRuntimeTypeInfo):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, RuntimeTypeInfo, [IRuntimeTypeInfo])
 
-agcls.AgClassCatalog.add_catalog_entry("{D80F3E93-932A-49B3-8661-1A1627DCBDD1}", RuntimeTypeInfo)
+agcls.AgClassCatalog.add_catalog_entry((5310750197822733971, 15113477984957915526), RuntimeTypeInfo)
 agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
-class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset):
+class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """AzEl orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationAzEl."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationAzEl.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4541,15 +4846,18 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry("{1E11E3CE-BCAA-4E1F-BAF9-B6AD3650F9BA}", CROrientationAzEl)
+agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), CROrientationAzEl)
 agcls.AgTypeNameMap["CROrientationAzEl"] = CROrientationAzEl
 
-class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset):
+class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Euler Angles orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationEulerAngles."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationEulerAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4562,15 +4870,18 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry("{D08A5BF9-5CBA-432D-8C48-3CD1CFC42636}", CROrientationEulerAngles)
+agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), CROrientationEulerAngles)
 agcls.AgTypeNameMap["CROrientationEulerAngles"] = CROrientationEulerAngles
 
-class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset):
+class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Quaternion orientation method."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationQuaternion."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationQuaternion.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4583,15 +4894,18 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry("{9D3BA3F8-B6F6-443B-A8AC-74C86A8B901A}", CROrientationQuaternion)
+agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), CROrientationQuaternion)
 agcls.AgTypeNameMap["CROrientationQuaternion"] = CROrientationQuaternion
 
-class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset):
+class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationYPRAngles."""
+        SupportsDeleteCallback.__init__(self)
         IOrientationYPRAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
         IOrientationPositionOffset.__init__(self, sourceObject)
@@ -4604,15 +4918,18 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry("{1FB88B69-1844-4CD9-BD44-09A9FCC4E06F}", CROrientationYPRAngles)
+agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), CROrientationYPRAngles)
 agcls.AgTypeNameMap["CROrientationYPRAngles"] = CROrientationYPRAngles
 
-class CROrientationOffsetCart(ICartesian3Vector):
+class CROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
     """Orientation offset cartesian."""
 
     def __init__(self, sourceObject=None):
+        """Construct an object of type CROrientationOffsetCart."""
+        SupportsDeleteCallback.__init__(self)
         ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4621,9 +4938,10 @@ class CROrientationOffsetCart(ICartesian3Vector):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, CROrientationOffsetCart, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry("{462F58AA-A74F-4E42-88B6-8F2790E85FEC}", CROrientationOffsetCart)
+agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), CROrientationOffsetCart)
 agcls.AgTypeNameMap["CROrientationOffsetCart"] = CROrientationOffsetCart
 
 

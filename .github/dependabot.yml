@@ -10,19 +10,22 @@ updates:
       prefix: "maint"
     groups:
       tests:
-        - "pytest*"
-        - "pytz"
-        - "parametrized"
+        patterns:
+          - "pytest*"
+          - "pytz"
+          - "parametrized"
       doc:
-        - "jupyter*"
-        - "jupytext"
-        - "myst*"
-        - "nbsphinx"
-        - "numpy*"
-        - "*sphinx*"
-        - "Pillow"
-        - "simplejpeg"
-        - "sidecar"
+        patterns:
+          - "jupyter*"
+          - "jupytext"
+          - "myst*"
+          - "nbsphinx"
+          - "numpy*"
+          - "nbconvert"
+          - "*sphinx*"
+          - "Pillow"
+          - "simplejpeg"
+          - "sidecar"
 
   - package-ecosystem: "github-actions"
     directory: "/"

@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2023-2023, Analytical Graphics, Inc.
+#          Copyright 2023-2024, Analytical Graphics, Inc.
 ################################################################################
 
 """Starts STK Runtime or attaches to an already running STK Runtime, and provides access to the Object Model root."""
@@ -9,14 +9,13 @@ __all__ = ["STKRuntime", "STKRuntimeApplication"]
 import atexit
 import subprocess
 import os
-if os.name == "nt":
-    import winreg
 
 from .stkx import STKXApplication
 from .stkobjects import StkObjectRoot, StkObjectModelContext
-from .utilities.exceptions import *
+from .utilities.exceptions import STKInitializationError
+from .utilities.grpcutilities import GrpcCallBatcher
 from .internal.grpcutil import GrpcClient
-from .internal.apiutil import InterfaceProxy
+from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 
 class STKRuntimeApplication(STKXApplication):
     """
@@ -27,6 +26,7 @@ class STKRuntimeApplication(STKXApplication):
     """
 
     def __init__(self):
+        """Construct an object of type STKRuntimeApplication."""
         self.__dict__["_intf"] = InterfaceProxy()
         STKXApplication.__init__(self)
         self.__dict__["_root"] = None
@@ -35,6 +35,7 @@ class STKRuntimeApplication(STKXApplication):
         STKXApplication._private_init(self, intf)
         
     def __del__(self):
+        """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
             self._intf.client.TerminateConnection(False)
         
@@ -56,6 +57,32 @@ class STKRuntimeApplication(STKXApplication):
             return context
         raise STKInitializationError(f"Not connected to the gRPC server.")
 
+    def SetGrpcOptions(self, options:dict) -> None:
+        """
+        Set advanced-usage options for the gRPC client.
+
+        Available options include:
+        { "collection iteration batch size" : int }. Number of items to preload while iterating
+        through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
+        { "disable batching" : bool }. Disable all batching operations.
+        { "release batch size" : int }. Number of interfaces to be garbage collected before 
+        sending the entire batch to STK to be released. Default value is 12.
+        """
+        if self._intf:
+            self._intf.client.set_grpc_options(options)
+            
+    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+        """
+        Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+        
+        max_batch is the maximum number of calls to batch together.
+        Set disable_batching=True to disable batching operations for this batcher.
+        See grpcutilities module for more information.
+        """
+        batcher = GrpcCallBatcher(disable_batching)
+        batcher._private_init(self._intf.client, max_batch)
+        return batcher
+
     def shutdown(self) -> None:
         """Shut down the STKRuntime application."""
         if self._intf:
@@ -70,18 +97,7 @@ class STKRuntimeApplication(STKXApplication):
 
 class STKRuntime(object):
     """Connect to STKRuntime using gRPC."""
-    
-    @staticmethod
-    def _read_registry_key(root, key, value=None, silent_exception=False):
-        try:
-            with winreg.OpenKey(root, key) as hkey:
-                (val, typ) = winreg.QueryValueEx(hkey, value)
-            return val
-        except Exception as e:
-            if not silent_exception:
-                raise STKInitializationError(f"Error Reading Registry for {key}: {e}")
-            return None
-        
+
     @staticmethod
     def start_application(grpc_host:str="0.0.0.0", \
                          grpc_port:int=40704, \
@@ -108,9 +124,14 @@ class STKRuntime(object):
             else:
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
-            executable = STKRuntime._read_registry_key(winreg.HKEY_CLASSES_ROOT, 'CLSID\{7ADA6C22-FA34-4578-8BE8-65405A55EE15}\LocalServer32')
-            dir, fi = os.path.split(executable)
-            cmd_line = f"{os.path.join(dir, 'STKRuntime.exe')}\" /grpcHost {grpc_host} /grpcPort {grpc_port}" + (" /noGraphics" if noGraphics else "")
+            clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
+            stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+            bin_dir, dll_name = (None, None) if stkx_dll_path is None else os.path.split(stkx_dll_path)
+            if bin_dir is None or not os.path.exists(os.path.join(bin_dir, "STKRuntime.exe")):
+                bin_dir = winreg_stk_binary_dir()
+                if bin_dir is None:
+                    raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
+            cmd_line = f"\"{os.path.join(bin_dir, 'STKRuntime.exe')}\" /grpcHost {grpc_host} /grpcPort {grpc_port}" + (" /noGraphics" if noGraphics else "")
 
         subprocess.Popen(cmd_line, shell=True)
         host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
@@ -141,5 +162,5 @@ class STKRuntime(object):
         
        
 ################################################################################
-#          Copyright 2023-2023, Analytical Graphics, Inc.
+#          Copyright 2023-2024, Analytical Graphics, Inc.
 ################################################################################

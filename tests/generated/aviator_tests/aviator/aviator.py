@@ -1097,6 +1097,8 @@ class EarlyBoundTests(TestBase):
 
         proc: "IProcedure" = extEphem.get_as_procedure()
         Assert.assertEqual("ExtEphem", proc.name)
+        proc.name = "ExtEphemTest"
+        Assert.assertEqual("ExtEphemTest", proc.name)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("No ephemeris file set")):
             d: float = extEphem.ephemeris_file_duration
@@ -1104,11 +1106,12 @@ class EarlyBoundTests(TestBase):
         extEphem.ephemeris_file = TestBase.GetScenarioFile("ExternalTestBFW.e")
         Assert.assertTrue(("ExternalTestBFW.e" in extEphem.ephemeris_file))
         Assert.assertAlmostEqual(799.26, extEphem.ephemeris_file_duration, delta=0.01)
-
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             extEphem.ephemeris_file = TestBase.GetScenarioFile("bogus.e")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             extEphem.ephemeris_file = TestBase.GetScenarioFile("Aircraft1.ac")
+
+        # System.Windows.Forms.MessageBox.Show("after set ephem file");
 
         extEphem.flight_mode = EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB
         Assert.assertEqual(EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB, extEphem.flight_mode)
@@ -1147,6 +1150,61 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(200, extEphem.duration, delta=extEphem.duration)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be non-negative")):
             extEphem.duration = -200
+
+        extEphem.use_shift_rotate = False
+        Assert.assertFalse(extEphem.use_shift_rotate)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.shift_time = 10
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.latitude = 20
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.longitude = 30
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.altitude = 40
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.course = 50
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            extEphem.shift_rotate_set(22)
+
+        extEphem.use_shift_rotate = True
+        Assert.assertTrue(extEphem.use_shift_rotate)
+
+        extEphem.shift_time = 10
+
+        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "rad")
+        TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", "rad")
+        extEphem.latitude = 20  # TODO - verify properties use UnitPreferences - AIR-10324
+
+        extEphem.longitude = 30
+        extEphem.altitude = 40
+        extEphem.course = 50
+
+        extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL, extEphem.altitude_mode)
+        extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_WGS
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_WGS, extEphem.altitude_mode)
+        extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_REL
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_REL, extEphem.altitude_mode)
+
+        extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE, extEphem.course_mode)
+        extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_MAGNITUDE
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_MAGNITUDE, extEphem.course_mode)
+        extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL, extEphem.course_mode)
+
+        extEphem.shift_rotate_set(10)
+
+        # TODO - verify values - AIR-10323
+
+        extEphem.shift_rotate_set(30)
+
+        # TODO - verify values - AIR-10323
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(extEphem, IProcedure))
 
@@ -1303,6 +1361,11 @@ class EarlyBoundTests(TestBase):
                     formationFlyer.stop_down_range = 40
                 with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set")):
                     formationFlyer.stop_fuel_state = 50
+
+        formationFlyer.stop_on_hover = False
+        Assert.assertFalse(formationFlyer.stop_on_hover)
+        formationFlyer.stop_on_hover = True
+        Assert.assertTrue(formationFlyer.stop_on_hover)
 
         EarlyBoundTests.InitHelper()
 
@@ -9025,56 +9088,103 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAvtrBasicManeuverTargetPosVel
     def Test_IAgAvtrBasicManeuverTargetPosVel(self, targetPosVel: "BasicManeuverTargetPositionVel"):
-        # Air-413 Console.WriteLine("INITIAL TargetPosVelTypeString:  " + targetPosVel.TargetPosVelTypeString);   // empty string
-        # Air-413 Console.WriteLine("TargetPosVelType:  " + targetPosVel.TargetPosVelType.ToString());            // Invalid parameters for TargetPosVel
+        # Initial state
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
 
         targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
 
-        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE_TARGET_POSITION_VEL
+        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(TARGET_POSITION_VEL_TYPE.SURFACE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type)
 
-        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING_RANGE_TARGET_POSITION_VEL
+        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(
+            TARGET_POSITION_VEL_TYPE.BEARING_RANGE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type
+        )
 
-        targetPosVel.target_position_vel_type_string = "Disabled Target PosVel."  # Air-413 Should not need the period
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        # Air-413 Console.WriteLine("TargetPosVelTypeString:  " + targetPosVel.TargetPosVelTypeString);        // Invalid parameters for TargetPosVel
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        targetPosVel.target_position_vel_type_string = "DisabledTargetPosVel"
+        Assert.assertEqual("DisabledTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL, targetPosVel.target_position_vel_type)
 
-        targetPosVel.target_position_vel_type_string = "Noisy Surface Target PosVel"
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        targetPosVel.target_position_vel_type_string = "NoisySurfaceTargetPosVel"
+        Assert.assertEqual("NoisySurfaceTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(TARGET_POSITION_VEL_TYPE.SURFACE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type)
 
-        targetPosVel.target_position_vel_type_string = "Noisy Bearing Range Target PosVel"
-        Console.WriteLine(("TargetPosVelTypeString:  " + targetPosVel.target_position_vel_type_string))
-        Console.WriteLine(("TargetPosVelType:  " + targetPosVel.target_position_vel_type.name))
+        targetPosVel.target_position_vel_type_string = "NoisyBearingRangeTargetPosVel"
+        Assert.assertEqual("NoisyBearingRangeTargetPosVel", targetPosVel.target_position_vel_type_string)
+        Assert.assertEqual(
+            TARGET_POSITION_VEL_TYPE.BEARING_RANGE_TARGET_POSITION_VEL, targetPosVel.target_position_vel_type
+        )
 
-        # Air-413 TryCatchAssertBlock.ExpectedException("invalid", delegate() {targetPosVel.TargetPosVelTypeString = "Bogus Target PosVel"; } );    // Should throw, does not
+        with pytest.raises(Exception, match=RegexSubstringMatch("Incorrect PosVel Type specified")):
+            targetPosVel.target_position_vel_type_string = "BogusTargetPosVel"
 
-        # Air-414
         targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL
-        # BasicManeuverTargetPositionVelNoisyBrnRng nbr = targetPosVel.ModeAsNoisyBrnRng;   // Exception: "The server threw an exception."
-        # BasicManeuverTargetPositionVelNoisySurfTgt nst = targetPosVel.ModeAsNoisySurfTgt; // Exception: "The server threw an exception."
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
+            nbr1: "BasicManeuverTargetPositionVelNoisyBrgRng" = targetPosVel.mode_as_noisy_brg_rng
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
+            nst1: "BasicManeuverTargetPositionVelNoisySurfTgt" = targetPosVel.mode_as_noisy_surf_tgt
 
-        # Air-414
-        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE
-        # BasicManeuverTargetPositionVelNoisyBrnRng nbr = targetPosVel.ModeAsNoisyBrnRng;   // Exception: "The server threw an exception."
-        # BasicManeuverTargetPositionVelNoisySurfTgt nst = targetPosVel.ModeAsNoisySurfTgt; // Exception: "The server threw an exception."
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE_TARGET_POSITION_VEL
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
+            nbr1: "BasicManeuverTargetPositionVelNoisyBrgRng" = targetPosVel.mode_as_noisy_brg_rng
+        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(targetPosVel.mode_as_noisy_surf_tgt)
 
-        # Air-414
-        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING
+        targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING_RANGE_TARGET_POSITION_VEL
+        with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
+            nst1: "BasicManeuverTargetPositionVelNoisySurfTgt" = targetPosVel.mode_as_noisy_surf_tgt
+        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(targetPosVel.mode_as_noisy_brg_rng)
 
     # endregion
 
     # region Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(
-        self, noisyBrnRng: "BasicManeuverTargetPositionVelNoisyBrnRng"
+        self, noisyBrgRng: "BasicManeuverTargetPositionVelNoisyBrgRng"
     ):
-        pass
+        noisyBrgRng.new_random_engine_seed()
+
+        noisyBrgRng.set_base_dyn_state_link_name("Aircraft/NUNIT_VBS_Test")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            noisyBrgRng.set_base_dyn_state_link_name("Bogus")
+
+        noisyBrgRng.smoothing_constant = 0.1
+        Assert.assertEqual(0.1, noisyBrgRng.smoothing_constant)
+        noisyBrgRng.smoothing_constant = 0.9
+        Assert.assertEqual(0.9, noisyBrgRng.smoothing_constant)
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisyBrgRng.smoothing_constant = 0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisyBrgRng.smoothing_constant = 1
+
+        noisyBrgRng.velocity_time_step = 0.001
+        Assert.assertEqual(0.001, noisyBrgRng.velocity_time_step)
+        noisyBrgRng.velocity_time_step = 5
+        Assert.assertEqual(5, noisyBrgRng.velocity_time_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisyBrgRng.velocity_time_step = 0.0005
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisyBrgRng.velocity_time_step = 6
+
+        noisyBrgRng.angle_error_std_dev = 0
+        Assert.assertEqual(0, noisyBrgRng.angle_error_std_dev)
+        noisyBrgRng.angle_error_std_dev = 30
+        Assert.assertAlmostEqual(30, noisyBrgRng.angle_error_std_dev, delta=1e-05)
+
+        noisyBrgRng.range_error_std_dev = 0
+        Assert.assertEqual(0, noisyBrgRng.range_error_std_dev)
+        noisyBrgRng.range_error_std_dev = 40
+        Assert.assertAlmostEqual(40, noisyBrgRng.range_error_std_dev, delta=1e-05)
+
+        noisyBrgRng.apply_position_vel()
+        # System.Windows.Forms.MessageBox.Show("noisyBrnRng done");
+
+        noisyBrgRng.cancel_position_vel()
 
     # endregion
 
@@ -9082,6 +9192,40 @@ class EarlyBoundTests(TestBase):
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(
         self, noisySurfTgt: "BasicManeuverTargetPositionVelNoisySurfTgt"
     ):
-        pass
+        noisySurfTgt.new_random_engine_seed()
+
+        noisySurfTgt.set_base_dyn_state_link_name("Aircraft/NUNIT_CSharp_Test")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            noisySurfTgt.set_base_dyn_state_link_name("Bogus")
+
+        noisySurfTgt.measurement_time_step = 0.001
+        Assert.assertEqual(0.001, noisySurfTgt.measurement_time_step)
+        noisySurfTgt.measurement_time_step = 10
+        Assert.assertEqual(10, noisySurfTgt.measurement_time_step)
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisySurfTgt.measurement_time_step = 0
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+            noisySurfTgt.measurement_time_step = -1
+
+        noisySurfTgt.position_cep = 0
+        Assert.assertEqual(0, noisySurfTgt.position_cep)
+        noisySurfTgt.position_cep = 20
+        Assert.assertEqual(20, noisySurfTgt.position_cep)
+
+        noisySurfTgt.course_error = 0
+        Assert.assertEqual(0, noisySurfTgt.course_error)
+        noisySurfTgt.course_error = 30
+        Assert.assertAlmostEqual(30, noisySurfTgt.course_error, delta=1e-05)
+
+        noisySurfTgt.speed_error = 0
+        Assert.assertEqual(0, noisySurfTgt.speed_error)
+        noisySurfTgt.speed_error = 40
+        Assert.assertAlmostEqual(40, noisySurfTgt.speed_error, delta=1e-05)
+
+        noisySurfTgt.apply_position_vel()
+        # System.Windows.Forms.MessageBox.Show("noisySurfTgt done");
+
+        noisySurfTgt.cancel_position_vel()
 
     # endregion
