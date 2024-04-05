@@ -168,6 +168,7 @@ jobs:
           steps.build-doc-with-examples.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
+          cp gh-pages/version/dev/api.html doc/_build/html/api.html
           cp -r gh-pages/version/dev/api doc/_build/html/api
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
@@ -176,6 +177,7 @@ jobs:
           steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
+          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 

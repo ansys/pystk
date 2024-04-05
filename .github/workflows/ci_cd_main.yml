@@ -36,8 +36,13 @@ jobs:
 
       - name: "Include 'API' and 'Examples' sections from nightly build docs"
         run: |
+          # Copy landing pages for 'API' and 'Examples' sections
+          cp gh-pages/version/dev/api.html doc/_build/html/api.html
+          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
+          # Copy content pages for 'API' and 'Examples' sections
           cp -r gh-pages/version/dev/api doc/_build/html/api
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
+          # Copy landing page to include links to previous sections
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Upload combined artifacts"
