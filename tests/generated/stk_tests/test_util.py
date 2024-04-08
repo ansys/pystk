@@ -985,26 +985,6 @@ class TestBase(unittest.TestCase):
     Units: "UnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
 
-    classesSupportingTemplates = [
-        "Aircraft",
-        "Antenna",
-        "AreaTarget",
-        "Facility",
-        "GroundVehicle",
-        "LaunchVehicle",
-        "LineTarget",
-        "Missile",
-        "Place",
-        "Planet",
-        "Radar",
-        "Receiver",
-        "Satellite",
-        "Sensor",
-        "Ship",
-        "Star",
-        "Target",
-    ]
-
     CurrentDirectory = None
     CodeBaseDir = None
     ScenarioDirectory = None
