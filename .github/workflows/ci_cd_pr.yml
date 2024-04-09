@@ -90,14 +90,6 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install Pandoc inside the container"
-        run: |
-          docker exec \
-            --user root \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "yum install -y epel-release && yum install -y pandoc --enablerepo=epel"
-
       - name: "Install Tox"
         run: |
           docker exec \
