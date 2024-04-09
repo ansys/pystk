@@ -18,7 +18,7 @@ from ansys.stk.core import __version__
 
 # Project information
 project = "ansys-stk-core"
-copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
+#copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
