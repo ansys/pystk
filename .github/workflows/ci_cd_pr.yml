@@ -96,7 +96,7 @@ jobs:
             --user root \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "apt install -y pandoc"
+            "apt update && apt install -y pandoc"
 
       - name: "Install Tox"
         run: |
