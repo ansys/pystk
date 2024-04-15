@@ -47,6 +47,12 @@ COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
     dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 
+# Fix timezone and localtime. See the following issue with Ubuntu 20.04:
+# Issue: https://bugs.launchpad.net/ubuntu/+source/tzdata/+bug/1899343
+RUN set -e; \
+    ln -snf /usr/share/zoneinfo/Etc/UTC /etc/localtime; \
+    echo 'Etc/UTC' > /etc/timezone
+
 # Switch back to non-root user
 USER stk
 
