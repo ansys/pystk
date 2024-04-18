@@ -66,6 +66,14 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
+      - name: "Install pandoc for building the examples"
+        run: |
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "apt update && apt install -y pandoc"
+
       - name: "Install Tox"
         run: |
           docker exec \
