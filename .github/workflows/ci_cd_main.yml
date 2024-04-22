@@ -21,7 +21,7 @@ jobs:
     steps:
 
       - name: "Build project documentation excluding 'API' and 'Example' sections"
-        uses: ansys/actions/doc-build@v5
+        uses: ansys/actions/doc-build@v6
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
         env:
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: doc-build
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v5
+      - uses: ansys/actions/doc-deploy-dev@v6
         with:
           doc-artifact-name: "complete-documentation-html"
           cname: ${{ env.DOCUMENTATION_CNAME }}

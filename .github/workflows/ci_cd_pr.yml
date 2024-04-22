@@ -43,14 +43,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v5
+      - uses: ansys/actions/branch-name-style@v6
 
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/code-style@v5
+      - uses: ansys/actions/code-style@v6
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/doc-style@v5
+      - uses: ansys/actions/doc-style@v6
         with: 
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -309,6 +309,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v5
+      - uses: ansys/actions/build-library@v6
         with:
           library-name: ${{ env.LIBRARY_NAME }}

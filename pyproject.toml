@@ -108,7 +108,7 @@ convention = "google"
 # the conditions under which codespell runs during CI/CD.
 # [tool.codespell]
 # skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
-# ignore-words = "./doc/styles/Vocab/ANSYS/accept.txt"
+# ignore-words = "./doc/styles/config/vocabularies/ANSYS/accept.txt"
 
 [tool.coverage.run]
 relative_files = true
