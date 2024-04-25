@@ -192,7 +192,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEventInterval
     def test_CreateSignaledEventInterval(self):
-        self.CreateSignaledEventInterval(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.CreateSignaledEventInterval(TestBase.Application)
 
     def CreateSignaledEventInterval(self, stkRoot: "StkObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
@@ -225,7 +225,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region SetSmartIntervalStateExplicit
     def test_SetSmartIntervalStateExplicit(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         self.SetSmartIntervalToTodayAndStopTimeToTomorrow(scenario.analysis_interval)
 
@@ -236,10 +236,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region ConfigureSmartIntervalStateStartStop
     def test_ConfigureSmartIntervalStateStartStop(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
-        startEvent: "ITimeToolEvent" = (clr.Convert(scenario, IStkObject)).vgt.events["AnalysisStartTime"]
-        stopEvent: "ITimeToolEvent" = (clr.Convert(scenario, IStkObject)).vgt.events["AnalysisStopTime"]
+        startEvent: "ITimeToolEvent" = (IStkObject(scenario)).vgt.events["AnalysisStartTime"]
+        stopEvent: "ITimeToolEvent" = (IStkObject(scenario)).vgt.events["AnalysisStopTime"]
 
         self.ConfigureSmartIntervalStateStartStop(scenario.analysis_interval, startEvent, stopEvent)
 
@@ -263,7 +263,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region ConfigureSmartIntervalEpochAndDuration
     def test_ConfigureSmartIntervalEpochAndDuration(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         self.ConfigureSmartIntervalEpochAndDuration(scenario.analysis_interval)
 
     def ConfigureSmartIntervalEpochAndDuration(self, smartInterval: "TimeToolEventIntervalSmartInterval"):
@@ -285,7 +285,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region GetSmartIntervalStartAndStopTime
     def test_GetSmartIntervalStartAndStopTime(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         self.GetSmartIntervalStartAndStopTime(scenario.analysis_interval)
 
     def GetSmartIntervalStartAndStopTime(self, smartInterval: "TimeToolEventIntervalSmartInterval"):

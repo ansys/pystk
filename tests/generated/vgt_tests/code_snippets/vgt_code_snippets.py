@@ -23,7 +23,7 @@ class VGT(CodeSnippetsTestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1"), Facility
         )
 
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scenario.epoch = "1 Jan 2012 12:00:00.000"
 
     # endregion
@@ -743,13 +743,12 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateAngleRateVector(self, provider: "AnalysisWorkbenchProvider"):
         # Create a vector.perpendicular to the plane in which the angle is defined.
-        vector: "VectorGeometryToolVectorAngleRate" = clr.Convert(
+        vector: "VectorGeometryToolVectorAngleRate" = VectorGeometryToolVectorAngleRate(
             provider.vectors.factory.create(
                 "myVector",
                 "a vector.perpendicular to the plane in which the angle is defined.",
                 VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.ANGLE_RATE,
-            ),
-            VectorGeometryToolVectorAngleRate,
+            )
         )
 
     # endregion
@@ -866,7 +865,7 @@ class VGT(CodeSnippetsTestBase):
             "SomeVector", String.Empty, VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT
         )
         try:
-            self.VectorRemove(provider, (clr.Convert(someVector, IAnalysisWorkbenchComponent)).name)
+            self.VectorRemove(provider, (IAnalysisWorkbenchComponent(someVector)).name)
 
         finally:
             del root
@@ -891,11 +890,10 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateAngleBetweenPlanes(self, provider: "AnalysisWorkbenchProvider"):
         # Create an angle between two planes.
-        angle: "VectorGeometryToolAngleBetweenPlanes" = clr.Convert(
+        angle: "VectorGeometryToolAngleBetweenPlanes" = VectorGeometryToolAngleBetweenPlanes(
             provider.angles.factory.create(
                 "AngleName", "Angle from one plane to another.", VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.BETWEEN_PLANES
-            ),
-            VectorGeometryToolAngleBetweenPlanes,
+            )
         )
 
     # endregion
@@ -971,11 +969,10 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateNormalPlane(self, provider: "AnalysisWorkbenchProvider"):
         # Create a plane normal to vector.
-        p: "VectorGeometryToolPlaneNormal" = clr.Convert(
+        p: "VectorGeometryToolPlaneNormal" = VectorGeometryToolPlaneNormal(
             provider.planes.factory.create(
                 "PlaneName", "A plane normal to vector.", VECTOR_GEOMETRY_TOOL_PLANE_TYPE.NORMAL
-            ),
-            VectorGeometryToolPlaneNormal,
+            )
         )
 
     # endregion
@@ -1047,11 +1044,10 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def CreateAxesAlignedAndConstrained(self, provider: "AnalysisWorkbenchProvider"):
-        axes: "VectorGeometryToolAxesAlignedAndConstrained" = clr.Convert(
+        axes: "VectorGeometryToolAxesAlignedAndConstrained" = VectorGeometryToolAxesAlignedAndConstrained(
             provider.axes.factory.create(
                 "AxesName", String.Empty, VECTOR_GEOMETRY_TOOL_AXES_TYPE.ALIGNED_AND_CONSTRAINED
-            ),
-            VectorGeometryToolAxesAlignedAndConstrained,
+            )
         )
 
     # endregion
@@ -1124,9 +1120,8 @@ class VGT(CodeSnippetsTestBase):
 
     def CreatePointBPlane(self, provider: "AnalysisWorkbenchProvider", TargetBody: str):
         # Create a B-Plane point using selected target body
-        point: "VectorGeometryToolPointBPlane" = clr.Convert(
-            provider.points.factory.create("PointName", String.Empty, VECTOR_GEOMETRY_TOOL_POINT_TYPE.B_PLANE),
-            VectorGeometryToolPointBPlane,
+        point: "VectorGeometryToolPointBPlane" = VectorGeometryToolPointBPlane(
+            provider.points.factory.create("PointName", String.Empty, VECTOR_GEOMETRY_TOOL_POINT_TYPE.B_PLANE)
         )
         point.target_body.set_path(TargetBody)
 
@@ -1204,9 +1199,8 @@ class VGT(CodeSnippetsTestBase):
         OriginPoint: "IVectorGeometryToolPoint",
         ReferenceAxes: "IVectorGeometryToolAxes",
     ):
-        system: "VectorGeometryToolSystemAssembled" = clr.Convert(
-            provider.systems.factory.create("SystemName", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED),
-            VectorGeometryToolSystemAssembled,
+        system: "VectorGeometryToolSystemAssembled" = VectorGeometryToolSystemAssembled(
+            provider.systems.factory.create("SystemName", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED)
         )
         # Set the system's origin point.
         system.origin_point.set_point(OriginPoint)
@@ -1286,11 +1280,10 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateParameterSetAttitude(self, provider: "AnalysisWorkbenchProvider"):
         # Create an attitude parameter set.
-        parameterSet: "CalculationToolParameterSetAttitude" = clr.Convert(
+        parameterSet: "CalculationToolParameterSetAttitude" = CalculationToolParameterSetAttitude(
             provider.parameter_sets.factory.create(
                 "ParameterSetName", "Attitude parameter set.", CRDN_PARAMETER_SET_TYPE.ATTITUDE
-            ),
-            CalculationToolParameterSetAttitude,
+            )
         )
 
     # endregion
@@ -1368,11 +1361,10 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateCalcScalarConstant(self, provider: "AnalysisWorkbenchProvider"):
         # Create a calc scalar constant.
-        calcScalar: "CalculationToolScalarConstant" = clr.Convert(
+        calcScalar: "CalculationToolScalarConstant" = CalculationToolScalarConstant(
             provider.calc_scalars.factory.create(
                 "CalcScalarName", "Calc scalar constant.", CRDN_CALC_SCALAR_TYPE.CONSTANT
-            ),
-            CalculationToolScalarConstant,
+            )
         )
 
     # endregion
@@ -1448,11 +1440,10 @@ class VGT(CodeSnippetsTestBase):
 
     def CreateConditionScalarBounds(self, provider: "AnalysisWorkbenchProvider"):
         # Create a condition from a scalar.
-        condition: "CalculationToolConditionScalarBounds" = clr.Convert(
+        condition: "CalculationToolConditionScalarBounds" = CalculationToolConditionScalarBounds(
             provider.conditions.factory.create(
                 "ConditionName", "Condition from a scalar.", CRDN_CONDITION_TYPE.SCALAR_BOUNDS
-            ),
-            CalculationToolConditionScalarBounds,
+            )
         )
 
     # endregion
@@ -1869,8 +1860,8 @@ class VGT(CodeSnippetsTestBase):
             0, provider.well_known_axes.earth.fixed
         )
         if result.is_valid:
-            angles: "IOrientationEulerAngles" = clr.Convert(
-                result.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES), IOrientationEulerAngles
+            angles: "IOrientationEulerAngles" = IOrientationEulerAngles(
+                result.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             )
             Console.WriteLine(
                 "Euler Angles [A,B,C,SEQ] => [{1}, {1}, {2}, {3}]", angles.a, angles.b, angles.c, angles.sequence
@@ -2057,7 +2048,7 @@ class VGT(CodeSnippetsTestBase):
             provider.points.common_tasks.create_fixed_in_system_cartographic(provider.systems["Fixed"], lat, lon, alt)
         )
         eastNorthUp: "VectorGeometryToolAxesFixed" = provider.axes.common_tasks.create_topocentric_axes_euler_angles(
-            clr.Convert(origin, IVectorGeometryToolPoint), EULER_ORIENTATION_SEQUENCE.SEQUENCE_321, 90.0, 0.0, 0.0
+            IVectorGeometryToolPoint(origin), EULER_ORIENTATION_SEQUENCE.SEQUENCE_321, 90.0, 0.0, 0.0
         )
 
     # endregion
@@ -2084,7 +2075,7 @@ class VGT(CodeSnippetsTestBase):
             provider.points.common_tasks.create_fixed_in_system_cartographic(provider.systems["Fixed"], lat, lon, alt)
         )
         eastNorthUp: "VectorGeometryToolAxesFixed" = provider.axes.common_tasks.create_topocentric_axes_quaternion(
-            clr.Convert(origin, IVectorGeometryToolPoint), 0.0, 0.0, 0.0, 1.0
+            IVectorGeometryToolPoint(origin), 0.0, 0.0, 0.0, 1.0
         )
 
     # endregion
@@ -2102,7 +2093,7 @@ class VGT(CodeSnippetsTestBase):
 
     def SystemsCreateAssembled(self, provider: "AnalysisWorkbenchProvider", facility: "Facility"):
         systemAssembled: "VectorGeometryToolSystemAssembled" = provider.systems.common_tasks.create_assembled(
-            (clr.Convert(facility, IStkObject)).vgt.points["Center"], provider.axes["Fixed"]
+            (IStkObject(facility)).vgt.points["Center"], provider.axes["Fixed"]
         )
 
     # endregion
@@ -2190,7 +2181,7 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
             "OriginalPoint", "description", VECTOR_GEOMETRY_TOOL_POINT_TYPE.AT_TIME_INSTANT
         )
-        duplicate: "IAnalysisWorkbenchComponent" = (clr.Convert(point, IAnalysisWorkbenchComponent)).duplicate(
+        duplicate: "IAnalysisWorkbenchComponent" = (IAnalysisWorkbenchComponent(point)).duplicate(
             "DuplicatePoint", "description"
         )
 
@@ -2210,9 +2201,7 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
             "OriginalPoint", "description", VECTOR_GEOMETRY_TOOL_POINT_TYPE.AT_TIME_INSTANT
         )
-        anonymousDuplicate: "IAnalysisWorkbenchComponent" = (
-            clr.Convert(point, IAnalysisWorkbenchComponent)
-        ).anonymous_duplicate()
+        anonymousDuplicate: "IAnalysisWorkbenchComponent" = (IAnalysisWorkbenchComponent(point)).anonymous_duplicate()
 
     # endregion
 
@@ -2224,7 +2213,7 @@ class VGT(CodeSnippetsTestBase):
             "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.GetEmbeddedComponent(clr.Convert(system, IAnalysisWorkbenchComponent))
+            self.GetEmbeddedComponent(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
@@ -2244,7 +2233,7 @@ class VGT(CodeSnippetsTestBase):
             "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.EnumerateThroughEmbeddedComponents(clr.Convert(system, IAnalysisWorkbenchComponent))
+            self.EnumerateThroughEmbeddedComponents(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
@@ -2265,7 +2254,7 @@ class VGT(CodeSnippetsTestBase):
             "mySystem", String.Empty, CRDN_SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.IterateThroughEmbeddedComponents(clr.Convert(system, IAnalysisWorkbenchComponent))
+            self.IterateThroughEmbeddedComponents(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
@@ -2303,8 +2292,8 @@ class VGT(CodeSnippetsTestBase):
         if angleRefTo.has_cyclic_dependency(angle):
             Console.WriteLine(
                 "The angle {0} has a cyclic dependency on angle {1}.",
-                (clr.Convert(angleRefTo.get_angle(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(angle, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(angleRefTo.get_angle())).name,
+                (IAnalysisWorkbenchComponent(angle)).name,
             )
 
     # endregion
@@ -2331,8 +2320,8 @@ class VGT(CodeSnippetsTestBase):
         if axesRefTo.has_cyclic_dependency(axes):
             Console.WriteLine(
                 "The axes {0} has a cyclic dependency on axes {1}.",
-                (clr.Convert(axesRefTo.get_axes(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(axes, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(axesRefTo.get_axes())).name,
+                (IAnalysisWorkbenchComponent(axes)).name,
             )
 
     # endregion
@@ -2359,8 +2348,8 @@ class VGT(CodeSnippetsTestBase):
         if planeRefTo.has_cyclic_dependency(plane):
             Console.WriteLine(
                 "The plane {0} has a cyclic dependency on plane {1}.",
-                (clr.Convert(planeRefTo.get_plane(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(plane, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(planeRefTo.get_plane())).name,
+                (IAnalysisWorkbenchComponent(plane)).name,
             )
 
     # endregion
@@ -2385,8 +2374,8 @@ class VGT(CodeSnippetsTestBase):
         if pointRefTo.has_cyclic_dependency(point):
             Console.WriteLine(
                 "The point {0} has a cyclic dependency on point {1}.",
-                (clr.Convert(pointRefTo.get_point(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(point, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(pointRefTo.get_point())).name,
+                (IAnalysisWorkbenchComponent(point)).name,
             )
 
     # endregion
@@ -2416,8 +2405,8 @@ class VGT(CodeSnippetsTestBase):
         if systemRefTo.has_cyclic_dependency(system):
             Console.WriteLine(
                 "The system {0} has a cyclic dependency on system {1}.",
-                (clr.Convert(systemRefTo.get_system(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(system, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(systemRefTo.get_system())).name,
+                (IAnalysisWorkbenchComponent(system)).name,
             )
 
     # endregion
@@ -2446,8 +2435,8 @@ class VGT(CodeSnippetsTestBase):
         if vectorRefTo.has_cyclic_dependency(vector):
             Console.WriteLine(
                 "The vector {0} has a cyclic dependency on vector {1}.",
-                (clr.Convert(vectorRefTo.get_vector(), IAnalysisWorkbenchComponent)).name,
-                (clr.Convert(vector, IAnalysisWorkbenchComponent)).name,
+                (IAnalysisWorkbenchComponent(vectorRefTo.get_vector())).name,
+                (IAnalysisWorkbenchComponent(vector)).name,
             )
 
     # endregion

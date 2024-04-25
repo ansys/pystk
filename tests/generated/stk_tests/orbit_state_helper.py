@@ -121,7 +121,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\tCurrent OrbitState type is: {0}", oOrbitState.orbit_state_type)
 
         # Cartesian OrbitState test
-        self.m_oCartesian = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
+        self.m_oCartesian = OrbitStateCartesian(oOrbitState.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
         Assert.assertIsNotNone(self.m_oCartesian)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oCartesian.orbit_state_type)
         self.m_oCartesian.assign(oOrbitState)
@@ -170,7 +170,7 @@ class OrbitStateHelper(object):
         self.CartesianTest()
 
         # Classical OrbitState test
-        self.m_oClassical = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical)
+        self.m_oClassical = OrbitStateClassical(oOrbitState.convert_to(ORBIT_STATE_TYPE.CLASSICAL))
         Assert.assertIsNotNone(self.m_oClassical)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oClassical.orbit_state_type)
         self.m_oClassical.assign(oOrbitState)
@@ -184,7 +184,7 @@ class OrbitStateHelper(object):
         self.ClassicalTest()
 
         # Geodetic OrbitState test
-        self.m_oGeodetic = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.GEODETIC), OrbitStateGeodetic)
+        self.m_oGeodetic = OrbitStateGeodetic(oOrbitState.convert_to(ORBIT_STATE_TYPE.GEODETIC))
         Assert.assertIsNotNone(self.m_oGeodetic)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oGeodetic.orbit_state_type)
         self.m_oGeodetic.assign(oOrbitState)
@@ -198,7 +198,7 @@ class OrbitStateHelper(object):
         self.GeodeticTest()
 
         # Delaunay OrbitState test
-        self.m_oDelaunay = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.DELAUNAY), OrbitStateDelaunay)
+        self.m_oDelaunay = OrbitStateDelaunay(oOrbitState.convert_to(ORBIT_STATE_TYPE.DELAUNAY))
         Assert.assertIsNotNone(self.m_oDelaunay)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oDelaunay.orbit_state_type)
         self.m_oDelaunay.assign(oOrbitState)
@@ -212,7 +212,7 @@ class OrbitStateHelper(object):
         self.DelaunayTest()
 
         # Equinoctical OrbitState test
-        self.m_oEquinoctial = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL), OrbitStateEquinoctial)
+        self.m_oEquinoctial = OrbitStateEquinoctial(oOrbitState.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL))
         Assert.assertIsNotNone(self.m_oEquinoctial)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oEquinoctial.orbit_state_type)
         self.m_oEquinoctial.assign(oOrbitState)
@@ -226,7 +226,7 @@ class OrbitStateHelper(object):
         self.EquinoctialTest()
 
         # MixedSpherical OrbitState test
-        self.m_oMixed = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL), OrbitStateMixedSpherical)
+        self.m_oMixed = OrbitStateMixedSpherical(oOrbitState.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL))
         Assert.assertIsNotNone(self.m_oMixed)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oMixed.orbit_state_type)
         self.m_oMixed.assign(oOrbitState)
@@ -240,7 +240,7 @@ class OrbitStateHelper(object):
         self.MixedSphericalTest()
 
         # Spherical OrbitState test
-        self.m_oSpherical = clr.Convert(oOrbitState.convert_to(ORBIT_STATE_TYPE.SPHERICAL), OrbitStateSpherical)
+        self.m_oSpherical = OrbitStateSpherical(oOrbitState.convert_to(ORBIT_STATE_TYPE.SPHERICAL))
         Assert.assertIsNotNone(self.m_oSpherical)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oSpherical.orbit_state_type)
         self.m_oSpherical.assign(oOrbitState)
@@ -414,7 +414,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -515,7 +519,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -610,17 +618,15 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\tNew SizeShape type is: {0}", self.m_oClassical.size_shape_type)
         Assert.assertEqual(eShapeType, self.m_oClassical.size_shape_type)
         if eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE:
-            self.ClassicalSizeShapeAltitude(clr.Convert(self.m_oClassical.size_shape, ClassicalSizeShapeAltitude))
+            self.ClassicalSizeShapeAltitude(ClassicalSizeShapeAltitude(self.m_oClassical.size_shape))
         elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_MEAN_MOTION:
-            self.ClassicalSizeShapeMeanMotion(clr.Convert(self.m_oClassical.size_shape, ClassicalSizeShapeMeanMotion))
+            self.ClassicalSizeShapeMeanMotion(ClassicalSizeShapeMeanMotion(self.m_oClassical.size_shape))
         elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD:
-            self.ClassicalSizeShapePeriod(clr.Convert(self.m_oClassical.size_shape, ClassicalSizeShapePeriod))
+            self.ClassicalSizeShapePeriod(ClassicalSizeShapePeriod(self.m_oClassical.size_shape))
         elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_RADIUS:
-            self.ClassicalSizeShapeRadius(clr.Convert(self.m_oClassical.size_shape, ClassicalSizeShapeRadius))
+            self.ClassicalSizeShapeRadius(ClassicalSizeShapeRadius(self.m_oClassical.size_shape))
         elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS:
-            self.ClassicalSizeShapeSemimajorAxis(
-                clr.Convert(self.m_oClassical.size_shape, ClassicalSizeShapeSemimajorAxis)
-            )
+            self.ClassicalSizeShapeSemimajorAxis(ClassicalSizeShapeSemimajorAxis(self.m_oClassical.size_shape))
         else:
             Assert.fail("Invalid SizeShape type!")
 
@@ -988,7 +994,7 @@ class OrbitStateHelper(object):
         oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_LAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
         Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_LAN, oOrientation.asc_node_type)
-        oLAN: "OrientationAscNodeLAN" = clr.Convert(oOrientation.asc_node, OrientationAscNodeLAN)
+        oLAN: "OrientationAscNodeLAN" = OrientationAscNodeLAN(oOrientation.asc_node)
         Assert.assertIsNotNone(oLAN)
         self.m_logger.WriteLine6("\t\t\t\t Current LAN value is: {0}", oLAN.value)
         oLAN.value = 1.23456
@@ -1009,7 +1015,7 @@ class OrbitStateHelper(object):
         oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
         self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
         Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_RAAN, oOrientation.asc_node_type)
-        oRAAN: "OrientationAscNodeRAAN" = clr.Convert(oOrientation.asc_node, OrientationAscNodeRAAN)
+        oRAAN: "OrientationAscNodeRAAN" = OrientationAscNodeRAAN(oOrientation.asc_node)
         Assert.assertIsNotNone(oRAAN)
         self.m_logger.WriteLine6("\t\t\t\t Current RAAN value is: {0}", oRAAN.value)
         oRAAN.value = 1.23456
@@ -1061,8 +1067,8 @@ class OrbitStateHelper(object):
             )
             Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-            oAOL: "ClassicalLocationArgumentOfLatitude" = clr.Convert(
-                self.m_oClassical.location, ClassicalLocationArgumentOfLatitude
+            oAOL: "ClassicalLocationArgumentOfLatitude" = ClassicalLocationArgumentOfLatitude(
+                self.m_oClassical.location
             )
             Assert.assertIsNotNone(oAOL)
             self.m_logger.WriteLine6("\t\t\t Current ArgumentOfLatitude value is: {0}", oAOL.value)
@@ -1094,8 +1100,8 @@ class OrbitStateHelper(object):
             )
             Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-            oEccentric: "ClassicalLocationEccentricAnomaly" = clr.Convert(
-                self.m_oClassical.location, ClassicalLocationEccentricAnomaly
+            oEccentric: "ClassicalLocationEccentricAnomaly" = ClassicalLocationEccentricAnomaly(
+                self.m_oClassical.location
             )
             Assert.assertIsNotNone(oEccentric)
             self.m_logger.WriteLine6("\t\t\t Current EccentricAnomaly value is: {0}", oEccentric.value)
@@ -1127,9 +1133,7 @@ class OrbitStateHelper(object):
             )
             Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-            oMean: "ClassicalLocationMeanAnomaly" = clr.Convert(
-                self.m_oClassical.location, ClassicalLocationMeanAnomaly
-            )
+            oMean: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(self.m_oClassical.location)
             Assert.assertIsNotNone(oMean)
             self.m_logger.WriteLine6("\t\t\t Current MeanAnomaly value is: {0}", oMean.value)
             oMean.value = 1.23456
@@ -1158,7 +1162,7 @@ class OrbitStateHelper(object):
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
             Assert.assertEqual("hr", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
 
-            oAN: "ClassicalLocationTimePastAN" = clr.Convert(self.m_oClassical.location, ClassicalLocationTimePastAN)
+            oAN: "ClassicalLocationTimePastAN" = ClassicalLocationTimePastAN(self.m_oClassical.location)
             Assert.assertIsNotNone(oAN)
             self.m_logger.WriteLine6("\t\t\t Current TimePastAN value is: {0}", oAN.value)
             oAN.value = 1.23456
@@ -1187,9 +1191,7 @@ class OrbitStateHelper(object):
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
             Assert.assertEqual("hr", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
 
-            oPerigee: "ClassicalLocationTimePastPerigee" = clr.Convert(
-                self.m_oClassical.location, ClassicalLocationTimePastPerigee
-            )
+            oPerigee: "ClassicalLocationTimePastPerigee" = ClassicalLocationTimePastPerigee(self.m_oClassical.location)
             Assert.assertIsNotNone(oPerigee)
             self.m_logger.WriteLine6("\t\t\t Current TimePastPerigee value is: {0}", oPerigee.value)
             oPerigee.value = 1.23456
@@ -1220,9 +1222,7 @@ class OrbitStateHelper(object):
             )
             Assert.assertEqual("rad", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
 
-            oTrue: "ClassicalLocationTrueAnomaly" = clr.Convert(
-                self.m_oClassical.location, ClassicalLocationTrueAnomaly
-            )
+            oTrue: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(self.m_oClassical.location)
             Assert.assertIsNotNone(oTrue)
             self.m_logger.WriteLine6("\t\t\t Current TrueAnomaly value is: {0}", oTrue.value)
             oTrue.value = 1.23456
@@ -1340,7 +1340,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -1484,7 +1488,7 @@ class OrbitStateHelper(object):
         self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_ALTITUDE
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
         Assert.assertEqual(GEODETIC_SIZE.SIZE_ALTITUDE, self.m_oGeodetic.size_type)
-        oAltitude: "GeodeticSizeAltitude" = clr.Convert(self.m_oGeodetic.size, GeodeticSizeAltitude)
+        oAltitude: "GeodeticSizeAltitude" = GeodeticSizeAltitude(self.m_oGeodetic.size)
         Assert.assertIsNotNone(oAltitude)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Altitude is: {0}", oAltitude.altitude)
@@ -1522,7 +1526,7 @@ class OrbitStateHelper(object):
         self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_RADIUS
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
         Assert.assertEqual(GEODETIC_SIZE.SIZE_RADIUS, self.m_oGeodetic.size_type)
-        oRadius: "GeodeticSizeRadius" = clr.Convert(self.m_oGeodetic.size, GeodeticSizeRadius)
+        oRadius: "GeodeticSizeRadius" = GeodeticSizeRadius(self.m_oGeodetic.size)
         Assert.assertIsNotNone(oRadius)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Radius is: {0}", oRadius.radius)
@@ -1656,7 +1660,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -1749,7 +1757,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.l_type)
         Assert.assertEqual(DELAUNAY_L_TYPE.L, self.m_oDelaunay.l_type)
-        oL: "DelaunayL" = clr.Convert(self.m_oDelaunay.l, DelaunayL)
+        oL: "DelaunayL" = DelaunayL(self.m_oDelaunay.l)
         Assert.assertIsNotNone(oL)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t L is: {0}", oL.l)
@@ -1772,7 +1780,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.l_type = DELAUNAY_L_TYPE.L_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew LType is: {0}", self.m_oDelaunay.l_type)
         Assert.assertEqual(DELAUNAY_L_TYPE.L_OVER_SQRT_MU, self.m_oDelaunay.l_type)
-        oLOver: "DelaunayLOverSQRTmu" = clr.Convert(self.m_oDelaunay.l, DelaunayLOverSQRTmu)
+        oLOver: "DelaunayLOverSQRTmu" = DelaunayLOverSQRTmu(self.m_oDelaunay.l)
         Assert.assertIsNotNone(oLOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t LOverSQRTmu is: {0}", oLOver.l_over_sqrt_mu)
@@ -1811,7 +1819,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.h_type)
         Assert.assertEqual(DELAUNAY_H_TYPE.H, self.m_oDelaunay.h_type)
-        oH: "DelaunayH" = clr.Convert(self.m_oDelaunay.h, DelaunayH)
+        oH: "DelaunayH" = DelaunayH(self.m_oDelaunay.h)
         Assert.assertIsNotNone(oH)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t H is: {0}", oH.h)
@@ -1834,7 +1842,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.h_type = DELAUNAY_H_TYPE.H_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew HType is: {0}", self.m_oDelaunay.h_type)
         Assert.assertEqual(DELAUNAY_H_TYPE.H_OVER_SQRT_MU, self.m_oDelaunay.h_type)
-        oHOver: "DelaunayHOverSQRTmu" = clr.Convert(self.m_oDelaunay.h, DelaunayHOverSQRTmu)
+        oHOver: "DelaunayHOverSQRTmu" = DelaunayHOverSQRTmu(self.m_oDelaunay.h)
         Assert.assertIsNotNone(oHOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t HOverSQRTmu is: {0}", oHOver.h_over_sqrt_mu)
@@ -1873,7 +1881,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.g_type)
         Assert.assertEqual(DELAUNAY_G_TYPE.G, self.m_oDelaunay.g_type)
-        oG: "DelaunayG" = clr.Convert(self.m_oDelaunay.g, DelaunayG)
+        oG: "DelaunayG" = DelaunayG(self.m_oDelaunay.g)
         Assert.assertIsNotNone(oG)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t G is: {0}", oG.g)
@@ -1896,7 +1904,7 @@ class OrbitStateHelper(object):
         self.m_oDelaunay.g_type = DELAUNAY_G_TYPE.G_OVER_SQRT_MU
         self.m_logger.WriteLine6("\t\tNew GType is: {0}", self.m_oDelaunay.g_type)
         Assert.assertEqual(DELAUNAY_G_TYPE.G_OVER_SQRT_MU, self.m_oDelaunay.g_type)
-        oGOver: "DelaunayGOverSQRTmu" = clr.Convert(self.m_oDelaunay.g, DelaunayGOverSQRTmu)
+        oGOver: "DelaunayGOverSQRTmu" = DelaunayGOverSQRTmu(self.m_oDelaunay.g)
         Assert.assertIsNotNone(oGOver)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t GOverSQRTmu is: {0}", oGOver.g_over_sqrt_mu)
@@ -1945,7 +1953,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -2125,13 +2137,9 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\tNew SizeShape type is: {0}", self.m_oEquinoctial.size_shape_type)
         Assert.assertEqual(eShapeType, self.m_oEquinoctial.size_shape_type)
         if eShapeType == EQUINOCTIAL_SIZE_SHAPE.MEAN_MOTION:
-            self.EquinoctialSizeShapeMeanMotion(
-                clr.Convert(self.m_oEquinoctial.size_shape, EquinoctialSizeShapeMeanMotion)
-            )
+            self.EquinoctialSizeShapeMeanMotion(EquinoctialSizeShapeMeanMotion(self.m_oEquinoctial.size_shape))
         elif eShapeType == EQUINOCTIAL_SIZE_SHAPE.SEMIMAJOR_AXIS:
-            self.EquinoctialSizeShapeSemimajorAxis(
-                clr.Convert(self.m_oEquinoctial.size_shape, EquinoctialSizeShapeSemimajorAxis)
-            )
+            self.EquinoctialSizeShapeSemimajorAxis(EquinoctialSizeShapeSemimajorAxis(self.m_oEquinoctial.size_shape))
         else:
             Assert.fail("Invalid SizeShape type!")
 
@@ -2215,7 +2223,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -2362,7 +2374,7 @@ class OrbitStateHelper(object):
         self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
         Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_HORIZONTAL, self.m_oMixed.fpa_type)
-        oHorizontal: "MixedSphericalFPAHorizontal" = clr.Convert(self.m_oMixed.fpa, MixedSphericalFPAHorizontal)
+        oHorizontal: "MixedSphericalFPAHorizontal" = MixedSphericalFPAHorizontal(self.m_oMixed.fpa)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
         oHorizontal.fpa = 1.2345
@@ -2383,7 +2395,7 @@ class OrbitStateHelper(object):
         self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
         Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_VERTICAL, self.m_oMixed.fpa_type)
-        oVertical: "MixedSphericalFPAVertical" = clr.Convert(self.m_oMixed.fpa, MixedSphericalFPAVertical)
+        oVertical: "MixedSphericalFPAVertical" = MixedSphericalFPAVertical(self.m_oMixed.fpa)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
         oVertical.fpa = -1.2345
@@ -2435,7 +2447,11 @@ class OrbitStateHelper(object):
                 "\t\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), COORDINATE_SYSTEM),
+                (
+                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -2572,7 +2588,7 @@ class OrbitStateHelper(object):
         self.m_oSpherical.fpa_type = SPHERICAL_FPA.HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
         Assert.assertEqual(SPHERICAL_FPA.HORIZONTAL, self.m_oSpherical.fpa_type)
-        oHorizontal: "SphericalFPAHorizontal" = clr.Convert(self.m_oSpherical.fpa, SphericalFPAHorizontal)
+        oHorizontal: "SphericalFPAHorizontal" = SphericalFPAHorizontal(self.m_oSpherical.fpa)
         Assert.assertIsNotNone(oHorizontal)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
         oHorizontal.fpa = 1.2345
@@ -2593,7 +2609,7 @@ class OrbitStateHelper(object):
         self.m_oSpherical.fpa_type = SPHERICAL_FPA.VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
         Assert.assertEqual(SPHERICAL_FPA.VERTICAL, self.m_oSpherical.fpa_type)
-        oVertical: "SphericalFPAVertical" = clr.Convert(self.m_oSpherical.fpa, SphericalFPAVertical)
+        oVertical: "SphericalFPAVertical" = SphericalFPAVertical(self.m_oSpherical.fpa)
         Assert.assertIsNotNone(oVertical)
         self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
         oVertical.fpa = -1.2345

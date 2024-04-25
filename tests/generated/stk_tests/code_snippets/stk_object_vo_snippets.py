@@ -192,26 +192,20 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM,
             (
-                clr.Convert(
-                    CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"], IAnalysisWorkbenchComponent
-                )
+                IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])
             ).qualified_path,
         )
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.AXES_ELEM,
             (
-                clr.Convert(
-                    CodeSnippetsTestBase.m_Root.central_bodies["Moon"].vgt.vectors["Position"],
-                    IAnalysisWorkbenchComponent,
-                )
+                IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Moon"].vgt.vectors["Position"])
             ).qualified_path,
         )
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM,
             (
-                clr.Convert(
-                    CodeSnippetsTestBase.m_Root.central_bodies["Sun"].vgt.vectors["Velocity(Barycenter)"],
-                    IAnalysisWorkbenchComponent,
+                IAnalysisWorkbenchComponent(
+                    CodeSnippetsTestBase.m_Root.central_bodies["Sun"].vgt.vectors["Velocity(Barycenter)"]
                 )
             ).qualified_path,
         )
@@ -221,15 +215,12 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             vector.reference_crdns.get_crdn_by_name(
                 GEOMETRIC_ELEM_TYPE.AXES_ELEM,
                 (
-                    clr.Convert(
-                        CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"],
-                        IAnalysisWorkbenchComponent,
-                    )
+                    IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])
                 ).qualified_path,
             ),
             Graphics3DReferenceVectorGeometryToolVector,
         )
-        (clr.Convert(body, IGraphics3DReferenceAnalysisWorkbenchComponent)).color = Colors.Yellow
+        (body).color = Colors.Yellow
         body.draw_at_cb = True
         body.axes = "CentralBody/Earth Fixed Axes"
 
@@ -243,8 +234,8 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         sat: "Satellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
         )
-        (clr.Convert(sat, Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        tb: "VehiclePropagatorTwoBody" = clr.CastAs((clr.Convert(sat, Satellite)).propagator, VehiclePropagatorTwoBody)
+        (sat).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+        tb: "VehiclePropagatorTwoBody" = clr.CastAs((sat).propagator, VehiclePropagatorTwoBody)
         tb.propagate()
         ddc: "Graphics3DDataDisplayCollection" = sat.graphics_3d.data_display
         self.ConfigureVODataDisplay(ddc)

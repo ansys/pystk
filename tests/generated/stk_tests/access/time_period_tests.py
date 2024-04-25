@@ -28,9 +28,7 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(TimePeriodTests.SatelliteObj)
         Assert.assertIsNotNone(TimePeriodTests.FacilityObj)
         # propagate default satellite (assumes TwoBody, assumes over the scenario interval)
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(
-            TimePeriodTests.SatelliteObj.propagator, VehiclePropagatorTwoBody
-        )
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(TimePeriodTests.SatelliteObj.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
@@ -173,7 +171,9 @@ class TimePeriodTests(TestBase):
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
 
         with pytest.raises(Exception):
-            tp.start_time.type = clr.Convert((-1), TIME_PERIOD_VALUE_TYPE)
+            tp.start_time.type = (
+                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
+            )
         with pytest.raises(Exception):
             tp.start_time.value = ""
 
@@ -196,7 +196,7 @@ class TimePeriodTests(TestBase):
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
 
         # Set the stop time to the stop time + 1 day
-        TimePeriodTests.DateObj.set_date("UTCG", clr.Convert(scene.stop_time, str))
+        TimePeriodTests.DateObj.set_date("UTCG", str(scene.stop_time))
         TimePeriodTests.DateObj = TimePeriodTests.DateObj.add("day", 1)
         scene.stop_time = TimePeriodTests.DateObj.format("UTCG")
 
@@ -225,7 +225,7 @@ class TimePeriodTests(TestBase):
         # ** Test the access's stop time
 
         # Set the stop time to today + 1 day
-        TimePeriodTests.DateObj.set_date("UTCG", clr.Convert(scene.start_time, str))
+        TimePeriodTests.DateObj.set_date("UTCG", str(scene.start_time))
         TimePeriodTests.DateObj = TimePeriodTests.DateObj.add("day", 1)
         scene.stop_time = TimePeriodTests.DateObj.format("UTCG")
 
@@ -252,7 +252,7 @@ class TimePeriodTests(TestBase):
         scene.stop_time = "Tomorrow"
 
         # Set the stop time to tomorrow + 1 day
-        TimePeriodTests.DateObj.set_date("UTCG", clr.Convert(scene.stop_time, str))
+        TimePeriodTests.DateObj.set_date("UTCG", str(scene.stop_time))
         TimePeriodTests.DateObj = TimePeriodTests.DateObj.add("day", 1)
         scene.stop_time = TimePeriodTests.DateObj.format("UTCG")
 
@@ -313,7 +313,9 @@ class TimePeriodTests(TestBase):
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.stop_time.type)
 
         with pytest.raises(Exception):
-            tp.stop_time.type = clr.Convert((-1), TIME_PERIOD_VALUE_TYPE)
+            tp.stop_time.type = (
+                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
+            )
         with pytest.raises(Exception):
             tp.stop_time.value = ""
 
@@ -340,12 +342,8 @@ class TimePeriodTests(TestBase):
         Assert.assertEqual("+1 sec", tp.duration)
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.DURATION, tp.stop_time.type)
 
-        oStartDate: "Date" = TestBase.Application.conversion_utility.new_date(
-            "UTCG", clr.Convert(tp.start_time.value, str)
-        )
-        oStopDate: "Date" = TestBase.Application.conversion_utility.new_date(
-            "UTCG", clr.Convert(tp.stop_time.value, str)
-        )
+        oStartDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.start_time.value))
+        oStopDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.stop_time.value))
         oDateSpan: "Quantity" = oStopDate.span(oStartDate)
         Assert.assertEqual(1, oDateSpan.value)
 

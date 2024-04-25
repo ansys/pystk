@@ -50,7 +50,7 @@ class ChainSnippets(CodeSnippetsTestBase):
 
     # region CreateChainOnCurrentScenarioCentralBody
     def test_CreateChainOnCurrentScenarioCentralBody(self):
-        (clr.Convert(ChainSnippets.m_Object, IStkObject)).unload()
+        (IStkObject(ChainSnippets.m_Object)).unload()
         self.CreateChainOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
         ChainSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children[ChainSnippets.m_DefaultName], Chain
@@ -133,26 +133,26 @@ class ChainSnippets(CodeSnippetsTestBase):
     def test_ConfigureChainComputeTimePeriod(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "Satellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), Satellite)
+        satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"))
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, VehiclePropagatorTwoBody)
+        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(satellite.propagator)
         twoBody.ephemeris_interval.set_start_time_and_duration("1 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
-        chain: "Chain" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"), Chain)
+        chain: "Chain" = Chain(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"))
 
         chain.objects.add("Satellite/GEO")
         chain.objects.add("Aircraft/DummyAircraft")
 
         try:
-            self.ConfigureChainComputeTimePeriod(clr.Convert(chain, Chain))
+            self.ConfigureChainComputeTimePeriod(chain)
 
         finally:
-            (clr.Convert(satellite, IStkObject)).unload()
+            (IStkObject(satellite)).unload()
             aircraft.unload()
-            (clr.Convert(chain, IStkObject)).unload()
+            (IStkObject(chain)).unload()
 
     def ConfigureChainComputeTimePeriod(self, chain: "Chain"):
         chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
@@ -167,28 +167,28 @@ class ChainSnippets(CodeSnippetsTestBase):
 
     # region PrintChainStrainIntervalsTimes
     def test_PrintChainStrainIntervalsTimes(self):
-        scenario: "IStkObject" = clr.Convert(TestBase.Application.current_scenario, IStkObject)
+        scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "Satellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"), Satellite)
+        satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"))
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.Convert(satellite.propagator, VehiclePropagatorTwoBody)
+        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(satellite.propagator)
         twoBody.ephemeris_interval.set_start_time_and_duration("2 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
-        chain: "Chain" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"), Chain)
+        chain: "Chain" = Chain(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"))
 
         chain.objects.add("Satellite/GEO")
         chain.objects.add("Aircraft/DummyAircraft")
 
         try:
-            self.PrintChainStrainIntervalsTimes(clr.Convert(chain, Chain))
+            self.PrintChainStrainIntervalsTimes(chain)
 
         finally:
-            (clr.Convert(satellite, IStkObject)).unload()
+            (IStkObject(satellite)).unload()
             aircraft.unload()
-            (clr.Convert(chain, IStkObject)).unload()
+            (IStkObject(chain)).unload()
 
     def PrintChainStrainIntervalsTimes(self, chain: "Chain"):
         chainAsStkObject: "IStkObject" = clr.CastAs(chain, IStkObject)

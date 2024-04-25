@@ -19,14 +19,12 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("AccessTests", "AccessTests.sc"))
-        EarlyBoundTests._satellite = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy"), Satellite
+        EarlyBoundTests._satellite = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy")
         )
         Assert.assertIsNotNone(EarlyBoundTests._satellite)
         # propagate satellite
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(
-            EarlyBoundTests._satellite.propagator, VehiclePropagatorTwoBody
-        )
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(EarlyBoundTests._satellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
@@ -51,7 +49,7 @@ class EarlyBoundTests(TestBase):
     def test_BasicTest(self):
         TestBase.logger.WriteLine("----- THE BASIC ACCESS TEST ----- BEGIN -----")
 
-        access: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
 
         Assert.assertEqual(r"Satellite-Spy-To-Facility-Facility1", access.name)
         Assert.assertEqual(r"/Application/STK/Scenario/AccessTests/Satellite/Spy", access.base.path)
@@ -250,7 +248,7 @@ class EarlyBoundTests(TestBase):
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        access: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         oGraphics: "StkAccessGraphics" = access.graphics
         Assert.assertIsNotNone(oGraphics)
         # Inherit (true)
@@ -301,7 +299,7 @@ class EarlyBoundTests(TestBase):
     # region DataDisplays
     @category("VO Tests")
     def test_DataDisplays(self):
-        access: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.compute_access()
         oDDHelper = VODataDisplayHelper(clr.CastAs(TestBase.Application, StkObjectRoot))
         oDDHelper.Run(access.data_displays, True, False)
@@ -317,7 +315,7 @@ class EarlyBoundTests(TestBase):
         oFacility: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
         Assert.assertIsNotNone(oFacility)
         # compute access
-        oAccess: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access_to_object(oFacility)
+        oAccess: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access_to_object(oFacility)
         Assert.assertIsNotNone(oAccess)
         oAccess.advanced.enable_light_time_delay = False
         oAccess.advanced.use_fixed_time_step = True  # change to test config persistence
@@ -460,19 +458,19 @@ class EarlyBoundTests(TestBase):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         scene.set_time_period(date.format("UTCG"), "+1 day")
 
-        oSatellite: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy"), Satellite
+        oSatellite: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy")
         )
-        oFacility: "Facility" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1"), Facility
+        oFacility: "Facility" = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
         )
         Assert.assertIsNotNone(oSatellite)
 
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
-        access: "StkAccess" = (clr.Convert(oSatellite, IStkObject)).get_access("Facility/Facility1")
+        access: "StkAccess" = (IStkObject(oSatellite)).get_access("Facility/Facility1")
         access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
@@ -529,7 +527,9 @@ class EarlyBoundTests(TestBase):
 
         # cannot cast to -1 in Java
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.start_time.type = clr.Convert((-1), TIME_PERIOD_VALUE_TYPE)
+            tp.start_time.type = (
+                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
+            )
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             tp.start_time.value = ""
 
@@ -555,7 +555,9 @@ class EarlyBoundTests(TestBase):
 
         # cannot cast to -1 in Java
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.stop_time.type = clr.Convert((-1), TIME_PERIOD_VALUE_TYPE)
+            tp.stop_time.type = (
+                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
+            )
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             tp.stop_time.value = ""
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
@@ -566,12 +568,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("+1 sec", tp.duration)
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.DURATION, tp.stop_time.type)
 
-        oStartDate: "Date" = TestBase.Application.conversion_utility.new_date(
-            "UTCG", clr.Convert(tp.start_time.value, str)
-        )
-        oStopDate: "Date" = TestBase.Application.conversion_utility.new_date(
-            "UTCG", clr.Convert(tp.stop_time.value, str)
-        )
+        oStartDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.start_time.value))
+        oStopDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.stop_time.value))
         oDateSpan: "Quantity" = oStopDate.span(oStartDate)
         Assert.assertEqual(1, oDateSpan.value)
 
@@ -588,7 +586,7 @@ class EarlyBoundTests(TestBase):
 
     # region ComputeWithIntervals
     def test_ComputeWithIntervals(self):
-        access: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.compute_access()
@@ -608,7 +606,7 @@ class EarlyBoundTests(TestBase):
         access.remove_access()
 
         accessTimes[0][0] = "1 Jul 1999 13:48:00.000"
-        access = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.specify_access_intervals(accessTimes)
@@ -627,7 +625,7 @@ class EarlyBoundTests(TestBase):
         access.remove_access()
 
         accessTimes[0][0] = "1 Jul 1999 13:49:00.000"
-        access = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+        access = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
         access.advanced.use_precise_event_times = True
         access.advanced.time_convergence = 0.0002
         access.specify_access_intervals(accessTimes)
@@ -661,22 +659,22 @@ class EarlyBoundTests(TestBase):
         # with as few modifications as possible.
         scene.epoch = "1 Jul 1999 00:00:00.000"
 
-        oFacility: "Facility" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "GB2Y"), Facility
+        oFacility: "Facility" = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "GB2Y")
         )
         oFacility.position.assign_geodetic(26.6255, -78.2985, -0.010997)
 
-        oSatellite: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite
+        oSatellite: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
         )
         oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
         j4: "VehiclePropagatorJ4Perturbation" = clr.CastAs(oSatellite.propagator, VehiclePropagatorJ4Perturbation)
 
-        classical: "OrbitStateClassical" = clr.Convert(
-            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+        classical: "OrbitStateClassical" = OrbitStateClassical(
+            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS
-        sma: "ClassicalSizeShapeSemimajorAxis" = clr.Convert(classical.size_shape, ClassicalSizeShapeSemimajorAxis)
+        sma: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sma.semi_major_axis = 6878.14
         sma.eccentricity = 3.70942e-16
         classical.orientation.inclination = 45
@@ -686,9 +684,7 @@ class EarlyBoundTests(TestBase):
         j4.initial_state.representation.assign(classical)
         j4.propagate()
 
-        myAccess: "StkAccess" = (clr.Convert(oFacility, IStkObject)).get_access_to_object(
-            clr.Convert(oSatellite, IStkObject)
-        )
+        myAccess: "StkAccess" = (IStkObject(oFacility)).get_access_to_object(IStkObject(oSatellite))
         myAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME  # 2
         myAccess.specify_access_time_period("17 Feb 2010 05:34:09.161", "17 Feb 2010 05:41:01.680")
         myAccess.compute_access()
@@ -710,7 +706,7 @@ class EarlyBoundTests(TestBase):
 
     def test_SignalSenseOfClockHostThrowsExceptionWhenReadOnly(self):
         def code1():
-            access: "StkAccess" = (clr.Convert(EarlyBoundTests._satellite, IStkObject)).get_access("Facility/Facility1")
+            access: "StkAccess" = (IStkObject(EarlyBoundTests._satellite)).get_access("Facility/Facility1")
             advanced: "StkAccessAdvanced" = access.advanced
 
             advanced.use_default_clock_host_and_signal_sense = True
@@ -731,23 +727,19 @@ class EarlyBoundTests(TestBase):
             satellite: "Satellite" = clr.CastAs(
                 root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatelliteBug107492"), Satellite
             )
-            (clr.Convert(satellite.propagator, VehiclePropagatorTwoBody)).propagate()
+            (VehiclePropagatorTwoBody(satellite.propagator)).propagate()
 
             # Force the creation of the PlaceBug107492-to-SatelliteBug107492 access object with an allocated step control data
             root.execute_command("Access */Place/PlaceBug107492 */Satellite/SatelliteBug107492 FixedSampleStep 0.1")
 
             # Create an object model access that duplicates the access request but before the fix
             # pointed to the same step control data
-            access1: "StkAccess" = (clr.Convert(place, IStkObject)).get_access_to_object(
-                clr.Convert(satellite, IStkObject)
-            )
+            access1: "StkAccess" = (IStkObject(place)).get_access_to_object(IStkObject(satellite))
             del access1  # the common step control data is deleted here
 
             # Create a second object model access that duplicates the access request and
             # before the fix pointed to the deleted step control data
-            access2: "StkAccess" = (clr.Convert(place, IStkObject)).get_access_to_object(
-                clr.Convert(satellite, IStkObject)
-            )
+            access2: "StkAccess" = (IStkObject(place)).get_access_to_object(IStkObject(satellite))
 
             # Before the fix assertion on the next line in debug when running in the debugger
             # [HEAP[nunit3-console.exe]: Invalid address specified to RtlValidateHeap]

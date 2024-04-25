@@ -153,7 +153,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateMergedEventIntervalList
     def test_CreateMergedEventIntervalList(self):
-        self.CreateMergedEventIntervalList(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.CreateMergedEventIntervalList(TestBase.Application)
 
     def CreateMergedEventIntervalList(self, stkRoot: "StkObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
@@ -233,7 +233,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEventIntervalList
     def test_CreateSignaledEventIntervalList(self):
-        self.CreateSignaledEventIntervalList(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.CreateSignaledEventIntervalList(TestBase.Application)
 
     def CreateSignaledEventIntervalList(self, stkRoot: "StkObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
@@ -268,9 +268,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity
     def test_DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self):
-        self.DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(
-            clr.Convert(TestBase.Application, StkObjectRoot)
-        )
+        self.DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(TestBase.Application)
 
     def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "StkObjectRoot"):
         aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
@@ -307,7 +305,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsWithoutAccess
     def test_DetermineIntervalsWithoutAccess(self):
-        self.DetermineIntervalsWithoutAccess(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.DetermineIntervalsWithoutAccess(TestBase.Application)
 
     def DetermineIntervalsWithoutAccess(self, stkRoot: "StkObjectRoot"):
         # Compute UAV's access to the satellite

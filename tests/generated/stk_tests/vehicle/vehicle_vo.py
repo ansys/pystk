@@ -152,9 +152,9 @@ class VOAttributesBasicHelper(object):
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oBasic.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH5, oBasic.line_width)
         with pytest.raises(Exception):
-            oBasic.line_width = clr.Convert((-1), LINE_WIDTH)
+            oBasic.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            oBasic.line_width = clr.Convert((11), LINE_WIDTH)
+            oBasic.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         oBasic.translucency = 50
         Assert.assertEqual(50, oBasic.translucency)
@@ -356,7 +356,11 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                clr.Convert(int(arChoices[iIndex][0]), VEHICLE_GRAPHICS_3D_SIGMA_SCALE),
+                (
+                    VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arChoices[iIndex][0]))
+                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
+                    else int(arChoices[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -371,7 +375,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE, oCovariance.sigma_scale_type)
 
         oSSSHelper = VOSigmaScaleScaleHelper()
-        oSSSHelper.Run(clr.Convert(oCovariance.sigma_scale, VehicleGraphics3DSigmaScaleScale))
+        oSSSHelper.Run(VehicleGraphics3DSigmaScaleScale(oCovariance.sigma_scale))
         if not oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY):
             Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY)
 
@@ -380,7 +384,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY, oCovariance.sigma_scale_type)
 
         oSSPHelper = VOSigmaScaleProbabilityHelper()
-        oSSPHelper.Run(clr.Convert(oCovariance.sigma_scale, VehicleGraphics3DSigmaScaleProbability))
+        oSSPHelper.Run(VehicleGraphics3DSigmaScaleProbability(oCovariance.sigma_scale))
         if oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_UNKNOWN):
             Assert.fail("The SIGMA_SCALE_UNKNOWN type should be unsupported!")
 
@@ -398,7 +402,11 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                clr.Convert(int(arChoices[iIndex][0]), VEHICLE_GRAPHICS_3D_ATTRIBUTES),
+                (
+                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0]))
+                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
+                    else int(arChoices[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -415,7 +423,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC, oCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
-        oABHelper.Run(clr.Convert(oCovariance.attributes, VehicleGraphics3DAttributesBasic))
+        oABHelper.Run(VehicleGraphics3DAttributesBasic(oCovariance.attributes))
         if not oCovariance.is_attributes_type_supported(
             VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
         ):
@@ -428,7 +436,7 @@ class VOCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS, oCovariance.attributes_type)
 
         oAIHelper = VOAttributesIntervalsHelper()
-        oAIHelper.Run(clr.Convert(oCovariance.attributes, VehicleGraphics3DAttributesIntervals))
+        oAIHelper.Run(VehicleGraphics3DAttributesIntervals(oCovariance.attributes))
         if oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
             Assert.fail("The GRAPHICS_3D_ATTRIBUTES_UNKNOWN type should be unsupported!")
 
@@ -473,7 +481,11 @@ class VOVelocityCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                clr.Convert(int(arChoices[iIndex][0]), VEHICLE_GRAPHICS_3D_ATTRIBUTES),
+                (
+                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0]))
+                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
+                    else int(arChoices[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -490,7 +502,7 @@ class VOVelocityCovarianceHelper(object):
         Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC, oVelCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
-        oABHelper.Run(clr.Convert(oVelCovariance.attributes, VehicleGraphics3DAttributesBasic))
+        oABHelper.Run(VehicleGraphics3DAttributesBasic(oVelCovariance.attributes))
         if not oVelCovariance.is_attributes_type_supported(
             VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
         ):
@@ -505,7 +517,7 @@ class VOVelocityCovarianceHelper(object):
         )
 
         oAIHelper = VOAttributesIntervalsHelper()
-        oAIHelper.Run(clr.Convert(oVelCovariance.attributes, VehicleGraphics3DAttributesIntervals))
+        oAIHelper.Run(VehicleGraphics3DAttributesIntervals(oVelCovariance.attributes))
         if oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_UNKNOWN):
             Assert.fail("The GRAPHICS_3D_ATTRIBUTES_UNKNOWN type should be unsupported!")
 
@@ -538,7 +550,11 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_3D_ATTRIBUTES),
+                (
+                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -548,8 +564,10 @@ class VOCovariancePointingContourHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_ATTRIBUTES" = clr.Convert(
-                int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_3D_ATTRIBUTES
+            eType: "VEHICLE_GRAPHICS_3D_ATTRIBUTES" = (
+                VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
+                else int(arSupportedTypes[iIndex][0])
             )
             if (eType != VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC) and (
                 eType != VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
@@ -566,10 +584,10 @@ class VOCovariancePointingContourHelper(object):
             Assert.assertEqual(eType, eType2)
             if eType == VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC:
                 oHelper = VOAttributesBasicHelper()
-                oHelper.Run(clr.Convert(oCPContour.attributes, VehicleGraphics3DAttributesBasic))
+                oHelper.Run(VehicleGraphics3DAttributesBasic(oCPContour.attributes))
             elif eType == VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS:
                 oHelper = VOAttributesIntervalsHelper()
-                oHelper.Run(clr.Convert(oCPContour.attributes, VehicleGraphics3DAttributesIntervals))
+                oHelper.Run(VehicleGraphics3DAttributesIntervals(oCPContour.attributes))
             else:
                 Assert.fail("The {0} type is not supported.", eType)
 
@@ -599,15 +617,21 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_3D_SIGMA_SCALE),
+                (
+                    VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = clr.Convert(
-                int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_3D_SIGMA_SCALE
+            eType: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = (
+                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
+                else int(arSupportedTypes[iIndex][0])
             )
             if (eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY) and (
                 eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE
@@ -624,10 +648,10 @@ class VOCovariancePointingContourHelper(object):
             Assert.assertEqual(eType, eType2)
             if eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY:
                 oSSPHelper = VOSigmaScaleProbabilityHelper()
-                oSSPHelper.Run(clr.Convert(oCPContour.sigma_scale, VehicleGraphics3DSigmaScaleProbability))
+                oSSPHelper.Run(VehicleGraphics3DSigmaScaleProbability(oCPContour.sigma_scale))
             elif eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE:
                 oSSSHelper = VOSigmaScaleScaleHelper()
-                oSSSHelper.Run(clr.Convert(oCPContour.sigma_scale, VehicleGraphics3DSigmaScaleScale))
+                oSSSHelper.Run(VehicleGraphics3DSigmaScaleScale(oCPContour.sigma_scale))
             else:
                 Assert.fail("The {0} should not be supported!", eType)
 
@@ -1168,7 +1192,7 @@ class VOMarkerHelper(object):
         oShape.style = MARKER_SHAPE_3D.SHAPE_POINT
         Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
         with pytest.raises(STKInvalidCastError):
-            voMarkerFileX: "Graphics3DMarkerFile" = clr.Convert(oMarker.marker_data, Graphics3DMarkerFile)
+            voMarkerFileX: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
         oMarker.marker_type = (
             MARKER_TYPE.IMAGE_FILE
@@ -1182,7 +1206,7 @@ class VOMarkerHelper(object):
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
         with pytest.raises(STKInvalidCastError):
-            oShape = clr.Convert(oMarker.marker_data, Graphics3DMarkerShape)
+            oShape = Graphics3DMarkerShape(oMarker.marker_data)
 
         oMarker.pixel_size = 12
         Assert.assertEqual(12, oMarker.pixel_size)
@@ -3692,7 +3716,11 @@ class VOLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA),
+                (
+                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -3702,7 +3730,11 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA)
+            eType: "LEAD_TRAIL_DATA" = (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[iIndex][0])
+            )
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -3714,9 +3746,7 @@ class VOLeadTrailDataHelper(object):
             if leadTrailData.has_lead_data:
                 if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
                     # LeadData
-                    oFraction: "IVehicleLeadTrailDataFraction" = clr.Convert(
-                        leadTrailData.lead_data, IVehicleLeadTrailDataFraction
-                    )
+                    oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oFraction)
                     # Fraction
                     self.m_logger.WriteLine6("\t\tThe current Fraction is: {0}", oFraction.fraction)
@@ -3737,7 +3767,7 @@ class VOLeadTrailDataHelper(object):
 
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # LeadData
-                    oTime: "IVehicleLeadTrailDataTime" = clr.Convert(leadTrailData.lead_data, IVehicleLeadTrailDataTime)
+                    oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oTime)
                     # set TimeUnit
                     strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -3781,7 +3811,11 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA)
+            eType: "LEAD_TRAIL_DATA" = (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[iIndex][0])
+            )
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -3793,9 +3827,7 @@ class VOLeadTrailDataHelper(object):
             if leadTrailData.has_trail_data:
                 if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
                     # TrailData
-                    oFraction: "IVehicleLeadTrailDataFraction" = clr.Convert(
-                        leadTrailData.trail_data, IVehicleLeadTrailDataFraction
-                    )
+                    oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oFraction)
                     # Fraction
                     self.m_logger.WriteLine6("\t\tThe current Fraction is: {0}", oFraction.fraction)
@@ -3816,9 +3848,7 @@ class VOLeadTrailDataHelper(object):
 
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # TrailData
-                    oTime: "IVehicleLeadTrailDataTime" = clr.Convert(
-                        leadTrailData.trail_data, IVehicleLeadTrailDataTime
-                    )
+                    oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oTime)
                     # set TimeUnit
                     strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -3858,7 +3888,13 @@ class VOLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(clr.Convert(int(arSupportedTypes[0][0]), LEAD_TRAIL_DATA))
+        leadTrailData.set_trail_data_type(
+            (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[0][0]))
+                if (int(arSupportedTypes[0][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[0][0])
+            )
+        )
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -4164,7 +4200,11 @@ class VOPathTickMarksHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arTypes[iIndex][1]),
-                clr.Convert(int(arTypes[iIndex][0]), TICK_DATA),
+                (
+                    TICK_DATA(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in TICK_DATA])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -4178,7 +4218,9 @@ class VOPathTickMarksHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oPath.set_tick_data_type(clr.Convert(arTypes[0][0], TICK_DATA))
+            oPath.set_tick_data_type(
+                (TICK_DATA(arTypes[0][0]) if (arTypes[0][0] in [item.value for item in TICK_DATA]) else arTypes[0][0])
+            )
 
         except Exception as e:
             bCaught = True
@@ -4188,7 +4230,7 @@ class VOPathTickMarksHelper(object):
             Assert.fail("The TickDataType should be readonly.")
 
         if oPath.tick_data_type == TICK_DATA.POINT:
-            oPoint: "VehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataPoint)
+            oPoint: "VehicleGraphics3DTickDataPoint" = VehicleGraphics3DTickDataPoint(oPath.tick_data)
             Assert.assertIsNotNone(oPoint)
             try:
                 bCaught = False
@@ -4204,7 +4246,7 @@ class VOPathTickMarksHelper(object):
         elif oPath.tick_data_type == TICK_DATA.UNKNOWN:
             pass
         else:
-            oLine: "VehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataLine)
+            oLine: "VehicleGraphics3DTickDataLine" = VehicleGraphics3DTickDataLine(oPath.tick_data)
             Assert.assertIsNotNone(oLine)
             try:
                 bCaught = False
@@ -4234,7 +4276,11 @@ class VOPathTickMarksHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "TICK_DATA" = clr.Convert(int(arTypes[iIndex][0]), TICK_DATA)
+            eType: "TICK_DATA" = (
+                TICK_DATA(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in TICK_DATA])
+                else int(arTypes[iIndex][0])
+            )
             if not oPath.is_tick_data_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -4245,7 +4291,7 @@ class VOPathTickMarksHelper(object):
             if oPath.tick_data_type == TICK_DATA.UNKNOWN:
                 Assert.fail("The UNKNOWN type should not be supported!")
             elif oPath.tick_data_type == TICK_DATA.POINT:
-                oPoint: "VehicleGraphics3DTickDataPoint" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataPoint)
+                oPoint: "VehicleGraphics3DTickDataPoint" = VehicleGraphics3DTickDataPoint(oPath.tick_data)
                 Assert.assertIsNotNone(oPoint)
                 # Size
                 self.m_logger.WriteLine6("\t\t\tThe current Size is: {0}", oPoint.size)
@@ -4265,7 +4311,7 @@ class VOPathTickMarksHelper(object):
                     Assert.fail("Cannot set value out of range!")
 
             else:
-                oLine: "VehicleGraphics3DTickDataLine" = clr.Convert(oPath.tick_data, VehicleGraphics3DTickDataLine)
+                oLine: "VehicleGraphics3DTickDataLine" = VehicleGraphics3DTickDataLine(oPath.tick_data)
                 Assert.assertIsNotNone(oLine)
                 # LineWith
                 self.m_logger.WriteLine6("\t\t\tThe current LineWith is: {0}", oLine.line_width)
@@ -4983,7 +5029,7 @@ class VOVectorsHelper(object):
 
         with pytest.raises(Exception):
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
-                clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus"
+                (GEOMETRIC_ELEM_TYPE((-1)) if ((-1) in [item.value for item in GEOMETRIC_ELEM_TYPE]) else (-1)), "bogus"
             )
         with pytest.raises(Exception):
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
@@ -4992,7 +5038,11 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            eType: "GEOMETRIC_ELEM_TYPE" = (
+                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
+                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
+                else int(arAvailable[iIndex][1])
+            )
             if eType == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5009,7 +5059,11 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            eType: "GEOMETRIC_ELEM_TYPE" = (
+                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
+                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
+                else int(arAvailable[iIndex][1])
+            )
             if eType == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5026,7 +5080,11 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            eType: "GEOMETRIC_ELEM_TYPE" = (
+                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
+                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
+                else int(arAvailable[iIndex][1])
+            )
             if eType == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5043,7 +5101,11 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            eType: "GEOMETRIC_ELEM_TYPE" = (
+                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
+                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
+                else int(arAvailable[iIndex][1])
+            )
             if eType == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5063,10 +5125,14 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = clr.Convert(int(arAvailable[iIndex][1]), GEOMETRIC_ELEM_TYPE)
+            eType: "GEOMETRIC_ELEM_TYPE" = (
+                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
+                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
+                else int(arAvailable[iIndex][1])
+            )
             if eType == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                oVector: "Graphics3DReferenceVectorGeometryToolVector" = clr.Convert(
-                    oCollection.add(eType, str(arAvailable[iIndex][0])), Graphics3DReferenceVectorGeometryToolVector
+                oVector: "Graphics3DReferenceVectorGeometryToolVector" = Graphics3DReferenceVectorGeometryToolVector(
+                    oCollection.add(eType, str(arAvailable[iIndex][0]))
                 )
                 Assert.assertIsNotNone(oVector)
                 strMagnitudeDim: str = oVector.magnitude_dimension
@@ -5135,15 +5201,15 @@ class VOVectorsHelper(object):
                 Assert.fail("The LabelVisible should be readonly.")
 
             if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
-                self.RefCrdnAngleReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAngle))
+                self.RefCrdnAngleReadOnly(Graphics3DReferenceVectorGeometryToolAngle(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
-                self.RefCrdnAxesReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAxes))
+                self.RefCrdnAxesReadOnly(Graphics3DReferenceVectorGeometryToolAxes(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
-                self.RefCrdnPlaneReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPlane))
+                self.RefCrdnPlaneReadOnly(Graphics3DReferenceVectorGeometryToolPlane(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
-                self.RefCrdnPointReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPoint))
+                self.RefCrdnPointReadOnly(Graphics3DReferenceVectorGeometryToolPoint(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                self.RefCrdnVectorReadOnly(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolVector))
+                self.RefCrdnVectorReadOnly(Graphics3DReferenceVectorGeometryToolVector(refCrdn))
             else:
                 Assert.fail("Invalid TypeID!")
 
@@ -5164,21 +5230,21 @@ class VOVectorsHelper(object):
             self.m_logger.WriteLine4("\tThe new LabelVisible flag is: {0}", refCrdn.label_visible)
             Assert.assertEqual(True, refCrdn.label_visible)
             if refCrdn.type_id == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
-                self.RefCrdnAngle(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAngle))
+                self.RefCrdnAngle(Graphics3DReferenceVectorGeometryToolAngle(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
-                self.RefCrdnAxes(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolAxes))
+                self.RefCrdnAxes(Graphics3DReferenceVectorGeometryToolAxes(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
-                self.RefCrdnPlane(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPlane))
+                self.RefCrdnPlane(Graphics3DReferenceVectorGeometryToolPlane(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 # 38619: Earth Center point freezes STK
-                self.RefCrdnPoint(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolPoint))
+                self.RefCrdnPoint(Graphics3DReferenceVectorGeometryToolPoint(refCrdn))
             elif refCrdn.type_id == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
-                self.RefCrdnVector(clr.Convert(refCrdn, Graphics3DReferenceVectorGeometryToolVector))
+                self.RefCrdnVector(Graphics3DReferenceVectorGeometryToolVector(refCrdn))
             else:
                 Assert.fail("Invalid TypeID!")
 
             oHelper = DisplayTimesHelper(self.m_oRoot)
-            oHelper.Run(clr.Convert(refCrdn, IDisplayTime))
+            oHelper.Run(IDisplayTime(refCrdn))
 
             iIndex += 1
 
@@ -5198,7 +5264,9 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine3("After RemoveByName() the Vector Collection contains: {0} elements", oCollection.count)
 
         with pytest.raises(Exception):
-            oCollection.remove_by_name(clr.Convert((-1), GEOMETRIC_ELEM_TYPE), "bogus")
+            oCollection.remove_by_name(
+                (GEOMETRIC_ELEM_TYPE((-1)) if ((-1) in [item.value for item in GEOMETRIC_ELEM_TYPE]) else (-1)), "bogus"
+            )
         with pytest.raises(Exception):
             oCollection.remove_by_name(GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus")
 
@@ -6244,7 +6312,7 @@ class VOVaporTrailHelper(object):
         Assert.assertTrue(oModel.visible)
         oModel.model_type = MODEL_TYPE.FILE
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.filename)
         oModelFile.filename = strDataPath + r"\STKData\VO\Models\Space\pegasus.glb"

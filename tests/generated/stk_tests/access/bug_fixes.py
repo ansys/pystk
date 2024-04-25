@@ -29,16 +29,15 @@ class BugFixes(TestBase):
     def InitHelper():
         TestBase.LoadTestScenario(Path.Combine("AccessTests", "AccessTests.sc"))
 
-        BugFixes.satellite = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AccessBugFixesSat"),
-            Satellite,
+        BugFixes.satellite = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AccessBugFixesSat")
         )
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(BugFixes.satellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(BugFixes.satellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
-        BugFixes.facility = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "AccessBugFixesFac"), Facility
+        BugFixes.facility = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "AccessBugFixesFac")
         )
         BugFixes.facility.position.assign_geodetic(26.6255, -78.2985, -0.010997)
 
@@ -55,9 +54,7 @@ class BugFixes(TestBase):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         scene.set_time_period("17 Feb 2010 05:00:00.000", "18 Feb 2010 05:00:00.000")
 
-        myAccess: "StkAccess" = (clr.Convert(BugFixes.satellite, IStkObject)).get_access_to_object(
-            clr.Convert(BugFixes.facility, IStkObject)
-        )
+        myAccess: "StkAccess" = (IStkObject(BugFixes.satellite)).get_access_to_object(IStkObject(BugFixes.facility))
         myAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
 
         # these intervals were chosen to be in the inerior of the first access interval if computed using object times
@@ -364,10 +361,7 @@ class BugFixes(TestBase):
         )
 
         agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-            agAssert,
-            self.CompareIntervalTimes(
-                "A", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-            ),
+            agAssert, self.CompareIntervalTimes("A", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
         )
 
         # NOW... get another handle to this existing Access
@@ -383,10 +377,7 @@ class BugFixes(TestBase):
 
         # times should be the same, not the default settings which would be transmit
         agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-            agAssert,
-            self.CompareIntervalTimes(
-                "B", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-            ),
+            agAssert, self.CompareIntervalTimes("B", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
         )
         if agAssert != None:
             agAssert.Assert()
@@ -435,28 +426,20 @@ class BugFixes(TestBase):
             )
 
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "A", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("A", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
             )
 
             # B) Facility to Transmitter: With a specified interval = scenario interval
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period: "AccessTimePeriod" = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period: "AccessTimePeriod" = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "B", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("B", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
             )
 
             # C) Facility to Transmitter: Mode Receive
@@ -468,10 +451,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "C", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("C", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
             )
 
             # D) Facility to Transmitter: Mode Transmit
@@ -483,10 +463,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "D", SatFacStartB, SatFacStopB, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("D", SatFacStartB, SatFacStopB, str(accStart), str(accStop))
             )
 
             # E) Facility to Transmitter: With a specified interval, Mode Receive
@@ -494,19 +471,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "E", SatFacStartA, SatFacStopA, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("E", SatFacStartA, SatFacStopA, str(accStart), str(accStop))
             )
 
             # F) Facility to Transmitter: With a specified interval, Mode Transmit
@@ -514,19 +486,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "F", SatFacStartB, SatFacStopB, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("F", SatFacStartB, SatFacStopB, str(accStart), str(accStop))
             )
 
             # G) Facility to Transmitter: Reverse ClockHost
@@ -538,10 +505,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "G", SatFacStartC, SatFacStopC, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("G", SatFacStartC, SatFacStopC, str(accStart), str(accStop))
             )
 
             # H) Facility to Transmitter: With a specified interval, Reverse ClockHost
@@ -549,19 +513,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "H", SatFacStartC, SatFacStopC, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("H", SatFacStartC, SatFacStopC, str(accStart), str(accStop))
             )
 
             # /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -574,28 +533,20 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "I", SatFacStartD, SatFacStopD, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("I", SatFacStartD, SatFacStopD, str(accStart), str(accStop))
             )
 
             # J) Receiver to Facility: With a specified interval = scenario interval
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "J", SatFacStartD, SatFacStopD, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("J", SatFacStartD, SatFacStopD, str(accStart), str(accStop))
             )
 
             # K) Receiver to Facility: Mode Receive
@@ -607,10 +558,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "K", SatFacStartD, SatFacStopD, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("K", SatFacStartD, SatFacStopD, str(accStart), str(accStop))
             )
 
             # L) Receiver to Facility: Mode Transmit
@@ -622,10 +570,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "L", SatFacStartC, SatFacStopC, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("L", SatFacStartC, SatFacStopC, str(accStart), str(accStop))
             )
 
             # M) Receiver to Facility: With a specified interval, Mode Receive
@@ -633,19 +578,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "M", SatFacStartD, SatFacStopD, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("M", SatFacStartD, SatFacStopD, str(accStart), str(accStop))
             )
 
             # N) Receiver to Facility: With a specified interval, Mode Transmit
@@ -653,19 +593,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "N", SatFacStartC, SatFacStopC, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("N", SatFacStartC, SatFacStopC, str(accStart), str(accStop))
             )
 
             # O) Receiver to Facility: Reverse ClockHost
@@ -677,10 +612,7 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "O", SatFacStartB, SatFacStopB, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("O", SatFacStartB, SatFacStopB, str(accStart), str(accStop))
             )
 
             # P) Receiver to Facility: With a specified interval, Reverse ClockHost
@@ -688,19 +620,14 @@ class BugFixes(TestBase):
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
             oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes(
-                    "P", SatFacStartB, SatFacStopB, clr.Convert(accStart, str), clr.Convert(accStop, str)
-                ),
+                agAssert, self.CompareIntervalTimes("P", SatFacStartB, SatFacStopB, str(accStart), str(accStop))
             )
 
             # /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -716,24 +643,20 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes("Q", plStart, plStop, clr.Convert(accStart, str), clr.Convert(accStop, str)),
+                agAssert, self.CompareIntervalTimes("Q", plStart, plStop, str(accStart), str(accStop))
             )
 
             # R) Planet to Facility: With a specified interval = scenario interval
             oAccess = oPlanet.get_access_to_object(oFacility)
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
-            period.access_interval.set_start_and_stop_times(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            period = AccessTimePeriod(oAccess.access_time_period_data)
+            period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
-                agAssert,
-                self.CompareIntervalTimes("R", plStart, plStop, clr.Convert(accStart, str), clr.Convert(accStop, str)),
+                agAssert, self.CompareIntervalTimes("R", plStart, plStop, str(accStart), str(accStop))
             )
 
             # /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -752,16 +675,14 @@ class BugFixes(TestBase):
             )
             sat: "Satellite" = clr.CastAs(oMarsSat, Satellite)
             sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            twobody: "VehiclePropagatorTwoBody" = clr.Convert(sat.propagator, VehiclePropagatorTwoBody)
-            twobody.ephemeris_interval.set_explicit_interval(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
-            )
+            twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
+            twobody.ephemeris_interval.set_explicit_interval(str(scene.start_time), str(scene.stop_time))
 
-            classical: "OrbitStateClassical" = clr.Convert(
-                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+            classical: "OrbitStateClassical" = OrbitStateClassical(
+                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
             )
             classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
-            trueanomaly: "ClassicalLocationTrueAnomaly" = clr.Convert(classical.location, ClassicalLocationTrueAnomaly)
+            trueanomaly: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(classical.location)
             trueanomaly.value = 60.0
             twobody.initial_state.representation.assign(classical)
             (clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)).propagate()
@@ -781,8 +702,8 @@ class BugFixes(TestBase):
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
-            availStart: str = clr.Convert(accStart, str)
-            availStop: str = clr.Convert(accStop, str)
+            availStart: str = str(accStart)
+            availStop: str = str(accStop)
             startTrunc: str = availStart[0 : (0 + Math.Min(19, len(availStart)))]  # drop partial secs
             stopTrunc: str = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
@@ -797,8 +718,8 @@ class BugFixes(TestBase):
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
             )
-            availStart = clr.Convert(accStart, str)
-            availStop = clr.Convert(accStop, str)
+            availStart = str(accStart)
+            availStop = str(accStop)
             startTrunc = availStart[0 : (0 + Math.Min(20, len(availStart)))]  # drop partial secs
             stopTrunc = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
@@ -817,7 +738,7 @@ class BugFixes(TestBase):
             oAccess.advanced.clock_host = IV_CLOCK_HOST.BASE
             oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
+            period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times("1 Jul 1999 21:00:00", "2 Jul 1999 00:03:00")
             oAccess.compute_access()
 
@@ -829,8 +750,8 @@ class BugFixes(TestBase):
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 2
             )
-            availStart = clr.Convert(accStart, str)
-            availStop = clr.Convert(accStop, str)
+            availStart = str(accStart)
+            availStop = str(accStop)
             startTrunc = availStart[0 : (0 + Math.Min(19, len(availStart)))]  # drop partial secs
             stopTrunc = availStop[0 : (0 + Math.Min(19, len(availStop)))]  # drop partial secs
             agAssert = BugFixes.AgAssertEqualString.BitwiseOr(
@@ -873,8 +794,8 @@ class BugFixes(TestBase):
                 oAccess.computed_access_interval_times, 0
             )
 
-            Assert.assertEqual("1 Jul 1999 11:09:00.000", clr.Convert(accStart, str))
-            Assert.assertEqual("1 Jul 1999 11:14:00.000", clr.Convert(accStop, str))
+            Assert.assertEqual("1 Jul 1999 11:09:00.000", str(accStart))
+            Assert.assertEqual("1 Jul 1999 11:14:00.000", str(accStop))
 
         finally:
             # Clean-up the objects created for this test
@@ -1019,12 +940,10 @@ class BugFixes(TestBase):
             Assert.assertEqual(2, intColl.count)
 
             # compute 3 days after scenario - still should have same number of accesses
-            dateObj: "Date" = TestBase.Application.conversion_utility.new_date(
-                "UTCG", clr.Convert(scene.start_time, str)
-            )
+            dateObj: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(scene.start_time))
             startDateObj: "Date" = dateObj.add("Day", 3.0)
             oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
-            period: "AccessTimePeriod" = clr.Convert(oAccess.access_time_period_data, AccessTimePeriod)
+            period: "AccessTimePeriod" = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_time_and_duration(startDateObj.format("UTCG"), "+1 day")
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
@@ -1049,32 +968,30 @@ class BugFixes(TestBase):
         oAccess: "StkAccess" = None
 
         try:
-            leo: "Satellite" = clr.Convert(oSatellite, Satellite)
+            leo: "Satellite" = Satellite(oSatellite)
 
             leo.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            twobody: "VehiclePropagatorTwoBody" = clr.Convert(leo.propagator, VehiclePropagatorTwoBody)
+            twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(leo.propagator)
 
-            twobody.ephemeris_interval.set_explicit_interval(
-                clr.Convert(scene.start_time, str), clr.Convert(scene.stop_time, str)
+            twobody.ephemeris_interval.set_explicit_interval(str(scene.start_time), str(scene.stop_time))
+
+            classical: "OrbitStateClassical" = OrbitStateClassical(
+                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
             )
 
-            classical: "OrbitStateClassical" = clr.Convert(
-                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
-            )
-
-            (clr.Convert(classical, IOrbitState)).epoch = clr.Convert(scene.start_time, str)
+            (classical).epoch = str(scene.start_time)
 
             classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
-            trueanomaly: "ClassicalLocationTrueAnomaly" = clr.Convert(classical.location, ClassicalLocationTrueAnomaly)
+            trueanomaly: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(classical.location)
             trueanomaly.value = 0
             classical.coordinate_system_type = COORDINATE_SYSTEM.ICRF
             classical.orientation.arg_of_perigee = 0.0
             classical.orientation.inclination = 45.0
             classical.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-            oRAAN: "OrientationAscNodeRAAN" = clr.Convert(classical.orientation.asc_node, OrientationAscNodeRAAN)
+            oRAAN: "OrientationAscNodeRAAN" = OrientationAscNodeRAAN(classical.orientation.asc_node)
             oRAAN.value = 0.0
             classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
-            sizeAlt: "ClassicalSizeShapeAltitude" = clr.Convert(classical.size_shape, ClassicalSizeShapeAltitude)
+            sizeAlt: "ClassicalSizeShapeAltitude" = ClassicalSizeShapeAltitude(classical.size_shape)
             sizeAlt.apogee_altitude = 400.0
             sizeAlt.perigee_altitude = 300.0
             twobody.initial_state.representation.assign(classical)
@@ -1180,9 +1097,7 @@ class BugFixes(TestBase):
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(2, intColl.count)
             Assert.assertEqual(oAccess.access_time_period, ACCESS_TIME_TYPE.EVENT_INTERVALS)
-            accInvtlList: "AccessTimeEventIntervals" = clr.Convert(
-                oAccess.access_time_period_data, AccessTimeEventIntervals
-            )
+            accInvtlList: "AccessTimeEventIntervals" = AccessTimeEventIntervals(oAccess.access_time_period_data)
             accInvtlListVals: "ITimeToolEventIntervalList" = accInvtlList.list_of_intervals
             accCrdn: "IAnalysisWorkbenchComponent" = clr.CastAs(accInvtlListVals, IAnalysisWorkbenchComponent)
             if BugFixes._verbose:

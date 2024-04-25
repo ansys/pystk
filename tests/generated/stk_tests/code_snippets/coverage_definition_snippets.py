@@ -256,17 +256,15 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     # region ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes
     def test_ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
-        coverage: "IStkObject" = (clr.Convert(scenario, IStkObject)).children.new(
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
+        coverage: "IStkObject" = (IStkObject(scenario)).children.new(
             STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageForCodeSnippet"
         )
 
-        aircraft: "Aircraft" = clr.Convert(
-            (clr.Convert(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1"), Aircraft
-        )
-        (clr.Convert(aircraft, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "AircraftSensor1")
+        aircraft: "Aircraft" = Aircraft((IStkObject(scenario)).children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1"))
+        (IStkObject(aircraft)).children.new(STK_OBJECT_TYPE.SENSOR, "AircraftSensor1")
         aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        greatArc: "VehiclePropagatorGreatArc" = clr.Convert(aircraft.route, VehiclePropagatorGreatArc)
+        greatArc: "VehiclePropagatorGreatArc" = VehiclePropagatorGreatArc(aircraft.route)
 
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.077, 0],
@@ -275,16 +273,16 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         ]
         greatArc.set_points_smooth_rate_and_propagate(waypoints)
 
-        (clr.Convert(coverage, CoverageDefinition)).asset_list.add((clr.Convert(aircraft, IStkObject)).path)
-        (clr.Convert(coverage, CoverageDefinition)).asset_list.add((clr.Convert(aircraft, IStkObject)).children[0].path)
+        (CoverageDefinition(coverage)).asset_list.add((IStkObject(aircraft)).path)
+        (CoverageDefinition(coverage)).asset_list.add((IStkObject(aircraft)).children[0].path)
 
         try:
             self.ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(
-                clr.Convert(TestBase.Application, StkObjectRoot), clr.Convert(coverage, CoverageDefinition)
+                TestBase.Application, CoverageDefinition(coverage)
             )
 
         finally:
-            (clr.Convert(aircraft, IStkObject)).unload()
+            (IStkObject(aircraft)).unload()
             coverage.unload()
 
     def ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(

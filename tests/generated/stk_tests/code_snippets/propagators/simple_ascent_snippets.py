@@ -37,7 +37,7 @@ class SimpleAscentSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(self.m_Object, IStkObject)).unload()
+        (IStkObject(self.m_Object)).unload()
         self.m_Object = None
 
     # endregion

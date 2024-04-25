@@ -97,7 +97,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
-        (clr.Convert(gv.route, VehiclePropagatorRealtime)).propagate()
+        (VehiclePropagatorRealtime(gv.route)).propagate()
         realtime: "VehiclePropagatorRealtime" = clr.CastAs(gv.route, VehiclePropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
@@ -115,7 +115,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
-        (clr.Convert(gv.route, VehiclePropagatorRealtime)).propagate()
+        (VehiclePropagatorRealtime(gv.route)).propagate()
         realtime: "VehiclePropagatorRealtime" = clr.CastAs(gv.route, VehiclePropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")

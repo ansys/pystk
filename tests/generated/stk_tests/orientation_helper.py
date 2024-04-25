@@ -29,14 +29,14 @@ class OrientationTest(object):
     def Display(self, oOrientation: "IOrientation"):
         Assert.assertIsNotNone(oOrientation)
         if oOrientation.orientation_type == ORIENTATION_TYPE.AZ_EL:
-            oAzEl: "IOrientationAzEl" = clr.Convert(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL), IOrientationAzEl)
+            oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
             Assert.assertIsNotNone(oAzEl)
             self.m_logger.WriteLine6("\t\tAzEl Azimuth is: {0}", oAzEl.azimuth)
             self.m_logger.WriteLine6("\t\tAzEl Elevation is: {0}", oAzEl.elevation)
             self.m_logger.WriteLine6("\t\tAzEl AboutBoresight is: {0}", oAzEl.about_boresight)
         elif oOrientation.orientation_type == ORIENTATION_TYPE.EULER_ANGLES:
-            oEulerAngles: "IOrientationEulerAngles" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES), IOrientationEulerAngles
+            oEulerAngles: "IOrientationEulerAngles" = IOrientationEulerAngles(
+                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             )
             Assert.assertIsNotNone(oEulerAngles)
             self.m_logger.WriteLine6("\t\tEulerAngles A is: {0}", oEulerAngles.a)
@@ -44,8 +44,8 @@ class OrientationTest(object):
             self.m_logger.WriteLine6("\t\tEulerAngles C is: {0}", oEulerAngles.c)
             self.m_logger.WriteLine6("\t\tEulerAngles Sequence is: {0}", oEulerAngles.sequence)
         elif oOrientation.orientation_type == ORIENTATION_TYPE.QUATERNION:
-            oQuaternion: "IOrientationQuaternion" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION), IOrientationQuaternion
+            oQuaternion: "IOrientationQuaternion" = IOrientationQuaternion(
+                oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION)
             )
             Assert.assertIsNotNone(oQuaternion)
             self.m_logger.WriteLine6("\t\tQuaternion QX is: {0}", oQuaternion.qx)
@@ -53,8 +53,8 @@ class OrientationTest(object):
             self.m_logger.WriteLine6("\t\tQuaternion QZ is: {0}", oQuaternion.qz)
             self.m_logger.WriteLine6("\t\tQuaternion QS is: {0}", oQuaternion.qs)
         elif oOrientation.orientation_type == ORIENTATION_TYPE.YPR_ANGLES:
-            oYPRAngles: "IOrientationYPRAngles" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES), IOrientationYPRAngles
+            oYPRAngles: "IOrientationYPRAngles" = IOrientationYPRAngles(
+                oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES)
             )
             Assert.assertIsNotNone(oYPRAngles)
             self.m_logger.WriteLine6("\t\tYPRAngles Yaw is: {0}", oYPRAngles.yaw)
@@ -82,7 +82,7 @@ class OrientationTest(object):
         self.m_logger.WriteLine5("\tThe new AngleUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         Assert.assertEqual("deg", self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
         if ((eTypes & Orientations.AzEl)) == Orientations.AzEl:
-            oAzEl: "IOrientationAzEl" = clr.Convert(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL), IOrientationAzEl)
+            oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
             Assert.assertIsNotNone(oAzEl)
             oAzEl.assign(oOrientation)
             self.m_logger.WriteLine6("\tNew orientation type is: {0}", oAzEl.orientation_type)
@@ -107,8 +107,8 @@ class OrientationTest(object):
                 oAzEl.elevation = -1234.5
 
         if ((eTypes & Orientations.EulerAngles)) == Orientations.EulerAngles:
-            oEulerAngles: "IOrientationEulerAngles" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES), IOrientationEulerAngles
+            oEulerAngles: "IOrientationEulerAngles" = IOrientationEulerAngles(
+                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             )
             Assert.assertIsNotNone(oEulerAngles)
             oEulerAngles.assign(oOrientation)
@@ -147,8 +147,8 @@ class OrientationTest(object):
                 oEulerAngles.c = 1234.5
 
         if ((eTypes & Orientations.Quaternion)) == Orientations.Quaternion:
-            oQuaternion: "IOrientationQuaternion" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION), IOrientationQuaternion
+            oQuaternion: "IOrientationQuaternion" = IOrientationQuaternion(
+                oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION)
             )
             Assert.assertIsNotNone(oQuaternion)
             oQuaternion.assign(oOrientation)
@@ -179,8 +179,8 @@ class OrientationTest(object):
                 oQuaternion.qs = -1.2345
 
         if ((eTypes & Orientations.YPRAngles)) == Orientations.YPRAngles:
-            oYPRAngles: "IOrientationYPRAngles" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES), IOrientationYPRAngles
+            oYPRAngles: "IOrientationYPRAngles" = IOrientationYPRAngles(
+                oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES)
             )
             Assert.assertIsNotNone(oYPRAngles)
             oYPRAngles.assign(oOrientation)
@@ -215,15 +215,15 @@ class OrientationTest(object):
         if ((eTypes & Orientations.AzEl)) == Orientations.AzEl:
             oOrientation.assign_az_el(85.4, 34.5, AZ_EL_ABOUT_BORESIGHT.ROTATE)
             self.Display(oOrientation)
-            pAzEl: "IOrientationAzEl" = clr.Convert(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL), IOrientationAzEl)
+            pAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
             Assert.assertEqual(85.4, pAzEl.azimuth)
             Assert.assertAlmostEqual(34.5, float(pAzEl.elevation), delta=1e-06)
             Assert.assertEqual(AZ_EL_ABOUT_BORESIGHT.ROTATE, pAzEl.about_boresight)
 
         if ((eTypes & Orientations.EulerAngles)) == Orientations.EulerAngles:
             oOrientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_121, 34.45, 56.51, 76.12)
-            pEuler: "IOrientationEulerAngles" = clr.Convert(
-                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES), IOrientationEulerAngles
+            pEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
+                oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             )
             self.Display(pEuler)
             pEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_121
@@ -258,24 +258,24 @@ class DirectionsTest(object):
     def Display(self, oDirection: "IDirection"):
         Assert.assertIsNotNone(oDirection)
         if oDirection.direction_type == DIRECTION_TYPE.EULER:
-            oEuler: "DirectionEuler" = clr.Convert(oDirection.convert_to(DIRECTION_TYPE.EULER), DirectionEuler)
+            oEuler: "DirectionEuler" = DirectionEuler(oDirection.convert_to(DIRECTION_TYPE.EULER))
             Assert.assertIsNotNone(oEuler)
             self.m_logger.WriteLine6("\t\tEuler B is: {0}", oEuler.b)
             self.m_logger.WriteLine6("\t\tEuler C is: {0}", oEuler.c)
             self.m_logger.WriteLine6("\t\tEuler Sequence is: {0}", oEuler.sequence)
         elif oDirection.direction_type == DIRECTION_TYPE.PR:
-            oPR: "DirectionPR" = clr.Convert(oDirection.convert_to(DIRECTION_TYPE.PR), DirectionPR)
+            oPR: "DirectionPR" = DirectionPR(oDirection.convert_to(DIRECTION_TYPE.PR))
             Assert.assertIsNotNone(oPR)
             self.m_logger.WriteLine6("\t\tPR Pitch is: {0}", oPR.pitch)
             self.m_logger.WriteLine6("\t\tPR Roll is: {0}", oPR.roll)
             self.m_logger.WriteLine6("\t\tPR Sequence is: {0}", oPR.sequence)
         elif oDirection.direction_type == DIRECTION_TYPE.RA_DEC:
-            oRADec: "DirectionRADec" = clr.Convert(oDirection.convert_to(DIRECTION_TYPE.RA_DEC), DirectionRADec)
+            oRADec: "DirectionRADec" = DirectionRADec(oDirection.convert_to(DIRECTION_TYPE.RA_DEC))
             Assert.assertIsNotNone(oRADec)
             self.m_logger.WriteLine6("\t\tRADec Pitch is: {0}", oRADec.ra)
             self.m_logger.WriteLine6("\t\tRADec Roll is: {0}", oRADec.dec)
         elif oDirection.direction_type == DIRECTION_TYPE.XYZ:
-            oXYZ: "DirectionXYZ" = clr.Convert(oDirection.convert_to(DIRECTION_TYPE.XYZ), DirectionXYZ)
+            oXYZ: "DirectionXYZ" = DirectionXYZ(oDirection.convert_to(DIRECTION_TYPE.XYZ))
             Assert.assertIsNotNone(oXYZ)
             self.m_logger.WriteLine6("\t\tX is: {0}", oXYZ.x)
             self.m_logger.WriteLine6("\t\tY is: {0}", oXYZ.y)
@@ -294,7 +294,7 @@ class DirectionsTest(object):
         self.Display(oDirection)
 
         # Euler direction test
-        oEuler: "DirectionEuler" = clr.Convert(oDirection.convert_to(DIRECTION_TYPE.EULER), DirectionEuler)
+        oEuler: "DirectionEuler" = DirectionEuler(oDirection.convert_to(DIRECTION_TYPE.EULER))
         Assert.assertIsNotNone(oEuler)
         oEuler.assign(oDirection)
         oDirection.convert_to(DIRECTION_TYPE.PR)
@@ -311,7 +311,7 @@ class DirectionsTest(object):
         self.Display(oEuler)
 
         # PR direction test
-        oPR: "DirectionPR" = clr.Convert(oEuler.convert_to(DIRECTION_TYPE.PR), DirectionPR)
+        oPR: "DirectionPR" = DirectionPR(oEuler.convert_to(DIRECTION_TYPE.PR))
         Assert.assertIsNotNone(oPR)
         oPR.assign(oEuler)
         oEuler.convert_to(DIRECTION_TYPE.EULER)
@@ -329,7 +329,7 @@ class DirectionsTest(object):
         self.Display(oPR)
 
         # RADec direction test
-        oRADec: "DirectionRADec" = clr.Convert(oPR.convert_to(DIRECTION_TYPE.RA_DEC), DirectionRADec)
+        oRADec: "DirectionRADec" = DirectionRADec(oPR.convert_to(DIRECTION_TYPE.RA_DEC))
         Assert.assertIsNotNone(oRADec)
         oPR.convert_to(DIRECTION_TYPE.EULER)
         oPR.convert_to(DIRECTION_TYPE.PR)
@@ -345,7 +345,7 @@ class DirectionsTest(object):
         self.Display(oRADec)
 
         # XYZ direction test
-        oXYZ: "DirectionXYZ" = clr.Convert(oRADec.convert_to(DIRECTION_TYPE.XYZ), DirectionXYZ)
+        oXYZ: "DirectionXYZ" = DirectionXYZ(oRADec.convert_to(DIRECTION_TYPE.XYZ))
         Assert.assertIsNotNone(oXYZ)
         oXYZ.assign(oRADec)
         oRADec.convert_to(DIRECTION_TYPE.EULER)
@@ -360,7 +360,7 @@ class DirectionsTest(object):
         oXYZ.assign_xyz(0.190988679940043, -0.743582379766568, 0.640787459798838)
         self.m_logger.WriteLine("\t\tNew values:")
         self.Display(oXYZ)
-        oEuler = clr.Convert(oXYZ.convert_to(DIRECTION_TYPE.EULER), DirectionEuler)
+        oEuler = DirectionEuler(oXYZ.convert_to(DIRECTION_TYPE.EULER))
         Assert.assertIsNotNone(oEuler)
         oDirection.assign(oEuler)
         oXYZ.convert_to(DIRECTION_TYPE.XYZ)
@@ -404,31 +404,31 @@ class PositionTest(object):
     def Display(self, oPosition: "IPosition"):
         Assert.assertIsNotNone(oPosition)
         if oPosition.position_type == POSITION_TYPE.CARTESIAN:
-            oCartesian: "Cartesian" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CARTESIAN), Cartesian)
+            oCartesian: "Cartesian" = Cartesian(oPosition.convert_to(POSITION_TYPE.CARTESIAN))
             Assert.assertIsNotNone(oCartesian)
             self.m_logger.WriteLine6("\t\tCartesian X is: {0}", oCartesian.x)
             self.m_logger.WriteLine6("\t\tCartesian Y is: {0}", oCartesian.y)
             self.m_logger.WriteLine6("\t\tCartesian Z is: {0}", oCartesian.z)
         elif oPosition.position_type == POSITION_TYPE.CYLINDRICAL:
-            oCylindrical: "Cylindrical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL), Cylindrical)
+            oCylindrical: "Cylindrical" = Cylindrical(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL))
             Assert.assertIsNotNone(oCylindrical)
             self.m_logger.WriteLine6("\t\tCylindrical Radius is: {0}", oCylindrical.radius)
             self.m_logger.WriteLine6("\t\tCylindrical Z is: {0}", oCylindrical.z)
             self.m_logger.WriteLine6("\t\tCylindrical Lon is: {0}", oCylindrical.lon)
         elif oPosition.position_type == POSITION_TYPE.GEOCENTRIC:
-            oGeocentric: "Geocentric" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC), Geocentric)
+            oGeocentric: "Geocentric" = Geocentric(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC))
             Assert.assertIsNotNone(oGeocentric)
             self.m_logger.WriteLine6("\t\tGeocentric Lat is: {0}", oGeocentric.lat)
             self.m_logger.WriteLine6("\t\tGeocentric Lon is: {0}", oGeocentric.lon)
             self.m_logger.WriteLine6("\t\tGeocentric Alt is: {0}", oGeocentric.altitude)
         elif oPosition.position_type == POSITION_TYPE.GEODETIC:
-            oGeodetic: "Geodetic" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+            oGeodetic: "Geodetic" = Geodetic(oPosition.convert_to(POSITION_TYPE.GEODETIC))
             Assert.assertIsNotNone(oGeodetic)
             self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", oGeodetic.lat)
             self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", oGeodetic.lon)
             self.m_logger.WriteLine6("\t\tGeodetic Alt is: {0}", oGeodetic.altitude)
         elif oPosition.position_type == POSITION_TYPE.SPHERICAL:
-            oSpherical: "Spherical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.SPHERICAL), Spherical)
+            oSpherical: "Spherical" = Spherical(oPosition.convert_to(POSITION_TYPE.SPHERICAL))
             Assert.assertIsNotNone(oSpherical)
             self.m_logger.WriteLine6("\t\tSpherical Lat is: {0}", oSpherical.lat)
             self.m_logger.WriteLine6("\t\tSpherical Lon is: {0}", oSpherical.lon)
@@ -479,7 +479,7 @@ class PositionTest(object):
         self.m_logger.WriteLine6("\tCurrent position type is: {0}", oPosition.position_type)
         self.Display(oPosition)
         if ((eTypes & PositionTest.Positions.Cartesian)) == PositionTest.Positions.Cartesian:
-            oCartesian: "Cartesian" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CARTESIAN), Cartesian)
+            oCartesian: "Cartesian" = Cartesian(oPosition.convert_to(POSITION_TYPE.CARTESIAN))
             Assert.assertIsNotNone(oCartesian)
             oCartesian.assign(oPosition)
             self.m_logger.WriteLine6("\tNew position type is: {0}", oCartesian.position_type)
@@ -509,7 +509,7 @@ class PositionTest(object):
                 oCartesian.convert_to(POSITION_TYPE.SPHERICAL)
 
         if ((eTypes & PositionTest.Positions.Cylindrical)) == PositionTest.Positions.Cylindrical:
-            oCylindrical: "Cylindrical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL), Cylindrical)
+            oCylindrical: "Cylindrical" = Cylindrical(oPosition.convert_to(POSITION_TYPE.CYLINDRICAL))
             Assert.assertIsNotNone(oCylindrical)
             oCylindrical.assign(oPosition)
             self.m_logger.WriteLine6("\tNew position type is: {0}", oCylindrical.position_type)
@@ -539,7 +539,7 @@ class PositionTest(object):
                 oCylindrical.convert_to(POSITION_TYPE.SPHERICAL)
 
         if ((eTypes & PositionTest.Positions.Geocentric)) == PositionTest.Positions.Geocentric:
-            oGeocentric: "Geocentric" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC), Geocentric)
+            oGeocentric: "Geocentric" = Geocentric(oPosition.convert_to(POSITION_TYPE.GEOCENTRIC))
             Assert.assertIsNotNone(oGeocentric)
             oGeocentric.assign(oPosition)
             self.m_logger.WriteLine6("\tNew position type is: {0}", oGeocentric.position_type)
@@ -569,7 +569,7 @@ class PositionTest(object):
                 oGeocentric.convert_to(POSITION_TYPE.SPHERICAL)
 
         if ((eTypes & PositionTest.Positions.Geodetic)) == PositionTest.Positions.Geodetic:
-            oGeodetic: "Geodetic" = clr.Convert(oPosition.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+            oGeodetic: "Geodetic" = Geodetic(oPosition.convert_to(POSITION_TYPE.GEODETIC))
             Assert.assertIsNotNone(oGeodetic)
             oGeodetic.assign(oPosition)
             self.m_logger.WriteLine6("\tNew position type is: {0}", oGeodetic.position_type)
@@ -599,7 +599,7 @@ class PositionTest(object):
                 oGeodetic.convert_to(POSITION_TYPE.SPHERICAL)
 
         if ((eTypes & PositionTest.Positions.Spherical)) == PositionTest.Positions.Spherical:
-            oSpherical: "Spherical" = clr.Convert(oPosition.convert_to(POSITION_TYPE.SPHERICAL), Spherical)
+            oSpherical: "Spherical" = Spherical(oPosition.convert_to(POSITION_TYPE.SPHERICAL))
             Assert.assertIsNotNone(oSpherical)
             oSpherical.assign(oPosition)
             self.m_logger.WriteLine6("\tNew position type is: {0}", oSpherical.position_type)
@@ -692,9 +692,7 @@ class LLAPositionTest(object):
     def Display(self, oPosition: "ILLAPosition"):
         Assert.assertIsNotNone(oPosition)
         if oPosition.type == LLA_POSITION_TYPE.GEOCENTRIC:
-            llaGeocentric: "LLAGeocentric" = clr.Convert(
-                oPosition.convert_to(LLA_POSITION_TYPE.GEOCENTRIC), LLAGeocentric
-            )
+            llaGeocentric: "LLAGeocentric" = LLAGeocentric(oPosition.convert_to(LLA_POSITION_TYPE.GEOCENTRIC))
             Assert.assertIsNotNone(llaGeocentric)
             self.m_logger.WriteLine6("\t\tGeocentric Lat is: {0}", llaGeocentric.lat)
             self.m_logger.WriteLine6("\t\tGeocentric Lon is: {0}", llaGeocentric.lon)
@@ -710,7 +708,7 @@ class LLAPositionTest(object):
             Assert.assertAlmostEqual(50.0, llaGeocentric.lon, delta=0.01)
             Assert.assertAlmostEqual(6429, llaGeocentric.rad, delta=1.0)
         elif oPosition.type == LLA_POSITION_TYPE.GEODETIC:
-            llaGeodetic: "LLAGeodetic" = clr.Convert(oPosition.convert_to(LLA_POSITION_TYPE.GEODETIC), LLAGeodetic)
+            llaGeodetic: "LLAGeodetic" = LLAGeodetic(oPosition.convert_to(LLA_POSITION_TYPE.GEODETIC))
             Assert.assertIsNotNone(llaGeodetic)
             self.m_logger.WriteLine6("\t\tGeodetic Lat is: {0}", llaGeodetic.lat)
             self.m_logger.WriteLine6("\t\tGeodetic Lon is: {0}", llaGeodetic.lon)
@@ -739,7 +737,7 @@ class LLAPositionTest(object):
         self.Display(oPosition)
         # Geocentric
         # ConvertTo
-        oGeocentric: "LLAGeocentric" = clr.Convert(oPosition.convert_to(LLA_POSITION_TYPE.GEOCENTRIC), LLAGeocentric)
+        oGeocentric: "LLAGeocentric" = LLAGeocentric(oPosition.convert_to(LLA_POSITION_TYPE.GEOCENTRIC))
         Assert.assertIsNotNone(oGeocentric)
         # Assign
         oGeocentric.assign(oPosition)
@@ -766,7 +764,7 @@ class LLAPositionTest(object):
         self.Display(oGeocentric)
         # Geodetic
         # ConvertTo
-        oGeodetic: "LLAGeodetic" = clr.Convert(oGeocentric.convert_to(LLA_POSITION_TYPE.GEODETIC), LLAGeodetic)
+        oGeodetic: "LLAGeodetic" = LLAGeodetic(oGeocentric.convert_to(LLA_POSITION_TYPE.GEODETIC))
         Assert.assertIsNotNone(oGeodetic)
         # Assign
         oGeodetic.assign(oGeocentric)

@@ -398,6 +398,8 @@ class GrpcClient(object):
 
     _active_batchers = {}
 
+    client_interceptor = None
+
     def __init__(self):
        self.channel = None
        self.stub = None
@@ -522,6 +524,10 @@ class GrpcClient(object):
         new_grpc_client.channel = grpc.insecure_channel(addr)
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
+
+            if GrpcClient.client_interceptor is not None:
+                new_grpc_client.channel = grpc.intercept_channel(new_grpc_client.channel, GrpcClient.client_interceptor)
+
             new_grpc_client.stub = AgGrpcServices_pb2_grpc.STKGrpcServiceStub(new_grpc_client.channel)
             new_grpc_client._addr = addr
             new_grpc_client._initialize_connection()
