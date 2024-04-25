@@ -40,7 +40,7 @@ doc = [
     "jupyterlab==4.1.6",
     "jupytext==1.16.1",
     "jupyter-server==2.14.0",
-    "myst-parser==2.0.0",
+    "myst-parser==3.0.0",
     "nbsphinx==0.9.3",
     "numpydoc==1.7.0",
     "nbconvert==7.16.3",
