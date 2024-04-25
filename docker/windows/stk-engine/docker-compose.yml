@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   stk:
-    image: ansys/stk:latest-windowsservercore-ltsc2019
+    image: ansys/stk:dev-windowsservercore-ltsc2019
     container_name: stk
     build: 
       context: .

@@ -5,14 +5,28 @@ if ($agreeToLicense -ne 'yes') {
     exit 1
 }
 
-Write-Host "Installing STK Engine"
+Write-Host "Installing STK ZIPs"
 
-# Unpack engine
-$zipFile = Get-ChildItem -Path c:/dist -Recurse '*.zip' | Select-Object -ExpandProperty FullName
-Expand-Archive -Path $zipFIle -DestinationPath c:/dist
-Remove-Item $zipFile;
+# Find all ZIPs
+$zipFiles = Get-ChildItem -Path C:/Users/STK/dist/ 'STK*.zip'
+foreach ($zipFile in $zipFiles) {
 
-$setup = Get-ChildItem -Path c:/dist -Recurse 'setup.exe' | Select-Object -ExpandProperty FullName
-Start-Process $setup -Wait -ArgumentList @('/S', '/V"/qn /L*v C:\dist\install.log AgreeToLicense=Yes"')
+    # Extract the current ZIP
+    Write-Host "Extracting $zipFile"
+    $zipFile -match "(?<archive>.*)\.zip" | Out-Null
+    $dirname = $matches['archive']
+    Expand-Archive -Path "C:/Users/STK/dist/$zipFile" -DestinationPath C:/Users/STK/dist/
+    Write-Host "Extracted $zipFile"
 
-Remove-Item -Path C:\dist\ -Force -Recurse
+    # Install current ZIP using setup.exe
+    Write-Host "Installing $zipFile"
+    $setup = Get-ChildItem -Path "C:/Users/STK/dist/$dirname" -Recurse 'setup.exe' | Select-Object -ExpandProperty FullName
+    Start-Process $setup -Wait -ArgumentList @('/S', '/V"/qn /L*v C:/Users/STK/dist/install.log AgreeToLicense=Yes"')
+    Write-Host "Installed $zipFile"
+
+    # Remove processed files/directories
+    Remove-Item "C:/Users/STK/dist/$zipFile"
+    Remove-Item -Path "C:/Users/STK/dist/$dirname" -Force -Recurse
+}
+
+Remove-Item -Path C:/Users/STK/dist/ -Force -Recurse

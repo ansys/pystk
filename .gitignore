@@ -162,6 +162,9 @@ cython_debug/
 # Ignore any distributions directory to prevent accidental publications
 distributions/
 
+# Ignore any trusted-certificates directory to prevent accidental publications
+trusted-certificates/
+
 # Backup files
 *.bak
 

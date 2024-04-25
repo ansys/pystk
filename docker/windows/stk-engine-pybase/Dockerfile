@@ -1,36 +1,23 @@
-# By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:latest-windowsservercore-ltsc2019
+ARG baseImage=ansys/stk:dev-windowsservercore-ltsc2019
 FROM ${baseImage}
 
-# Install system dependencies
-USER root
-RUN set -e; \
+USER ContainerAdministrator
 
-    # Install basic development utilities
-    yum groupinstall -y development; \
-    yum -y install gcc make tar wget; \
+# CA Certificates Configuration
+# Adds additional trusted CAs to the system certificate truststore.
+# Delete the following two lines if you do not need any additional trusted CAs.
+COPY trusted-certificates/* c:/Temp/certificates/
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+RUN Get-ChildItem -Path c:/Temp/certificates | Foreach {Import-Certificate -FilePath $_.fullname -CertStoreLocation cert:/LocalMachine/Root}
 
-    # Install OpenSSL 1.1 dependencies
-    yum -y install perl-core pcre-devel; \
+# PIP Configuration
+RUN Get-Content c:/Temp/certificates/*.crt | Set-Content c:/Temp/certificates/ca-bundle.crt
+ENV PIP_CERT=c:/Temp/certificates/ca-bundle.crt
+# Directs python pip installs to pull packages from a specified repository.
+# Delete the following two lines if you do not need to override the default pip repository URL.
+ARG pipIndexUrl=''
+ENV PIP_INDEX_URL=${pipIndexUrl}
 
-    # Install required dependencies for Python 3.X
-    yum -y install bzip2-devel libffi-devel tk-devel; \
-    yum -y install zlib-devel ncurses-devel sqlite-devel; \
-    yum -y install readline-devel gdbm-devel db4-devel libpcap-devel xz-devel; \
+SHELL ["cmd", "/S", "/C"]
 
-    # Clean all unnecessary files
-    yum clean all; \
-    rm -rf /var/cache/yum
-
-# Install OpenSSL 1.1
-RUN set -e; \
-   wget --no-check-certificate https://ftp.openssl.org/source/openssl-1.1.1k.tar.gz; \
-   tar -xzvf openssl-1.1.1k.tar.gz; \
-   cd openssl-1.1.1k; \
-   ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic; \
-   make && make install; \
-   echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" > /etc/profile.d/openssl.sh; \
-   echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" >> .bashrc
-
-
-CMD echo 'Extend this container by installing Python.'
+USER STK

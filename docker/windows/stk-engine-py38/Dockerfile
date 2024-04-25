@@ -1,59 +1,23 @@
 # By default, start from the base STK Engine Python image
-ARG baseImage=ansys/stk:latest-windowsservercore-ltsc2019
-ARG basePythonImage=ansys/stk:latest-windowsservercore-ltsc2019-pybase
+ARG baseImage=ansys/stk:dev-windowsservercore-ltsc2019
+ARG basePythonImage=ansys/stk:dev-windowsservercore-ltsc2019-pybase
 FROM ${basePythonImage} as builder
 
-##############################################
-# 1) Build Python into its own builder stage
-##############################################
+USER ContainerAdministrator
 
-# Install Python 3.8 and create a symbolic link named "python".
-# This overrides the default Python 2.7 in CentOS7.
-USER root
-RUN cd /tmp && \
-    wget https://www.python.org/ftp/python/3.8.16/Python-3.8.16.tar.xz && \
-    tar xf Python-3.8.16.tar.xz && \
-    cd Python-3.8.16 && \
-    ./configure --enable-optimizations && \
-    make altinstall
+# Install Python
+ADD "https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe" "C:\dist\python-3.8.10-amd64.exe"
 
-#############################################################
-# 2) Copy the Python build to the system in the second stage
-#############################################################
+COPY  scripts C:/dist/
 
-# Switch back to non-root user
-FROM ${baseImage}
-USER root
+RUN powershell -Command $ErrorActionPreference = 'Stop'; \
+    $ProgressPreference = 'SilentlyContinue'; \
+    C:\dist\install.ps1 $Env:agreeToLicense
 
-# Install required packages for X Window System and MESA graphics
-RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
-    yum -y install mesa-dri-drivers mesa-libGLU; \
-    yum -y install glxinfo; \
-    yum -y install tk; \
-    yum -y install dos2unix; \
-    yum clean all;
+USER STK
 
-# Set the display environment variable to allow GUI applications
-ENV DISPLAY=:0
-
-# Copy the Python interpreter, the standard library and pip to the final image
-COPY --from=builder /usr/local/bin/python3.8 /usr/local/bin/python3.8 
-COPY --from=builder /usr/local/lib/python3.8 /usr/local/lib/python3.8 
-COPY --from=builder /usr/local/bin/pip3.8 /usr/local/bin/pip3.8 
-
-RUN ln -sfn /usr/local/bin/python3.8 /usr/local/bin/python && \
-    ln -sfn /usr/local/bin/pip3.8 /usr/local/bin/pip
-
-# Switch back to non-root user
-USER stk
-
-# Update the path to include Python executables
-ENV PATH="/usr/local/bin:${STK_USER_HOME}/.local/bin:${PATH}" \
-    PIP_DEFAULT_TIMEOUT=600 \
+# Update the pip environment variables
+ENV PIP_DEFAULT_TIMEOUT=600 \
     PIP_RETRY=50
 
-# Use the entrypoint script
-COPY --chown=stk docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
-    dos2unix "${STK_USER_HOME}/bin/docker-entrypoint.sh"
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ENTRYPOINT [ "python" ]
