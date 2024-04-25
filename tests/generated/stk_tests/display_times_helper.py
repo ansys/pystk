@@ -30,7 +30,11 @@ class DisplayTimesHelper(object):
                 "\t\tType {0}: {1} ({2})",
                 iIndex,
                 arTypes[iIndex][1],
-                clr.Convert(int(arTypes[iIndex][0]), DISPLAY_TIMES_TYPE),
+                (
+                    DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
+                    else int(arTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -47,7 +51,11 @@ class DisplayTimesHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "DISPLAY_TIMES_TYPE" = clr.Convert(int(arTypes[iIndex][0]), DISPLAY_TIMES_TYPE)
+            eType: "DISPLAY_TIMES_TYPE" = (
+                DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
+                else int(arTypes[iIndex][0])
+            )
             if not oDisplay.is_display_status_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -69,7 +77,7 @@ class DisplayTimesHelper(object):
             elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
                 oHelper.Run(
-                    clr.Convert(oDisplay.display_times_data, IntervalCollection),
+                    IntervalCollection(oDisplay.display_times_data),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
             elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:

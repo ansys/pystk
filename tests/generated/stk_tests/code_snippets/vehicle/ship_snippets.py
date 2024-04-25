@@ -43,7 +43,7 @@ class ShipSnippets(CodeSnippetsTestBase):
 
     # region CreateShipOnCurrentScenarioCentralBody
     def test_CreateShipOnCurrentScenarioCentralBody(self):
-        (clr.Convert(ShipSnippets.m_Object, IStkObject)).unload()
+        (IStkObject(ShipSnippets.m_Object)).unload()
         self.CreateShipOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateShipOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):

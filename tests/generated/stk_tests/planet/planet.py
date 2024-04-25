@@ -21,7 +21,7 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("PlanetTests", "PlanetTests.sc"))
-            EarlyBoundTests.AG_PL = clr.Convert(TestBase.Application.current_scenario.children["Planet1"], Planet)
+            EarlyBoundTests.AG_PL = Planet(TestBase.Application.current_scenario.children["Planet1"])
 
         except Exception as e:
             raise e
@@ -65,9 +65,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
         Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY, EarlyBoundTests.AG_PL.position_source)
         # CentralBody
-        oBody: "PlanetPositionCentralBody" = clr.Convert(
-            EarlyBoundTests.AG_PL.position_source_data, PlanetPositionCentralBody
-        )
+        oBody: "PlanetPositionCentralBody" = PlanetPositionCentralBody(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(oBody)
         TestBase.logger.WriteLine6("\tThe current Radius is: {0}", oBody.radius)
         TestBase.logger.WriteLine4("\tThe current AutoRename flag is: {0}", oBody.auto_rename)
@@ -92,27 +90,31 @@ class EarlyBoundTests(TestBase):
                 "\t\t\tThe {0} supports {1} EphemSourceTypes", oBody.central_body, Array.Length(arEphem)
             )
             if Array.Length(arEphem) > 0:
-                eType: "EPHEM_SOURCE_TYPE" = clr.Convert(int(arEphem[0]), EPHEM_SOURCE_TYPE)
+                eType: "EPHEM_SOURCE_TYPE" = (
+                    EPHEM_SOURCE_TYPE(int(arEphem[0]))
+                    if (int(arEphem[0]) in [item.value for item in EPHEM_SOURCE_TYPE])
+                    else int(arEphem[0])
+                )
                 TestBase.logger.WriteLine7("\t\t\t\tAvailable Type {0}: {1}", 0, eType)
                 oBody.ephem_source = eType
                 TestBase.logger.WriteLine6("\t\t\t\t\tThe new EphemSourceType is: {0}", oBody.ephem_source)
-                Assert.assertEqual(eType, clr.Convert(oBody.ephem_source, EPHEM_SOURCE_TYPE))
+                Assert.assertEqual(eType, oBody.ephem_source)
 
         # File
         EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_FILE
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
         Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.POSITION_FILE, EarlyBoundTests.AG_PL.position_source)
-        file: "PlanetPositionFile" = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, PlanetPositionFile)
+        file: "PlanetPositionFile" = PlanetPositionFile(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(file)
         TestBase.logger.WriteLine5("The current Filename is: {0}", file.filename)
         file.filename = TestBase.GetScenarioFile("Venus.pe")
         TestBase.logger.WriteLine5("The new Filename is: {0}", file.filename)
         # Restore the planet name to its original value
         EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-        oBody = clr.Convert(EarlyBoundTests.AG_PL.position_source_data, PlanetPositionCentralBody)
+        oBody = PlanetPositionCentralBody(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(oBody)
         oBody.auto_rename = False
-        (clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).instance_name = "Planet1"
+        (IStkObject(EarlyBoundTests.AG_PL)).instance_name = "Planet1"
         oBody.central_body = "Sun"
         TestBase.logger.WriteLine5("JPLDEVersion: {0}", oBody.jplde_version)
         oBody.ephem_source = EPHEM_SOURCE_TYPE.ANALYTIC
@@ -130,13 +132,11 @@ class EarlyBoundTests(TestBase):
     def test_PlanetRadius(self):
         initialDistanceUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DistanceUnit")
         try:
-            tempPlanet: "Planet" = clr.Convert(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "TempPlanet"), Planet
+            tempPlanet: "Planet" = Planet(
+                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "TempPlanet")
             )
             tempPlanet.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-            centralBody: "PlanetPositionCentralBody" = clr.Convert(
-                tempPlanet.position_source_data, PlanetPositionCentralBody
-            )
+            centralBody: "PlanetPositionCentralBody" = PlanetPositionCentralBody(tempPlanet.position_source_data)
             centralBody.auto_rename = False
             centralBody.central_body = "Sun"
 
@@ -161,7 +161,7 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oHelper.Run(clr.CastAs(EarlyBoundTests.AG_PL, IStkObject))
-        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_PL, IStkObject)).object_files)
+        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_PL)).object_files)
 
     # endregion
 
@@ -201,9 +201,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH4, gfx.line_width)
         with pytest.raises(Exception):
-            gfx.line_width = clr.Convert((-1), LINE_WIDTH)
+            gfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            gfx.line_width = clr.Convert((11), LINE_WIDTH)
+            gfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         # Inherit from 2D
         TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.inherit)
@@ -313,7 +313,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            oODD: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
+            oODD: "PlanetOrbitDisplayTime" = PlanetOrbitDisplayTime(gfx.orbit_display_data)
             Assert.assertIsNotNone(oODD)
             oODD.time = 12345.6789
 
@@ -333,7 +333,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.DISPLAY_ONE_ORBIT, gfx.orbit_display)
         try:
             bCaught = False
-            oODD: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
+            oODD: "PlanetOrbitDisplayTime" = PlanetOrbitDisplayTime(gfx.orbit_display_data)
             Assert.assertIsNotNone(oODD)
             oODD.time = 12345.6789
 
@@ -347,7 +347,7 @@ class EarlyBoundTests(TestBase):
         gfx.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
         TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
         Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME, gfx.orbit_display)
-        oODT: "PlanetOrbitDisplayTime" = clr.Convert(gfx.orbit_display_data, PlanetOrbitDisplayTime)
+        oODT: "PlanetOrbitDisplayTime" = PlanetOrbitDisplayTime(gfx.orbit_display_data)
         Assert.assertIsNotNone(oODT)
         TestBase.logger.WriteLine6("The current Time is: {0}", oODT.time)
         oODT.time = 12345.6789
@@ -422,9 +422,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_PL.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_PL, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_PL.access_constraints, IStkObject(EarlyBoundTests.AG_PL), TestBase.TemporaryDirectory
         )
 
     # endregion

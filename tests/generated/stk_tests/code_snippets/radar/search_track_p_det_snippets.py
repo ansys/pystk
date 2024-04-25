@@ -35,7 +35,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        scenario: "IStkObject" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IStkObject)
+        scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
         SearchTrackPDetSnippets.m_Facility = scenario.children.new(
             STK_OBJECT_TYPE.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
         )
@@ -103,7 +103,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
     # region ComputeMonostaticSearchTrackProbabilityOfDetection
     def test_ComputeMonostaticSearchTrackProbabilityOfDetection(self):
-        scenario: "Scenario" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(CodeSnippetsTestBase.m_Root.current_scenario)
         self.ComputeMonostaticSearchTrackProbabilityOfDetection(
             SearchTrackPDetSnippets.m_Radar, SearchTrackPDetSnippets.m_TargetAircraft, scenario.rf_environment
         )
@@ -228,7 +228,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
             index1: int = 0
             while index1 < len(timeValues):
-                time: str = clr.Convert(timeValues[index1], str)
+                time: str = str(timeValues[index1])
                 snr1Val: float = float(snr1[index1])
                 pdet1Val: float = float(pdet1[index1])
                 integSnrVal: float = float(integSnr[index1])

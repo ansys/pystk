@@ -19,8 +19,8 @@ class EarlyBoundTests(TestBase):
         Console.WriteLine("XXX Volumetric OneTimeSetUp - START")
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("VolumetricTests", "VolumetricTests.sc"))
-        EarlyBoundTests.AG_VOL = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.VOLUMETRIC, "Volumetric1"), Volumetric
+        EarlyBoundTests.AG_VOL = Volumetric(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.VOLUMETRIC, "Volumetric1")
         )
         Console.WriteLine("XXX Volumetric OneTimeSetUp - END")
 

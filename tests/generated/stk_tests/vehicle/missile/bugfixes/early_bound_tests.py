@@ -17,9 +17,9 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
-        EarlyBoundTests.AG_MSL = clr.Convert(TestBase.Application.current_scenario.children["Missile1"], Missile)
-        EarlyBoundTests.AG_SENSOR = clr.Convert(
-            (clr.Convert(EarlyBoundTests.AG_MSL, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor
+        EarlyBoundTests.AG_MSL = Missile(TestBase.Application.current_scenario.children["Missile1"])
+        EarlyBoundTests.AG_SENSOR = Sensor(
+            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1")
         )
 
     @staticmethod
@@ -48,18 +48,18 @@ class EarlyBoundTests(TestBase):
             if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.MISSILE, "Test"):
                 TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "Test")
 
-            missile: "Missile" = clr.Convert(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test"), Missile
+            missile: "Missile" = Missile(
+                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test")
             )
             Assert.assertIsNotNone(missile)
 
             missile.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
 
-            propagator: "VehiclePropagatorBallistic" = clr.Convert(missile.trajectory, VehiclePropagatorBallistic)
+            propagator: "VehiclePropagatorBallistic" = VehiclePropagatorBallistic(missile.trajectory)
             Assert.assertIsNotNone(propagator)
 
             propagator.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
-            launch: "VehicleLaunchLLA" = clr.Convert(propagator.launch, VehicleLaunchLLA)
+            launch: "VehicleLaunchLLA" = VehicleLaunchLLA(propagator.launch)
             Assert.assertIsNotNone(launch)
 
             launch.lat = 37.9249
@@ -67,9 +67,7 @@ class EarlyBoundTests(TestBase):
             launch.altitude = 0.0
 
             propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
-            impact: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
-                propagator.impact_location, VehicleImpactLocationLaunchAzEl
-            )
+            impact: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(propagator.impact_location)
 
             impact.azimuth = azimuthInDeg
             impact.elevation = elevationInDeg
@@ -81,7 +79,7 @@ class EarlyBoundTests(TestBase):
 
             propagator.propagate()
 
-            impact = clr.Convert(propagator.impact_location, VehicleImpactLocationLaunchAzEl)
+            impact = VehicleImpactLocationLaunchAzEl(propagator.impact_location)
 
             Assert.assertAlmostEqual(azimuthInDeg, impact.azimuth, delta=Math2.Epsilon9)
             Assert.assertAlmostEqual(elevationInDeg, impact.elevation, delta=Math2.Epsilon9)

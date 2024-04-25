@@ -323,11 +323,9 @@ class SensorSnippets(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses swath)")
 
-        (clr.Convert(SensorSnippets.m_Satellite, Satellite)).set_propagator_type(
-            VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY
-        )
+        (Satellite(SensorSnippets.m_Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         tb: "VehiclePropagatorTwoBody" = clr.CastAs(
-            (clr.Convert(SensorSnippets.m_Satellite, Satellite)).propagator, VehiclePropagatorTwoBody
+            (Satellite(SensorSnippets.m_Satellite)).propagator, VehiclePropagatorTwoBody
         )
         # Propagate
         tb.propagate()

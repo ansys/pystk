@@ -37,7 +37,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(VehicleSnippets.m_Object, IStkObject)).unload()
+        (IStkObject(VehicleSnippets.m_Object)).unload()
 
     # endregion
 
@@ -53,7 +53,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
         ga.propagate()
         ephemFilePath: str = TestBase.TemporaryDirectory + "\\OMExternalFileStk.e"
         self.ExportVehicleToStkEphemerisFile(
-            clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, Scenario),
+            Scenario(CodeSnippetsTestBase.m_Root.current_scenario),
             gv.export_tools.get_ephemeris_stk_export_tool(),
             ephemFilePath,
         )
@@ -88,8 +88,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
         ga.waypoints.add()
         ga.propagate()
         self.ExportVehicleToAttitudeFile(
-            clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, Scenario),
-            gv.export_tools.get_attitude_export_tool(),
+            Scenario(CodeSnippetsTestBase.m_Root.current_scenario), gv.export_tools.get_attitude_export_tool()
         )
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
 

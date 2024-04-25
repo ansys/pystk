@@ -23,8 +23,8 @@ class EarlyBoundTests(TestBase):
 
         scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
-        EarlyBoundTests.AG_AC = clr.Convert(
-            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")), Aircraft
+        EarlyBoundTests.AG_AC = Aircraft(
+            (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC"))
         )
         # Set to Propagator to Aviator
         EarlyBoundTests.AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
@@ -1273,9 +1273,7 @@ class EarlyBoundTests(TestBase):
     def test_FormationFlyer(self):
         TestBase.LoadTestScenario(TestBase.PathCombine("AviatorTests", "Formation_Flyer", "Scenario1.sc"))
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
-        EarlyBoundTests.AG_AC = clr.Convert(
-            (EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")), Aircraft
-        )
+        EarlyBoundTests.AG_AC = Aircraft((EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")))
         aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
         EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, AviatorPropagator)
         EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.avtr_mission

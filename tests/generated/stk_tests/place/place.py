@@ -26,7 +26,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("PlaceTests", "PlaceTests.sc"))
-        EarlyBoundTests.AG_PLC = clr.Convert(TestBase.Application.current_scenario.children["Place1"], Place)
+        EarlyBoundTests.AG_PLC = Place(TestBase.Application.current_scenario.children["Place1"])
 
     # endregion
 
@@ -306,7 +306,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_PLC.graphics_3d.vector, False)
 
     # endregion
@@ -391,9 +391,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_PLC.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_PLC, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_PLC.access_constraints, IStkObject(EarlyBoundTests.AG_PLC), TestBase.TemporaryDirectory
         )
 
     # endregion
