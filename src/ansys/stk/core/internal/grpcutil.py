@@ -115,8 +115,8 @@ def _marshall_input_arg(arg:typing.Any, dest_grpc_arg) -> None:
         dest_grpc_arg.values.append(rpc_val)
 
 class GrpcInterface(object):
-    def __init__(self, client, obj):
-        self.client = client
+    def __init__(self, client: "GrpcClient", obj: AgGrpcServices_pb2.STKObject):
+        self.client: "GrpcClient" = client
         self.obj = obj
         self.client._register_obj(self.obj)
 
@@ -134,7 +134,7 @@ class GrpcInterface(object):
 
     def query_interface(self, intf_metadata:dict) -> "GrpcInterface":
         guid = _grpc_guid(intf_metadata)
-        if self.client.SupportsInterface(self.obj, guid):
+        if self.client.supports_interface(self.obj, guid):
             return self
         else:
             return None
@@ -142,26 +142,26 @@ class GrpcInterface(object):
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         guid = _grpc_guid(intf_metadata)
         method_offset = method_metadata["offset"]
-        return _grpc_post_process_return_vals(self.client.Invoke(self.obj, guid, method_offset, False, *args), method_metadata["marshallers"], *args)
+        return _grpc_post_process_return_vals(self.client.invoke(self.obj, guid, method_offset, False, *args), method_metadata["marshallers"], *args)
 
     def get_property(self, intf_metadata:dict, method_metadata:dict):
         guid = _grpc_guid(intf_metadata)
         method_offset = method_metadata["offset"]
-        return _grpc_post_process_return_vals(self.client.GetProperty(self.obj, guid, method_offset), method_metadata["marshallers"], OutArg())
+        return _grpc_post_process_return_vals(self.client.get_property(self.obj, guid, method_offset), method_metadata["marshallers"], OutArg())
 
     def set_property(self, intf_metadata:dict, method_metadata:dict, value):
         guid = _grpc_guid(intf_metadata)
         method_offset = method_metadata["offset"]
-        return self.client.SetProperty(self.obj, guid, method_offset, value)
+        return self.client.set_property(self.obj, guid, method_offset, value)
 
     def subscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        return self.client.Subscribe(self.obj, event_handler, event, callback)
+        return self.client.subscribe(self.obj, event_handler, event, callback)
 
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        return self.client.Unsubscribe(self.obj, event_handler, event, callback)
+        return self.client.unsubscribe(self.obj, event_handler, event, callback)
         
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
-        return self.client.Unsubscribe(self.obj, event_handler, "", None)
+        return self.client.unsubscribe(self.obj, event_handler, "", None)
 
 class GrpcInterfacePimpl(object):
 
@@ -332,8 +332,8 @@ class GrpcInterfaceFuture(object):
         raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
 
 class GrpcApplication(GrpcInterface):
-    def __init__(self, client, obj):
-        self.client = client
+    def __init__(self, client: "GrpcClient", obj):
+        self.client: "GrpcClient" = client
         self.obj = obj
         self.client._register_app(self.obj)
 
@@ -342,8 +342,8 @@ class GrpcApplication(GrpcInterface):
         pass
 
 class UnmanagedGrpcInterface(GrpcInterface):
-    def __init__(self, client, obj):
-        self.client = client
+    def __init__(self, client: "GrpcClient", obj):
+        self.client: "GrpcClient" = client
         self.obj = obj
 
     def __del__(self):
@@ -351,7 +351,7 @@ class UnmanagedGrpcInterface(GrpcInterface):
         pass
 
     def release(self):
-        self.client.Release(self.obj)
+        self.client.release(self.obj)
 
 class GrpcEnumerator(GrpcInterface):
     _NEXT_INDEX = 1
@@ -362,7 +362,7 @@ class GrpcEnumerator(GrpcInterface):
     _iid_data.data1 = IID_IEnumVARIANT[0]
     _iid_data.data2 = IID_IEnumVARIANT[1]
     
-    def __init__(self, client, obj):
+    def __init__(self, client: "GrpcClient", obj):
         GrpcInterface.__init__(self, client=client, obj=obj)
         self._reset()
 
@@ -388,7 +388,7 @@ class GrpcEnumerator(GrpcInterface):
         return self._item_queue.get(block=False)
 
     def reset(self):
-        self.client.Invoke(self.obj, GrpcEnumerator._iid_data, GrpcEnumerator._RESET_INDEX, True)
+        self.client.invoke(self.obj, GrpcEnumerator._iid_data, GrpcEnumerator._RESET_INDEX, True)
         self._reset()
 
 class GrpcClient(object):

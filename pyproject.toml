@@ -35,19 +35,19 @@ tests = [
     "parameterized==0.9.0",
 ]
 doc = [
-    "ansys-sphinx-theme==0.15.0",
-    "enum-tools[sphinx]==0.11.0",
+    "ansys-sphinx-theme==0.15.2",
+    "enum-tools[sphinx]==0.12.0",
+    "jupyterlab==4.1.6",
     "jupytext==1.16.1",
-    "jupyter-server==2.13.0",
+    "jupyter-server==2.14.0",
     "myst-parser==2.0.0",
     "nbsphinx==0.9.3",
     "numpydoc==1.7.0",
     "nbconvert==7.16.3",
-    "sphinx==7.2.6",
+    "sphinx==7.3.7",
     "sphinx-design==0.5.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "jupyterlab==4.1.5",
 ]
 visualization = [
     "numpy==1.26.4",
@@ -108,7 +108,7 @@ convention = "google"
 # the conditions under which codespell runs during CI/CD.
 # [tool.codespell]
 # skip = './src/ansys/stk/core/internal,./tests,./doc/_build,./doc/styles'
-# ignore-words = "./doc/styles/Vocab/ANSYS/accept.txt"
+# ignore-words = "./doc/styles/config/vocabularies/ANSYS/accept.txt"
 
 [tool.coverage.run]
 relative_files = true

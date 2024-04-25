@@ -45,6 +45,7 @@ ENV STK_USER_HOME=/home/stk
 # Setup non-root STK user
 RUN set -e; \
     useradd -ms /bin/bash stk; \
+    apt-get update; \
     apt-get install --no-install-recommends -y libgfortran5; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/*
