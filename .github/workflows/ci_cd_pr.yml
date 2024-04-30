@@ -181,12 +181,11 @@ jobs:
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
-      - name: "Upload combined artifacts"
-        if: steps.build-doc-full.outcome == 'skipped'
+      - name: "Upload HTML documentation artifacts"
         uses: actions/upload-artifact@v4
         with:
           path: doc/_build/html
-          name: full-documentation-html
+          name: documentation-html
 
       - name: "Stop the container"
         if: always()
