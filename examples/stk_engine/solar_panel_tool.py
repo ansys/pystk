@@ -1,3 +1,7 @@
+# # Solar Panel
+#
+# Demonstrates how to use Solar Panel Tool using STK Engine.
+#
 """Demonstrates how to use Solar Panel Tool using STK Engine."""
 
 import os
