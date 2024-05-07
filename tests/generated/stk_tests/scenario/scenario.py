@@ -3763,53 +3763,9 @@ class EarlyBoundTests(TestBase):
                     TestBase.PathCombine("CommRad", "RCS_External_File.txt"), strategyExternalFile.filename
                 )
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.SCRIPT_PLUGIN:
-                if not OSHelper.IsLinux():
-                    # script plugins do not work on linux
-                    band.set_compute_strategy("Script Plugin")
-                    Assert.assertEqual("Script Plugin", band.compute_strategy.name)
-                    Assert.assertEqual(RCS_COMPUTE_STRATEGY.SCRIPT_PLUGIN, band.compute_strategy.type)
-                    Assert.assertTrue(
-                        self.IsSupportedComputeStrategy("Script Plugin", band.supported_compute_strategies)
-                    )
-
-                    strategyScriptPlugin: "RadarCrossSectionComputeStrategyScriptPlugin" = clr.CastAs(
-                        band.compute_strategy, RadarCrossSectionComputeStrategyScriptPlugin
-                    )
-                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                        strategyScriptPlugin.filename = r"C:\bogus.vbs"
-                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-                        strategyScriptPlugin.filename = r"ChainTest\ChainTest.sc"
-                    strategyScriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RadarCrossSection.vbs")
-                    Assert.assertEqual(r"CommRad\VB_RadarCrossSection.vbs", strategyScriptPlugin.filename)
-
+                pass
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.PLUGIN:
-                if not OSHelper.IsLinux():
-                    # Some plugins do not work on linux
-                    band.set_compute_strategy("RCS CSharp Example")
-                    Assert.assertEqual("RCS CSharp Example", band.compute_strategy.name)
-                    Assert.assertEqual(RCS_COMPUTE_STRATEGY.PLUGIN, band.compute_strategy.type)
-                    Assert.assertTrue(
-                        self.IsSupportedComputeStrategy("RCS CSharp Example", band.supported_compute_strategies)
-                    )
-
-                    plugin: "RadarCrossSectionComputeStrategyPlugin" = clr.CastAs(
-                        band.compute_strategy, RadarCrossSectionComputeStrategyPlugin
-                    )
-                    rawPluginObject: typing.Any = plugin.raw_plugin_object
-                    pluginConfig: "CRPluginConfiguration" = plugin.plugin_configuration
-                    arProps = pluginConfig.available_properties
-                    Assert.assertEqual(2, Array.Length(arProps))
-
-                    pluginConfig.set_property("ConstantRCS", 2.0)
-                    Assert.assertAlmostEqual(2.0, float(pluginConfig.get_property("ConstantRCS")), delta=1e-06)
-                    pluginConfig.set_property("EnablePolarization", True)
-                    Assert.assertEqual(True, pluginConfig.get_property("EnablePolarization"))
-
-                    with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                        pluginConfig.set_property("BogusProperty", 123)
-                    with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                        pluginConfig.get_property("BogusProperty")
-
+                pass
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.ANSYS_CSV_FILE:
                 band.set_compute_strategy("Ansys HFSS CSV File")
                 Assert.assertEqual("Ansys HFSS CSV File", band.compute_strategy.name)

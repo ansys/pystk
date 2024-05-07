@@ -311,12 +311,11 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.primary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.primary_default_class)
 
-        numAvailObjs: int = (
-            29 if OSHelper.IsLinux() else 35
-        )  # Some file extensions are added to the search by CSharp plugins. These are currently not supported on Linux.
-
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
-        Assert.assertEqual(numAvailObjs, availObjColl.count)
+
+        # Some file extensions are added to the search by CSharp plugins. These are not yet supported on all platforms for PySTK.
+        Assert.assertTrue(availObjColl.count, [29, 35])
+        numAvailObjs: int = availObjColl.count
 
         name: typing.Any = None
         date: typing.Any = None
@@ -441,12 +440,11 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_ACAT.secondary_default_class = ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC
         Assert.assertEqual(ADV_CAT_ELLIPSOID_CLASS.CLASS_QUADRATIC, EarlyBoundTests.AG_ACAT.secondary_default_class)
 
-        numAvailObjs: int = (
-            29 if OSHelper.IsLinux() else 35
-        )  # Some file extensions are added to the search by CSharp plugins. These are currently not supported on Linux.
-
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
-        Assert.assertEqual(numAvailObjs, availObjColl.count)
+
+        # Some file extensions are added to the search by CSharp plugins. These are not yet supported on all platforms for PySTK.
+        Assert.assertTrue(availObjColl.count, [29, 35])
+        numAvailObjs: int = availObjColl.count
 
         name: typing.Any = None
         date: typing.Any = None

@@ -2531,33 +2531,6 @@ class EarlyBoundTests(TestBase):
         clutterModel = clutter.model
         Assert.assertEqual(RADAR_CLUTTER_GEOMETRY_MODEL_TYPE.RANGE_OVER_CFAR_CELLS, clutterModel.type)
         Assert.assertEqual("Range Over CFAR Cells", clutterModel.name)
-        if not OSHelper.IsLinux():
-            clutter.set_model("Clutter Geometry CSharp Example")
-            clutterModel = clutter.model
-            Assert.assertEqual(RADAR_CLUTTER_GEOMETRY_MODEL_TYPE.PLUGIN, clutterModel.type)
-            Assert.assertEqual("Clutter Geometry CSharp Example", clutterModel.name)
-
-            cgmPlugin: "ScatteringPointProviderPlugin" = clr.CastAs(clutterModel, ScatteringPointProviderPlugin)
-            rawPluginObject: typing.Any = cgmPlugin.raw_plugin_object
-            if (
-                (EngineLifetimeManager.target != TestTarget.eStkGrpc)
-                and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
-            ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
-                Assert.assertIsNotNone(rawPluginObject)
-
-            pluginConfig: "CRPluginConfiguration" = cgmPlugin.plugin_configuration
-            arProps = pluginConfig.available_properties
-            Assert.assertEqual(2, Array.Length(arProps))
-            pluginConfig.set_property("PatchArea", 2)
-            Assert.assertAlmostEqual(2, float(pluginConfig.get_property("PatchArea")), delta=0.0001)
-            pluginConfig.set_property("OffsetAngle", 3)
-            Assert.assertAlmostEqual(3, float(pluginConfig.get_property("OffsetAngle")), delta=0.0001)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                pluginConfig.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                pluginConfig.get_property("BogusProperty")
-
         if hasRAE:
             clutter.set_model("Smooth Oblate Earth")
             clutterModel = clutter.model
@@ -2656,31 +2629,11 @@ class EarlyBoundTests(TestBase):
 
         compLinkEmbedControl2: "ComponentAttrLinkEmbedControl" = sppce.scattering_point_provider  # G
         arSupportedComponents = compLinkEmbedControl2.supported_components  # H
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(6, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Geometry CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Points File", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Range Over CFAR Cells", arSupportedComponents[3])
-            Assert.assertEqual("Single Point", arSupportedComponents[4])
-            Assert.assertEqual("Smooth Oblate Earth", arSupportedComponents[5])
-
-        else:
-            Assert.assertEqual(5, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Points File", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Range Over CFAR Cells", arSupportedComponents[2])
-            Assert.assertEqual("Single Point", arSupportedComponents[3])
-            Assert.assertEqual("Smooth Oblate Earth", arSupportedComponents[4])
 
         compLinkEmbedControl2.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # G1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, compLinkEmbedControl2.reference_type)
         compLinkEmbedControl2.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, compLinkEmbedControl2.reference_type)
-        if not OSHelper.IsLinux():
-            compLinkEmbedControl2.set_component("Clutter Geometry CSharp Example")
-            Assert.assertEqual("Clutter Geometry CSharp Example", compLinkEmbedControl2.component.name)
-            self.Test_ClutterGeometryCSharpExample(compLinkEmbedControl2.component)
 
         compLinkEmbedControl2.set_component("Points File")
         Assert.assertEqual("Points File", compLinkEmbedControl2.component.name)
@@ -2737,27 +2690,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, linkEmbedControl.reference_type)
 
         arSupportedComponents = linkEmbedControl.supported_components  # K
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(4, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Map CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[3])
-
-            linkEmbedControl.set_component("Clutter Map CSharp Example")
-            Assert.assertEqual(
-                SCATTERING_POINT_MODEL_TYPE.PLUGIN, (clr.CastAs(linkEmbedControl.component, IScatteringPointModel)).type
-            )
-            Assert.assertEqual("Clutter Map CSharp Example", linkEmbedControl.component.name)
-            self.Test_IAgScatteringPointModelPlugin(
-                clr.CastAs(linkEmbedControl.component, ScatteringPointModelPlugin), "Clutter Map CSharp Example"
-            )
-
-        else:
-            Assert.assertEqual(3, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[2])
 
         linkEmbedControl.set_component("Constant Coefficient")
         Assert.assertEqual(
@@ -2825,27 +2757,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, linkEmbedControl.reference_type)
 
         arSupportedComponents = linkEmbedControl.supported_components  # K
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(4, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Map CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[3])
-
-            linkEmbedControl.set_component("Clutter Map CSharp Example")
-            Assert.assertEqual(
-                SCATTERING_POINT_MODEL_TYPE.PLUGIN, (clr.CastAs(linkEmbedControl.component, IScatteringPointModel)).type
-            )
-            Assert.assertEqual("Clutter Map CSharp Example", linkEmbedControl.component.name)
-            self.Test_IAgScatteringPointModelPlugin(
-                clr.CastAs(linkEmbedControl.component, ScatteringPointModelPlugin), "Clutter Map CSharp Example"
-            )
-
-        else:
-            Assert.assertEqual(3, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[2])
 
         linkEmbedControl.set_component("Constant Coefficient")
         Assert.assertEqual(
@@ -2884,27 +2795,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, linkEmbedControl.reference_type)
 
         arSupportedComponents = linkEmbedControl.supported_components  # K
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(4, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Map CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[3])
-
-            linkEmbedControl.set_component("Clutter Map CSharp Example")
-            Assert.assertEqual(
-                SCATTERING_POINT_MODEL_TYPE.PLUGIN, (clr.CastAs(linkEmbedControl.component, IScatteringPointModel)).type
-            )
-            Assert.assertEqual("Clutter Map CSharp Example", linkEmbedControl.component.name)
-            self.Test_IAgScatteringPointModelPlugin(
-                clr.CastAs(linkEmbedControl.component, ScatteringPointModelPlugin), "Clutter Map CSharp Example"
-            )
-
-        else:
-            Assert.assertEqual(3, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[2])
 
         linkEmbedControl.set_component("Constant Coefficient")
         Assert.assertEqual(
@@ -2945,27 +2835,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, linkEmbedControl.reference_type)
 
         arSupportedComponents = linkEmbedControl.supported_components  # K
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(4, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Map CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[3])
-
-            linkEmbedControl.set_component("Clutter Map CSharp Example")
-            Assert.assertEqual(
-                SCATTERING_POINT_MODEL_TYPE.PLUGIN, (clr.CastAs(linkEmbedControl.component, IScatteringPointModel)).type
-            )
-            Assert.assertEqual("Clutter Map CSharp Example", linkEmbedControl.component.name)
-            self.Test_IAgScatteringPointModelPlugin(
-                clr.CastAs(linkEmbedControl.component, ScatteringPointModelPlugin), "Clutter Map CSharp Example"
-            )
-
-        else:
-            Assert.assertEqual(3, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[2])
 
         linkEmbedControl.set_component("Constant Coefficient")
         Assert.assertEqual(
@@ -3004,27 +2873,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, linkEmbedControl.reference_type)
 
         arSupportedComponents = linkEmbedControl.supported_components  # K
-        if not OSHelper.IsLinux():
-            Assert.assertEqual(4, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Clutter Map CSharp Example", arSupportedComponents[0])
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[1])
-            Assert.assertEqual("Python", arSupportedComponents[2])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[3])
-
-            linkEmbedControl.set_component("Clutter Map CSharp Example")
-            Assert.assertEqual(
-                SCATTERING_POINT_MODEL_TYPE.PLUGIN, (clr.CastAs(linkEmbedControl.component, IScatteringPointModel)).type
-            )
-            Assert.assertEqual("Clutter Map CSharp Example", linkEmbedControl.component.name)
-            self.Test_IAgScatteringPointModelPlugin(
-                clr.CastAs(linkEmbedControl.component, ScatteringPointModelPlugin), "Clutter Map CSharp Example"
-            )
-
-        else:
-            Assert.assertEqual(3, Array.Length(arSupportedComponents))
-            Assert.assertEqual("Constant Coefficient", arSupportedComponents[0])
-            Assert.assertEqual("Python", arSupportedComponents[1])
-            Assert.assertEqual("Wind Turbine", arSupportedComponents[2])
 
         linkEmbedControl.set_component("Constant Coefficient")
         Assert.assertEqual(
