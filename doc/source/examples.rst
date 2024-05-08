@@ -8,4 +8,4 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
 
 .. nbgallery::
 
-    hohmann-transfer
+    examples/hohmann-transfer
