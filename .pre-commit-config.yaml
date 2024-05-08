@@ -1,10 +1,10 @@
 repos:
 
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.1.6
+  rev: v0.3.4
   hooks:
+    # Run the linter
     - id: ruff
-      args: [--fix]
 
 - repo: https://github.com/codespell-project/codespell
   rev: v2.2.6
@@ -16,7 +16,7 @@ repos:
     # it looks like the `--all-files` only listens for the `exclude` option in a
     # pre-commit hook, ignoring `pyproject.toml` excludes.
     exclude: ^(src/ansys/stk/core/internal/|tests/|doc/_build|doc/styles/|doc/source/_static)
-    args: [--ignore-words=./doc/styles/Vocab/ANSYS/accept.txt]
+    args: [--ignore-words=./doc/styles/config/vocabularies/ANSYS/accept.txt]
     # TODO: pre-commit seems to ignore the configuration declared for codespell
     # in the `pyproject.toml` file. For more details, see `[tool.codespell]` in
     # the `pyproject.toml` file.

@@ -27,7 +27,7 @@ class EarlyBoundTests(TestBase):
     @staticmethod
     def InitHelper():
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
-        EarlyBoundTests.AG_MSL = clr.Convert(TestBase.Application.current_scenario.children["Missile1"], Missile)
+        EarlyBoundTests.AG_MSL = Missile(TestBase.Application.current_scenario.children["Missile1"])
 
     # endregion
 
@@ -48,9 +48,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_MSL.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_MSL, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_MSL.access_constraints, IStkObject(EarlyBoundTests.AG_MSL), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -61,18 +59,14 @@ class EarlyBoundTests(TestBase):
         # See 31588
         EarlyBoundTests.AG_MSL.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC, EarlyBoundTests.AG_MSL.trajectory_type)
-        ballistic: "VehiclePropagatorBallistic" = clr.Convert(
-            EarlyBoundTests.AG_MSL.trajectory, VehiclePropagatorBallistic
-        )
+        ballistic: "VehiclePropagatorBallistic" = VehiclePropagatorBallistic(EarlyBoundTests.AG_MSL.trajectory)
         ballistic.ephemeris_interval.set_start_and_stop_times(
             "1 Jul 1999 00:00:00.00", ballistic.ephemeris_interval.find_stop_time()
         )
         ballistic.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT)
-        point: "VehicleImpactLocationPoint" = clr.Convert(ballistic.impact_location, VehicleImpactLocationPoint)
+        point: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(ballistic.impact_location)
         point.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT)
-        tof: "VehicleLaunchControlFixedTimeOfFlight" = clr.Convert(
-            point.launch_control, VehicleLaunchControlFixedTimeOfFlight
-        )
+        tof: "VehicleLaunchControlFixedTimeOfFlight" = VehicleLaunchControlFixedTimeOfFlight(point.launch_control)
         tof.time_of_flight = 9024.46
         ballistic.propagate()
         oHelper = STKObjectHelper()
@@ -86,7 +80,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_MSL)
-        obj: "IStkObject" = clr.Convert(EarlyBoundTests.AG_MSL, IStkObject)
+        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_MSL)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -132,7 +126,11 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_ATTITUDE)
+            eType: "VEHICLE_ATTITUDE" = (
+                VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ATTITUDE])
+                else int(arTypes[iIndex][0])
+            )
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_MSL.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -145,12 +143,12 @@ class EarlyBoundTests(TestBase):
             if eType == VEHICLE_ATTITUDE.ATTITUDE_STANDARD:
                 # Attitude
                 oHelper = BasicAttitudeStandardHelper(TestBase.Application)
-                oHelper.Run(clr.Convert(EarlyBoundTests.AG_MSL.attitude, IVehicleAttitudeStandard))
+                oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_MSL.attitude))
             elif eType == VEHICLE_ATTITUDE.ATTITUDE_REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
                     TestBase.Application, clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject)
                 )
-                oHelper.Run(clr.Convert(EarlyBoundTests.AG_MSL.attitude, VehicleAttitudeRealTime))
+                oHelper.Run(VehicleAttitudeRealTime(EarlyBoundTests.AG_MSL.attitude))
             else:
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -236,7 +234,11 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_PROPAGATOR_TYPE" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_PROPAGATOR_TYPE)
+            eType: "VEHICLE_PROPAGATOR_TYPE" = (
+                VEHICLE_PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_PROPAGATOR_TYPE])
+                else int(arTypes[iIndex][0])
+            )
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_MSL.is_trajectory_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -277,7 +279,11 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                clr.Convert(int(arSupportedTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_ATTRIBUTES),
+                (
+                    VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ATTRIBUTES])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -302,7 +308,7 @@ class EarlyBoundTests(TestBase):
         self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
         oHelper = GfxAttributesTrajectoryHelper()
-        oHelper.Run(clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, VehicleGraphics2DAttributesTrajectory))
+        oHelper.Run(VehicleGraphics2DAttributesTrajectory(EarlyBoundTests.AG_MSL.graphics.attributes))
         EarlyBoundTests.AG_MSL.graphics.use_inst_name_label = False
         Assert.assertFalse(EarlyBoundTests.AG_MSL.graphics.use_inst_name_label)
         EarlyBoundTests.AG_MSL.graphics.label_name = "Tester"
@@ -334,7 +340,7 @@ class EarlyBoundTests(TestBase):
 
         oHelper = GfxAttributesAccessHelper()
         oHelper.Run(
-            clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, VehicleGraphics2DAttributesAccess),
+            VehicleGraphics2DAttributesAccess(EarlyBoundTests.AG_MSL.graphics.attributes),
             GfxAttributesType.eTrajectory,
             TestBase.Application,
         )
@@ -362,8 +368,7 @@ class EarlyBoundTests(TestBase):
         # Custom Intervals
         oHelper = GfxAttributesCustomHelper()
         oHelper.Run(
-            clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, VehicleGraphics2DAttributesCustom),
-            GfxAttributesType.eTrajectory,
+            VehicleGraphics2DAttributesCustom(EarlyBoundTests.AG_MSL.graphics.attributes), GfxAttributesType.eTrajectory
         )
 
         custom: "VehicleGraphics2DAttributesCustom" = clr.CastAs(
@@ -393,7 +398,7 @@ class EarlyBoundTests(TestBase):
 
         oHelper = GfxAttributesTimeComponentsHelper()
         oHelper.Run(
-            clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, VehicleGraphics2DAttributesTimeComponents),
+            VehicleGraphics2DAttributesTimeComponents(EarlyBoundTests.AG_MSL.graphics.attributes),
             GfxAttributesType.eTrajectory,
             TestBase.Application,
         )
@@ -439,7 +444,7 @@ class EarlyBoundTests(TestBase):
 
         oHelper = GfxAttributesRealTimeHelper()
         oHelper.Run(
-            clr.Convert(EarlyBoundTests.AG_MSL.graphics.attributes, VehicleGraphics2DAttributesRealtime),
+            VehicleGraphics2DAttributesRealtime(EarlyBoundTests.AG_MSL.graphics.attributes),
             GfxAttributesType.eTrajectory,
         )
 
@@ -496,7 +501,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_GfxLabelNotes(self):
         oHelper = GfxLabelNoteHelper(TestBase.Application.unit_preferences)
-        oHelper.Run(clr.Convert(EarlyBoundTests.AG_MSL.graphics.label_notes, LabelNoteCollection))
+        oHelper.Run(EarlyBoundTests.AG_MSL.graphics.label_notes)
 
     # endregion
 
@@ -600,7 +605,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_MSL.graphics_3d.vector, False)
 
     # endregion
@@ -625,7 +630,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
         # set new ModelFile.Filename
-        oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
@@ -703,9 +708,7 @@ class EarlyBoundTests(TestBase):
         ball.step = 56
         ball.propagate()
 
-        exportHelper = ExportDataFileHelper(
-            clr.Convert(ms, IStkObject), clr.Convert(TestBase.Application, StkObjectRoot)
-        )
+        exportHelper = ExportDataFileHelper(IStkObject(ms), TestBase.Application)
         exportHelper.AttitudeExportTool(ms.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(ms.export_tools.get_ephemeris_stk_export_tool(), False)
         exportHelper.PropDefExportTool(ms.export_tools.get_prop_definition_export_tool())

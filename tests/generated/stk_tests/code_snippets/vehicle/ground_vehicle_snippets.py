@@ -47,7 +47,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     # region CreateGroundVehicleOnCurrentScenarioCentralBody
     def test_CreateGroundVehicleOnCurrentScenarioCentralBody(self):
-        (clr.Convert(GroundVehicleSnippets.m_Object, IStkObject)).unload()
+        (IStkObject(GroundVehicleSnippets.m_Object)).unload()
         self.CreateGroundVehicleOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
@@ -104,7 +104,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportStkEphemerisTool(gv)
-        (clr.Convert(gv, IStkObject)).unload()
+        (IStkObject(gv)).unload()
 
     def GetExportStkEphemerisTool(self, groundVehicle: "GroundVehicle"):
         stkEphem: "VehicleEphemerisStkExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
@@ -118,7 +118,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportAttitudeTool(gv)
-        (clr.Convert(gv, IStkObject)).unload()
+        (IStkObject(gv)).unload()
 
     def GetExportAttitudeTool(self, groundVehicle: "GroundVehicle"):
         attExTool: "VehicleAttitudeExportTool" = groundVehicle.export_tools.get_attitude_export_tool()
@@ -132,7 +132,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
             GroundVehicle,
         )
         self.GetExportPropDefTool(gv)
-        (clr.Convert(gv, IStkObject)).unload()
+        (IStkObject(gv)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "GroundVehicle"):
         attExTool: "VehiclePropDefinitionExportTool" = groundVehicle.export_tools.get_prop_definition_export_tool()

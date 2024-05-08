@@ -25,11 +25,9 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-            EarlyBoundTests.AG_SAT = clr.Convert(
-                TestBase.Application.current_scenario.children["Satellite1"], Satellite
-            )
+            EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
             EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-            EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+            EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
 
         except Exception as e:
             Console.WriteLine(str(e))
@@ -314,7 +312,7 @@ class EarlyBoundTests(TestBase):
         infoCollection: "ComponentInfoCollection" = directory.get_components(COMPONENT.ASTROGATOR).get_folder(
             "MCS Segments"
         )
-        info: "IComponentInfo" = clr.CastAs((clr.Convert(sequence, ICloneable)).clone_object(), IComponentInfo)
+        info: "IComponentInfo" = clr.CastAs((ICloneable(sequence)).clone_object(), IComponentInfo)
         browser: "IComponentInfo" = infoCollection[info.name]
         Assert.assertIsNotNone(browser)
         targetSequence: "MissionControlSequenceTargetSequence" = clr.CastAs(
@@ -697,53 +695,50 @@ class EarlyBoundTests(TestBase):
             MissionControlSequenceTargetSequence,
         )
         initState2: "MissionControlSequenceInitialState" = clr.CastAs(
-            ts.segments.insert_copy(clr.Convert(initialState, IMissionControlSequenceSegment), "-"),
+            ts.segments.insert_copy(IMissionControlSequenceSegment(initialState), "-"),
             MissionControlSequenceInitialState,
         )
         launch2: "MissionControlSequenceLaunch" = clr.CastAs(
-            ts.segments.insert_copy(clr.Convert(launch, IMissionControlSequenceSegment), "-"),
-            MissionControlSequenceLaunch,
+            ts.segments.insert_copy(IMissionControlSequenceSegment(launch), "-"), MissionControlSequenceLaunch
         )
         follow2: "MissionControlSequenceFollow" = clr.CastAs(
-            ts.segments.insert_copy(clr.Convert(follow, IMissionControlSequenceSegment), "-"),
-            MissionControlSequenceFollow,
+            ts.segments.insert_copy(IMissionControlSequenceSegment(follow), "-"), MissionControlSequenceFollow
         )
         update2: "MissionControlSequenceUpdate" = clr.CastAs(
-            ts.segments.insert_copy(clr.Convert(update, IMissionControlSequenceSegment), "-"),
-            MissionControlSequenceUpdate,
+            ts.segments.insert_copy(IMissionControlSequenceSegment(update), "-"), MissionControlSequenceUpdate
         )
 
         Assert.assertTrue(initState2.user_variables[0].control_parameters_available)
         initState2.user_variables[0].enable_control_parameter()
         Assert.assertTrue(initState2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(1, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(1, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
         initState2.user_variables[0].disable_control_parameter()
         Assert.assertFalse(initState2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(0, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(0, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
 
         Assert.assertTrue(launch2.user_variables[0].control_parameters_available)
         launch2.user_variables[0].enable_control_parameter()
         Assert.assertTrue(launch2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(1, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(1, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
         launch2.user_variables[0].disable_control_parameter()
         Assert.assertFalse(launch2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(0, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(0, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
 
         Assert.assertTrue(follow2.user_variables[0].control_parameters_available)
         follow2.user_variables[0].enable_control_parameter()
         Assert.assertTrue(follow2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(1, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(1, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
         follow2.user_variables[0].disable_control_parameter()
         Assert.assertFalse(follow2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(0, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(0, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
 
         Assert.assertTrue(update2.user_variables[0].control_parameters_available)
         update2.user_variables[0].enable_control_parameter()
         Assert.assertTrue(update2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(1, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(1, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
         update2.user_variables[0].disable_control_parameter()
         Assert.assertFalse(update2.user_variables[0].is_control_parameter_enabled())
-        Assert.assertEqual(0, (clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)).control_parameters.count)
+        Assert.assertEqual(0, (ProfileDifferentialCorrector(ts.profiles[0])).control_parameters.count)
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
 
         self.TestUserVariableDefinitionCollection(EarlyBoundTests.AG_VA.options.user_variables)
@@ -779,8 +774,8 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < mcsSegColl.count:
-            compInfo: "IComponentInfo" = clr.Convert(mcsSegColl[i], IComponentInfo)
-            compInfoB: "IComponentInfo" = clr.Convert(mcsSegColl.get_item_by_index(i), IComponentInfo)
+            compInfo: "IComponentInfo" = IComponentInfo(mcsSegColl[i])
+            compInfoB: "IComponentInfo" = IComponentInfo(mcsSegColl.get_item_by_index(i))
             Assert.assertIsNotNone(compInfo, "compInfo should not be null")
             Assert.assertIsNotNone(compInfoB, "compInfoB should not be null")
             Assert.assertEqual(
@@ -793,9 +788,9 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not found")):
-            compInfo: "IComponentInfo" = clr.Convert(mcsSegColl.get_item_by_index(mcsSegColl.count), IComponentInfo)
+            compInfo: "IComponentInfo" = IComponentInfo(mcsSegColl.get_item_by_index(mcsSegColl.count))
         with pytest.raises(Exception, match=RegexSubstringMatch("value was not found")):
-            compInfo: "IComponentInfo" = clr.Convert(mcsSegColl.get_item_by_name("Bogus"), IComponentInfo)
+            compInfo: "IComponentInfo" = IComponentInfo(mcsSegColl.get_item_by_name("Bogus"))
 
         mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg1", "-")
         mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg2", "Seg1")
@@ -899,9 +894,9 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestRuntimeTypeInfo(mcsSegColl)
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
@@ -947,16 +942,13 @@ class EarlyBoundTests(TestBase):
     # region InitialState
     def test_InitialState(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - InitialState START")
-        initState: "MissionControlSequenceInitialState" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitState", "Propagate"),
-            MissionControlSequenceInitialState,
+        initState: "MissionControlSequenceInitialState" = MissionControlSequenceInitialState(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitState", "Propagate")
         )
         GatorHelper.TestInitialState(initState, False, TestBase.Application)
         GatorHelper.TestRuntimeTypeInfo(initState)
         self.TestSegment(clr.CastAs(initState, IMissionControlSequenceSegment))
-        oInitState: "IMissionControlSequenceSegment" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence[0], IMissionControlSequenceSegment
-        )
+        oInitState: "IMissionControlSequenceSegment" = EarlyBoundTests.AG_VA.main_sequence[0]
 
         GatorHelper.TestOrbitState(oInitState.initial_state)
 
@@ -980,9 +972,8 @@ class EarlyBoundTests(TestBase):
     # region Propagate
     def test_Propagate(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Propagate START")
-        propagate: "MissionControlSequencePropagate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate"),
-            MissionControlSequencePropagate,
+        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate")
         )
         GatorHelper.TestPropagate(propagate, False)
         self.TestSegment(clr.CastAs(propagate, IMissionControlSequenceSegment))
@@ -993,9 +984,8 @@ class EarlyBoundTests(TestBase):
     # region TestStopping
     def test_TestStopping(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TestStopping START")
-        propagate: "MissionControlSequencePropagate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate"),
-            MissionControlSequencePropagate,
+        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate")
         )
         segment: "IMissionControlSequenceSegment" = clr.CastAs(propagate, IMissionControlSequenceSegment)
         self.TestSegment(segment)
@@ -1003,14 +993,10 @@ class EarlyBoundTests(TestBase):
         propagate.propagator_name = "Earth Point Mass"
         Assert.assertEqual("Earth Point Mass", propagate.propagator_name)
 
-        sc1: "AccessStoppingCondition" = clr.Convert(
-            propagate.stopping_conditions.add("Access").properties, AccessStoppingCondition
-        )
+        sc1: "AccessStoppingCondition" = AccessStoppingCondition(propagate.stopping_conditions.add("Access").properties)
 
-        temp1: "AccessStoppingCondition" = clr.Convert(
-            propagate.stopping_conditions["Access"].properties, AccessStoppingCondition
-        )
-        Assert.assertEqual((clr.Convert(sc1, IComponentInfo)).name, (clr.Convert(temp1, IComponentInfo)).name)
+        temp1: "AccessStoppingCondition" = AccessStoppingCondition(propagate.stopping_conditions["Access"].properties)
+        Assert.assertEqual((IComponentInfo(sc1)).name, (IComponentInfo(temp1)).name)
 
         sc1.criterion = ACCESS_CRITERION.GAIN
         Assert.assertEqual(ACCESS_CRITERION.GAIN, sc1.criterion)
@@ -1108,11 +1094,11 @@ class EarlyBoundTests(TestBase):
 
         sc1.base_selection.bind_to("Satellite/Satellite1")
 
-        sc: "LightingStoppingCondition" = clr.Convert(
-            propagate.stopping_conditions.add("Lighting").properties, LightingStoppingCondition
+        sc: "LightingStoppingCondition" = LightingStoppingCondition(
+            propagate.stopping_conditions.add("Lighting").properties
         )
-        temp: "LightingStoppingCondition" = clr.Convert(
-            propagate.stopping_conditions["Lighting"].properties, LightingStoppingCondition
+        temp: "LightingStoppingCondition" = LightingStoppingCondition(
+            propagate.stopping_conditions["Lighting"].properties
         )
 
         scc: "StoppingConditionCollection" = sc.before_conditions
@@ -1158,7 +1144,7 @@ class EarlyBoundTests(TestBase):
 
         sct: "STOPPING_CONDITION" = sc.stopping_condition_type
 
-        Assert.assertEqual((clr.Convert(sc, IComponentInfo)).name, (clr.Convert(temp, IComponentInfo)).name)
+        Assert.assertEqual((IComponentInfo(sc)).name, (IComponentInfo(temp)).name)
         sc.condition = LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN
         Assert.assertEqual(LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN, sc.condition)
         sc.condition = LIGHTING_CONDITION.CRITERION_EXIT_DIRECT_SUN
@@ -1175,9 +1161,8 @@ class EarlyBoundTests(TestBase):
     # region Sequence
     def test_Sequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Sequence START")
-        ts: "IMissionControlSequenceSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence1", "Propagate"),
-            IMissionControlSequenceSequence,
+        ts: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence1", "Propagate")
         )
         GatorHelper.TestSequence(ts, SEGMENT_TYPE.SEQUENCE, False)
         self.TestSegment(clr.CastAs(ts, IMissionControlSequenceSegment))
@@ -1188,11 +1173,8 @@ class EarlyBoundTests(TestBase):
     # region BackwardSequence
     def test_BackwardSequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - BackwardSequence START")
-        ts: "MissionControlSequenceBackwardSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(
-                SEGMENT_TYPE.BACKWARD_SEQUENCE, "BackwardsSequence", "Propagate"
-            ),
-            MissionControlSequenceBackwardSequence,
+        ts: "MissionControlSequenceBackwardSequence" = MissionControlSequenceBackwardSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "BackwardsSequence", "Propagate")
         )
         GatorHelper.TestSequence(ts, SEGMENT_TYPE.BACKWARD_SEQUENCE, False)
         GatorHelper.TestRuntimeTypeInfo(ts)
@@ -1204,9 +1186,8 @@ class EarlyBoundTests(TestBase):
     # region Launch
     def test_Launch(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Launch START")
-        launch: "MissionControlSequenceLaunch" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "Launcher", "Propagate"),
-            MissionControlSequenceLaunch,
+        launch: "MissionControlSequenceLaunch" = MissionControlSequenceLaunch(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "Launcher", "Propagate")
         )
         GatorHelper.TestLaunch(launch, False)
         self.TestSegment(clr.CastAs(launch, IMissionControlSequenceSegment))
@@ -1218,8 +1199,8 @@ class EarlyBoundTests(TestBase):
     # region Follow
     def test_Follow(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Follow START")
-        follow: "MissionControlSequenceFollow" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.FOLLOW, "Follow", "-"), MissionControlSequenceFollow
+        follow: "MissionControlSequenceFollow" = MissionControlSequenceFollow(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.FOLLOW, "Follow", "-")
         )
         follow.leader.bind_to("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", follow.leader.name)
@@ -1272,7 +1253,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AstgLeader57325"), Satellite
         )
         leader.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        follow.leader.bind_to((clr.Convert(leader, IStkObject)).path)
+        follow.leader.bind_to((IStkObject(leader)).path)
         Assert.assertEqual(follow.leader.name, "Satellite/AstgLeader57325")
 
         follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER
@@ -1288,9 +1269,8 @@ class EarlyBoundTests(TestBase):
     # region Maneuver
     def test_Maneuver(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Maneuver START")
-        maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-"),
-            MissionControlSequenceManeuver,
+        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-")
         )
         self.TestSegment(clr.CastAs(maneuver, IMissionControlSequenceSegment))
         GatorHelper.TestManeuver(maneuver, False)
@@ -1306,9 +1286,8 @@ class EarlyBoundTests(TestBase):
         if (((self.Target != TestTarget.eStkX)) and ((self.Target != TestTarget.eStkNoGfx))) and (
             (self.Target != TestTarget.eStkRuntimeNoGfx)
         ):
-            maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-                EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-"),
-                MissionControlSequenceManeuver,
+            maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+                EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-")
             )
             self.TestSegment(clr.CastAs(maneuver, IMissionControlSequenceSegment))
             GatorHelper.TestManeuver_OptimalFinite(maneuver, False, TestBase.Application)
@@ -1322,8 +1301,8 @@ class EarlyBoundTests(TestBase):
     # region Hold
     def test_Hold(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Hold START")
-        hold: "MissionControlSequenceHold" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.HOLD, "Holder1", "-"), MissionControlSequenceHold
+        hold: "MissionControlSequenceHold" = MissionControlSequenceHold(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.HOLD, "Holder1", "-")
         )
         self.TestSegment(clr.CastAs(hold, IMissionControlSequenceSegment))
         GatorHelper.TestRuntimeTypeInfo(hold)
@@ -1372,9 +1351,8 @@ class EarlyBoundTests(TestBase):
     # region Update
     def test_Update(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Update START")
-        update: "MissionControlSequenceUpdate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.UPDATE, "Updater1", "-"),
-            MissionControlSequenceUpdate,
+        update: "MissionControlSequenceUpdate" = MissionControlSequenceUpdate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.UPDATE, "Updater1", "-")
         )
         GatorHelper.TestUpdate(update, False)
         self.TestSegment(clr.CastAs(update, IMissionControlSequenceSegment))
@@ -1385,14 +1363,13 @@ class EarlyBoundTests(TestBase):
     # region ReturnSegment
     def test_ReturnSegment(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Return START")
-        target: "MissionControlSequenceTargetSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "target", "-"),
-            MissionControlSequenceTargetSequence,
+        target: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "target", "-")
         )
         self.TestSegment(clr.CastAs(target, IMissionControlSequenceSegment))
 
-        ret: "MissionControlSequenceReturn" = clr.Convert(
-            target.segments.insert(SEGMENT_TYPE.RETURN, "returner1", "-"), MissionControlSequenceReturn
+        ret: "MissionControlSequenceReturn" = MissionControlSequenceReturn(
+            target.segments.insert(SEGMENT_TYPE.RETURN, "returner1", "-")
         )
         self.TestSegment(clr.CastAs(ret, IMissionControlSequenceSegment))
         GatorHelper.TestRuntimeTypeInfo(ret)
@@ -1443,8 +1420,8 @@ class EarlyBoundTests(TestBase):
                 compCopy.name = oldName
                 compCopy.user_comment = oldUserComment
 
-        stop: "MissionControlSequenceStop" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.STOP, "stop1", "-"), MissionControlSequenceStop
+        stop: "MissionControlSequenceStop" = MissionControlSequenceStop(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.STOP, "stop1", "-")
         )
         self.TestSegment(clr.CastAs(stop, IMissionControlSequenceSegment))
         GatorHelper.TestRuntimeTypeInfo(stop)
@@ -1467,9 +1444,8 @@ class EarlyBoundTests(TestBase):
     # region TargetSequence
     def test_TargetSequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TargetSequence START")
-        ts: "MissionControlSequenceTargetSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts1", "-"),
-            MissionControlSequenceTargetSequence,
+        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts1", "-")
         )
         GatorHelper.bIsStkX = (self.Target == TestTarget.eStkX) or (self.Target == TestTarget.eStkNoGfx)
         GatorHelper.TestTargetSequence(ts, False, TestBase.Application)
@@ -1481,9 +1457,8 @@ class EarlyBoundTests(TestBase):
 
     # region TargetSequence_SequenceDeltaV
     def test_TargetSequence_SequenceDeltaV(self):
-        ts: "MissionControlSequenceTargetSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts2", "-"),
-            MissionControlSequenceTargetSequence,
+        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts2", "-")
         )
         seg: "IMissionControlSequenceSegment" = clr.CastAs(ts, IMissionControlSequenceSegment)
 
@@ -1514,7 +1489,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario("Test")
         TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
         #
-        scene: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.start_time = "1 Jan 1993 00:00:00.00"
         scene.stop_time = "1 Jan 1994 00:00:00.00"
         if not TestBase.NoGraphicsMode:
@@ -1522,41 +1497,35 @@ class EarlyBoundTests(TestBase):
             scene.animation.enable_anim_cycle_time = True
             scene.animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
             scene.animation.anim_cycle_time = "1 Jan 1994 00:00:00.00"
-            (clr.Convert(TestBase.Application, StkObjectRoot)).rewind()
+            (StkObjectRoot(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 scene.animation.start_time = "1 Jan 1993 00:00:00.00"
 
         #
-        sun: "Planet" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Sun"), Planet
-        )
+        sun: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Sun"))
         sun.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-        pos: "PlanetPositionCentralBody" = clr.Convert(sun.position_source_data, PlanetPositionCentralBody)
+        pos: "PlanetPositionCentralBody" = PlanetPositionCentralBody(sun.position_source_data)
         pos.auto_rename = True
         pos.central_body = "Sun"
         #
-        moon: "Planet" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Moon"), Planet
-        )
+        moon: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Moon"))
         moon.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-        pos = clr.Convert(moon.position_source_data, PlanetPositionCentralBody)
+        pos = PlanetPositionCentralBody(moon.position_source_data)
         pos.central_body = "Moon"
         #
-        earth: "Planet" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Earth"), Planet
-        )
+        earth: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Earth"))
         earth.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
-        pos = clr.Convert(earth.position_source_data, PlanetPositionCentralBody)
+        pos = PlanetPositionCentralBody(earth.position_source_data)
         pos.central_body = "Earth"
 
         #
-        sat: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LunarProbe"), Satellite
+        sat: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LunarProbe")
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.Convert(sat.propagator, DriverMissionControlSequence)
+        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(sat.propagator)
         driver.options.draw_trajectory_in_2d = True
         driver.options.draw_trajectory_in_3d = True
         driver.options.update_animation_time_for_all_objects = True
@@ -1566,9 +1535,7 @@ class EarlyBoundTests(TestBase):
             sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_ALL)
             sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
             sat.graphics_3d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
-            markerData: "Graphics3DMarkerShape" = clr.Convert(
-                sat.graphics_3d.model.orbit_marker.marker_data, Graphics3DMarkerShape
-            )
+            markerData: "Graphics3DMarkerShape" = Graphics3DMarkerShape(sat.graphics_3d.model.orbit_marker.marker_data)
             markerData.style = MARKER_SHAPE_3D.SHAPE_POINT
             sat.graphics_3d.model.orbit_marker.pixel_size = 7
             sat.graphics_3d.model.detail_threshold.marker_label = 1000000000000.0
@@ -1583,31 +1550,30 @@ class EarlyBoundTests(TestBase):
 
         #
         driver.main_sequence.remove_all()
-        ts: "MissionControlSequenceTargetSequence" = clr.Convert(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"),
-            MissionControlSequenceTargetSequence,
+        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-")
         )
-        launch: "MissionControlSequenceLaunch" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.LAUNCH, "Launch", "-"), MissionControlSequenceLaunch
+        launch: "MissionControlSequenceLaunch" = MissionControlSequenceLaunch(
+            ts.segments.insert(SEGMENT_TYPE.LAUNCH, "Launch", "-")
         )
         launch.epoch = "1 Jan 1993 00:00:00.00"
         #
-        coast: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Coast", "-"), MissionControlSequencePropagate
+        coast: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Coast", "-")
         )
-        (clr.Convert(coast.stopping_conditions[0].properties, StoppingCondition)).trip = 2700
+        (StoppingCondition(coast.stopping_conditions[0].properties)).trip = 2700
         #
-        transLunarInjection: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "TransLunarInjection", "-"), MissionControlSequenceManeuver
+        transLunarInjection: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "TransLunarInjection", "-")
         )
         transLunarInjection.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-        impulsive: "ManeuverImpulsive" = clr.Convert(transLunarInjection.maneuver, ManeuverImpulsive)
+        impulsive: "ManeuverImpulsive" = ManeuverImpulsive(transLunarInjection.maneuver)
 
         GatorHelper.TestRuntimeTypeInfo(impulsive)
 
         impulsive.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
-        thrustVector: "AttitudeControlImpulsiveThrustVector" = clr.Convert(
-            impulsive.attitude_control, AttitudeControlImpulsiveThrustVector
+        thrustVector: "AttitudeControlImpulsiveThrustVector" = AttitudeControlImpulsiveThrustVector(
+            impulsive.attitude_control
         )
 
         # ENG98248, BUG98514
@@ -1720,27 +1686,23 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestRuntimeTypeInfo(thrustVector)
 
         #
-        toSwingBy: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToSwingBy", "-"), MissionControlSequencePropagate
+        toSwingBy: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToSwingBy", "-")
         )
         toSwingBy.propagator_name = "CisLunar"
-        (clr.Convert(toSwingBy.stopping_conditions.add("R Magnitude").properties, StoppingCondition)).trip = 300000
+        (StoppingCondition(toSwingBy.stopping_conditions.add("R Magnitude").properties)).trip = 300000
         toSwingBy.stopping_conditions.remove("Duration")
         #
-        toPersilene: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToPersilene", "-"), MissionControlSequencePropagate
+        toPersilene: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToPersilene", "-")
         )
         toPersilene.propagator_name = "CisLunar"
-        (clr.Convert(toPersilene.stopping_conditions[0].properties, StoppingCondition)).trip = 864000
-        alt: "StoppingCondition" = clr.Convert(
-            toPersilene.stopping_conditions.add("Altitude").properties, StoppingCondition
-        )
+        (StoppingCondition(toPersilene.stopping_conditions[0].properties)).trip = 864000
+        alt: "StoppingCondition" = StoppingCondition(toPersilene.stopping_conditions.add("Altitude").properties)
         alt.trip = 0
         alt.central_body_name = "Moon"
         #
-        periapsis: "StoppingCondition" = clr.Convert(
-            toPersilene.stopping_conditions.add("Periapsis").properties, StoppingCondition
-        )
+        periapsis: "StoppingCondition" = StoppingCondition(toPersilene.stopping_conditions.add("Periapsis").properties)
         periapsis.central_body_name = "Moon"
         #
         #
@@ -1752,14 +1714,14 @@ class EarlyBoundTests(TestBase):
         launch.enable_control_parameter(CONTROL_LAUNCH.EPOCH)
         coast.stopping_conditions[0].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         #
-        calcObject: "IComponentInfo" = (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add(
+        calcObject: "IComponentInfo" = (IMissionControlSequenceSegment(toPersilene)).results.add(
             "MultiBody/Delta Right Asc"
         )
-        (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("MultiBody/Delta Declination")
-        self.TestCalcObjectCollection((clr.Convert(toPersilene, IMissionControlSequenceSegment)).results)
+        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/Delta Declination")
+        self.TestCalcObjectCollection((IMissionControlSequenceSegment(toPersilene)).results)
         #
         #
-        diffCorrector: "ProfileDifferentialCorrector" = clr.Convert(ts.profiles[0], ProfileDifferentialCorrector)
+        diffCorrector: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(ts.profiles[0])
         diffCorrector.name = "Delta RA and Dec"
         diffCorrector.control_parameters.get_control_by_paths("Launch", "Launch.Epoch").perturbation = 60
         diffCorrector.control_parameters.get_control_by_paths("Launch", "Launch.Epoch").max_step = 3600
@@ -1789,13 +1751,13 @@ class EarlyBoundTests(TestBase):
         ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         driver.run_mission_control_sequence()
         #
-        dcCopy: "ProfileDifferentialCorrector" = clr.Convert(ts.profiles[0].copy(), ProfileDifferentialCorrector)
+        dcCopy: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(ts.profiles[0].copy())
         dcCopy.name = "B_Plane_Targeting"
         ts.profiles[0].mode = PROFILE_MODE.NOT_ACTIVE
         #
-        (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("Epoch")
-        (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("MultiBody/BDotT")
-        (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("MultiBody/BDotR")
+        (IMissionControlSequenceSegment(toPersilene)).results.add("Epoch")
+        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/BDotT")
+        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/BDotR")
         #
 
         transLunarInjection.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
@@ -1837,26 +1799,20 @@ class EarlyBoundTests(TestBase):
         dcCopy.results.get_result_by_paths("ToPersilene", "BDotT").desired_value = 0
         dcCopy.results.get_result_by_paths("ToPersilene", "Epoch").desired_value = "4 Jan 1993 00:00:00.00"
         if not TestBase.NoGraphicsMode:
-            template: "VehicleGraphics3DBPlaneTemplate" = clr.Convert(
-                sat.graphics_3d.b_planes.templates.add(), VehicleGraphics3DBPlaneTemplate
-            )
+            template: "VehicleGraphics3DBPlaneTemplate" = sat.graphics_3d.b_planes.templates.add()
             template.name = "Lunar_B-Plane"
             template.central_body = "Moon"
             template.reference_vector = "CentralBody/Moon Orbit_Normal Vector"
-            bPlane: "VehicleGraphics3DBPlaneInstance" = clr.Convert(
-                sat.graphics_3d.b_planes.instances.add("Lunar_B-Plane"), VehicleGraphics3DBPlaneInstance
-            )
+            bPlane: "VehicleGraphics3DBPlaneInstance" = sat.graphics_3d.b_planes.instances.add("Lunar_B-Plane")
             bPlane.name = "LunarBPlane"
-            (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.b_planes.add("LunarBPlane")
+            (IMissionControlSequenceSegment(toPersilene)).properties.b_planes.add("LunarBPlane")
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                template: "VehicleGraphics3DBPlaneTemplate" = clr.Convert(
-                    sat.graphics_3d.b_planes.templates.add(), VehicleGraphics3DBPlaneTemplate
-                )
+                template: "VehicleGraphics3DBPlaneTemplate" = sat.graphics_3d.b_planes.templates.add()
 
         # Test BPlane collection iteration
-        bplaneColl: "BPlaneCollection" = (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.b_planes
+        bplaneColl: "BPlaneCollection" = (IMissionControlSequenceSegment(toPersilene)).properties.b_planes
         bplane: str
         for bplane in bplaneColl:
             TestBase.logger.WriteLine(bplane)
@@ -1867,7 +1823,7 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        (clr.Convert(toPersilene, IMissionControlSequenceSegment)).properties.apply_final_state_to_b_planes()
+        (IMissionControlSequenceSegment(toPersilene)).properties.apply_final_state_to_b_planes()
         #
         ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES_ONCE
         driver.run_mission_control_sequence()
@@ -1888,21 +1844,19 @@ class EarlyBoundTests(TestBase):
         )
         #
         #
-        altInc: "ProfileDifferentialCorrector" = clr.Convert(dcCopy.copy(), ProfileDifferentialCorrector)
+        altInc: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(dcCopy.copy())
         altInc.name = "Altitude and Inclination"
         #
         ts.profiles[0].mode = PROFILE_MODE.NOT_ACTIVE
-        (clr.Convert(dcCopy, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (dcCopy).mode = PROFILE_MODE.NOT_ACTIVE
         #
         #
-        calcAlt: "StateCalcGeodeticElem" = clr.Convert(
-            (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("Geodetic/Altitude"),
-            StateCalcGeodeticElem,
+        calcAlt: "StateCalcGeodeticElem" = StateCalcGeodeticElem(
+            (IMissionControlSequenceSegment(toPersilene)).results.add("Geodetic/Altitude")
         )
         calcAlt.central_body_name = "Moon"
-        calcInc: "StateCalcInclination" = clr.Convert(
-            (clr.Convert(toPersilene, IMissionControlSequenceSegment)).results.add("Keplerian Elems/Inclination"),
-            StateCalcInclination,
+        calcInc: "StateCalcInclination" = StateCalcInclination(
+            (IMissionControlSequenceSegment(toPersilene)).results.add("Keplerian Elems/Inclination")
         )
         calcInc.coord_system_name = "CentralBody/Moon True_Lunar_Equatorial"
 
@@ -1926,36 +1880,34 @@ class EarlyBoundTests(TestBase):
         ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         driver.run_mission_control_sequence()
         #
-        prop3Day: "MissionControlSequencePropagate" = clr.Convert(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop3Days", "-"), MissionControlSequencePropagate
+        prop3Day: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop3Days", "-")
         )
         prop3Day.propagator_name = "CisLunar"
-        (clr.Convert(prop3Day.stopping_conditions[0].properties, StoppingCondition)).trip = 259200
+        (StoppingCondition(prop3Day.stopping_conditions[0].properties)).trip = 259200
         #
         driver.run_mission_control_sequence()
         #
-        ts2: "MissionControlSequenceTargetSequence" = clr.Convert(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence2", "Prop3Days"),
-            MissionControlSequenceTargetSequence,
+        ts2: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence2", "Prop3Days")
         )
-        loi: "MissionControlSequenceManeuver" = clr.Convert(
-            ts2.segments.insert(SEGMENT_TYPE.MANEUVER, "LOI", "-"), MissionControlSequenceManeuver
+        loi: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts2.segments.insert(SEGMENT_TYPE.MANEUVER, "LOI", "-")
         )
         loi.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-        impulsive = clr.Convert(loi.maneuver, ManeuverImpulsive)
+        impulsive = ManeuverImpulsive(loi.maneuver)
         impulsive.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
-        thrust: "AttitudeControlImpulsiveThrustVector" = clr.Convert(
-            impulsive.attitude_control, AttitudeControlImpulsiveThrustVector
+        thrust: "AttitudeControlImpulsiveThrustVector" = AttitudeControlImpulsiveThrustVector(
+            impulsive.attitude_control
         )
         thrust.thrust_axes_name = "Satellite VNC(Moon)"
         loi.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-        ecc: "StateCalcEccentricity" = clr.Convert(
-            (clr.Convert(loi, IMissionControlSequenceSegment)).results.add("Keplerian Elems/Eccentricity"),
-            StateCalcEccentricity,
+        ecc: "StateCalcEccentricity" = StateCalcEccentricity(
+            (IMissionControlSequenceSegment(loi)).results.add("Keplerian Elems/Eccentricity")
         )
         ecc.central_body_name = "Moon"
         #
-        diffCorrector = clr.Convert(ts2.profiles[0], ProfileDifferentialCorrector)
+        diffCorrector = ProfileDifferentialCorrector(ts2.profiles[0])
         diffCorrector.control_parameters[0].enable = True
         diffCorrector.results[0].enable = True
         #
@@ -1965,16 +1917,16 @@ class EarlyBoundTests(TestBase):
         ts2.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         driver.run_mission_control_sequence()
         if not TestBase.NoGraphicsMode:
-            (clr.Convert(TestBase.Application, StkObjectRoot)).rewind()
+            (StkObjectRoot(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                (clr.Convert(TestBase.Application, StkObjectRoot)).rewind()
+                (StkObjectRoot(TestBase.Application)).rewind()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission END")
 
     # endregion
@@ -1982,17 +1934,16 @@ class EarlyBoundTests(TestBase):
     # region ScriptingToolSetControl
     def test_ScriptingToolSetControl(self):
         # Put the target sequence in a sequence
-        s43701: "IMissionControlSequenceSequence" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "s43701", "-"),
-            IMissionControlSequenceSequence,
+        s43701: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "s43701", "-")
         )
-        ts43701: "MissionControlSequenceTargetSequence" = clr.Convert(
-            s43701.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts43701", "-"), MissionControlSequenceTargetSequence
+        ts43701: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+            s43701.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts43701", "-")
         )
 
         # Put a propagate segment in a target sequence
-        ps43701: "MissionControlSequencePropagate" = clr.Convert(
-            ts43701.segments.insert(SEGMENT_TYPE.PROPAGATE, "ps43701", "-"), MissionControlSequencePropagate
+        ps43701: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts43701.segments.insert(SEGMENT_TYPE.PROPAGATE, "ps43701", "-")
         )
 
         # Make sure Trip Stopping Condition is enabled so can target in the DC
@@ -2092,16 +2043,15 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MissionControlSequenceTargetSequence" = None
-        targSeq = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq = MissionControlSequenceTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         ret: "MissionControlSequenceReturn" = None
-        ret = clr.Convert(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"), MissionControlSequenceReturn)
+        ret = MissionControlSequenceReturn(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
 
         changeReturn: "ProfileChangeReturnSegment" = None
-        changeReturn = clr.Convert(targSeq.profiles.add("Change Return Segment"), ProfileChangeReturnSegment)
+        changeReturn = ProfileChangeReturnSegment(targSeq.profiles.add("Change Return Segment"))
         changeReturn.segment_name = "Return"
         changeReturn.name = "MyReturn"
         crs: "ProfileChangeReturnSegment" = clr.CastAs(targSeq.profiles["MyReturn"], ProfileChangeReturnSegment)
@@ -2318,9 +2268,9 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_VA.run_mission_control_sequence()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
@@ -2525,9 +2475,9 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_VA.run_mission_control_sequence()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
@@ -2547,8 +2497,8 @@ class EarlyBoundTests(TestBase):
         durationElem: "StoppingConditionElement" = propagate.stopping_conditions["Duration"]
         longitudeElem: "StoppingConditionElement" = propagate.stopping_conditions.add("Longitude")
 
-        duration: "StoppingCondition" = clr.Convert(durationElem.properties, StoppingCondition)
-        longitude: "StoppingCondition" = clr.Convert(longitudeElem.properties, StoppingCondition)
+        duration: "StoppingCondition" = StoppingCondition(durationElem.properties)
+        longitude: "StoppingCondition" = StoppingCondition(longitudeElem.properties)
 
         duration.trip = 3600
         longitude.trip = 120
@@ -2612,7 +2562,7 @@ longitude = 121;"""
         prop: "MissionControlSequencePropagate" = clr.CastAs(
             EarlyBoundTests.AG_VA.main_sequence["Propagate"], MissionControlSequencePropagate
         )
-        result: "IComponentInfo" = (clr.Convert(prop, IMissionControlSequenceSegment)).results.add(
+        result: "IComponentInfo" = (IMissionControlSequenceSegment(prop)).results.add(
             "Segments/Difference Across Segments Across Satellites"
         )
         diffAcrossSegs: "StateCalcDifferenceAcrossSegmentsOtherSat" = clr.CastAs(
@@ -2633,9 +2583,7 @@ longitude = 121;"""
         diffAcrossSegs.difference_order = SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT
         Assert.assertEqual(SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT, diffAcrossSegs.difference_order)
 
-        result = (clr.Convert(prop, IMissionControlSequenceSegment)).results.add(
-            "Segments/Value At Segment Other Satellite"
-        )
+        result = (IMissionControlSequenceSegment(prop)).results.add("Segments/Value At Segment Other Satellite")
         valueAtSegment: "StateCalcValueAtSegmentOtherSat" = clr.CastAs(result, StateCalcValueAtSegmentOtherSat)
         STKUtilHelper.TestComponent(clr.CastAs(valueAtSegment, IComponentInfo), False)
         refSat = valueAtSegment.reference_sat
@@ -2654,22 +2602,16 @@ longitude = 121;"""
         EarlyBoundTests.AG_VA.run_mission_control_sequence()
 
         value: float = float(
-            (clr.Convert(prop, IMissionControlSequenceSegment)).get_result_value(
-                "Difference_Across_Segments_Across_Satellites"
-            )
+            (IMissionControlSequenceSegment(prop)).get_result_value("Difference_Across_Segments_Across_Satellites")
         )
         Assert.assertAlmostEqual(0, Math.Round(value, 2), delta=1e-05)
-        value = float(
-            (clr.Convert(prop, IMissionControlSequenceSegment)).get_result_value("Value_At_Segment_Other_Satellite")
-        )
+        value = float((IMissionControlSequenceSegment(prop)).get_result_value("Value_At_Segment_Other_Satellite"))
         Assert.assertAlmostEqual(0, Math.Round(value, 2), delta=1e-05)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "DiffAcross")
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "NonGator")
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.remove(
-            "Difference_Across_Segments_Across_Satellites"
-        )
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.remove("Value_At_Segment_Other_Satellite")
+        (IMissionControlSequenceSegment(prop)).results.remove("Difference_Across_Segments_Across_Satellites")
+        (IMissionControlSequenceSegment(prop)).results.remove("Value_At_Segment_Other_Satellite")
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - DiffAcrossAndValueAtOtherSatellites STOP")
 
     # endregion
@@ -2678,56 +2620,46 @@ longitude = 121;"""
     @category("Causes crashes")
     def test_AppendRun(self):
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
-        initialState: "MissionControlSequenceInitialState" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-"),
-            MissionControlSequenceInitialState,
+        initialState: "MissionControlSequenceInitialState" = MissionControlSequenceInitialState(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
         )
-        propagate: "MissionControlSequencePropagate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"),
-            MissionControlSequencePropagate,
+        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
         )
-        (clr.Convert(propagate.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"),
-            MissionControlSequenceManeuver,
+        (StoppingCondition(propagate.stopping_conditions["Duration"].properties)).trip = 3600
+        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-")
         )
         (
-            clr.Convert(
-                (clr.Convert(maneuver.maneuver, ManeuverImpulsive)).attitude_control,
-                AttitudeControlImpulsiveVelocityVector,
-            )
+            AttitudeControlImpulsiveVelocityVector((ManeuverImpulsive(maneuver.maneuver)).attitude_control)
         ).delta_v_magnitude = 0.5
-        propagate1: "MissionControlSequencePropagate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"),
-            MissionControlSequencePropagate,
+        propagate1: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-")
         )
-        propagate2: "MissionControlSequencePropagate" = clr.Convert(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-"),
-            MissionControlSequencePropagate,
+        propagate2: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-")
         )
 
         # region Append
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.append_run()
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
-        spatialInfo: "VehicleSpatialInfo" = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(
-            False
-        )
+        spatialInfo: "VehicleSpatialInfo" = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
         spatialState: "SpatialState" = spatialInfo.get_state(
-            (clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch
+            (IMissionControlSequenceSegment(initialState)).initial_state.epoch
         )
 
         # the appended run will be 2 hours long
         convUtil: "ConversionUtility" = TestBase.Application.conversion_utility
-        startTime: "Date" = convUtil.new_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime: "Date" = convUtil.new_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        startTime: "Date" = convUtil.new_date("UTCG", str(spatialState.start_time))
+        stopTime: "Date" = convUtil.new_date("UTCG", str(spatialState.stop_time))
         span: "Quantity" = stopTime.span(startTime)
         Assert.assertEqual(7200, span.value)
 
@@ -2738,41 +2670,39 @@ longitude = 121;"""
         # now append after the end of the first propagate and overwrite a maneuver and another propagate
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 1.0
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
+        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will be two hours
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch
-        )
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
 
-        startTime = convUtil.new_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime = convUtil.new_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        startTime = convUtil.new_date("UTCG", str(spatialState.start_time))
+        stopTime = convUtil.new_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         Assert.assertEqual(7200, span.value)
 
         # set up getting the SMA from the ephemeris, not the states of the segments
         astgValues: "DataProviderGroup" = clr.CastAs(
-            (clr.Convert(EarlyBoundTests.AG_SAT, IStkObject)).data_providers["Astrogator Values"], DataProviderGroup
+            (IStkObject(EarlyBoundTests.AG_SAT)).data_providers["Astrogator Values"], DataProviderGroup
         )
         dp: "DataProviderTimeVarying" = clr.CastAs(astgValues.group["Keplerian Elems"], DataProviderTimeVarying)
         elems = ["Time", "Semimajor_Axis"]
 
         # get the sma at the end of the propagate2 segment
-        resInfo: "DataProviderResult" = dp.exec_single_elements(clr.Convert(spatialState.stop_time, str), elems)
+        resInfo: "DataProviderResult" = dp.exec_single_elements(str(spatialState.stop_time), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
 
         Assert.assertLess(float((result[0])), 7000)  # show that the maneuver doesn't occur
@@ -2786,19 +2716,19 @@ longitude = 121;"""
         # to the long propagate1 ephemeris.
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 1.0
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
+        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.BEFORE
+            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.BEFORE
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will start at the end of the first propagate and end at the end of the long propagate from the previous run
@@ -2806,17 +2736,15 @@ longitude = 121;"""
         # span is 12 hours 1 second.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
         # need to get a new spatial state since the old one isn't in the ephemeris anymore
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         Assert.assertEqual(43201, span.value)  # total length of ephemeris
 
         initialStateEpoch: "Date" = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch: "Quantity" = startTime.span(initialStateEpoch)
         Assert.assertEqual(3600, timeFromEpoch.value)
@@ -2842,34 +2770,31 @@ longitude = 121;"""
         # and append on the new one and keep the old 12 hour one also...  the total span should be 13 hours 1 second
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 1.0
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
+        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state.epoch,
-            CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR,
+            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 13:00:01;
         Assert.assertEqual(46801, span.value)
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
@@ -2907,34 +2832,32 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from time using the final time of propagate, coincident with maneuver, orbit should
         # be the postmaneuver one
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
@@ -2966,34 +2889,32 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
@@ -3025,17 +2946,17 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state, CLEAR_EPHEMERIS_DIRECTION.BEFORE
+            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.BEFORE
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will start at the end of the first propagate and end at the end of the long propagate from the previous run
@@ -3043,17 +2964,15 @@ longitude = 121;"""
         # span is 12 hours.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         Assert.assertEqual(43200, span.value)  # total length of ephemeris
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         Assert.assertEqual(3600, timeFromEpoch.value)
@@ -3079,34 +2998,32 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).final_state, CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR
+            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 13:00:00;
         Assert.assertEqual(46800, span.value)
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
@@ -3144,34 +3061,32 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (clr.Convert(initialState, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate, IMissionControlSequenceSegment)).run()
-        (clr.Convert(maneuver, IMissionControlSequenceSegment)).run()
-        (clr.Convert(propagate1, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(initialState)).run()
+        (IMissionControlSequenceSegment(propagate)).run()
+        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMissionControlSequenceSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (clr.Convert(maneuver, IMissionControlSequenceSegment)).initial_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMissionControlSequenceSegment(maneuver)).initial_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
         )
-        (clr.Convert(propagate2.stopping_conditions["Duration"].properties, StoppingCondition)).trip = 3600
-        (clr.Convert(propagate2, IMissionControlSequenceSegment)).run()
+        (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
+        (IMissionControlSequenceSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the intial state of the maneuever, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (clr.Convert(EarlyBoundTests.AG_SAT, IProvideSpatialInfo)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state(
-            (clr.Convert(propagate, IMissionControlSequenceSegment)).initial_state.epoch
-        )
-        startTime.set_date("UTCG", clr.Convert(spatialState.start_time, str))
-        stopTime.set_date("UTCG", clr.Convert(spatialState.stop_time, str))
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        startTime.set_date("UTCG", str(spatialState.start_time))
+        stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
         initialStateEpoch = convUtil.new_date(
-            "UTCG", clr.Convert((clr.Convert(initialState, IMissionControlSequenceSegment)).initial_state.epoch, str)
+            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
         )
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
@@ -3199,9 +3114,9 @@ longitude = 121;"""
         # region ResetToBefore
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = clr.Convert(EarlyBoundTests.AG_SAT.propagator, DriverMissionControlSequence)
+        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
@@ -3223,7 +3138,7 @@ longitude = 121;"""
         Assert.assertEqual(code0, code)
         driver.begin_run()
         try:
-            (clr.Convert(targSeq, IMissionControlSequenceSegment)).run()
+            (IMissionControlSequenceSegment(targSeq)).run()
             Assert.fail("Expected an exception, none thrown.")
 
         except STKRuntimeError as e:
@@ -3236,15 +3151,13 @@ longitude = 121;"""
             Assert.fail(("Expected a COM exception, but got a " + type(e).FullName))
 
         driver.end_run()
-        Assert.assertEqual(
-            RUN_CODE.ERROR, (clr.Convert(targSeq, IMissionControlSequenceSegment)).properties.last_run_code
-        )
+        Assert.assertEqual(RUN_CODE.ERROR, (IMissionControlSequenceSegment(targSeq)).properties.last_run_code)
 
         prop: "MissionControlSequencePropagate" = clr.CastAs(
             targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
         )
         prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Epoch")
+        (IMissionControlSequenceSegment(prop)).results.add("Epoch")
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
@@ -3255,11 +3168,9 @@ longitude = 121;"""
         code0 = RUN_CODE.PROFILE_FAILURE
         Assert.assertEqual(code0, code)
         driver.begin_run()
-        (clr.Convert(targSeq, IMissionControlSequenceSegment)).run()
+        (IMissionControlSequenceSegment(targSeq)).run()
         driver.end_run()
-        Assert.assertEqual(
-            RUN_CODE.PROFILE_FAILURE, (clr.Convert(targSeq, IMissionControlSequenceSegment)).properties.last_run_code
-        )
+        Assert.assertEqual(RUN_CODE.PROFILE_FAILURE, (IMissionControlSequenceSegment(targSeq)).properties.last_run_code)
 
         driver.main_sequence.remove("TargetSequence")
 
@@ -3270,9 +3181,7 @@ longitude = 121;"""
         driver.begin_run()
         stop.run()
         driver.end_run()
-        Assert.assertEqual(
-            RUN_CODE.STOPPED, (clr.Convert(stop, IMissionControlSequenceSegment)).properties.last_run_code
-        )
+        Assert.assertEqual(RUN_CODE.STOPPED, (stop).properties.last_run_code)
 
         driver.main_sequence.remove("STOP")
 
@@ -3286,7 +3195,7 @@ longitude = 121;"""
         Assert.assertEqual(RUN_CODE.MARCHING, seg.properties.last_run_code)
 
         # TODO: fix NUNIT2JUNIT test conversion to handle OnPercentCompleteUpdate tests
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     def Application_OnPercentCompleteUpdate(self, args: "PctCmpltEventArgs"):
         args.cancel()
@@ -3311,7 +3220,7 @@ longitude = 121;"""
             targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
         )
         prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Time/Duration")
+        (IMissionControlSequenceSegment(prop)).results.add("Time/Duration")
 
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
@@ -3357,7 +3266,7 @@ longitude = 121;"""
         stop: "StoppingCondition" = clr.CastAs(epochStop.properties, StoppingCondition)
         stop.trip = "02 Jul 2000 12:00:00.000"
 
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Epoch")
+        (IMissionControlSequenceSegment(prop)).results.add("Epoch")
 
         epochControl: "DifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
             "Prop", "StoppingConditions.Epoch.TripValue"
@@ -3375,7 +3284,7 @@ longitude = 121;"""
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochControl.values[2])
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochResult.values[2])
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -3398,7 +3307,7 @@ longitude = 121;"""
             targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
         )
         prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (clr.Convert(prop, IMissionControlSequenceSegment)).results.add("Time/Duration")
+        (IMissionControlSequenceSegment(prop)).results.add("Time/Duration")
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
@@ -3427,7 +3336,7 @@ longitude = 121;"""
         result.custom_display_unit = "hr"
         Assert.assertEqual("hr", result.custom_display_unit)
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -3483,17 +3392,17 @@ longitude = 121;"""
         Assert.assertAlmostEqual(0.001, float(geodetic.radius_rate), delta=1e-09)
 
         components: "ComponentInfoCollection" = (
-            clr.Convert(TestBase.Application.current_scenario, Scenario)
+            Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(COMPONENT.ASTROGATOR)
         geodeticElems: "ComponentInfoCollection" = components.get_folder("Calculation Objects").get_folder("Geodetic")
         geodeticElem: "StateCalcGeodeticElem" = clr.CastAs(
-            (clr.Convert(geodeticElems["LatitudeRate"], ICloneable)).clone_object(), StateCalcGeodeticElem
+            (ICloneable(geodeticElems["LatitudeRate"])).clone_object(), StateCalcGeodeticElem
         )
         Assert.assertIsNotNone(geodeticElem)
         geodeticElem.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", geodeticElem.central_body_name)
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -3516,19 +3425,19 @@ longitude = 121;"""
         cart.y = 5000
         cart.z = 5000
         vecX: "StateCalcVectorX" = clr.CastAs(
-            (clr.Convert(initState, IMissionControlSequenceSegment)).results.add("Vector/Vector X"), StateCalcVectorX
+            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector X"), StateCalcVectorX
         )
         vecX.vector_name = "Satellite/NormalizedVectors Position"
         vecX.unit_dimension = "DistanceUnit"
 
         vecY: "StateCalcVectorY" = clr.CastAs(
-            (clr.Convert(initState, IMissionControlSequenceSegment)).results.add("Vector/Vector Y"), StateCalcVectorY
+            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector Y"), StateCalcVectorY
         )
         vecY.vector_name = "Satellite/NormalizedVectors Position"
         vecY.unit_dimension = "DistanceUnit"
 
         vecZ: "StateCalcVectorZ" = clr.CastAs(
-            (clr.Convert(initState, IMissionControlSequenceSegment)).results.add("Vector/Vector Z"), StateCalcVectorZ
+            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector Z"), StateCalcVectorZ
         )
         vecZ.vector_name = "Satellite/NormalizedVectors Position"
         vecZ.unit_dimension = "DistanceUnit"
@@ -3536,19 +3445,13 @@ longitude = 121;"""
         driver.run_mission_control_sequence()
 
         Assert.assertAlmostEqual(
-            5000,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_X")),
-            delta=1e-09,
+            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_X")), delta=1e-09
         )
         Assert.assertAlmostEqual(
-            5000,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_Y")),
-            delta=1e-09,
+            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Y")), delta=1e-09
         )
         Assert.assertAlmostEqual(
-            5000,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_Z")),
-            delta=1e-09,
+            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Z")), delta=1e-09
         )
 
         vecX.normalize = True
@@ -3561,20 +3464,20 @@ longitude = 121;"""
 
         Assert.assertAlmostEqual(
             0.5773502691896258,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_X")),
+            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_X")),
             delta=1e-09,
         )
         Assert.assertAlmostEqual(
             0.5773502691896258,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_Y")),
+            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Y")),
             delta=1e-09,
         )
         Assert.assertAlmostEqual(
             0.5773502691896258,
-            float((clr.Convert(initState, IMissionControlSequenceSegment)).get_result_value("Vector_Z")),
+            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Z")),
             delta=1e-09,
         )
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -3804,7 +3707,7 @@ longitude = 121;"""
         Assert.assertEqual("Constant_Thrust_and_Isp", dataSet[1])
         Assert.assertEqual("Constant_Thrust_and_Isp", dataSet[2])
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -3820,9 +3723,7 @@ longitude = 121;"""
         driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
         driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-")
         driver.main_sequence.cut("Propagate")
-        sequence: "IMissionControlSequenceSequence" = clr.Convert(
-            driver.main_sequence["Sequence"], IMissionControlSequenceSequence
-        )
+        sequence: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(driver.main_sequence["Sequence"])
         prop: "MissionControlSequencePropagate" = clr.CastAs(
             sequence.segments.paste("-"), MissionControlSequencePropagate
         )
@@ -3854,9 +3755,7 @@ longitude = 121;"""
         sequence.scripting_tool.script_text("Attribute = Parameter;")
         sequence.apply_script()
         Assert.assertAlmostEqual(
-            60,
-            float((clr.Convert(prop.stopping_conditions["Duration"].properties, StoppingCondition)).trip),
-            delta=1e-09,
+            60, float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
 
         TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "hr")
@@ -3867,9 +3766,7 @@ longitude = 121;"""
         sequence.apply_script()
         TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
         Assert.assertAlmostEqual(
-            (60 * 3600),
-            float((clr.Convert(prop.stopping_conditions["Duration"].properties, StoppingCondition)).trip),
-            delta=1e-09,
+            (60 * 3600), float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
         Assert.assertAlmostEqual((70 * 3600), float(parameter.max_value), delta=1e-13)
         parameter.use_min_value = False
@@ -4160,7 +4057,7 @@ longitude = 121;"""
                     rtti2: "RuntimeTypeInfo" = rttip2.provide_runtime_type_info
 
                     name: "PropertyInfo" = rtti2.properties[0]
-                    Assert.assertEqual(enumChoices[i].name, clr.Convert(name.get_value(), str))
+                    Assert.assertEqual(enumChoices[i].name, str(name.get_value()))
                     value: "PropertyInfo" = rtti2.properties[1]
                     rttiValue: typing.Any = value.get_value()
                     Assert.assertEqual(enumChoices[i].value, int(rttiValue))
@@ -4296,9 +4193,9 @@ longitude = 121;"""
         Assert.assertEqual(True, param2.inherit_value)
 
         # disable first profile
-        (clr.Convert(dc1, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (dc1).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(False, param2.inherit_value)
-        (clr.Convert(dc1, IProfile)).mode = PROFILE_MODE.ITERATE
+        (dc1).mode = PROFILE_MODE.ITERATE
         Assert.assertEqual(True, param2.inherit_value)
 
         # functional test...
@@ -4334,17 +4231,17 @@ longitude = 121;"""
             targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-"), MissionControlSequencePropagate
         )
 
-        (clr.Convert(man1, IMissionControlSequenceSegment)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMissionControlSequenceSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop1.stopping_conditions.add("Periapsis")
         prop1.stopping_conditions.remove("Duration")
         prop1.propagator_name = "Earth Point Mass"
 
-        (clr.Convert(man2, IMissionControlSequenceSegment)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMissionControlSequenceSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop2.stopping_conditions.add("Apoapsis")
         prop2.stopping_conditions.remove("Duration")
-        (clr.Convert(prop2, IMissionControlSequenceSegment)).results.add("Spherical Elems/R_Mag")
+        (IMissionControlSequenceSegment(prop2)).results.add("Spherical Elems/R_Mag")
 
         targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
         targSeq.profiles.remove_all()
@@ -4431,7 +4328,7 @@ longitude = 121;"""
         resultff.tolerance = 0.1
         # endregion
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -4480,17 +4377,17 @@ longitude = 121;"""
             targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-"), MissionControlSequencePropagate
         )
 
-        (clr.Convert(man1, IMissionControlSequenceSegment)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMissionControlSequenceSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop1.stopping_conditions.add("Periapsis")
         prop1.stopping_conditions.remove("Duration")
         prop1.propagator_name = "Earth Point Mass"
 
-        (clr.Convert(man2, IMissionControlSequenceSegment)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMissionControlSequenceSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop2.stopping_conditions.add("Apoapsis")
         prop2.stopping_conditions.remove("Duration")
-        (clr.Convert(prop2, IMissionControlSequenceSegment)).results.add("Spherical Elems/R_Mag")
+        (IMissionControlSequenceSegment(prop2)).results.add("Spherical Elems/R_Mag")
 
         diffCorr2b: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles.add("Differential Corrector"), ProfileDifferentialCorrector
@@ -4555,7 +4452,7 @@ longitude = 121;"""
         resultff.desired_value = 15000
         resultff.tolerance = 0.1
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
@@ -4597,10 +4494,8 @@ longitude = 121;"""
         maneuver: "MissionControlSequenceManeuver" = clr.CastAs(
             driver.main_sequence["Maneuver"], MissionControlSequenceManeuver
         )
-        impulse: "ManeuverImpulsive" = clr.Convert(maneuver.maneuver, ManeuverImpulsive)
-        att: "AttitudeControlImpulsiveAttitude" = clr.Convert(
-            impulse.attitude_control, AttitudeControlImpulsiveAttitude
-        )
+        impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
+        att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
         att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, deuler0, deuler1, deuler2)
 
         a: typing.Any = None
@@ -4623,10 +4518,8 @@ longitude = 121;"""
         settle: "MissionControlSequenceManeuver" = clr.CastAs(
             driver2.main_sequence["Settle"], MissionControlSequenceManeuver
         )
-        impulse2: "ManeuverImpulsive" = clr.Convert(maneuver.maneuver, ManeuverImpulsive)
-        att2: "AttitudeControlImpulsiveAttitude" = clr.Convert(
-            impulse2.attitude_control, AttitudeControlImpulsiveAttitude
-        )
+        impulse2: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
+        att2: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse2.attitude_control)
         att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, euler0, euler1, euler2)
         arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
         a = arEulerAngles[0]
@@ -4642,12 +4535,11 @@ longitude = 121;"""
 
     def test_CalculationGraphs(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
-        sat: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CalculationGraphs"),
-            Satellite,
+        sat: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CalculationGraphs")
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.Convert(sat.propagator, DriverMissionControlSequence)
+        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(sat.propagator)
 
         graphs: "CalculationGraphCollection" = driver.calculation_graphs
         graphs.add("Classical Orbit Elements")
@@ -4680,18 +4572,18 @@ longitude = 121;"""
             graphs.remove(graph)
 
         Assert.assertTrue((graphs.count == 0))
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     # endregion
 
     # region DPExecElements
 
     def test_DPExecElements(self):
-        satellite: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TestSat"), Satellite
+        satellite: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TestSat")
         )
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.Convert(satellite.propagator, DriverMissionControlSequence)
+        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(satellite.propagator)
 
         driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-")
         driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop2", "-")
@@ -4701,61 +4593,61 @@ longitude = 121;"""
         driver.run_mission_control_sequence()
 
         timevar: "DataProviderTimeVarying" = (
-            clr.Convert(satellite, IStkObject)
+            IStkObject(satellite)
         ).data_providers.get_data_provider_time_varying_from_path("Astrogator Targeter Data")
         Assert.assertIsNotNone(timevar)  # Verify 58379
 
-        interval: "DataProviderInterval" = (
-            clr.Convert(satellite, IStkObject)
-        ).data_providers.get_data_provider_interval_from_path("Maneuver Summary")
+        interval: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+            "Maneuver Summary"
+        )
         elements = ["Maneuver Number", "Start Time"]
 
         result: "DataProviderResult" = interval.exec_elements(
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).start_time,
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).stop_time,
+            (Scenario(TestBase.Application.current_scenario)).start_time,
+            (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements,
         )
 
         dataSetcount1: int = result.intervals[0].data_sets.count
         Assert.assertEqual(2, dataSetcount1)
 
-        interval2: "DataProviderInterval" = (
-            clr.Convert(satellite, IStkObject)
-        ).data_providers.get_data_provider_interval_from_path("Astrogator MCS Ephemeris Segments")
+        interval2: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+            "Astrogator MCS Ephemeris Segments"
+        )
         elements2 = ["Segment Name", "Segment Type", "Start Time"]
 
         result2: "DataProviderResult" = interval2.exec_elements(
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).start_time,
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).stop_time,
+            (Scenario(TestBase.Application.current_scenario)).start_time,
+            (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements2,
         )
 
         dataSetcount2: int = result2.intervals[0].data_sets.count
         Assert.assertEqual(3, dataSetcount2)
 
-        interval3: "DataProviderInterval" = (
-            clr.Convert(satellite, IStkObject)
-        ).data_providers.get_data_provider_interval_from_path("Astrogator MCS Ephemeris Segments")
+        interval3: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+            "Astrogator MCS Ephemeris Segments"
+        )
 
         elements3 = []
 
         result3: "DataProviderResult" = interval3.exec_elements(
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).start_time,
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).stop_time,
+            (Scenario(TestBase.Application.current_scenario)).start_time,
+            (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements3,
         )
 
         dataSetcount3: int = result3.intervals[0].data_sets.count
         Assert.assertEqual(6, dataSetcount3)
 
-        interval4: "DataProviderInterval" = (
-            clr.Convert(satellite, IStkObject)
-        ).data_providers.get_data_provider_interval_from_path("Astrogator MCS Ephemeris Segments")
+        interval4: "DataProviderInterval" = (IStkObject(satellite)).data_providers.get_data_provider_interval_from_path(
+            "Astrogator MCS Ephemeris Segments"
+        )
         elements4 = ["Bogus"]
         with pytest.raises(Exception):
             result4: "DataProviderResult" = interval4.exec_elements(
-                (clr.Convert(TestBase.Application.current_scenario, Scenario)).start_time,
-                (clr.Convert(TestBase.Application.current_scenario, Scenario)).stop_time,
+                (Scenario(TestBase.Application.current_scenario)).start_time,
+                (Scenario(TestBase.Application.current_scenario)).stop_time,
                 elements4,
             )
 
@@ -4765,7 +4657,6 @@ longitude = 121;"""
 
     # region CompBrowsCutCopyPaste
     @category("NUNITTestFails")
-    @category("ExcludeWithGrpc")
     def test_CompBrowsCutCopyPaste(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
         sat: "Satellite" = clr.CastAs(
@@ -4878,7 +4769,7 @@ longitude = 121;"""
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
-        (clr.Convert(diffCorr, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (diffCorr).mode = PROFILE_MODE.NOT_ACTIVE
 
         with pytest.raises(Exception):
             targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
@@ -5030,11 +4921,11 @@ longitude = 121;"""
         # ThrusterSetCollection test
 
         astComps: "ComponentInfoCollection" = (
-            clr.Convert(TestBase.Application.current_scenario, Scenario)
+            Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(COMPONENT.ASTROGATOR)
         thrusterSets: "ComponentInfoCollection" = astComps.get_folder("Thruster Sets")
         newThrusterSet: "ThrusterSet" = clr.CastAs(
-            (clr.Convert(thrusterSets["Thruster Set"], ICloneable)).clone_object(), ThrusterSet
+            (ICloneable(thrusterSets["Thruster Set"])).clone_object(), ThrusterSet
         )
         thrusterSetColl: "ThrusterSetCollection" = newThrusterSet.thrusters
         thrusterSetColl.remove_all()
@@ -5079,11 +4970,11 @@ longitude = 121;"""
         # PropagatorFunctionCollection test
 
         astComps: "ComponentInfoCollection" = (
-            clr.Convert(TestBase.Application.current_scenario, Scenario)
+            Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(COMPONENT.ASTROGATOR)
         propagators: "ComponentInfoCollection" = astComps.get_folder("Propagators")
         newPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
-            (clr.Convert(propagators["Earth J2"], ICloneable)).clone_object(), NumericalPropagatorWrapper
+            (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
         )
 
         propFuncColl: "PropagatorFunctionCollection" = newPropagator.propagator_functions
@@ -5115,7 +5006,7 @@ longitude = 121;"""
             propFuncColl.cut(99)
 
         anotherNewPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
-            (clr.Convert(propagators["Earth J2"], ICloneable)).clone_object(), NumericalPropagatorWrapper
+            (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
         )
         propFuncColl2: "PropagatorFunctionCollection" = anotherNewPropagator.propagator_functions
         with pytest.raises(Exception):
@@ -5132,7 +5023,7 @@ longitude = 121;"""
         propFuncColl2.remove_all()
 
         lastFunc: "GravityFieldFunction" = clr.CastAs(
-            propFuncColl2.insert_copy(clr.Convert(anotherFunc, IComponentInfo)), GravityFieldFunction
+            propFuncColl2.insert_copy(IComponentInfo(anotherFunc)), GravityFieldFunction
         )
         Assert.assertEqual(16, lastFunc.degree)
 
@@ -5171,7 +5062,7 @@ longitude = 121;"""
         with pytest.raises(Exception):
             calcObjColl.insert_copy(None)
 
-        pasted = clr.CastAs(prop.results.insert_copy(clr.Convert(alt, IComponentInfo)), StateCalcGeodeticElem)
+        pasted = clr.CastAs(prop.results.insert_copy(IComponentInfo(alt)), StateCalcGeodeticElem)
         Assert.assertEqual("Mars", pasted.central_body_name)
 
         # TargeterGraphCollection test
@@ -5181,7 +5072,7 @@ longitude = 121;"""
             MissionControlSequenceTargetSequence,
         )
         dc8: "IProfile" = targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE)
-        diffCorr: "ProfileDifferentialCorrector" = clr.Convert(dc8, ProfileDifferentialCorrector)
+        diffCorr: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(dc8)
         targGraphColl: "TargeterGraphCollection" = diffCorr.targeter_graphs
 
         with pytest.raises(Exception):
@@ -5475,7 +5366,7 @@ longitude = 121;"""
         newCalcObj: "ScriptingCalcObject" = scriptTool.calc_objects.add("NewCalcObj")
 
         stopCondElem: "StoppingConditionElement" = prop1.stopping_conditions.add("UserSelect")
-        stopCond: "StoppingCondition" = clr.Convert(stopCondElem.properties, StoppingCondition)
+        stopCond: "StoppingCondition" = StoppingCondition(stopCondElem.properties)
 
         with pytest.raises(Exception):
             stopCond.paste_user_calc_object_from_clipboard()
@@ -5526,19 +5417,17 @@ longitude = 121;"""
         Assert.assertEqual("ThirdClipboardInstance", stopCond.user_calc_object.name)
 
         # paste a clipboard calc object as a result
-        fromClipboard: "IComponentInfo" = (clr.Convert(prop1, IMissionControlSequenceSegment)).results.paste()
+        fromClipboard: "IComponentInfo" = (IMissionControlSequenceSegment(prop1)).results.paste()
         Assert.assertEqual("ThirdClipboardInstance", fromClipboard.name)
 
         # AstrogatorCentralBody - Cut, Copy, Paste
 
         # Gravity Model
         astComps: "ComponentInfoCollection" = (
-            clr.Convert(TestBase.Application.current_scenario, Scenario)
+            Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(COMPONENT.ASTROGATOR)
         cbs: "ComponentInfoCollection" = astComps.get_folder("Central Bodies")
-        cb: "AstrogatorCentralBody" = clr.CastAs(
-            (clr.Convert(cbs["Charon"], ICloneable)).clone_object(), AstrogatorCentralBody
-        )
+        cb: "AstrogatorCentralBody" = clr.CastAs((ICloneable(cbs["Charon"])).clone_object(), AstrogatorCentralBody)
         model: "CentralBodyGravityModel" = cb.add_gravity_model(CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE, "NewGrav")
         model.gravitational_param = 1337
 
@@ -5688,11 +5577,11 @@ longitude = 121;"""
         driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
 
         astComps: "ComponentInfoCollection" = (
-            clr.Convert(TestBase.Application.current_scenario, Scenario)
+            Scenario(TestBase.Application.current_scenario)
         ).component_directory.get_components(COMPONENT.ASTROGATOR)
         propagators: "ComponentInfoCollection" = astComps.get_folder("Propagators")
         newPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
-            (clr.Convert(propagators["Earth J2"], ICloneable)).clone_object(), NumericalPropagatorWrapper
+            (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
         )
         propFuncColl: "PropagatorFunctionCollection" = newPropagator.propagator_functions
 
@@ -5728,9 +5617,8 @@ longitude = 121;"""
             propagate.results.add("Keplerian Elems/Nonexistent")
 
         # tests embeds
-        userSel: "StoppingCondition" = clr.Convert(
-            (clr.Convert(propagate, MissionControlSequencePropagate)).stopping_conditions.add("UserSelect").properties,
-            StoppingCondition,
+        userSel: "StoppingCondition" = StoppingCondition(
+            (MissionControlSequencePropagate(propagate)).stopping_conditions.add("UserSelect").properties
         )
         userSel.user_calc_object_name = "Keplerian Elems/Eccentricity"
         Assert.assertEqual("Eccentricity", userSel.user_calc_object_name)
@@ -5738,30 +5626,20 @@ longitude = 121;"""
         Assert.assertEqual("Inclination", userSel.user_calc_object_name)
 
         # tests links (propagators)
-        (
-            clr.Convert(propagate, MissionControlSequencePropagate)
-        ).propagator_name = "Previous Versions/Earth HPOP Default v8-1-1"
-        Assert.assertEqual(
-            "Earth HPOP Default v8-1-1", (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name
-        )
-        (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name = "Earth HPOP Default v8-1"
-        Assert.assertEqual(
-            "Earth HPOP Default v8-1", (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name
-        )
+        (MissionControlSequencePropagate(propagate)).propagator_name = "Previous Versions/Earth HPOP Default v8-1-1"
+        Assert.assertEqual("Earth HPOP Default v8-1-1", (MissionControlSequencePropagate(propagate)).propagator_name)
+        (MissionControlSequencePropagate(propagate)).propagator_name = "Earth HPOP Default v8-1"
+        Assert.assertEqual("Earth HPOP Default v8-1", (MissionControlSequencePropagate(propagate)).propagator_name)
 
         # backward comp.
-        (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name = "Earth HPOP Default v8-1-1"
-        Assert.assertEqual(
-            "Earth HPOP Default v8-1-1", (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name
-        )
+        (MissionControlSequencePropagate(propagate)).propagator_name = "Earth HPOP Default v8-1-1"
+        Assert.assertEqual("Earth HPOP Default v8-1-1", (MissionControlSequencePropagate(propagate)).propagator_name)
         with pytest.raises(Exception):
-            (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name = "Nonexistent"
+            (MissionControlSequencePropagate(propagate)).propagator_name = "Nonexistent"
         with pytest.raises(Exception):
-            (
-                clr.Convert(propagate, MissionControlSequencePropagate)
-            ).propagator_name = "Nonexistent/Earth HPOP Default v11"
+            (MissionControlSequencePropagate(propagate)).propagator_name = "Nonexistent/Earth HPOP Default v11"
         with pytest.raises(Exception):
-            (clr.Convert(propagate, MissionControlSequencePropagate)).propagator_name = "Previous Versions/Nonexistent"
+            (MissionControlSequencePropagate(propagate)).propagator_name = "Previous Versions/Nonexistent"
 
         # test segment collection
         driver.main_sequence.insert_by_name("Hohmann Transfer", "-")
@@ -5777,7 +5655,7 @@ longitude = 121;"""
         driver.main_sequence.insert_by_name("Examples/Hohmann Transfer", "-")
         Assert.assertIsNotNone(driver.main_sequence["Hohmann Transfer1"])
 
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(sat)).unload()
 
     def test_SpacesInVGTPath(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - SpacesInVGTPath START")
@@ -5791,7 +5669,7 @@ longitude = 121;"""
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
         driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
         propSeg: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
-        vecX: "StateCalcVectorX" = clr.Convert(propSeg.results.add("Vector/Vector X"), StateCalcVectorX)
+        vecX: "StateCalcVectorX" = StateCalcVectorX(propSeg.results.add("Vector/Vector X"))
         vecX.vector_name = "Satellite/VGT_Space Position"
         Assert.assertEqual("Satellite/VGT_Space Position", vecX.vector_name)
         vecX.vector_name = "Satellite/VGT Position"
@@ -5813,8 +5691,8 @@ longitude = 121;"""
             vecX.vector_name = "Invalid/VGT Position"
         with pytest.raises(Exception):
             vecX.vector_name = "Satellite/VGT Invalid"
-        (clr.Convert(satWithSpaces, IStkObject)).unload()
-        (clr.Convert(sat, IStkObject)).unload()
+        (IStkObject(satWithSpaces)).unload()
+        (IStkObject(sat)).unload()
 
     @category("ExcludeOnLinux")
     def test_MarsGRAM(self):
@@ -5825,35 +5703,27 @@ longitude = 121;"""
         epmProp.clone_object()
         mpmProp: "IComponentInfo" = propObjs["Earth Point Mass1"]
         mpmProp.name = "Mars HPOP"
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).central_body_name = "Mars"
+        (NumericalPropagatorWrapper(mpmProp)).central_body_name = "Mars"
 
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.add("Atmospheric Models/Mars GRAM 2000")
-        Assert.assertIsNotNone(
-            (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions["Mars GRAM 2000"]
-        )
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.remove("Mars GRAM 2000")
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.add("Atmospheric Models/Mars GRAM 2000")
+        Assert.assertIsNotNone((NumericalPropagatorWrapper(mpmProp)).propagator_functions["Mars GRAM 2000"])
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.remove("Mars GRAM 2000")
 
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.add("Atmospheric Models/Mars GRAM 2001")
-        Assert.assertIsNotNone(
-            (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions["Mars GRAM 2001"]
-        )
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.remove("Mars GRAM 2001")
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.add("Atmospheric Models/Mars GRAM 2001")
+        Assert.assertIsNotNone((NumericalPropagatorWrapper(mpmProp)).propagator_functions["Mars GRAM 2001"])
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.remove("Mars GRAM 2001")
 
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.add("Atmospheric Models/Mars GRAM 2005")
-        Assert.assertIsNotNone(
-            (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions["Mars GRAM 2005"]
-        )
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.remove("Mars GRAM 2005")
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.add("Atmospheric Models/Mars GRAM 2005")
+        Assert.assertIsNotNone((NumericalPropagatorWrapper(mpmProp)).propagator_functions["Mars GRAM 2005"])
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.remove("Mars GRAM 2005")
 
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.add("Atmospheric Models/Mars GRAM 2010")
-        Assert.assertIsNotNone(
-            (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions["Mars GRAM 2010"]
-        )
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.remove("Mars GRAM 2010")
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.add("Atmospheric Models/Mars GRAM 2010")
+        Assert.assertIsNotNone((NumericalPropagatorWrapper(mpmProp)).propagator_functions["Mars GRAM 2010"])
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.remove("Mars GRAM 2010")
 
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.add("Atmospheric Models/Mars GRAM 3 7")
-        Assert.assertIsNotNone((clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions["Mars GRAM 3 7"])
-        (clr.Convert(mpmProp, NumericalPropagatorWrapper)).propagator_functions.remove("Mars GRAM 3 7")
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.add("Atmospheric Models/Mars GRAM 3 7")
+        Assert.assertIsNotNone((NumericalPropagatorWrapper(mpmProp)).propagator_functions["Mars GRAM 3 7"])
+        (NumericalPropagatorWrapper(mpmProp)).propagator_functions.remove("Mars GRAM 3 7")
 
         propObjs.remove("Mars HPOP")
 

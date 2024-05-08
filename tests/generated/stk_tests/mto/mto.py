@@ -22,9 +22,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("MtoTests", "MtoTests.sc"))
-        EarlyBoundTests.AG_MTO = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"), Mto
-        )
+        EarlyBoundTests.AG_MTO = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"))
 
     # endregion
 
@@ -236,20 +234,20 @@ class EarlyBoundTests(TestBase):
         fov.sensor = "Aircraft/Aircraft1/Sensor/Sensor1"
 
         Assert.assertTrue(fov.is_any_track_in_fov("UseTrackTimes"))
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsAnyTrackInFOV("UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsAnyTrackInFOV("UseTrackTimesX"); });
 
         Assert.assertTrue(fov.is_track_in_fov(1, "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("Track id is invalid")):
             fov.is_track_in_fov(4, "UseTrackTimes")
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsTrackInFOV(1, "UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.IsTrackInFOV(1, "UseTrackTimesX"); });
 
         Assert.assertTrue(fov.are_all_tracks_in_fov("UseTrackTimes"))
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreAllTracksInFOV("UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreAllTracksInFOV("UseTrackTimesX"); });
 
         Assert.assertTrue(fov.are_tracks_in_fov(MTO_TRACK_EVAL.ALL, [1, 2, 3], "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
             fov.are_tracks_in_fov(MTO_TRACK_EVAL.ALL, [1, 2, 3, 4], "UseTrackTimes")
-        # BUG100362 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTO_TRACK_EVAL.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTO_TRACK_EVAL.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
 
         arTracks = fov.compute_all_tracks(MTO_VISIBILITY_MODE.VISIBILITY_MODE_EACH, "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
@@ -354,7 +352,7 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oHelper.Run(clr.CastAs(EarlyBoundTests.AG_MTO, IStkObject))
-        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_MTO, IStkObject)).object_files)
+        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_MTO)).object_files)
 
     # endregion
 
@@ -404,7 +402,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.begin_update()
 
-        oTrackCollection: "MtoTrackCollection" = clr.Convert(EarlyBoundTests.AG_MTO.tracks, MtoTrackCollection)
+        oTrackCollection: "MtoTrackCollection" = EarlyBoundTests.AG_MTO.tracks
         oTrack: "MtoTrack" = oTrackCollection.add(0)
         Assert.assertEqual(1, EarlyBoundTests.AG_MTO.tracks.count)
         oTrack.points.extend(timeArray, latArray, lonArray, altArray)
@@ -1124,7 +1122,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH LLA ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "Mto" = clr.Convert(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"), Mto)
+        mto2: "Mto" = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MtoTrackCollection" = mto2.tracks
@@ -1323,7 +1321,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH CBF ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "Mto" = clr.Convert(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"), Mto)
+        mto2: "Mto" = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MtoTrackCollection" = mto2.tracks
@@ -1500,7 +1498,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "Mto" = clr.Convert(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"), Mto)
+        mto2: "Mto" = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MtoTrackCollection" = mto2.tracks
@@ -1679,7 +1677,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "Mto" = clr.Convert(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"), Mto)
+        mto2: "Mto" = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MtoTrackCollection" = mto2.tracks
@@ -1897,6 +1895,10 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
         Assert.assertEqual(75, oGfxTrack.line.translucency)
+        oGfxTrack.line.alway_show_entire_line = True
+        Assert.assertEqual(True, oGfxTrack.line.alway_show_entire_line)
+        oGfxTrack.line.alway_show_entire_line = False
+        Assert.assertEqual(False, oGfxTrack.line.alway_show_entire_line)
 
         oGfxTrack.marker.is_visible = True
         Assert.assertEqual(True, oGfxTrack.marker.is_visible)
@@ -2280,7 +2282,7 @@ class EarlyBoundTests(TestBase):
             oShape.style = MARKER_SHAPE_3D.SHAPE_POINT
             Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
             with pytest.raises(STKInvalidCastError):
-                oF: "Graphics3DMarkerFile" = clr.Convert(oMarker.marker_data, Graphics3DMarkerFile)
+                oF: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
             oMarker.marker_type = MARKER_TYPE.IMAGE_FILE
             Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
@@ -2289,7 +2291,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertIsNotNone(oFile)
             self.VOMarkerFileHelper(oFile)
             with pytest.raises(STKInvalidCastError):
-                oShape = clr.Convert(oMarker.marker_data, Graphics3DMarkerShape)
+                oShape = Graphics3DMarkerShape(oMarker.marker_data)
 
             oMarker.pixel_size = 12
             Assert.assertEqual(12, oMarker.pixel_size)
@@ -2586,9 +2588,7 @@ class EarlyBoundTests(TestBase):
             iIndex += 1
 
         TestBase.LoadTestScenario(Path.Combine("MtoTests", "MtoTests.sc"))
-        EarlyBoundTests.AG_MTO = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"), Mto
-        )
+        EarlyBoundTests.AG_MTO = Mto(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"))
 
     # endregion
 
@@ -3036,7 +3036,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", initialDateUnit)
 
         # Delete MTO object that was added for the test
-        (clr.Convert(mto, IStkObject)).unload()
+        (IStkObject(mto)).unload()
 
         TestBase.logger.WriteLine("----- CreateTracksUsingDifferentDateFormats ----- END -----")
 

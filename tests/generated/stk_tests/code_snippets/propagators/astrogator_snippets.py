@@ -28,11 +28,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
     # region TestSetUp
     def setUp(self):
-        AstrogatorSnippets.m_Satellite = clr.Convert(
+        AstrogatorSnippets.m_Satellite = Satellite(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 STK_OBJECT_TYPE.SATELLITE, AstrogatorSnippets.m_DefaultName
-            ),
-            Satellite,
+            )
         )
         AstrogatorSnippets.m_Satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
         AstrogatorSnippets.m_Object = clr.CastAs(
@@ -44,7 +43,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(AstrogatorSnippets.m_Satellite, IStkObject)).unload()
+        (IStkObject(AstrogatorSnippets.m_Satellite)).unload()
         AstrogatorSnippets.m_Object = None
 
     # endregion
@@ -186,7 +185,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         controlParam.max_step = 0.3
 
         # Enable results
-        (clr.Convert(dv1, IMissionControlSequenceSegment)).results.add("Epoch")
+        (IMissionControlSequenceSegment(dv1)).results.add("Epoch")
         roaResult: "DifferentialCorrectorResult" = dc.results.get_result_by_paths("DV1", "Epoch")
         roaResult.enable = True
 
@@ -219,7 +218,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
         # Configure display type
         launch.set_display_system_type(LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC)
-        llr: "DisplaySystemGeocentric" = clr.Convert(launch.display_system, DisplaySystemGeocentric)
+        llr: "DisplaySystemGeocentric" = DisplaySystemGeocentric(launch.display_system)
         llr.latitude = 35.581
         llr.longitude = -92.263
         llr.radius = 1000

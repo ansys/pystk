@@ -28,11 +28,10 @@ class EarlyBoundTests(TestBase):
     @staticmethod
     def InitHelper():
         TestBase.LoadTestScenario(Path.Combine("CovDefTests", "CovDefTests.sc"))
-        EarlyBoundTests.AG_COV = clr.Convert(
+        EarlyBoundTests.AG_COV = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-            ),
-            CoverageDefinition,
+            )
         )
         TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2")
 
@@ -54,7 +53,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_BasicDescription(self):
         Assert.assertNotEqual(None, EarlyBoundTests.AG_COV)
-        obj: "IStkObject" = clr.Convert(EarlyBoundTests.AG_COV, IStkObject)
+        obj: "IStkObject" = IStkObject(EarlyBoundTests.AG_COV)
 
         # Short Description test
         obj.short_description = "This is a new short description."
@@ -86,24 +85,24 @@ class EarlyBoundTests(TestBase):
     # region ComputeAccess
     @category("Basic Tests")
     def test_ComputeAccess(self):
-        polarSat: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "PolarSat"), Satellite
+        polarSat: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "PolarSat")
         )
         polarSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
-        j4: "VehiclePropagatorJ4Perturbation" = clr.Convert(polarSat.propagator, VehiclePropagatorJ4Perturbation)
-        classical: "OrbitStateClassical" = clr.Convert(
-            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+        j4: "VehiclePropagatorJ4Perturbation" = VehiclePropagatorJ4Perturbation(polarSat.propagator)
+        classical: "OrbitStateClassical" = OrbitStateClassical(
+            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
         classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
-        trueAnomaly: "ClassicalLocationTrueAnomaly" = clr.Convert(classical.location, ClassicalLocationTrueAnomaly)
+        trueAnomaly: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(classical.location)
         trueAnomaly.value = 0.0
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
-        altitude: "ClassicalSizeShapeAltitude" = clr.Convert(classical.size_shape, ClassicalSizeShapeAltitude)
+        altitude: "ClassicalSizeShapeAltitude" = ClassicalSizeShapeAltitude(classical.size_shape)
         altitude.apogee_altitude = 400.0
         altitude.perigee_altitude = 400.0
         classical.orientation.arg_of_perigee = 0.0
         classical.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-        raan: "OrientationAscNodeRAAN" = clr.Convert(classical.orientation.asc_node, OrientationAscNodeRAAN)
+        raan: "OrientationAscNodeRAAN" = OrientationAscNodeRAAN(classical.orientation.asc_node)
         raan.value = 0
         classical.orientation.inclination = 97.3
 
@@ -111,8 +110,8 @@ class EarlyBoundTests(TestBase):
         j4.propagate()
         if not TestBase.NoGraphicsMode:
             polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-            basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
-                polarSat.graphics.attributes, IVehicleGraphics2DAttributesBasic
+            basicAtt: "IVehicleGraphics2DAttributesBasic" = IVehicleGraphics2DAttributesBasic(
+                polarSat.graphics.attributes
             )
             basicAtt.color = Colors.Yellow
 
@@ -121,24 +120,22 @@ class EarlyBoundTests(TestBase):
                 polarSat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
         # Add a shuttle
-        shuttle: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle"), Satellite
+        shuttle: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle")
         )
         shuttle.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
-        j4 = clr.Convert(shuttle.propagator, VehiclePropagatorJ4Perturbation)
-        classical = clr.Convert(
-            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
-        )
+        j4 = VehiclePropagatorJ4Perturbation(shuttle.propagator)
+        classical = OrbitStateClassical(j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL))
         classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
-        trueAnomaly = clr.Convert(classical.location, ClassicalLocationTrueAnomaly)
+        trueAnomaly = ClassicalLocationTrueAnomaly(classical.location)
         trueAnomaly.value = 0.0
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
-        altitude = clr.Convert(classical.size_shape, ClassicalSizeShapeAltitude)
+        altitude = ClassicalSizeShapeAltitude(classical.size_shape)
         altitude.apogee_altitude = 500.0
         altitude.perigee_altitude = 500.0
         classical.orientation.arg_of_perigee = 0.0
         classical.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-        raan = clr.Convert(classical.orientation.asc_node, OrientationAscNodeRAAN)
+        raan = OrientationAscNodeRAAN(classical.orientation.asc_node)
         raan.value = 340
         classical.orientation.inclination = 45.0
 
@@ -146,8 +143,8 @@ class EarlyBoundTests(TestBase):
         j4.propagate()
         if not TestBase.NoGraphicsMode:
             shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-            basicAtt: "IVehicleGraphics2DAttributesBasic" = clr.Convert(
-                shuttle.graphics.attributes, IVehicleGraphics2DAttributesBasic
+            basicAtt: "IVehicleGraphics2DAttributesBasic" = IVehicleGraphics2DAttributesBasic(
+                shuttle.graphics.attributes
             )
             basicAtt.color = Colors.Cyan
 
@@ -155,16 +152,15 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 shuttle.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
 
-        tropics: "CoverageDefinition" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics"),
-            CoverageDefinition,
+        tropics: "CoverageDefinition" = CoverageDefinition(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics")
         )
-        grid: "CoverageGrid" = clr.Convert(tropics.grid, CoverageGrid)
-        bounds: "CoverageBoundsLat" = clr.Convert(grid.bounds, CoverageBoundsLat)
+        grid: "CoverageGrid" = tropics.grid
+        bounds: "CoverageBoundsLat" = CoverageBoundsLat(grid.bounds)
         bounds.max_latitude = 23.5
         bounds.min_latitude = -23.5
 
-        res: "CoverageResolutionLatLon" = clr.Convert(grid.resolution, CoverageResolutionLatLon)
+        res: "CoverageResolutionLatLon" = CoverageResolutionLatLon(grid.resolution)
         res.lat_lon = 3
 
         assets: "CoverageAssetListCollection" = tropics.asset_list
@@ -197,16 +193,15 @@ class EarlyBoundTests(TestBase):
         # ComputeAccesses
         tropics.compute_accesses()
 
-        twoEyes: "FigureOfMerit" = clr.Convert(
+        twoEyes: "FigureOfMerit" = FigureOfMerit(
             TestBase.Application.current_scenario.children["Tropics"].children.new(
                 STK_OBJECT_TYPE.FIGURE_OF_MERIT, "TwoEyes"
-            ),
-            FigureOfMerit,
+            )
         )
 
         # Set type to N Asset Coverage and compute option to Maximum
         twoEyes.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
-        compute: "IFigureOfMeritDefinitionCompute" = clr.Convert(twoEyes.definition, IFigureOfMeritDefinitionCompute)
+        compute: "IFigureOfMeritDefinitionCompute" = IFigureOfMeritDefinitionCompute(twoEyes.definition)
 
         compute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
         if not TestBase.NoGraphicsMode:
@@ -227,7 +222,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 tropics.graphics.static.is_region_visible = False
 
-        compute = clr.Convert(twoEyes.definition, IFigureOfMeritDefinitionCompute)
+        compute = IFigureOfMeritDefinitionCompute(twoEyes.definition)
 
         compute.satisfaction.enable_satisfaction = True
         compute.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
@@ -1250,7 +1245,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
-        lat: "CoverageBoundsLat" = clr.Convert(EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsLat)
+        lat: "CoverageBoundsLat" = CoverageBoundsLat(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(lat)
         TestBase.logger.WriteLine7(
             "\t\tThe current Bounds is: MinLatitude = {0}, MaxLatitude = {1}", lat.min_latitude, lat.max_latitude
@@ -1274,38 +1269,38 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oInspector.select_point(-12, "two")
         # PointCoverage
-        oInterval: "DataProviderInterval" = clr.Convert(oInspector.point_coverage, DataProviderInterval)
+        oInterval: "DataProviderInterval" = DataProviderInterval(oInspector.point_coverage)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointCoverage result:")
         oResult.Dump()
         # PointDailyCoverage
-        dpFixed: "DataProviderFixed" = clr.Convert(oInspector.point_daily_coverage, DataProviderFixed)
+        dpFixed: "DataProviderFixed" = DataProviderFixed(oInspector.point_daily_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tPointDailyCoverage result:")
         oResult.Dump()
         # PointProbOfCoverage
-        dpFixed = clr.Convert(oInspector.point_prob_of_coverage, DataProviderFixed)
+        dpFixed = DataProviderFixed(oInspector.point_prob_of_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tPointProbOfCoverage result:")
         oResult.Dump()
         # RegionCoverage
-        oTimeVar: "DataProviderTimeVarying" = clr.Convert(oInspector.region_coverage, DataProviderTimeVarying)
+        oTimeVar: "DataProviderTimeVarying" = DataProviderTimeVarying(oInspector.region_coverage)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionCoverage result:")
         oResult.Dump()
         # RegionFullCoverage
-        oInterval = clr.Convert(oInspector.region_full_coverage, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.region_full_coverage)
         Assert.assertIsNotNone(oInterval)
 
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFullCoverage result:")
         oResult.Dump()
         # RegionPassCoverage
-        dpFixed = clr.Convert(oInspector.region_pass_coverage, DataProviderFixed)
+        dpFixed = DataProviderFixed(oInspector.region_pass_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tRegionPassCoverage result:")
@@ -1320,8 +1315,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
-        boundsCustomRegions: "CoverageBoundsCustomRegions" = clr.Convert(
-            EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
+        boundsCustomRegions: "CoverageBoundsCustomRegions" = CoverageBoundsCustomRegions(
+            EarlyBoundTests.AG_COV.grid.bounds
         )
         boundsCustomRegions.area_targets.add("AreaTarget/AreaTarget1")
         # ComputeAccesses
@@ -1333,37 +1328,37 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oInspector.select_region("Invalid.Region")
         # PointCoverage
-        oInterval = clr.Convert(oInspector.point_coverage, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.point_coverage)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointCoverage result:")
         oResult.Dump()
         # PointDailyCoverage
-        dpFixed = clr.Convert(oInspector.point_daily_coverage, DataProviderFixed)
+        dpFixed = DataProviderFixed(oInspector.point_daily_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tPointDailyCoverage result:")
         oResult.Dump()
         # PointProbOfCoverage
-        dpFixed = clr.Convert(oInspector.point_prob_of_coverage, DataProviderFixed)
+        dpFixed = DataProviderFixed(oInspector.point_prob_of_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tPointProbOfCoverage result:")
         oResult.Dump()
         # RegionCoverage
-        oTimeVar = clr.Convert(oInspector.region_coverage, DataProviderTimeVarying)
+        oTimeVar = DataProviderTimeVarying(oInspector.region_coverage)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionCoverage result:")
         oResult.Dump()
         # RegionFullCoverage
-        oInterval = clr.Convert(oInspector.region_full_coverage, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.region_full_coverage)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFullCoverage result:")
         oResult.Dump()
         # RegionPassCoverage
-        dpFixed = clr.Convert(oInspector.region_pass_coverage, DataProviderFixed)
+        dpFixed = DataProviderFixed(oInspector.region_pass_coverage)
         Assert.assertIsNotNone(dpFixed)
         oResult = DataProviderResultWriter(dpFixed.exec())
         TestBase.logger.WriteLine("\n\tRegionPassCoverage result:")
@@ -1380,11 +1375,10 @@ class EarlyBoundTests(TestBase):
 
     # region GridPointSelection
     def test_GridPointSelection(self):
-        covdef: "CoverageDefinition" = clr.Convert(
+        covdef: "CoverageDefinition" = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDefGridPointSelection"
-            ),
-            CoverageDefinition,
+            )
         )
         covdef.asset_list.remove_all()
         covdef.asset_list.add("Satellite/Satellite1")
@@ -1427,11 +1421,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         EarlyBoundTests.InitHelper()
 
-        areaTarget: "AreaTarget" = clr.Convert(
+        areaTarget: "AreaTarget" = AreaTarget(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.AREA_TARGET, "GridInspectorFastVsSlow2_AreaTarget"
-            ),
-            AreaTarget,
+            )
         )
         areaTarget.area_type = AREA_TYPE.PATTERN
         patterns: "AreaTypePatternCollection" = clr.CastAs(areaTarget.area_type_data, AreaTypePatternCollection)
@@ -1440,11 +1433,10 @@ class EarlyBoundTests(TestBase):
         patterns.add(35.52, -74.1898)
         patterns.add(36.9996, -85.1227)
 
-        aircraft: "Aircraft" = clr.Convert(
+        aircraft: "Aircraft" = Aircraft(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.AIRCRAFT, "GridInspectorFastVsSlow2_Aircraft"
-            ),
-            Aircraft,
+            )
         )
         aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "VehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, VehiclePropagatorGreatArc)
@@ -1465,9 +1457,9 @@ class EarlyBoundTests(TestBase):
         boundRegion: "CoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
         )
-        boundRegion.area_targets.add((clr.Convert(areaTarget, IStkObject)).path)
+        boundRegion.area_targets.add((IStkObject(areaTarget)).path)
 
-        EarlyBoundTests.AG_COV.asset_list.add((clr.Convert(aircraft, IStkObject)).path)
+        EarlyBoundTests.AG_COV.asset_list.add((IStkObject(aircraft)).path)
 
         EarlyBoundTests.AG_COV.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         latLonResolution: "CoverageResolutionLatLon" = clr.CastAs(
@@ -1553,11 +1545,10 @@ class EarlyBoundTests(TestBase):
 
             j: int = 0
             while j < 100:
-                cov: "CoverageDefinition" = clr.Convert(
+                cov: "CoverageDefinition" = CoverageDefinition(
                     TestBase.Application.current_scenario.children.new(
                         STK_OBJECT_TYPE.COVERAGE_DEFINITION, String.Format("CoverageDefinition{0}", j)
-                    ),
-                    CoverageDefinition,
+                    )
                 )
                 gps: "CoverageGridPointSelection" = cov.grid_inspector.get_grid_point_selection()
                 point: "CoverageSelectedGridPoint"
@@ -1576,13 +1567,12 @@ class EarlyBoundTests(TestBase):
 
             j: int = 0
             while j < 10:
-                sat: "Satellite" = clr.Convert(
+                sat: "Satellite" = Satellite(
                     TestBase.Application.current_scenario.children.new(
                         STK_OBJECT_TYPE.SATELLITE, String.Format("Satellite{0}_{1}", i, j)
-                    ),
-                    Satellite,
+                    )
                 )
-                propagator: "VehiclePropagatorTwoBody" = clr.Convert(sat.propagator, VehiclePropagatorTwoBody)
+                propagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
                 propagator.propagate()
 
                 j += 1
@@ -1716,11 +1706,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         EarlyBoundTests.InitHelper()
 
-        areaTarget: "AreaTarget" = clr.Convert(
+        areaTarget: "AreaTarget" = AreaTarget(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.AREA_TARGET, "GridInspectorFastVsSlow2_AreaTarget"
-            ),
-            AreaTarget,
+            )
         )
         areaTarget.area_type = AREA_TYPE.PATTERN
         patterns: "AreaTypePatternCollection" = clr.CastAs(areaTarget.area_type_data, AreaTypePatternCollection)
@@ -1729,11 +1718,10 @@ class EarlyBoundTests(TestBase):
         patterns.add(35.52, -74.1898)
         patterns.add(36.9996, -85.1227)
 
-        aircraft: "Aircraft" = clr.Convert(
+        aircraft: "Aircraft" = Aircraft(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.AIRCRAFT, "GridInspectorFastVsSlow2_Aircraft"
-            ),
-            Aircraft,
+            )
         )
         aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
         propagator: "VehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, VehiclePropagatorGreatArc)
@@ -1754,9 +1742,9 @@ class EarlyBoundTests(TestBase):
         boundRegion: "CoverageBoundsCustomRegions" = clr.CastAs(
             EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
         )
-        boundRegion.area_targets.add((clr.Convert(areaTarget, IStkObject)).path)
+        boundRegion.area_targets.add((IStkObject(areaTarget)).path)
 
-        EarlyBoundTests.AG_COV.asset_list.add((clr.Convert(aircraft, IStkObject)).path)
+        EarlyBoundTests.AG_COV.asset_list.add((IStkObject(aircraft)).path)
 
         EarlyBoundTests.AG_COV.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
         latLonResolution: "CoverageResolutionLatLon" = clr.CastAs(
@@ -1775,8 +1763,8 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- GRID INSPECTOR ALL TYPES TEST ----- BEGIN -----")
         TestBase.Application.close_scenario()
         EarlyBoundTests.InitHelper()
-        covDef: "CoverageDefinition" = clr.Convert(
-            TestBase.Application.current_scenario.children["CoverageDefinition1"], CoverageDefinition
+        covDef: "CoverageDefinition" = CoverageDefinition(
+            TestBase.Application.current_scenario.children["CoverageDefinition1"]
         )
 
         self.CompareGridPointsByBoundsType(covDef, COVERAGE_BOUNDS.BOUNDS_LAT)  # original
@@ -1789,7 +1777,7 @@ class EarlyBoundTests(TestBase):
 
         # restore to original
         covDef.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
-        bounds: "CoverageBoundsLat" = clr.Convert(covDef.grid.bounds, CoverageBoundsLat)
+        bounds: "CoverageBoundsLat" = CoverageBoundsLat(covDef.grid.bounds)
         bounds.min_latitude = TestBase.Application.conversion_utility.convert_quantity("AngleUnit", "deg", "rad", -70.0)
         bounds.max_latitude = TestBase.Application.conversion_utility.convert_quantity("AngleUnit", "deg", "rad", 60.0)
 
@@ -1811,7 +1799,7 @@ class EarlyBoundTests(TestBase):
 
         gridPointLocations = []
         group: "DataProviderFixed" = clr.CastAs(
-            (clr.Convert(covDef, IStkObject)).data_providers["Grid Point Locations"], DataProviderFixed
+            (IStkObject(covDef)).data_providers["Grid Point Locations"], DataProviderFixed
         )
         execElements = ["Latitude", "Longitude"]
         result: "DataProviderResult" = group.exec_elements(execElements)
@@ -2320,8 +2308,10 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = clr.Convert(
-                int(arTypes[iIndex][0]), FIGURE_OF_MERIT_DEFINITION_TYPE
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = (
+                FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in FIGURE_OF_MERIT_DEFINITION_TYPE])
+                else int(arTypes[iIndex][0])
             )
             if not fom.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -2427,20 +2417,19 @@ class EarlyBoundTests(TestBase):
 
         TestBase.logger.WriteLine("----- PointAltitude TEST ----- BEGIN -----")
 
-        covDef: "CoverageDefinition" = clr.Convert(
+        covDef: "CoverageDefinition" = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef_PointAltitude"
-            ),
-            CoverageDefinition,
+            )
         )
         pointDef: "CoveragePointDefinition" = covDef.point_definition
         pointDef.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE_ABOVE_TERRAIN
 
-        fac: "Facility" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Fac_PointAltitude"), Facility
+        fac: "Facility" = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Fac_PointAltitude")
         )
         constraint: "IAccessConstraint" = fac.access_constraints.add_constraint(ACCESS_CONSTRAINTS.LIGHTING)
-        cnstrCondition: "AccessConstraintCondition" = clr.Convert(constraint, AccessConstraintCondition)
+        cnstrCondition: "AccessConstraintCondition" = AccessConstraintCondition(constraint)
         cnstrCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 
         pointDef.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_FACILITY
@@ -2460,11 +2449,10 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_CustomPointAltitudeMethod(self, method: "COVERAGE_POINT_ALTITUDE_METHOD"):
-        covDef: "CoverageDefinition" = clr.Convert(
+        covDef: "CoverageDefinition" = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef_PointAltitude"
-            ),
-            CoverageDefinition,
+            )
         )
         try:
             pointDef: "CoveragePointDefinition" = covDef.point_definition
@@ -2475,15 +2463,14 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(method, method2)
 
         finally:
-            (clr.Convert(covDef, IStkObject)).unload()
+            (IStkObject(covDef)).unload()
 
     def test_CustomPointAltitudeMethodException(self):
         def code1():
-            covDef: "CoverageDefinition" = clr.Convert(
+            covDef: "CoverageDefinition" = CoverageDefinition(
                 TestBase.Application.current_scenario.children.new(
                     STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef_PointAltitude"
-                ),
-                CoverageDefinition,
+                )
             )
             try:
                 pointDef: "CoveragePointDefinition" = covDef.point_definition
@@ -2492,7 +2479,7 @@ class EarlyBoundTests(TestBase):
                 pointDef.point_altitude_method = COVERAGE_POINT_ALTITUDE_METHOD.POINT_ALTITUDE_METHOD_FILE_VALUES
 
             finally:
-                (clr.Convert(covDef, IStkObject)).unload()
+                (IStkObject(covDef)).unload()
 
         ex = ExceptionAssert.Throws(code1)
         StringAssert.Contains("Cannot modify read-only attribute", str(ex), "Exception message mismatch")

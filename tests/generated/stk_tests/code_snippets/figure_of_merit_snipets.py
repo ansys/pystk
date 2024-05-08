@@ -242,9 +242,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     # region FigureOfMeritDefinitionScalarCalculationFromVGT
     def test_FigureOfMeritDefinitionScalarCalculationFromVGT(self):
-        self.FigureOfMeritDefinitionScalarCalculationFromVGT(
-            FigureOfMeritSnipets.m_Object, clr.Convert(TestBase.Application, StkObjectRoot)
-        )
+        self.FigureOfMeritDefinitionScalarCalculationFromVGT(FigureOfMeritSnipets.m_Object, TestBase.Application)
 
     def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "FigureOfMerit", stkRoot: "StkObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.

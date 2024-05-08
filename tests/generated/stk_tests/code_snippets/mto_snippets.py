@@ -108,7 +108,7 @@ class MtoSnippets(CodeSnippetsTestBase):
             element.marker.set_marker_image_file(r"STKData\VO\Markers\Fire.ppm")
 
             element.model.is_visible = True
-            element.model.filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
+            element.model.filename = r"STKData\VO\Models\Land\ariane-lp.glb"
             element.model.initial_bearing = 3.0
             element.model.scale_value = 2.0
             element.model.z_points_nadir = True
@@ -132,7 +132,7 @@ class MtoSnippets(CodeSnippetsTestBase):
     def ConfigureMtoTrackModel(self, track: "MtoGraphics3DTrack"):
         model: "MtoGraphics3DModel" = track.model
         model.is_visible = True
-        model.filename = r"STKData\VO\Models\Land\ariane-lp.mdl"
+        model.filename = r"STKData\VO\Models\Land\ariane-lp.glb"
         model.initial_bearing = 3.0
         model.scale_value = 2.0
         model.z_points_nadir = True
@@ -490,9 +490,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         MtoSnippets.m_Object.tracks.add(1)
         MtoSnippets.m_Object.tracks.add(4)
 
-        sensor1: "Sensor" = clr.CastAs(
-            (clr.Convert(satellite, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor
-        )
+        sensor1: "Sensor" = clr.CastAs((IStkObject(satellite)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor)
         self.ComputeMtoFieldOfView(MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "J2Satellite")
 

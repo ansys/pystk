@@ -145,7 +145,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEventArray
     def test_CreateSignaledEventArray(self):
-        self.CreateSignaledEventArray(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.CreateSignaledEventArray(TestBase.Application)
 
     def CreateSignaledEventArray(self, stkRoot: "StkObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
@@ -297,7 +297,7 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region DetermineAltitudeOfAircraftAtOneCertainSample
     def test_DetermineAltitudeOfAircraftAtOneCertainSample(self):
-        self.DetermineAltitudeOfAircraftAtOneCertainSample(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.DetermineAltitudeOfAircraftAtOneCertainSample(TestBase.Application)
 
     def DetermineAltitudeOfAircraftAtOneCertainSample(self, stkRoot: "StkObjectRoot"):
         # Get the aircraft

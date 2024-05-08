@@ -32,7 +32,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Initialize()
 
         TestBase.LoadTestScenario(Path.Combine("AreaTargetTests", "AreaTargetTests.sc"))
-        EarlyBoundTests.AG_AT = clr.Convert(TestBase.Application.current_scenario.children["AreaTarget1"], AreaTarget)
+        EarlyBoundTests.AG_AT = AreaTarget(TestBase.Application.current_scenario.children["AreaTarget1"])
 
     # endregion
 
@@ -71,7 +71,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TEST ----- BEGIN -----")
         EarlyBoundTests.AG_AT.area_type = AREA_TYPE.ELLIPSE
         Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
-        ellipse: "AreaTypeEllipse" = clr.Convert(EarlyBoundTests.AG_AT.area_type_data, AreaTypeEllipse)
+        ellipse: "AreaTypeEllipse" = AreaTypeEllipse(EarlyBoundTests.AG_AT.area_type_data)
         ellipse.bearing = 1
         Assert.assertEqual(1, ellipse.bearing)
         ellipse.semi_major_axis = 301
@@ -81,9 +81,7 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_AT.area_type = AREA_TYPE.PATTERN
         Assert.assertEqual(AREA_TYPE.PATTERN, EarlyBoundTests.AG_AT.area_type)
-        patterns: "AreaTypePatternCollection" = clr.Convert(
-            EarlyBoundTests.AG_AT.area_type_data, AreaTypePatternCollection
-        )
+        patterns: "AreaTypePatternCollection" = AreaTypePatternCollection(EarlyBoundTests.AG_AT.area_type_data)
         Assert.assertIsNotNone(patterns)
         self.Units.set_current_unit("LongitudeUnit", "deg")
         self.Units.set_current_unit("LatitudeUnit", "deg")
@@ -172,7 +170,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(bIsAllowed, EarlyBoundTests.AG_AT.allow_object_access)
 
         pl: "IStkObject" = TestBase.Application.current_scenario.children["JupiterAnalytic"]
-        fa: "Facility" = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        fa: "Facility" = Facility(TestBase.Application.current_scenario.children["Facility1"])
         Assert.assertIsNotNone(pl)
         areaTargetObject: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AT, IStkObject)
         if areaTargetObject.is_access_supported():
@@ -193,11 +191,9 @@ class EarlyBoundTests(TestBase):
                 cov: "StkObjectCoverage" = areaTargetObject.object_coverage
                 TestBase.logger.WriteLine(cov.data_providers[0].name)
 
-            (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access_to_object(
-                clr.CastAs(fa, IStkObject)
-            ).remove_access()
-            (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access("*/Planet/Planet1").remove_access()
-            (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access(pl.path).remove_access()
+            (IStkObject(EarlyBoundTests.AG_AT)).get_access_to_object(clr.CastAs(fa, IStkObject)).remove_access()
+            (IStkObject(EarlyBoundTests.AG_AT)).get_access("*/Planet/Planet1").remove_access()
+            (IStkObject(EarlyBoundTests.AG_AT)).get_access(pl.path).remove_access()
 
         st: "IStkObject" = TestBase.Application.current_scenario.children["Star1"]
         Assert.assertIsNotNone(st)
@@ -217,7 +213,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- BEGIN -----")
-        gfx: "AreaTargetGraphics" = clr.Convert(EarlyBoundTests.AG_AT.graphics, AreaTargetGraphics)
+        gfx: "AreaTargetGraphics" = EarlyBoundTests.AG_AT.graphics
         gfx.is_object_graphics_visible = False
         Assert.assertFalse(gfx.is_object_graphics_visible)
         gfx.is_object_graphics_visible = True
@@ -289,7 +285,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_AT.graphics_3d.vector, True)
 
     # endregion
@@ -372,7 +368,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_DisplayTimes(self):
         oHelper = DisplayTimesHelper(TestBase.Application)
-        oHelper.Run(clr.Convert(EarlyBoundTests.AG_AT, IDisplayTime))
+        oHelper.Run(IDisplayTime(EarlyBoundTests.AG_AT))
 
     # endregion
 
@@ -381,9 +377,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_AT.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_AT, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_AT.access_constraints, IStkObject(EarlyBoundTests.AG_AT), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -402,18 +396,17 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_AccessDataDisplay(self):
         # test Access VO DataDisplays
-        oSatellite: "Satellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        oSatellite: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         Assert.assertNotEqual(None, oSatellite)
         oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "StkAccess" = clr.Convert(
-            (clr.Convert(EarlyBoundTests.AG_AT, IStkObject)).get_access_to_object(clr.CastAs(oSatellite, IStkObject)),
-            StkAccess,
+        oAccess: "StkAccess" = (IStkObject(EarlyBoundTests.AG_AT)).get_access_to_object(
+            clr.CastAs(oSatellite, IStkObject)
         )
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()

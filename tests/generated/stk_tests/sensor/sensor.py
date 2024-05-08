@@ -101,8 +101,8 @@ class EarlyBoundTests(TestBase):
     # region LaunchVehicleSensor
     def test_LaunchVehicleSensor(self):
         oHelper = SensorHelper(TestBase.Application)
-        oLV: "LaunchVehicle" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "MIR"), LaunchVehicle
+        oLV: "LaunchVehicle" = LaunchVehicle(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "MIR")
         )
         Assert.assertIsNotNone(oLV)
         oLV.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
@@ -233,21 +233,21 @@ class BugFixes(TestBase):
         objSat: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SwathSat")
         sat: "Satellite" = clr.CastAs(objSat, Satellite)
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twobody: "VehiclePropagatorTwoBody" = clr.Convert(sat.propagator, VehiclePropagatorTwoBody)
+        twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
         twobody.propagate()
 
         satSensor: "Sensor" = clr.CastAs(objSat.children.new(STK_OBJECT_TYPE.SENSOR, "SwathSatSensor"), Sensor)
         satSensor.swath.enable = True
 
-        classicalX: "OrbitStateClassical" = clr.Convert(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+        classicalX: "OrbitStateClassical" = OrbitStateClassical(
+            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
         classicalX.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
-        periodX: "ClassicalSizeShapePeriod" = clr.Convert(classicalX.size_shape, ClassicalSizeShapePeriod)
+        periodX: "ClassicalSizeShapePeriod" = ClassicalSizeShapePeriod(classicalX.size_shape)
         periodX.eccentricity = 0
         twobody.initial_state.representation.assign(classicalX)
 
-        standard: "VehicleOrbitAttitudeStandard" = clr.Convert(sat.attitude, VehicleOrbitAttitudeStandard)
+        standard: "VehicleOrbitAttitudeStandard" = VehicleOrbitAttitudeStandard(sat.attitude)
         standard.basic.set_profile_type(VEHICLE_PROFILE.PROFILE_NADIR_ALIGNMENT_WITH_ECF_VELOCITY_CONSTRAINT)
         twobody.propagate()
 
@@ -266,11 +266,11 @@ class BugFixes(TestBase):
         Assert.assertEqual(SWATH_COMPUTATIONAL_METHOD.NUMERICAL, satSensor.swath.computational_method)
 
         # Analytical should fail for non-circular
-        classical: "OrbitStateClassical" = clr.Convert(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+        classical: "OrbitStateClassical" = OrbitStateClassical(
+            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
-        period: "ClassicalSizeShapePeriod" = clr.Convert(classical.size_shape, ClassicalSizeShapePeriod)
+        period: "ClassicalSizeShapePeriod" = ClassicalSizeShapePeriod(classical.size_shape)
         period.eccentricity = 0.01
         twobody.initial_state.representation.assign(classical)
         twobody.propagate()
@@ -281,7 +281,7 @@ class BugFixes(TestBase):
         twobody.propagate()
 
         # Analytical should fail for different attitude
-        orbit: "VehicleOrbitAttitudeStandard" = clr.Convert(sat.attitude, VehicleOrbitAttitudeStandard)
+        orbit: "VehicleOrbitAttitudeStandard" = VehicleOrbitAttitudeStandard(sat.attitude)
         orbit.basic.set_profile_type(VEHICLE_PROFILE.PROFILE_NADIR_ALIGNMENT_WITH_ECI_VELOCITY_CONSTRAINT)
         twobody.propagate()
         with pytest.raises(Exception):
@@ -501,9 +501,9 @@ class BugFixes(TestBase):
         shuttleSat: "IStkObject" = TestBase.Application.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "Shuttle1"
         )
-        sensor: "Sensor" = clr.Convert(shuttleSat.children.new(STK_OBJECT_TYPE.SENSOR, "Horizon1"), Sensor)
+        sensor: "Sensor" = Sensor(shuttleSat.children.new(STK_OBJECT_TYPE.SENSOR, "Horizon1"))
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         # Supported Pattern Types
 
@@ -579,7 +579,7 @@ class BugFixes(TestBase):
         # pattern = sensor.Pattern;
         # Assert.IsNotNull(pattern);
 
-        (clr.Convert(sensor, IStkObject)).unload()
+        (IStkObject(sensor)).unload()
         shuttleSat.unload()
 
     # endregion
@@ -590,10 +590,10 @@ class BugFixes(TestBase):
         shuttleSat: "IStkObject" = TestBase.Application.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "Shuttle"
         )
-        sensor: "Sensor" = clr.Convert(shuttleSat.children.new(STK_OBJECT_TYPE.SENSOR, "Horizon"), Sensor)
+        sensor: "Sensor" = Sensor(shuttleSat.children.new(STK_OBJECT_TYPE.SENSOR, "Horizon"))
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
 
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         cmd: str = String.Format(
             'Point */Satellite/Shuttle/Sensor/Horizon Schedule AddLLA "{0}" -33.17 -70.08 0.36', scenario.start_time
         )
@@ -609,7 +609,7 @@ class BugFixes(TestBase):
         TestBase.Application.execute_command("Point */Satellite/Shuttle/Sensor/Horizon Schedule Off")
         Assert.assertFalse(pointingMethod.enabled)
 
-        (clr.Convert(sensor, IStkObject)).unload()
+        (IStkObject(sensor)).unload()
         shuttleSat.unload()
 
 
@@ -640,11 +640,11 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oParent)
         # get (create) sensor
         try:
-            self.m_oSensor = clr.Convert(oParent.children[strSensorName], Sensor)
+            self.m_oSensor = Sensor(oParent.children[strSensorName])
 
         except Exception as e:
             self.m_logger.WriteLine(str(e))
-            self.m_oSensor = clr.Convert(oParent.children.new(STK_OBJECT_TYPE.SENSOR, strSensorName), Sensor)
+            self.m_oSensor = Sensor(oParent.children.new(STK_OBJECT_TYPE.SENSOR, strSensorName))
             self.m_logger.WriteLine5("Object {0} was created.", strSensorName)
 
         Assert.assertIsNotNone(self.m_oSensor)
@@ -690,17 +690,17 @@ class SensorHelper(object):
             ) or ((oParent.class_type == STK_OBJECT_TYPE.SHIP)):
                 self.Swath(True)
             elif oParent.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-                oLV: "LaunchVehicle" = clr.Convert(oParent, LaunchVehicle)
+                oLV: "LaunchVehicle" = LaunchVehicle(oParent)
 
                 # ProfileType
-                simpleAsc: "VehiclePropagatorSimpleAscent" = clr.Convert(oLV.trajectory, VehiclePropagatorSimpleAscent)
+                simpleAsc: "VehiclePropagatorSimpleAscent" = VehiclePropagatorSimpleAscent(oLV.trajectory)
                 simpleAsc.propagate()
                 # Swath
                 self.Swath(True)
             elif oParent.class_type == STK_OBJECT_TYPE.MISSILE:
-                oMissile: "Missile" = clr.Convert(oParent, Missile)
+                oMissile: "Missile" = Missile(oParent)
                 Assert.assertIsNotNone(oMissile)
-                oBallistic: "VehiclePropagatorBallistic" = clr.Convert(oMissile.trajectory, VehiclePropagatorBallistic)
+                oBallistic: "VehiclePropagatorBallistic" = VehiclePropagatorBallistic(oMissile.trajectory)
                 self.m_oRoot.unit_preferences.set_current_unit("TimeUnit", "day")
                 oBallistic.step = 0.001  # 86.4 seconds
                 self.m_oRoot.unit_preferences.reset_units()
@@ -711,7 +711,7 @@ class SensorHelper(object):
                 # Swath
                 self.Swath(True)
             elif oParent.class_type == STK_OBJECT_TYPE.SATELLITE:
-                oSatellite: "Satellite" = clr.Convert(oParent, Satellite)
+                oSatellite: "Satellite" = Satellite(oParent)
                 Assert.assertIsNotNone(oSatellite)
                 # Swath
                 self.Swath(True)
@@ -732,7 +732,7 @@ class SensorHelper(object):
     # region AccessConstraints
     def AccessConstraints(self, temporaryDirectory: str):
         oHelper = AccessConstraintHelper(self.m_oRoot.unit_preferences)
-        oHelper.DoTest(self.m_oSensor.access_constraints, clr.Convert(self.m_oSensor, IStkObject), temporaryDirectory)
+        oHelper.DoTest(self.m_oSensor.access_constraints, IStkObject(self.m_oSensor), temporaryDirectory)
 
     # endregion
 
@@ -756,7 +756,7 @@ class SensorHelper(object):
         # SetPatternType(SIMPLE_CONIC)
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
         Assert.assertEqual(SENSOR_PATTERN.SIMPLE_CONIC, self.m_oSensor.pattern_type)
-        oSimpleConic: "SensorSimpleConicPattern" = clr.Convert(self.m_oSensor.pattern, SensorSimpleConicPattern)
+        oSimpleConic: "SensorSimpleConicPattern" = SensorSimpleConicPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oSimpleConic)
 
         oSimpleConic.cone_angle = 23.123456789
@@ -776,7 +776,7 @@ class SensorHelper(object):
         # SetPatternType(COMPLEX_CONIC)
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.COMPLEX_CONIC)
         Assert.assertEqual(SENSOR_PATTERN.COMPLEX_CONIC, self.m_oSensor.pattern_type)
-        oComplexConic: "SensorComplexConicPattern" = clr.Convert(self.m_oSensor.pattern, SensorComplexConicPattern)
+        oComplexConic: "SensorComplexConicPattern" = SensorComplexConicPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oComplexConic)
 
         oComplexConic.inner_cone_half_angle = 12.34
@@ -858,7 +858,7 @@ class SensorHelper(object):
         # SetPatternType(CUSTOM)
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.CUSTOM)
         Assert.assertEqual(SENSOR_PATTERN.CUSTOM, self.m_oSensor.pattern_type)
-        oCustom: "SensorCustomPattern" = clr.Convert(self.m_oSensor.pattern, SensorCustomPattern)
+        oCustom: "SensorCustomPattern" = SensorCustomPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oCustom)
 
         oCustom.filename = TestBase.GetScenarioFile("AreaTgtWeird", "RedSensor.Pattern")
@@ -888,7 +888,7 @@ class SensorHelper(object):
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.HALF_POWER)
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.HALF_POWER, self.m_oSensor.pattern_type)
-        oHalfPower: "SensorHalfPowerPattern" = clr.Convert(self.m_oSensor.pattern, SensorHalfPowerPattern)
+        oHalfPower: "SensorHalfPowerPattern" = SensorHalfPowerPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oHalfPower)
 
         self.m_logger.WriteLine6("\t\tThe current HalfAngle is: {0}", oHalfPower.half_angle)
@@ -916,7 +916,7 @@ class SensorHelper(object):
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.RECTANGULAR)
         Assert.assertEqual(SENSOR_PATTERN.RECTANGULAR, self.m_oSensor.pattern_type)
 
-        oRectangular: "SensorRectangularPattern" = clr.Convert(self.m_oSensor.pattern, SensorRectangularPattern)
+        oRectangular: "SensorRectangularPattern" = SensorRectangularPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oRectangular)
 
         oRectangular.vertical_half_angle = 12.34
@@ -941,7 +941,7 @@ class SensorHelper(object):
         # SetPatternType(SAR)
         self.m_oSensor.set_pattern_type(SENSOR_PATTERN.SAR)
         Assert.assertEqual(SENSOR_PATTERN.SAR, self.m_oSensor.pattern_type)
-        oSAR: "SensorSARPattern" = clr.Convert(self.m_oSensor.pattern, SensorSARPattern)
+        oSAR: "SensorSARPattern" = SensorSARPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oSAR)
 
         oSAR.min_elevation_angle = 12.3456789
@@ -1111,7 +1111,7 @@ class SensorHelper(object):
             self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
             Assert.assertEqual(SENSOR_POINTING.POINT_3D_MODEL, self.m_oSensor.pointing_type)
             # Pointing
-            o3DModel: "SensorPointing3DModel" = clr.Convert(self.m_oSensor.pointing, SensorPointing3DModel)
+            o3DModel: "SensorPointing3DModel" = SensorPointing3DModel(self.m_oSensor.pointing)
             Assert.assertIsNotNone(o3DModel)
             self.m_logger.WriteLine5("\t\tThe current AttachName is: {0}", o3DModel.attach_name)
             arElements = o3DModel.available_elements
@@ -1153,7 +1153,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_EXTERNAL, self.m_oSensor.pointing_type)
         # Pointing
-        oExternal: "SensorPointingExternal" = clr.Convert(self.m_oSensor.pointing, SensorPointingExternal)
+        oExternal: "SensorPointingExternal" = SensorPointingExternal(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oExternal)
         # Filename
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oExternal.filename)
@@ -1169,7 +1169,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED, self.m_oSensor.pointing_type)
         # Pointing
-        oFixed: "SensorPointingFixed" = clr.Convert(self.m_oSensor.pointing, SensorPointingFixed)
+        oFixed: "SensorPointingFixed" = SensorPointingFixed(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oFixed)
         # Orientation
         oHelper = OrientationTest(self.m_oRoot.unit_preferences)
@@ -1182,7 +1182,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED_AXES, self.m_oSensor.pointing_type)
         # Pointing
-        oFixedAxes: "SensorPointingFixedAxes" = clr.Convert(self.m_oSensor.pointing, SensorPointingFixedAxes)
+        oFixedAxes: "SensorPointingFixedAxes" = SensorPointingFixedAxes(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oFixedAxes)
         # ReferenceAxes
         self.m_logger.WriteLine5("\t\tThe current ReferenceAxes is: {0}", oFixedAxes.reference_axes)
@@ -1250,7 +1250,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_SPINNING, self.m_oSensor.pointing_type)
         # Pointing
-        oSpinning: "SensorPointingSpinning" = clr.Convert(self.m_oSensor.pointing, SensorPointingSpinning)
+        oSpinning: "SensorPointingSpinning" = SensorPointingSpinning(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oSpinning)
 
         # region CONTINUOUS
@@ -1453,7 +1453,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_TARGETED, self.m_oSensor.pointing_type)
         # Pointing
-        oTarget: "SensorPointingTargeted" = clr.Convert(self.m_oSensor.pointing, SensorPointingTargeted)
+        oTarget: "SensorPointingTargeted" = SensorPointingTargeted(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oTarget)
         oTarget.save_target_access = False
         Assert.assertEqual(False, oTarget.save_target_access)
@@ -1465,9 +1465,7 @@ class SensorHelper(object):
         Assert.assertEqual(SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING, oTarget.boresight)
 
         # BoresightData
-        oTracking: "SensorPointingTargetedBoresightTrack" = clr.Convert(
-            oTarget.boresight_data, SensorPointingTargetedBoresightTrack
-        )
+        oTracking: "SensorPointingTargetedBoresightTrack" = SensorPointingTargetedBoresightTrack(oTarget.boresight_data)
         Assert.assertIsNotNone(oTracking)
 
         # AboutBoresight
@@ -1523,8 +1521,8 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\t\tThe new Boresight is: {0}", oTarget.boresight)
         Assert.assertEqual(SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED, oTarget.boresight)
         # BoresightData
-        oBrstFixed: "SensorPointingTargetedBoresightFixed" = clr.Convert(
-            oTarget.boresight_data, SensorPointingTargetedBoresightFixed
+        oBrstFixed: "SensorPointingTargetedBoresightFixed" = SensorPointingTargetedBoresightFixed(
+            oTarget.boresight_data
         )
         Assert.assertIsNotNone(oBrstFixed)
         # Orientation
@@ -1773,17 +1771,17 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oAdvanced)
         # AberrationType
         self.m_logger.WriteLine6("\tThe current AberrationType is: {0}", oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
+        (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.NONE
+        (oAdvanced).aberration_type = ABERRATION_TYPE.NONE
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.TOTAL
+        (oAdvanced).aberration_type = ABERRATION_TYPE.TOTAL
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
         with pytest.raises(Exception):
-            (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.UNKNOWN
+            (oAdvanced).aberration_type = ABERRATION_TYPE.UNKNOWN
         # TimeDelayConvergence
         self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
         oAdvanced.time_delay_convergence = 0.1
@@ -1808,9 +1806,7 @@ class SensorHelper(object):
             self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
             Assert.assertEqual(SENSOR_POINTING.POINT_GRAZING_ALTITUDE, self.m_oSensor.pointing_type)
             # Pointing
-            oGrazing: "SensorPointingGrazingAltitude" = clr.Convert(
-                self.m_oSensor.pointing, SensorPointingGrazingAltitude
-            )
+            oGrazing: "SensorPointingGrazingAltitude" = SensorPointingGrazingAltitude(self.m_oSensor.pointing)
             Assert.assertIsNotNone(oGrazing)
             # AzimuthOffset
             self.m_logger.WriteLine6("\t\tThe current AzimuthOffset is: {0}", oGrazing.azimuth_offset)
@@ -1838,7 +1834,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_ALONG_VECTOR, self.m_oSensor.pointing_type)
         # Pointing
-        alongVector: "SensorPointingAlongVector" = clr.Convert(self.m_oSensor.pointing, SensorPointingAlongVector)
+        alongVector: "SensorPointingAlongVector" = SensorPointingAlongVector(self.m_oSensor.pointing)
         Assert.assertIsNotNone(alongVector)
 
         arAvailAlignmentVecs = alongVector.available_alignment_vectors
@@ -1925,7 +1921,7 @@ class SensorHelper(object):
         with pytest.raises(Exception):
             self.m_oSensor.set_az_el_mask_file(TestBase.GetScenarioFile("InvalidName.aem"))
         # AzElMaskData
-        oMaskFile: "SensorAzElMaskFile" = clr.Convert(self.m_oSensor.az_el_mask_data, SensorAzElMaskFile)
+        oMaskFile: "SensorAzElMaskFile" = SensorAzElMaskFile(self.m_oSensor.az_el_mask_data)
         Assert.assertIsNotNone(oMaskFile)
         # Filename
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oMaskFile.filename)
@@ -1986,9 +1982,9 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oGraphics.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH1, oGraphics.line_width)
         with pytest.raises(Exception):
-            oGraphics.line_width = clr.Convert((-1), LINE_WIDTH)
+            oGraphics.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            oGraphics.line_width = clr.Convert((11), LINE_WIDTH)
+            oGraphics.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         # InheritFromScenario (true)
         self.m_logger.WriteLine4("\tThe current InheritFromScenario flag is: {0}", oGraphics.inherit_from_scenario)
@@ -2235,23 +2231,19 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\t\tThe new DistanceType is: {0}", oProjection.distance_type)
         Assert.assertEqual(SENSOR_PROJECTION_DISTANCE_TYPE.CONSTANT_ALTITUDE, oProjection.distance_type)
         # DistanceData
-        self.GraphicsProjectionConstantAlt(
-            clr.Convert(oProjection.distance_data, SensorProjectionConstantAltitude), False
-        )
+        self.GraphicsProjectionConstantAlt(SensorProjectionConstantAltitude(oProjection.distance_data), False)
         # DistanceType (CONSTANT_RANGE_FROM_PARENT)
         oProjection.distance_type = SENSOR_PROJECTION_DISTANCE_TYPE.CONSTANT_RANGE_FROM_PARENT
         self.m_logger.WriteLine6("\t\tThe new DistanceType is: {0}", oProjection.distance_type)
         Assert.assertEqual(SENSOR_PROJECTION_DISTANCE_TYPE.CONSTANT_RANGE_FROM_PARENT, oProjection.distance_type)
         # DistanceData
-        self.GraphicsProjectionDisplayDistance(
-            clr.Convert(oProjection.distance_data, ISensorProjectionDisplayDistance), False
-        )
+        self.GraphicsProjectionDisplayDistance(ISensorProjectionDisplayDistance(oProjection.distance_data), False)
         # DistanceType (OBJECT_ALTITUDE)
         oProjection.distance_type = SENSOR_PROJECTION_DISTANCE_TYPE.OBJECT_ALTITUDE
         self.m_logger.WriteLine6("\t\tThe new DistanceType is: {0}", oProjection.distance_type)
         Assert.assertEqual(SENSOR_PROJECTION_DISTANCE_TYPE.OBJECT_ALTITUDE, oProjection.distance_type)
         # DistanceData
-        self.GraphicsProjectionObjectAlt(clr.Convert(oProjection.distance_data, SensorProjectionObjectAltitude))
+        self.GraphicsProjectionObjectAlt(SensorProjectionObjectAltitude(oProjection.distance_data))
 
         # DistanceType (RANGE_CONSTRAINT)
         oProjection.distance_type = SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
@@ -2259,9 +2251,7 @@ class SensorHelper(object):
         Assert.assertEqual(SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT, oProjection.distance_type)
         # DistanceData
         with pytest.raises(Exception):
-            self.GraphicsProjectionDisplayDistance(
-                clr.Convert(oProjection.distance_data, ISensorProjectionDisplayDistance), True
-            )
+            self.GraphicsProjectionDisplayDistance(ISensorProjectionDisplayDistance(oProjection.distance_data), True)
 
         # ProjectAtAltObject
         self.m_logger.WriteLine5("\t\tThe current ProjectAtAltObject is: {0}", oProjection.project_at_altitude_object)
@@ -2398,7 +2388,7 @@ class SensorHelper(object):
     def DisplayTimes(self):
         self.m_logger.WriteLine("----- THE DISPLAY TIMES TEST ----- BEGIN -----")
         oHelper = DisplayTimesHelper(self.m_oRoot)
-        oHelper.Run(clr.Convert(self.m_oSensor, IDisplayTime))
+        oHelper.Run(IDisplayTime(self.m_oSensor))
         self.m_logger.WriteLine("----- THE DISPLAY TIMES TEST ----- END -----")
 
     # endregion
@@ -2537,7 +2527,7 @@ class SensorHelper(object):
         with pytest.raises(Exception):
             oVO.inherit_from_2d = SENSOR_GRAPHICS_3D_INHERIT_FROM_2D.UNKNOWN
         # System.Windows.Forms.MessageBox.Show("A");
-        senObj: "IStkObject" = clr.Convert(self.m_oSensor, IStkObject)
+        senObj: "IStkObject" = IStkObject(self.m_oSensor)
         if not (clr.Is(senObj.parent, Missile)):
             # SpaceProjection
             oVO.projection_time_dependency = SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE.CONSTANT
@@ -3314,7 +3304,11 @@ class SensorHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "SENSOR_REFRACTION_TYPE" = clr.Convert(int(arTypes[iIndex][0]), SENSOR_REFRACTION_TYPE)
+            eType: "SENSOR_REFRACTION_TYPE" = (
+                SENSOR_REFRACTION_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
+                else int(arTypes[iIndex][0])
+            )
             if not self.m_oSensor.is_refraction_type_supported(eType):
                 Assert.fail("The Refraction Type {0} should be supported!", eType)
 
@@ -3323,8 +3317,8 @@ class SensorHelper(object):
             self.m_logger.WriteLine6("\tThe new RefractionType is: {0}", self.m_oSensor.refraction)
             if eType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
                 # RefractionModel
-                modelEffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod" = clr.Convert(
-                    self.m_oSensor.refraction_model, RefractionModelEffectiveRadiusMethod
+                modelEffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod" = (
+                    RefractionModelEffectiveRadiusMethod(self.m_oSensor.refraction_model)
                 )
                 Assert.assertIsNotNone(modelEffectiveRadiusMethod)
                 # Ceiling
@@ -3368,9 +3362,7 @@ class SensorHelper(object):
                 Assert.assertEqual(True, modelEffectiveRadiusMethod.use_extrapolation)
             elif eType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
                 # RefractionModel
-                modelITURP8344: "RefractionModelITURP8344" = clr.Convert(
-                    self.m_oSensor.refraction_model, RefractionModelITURP8344
-                )
+                modelITURP8344: "RefractionModelITURP8344" = RefractionModelITURP8344(self.m_oSensor.refraction_model)
                 Assert.assertIsNotNone(modelITURP8344)
                 # Ceiling
                 self.m_logger.WriteLine6("\t\tThe current Ceiling is: {0}", modelITURP8344.ceiling)
@@ -3395,9 +3387,7 @@ class SensorHelper(object):
                     modelITURP8344.knee_bend_factor = 3.45
             elif eType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
                 # RefractionModel
-                modelSCFMethod: "RefractionModelSCFMethod" = clr.Convert(
-                    self.m_oSensor.refraction_model, RefractionModelSCFMethod
-                )
+                modelSCFMethod: "RefractionModelSCFMethod" = RefractionModelSCFMethod(self.m_oSensor.refraction_model)
                 Assert.assertIsNotNone(modelSCFMethod)
                 # MinTargetAltitude
                 self.m_logger.WriteLine6(
@@ -3606,7 +3596,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.SIMPLE_CONIC, self.m_oSensor.pattern_type)
         # Pattern
-        oSimpleConic: "SensorSimpleConicPattern" = clr.Convert(self.m_oSensor.pattern, SensorSimpleConicPattern)
+        oSimpleConic: "SensorSimpleConicPattern" = SensorSimpleConicPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oSimpleConic)
         # ConeAngle
         self.m_logger.WriteLine6("\t\tThe new ConeAngle is: {0}", oSimpleConic.cone_angle)
@@ -3617,7 +3607,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.COMPLEX_CONIC, self.m_oSensor.pattern_type)
         # Pattern
-        oComplexConic: "SensorComplexConicPattern" = clr.Convert(self.m_oSensor.pattern, SensorComplexConicPattern)
+        oComplexConic: "SensorComplexConicPattern" = SensorComplexConicPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oComplexConic)
         # InnerConeHalfAngle
         self.m_logger.WriteLine6("\t\tThe current InnerConeHalfAngle is: {0}", oComplexConic.inner_cone_half_angle)
@@ -3641,7 +3631,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.CUSTOM, self.m_oSensor.pattern_type)
         # Pattern
-        oCustom: "SensorCustomPattern" = clr.Convert(self.m_oSensor.pattern, SensorCustomPattern)
+        oCustom: "SensorCustomPattern" = SensorCustomPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oCustom)
         oCustom.angular_resolution = 5
         Assert.assertEqual(5, oCustom.angular_resolution)
@@ -3659,7 +3649,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.HALF_POWER, self.m_oSensor.pattern_type)
         # Pattern
-        oHalfPower: "SensorHalfPowerPattern" = clr.Convert(self.m_oSensor.pattern, SensorHalfPowerPattern)
+        oHalfPower: "SensorHalfPowerPattern" = SensorHalfPowerPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oHalfPower)
         # HalfAngle
         self.m_logger.WriteLine6("\t\tThe current HalfAngle is: {0}", oHalfPower.half_angle)
@@ -3679,7 +3669,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.RECTANGULAR, self.m_oSensor.pattern_type)
         # Pattern
-        oRectangular: "SensorRectangularPattern" = clr.Convert(self.m_oSensor.pattern, SensorRectangularPattern)
+        oRectangular: "SensorRectangularPattern" = SensorRectangularPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oRectangular)
         # VerticalHalfAngle
         self.m_logger.WriteLine6("\t\tThe current VerticalHalfAngle is: {0}", oRectangular.vertical_half_angle)
@@ -3695,7 +3685,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PatternType is: {0}", self.m_oSensor.pattern_type)
         Assert.assertEqual(SENSOR_PATTERN.SAR, self.m_oSensor.pattern_type)
         # Pattern
-        oSAR: "SensorSARPattern" = clr.Convert(self.m_oSensor.pattern, SensorSARPattern)
+        oSAR: "SensorSARPattern" = SensorSARPattern(self.m_oSensor.pattern)
         Assert.assertIsNotNone(oSAR)
         # MinElevationAngle
         self.m_logger.WriteLine6("\t\tThe current MinElevationAngle is: {0}", oSAR.min_elevation_angle)
@@ -3880,7 +3870,7 @@ class SensorHelper(object):
         else:
             # SetPointing3DModel
             self.m_oSensor.set_pointing_type(SENSOR_POINTING.POINT_3D_MODEL)
-            o3DModel: "SensorPointing3DModel" = clr.Convert(self.m_oSensor.pointing, SensorPointing3DModel)
+            o3DModel: "SensorPointing3DModel" = SensorPointing3DModel(self.m_oSensor.pointing)
             if Array.Length(o3DModel.available_elements) > 0:
                 sAttachName: str = str(o3DModel.available_elements[0])  # try the first one
                 self.m_oSensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)  # set to something else to test below
@@ -3895,8 +3885,8 @@ class SensorHelper(object):
                     "BogusAttachName"
                 )
 
-        if ((clr.Convert(self.m_oSensor, IStkObject)).parent.class_name != "Facility") and (
-            (clr.Convert(self.m_oSensor, IStkObject)).parent.class_name != "Target"
+        if ((IStkObject(self.m_oSensor)).parent.class_name != "Facility") and (
+            (IStkObject(self.m_oSensor)).parent.class_name != "Target"
         ):
             oGrazingAlt: "SensorPointingGrazingAltitude" = self.m_oSensor.common_tasks.set_pointing_grazing_altitude(
                 9.9, 100
@@ -4029,7 +4019,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_EXTERNAL, self.m_oSensor.pointing_type)
         # Pointing
-        oExternal: "SensorPointingExternal" = clr.Convert(self.m_oSensor.pointing, SensorPointingExternal)
+        oExternal: "SensorPointingExternal" = SensorPointingExternal(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oExternal)
         # Filename
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oExternal.filename)
@@ -4045,7 +4035,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED, self.m_oSensor.pointing_type)
         # Pointing
-        oFixed: "SensorPointingFixed" = clr.Convert(self.m_oSensor.pointing, SensorPointingFixed)
+        oFixed: "SensorPointingFixed" = SensorPointingFixed(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oFixed)
         # Orientation
         oHelper = OrientationTest(self.m_oRoot.unit_preferences)
@@ -4058,7 +4048,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED_AXES, self.m_oSensor.pointing_type)
         # Pointing
-        oFixedAxes: "SensorPointingFixedAxes" = clr.Convert(self.m_oSensor.pointing, SensorPointingFixedAxes)
+        oFixedAxes: "SensorPointingFixedAxes" = SensorPointingFixedAxes(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oFixedAxes)
         # ReferenceAxes
         self.m_logger.WriteLine5("\t\tThe current ReferenceAxes is: {0}", oFixedAxes.reference_axes)
@@ -4075,11 +4065,11 @@ class SensorHelper(object):
             self.m_logger.WriteLine7("\t\t\tAxes {0}: {1}", 0, strAxes)
             if (
                 (
-                    (strAxes.find((clr.Convert(self.m_oSensor, IStkObject)).parent.class_name) != -1)
-                    and (strAxes.find((clr.Convert(self.m_oSensor, IStkObject)).parent.instance_name) != -1)
+                    (strAxes.find((IStkObject(self.m_oSensor)).parent.class_name) != -1)
+                    and (strAxes.find((IStkObject(self.m_oSensor)).parent.instance_name) != -1)
                 )
-                and (strAxes.find((clr.Convert(self.m_oSensor, IStkObject)).class_name) != -1)
-            ) and (strAxes.find((clr.Convert(self.m_oSensor, IStkObject)).instance_name) != -1):
+                and (strAxes.find((IStkObject(self.m_oSensor)).class_name) != -1)
+            ) and (strAxes.find((IStkObject(self.m_oSensor)).instance_name) != -1):
                 self.m_logger.WriteLine("\t\t\t\tCannot set reference to itself.")
 
             oFixedAxes.reference_axes = strAxes
@@ -4096,7 +4086,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_SPINNING, self.m_oSensor.pointing_type)
         # Pointing
-        oSpinning: "SensorPointingSpinning" = clr.Convert(self.m_oSensor.pointing, SensorPointingSpinning)
+        oSpinning: "SensorPointingSpinning" = SensorPointingSpinning(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oSpinning)
 
         # region CONTINUOUS
@@ -4299,7 +4289,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
         Assert.assertEqual(SENSOR_POINTING.POINT_TARGETED, self.m_oSensor.pointing_type)
         # Pointing
-        oTarget: "SensorPointingTargeted" = clr.Convert(self.m_oSensor.pointing, SensorPointingTargeted)
+        oTarget: "SensorPointingTargeted" = SensorPointingTargeted(self.m_oSensor.pointing)
         Assert.assertIsNotNone(oTarget)
 
         # region Boresight
@@ -4309,9 +4299,7 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\t\tThe new Boresight is: {0}", oTarget.boresight)
         Assert.assertEqual(SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING, oTarget.boresight)
         # BoresightData
-        oTracking: "SensorPointingTargetedBoresightTrack" = clr.Convert(
-            oTarget.boresight_data, SensorPointingTargetedBoresightTrack
-        )
+        oTracking: "SensorPointingTargetedBoresightTrack" = SensorPointingTargetedBoresightTrack(oTarget.boresight_data)
         Assert.assertIsNotNone(oTracking)
         # AboutBoresight
         self.m_logger.WriteLine6("\t\t\tThe current AboutBoresight is: {0}", oTracking.about_boresight)
@@ -4341,8 +4329,8 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\t\tThe new Boresight is: {0}", oTarget.boresight)
         Assert.assertEqual(SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED, oTarget.boresight)
         # BoresightData
-        oBrstFixed: "SensorPointingTargetedBoresightFixed" = clr.Convert(
-            oTarget.boresight_data, SensorPointingTargetedBoresightFixed
+        oBrstFixed: "SensorPointingTargetedBoresightFixed" = SensorPointingTargetedBoresightFixed(
+            oTarget.boresight_data
         )
         Assert.assertIsNotNone(oBrstFixed)
         # Orientation
@@ -4598,17 +4586,17 @@ class SensorHelper(object):
         Assert.assertIsNotNone(oAdvanced)
         # AberrationType
         self.m_logger.WriteLine6("\tThe current AberrationType is: {0}", oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
+        (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.NONE
+        (oAdvanced).aberration_type = ABERRATION_TYPE.NONE
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
-        (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.TOTAL
+        (oAdvanced).aberration_type = ABERRATION_TYPE.TOTAL
         self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
         Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
         with pytest.raises(Exception):
-            (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.UNKNOWN
+            (oAdvanced).aberration_type = ABERRATION_TYPE.UNKNOWN
         # TimeDelayConvergence
         self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
         oAdvanced.time_delay_convergence = 0.1
@@ -4633,9 +4621,7 @@ class SensorHelper(object):
             self.m_logger.WriteLine6("\tThe new PointingType is: {0}", self.m_oSensor.pointing_type)
             Assert.assertEqual(SENSOR_POINTING.POINT_GRAZING_ALTITUDE, self.m_oSensor.pointing_type)
             # Pointing
-            oGrazing: "SensorPointingGrazingAltitude" = clr.Convert(
-                self.m_oSensor.pointing, SensorPointingGrazingAltitude
-            )
+            oGrazing: "SensorPointingGrazingAltitude" = SensorPointingGrazingAltitude(self.m_oSensor.pointing)
             Assert.assertIsNotNone(oGrazing)
             # AzimuthOffset
             self.m_logger.WriteLine6("\t\tThe current AzimuthOffset is: {0}", oGrazing.azimuth_offset)
@@ -4828,7 +4814,7 @@ class EOIRHelper(object):
         sensor.set_pattern_type(SENSOR_PATTERN.EOIR)
 
         Assert.assertEqual(SENSOR_PATTERN.EOIR, sensor.pattern_type)
-        eoirPattern: "SensorEOIRPattern" = clr.Convert(sensor.pattern, SensorEOIRPattern)
+        eoirPattern: "SensorEOIRPattern" = SensorEOIRPattern(sensor.pattern)
         Assert.assertIsNotNone(eoirPattern)
 
         self.Test_IAgSnEOIRPattern(eoirPattern)
@@ -4840,7 +4826,7 @@ class EOIRHelper(object):
 
         sensor2.common_tasks.set_pattern_eoir(5, SENSOR_EOIR_PROCESSING_LEVELS.RADIOMETRIC_INPUT)
         Assert.assertEqual(SENSOR_PATTERN.EOIR, sensor2.pattern_type)
-        oEOIR: "SensorEOIRPattern" = clr.Convert(sensor2.pattern, SensorEOIRPattern)
+        oEOIR: "SensorEOIRPattern" = SensorEOIRPattern(sensor2.pattern)
         Assert.assertIsNotNone(oEOIR)
         Assert.assertEqual(5, oEOIR.line_of_site_jitter)
         Assert.assertEqual(SENSOR_EOIR_PROCESSING_LEVELS.RADIOMETRIC_INPUT, oEOIR.processing_level)

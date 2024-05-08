@@ -126,8 +126,8 @@ with open(links_filepath) as links_file:
 
 # Read available Docker images for Windows and Linux
 DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
-WINDOWS_IMAGES, LINUX_IMAGES = [
-    DOCKER_DIR / path for path in ["windows", "linux"]
+WINDOWS_IMAGES, CENTOS_IMAGES, UBUNTU_IMAGES = [
+    DOCKER_DIR / path for path in ["windows", "linux/centos", "linux/ubuntu"]
 ]
 
 
@@ -145,13 +145,13 @@ def get_images_directories_from_path(path):
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
-    exclude_patterns.append("api")
+    exclude_patterns.extend(["api.rst", "api/**"])
 
 BUILD_EXAMPLES = (
     True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 )
 if not BUILD_EXAMPLES:
-    exclude_patterns.append("examples/**")
+    exclude_patterns.extend(["examples.rst", "examples/**"])
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
@@ -199,7 +199,7 @@ else:
 jinja_contexts = {
     "docker_images": {
         "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
-        "linux_images": get_images_directories_from_path(LINUX_IMAGES),
+        "linux_images": get_images_directories_from_path(CENTOS_IMAGES),
     },
     "install_guide": {
         "version": f"v{version}" if not version.endswith("dev0") else "main",
@@ -247,9 +247,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
-    index = EXAMPLES_DIRECTORY / "index.rst"
     files = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
-    files.append(index)
     for file in status_iterator(
             files, 
             "Copying examples file...", 
@@ -269,6 +267,8 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     ----------
     app : sphinx.application.Sphinx
         Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
 
     """
     OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
