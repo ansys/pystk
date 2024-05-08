@@ -1,13 +1,11 @@
 Examples
 ########
 
-STKEngine applications
-======================
+Orbital maneuvers
+=================
 
-This series of tutorials explain how to create custom applications based on
-:py:class:`ansys.stk.core.stkengine.STKEngine`. 
-
+This series of tutorials explain how to model and simulate orbital maneuvers using Python.
 
 .. nbgallery::
 
-    hohmann_transfer_using_targeter
+    hohmann-transfer
