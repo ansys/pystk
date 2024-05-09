@@ -308,13 +308,12 @@ lambert.target_velocity_z = final_velocity[2] * 1000
 # Next, the time of flight can be computed. Using the `datetime` module allows for the computation of the time of flight, which is assigned later to the Lambert profile.
 
 # +
-from datetime import datetime
+launch_date = root.conversion_utility.new_date("UTCG", START_TIME)
+arrival_date = root.conversion_utility.new_date("UTCG", STOP_TIME)
+tof = arrival_date.span(launch_date).value
 
-
-launch_date = datetime.strptime(START_TIME, '%d %b %Y')
-arrival_date = datetime.strptime(STOP_TIME, '%d %b %Y')
-
-lambert.time_of_flight = (arrival_date - launch_date).total_seconds()
+lambert.time_of_flight = tof
+print(f"Time of flight: {tof} seconds")
 # -
 
 # Then, other parameters for the transfer can be configured. These include the type of solution, the direction of motion, and the padding altitude for the collision with the central body.
@@ -404,3 +403,4 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 satellite.graphics_3d.model.detail_threshold.all = 1E12
 
 plotter.animate(time_step=14000)
+plotter.show()
