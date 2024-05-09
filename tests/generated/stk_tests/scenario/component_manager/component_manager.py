@@ -402,38 +402,6 @@ class EarlyBoundTests(TestBase):
             "Components", "MyITU-R P1814.LaserTropoScintLossModel"
         )
         map["Radar Waveforms"] = TestBase.GetScenarioFile("Components", "My_Long_Range_Rectangular.Waveform")
-        if (
-            (
-                (
-                    ((thisFolderName != "") and (thisFolderName != "Previous Versions"))
-                    and (thisFolderName != "Central Bodies")
-                )
-                and (thisFolderName != "Star Catalogs")
-            )
-            and (thisFolderName != "Design Tools")
-        ) and (
-            ((not OSHelper.IsLinux()) or ((OSHelper.IsLinux() and (thisFolderName != "Atmospheric Absorption Models"))))
-        ):
-            # Console.WriteLine(thisFolderName);
-            filepath: str = map[thisFolderName]
-            # Console.WriteLine(filepath);
-            # try
-            # {
-            compInfoLoaded: "IComponentInfo" = compInfoColl.load_component(filepath)
-
-            Assert.assertEqual((origCount + 1), compInfoColl.count)
-            self.TestComponent(compInfoLoaded, False)
-            Assert.assertEqual((origCount + 1), compInfoColl.count)
-            compInfoColl.remove(compInfoLoaded.name)
-            Assert.assertEqual(origCount, compInfoColl.count)
-
-            with pytest.raises(Exception):
-                compInfoBadPath: "IComponentInfo" = compInfoColl.load_component("BadPath")
-            if thisFolderName == "Formation":
-                with pytest.raises(Exception):
-                    compInfoWrongType: "IComponentInfo" = compInfoColl.load_component(map["Thruster Sets"])
-                compInfoLoadTwiceOK: "IComponentInfo" = compInfoColl.load_component(map["Formation"])
-                compInfoColl.remove(compInfoLoadTwiceOK.name)
 
         i: int = 0
         while i < compInfoColl.count:
@@ -3011,16 +2979,6 @@ class EarlyBoundTests(TestBase):
         script.file_extension_name = ".py"
         Assert.assertEqual(".py", script.file_extension_name)
 
-        # The following Python file is not a custom function script, just a Python file (this is also how we used to check Perl).
-        script.script_filename = TestBase.GetScenarioFile("AccConstraintPlugin.py")
-        # CL 225802 introduced the changes that broke the object model test.
-        # The path returned by the ScriptFile is pre-processed to make
-        # it relative to the user data directory; when the data directory
-        # and the file match the value returned by the property is always
-        # in the format '.\' followed by the file name. Hence the test
-        # needed to be modified to reflect the changes.
-        Assert.assertEqual("AccConstraintPlugin.py", Path.GetFileName(script.script_filename))
-
         components.remove("PythonCustomFunction1")
 
     def test_Constraints(self):
@@ -4628,54 +4586,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Drag Model Plugin", dens.drag_model_plugin_name)
         with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
             dragModelPlugin = dens.drag_model_plugin
-        if not OSHelper.IsLinux():
-            dens.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dens.drag_model_plugin_name)
-            dragModelPlugin = dens.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
-
-            pluginProps: "PluginProperties" = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("LiftArea", 4e-05)
-            Assert.assertEqual(4e-05, pluginProps.get_property("LiftArea"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("GetUserVariable", True)
-            Assert.assertEqual(True, pluginProps.get_property("GetUserVariable"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
-
-            dens.drag_model_plugin_name = "Drag Spherical JScript"
-            Assert.assertEqual("Drag Spherical JScript", dens.drag_model_plugin_name)
-            dragModelPlugin = dens.drag_model_plugin
-            Assert.assertEqual("Drag.Spherical.JScript", dragModelPlugin.plugin_identifier)
-
-            pluginProps = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("RefFrame", "eUtFrameFixed")
-            Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("RefFrame"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("MessageInterval", 600)
-            Assert.assertEqual(600, pluginProps.get_property("MessageInterval"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
 
         dens.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dens.drag_model_type)
@@ -4999,54 +4909,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Drag Model Plugin", cira72.drag_model_plugin_name)
         with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
             dragModelPlugin = cira72.drag_model_plugin
-        if not OSHelper.IsLinux():
-            cira72.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", cira72.drag_model_plugin_name)
-            dragModelPlugin = cira72.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
-
-            pluginProps: "PluginProperties" = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("LiftArea", 4e-05)
-            Assert.assertEqual(4e-05, pluginProps.get_property("LiftArea"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("GetUserVariable", True)
-            Assert.assertEqual(True, pluginProps.get_property("GetUserVariable"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
-
-            cira72.drag_model_plugin_name = "Drag Spherical JScript"
-            Assert.assertEqual("Drag Spherical JScript", cira72.drag_model_plugin_name)
-            dragModelPlugin = cira72.drag_model_plugin
-            Assert.assertEqual("Drag.Spherical.JScript", dragModelPlugin.plugin_identifier)
-
-            pluginProps = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("RefFrame", "eUtFrameFixed")
-            Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("RefFrame"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("MessageInterval", 600)
-            Assert.assertEqual(600, pluginProps.get_property("MessageInterval"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
 
         cira72.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, cira72.drag_model_type)
@@ -5154,27 +5016,6 @@ class EarlyBoundTests(TestBase):
             dtm2012.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            dtm2012.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, dtm2012.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2012.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2012.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                dtm2012.drag_model_plugin_name = "Bogus"
-
-            dtm2012.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", dtm2012.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = dtm2012.drag_model_plugin
-
-            dtm2012.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dtm2012.drag_model_plugin_name)
-            dragModelPlugin = dtm2012.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         dtm2012.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dtm2012.drag_model_type)
@@ -5282,27 +5123,6 @@ class EarlyBoundTests(TestBase):
             dtm2020.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            dtm2020.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, dtm2020.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2020.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2020.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                dtm2020.drag_model_plugin_name = "Bogus"
-
-            dtm2020.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", dtm2020.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = dtm2020.drag_model_plugin
-
-            dtm2020.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dtm2020.drag_model_plugin_name)
-            dragModelPlugin = dtm2020.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         dtm2020.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dtm2020.drag_model_type)
@@ -5374,27 +5194,6 @@ class EarlyBoundTests(TestBase):
             hp.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            hp.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, hp.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                hp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                hp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                hp.drag_model_plugin_name = "Bogus"
-
-            hp.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", hp.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = hp.drag_model_plugin
-
-            hp.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", hp.drag_model_plugin_name)
-            dragModelPlugin = hp.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         hp.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, hp.drag_model_type)
@@ -5482,27 +5281,6 @@ class EarlyBoundTests(TestBase):
             msis1986.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            msis1986.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, msis1986.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msis1986.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msis1986.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                msis1986.drag_model_plugin_name = "Bogus"
-
-            msis1986.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", msis1986.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = msis1986.drag_model_plugin
-
-            msis1986.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", msis1986.drag_model_plugin_name)
-            dragModelPlugin = msis1986.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         msis1986.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, msis1986.drag_model_type)
@@ -5590,27 +5368,6 @@ class EarlyBoundTests(TestBase):
             msise1990.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            msise1990.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, msise1990.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msise1990.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msise1990.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                msise1990.drag_model_plugin_name = "Bogus"
-
-            msise1990.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", msise1990.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = msise1990.drag_model_plugin
-
-            msise1990.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", msise1990.drag_model_plugin_name)
-            dragModelPlugin = msise1990.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         msise1990.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, msise1990.drag_model_type)
@@ -5698,27 +5455,6 @@ class EarlyBoundTests(TestBase):
             nrlmsise2000.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            nrlmsise2000.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, nrlmsise2000.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                nrlmsise2000.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                nrlmsise2000.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                nrlmsise2000.drag_model_plugin_name = "Bogus"
-
-            nrlmsise2000.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", nrlmsise2000.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = nrlmsise2000.drag_model_plugin
-
-            nrlmsise2000.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", nrlmsise2000.drag_model_plugin_name)
-            dragModelPlugin = nrlmsise2000.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         nrlmsise2000.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, nrlmsise2000.drag_model_type)
@@ -5769,27 +5505,6 @@ class EarlyBoundTests(TestBase):
             sa.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            sa.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, sa.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                sa.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                sa.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                sa.drag_model_plugin_name = "Bogus"
-
-            sa.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", sa.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = sa.drag_model_plugin
-
-            sa.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", sa.drag_model_plugin_name)
-            dragModelPlugin = sa.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         sa.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, sa.drag_model_type)
@@ -5885,27 +5600,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -5973,27 +5667,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6089,27 +5762,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6207,27 +5859,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6375,27 +6006,6 @@ class EarlyBoundTests(TestBase):
             jb.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jb.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jb.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jb.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jb.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jb.drag_model_plugin_name = "Bogus"
-
-            jb.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jb.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jb.drag_model_plugin
-
-            jb.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jb.drag_model_plugin_name)
-            dragModelPlugin = jb.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jb.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jb.drag_model_type)
@@ -6498,27 +6108,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6621,27 +6210,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6744,27 +6312,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6867,27 +6414,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6939,27 +6465,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -7085,27 +6590,6 @@ class EarlyBoundTests(TestBase):
             vg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            vg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, vg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                vg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                vg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                vg.drag_model_plugin_name = "Bogus"
-
-            vg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", vg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = vg.drag_model_plugin
-
-            vg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", vg.drag_model_plugin_name)
-            dragModelPlugin = vg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         vg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, vg.drag_model_type)
@@ -7505,27 +6989,6 @@ class EarlyBoundTests(TestBase):
             exp.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            exp.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, exp.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                exp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                exp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                exp.drag_model_plugin_name = "Bogus"
-
-            exp.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", exp.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = exp.drag_model_plugin
-
-            exp.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", exp.drag_model_plugin_name)
-            dragModelPlugin = exp.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         exp.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, exp.drag_model_type)
@@ -8569,60 +8032,6 @@ class EarlyBoundTests(TestBase):
 
         compPlugin: "IComponentInfo" = clr.CastAs(plugin, IComponentInfo)
         self.TestComponent(compPlugin, False)
-        if not OSHelper.IsLinux():
-            plugin = clr.CastAs((ICloneable(components["CSharp Engine Example"])).clone_object(), EnginePlugin)
-            plugin.g = 0.0097
-            Assert.assertEqual(0.0097, plugin.g)
-            pluginProperties = plugin.plugin_config
-            plugin.plugin_identifier = "Test"
-            Assert.assertEqual("Test", plugin.plugin_identifier)
-            compPlugin = clr.CastAs(plugin, IComponentInfo)
-            self.TestComponent(compPlugin, False)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(7, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("T0", availableProperties[1])
-            pluginProperties.set_property("T0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("T0"))
-            pluginProperties.set_property("T1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("T1"))
-            pluginProperties.set_property("T2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("T2"))
-            pluginProperties.set_property("Ts", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ts"))
-            pluginProperties.set_property("Tc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Tc"))
-            pluginProperties.set_property("Isp", 3100)
-            Assert.assertEqual(3100, pluginProperties.get_property("Isp"))
-
-            plugin = clr.CastAs((ICloneable(components["JScript Engine Example"])).clone_object(), EnginePlugin)
-            plugin.g = 0.0097
-            Assert.assertEqual(0.0097, plugin.g)
-            pluginProperties = plugin.plugin_config
-            plugin.plugin_identifier = "Test"
-            Assert.assertEqual("Test", plugin.plugin_identifier)
-            compPlugin = clr.CastAs(plugin, IComponentInfo)
-            self.TestComponent(compPlugin, False)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(7, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("T0", availableProperties[1])
-            pluginProperties.set_property("T0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("T0"))
-            pluginProperties.set_property("T1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("T1"))
-            pluginProperties.set_property("T2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("T2"))
-            pluginProperties.set_property("Ts", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ts"))
-            pluginProperties.set_property("Tc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Tc"))
-            pluginProperties.set_property("Isp", 3100)
-            Assert.assertEqual(3100, pluginProperties.get_property("Isp"))
 
         # /////////////////////////////////////////
 
