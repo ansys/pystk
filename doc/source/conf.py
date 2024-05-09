@@ -161,6 +161,7 @@ else:
     }
     nbsphinx_thumbnails = {
         "examples/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/lambert-transfer": "_static/thumbnails/lambert-transfer.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
