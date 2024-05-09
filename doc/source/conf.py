@@ -160,7 +160,7 @@ else:
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
     nbsphinx_thumbnails = {
-        "examples/hohmann_transfer_using_targeter": "_static/thumbnails/hohmann-transfer-using-targeter.png",
+        "examples/hohmann-transfer": "_static/thumbnails/hohmann-transfer.png",
     }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
