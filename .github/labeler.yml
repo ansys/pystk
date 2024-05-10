@@ -46,7 +46,7 @@
 'ci:skip':
   - all:
       - changed-files:
-          - all-glob-to-all-file: ['NO-MATCHING-FILE']
+          - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']
 
 'tests':
   - any:
@@ -58,4 +58,4 @@
 'tests:skip':
   - all:
       - changed-files:
-          - all-glob-to-all-file: ['NO-MATCHING-FILE']
+          - all-globs-to-all-files: ['THIS-NEVER-MATCHES-A-FILE']
