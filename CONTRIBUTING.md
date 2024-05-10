@@ -82,11 +82,12 @@ Use the following commands to build the images for your target distribution:
     ~$ docker images
 
     REPOSITORY                                         TAG                                         IMAGE ID       CREATED        SIZE
-    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.10   da112bee5232   13 hours ago   11.1GB
-    ansys/stk                                          dev-windowsservercore-ltsc2019-pybase       6386ed51b256   13 hours ago   10.9GB
-    ansys/stk                                          dev-windowsservercore-ltsc2019              59ab48f41f9c   13 hours ago   10.8GB
-    mcr.artifactory.stk.com/dotnet/framework/runtime   4.8-windowsservercore-ltsc2019              6b8d98588f15   6 weeks ago    6.91GB
-    mcr.microsoft.com/dotnet/framework/runtime         4.8-windowsservercore-ltsc2019              6b8d98588f15   6 weeks ago    6.91GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.10   8399f5359163   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.9    12ed5235a1e4   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.8    0e5d12988064   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-pybase       00868a57cc61   3 hours ago   20.7GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019              a8e6508529ba   3 hours ago   20.7GB
+    mcr.microsoft.com/dotnet/framework/runtime         4.8-windowsservercore-ltsc2019              6b8d98588f15   4 weeks ago   6.91GB
     ```
 
 
@@ -107,7 +108,7 @@ In the previous command, you need to select the Python version you want to
 use, for instance:
 - `tox -f docker-run-centos_container-py38` will start a CentOS container configured with Python 3.8.
 - `tox -f docker-run-ubuntu_container-py39` will start a Ubuntu container configured with Python 3.9.
-- `tox -f docker-run-windows_container-py310` will start a Ubuntu container configured with Python 3.10.
+- `tox -f docker-run-windows_container-py310` will start a Windows container configured with Python 3.10.
 
 ## Executing a command inside an STK container with Tox
 
