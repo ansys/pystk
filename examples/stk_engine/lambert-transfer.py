@@ -1,6 +1,6 @@
 # # Lambert transfer
 #
-# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the {py:class}`ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile` included in Astrogator.
+# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the ``Lambert Profile`` included in Astrogator.
 
 
 # ## What is a Lambert transfer?
