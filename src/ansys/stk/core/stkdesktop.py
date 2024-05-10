@@ -1,5 +1,5 @@
 ################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
+#          Copyright 2020-2024, Ansys Government Initiatives
 ################################################################################
 
 """Starts STK Desktop or attaches to an already running STK Desktop, and provides access to the Object Model root."""
@@ -11,29 +11,22 @@ import typing
 import atexit
 from ctypes import byref
 import subprocess
-if os.name == "nt":
-    import winreg
 
-from .internal.comutil       import (OLE32Lib, OLEAut32Lib, GUID, IUnknown, CoInitializeManager, Succeeded,
-                                 CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
-from .internal.coclassutil   import attach_to_stk_by_pid
-from .internal.eventutil     import EventSubscriptionManager
-from .internal.apiutil       import InterfaceProxy
-from .utilities.exceptions   import *
-from .graphics               import *
-from .stkobjects             import *
-from .stkobjects.astrogator  import *
-from .stkobjects.aviator     import *
-from .stkutil                import *
-from .uiapplication          import *
-from .uicore                 import *
-from .vgt                    import *
+from .internal.comutil        import (OLE32Lib, OLEAut32Lib, GUID, IUnknown, CoInitializeManager, Succeeded,
+                                  CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
+from .internal.coclassutil    import attach_to_stk_by_pid
+from .internal.eventutil      import EventSubscriptionManager
+from .internal.apiutil        import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+from .utilities.grpcutilities import GrpcCallBatcher
+from .utilities.exceptions    import STKRuntimeError, STKInitializationError
+from .stkobjects              import StkObjectRoot, StkObjectModelContext, StkObjectRoot
+from .uiapplication           import UiApplication
 
 class ThreadMarshaller(object):
     _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":
-            raise RuntimeError("ThreadMarshaller is only available on Windows.")
+            raise STKRuntimeError("ThreadMarshaller is only available on Windows.")
         if not hasattr(obj, "_intf"):
             raise STKRuntimeError("Invalid object to passed to ThreadMarshaller.")
         if type(obj._intf) != IUnknown:
@@ -87,7 +80,7 @@ class STKDesktopApplication(UiApplication):
     def __init__(self):
         """Construct an object of type STKDesktopApplication."""
         if os.name != "nt":
-            raise RuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
+            raise STKRuntimeError("STKDesktopApplication is only available on Windows. Use STKEngine.")
         self.__dict__["_intf"] = InterfaceProxy()
         UiApplication.__init__(self)
         self.__dict__["_root"] = None
@@ -104,7 +97,7 @@ class STKDesktopApplication(UiApplication):
     def root(self) -> StkObjectRoot:
         """Get the object model root associated with this instance of STK Desktop application."""
         if not self._intf:
-            raise RuntimeError("STKDesktopApplication has not been properly initialized.  Use STKDesktop to obtain the STKDesktopApplication object.")
+            raise STKRuntimeError("STKDesktopApplication has not been properly initialized.  Use STKDesktop to obtain the STKDesktopApplication object.")
         if self._root is not None:
             return self._root
         if self._intf:
@@ -112,8 +105,38 @@ class STKDesktopApplication(UiApplication):
             return self.__dict__["_root"]
             
     def new_object_model_context(self) -> StkObjectModelContext:
-        '''Create a new object model context for the STK Desktop application.'''
+        """Create a new object model context for the STK Desktop application."""
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
+
+    def SetGrpcOptions(self, options:dict) -> None:
+        """
+        Set advanced-usage options for the gRPC client.
+
+        Available options include:
+        { "collection iteration batch size" : int }. Number of items to preload while iterating
+        through a collection object. Default is 100. Use 0 to indicate no limit (load entire collection).
+        { "disable batching" : bool }. Disable all batching operations.
+        { "release batch size" : int }. Number of interfaces to be garbage collected before 
+        sending the entire batch to STK to be released. Default value is 12.
+        """
+        if hasattr(self._intf, "client"):
+            self._intf.client.set_grpc_options(options)
+            
+    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+        """
+        Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
+        
+        If gRPC is not active, the batcher will be disabled.
+        max_batch is the maximum number of calls to batch together.
+        Set disable_batching=True to disable batching operations for this batcher.
+        See grpcutilities module for more information.
+        """
+        if hasattr(self._intf, "client"):
+            batcher = GrpcCallBatcher(disable_batching)
+            batcher._private_init(self._intf.client, max_batch)
+        else:
+            batcher = GrpcCallBatcher(disable_batching=True)
+        return batcher
     
     def shutdown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
@@ -137,17 +160,6 @@ class STKDesktopApplication(UiApplication):
 
 class STKDesktop(object):
     """Create, initialize, and manage STK Desktop application instances."""
-    
-    @staticmethod
-    def _read_registry_key(root, key, value=None, silent_exception=False):
-        try:
-            with winreg.OpenKey(root, key) as hkey:
-                (val, typ) = winreg.QueryValueEx(hkey, value)
-            return val
-        except Exception as e:
-            if not silent_exception:
-                raise STKInitializationError(f"Error Reading Registry for {key}: {e}")
-            return None
 
     @staticmethod
     def start_application(visible:bool=False, \
@@ -171,7 +183,7 @@ class STKDesktop(object):
         Only available on Windows.
         """
         if os.name != "nt":
-            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+            raise STKRuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
 
         CoInitializeManager.initialize()
         if grpc_server:
@@ -179,8 +191,15 @@ class STKDesktop(object):
                 pass
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
-            executable = STKDesktop._read_registry_key(winreg.HKEY_CLASSES_ROOT, 'CLSID\{7ADA6C22-FA34-4578-8BE8-65405A55EE15}\LocalServer32')
-            cmd_line = f"{executable} /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
+            clsid_stk12application = "{7ADA6C22-FA34-4578-8BE8-65405A55EE15}"
+            executable = read_registry_key(f"CLSID\\{clsid_stk12application}\\LocalServer32", silent_exception=True)
+            if executable is None or not os.path.exists(executable):
+                bin_dir = winreg_stk_binary_dir()
+                if bin_dir is not None:
+                    executable = os.path.join(bin_dir, "UiApplication.exe")
+                else:
+                    raise STKInitializationError(f"Could not find UiApplication.exe. Verify STK 12 installation.")
+            cmd_line = f"\"{executable}\" /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
             app_process = subprocess.Popen(cmd_line)
             host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
             app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
@@ -218,7 +237,7 @@ class STKDesktop(object):
         Only available on Windows.
         """
         if os.name != "nt":
-            raise RuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
+            raise STKRuntimeError("STKDesktop is only available on Windows. Use STKEngine.")
 
         CoInitializeManager.initialize()
         if grpc_server:
@@ -266,7 +285,7 @@ class STKDesktop(object):
         Not applicable to gRPC connections.
         """
         if os.name != "nt":
-            raise RuntimeError("STKDesktop is only available on Windows.")
+            raise STKRuntimeError("STKDesktop is only available on Windows.")
         EventSubscriptionManager.unsubscribe_all()
         ObjectLifetimeManager.release_all()
         
@@ -278,10 +297,10 @@ class STKDesktop(object):
         Not applicable to gRPC connections.
         """
         if os.name != "nt":
-            raise RuntimeError("STKDesktop is only available on Windows.")
+            raise STKRuntimeError("STKDesktop is only available on Windows.")
         return ThreadMarshaller(stk_object)
 
 
 ################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
+#          Copyright 2020-2024, Ansys Government Initiatives
 ################################################################################

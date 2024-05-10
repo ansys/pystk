@@ -258,7 +258,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
 
-        self.ComputeAccessBetweenTwoStkObjectsUsingObjectPath(clr.Convert(sat, IStkObject))
+        self.ComputeAccessBetweenTwoStkObjectsUsingObjectPath(IStkObject(sat))
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
@@ -284,9 +284,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         tb.propagate()
         fac.position.assign_geodetic(-34.88, -58.14, 0.0)  # so i can actually see the access on ui
 
-        self.ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(
-            clr.Convert(sat, IStkObject), clr.Convert(fac, IStkObject)
-        )
+        self.ComputeAccessBetweenTwoStkObjectsUsingIAgStkObjectInterface(IStkObject(sat), IStkObject(fac))
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
@@ -461,8 +459,12 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         i: int = 0
         while i < len(arAvailable):
-            availName: str = clr.Convert(arAvailable[i][0], str)
-            eAccessConstraint: "ACCESS_CONSTRAINTS" = clr.Convert(int(arAvailable[i][1]), ACCESS_CONSTRAINTS)
+            availName: str = str(arAvailable[i][0])
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = (
+                ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
+                if (int(arAvailable[i][1]) in [item.value for item in ACCESS_CONSTRAINTS])
+                else int(arAvailable[i][1])
+            )
             Console.WriteLine("\tConstraint {0}: {1} ({2})", i, availName, eAccessConstraint)
 
             i += 1
@@ -475,9 +477,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         place: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.PLACE, "ColoradoSprings")
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
         aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAVSensor")
-        greatArc: "VehiclePropagatorGreatArc" = clr.Convert(
-            (clr.Convert(aircraft, Aircraft)).route, VehiclePropagatorGreatArc
-        )
+        greatArc: "VehiclePropagatorGreatArc" = VehiclePropagatorGreatArc((Aircraft(aircraft)).route)
 
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.077, 0],
@@ -524,16 +524,12 @@ class AccessSnippets(CodeSnippetsTestBase):
     def test_ConfigureAccessTimePeriodToObjectTimeOfOtherObject(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
         satellite: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO")
-        twoBody: "VehiclePropagatorTwoBody" = clr.Convert(
-            (clr.Convert(satellite, Satellite)).propagator, VehiclePropagatorTwoBody
-        )
+        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody((Satellite(satellite)).propagator)
         twoBody.propagate()
 
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
         aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAVSensor")
-        greatArc: "VehiclePropagatorGreatArc" = clr.Convert(
-            (clr.Convert(aircraft, Aircraft)).route, VehiclePropagatorGreatArc
-        )
+        greatArc: "VehiclePropagatorGreatArc" = VehiclePropagatorGreatArc((Aircraft(aircraft)).route)
 
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.077, 0],

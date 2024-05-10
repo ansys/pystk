@@ -231,8 +231,8 @@ class ReportComparison(object):
                 i: int = 0
                 while i < len(row):
                     if row[i] != None:
-                        if len((clr.Convert(row[i], str))) > col_len[i]:
-                            col_len[i] = len((clr.Convert(row[i], str)))
+                        if len((row[i])) > col_len[i]:
+                            col_len[i] = len((row[i]))
 
                     i += 1
 
@@ -242,9 +242,7 @@ class ReportComparison(object):
                 i: int = 0
                 while i < len(row):
                     if rowstr != None:
-                        rowstr += self.Indent(((col_len[i] - len((clr.Convert(row[i], str)))) + 4)) + (
-                            clr.Convert(row[i], str)
-                        )
+                        rowstr += self.Indent(((col_len[i] - len((row[i]))) + 4)) + (row[i])
 
                     else:
                         repstr += self.Indent((col_len[i] + 4))

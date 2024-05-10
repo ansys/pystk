@@ -23,7 +23,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("LineTargetTests", "LineTargetTests.sc"))
-        EarlyBoundTests.AG_LT = clr.Convert(TestBase.Application.current_scenario.children["LineTarget2"], LineTarget)
+        EarlyBoundTests.AG_LT = LineTarget(TestBase.Application.current_scenario.children["LineTarget2"])
 
     # endregion
 
@@ -47,7 +47,7 @@ class EarlyBoundTests(TestBase):
         self.Units.set_current_unit("LongitudeUnit", "deg")
         self.Units.set_current_unit("LatitudeUnit", "deg")
         # Points
-        oPoints: "LineTargetPointCollection" = clr.Convert(EarlyBoundTests.AG_LT.points, LineTargetPointCollection)
+        oPoints: "LineTargetPointCollection" = EarlyBoundTests.AG_LT.points
         Assert.assertIsNotNone(oPoints)
         # Count
         TestBase.logger.WriteLine3("\tThe current Line Target points collection contains: {0} elements", oPoints.count)
@@ -88,7 +88,7 @@ class EarlyBoundTests(TestBase):
             idx += 1
 
         size = oPoints.count
-        oPoint: "LineTargetPoint" = clr.Convert(oPoints.add(0.02, 0.02), LineTargetPoint)
+        oPoint: "LineTargetPoint" = oPoints.add(0.02, 0.02)
         Assert.assertEqual((size + 1), oPoints.count)
         TestBase.logger.WriteLine3("\tThe new Line Target points collection contains: {0} elements", oPoints.count)
 
@@ -135,7 +135,7 @@ class EarlyBoundTests(TestBase):
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- BEGIN -----")
         # Graphics
-        gfx: "LineTargetGraphics" = clr.Convert(EarlyBoundTests.AG_LT.graphics, LineTargetGraphics)
+        gfx: "LineTargetGraphics" = EarlyBoundTests.AG_LT.graphics
         # IsObjectGraphicsVisible (true)
         TestBase.logger.WriteLine4("\tThe current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
         gfx.is_object_graphics_visible = False
@@ -207,9 +207,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH2, gfx.line_width)
         with pytest.raises(Exception):
-            gfx.line_width = clr.Convert((-1), LINE_WIDTH)
+            gfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            gfx.line_width = clr.Convert((11), LINE_WIDTH)
+            gfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         # LineStyle
         TestBase.logger.WriteLine6("\tThe current LineStyle is: {0}", gfx.line_style)
@@ -226,7 +226,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, gfx.line_pts_visible)
         # LabelNotes
         oHelper = GfxLabelNoteHelper(self.Units)
-        oHelper.Run(clr.Convert(gfx.label_notes, LabelNoteCollection))
+        oHelper.Run(gfx.label_notes)
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -244,7 +244,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_LT.graphics_3d.vector, True)
 
     # endregion
@@ -253,7 +253,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VO(self):
         TestBase.logger.WriteLine("----- THE VO TEST ----- BEGIN -----")
-        vo: "LineTargetGraphics3D" = clr.Convert(EarlyBoundTests.AG_LT.graphics_3d, LineTargetGraphics3D)
+        vo: "LineTargetGraphics3D" = EarlyBoundTests.AG_LT.graphics_3d
         Assert.assertIsNotNone(vo)
         # set DistanceUnit
         TestBase.logger.WriteLine5(
@@ -291,7 +291,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_DisplayTimes(self):
         oHelper = DisplayTimesHelper(TestBase.Application)
-        oHelper.Run(clr.Convert(EarlyBoundTests.AG_LT, IDisplayTime))
+        oHelper.Run(IDisplayTime(EarlyBoundTests.AG_LT))
 
     # endregion
 
@@ -300,9 +300,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_LT.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_LT, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_LT.access_constraints, IStkObject(EarlyBoundTests.AG_LT), TestBase.TemporaryDirectory
         )
 
     # endregion
@@ -321,18 +319,17 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_AccessDataDisplay(self):
         # test Access VO DataDisplays
-        oSatellite: "Satellite" = clr.Convert(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
+        oSatellite: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         Assert.assertNotEqual(None, oSatellite)
         oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "StkAccess" = clr.Convert(
-            (clr.Convert(EarlyBoundTests.AG_LT, IStkObject)).get_access_to_object(clr.CastAs(oSatellite, IStkObject)),
-            StkAccess,
+        oAccess: "StkAccess" = (IStkObject(EarlyBoundTests.AG_LT)).get_access_to_object(
+            clr.CastAs(oSatellite, IStkObject)
         )
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()

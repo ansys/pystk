@@ -23,7 +23,7 @@ class GatorHelper(object):
         coordSystemName: str = oState.coord_system_name
         oState.set_element_type(ELEMENT_TYPE.SPHERICAL)
         Assert.assertEqual(ELEMENT_TYPE.SPHERICAL, oState.element_type)
-        spherical: "ElementSpherical" = clr.Convert(oState.element, ElementSpherical)
+        spherical: "ElementSpherical" = ElementSpherical(oState.element)
         spherical.declination = 1
         Assert.assertAlmostEqual(1, float(spherical.declination), delta=Math2.Epsilon12)
         spherical.horizontal_flight_path_angle = 1
@@ -40,7 +40,7 @@ class GatorHelper(object):
         oState.set_element_type(ELEMENT_TYPE.CARTESIAN)
         Assert.assertEqual(ELEMENT_TYPE.CARTESIAN, oState.element_type)
 
-        cart: "ElementCartesian" = clr.Convert(oState.element, ElementCartesian)
+        cart: "ElementCartesian" = ElementCartesian(oState.element)
         GatorHelper.TestRuntimeTypeInfo(cart)
 
         cart.x = 6670
@@ -59,9 +59,7 @@ class GatorHelper(object):
 
         oState.set_element_type(ELEMENT_TYPE.TARGET_VECTOR_OUTGOING_ASYMPTOTE)
         Assert.assertEqual(ELEMENT_TYPE.TARGET_VECTOR_OUTGOING_ASYMPTOTE, oState.element_type)
-        outgoing: "ElementTargetVectorOutgoingAsymptote" = clr.Convert(
-            oState.element, ElementTargetVectorOutgoingAsymptote
-        )
+        outgoing: "ElementTargetVectorOutgoingAsymptote" = ElementTargetVectorOutgoingAsymptote(oState.element)
 
         outgoing.radius_of_periapsis = 6678.2
         Assert.assertAlmostEqual(6678.2, float(outgoing.radius_of_periapsis), delta=0.001)
@@ -78,9 +76,7 @@ class GatorHelper(object):
 
         oState.set_element_type(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE)
         Assert.assertEqual(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE, oState.element_type)
-        incoming: "ElementTargetVectorIncomingAsymptote" = clr.Convert(
-            oState.element, ElementTargetVectorIncomingAsymptote
-        )
+        incoming: "ElementTargetVectorIncomingAsymptote" = ElementTargetVectorIncomingAsymptote(oState.element)
         incoming.radius_of_periapsis = 6678.2
         Assert.assertAlmostEqual(6678.2, float(incoming.radius_of_periapsis), delta=0.001)
         incoming.c3_energy = -58
@@ -96,7 +92,7 @@ class GatorHelper(object):
 
         oState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
         Assert.assertEqual(ELEMENT_TYPE.KEPLERIAN, oState.element_type)
-        kep: "ElementKeplerian" = clr.Convert(oState.element, ElementKeplerian)
+        kep: "ElementKeplerian" = ElementKeplerian(oState.element)
         kep.arg_of_periapsis = 1
         Assert.assertAlmostEqual(1, float(kep.arg_of_periapsis), delta=0.001)
 
@@ -156,7 +152,7 @@ class GatorHelper(object):
         GatorHelper.TestRuntimeTypeInfo(sc)
 
         temp: "StoppingCondition" = clr.CastAs(scc["Altitude"].properties, StoppingCondition)
-        Assert.assertEqual((clr.Convert(sc, IComponentInfo)).name, (clr.Convert(temp, IComponentInfo)).name)
+        Assert.assertEqual((IComponentInfo(sc)).name, (IComponentInfo(temp)).name)
         sc.trip = 201
         Assert.assertEqual(201, sc.trip)
         sc.criterion = CRITERION.CROSS_DECREASING
@@ -179,7 +175,7 @@ class GatorHelper(object):
 
         i: int = 0
         while i < scc.count:
-            cmp: "IComponentInfo" = clr.Convert(scc[i], IComponentInfo)
+            cmp: "IComponentInfo" = IComponentInfo(scc[i])
             name: str = cmp.name
             userComment: str = cmp.user_comment
             desc: str = cmp.description
@@ -190,10 +186,10 @@ class GatorHelper(object):
         sce: "StoppingConditionElement" = scc["Duration"]
 
         with pytest.raises(Exception):
-            cmp3: "IComponentInfo" = clr.Convert(scc[5], IComponentInfo)
+            cmp3: "IComponentInfo" = IComponentInfo(scc[5])
 
         with pytest.raises(Exception):
-            cmp4: "IComponentInfo" = clr.Convert(scc["Bogus"], IComponentInfo)
+            cmp4: "IComponentInfo" = IComponentInfo(scc["Bogus"])
 
         cmp: "IComponentInfo"
 
@@ -217,7 +213,7 @@ class GatorHelper(object):
         with pytest.raises(Exception):
             scc.remove("Bogus")
 
-        sc = clr.CastAs(clr.Convert(scc.add("Argument of Latitude").properties, StoppingCondition), StoppingCondition)
+        sc = clr.CastAs(StoppingCondition(scc.add("Argument of Latitude").properties), StoppingCondition)
         sc.trip = 1
         Assert.assertEqual(1, sc.trip)
         sc.criterion = CRITERION.CROSS_DECREASING
@@ -327,11 +323,15 @@ class GatorHelper(object):
         Assert.assertEqual("CentralBody/Moon Moon_Angular_Velocity", attControl.constraint_vector_name)
 
         with pytest.raises(Exception):
-            attControl.body_axis = clr.Convert((-1), BODY_AXIS)
+            attControl.body_axis = BODY_AXIS((-1)) if ((-1) in [item.value for item in BODY_AXIS]) else (-1)
         with pytest.raises(Exception):
-            attControl.custom_function = clr.Convert((-1), CUSTOM_FUNCTION)
+            attControl.custom_function = (
+                CUSTOM_FUNCTION((-1)) if ((-1) in [item.value for item in CUSTOM_FUNCTION]) else (-1)
+            )
         with pytest.raises(Exception):
-            attControl.constraint_sign = clr.Convert((-1), CONSTRAINT_SIGN)
+            attControl.constraint_sign = (
+                CONSTRAINT_SIGN((-1)) if ((-1) in [item.value for item in CONSTRAINT_SIGN]) else (-1)
+            )
         with pytest.raises(Exception):
             attControl.constraint_vector_name = "Bogus"
 
@@ -2551,23 +2551,23 @@ class GatorHelper(object):
 
         ts.reset_profiles()
 
-        maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "TMan", "-"), MissionControlSequenceManeuver
+        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "TMan", "-")
         )
-        initState: "MissionControlSequenceInitialState" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.INITIAL_STATE, "myInitState", "-"), MissionControlSequenceInitialState
+        initState: "MissionControlSequenceInitialState" = MissionControlSequenceInitialState(
+            ts.segments.insert(SEGMENT_TYPE.INITIAL_STATE, "myInitState", "-")
         )
-        launch: "MissionControlSequenceLaunch" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.LAUNCH, "myLaunch", "-"), MissionControlSequenceLaunch
+        launch: "MissionControlSequenceLaunch" = MissionControlSequenceLaunch(
+            ts.segments.insert(SEGMENT_TYPE.LAUNCH, "myLaunch", "-")
         )
-        follow: "MissionControlSequenceFollow" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.FOLLOW, "myFollow", "-"), MissionControlSequenceFollow
+        follow: "MissionControlSequenceFollow" = MissionControlSequenceFollow(
+            ts.segments.insert(SEGMENT_TYPE.FOLLOW, "myFollow", "-")
         )
-        prop: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "myProp", "-"), MissionControlSequencePropagate
+        prop: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "myProp", "-")
         )
-        update: "MissionControlSequenceUpdate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.UPDATE, "myUpdate", "-"), MissionControlSequenceUpdate
+        update: "MissionControlSequenceUpdate" = MissionControlSequenceUpdate(
+            ts.segments.insert(SEGMENT_TYPE.UPDATE, "myUpdate", "-")
         )
         if not isFromCM:
             # PLUGINSTUFF
@@ -2582,25 +2582,25 @@ class GatorHelper(object):
                     GatorHelper.TestProfileChangeManeuverType(ts.profiles.add(profile), maneuver, ts)
 
                 elif profile == "Change Stopping Condition State":
-                    hold: "MissionControlSequenceHold" = clr.Convert(
-                        ts.segments.insert(SEGMENT_TYPE.HOLD, "holdts", "-"), MissionControlSequenceHold
+                    hold: "MissionControlSequenceHold" = MissionControlSequenceHold(
+                        ts.segments.insert(SEGMENT_TYPE.HOLD, "holdts", "-")
                     )
                     GatorHelper.TestProfileChangeStoppingConditionState(
                         ts.profiles.add(profile),
-                        clr.Convert(maneuver, IMissionControlSequenceSegment),
+                        IMissionControlSequenceSegment(maneuver),
                         hold.stopping_conditions[0],
                         ts,
                     )
 
                 elif profile == "Change Return Segment":
-                    returnSeg: "MissionControlSequenceReturn" = clr.Convert(
-                        ts.segments.insert(SEGMENT_TYPE.RETURN, "myReturn", "-"), MissionControlSequenceReturn
+                    returnSeg: "MissionControlSequenceReturn" = MissionControlSequenceReturn(
+                        ts.segments.insert(SEGMENT_TYPE.RETURN, "myReturn", "-")
                     )
                     GatorHelper.TestProfileChangeReturnSegment(ts.profiles.add(profile), returnSeg, ts)
 
                 elif profile == "Change Stop Segment":
-                    stopSeg: "MissionControlSequenceStop" = clr.Convert(
-                        ts.segments.insert(SEGMENT_TYPE.STOP, "myStop", "-"), MissionControlSequenceStop
+                    stopSeg: "MissionControlSequenceStop" = MissionControlSequenceStop(
+                        ts.segments.insert(SEGMENT_TYPE.STOP, "myStop", "-")
                     )
                     GatorHelper.TestProfileChangeStopSegment(ts.profiles.add(profile), stopSeg, ts)
 
@@ -2900,7 +2900,7 @@ class GatorHelper(object):
         GatorHelper.m_logger.WriteLine("TestPlugin_Bisection - START")
 
         # Enable a control and add a Result
-        propSeg: "MissionControlSequencePropagate" = clr.Convert(ts.segments["myProp"], MissionControlSequencePropagate)
+        propSeg: "MissionControlSequencePropagate" = MissionControlSequencePropagate(ts.segments["myProp"])
         durationControl: "StoppingConditionElement" = propSeg.stopping_conditions["Duration"]
         durationControl.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
         seg: "IMissionControlSequenceSegment" = clr.CastAs(propSeg, IMissionControlSequenceSegment)
@@ -2937,7 +2937,7 @@ class GatorHelper(object):
                 searchPluginControl, "AGI.SearchControlReal.Plugin.Examples.CSharp.BisectionControlReal"
             )
 
-        (clr.Convert(profileSearchPlugin, IProfile)).mode = PROFILE_MODE.ITERATE
+        (profileSearchPlugin).mode = PROFILE_MODE.ITERATE
         Assert.assertEqual(PROFILE_MODE.ITERATE, profileSearchPlugin.mode)
 
         profileSearchPlugin.name = "MyCSharpBisection"
@@ -3012,7 +3012,7 @@ class GatorHelper(object):
         profileSearchPlugin.user_comment = "MyUserComment"
         Assert.assertEqual("MyUserComment", profileSearchPlugin.user_comment)
 
-        spCopy: "ProfileSearchPlugin" = clr.Convert(profileSearchPlugin.copy(), ProfileSearchPlugin)
+        spCopy: "ProfileSearchPlugin" = ProfileSearchPlugin(profileSearchPlugin.copy())
 
         seg.results.remove("Epoch")
         durationControl.disable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
@@ -3137,7 +3137,7 @@ class GatorHelper(object):
         optimizer.allow_internal_primal_infeasibility_measure_normalization = True
         Assert.assertTrue(optimizer.allow_internal_primal_infeasibility_measure_normalization)
 
-        spCopy: "ProfileSNOPTOptimizer" = clr.Convert(optimizer.copy(), ProfileSNOPTOptimizer)
+        spCopy: "ProfileSNOPTOptimizer" = ProfileSNOPTOptimizer(optimizer.copy())
 
         manSegment.results.remove("Epoch")
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
@@ -3258,7 +3258,7 @@ class GatorHelper(object):
         optimizer.options_filename = TestBase.GetScenarioFile("gp_marker.bmp")
         Assert.assertTrue(("gp_marker.bmp" in optimizer.options_filename))
 
-        spCopy: "ProfileIPOPTOptimizer" = clr.Convert(optimizer.copy(), ProfileIPOPTOptimizer)
+        spCopy: "ProfileIPOPTOptimizer" = ProfileIPOPTOptimizer(optimizer.copy())
 
         manSegment.results.remove("Epoch")
         maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
@@ -3546,24 +3546,24 @@ class GatorHelper(object):
     @staticmethod
     def TestProfileChangePropagator(iAgVAProfile: "IProfile", maneuver: "MissionControlSequenceManeuver"):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.CHANGE_PROPAGATOR)
-        cp: "ProfileChangePropagator" = clr.Convert(iAgVAProfile, ProfileChangePropagator)
+        cp: "ProfileChangePropagator" = ProfileChangePropagator(iAgVAProfile)
         GatorHelper.TestRuntimeTypeInfo(cp)
 
-        (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (cp).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, cp.mode)
-        (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (cp).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, cp.mode)
         with pytest.raises(Exception):
-            (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.ITERATE
+            (cp).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(cp, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (cp).mode = PROFILE_MODE.RUN_ONCE
         cp.name = "MyChangePropagator"
         Assert.assertEqual("MyChangePropagator", cp.name)
 
-        cp.segment_name = (clr.Convert(maneuver, IComponentInfo)).name
-        Assert.assertEqual((clr.Convert(maneuver, IComponentInfo)).name, cp.segment_name)
+        cp.segment_name = (IComponentInfo(maneuver)).name
+        Assert.assertEqual((IComponentInfo(maneuver)).name, cp.segment_name)
         cp.set_segment(clr.CastAs(maneuver, IMissionControlSequenceSegment))
-        Assert.assertEqual((clr.Convert(maneuver, IComponentInfo)).name, cp.segment_name)
+        Assert.assertEqual((IComponentInfo(maneuver)).name, cp.segment_name)
         GatorHelper.m_logger.WriteLine(cp.status)
         cp.propagator_name = "Heliocentric"
         Assert.assertEqual("Heliocentric", cp.propagator_name)
@@ -3579,14 +3579,14 @@ class GatorHelper(object):
             GatorHelper.Test_IAgVAProfile(ts, scriptingTool, PROFILE_MODE.NOT_ACTIVE)
             GatorHelper.TestRuntimeTypeInfo(scriptingTool)
 
-            (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+            (scriptingTool).mode = PROFILE_MODE.NOT_ACTIVE
             Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, scriptingTool.mode)
-            (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.ACTIVE
+            (scriptingTool).mode = PROFILE_MODE.ACTIVE
             Assert.assertEqual(PROFILE_MODE.ACTIVE, scriptingTool.mode)
             with pytest.raises(Exception):
-                (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.ITERATE
+                (scriptingTool).mode = PROFILE_MODE.ITERATE
             with pytest.raises(Exception):
-                (clr.Convert(scriptingTool, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+                (scriptingTool).mode = PROFILE_MODE.RUN_ONCE
             scriptingTool.enable = True
             Assert.assertTrue(scriptingTool.enable)
 
@@ -3603,7 +3603,7 @@ class GatorHelper(object):
     @staticmethod
     def TestProfileDifferentialCorrector(iAgVAProfile: "IProfile", ts: "MissionControlSequenceTargetSequence"):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.DIFFERENTIAL_CORRECTOR)
-        dc: "ProfileDifferentialCorrector" = clr.Convert(iAgVAProfile, ProfileDifferentialCorrector)
+        dc: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(iAgVAProfile)
 
         GatorHelper.Test_IAgVAProfile(ts, dc, PROFILE_MODE.ITERATE)
 
@@ -3779,24 +3779,24 @@ class GatorHelper(object):
     @staticmethod
     def TestProfileRunOnce(iAgVAProfile: "IProfile"):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.RUN_ONCE)
-        ro: "ProfileRunOnce" = clr.Convert(iAgVAProfile, ProfileRunOnce)
+        ro: "ProfileRunOnce" = ProfileRunOnce(iAgVAProfile)
         GatorHelper.TestRuntimeTypeInfo(ro)
 
-        (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (ro).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, ro.mode)
-        (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (ro).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, ro.mode)
         with pytest.raises(Exception):
-            (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.ITERATE
+            (ro).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(ro, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (ro).mode = PROFILE_MODE.RUN_ONCE
         ro.name = "Run Target Sequence Once"
         Assert.assertEqual("Run Target Sequence Once", ro.name)
         GatorHelper.m_logger.WriteLine(ro.status)
         ro.user_comment = "Test User Comment"
         Assert.assertEqual("Test User Comment", ro.user_comment)
         GatorHelper.m_logger.WriteLine(ro.user_comment)
-        roCopy: "ProfileRunOnce" = clr.Convert(ro.copy(), ProfileRunOnce)
+        roCopy: "ProfileRunOnce" = ProfileRunOnce(ro.copy())
         Assert.assertEqual(ro.mode, roCopy.mode)
         Assert.assertEqual(ro.status, roCopy.status)
 
@@ -3805,26 +3805,26 @@ class GatorHelper(object):
         iAgVAProfile: "IProfile", maneuver: "MissionControlSequenceManeuver", ts: "MissionControlSequenceTargetSequence"
     ):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.SEED_FINITE_MANEUVER)
-        sfm: "ProfileSeedFiniteManeuver" = clr.Convert(iAgVAProfile, ProfileSeedFiniteManeuver)
+        sfm: "ProfileSeedFiniteManeuver" = ProfileSeedFiniteManeuver(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, sfm, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(sfm)
 
-        (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (sfm).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, sfm.mode)
-        (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (sfm).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, sfm.mode)
         with pytest.raises(Exception):
-            (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.ITERATE
+            (sfm).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(sfm, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (sfm).mode = PROFILE_MODE.RUN_ONCE
         sfm.set_segment(maneuver)
-        Assert.assertEqual((clr.Convert(maneuver, IComponentInfo)).name, sfm.segment_name)
-        sfm.segment_name = (clr.Convert(maneuver, IComponentInfo)).name
-        Assert.assertEqual((clr.Convert(maneuver, IComponentInfo)).name, sfm.segment_name)
+        Assert.assertEqual((IComponentInfo(maneuver)).name, sfm.segment_name)
+        sfm.segment_name = (IComponentInfo(maneuver)).name
+        Assert.assertEqual((IComponentInfo(maneuver)).name, sfm.segment_name)
         Assert.assertEqual("Seed Finite Maneuver", sfm.name)
         GatorHelper.m_logger.WriteLine(sfm.status)
         GatorHelper.m_logger.WriteLine(sfm.user_comment)
-        sfmCopy: "ProfileSeedFiniteManeuver" = clr.Convert(sfm.copy(), ProfileSeedFiniteManeuver)
+        sfmCopy: "ProfileSeedFiniteManeuver" = ProfileSeedFiniteManeuver(sfm.copy())
         Assert.assertEqual(sfm.mode, sfmCopy.mode)
         Assert.assertEqual(sfm.segment_name, sfmCopy.segment_name)
         Assert.assertEqual(sfm.status, sfmCopy.status)
@@ -3834,7 +3834,7 @@ class GatorHelper(object):
         iAgVAProfile: "IProfile", stopSeg: "MissionControlSequenceStop", ts: "MissionControlSequenceTargetSequence"
     ):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.CHANGE_STOP_SEGMENT)
-        css: "ProfileChangeStopSegment" = clr.Convert(iAgVAProfile, ProfileChangeStopSegment)
+        css: "ProfileChangeStopSegment" = ProfileChangeStopSegment(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, css, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(css)
 
@@ -3842,14 +3842,14 @@ class GatorHelper(object):
         Assert.assertEqual("myStop", css.segment_name)
         css.segment_name = "myStop"
         Assert.assertEqual("myStop", css.segment_name)
-        (clr.Convert(css, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (css).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, css.mode)
-        (clr.Convert(css, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (css).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, css.mode)
         with pytest.raises(Exception):
-            (clr.Convert(css, IProfile)).mode = PROFILE_MODE.ITERATE
+            (css).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(css, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (css).mode = PROFILE_MODE.RUN_ONCE
         css.state = STATE.DISABLED
         Assert.assertEqual(STATE.DISABLED, css.state)
         css.state = STATE.ENABLED
@@ -3858,7 +3858,7 @@ class GatorHelper(object):
         css.user_comment = "My User Comment"
         Assert.assertEqual("My User Comment", css.user_comment)
 
-        cssCopy: "ProfileChangeStopSegment" = clr.Convert(css.copy(), ProfileChangeStopSegment)
+        cssCopy: "ProfileChangeStopSegment" = ProfileChangeStopSegment(css.copy())
         Assert.assertEqual(css.mode, cssCopy.mode)
         Assert.assertEqual(css.segment_name, cssCopy.segment_name)
         Assert.assertEqual(css.state, cssCopy.state)
@@ -3868,7 +3868,7 @@ class GatorHelper(object):
         iAgVAProfile: "IProfile", returnSeg: "MissionControlSequenceReturn", ts: "MissionControlSequenceTargetSequence"
     ):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.CHANGE_RETURN_SEGMENT)
-        crs: "ProfileChangeReturnSegment" = clr.Convert(iAgVAProfile, ProfileChangeReturnSegment)
+        crs: "ProfileChangeReturnSegment" = ProfileChangeReturnSegment(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, crs, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(crs)
 
@@ -3878,14 +3878,14 @@ class GatorHelper(object):
         crs.set_segment(returnSeg)
         Assert.assertEqual("myReturn", crs.segment_name)
         crs.segment_name = "myReturn"
-        (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (crs).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, crs.mode)
-        (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (crs).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, crs.mode)
         with pytest.raises(Exception):
-            (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.ITERATE
+            (crs).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(crs, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (crs).mode = PROFILE_MODE.RUN_ONCE
         crs.state = RETURN_CONTROL.DISABLE
         Assert.assertEqual(RETURN_CONTROL.DISABLE, crs.state)
         crs.state = RETURN_CONTROL.ENABLE
@@ -3894,7 +3894,7 @@ class GatorHelper(object):
         Assert.assertEqual(RETURN_CONTROL.ENABLE_EXCEPT_PROFILES_BYPASS, crs.state)
         GatorHelper.m_logger.WriteLine(crs.status)
         GatorHelper.m_logger.WriteLine(crs.user_comment)
-        crsCopy: "ProfileChangeReturnSegment" = clr.Convert(crs.copy(), ProfileChangeReturnSegment)
+        crsCopy: "ProfileChangeReturnSegment" = ProfileChangeReturnSegment(crs.copy())
 
         Assert.assertEqual(crs.mode, crsCopy.mode)
         Assert.assertEqual(crs.segment_name, crsCopy.segment_name)
@@ -3908,7 +3908,7 @@ class GatorHelper(object):
         ts: "MissionControlSequenceTargetSequence",
     ):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.CHANGE_STOPPING_CONDITION_STATE)
-        state: "ProfileChangeStoppingConditionState" = clr.Convert(iAgVAProfile, ProfileChangeStoppingConditionState)
+        state: "ProfileChangeStoppingConditionState" = ProfileChangeStoppingConditionState(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, state, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(condition)
 
@@ -3931,14 +3931,14 @@ class GatorHelper(object):
         Assert.assertEqual("Change Stopping Condition State", state.name)
         GatorHelper.m_logger.WriteLine(state.status)
 
-        (clr.Convert(state, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (state).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, state.mode)
-        (clr.Convert(state, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (state).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, state.mode)
         with pytest.raises(Exception):
-            (clr.Convert(state, IProfile)).mode = PROFILE_MODE.ITERATE
+            (state).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(state, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (state).mode = PROFILE_MODE.RUN_ONCE
 
         state.state = STATE.ENABLED
         Assert.assertEqual(STATE.ENABLED, state.state)
@@ -3949,16 +3949,14 @@ class GatorHelper(object):
             state.set_trigger(clr.CastAs(condition, StoppingCondition))
 
         state.set_trigger(clr.CastAs(condition.properties, StoppingCondition))
-        Assert.assertEqual((clr.Convert(condition, IComponentInfo)).name, state.trigger_name)
+        Assert.assertEqual((IComponentInfo(condition)).name, state.trigger_name)
         state.trigger_name = "Duration"
         Assert.assertEqual("Duration", state.trigger_name)
 
         with pytest.raises(Exception):
             state.trigger_name = "Bogus"
 
-        stateCopy: "ProfileChangeStoppingConditionState" = clr.Convert(
-            state.copy(), ProfileChangeStoppingConditionState
-        )
+        stateCopy: "ProfileChangeStoppingConditionState" = ProfileChangeStoppingConditionState(state.copy())
         Assert.assertEqual(stateCopy.segment_name, state.segment_name)
         Assert.assertEqual(stateCopy.mode, state.mode)
         Assert.assertEqual(stateCopy.state, stateCopy.state)
@@ -3970,32 +3968,30 @@ class GatorHelper(object):
         iAgVAProfile: "IProfile", maneuver: "MissionControlSequenceManeuver", ts: "MissionControlSequenceTargetSequence"
     ):
         Assert.assertEqual(iAgVAProfile.type, PROFILE.CHANGE_MANEUVER_TYPE)
-        cmt: "ProfileChangeManeuverType" = clr.Convert(iAgVAProfile, ProfileChangeManeuverType)
+        cmt: "ProfileChangeManeuverType" = ProfileChangeManeuverType(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, cmt, PROFILE_MODE.NOT_ACTIVE)
         GatorHelper.TestRuntimeTypeInfo(cmt)
 
         cmt.name = "My Change"
         Assert.assertEqual("My Change", cmt.name)
-        (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.NOT_ACTIVE
+        (cmt).mode = PROFILE_MODE.NOT_ACTIVE
         Assert.assertEqual(PROFILE_MODE.NOT_ACTIVE, cmt.mode)
-        (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.ACTIVE
+        (cmt).mode = PROFILE_MODE.ACTIVE
         Assert.assertEqual(PROFILE_MODE.ACTIVE, cmt.mode)
         with pytest.raises(Exception):
-            (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.ITERATE
+            (cmt).mode = PROFILE_MODE.ITERATE
         with pytest.raises(Exception):
-            (clr.Convert(cmt, IProfile)).mode = PROFILE_MODE.RUN_ONCE
+            (cmt).mode = PROFILE_MODE.RUN_ONCE
         cmt.segment = maneuver
-        Assert.assertEqual("TMan", (clr.Convert(cmt.segment, IComponentInfo)).name)
+        Assert.assertEqual("TMan", (IComponentInfo(cmt.segment)).name)
         cmt.maneuver_type = MANEUVER_TYPE.FINITE
         Assert.assertEqual(MANEUVER_TYPE.FINITE, cmt.maneuver_type)
         cmt.maneuver_type = MANEUVER_TYPE.IMPULSIVE
         Assert.assertEqual(MANEUVER_TYPE.IMPULSIVE, cmt.maneuver_type)
         GatorHelper.m_logger.WriteLine(cmt.status)
         GatorHelper.m_logger.WriteLine(cmt.user_comment)
-        cmtCopy: "ProfileChangeManeuverType" = clr.Convert(cmt.copy(), ProfileChangeManeuverType)
-        Assert.assertEqual(
-            (clr.Convert(cmtCopy.segment, IComponentInfo)).name, (clr.Convert(cmt.segment, IComponentInfo)).name
-        )
+        cmtCopy: "ProfileChangeManeuverType" = ProfileChangeManeuverType(cmt.copy())
+        Assert.assertEqual((IComponentInfo(cmtCopy.segment)).name, (IComponentInfo(cmt.segment)).name)
 
     @staticmethod
     def TestSequence(sequence: "IMissionControlSequenceSequence", type: "SEGMENT_TYPE", isFromCM: bool):
@@ -4270,7 +4266,7 @@ class GatorHelper(object):
         newWrapper.calc_object_name = "Maneuver/DeltaV"
         Assert.assertEqual("DeltaV", newWrapper.calc_object_name)
         deltaV: "StateCalcDeltaV" = clr.CastAs(newWrapper.calc_object, StateCalcDeltaV)
-        Assert.assertEqual("DeltaV", (clr.Convert(deltaV, IComponentInfo)).name)
+        Assert.assertEqual("DeltaV", (IComponentInfo(deltaV)).name)
         newWrapper.unit = "m/sec"
         Assert.assertEqual("m/sec", newWrapper.unit)
         newWrapper.unit = "mi/hr"
@@ -4416,7 +4412,7 @@ class GatorHelper(object):
         # IMPULSIVE
         maneuver.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
         Assert.assertEqual(MANEUVER_TYPE.IMPULSIVE, maneuver.maneuver_type)
-        impulse: "ManeuverImpulsive" = clr.Convert(maneuver.maneuver, ManeuverImpulsive)
+        impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
 
         impulse.set_propulsion_method(PROPULSION_METHOD.THRUSTER_SET, "Thruster Set")
         Assert.assertEqual(PROPULSION_METHOD.THRUSTER_SET, impulse.propulsion_method)
@@ -4434,8 +4430,8 @@ class GatorHelper(object):
         # VELOCITY_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.VELOCITY_VECTOR, impulse.attitude_control_type)
-        velVec: "AttitudeControlImpulsiveVelocityVector" = clr.Convert(
-            impulse.attitude_control, AttitudeControlImpulsiveVelocityVector
+        velVec: "AttitudeControlImpulsiveVelocityVector" = AttitudeControlImpulsiveVelocityVector(
+            impulse.attitude_control
         )
         GatorHelper.TestAttitudeControl(velVec)
         GatorHelper.TestRuntimeTypeInfo(velVec)
@@ -4459,8 +4455,8 @@ class GatorHelper(object):
         # ANTI_VELOCITY_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR, impulse.attitude_control_type)
-        antiVelVec: "AttitudeControlImpulsiveAntiVelocityVector" = clr.Convert(
-            impulse.attitude_control, AttitudeControlImpulsiveAntiVelocityVector
+        antiVelVec: "AttitudeControlImpulsiveAntiVelocityVector" = AttitudeControlImpulsiveAntiVelocityVector(
+            impulse.attitude_control
         )
         GatorHelper.TestAttitudeControl(antiVelVec)
         GatorHelper.TestRuntimeTypeInfo(antiVelVec)
@@ -4479,9 +4475,7 @@ class GatorHelper(object):
         # ATTITUDE
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.ATTITUDE)
         Assert.assertEqual(ATTITUDE_CONTROL.ATTITUDE, impulse.attitude_control_type)
-        att: "AttitudeControlImpulsiveAttitude" = clr.Convert(
-            impulse.attitude_control, AttitudeControlImpulsiveAttitude
-        )
+        att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
         GatorHelper.TestAttitudeControl(att)
         GatorHelper.TestRuntimeTypeInfo(att)
 
@@ -4511,7 +4505,7 @@ class GatorHelper(object):
         # FILE
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.FILE)
         Assert.assertEqual(ATTITUDE_CONTROL.FILE, impulse.attitude_control_type)
-        file: "AttitudeControlImpulsiveFile" = clr.Convert(impulse.attitude_control, AttitudeControlImpulsiveFile)
+        file: "AttitudeControlImpulsiveFile" = AttitudeControlImpulsiveFile(impulse.attitude_control)
         GatorHelper.TestAttitudeControl(file)
         GatorHelper.TestRuntimeTypeInfo(file)
 
@@ -4529,9 +4523,7 @@ class GatorHelper(object):
         # THRUST_VECTOR
         impulse.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.THRUST_VECTOR, impulse.attitude_control_type)
-        thrust: "AttitudeControlImpulsiveThrustVector" = clr.Convert(
-            impulse.attitude_control, AttitudeControlImpulsiveThrustVector
-        )
+        thrust: "AttitudeControlImpulsiveThrustVector" = AttitudeControlImpulsiveThrustVector(impulse.attitude_control)
         GatorHelper.TestAttitudeControl(thrust)
         GatorHelper.TestRuntimeTypeInfo(thrust)
 
@@ -4578,7 +4570,7 @@ class GatorHelper(object):
         # FINITE
         maneuver.set_maneuver_type(MANEUVER_TYPE.FINITE)
         Assert.assertEqual(MANEUVER_TYPE.FINITE, maneuver.maneuver_type)
-        finite: "ManeuverFinite" = clr.Convert(maneuver.maneuver, ManeuverFinite)
+        finite: "ManeuverFinite" = ManeuverFinite(maneuver.maneuver)
 
         finite.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, "Polynomial Thrust and Isp")
         Assert.assertEqual("Polynomial Thrust and Isp", finite.propulsion_method_value)
@@ -4599,8 +4591,8 @@ class GatorHelper(object):
         # ANTI_VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR, finite.attitude_control_type)
-        fAntiVel: "AttitudeControlFiniteAntiVelocityVector" = clr.Convert(
-            finite.attitude_control, AttitudeControlFiniteAntiVelocityVector
+        fAntiVel: "AttitudeControlFiniteAntiVelocityVector" = AttitudeControlFiniteAntiVelocityVector(
+            finite.attitude_control
         )
         GatorHelper.TestAttitudeControl(fAntiVel)
         GatorHelper.TestRuntimeTypeInfo(fAntiVel)
@@ -4623,9 +4615,7 @@ class GatorHelper(object):
         # VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.VELOCITY_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.VELOCITY_VECTOR, finite.attitude_control_type)
-        fVelVec: "AttitudeControlFiniteVelocityVector" = clr.Convert(
-            finite.attitude_control, AttitudeControlFiniteVelocityVector
-        )
+        fVelVec: "AttitudeControlFiniteVelocityVector" = AttitudeControlFiniteVelocityVector(finite.attitude_control)
         GatorHelper.TestAttitudeControl(fVelVec)
         GatorHelper.TestRuntimeTypeInfo(fVelVec)
 
@@ -4647,7 +4637,7 @@ class GatorHelper(object):
         # ATTITUDE
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ATTITUDE)
         Assert.assertEqual(ATTITUDE_CONTROL.ATTITUDE, finite.attitude_control_type)
-        fAtt: "AttitudeControlFiniteAttitude" = clr.Convert(finite.attitude_control, AttitudeControlFiniteAttitude)
+        fAtt: "AttitudeControlFiniteAttitude" = AttitudeControlFiniteAttitude(finite.attitude_control)
         GatorHelper.TestAttitudeControl(fAtt)
         GatorHelper.TestRuntimeTypeInfo(fAtt)
 
@@ -4675,9 +4665,7 @@ class GatorHelper(object):
         # THRUST_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
         Assert.assertEqual(ATTITUDE_CONTROL.THRUST_VECTOR, finite.attitude_control_type)
-        fthrust: "AttitudeControlFiniteThrustVector" = clr.Convert(
-            finite.attitude_control, AttitudeControlFiniteThrustVector
-        )
+        fthrust: "AttitudeControlFiniteThrustVector" = AttitudeControlFiniteThrustVector(finite.attitude_control)
         GatorHelper.TestAttitudeControl(fthrust)
         GatorHelper.TestRuntimeTypeInfo(fthrust)
 
@@ -4712,9 +4700,7 @@ class GatorHelper(object):
         # TIME_VARYING
         finite.set_attitude_control_type(ATTITUDE_CONTROL.TIME_VARYING)
         Assert.assertEqual(ATTITUDE_CONTROL.TIME_VARYING, finite.attitude_control_type)
-        ftimevary: "AttitudeControlFiniteTimeVarying" = clr.Convert(
-            finite.attitude_control, AttitudeControlFiniteTimeVarying
-        )
+        ftimevary: "AttitudeControlFiniteTimeVarying" = AttitudeControlFiniteTimeVarying(finite.attitude_control)
         GatorHelper.TestAttitudeControl(ftimevary)
         GatorHelper.TestRuntimeTypeInfo(ftimevary)
 
@@ -4760,7 +4746,7 @@ class GatorHelper(object):
         # FILE
         finite.set_attitude_control_type(ATTITUDE_CONTROL.FILE)
         Assert.assertEqual(ATTITUDE_CONTROL.FILE, finite.attitude_control_type)
-        ffile: "AttitudeControlFiniteFile" = clr.Convert(finite.attitude_control, AttitudeControlFiniteFile)
+        ffile: "AttitudeControlFiniteFile" = AttitudeControlFiniteFile(finite.attitude_control)
         GatorHelper.TestAttitudeControl(ffile)
         GatorHelper.TestRuntimeTypeInfo(ffile)
 
@@ -4775,7 +4761,7 @@ class GatorHelper(object):
         # PLUGIN
         finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
         Assert.assertEqual(ATTITUDE_CONTROL.PLUGIN, finite.attitude_control_type)
-        plugin: "AttitudeControlFinitePlugin" = clr.Convert(finite.attitude_control, AttitudeControlFinitePlugin)
+        plugin: "AttitudeControlFinitePlugin" = AttitudeControlFinitePlugin(finite.attitude_control)
         GatorHelper.TestAttitudeControl(plugin)
         GatorHelper.TestRuntimeTypeInfo(plugin)
 
@@ -4786,74 +4772,6 @@ class GatorHelper(object):
         Assert.assertEqual("Plugin Attitude Controller", plugin.plugin_name)
         with pytest.raises(Exception):
             plugin.select_plugin_by_name("Plugin Bogus")
-        if not OSHelper.IsLinux():
-            # CSharp AttCtl Plugin
-            finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
-            plugin = clr.Convert(finite.attitude_control, AttitudeControlFinitePlugin)
-            plugin.select_plugin_by_name("CSharp AttCtrl Example")
-            Assert.assertEqual("CSharp AttCtrl Example", plugin.plugin_name)
-            GatorHelper.TestAttitudeControl(plugin)
-            GatorHelper.TestRuntimeTypeInfo(plugin)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(11, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("Y0", availableProperties[1])
-            pluginProperties.set_property("Y0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("Y0"))
-            pluginProperties.set_property("Y1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("Y1"))
-            pluginProperties.set_property("Y2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("Y2"))
-            pluginProperties.set_property("Ys", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ys"))
-            pluginProperties.set_property("Yc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Yc"))
-            pluginProperties.set_property("P0", 0.6)
-            Assert.assertEqual(0.6, pluginProperties.get_property("P0"))
-            pluginProperties.set_property("P1", 0.7)
-            Assert.assertEqual(0.7, pluginProperties.get_property("P1"))
-            pluginProperties.set_property("P2", 0.8)
-            Assert.assertEqual(0.8, pluginProperties.get_property("P2"))
-            pluginProperties.set_property("Ps", 0.9)
-            Assert.assertEqual(0.9, pluginProperties.get_property("Ps"))
-            pluginProperties.set_property("Pc", 0.99)
-            Assert.assertEqual(0.99, pluginProperties.get_property("Pc"))
-
-            # JScript AttCtl Plugin
-            finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
-            plugin = clr.Convert(finite.attitude_control, AttitudeControlFinitePlugin)
-            plugin.select_plugin_by_name("JScript AttCtrl Example")
-            Assert.assertEqual("JScript AttCtrl Example", plugin.plugin_name)
-            GatorHelper.TestAttitudeControl(plugin)
-            GatorHelper.TestRuntimeTypeInfo(plugin)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(11, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("Y0", availableProperties[1])
-            pluginProperties.set_property("Y0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("Y0"))
-            pluginProperties.set_property("Y1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("Y1"))
-            pluginProperties.set_property("Y2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("Y2"))
-            pluginProperties.set_property("Ys", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ys"))
-            pluginProperties.set_property("Yc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Yc"))
-            pluginProperties.set_property("P0", 0.6)
-            Assert.assertEqual(0.6, pluginProperties.get_property("P0"))
-            pluginProperties.set_property("P1", 0.7)
-            Assert.assertEqual(0.7, pluginProperties.get_property("P1"))
-            pluginProperties.set_property("P2", 0.8)
-            Assert.assertEqual(0.8, pluginProperties.get_property("P2"))
-            pluginProperties.set_property("Ps", 0.9)
-            Assert.assertEqual(0.9, pluginProperties.get_property("Ps"))
-            pluginProperties.set_property("Pc", 0.99)
-            Assert.assertEqual(0.99, pluginProperties.get_property("Pc"))
 
         propagate: "ManeuverFinitePropagator" = finite.propagator
 
@@ -5715,7 +5633,7 @@ class GatorHelper(object):
 
         launch.set_display_system_type(LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC)
         Assert.assertEqual(LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEOCENTRIC, launch.display_system_type)
-        llr: "DisplaySystemGeocentric" = clr.Convert(launch.display_system, DisplaySystemGeocentric)
+        llr: "DisplaySystemGeocentric" = DisplaySystemGeocentric(launch.display_system)
         llr.latitude = 29
         Assert.assertAlmostEqual(29, float(llr.latitude), delta=1e-08)
         llr.longitude = -81
@@ -5725,7 +5643,7 @@ class GatorHelper(object):
 
         launch.set_display_system_type(LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEODETIC)
         Assert.assertEqual(LAUNCH_DISPLAY_SYSTEM.DISPLAY_SYSTEM_GEODETIC, launch.display_system_type)
-        lla: "DisplaySystemGeodetic" = clr.Convert(launch.display_system, DisplaySystemGeodetic)
+        lla: "DisplaySystemGeodetic" = DisplaySystemGeodetic(launch.display_system)
         lla.latitude = 30
         Assert.assertAlmostEqual(30, float(lla.latitude), delta=1e-08)
         lla.longitude = -82
@@ -5742,7 +5660,7 @@ class GatorHelper(object):
 
         launch.set_burnout_type(BURNOUT_TYPE.GEOCENTRIC)
         Assert.assertEqual(BURNOUT_TYPE.GEOCENTRIC, launch.burnout_type)
-        bLLR: "BurnoutGeocentric" = clr.Convert(launch.burnout, BurnoutGeocentric)
+        bLLR: "BurnoutGeocentric" = BurnoutGeocentric(launch.burnout)
         bLLR.latitude = 30
         Assert.assertAlmostEqual(30, float(bLLR.latitude), delta=1e-08)
         bLLR.longitude = 31
@@ -5752,7 +5670,7 @@ class GatorHelper(object):
 
         launch.set_burnout_type(BURNOUT_TYPE.GEODETIC)
         Assert.assertEqual(BURNOUT_TYPE.GEODETIC, launch.burnout_type)
-        bLLA: "BurnoutGeodetic" = clr.Convert(launch.burnout, BurnoutGeodetic)
+        bLLA: "BurnoutGeodetic" = BurnoutGeodetic(launch.burnout)
         bLLA.latitude = 32
         Assert.assertEqual(32, bLLA.latitude)
         bLLA.longitude = 34
@@ -5762,7 +5680,7 @@ class GatorHelper(object):
 
         launch.set_burnout_type(BURNOUT_TYPE.LAUNCH_AZ_ALTITUDE)
         Assert.assertEqual(BURNOUT_TYPE.LAUNCH_AZ_ALTITUDE, launch.burnout_type)
-        azAlt: "BurnoutLaunchAzAltitude" = clr.Convert(launch.burnout, BurnoutLaunchAzAltitude)
+        azAlt: "BurnoutLaunchAzAltitude" = BurnoutLaunchAzAltitude(launch.burnout)
         azAlt.azimuth = 30
         Assert.assertAlmostEqual(30, float(azAlt.azimuth), delta=1e-08)
         azAlt.down_range_dist = 1
@@ -5772,7 +5690,7 @@ class GatorHelper(object):
 
         launch.set_burnout_type(BURNOUT_TYPE.LAUNCH_AZ_RAD)
         Assert.assertEqual(BURNOUT_TYPE.LAUNCH_AZ_RAD, launch.burnout_type)
-        azRad: "BurnoutLaunchAzRadius" = clr.Convert(launch.burnout, BurnoutLaunchAzRadius)
+        azRad: "BurnoutLaunchAzRadius" = BurnoutLaunchAzRadius(launch.burnout)
         azRad.azimuth = 30
         Assert.assertAlmostEqual(30, float(azRad.azimuth), delta=0.001)
         azRad.down_range_dist = 1
@@ -5834,7 +5752,7 @@ class GatorHelper(object):
         # Test spherical and cartesian because only these two work for centralbody/fixed
         initState.set_element_type(ELEMENT_TYPE.SPHERICAL)
         Assert.assertEqual(ELEMENT_TYPE.SPHERICAL, initState.element_type)
-        spherical: "ElementSpherical" = clr.Convert(initState.element, ElementSpherical)
+        spherical: "ElementSpherical" = ElementSpherical(initState.element)
         spherical.declination = 1
         Assert.assertAlmostEqual(1.0, float(spherical.declination), delta=0.0001)
         spherical.horizontal_flight_path_angle = 1
@@ -5865,7 +5783,7 @@ class GatorHelper(object):
 
         initState.set_element_type(ELEMENT_TYPE.CARTESIAN)
         Assert.assertEqual(ELEMENT_TYPE.CARTESIAN, initState.element_type)
-        cart: "ElementCartesian" = clr.Convert(initState.element, ElementCartesian)
+        cart: "ElementCartesian" = ElementCartesian(initState.element)
         cart.x = 6670
         Assert.assertEqual(6670, cart.x)
         cart.y = 1
@@ -5886,9 +5804,7 @@ class GatorHelper(object):
 
         initState.set_element_type(ELEMENT_TYPE.TARGET_VECTOR_OUTGOING_ASYMPTOTE)
         Assert.assertEqual(ELEMENT_TYPE.TARGET_VECTOR_OUTGOING_ASYMPTOTE, initState.element_type)
-        outgoing: "ElementTargetVectorOutgoingAsymptote" = clr.Convert(
-            initState.element, ElementTargetVectorOutgoingAsymptote
-        )
+        outgoing: "ElementTargetVectorOutgoingAsymptote" = ElementTargetVectorOutgoingAsymptote(initState.element)
 
         outgoing.radius_of_periapsis = 6678.2
         Assert.assertAlmostEqual(6678.2, float(outgoing.radius_of_periapsis), delta=0.001)
@@ -5912,9 +5828,7 @@ class GatorHelper(object):
 
         initState.set_element_type(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE)
         Assert.assertEqual(ELEMENT_TYPE.TARGET_VECTOR_INCOMING_ASYMPTOTE, initState.element_type)
-        incoming: "ElementTargetVectorIncomingAsymptote" = clr.Convert(
-            initState.element, ElementTargetVectorIncomingAsymptote
-        )
+        incoming: "ElementTargetVectorIncomingAsymptote" = ElementTargetVectorIncomingAsymptote(initState.element)
         incoming.radius_of_periapsis = 6678.2
         Assert.assertAlmostEqual(6678.2, float(incoming.radius_of_periapsis), delta=0.001)
         incoming.c3_energy = -58
@@ -5937,7 +5851,7 @@ class GatorHelper(object):
 
         initState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
         Assert.assertEqual(ELEMENT_TYPE.KEPLERIAN, initState.element_type)
-        kep: "ElementKeplerian" = clr.Convert(initState.element, ElementKeplerian)
+        kep: "ElementKeplerian" = ElementKeplerian(initState.element)
         kep.arg_of_periapsis = 1
         Assert.assertAlmostEqual(1, float(kep.arg_of_periapsis), delta=0.001)
         kep.eccentricity = 0.01
@@ -6068,13 +5982,47 @@ class GatorHelper(object):
         mixedSpherical.velocity_magnitude = 7.9
         Assert.assertAlmostEqual(7.9, float(mixedSpherical.velocity_magnitude), delta=0.0001)
 
+        initState.set_element_type(ELEMENT_TYPE.SPHERICAL_RANGE_RATE)
+        Assert.assertEqual(ELEMENT_TYPE.SPHERICAL_RANGE_RATE, initState.element_type)
+        sphericalRangeRate: "ElementSphericalRangeRate" = clr.CastAs(initState.element, ElementSphericalRangeRate)
+
+        sphericalRangeRate.right_ascension = 10.0
+        Assert.assertAlmostEqual(10, float(sphericalRangeRate.right_ascension), delta=0.0001)
+
+        sphericalRangeRate.declination = -90
+        Assert.assertAlmostEqual(-90, float(sphericalRangeRate.declination), delta=0.0001)
+        sphericalRangeRate.declination = 90
+        Assert.assertAlmostEqual(90, float(sphericalRangeRate.declination), delta=0.0001)
+        sphericalRangeRate.declination = 80
+        Assert.assertAlmostEqual(80, float(sphericalRangeRate.declination), delta=0.0001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.declination = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.declination = 91
+
+        sphericalRangeRate.range = 1e-13
+        Assert.assertAlmostEqual(1e-13, sphericalRangeRate.range, delta=0.0001)
+        sphericalRangeRate.range = 100
+        Assert.assertAlmostEqual(100, sphericalRangeRate.range, delta=0.0001)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            sphericalRangeRate.range = 0
+
+        sphericalRangeRate.right_ascension_rate = 110
+        Assert.assertAlmostEqual(110, float(sphericalRangeRate.right_ascension_rate), delta=0.0001)
+
+        sphericalRangeRate.declination_rate = 120
+        Assert.assertAlmostEqual(120, float(sphericalRangeRate.declination_rate), delta=0.0001)
+
+        sphericalRangeRate.range_rate = 130
+        Assert.assertAlmostEqual(130, sphericalRangeRate.range_rate, delta=0.0001)
+
         # //////////////////////////////////////////////////////////////////////////////////
 
         oSat: "Satellite" = clr.CastAs(
             root.current_scenario.children.import_object(TestBase.GetScenarioFile("FEA118980", "Open_BPlane.sa")),
             Satellite,
         )
-        driver: "DriverMissionControlSequence" = clr.Convert(oSat.propagator, DriverMissionControlSequence)
+        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(oSat.propagator)
         _is: "MissionControlSequenceInitialState" = clr.CastAs(
             driver.main_sequence["Initial State"], MissionControlSequenceInitialState
         )
@@ -6255,21 +6203,21 @@ class GatorHelper(object):
 
     @staticmethod
     def TestProfileLambertProfile(iAgVAProfile: "IProfile", ts: "MissionControlSequenceTargetSequence"):
-        maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
+        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-")
         )
-        propagate: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
+        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
         )
-        maneuver1: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MissionControlSequenceManeuver
+        maneuver1: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-")
         )
-        propagate1: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"), MissionControlSequencePropagate
+        propagate1: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-")
         )
 
         Assert.assertEqual(iAgVAProfile.type, PROFILE.LAMBERT_PROFILE)
-        lambert: "ProfileLambertProfile" = clr.Convert(iAgVAProfile, ProfileLambertProfile)
+        lambert: "ProfileLambertProfile" = ProfileLambertProfile(iAgVAProfile)
         GatorHelper.Test_IAgVAProfile(ts, lambert, PROFILE_MODE.ACTIVE)
 
         lambert.coord_system_name = "CentralBody/Earth Fixed"
@@ -6524,21 +6472,21 @@ class GatorHelper(object):
 
     @staticmethod
     def TestProfileLambertSearchProfile(iAgVAProfile: "IProfile", ts: "MissionControlSequenceTargetSequence"):
-        maneuver: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"), MissionControlSequenceManeuver
+        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-")
         )
-        propagate: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
+        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
         )
-        maneuver1: "MissionControlSequenceManeuver" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MissionControlSequenceManeuver
+        maneuver1: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
+            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-")
         )
-        propagate1: "MissionControlSequencePropagate" = clr.Convert(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"), MissionControlSequencePropagate
+        propagate1: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
+            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-")
         )
 
         Assert.assertEqual(iAgVAProfile.type, PROFILE.LAMBERT_SEARCH_PROFILE)
-        lambert: "ProfileLambertSearchProfile" = clr.Convert(iAgVAProfile, ProfileLambertSearchProfile)
+        lambert: "ProfileLambertSearchProfile" = ProfileLambertSearchProfile(iAgVAProfile)
 
         GatorHelper.Test_IAgVAProfile(ts, lambert, PROFILE_MODE.ACTIVE)
 
@@ -6799,13 +6747,11 @@ class GatorHelper(object):
                 root.current_scenario.children.import_object(TestBase.GetScenarioFile("ENG116918", "GoldenSection.sa")),
                 Satellite,
             )
-            driver: "DriverMissionControlSequence" = clr.Convert(oSat.propagator, DriverMissionControlSequence)
+            driver: "DriverMissionControlSequence" = DriverMissionControlSequence(oSat.propagator)
             _ts: "MissionControlSequenceTargetSequence" = clr.CastAs(
                 driver.main_sequence["Target Sequence"], MissionControlSequenceTargetSequence
             )
-            profGoldenSection: "ProfileGoldenSection" = clr.Convert(
-                _ts.profiles["Golden Section Search"], ProfileGoldenSection
-            )
+            profGoldenSection: "ProfileGoldenSection" = ProfileGoldenSection(_ts.profiles["Golden Section Search"])
             Assert.assertEqual("Golden Section Search", profGoldenSection.name)
 
             GatorHelper.TestRuntimeTypeInfo(profGoldenSection)
@@ -6940,7 +6886,7 @@ class GatorHelper(object):
             (clr.CastAs(man1, IMissionControlSequenceSegment)).results.add("Epoch")
 
             Assert.assertEqual(iAgVAProfile.type, PROFILE.GRID_SEARCH)
-            profGridSearch: "ProfileGridSearch" = clr.Convert(iAgVAProfile, ProfileGridSearch)
+            profGridSearch: "ProfileGridSearch" = ProfileGridSearch(iAgVAProfile)
             Assert.assertEqual("One Dimensional Grid Search", profGridSearch.name)
             GatorHelper.TestRuntimeTypeInfo(profGridSearch)
 
@@ -7125,7 +7071,7 @@ class GatorHelper(object):
             with pytest.raises(Exception):
                 profBisection.maximum_iterations = -1
 
-            spCopy: "ProfileBisection" = clr.Convert(profBisection.copy(), ProfileBisection)
+            spCopy: "ProfileBisection" = ProfileBisection(profBisection.copy())
 
             manSegment.results.remove("Epoch")
             maneuver.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)

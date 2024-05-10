@@ -166,7 +166,12 @@ class EarlyBoundTests(TestBase):
         arSupportedContourTypes = EarlyBoundTests.antennaContourGraphics.supported_contour_types
         Assert.assertEqual(1, len(arSupportedContourTypes))
         Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.GAIN, clr.Convert(int(arSupportedContourTypes[0][0]), ANTENNA_CONTOUR_TYPE)
+            ANTENNA_CONTOUR_TYPE.GAIN,
+            (
+                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[0][0]))
+                if (int(arSupportedContourTypes[0][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
+                else int(arSupportedContourTypes[0][0])
+            ),
         )
         Assert.assertEqual("Antenna Gain", arSupportedContourTypes[0][1])
 
@@ -1041,18 +1046,33 @@ class EarlyBoundTests(TestBase):
             if (
                 (
                     (
-                        clr.Convert(int(arRefrSuppTypes[1][0]), SENSOR_REFRACTION_TYPE)
+                        (
+                            SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
+                            if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
+                            else int(arRefrSuppTypes[1][0])
+                        )
                         == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD
                     )
                 )
                 or (
                     (
-                        clr.Convert(int(arRefrSuppTypes[1][0]), SENSOR_REFRACTION_TYPE)
+                        (
+                            SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
+                            if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
+                            else int(arRefrSuppTypes[1][0])
+                        )
                         == SENSOR_REFRACTION_TYPE.ITU_R_P834_4
                     )
                 )
             ) or (
-                (clr.Convert(int(arRefrSuppTypes[1][0]), SENSOR_REFRACTION_TYPE) == SENSOR_REFRACTION_TYPE.SCF_METHOD)
+                (
+                    (
+                        SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
+                        if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
+                        else int(arRefrSuppTypes[1][0])
+                    )
+                    == SENSOR_REFRACTION_TYPE.SCF_METHOD
+                )
             ):
                 pass
             else:
@@ -2673,7 +2693,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.VOVector, True)
 
     # endregion

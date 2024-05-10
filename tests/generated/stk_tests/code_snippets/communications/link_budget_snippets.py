@@ -35,15 +35,15 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        scenario: "IStkObject" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, IStkObject)
+        scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
 
         LinkBudgetSnippets.m_Satellite = scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
         )
 
-        sat: "Satellite" = clr.Convert(LinkBudgetSnippets.m_Satellite, Satellite)
+        sat: "Satellite" = Satellite(LinkBudgetSnippets.m_Satellite)
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.Convert(sat.propagator, VehiclePropagatorTwoBody)
+        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         twoBody.initial_state.representation.epoch = "1 Jan 2012 12:00:00.000"
         twoBody.initial_state.representation.assign_classical(
@@ -153,7 +153,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
             index1: int = 0
             while index1 < len(timeValues):
-                time: str = clr.Convert(timeValues[index1], str)
+                time: str = str(timeValues[index1])
                 ebnoVal: float = float(ebno[index1])
                 berVal: float = float(ber[index1])
                 Console.WriteLine("{0}: Eb/No={1} BER={2}", time, ebnoVal, berVal)
@@ -168,7 +168,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
     # region ComputeLinkBudgetComplex
     def test_ComputeLinkBudgetComplex(self):
-        scenario: "Scenario" = clr.Convert(CodeSnippetsTestBase.m_Root.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(CodeSnippetsTestBase.m_Root.current_scenario)
 
         self.ComputeLinkBudgetComplex(
             LinkBudgetSnippets.m_XmtrObject,
@@ -276,7 +276,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
             index1: int = 0
             while index1 < len(timeValues):
-                time: str = clr.Convert(timeValues[index1], str)
+                time: str = str(timeValues[index1])
                 xmtrGainVal: float = float(xmtrGain[index1])
                 rcvrGainVal: float = float(rcvrGain[index1])
                 ebnoVal: float = float(ebno[index1])

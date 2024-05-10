@@ -46,7 +46,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
 
     # region CreateAreaTargetOnCurrentScenarioCentralBody
     def test_CreateAreaTargetOnCurrentScenarioCentralBody(self):
-        (clr.Convert(self.m_Object, IStkObject)).unload()
+        (IStkObject(self.m_Object)).unload()
         self.CreateAreaTargetOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children[AreaTargetSnippets.m_DefaultName], AreaTarget

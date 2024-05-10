@@ -43,9 +43,7 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
         areaTarget: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "Airspace")
 
         try:
-            self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(
-                clr.Convert(TestBase.Application, StkObjectRoot)
-            )
+            self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(TestBase.Application)
 
         finally:
             areaTarget.unload()

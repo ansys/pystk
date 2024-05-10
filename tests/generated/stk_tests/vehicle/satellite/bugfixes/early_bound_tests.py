@@ -18,11 +18,11 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("SatelliteTests", "SatelliteTests.sc"))
-        EarlyBoundTests.AG_SAT = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2"), Satellite
+        EarlyBoundTests.AG_SAT = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2")
         )
         EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.Convert(EarlyBoundTests.AG_SAT.propagator, VehiclePropagatorTwoBody)).propagate()
+        (VehiclePropagatorTwoBody(EarlyBoundTests.AG_SAT.propagator)).propagate()
 
     @staticmethod
     def tearDownClass():
@@ -131,8 +131,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
+            timeEvent.time_event_type_data
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 
@@ -145,8 +145,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
+            timeEvent.time_event_type_data
         )
         Assert.assertEqual("TimeEvent2", data.unique_id)
 
@@ -163,8 +163,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER)
 
-        data: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-            timeEvent.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
+        data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
+            timeEvent.time_event_type_data
         )
         Assert.assertEqual("TimeEvent1", data.unique_id)
 

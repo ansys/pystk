@@ -109,7 +109,7 @@ class SEETHelper(object):
         # MagneticField Compute methods
         #
 
-        dp = clr.Convert(obj.data_providers["SEET Magnetic Field"], IDataProvider)
+        dp = IDataProvider(obj.data_providers["SEET Magnetic Field"])
         dp.allow_user_interface = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
@@ -240,7 +240,7 @@ class SEETHelper(object):
         #
 
         # Meteor Impact Flux
-        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], DataProviderGroup)
+        dpg = DataProviderGroup(obj.data_providers["SEET Meteor Flux"])
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Impacts"], IDataProvider)
         dp.allow_user_interface = False
@@ -264,7 +264,7 @@ class SEETHelper(object):
         Console.WriteLine(stopDP)
 
         # Meteor Damaging Impact Flux
-        dpg = clr.Convert(obj.data_providers["SEET Meteor Flux"], DataProviderGroup)
+        dpg = DataProviderGroup(obj.data_providers["SEET Meteor Flux"])
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Damaging Impacts"], IDataProvider)
         dp.allow_user_interface = False
@@ -355,12 +355,12 @@ class SEETHelper(object):
 
         seetSat: "Satellite" = clr.CastAs(obj, Satellite)
         seetSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twobody: "VehiclePropagatorTwoBody" = clr.Convert(seetSat.propagator, VehiclePropagatorTwoBody)
-        classical: "OrbitStateClassical" = clr.Convert(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+        twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(seetSat.propagator)
+        classical: "OrbitStateClassical" = OrbitStateClassical(
+            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
         classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
-        period: "ClassicalSizeShapePeriod" = clr.Convert(classical.size_shape, ClassicalSizeShapePeriod)
+        period: "ClassicalSizeShapePeriod" = ClassicalSizeShapePeriod(classical.size_shape)
         period.eccentricity = 0.2
         period.period = 10000
         twobody.initial_state.representation.assign(classical)
@@ -370,7 +370,7 @@ class SEETHelper(object):
         # SAA Flux Intensity Compute methods
         #
 
-        dpg = clr.Convert(obj.data_providers["SEET SAA Flux Intensity"], DataProviderGroup)
+        dpg = DataProviderGroup(obj.data_providers["SEET SAA Flux Intensity"])
         dpColl = dpg.group
         dpx: "IDataProviderInfo"
         for dpx in dpColl:
@@ -391,7 +391,7 @@ class SEETHelper(object):
         # Environment - Temperature Compute methods
         #
 
-        dp = clr.Convert(obj.data_providers["SEET Vehicle Temperature"], IDataProvider)
+        dp = IDataProvider(obj.data_providers["SEET Vehicle Temperature"])
         dp.allow_user_interface = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
         result = tv.exec(startTime, stopTime, 60)
@@ -559,9 +559,9 @@ class SEETHelper(object):
         magFieldLine.line_width = LINE_WIDTH.WIDTH3
         Assert.assertEqual(LINE_WIDTH.WIDTH3, magFieldLine.line_width)
         with pytest.raises(Exception):
-            magFieldLine.line_width = clr.Convert((-1), LINE_WIDTH)
+            magFieldLine.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            magFieldLine.line_width = clr.Convert((11), LINE_WIDTH)
+            magFieldLine.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         magFieldLine.label_visible = False
         Assert.assertFalse(magFieldLine.label_visible)

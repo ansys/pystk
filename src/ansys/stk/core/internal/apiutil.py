@@ -1,5 +1,6 @@
 # Copyright 2020-2023, Ansys Government Initiatives 
 
+import gc
 import typing
 
 from ..utilities.exceptions import *
@@ -21,17 +22,17 @@ class InterfaceProxy(object):
         """Represent a valid interface."""
         return False
 
-    def query_interface(self, guid) -> "InterfaceProxy":
+    def query_interface(self, intf_metadata:dict) -> "InterfaceProxy":
         """Return a new object with the requested guid."""
         return InterfaceProxy()
 
-    def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
+    def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         pass
 
-    def get_property(self, intf_metatdata:dict, method_metadata:dict):
+    def get_property(self, intf_metadata:dict, method_metadata:dict):
         pass
 
-    def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
+    def set_property(self, intf_metadata:dict, method_metadata:dict, value):
         pass
 
 class EnumeratorProxy(object):
@@ -46,13 +47,39 @@ class EnumeratorProxy(object):
     def reset(self):
         """Reset the enumeration of the collection."""
 
+class SupportsDeleteCallback(object):
+    """Execute callbacks on object deletion."""
+    def __init__(self):
+        self.__dict__["_del_callbacks"] = []
+
+    def __del__(self):
+        for callback in self._del_callbacks:
+            callback()
+
+    def _add_delete_callback(self, callback:typing.Callable) -> None:
+        self._del_callbacks.append(callback)
+
 class OutArg(object):
     pass
+
+class GcDisabler(object):
+    """Temporarily disable garbage collection."""
+    def __init__(self):
+        self._is_gc_enabled = False
+    def __enter__(self):
+        if gc.isenabled():
+            self._is_gc_enabled = True
+            gc.disable()
+        return self
+    def __exit__(self, type, value, tb):
+        if self._is_gc_enabled:
+            gc.enable()
+        return False
 
 def initialize_from_source_object(this, sourceObject, interfaceType):
     this.__dict__["_intf"] = InterfaceProxy()
     if sourceObject is not None and sourceObject._intf is not None:
-        intf = sourceObject._intf.query_interface(interfaceType._metadata["uuid"])
+        intf = sourceObject._intf.query_interface(interfaceType._metadata)
         if intf is not None:
             this._private_init(intf)
             del(intf)
@@ -65,8 +92,8 @@ def get_interface_property(attrname, interfaceType):
     return None
 
 def set_interface_attribute(this, attrname, value, interfaceType, baseType):
-    if this._get_property(attrname) is not None:
-        this._get_property(attrname).__set__(this, value)
+    if interfaceType._get_property(this, attrname) is not None:
+        interfaceType._get_property(this, attrname).__set__(this, value)
     elif baseType is not None:
         baseType.__setattr__(this, attrname, value)
     else:
@@ -82,3 +109,31 @@ def set_class_attribute(this, attrname, value, classType, interfaceTypes):
         found_prop.__set__(this, value)
     else:
         raise STKAttributeError(f"{attrname} is not a recognized attribute in {classType.__name__}.")
+
+def _unquoted(s:str) -> str:
+    if s is not None and len(s) > 0:
+        if s[0] == "\"":
+            s = s[1:]
+        if len(s) > 0 and s[-1] == "\"":
+            s = s[:-1]
+    return s 
+
+def read_registry_key(key, value=None, root=None, silent_exception=False):
+    try:
+        import winreg
+        if root is None:
+            root = winreg.HKEY_CLASSES_ROOT
+        with winreg.OpenKey(root, key) as hkey:
+            (val, typ) = winreg.QueryValueEx(hkey, value)
+        return _unquoted(val)
+    except Exception as e:
+        if not silent_exception:
+            raise STKInitializationError(f"Error Reading Registry for {key}: {e}")
+        return None
+
+def winreg_stk_binary_dir():
+    try:
+        import winreg
+        return _unquoted(read_registry_key(f"SOFTWARE\\AGI\\STK\\12.0", root=winreg.HKEY_LOCAL_MACHINE, value="STKBinaryFolder"))
+    except Exception as e:
+        return None

@@ -38,9 +38,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
     def setUp(self):
         scenario: "IStkObject" = clr.CastAs(TestBase.Application.current_scenario, IStkObject)
         AviatorCodeSnippets.AG_Scenario = scenario
-        AviatorCodeSnippets.AG_AC = clr.Convert(
-            (scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")), Aircraft
-        )
+        AviatorCodeSnippets.AG_AC = Aircraft((scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")))
         # Set to Propagator to Aviator
         AviatorCodeSnippets.AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
         # Get the aircrafts route (still on the STKObjects side)
@@ -71,7 +69,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        (clr.Convert(AviatorCodeSnippets.AG_AC, IStkObject)).unload()
+        (IStkObject(AviatorCodeSnippets.AG_AC)).unload()
         AviatorCodeSnippets.AG_AC = None
         AviatorCodeSnippets.AG_AvtrAircraft.get_as_catalog_item().remove()
 

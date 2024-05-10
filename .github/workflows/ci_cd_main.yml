@@ -21,7 +21,7 @@ jobs:
     steps:
 
       - name: "Build project documentation excluding 'API' and 'Example' sections"
-        uses: ansys/actions/doc-build@v5
+        uses: ansys/actions/doc-build@v6
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
         env:
@@ -36,8 +36,13 @@ jobs:
 
       - name: "Include 'API' and 'Examples' sections from nightly build docs"
         run: |
+          # Copy landing pages for 'API' and 'Examples' sections
+          cp gh-pages/version/dev/api.html doc/_build/html/api.html
+          cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
+          # Copy content pages for 'API' and 'Examples' sections
           cp -r gh-pages/version/dev/api doc/_build/html/api
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
+          # Copy landing page to include links to previous sections
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Upload combined artifacts"
@@ -51,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: doc-build
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v5
+      - uses: ansys/actions/doc-deploy-dev@v6
         with:
           doc-artifact-name: "complete-documentation-html"
           cname: ${{ env.DOCUMENTATION_CNAME }}
