@@ -41,7 +41,21 @@
       - changed-files:
           - any-glob-to-any-file: ['.github/workflows/**']
 
+# HACK: avoid GitHub bot to remove unconfigured labels, see official
+# action/labeler issue https://github.com/actions/labeler/issues/763
+'ci:skip':
+  - all:
+      - changed-files:
+          - all-glob-to-all-file: ['NO-MATCHING-FILE']
+
 'tests':
   - any:
       - changed-files:
           - any-glob-to-any-file: ['tests/**']
+
+# HACK: avoid GitHub bot to remove unconfigured labels, see official
+# action/labeler issue https://github.com/actions/labeler/issues/763
+'tests:skip':
+  - all:
+      - changed-files:
+          - all-glob-to-all-file: ['NO-MATCHING-FILE']
