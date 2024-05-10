@@ -272,11 +272,11 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
 
     """
     OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
-    EXAMPLES_DIRECTORY = OUTPUT_DIRECTORY.parent.parent / "examples"
+    EXAMPLES_DIRECTORY = pathlib.Path(__file__).parent.parent.parent / "examples"
     examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
     for example in status_iterator(
             examples, 
-            "Adding example in output directory...", 
+            f"Adding example in output directory: ", 
             "green", 
             len(examples),
             verbosity=1,
