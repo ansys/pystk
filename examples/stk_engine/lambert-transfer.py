@@ -1,6 +1,6 @@
 # # Lambert transfer
 #
-# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the [Lambert Profile](https://help.agi.com/stk/index.htm#gator/ab-lambertprofile.htm) included in Astrogator.
+# This tutorial provides a practical example on how to solve an interplanetary Lambert transfer using Python. A direct and prograde interplanetary transfer arc between the Earth and Mars is solved by using the {py:class}`ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile` included in Astrogator.
 
 
 # ## What is a Lambert transfer?
@@ -65,7 +65,7 @@ plotter.show()
 
 # ## Add the planets to the scenario
 #
-# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the [EPHEM_SOURCE_TYPE](https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/index.html#ansys.stk.core.stkobjects.EPHEM_SOURCE_TYPE) enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
+# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the EPHEM_SOURCE_TYPE enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_TYPE
@@ -114,9 +114,9 @@ plotter.show()
 #
 # The initial and final state vectors are required to solve for the transfer orbit. These vectors can be computed knowing the positions of the planets involved in the transfer.
 #
-# The [data providers](https://help.agi.com/stk/Subsystems/dataProviders/dataProviders.htm#html/dataProviders/Data_Provider_Summary.htm) can be used to find the state vector of an object at a given epoch and with respect to a reference frame.
+# The data providers can be used to find the state vector of an object at a given epoch and with respect to a reference frame.
 
-# First, a utility function for converting a [DataProviderResult](https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/index.html#ansys.stk.core.stkobjects.DataProviderResult) instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
+# First, a utility function for converting a DataProviderResult instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
 
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
     """Convert a data provider result to a dictionary.
