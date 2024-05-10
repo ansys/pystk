@@ -2,8 +2,6 @@ ARG baseImage=mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-l
 FROM $baseImage
 ARG agreeToLicense=no
 
-RUN echo ${agreeToLicense}
-
 RUN net user STK /ADD
 
 COPY distributions scripts C:/Users/STK/dist/

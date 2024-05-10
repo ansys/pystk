@@ -8,11 +8,11 @@ USER ContainerAdministrator
 # Install Python
 ADD "https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe" "C:\dist\python-3.9.13-amd64.exe"
 
-COPY  scripts C:/dist/
+COPY scripts C:/dist/
 
 RUN powershell -Command $ErrorActionPreference = 'Stop'; \
     $ProgressPreference = 'SilentlyContinue'; \
-    C:\dist\install.ps1 $Env:agreeToLicense
+    C:\dist\install.ps1
 
 USER STK
 
