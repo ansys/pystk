@@ -65,7 +65,7 @@ plotter.show()
 
 # ## Add the planets to the scenario
 #
-# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the EPHEM_SOURCE_TYPE enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
+# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EPHEM_SOURCE_TYPE`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_TYPE
@@ -116,7 +116,7 @@ plotter.show()
 #
 # The data providers can be used to find the state vector of an object at a given epoch and with respect to a reference frame.
 
-# First, a utility function for converting a DataProviderResult instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
+# First, a utility function for converting a ``DataProviderResult`` instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
 
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
     """Convert a data provider result to a dictionary.
@@ -272,7 +272,7 @@ for control_sequence in satellite.propagator.main_sequence:
 
 # ## Configure the Lambert profile
 #
-# To ease the creation of a Lambert's transfer, STK provides a profile named `Lambert Profile`. This profile can be added to a target sequence. Later, it can be configured to solve for the desired transfer requirements such as the time of flight and the final state vector.
+# To ease the creation of a Lambert's transfer, STK provides a profile named ``IProfileLambertProfile``. This profile can be added to a target sequence. Later, it can be configured to solve for the desired transfer requirements such as the time of flight and the final state vector.
 #
 # Additional configuration parameters exist, such as the number of revolutions or the direction of motion. However, since this example covers a direct transfer arc, these options are not explored.
 
