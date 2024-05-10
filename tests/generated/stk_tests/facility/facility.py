@@ -33,7 +33,7 @@ class EarlyBoundTests(TestBase):
         paths.add(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
 
         TestBase.LoadTestScenario(TestBase.PathCombine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -318,7 +318,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_FA.graphics_3d.vector, False)
 
     # endregion
@@ -408,7 +408,7 @@ class EarlyBoundTests(TestBase):
         anim.current_time = 7200  # move ahead 2 hours
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -421,7 +421,7 @@ class EarlyBoundTests(TestBase):
         scenario.stop_time = "23 Oct 2009 16:00:00.000"
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -443,9 +443,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_FA.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_FA, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_FA.access_constraints, IStkObject(EarlyBoundTests.AG_FA), TestBase.TemporaryDirectory
         )
 
     # endregion

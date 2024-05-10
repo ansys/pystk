@@ -18,17 +18,15 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
-            EarlyBoundTests.AG_COV = clr.Convert(
+            EarlyBoundTests.AG_COV = CoverageDefinition(
                 TestBase.Application.current_scenario.children.new(
                     STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-                ),
-                CoverageDefinition,
+                )
             )
-            EarlyBoundTests.AG_FOM = clr.Convert(
+            EarlyBoundTests.AG_FOM = FigureOfMerit(
                 (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
                     STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-                ),
-                FigureOfMerit,
+                )
             )
 
         except Exception as e:
@@ -64,8 +62,10 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = clr.Convert(
-                int(arTypes[iIndex][0]), FIGURE_OF_MERIT_DEFINITION_TYPE
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = (
+                FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in FIGURE_OF_MERIT_DEFINITION_TYPE])
+                else int(arTypes[iIndex][0])
             )
             if not EarlyBoundTests.AG_FOM.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -199,7 +199,7 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oHelper.Run(clr.CastAs(EarlyBoundTests.AG_FOM, IStkObject))
-        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_FOM, IStkObject)).object_files)
+        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_FOM)).object_files)
 
     # endregion
 
@@ -208,11 +208,11 @@ class EarlyBoundTests(TestBase):
     @category("Grid Inspector")
     def test_GridInspector(self):
         TestBase.logger.WriteLine("----- GRID INSPECTOR TEST ----- BEGIN -----")
-        oSatellite: "Satellite" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+        oSatellite: "Satellite" = Satellite(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
         )
         Assert.assertIsNotNone(oSatellite)
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
@@ -222,7 +222,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
-        lat: "CoverageBoundsLat" = clr.Convert(EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsLat)
+        lat: "CoverageBoundsLat" = CoverageBoundsLat(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(lat)
         TestBase.logger.WriteLine7(
             "\t\tThe current Bounds is: MinLatitude = {0}, MaxLatitude = {1}", lat.min_latitude, lat.max_latitude
@@ -274,13 +274,13 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oInspector.select_point(-12, "two")
         # PointFOM
-        oTimeVar: "DataProviderTimeVarying" = clr.Convert(oInspector.point_figure_of_merit, DataProviderTimeVarying)
+        oTimeVar: "DataProviderTimeVarying" = DataProviderTimeVarying(oInspector.point_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointFOM result:")
         oResult.Dump()
         # PointSatisfaction
-        oInterval: "DataProviderInterval" = clr.Convert(oInspector.point_satisfaction, DataProviderInterval)
+        oInterval: "DataProviderInterval" = DataProviderInterval(oInspector.point_satisfaction)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointSatisfaction result:")
@@ -289,13 +289,13 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oInspector.select_region("AreaTarget1")
         # RegionFOM
-        oTimeVar = clr.Convert(oInspector.region_figure_of_merit, DataProviderTimeVarying)
+        oTimeVar = DataProviderTimeVarying(oInspector.region_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFOM result:")
         oResult.Dump()
         # RegionSatisfaction
-        oInterval = clr.Convert(oInspector.region_satisfaction, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.region_satisfaction)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionSatisfaction result:")
@@ -310,9 +310,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
         Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
-        oCustom: "CoverageBoundsCustomRegions" = clr.Convert(
-            EarlyBoundTests.AG_COV.grid.bounds, CoverageBoundsCustomRegions
-        )
+        oCustom: "CoverageBoundsCustomRegions" = CoverageBoundsCustomRegions(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(oCustom)
         oCustom.area_targets.add("AreaTarget/AreaTarget1")
 
@@ -323,25 +321,25 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oInspector.select_region("Invalid.Region")
         # PointFOM
-        oTimeVar = clr.Convert(oInspector.point_figure_of_merit, DataProviderTimeVarying)
+        oTimeVar = DataProviderTimeVarying(oInspector.point_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointFOM result:")
         oResult.Dump()
         # PointSatisfaction
-        oInterval = clr.Convert(oInspector.point_satisfaction, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.point_satisfaction)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointSatisfaction result:")
         oResult.Dump()
         # RegionFOM
-        oTimeVar = clr.Convert(oInspector.region_figure_of_merit, DataProviderTimeVarying)
+        oTimeVar = DataProviderTimeVarying(oInspector.region_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
         oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFOM result:")
         oResult.Dump()
         # RegionSatisfaction
-        oInterval = clr.Convert(oInspector.region_satisfaction, DataProviderInterval)
+        oInterval = DataProviderInterval(oInspector.region_satisfaction)
         Assert.assertIsNotNone(oInterval)
         oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionSatisfaction result:")
@@ -506,8 +504,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oCovDef)
 
         oFOMerit: "FigureOfMerit" = clr.CastAs(
-            (clr.Convert(oCovDef, IStkObject)).children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOM_2352353"),
-            FigureOfMerit,
+            (IStkObject(oCovDef)).children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOM_2352353"), FigureOfMerit
         )
         Assert.assertIsNotNone(oFOMerit)
 
@@ -538,11 +535,11 @@ class EarlyBoundTests(TestBase):
                 self.TestFOMGfxContours(oFOMerit, True)
 
         finally:
-            (clr.Convert(oCovDef, IStkObject)).children.unload(
-                (clr.Convert(oFOMerit, IStkObject)).class_type, (clr.Convert(oFOMerit, IStkObject)).instance_name
+            (IStkObject(oCovDef)).children.unload(
+                (IStkObject(oFOMerit)).class_type, (IStkObject(oFOMerit)).instance_name
             )
             TestBase.Application.current_scenario.children.unload(
-                (clr.Convert(oCovDef, IStkObject)).class_type, (clr.Convert(oCovDef, IStkObject)).instance_name
+                (IStkObject(oCovDef)).class_type, (IStkObject(oCovDef)).instance_name
             )
 
         TestBase.logger.WriteLine("----- GRAPHICS SMOOTH CONTOURS ----- END -----")
@@ -664,17 +661,15 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
-        EarlyBoundTests.AG_COV = clr.Convert(
+        EarlyBoundTests.AG_COV = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-            ),
-            CoverageDefinition,
+            )
         )
-        EarlyBoundTests.AG_FOM = clr.Convert(
+        EarlyBoundTests.AG_FOM = FigureOfMerit(
             (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
                 STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-            ),
-            FigureOfMerit,
+            )
         )
         TestBase.logger.WriteLine("-----  NON LINEAR CONTOUR LEVELS ----- END -----")
 
@@ -832,17 +827,15 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
-        EarlyBoundTests.AG_COV = clr.Convert(
+        EarlyBoundTests.AG_COV = CoverageDefinition(
             TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-            ),
-            CoverageDefinition,
+            )
         )
-        EarlyBoundTests.AG_FOM = clr.Convert(
+        EarlyBoundTests.AG_FOM = FigureOfMerit(
             (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
                 STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-            ),
-            FigureOfMerit,
+            )
         )
         TestBase.logger.WriteLine("-----  ACCESS CONSTRAINT DEFINITION ----- END -----")
 

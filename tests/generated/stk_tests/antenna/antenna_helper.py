@@ -2943,29 +2943,49 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < len(supportedTypes):
-            if clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+            if (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderAsciiFile), True
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.LINK:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.LINK:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.LINK, phasedArray.beam_direction_provider_type)
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.OBJECT:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderObject), False
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.beam_direction_provider_type)
                 filename: str = r"CommRad\VB_BeamDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderScript), filename
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
             else:
@@ -2979,26 +2999,42 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < len(supportedTypes):
-            if clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+            if (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderAsciiFile), False
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.OBJECT:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderObject), False
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.null_direction_provider_type)
                 filename: str = r"CommRad\VB_NullDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderScript), filename
                 )
-            elif clr.Convert(int(supportedTypes[i]), DIRECTION_PROVIDER_TYPE) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
             else:

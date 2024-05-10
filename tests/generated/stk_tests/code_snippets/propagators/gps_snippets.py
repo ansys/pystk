@@ -56,7 +56,7 @@ class GPSSnippets(CodeSnippetsTestBase):
         self.ConfigureGPSWithAlmanac(
             propagator,
             TestBase.GetScenarioFile("CodeSnippetsTests", "GPSAlmanac.alm"),
-            (clr.Convert(GPSSnippets.m_Object, IStkObject)).root.current_scenario,
+            (IStkObject(GPSSnippets.m_Object)).root.current_scenario,
         )
 
     def ConfigureGPSWithAlmanac(self, propagator: "VehiclePropagatorGPS", almanacPath: str, scenario: "IStkObject"):
@@ -65,7 +65,7 @@ class GPSSnippets(CodeSnippetsTestBase):
         propagator.ephemeris_interval.set_implicit_interval(scenario.vgt.event_intervals["AnalysisInterval"])
 
         # PRN must be set before configuring GPS almanac
-        propagator.prn = int(clr.Convert(propagator.available_prns[0], str))
+        propagator.prn = int(str(propagator.available_prns[0]))
 
         # Turn the Auto-update off
         propagator.auto_update_enabled = False

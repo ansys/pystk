@@ -490,9 +490,7 @@ class MtoSnippets(CodeSnippetsTestBase):
         MtoSnippets.m_Object.tracks.add(1)
         MtoSnippets.m_Object.tracks.add(4)
 
-        sensor1: "Sensor" = clr.CastAs(
-            (clr.Convert(satellite, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor
-        )
+        sensor1: "Sensor" = clr.CastAs((IStkObject(satellite)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"), Sensor)
         self.ComputeMtoFieldOfView(MtoSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "J2Satellite")
 

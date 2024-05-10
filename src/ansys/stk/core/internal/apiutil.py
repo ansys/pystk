@@ -92,8 +92,8 @@ def get_interface_property(attrname, interfaceType):
     return None
 
 def set_interface_attribute(this, attrname, value, interfaceType, baseType):
-    if this._get_property(attrname) is not None:
-        this._get_property(attrname).__set__(this, value)
+    if interfaceType._get_property(this, attrname) is not None:
+        interfaceType._get_property(this, attrname).__set__(this, value)
     elif baseType is not None:
         baseType.__setattr__(this, attrname, value)
     else:

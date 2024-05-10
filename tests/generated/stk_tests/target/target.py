@@ -25,7 +25,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("TargetTests", "TargetTests.sc"))
-        EarlyBoundTests.AG_TG = clr.Convert(TestBase.Application.current_scenario.children["Target1"], Target)
+        EarlyBoundTests.AG_TG = Target(TestBase.Application.current_scenario.children["Target1"])
 
     # endregion
 
@@ -108,14 +108,14 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_DisplayTimes(self):
         oHelper = DisplayTimesHelper(TestBase.Application)
-        oHelper.Run(clr.Convert(EarlyBoundTests.AG_TG, IDisplayTime))
+        oHelper.Run(IDisplayTime(EarlyBoundTests.AG_TG))
 
     # endregion
 
     # region Graphics
     @category("Graphics Tests")
     def test_Graphics(self):
-        gfx: "TargetGraphics" = clr.Convert(EarlyBoundTests.AG_TG.graphics, TargetGraphics)
+        gfx: "TargetGraphics" = EarlyBoundTests.AG_TG.graphics
         Assert.assertIsNotNone(gfx)
         gfx.is_object_graphics_visible = False
         Assert.assertFalse(gfx.is_object_graphics_visible)
@@ -140,7 +140,7 @@ class EarlyBoundTests(TestBase):
         gfx.marker_style = TestBase.GetScenarioFile("gp_marker.bmp")
 
         oHelper = GfxLabelNoteHelper(self.Units)
-        oHelper.Run(clr.Convert(gfx.label_notes, LabelNoteCollection))
+        oHelper.Run(gfx.label_notes)
 
         uiLC: Color = gfx.label_color
         uiNewColor: Color = Colors.from_argb(65280)  # Green
@@ -166,7 +166,7 @@ class EarlyBoundTests(TestBase):
     # region GfxAzElMask
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
-        azel: "BasicAzElMask" = clr.Convert(EarlyBoundTests.AG_TG.graphics.az_el_mask, BasicAzElMask)
+        azel: "BasicAzElMask" = EarlyBoundTests.AG_TG.graphics.az_el_mask
         azel.range_visible = True
         Assert.assertEqual(True, azel.range_visible)
         azel.altitude_visible = True
@@ -217,7 +217,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.vector, False)
 
     # endregion
@@ -272,7 +272,7 @@ class EarlyBoundTests(TestBase):
         oModel.model_type = MODEL_TYPE.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
         Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
-        oModelFile: "Graphics3DModelFile" = clr.Convert(oModel.model_data, Graphics3DModelFile)
+        oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
         oModelFile.filename = TestBase.GetScenarioFile("VO", "Models", "m1a1.mdl")
@@ -300,9 +300,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_TG.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_TG, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_TG.access_constraints, IStkObject(EarlyBoundTests.AG_TG), TestBase.TemporaryDirectory
         )
 
     # endregion

@@ -18,9 +18,7 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("ConstellationTests", "ConstellationTests.sc"))
-            EarlyBoundTests.AG_CN = clr.Convert(
-                TestBase.Application.current_scenario.children["Constellation1"], Constellation
-            )
+            EarlyBoundTests.AG_CN = Constellation(TestBase.Application.current_scenario.children["Constellation1"])
 
         except Exception as e:
             raise e
@@ -206,7 +204,7 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oHelper.Run(clr.CastAs(EarlyBoundTests.AG_CN, IStkObject))
-        oHelper.TestObjectFilesArray((clr.Convert(EarlyBoundTests.AG_CN, IStkObject)).object_files)
+        oHelper.TestObjectFilesArray((IStkObject(EarlyBoundTests.AG_CN)).object_files)
 
     # endregion
 
@@ -249,7 +247,7 @@ class EarlyBoundTests(TestBase):
                 # Iterate the collection of objects in the constellation
                 # to verify the original constellation object is not in it.
                 for o in newCn.objects:
-                    Assert.assertNotEqual(o.linked_object.path, (clr.Convert(EarlyBoundTests.AG_CN, IStkObject)).path)
+                    Assert.assertNotEqual(o.linked_object.path, (IStkObject(EarlyBoundTests.AG_CN)).path)
 
                 # Remove a couple of objects from the temporary
                 # constellation.
