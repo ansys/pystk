@@ -26,7 +26,8 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      github.event.type != 'labeled'
     steps:
      - uses: actions/checkout@v4
 
@@ -36,7 +37,6 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
      - name: "Label pull-request"
-       if: github.event.type != 'labeled'
        uses: actions/labeler@v5.0.0
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -45,7 +45,7 @@ jobs:
     name: "Branch style checks"
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
@@ -55,7 +55,7 @@ jobs:
     name: "Code style checks"
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
@@ -67,7 +67,7 @@ jobs:
     name: "Doc style checks"
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
@@ -79,7 +79,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     needs: doc-style
     timeout-minutes: 30
@@ -213,7 +213,7 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') ||
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
