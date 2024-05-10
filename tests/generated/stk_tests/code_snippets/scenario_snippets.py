@@ -199,17 +199,15 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "Satellite" = clr.Convert(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"), Satellite)
+        satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"))
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.Convert(satellite.propagator, VehiclePropagatorTwoBody)).propagate()
+        (VehiclePropagatorTwoBody(satellite.propagator)).propagate()
 
         try:
-            self.SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(
-                clr.Convert(TestBase.Application, StkObjectRoot), clr.Convert(scenario, Scenario)
-            )
+            self.SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(TestBase.Application, Scenario(scenario))
 
         finally:
-            (clr.Convert(satellite, IStkObject)).unload()
+            (IStkObject(satellite)).unload()
 
     def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
         satellite: "Satellite" = clr.CastAs(stkRoot.get_object_from_path("/Satellite/GeoEye"), Satellite)
@@ -227,9 +225,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_SetTimePeriodToTodayWithDurationOfOneDay(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        self.SetTimePeriodToTodayWithDurationOfOneDay(
-            clr.Convert(TestBase.Application, StkObjectRoot), clr.Convert(scenario, Scenario)
-        )
+        self.SetTimePeriodToTodayWithDurationOfOneDay(TestBase.Application, Scenario(scenario))
 
     def SetTimePeriodToTodayWithDurationOfOneDay(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
         scenario.analysis_interval.set_start_time_and_duration("Today", "+1 Day")

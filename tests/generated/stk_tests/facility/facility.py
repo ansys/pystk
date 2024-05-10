@@ -33,7 +33,7 @@ class EarlyBoundTests(TestBase):
         paths.add(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "Plugins", "RangeExample.py"))
 
         TestBase.LoadTestScenario(TestBase.PathCombine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -150,7 +150,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(None, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
-        # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
+        with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
+            b: bool = EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary
+        with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
+            EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
 
@@ -158,15 +161,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AZ_EL_MASK_TYPE.MASK_FILE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
-        # BUG120275 TryCatchAssertBlock.ExpectedException("read-only", delegate () { AG_FA.SaveTerrainMaskDataInBinary = true; });    // Undefined symbol - should be "read only"
+        with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
+            b: bool = EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary
+        with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
+            EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 11.0
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
 
-        EarlyBoundTests.AG_FA.set_az_el_mask(
-            AZ_EL_MASK_TYPE.TERRAIN_DATA, 22
-        )  #  BUG120275 Data value?  Helpstring says: "If Type is TERRAIN_DATA then it is the Height above ground"
+        EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.TERRAIN_DATA, 22)
         Assert.assertEqual(AZ_EL_MASK_TYPE.TERRAIN_DATA, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(22, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
@@ -183,8 +187,6 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = -1.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_FA.max_range_when_computing_az_el_mask = 1001.0
-
-        #  BUG120275 No OM property for "Use Mask for Access Constraint" checkbox
 
         EarlyBoundTests.AG_FA.reset_az_el_mask()
         Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
@@ -316,7 +318,7 @@ class EarlyBoundTests(TestBase):
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
-        oHelper = VOVectorsHelper(self.Units, clr.Convert(TestBase.Application, StkObjectRoot))
+        oHelper = VOVectorsHelper(self.Units, TestBase.Application)
         oHelper.Run(EarlyBoundTests.AG_FA.graphics_3d.vector, False)
 
     # endregion
@@ -397,7 +399,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1"), Facility
         )
         voModelFile: "Graphics3DModelFile" = clr.CastAs(fac.graphics_3d.model.model_data, Graphics3DModelFile)
-        voModelFile.filename = r"STKData\VO\Models\Land\ground-antenna.mdl"
+        voModelFile.filename = r"STKData\VO\Models\Land\ground-antenna.glb"
         fac.graphics_3d.model_pointing.pointable_elements[0].assigned_target_object.bind_to("Sun")
         fac.graphics_3d.model_pointing.pointable_elements[1].assigned_target_object.bind_to("Sun")
         TestBase.Application.execute_command("VO * ViewFromTo Normal From Facility/Facility1 To Facility/Facility1")
@@ -406,7 +408,7 @@ class EarlyBoundTests(TestBase):
         anim.current_time = 7200  # move ahead 2 hours
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -419,7 +421,7 @@ class EarlyBoundTests(TestBase):
         scenario.stop_time = "23 Oct 2009 16:00:00.000"
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))
-        EarlyBoundTests.AG_FA = clr.Convert(TestBase.Application.current_scenario.children["Facility1"], Facility)
+        EarlyBoundTests.AG_FA = Facility(TestBase.Application.current_scenario.children["Facility1"])
 
     # endregion
 
@@ -441,9 +443,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_FA.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_FA, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_FA.access_constraints, IStkObject(EarlyBoundTests.AG_FA), TestBase.TemporaryDirectory
         )
 
     # endregion

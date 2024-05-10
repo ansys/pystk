@@ -49,6 +49,11 @@ class STKGrpcServiceStub(object):
                 request_serializer=AgGrpcServices__pb2.RefCountRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.RefCountReturn.FromString,
                 )
+        self.BatchedRelease = channel.unary_unary(
+                '/AgGrpcServices.STKGrpcService/BatchedRelease',
+                request_serializer=AgGrpcServices__pb2.BatchedReleaseRequest.SerializeToString,
+                response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
+                )
         self.SupportsInterface = channel.unary_unary(
                 '/AgGrpcServices.STKGrpcService/SupportsInterface',
                 request_serializer=AgGrpcServices__pb2.SupportsInterfaceRequest.SerializeToString,
@@ -68,6 +73,16 @@ class STKGrpcServiceStub(object):
                 '/AgGrpcServices.STKGrpcService/SetProperty',
                 request_serializer=AgGrpcServices__pb2.SetPropertyRequest.SerializeToString,
                 response_deserializer=AgGrpcServices__pb2.EmptyMessage.FromString,
+                )
+        self.EnumerateCollection = channel.unary_unary(
+                '/AgGrpcServices.STKGrpcService/EnumerateCollection',
+                request_serializer=AgGrpcServices__pb2.CollectionRequest.SerializeToString,
+                response_deserializer=AgGrpcServices__pb2.CollectionReturn.FromString,
+                )
+        self.BatchedInvoke = channel.unary_unary(
+                '/AgGrpcServices.STKGrpcService/BatchedInvoke',
+                request_serializer=AgGrpcServices__pb2.BatchedInvokeRequest.SerializeToString,
+                response_deserializer=AgGrpcServices__pb2.BatchedInvokeReturn.FromString,
                 )
         self.StartEventLoop = channel.unary_stream(
                 '/AgGrpcServices.STKGrpcService/StartEventLoop',
@@ -144,6 +159,12 @@ class STKGrpcServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchedRelease(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SupportsInterface(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -163,6 +184,18 @@ class STKGrpcServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetProperty(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EnumerateCollection(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchedInvoke(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -237,6 +270,11 @@ def add_STKGrpcServiceServicer_to_server(servicer, server):
                     request_deserializer=AgGrpcServices__pb2.RefCountRequest.FromString,
                     response_serializer=AgGrpcServices__pb2.RefCountReturn.SerializeToString,
             ),
+            'BatchedRelease': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchedRelease,
+                    request_deserializer=AgGrpcServices__pb2.BatchedReleaseRequest.FromString,
+                    response_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
+            ),
             'SupportsInterface': grpc.unary_unary_rpc_method_handler(
                     servicer.SupportsInterface,
                     request_deserializer=AgGrpcServices__pb2.SupportsInterfaceRequest.FromString,
@@ -256,6 +294,16 @@ def add_STKGrpcServiceServicer_to_server(servicer, server):
                     servicer.SetProperty,
                     request_deserializer=AgGrpcServices__pb2.SetPropertyRequest.FromString,
                     response_serializer=AgGrpcServices__pb2.EmptyMessage.SerializeToString,
+            ),
+            'EnumerateCollection': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnumerateCollection,
+                    request_deserializer=AgGrpcServices__pb2.CollectionRequest.FromString,
+                    response_serializer=AgGrpcServices__pb2.CollectionReturn.SerializeToString,
+            ),
+            'BatchedInvoke': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchedInvoke,
+                    request_deserializer=AgGrpcServices__pb2.BatchedInvokeRequest.FromString,
+                    response_serializer=AgGrpcServices__pb2.BatchedInvokeReturn.SerializeToString,
             ),
             'StartEventLoop': grpc.unary_stream_rpc_method_handler(
                     servicer.StartEventLoop,
@@ -412,6 +460,23 @@ class STKGrpcService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def BatchedRelease(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/BatchedRelease',
+            AgGrpcServices__pb2.BatchedReleaseRequest.SerializeToString,
+            AgGrpcServices__pb2.EmptyMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def SupportsInterface(request,
             target,
             options=(),
@@ -476,6 +541,40 @@ class STKGrpcService(object):
         return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/SetProperty',
             AgGrpcServices__pb2.SetPropertyRequest.SerializeToString,
             AgGrpcServices__pb2.EmptyMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EnumerateCollection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/EnumerateCollection',
+            AgGrpcServices__pb2.CollectionRequest.SerializeToString,
+            AgGrpcServices__pb2.CollectionReturn.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchedInvoke(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/AgGrpcServices.STKGrpcService/BatchedInvoke',
+            AgGrpcServices__pb2.BatchedInvokeRequest.SerializeToString,
+            AgGrpcServices__pb2.BatchedInvokeReturn.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

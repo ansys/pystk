@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import os
-import gc
+import typing
+import copy
 
 from ctypes import c_void_p, c_longlong, c_ulonglong, c_int, c_uint, c_ulong, c_ushort, c_short, c_ubyte, c_wchar_p, c_double, c_float, c_bool
 from ctypes import POINTER, Structure, Union, byref, cast, pointer 
 
-from .apiutil import OutArg
+from .apiutil import OutArg, GcDisabler
 
 ###############################################################################
 #   COM Types
@@ -149,6 +150,16 @@ class GUID(Structure):
 
         return guid
 
+    @staticmethod
+    def from_data_pair(data:tuple) -> "GUID":
+        guid_union = _guid_union(data)
+        guid = copy.deepcopy(guid_union.guid)
+        return guid
+
+    def as_data_pair(self) -> tuple:
+        guid_union = _guid_union(self)
+        return (guid_union.data[0], guid_union.data[1])
+
     def __eq__(self, other):
         are_equal = True
         if self.Data1[0] != other.Data1[0]: are_equal = False
@@ -187,6 +198,15 @@ class GUID(Structure):
             self.Data4[5],
             self.Data4[6],
             self.Data4[7])
+
+class _guid_union(Union):
+    _fields_ = [("guid", GUID), ("data", ULONGLONG*2)]
+    def __init__(self, iid:typing.Union[GUID, tuple]):
+        if type(iid) == tuple:
+            self.data[0] = iid[0]
+            self.data[1] = iid[1]
+        else:
+            self.guid = iid
 
 IID = GUID
 REFIID = POINTER(IID)
@@ -382,19 +402,6 @@ class OLEAut32Lib:
 ###############################################################################
 def Succeeded(hr):
     return hr >= S_OK
-    
-class _GCDisabler(object):
-    def __init__(self):
-        self._is_gc_enabled = False
-    def __enter__(self):
-        if gc.isenabled():
-            self._is_gc_enabled = True
-            gc.disable()
-        return self
-    def __exit__(self, type, value, tb):
-        if self._is_gc_enabled:
-            gc.enable()
-        return False
 
 class _CreateAgObjectLifetimeManager(object):
     """Singleton class for managing reference counts on COM interfaces."""
@@ -440,7 +447,7 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            with _GCDisabler() as gc_lock:
+            with GcDisabler():
                 if isApplication:
                     self._applications.append(ptraddress)
                 if ptraddress in self._ref_counts:
@@ -452,7 +459,7 @@ class _CreateAgObjectLifetimeManager(object):
     def internal_add_ref(self, pUnk:"IUnknown"):
         """Increment the internal reference count of pUnk."""
         ptraddress = pUnk.p.value
-        with _GCDisabler() as gc_lock:
+        with GcDisabler():
             if ptraddress in self._ref_counts:
                 self._ref_counts[ptraddress] = self._ref_counts[ptraddress] + 1
 
@@ -464,7 +471,7 @@ class _CreateAgObjectLifetimeManager(object):
         """
         ptraddress = pUnk.p.value
         if ptraddress is not None:
-            with _GCDisabler() as gc_lock:
+            with GcDisabler():
                 if ptraddress in self._ref_counts:
                     if self._ref_counts[ptraddress] == 1:
                         _CreateAgObjectLifetimeManager._release_impl(pUnk)
@@ -473,7 +480,7 @@ class _CreateAgObjectLifetimeManager(object):
                         self._ref_counts[ptraddress] = self._ref_counts[ptraddress] - 1
                 
     def release_all(self, releaseApplication=True):
-        with _GCDisabler() as gc_lock:
+        with GcDisabler():
             preserved_app_ref_counts = dict()
             while len(self._ref_counts) > 0:
                 ref_count = self._ref_counts.popitem()
@@ -521,6 +528,9 @@ class IUnknown(object):
     _vtable_offset = 0
     _num_methods = 3
     _QueryInterface = WINFUNCTYPE(HRESULT, LPVOID, POINTER(GUID), POINTER(LPVOID))
+    _metadata = {
+        "iid_data" : (0, 5044031582654955712),
+    }
     if os.name == "nt":
         _QIIndex = 0
     else:
@@ -544,9 +554,12 @@ class IUnknown(object):
         vptr = cast(self.p, POINTER(c_void_p))
         vtbl = cast(vptr.contents, POINTER(c_void_p))
         return vtbl[index]
-    def query_interface(self, iid:GUID|str) -> "IUnknown":
+    def query_interface(self, arg:typing.Union[GUID, dict]) -> "IUnknown":
+        if type(arg) == dict:
+            iid = GUID.from_data_pair(arg["iid_data"])
+        else:
+            iid = arg
         pIntf = IUnknown()
-        if isinstance(iid, str): iid=GUID(iid)
         hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
         if not Succeeded(hr):
             return None
@@ -571,22 +584,20 @@ class IUnknown(object):
         """
         ObjectLifetimeManager.release(self)   
 
-    def invoke(self, intf_metatdata:dict, method_metadata:dict, *args):
-        method_offset = intf_metatdata["method_offsets"][method_metadata["name"]]
-        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, *args)
+    def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
+        return self._invoke_impl(intf_metadata, method_metadata, *args)
 
-    def get_property(self, intf_metatdata:dict, method_metadata:dict):
-        method_offset = intf_metatdata["method_offsets"]["get_" + method_metadata["name"]]
-        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, OutArg())
+    def get_property(self, intf_metadata:dict, method_metadata:dict):
+        return self._invoke_impl(intf_metadata, method_metadata, OutArg())
 
-    def set_property(self, intf_metatdata:dict, method_metadata:dict, value):
-        method_offset = intf_metatdata["method_offsets"]["set_" + method_metadata["name"]]
-        return self._invoke_impl(intf_metatdata, method_metadata, method_offset, value)
+    def set_property(self, intf_metadata:dict, method_metadata:dict, value):
+        return self._invoke_impl(intf_metadata, method_metadata, value)
 
-    def _invoke_impl(self, intf_metatdata:dict, method_metadata:dict, method_offset:int, *args):
+    def _invoke_impl(self, intf_metadata:dict, method_metadata:dict, *args):
         from .coclassutil import evaluate_hresult
-        guid = GUID(intf_metatdata["uuid"])
-        vtable_index = intf_metatdata["vtable_reference"] + method_offset
+        guid = GUID.from_data_pair(intf_metadata["iid_data"])
+        method_offset = method_metadata["offset"]
+        vtable_index = intf_metadata["vtable_reference"] + method_offset
         arg_types = method_metadata["arg_types"]
         marshaller_classes = method_metadata["marshallers"]
         method = IFuncType(self, guid, vtable_index, *arg_types)

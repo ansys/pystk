@@ -109,7 +109,7 @@ class GfxAttributesRouteHelper(object):
 
         # Basic
         oHelper = GfxAttributesBasicHelper()
-        oHelper.Run(clr.Convert(oRoute, IVehicleGraphics2DAttributesBasic))
+        oHelper.Run(oRoute)
 
         self.m_logger.WriteLine("GfxAttributesRouteHelper test:")
 
@@ -173,7 +173,7 @@ class GfxAttributesOrbitHelper(object):
 
         # Basic
         oHelper = GfxAttributesBasicHelper()
-        oHelper.Run(clr.Convert(oOrbit, IVehicleGraphics2DAttributesBasic))
+        oHelper.Run(oOrbit)
 
         self.m_logger.WriteLine("GfxAttributesOrbitHelper test:")
 
@@ -259,7 +259,7 @@ class GfxAttributesTrajectoryHelper(object):
 
         # Basic
         oHelper = GfxAttributesBasicHelper()
-        oHelper.Run(clr.Convert(oTrajectory, IVehicleGraphics2DAttributesBasic))
+        oHelper.Run(oTrajectory)
 
         self.m_logger.WriteLine("GfxAttributesTrajectoryHelper test:")
 
@@ -389,24 +389,24 @@ class GfxAttributesAccessHelper(object):
         if eType == GfxAttributesType.eOrbit:
             # DuringAccess
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oAccess.during_access))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oAccess.no_access))
         elif eType == GfxAttributesType.eRoute:
             # DuringAccess
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oAccess.during_access))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oAccess.no_access))
         elif eType == GfxAttributesType.eTrajectory:
             # DuringAccess
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oAccess.during_access, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oAccess.during_access))
 
             # NoAccess
-            oHelper.Run(clr.Convert(oAccess.no_access, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oAccess.no_access))
         else:
             Assert.fail("Invalid type!")
 
@@ -435,13 +435,13 @@ class GfxAttributesCustomHelper(object):
         Assert.assertTrue(oCustom.preemptive_intervals)
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oCustom.default, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oCustom.default))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oCustom.default, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oCustom.default))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oCustom.default, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oCustom.default))
         else:
             Assert.fail("Invalid type!")
 
@@ -631,13 +631,13 @@ class GfxAttributesTimeComponentsHelper(object):
         Assert.assertEqual(0, tcColl.count)
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oTimeComponents.default))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oTimeComponents.default))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oTimeComponents.default, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oTimeComponents.default))
         else:
             Assert.fail("Invalid type!")
 
@@ -695,13 +695,13 @@ class GfxIntervalsCollectionHelper(object):
         )
         if eType == GfxAttributesType.eOrbit:
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oInterval.graphics_2d_attributes))
         elif eType == GfxAttributesType.eRoute:
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oInterval.graphics_2d_attributes))
         elif eType == GfxAttributesType.eTrajectory:
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oInterval.graphics_2d_attributes, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oInterval.graphics_2d_attributes))
         else:
             Assert.fail("Invalid type!")
 
@@ -834,33 +834,33 @@ class GfxAttributesRealTimeHelper(object):
         if eType == GfxAttributesType.eOrbit:
             # DropOut
             oHelper = GfxAttributesOrbitHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oRealTime.drop_out))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oRealTime.history))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oRealTime.look_ahead))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, VehicleGraphics2DAttributesOrbit))
+            oHelper.Run(VehicleGraphics2DAttributesOrbit(oRealTime.spline))
         elif eType == GfxAttributesType.eRoute:
             # DropOut
             oHelper = GfxAttributesRouteHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oRealTime.drop_out))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oRealTime.history))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oRealTime.look_ahead))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, VehicleGraphics2DAttributesRoute))
+            oHelper.Run(VehicleGraphics2DAttributesRoute(oRealTime.spline))
         elif eType == GfxAttributesType.eTrajectory:
             # DropOut
             oHelper = GfxAttributesTrajectoryHelper()
-            oHelper.Run(clr.Convert(oRealTime.drop_out, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oRealTime.drop_out))
             # History
-            oHelper.Run(clr.Convert(oRealTime.history, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oRealTime.history))
             # LookAhead
-            oHelper.Run(clr.Convert(oRealTime.look_ahead, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oRealTime.look_ahead))
             # Spline
-            oHelper.Run(clr.Convert(oRealTime.spline, VehicleGraphics2DAttributesTrajectory))
+            oHelper.Run(VehicleGraphics2DAttributesTrajectory(oRealTime.spline))
         else:
             Assert.fail("Invalid type!")
 
@@ -1515,9 +1515,13 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
         with pytest.raises(Exception):
-            oVeGfxLightingElement.line_width = clr.Convert((-1), LINE_WIDTH)
+            oVeGfxLightingElement.line_width = (
+                LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            )
         with pytest.raises(Exception):
-            oVeGfxLightingElement.line_width = clr.Convert((11), LINE_WIDTH)
+            oVeGfxLightingElement.line_width = (
+                LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            )
 
         # MarkerStyle
         self.m_logger.WriteLine5("\tThe current MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
@@ -1679,7 +1683,11 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA),
+                (
+                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -1689,7 +1697,11 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA)
+            eType: "LEAD_TRAIL_DATA" = (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[iIndex][0])
+            )
             if not leadTrailData.is_lead_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -1700,9 +1712,7 @@ class GfxLeadTrailDataHelper(object):
             if leadTrailData.has_lead_data:
                 if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
                     # LeadData
-                    oFraction: "IVehicleLeadTrailDataFraction" = clr.Convert(
-                        leadTrailData.lead_data, IVehicleLeadTrailDataFraction
-                    )
+                    oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oFraction)
                     # Fraction
                     self.m_logger.WriteLine6("\t\tThe current Fraction is: {0}", oFraction.fraction)
@@ -1714,7 +1724,7 @@ class GfxLeadTrailDataHelper(object):
                         oFraction.fraction = -56.34
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # LeadData
-                    oTime: "IVehicleLeadTrailDataTime" = clr.Convert(leadTrailData.lead_data, IVehicleLeadTrailDataTime)
+                    oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oTime)
                     # set TimeUnit
                     strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -1754,7 +1764,11 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA),
+                (
+                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                    else int(arSupportedTypes[iIndex][0])
+                ),
             )
 
             iIndex += 1
@@ -1764,7 +1778,11 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = clr.Convert(int(arSupportedTypes[iIndex][0]), LEAD_TRAIL_DATA)
+            eType: "LEAD_TRAIL_DATA" = (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[iIndex][0])
+            )
             if not leadTrailData.is_trail_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -1775,9 +1793,7 @@ class GfxLeadTrailDataHelper(object):
             if leadTrailData.has_trail_data:
                 if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
                     # TrailData
-                    oFraction: "IVehicleLeadTrailDataFraction" = clr.Convert(
-                        leadTrailData.trail_data, IVehicleLeadTrailDataFraction
-                    )
+                    oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oFraction)
                     # Fraction
                     self.m_logger.WriteLine6("\t\tThe current Fraction is: {0}", oFraction.fraction)
@@ -1790,9 +1806,7 @@ class GfxLeadTrailDataHelper(object):
                         oFraction.fraction = -56.34
                 elif eType == LEAD_TRAIL_DATA.DATA_TIME:
                     # TrailData
-                    oTime: "IVehicleLeadTrailDataTime" = clr.Convert(
-                        leadTrailData.trail_data, IVehicleLeadTrailDataTime
-                    )
+                    oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oTime)
                     # set TimeUnit
                     strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -1825,7 +1839,13 @@ class GfxLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(clr.Convert(int(arSupportedTypes[0][0]), LEAD_TRAIL_DATA))
+        leadTrailData.set_trail_data_type(
+            (
+                LEAD_TRAIL_DATA(int(arSupportedTypes[0][0]))
+                if (int(arSupportedTypes[0][0]) in [item.value for item in LEAD_TRAIL_DATA])
+                else int(arSupportedTypes[0][0])
+            )
+        )
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -1865,7 +1885,11 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_ELEVATION)
+            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = (
+                VEHICLE_GRAPHICS_2D_ELEVATION(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ELEVATION])
+                else int(arTypes[iIndex][0])
+            )
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1877,8 +1901,8 @@ class GfxSwathHelper(object):
                 (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
             ):
                 # Elevation
-                gfxElevationGroundElevation: "VehicleGraphics2DElevationGroundElevation" = clr.Convert(
-                    oSwath.elevation, VehicleGraphics2DElevationGroundElevation
+                gfxElevationGroundElevation: "VehicleGraphics2DElevationGroundElevation" = (
+                    VehicleGraphics2DElevationGroundElevation(oSwath.elevation)
                 )
                 Assert.assertIsNotNone(gfxElevationGroundElevation)
                 # set AngleUnit
@@ -1906,8 +1930,8 @@ class GfxSwathHelper(object):
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
             elif oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
                 # Elevation
-                gfxElevationSwathHalfWidth: "VehicleGraphics2DElevationSwathHalfWidth" = clr.Convert(
-                    oSwath.elevation, VehicleGraphics2DElevationSwathHalfWidth
+                gfxElevationSwathHalfWidth: "VehicleGraphics2DElevationSwathHalfWidth" = (
+                    VehicleGraphics2DElevationSwathHalfWidth(oSwath.elevation)
                 )
                 Assert.assertIsNotNone(gfxElevationSwathHalfWidth)
                 # set DistanceUnit
@@ -1938,8 +1962,8 @@ class GfxSwathHelper(object):
             elif ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
                 (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
             ):
-                gfxElevationVehicleHalfAngle: "VehicleGraphics2DElevationVehicleHalfAngle" = clr.Convert(
-                    oSwath.elevation, VehicleGraphics2DElevationVehicleHalfAngle
+                gfxElevationVehicleHalfAngle: "VehicleGraphics2DElevationVehicleHalfAngle" = (
+                    VehicleGraphics2DElevationVehicleHalfAngle(oSwath.elevation)
                 )
                 Assert.assertIsNotNone(gfxElevationVehicleHalfAngle)
                 # set AngleUnit
@@ -2146,8 +2170,10 @@ class GfxTimeEventsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = clr.Convert(
-                int(arTypes[iIndex][0]), VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE
+            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = (
+                VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE])
+                else int(arTypes[iIndex][0])
             )
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -2160,8 +2186,8 @@ class GfxTimeEventsHelper(object):
             Assert.assertEqual(eType, timeEventsElement.time_event_type)
             if eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
                 # TimeEventTypeData
-                oLine: "VehicleGraphics2DTimeEventTypeLine" = clr.Convert(
-                    timeEventsElement.time_event_type_data, VehicleGraphics2DTimeEventTypeLine
+                oLine: "VehicleGraphics2DTimeEventTypeLine" = VehicleGraphics2DTimeEventTypeLine(
+                    timeEventsElement.time_event_type_data
                 )
                 Assert.assertIsNotNone(oLine)
 
@@ -2179,7 +2205,7 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("25 Jul 2005 12:00:00.000", oLine.event_interval.find_stop_time())
 
                 oLine.event_interval.set_implicit_interval(
-                    (clr.Convert(AG_SAT, IStkObject)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oLine.event_interval.find_start_time())
                 Assert.assertEqual("2 Jul 1999 00:00:00.000", oLine.event_interval.find_stop_time())
@@ -2214,8 +2240,10 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = clr.Convert(
-                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS_2D_OFFSET
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = (
+                        VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                        if (int(arOffsetTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_OFFSET])
+                        else int(arOffsetTypes[i][0])
                     )
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
@@ -2238,8 +2266,8 @@ class GfxTimeEventsHelper(object):
 
             elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
                 # TimeEventTypeData
-                oMarker: "VehicleGraphics2DTimeEventTypeMarker" = clr.Convert(
-                    timeEventsElement.time_event_type_data, VehicleGraphics2DTimeEventTypeMarker
+                oMarker: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
+                    timeEventsElement.time_event_type_data
                 )
                 Assert.assertIsNotNone(oMarker)
                 # StartTime
@@ -2260,7 +2288,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oMarker.StopTime);
 
                 oMarker.event_interval.set_implicit_interval(
-                    (clr.Convert(AG_SAT, IStkObject)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oMarker.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oMarker.StopTime);
@@ -2282,8 +2310,8 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("Howdy", oMarker.unique_id)
             elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
                 # TimeEventTypeData
-                oText: "VehicleGraphics2DTimeEventTypeText" = clr.Convert(
-                    timeEventsElement.time_event_type_data, VehicleGraphics2DTimeEventTypeText
+                oText: "VehicleGraphics2DTimeEventTypeText" = VehicleGraphics2DTimeEventTypeText(
+                    timeEventsElement.time_event_type_data
                 )
                 Assert.assertIsNotNone(oText)
                 # StartTime
@@ -2304,7 +2332,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oText.StopTime);
 
                 oText.event_interval.set_implicit_interval(
-                    (clr.Convert(AG_SAT, IStkObject)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oText.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oText.StopTime);
@@ -2334,8 +2362,10 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = clr.Convert(
-                        int(arOffsetTypes[i][0]), VEHICLE_GRAPHICS_2D_OFFSET
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = (
+                        VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                        if (int(arOffsetTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_OFFSET])
+                        else int(arOffsetTypes[i][0])
                     )
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")

@@ -82,6 +82,7 @@ Interfaces
     IElementTargetVectorOutgoingAsymptote
     IElementGeodetic
     IElementBPlane
+    IElementSphericalRangeRate
     IStoppingCondition
     ILightingStoppingCondition
     IAccessStoppingCondition
@@ -318,6 +319,7 @@ Interfaces
     IStateCalcValueAtSegmentOtherSat
     IStateCalcRARate
     IStateCalcDecRate
+    IStateCalcRangeRate
     IStateCalcGravitationalParameter
     IStateCalcReferenceRadius
     IStateCalcGravCoeff
@@ -586,6 +588,7 @@ Classes
     ElementTargetVectorOutgoingAsymptote
     ElementGeodetic
     ElementBPlane
+    ElementSphericalRangeRate
     MissionControlSequencePropagate
     State
     StoppingConditionCollection
@@ -813,6 +816,7 @@ Classes
     StateCalcValueAtSegmentOtherSat
     StateCalcRARate
     StateCalcDecRate
+    StateCalcRangeRate
     StateCalcGravitationalParameter
     StateCalcReferenceRadius
     StateCalcGravCoeff
@@ -1192,6 +1196,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IElementBPlane
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IElementSphericalRangeRate
     :members:
     :exclude-members: __init__
 .. autoclass:: IStoppingCondition
@@ -1902,6 +1909,9 @@ Interfaces
 .. autoclass:: IStateCalcDecRate
     :members:
     :exclude-members: __init__
+.. autoclass:: IStateCalcRangeRate
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IStateCalcGravitationalParameter
     :members:
     :exclude-members: __init__
@@ -2537,6 +2547,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: ElementBPlane
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ElementSphericalRangeRate
     :members:
     :exclude-members: __init__
 .. autoclass:: MissionControlSequencePropagate
@@ -3218,6 +3231,9 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcDecRate
+    :members:
+    :exclude-members: __init__
+.. autoclass:: StateCalcRangeRate
     :members:
     :exclude-members: __init__
 .. autoclass:: StateCalcGravitationalParameter

@@ -1,0 +1,580 @@
+################################################################################
+#            COPYRIGHT 1995 Analytical Graphics, Inc.                          #
+#            This data is intended for use with Satellite Tool Kit (TM)        #
+#            products only.  Any other use is expressly forbidden.             #
+################################################################################
+#Model Builder:Jim Poland
+#DOM 21 Mar '98_sc
+#Manufacturer/Contractor:n/a
+#Name: House
+#Width:250 m 
+#Length:300 m 
+#Height:35 m 
+#Articulations:(No)
+
+
+Component FencePost
+	Cylinder
+		FaceColor white
+		NumSides 8
+		Face1Position 0.0 0.0 0.0
+		Face1Radius 2
+		Face1Normal -1.0 0.0 0.0
+		Face2Position 45 0.0 0.0
+		Face2Radius 2
+		Face2Normal 1.0 0.0 0.0
+	EndCylinder
+EndComponent
+Component FenceRail
+	Cylinder
+		Rotate 0 0 90
+		FaceColor white
+		NumSides 8
+		Face1Position 0.0 0.0 0.0
+		Face1Radius 1
+		Face1Normal -1.0 0.0 0.0
+		Face2Position 100 0.0 0.0
+		Face2Radius 1
+		Face2Normal 1.0 0.0 0.0
+	EndCylinder
+EndComponent
+Component FenceSeg
+	Refer
+		Component FencePost
+	EndRefer
+	Refer
+		Translate 10 0 0
+		Component FenceRail
+	EndRefer
+	Refer
+		Translate 20 0 0
+		Component FenceRail
+	EndRefer
+	Refer
+		Translate 30 0 0
+		Component FenceRail
+	EndRefer
+	Refer
+		Translate 40 0 0
+		Component FenceRail
+	EndRefer
+#	Refer
+#		Translate 75 0 0
+#		Component FenceRail
+#	EndRefer
+EndComponent
+Component FenceHalfSection
+	Refer
+		Component FenceSeg
+	EndRefer
+	Refer
+		Translate 0 100 0
+		Component FenceSeg
+	EndRefer
+	Refer
+		Translate 0 200 0
+		Component FenceSeg
+	EndRefer
+	Refer
+		Translate 0 300 0
+		Component FenceSeg
+	EndRefer
+	Refer
+		Translate 0 400 0
+		Component FenceSeg
+	EndRefer
+EndComponent
+Component FenceSection
+	Refer
+		Component FenceHalfSection
+	EndRefer
+	Refer
+		Translate 0 500 0
+		Component FenceHalfSection
+	EndRefer
+EndComponent
+Component ShortFenceSection
+	Refer
+		Component FenceSeg
+	EndRefer
+	Refer
+		Translate 0 100 0
+		Component FenceSeg
+	EndRefer
+EndComponent
+Component Lawn
+	Polygon
+	BackfaceCullable Yes
+	TxDef grass.tga AA
+	TxScale 2 2 1
+	TxGen
+	TxScale 2 2 1
+	Rotate -90.0 0.0 0.0
+	Translate 0.0 -1325.0 1500.0
+	FaceColor green4
+	NumVerts 4
+	Data
+		0.0 1200 0
+		0.0 1200 1000
+		0.0 0 1000
+		0.0 0 0
+	EndPolygon
+EndComponent
+Component HouseWalls
+	Extrusion
+	BackfaceCullable Yes
+	SharpEdges
+	FaceColor ivory
+	Length 200
+	NumVerts 4
+	Data
+		0.0 150.0 0.0
+		0.0 150.0 60
+		0.0 -150.0 60
+		0.0 -150.0 0.0
+	EndExtrusion
+EndComponent
+Component HouseRoof 
+	Extrusion
+	BackfaceCullable Yes
+	SharpEdges
+	FaceColor gray30
+	Length 210
+	NumVerts 5
+	Data
+		-5.0 155.0 60
+		-5.0 0.0 100
+		-5.0 -155.0 60
+		-5.0 0.0 100
+		-5.0 155.0 60
+	EndExtrusion
+EndComponent
+Component HouseRear
+	Polygon
+	Translate 1.0 0.0 0.0
+	FaceColor coral
+	NumVerts 5
+	Data
+		-1.0 150.0 0.0
+		-1.0 150.0 60.0
+		-1.0 0.0 100
+		-1.0 -150.0 60.0
+		-1.0 -150.0 0.0
+	EndPolygon
+EndComponent
+Component HouseFront
+	Polygon
+	Translate 200.0 0.0 0.0
+	FaceColor coral
+	NumVerts 9
+	Data
+		0.0 50.0 35.0
+		0.0 50 0.0
+		0.0 150.0 0.0
+		0.0 150.0 60.0
+		0.0 0.0 100
+		0.0 -150.0 60.0
+		0.0 -150.0 0.0
+		0.0 30.0 0.0
+		0.0 30.0 35.0
+	EndPolygon
+EndComponent
+Component Chimney 
+	Extrusion
+		SharpEdges
+	FaceColor firebrick
+	Length 140
+	NumVerts 4
+	Data
+		0.0 7.0 -10.0
+		0.0 7.0 10.0
+		0.0 -7.0 10.0
+		0.0 -7.0 -10.0
+	EndExtrusion
+EndComponent
+Component House
+	Refer
+		Component HouseWalls
+	EndRefer
+	Refer
+		Component HouseRoof
+	EndRefer
+#	Refer
+#		Component HouseFront
+#	EndRefer
+	Refer
+		Component HouseRear
+	EndRefer
+	Refer
+		Component HouseRear
+		Translate 200 0 0
+	EndRefer
+		Refer
+		Component Chimney
+		Rotate 0 270 0
+		Translate 50.0 -158.0 0
+	EndRefer
+EndComponent
+Component Pool
+	Extrusion
+	Rotate 0 90 90
+	Translate 1 -1150 1400
+	FaceColor turquoise
+	Length 200
+	NumVerts 4
+	Data
+		0.0 1.0 -50.0
+		0.0 1.0 50.0
+		0.0 -1.0 50.0
+		0.0 -1.0 -50.0
+	EndExtrusion
+EndComponent
+Component LongSide
+	Extrusion
+	Rotate 0 90 90
+	Translate 1.5 -1098 1404
+	FaceColor gray10
+	Length 205
+	NumVerts 4
+	Data
+		0.0 1.0 -3.0
+		0.0 1.0 3.0
+		0.0 -1.0 3.0
+		0.0 -1.0 -3.0
+	EndExtrusion
+EndComponent
+Component ShortSide
+	Extrusion
+	Rotate 0 180 90
+	Translate 1.5 -1096 1401
+	FaceColor gray10
+	Length 104
+	NumVerts 4
+	Data
+		0.0 1.0 -3.0
+		0.0 1.0 3.0
+		0.0 -1.0 3.0
+		0.0 -1.0 -3.0
+	EndExtrusion
+EndComponent
+Component Sides
+	Refer
+		Component Pool
+	EndRefer
+	Refer
+		Component LongSide
+	EndRefer
+	Refer
+		Component ShortSide
+	EndRefer
+	Refer
+		Component LongSide
+		Translate 0 -100 0
+	EndRefer
+	Refer
+		Component ShortSide
+		Translate 0 0 -200
+	EndRefer
+EndComponent
+Component AntennaPlate
+    Revolve
+        FaceColor ivory
+        StartAngle 0.0
+        EndAngle 359.99
+        NumRevolve 32
+        NumVerts 8
+        Data
+            0.0 0.01 0.0
+            0.2 2.0 0.0
+            0.4 5.0 0.0
+            0.8 8.0 0.0
+            1.2 11.0 0.0
+            2.1 14.0 0.0
+            3.1 17.0 0.0
+            4.3 20.0 0.0
+    EndRevolve
+EndComponent
+Component AntennaRec
+    Revolve
+        Translate 15.0 0.0 0.0
+        FaceColor grey50
+        StartAngle 0.0
+        EndAngle 359.99
+        NumRevolve 10
+        NumVerts 4
+        Data
+            0.0 0.01 0.0
+            0.0 2.2 0.0
+            1.2 2.2 0.0
+            1.2 0.01 0.0
+    EndRevolve
+EndComponent
+Component Support
+    Cylinder
+        FaceColor gray40
+        NumSides 10
+        Face1Position 0.0 0.0 0.0
+        Face1Radius 0.25
+        Face1Normal -0.8508 -0.5255 0.0
+        Face2Position 20.65 0.0 0.0
+        Face2Radius 0.25
+        Face2Normal 0.8508 -0.5255 0.0
+    EndCylinder
+EndComponent
+Component RecSupt1
+    Refer
+         Rotate 0.0 0.0 -58.3
+         Translate 4.3 20.0 0.0
+         Component Support
+    EndRefer
+EndComponent
+
+Component RecSupt2
+    Refer
+         Rotate 120.0 0.0 0.0
+         Component RecSupt1
+    EndRefer
+EndComponent
+
+Component RecSupt3
+    Refer
+         Rotate -120.0 0.0 0.0
+         Component RecSupt1
+    EndRefer
+EndComponent
+
+Component test
+	Refer
+         Component FencePost
+		 Translate -25 -1050 1240
+    EndRefer
+EndComponent
+Component Antenna
+	Scale .6 .6 .6
+    Refer
+         Component AntennaPlate
+    EndRefer
+    Refer
+         Component AntennaRec
+    EndRefer
+    Refer
+         Component RecSupt1
+    EndRefer
+    Refer
+         Component RecSupt2
+    EndRefer
+    Refer
+         Component RecSupt3
+    EndRefer
+EndComponent
+Component MSX
+	Scale .6 .6 .6
+    Refer
+        Component Antenna
+    EndRefer
+EndComponent
+#Component MfgBldgShell 
+#	Extrusion
+#	FaceColor turquoise4
+#	Length 300
+#	NumVerts 6
+#	Data
+#		0.0 280.0 0.0
+#		0.0 280.0 100.0
+#		0.0 0.0 100.0
+#		0.0 0.0 60
+#		0.0 -400 60
+#		0.0 -400 0.0
+#	EndExtrusion
+#EndComponent
+#Component MfgBldgRear
+#	Polygon
+#	Translate 1.0 0.0 0.0
+#	FaceColor turquoise4
+#	NumVerts 6
+#	Data
+#		0.0 280.0 0.0
+#		0.0 280.0 100.0
+#		0.0 0.0 100.0
+#		0.0 0.0 60
+#		0.0 -400 60
+#		0.0 -400 0.0
+#	EndPolygon
+#EndComponent
+#Component MfgBldgFront
+#	Polygon
+#	Translate 300.0 0.0 0.0
+#	FaceColor turquoise4
+#	NumVerts 10
+#	Data
+#		0.0 280.0 0.0
+#		0.0 280.0 100.0
+#		0.0 0.0 100.0
+#		0.0 0.0 60
+#		0.0 -400 60
+#		0.0 -400 0.0
+#		0.0 100 0.0
+#		0.0 100 80.0
+#		0.0 260 80.0
+#		0.0 260 0.0
+#	EndPolygon
+#EndComponent
+#Component MfgBldg1
+#	Refer
+#		Component MfgBldgShell
+#	EndRefer
+#	Refer
+#		Component MfgBldgFront
+#	EndRefer
+#	Refer
+#		Component MfgBldgRear
+#	EndRefer
+#EndComponent
+#Component MfgBldg
+#	Refer
+#		Rotate 0.0 90.0 0.0
+#		Translate 5.0 0.0 100.0
+#		Component MfgBldg1
+#	EndRefer
+#EndComponent
+#Component RoofSprt 
+#	Extrusion
+#		Rotate 0.0 20.0 0.0
+#		Translate 140.0 0.0 0.0
+#		Rotate 45.0 0.0 0.0
+#		FaceColor gray30
+#		Length 15
+#		NumVerts 4
+#		Data
+#		0.0 1.0 -1.5
+#		0.0 1.0 0.0
+#		0.0 -1.0 0.0
+#		0.0 -1.0 -1.5
+#	EndExtrusion
+#EndComponent
+#Component TowerRoof 
+#	Extrusion
+#		FaceColor red
+#		Length 70
+#		NumVerts 4
+#		Data
+#		0.0 30.0 -0.5
+#		0.0 30.0 0.5
+#		0.0 -30.0 0.5
+#		0.0 -30.0 -0.5
+#	EndExtrusion
+#EndComponent
+#Component TowerRoofStr
+#	Refer
+#		Component TowerRoof
+#	EndRefer
+#EndComponent
+#Component Tower
+#	Refer
+#		Component chimney
+#		Translate 0.0 43.0 150.0
+#	EndRefer
+#	Refer
+#		Translate 0.0 20.0 -20.0
+#		Component RoofSprt
+#	EndRefer
+#	Refer
+#		Rotate 90.0 0.0 0.0
+#		Translate 0.0 20.0 20.0
+#		Component RoofSprt
+#	EndRefer
+#	Refer
+#		Rotate 180.0 0.0 0.0
+#		Translate 0.0 -20.0 20.0
+#		Component RoofSprt
+#	EndRefer
+#	Refer
+#		Rotate 270.0 0.0 0.0
+#		Translate 0.0 -20.0 -20.0
+#		Component RoofSprt
+#	EndRefer
+#	Refer
+#		Rotate 0.0 -90.0 0.0
+#		Translate 155.0 0.0 -35.0
+#		Component TowerRoofStr
+#	EndRefer
+#EndComponent
+Component Body
+	Refer
+		Component Lawn
+	EndRefer
+	Refer
+		Component Antenna
+		Rotate 0 30 300
+		Translate 20 -1050 1240
+	EndRefer
+	Refer
+		Rotate 0.0 90.0 0.0
+		Translate 0.0 -800.0 1400.0
+		Component House
+	EndRefer
+	Refer
+		Translate 0 -1320 300
+		Component FenceSection
+	EndRefer
+	Refer
+		Translate 0 -1320 1500
+		Component FenceSection
+	EndRefer
+	Refer
+		Rotate 90 0 0
+		Translate 0 -1320 300
+		Component FenceSection
+	EndRefer
+	Refer
+		Rotate 90 0 0
+		Translate 0 -1320 1300
+		Component ShortFenceSection
+	EndRefer
+	Refer
+		Rotate -90 0 0
+		Translate 0 -325 1500
+		Component FenceSection
+	EndRefer
+	Refer
+		Rotate -90 0 0
+		Translate 0 -325 500
+		Component ShortFenceSection
+	EndRefer
+	Refer
+		Translate 0 -325 300
+		Component FencePost
+	EndRefer
+	Refer
+		Component test
+	EndRefer
+	Refer
+		Component Sides
+	EndRefer
+	Refer
+		Component Sides
+		Scale .25 .25 .31
+		Rotate 0 90 90
+		Translate -265 -1250 1200
+	EndRefer
+		Refer
+		Component Sides
+		Scale .24 .24 .15
+		Rotate 0 90 90
+		Translate -255 -900 1200
+	EndRefer
+EndComponent
+Component Airport
+	Root
+	Rotate 0.0 -90.0 0.0
+	Translate 900 700 1
+	Scale .25 .25 .25
+	Refer
+		Component Body
+	EndRefer
+EndComponent
+################################################################################
+#            COPYRIGHT 1995 Analytical Graphics, Inc.                          #
+#            This data is intended for use with Satellite Tool Kit (TM)        #
+#            products only.  Any other use is expressly forbidden.             #
+################################################################################

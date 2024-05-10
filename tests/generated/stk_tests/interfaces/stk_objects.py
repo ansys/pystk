@@ -141,19 +141,19 @@ class STKObjectHelper(object):
                 oCoverage: "StkObjectCoverage" = oObject.object_coverage
 
         # create an additional Satellite
-        oSatellite: "Satellite" = clr.Convert(
-            oObject.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MIR"), Satellite
+        oSatellite: "Satellite" = Satellite(
+            oObject.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MIR")
         )
         Assert.assertIsNotNone(oSatellite)
         oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
-        oPropagator: "VehiclePropagatorTwoBody" = clr.Convert(oSatellite.propagator, VehiclePropagatorTwoBody)
+        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
         if oObject.is_access_supported():
             self.m_logger.WriteLine5("\tThe {0} supports an Access.", oObject.instance_name)
             # GetAccess
-            oAccess: "StkAccess" = oObject.get_access((clr.Convert(oSatellite, IStkObject)).path)
+            oAccess: "StkAccess" = oObject.get_access((IStkObject(oSatellite)).path)
             Assert.assertIsNotNone(oAccess)
             oAHelper = StkAccessHelper()
             oAHelper.Run(oAccess, oObject.root)
@@ -171,7 +171,7 @@ class STKObjectHelper(object):
         else:
             self.m_logger.WriteLine5("\tThe {0} does not support an Access.", oObject.instance_name)
             with pytest.raises(Exception):
-                oAccess: "StkAccess" = oObject.get_access((clr.Convert(oSatellite, IStkObject)).path)
+                oAccess: "StkAccess" = oObject.get_access((IStkObject(oSatellite)).path)
             with pytest.raises(Exception):
                 oAccess: "StkAccess" = oObject.get_access_to_object(clr.CastAs(oSatellite, IStkObject))
             with pytest.raises(Exception):
@@ -356,17 +356,18 @@ class STKObjectHelper(object):
 
             j: int = 0
             while j < Array.Length(SupportedChildTypes):
-                objType: "STK_OBJECT_TYPE" = clr.Convert(int(SupportedChildTypes[j]), STK_OBJECT_TYPE)
+                objType: "STK_OBJECT_TYPE" = (
+                    STK_OBJECT_TYPE(int(SupportedChildTypes[j]))
+                    if (int(SupportedChildTypes[j]) in [item.value for item in STK_OBJECT_TYPE])
+                    else int(SupportedChildTypes[j])
+                )
                 if objType == STK_OBJECT_TYPE.SENSOR:
                     found = True
 
                 j += 1
 
             if not found:
-                Assert.fail(
-                    "Sensor should be an available child object of the {0} object",
-                    clr.Convert(oObject.class_type, STK_OBJECT_TYPE),
-                )
+                Assert.fail("Sensor should be an available child object of the {0} object", oObject.class_type)
 
             # New
             oSensor: "IStkObject" = oCollection.new(STK_OBJECT_TYPE.SENSOR, "Radar")
@@ -463,7 +464,7 @@ class STKObjectHelper(object):
 
         i: int = 0
         while i < Array.Length(keys):
-            key: str = clr.Convert(keys[i], str)
+            key: str = str(keys[i])
             Assert.assertTrue((len(metadata[key]) > 5))
             Assert.assertTrue(metadata.contains(key))
 
@@ -833,7 +834,7 @@ class DataProviderCollectionHelper(object):
             dtStart: typing.Any = "1 Jun 2004 12:00:00.00"
             dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
             # Exec
-            dp: "IDataProvider" = clr.Convert(oProvider, IDataProvider)
+            dp: "IDataProvider" = IDataProvider(oProvider)
             dp.pre_data = "Missile/Missile1"
 
             oResult: "DataProviderResult" = None
@@ -1342,7 +1343,7 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(2, Array.Length(arAvailableWindows))
 
         sAll: str = "All"
-        sTitle: str = clr.Convert(arAvailableWindows[1], str)
+        sTitle: str = str(arAvailableWindows[1])
         Assert.assertEqual(True, oVODataDisplayElement.is_displayed_in_window(sAll))
         Assert.assertEqual(False, oVODataDisplayElement.is_displayed_in_window(sTitle))
         oVODataDisplayElement.add_to_window(sTitle)

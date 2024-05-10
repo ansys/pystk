@@ -101,7 +101,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateSignaledEvent
     def test_CreateSignaledEvent(self):
-        self.CreateSignaledEvent(clr.Convert(TestBase.Application, StkObjectRoot))
+        self.CreateSignaledEvent(TestBase.Application)
 
     def CreateSignaledEvent(self, stkRoot: "StkObjectRoot"):
         satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt

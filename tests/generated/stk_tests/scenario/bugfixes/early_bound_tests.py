@@ -58,7 +58,7 @@ class EarlyBoundTests(TestBase):
     )
     @category("Graphics Tests")
     def test_AnimationModes(self, mode: "ANIMATION_MODES"):
-        (clr.Convert(TestBase.Application.current_scenario, Scenario)).set_time_period(0, 360)
+        (Scenario(TestBase.Application.current_scenario)).set_time_period(0, 360)
 
         EarlyBoundTests._animation.mode = mode
         Assert.assertEqual(mode, EarlyBoundTests._animation.mode)
@@ -66,7 +66,7 @@ class EarlyBoundTests(TestBase):
     @parameterized.expand([(0, 360, 60)])
     @category("Graphics Tests")
     def test_AnimationFlags(self, startTime: typing.Any, stopTime: typing.Any, stepInSecs: int):
-        sc: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         sc.set_time_period(startTime, stopTime)
 
         # Change the animation step to test the animation mode
@@ -89,7 +89,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     def test_BUG51942_UseAnalysisStartForEpoch(self):
-        sc: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         sc.set_time_period("Today", "Tomorrow")
         sc.use_analysis_start_time_for_epoch = True
         Assert.assertTrue(sc.use_analysis_start_time_for_epoch)
@@ -114,12 +114,12 @@ class EarlyBoundTests(TestBase):
         filepath: str = Path.Combine(TestBase.TemporaryDirectory, (scenarioTitle + ".sc"))
         try:
             TestBase.Application.new_scenario(scenarioTitle)
-            (clr.Convert(TestBase.Application.current_scenario, Scenario)).set_time_period("Today", "Tomorrow")
+            (Scenario(TestBase.Application.current_scenario)).set_time_period("Today", "Tomorrow")
             TestBase.Application.save_scenario_as(filepath)
             TestBase.Application.close_scenario()
 
             TestBase.Application.load_scenario(filepath)
-            sc: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+            sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         finally:
             TestBase.Application.close_scenario()
@@ -138,7 +138,7 @@ class EarlyBoundTests(TestBase):
 
     def test_BUG65596_SetTimePeriod(self):
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        sc: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         starttime1: str = str(sc.start_time)
         stoptime1: str = str(sc.stop_time)
@@ -195,7 +195,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.unit_preferences.set_current_unit("DateFormat", dateFormat)
 
     def HeapCorruption(self):
-        sc: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         oSatOnMars: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
             STK_OBJECT_TYPE.SATELLITE, "SatelliteOnMars", "Mars"
         )
@@ -241,7 +241,7 @@ class EarlyBoundTests(TestBase):
         ele.is_visible = True
         Assert.assertTrue(ele.is_visible)
         Assert.assertEqual("RIC", ele.name)
-        (clr.Convert(TestBase.Application, StkObjectRoot)).rewind()
+        (StkObjectRoot(TestBase.Application)).rewind()
 
     @category("VO Tests")
     def test_BUG70140_DynamicDisplay_RequiresPreData_Fail(self):

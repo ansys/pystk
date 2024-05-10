@@ -158,17 +158,6 @@ class ClrTypeOfResult:
 
 class clr:
     @staticmethod
-    def Convert(a, b):
-        if isinstance(a, b):
-            return a
-        elif issubclass(b, enum.Enum):
-            try:
-                return b(a)
-            except ValueError as ex:
-                return a
-        return b(a)
-
-    @staticmethod
     def CastAs(a, b):
         if isinstance(a, b):
             return a
@@ -985,29 +974,10 @@ class TestBase(unittest.TestCase):
     Units: "UnitPreferencesDimensionCollection" = None
     OriginalAccConstraintPaths = []
 
-    classesSupportingTemplates = [
-        "Aircraft",
-        "Antenna",
-        "AreaTarget",
-        "Facility",
-        "GroundVehicle",
-        "LaunchVehicle",
-        "LineTarget",
-        "Missile",
-        "Place",
-        "Planet",
-        "Radar",
-        "Receiver",
-        "Satellite",
-        "Sensor",
-        "Ship",
-        "Star",
-        "Target",
-    ]
-
     CurrentDirectory = None
     CodeBaseDir = None
     ScenarioDirectory = None
+    ModelDirectory = None
     NonSupportedDirectory = None
     DataProvidersDirectory = None
 
@@ -1046,6 +1016,7 @@ class TestBase(unittest.TestCase):
         TestBase.ScenarioDirectory = Path.Combine(TestBase.CodeBaseDir, TestBase.ScenarioDirName)
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProvidersTests")
+        TestBase.ModelDirectory = Path.Combine(TestBase.CurrentDirectory, "data", "VO", "Models")
 
         TestBase.CheckICRFDataFilesVersion()
 
@@ -1219,7 +1190,7 @@ class TestBase(unittest.TestCase):
 
     @property
     def EarthGravModel(self):
-        sc = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        sc = Scenario(TestBase.Application.current_scenario)
         cbEarth: AstrogatorCentralBody = clr.CastAs(
             sc.component_directory.get_components(COMPONENT.ASTROGATOR).get_folder("Central Bodies")["Earth"],
             AstrogatorCentralBody,
@@ -1612,11 +1583,11 @@ class DataProviderResultWriter(object):
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
         if self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.INTERVAL_LIST:
-            self.DumpDPIntervalList(clr.Convert(self._result.value, DataProviderResultIntervalCollection), 1)
+            self.DumpDPIntervalList(DataProviderResultIntervalCollection(self._result.value), 1)
         elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.SUB_SECTION_LIST:
-            self.DumpDPSubSectionList(clr.Convert(self._result.value, DataProviderResultSubSectionCollection), 1)
+            self.DumpDPSubSectionList(DataProviderResultSubSectionCollection(self._result.value), 1)
         elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.MESSAGE:
-            self.DumpDPMessage(clr.Convert(self._result.value, DataProviderResultTextMessage), 1)
+            self.DumpDPMessage(DataProviderResultTextMessage(self._result.value), 1)
         return Regex.Replace(self.outStr, "\n", "")
 
     def DumpDPIntervalList(self, intList: DataProviderResultIntervalCollection, indent):
@@ -1644,7 +1615,7 @@ class DataProviderResultWriter(object):
         self.WriteLine(indent, "{")
         i = 0
         while i < msgContainer.count:
-            self.WriteLine(indent, clr.Convert(msgContainer[i], str))
+            self.WriteLine(indent, str(msgContainer[i]))
             i += 1
         self.WriteLine(indent, "}")
 

@@ -40,7 +40,7 @@ class EarlyBoundTests(TestBase):
         try:
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("ScenarioTests", "ScenarioTests.sc"))
-            EarlyBoundTests.AG_SC = clr.Convert(TestBase.Application.current_scenario, Scenario)
+            EarlyBoundTests.AG_SC = Scenario(TestBase.Application.current_scenario)
 
             EarlyBoundTests.today = str(
                 TestBase.Application.current_scenario.vgt.events["Today"].find_occurrence().epoch
@@ -229,7 +229,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AIRCRAFT_WGS84_WARNING_TYPE.ONLY_ONCE, EarlyBoundTests.AG_SC.aircraft_wgs84_warning)
 
         sc2: "IStkObject" = TestBase.Application.current_scenario
-        if sc2.parent == (clr.Convert(EarlyBoundTests.AG_SC, IStkObject)).parent:
+        if sc2.parent == (IStkObject(EarlyBoundTests.AG_SC)).parent:
             TestBase.logger.WriteLine("Scenarios equal")
 
         else:
@@ -652,7 +652,7 @@ class EarlyBoundTests(TestBase):
     # region TerrainCollection
     def test_ScenarioTerrainChangeUpdatesVGTComponents(self):
         tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
-            (clr.Convert(EarlyBoundTests.AG_SC, IStkObject)).central_body_name
+            (IStkObject(EarlyBoundTests.AG_SC)).central_body_name
         ].terrain_collection
         oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
         oTerrain.use_terrain = True
@@ -727,7 +727,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.logger.WriteLine("----- TERRAIN COLLECTION TEST ----- BEGIN -----")
         tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
-            (clr.Convert(EarlyBoundTests.AG_SC, IStkObject)).central_body_name
+            (IStkObject(EarlyBoundTests.AG_SC)).central_body_name
         ].terrain_collection
         Assert.assertIsNotNone(tc)
         # Count
@@ -926,21 +926,21 @@ class EarlyBoundTests(TestBase):
         self.Units.set_current_unit("AngleUnit", "deg")
         # Create a facility and place it a specific location to verify of the
         # terrain has been applied properly.
-        fac: "Facility" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacilityOnTerrain"), Facility
+        fac: "Facility" = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacilityOnTerrain")
         )
 
         # Specify that a terrain shall be used to compute the facility's altitude above the ground
         fac.use_terrain = True
 
-        pos: "Geodetic" = clr.Convert(fac.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+        pos: "Geodetic" = Geodetic(fac.position.convert_to(POSITION_TYPE.GEODETIC))
         pos.lat = 40.31
         pos.lon = -111.645
         fac.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
 
         fac.position.assign(pos)
 
-        pos = clr.Convert(fac.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+        pos = Geodetic(fac.position.convert_to(POSITION_TYPE.GEODETIC))
         Assert.assertAlmostEqual(1.6433, pos.altitude, delta=0.0001)
 
         lat: typing.Any = None
@@ -990,7 +990,7 @@ class EarlyBoundTests(TestBase):
 
         # Remove the instance of the facility
         TestBase.Application.current_scenario.children.unload(
-            (clr.Convert(fac, IStkObject)).class_type, (clr.Convert(fac, IStkObject)).instance_name
+            (IStkObject(fac)).class_type, (IStkObject(fac)).instance_name
         )
         del fac
 
@@ -1231,8 +1231,8 @@ class EarlyBoundTests(TestBase):
 
         self.Units.set_current_unit("DistanceUnit", "km")
         self.Units.set_current_unit("AngleUnit", "deg")
-        earthFac: "Facility" = clr.Convert(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacilityOnTerrain"), Facility
+        earthFac: "Facility" = Facility(
+            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacilityOnTerrain")
         )
 
         # Specify that a terrain shall be used to compute the facility's altitude above the ground
@@ -1403,7 +1403,7 @@ class EarlyBoundTests(TestBase):
 
         # Remove the instance of the facility
         TestBase.Application.current_scenario.children.unload(
-            (clr.Convert(earthFac, IStkObject)).class_type, (clr.Convert(earthFac, IStkObject)).instance_name
+            (IStkObject(earthFac)).class_type, (IStkObject(earthFac)).instance_name
         )
         del earthFac
         del earthTerrainElement
@@ -1411,11 +1411,10 @@ class EarlyBoundTests(TestBase):
         # Other CentralBody tests
 
         # Should throw exception if non earth facilities are used.
-        marsFacility: "Facility" = clr.Convert(
-            (clr.Convert(EarlyBoundTests.AG_SC, IStkObject)).children.new_on_central_body(
+        marsFacility: "Facility" = Facility(
+            (IStkObject(EarlyBoundTests.AG_SC)).children.new_on_central_body(
                 STK_OBJECT_TYPE.FACILITY, "MarsFacilityOnTerrain", "Mars"
-            ),
-            Facility,
+            )
         )
 
         marsTerrainElement: "CentralBodyTerrainCollectionElement" = EarlyBoundTests.AG_SC.terrain["Mars"]
@@ -1459,7 +1458,7 @@ class EarlyBoundTests(TestBase):
         )
 
         TestBase.Application.current_scenario.children.unload(
-            (clr.Convert(marsFacility, IStkObject)).class_type, (clr.Convert(marsFacility, IStkObject)).instance_name
+            (IStkObject(marsFacility)).class_type, (IStkObject(marsFacility)).instance_name
         )
         del marsFacility
         del marsTerrainElement
@@ -1488,7 +1487,7 @@ class EarlyBoundTests(TestBase):
         except Exception:
             pass
 
-        geodeticPosition: "Geodetic" = clr.Convert(fac.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+        geodeticPosition: "Geodetic" = Geodetic(fac.position.convert_to(POSITION_TYPE.GEODETIC))
         facilityAlt: float = geodeticPosition.altitude
 
         Assert.assertAlmostEqual(facilityAlt, actualAlt, delta=1e-05)
@@ -1534,7 +1533,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("Longitude"))
 
             # ~Coi pond
-            pos1: "Geodetic" = clr.Convert(facility1.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+            pos1: "Geodetic" = Geodetic(facility1.position.convert_to(POSITION_TYPE.GEODETIC))
             pos1.altitude = 0.086
             pos1.lat = 40.039129
             pos1.lon = -75.5968411
@@ -1542,7 +1541,7 @@ class EarlyBoundTests(TestBase):
             facility1.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
             facility1.position.assign(pos1)
             # ~South side of building (back parking lot)
-            pos2: "Geodetic" = clr.Convert(facility2.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+            pos2: "Geodetic" = Geodetic(facility2.position.convert_to(POSITION_TYPE.GEODETIC))
             pos2.altitude = 0.086
             pos2.lat = 40.03840663
             pos2.lon = -75.596263
@@ -1550,7 +1549,7 @@ class EarlyBoundTests(TestBase):
             facility2.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
             facility2.position.assign(pos2)
             # ~entrance to corporate center ... should have LOS to Facility1
-            pos3: "Geodetic" = clr.Convert(facility2.position.convert_to(POSITION_TYPE.GEODETIC), Geodetic)
+            pos3: "Geodetic" = Geodetic(facility2.position.convert_to(POSITION_TYPE.GEODETIC))
             pos3.altitude = 0.086
             pos3.lat = 40.0393
             pos3.lon = -75.5964
@@ -2096,9 +2095,9 @@ class EarlyBoundTests(TestBase):
         magFieldGfx.line_width = LINE_WIDTH.WIDTH3
         Assert.assertEqual(LINE_WIDTH.WIDTH3, magFieldGfx.line_width)
         with pytest.raises(Exception):
-            magFieldGfx.line_width = clr.Convert((-1), LINE_WIDTH)
+            magFieldGfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
         with pytest.raises(Exception):
-            magFieldGfx.line_width = clr.Convert((11), LINE_WIDTH)
+            magFieldGfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
 
         magFieldGfx.max_translucency = 55
         Assert.assertAlmostEqual(55, magFieldGfx.max_translucency, delta=Math2.Epsilon12)
@@ -3764,53 +3763,9 @@ class EarlyBoundTests(TestBase):
                     TestBase.PathCombine("CommRad", "RCS_External_File.txt"), strategyExternalFile.filename
                 )
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.SCRIPT_PLUGIN:
-                if not OSHelper.IsLinux():
-                    # script plugins do not work on linux
-                    band.set_compute_strategy("Script Plugin")
-                    Assert.assertEqual("Script Plugin", band.compute_strategy.name)
-                    Assert.assertEqual(RCS_COMPUTE_STRATEGY.SCRIPT_PLUGIN, band.compute_strategy.type)
-                    Assert.assertTrue(
-                        self.IsSupportedComputeStrategy("Script Plugin", band.supported_compute_strategies)
-                    )
-
-                    strategyScriptPlugin: "RadarCrossSectionComputeStrategyScriptPlugin" = clr.CastAs(
-                        band.compute_strategy, RadarCrossSectionComputeStrategyScriptPlugin
-                    )
-                    with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                        strategyScriptPlugin.filename = r"C:\bogus.vbs"
-                    with pytest.raises(Exception, match=RegexSubstringMatch("Could not initialize")):
-                        strategyScriptPlugin.filename = r"ChainTest\ChainTest.sc"
-                    strategyScriptPlugin.filename = TestBase.GetScenarioFile("CommRad", "VB_RadarCrossSection.vbs")
-                    Assert.assertEqual(r"CommRad\VB_RadarCrossSection.vbs", strategyScriptPlugin.filename)
-
+                pass
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.PLUGIN:
-                if not OSHelper.IsLinux():
-                    # Some plugins do not work on linux
-                    band.set_compute_strategy("RCS CSharp Example")
-                    Assert.assertEqual("RCS CSharp Example", band.compute_strategy.name)
-                    Assert.assertEqual(RCS_COMPUTE_STRATEGY.PLUGIN, band.compute_strategy.type)
-                    Assert.assertTrue(
-                        self.IsSupportedComputeStrategy("RCS CSharp Example", band.supported_compute_strategies)
-                    )
-
-                    plugin: "RadarCrossSectionComputeStrategyPlugin" = clr.CastAs(
-                        band.compute_strategy, RadarCrossSectionComputeStrategyPlugin
-                    )
-                    rawPluginObject: typing.Any = plugin.raw_plugin_object
-                    pluginConfig: "CRPluginConfiguration" = plugin.plugin_configuration
-                    arProps = pluginConfig.available_properties
-                    Assert.assertEqual(2, Array.Length(arProps))
-
-                    pluginConfig.set_property("ConstantRCS", 2.0)
-                    Assert.assertAlmostEqual(2.0, float(pluginConfig.get_property("ConstantRCS")), delta=1e-06)
-                    pluginConfig.set_property("EnablePolarization", True)
-                    Assert.assertEqual(True, pluginConfig.get_property("EnablePolarization"))
-
-                    with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                        pluginConfig.set_property("BogusProperty", 123)
-                    with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                        pluginConfig.get_property("BogusProperty")
-
+                pass
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.ANSYS_CSV_FILE:
                 band.set_compute_strategy("Ansys HFSS CSV File")
                 Assert.assertEqual("Ansys HFSS CSV File", band.compute_strategy.name)

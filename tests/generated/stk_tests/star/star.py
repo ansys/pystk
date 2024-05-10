@@ -19,7 +19,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("StarTests", "StarTests.sc"))
-        EarlyBoundTests.AG_SR = clr.Convert(TestBase.Application.current_scenario.children["Star1"], Star)
+        EarlyBoundTests.AG_SR = Star(TestBase.Application.current_scenario.children["Star1"])
 
     # endregion
 
@@ -95,10 +95,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(STAR_REFERENCE_FRAME.J2000, EarlyBoundTests.AG_SR.reference_frame)
 
         # Radial velocity
-        unit: str = (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).root.unit_preferences.get_current_unit_abbrv(
-            "Distance"
-        )
-        (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).root.unit_preferences.set_current_unit("Distance", "m")
+        unit: str = (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.get_current_unit_abbrv("Distance")
+        (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.set_current_unit("Distance", "m")
         try:
             EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10  # in meters
             Assert.assertEqual(10, EarlyBoundTests.AG_SR.proper_motion_radial_velocity)
@@ -116,7 +114,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 20000000000.0
 
         finally:
-            (clr.Convert(EarlyBoundTests.AG_SR, IStkObject)).root.unit_preferences.set_current_unit("Distance", unit)
+            (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.set_current_unit("Distance", unit)
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
@@ -266,9 +264,7 @@ class EarlyBoundTests(TestBase):
     def test_AccessConstraints(self):
         oHelper = AccessConstraintHelper(self.Units)
         oHelper.DoTest(
-            EarlyBoundTests.AG_SR.access_constraints,
-            clr.Convert(EarlyBoundTests.AG_SR, IStkObject),
-            TestBase.TemporaryDirectory,
+            EarlyBoundTests.AG_SR.access_constraints, IStkObject(EarlyBoundTests.AG_SR), TestBase.TemporaryDirectory
         )
 
     # endregion

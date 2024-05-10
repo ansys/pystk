@@ -63,7 +63,7 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.ICRF, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
+                customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 Assert.assertEqual("CentralBody/Sun J2000 Axes", customAxes.reference_axes_name)
 
@@ -78,7 +78,7 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
+                customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 if attitude.central_body_name == "Earth":
                     attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
@@ -95,13 +95,17 @@ class ExportDataFileHelper(object):
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
                 attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
                 Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-                customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
+                customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
             supportedCoordinateAxes = attitude.supported_coordinate_axes
             ocoordAxis: typing.Any
             for ocoordAxis in supportedCoordinateAxes:
-                coordAxis: "ATTITUDE_COORDINATE_AXES" = clr.Convert(int(ocoordAxis), ATTITUDE_COORDINATE_AXES)
+                coordAxis: "ATTITUDE_COORDINATE_AXES" = (
+                    ATTITUDE_COORDINATE_AXES(int(ocoordAxis))
+                    if (int(ocoordAxis) in [item.value for item in ATTITUDE_COORDINATE_AXES])
+                    else int(ocoordAxis)
+                )
                 self.m_logger.WriteLine6("Supported coordinate axes: {0}", coordAxis)
                 if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
                     if (
@@ -145,7 +149,7 @@ class ExportDataFileHelper(object):
         attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
         Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
-        customAxes = clr.Convert(attitude.coordinate_axes, VehicleCoordinateAxesCustom)
+        customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
         attitude.include = ATTITUDE_INCLUDE.QUATERNIONS
@@ -158,10 +162,10 @@ class ExportDataFileHelper(object):
         attitude.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, attitude.time_period.time_period_type)
 
-        attitude.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, attitude.time_period.start)
-        attitude.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, attitude.time_period.stop)
+        attitude.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, attitude.time_period.start)
+        attitude.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, attitude.time_period.stop)
 
         attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, attitude.step_size.step_size_type)
@@ -232,52 +236,21 @@ class ExportDataFileHelper(object):
 
     # endregion
 
-    def CompareCCSDSWithOneSecondTolerance(self, omFile: str, connectFile: str):
-        try:
-            Assert.assertEqual(omFile, connectFile)
+    def CompareCCSDSWithoutCreationDate(self, omFile: str, connectFile: str):
+        # The creation date might have spanned a second boundary between the OM run and the Connect run so remove the creation date
 
-        except Exception:
-            # The creation date might have spanned a second boundary between the OM run and the Connect run.
+        # Format:  "CREATION_DATE  = 2010-09-21T14:00:06"
+        pos: int = connectFile.find("CREATION_DATE")
+        oldCreationDate: str = connectFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        s: str = oldCreationDate[17 : (17 + 4)]
+        connectFile = connectFile.replace(oldCreationDate, "")
 
-            # Format:  "CREATION_DATE  = 2010-09-21T14:00:06"
-            pos: int = connectFile.find("CREATION_DATE")
-            oldCreationDate: str = connectFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        pos = omFile.find("CREATION_DATE")
+        oldCreationDate = omFile[pos : (pos + 36)]  # e.g. "2010-09-21T14:00:06"
+        s = oldCreationDate[17 : (17 + 4)]
+        omFile = omFile.replace(oldCreationDate, "")
 
-            s: str = oldCreationDate[17 : (17 + 4)]
-
-            year: int = Convert.ToInt16(oldCreationDate[17 : (17 + 4)])
-            mon: int = Convert.ToInt16(oldCreationDate[22 : (22 + 2)])
-            day: int = Convert.ToInt16(oldCreationDate[25 : (25 + 2)])
-            hour: int = Convert.ToInt16(oldCreationDate[28 : (28 + 2)])
-            min: int = Convert.ToInt16(oldCreationDate[31 : (31 + 2)])
-            sec: int = Convert.ToInt16(oldCreationDate[34 : (34 + 2)])
-
-            dt = DateTime(year, mon, day, hour, min, sec)
-            dt2 = dt.AddSeconds(-1)
-
-            newCreationDate: str = (
-                (
-                    (
-                        (
-                            (
-                                (
-                                    (((("CREATION_DATE  = " + str(dt2.Year)) + "-") + dt2.Month.ToString("D2")) + "-")
-                                    + dt2.Day.ToString("D2")
-                                )
-                                + "T"
-                            )
-                            + dt2.Hour.ToString("D2")
-                        )
-                        + ":"
-                    )
-                    + dt2.Minute.ToString("D2")
-                )
-                + ":"
-            ) + dt2.Second.ToString("D2")
-
-            connectFile = connectFile.replace(oldCreationDate, newCreationDate)
-
-            Assert.assertEqual(omFile, connectFile)
+        Assert.assertEqual(omFile, connectFile)
 
     # region EphemerisSTKExportTool
     def EphemerisSTKExportTool(self, stkEphem: "VehicleEphemerisStkExportTool", isSat: bool):
@@ -331,10 +304,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, stkEphem.time_period.time_period_type)
         stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, stkEphem.time_period.time_period_type)
-        stkEphem.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, stkEphem.time_period.start)
-        stkEphem.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, stkEphem.time_period.stop)
+        stkEphem.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, stkEphem.time_period.start)
+        stkEphem.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, stkEphem.time_period.stop)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             stkEphem.covariance_type = STK_EPHEM_COVARIANCE_TYPE.POSITION3_X3
@@ -365,11 +338,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STK CentralBody Europa CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                                + str((Scenario(self._root.current_scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                        + str((Scenario(self._root.current_scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -388,11 +361,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STK CentralBody Earth CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                                + str((Scenario(self._root.current_scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                        + str((Scenario(self._root.current_scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -443,7 +416,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -455,7 +432,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -467,7 +448,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -495,10 +480,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsds.time_period.time_period_type)
         ccsds.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsds.time_period.time_period_type)
-        ccsds.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, ccsds.time_period.start)
-        ccsds.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, ccsds.time_period.stop)
+        ccsds.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, ccsds.time_period.start)
+        ccsds.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, ccsds.time_period.stop)
 
         ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, ccsds.step_size.step_size_type)
@@ -533,11 +518,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator Test1 ObjectName TestSatellite ObjectID 2000-000B TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -552,7 +537,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile: str = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Test whether the names with ws are handled
         ccsds.originator = "Originator with ws"
@@ -574,11 +562,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -593,7 +581,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # export CCSDS ephemeris using the satellite's center and reference frame
         ccsds.use_satellite_center_and_frame = True
@@ -610,11 +601,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDS CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -629,7 +620,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
     # endregion
 
@@ -671,7 +665,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -683,7 +681,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -695,7 +697,11 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = clr.Convert(int(refTypeObj), CCSDS_REFERENCE_FRAME)
+            refType: "CCSDS_REFERENCE_FRAME" = (
+                CCSDS_REFERENCE_FRAME(int(refTypeObj))
+                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
+                else int(refTypeObj)
+            )
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -723,10 +729,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsdsv2.time_period.time_period_type)
         ccsdsv2.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsdsv2.time_period.time_period_type)
-        ccsdsv2.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, ccsdsv2.time_period.start)
-        ccsdsv2.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, ccsdsv2.time_period.stop)
+        ccsdsv2.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, ccsdsv2.time_period.start)
+        ccsdsv2.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, ccsdsv2.time_period.stop)
 
         ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, ccsdsv2.step_size.step_size_type)
@@ -761,11 +767,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator Test1 ObjectName TestSatellite ObjectID 2000-000B TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -780,7 +786,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile: str = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Test whether the names with ws are handled
         ccsdsv2.originator = "Originator with ws"
@@ -802,11 +811,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -821,7 +830,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # export CCSDS ephemeris using the satellite's center and reference frame
         ccsdsv2.use_satellite_center_and_frame = True
@@ -838,11 +850,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -857,7 +869,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         # Properties specific to v2
 
@@ -887,11 +902,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat KVN TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -906,7 +921,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
         ccsdsv2.file_format = EPHEM_EXPORT_TOOL_FILE_FORMAT.CCSD_SV2_XML
         Assert.assertEqual(EPHEM_EXPORT_TOOL_FILE_FORMAT.CCSD_SV2_XML, ccsdsv2.file_format)
@@ -924,11 +942,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type CCSDSv2 CenterName Moon RefFrame EME2000 Originator "Originator with ws" ObjectName "ObjectName with ws" ObjectID "ObjectID with ws" TimePrecision 7 DateFormat YMD EphFormat SciNotation StepSize 3600 IncludeAcceleration Yes FileFormat XML TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '" UseSatCenterAndFrame Yes'
             )
@@ -943,7 +961,10 @@ class ExportDataFileHelper(object):
         connectSr = connect.OpenText()
         connectFile = connectSr.ReadToEnd()
         connectSr.Close()
-        self.CompareCCSDSWithOneSecondTolerance(omFile, connectFile)
+        self.CompareCCSDSWithoutCreationDate(omFile, connectFile)
+
+        om.Delete()
+        connect.Delete()
 
     # endregion
 
@@ -956,10 +977,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, code500.time_period.time_period_type)
         code500.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, code500.time_period.time_period_type)
-        code500.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, code500.time_period.start)
-        code500.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, code500.time_period.stop)
+        code500.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, code500.time_period.start)
+        code500.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, code500.time_period.stop)
 
         code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, code500.step_size.step_size_type)
@@ -984,11 +1005,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type Code500 StepSize 3600 SatelliteID 40 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -1030,10 +1051,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, spice.time_period.time_period_type)
         spice.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, spice.time_period.time_period_type)
-        spice.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, spice.time_period.start)
-        spice.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, spice.time_period.stop)
+        spice.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, spice.time_period.start)
+        spice.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, spice.time_period.stop)
 
         spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
         Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEM, spice.step_size.step_size_type)
@@ -1057,11 +1078,11 @@ class ExportDataFileHelper(object):
                                 )
                                 + '" Type Spice CentralBody Sun SatelliteID -200001 InterpType Type13 InterpOrder 7 StepSize 3600 TimePeriod "'
                             )
-                            + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                            + str((Scenario(self._root.current_scenario)).start_time)
                         )
                         + '" "'
                     )
-                    + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                    + str((Scenario(self._root.current_scenario)).stop_time)
                 )
                 + '"'
             )
@@ -1183,10 +1204,10 @@ class ExportDataFileHelper(object):
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, binary.time_period.time_period_type)
         binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
         Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, binary.time_period.time_period_type)
-        binary.time_period.start = (clr.Convert(self._root.current_scenario, Scenario)).start_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).start_time, binary.time_period.start)
-        binary.time_period.stop = (clr.Convert(self._root.current_scenario, Scenario)).stop_time
-        Assert.assertEqual((clr.Convert(self._root.current_scenario, Scenario)).stop_time, binary.time_period.stop)
+        binary.time_period.start = (Scenario(self._root.current_scenario)).start_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, binary.time_period.start)
+        binary.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
+        Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, binary.time_period.stop)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             binary.covariance_type = STK_EPHEM_COVARIANCE_TYPE.NONE
@@ -1218,11 +1239,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STKBinary CentralBody Europa CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                                + str((Scenario(self._root.current_scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                        + str((Scenario(self._root.current_scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -1241,11 +1262,11 @@ class ExportDataFileHelper(object):
                                     )
                                     + '" Type STKBinary CentralBody Earth CoordSys J2000 InterpBoundaries Include StepSize 3600 TimePeriod "'
                                 )
-                                + str((clr.Convert(self._root.current_scenario, Scenario)).start_time)
+                                + str((Scenario(self._root.current_scenario)).start_time)
                             )
                             + '" "'
                         )
-                        + str((clr.Convert(self._root.current_scenario, Scenario)).stop_time)
+                        + str((Scenario(self._root.current_scenario)).stop_time)
                     )
                     + '"'
                 )
@@ -1499,40 +1520,40 @@ class BasicPropagatorHelper(object):
         Assert.assertIsNotNone(oPropagator)
         if eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC:
             oHelper = PropagatorGreatArcHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorGreatArc))
+            oHelper.Run(VehiclePropagatorGreatArc(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL:
             oHelper = PropagatorStkExternalHelper(self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorStkExternal))
+            oHelper.Run(VehiclePropagatorStkExternal(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT:
             oHelper = PropagatorSimpleAscentHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSimpleAscent))
+            oHelper.Run(VehiclePropagatorSimpleAscent(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY:
             oHelper = PropagatorTwoBodyHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorTwoBody))
+            oHelper.Run(VehiclePropagatorTwoBody(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP:
             oHelper = PropagatorLOPHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorLOP))
+            oHelper.Run(VehiclePropagatorLOP(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION:
             oHelper = PropagatorJ2PerturbationHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorJ2Perturbation))
+            oHelper.Run(VehiclePropagatorJ2Perturbation(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION:
             oHelper = PropagatorJ4PerturbationHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorJ4Perturbation))
+            oHelper.Run(VehiclePropagatorJ4Perturbation(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4:
             oHelper = PropagatorSGP4Helper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSGP4))
+            oHelper.Run(VehiclePropagatorSGP4(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE:
             oHelper = PropagatorSPICEHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorSPICE))
+            oHelper.Run(VehiclePropagatorSPICE(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_USER_EXTERNAL:
             oHelper = PropagatorUserExternalHelper(self.m_oApplication)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorUserExternal))
+            oHelper.Run(VehiclePropagatorUserExternal(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP:
             oHelper = PropagatorHPOPHelper(self.m_oApplication, obj, EarthGravModel)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorHPOP), False)
+            oHelper.Run(VehiclePropagatorHPOP(oPropagator), False)
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC:
             oHelper = PropagatorBallisticHelper(obj, self.m_oUnits)
-            oHelper.Run(clr.Convert(oPropagator, VehiclePropagatorBallistic))
+            oHelper.Run(VehiclePropagatorBallistic(oPropagator))
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR:
             pass
         elif eType == VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME:
@@ -1615,7 +1636,11 @@ class PropagatorGreatArcHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eRefType: "VEHICLE_ALTITUDE_REFERENCE" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_ALTITUDE_REFERENCE)
+            eRefType: "VEHICLE_ALTITUDE_REFERENCE" = (
+                VEHICLE_ALTITUDE_REFERENCE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ALTITUDE_REFERENCE])
+                else int(arTypes[iIndex][0])
+            )
             if not oGreatArc.is_altitude_reference_type_supported(eRefType):
                 Assert.fail("The {0} Altitude Ref Type should be supported!", eRefType)
 
@@ -1697,7 +1722,7 @@ class PropagatorGreatArcHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self._owner.root.current_scenario)
         oGreatArc.ephemeris_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_stop_time()
         )
@@ -1709,9 +1734,7 @@ class PropagatorGreatArcHelper(object):
 
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_start_time())
 
-        oGreatArc.ephemeris_interval.set_implicit_interval(
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"]
-        )
+        oGreatArc.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
         oGreatArc.propagate()
 
         Assert.assertEqual(sc.start_time, oGreatArc.ephemeris_interval.find_start_time())
@@ -2026,7 +2049,7 @@ class PropagatorSimpleAscentHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self._owner.root.current_scenario)
         oSimple.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
@@ -2039,9 +2062,7 @@ class PropagatorSimpleAscentHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
 
-        oSimple.ephemeris_interval.set_implicit_interval(
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"]
-        )
+        oSimple.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
         oSimple.propagate()
 
         Assert.assertEqual(sc.start_time, oSimple.ephemeris_interval.find_start_time())
@@ -2094,10 +2115,10 @@ class PropagatorTwoBodyHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart: "OrbitStateCartesian" = clr.Convert(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian
+        cart: "OrbitStateCartesian" = OrbitStateCartesian(
+            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
-        (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
+        (cart).epoch = "18 Jan 2003 01:23:45.678"
         self.m_logger.WriteLine6("\tThe new Epoch is:  {0}", cart.epoch)
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
@@ -2112,7 +2133,7 @@ class PropagatorTwoBodyHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self.m_oApplication.current_scenario)
         oTwoBody.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
@@ -2125,13 +2146,35 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
 
-        oTwoBody.ephemeris_interval.set_implicit_interval(
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"]
-        )
+        oTwoBody.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
         oTwoBody.propagate()
 
         Assert.assertEqual(sc.start_time, oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oTwoBody.ephemeris_interval.find_stop_time())
+
+        arSupportedPropagationFrames = oTwoBody.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oTwoBody.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[2])))
+            if (int((arSupportedPropagationFrames[2])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else int((arSupportedPropagationFrames[2]))
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
+        oTwoBody.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[1])))
+            if (int((arSupportedPropagationFrames[1])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else int((arSupportedPropagationFrames[1]))
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
+        oTwoBody.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[0])))
+            if (int((arSupportedPropagationFrames[0])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else int((arSupportedPropagationFrames[0]))
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oTwoBody.propagation_frame)
+        oTwoBody.propagate()
 
         self.m_logger.WriteLine("----- TWO BODY PROPAGATOR TEST ----- END -----")
 
@@ -2176,10 +2219,10 @@ class PropagatorLOPHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart: "OrbitStateCartesian" = clr.Convert(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian
+        cart: "OrbitStateCartesian" = OrbitStateCartesian(
+            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
-        (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
+        (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
         # Propagate
@@ -2502,8 +2545,8 @@ class PropagatorJ2PerturbationHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
-        (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
+        cart = OrbitStateCartesian(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
 
         # EllipseOptions (OSCULATING)
@@ -2526,7 +2569,7 @@ class PropagatorJ2PerturbationHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self.m_oApplication.current_scenario)
         oJ2.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_stop_time())
@@ -2546,6 +2589,30 @@ class PropagatorJ2PerturbationHelper(object):
 
         Assert.assertEqual(sc.start_time, oJ2.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oJ2.ephemeris_interval.find_stop_time())
+
+        arSupportedPropagationFrames = oJ2.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oJ2.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
+            if ((arSupportedPropagationFrames[2]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[2])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ2.propagation_frame)
+        oJ2.propagate()
+        oJ2.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
+            if ((arSupportedPropagationFrames[1]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[1])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ2.propagation_frame)
+        oJ2.propagate()
+        oJ2.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
+            if ((arSupportedPropagationFrames[0]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[0])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ2.propagation_frame)
+        oJ2.propagate()
 
         self.m_logger.WriteLine("----- J2 PERTURBATION PROPAGATOR TEST ----- END -----")
 
@@ -2593,8 +2660,8 @@ class PropagatorJ4PerturbationHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = clr.Convert(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
-        (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 01:23:45.678"
+        cart = OrbitStateCartesian(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
         # EllipseOptions (OSCULATING)
@@ -2617,7 +2684,7 @@ class PropagatorJ4PerturbationHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self.m_oApplication.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self.m_oApplication.current_scenario)
         oJ4.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "2 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_stop_time())
@@ -2637,6 +2704,30 @@ class PropagatorJ4PerturbationHelper(object):
 
         Assert.assertEqual(sc.start_time, oJ4.ephemeris_interval.find_start_time())
         Assert.assertEqual(sc.stop_time, oJ4.ephemeris_interval.find_stop_time())
+
+        arSupportedPropagationFrames = oJ4.supported_propagation_frames
+        Assert.assertEqual(3, len(arSupportedPropagationFrames))
+        oJ4.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
+            if ((arSupportedPropagationFrames[2]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[2])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ4.propagation_frame)
+        oJ4.propagate()
+        oJ4.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
+            if ((arSupportedPropagationFrames[1]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[1])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ4.propagation_frame)
+        oJ4.propagate()
+        oJ4.propagation_frame = (
+            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
+            if ((arSupportedPropagationFrames[0]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
+            else (arSupportedPropagationFrames[0])
+        )
+        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ4.propagation_frame)
+        oJ4.propagate()
 
         self.m_logger.WriteLine("----- J4 PERTURBATION PROPAGATOR TEST ----- END -----")
 
@@ -3451,14 +3542,14 @@ class PropagatorSPICEHelper(object):
         oSPICE.propagate()
 
         # BUG59850 - Try to propagate SPICE using a SatelliteID as a BodyName
-        sat: "Satellite" = clr.Convert(self.m_oApplication.get_object_from_path("Satellite/Satellite1"), Satellite)
+        sat: "Satellite" = Satellite(self.m_oApplication.get_object_from_path("Satellite/Satellite1"))
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
-        spice: "VehiclePropagatorSPICE" = clr.Convert(sat.propagator, VehiclePropagatorSPICE)
+        spice: "VehiclePropagatorSPICE" = VehiclePropagatorSPICE(sat.propagator)
         spice.spice = TestBase.GetScenarioFile("Satellite1.bsp")
         spice.body_name = "-200000"
         spice.ephemeris_interval.set_explicit_interval(
-            (clr.Convert(self.m_oApplication.current_scenario, Scenario)).start_time,
-            (clr.Convert(self.m_oApplication.current_scenario, Scenario)).stop_time,
+            (Scenario(self.m_oApplication.current_scenario)).start_time,
+            (Scenario(self.m_oApplication.current_scenario)).stop_time,
         )
         spice.propagate()
 
@@ -3656,8 +3747,8 @@ class PropagatorHPOPHelper(object):
         # oState.Epoch = "18 Jan 2003 02:40:24.680";
         # m_logger.WriteLine("\tThe new Epoch is: {0}", oState.Epoch);
         # Assert.AreEqual("18 Jan 2003 02:40:24.680", oState.Epoch);
-        cart = clr.Convert(oState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN), OrbitStateCartesian)
-        (clr.Convert(cart, IOrbitState)).epoch = "18 Jan 2003 02:40:24.680"
+        cart = OrbitStateCartesian(oState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        (cart).epoch = "18 Jan 2003 02:40:24.680"
         Assert.assertEqual("18 Jan 2003 02:40:24.680", cart.epoch)
         oState.representation.assign(cart)
         # Representation
@@ -3819,7 +3910,11 @@ class PropagatorHPOPHelper(object):
 
         i: int = 0
         while i < len(oSrpModelChoices):
-            eModel: "SRP_MODEL" = clr.Convert(int(oSrpModelChoices[i][0]), SRP_MODEL)
+            eModel: "SRP_MODEL" = (
+                SRP_MODEL(int(oSrpModelChoices[i][0]))
+                if (int(oSrpModelChoices[i][0]) in [item.value for item in SRP_MODEL])
+                else int(oSrpModelChoices[i][0])
+            )
             self.m_logger.WriteLine6("SRP Model: {0}", eModel)
             oSrpModel.set_model_type(eModel)
             eModel1: "SRP_MODEL" = oSrpModel.model_type
@@ -3893,10 +3988,10 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(False, oDrag.use)
         # Cd (readonly)
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 5.6
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd = 5.6
         # AreaMassRatio (readonly)
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 12.34
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = 12.34
         # AtmosphericDensityModel (readonly)
         with pytest.raises(Exception):
             oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOS_MODEL_1976
@@ -3926,38 +4021,33 @@ class PropagatorHPOPHelper(object):
 
         # Cd
 
-        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = -1.24
-        self.m_logger.WriteLine6(
-            "\tThe new Cd is: {0}", (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd
-        )
-        Assert.assertEqual(-1.24, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd)
+        (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd = -1.24
+        self.m_logger.WriteLine6("\tThe new Cd is: {0}", (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd)
+        Assert.assertEqual(-1.24, (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd)
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 120.34
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd = 120.34
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).cd = 120.34
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).cd = 120.34
 
         # AreaMassRatio
         self.m_logger.WriteLine6(
-            "\tThe current AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
+            "\tThe current AreaMassRatio is: {0}", (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio
         )
-        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 123
+        (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = 123
         self.m_logger.WriteLine6(
-            "\tThe new AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
+            "\tThe new AreaMassRatio is: {0}", (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio
         )
-        Assert.assertEqual(123, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio)
+        Assert.assertEqual(123, (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio)
 
-        (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = 124
+        (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = 124
         self.m_logger.WriteLine6(
-            "\tThe new AreaMassRatio is: {0}",
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio,
+            "\tThe new AreaMassRatio is: {0}", (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio
         )
-        Assert.assertEqual(124, (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio)
+        Assert.assertEqual(124, (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio)
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = -12.34
         with pytest.raises(Exception):
-            (clr.Convert((oDrag.drag_model), VehicleHPOPDragModelSpherical)).area_mass_ratio = -12.34
+            (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = -12.34
 
         oDrag.set_drag_model_type(DRAG_MODEL.PLUGIN)
         Assert.assertEqual(DRAG_MODEL.PLUGIN, oDrag.drag_model_type)
@@ -4343,7 +4433,11 @@ class PropagatorHPOPHelper(object):
 
         i: int = 0
         while i < len(oDragModelChoices):
-            eModel: "DRAG_MODEL" = clr.Convert(int(oDragModelChoices[i][0]), DRAG_MODEL)
+            eModel: "DRAG_MODEL" = (
+                DRAG_MODEL(int(oDragModelChoices[i][0]))
+                if (int(oDragModelChoices[i][0]) in [item.value for item in DRAG_MODEL])
+                else int(oDragModelChoices[i][0])
+            )
             self.m_logger.WriteLine6("Drag Model: {0}", eModel)
             oDrag.set_drag_model_type(eModel)
             Assert.assertEqual(eModel, oDrag.drag_model_type)
@@ -4553,7 +4647,7 @@ class PropagatorHPOPHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arBodies):
-            centralBody: str = clr.Convert(arBodies[iIndex], str)
+            centralBody: str = str(arBodies[iIndex])
             self.m_logger.WriteLine7("\t\tBody {0}: {1}", iIndex, centralBody)
             # Add
             thirdBodyGravityElement: "VehicleThirdBodyGravityElement" = oGravity.add_third_body(centralBody)
@@ -5788,7 +5882,11 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arLanchTypes):
-            eLaunch: "VEHICLE_LAUNCH" = clr.Convert(int(arLanchTypes[iIndex][0]), VEHICLE_LAUNCH)
+            eLaunch: "VEHICLE_LAUNCH" = (
+                VEHICLE_LAUNCH(int(arLanchTypes[iIndex][0]))
+                if (int(arLanchTypes[iIndex][0]) in [item.value for item in VEHICLE_LAUNCH])
+                else int(arLanchTypes[iIndex][0])
+            )
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arLanchTypes[iIndex][1], eLaunch)
             if not oBallistic.is_launch_type_supported(eLaunch):
                 Assert.fail("The {0} type should be supported!", eLaunch)
@@ -5799,7 +5897,7 @@ class PropagatorBallisticHelper(object):
             Assert.assertEqual(eLaunch, oBallistic.launch_type)
             if eLaunch == VEHICLE_LAUNCH.LAUNCH_LLA:
                 # Launch
-                launchLLA: "VehicleLaunchLLA" = clr.Convert(oBallistic.launch, VehicleLaunchLLA)
+                launchLLA: "VehicleLaunchLLA" = VehicleLaunchLLA(oBallistic.launch)
                 Assert.assertIsNotNone(launchLLA)
                 # Lat
                 self.m_logger.WriteLine6("\t\t\tThe current Lat is: {0}", launchLLA.lat)
@@ -5823,7 +5921,7 @@ class PropagatorBallisticHelper(object):
                 with pytest.raises(Exception):
                     launchLLA.altitude = -1
             elif eLaunch == VEHICLE_LAUNCH.LAUNCH_LLR:
-                oLLR: "VehicleLaunchLLR" = clr.Convert(oBallistic.launch, VehicleLaunchLLR)
+                oLLR: "VehicleLaunchLLR" = VehicleLaunchLLR(oBallistic.launch)
                 Assert.assertIsNotNone(oLLR)
                 # Lat
                 self.m_logger.WriteLine6("\t\t\tThe current Lat is: {0}", oLLR.lat)
@@ -5850,9 +5948,7 @@ class PropagatorBallisticHelper(object):
                 Assert.fail("Invalid type!")
             # need the deltaV to be set in order to propagate without exception
             oBallistic.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
-            oAzEl: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
-                oBallistic.impact_location, VehicleImpactLocationLaunchAzEl
-            )
+            oAzEl: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(oBallistic.impact_location)
             oAzEl.delta_v = 4
             oAzEl.elevation = 88
             oAzEl.azimuth = 46
@@ -5869,7 +5965,11 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arImpactTypes):
-            eImpact: "VEHICLE_IMPACT_LOCATION" = clr.Convert(int(arImpactTypes[iIndex][0]), VEHICLE_IMPACT_LOCATION)
+            eImpact: "VEHICLE_IMPACT_LOCATION" = (
+                VEHICLE_IMPACT_LOCATION(int(arImpactTypes[iIndex][0]))
+                if (int(arImpactTypes[iIndex][0]) in [item.value for item in VEHICLE_IMPACT_LOCATION])
+                else int(arImpactTypes[iIndex][0])
+            )
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arImpactTypes[iIndex][1], eImpact)
             if not oBallistic.is_impact_location_type_supported(eImpact):
                 Assert.fail("The {0} type should be supported!", eImpact)
@@ -5880,9 +5980,7 @@ class PropagatorBallisticHelper(object):
             Assert.assertEqual(eImpact, oBallistic.impact_location_type)
             if eImpact == VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL:
                 # ImpactLocation
-                oAzEl: "VehicleImpactLocationLaunchAzEl" = clr.Convert(
-                    oBallistic.impact_location, VehicleImpactLocationLaunchAzEl
-                )
+                oAzEl: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(oBallistic.impact_location)
                 Assert.assertIsNotNone(oAzEl)
                 # Azimuth
                 self.m_logger.WriteLine6("\t\t\tThe current Azimuth is: {0}", oAzEl.azimuth)
@@ -5907,9 +6005,7 @@ class PropagatorBallisticHelper(object):
                     oAzEl.delta_v = 390.1
             elif eImpact == VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_POINT:
                 # ImpactLocation
-                oPoint: "VehicleImpactLocationPoint" = clr.Convert(
-                    oBallistic.impact_location, VehicleImpactLocationPoint
-                )
+                oPoint: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(oBallistic.impact_location)
                 Assert.assertIsNotNone(oPoint)
                 # ImpactType
                 self.m_logger.WriteLine6("\t\tThe current ImpactType is: {0}", oPoint.impact_type)
@@ -5919,7 +6015,11 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arPITypes):
-                    eI: "VEHICLE_IMPACT" = clr.Convert(int(arPITypes[j][0]), VEHICLE_IMPACT)
+                    eI: "VEHICLE_IMPACT" = (
+                        VEHICLE_IMPACT(int(arPITypes[j][0]))
+                        if (int(arPITypes[j][0]) in [item.value for item in VEHICLE_IMPACT])
+                        else int(arPITypes[j][0])
+                    )
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arPITypes[j][1], eI)
                     if not oPoint.is_impact_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -5929,7 +6029,7 @@ class PropagatorBallisticHelper(object):
                     self.m_logger.WriteLine6("\t\t\tThe new Impact type is: {0}", oPoint.impact_type)
                     Assert.assertEqual(eI, oPoint.impact_type)
                     if eI == VEHICLE_IMPACT.IMPACT_LLA:
-                        impactLLA: "VehicleImpactLLA" = clr.Convert(oPoint.impact, VehicleImpactLLA)
+                        impactLLA: "VehicleImpactLLA" = VehicleImpactLLA(oPoint.impact)
                         Assert.assertIsNotNone(impactLLA)
                         # Lat
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lat is: {0}", impactLLA.lat)
@@ -5953,7 +6053,7 @@ class PropagatorBallisticHelper(object):
                         with pytest.raises(Exception):
                             impactLLA.altitude = -1
                     elif eI == VEHICLE_IMPACT.IMPACT_LLR:
-                        oLLR: "VehicleImpactLLR" = clr.Convert(oPoint.impact, VehicleImpactLLR)
+                        oLLR: "VehicleImpactLLR" = VehicleImpactLLR(oPoint.impact)
                         Assert.assertIsNotNone(oLLR)
                         # Lat
                         self.m_logger.WriteLine6("\t\t\t\tThe current Lat is: {0}", oLLR.lat)
@@ -5978,9 +6078,7 @@ class PropagatorBallisticHelper(object):
                             oLLR.radius = -1
                     else:
                         Assert.fail("Invalid type!")
-                    deltaV: "VehicleLaunchControlFixedDeltaV" = clr.Convert(
-                        oPoint.launch_control, VehicleLaunchControlFixedDeltaV
-                    )
+                    deltaV: "VehicleLaunchControlFixedDeltaV" = VehicleLaunchControlFixedDeltaV(oPoint.launch_control)
                     deltaV.delta_v = 4
                     # Propagate
                     oBallistic.propagate()
@@ -5995,7 +6093,11 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arLCTypes):
-                    eI: "VEHICLE_LAUNCH_CONTROL" = clr.Convert(int(arLCTypes[j][0]), VEHICLE_LAUNCH_CONTROL)
+                    eI: "VEHICLE_LAUNCH_CONTROL" = (
+                        VEHICLE_LAUNCH_CONTROL(int(arLCTypes[j][0]))
+                        if (int(arLCTypes[j][0]) in [item.value for item in VEHICLE_LAUNCH_CONTROL])
+                        else int(arLCTypes[j][0])
+                    )
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arLCTypes[j][1], eI)
                     if not oPoint.is_launch_control_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -6005,8 +6107,8 @@ class PropagatorBallisticHelper(object):
                     self.m_logger.WriteLine6("\t\t\tThe new LaunchControl type is: {0}", oPoint.launch_control_type)
                     Assert.assertEqual(eI, oPoint.launch_control_type)
                     if eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_APOGEE_ALTITUDE:
-                        launchControlFixedApogeeAlt: "VehicleLaunchControlFixedApogeeAltitude" = clr.Convert(
-                            oPoint.launch_control, VehicleLaunchControlFixedApogeeAltitude
+                        launchControlFixedApogeeAlt: "VehicleLaunchControlFixedApogeeAltitude" = (
+                            VehicleLaunchControlFixedApogeeAltitude(oPoint.launch_control)
                         )
                         Assert.assertIsNotNone(launchControlFixedApogeeAlt)
                         # ApogeeAlt
@@ -6021,8 +6123,8 @@ class PropagatorBallisticHelper(object):
                         with pytest.raises(Exception):
                             launchControlFixedApogeeAlt.apogee_altitude = -1
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V:
-                        launchControlFixedDeltaV: "VehicleLaunchControlFixedDeltaV" = clr.Convert(
-                            oPoint.launch_control, VehicleLaunchControlFixedDeltaV
+                        launchControlFixedDeltaV: "VehicleLaunchControlFixedDeltaV" = VehicleLaunchControlFixedDeltaV(
+                            oPoint.launch_control
                         )
                         Assert.assertIsNotNone(launchControlFixedDeltaV)
                         # DeltaV
@@ -6033,8 +6135,8 @@ class PropagatorBallisticHelper(object):
                         with pytest.raises(Exception):
                             launchControlFixedDeltaV.delta_v = 23
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_DELTA_V_MIN_ECCENTRICITY:
-                        launchControlFixedDeltaVMinEcc: "VehicleLaunchControlFixedDeltaVMinEccentricity" = clr.Convert(
-                            oPoint.launch_control, VehicleLaunchControlFixedDeltaVMinEccentricity
+                        launchControlFixedDeltaVMinEcc: "VehicleLaunchControlFixedDeltaVMinEccentricity" = (
+                            VehicleLaunchControlFixedDeltaVMinEccentricity(oPoint.launch_control)
                         )
                         Assert.assertIsNotNone(launchControlFixedDeltaVMinEcc)
                         # DeltaVMin
@@ -6049,8 +6151,8 @@ class PropagatorBallisticHelper(object):
                         with pytest.raises(Exception):
                             launchControlFixedDeltaVMinEcc.delta_v_min = 12
                     elif eI == VEHICLE_LAUNCH_CONTROL.LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT:
-                        launchControlFixedTimeOfFlight: "VehicleLaunchControlFixedTimeOfFlight" = clr.Convert(
-                            oPoint.launch_control, VehicleLaunchControlFixedTimeOfFlight
+                        launchControlFixedTimeOfFlight: "VehicleLaunchControlFixedTimeOfFlight" = (
+                            VehicleLaunchControlFixedTimeOfFlight(oPoint.launch_control)
                         )
                         Assert.assertIsNotNone(launchControlFixedTimeOfFlight)
                         # TimeOfFlight
@@ -6084,7 +6186,7 @@ class PropagatorBallisticHelper(object):
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
         # start/stop times are overridden with the scenario's start/stop times.
-        sc: "Scenario" = clr.Convert(self._owner.root.current_scenario, Scenario)
+        sc: "Scenario" = Scenario(self._owner.root.current_scenario)
         oBallistic.ephemeris_interval.set_explicit_interval("1 Jul 2005 12:00:00.000", "1 Jul 2005 12:00:00.000")
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
         # oBallistic.StopTime = "2 Jul 2005 12:00:00.000";
@@ -6098,12 +6200,10 @@ class PropagatorBallisticHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
         # Assert.AreEqual("2 Jul 2005 12:00:00.000", oBallistic.StopTime);
 
-        oBallistic.ephemeris_interval.set_implicit_interval(
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"]
-        )
+        oBallistic.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
         oBallistic.ephemeris_interval.set_explicit_interval(
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
-            (clr.Convert(sc, IStkObject)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
         )
         oBallistic.propagate()
 
@@ -6296,7 +6396,7 @@ class BoostedOMRealtimePointBuilderHelper(object):
         if batchIndex != 0:
             dtStart: "Date" = self._root.conversion_utility.new_date(
                 self._root.unit_preferences.get_current_unit_abbrv("DateFormat"),
-                str((clr.Convert(self._root.current_scenario, Scenario)).stop_time),
+                str((Scenario(self._root.current_scenario)).stop_time),
             )
             lasttime: float = float(dtStart.format("EpSec"))
             if self._includeVelocities:
@@ -6333,7 +6433,11 @@ class PropagatorRealtimeHelper(object):
 
         i: int = 0
         while i < len(supportedPropagators):
-            supportedType: "LOOK_AHEAD_PROPAGATOR" = clr.Convert(int(supportedPropagators[i]), LOOK_AHEAD_PROPAGATOR)
+            supportedType: "LOOK_AHEAD_PROPAGATOR" = (
+                LOOK_AHEAD_PROPAGATOR(int(supportedPropagators[i]))
+                if (int(supportedPropagators[i]) in [item.value for item in LOOK_AHEAD_PROPAGATOR])
+                else int(supportedPropagators[i])
+            )
             self.m_logger.WriteLine6("Supported lookahead propagator: {0}", supportedType)
             if ((supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CBI_POSITION)) or (
                 (supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CBF_POSITION)
@@ -6512,8 +6616,8 @@ class PropagatorGPSHelper(object):
 
         i: int = 0
         while i < Array.Length(availPRNs):
-            gps.prn = int(clr.Convert(availPRNs[i], str))
-            Assert.assertEqual(gps.prn, int(clr.Convert(availPRNs[i], str)))
+            gps.prn = int(str(availPRNs[i]))
+            Assert.assertEqual(gps.prn, int(str(availPRNs[i])))
 
             i += 1
 
@@ -6588,8 +6692,8 @@ class PropagatorGPSHelper(object):
 
         i: int = 0
         while i < Array.Length(availPRNs):
-            gps.prn = int(clr.Convert(availPRNs[i], str))
-            Assert.assertEqual(gps.prn, int(clr.Convert(availPRNs[i], str)))
+            gps.prn = int(str(availPRNs[i]))
+            Assert.assertEqual(gps.prn, int(str(availPRNs[i])))
 
             i += 1
 
@@ -6679,7 +6783,7 @@ class BasicAttitudeStandardHelper(object):
         # Type
         self.m_logger.WriteLine6("\tThe current Type is: {0}", oAttitude.type)
         if oAttitude.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            oTrajectory: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oAttitude, VehicleTrajectoryAttitudeStandard)
+            oTrajectory: "VehicleTrajectoryAttitudeStandard" = VehicleTrajectoryAttitudeStandard(oAttitude)
             Assert.assertIsNotNone(oTrajectory)
             # Basic
             self.Basic(oTrajectory.basic)
@@ -6688,7 +6792,7 @@ class BasicAttitudeStandardHelper(object):
             # Pointing
             self.Pointing(oTrajectory.pointing)
         elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            oOrbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oAttitude, VehicleOrbitAttitudeStandard)
+            oOrbit: "VehicleOrbitAttitudeStandard" = VehicleOrbitAttitudeStandard(oAttitude)
             Assert.assertIsNotNone(oOrbit)
             # Basic
             self.Basic(oOrbit.basic)
@@ -6699,7 +6803,7 @@ class BasicAttitudeStandardHelper(object):
             # External
             self.External(oOrbit.external)
         elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            oRoute: "VehicleRouteAttitudeStandard" = clr.Convert(oAttitude, VehicleRouteAttitudeStandard)
+            oRoute: "VehicleRouteAttitudeStandard" = VehicleRouteAttitudeStandard(oAttitude)
             Assert.assertIsNotNone(oRoute)
             # Basic
             self.Basic(oRoute.basic)
@@ -6723,7 +6827,11 @@ class BasicAttitudeStandardHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_PROFILE" = clr.Convert(int(arTypes[iIndex][0]), VEHICLE_PROFILE)
+            eType: "VEHICLE_PROFILE" = (
+                VEHICLE_PROFILE(int(arTypes[iIndex][0]))
+                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_PROFILE])
+                else int(arTypes[iIndex][0])
+            )
             self.m_logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oBasic.is_profile_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -6748,7 +6856,7 @@ class BasicAttitudeStandardHelper(object):
         # Type
         self.m_logger.WriteLine5("\t\t\tThe current Type is: {0}", oProfile.type)
         if oProfile.type == "Aligned and Constrained":
-            oAAC: "VehicleProfileAlignedAndConstrained" = clr.Convert(oProfile, VehicleProfileAlignedAndConstrained)
+            oAAC: "VehicleProfileAlignedAndConstrained" = VehicleProfileAlignedAndConstrained(oProfile)
             Assert.assertIsNotNone(oAAC)
             # AlignedVector
             self.Vector(oAAC.aligned_vector)
@@ -6756,7 +6864,7 @@ class BasicAttitudeStandardHelper(object):
             self.Vector(oAAC.constrained_vector)
 
         if oProfile.type == "Coordinated Turn":
-            oCTurn: "VehicleProfileCoordinatedTurn" = clr.Convert(oProfile, VehicleProfileCoordinatedTurn)
+            oCTurn: "VehicleProfileCoordinatedTurn" = VehicleProfileCoordinatedTurn(oProfile)
             Assert.assertIsNotNone(oCTurn)
             # TimeOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current TimeOffset is: {0}", oCTurn.time_offset)
@@ -6782,7 +6890,7 @@ class BasicAttitudeStandardHelper(object):
             )
             or (oProfile.type == "Nadir alignment with Sun constraint")
         ) or (oProfile.type == "Nadir alignment with orbit normal constraint"):
-            oCOffset: "VehicleProfileConstraintOffset" = clr.Convert(oProfile, VehicleProfileConstraintOffset)
+            oCOffset: "VehicleProfileConstraintOffset" = VehicleProfileConstraintOffset(oProfile)
             Assert.assertIsNotNone(oCOffset)
             # ConstraintOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current ConstraintOffset is: {0}", oCOffset.constraint_offset)
@@ -6793,7 +6901,7 @@ class BasicAttitudeStandardHelper(object):
                 oCOffset.constraint_offset = 1234.56
 
         if oProfile.type == "Fixed in Axes":
-            oFixed: "VehicleProfileFixedInAxes" = clr.Convert(oProfile, VehicleProfileFixedInAxes)
+            oFixed: "VehicleProfileFixedInAxes" = VehicleProfileFixedInAxes(oProfile)
             Assert.assertIsNotNone(oFixed)
             arAvailRefAxes = oFixed.available_reference_axes
             # ReferenceAxes
@@ -6812,7 +6920,7 @@ class BasicAttitudeStandardHelper(object):
             )
 
         if oProfile.type == "Precessing Spin":
-            profilePrecessingSpin: "VehicleProfilePrecessingSpin" = clr.Convert(oProfile, VehicleProfilePrecessingSpin)
+            profilePrecessingSpin: "VehicleProfilePrecessingSpin" = VehicleProfilePrecessingSpin(oProfile)
             Assert.assertIsNotNone(profilePrecessingSpin)
             # Epoch
             self.m_logger.WriteLine6(
@@ -6846,7 +6954,7 @@ class BasicAttitudeStandardHelper(object):
                 profilePrecessingSpin.reference_axes = "bogus"
 
         if oProfile.type == "Spinning":
-            profileSpinning: "VehicleProfileSpinning" = clr.Convert(oProfile, VehicleProfileSpinning)
+            profileSpinning: "VehicleProfileSpinning" = VehicleProfileSpinning(oProfile)
             Assert.assertIsNotNone(profileSpinning)
             # Epoch
             self.m_logger.WriteLine6("\t\t\t\tThe current Epoch is: {0}", profileSpinning.smart_epoch.time_instant)
@@ -6889,7 +6997,7 @@ class BasicAttitudeStandardHelper(object):
             )
             or (oProfile.type == "Sun alignment with ecliptic normal constraint")
         ) or (oProfile.type == "XPOP Inertial Attitude"):
-            oAOffset: "VehicleProfileAlignmentOffset" = clr.Convert(oProfile, VehicleProfileAlignmentOffset)
+            oAOffset: "VehicleProfileAlignmentOffset" = VehicleProfileAlignmentOffset(oProfile)
             Assert.assertIsNotNone(oAOffset)
             # AlignmentOffset
             self.m_logger.WriteLine6("\t\t\t\tThe current AlignmentOffset is: {0}", oAOffset.alignment_offset)
@@ -6900,7 +7008,7 @@ class BasicAttitudeStandardHelper(object):
                 oAOffset.alignment_offset = 1234.56
 
         if oProfile.type == "Inertially fixed":
-            oInertial: "VehicleProfileInertial" = clr.Convert(oProfile, VehicleProfileInertial)
+            oInertial: "VehicleProfileInertial" = VehicleProfileInertial(oProfile)
             Assert.assertIsNotNone(oInertial)
             # Inertial
             oHelper = OrientationTest(self.m_oUnits)
@@ -6909,14 +7017,14 @@ class BasicAttitudeStandardHelper(object):
             )
 
         if oProfile.type == "Yaw to nadir":
-            oYTN: "VehicleProfileYawToNadir" = clr.Convert(oProfile, VehicleProfileYawToNadir)
+            oYTN: "VehicleProfileYawToNadir" = VehicleProfileYawToNadir(oProfile)
             Assert.assertIsNotNone(oYTN)
             # Inertial
             oHelper = DirectionsTest()
             oHelper.Run(oYTN.inertial)
 
         if (oProfile.type == "Spin about Sun vector") or (oProfile.type == "Spin about nadir"):
-            profileSpinAboutXxx: "VehicleProfileSpinAboutXXX" = clr.Convert(oProfile, VehicleProfileSpinAboutXXX)
+            profileSpinAboutXxx: "VehicleProfileSpinAboutXXX" = VehicleProfileSpinAboutXXX(oProfile)
             Assert.assertIsNotNone(profileSpinAboutXxx)
             # Epoch
             self.m_logger.WriteLine6("\t\t\t\tThe current Epoch is: {0}", profileSpinAboutXxx.smart_epoch.time_instant)
@@ -6939,7 +7047,7 @@ class BasicAttitudeStandardHelper(object):
                 profileSpinAboutXxx.offset = 1234.5
 
         if oProfile.type == "GPS":
-            oGPS: "VehicleProfileGPS" = clr.Convert(oProfile, VehicleProfileGPS)
+            oGPS: "VehicleProfileGPS" = VehicleProfileGPS(oProfile)
             Assert.assertIsNotNone(oGPS)
             # ModelType
             self.m_logger.WriteLine6("\t\t\t\tThe current ModelType is: {0}", oGPS.model_type)
@@ -7254,7 +7362,7 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
             with pytest.raises(Exception):
-                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
+                (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
             # EventDetection (readonly)
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling (readonly)
@@ -7274,24 +7382,24 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
             with pytest.raises(Exception):
-                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
+                (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
             # UseLightTimeDelay (true)
             oAdvanced.use_light_time_delay = True
             self.m_logger.WriteLine4("\tThe new UseLightTimeDelay is: {0}", oAdvanced.use_light_time_delay)
             Assert.assertTrue(oAdvanced.use_light_time_delay)
             # AberrationType
             self.m_logger.WriteLine6("\tThe current AberrationType is: {0}", oAdvanced.aberration_type)
-            (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.ANNUAL
+            (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
             Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
-            (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.NONE
+            (oAdvanced).aberration_type = ABERRATION_TYPE.NONE
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
             Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
-            (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.TOTAL
+            (oAdvanced).aberration_type = ABERRATION_TYPE.TOTAL
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
             Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
             with pytest.raises(Exception):
-                (clr.Convert(oAdvanced, IAccessAdvanced)).aberration_type = ABERRATION_TYPE.UNKNOWN
+                (oAdvanced).aberration_type = ABERRATION_TYPE.UNKNOWN
             # TimeDelayConvergence
             self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
             oAdvanced.time_delay_convergence = 0.1
@@ -7692,7 +7800,7 @@ class ScheduleTimesHelper(object):
 
             i: int = 0
             while i < Array.Length(arAvailTargets):
-                name: str = clr.Convert(arAvailTargets[i], str)
+                name: str = str(arAvailTargets[i])
 
                 i += 1
 
@@ -7726,8 +7834,8 @@ class ScheduleTimesHelper(object):
             # Item
             oTime: "VehicleScheduleTimesElement" = oCollection[0]
             nameX: str = oTime.target.name
-            start: str = clr.Convert(oTime.start, str)
-            stop: str = clr.Convert(oTime.stop, str)
+            start: str = str(oTime.start)
+            stop: str = str(oTime.stop)
             Assert.assertIsNotNone(oTime)
 
             # Start
@@ -7952,7 +8060,7 @@ class BasicAttitudeRealTimeHelper(object):
         self.m_logger.WriteLine5(" Stop time in seconds: {0} ", dtStop.format("EpSec"))
         if self._obj.class_type == STK_OBJECT_TYPE.SATELLITE:
             # Re-propagate the satellite
-            AG_SAT: "Satellite" = clr.Convert(self._obj, Satellite)
+            AG_SAT: "Satellite" = Satellite(self._obj)
             AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             tb: "VehiclePropagatorTwoBody" = clr.CastAs(AG_SAT.propagator, VehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
@@ -7961,7 +8069,7 @@ class BasicAttitudeRealTimeHelper(object):
             stopTime = tb.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.SHIP:
-            AG_SH: "Ship" = clr.Convert(self._obj, Ship)
+            AG_SH: "Ship" = Ship(self._obj)
             AG_SH.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_SH.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
@@ -7969,7 +8077,7 @@ class BasicAttitudeRealTimeHelper(object):
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.AIRCRAFT:
-            AG_AC: "Aircraft" = clr.Convert(self._obj, Aircraft)
+            AG_AC: "Aircraft" = Aircraft(self._obj)
             AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_AC.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
@@ -7977,7 +8085,7 @@ class BasicAttitudeRealTimeHelper(object):
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
-            AG_GV: "GroundVehicle" = clr.Convert(self._obj, GroundVehicle)
+            AG_GV: "GroundVehicle" = GroundVehicle(self._obj)
             AG_GV.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
             ga: "VehiclePropagatorGreatArc" = clr.CastAs(AG_GV.route, VehiclePropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
@@ -7985,7 +8093,7 @@ class BasicAttitudeRealTimeHelper(object):
             stopTime = ga.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.MISSILE:
-            AG_MS: "Missile" = clr.Convert(self._obj, Missile)
+            AG_MS: "Missile" = Missile(self._obj)
             AG_MS.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             tb: "VehiclePropagatorTwoBody" = clr.CastAs(AG_MS.trajectory, VehiclePropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
@@ -7994,7 +8102,7 @@ class BasicAttitudeRealTimeHelper(object):
             stopTime = tb.ephemeris_interval.find_stop_time()
 
         elif self._obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-            AG_LV: "LaunchVehicle" = clr.Convert(self._obj, LaunchVehicle)
+            AG_LV: "LaunchVehicle" = LaunchVehicle(self._obj)
             AG_LV.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
             sa: "VehiclePropagatorSimpleAscent" = clr.CastAs(AG_LV.trajectory, VehiclePropagatorSimpleAscent)
             sa.ephemeris_interval.set_explicit_interval(startTime, stopTime)
@@ -8048,7 +8156,11 @@ class BasicAttitudeRealTimeHelper(object):
 
         i: int = 0
         while i < len(supportedProfileTypes):
-            profileid: "VEHICLE_PROFILE" = clr.Convert(int(supportedProfileTypes[i][0]), VEHICLE_PROFILE)
+            profileid: "VEHICLE_PROFILE" = (
+                VEHICLE_PROFILE(int(supportedProfileTypes[i][0]))
+                if (int(supportedProfileTypes[i][0]) in [item.value for item in VEHICLE_PROFILE])
+                else int(supportedProfileTypes[i][0])
+            )
             self.m_logger.WriteLine6("DataReference: {0}", profileid)
             oAttitude.data_reference.set_profile_type(profileid)
             Assert.assertIsNotNone(oAttitude.data_reference.profile)
@@ -8098,7 +8210,7 @@ class BasicAttitudeRealTimeHelper(object):
                 raise
 
         if dpi != None:
-            tvdp = clr.Convert(dpi, DataProviderTimeVarying)
+            tvdp = DataProviderTimeVarying(dpi)
             resultA = tvdp.exec_elements(startTime, stopTime, reportStep, elements)
             Assert.assertEqual(5, resultA.data_sets.count)
             ds1: "DataProviderResultDataSet" = self.FindDataSet(resultA.data_sets, "Time")
@@ -8130,7 +8242,7 @@ class BasicAttitudeRealTimeHelper(object):
                     pos += 4
 
                 dpi = self._obj.data_providers["Attitude Quaternions"]
-                tvdp = clr.Convert(dpi, DataProviderTimeVarying)
+                tvdp = DataProviderTimeVarying(dpi)
                 resultB = tvdp.exec_elements(startTime, stopTime, reportStep, elements)
                 ds2: "DataProviderResultDataSet" = self.FindDataSet(resultB.data_sets, "Time")
                 times = ds2.get_values()
@@ -8184,8 +8296,7 @@ class BasicAttitudeDifferenceHelper(object):
         veProfile: "VEHICLE_PROFILE" = self.GetCurrentBasicProfileType(oStandard)
         Assert.assertEqual(VEHICLE_PROFILE.PROFILE_ECF_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
         Assert.assertEqual(
-            12.5,
-            (clr.Convert(self.GetCurrentBasicProfile(oStandard), VehicleProfileConstraintOffset)).constraint_offset,
+            12.5, (VehicleProfileConstraintOffset(self.GetCurrentBasicProfile(oStandard))).constraint_offset
         )
 
         self.m_oApplication.execute_command(
@@ -8207,17 +8318,17 @@ class BasicAttitudeDifferenceHelper(object):
     def GetAttitude(self, oAny: "IStkObject"):
         oAttitude: "IVehicleAttitude" = None
         if oAny.class_type == STK_OBJECT_TYPE.SATELLITE:
-            oAttitude = (clr.Convert(oAny, Satellite)).attitude
+            oAttitude = (Satellite(oAny)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.SHIP:
-            oAttitude = (clr.Convert(oAny, Ship)).attitude
+            oAttitude = (Ship(oAny)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.AIRCRAFT:
-            oAttitude = (clr.Convert(oAny, Aircraft)).attitude
+            oAttitude = (Aircraft(oAny)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.MISSILE:
-            oAttitude = (clr.Convert(oAny, Missile)).attitude
+            oAttitude = (Missile(oAny)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
-            oAttitude = (clr.Convert(oAny, GroundVehicle)).attitude
+            oAttitude = (GroundVehicle(oAny)).attitude
         elif oAny.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-            oAttitude = (clr.Convert(oAny, LaunchVehicle)).attitude
+            oAttitude = (LaunchVehicle(oAny)).attitude
         return oAttitude
 
     # endregion
@@ -8225,13 +8336,13 @@ class BasicAttitudeDifferenceHelper(object):
     # region GetCurrentBasicProfileType
     def GetCurrentBasicProfileType(self, oStandard: "IVehicleAttitudeStandard"):
         if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            orbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oStandard, VehicleOrbitAttitudeStandard)
+            orbit: "VehicleOrbitAttitudeStandard" = VehicleOrbitAttitudeStandard(oStandard)
             return orbit.basic.profile_type
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            route: "VehicleRouteAttitudeStandard" = clr.Convert(oStandard, VehicleRouteAttitudeStandard)
+            route: "VehicleRouteAttitudeStandard" = VehicleRouteAttitudeStandard(oStandard)
             return route.basic.profile_type
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            traj: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, VehicleTrajectoryAttitudeStandard)
+            traj: "VehicleTrajectoryAttitudeStandard" = VehicleTrajectoryAttitudeStandard(oStandard)
             return traj.basic.profile_type
         else:
             return VEHICLE_PROFILE.PROFILE_UNKNOWN
@@ -8241,13 +8352,13 @@ class BasicAttitudeDifferenceHelper(object):
     # region GetCurrentBasicProfile
     def GetCurrentBasicProfile(self, oStandard: "IVehicleAttitudeStandard"):
         if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
-            orbit: "VehicleOrbitAttitudeStandard" = clr.Convert(oStandard, VehicleOrbitAttitudeStandard)
+            orbit: "VehicleOrbitAttitudeStandard" = VehicleOrbitAttitudeStandard(oStandard)
             return orbit.basic.profile
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
-            route: "VehicleRouteAttitudeStandard" = clr.Convert(oStandard, VehicleRouteAttitudeStandard)
+            route: "VehicleRouteAttitudeStandard" = VehicleRouteAttitudeStandard(oStandard)
             return route.basic.profile
         elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
-            traj: "VehicleTrajectoryAttitudeStandard" = clr.Convert(oStandard, VehicleTrajectoryAttitudeStandard)
+            traj: "VehicleTrajectoryAttitudeStandard" = VehicleTrajectoryAttitudeStandard(oStandard)
             return traj.basic.profile
         else:
             return None
@@ -8299,7 +8410,11 @@ class AccessEventDetectionHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "EVENT_DETECTION" = clr.Convert(int(arTypes[iIndex][0]), EVENT_DETECTION)
+                eType: "EVENT_DETECTION" = (
+                    EVENT_DETECTION(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in EVENT_DETECTION])
+                    else int(arTypes[iIndex][0])
+                )
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oDetection.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -8405,7 +8520,11 @@ class AccessSamplingHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "SAMPLING_METHOD" = clr.Convert(int(arTypes[iIndex][0]), SAMPLING_METHOD)
+                eType: "SAMPLING_METHOD" = (
+                    SAMPLING_METHOD(int(arTypes[iIndex][0]))
+                    if (int(arTypes[iIndex][0]) in [item.value for item in SAMPLING_METHOD])
+                    else int(arTypes[iIndex][0])
+                )
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oSampling.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -8512,8 +8631,8 @@ class SpatialInfoHelper(object):
             Assert.assertFalse(spatialState.is_available)
             objTypeToPropagate = oObj.class_type
             if objTypeToPropagate == STK_OBJECT_TYPE.AIRCRAFT:
-                (clr.Convert(oParentObj, Aircraft)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, Aircraft)).route, VehiclePropagatorGreatArc)
+                (Aircraft(oParentObj)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = VehiclePropagatorGreatArc((Aircraft(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -10
                 wpe.longitude = -11
@@ -8525,8 +8644,8 @@ class SpatialInfoHelper(object):
                 wpe.longitude = -14
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.GROUND_VEHICLE:
-                (clr.Convert(oParentObj, GroundVehicle)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, GroundVehicle)).route, VehiclePropagatorGreatArc)
+                (GroundVehicle(oParentObj)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = VehiclePropagatorGreatArc((GroundVehicle(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -16
                 wpe.longitude = -17
@@ -8538,32 +8657,30 @@ class SpatialInfoHelper(object):
                 wpe.longitude = -21
                 ga.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-                (clr.Convert(oParentObj, LaunchVehicle)).set_trajectory_type(
-                    VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT
-                )
+                (LaunchVehicle(oParentObj)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
                 ascent: "VehiclePropagatorSimpleAscent" = clr.CastAs(
-                    (clr.Convert(oParentObj, LaunchVehicle)).trajectory, VehiclePropagatorSimpleAscent
+                    (LaunchVehicle(oParentObj)).trajectory, VehiclePropagatorSimpleAscent
                 )
                 Assert.assertIsNotNone(ascent)
                 ascent.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.MISSILE:
-                (clr.Convert(oParentObj, Missile)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                (Missile(oParentObj)).set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
                 ballistic: "VehiclePropagatorTwoBody" = clr.CastAs(
-                    (clr.Convert(oParentObj, Missile)).trajectory, VehiclePropagatorTwoBody
+                    (Missile(oParentObj)).trajectory, VehiclePropagatorTwoBody
                 )
                 Assert.assertIsNotNone(ballistic)
                 ballistic.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SATELLITE:
-                (clr.Convert(oParentObj, Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+                (Satellite(oParentObj)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
                 tb: "VehiclePropagatorTwoBody" = clr.CastAs(
-                    (clr.Convert(oParentObj, Satellite)).propagator, VehiclePropagatorTwoBody
+                    (Satellite(oParentObj)).propagator, VehiclePropagatorTwoBody
                 )
                 Assert.assertIsNotNone(tb)
                 tb.step = 120
                 tb.propagate()
             elif objTypeToPropagate == STK_OBJECT_TYPE.SHIP:
-                (clr.Convert(oParentObj, Ship)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-                ga = clr.Convert((clr.Convert(oParentObj, Ship)).route, VehiclePropagatorGreatArc)
+                (Ship(oParentObj)).set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+                ga = VehiclePropagatorGreatArc((Ship(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -22
                 wpe.longitude = -23
@@ -8668,7 +8785,7 @@ class SpatialInfoHelper(object):
 
         # Create a spatial object that recylces the same spatial state
         # instead of creating a new state object
-        oSpatialInfo = (clr.Convert(oObj, IProvideSpatialInfo)).get_spatial_info(True)
+        oSpatialInfo = (IProvideSpatialInfo(oObj)).get_spatial_info(True)
         Assert.assertIsNotNone(oSpatialInfo)
         Assert.assertTrue(oSpatialInfo.recycle)
 

@@ -21,7 +21,8 @@ from ...internal  import coclassutil      as agcls
 from ...internal  import marshall         as agmarshall
 from ...internal.comutil     import IUnknown
 from ...internal.apiutil     import (InterfaceProxy, OutArg, initialize_from_source_object, 
-    get_interface_property, set_interface_attribute, set_class_attribute)
+    get_interface_property, set_interface_attribute, set_class_attribute, 
+    SupportsDeleteCallback)
 from ...internal.eventutil   import *
 from ...utilities.exceptions import *
 
@@ -36,17 +37,18 @@ class IStrategyMATLABNav(object):
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_function_name_method_offset = 1
+    _set_function_name_method_offset = 2
+    _is_function_path_valid_method_offset = 3
+    _get_check_for_errors_method_offset = 4
+    _set_check_for_errors_method_offset = 5
+    _get_display_output_method_offset = 6
+    _set_display_output_method_offset = 7
     _metadata = {
-        "uuid" : "{e53fcce4-1a17-488d-9053-c236d27b8b6e}",
+        "iid_data" : (5227863432379747556, 7965596508726907792),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_function_name" : 1,
-                             "set_function_name" : 2,
-                             "is_function_path_valid" : 3,
-                             "get_check_for_errors" : 4,
-                             "set_check_for_errors" : 5,
-                             "get_display_output" : 6,
-                             "set_display_output" : 7, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
         """Construct an object of type IStrategyMATLABNav."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABNav)
@@ -61,7 +63,7 @@ class IStrategyMATLABNav(object):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABNav, None)
     
-    _get_function_name_metadata = { "name" : "function_name",
+    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -69,7 +71,7 @@ class IStrategyMATLABNav(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._get_function_name_metadata)
 
-    _set_function_name_metadata = { "name" : "function_name",
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
@@ -77,14 +79,14 @@ class IStrategyMATLABNav(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._set_function_name_metadata, newVal)
 
-    _is_function_path_valid_metadata = { "name" : "is_function_path_valid",
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(IStrategyMATLABNav._metadata, IStrategyMATLABNav._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "name" : "check_for_errors",
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -92,7 +94,7 @@ class IStrategyMATLABNav(object):
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "name" : "check_for_errors",
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
@@ -100,7 +102,7 @@ class IStrategyMATLABNav(object):
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._set_check_for_errors_metadata, newVal)
 
-    _get_display_output_metadata = { "name" : "display_output",
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -108,7 +110,7 @@ class IStrategyMATLABNav(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._get_display_output_metadata)
 
-    _set_display_output_metadata = { "name" : "display_output",
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
@@ -116,8 +118,12 @@ class IStrategyMATLABNav(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABNav._metadata, IStrategyMATLABNav._set_display_output_metadata, newVal)
 
+    _property_names[function_name] = "function_name"
+    _property_names[check_for_errors] = "check_for_errors"
+    _property_names[display_output] = "display_output"
 
-agcls.AgClassCatalog.add_catalog_entry("{e53fcce4-1a17-488d-9053-c236d27b8b6e}", IStrategyMATLABNav)
+
+agcls.AgClassCatalog.add_catalog_entry((5227863432379747556, 7965596508726907792), IStrategyMATLABNav)
 agcls.AgTypeNameMap["IStrategyMATLABNav"] = IStrategyMATLABNav
 
 class IStrategyMATLABProfile(object):
@@ -125,17 +131,18 @@ class IStrategyMATLABProfile(object):
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_function_name_method_offset = 1
+    _set_function_name_method_offset = 2
+    _is_function_path_valid_method_offset = 3
+    _get_check_for_errors_method_offset = 4
+    _set_check_for_errors_method_offset = 5
+    _get_display_output_method_offset = 6
+    _set_display_output_method_offset = 7
     _metadata = {
-        "uuid" : "{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}",
+        "iid_data" : (5762811461223097488, 815303183833033109),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_function_name" : 1,
-                             "set_function_name" : 2,
-                             "is_function_path_valid" : 3,
-                             "get_check_for_errors" : 4,
-                             "set_check_for_errors" : 5,
-                             "get_display_output" : 6,
-                             "set_display_output" : 7, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
         """Construct an object of type IStrategyMATLABProfile."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABProfile)
@@ -150,7 +157,7 @@ class IStrategyMATLABProfile(object):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABProfile, None)
     
-    _get_function_name_metadata = { "name" : "function_name",
+    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -158,7 +165,7 @@ class IStrategyMATLABProfile(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._get_function_name_metadata)
 
-    _set_function_name_metadata = { "name" : "function_name",
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
@@ -166,14 +173,14 @@ class IStrategyMATLABProfile(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._set_function_name_metadata, newVal)
 
-    _is_function_path_valid_metadata = { "name" : "is_function_path_valid",
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "name" : "check_for_errors",
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -181,7 +188,7 @@ class IStrategyMATLABProfile(object):
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "name" : "check_for_errors",
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
@@ -189,7 +196,7 @@ class IStrategyMATLABProfile(object):
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._set_check_for_errors_metadata, newVal)
 
-    _get_display_output_metadata = { "name" : "display_output",
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -197,7 +204,7 @@ class IStrategyMATLABProfile(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._get_display_output_metadata)
 
-    _set_display_output_metadata = { "name" : "display_output",
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
@@ -205,8 +212,12 @@ class IStrategyMATLABProfile(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABProfile._metadata, IStrategyMATLABProfile._set_display_output_metadata, newVal)
 
+    _property_names[function_name] = "function_name"
+    _property_names[check_for_errors] = "check_for_errors"
+    _property_names[display_output] = "display_output"
 
-agcls.AgClassCatalog.add_catalog_entry("{c5c0a490-9e7d-4ff9-95e9-9c10ed89500b}", IStrategyMATLABProfile)
+
+agcls.AgClassCatalog.add_catalog_entry((5762811461223097488, 815303183833033109), IStrategyMATLABProfile)
 agcls.AgTypeNameMap["IStrategyMATLABProfile"] = IStrategyMATLABProfile
 
 class IStrategyMATLABFull3D(object):
@@ -214,17 +225,18 @@ class IStrategyMATLABFull3D(object):
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_function_name_method_offset = 1
+    _set_function_name_method_offset = 2
+    _is_function_path_valid_method_offset = 3
+    _get_check_for_errors_method_offset = 4
+    _set_check_for_errors_method_offset = 5
+    _get_display_output_method_offset = 6
+    _set_display_output_method_offset = 7
     _metadata = {
-        "uuid" : "{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}",
+        "iid_data" : (4991766284198429486, 11343135184924199837),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_function_name" : 1,
-                             "set_function_name" : 2,
-                             "is_function_path_valid" : 3,
-                             "get_check_for_errors" : 4,
-                             "set_check_for_errors" : 5,
-                             "get_display_output" : 6,
-                             "set_display_output" : 7, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
         """Construct an object of type IStrategyMATLABFull3D."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLABFull3D)
@@ -239,7 +251,7 @@ class IStrategyMATLABFull3D(object):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLABFull3D, None)
     
-    _get_function_name_metadata = { "name" : "function_name",
+    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -247,7 +259,7 @@ class IStrategyMATLABFull3D(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._get_function_name_metadata)
 
-    _set_function_name_metadata = { "name" : "function_name",
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
@@ -255,14 +267,14 @@ class IStrategyMATLABFull3D(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._set_function_name_metadata, newVal)
 
-    _is_function_path_valid_metadata = { "name" : "is_function_path_valid",
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "name" : "check_for_errors",
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -270,7 +282,7 @@ class IStrategyMATLABFull3D(object):
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "name" : "check_for_errors",
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
@@ -278,7 +290,7 @@ class IStrategyMATLABFull3D(object):
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._set_check_for_errors_metadata, newVal)
 
-    _get_display_output_metadata = { "name" : "display_output",
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -286,7 +298,7 @@ class IStrategyMATLABFull3D(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._get_display_output_metadata)
 
-    _set_display_output_metadata = { "name" : "display_output",
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
@@ -294,8 +306,12 @@ class IStrategyMATLABFull3D(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.set_property(IStrategyMATLABFull3D._metadata, IStrategyMATLABFull3D._set_display_output_metadata, newVal)
 
+    _property_names[function_name] = "function_name"
+    _property_names[check_for_errors] = "check_for_errors"
+    _property_names[display_output] = "display_output"
 
-agcls.AgClassCatalog.add_catalog_entry("{eb6b432e-50fc-4546-9d4b-a4285ae96a9d}", IStrategyMATLABFull3D)
+
+agcls.AgClassCatalog.add_catalog_entry((4991766284198429486, 11343135184924199837), IStrategyMATLABFull3D)
 agcls.AgTypeNameMap["IStrategyMATLABFull3D"] = IStrategyMATLABFull3D
 
 class IStrategyMATLAB3DGuidance(object):
@@ -303,39 +319,40 @@ class IStrategyMATLAB3DGuidance(object):
 
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_target_name_method_offset = 1
+    _set_target_name_method_offset = 2
+    _get_valid_target_names_method_offset = 3
+    _get_target_resolution_method_offset = 4
+    _set_target_resolution_method_offset = 5
+    _get_use_stop_time_to_go_method_offset = 6
+    _get_stop_time_to_go_method_offset = 7
+    _set_stop_time_to_go_method_offset = 8
+    _get_use_stop_slant_range_method_offset = 9
+    _get_stop_slant_range_method_offset = 10
+    _set_stop_slant_range_method_offset = 11
+    _get_function_name_method_offset = 12
+    _set_function_name_method_offset = 13
+    _is_function_path_valid_method_offset = 14
+    _get_check_for_errors_method_offset = 15
+    _set_check_for_errors_method_offset = 16
+    _get_display_output_method_offset = 17
+    _set_display_output_method_offset = 18
+    _get_closure_mode_method_offset = 19
+    _set_closure_mode_method_offset = 20
+    _get_hobs_max_angle_method_offset = 21
+    _set_hobs_max_angle_method_offset = 22
+    _get_hobs_angle_tol_method_offset = 23
+    _set_hobs_angle_tol_method_offset = 24
+    _get_compute_tas_dot_method_offset = 25
+    _set_compute_tas_dot_method_offset = 26
+    _get_airspeed_options_method_offset = 27
+    _get_position_vel_strategies_method_offset = 28
+    _cancel_tgt_position_vel_method_offset = 29
     _metadata = {
-        "uuid" : "{fa4719ee-da5b-4845-af69-09ce61f4109e}",
+        "iid_data" : (5207808632699689454, 11389872158525712815),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-        "method_offsets" : { "get_target_name" : 1,
-                             "set_target_name" : 2,
-                             "get_valid_target_names" : 3,
-                             "get_target_resolution" : 4,
-                             "set_target_resolution" : 5,
-                             "get_use_stop_time_to_go" : 6,
-                             "get_stop_time_to_go" : 7,
-                             "set_stop_time_to_go" : 8,
-                             "get_use_stop_slant_range" : 9,
-                             "get_stop_slant_range" : 10,
-                             "set_stop_slant_range" : 11,
-                             "get_function_name" : 12,
-                             "set_function_name" : 13,
-                             "is_function_path_valid" : 14,
-                             "get_check_for_errors" : 15,
-                             "set_check_for_errors" : 16,
-                             "get_display_output" : 17,
-                             "set_display_output" : 18,
-                             "get_closure_mode" : 19,
-                             "set_closure_mode" : 20,
-                             "get_hobs_max_angle" : 21,
-                             "set_hobs_max_angle" : 22,
-                             "get_hobs_angle_tol" : 23,
-                             "set_hobs_angle_tol" : 24,
-                             "get_compute_tas_dot" : 25,
-                             "set_compute_tas_dot" : 26,
-                             "get_airspeed_options" : 27,
-                             "get_position_vel_strategies" : 28,
-                             "cancel_tgt_position_vel" : 29, }
     }
+    _property_names = {}
     def __init__(self, sourceObject=None):
         """Construct an object of type IStrategyMATLAB3DGuidance."""
         initialize_from_source_object(self, sourceObject, IStrategyMATLAB3DGuidance)
@@ -350,7 +367,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Attempt to assign an attribute."""
         set_interface_attribute(self, attrname, value, IStrategyMATLAB3DGuidance, None)
     
-    _get_target_name_metadata = { "name" : "target_name",
+    _get_target_name_metadata = { "offset" : _get_target_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -358,7 +375,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the target name."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_target_name_metadata)
 
-    _set_target_name_metadata = { "name" : "target_name",
+    _set_target_name_metadata = { "offset" : _set_target_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @target_name.setter
@@ -366,7 +383,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the target name."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_target_name_metadata, newVal)
 
-    _get_valid_target_names_metadata = { "name" : "valid_target_names",
+    _get_valid_target_names_metadata = { "offset" : _get_valid_target_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @property
@@ -374,7 +391,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Return the valid target names."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_valid_target_names_metadata)
 
-    _get_target_resolution_metadata = { "name" : "target_resolution",
+    _get_target_resolution_metadata = { "offset" : _get_target_resolution_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -382,7 +399,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the target position/velocity sampling resolution."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_target_resolution_metadata)
 
-    _set_target_resolution_metadata = { "name" : "target_resolution",
+    _set_target_resolution_metadata = { "offset" : _set_target_resolution_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @target_resolution.setter
@@ -390,7 +407,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the target position/velocity sampling resolution."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_target_resolution_metadata, newVal)
 
-    _get_use_stop_time_to_go_metadata = { "name" : "use_stop_time_to_go",
+    _get_use_stop_time_to_go_metadata = { "offset" : _get_use_stop_time_to_go_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -398,7 +415,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the option to specify a time to go stopping condition."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_use_stop_time_to_go_metadata)
 
-    _get_stop_time_to_go_metadata = { "name" : "stop_time_to_go",
+    _get_stop_time_to_go_metadata = { "offset" : _get_stop_time_to_go_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -406,14 +423,14 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the stop time from the target at which the maneuver will stop."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_stop_time_to_go_metadata)
 
-    _set_stop_time_to_go_metadata = { "name" : "set_stop_time_to_go",
+    _set_stop_time_to_go_metadata = { "offset" : _set_stop_time_to_go_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_stop_time_to_go(self, enable:bool, time:float) -> None:
         """Set the option to use the stop time from target stopping condition and set the according value."""
         return self._intf.invoke(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_stop_time_to_go_metadata, enable, time)
 
-    _get_use_stop_slant_range_metadata = { "name" : "use_stop_slant_range",
+    _get_use_stop_slant_range_metadata = { "offset" : _get_use_stop_slant_range_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -421,7 +438,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the option to specify a range from target stopping condition."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_use_stop_slant_range_metadata)
 
-    _get_stop_slant_range_metadata = { "name" : "stop_slant_range",
+    _get_stop_slant_range_metadata = { "offset" : _get_stop_slant_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
@@ -429,14 +446,14 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the range from the target at which the maneuver will stop."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_stop_slant_range_metadata)
 
-    _set_stop_slant_range_metadata = { "name" : "set_stop_slant_range",
+    _set_stop_slant_range_metadata = { "offset" : _set_stop_slant_range_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_stop_slant_range(self, enable:bool, range:float) -> None:
         """Set the option to use the stop slant range stopping condition and set the according value."""
         return self._intf.invoke(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_stop_slant_range_metadata, enable, range)
 
-    _get_function_name_metadata = { "name" : "function_name",
+    _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
@@ -444,7 +461,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_function_name_metadata)
 
-    _set_function_name_metadata = { "name" : "function_name",
+    _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @function_name.setter
@@ -452,14 +469,14 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the name of the MATLAB function."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_function_name_metadata, newVal)
 
-    _is_function_path_valid_metadata = { "name" : "is_function_path_valid",
+    _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
         return self._intf.invoke(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._is_function_path_valid_metadata, OutArg())
 
-    _get_check_for_errors_metadata = { "name" : "check_for_errors",
+    _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -467,7 +484,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to check the function for errors."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_check_for_errors_metadata)
 
-    _set_check_for_errors_metadata = { "name" : "check_for_errors",
+    _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @check_for_errors.setter
@@ -475,7 +492,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to check the function for errors."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_check_for_errors_metadata, newVal)
 
-    _get_display_output_metadata = { "name" : "display_output",
+    _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -483,7 +500,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_display_output_metadata)
 
-    _set_display_output_metadata = { "name" : "display_output",
+    _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_output.setter
@@ -491,7 +508,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to display the output from the MATLAB function."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_display_output_metadata, newVal)
 
-    _get_closure_mode_metadata = { "name" : "closure_mode",
+    _get_closure_mode_metadata = { "offset" : _get_closure_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(CLOSURE_MODE),) }
     @property
@@ -499,7 +516,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_closure_mode_metadata)
 
-    _set_closure_mode_metadata = { "name" : "closure_mode",
+    _set_closure_mode_metadata = { "offset" : _set_closure_mode_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CLOSURE_MODE),) }
     @closure_mode.setter
@@ -507,7 +524,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_closure_mode_metadata, newVal)
 
-    _get_hobs_max_angle_metadata = { "name" : "hobs_max_angle",
+    _get_hobs_max_angle_metadata = { "offset" : _get_hobs_max_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -515,7 +532,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure high off boresight max angle."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_hobs_max_angle_metadata)
 
-    _set_hobs_max_angle_metadata = { "name" : "hobs_max_angle",
+    _set_hobs_max_angle_metadata = { "offset" : _set_hobs_max_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @hobs_max_angle.setter
@@ -523,7 +540,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure high off boresight max angle."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_hobs_max_angle_metadata, newVal)
 
-    _get_hobs_angle_tol_metadata = { "name" : "hobs_angle_tol",
+    _get_hobs_angle_tol_metadata = { "offset" : _get_hobs_angle_tol_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
@@ -531,7 +548,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_hobs_angle_tol_metadata)
 
-    _set_hobs_angle_tol_metadata = { "name" : "hobs_angle_tol",
+    _set_hobs_angle_tol_metadata = { "offset" : _set_hobs_angle_tol_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @hobs_angle_tol.setter
@@ -539,7 +556,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_hobs_angle_tol_metadata, newVal)
 
-    _get_compute_tas_dot_metadata = { "name" : "compute_tas_dot",
+    _get_compute_tas_dot_metadata = { "offset" : _get_compute_tas_dot_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
@@ -547,7 +564,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to allow MATLAB to compute the true airspeed for the aircraft."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_compute_tas_dot_metadata)
 
-    _set_compute_tas_dot_metadata = { "name" : "compute_tas_dot",
+    _set_compute_tas_dot_metadata = { "offset" : _set_compute_tas_dot_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @compute_tas_dot.setter
@@ -555,7 +572,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get or set the option to allow MATLAB to compute the true airspeed for the aircraft."""
         return self._intf.set_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._set_compute_tas_dot_metadata, newVal)
 
-    _get_airspeed_options_metadata = { "name" : "airspeed_options",
+    _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -563,7 +580,7 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the airspeed options."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_airspeed_options_metadata)
 
-    _get_position_vel_strategies_metadata = { "name" : "position_vel_strategies",
+    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
@@ -571,24 +588,42 @@ class IStrategyMATLAB3DGuidance(object):
         """Get the position velocity strategies for MATLAB 3D Guidance."""
         return self._intf.get_property(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "name" : "cancel_tgt_position_vel",
+    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def cancel_tgt_position_vel(self) -> None:
         """Cancel the position velocity strategies for MATLAB 3D Guidance."""
         return self._intf.invoke(IStrategyMATLAB3DGuidance._metadata, IStrategyMATLAB3DGuidance._cancel_tgt_position_vel_metadata, )
 
+    _property_names[target_name] = "target_name"
+    _property_names[valid_target_names] = "valid_target_names"
+    _property_names[target_resolution] = "target_resolution"
+    _property_names[use_stop_time_to_go] = "use_stop_time_to_go"
+    _property_names[stop_time_to_go] = "stop_time_to_go"
+    _property_names[use_stop_slant_range] = "use_stop_slant_range"
+    _property_names[stop_slant_range] = "stop_slant_range"
+    _property_names[function_name] = "function_name"
+    _property_names[check_for_errors] = "check_for_errors"
+    _property_names[display_output] = "display_output"
+    _property_names[closure_mode] = "closure_mode"
+    _property_names[hobs_max_angle] = "hobs_max_angle"
+    _property_names[hobs_angle_tol] = "hobs_angle_tol"
+    _property_names[compute_tas_dot] = "compute_tas_dot"
+    _property_names[airspeed_options] = "airspeed_options"
+    _property_names[position_vel_strategies] = "position_vel_strategies"
 
-agcls.AgClassCatalog.add_catalog_entry("{fa4719ee-da5b-4845-af69-09ce61f4109e}", IStrategyMATLAB3DGuidance)
+
+agcls.AgClassCatalog.add_catalog_entry((5207808632699689454, 11389872158525712815), IStrategyMATLAB3DGuidance)
 agcls.AgTypeNameMap["IStrategyMATLAB3DGuidance"] = IStrategyMATLAB3DGuidance
 
 
 
-class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
+class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy, SupportsDeleteCallback):
     """Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StrategyMATLABNav."""
+        SupportsDeleteCallback.__init__(self)
         IStrategyMATLABNav.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -602,14 +637,15 @@ class StrategyMATLABNav(IStrategyMATLABNav, IBasicManeuverStrategy):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABNav, [IStrategyMATLABNav, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry("{4447B282-8834-4451-8CD8-0A3168015B45}", StrategyMATLABNav)
+agcls.AgClassCatalog.add_catalog_entry((4922865625757889154, 4997589758508718220), StrategyMATLABNav)
 agcls.AgTypeNameMap["StrategyMATLABNav"] = StrategyMATLABNav
 
-class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
+class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy, SupportsDeleteCallback):
     """Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StrategyMATLABProfile."""
+        SupportsDeleteCallback.__init__(self)
         IStrategyMATLABProfile.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -623,14 +659,15 @@ class StrategyMATLABProfile(IStrategyMATLABProfile, IBasicManeuverStrategy):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABProfile, [IStrategyMATLABProfile, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry("{1bf89982-311b-4b61-ba17-00881de09863}", StrategyMATLABProfile)
+agcls.AgClassCatalog.add_catalog_entry((5431676618088683906, 7176732423655266234), StrategyMATLABProfile)
 agcls.AgTypeNameMap["StrategyMATLABProfile"] = StrategyMATLABProfile
 
-class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
+class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy, SupportsDeleteCallback):
     """Class defining the MATLAB - Full 3D strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StrategyMATLABFull3D."""
+        SupportsDeleteCallback.__init__(self)
         IStrategyMATLABFull3D.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -644,14 +681,15 @@ class StrategyMATLABFull3D(IStrategyMATLABFull3D, IBasicManeuverStrategy):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLABFull3D, [IStrategyMATLABFull3D, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry("{7fdf8025-0f64-4f1a-9c12-8275051354d4}", StrategyMATLABFull3D)
+agcls.AgClassCatalog.add_catalog_entry((5699885202707284005, 15299874748251640476), StrategyMATLABFull3D)
 agcls.AgTypeNameMap["StrategyMATLABFull3D"] = StrategyMATLABFull3D
 
-class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy):
+class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy, SupportsDeleteCallback):
     """Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StrategyMATLAB3DGuidance."""
+        SupportsDeleteCallback.__init__(self)
         IStrategyMATLAB3DGuidance.__init__(self, sourceObject)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -665,14 +703,15 @@ class StrategyMATLAB3DGuidance(IStrategyMATLAB3DGuidance, IBasicManeuverStrategy
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, StrategyMATLAB3DGuidance, [IStrategyMATLAB3DGuidance, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry("{c90db66d-a2fa-4474-9c21-2e8f61b93fad}", StrategyMATLAB3DGuidance)
+agcls.AgClassCatalog.add_catalog_entry((4932746689876178541, 12483900520759435676), StrategyMATLAB3DGuidance)
 agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
 
-class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
+class BasicManeuverMATLABFactory(IAutomationStrategyFactory, SupportsDeleteCallback):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverMATLABFactory."""
+        SupportsDeleteCallback.__init__(self)
         IAutomationStrategyFactory.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -684,7 +723,7 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory):
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, BasicManeuverMATLABFactory, [IAutomationStrategyFactory])
 
-agcls.AgClassCatalog.add_catalog_entry("{29352A63-3095-4D7E-A056-189D672BF458}", BasicManeuverMATLABFactory)
+agcls.AgClassCatalog.add_catalog_entry((5583954005185604195, 6409795893672302240), BasicManeuverMATLABFactory)
 agcls.AgTypeNameMap["BasicManeuverMATLABFactory"] = BasicManeuverMATLABFactory
 
 

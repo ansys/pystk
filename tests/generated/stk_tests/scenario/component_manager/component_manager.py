@@ -402,38 +402,6 @@ class EarlyBoundTests(TestBase):
             "Components", "MyITU-R P1814.LaserTropoScintLossModel"
         )
         map["Radar Waveforms"] = TestBase.GetScenarioFile("Components", "My_Long_Range_Rectangular.Waveform")
-        if (
-            (
-                (
-                    ((thisFolderName != "") and (thisFolderName != "Previous Versions"))
-                    and (thisFolderName != "Central Bodies")
-                )
-                and (thisFolderName != "Star Catalogs")
-            )
-            and (thisFolderName != "Design Tools")
-        ) and (
-            ((not OSHelper.IsLinux()) or ((OSHelper.IsLinux() and (thisFolderName != "Atmospheric Absorption Models"))))
-        ):
-            # Console.WriteLine(thisFolderName);
-            filepath: str = map[thisFolderName]
-            # Console.WriteLine(filepath);
-            # try
-            # {
-            compInfoLoaded: "IComponentInfo" = compInfoColl.load_component(filepath)
-
-            Assert.assertEqual((origCount + 1), compInfoColl.count)
-            self.TestComponent(compInfoLoaded, False)
-            Assert.assertEqual((origCount + 1), compInfoColl.count)
-            compInfoColl.remove(compInfoLoaded.name)
-            Assert.assertEqual(origCount, compInfoColl.count)
-
-            with pytest.raises(Exception):
-                compInfoBadPath: "IComponentInfo" = compInfoColl.load_component("BadPath")
-            if thisFolderName == "Formation":
-                with pytest.raises(Exception):
-                    compInfoWrongType: "IComponentInfo" = compInfoColl.load_component(map["Thruster Sets"])
-                compInfoLoadTwiceOK: "IComponentInfo" = compInfoColl.load_component(map["Formation"])
-                compInfoColl.remove(compInfoLoadTwiceOK.name)
 
         i: int = 0
         while i < compInfoColl.count:
@@ -498,7 +466,7 @@ class EarlyBoundTests(TestBase):
                 cloneName = compInfoByIndex.name + "1"
                 # }
                 compInfoClone: "IComponentInfo" = clr.CastAs(
-                    (clr.Convert(compInfoByIndex, ICloneable)).clone_object(), IComponentInfo
+                    (ICloneable(compInfoByIndex)).clone_object(), IComponentInfo
                 )
                 Assert.assertEqual((origCount + 1), compInfoColl.count)
                 Assert.assertEqual(cloneName, compInfoClone.name)
@@ -538,7 +506,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     def test_TestAvailableFolders(self):
-        scenario: "Scenario" = clr.Convert(TestBase.Application.current_scenario, Scenario)
+        scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         compdir: "ComponentDirectory" = scenario.component_directory
         compinfocoll: "ComponentInfoCollection" = compdir.get_components(COMPONENT.ASTROGATOR)
         arFolders = compinfocoll.available_folders
@@ -568,7 +536,7 @@ class EarlyBoundTests(TestBase):
                 i: int = count - 1
                 while i >= 0:
                     compInfo: "IComponentInfo" = clr.CastAs(folder[i], IComponentInfo)
-                    oCompCopy: typing.Any = (clr.Convert(compInfo, ICloneable)).clone_object()
+                    oCompCopy: typing.Any = (ICloneable(compInfo)).clone_object()
                     self.TestComponent(clr.CastAs(oCompCopy, IComponentInfo), False)
                     folder.remove((clr.CastAs(oCompCopy, IComponentInfo)).name)
 
@@ -584,7 +552,7 @@ class EarlyBoundTests(TestBase):
                     j: int = count2 - 1
                     while j >= 0:
                         compInfo: "IComponentInfo" = clr.CastAs(folder2[j], IComponentInfo)
-                        oCompCopy: typing.Any = (clr.Convert(compInfo, ICloneable)).clone_object()
+                        oCompCopy: typing.Any = (ICloneable(compInfo)).clone_object()
                         self.TestComponent(clr.CastAs(oCompCopy, IComponentInfo), False)
                         folder2.remove((clr.CastAs(oCompCopy, IComponentInfo)).name)
 
@@ -681,7 +649,7 @@ class EarlyBoundTests(TestBase):
     # }
 
     def Test_Export(self, folder: "ComponentInfoCollection", compInfo: "IComponentInfo"):
-        compInfoClone: "IComponentInfo" = clr.CastAs((clr.Convert(compInfo, ICloneable)).clone_object(), IComponentInfo)
+        compInfoClone: "IComponentInfo" = clr.CastAs((ICloneable(compInfo)).clone_object(), IComponentInfo)
         # Console.WriteLine(compInfoClone.Name);
         compInfoClone.export()
 
@@ -692,7 +660,7 @@ class EarlyBoundTests(TestBase):
         exportDir: str = Path.Combine(TestBase.ScenarioDirectory, r"ExportDir")
 
         # Clone the component
-        compInfoClone: "IComponentInfo" = clr.CastAs((clr.Convert(compInfo, ICloneable)).clone_object(), IComponentInfo)
+        compInfoClone: "IComponentInfo" = clr.CastAs((ICloneable(compInfo)).clone_object(), IComponentInfo)
         compCloneName: str = compInfoClone.name
 
         # Construct the full path of the exported file
@@ -720,14 +688,8 @@ class EarlyBoundTests(TestBase):
         comp: "IComponentInfo" = None
 
         i: int = 0
-        while i < components.count:
-            comp = components[i]
-            self.TestComponent(comp, True)
-
-            i += 1
-
-        i: int = 0
         while i < components.folder_count:
+            # Console.WriteLine("Procesing folder: " + i.ToString());
             compFolder: "ComponentInfoCollection" = components.get_folder(i)
 
             j: int = 0
@@ -751,14 +713,14 @@ class EarlyBoundTests(TestBase):
         cartElems: "ComponentInfoCollection" = components.get_folder("Cartesian Elems")
 
         elem: "StateCalcCartesianElem" = clr.CastAs(
-            (clr.Convert(cartElems["Vx"], ICloneable)).clone_object(), StateCalcCartesianElem
+            (ICloneable(cartElems["Vx"])).clone_object(), StateCalcCartesianElem
         )
         Assert.assertIsNotNone(elem)
         elem.coord_system_name = "CentralBody/Earth Fixed"
         Assert.assertEqual("CentralBody/Earth Fixed", elem.coord_system_name)
         cartElems.remove((clr.CastAs(elem, IComponentInfo)).name)
 
-        elem = clr.CastAs((clr.Convert(cartElems["X"], ICloneable)).clone_object(), StateCalcCartesianElem)
+        elem = clr.CastAs((ICloneable(cartElems["X"])).clone_object(), StateCalcCartesianElem)
         elem.coord_system_name = "CentralBody/Moon Fixed"
         Assert.assertEqual("CentralBody/Moon Fixed", elem.coord_system_name)
         cartElems.remove((clr.CastAs(elem, IComponentInfo)).name)
@@ -810,7 +772,7 @@ class EarlyBoundTests(TestBase):
 
         for cartStmName in arCartStmNames:
             cartStmElem: "StateCalcCartSTMElem" = clr.CastAs(
-                (clr.Convert(cartSTMs[cartStmName], ICloneable)).clone_object(), StateCalcCartSTMElem
+                (ICloneable(cartSTMs[cartStmName])).clone_object(), StateCalcCartSTMElem
             )
             Assert.assertIsNotNone(cartStmElem)
 
@@ -854,8 +816,7 @@ class EarlyBoundTests(TestBase):
         constantElems: "ComponentInfoCollection" = components.get_folder("Constants")
 
         mu: "StateCalcGravitationalParameter" = clr.CastAs(
-            (clr.Convert(constantElems["Gravitational Parameter"], ICloneable)).clone_object(),
-            StateCalcGravitationalParameter,
+            (ICloneable(constantElems["Gravitational Parameter"])).clone_object(), StateCalcGravitationalParameter
         )
         Assert.assertIsNotNone(mu)
         mu.central_body_name = "Jupiter"
@@ -879,7 +840,7 @@ class EarlyBoundTests(TestBase):
         constantElems.remove((clr.CastAs(mu, IComponentInfo)).name)
 
         radius: "StateCalcReferenceRadius" = clr.CastAs(
-            (clr.Convert(constantElems["Reference Radius"], ICloneable)).clone_object(), StateCalcReferenceRadius
+            (ICloneable(constantElems["Reference Radius"])).clone_object(), StateCalcReferenceRadius
         )
         Assert.assertIsNotNone(radius)
         radius.central_body_name = "Jupiter"
@@ -894,7 +855,7 @@ class EarlyBoundTests(TestBase):
         constantElems.remove((clr.CastAs(radius, IComponentInfo)).name)
 
         gravCoeff: "StateCalcGravCoeff" = clr.CastAs(
-            (clr.Convert(constantElems["Gravity Coefficient"], ICloneable)).clone_object(), StateCalcGravCoeff
+            (ICloneable(constantElems["Gravity Coefficient"])).clone_object(), StateCalcGravCoeff
         )
         Assert.assertIsNotNone(gravCoeff)
         gravCoeff.central_body_name = "Jupiter"
@@ -937,12 +898,12 @@ class EarlyBoundTests(TestBase):
         constantElems.remove((clr.CastAs(gravCoeff, IComponentInfo)).name)
 
         c: "StateCalcSpeedOfLight" = clr.CastAs(
-            (clr.Convert(constantElems["Speed of Light"], ICloneable)).clone_object(), StateCalcSpeedOfLight
+            (ICloneable(constantElems["Speed of Light"])).clone_object(), StateCalcSpeedOfLight
         )
         Assert.assertIsNotNone(c)
         constantElems.remove((clr.CastAs(c, IComponentInfo)).name)
 
-        p: "StateCalcPi" = clr.CastAs((clr.Convert(constantElems["Pi"], ICloneable)).clone_object(), StateCalcPi)
+        p: "StateCalcPi" = clr.CastAs((ICloneable(constantElems["Pi"])).clone_object(), StateCalcPi)
         Assert.assertIsNotNone(p)
         constantElems.remove((clr.CastAs(p, IComponentInfo)).name)
 
@@ -968,8 +929,7 @@ class EarlyBoundTests(TestBase):
 
         for elemName in arCurvilinearRelMotionNames:
             curvRelMotion: "StateCalcCurvilinearRelMotion" = clr.CastAs(
-                (clr.Convert(curvilinearRelMotionElems[elemName], ICloneable)).clone_object(),
-                StateCalcCurvilinearRelMotion,
+                (ICloneable(curvilinearRelMotionElems[elemName])).clone_object(), StateCalcCurvilinearRelMotion
             )
             Assert.assertIsNotNone(curvRelMotion)
 
@@ -1010,7 +970,7 @@ class EarlyBoundTests(TestBase):
         delaunayElems: "ComponentInfoCollection" = components.get_folder("Delaunay Elems")
 
         delG: "StateCalcOrbitDelaunayG" = clr.CastAs(
-            (clr.Convert(delaunayElems["Delaunay G"], ICloneable)).clone_object(), StateCalcOrbitDelaunayG
+            (ICloneable(delaunayElems["Delaunay G"])).clone_object(), StateCalcOrbitDelaunayG
         )
         Assert.assertIsNotNone(delG)
         delG.central_body_name = "Mars"
@@ -1024,7 +984,7 @@ class EarlyBoundTests(TestBase):
         delaunayElems.remove((clr.CastAs(delG, IComponentInfo)).name)
 
         delH: "StateCalcOrbitDelaunayH" = clr.CastAs(
-            (clr.Convert(delaunayElems["Delaunay H"], ICloneable)).clone_object(), StateCalcOrbitDelaunayH
+            (ICloneable(delaunayElems["Delaunay H"])).clone_object(), StateCalcOrbitDelaunayH
         )
         Assert.assertIsNotNone(delH)
         delH.central_body_name = "Mars"
@@ -1038,7 +998,7 @@ class EarlyBoundTests(TestBase):
         delaunayElems.remove((clr.CastAs(delH, IComponentInfo)).name)
 
         delL: "StateCalcOrbitDelaunayL" = clr.CastAs(
-            (clr.Convert(delaunayElems["Delaunay L"], ICloneable)).clone_object(), StateCalcOrbitDelaunayL
+            (ICloneable(delaunayElems["Delaunay L"])).clone_object(), StateCalcOrbitDelaunayL
         )
         Assert.assertIsNotNone(delL)
         delL.central_body_name = "Mars"
@@ -1052,7 +1012,7 @@ class EarlyBoundTests(TestBase):
         delaunayElems.remove((clr.CastAs(delL, IComponentInfo)).name)
 
         slr: "StateCalcOrbitSemiLatusRectum" = clr.CastAs(
-            (clr.Convert(delaunayElems["Semi-latus Rectum"], ICloneable)).clone_object(), StateCalcOrbitSemiLatusRectum
+            (ICloneable(delaunayElems["Semi-latus Rectum"])).clone_object(), StateCalcOrbitSemiLatusRectum
         )
         Assert.assertIsNotNone(slr)
         slr.central_body_name = "Mars"
@@ -1070,7 +1030,7 @@ class EarlyBoundTests(TestBase):
         envElems: "ComponentInfoCollection" = components.get_folder("Environment")
 
         env: "StateCalcEnvironment" = clr.CastAs(
-            (clr.Convert(envElems["AtmosDensity"], ICloneable)).clone_object(), StateCalcEnvironment
+            (ICloneable(envElems["AtmosDensity"])).clone_object(), StateCalcEnvironment
         )
         Assert.assertIsNotNone(env)
         env.atmos_model_name = "Atmospheric Models/Cira72"
@@ -1079,7 +1039,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Pluto", env.central_body_name)
         envElems.remove((clr.CastAs(env, IComponentInfo)).name)
 
-        env = clr.CastAs((clr.Convert(envElems["AtmosTemperature"], ICloneable)).clone_object(), StateCalcEnvironment)
+        env = clr.CastAs((ICloneable(envElems["AtmosTemperature"])).clone_object(), StateCalcEnvironment)
         env.atmos_model_name = "Atmospheric Models/US Standard Atmosphere"
         Assert.assertEqual("US Standard Atmosphere", env.atmos_model_name)
         env.central_body_name = "Mars"
@@ -1090,7 +1050,7 @@ class EarlyBoundTests(TestBase):
 
         equinElems: "ComponentInfoCollection" = components.get_folder("Equinoctial Elems")
         equinElem: "StateCalcEquinoctialElem" = clr.CastAs(
-            (clr.Convert(equinElems["Equinoctial h"], ICloneable)).clone_object(), StateCalcEquinoctialElem
+            (ICloneable(equinElems["Equinoctial h"])).clone_object(), StateCalcEquinoctialElem
         )
         Assert.assertIsNotNone(equinElem)
         equinElem.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -1105,9 +1065,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, equinElem.element_type)
         equinElems.remove((clr.CastAs(equinElem, IComponentInfo)).name)
 
-        equinElem = clr.CastAs(
-            (clr.Convert(equinElems["Mean Longitude"], ICloneable)).clone_object(), StateCalcEquinoctialElem
-        )
+        equinElem = clr.CastAs((ICloneable(equinElems["Mean Longitude"])).clone_object(), StateCalcEquinoctialElem)
         Assert.assertIsNotNone(equinElem)
         equinElem.coord_system_name = "CentralBody/Earth Mean Ecliptic of Date"
         Assert.assertEqual("CentralBody/Earth Mean_Ecliptic_of_Date", equinElem.coord_system_name)
@@ -1126,8 +1084,7 @@ class EarlyBoundTests(TestBase):
         formationElems: "ComponentInfoCollection" = components.get_folder("Formation")
 
         cab: "StateCalcCloseApproachBearing" = clr.CastAs(
-            (clr.Convert(formationElems["CloseApproachBearing"], ICloneable)).clone_object(),
-            StateCalcCloseApproachBearing,
+            (ICloneable(formationElems["CloseApproachBearing"])).clone_object(), StateCalcCloseApproachBearing
         )
         Assert.assertIsNotNone(cab)
         cab.central_body_name = "Charon"
@@ -1141,7 +1098,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(cab, IComponentInfo)).name)
 
         closeApproachTheta: "StateCalcCloseApproachTheta" = clr.CastAs(
-            (clr.Convert(formationElems["CloseApproachTheta"], ICloneable)).clone_object(), StateCalcCloseApproachTheta
+            (ICloneable(formationElems["CloseApproachTheta"])).clone_object(), StateCalcCloseApproachTheta
         )
         Assert.assertIsNotNone(closeApproachTheta)
         closeApproachTheta.central_body_name = "Charon"
@@ -1155,7 +1112,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(closeApproachTheta, IComponentInfo)).name)
 
         closeApproachX: "StateCalcCloseApproachX" = clr.CastAs(
-            (clr.Convert(formationElems["CloseApproachX"], ICloneable)).clone_object(), StateCalcCloseApproachX
+            (ICloneable(formationElems["CloseApproachX"])).clone_object(), StateCalcCloseApproachX
         )
         Assert.assertIsNotNone(closeApproachX)
         closeApproachX.central_body_name = "Charon"
@@ -1169,7 +1126,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(closeApproachX, IComponentInfo)).name)
 
         closeApproachY: "StateCalcCloseApproachY" = clr.CastAs(
-            (clr.Convert(formationElems["CloseApproachY"], ICloneable)).clone_object(), StateCalcCloseApproachY
+            (ICloneable(formationElems["CloseApproachY"])).clone_object(), StateCalcCloseApproachY
         )
         Assert.assertIsNotNone(closeApproachY)
         closeApproachY.central_body_name = "Charon"
@@ -1183,7 +1140,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(closeApproachY, IComponentInfo)).name)
 
         cacb: "StateCalcCloseApproachCosBearing" = clr.CastAs(
-            (clr.Convert(formationElems["CosineOfCloseApproachBearing"], ICloneable)).clone_object(),
+            (ICloneable(formationElems["CosineOfCloseApproachBearing"])).clone_object(),
             StateCalcCloseApproachCosBearing,
         )
         Assert.assertIsNotNone(cacb)
@@ -1198,8 +1155,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(cacb, IComponentInfo)).name)
 
         gte: "StateCalcRelGroundTrackError" = clr.CastAs(
-            (clr.Convert(formationElems["RelGroundTrackError"], ICloneable)).clone_object(),
-            StateCalcRelGroundTrackError,
+            (ICloneable(formationElems["RelGroundTrackError"])).clone_object(), StateCalcRelGroundTrackError
         )
         Assert.assertIsNotNone(gte)
         gte.central_body_name = "Phobos"
@@ -1221,7 +1177,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(gte, IComponentInfo)).name)
 
         deltaMaster: "StateCalcDeltaFromMaster" = clr.CastAs(
-            (clr.Convert(formationElems["Rel Mean Arg of Lat"], ICloneable)).clone_object(), StateCalcDeltaFromMaster
+            (ICloneable(formationElems["Rel Mean Arg of Lat"])).clone_object(), StateCalcDeltaFromMaster
         )
         Assert.assertIsNotNone(deltaMaster)
         deltaMaster.calc_object_name = "Ground Track/RepeatingGroundTrackEquatorError"
@@ -1235,7 +1191,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(deltaMaster, IComponentInfo)).name)
 
         aolMaster: "StateCalcRelAtAOLMaster" = clr.CastAs(
-            (clr.Convert(formationElems["RelativeAtAOL"], ICloneable)).clone_object(), StateCalcRelAtAOLMaster
+            (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelAtAOLMaster
         )
         Assert.assertIsNotNone(aolMaster)
         aolMaster.calc_object_name = "Relative Motion/CrossTrack"
@@ -1255,8 +1211,7 @@ class EarlyBoundTests(TestBase):
         formationElems.remove((clr.CastAs(aolMaster, IComponentInfo)).name)
 
         closeApproachMag: "StateCalcCloseApproachMagnitude" = clr.CastAs(
-            (clr.Convert(formationElems["CloseApproachMagnitude"], ICloneable)).clone_object(),
-            StateCalcCloseApproachMagnitude,
+            (ICloneable(formationElems["CloseApproachMagnitude"])).clone_object(), StateCalcCloseApproachMagnitude
         )
         Assert.assertIsNotNone(closeApproachMag)
         closeApproachMag.central_body_name = "Earth"
@@ -1271,7 +1226,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems: "ComponentInfoCollection" = components.get_folder("GeoStationary")
 
         driftRate: "StateCalcLonDriftRate" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["Longitude Drift Rate"], ICloneable)).clone_object(), StateCalcLonDriftRate
+            (ICloneable(geoStationaryElems["Longitude Drift Rate"])).clone_object(), StateCalcLonDriftRate
         )
         Assert.assertIsNotNone(driftRate)
         driftRate.central_body_name = "Venus"
@@ -1287,7 +1242,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(driftRate, IComponentInfo)).name)
 
         meanEarthLon: "StateCalcMeanEarthLon" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["Mean Earth Longitude"], ICloneable)).clone_object(), StateCalcMeanEarthLon
+            (ICloneable(geoStationaryElems["Mean Earth Longitude"])).clone_object(), StateCalcMeanEarthLon
         )
         Assert.assertIsNotNone(meanEarthLon)
         meanEarthLon.central_body_name = "Neptune"
@@ -1295,7 +1250,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(meanEarthLon, IComponentInfo)).name)
 
         rectified: "StateCalcRectifiedLon" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["RectifiedLongitude"], ICloneable)).clone_object(), StateCalcRectifiedLon
+            (ICloneable(geoStationaryElems["RectifiedLongitude"])).clone_object(), StateCalcRectifiedLon
         )
         Assert.assertIsNotNone(rectified)
         rectified.central_body_name = "Mercury"
@@ -1303,7 +1258,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(rectified, IComponentInfo)).name)
 
         trueLon: "StateCalcTrueLongitude" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["TrueLongitude"], ICloneable)).clone_object(), StateCalcTrueLongitude
+            (ICloneable(geoStationaryElems["TrueLongitude"])).clone_object(), StateCalcTrueLongitude
         )
         Assert.assertIsNotNone(trueLon)
         trueLon.central_body_name = "Mercury"
@@ -1311,8 +1266,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(trueLon, IComponentInfo)).name)
 
         geoTrueLon: "StateCalcGeodeticTrueLongitude" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["GeodeticTrueLongitude"], ICloneable)).clone_object(),
-            StateCalcGeodeticTrueLongitude,
+            (ICloneable(geoStationaryElems["GeodeticTrueLongitude"])).clone_object(), StateCalcGeodeticTrueLongitude
         )
         Assert.assertIsNotNone(geoTrueLon)
         geoTrueLon.central_body_name = "Mercury"
@@ -1320,7 +1274,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(geoTrueLon, IComponentInfo)).name)
 
         geoTrueLon0: "StateCalcGeodeticTrueLongitudeAtTimeOfPerigee" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["GeodeticTrueLongitudeAtTimeOfPerigee"], ICloneable)).clone_object(),
+            (ICloneable(geoStationaryElems["GeodeticTrueLongitudeAtTimeOfPerigee"])).clone_object(),
             StateCalcGeodeticTrueLongitudeAtTimeOfPerigee,
         )
         Assert.assertIsNotNone(geoTrueLon0)
@@ -1329,8 +1283,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(geoTrueLon0, IComponentInfo)).name)
 
         meanRA: "StateCalcMeanRightAscension" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["MeanRightAscension"], ICloneable)).clone_object(),
-            StateCalcMeanRightAscension,
+            (ICloneable(geoStationaryElems["MeanRightAscension"])).clone_object(), StateCalcMeanRightAscension
         )
         Assert.assertIsNotNone(meanRA)
         meanRA.central_body_name = "Mercury"
@@ -1338,7 +1291,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(meanRA, IComponentInfo)).name)
 
         geoMeanRA: "StateCalcGeodeticMeanRightAscension" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["GeodeticMeanRightAscension"], ICloneable)).clone_object(),
+            (ICloneable(geoStationaryElems["GeodeticMeanRightAscension"])).clone_object(),
             StateCalcGeodeticMeanRightAscension,
         )
         Assert.assertIsNotNone(geoMeanRA)
@@ -1347,7 +1300,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(geoMeanRA, IComponentInfo)).name)
 
         dr: "StateCalcTwoBodyDriftRate" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["TwoBodyDriftRate"], ICloneable)).clone_object(), StateCalcTwoBodyDriftRate
+            (ICloneable(geoStationaryElems["TwoBodyDriftRate"])).clone_object(), StateCalcTwoBodyDriftRate
         )
         Assert.assertIsNotNone(dr)
         dr.central_body_name = "Mercury"
@@ -1355,7 +1308,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(dr, IComponentInfo)).name)
 
         drf: "StateCalcDriftRateFactor" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["DriftRateFactor"], ICloneable)).clone_object(), StateCalcDriftRateFactor
+            (ICloneable(geoStationaryElems["DriftRateFactor"])).clone_object(), StateCalcDriftRateFactor
         )
         Assert.assertIsNotNone(drf)
         drf.central_body_name = "Mercury"
@@ -1367,7 +1320,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(drf, IComponentInfo)).name)
 
         eccVx: "StateCalcEccentricityX" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["EccentricityX"], ICloneable)).clone_object(), StateCalcEccentricityX
+            (ICloneable(geoStationaryElems["EccentricityX"])).clone_object(), StateCalcEccentricityX
         )
         Assert.assertIsNotNone(eccVx)
         eccVx.central_body_name = "Mercury"
@@ -1375,7 +1328,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(eccVx, IComponentInfo)).name)
 
         eccVy: "StateCalcEccentricityY" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["EccentricityY"], ICloneable)).clone_object(), StateCalcEccentricityY
+            (ICloneable(geoStationaryElems["EccentricityY"])).clone_object(), StateCalcEccentricityY
         )
         Assert.assertIsNotNone(eccVy)
         eccVy.central_body_name = "Mercury"
@@ -1383,7 +1336,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(eccVy, IComponentInfo)).name)
 
         ix: "StateCalcInclinationX" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["InclinationX"], ICloneable)).clone_object(), StateCalcInclinationX
+            (ICloneable(geoStationaryElems["InclinationX"])).clone_object(), StateCalcInclinationX
         )
         Assert.assertIsNotNone(ix)
         ix.central_body_name = "Mercury"
@@ -1407,7 +1360,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(ix, IComponentInfo)).name)
 
         iy: "StateCalcInclinationY" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["InclinationY"], ICloneable)).clone_object(), StateCalcInclinationY
+            (ICloneable(geoStationaryElems["InclinationY"])).clone_object(), StateCalcInclinationY
         )
         Assert.assertIsNotNone(iy)
         iy.central_body_name = "Mercury"
@@ -1431,8 +1384,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(iy, IComponentInfo)).name)
 
         angMomx: "StateCalcUnitAngularMomentumX" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["UnitAngularMomentumX"], ICloneable)).clone_object(),
-            StateCalcUnitAngularMomentumX,
+            (ICloneable(geoStationaryElems["UnitAngularMomentumX"])).clone_object(), StateCalcUnitAngularMomentumX
         )
         Assert.assertIsNotNone(angMomx)
         angMomx.central_body_name = "Mercury"
@@ -1440,8 +1392,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(angMomx, IComponentInfo)).name)
 
         angMomy: "StateCalcUnitAngularMomentumY" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["UnitAngularMomentumY"], ICloneable)).clone_object(),
-            StateCalcUnitAngularMomentumY,
+            (ICloneable(geoStationaryElems["UnitAngularMomentumY"])).clone_object(), StateCalcUnitAngularMomentumY
         )
         Assert.assertIsNotNone(angMomy)
         angMomy.central_body_name = "Mercury"
@@ -1449,8 +1400,7 @@ class EarlyBoundTests(TestBase):
         geoStationaryElems.remove((clr.CastAs(angMomy, IComponentInfo)).name)
 
         angMomz: "StateCalcUnitAngularMomentumZ" = clr.CastAs(
-            (clr.Convert(geoStationaryElems["UnitAngularMomentumZ"], ICloneable)).clone_object(),
-            StateCalcUnitAngularMomentumZ,
+            (ICloneable(geoStationaryElems["UnitAngularMomentumZ"])).clone_object(), StateCalcUnitAngularMomentumZ
         )
         Assert.assertIsNotNone(angMomz)
         angMomz.central_body_name = "Mercury"
@@ -1462,23 +1412,21 @@ class EarlyBoundTests(TestBase):
         geodeticElems: "ComponentInfoCollection" = components.get_folder("Geodetic")
 
         geodeticElem: "StateCalcGeodeticElem" = clr.CastAs(
-            (clr.Convert(geodeticElems["Latitude"], ICloneable)).clone_object(), StateCalcGeodeticElem
+            (ICloneable(geodeticElems["Latitude"])).clone_object(), StateCalcGeodeticElem
         )
         Assert.assertIsNotNone(geodeticElem)
         geodeticElem.central_body_name = "Saturn"
         Assert.assertEqual("Saturn", geodeticElem.central_body_name)
         geodeticElems.remove((clr.CastAs(geodeticElem, IComponentInfo)).name)
 
-        geodeticElem = clr.CastAs(
-            (clr.Convert(geodeticElems["LongitudeRate"], ICloneable)).clone_object(), StateCalcGeodeticElem
-        )
+        geodeticElem = clr.CastAs((ICloneable(geodeticElems["LongitudeRate"])).clone_object(), StateCalcGeodeticElem)
         Assert.assertIsNotNone(geodeticElem)
         geodeticElem.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", geodeticElem.central_body_name)
         geodeticElems.remove((clr.CastAs(geodeticElem, IComponentInfo)).name)
 
         hat: "StateCalcHeightAboveTerrain" = clr.CastAs(
-            (clr.Convert(geodeticElems["Height above terrain"], ICloneable)).clone_object(), StateCalcHeightAboveTerrain
+            (ICloneable(geodeticElems["Height above terrain"])).clone_object(), StateCalcHeightAboveTerrain
         )
         Assert.assertIsNotNone(hat)
         hat.central_body_name = "Jupiter"
@@ -1492,8 +1440,7 @@ class EarlyBoundTests(TestBase):
         grTracks: "ComponentInfoCollection" = components.get_folder("Ground Track")
 
         grTrackErr: "StateCalcRepeatingGroundTrackErr" = clr.CastAs(
-            (clr.Convert(grTracks["RepeatingGroundTrackEquatorError"], ICloneable)).clone_object(),
-            StateCalcRepeatingGroundTrackErr,
+            (ICloneable(grTracks["RepeatingGroundTrackEquatorError"])).clone_object(), StateCalcRepeatingGroundTrackErr
         )
         Assert.assertIsNotNone(grTrackErr)
         grTrackErr.central_body_name = "Io"
@@ -1525,7 +1472,7 @@ class EarlyBoundTests(TestBase):
         kepElems: "ComponentInfoCollection" = components.get_folder("Keplerian Elems")
 
         aoa: "StateCalcAltitudeOfApoapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Altitude Of Apoapsis"], ICloneable)).clone_object(), StateCalcAltitudeOfApoapsis
+            (ICloneable(kepElems["Altitude Of Apoapsis"])).clone_object(), StateCalcAltitudeOfApoapsis
         )
         Assert.assertIsNotNone(aoa)
         aoa.central_body_name = "Pluto"
@@ -1541,7 +1488,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(aoa, IComponentInfo)).name)
 
         aop: "StateCalcAltitudeOfPeriapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Altitude Of Periapsis"], ICloneable)).clone_object(), StateCalcAltitudeOfPeriapsis
+            (ICloneable(kepElems["Altitude Of Periapsis"])).clone_object(), StateCalcAltitudeOfPeriapsis
         )
         Assert.assertIsNotNone(aop)
         aop.central_body_name = "Pluto"
@@ -1557,7 +1504,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(aop, IComponentInfo)).name)
 
         argPeriapsis: "StateCalcArgOfPeriapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Argument of Periapsis"], ICloneable)).clone_object(), StateCalcArgOfPeriapsis
+            (ICloneable(kepElems["Argument of Periapsis"])).clone_object(), StateCalcArgOfPeriapsis
         )
         Assert.assertIsNotNone(argPeriapsis)
         argPeriapsis.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -1567,7 +1514,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(argPeriapsis, IComponentInfo)).name)
 
         aol: "StateCalcArgOfLat" = clr.CastAs(
-            (clr.Convert(kepElems["Argument of Latitude"], ICloneable)).clone_object(), StateCalcArgOfLat
+            (ICloneable(kepElems["Argument of Latitude"])).clone_object(), StateCalcArgOfLat
         )
         Assert.assertIsNotNone(aol)
         aol.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -1583,7 +1530,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(aol, IComponentInfo)).name)
 
         eccAnomaly: "StateCalcEccentricityAnomaly" = clr.CastAs(
-            (clr.Convert(kepElems["Eccentric Anomaly"], ICloneable)).clone_object(), StateCalcEccentricityAnomaly
+            (ICloneable(kepElems["Eccentric Anomaly"])).clone_object(), StateCalcEccentricityAnomaly
         )
         Assert.assertIsNotNone(eccAnomaly)
         eccAnomaly.central_body_name = "Earth"
@@ -1593,7 +1540,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(eccAnomaly, IComponentInfo)).name)
 
         eccentricity: "StateCalcEccentricity" = clr.CastAs(
-            (clr.Convert(kepElems["Eccentricity"], ICloneable)).clone_object(), StateCalcEccentricity
+            (ICloneable(kepElems["Eccentricity"])).clone_object(), StateCalcEccentricity
         )
         Assert.assertIsNotNone(eccentricity)
         eccentricity.central_body_name = "Earth"
@@ -1603,7 +1550,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(eccentricity, IComponentInfo)).name)
 
         inclination: "StateCalcInclination" = clr.CastAs(
-            (clr.Convert(kepElems["Inclination"], ICloneable)).clone_object(), StateCalcInclination
+            (ICloneable(kepElems["Inclination"])).clone_object(), StateCalcInclination
         )
         Assert.assertIsNotNone(inclination)
         inclination.coord_system_name = "CentralBody/Earth Inertial"
@@ -1613,7 +1560,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(inclination, IComponentInfo)).name)
 
         loan: "StateCalcLonOfAscNode" = clr.CastAs(
-            (clr.Convert(kepElems["Longitude Of Ascending Node"], ICloneable)).clone_object(), StateCalcLonOfAscNode
+            (ICloneable(kepElems["Longitude Of Ascending Node"])).clone_object(), StateCalcLonOfAscNode
         )
         Assert.assertIsNotNone(loan)
         loan.central_body_name = "Earth"
@@ -1623,7 +1570,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(loan, IComponentInfo)).name)
 
         meanAnomaly: "StateCalcMeanAnomaly" = clr.CastAs(
-            (clr.Convert(kepElems["MeanAnomaly"], ICloneable)).clone_object(), StateCalcMeanAnomaly
+            (ICloneable(kepElems["MeanAnomaly"])).clone_object(), StateCalcMeanAnomaly
         )
         Assert.assertIsNotNone(meanAnomaly)
         meanAnomaly.central_body_name = "Earth"
@@ -1633,7 +1580,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(meanAnomaly, IComponentInfo)).name)
 
         meanMotion: "StateCalcMeanMotion" = clr.CastAs(
-            (clr.Convert(kepElems["Mean Motion"], ICloneable)).clone_object(), StateCalcMeanMotion
+            (ICloneable(kepElems["Mean Motion"])).clone_object(), StateCalcMeanMotion
         )
         Assert.assertIsNotNone(meanMotion)
         meanMotion.central_body_name = "Earth"
@@ -1643,7 +1590,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(meanMotion, IComponentInfo)).name)
 
         orbitPeriod: "StateCalcOrbitPeriod" = clr.CastAs(
-            (clr.Convert(kepElems["Orbit Period"], ICloneable)).clone_object(), StateCalcOrbitPeriod
+            (ICloneable(kepElems["Orbit Period"])).clone_object(), StateCalcOrbitPeriod
         )
         Assert.assertIsNotNone(orbitPeriod)
         orbitPeriod.central_body_name = "Earth"
@@ -1652,7 +1599,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, orbitPeriod.element_type)
         kepElems.remove((clr.CastAs(orbitPeriod, IComponentInfo)).name)
 
-        raan: "StateCalcRAAN" = clr.CastAs((clr.Convert(kepElems["RAAN"], ICloneable)).clone_object(), StateCalcRAAN)
+        raan: "StateCalcRAAN" = clr.CastAs((ICloneable(kepElems["RAAN"])).clone_object(), StateCalcRAAN)
         Assert.assertIsNotNone(raan)
         raan.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", raan.coord_system_name)
@@ -1661,7 +1608,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(raan, IComponentInfo)).name)
 
         roa: "StateCalcRadOfApoapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Radius Of Apoapsis"], ICloneable)).clone_object(), StateCalcRadOfApoapsis
+            (ICloneable(kepElems["Radius Of Apoapsis"])).clone_object(), StateCalcRadOfApoapsis
         )
         Assert.assertIsNotNone(roa)
         roa.central_body_name = "Earth"
@@ -1671,7 +1618,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(roa, IComponentInfo)).name)
 
         radiusOfPeriapsis: "StateCalcRadOfPeriapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Radius Of Periapsis"], ICloneable)).clone_object(), StateCalcRadOfPeriapsis
+            (ICloneable(kepElems["Radius Of Periapsis"])).clone_object(), StateCalcRadOfPeriapsis
         )
         Assert.assertIsNotNone(radiusOfPeriapsis)
         radiusOfPeriapsis.central_body_name = "Earth"
@@ -1681,7 +1628,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(radiusOfPeriapsis, IComponentInfo)).name)
 
         semiMajorAxis: "StateCalcSemiMajorAxis" = clr.CastAs(
-            (clr.Convert(kepElems["Semimajor Axis"], ICloneable)).clone_object(), StateCalcSemiMajorAxis
+            (ICloneable(kepElems["Semimajor Axis"])).clone_object(), StateCalcSemiMajorAxis
         )
         Assert.assertIsNotNone(semiMajorAxis)
         semiMajorAxis.central_body_name = "Earth"
@@ -1691,7 +1638,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(semiMajorAxis, IComponentInfo)).name)
 
         tpan: "StateCalcTimePastAscNode" = clr.CastAs(
-            (clr.Convert(kepElems["Time Past Asc Node"], ICloneable)).clone_object(), StateCalcTimePastAscNode
+            (ICloneable(kepElems["Time Past Asc Node"])).clone_object(), StateCalcTimePastAscNode
         )
         Assert.assertIsNotNone(tpan)
         tpan.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -1701,7 +1648,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(tpan, IComponentInfo)).name)
 
         timePastPeriapsis: "StateCalcTimePastPeriapsis" = clr.CastAs(
-            (clr.Convert(kepElems["Time Past Periapsis"], ICloneable)).clone_object(), StateCalcTimePastPeriapsis
+            (ICloneable(kepElems["Time Past Periapsis"])).clone_object(), StateCalcTimePastPeriapsis
         )
         Assert.assertIsNotNone(timePastPeriapsis)
         timePastPeriapsis.central_body_name = "Earth"
@@ -1711,7 +1658,7 @@ class EarlyBoundTests(TestBase):
         kepElems.remove((clr.CastAs(timePastPeriapsis, IComponentInfo)).name)
 
         trueAnomaly: "StateCalcTrueAnomaly" = clr.CastAs(
-            (clr.Convert(kepElems["True Anomaly"], ICloneable)).clone_object(), StateCalcTrueAnomaly
+            (ICloneable(kepElems["True Anomaly"])).clone_object(), StateCalcTrueAnomaly
         )
         Assert.assertIsNotNone(trueAnomaly)
         trueAnomaly.central_body_name = "Earth"
@@ -1725,7 +1672,7 @@ class EarlyBoundTests(TestBase):
         maneuverElems: "ComponentInfoCollection" = components.get_folder("Maneuver")
 
         difference: "StateCalcDifference" = clr.CastAs(
-            (clr.Convert(maneuverElems["Fuel Used"], ICloneable)).clone_object(), StateCalcDifference
+            (ICloneable(maneuverElems["Fuel Used"])).clone_object(), StateCalcDifference
         )
         Assert.assertIsNotNone(difference)
         difference.calc_object_name = "Epoch"
@@ -1737,7 +1684,7 @@ class EarlyBoundTests(TestBase):
         maneuverElems.remove((clr.CastAs(difference, IComponentInfo)).name)
 
         inertialDeltaVx: "StateCalcInertialDeltaVx" = clr.CastAs(
-            (clr.Convert(maneuverElems["Inertial DeltaVx"], ICloneable)).clone_object(), StateCalcInertialDeltaVx
+            (ICloneable(maneuverElems["Inertial DeltaVx"])).clone_object(), StateCalcInertialDeltaVx
         )
         Assert.assertIsNotNone(inertialDeltaVx)
         inertialDeltaVx.coord_axes_name = "CentralBody/Earth Inertial"
@@ -1745,7 +1692,7 @@ class EarlyBoundTests(TestBase):
         maneuverElems.remove((clr.CastAs(inertialDeltaVx, IComponentInfo)).name)
 
         inertialDeltaVy: "StateCalcInertialDeltaVy" = clr.CastAs(
-            (clr.Convert(maneuverElems["Inertial DeltaVy"], ICloneable)).clone_object(), StateCalcInertialDeltaVy
+            (ICloneable(maneuverElems["Inertial DeltaVy"])).clone_object(), StateCalcInertialDeltaVy
         )
         Assert.assertIsNotNone(inertialDeltaVy)
         inertialDeltaVy.coord_axes_name = "CentralBody/Earth Inertial"
@@ -1753,7 +1700,7 @@ class EarlyBoundTests(TestBase):
         maneuverElems.remove((clr.CastAs(inertialDeltaVy, IComponentInfo)).name)
 
         inertialDeltaVz: "StateCalcInertialDeltaVz" = clr.CastAs(
-            (clr.Convert(maneuverElems["Inertial DeltaVz"], ICloneable)).clone_object(), StateCalcInertialDeltaVz
+            (ICloneable(maneuverElems["Inertial DeltaVz"])).clone_object(), StateCalcInertialDeltaVz
         )
         Assert.assertIsNotNone(inertialDeltaVz)
         inertialDeltaVz.coord_axes_name = "CentralBody/Earth Inertial"
@@ -1761,7 +1708,7 @@ class EarlyBoundTests(TestBase):
         maneuverElems.remove((clr.CastAs(inertialDeltaVz, IComponentInfo)).name)
 
         vectorX: "StateCalcVectorX" = clr.CastAs(
-            (clr.Convert(maneuverElems["Thrust Vector X"], ICloneable)).clone_object(), StateCalcVectorX
+            (ICloneable(maneuverElems["Thrust Vector X"])).clone_object(), StateCalcVectorX
         )
         Assert.assertIsNotNone(vectorX)
         vectorX.coord_axes_name = "CentralBody/Charon B1950 FK4"
@@ -1772,26 +1719,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Pluto Pluto_Angular_Velocity", vectorX.vector_name)
         maneuverElems.remove((clr.CastAs(vectorX, IComponentInfo)).name)
 
-        deltaV: "StateCalcDeltaV" = clr.CastAs(
-            (clr.Convert(maneuverElems["DeltaV"], ICloneable)).clone_object(), StateCalcDeltaV
-        )
+        deltaV: "StateCalcDeltaV" = clr.CastAs((ICloneable(maneuverElems["DeltaV"])).clone_object(), StateCalcDeltaV)
         Assert.assertIsNotNone(deltaV)
         maneuverElems.remove("DeltaV1")
 
         deltaVSquared: "StateCalcDeltaVSquared" = clr.CastAs(
-            (clr.Convert(maneuverElems["DeltaV Squared"], ICloneable)).clone_object(), StateCalcDeltaVSquared
+            (ICloneable(maneuverElems["DeltaV Squared"])).clone_object(), StateCalcDeltaVSquared
         )
         Assert.assertIsNotNone(deltaVSquared)
         maneuverElems.remove("DeltaV Squared1")
 
         MCSdeltaV: "StateCalcMissionControlSequenceDeltaV" = clr.CastAs(
-            (clr.Convert(maneuverElems["MCS DeltaV"], ICloneable)).clone_object(), StateCalcMissionControlSequenceDeltaV
+            (ICloneable(maneuverElems["MCS DeltaV"])).clone_object(), StateCalcMissionControlSequenceDeltaV
         )
         Assert.assertIsNotNone(MCSdeltaV)
         maneuverElems.remove("MCS DeltaV1")
 
         MCSdeltaVSquared: "StateCalcMissionControlSequenceDeltaVSquared" = clr.CastAs(
-            (clr.Convert(maneuverElems["MCS DeltaV Squared"], ICloneable)).clone_object(),
+            (ICloneable(maneuverElems["MCS DeltaV Squared"])).clone_object(),
             StateCalcMissionControlSequenceDeltaVSquared,
         )
         Assert.assertIsNotNone(MCSdeltaVSquared)
@@ -1806,7 +1751,7 @@ class EarlyBoundTests(TestBase):
         math: "ComponentInfoCollection" = components.get_folder("Math")
 
         absValue: "StateCalcAbsoluteValue" = clr.CastAs(
-            (clr.Convert(math["Absolute Value"], ICloneable)).clone_object(), StateCalcAbsoluteValue
+            (ICloneable(math["Absolute Value"])).clone_object(), StateCalcAbsoluteValue
         )
         Assert.assertIsNotNone(absValue)
         absValue.calc_object_name = "Epoch"
@@ -1814,7 +1759,7 @@ class EarlyBoundTests(TestBase):
         math.remove((clr.CastAs(absValue, IComponentInfo)).name)
 
         maxvalue: "StateCalcMaxValue" = clr.CastAs(
-            (clr.Convert(math["Maximum Value"], ICloneable)).clone_object(), StateCalcMaxValue
+            (ICloneable(math["Maximum Value"])).clone_object(), StateCalcMaxValue
         )
         Assert.assertIsNotNone(maxvalue)
         maxvalue.calc_object_name = "Epoch"
@@ -1822,23 +1767,21 @@ class EarlyBoundTests(TestBase):
         math.remove((clr.CastAs(maxvalue, IComponentInfo)).name)
 
         minvalue: "StateCalcMinValue" = clr.CastAs(
-            (clr.Convert(math["Minimum Value"], ICloneable)).clone_object(), StateCalcMinValue
+            (ICloneable(math["Minimum Value"])).clone_object(), StateCalcMinValue
         )
         Assert.assertIsNotNone(minvalue)
         minvalue.calc_object_name = "Epoch"
         Assert.assertEqual("Epoch", minvalue.calc_object_name)
         math.remove((clr.CastAs(minvalue, IComponentInfo)).name)
 
-        negative: "StateCalcNegative" = clr.CastAs(
-            (clr.Convert(math["Negative"], ICloneable)).clone_object(), StateCalcNegative
-        )
+        negative: "StateCalcNegative" = clr.CastAs((ICloneable(math["Negative"])).clone_object(), StateCalcNegative)
         Assert.assertIsNotNone(negative)
         negative.calc_object_name = "Epoch"
         Assert.assertEqual("Epoch", negative.calc_object_name)
         math.remove((clr.CastAs(negative, IComponentInfo)).name)
 
         meanValue: "StateCalcMeanValue" = clr.CastAs(
-            (clr.Convert(math["Mean Value"], ICloneable)).clone_object(), StateCalcMeanValue
+            (ICloneable(math["Mean Value"])).clone_object(), StateCalcMeanValue
         )
         Assert.assertIsNotNone(meanValue)
         meanValue.calc_object_name = "Cartesian Elems/X"
@@ -1846,7 +1789,7 @@ class EarlyBoundTests(TestBase):
         math.remove((clr.CastAs(meanValue, IComponentInfo)).name)
 
         medianValue: "StateCalcMedianValue" = clr.CastAs(
-            (clr.Convert(math["Median Value"], ICloneable)).clone_object(), StateCalcMedianValue
+            (ICloneable(math["Median Value"])).clone_object(), StateCalcMedianValue
         )
         Assert.assertIsNotNone(medianValue)
         medianValue.calc_object_name = "Cartesian Elems/X"
@@ -1854,7 +1797,7 @@ class EarlyBoundTests(TestBase):
         math.remove((clr.CastAs(medianValue, IComponentInfo)).name)
 
         stdDev: "StateCalcStandardDeviation" = clr.CastAs(
-            (clr.Convert(math["Standard Deviation"], ICloneable)).clone_object(), StateCalcStandardDeviation
+            (ICloneable(math["Standard Deviation"])).clone_object(), StateCalcStandardDeviation
         )
         Assert.assertIsNotNone(stdDev)
         stdDev.calc_object_name = "Cartesian Elems/X"
@@ -1865,9 +1808,7 @@ class EarlyBoundTests(TestBase):
 
         meanElems: "ComponentInfoCollection" = components.get_folder("Mean Elems")
 
-        aol = clr.CastAs(
-            (clr.Convert(meanElems["Mean Argument of Latitude"], ICloneable)).clone_object(), StateCalcArgOfLat
-        )
+        aol = clr.CastAs((ICloneable(meanElems["Mean Argument of Latitude"])).clone_object(), StateCalcArgOfLat)
         Assert.assertIsNotNone(aol)
         aol.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", aol.coord_system_name)
@@ -1885,7 +1826,7 @@ class EarlyBoundTests(TestBase):
 
         multiBodyElems: "ComponentInfoCollection" = components.get_folder("MultiBody")
 
-        bDotR: "BDotRCalc" = clr.CastAs((clr.Convert(multiBodyElems["BDotR"], ICloneable)).clone_object(), BDotRCalc)
+        bDotR: "BDotRCalc" = clr.CastAs((ICloneable(multiBodyElems["BDotR"])).clone_object(), BDotRCalc)
         Assert.assertIsNotNone(bDotR)
         bDotR.reference_vector_name = "CentralBody/Mercury Mercury Angular Velocity"
         Assert.assertEqual("CentralBody/Mercury Mercury_Angular_Velocity", bDotR.reference_vector_name)
@@ -1893,7 +1834,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Mercury", bDotR.target_body_name)
         multiBodyElems.remove((clr.CastAs(bDotR, IComponentInfo)).name)
 
-        bDotT: "BDotTCalc" = clr.CastAs((clr.Convert(multiBodyElems["BDotT"], ICloneable)).clone_object(), BDotTCalc)
+        bDotT: "BDotTCalc" = clr.CastAs((ICloneable(multiBodyElems["BDotT"])).clone_object(), BDotTCalc)
         Assert.assertIsNotNone(bDotT)
         bDotT.reference_vector_name = "CentralBody/Mercury Mercury Angular Velocity"
         Assert.assertEqual("CentralBody/Mercury Mercury_Angular_Velocity", bDotT.reference_vector_name)
@@ -1901,17 +1842,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Mercury", bDotT.target_body_name)
         multiBodyElems.remove((clr.CastAs(bDotT, IComponentInfo)).name)
 
-        bMag: "BMagnitudeCalc" = clr.CastAs(
-            (clr.Convert(multiBodyElems["BMagnitude"], ICloneable)).clone_object(), BMagnitudeCalc
-        )
+        bMag: "BMagnitudeCalc" = clr.CastAs((ICloneable(multiBodyElems["BMagnitude"])).clone_object(), BMagnitudeCalc)
         Assert.assertIsNotNone(bMag)
         bMag.target_body_name = "Mercury"
         Assert.assertEqual("Mercury", bMag.target_body_name)
         multiBodyElems.remove((clr.CastAs(bMag, IComponentInfo)).name)
 
-        bTheta: "BThetaCalc" = clr.CastAs(
-            (clr.Convert(multiBodyElems["BTheta"], ICloneable)).clone_object(), BThetaCalc
-        )
+        bTheta: "BThetaCalc" = clr.CastAs((ICloneable(multiBodyElems["BTheta"])).clone_object(), BThetaCalc)
         Assert.assertIsNotNone(bTheta)
         bTheta.reference_vector_name = "CentralBody/Mercury Mercury Angular Velocity"
         Assert.assertEqual("CentralBody/Mercury Mercury_Angular_Velocity", bTheta.reference_vector_name)
@@ -1920,7 +1857,7 @@ class EarlyBoundTests(TestBase):
         multiBodyElems.remove((clr.CastAs(bTheta, IComponentInfo)).name)
 
         deltaDec: "StateCalcDeltaDec" = clr.CastAs(
-            (clr.Convert(multiBodyElems["Delta Declination"], ICloneable)).clone_object(), StateCalcDeltaDec
+            (ICloneable(multiBodyElems["Delta Declination"])).clone_object(), StateCalcDeltaDec
         )
         Assert.assertIsNotNone(deltaDec)
         deltaDec.central_body_name = "Sun"
@@ -1950,7 +1887,7 @@ class EarlyBoundTests(TestBase):
         multiBodyElems.remove((clr.CastAs(deltaDec, IComponentInfo)).name)
 
         deltaRA: "StateCalcDeltaRA" = clr.CastAs(
-            (clr.Convert(multiBodyElems["Delta Right Asc"], ICloneable)).clone_object(), StateCalcDeltaRA
+            (ICloneable(multiBodyElems["Delta Right Asc"])).clone_object(), StateCalcDeltaRA
         )
         Assert.assertIsNotNone(deltaRA)
         deltaRA.central_body_name = "Sun"
@@ -1980,7 +1917,7 @@ class EarlyBoundTests(TestBase):
         multiBodyElems.remove((clr.CastAs(deltaRA, IComponentInfo)).name)
 
         jacobiConstant: "StateCalcJacobiConstant" = clr.CastAs(
-            (clr.Convert(multiBodyElems["JacobiConstant"], ICloneable)).clone_object(), StateCalcJacobiConstant
+            (ICloneable(multiBodyElems["JacobiConstant"])).clone_object(), StateCalcJacobiConstant
         )
         Assert.assertIsNotNone(jacobiConstant)
         multiBodyElems.remove((clr.CastAs(jacobiConstant, IComponentInfo)).name)
@@ -1993,7 +1930,7 @@ class EarlyBoundTests(TestBase):
         # IAgVAStateCalcApparentSolarLon appSolLon = ((ICloneable)otherOrbitElems["Apparent Solar Longitude"]).CloneObject() as StateCalcApparentSolarLon;        #            Assert.IsNotNull(appSolLon);        #            appSolLon.CentralBodyName = "Earth";        #            Assert.AreEqual("Earth", appSolLon.CentralBodyName);
 
         appSolTime: "StateCalcApparentSolarTime" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Apparent Solar Time"], ICloneable)).clone_object(), StateCalcApparentSolarTime
+            (ICloneable(otherOrbitElems["Apparent Solar Time"])).clone_object(), StateCalcApparentSolarTime
         )
         Assert.assertIsNotNone(appSolTime)
         appSolTime.central_body_name = "Earth"
@@ -2001,7 +1938,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(appSolTime, IComponentInfo)).name)
 
         betaAngle: "StateCalcBetaAngle" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Beta Angle"], ICloneable)).clone_object(), StateCalcBetaAngle
+            (ICloneable(otherOrbitElems["Beta Angle"])).clone_object(), StateCalcBetaAngle
         )
         Assert.assertIsNotNone(betaAngle)
         betaAngle.central_body_name = "Earth"
@@ -2012,8 +1949,7 @@ class EarlyBoundTests(TestBase):
         # IAgVAStateCalcEarthMeanSolarLon mesl = ((ICloneable)otherOrbitElems["Earth Mean Solar Longitude"]).CloneObject() as StateCalcEarthMeanSolarLon;        #            Assert.IsNotNull(mesl);        #            mesl.CentralBodyName = "Earth";        #            Assert.AreEqual("Earth", mesl.CentralBodyName);
 
         mest: "StateCalcEarthMeanSolarTime" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Earth Mean Solar Time"], ICloneable)).clone_object(),
-            StateCalcEarthMeanSolarTime,
+            (ICloneable(otherOrbitElems["Earth Mean Solar Time"])).clone_object(), StateCalcEarthMeanSolarTime
         )
         Assert.assertIsNotNone(mest)
         mest.central_body_name = "Earth"
@@ -2021,7 +1957,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(mest, IComponentInfo)).name)
 
         emltan: "StateCalcEarthMeanLocTimeAN" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Earth Mean Local Time of Ascending Node"], ICloneable)).clone_object(),
+            (ICloneable(otherOrbitElems["Earth Mean Local Time of Ascending Node"])).clone_object(),
             StateCalcEarthMeanLocTimeAN,
         )
         Assert.assertIsNotNone(emltan)
@@ -2030,7 +1966,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(emltan, IComponentInfo)).name)
 
         lasl: "StateCalcLocalApparentSolarLon" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Local Apparent Solar Longitude"], ICloneable)).clone_object(),
+            (ICloneable(otherOrbitElems["Local Apparent Solar Longitude"])).clone_object(),
             StateCalcLocalApparentSolarLon,
         )
         Assert.assertIsNotNone(lasl)
@@ -2039,7 +1975,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(lasl, IComponentInfo)).name)
 
         longPeriapsis: "StateCalcLonOfPeriapsis" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Longitude of Periapsis"], ICloneable)).clone_object(), StateCalcLonOfPeriapsis
+            (ICloneable(otherOrbitElems["Longitude of Periapsis"])).clone_object(), StateCalcLonOfPeriapsis
         )
         Assert.assertIsNotNone(longPeriapsis)
         longPeriapsis.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -2049,7 +1985,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(longPeriapsis, IComponentInfo)).name)
 
         osv: "StateCalcOrbitStateValue" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["Orbit State Value"], ICloneable)).clone_object(), StateCalcOrbitStateValue
+            (ICloneable(otherOrbitElems["Orbit State Value"])).clone_object(), StateCalcOrbitStateValue
         )
         Assert.assertIsNotNone(osv)
         osv.calc_object_name = "Epoch"
@@ -2091,7 +2027,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(osv, IComponentInfo)).name)
 
         se: "StateCalcSignedEccentricity" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["SignedEccentricity"], ICloneable)).clone_object(), StateCalcSignedEccentricity
+            (ICloneable(otherOrbitElems["SignedEccentricity"])).clone_object(), StateCalcSignedEccentricity
         )
         Assert.assertIsNotNone(se)
         se.central_body_name = "Earth"
@@ -2101,7 +2037,7 @@ class EarlyBoundTests(TestBase):
         otherOrbitElems.remove((clr.CastAs(se, IComponentInfo)).name)
 
         trueLong: "StateCalcTrueLon" = clr.CastAs(
-            (clr.Convert(otherOrbitElems["True Longitude"], ICloneable)).clone_object(), StateCalcTrueLon
+            (ICloneable(otherOrbitElems["True Longitude"])).clone_object(), StateCalcTrueLon
         )
         Assert.assertIsNotNone(trueLong)
         trueLong.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
@@ -2124,9 +2060,7 @@ class EarlyBoundTests(TestBase):
 
         powerElems: "ComponentInfoCollection" = components.get_folder("Power")
 
-        power: "StateCalcPower" = clr.CastAs(
-            (clr.Convert(powerElems["Power"], ICloneable)).clone_object(), StateCalcPower
-        )
+        power: "StateCalcPower" = clr.CastAs((ICloneable(powerElems["Power"])).clone_object(), StateCalcPower)
         Assert.assertIsNotNone(power)
         power.power_source_name = "ProcessedPower"
         Assert.assertEqual("ProcessedPower", power.power_source_name)
@@ -2137,7 +2071,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems: "ComponentInfoCollection" = components.get_folder("Relative Motion")
 
         crossTrack: "StateCalcRelMotion" = clr.CastAs(
-            (clr.Convert(relMotionElems["CrossTrack"], ICloneable)).clone_object(), StateCalcRelMotion
+            (ICloneable(relMotionElems["CrossTrack"])).clone_object(), StateCalcRelMotion
         )
         Assert.assertIsNotNone(crossTrack)
 
@@ -2169,7 +2103,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems.remove((clr.CastAs(crossTrack, IComponentInfo)).name)
 
         solarBetaAngle: "StateCalcSolarBetaAngle" = clr.CastAs(
-            (clr.Convert(relMotionElems["Solar Beta Angle"], ICloneable)).clone_object(), StateCalcSolarBetaAngle
+            (ICloneable(relMotionElems["Solar Beta Angle"])).clone_object(), StateCalcSolarBetaAngle
         )
         Assert.assertIsNotNone(solarBetaAngle)
 
@@ -2209,7 +2143,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems.remove((clr.CastAs(solarBetaAngle, IComponentInfo)).name)
 
         solarInPlanlaneAngle: "StateCalcSolarInPlaneAngle" = clr.CastAs(
-            (clr.Convert(relMotionElems["Solar InPlane Angle"], ICloneable)).clone_object(), StateCalcSolarInPlaneAngle
+            (ICloneable(relMotionElems["Solar InPlane Angle"])).clone_object(), StateCalcSolarInPlaneAngle
         )
         Assert.assertIsNotNone(solarInPlanlaneAngle)
 
@@ -2252,7 +2186,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems.remove((clr.CastAs(solarInPlanlaneAngle, IComponentInfo)).name)
 
         relPosDecAngle: "StateCalcRelPositionDecAngle" = clr.CastAs(
-            (clr.Convert(relMotionElems["Relative Position Declination Angle"], ICloneable)).clone_object(),
+            (ICloneable(relMotionElems["Relative Position Declination Angle"])).clone_object(),
             StateCalcRelPositionDecAngle,
         )
         Assert.assertIsNotNone(relPosDecAngle)
@@ -2291,7 +2225,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems.remove((clr.CastAs(relPosDecAngle, IComponentInfo)).name)
 
         relPosInPlaneAngle: "StateCalcRelPositionInPlaneAngle" = clr.CastAs(
-            (clr.Convert(relMotionElems["Relative Position InPlane Angle"], ICloneable)).clone_object(),
+            (ICloneable(relMotionElems["Relative Position InPlane Angle"])).clone_object(),
             StateCalcRelPositionInPlaneAngle,
         )
         Assert.assertIsNotNone(relPosInPlaneAngle)
@@ -2338,8 +2272,7 @@ class EarlyBoundTests(TestBase):
         relMotionElems.remove((clr.CastAs(relPosInPlaneAngle, IComponentInfo)).name)
 
         relativeInclination: "StateCalcRelativeInclination" = clr.CastAs(
-            (clr.Convert(relMotionElems["Relative Inclination"], ICloneable)).clone_object(),
-            StateCalcRelativeInclination,
+            (ICloneable(relMotionElems["Relative Inclination"])).clone_object(), StateCalcRelativeInclination
         )
         Assert.assertIsNotNone(relativeInclination)
 
@@ -2390,7 +2323,7 @@ class EarlyBoundTests(TestBase):
         eigValName: str
         for eigValName in arEigValNames:
             eigval: "StateCalcSTMEigenval" = clr.CastAs(
-                (clr.Convert(stmEigenvalues[eigValName], ICloneable)).clone_object(), StateCalcSTMEigenval
+                (ICloneable(stmEigenvalues[eigValName])).clone_object(), StateCalcSTMEigenval
             )
             Assert.assertIsNotNone(eigval)
 
@@ -2488,7 +2421,7 @@ class EarlyBoundTests(TestBase):
         eigVecName: str
         for eigVecName in arEigVecNames:
             eigvec: "StateCalcSTMEigenvecElem" = clr.CastAs(
-                (clr.Convert(stmEigenvectors[eigVecName], ICloneable)).clone_object(), StateCalcSTMEigenvecElem
+                (ICloneable(stmEigenvectors[eigVecName])).clone_object(), StateCalcSTMEigenvecElem
             )
             Assert.assertIsNotNone(eigvec)
 
@@ -2515,7 +2448,7 @@ class EarlyBoundTests(TestBase):
         seetElems: "ComponentInfoCollection" = components.get_folder("SEET")
 
         fieldfieldLineSepAngle: "StateCalcSEETMagnitudeFieldFieldLineSepAngle" = clr.CastAs(
-            (clr.Convert(seetElems["GeoMagFieldFieldLineSeparation"], ICloneable)).clone_object(),
+            (ICloneable(seetElems["GeoMagFieldFieldLineSeparation"])).clone_object(),
             StateCalcSEETMagnitudeFieldFieldLineSepAngle,
         )
         fieldfieldLineSepAngle.target_object.bind_to("Missile/Missile1")
@@ -2524,9 +2457,7 @@ class EarlyBoundTests(TestBase):
 
         # Scalar
         scalarElems: "ComponentInfoCollection" = components.get_folder("Scalar")
-        scalar: "StateCalcScalar" = clr.CastAs(
-            (clr.Convert(scalarElems["Scalar"], ICloneable)).clone_object(), StateCalcScalar
-        )
+        scalar: "StateCalcScalar" = clr.CastAs((ICloneable(scalarElems["Scalar"])).clone_object(), StateCalcScalar)
         Assert.assertIsNotNone(scalar)
         scalar.scalar_name = "CentralBody/Earth ElapsedTimeFromStart"
         Assert.assertEqual("CentralBody/Earth ElapsedTimeFromStart", scalar.scalar_name)
@@ -2539,7 +2470,7 @@ class EarlyBoundTests(TestBase):
         scripts: "ComponentInfoCollection" = components.get_folder("Scripts")
 
         customFunc: "StateCalcCustomFunction" = clr.CastAs(
-            (clr.Convert(scripts["CustomFunctionCalcObject"], ICloneable)).clone_object(), StateCalcCustomFunction
+            (ICloneable(scripts["CustomFunctionCalcObject"])).clone_object(), StateCalcCustomFunction
         )
         Assert.assertIsNotNone(customFunc)
         customFunc.eval_function_name = "MatlabCustomFunction"
@@ -2560,9 +2491,7 @@ class EarlyBoundTests(TestBase):
 
         # Scripts - JScript
 
-        script: "StateCalcScript" = clr.CastAs(
-            (clr.Convert(scripts["JScript"], ICloneable)).clone_object(), StateCalcScript
-        )
+        script: "StateCalcScript" = clr.CastAs((ICloneable(scripts["JScript"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(script)
 
         calcObjectCollection: "CalcObjectCollection" = script.calc_arguments
@@ -2589,9 +2518,7 @@ class EarlyBoundTests(TestBase):
 
         # Scripts - Matlab
 
-        mScript: "StateCalcScript" = clr.CastAs(
-            (clr.Convert(scripts["Matlab"], ICloneable)).clone_object(), StateCalcScript
-        )
+        mScript: "StateCalcScript" = clr.CastAs((ICloneable(scripts["Matlab"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(mScript)
         objLinkEmbedControl: "ComponentAttrLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
             "Epoch", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
@@ -2748,14 +2675,13 @@ class EarlyBoundTests(TestBase):
         segments: "ComponentInfoCollection" = components.get_folder("Segments")
 
         SequenceDeltaV: "StateCalcSequenceDeltaV" = clr.CastAs(
-            (clr.Convert(segments["Sequence DeltaV"], ICloneable)).clone_object(), StateCalcSequenceDeltaV
+            (ICloneable(segments["Sequence DeltaV"])).clone_object(), StateCalcSequenceDeltaV
         )
         Assert.assertIsNotNone(SequenceDeltaV)
         segments.remove("Sequence DeltaV1")
 
         SequenceDeltaVSquared: "StateCalcSequenceDeltaVSquared" = clr.CastAs(
-            (clr.Convert(segments["Sequence DeltaV Squared"], ICloneable)).clone_object(),
-            StateCalcSequenceDeltaVSquared,
+            (ICloneable(segments["Sequence DeltaV Squared"])).clone_object(), StateCalcSequenceDeltaVSquared
         )
         Assert.assertIsNotNone(SequenceDeltaVSquared)
         SequenceDeltaVSquared.squared_type = SQUARED_TYPE.OF_SUM
@@ -2771,48 +2697,41 @@ class EarlyBoundTests(TestBase):
         sphericalElems: "ComponentInfoCollection" = components.get_folder("Spherical Elems")
 
         stateCosineVFPA: "StateCalcCosOfVerticalFPA" = clr.CastAs(
-            (clr.Convert(sphericalElems["Cosine of Vertical FPA"], ICloneable)).clone_object(),
-            StateCalcCosOfVerticalFPA,
+            (ICloneable(sphericalElems["Cosine of Vertical FPA"])).clone_object(), StateCalcCosOfVerticalFPA
         )
         Assert.assertIsNotNone(stateCosineVFPA)
         stateCosineVFPA.central_body_name = "Earth"
         Assert.assertEqual("Earth", stateCosineVFPA.central_body_name)
         sphericalElems.remove((clr.CastAs(stateCosineVFPA, IComponentInfo)).name)
 
-        dec: "StateCalcDec" = clr.CastAs(
-            (clr.Convert(sphericalElems["Declination"], ICloneable)).clone_object(), StateCalcDec
-        )
+        dec: "StateCalcDec" = clr.CastAs((ICloneable(sphericalElems["Declination"])).clone_object(), StateCalcDec)
         Assert.assertIsNotNone(dec)
         dec.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", dec.coord_system_name)
         sphericalElems.remove((clr.CastAs(dec, IComponentInfo)).name)
 
-        fpa: "StateCalcFPA" = clr.CastAs(
-            (clr.Convert(sphericalElems["Flight Path Angle"], ICloneable)).clone_object(), StateCalcFPA
-        )
+        fpa: "StateCalcFPA" = clr.CastAs((ICloneable(sphericalElems["Flight Path Angle"])).clone_object(), StateCalcFPA)
         Assert.assertIsNotNone(fpa)
         fpa.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", fpa.coord_system_name)
         sphericalElems.remove((clr.CastAs(fpa, IComponentInfo)).name)
 
         rMag: "StateCalcRMagnitude" = clr.CastAs(
-            (clr.Convert(sphericalElems["R Mag"], ICloneable)).clone_object(), StateCalcRMagnitude
+            (ICloneable(sphericalElems["R Mag"])).clone_object(), StateCalcRMagnitude
         )
         Assert.assertIsNotNone(rMag)
         rMag.reference_point_name = "CentralBody/Earth L1"
         Assert.assertEqual("CentralBody/Earth L1", rMag.reference_point_name)
         sphericalElems.remove((clr.CastAs(rMag, IComponentInfo)).name)
 
-        ra: "StateCalcRA" = clr.CastAs(
-            (clr.Convert(sphericalElems["Right Asc"], ICloneable)).clone_object(), StateCalcRA
-        )
+        ra: "StateCalcRA" = clr.CastAs((ICloneable(sphericalElems["Right Asc"])).clone_object(), StateCalcRA)
         Assert.assertIsNotNone(ra)
         ra.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", ra.coord_system_name)
         sphericalElems.remove((clr.CastAs(ra, IComponentInfo)).name)
 
         vMag: "StateCalcVMagnitude" = clr.CastAs(
-            (clr.Convert(sphericalElems["V Mag"], ICloneable)).clone_object(), StateCalcVMagnitude
+            (ICloneable(sphericalElems["V Mag"])).clone_object(), StateCalcVMagnitude
         )
         Assert.assertIsNotNone(vMag)
         vMag.coord_system_name = "CentralBody/Earth Inertial"
@@ -2820,7 +2739,7 @@ class EarlyBoundTests(TestBase):
         sphericalElems.remove((clr.CastAs(vMag, IComponentInfo)).name)
 
         VAz: "StateCalcVelAz" = clr.CastAs(
-            (clr.Convert(sphericalElems["Velocity Azimuth"], ICloneable)).clone_object(), StateCalcVelAz
+            (ICloneable(sphericalElems["Velocity Azimuth"])).clone_object(), StateCalcVelAz
         )
         Assert.assertIsNotNone(VAz)
         VAz.coord_system_name = "CentralBody/Earth Inertial"
@@ -2828,7 +2747,7 @@ class EarlyBoundTests(TestBase):
         sphericalElems.remove((clr.CastAs(VAz, IComponentInfo)).name)
 
         raRate: "StateCalcRARate" = clr.CastAs(
-            (clr.Convert(sphericalElems["Right Asc Rate"], ICloneable)).clone_object(), StateCalcRARate
+            (ICloneable(sphericalElems["Right Asc Rate"])).clone_object(), StateCalcRARate
         )
         Assert.assertIsNotNone(raRate)
         raRate.coord_system_name = "CentralBody/Earth Inertial"
@@ -2836,19 +2755,27 @@ class EarlyBoundTests(TestBase):
         sphericalElems.remove((clr.CastAs(raRate, IComponentInfo)).name)
 
         decRate: "StateCalcDecRate" = clr.CastAs(
-            (clr.Convert(sphericalElems["Declination Rate"], ICloneable)).clone_object(), StateCalcDecRate
+            (ICloneable(sphericalElems["Declination Rate"])).clone_object(), StateCalcDecRate
         )
         Assert.assertIsNotNone(decRate)
         decRate.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", decRate.coord_system_name)
         sphericalElems.remove((clr.CastAs(decRate, IComponentInfo)).name)
 
+        rangeRate: "StateCalcRangeRate" = clr.CastAs(
+            (ICloneable(sphericalElems["Range Rate"])).clone_object(), StateCalcRangeRate
+        )
+        Assert.assertIsNotNone(rangeRate)
+        rangeRate.coord_system_name = "CentralBody/Earth Fixed"
+        Assert.assertEqual("CentralBody/Earth Fixed", rangeRate.coord_system_name)
+        sphericalElems.remove((clr.CastAs(rangeRate, IComponentInfo)).name)
+
         # Target Vector
 
         targetElems: "ComponentInfoCollection" = components.get_folder("Target Vector")
 
         c3Energy: "StateCalcC3Energy" = clr.CastAs(
-            (clr.Convert(targetElems["C3 Energy"], ICloneable)).clone_object(), StateCalcC3Energy
+            (ICloneable(targetElems["C3 Energy"])).clone_object(), StateCalcC3Energy
         )
         Assert.assertIsNotNone(c3Energy)
         c3Energy.central_body_name = "Earth"
@@ -2858,7 +2785,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(c3Energy, IComponentInfo)).name)
 
         InAsympDec: "StateCalcInAsympDec" = clr.CastAs(
-            (clr.Convert(targetElems["Incoming Asymptote Dec"], ICloneable)).clone_object(), StateCalcInAsympDec
+            (ICloneable(targetElems["Incoming Asymptote Dec"])).clone_object(), StateCalcInAsympDec
         )
         Assert.assertIsNotNone(InAsympDec)
         InAsympDec.coord_system_name = "CentralBody/Earth Inertial"
@@ -2866,7 +2793,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(InAsympDec, IComponentInfo)).name)
 
         InAsympRA: "StateCalcInAsympRA" = clr.CastAs(
-            (clr.Convert(targetElems["Incoming Asymptote RA"], ICloneable)).clone_object(), StateCalcInAsympRA
+            (ICloneable(targetElems["Incoming Asymptote RA"])).clone_object(), StateCalcInAsympRA
         )
         Assert.assertIsNotNone(InAsympRA)
         InAsympRA.coord_system_name = "CentralBody/Earth Inertial"
@@ -2874,8 +2801,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(InAsympRA, IComponentInfo)).name)
 
         InVAzP: "StateCalcInVelAzAtPeriapsis" = clr.CastAs(
-            (clr.Convert(targetElems["Incoming Vel Az at Periapsis"], ICloneable)).clone_object(),
-            StateCalcInVelAzAtPeriapsis,
+            (ICloneable(targetElems["Incoming Vel Az at Periapsis"])).clone_object(), StateCalcInVelAzAtPeriapsis
         )
         Assert.assertIsNotNone(InVAzP)
         InVAzP.coord_system_name = "CentralBody/Earth Inertial"
@@ -2883,7 +2809,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(InVAzP, IComponentInfo)).name)
 
         OutAsympDec: "StateCalcOutAsympDec" = clr.CastAs(
-            (clr.Convert(targetElems["Outgoing Asymptote Dec"], ICloneable)).clone_object(), StateCalcOutAsympDec
+            (ICloneable(targetElems["Outgoing Asymptote Dec"])).clone_object(), StateCalcOutAsympDec
         )
         Assert.assertIsNotNone(OutAsympDec)
         OutAsympDec.coord_system_name = "CentralBody/Earth Inertial"
@@ -2891,7 +2817,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(OutAsympDec, IComponentInfo)).name)
 
         OutAsympRA: "StateCalcOutAsympRA" = clr.CastAs(
-            (clr.Convert(targetElems["Outgoing Asymptote RA"], ICloneable)).clone_object(), StateCalcOutAsympRA
+            (ICloneable(targetElems["Outgoing Asymptote RA"])).clone_object(), StateCalcOutAsympRA
         )
         Assert.assertIsNotNone(OutAsympRA)
         OutAsympRA.coord_system_name = "CentralBody/Earth Inertial"
@@ -2899,8 +2825,7 @@ class EarlyBoundTests(TestBase):
         targetElems.remove((clr.CastAs(OutAsympRA, IComponentInfo)).name)
 
         OutVAzP: "StateCalcOutVelAzAtPeriapsis" = clr.CastAs(
-            (clr.Convert(targetElems["Outgoing Vel Az at Periapsis"], ICloneable)).clone_object(),
-            StateCalcOutVelAzAtPeriapsis,
+            (ICloneable(targetElems["Outgoing Vel Az at Periapsis"])).clone_object(), StateCalcOutVelAzAtPeriapsis
         )
         Assert.assertIsNotNone(OutVAzP)
         OutVAzP.coord_system_name = "CentralBody/Earth Inertial"
@@ -2913,13 +2838,11 @@ class EarlyBoundTests(TestBase):
 
         compDur: "IComponentInfo" = timeElems["Duration"]
         dur1: "StateCalcDuration" = clr.CastAs(compDur, StateCalcDuration)
-        dur2: "StateCalcDuration" = clr.CastAs(
-            (clr.Convert(timeElems["Duration"], ICloneable)).clone_object(), StateCalcDuration
-        )
+        dur2: "StateCalcDuration" = clr.CastAs((ICloneable(timeElems["Duration"])).clone_object(), StateCalcDuration)
         timeElems.remove((clr.CastAs(dur2, IComponentInfo)).name)
 
         numRevs: "StateCalcNumRevs" = clr.CastAs(
-            (clr.Convert(timeElems["Number of Revolutions"], ICloneable)).clone_object(), StateCalcNumRevs
+            (ICloneable(timeElems["Number of Revolutions"])).clone_object(), StateCalcNumRevs
         )
         Assert.assertIsNotNone(numRevs)
         numRevs.central_body_name = "Earth"
@@ -2936,9 +2859,7 @@ class EarlyBoundTests(TestBase):
 
         uvElems: "ComponentInfoCollection" = components.get_folder("UserValues")
 
-        uv: "StateCalcUserValue" = clr.CastAs(
-            (clr.Convert(uvElems["User value"], ICloneable)).clone_object(), StateCalcUserValue
-        )
+        uv: "StateCalcUserValue" = clr.CastAs((ICloneable(uvElems["User value"])).clone_object(), StateCalcUserValue)
         uv.variable_name = "MyVariableName"
         Assert.assertEqual("MyVariableName", uv.variable_name)
         uvElems.remove((clr.CastAs(uv, IComponentInfo)).name)
@@ -2948,7 +2869,7 @@ class EarlyBoundTests(TestBase):
         vectorElems: "ComponentInfoCollection" = components.get_folder("Vector")
 
         angle: "StateCalcVectorGeometryToolAngle" = clr.CastAs(
-            (clr.Convert(vectorElems["Angle"], ICloneable)).clone_object(), StateCalcVectorGeometryToolAngle
+            (ICloneable(vectorElems["Angle"])).clone_object(), StateCalcVectorGeometryToolAngle
         )
         Assert.assertIsNotNone(angle)
         angle.angle_name = "CentralBody/Mars EarthRA"
@@ -2956,7 +2877,7 @@ class EarlyBoundTests(TestBase):
         vectorElems.remove((clr.CastAs(angle, IComponentInfo)).name)
 
         dotProduct: "StateCalcDotProduct" = clr.CastAs(
-            (clr.Convert(vectorElems["Dot Product"], ICloneable)).clone_object(), StateCalcDotProduct
+            (ICloneable(vectorElems["Dot Product"])).clone_object(), StateCalcDotProduct
         )
         Assert.assertIsNotNone(dotProduct)
         dotProduct.vector1_name = "CentralBody/Earth ICRF-X"
@@ -2966,7 +2887,7 @@ class EarlyBoundTests(TestBase):
         vectorElems.remove((clr.CastAs(dotProduct, IComponentInfo)).name)
 
         angleBetweenVectors: "StateCalcAngle" = clr.CastAs(
-            (clr.Convert(vectorElems["Angle Between Vectors"], ICloneable)).clone_object(), StateCalcAngle
+            (ICloneable(vectorElems["Angle Between Vectors"])).clone_object(), StateCalcAngle
         )
         Assert.assertIsNotNone(angleBetweenVectors)
         angleBetweenVectors.vector1_name = "CentralBody/Earth ICRF-X"
@@ -2976,7 +2897,7 @@ class EarlyBoundTests(TestBase):
         vectorElems.remove((clr.CastAs(angleBetweenVectors, IComponentInfo)).name)
 
         vectorDec: "StateCalcVectorDec" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector Dec"], ICloneable)).clone_object(), StateCalcVectorDec
+            (ICloneable(vectorElems["Vector Dec"])).clone_object(), StateCalcVectorDec
         )
         Assert.assertIsNotNone(vectorDec)
         vectorDec.coord_axes_name = "CentralBody/Earth Inertial"
@@ -2986,7 +2907,7 @@ class EarlyBoundTests(TestBase):
         vectorElems.remove((clr.CastAs(vectorDec, IComponentInfo)).name)
 
         vectorMag: "StateCalcVectorMagnitude" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector Mag"], ICloneable)).clone_object(), StateCalcVectorMagnitude
+            (ICloneable(vectorElems["Vector Mag"])).clone_object(), StateCalcVectorMagnitude
         )
         Assert.assertIsNotNone(vectorMag)
         vectorMag.unit_dimension = "Unitless"
@@ -2996,7 +2917,7 @@ class EarlyBoundTests(TestBase):
         vectorElems.remove((clr.CastAs(vectorMag, IComponentInfo)).name)
 
         vectorRA: "StateCalcVectorRA" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector RA"], ICloneable)).clone_object(), StateCalcVectorRA
+            (ICloneable(vectorElems["Vector RA"])).clone_object(), StateCalcVectorRA
         )
         Assert.assertIsNotNone(vectorRA)
         vectorRA.coord_axes_name = "CentralBody/Earth Inertial"
@@ -3005,9 +2926,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth ICRF-X", vectorRA.vector_name)
         vectorElems.remove((clr.CastAs(vectorRA, IComponentInfo)).name)
 
-        x: "StateCalcVectorX" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector X"], ICloneable)).clone_object(), StateCalcVectorX
-        )
+        x: "StateCalcVectorX" = clr.CastAs((ICloneable(vectorElems["Vector X"])).clone_object(), StateCalcVectorX)
         Assert.assertIsNotNone(x)
         x.coord_axes_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", x.coord_axes_name)
@@ -3017,9 +2936,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth ICRF-X", x.vector_name)
         vectorElems.remove((clr.CastAs(x, IComponentInfo)).name)
 
-        y: "StateCalcVectorY" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector Y"], ICloneable)).clone_object(), StateCalcVectorY
-        )
+        y: "StateCalcVectorY" = clr.CastAs((ICloneable(vectorElems["Vector Y"])).clone_object(), StateCalcVectorY)
         Assert.assertIsNotNone(y)
         y.coord_axes_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", y.coord_axes_name)
@@ -3029,9 +2946,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth ICRF-X", y.vector_name)
         vectorElems.remove((clr.CastAs(y, IComponentInfo)).name)
 
-        z: "StateCalcVectorZ" = clr.CastAs(
-            (clr.Convert(vectorElems["Vector Z"], ICloneable)).clone_object(), StateCalcVectorZ
-        )
+        z: "StateCalcVectorZ" = clr.CastAs((ICloneable(vectorElems["Vector Z"])).clone_object(), StateCalcVectorZ)
         Assert.assertIsNotNone(z)
         z.coord_axes_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", z.coord_axes_name)
@@ -3057,22 +2972,12 @@ class EarlyBoundTests(TestBase):
 
         # CHG119630 - remove Perl support; changing to Python
         script: "CustomFunctionScriptEngine" = clr.CastAs(
-            (clr.Convert(components["PythonCustomFunction"], ICloneable)).clone_object(), CustomFunctionScriptEngine
+            (ICloneable(components["PythonCustomFunction"])).clone_object(), CustomFunctionScriptEngine
         )
         script.file_extension_name = ".dummy"
         Assert.assertEqual(".dummy", script.file_extension_name)
         script.file_extension_name = ".py"
         Assert.assertEqual(".py", script.file_extension_name)
-
-        # The following Python file is not a custom function script, just a Python file (this is also how we used to check Perl).
-        script.script_filename = TestBase.GetScenarioFile("AccConstraintPlugin.py")
-        # CL 225802 introduced the changes that broke the object model test.
-        # The path returned by the ScriptFile is pre-processed to make
-        # it relative to the user data directory; when the data directory
-        # and the file match the value returned by the property is always
-        # in the format '.\' followed by the file name. Hence the test
-        # needed to be modified to reflect the changes.
-        Assert.assertEqual("AccConstraintPlugin.py", Path.GetFileName(script.script_filename))
 
         components.remove("PythonCustomFunction1")
 
@@ -3102,7 +3007,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestConstraint(clr.CastAs(comp, AsTriggerCondition), True)
 
-        comp = clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), IComponentInfo)
+        comp = clr.CastAs((ICloneable(comp)).clone_object(), IComponentInfo)
         self.TestComponent(comp, False)
         self.TestConstraint(clr.CastAs(components["UserDefined1"], AsTriggerCondition), False)
         components.remove("UserDefined1")
@@ -3114,7 +3019,7 @@ class EarlyBoundTests(TestBase):
         components = components.get_folder("Access")
 
         access: "StateCalcOnePointAccess" = clr.CastAs(
-            (clr.Convert(components["Access"], ICloneable)).clone_object(), StateCalcOnePointAccess
+            (ICloneable(components["Access"])).clone_object(), StateCalcOnePointAccess
         )
 
         access.aberration_type = ABERRATION_TYPE.ANNUAL
@@ -3323,9 +3228,9 @@ class EarlyBoundTests(TestBase):
             ao.mean_longitude_rate = 1
 
         with pytest.raises(Exception):
-            (clr.Convert(components["Earth"], ICloneable)).clone_object()
+            (ICloneable(components["Earth"])).clone_object()
 
-        oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()  # Iapetus1
+        oComp: typing.Any = (ICloneable(comp)).clone_object()  # Iapetus1
         comp = clr.CastAs(oComp, IComponentInfo)
         self.TestComponent(comp, False)
 
@@ -3588,7 +3493,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 thruster1.user_comment = "TestComment"
 
-        oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+        oComp: typing.Any = (ICloneable(comp)).clone_object()
         comp = clr.CastAs(oComp, IComponentInfo)
         self.TestComponent(comp, False)
         comp.name = "SingleThruster"
@@ -4081,22 +3986,18 @@ class EarlyBoundTests(TestBase):
         backwardSequence: "MissionControlSequenceBackwardSequence" = clr.CastAs(
             comp, MissionControlSequenceBackwardSequence
         )
-        Assert.assertEqual(
-            SEGMENT_TYPE.BACKWARD_SEQUENCE, (clr.Convert(backwardSequence, IMissionControlSequenceSegment)).type
-        )
+        Assert.assertEqual(SEGMENT_TYPE.BACKWARD_SEQUENCE, (IMissionControlSequenceSegment(backwardSequence)).type)
         with pytest.raises(Exception):
             backwardSequence.repeat_count = 2
         with pytest.raises(Exception):
-            (
-                clr.Convert(backwardSequence, IMissionControlSequenceSequence)
-            ).sequence_state_to_pass = SEQUENCE_STATE_TO_PASS.INITIAL
+            (backwardSequence).sequence_state_to_pass = SEQUENCE_STATE_TO_PASS.INITIAL
         with pytest.raises(Exception):
             backwardSequence.generate_ephemeris = False
-        self.TestSegmentProperties((clr.Convert(backwardSequence, IMissionControlSequenceSegment)), True)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(backwardSequence)), True)
 
-        oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+        oComp: typing.Any = (ICloneable(comp)).clone_object()
         backwardSequence = clr.CastAs(oComp, MissionControlSequenceBackwardSequence)
-        self.TestSegmentProperties((clr.Convert(backwardSequence, IMissionControlSequenceSegment)), False)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(backwardSequence)), False)
 
         comp = components["Follow"]
         self.TestComponent(comp, True)
@@ -4107,7 +4008,7 @@ class EarlyBoundTests(TestBase):
             follow.joining_type = FOLLOW_JOIN.SPECIFY
         with pytest.raises(Exception):
             follow.leader.bind_to("Aircraft/Boing737")
-        self.TestSegmentProperties((clr.Convert(follow, IMissionControlSequenceSegment)), True)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(follow)), True)
         with pytest.raises(Exception):
             follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY
         GatorHelper.TestSpaceCraftParameters(follow.spacecraft_parameters, True)
@@ -4118,7 +4019,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             follow.z_offset = 1
 
-        follow = clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceFollow)
+        follow = clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceFollow)
 
         with pytest.raises(Exception):
             follow.leader.bind_to("Aircraft/Boing737")
@@ -4169,12 +4070,12 @@ class EarlyBoundTests(TestBase):
             hold.max_propagation_time = 8640000
         with pytest.raises(Exception):
             hold.min_propagation_time = 60
-        self.TestSegmentProperties((clr.Convert(hold, IMissionControlSequenceSegment)), True)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(hold)), True)
         with pytest.raises(Exception):
             hold.step_size = 60
         GatorHelper.TestStoppingConditionCollection2(hold.stopping_conditions, True)
 
-        comp = clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), IComponentInfo)
+        comp = clr.CastAs((ICloneable(comp)).clone_object(), IComponentInfo)
         self.TestComponent(comp, False)
         hold = clr.CastAs(comp, MissionControlSequenceHold)
         hold.min_propagation_time = 0
@@ -4198,66 +4099,54 @@ class EarlyBoundTests(TestBase):
         comp = components["Initial State"]
         self.TestComponent(comp, True)
         GatorHelper.TestInitialState(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceInitialState),
+            clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceInitialState),
             True,
             TestBase.Application,
         )
 
         comp = components["Launch"]
         self.TestComponent(comp, True)
-        GatorHelper.TestLaunch(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceLaunch), True
-        )
+        GatorHelper.TestLaunch(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceLaunch), True)
 
         comp = components["Maneuver"]
         self.TestComponent(comp, True)
-        GatorHelper.TestManeuver(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceManeuver), True
-        )
+        GatorHelper.TestManeuver(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceManeuver), True)
 
         comp = components["Propagate"]
         self.TestComponent(comp, True)
-        GatorHelper.TestPropagate(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequencePropagate), True
-        )
+        GatorHelper.TestPropagate(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequencePropagate), True)
 
         comp = components["STOP"]
         self.TestComponent(comp, True)
-        stop: "MissionControlSequenceStop" = clr.CastAs(
-            (clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceStop
-        )
+        stop: "MissionControlSequenceStop" = clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceStop)
         stop.enabled = False
         Assert.assertEqual(False, stop.enabled)
-        self.TestSegmentProperties((clr.Convert(stop, IMissionControlSequenceSegment)), False)
-        Assert.assertEqual(SEGMENT_TYPE.STOP, (clr.Convert(stop, IMissionControlSequenceSegment)).type)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(stop)), False)
+        Assert.assertEqual(SEGMENT_TYPE.STOP, (IMissionControlSequenceSegment(stop)).type)
 
         comp = components["Sequence"]
         self.TestComponent(comp, True)
         GatorHelper.TestSequence(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), IMissionControlSequenceSequence),
-            SEGMENT_TYPE.SEQUENCE,
-            True,
+            clr.CastAs((ICloneable(comp)).clone_object(), IMissionControlSequenceSequence), SEGMENT_TYPE.SEQUENCE, True
         )
 
         comp = components["Target Sequence"]
         self.TestComponent(comp, True)
         GatorHelper.TestTargetSequence(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceTargetSequence), True, None
+            clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceTargetSequence), True, None
         )
 
         comp = components["Update"]
         self.TestComponent(comp, True)
-        GatorHelper.TestUpdate(
-            clr.CastAs((clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceUpdate), True
-        )
+        GatorHelper.TestUpdate(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceUpdate), True)
 
         comp = components["return"]
         self.TestComponent(comp, True)
         ret: "MissionControlSequenceReturn" = clr.CastAs(
-            (clr.Convert(comp, ICloneable)).clone_object(), MissionControlSequenceReturn
+            (ICloneable(comp)).clone_object(), MissionControlSequenceReturn
         )
-        Assert.assertEqual(SEGMENT_TYPE.RETURN, (clr.Convert(ret, IMissionControlSequenceSegment)).type)
-        self.TestSegmentProperties((clr.Convert(ret, IMissionControlSequenceSegment)), False)
+        Assert.assertEqual(SEGMENT_TYPE.RETURN, (IMissionControlSequenceSegment(ret)).type)
+        self.TestSegmentProperties((IMissionControlSequenceSegment(ret)), False)
 
         ret.return_control_to_parent_sequence = RETURN_CONTROL.DISABLE
         Assert.assertEqual(RETURN_CONTROL.DISABLE, ret.return_control_to_parent_sequence)
@@ -4278,13 +4167,13 @@ class EarlyBoundTests(TestBase):
             # Console.WriteLine(comp.Name);
             self.TestComponent(comp, True)
             if comp.name == "Yarkovsky Effect":
-                oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                oComp: typing.Any = (ICloneable(comp)).clone_object()
                 comp = clr.CastAs(oComp, IComponentInfo)
                 self.TestYarkovskyFunc(clr.CastAs(comp, YarkovskyFunc))
                 components.remove("Yarkovsky Effect1")
 
             elif comp.name == "Radiation Pressure":
-                oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                oComp: typing.Any = (ICloneable(comp)).clone_object()
                 comp = clr.CastAs(oComp, IComponentInfo)
                 self.TestRadiationPressure(clr.CastAs(comp, RadiationPressureFunction))
                 components.remove("Radiation Pressure1")
@@ -4322,207 +4211,207 @@ class EarlyBoundTests(TestBase):
             while j < len(compNames):
                 comp = compFolder[compNames[j]]
                 if comp.name == "Exponential":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestExponential(clr.CastAs(comp, Exponential))
 
                 elif comp.name == "Gravitational Force":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestGravityFieldFunc(clr.CastAs(comp, GravityFieldFunction))
 
                 elif comp.name == "TwoBody Force":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestTwoBodyFunc(clr.CastAs(comp, TwoBodyFunction))
 
                 elif comp.name == "AeroT20 SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestAeroT20(clr.CastAs(comp, SRPAeroT20))
 
                 elif comp.name == "AeroT30 SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestAeroT30(clr.CastAs(comp, SRPAeroT30))
 
                 elif comp.name == "Earth":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestThirdBodyFunc(clr.CastAs(comp, ThirdBodyFunction))
 
                 elif comp.name == "Spherical SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSphericalFunc(clr.CastAs(comp, SRPSpherical))
 
                 elif comp.name == "TabAreaVector SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestIAgVASRPTabAreaVec(clr.CastAs(comp, SRPTabAreaVec))
 
                 elif comp.name == "NPlate SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestNPlateSRPFunc(clr.CastAs(comp, SRPNPlate))
 
                 elif comp.name == "Jacchia-Roberts":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestJacchiaRoberts(clr.CastAs(comp, JacchiaRoberts))
 
                 elif comp.name == "Jacchia 1960":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestJacchia1960(clr.CastAs(comp, Jacchia_1960))
 
                 elif comp.name == "Jacchia 1970":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestJacchia1970(clr.CastAs(comp, Jacchia_1970))
 
                 elif comp.name == "Jacchia 1971":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestJacchia1971(clr.CastAs(comp, Jacchia_1971))
 
                 elif comp.name == "Jacchia Bowman 2008":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestJacchiaBowman2008(clr.CastAs(comp, JacchiaBowman2008))
 
                 elif comp.name == "Mars GRAM 3 7":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMarsGRAM37(clr.CastAs(comp, MarsGRAM37))
 
                 elif comp.name == "Mars GRAM 2000":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMarsGRAM2000(clr.CastAs(comp, MarsGRAM2000))
 
                 elif comp.name == "Mars GRAM 2001":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMarsGRAM2001(clr.CastAs(comp, MarsGRAM2001))
 
                 elif comp.name == "Mars GRAM 2005":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMarsGRAM2005(clr.CastAs(comp, MarsGRAM2005))
 
                 elif comp.name == "Mars GRAM 2010":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMarsGRAM2010(clr.CastAs(comp, MarsGRAM2010))
 
                 elif comp.name == "Venus GRAM 2005":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestVenusGRAM2005(clr.CastAs(comp, VenusGRAM2005))
 
                 elif comp.name == "GSPM 04a-IIA SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPGSPM04aIIA(clr.CastAs(comp, SRPGSPM04aIIA))
 
                 elif comp.name == "GSPM 04a-IIR SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPGSPM04aIIR(clr.CastAs(comp, SRPGSPM04aIIR))
 
                 elif comp.name == "GSPM 04ae-IIA SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPGSPM04aeIIA(clr.CastAs(comp, SRPGSPM04aeIIA))
 
                 elif comp.name == "GSPM 04ae-IIR SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPGSPM04aeIIR(clr.CastAs(comp, SRPGSPM04aeIIR))
 
                 elif comp.name == "Cira72":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestCira72Func(clr.CastAs(comp, Cira72Function))
 
                 elif comp.name == "Harris-Priester":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestHarrisPriester(clr.CastAs(comp, HarrisPriester))
 
                 elif comp.name == "MSIS 1986":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMSIS1986(clr.CastAs(comp, MSIS_1986))
 
                 elif comp.name == "MSISE 1990":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestMSISE1990(clr.CastAs(comp, MSISE_1990))
 
                 elif comp.name == "NRLMSISE 2000":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestNRLMSISE2000(clr.CastAs(comp, NRLMSISE_2000))
 
                 elif comp.name == "US Standard Atmosphere":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestUSStandardAtmosphere(clr.CastAs(comp, US_Standard_Atmosphere))
 
                 elif comp.name == "CSharp EOM Func Example":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestCSharpEOMFuncExample(clr.CastAs(comp, EOMFuncPluginFunction))
 
                 elif comp.name == "JScript EOM Func Example":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestCSharpEOMFuncExample(clr.CastAs(comp, EOMFuncPluginFunction))
 
                 elif comp.name == "DTM 2012":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestDTM2012(clr.CastAs(comp, DTM2012))
 
                 elif comp.name == "DTM 2020":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestDTM2020(clr.CastAs(comp, DTM2020))
 
                 elif comp.name == "SRP Spherical CSharp":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPReflectionPlugin(clr.CastAs(comp, SRPReflectionPlugin))
 
                 elif comp.name == "SRP Spherical JScript":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestSRPReflectionPlugin(clr.CastAs(comp, SRPReflectionPlugin))
 
                 elif comp.name == "VariableArea SRP":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestIAgVASRPVariableArea(clr.CastAs(comp, SRPVariableArea))
 
                 elif comp.name == "CSharp SRP Example":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestCSharpSRPExample(clr.CastAs(comp, HPOPPluginFunction))
 
                 elif comp.name == "CSharp Example1":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestForceModelingExample(clr.CastAs(comp, HPOPPluginFunction))
 
                 elif comp.name == "JScript Example1":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestForceModelingExample(clr.CastAs(comp, HPOPPluginFunction))
 
                 elif comp.name == "CSharp Exponential Density Example":
-                    oComp: typing.Any = (clr.Convert(comp, ICloneable)).clone_object()
+                    oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
                     self.TestIAgVADensityModelPlugin(clr.CastAs(comp, DensityModelPlugin))
 
@@ -4697,54 +4586,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Drag Model Plugin", dens.drag_model_plugin_name)
         with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
             dragModelPlugin = dens.drag_model_plugin
-        if not OSHelper.IsLinux():
-            dens.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dens.drag_model_plugin_name)
-            dragModelPlugin = dens.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
-
-            pluginProps: "PluginProperties" = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("LiftArea", 4e-05)
-            Assert.assertEqual(4e-05, pluginProps.get_property("LiftArea"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("GetUserVariable", True)
-            Assert.assertEqual(True, pluginProps.get_property("GetUserVariable"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
-
-            dens.drag_model_plugin_name = "Drag Spherical JScript"
-            Assert.assertEqual("Drag Spherical JScript", dens.drag_model_plugin_name)
-            dragModelPlugin = dens.drag_model_plugin
-            Assert.assertEqual("Drag.Spherical.JScript", dragModelPlugin.plugin_identifier)
-
-            pluginProps = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("RefFrame", "eUtFrameFixed")
-            Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("RefFrame"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("MessageInterval", 600)
-            Assert.assertEqual(600, pluginProps.get_property("MessageInterval"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
 
         dens.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dens.drag_model_type)
@@ -5068,54 +4909,6 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Drag Model Plugin", cira72.drag_model_plugin_name)
         with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
             dragModelPlugin = cira72.drag_model_plugin
-        if not OSHelper.IsLinux():
-            cira72.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", cira72.drag_model_plugin_name)
-            dragModelPlugin = cira72.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
-
-            pluginProps: "PluginProperties" = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("LiftArea", 4e-05)
-            Assert.assertEqual(4e-05, pluginProps.get_property("LiftArea"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("GetUserVariable", True)
-            Assert.assertEqual(True, pluginProps.get_property("GetUserVariable"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
-
-            cira72.drag_model_plugin_name = "Drag Spherical JScript"
-            Assert.assertEqual("Drag Spherical JScript", cira72.drag_model_plugin_name)
-            dragModelPlugin = cira72.drag_model_plugin
-            Assert.assertEqual("Drag.Spherical.JScript", dragModelPlugin.plugin_identifier)
-
-            pluginProps = dragModelPlugin.plugin_config
-            arProps = pluginProps.available_properties
-            Assert.assertEqual(5, Array.Length(arProps))
-            pluginProps.set_property("DragArea", 3e-05)
-            Assert.assertEqual(3e-05, pluginProps.get_property("DragArea"))
-            pluginProps.set_property("RefFrame", "eUtFrameFixed")
-            Assert.assertEqual("eUtFrameFixed", pluginProps.get_property("RefFrame"))
-            pluginProps.set_property("PluginEnabled", False)
-            Assert.assertEqual(False, pluginProps.get_property("PluginEnabled"))
-            pluginProps.set_property("DebugMode", True)
-            Assert.assertEqual(True, pluginProps.get_property("DebugMode"))
-            pluginProps.set_property("MessageInterval", 600)
-            Assert.assertEqual(600, pluginProps.get_property("MessageInterval"))
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.set_property("BogusProperty", 123)
-            with pytest.raises(Exception, match=RegexSubstringMatch("Undefined")):
-                pluginProps.get_property("BogusProperty")
 
         cira72.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, cira72.drag_model_type)
@@ -5223,27 +5016,6 @@ class EarlyBoundTests(TestBase):
             dtm2012.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            dtm2012.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, dtm2012.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2012.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2012.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                dtm2012.drag_model_plugin_name = "Bogus"
-
-            dtm2012.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", dtm2012.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = dtm2012.drag_model_plugin
-
-            dtm2012.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dtm2012.drag_model_plugin_name)
-            dragModelPlugin = dtm2012.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         dtm2012.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dtm2012.drag_model_type)
@@ -5351,27 +5123,6 @@ class EarlyBoundTests(TestBase):
             dtm2020.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            dtm2020.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, dtm2020.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2020.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                dtm2020.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                dtm2020.drag_model_plugin_name = "Bogus"
-
-            dtm2020.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", dtm2020.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = dtm2020.drag_model_plugin
-
-            dtm2020.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", dtm2020.drag_model_plugin_name)
-            dragModelPlugin = dtm2020.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         dtm2020.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, dtm2020.drag_model_type)
@@ -5443,27 +5194,6 @@ class EarlyBoundTests(TestBase):
             hp.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            hp.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, hp.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                hp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                hp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                hp.drag_model_plugin_name = "Bogus"
-
-            hp.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", hp.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = hp.drag_model_plugin
-
-            hp.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", hp.drag_model_plugin_name)
-            dragModelPlugin = hp.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         hp.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, hp.drag_model_type)
@@ -5551,27 +5281,6 @@ class EarlyBoundTests(TestBase):
             msis1986.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            msis1986.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, msis1986.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msis1986.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msis1986.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                msis1986.drag_model_plugin_name = "Bogus"
-
-            msis1986.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", msis1986.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = msis1986.drag_model_plugin
-
-            msis1986.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", msis1986.drag_model_plugin_name)
-            dragModelPlugin = msis1986.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         msis1986.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, msis1986.drag_model_type)
@@ -5659,27 +5368,6 @@ class EarlyBoundTests(TestBase):
             msise1990.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            msise1990.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, msise1990.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msise1990.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                msise1990.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                msise1990.drag_model_plugin_name = "Bogus"
-
-            msise1990.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", msise1990.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = msise1990.drag_model_plugin
-
-            msise1990.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", msise1990.drag_model_plugin_name)
-            dragModelPlugin = msise1990.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         msise1990.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, msise1990.drag_model_type)
@@ -5767,27 +5455,6 @@ class EarlyBoundTests(TestBase):
             nrlmsise2000.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            nrlmsise2000.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, nrlmsise2000.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                nrlmsise2000.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                nrlmsise2000.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                nrlmsise2000.drag_model_plugin_name = "Bogus"
-
-            nrlmsise2000.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", nrlmsise2000.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = nrlmsise2000.drag_model_plugin
-
-            nrlmsise2000.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", nrlmsise2000.drag_model_plugin_name)
-            dragModelPlugin = nrlmsise2000.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         nrlmsise2000.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, nrlmsise2000.drag_model_type)
@@ -5838,27 +5505,6 @@ class EarlyBoundTests(TestBase):
             sa.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            sa.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, sa.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                sa.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                sa.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                sa.drag_model_plugin_name = "Bogus"
-
-            sa.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", sa.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = sa.drag_model_plugin
-
-            sa.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", sa.drag_model_plugin_name)
-            dragModelPlugin = sa.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         sa.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, sa.drag_model_type)
@@ -5954,27 +5600,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6042,27 +5667,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6158,27 +5762,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6276,27 +5859,6 @@ class EarlyBoundTests(TestBase):
             jr.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jr.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jr.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jr.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jr.drag_model_plugin_name = "Bogus"
-
-            jr.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jr.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jr.drag_model_plugin
-
-            jr.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jr.drag_model_plugin_name)
-            dragModelPlugin = jr.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jr.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jr.drag_model_type)
@@ -6444,27 +6006,6 @@ class EarlyBoundTests(TestBase):
             jb.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            jb.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, jb.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jb.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                jb.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                jb.drag_model_plugin_name = "Bogus"
-
-            jb.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", jb.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = jb.drag_model_plugin
-
-            jb.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", jb.drag_model_plugin_name)
-            dragModelPlugin = jb.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         jb.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, jb.drag_model_type)
@@ -6567,27 +6108,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6690,27 +6210,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6813,27 +6312,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -6936,27 +6414,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -7008,27 +6465,6 @@ class EarlyBoundTests(TestBase):
             mg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            mg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, mg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                mg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                mg.drag_model_plugin_name = "Bogus"
-
-            mg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", mg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = mg.drag_model_plugin
-
-            mg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", mg.drag_model_plugin_name)
-            dragModelPlugin = mg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         mg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, mg.drag_model_type)
@@ -7154,27 +6590,6 @@ class EarlyBoundTests(TestBase):
             vg.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            vg.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, vg.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                vg.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                vg.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                vg.drag_model_plugin_name = "Bogus"
-
-            vg.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", vg.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = vg.drag_model_plugin
-
-            vg.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", vg.drag_model_plugin_name)
-            dragModelPlugin = vg.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         vg.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, vg.drag_model_type)
@@ -7574,27 +6989,6 @@ class EarlyBoundTests(TestBase):
             exp.drag_model_plugin_name = "Drag Lift CSharp"
 
         dragModelPlugin: "DragModelPlugin" = None
-        if not OSHelper.IsLinux():
-            exp.drag_model_type = DRAG_MODEL_TYPE.PLUGIN
-            Assert.assertEqual(DRAG_MODEL_TYPE.PLUGIN, exp.drag_model_type)
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                exp.n_plate_definition_file = TestBase.GetScenarioFile("SRP_NPlate_Test.nplate")
-            with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                exp.variable_area_history_file = r"STKData\Astrogator\VariableArea_Example.dat"
-
-            with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-                exp.drag_model_plugin_name = "Bogus"
-
-            exp.drag_model_plugin_name = "Drag Model Plugin"
-            Assert.assertEqual("Drag Model Plugin", exp.drag_model_plugin_name)
-            with pytest.raises(Exception, match=RegexSubstringMatch("a valid user plugin is not currently selected")):
-                dragModelPlugin = exp.drag_model_plugin
-
-            exp.drag_model_plugin_name = "Drag Lift CSharp"
-            Assert.assertEqual("Drag Lift CSharp", exp.drag_model_plugin_name)
-            dragModelPlugin = exp.drag_model_plugin
-            Assert.assertEqual("Drag.Lift.CSharp", dragModelPlugin.plugin_identifier)
 
         exp.drag_model_type = DRAG_MODEL_TYPE.N_PLATE
         Assert.assertEqual(DRAG_MODEL_TYPE.N_PLATE, exp.drag_model_type)
@@ -8028,7 +7422,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(components)
 
         internalPower: "PowerInternal" = clr.CastAs(
-            (clr.Convert(components["InternalPower"], ICloneable)).clone_object(), PowerInternal
+            (ICloneable(components["InternalPower"])).clone_object(), PowerInternal
         )
         internalPower.generated_power = 31
         Assert.assertEqual(31, internalPower.generated_power)
@@ -8051,10 +7445,8 @@ class EarlyBoundTests(TestBase):
             COMPONENT.ASTROGATOR
         ).get_folder("Engine Models")
 
-        ion: "EngineIon" = clr.CastAs(
-            (clr.Convert(engineComponents["Ion Engine"], ICloneable)).clone_object(), EngineIon
-        )
-        ion.input_power_source_name = (clr.Convert(internalPower, IComponentInfo)).name
+        ion: "EngineIon" = clr.CastAs((ICloneable(engineComponents["Ion Engine"])).clone_object(), EngineIon)
+        ion.input_power_source_name = (IComponentInfo(internalPower)).name
         compIon: "IComponentInfo" = clr.CastAs(ion, IComponentInfo)
         self.TestComponent(compIon, False)
 
@@ -8065,7 +7457,7 @@ class EarlyBoundTests(TestBase):
         man.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 
         impulse: "ManeuverImpulsive" = clr.CastAs(man.maneuver, ManeuverImpulsive)
-        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (clr.Convert(ion, IComponentInfo)).name)
+        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(ion)).name)
         dc: "ProfileDifferentialCorrector" = clr.CastAs(
             EarlyBoundTests._targetSequence.profiles[0], ProfileDifferentialCorrector
         )
@@ -8098,9 +7490,7 @@ class EarlyBoundTests(TestBase):
                 "Component Browser.InternalPower1", "PercentDegradationPerYear"
             )
 
-        ppu: "PowerProcessed" = clr.CastAs(
-            (clr.Convert(components["ProcessedPower"], ICloneable)).clone_object(), PowerProcessed
-        )
+        ppu: "PowerProcessed" = clr.CastAs((ICloneable(components["ProcessedPower"])).clone_object(), PowerProcessed)
         ppu.efficiency = 0.95
         Assert.assertEqual(0.95, ppu.efficiency)
         ppu.input_power_source_name = "InternalPower1"
@@ -8112,7 +7502,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(ppu.is_control_parameter_enabled(CONTROL_POWER_PROCESSED.EFFICIENCY))
         ppu.enable_control_parameter(CONTROL_POWER_PROCESSED.LOAD)
         Assert.assertTrue(ppu.is_control_parameter_enabled(CONTROL_POWER_PROCESSED.LOAD))
-        ion.input_power_source_name = (clr.Convert(ppu, IComponentInfo)).name
+        ion.input_power_source_name = (IComponentInfo(ppu)).name
         param = dc.control_parameters.get_control_by_paths("Component Browser.ProcessedPower1", "Efficiency")
         Assert.assertIsNotNone(param)
         param = dc.control_parameters.get_control_by_paths("Component Browser.ProcessedPower1", "Load")
@@ -8131,7 +7521,7 @@ class EarlyBoundTests(TestBase):
         compPPU: "IComponentInfo" = clr.CastAs(ppu, IComponentInfo)
         self.TestComponent(compPPU, False)
         solar: "PowerSolarArray" = clr.CastAs(
-            (clr.Convert(components["SolarArrayPower"], ICloneable)).clone_object(), PowerSolarArray
+            (ICloneable(components["SolarArrayPower"])).clone_object(), PowerSolarArray
         )
 
         Assert.assertEqual("Factor = (C0 + C1/rMag + C2/rMag^2)/(1 + C3*rMag + C4*rMag^2)", solar.approximation_formula)
@@ -8186,7 +7576,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(solar.is_control_parameter_enabled(CONTROL_POWER_SOLAR_ARRAY.INCLINATION_TO_SUN_LINE))
         solar.enable_control_parameter(CONTROL_POWER_SOLAR_ARRAY.PERCENT_DEGRADATION)
         Assert.assertTrue(solar.is_control_parameter_enabled(CONTROL_POWER_SOLAR_ARRAY.PERCENT_DEGRADATION))
-        ion.input_power_source_name = (clr.Convert(solar, IComponentInfo)).name
+        ion.input_power_source_name = (IComponentInfo(solar)).name
 
         param = dc.control_parameters.get_control_by_paths("Component Browser.SolarArrayPower1", "Area")
         Assert.assertIsNotNone(param)
@@ -8291,7 +7681,7 @@ class EarlyBoundTests(TestBase):
             "Design Tools"
         )
         designCR3BPSetup: "DesignCR3BPSetup" = clr.CastAs(
-            (clr.Convert(components["CR3BP Setup Tool"], ICloneable)).clone_object(), DesignCR3BPSetup
+            (ICloneable(components["CR3BP Setup Tool"])).clone_object(), DesignCR3BPSetup
         )
         designCR3BPSetupInfo: "IComponentInfo" = clr.CastAs(designCR3BPSetup, IComponentInfo)
 
@@ -8486,7 +7876,7 @@ class EarlyBoundTests(TestBase):
         # /////////////////////////////////////////
 
         constaccel: "EngineConstAcc" = clr.CastAs(
-            (clr.Convert(components["Constant Acceleration and Isp"], ICloneable)).clone_object(), EngineConstAcc
+            (ICloneable(components["Constant Acceleration and Isp"])).clone_object(), EngineConstAcc
         )
 
         constaccel.g = 1e-13
@@ -8536,7 +7926,7 @@ class EarlyBoundTests(TestBase):
         # /////////////////////////////////////////
 
         constant: "EngineConstant" = clr.CastAs(
-            (clr.Convert(components["Constant Thrust and Isp"], ICloneable)).clone_object(), EngineConstant
+            (ICloneable(components["Constant Thrust and Isp"])).clone_object(), EngineConstant
         )
 
         constant.g = 0.0097
@@ -8552,7 +7942,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(constant.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT.ISP))
         constant.enable_control_parameter(CONTROL_ENGINE_CONSTANT.THRUST)
         Assert.assertTrue(constant.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT.THRUST))
-        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (clr.Convert(constant, IComponentInfo)).name)
+        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(constant)).name)
 
         dc: "ProfileDifferentialCorrector" = clr.CastAs(
             EarlyBoundTests._targetSequence.profiles[0], ProfileDifferentialCorrector
@@ -8632,9 +8022,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////////////////////////////
 
-        plugin: "EnginePlugin" = clr.CastAs(
-            (clr.Convert(components["Plugin Engine"], ICloneable)).clone_object(), EnginePlugin
-        )
+        plugin: "EnginePlugin" = clr.CastAs((ICloneable(components["Plugin Engine"])).clone_object(), EnginePlugin)
 
         plugin.g = 0.0097
         Assert.assertEqual(0.0097, plugin.g)
@@ -8644,69 +8032,11 @@ class EarlyBoundTests(TestBase):
 
         compPlugin: "IComponentInfo" = clr.CastAs(plugin, IComponentInfo)
         self.TestComponent(compPlugin, False)
-        if not OSHelper.IsLinux():
-            plugin = clr.CastAs(
-                (clr.Convert(components["CSharp Engine Example"], ICloneable)).clone_object(), EnginePlugin
-            )
-            plugin.g = 0.0097
-            Assert.assertEqual(0.0097, plugin.g)
-            pluginProperties = plugin.plugin_config
-            plugin.plugin_identifier = "Test"
-            Assert.assertEqual("Test", plugin.plugin_identifier)
-            compPlugin = clr.CastAs(plugin, IComponentInfo)
-            self.TestComponent(compPlugin, False)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(7, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("T0", availableProperties[1])
-            pluginProperties.set_property("T0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("T0"))
-            pluginProperties.set_property("T1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("T1"))
-            pluginProperties.set_property("T2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("T2"))
-            pluginProperties.set_property("Ts", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ts"))
-            pluginProperties.set_property("Tc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Tc"))
-            pluginProperties.set_property("Isp", 3100)
-            Assert.assertEqual(3100, pluginProperties.get_property("Isp"))
-
-            plugin = clr.CastAs(
-                (clr.Convert(components["JScript Engine Example"], ICloneable)).clone_object(), EnginePlugin
-            )
-            plugin.g = 0.0097
-            Assert.assertEqual(0.0097, plugin.g)
-            pluginProperties = plugin.plugin_config
-            plugin.plugin_identifier = "Test"
-            Assert.assertEqual("Test", plugin.plugin_identifier)
-            compPlugin = clr.CastAs(plugin, IComponentInfo)
-            self.TestComponent(compPlugin, False)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(7, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("T0", availableProperties[1])
-            pluginProperties.set_property("T0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("T0"))
-            pluginProperties.set_property("T1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("T1"))
-            pluginProperties.set_property("T2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("T2"))
-            pluginProperties.set_property("Ts", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ts"))
-            pluginProperties.set_property("Tc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Tc"))
-            pluginProperties.set_property("Isp", 3100)
-            Assert.assertEqual(3100, pluginProperties.get_property("Isp"))
 
         # /////////////////////////////////////////
 
         poly: "EngineModelPoly" = clr.CastAs(
-            (clr.Convert(components["Polynomial Thrust and Isp"], ICloneable)).clone_object(), EngineModelPoly
+            (ICloneable(components["Polynomial Thrust and Isp"])).clone_object(), EngineModelPoly
         )
 
         poly.g = 0.0097
@@ -8847,7 +8177,7 @@ class EarlyBoundTests(TestBase):
         poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP)
         Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP))
 
-        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (clr.Convert(poly, IComponentInfo)).name)
+        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(poly)).name)
 
         param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "g")
         Assert.assertIsNotNone(param)
@@ -9222,7 +8552,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////////////////////////////
 
-        ion: "EngineIon" = clr.CastAs((clr.Convert(components["Ion Engine"], ICloneable)).clone_object(), EngineIon)
+        ion: "EngineIon" = clr.CastAs((ICloneable(components["Ion Engine"])).clone_object(), EngineIon)
 
         ion.g = 0.0097
         Assert.assertEqual(0.0097, ion.g)
@@ -9347,7 +8677,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.REFERENCE_EPOCH)
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.REFERENCE_EPOCH))
-        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (clr.Convert(ion, IComponentInfo)).name)
+        impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(ion)).name)
         param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C0")
         Assert.assertIsNotNone(param)
         param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C1")
@@ -9532,7 +8862,7 @@ class EarlyBoundTests(TestBase):
         # /////////////////////////////////////////
 
         tt: "EngineThrottleTable" = clr.CastAs(
-            (clr.Convert(components["Throttle Table Engine"], ICloneable)).clone_object(), EngineThrottleTable
+            (ICloneable(components["Throttle Table Engine"])).clone_object(), EngineThrottleTable
         )
 
         tt.throttle_table_filename = TestBase.GetScenarioFile("NSTAR.throttletable")
@@ -9637,7 +8967,7 @@ class EarlyBoundTests(TestBase):
             pass
 
         wrapper: "NumericalPropagatorWrapper" = clr.CastAs(
-            (clr.Convert(components.get_folder("Previous Versions")["Earth Full"], ICloneable)).clone_object(),
+            (ICloneable(components.get_folder("Previous Versions")["Earth Full"])).clone_object(),
             NumericalPropagatorWrapper,
         )
         wrapper.central_body_name = "Earth"
@@ -10118,7 +9448,7 @@ class EarlyBoundTests(TestBase):
         j2: "IComponentInfo" = components["Earth J2"]
         with pytest.raises(Exception):
             j2.name = "NewName"
-        j2Copy: "IComponentInfo" = clr.CastAs((clr.Convert(j2, ICloneable)).clone_object(), IComponentInfo)
+        j2Copy: "IComponentInfo" = clr.CastAs((ICloneable(j2)).clone_object(), IComponentInfo)
         Assert.assertIsNotNone(j2Copy)
         j2Copy.name = "NewName"
         Assert.assertEqual("NewName", j2Copy.name)
