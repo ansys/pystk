@@ -271,8 +271,11 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         Exception encountered during the building of the documentation.
 
     """
-    OUTPUT_DIRECTORY = pathlib.Path(app.outdir) / "examples"
-    EXAMPLES_DIRECTORY = pathlib.Path(__file__).parent.parent.parent / "examples"
+    OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
+    if not OUTPUT_EXAMPLES.exists():
+        OUTPUT_EXAMPLES.mkdir(parents=True, exist_ok=True)
+
+    EXAMPLES_DIRECTORY = OUTPUT_EXAMPLES.parent.parent.parent / "examples"
     examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
     for example in status_iterator(
             examples, 
@@ -282,7 +285,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
             verbosity=1,
             stringify_func=(lambda x: x.name),
     ):
-        destination_file = OUTPUT_DIRECTORY / example.name
+        destination_file = OUTPUT_EXAMPLES / example.name
         destination_file.write_text(example.read_text())
     
 
