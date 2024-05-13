@@ -104,7 +104,7 @@ numpydoc_validation_checks = (
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["examples/solar_panel_tool.py", "examples/stk_tutorial.py", "examples/stk_vgt_tutorial.py"]
+exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # The suffix(es) of source filenames
@@ -247,12 +247,17 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
-    files = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+
+    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+
+    print(f"BUILDER: {app.builder.name}")
+
     for file in status_iterator(
-            files, 
-            "Copying examples file...", 
+            examples, 
+            f"Copying example to doc/source/examples/",
             "green", 
-            len(files),
+            len(examples),
             verbosity=1,
             stringify_func=(lambda file: file.name),
     ):
@@ -275,19 +280,28 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     if not OUTPUT_EXAMPLES.exists():
         OUTPUT_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
-    EXAMPLES_DIRECTORY = OUTPUT_EXAMPLES.parent.parent.parent / "examples"
-    examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
-    print(f"Found examples: {examples}")
-    for example in status_iterator(
+    # TODO: investigate why if using:
+    #
+    # EXAMPLES_DIRECTORY = OUTPUT_EXAMPLES.parent.parent.parent / "examples"
+    #
+    # blocks Sphinx from finding the Python examples even if the path is the
+    # right one. Using SOURCE_EXAMPLES is a workaround to this issue.
+    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+
+    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+
+    for file in status_iterator(
             examples, 
-            f"Adding example in output directory: ", 
+            f"Copying example to doc/_build/examples/",
             "green", 
             len(examples),
             verbosity=1,
             stringify_func=(lambda x: x.name),
     ):
-        destination_file = OUTPUT_EXAMPLES / example.name
-        destination_file.write_text(example.read_text())
+        destination_file = OUTPUT_EXAMPLES / file.name
+        destination_file.write_text(file.read_text())
     
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
