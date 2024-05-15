@@ -6,7 +6,7 @@ FROM ${basePythonImage} as builder
 USER ContainerAdministrator
 
 # Install Python
-ADD "https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe" "C:\dist\python-3.9.13-amd64.exe"
+RUN curl -o "C:\dist\python-3.9.13-amd64.exe" "https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe"
 
 COPY scripts C:/dist/
 
