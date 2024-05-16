@@ -6,9 +6,11 @@ RUN net user STK /ADD
 
 COPY distributions scripts C:/Users/STK/dist/
 
-RUN powershell -Command $ErrorActionPreference = 'Stop'; \
-    $ProgressPreference = 'SilentlyContinue'; \
-    C:\Users\STK\dist\install.ps1 $Env:agreeToLicense
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+RUN C:\Users\STK\dist\install.ps1 $Env:agreeToLicense
+
+SHELL ["cmd", "/S", "/C"]
 
 RUN icacls "C:\Users\STK" /grant STK:(OI)(CI)F /T
 USER STK

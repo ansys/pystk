@@ -10,9 +10,11 @@ RUN curl -o "C:\dist\python-3.8.10-amd64.exe" "https://www.python.org/ftp/python
 
 COPY scripts C:/dist/
 
-RUN powershell -Command $ErrorActionPreference = 'Stop'; \
-    $ProgressPreference = 'SilentlyContinue'; \
-    C:\dist\install.ps1
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+RUN C:\dist\install.ps1
+
+SHELL ["cmd", "/S", "/C"]
 
 USER STK
 
