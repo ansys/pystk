@@ -194,6 +194,43 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     # endregion
 
+    # region AddAndConfigureCbObstructionConstraint
+    def test_AddAndConfigureCbObstructionConstraint(self):
+        satelliteName: str = "satellite1"
+        stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
+            STK_OBJECT_TYPE.SATELLITE, satelliteName
+        )
+        self.AddAndConfigureCbObstructionConstraint(stkobject.access_constraints)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
+
+    def AddAndConfigureCbObstructionConstraint(self, accessconstraints: "AccessConstraintCollection"):
+        # Get AccessConstraintCentralBodyObstruction interface
+        cbObstrConstraint: "AccessConstraintCentralBodyObstruction" = clr.CastAs(
+            accessconstraints.add_constraint(ACCESS_CONSTRAINTS.CENTRAL_BODY_OBSTRUCTION),
+            AccessConstraintCentralBodyObstruction,
+        )
+
+        # AvailableObstructions returns a one dimensional array of obstruction paths
+        availableArray = cbObstrConstraint.available_obstructions
+
+        # In this example add all available obstructions
+        Console.WriteLine("Available obstructions")
+        available: str
+        for available in availableArray:
+            Console.WriteLine(available)
+            if "Sun" != available:
+                cbObstrConstraint.add_obstruction(available)
+
+        # AssignedObstructions returns a one dimensional array of obstruction paths
+        assignedArray = cbObstrConstraint.assigned_obstructions
+
+        Console.WriteLine("Assigned obstructions")
+        assigned: str
+        for assigned in assignedArray:
+            Console.WriteLine(assigned)
+
+    # endregion
+
     # region ListAllConstraintExclusiveZones
     def test_ListAllConstraintExclusiveZones(self):
         satelliteName: str = "satellite1"

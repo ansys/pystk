@@ -1,0 +1,30 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Constellation
+
+    Name		 SatXmtrs
+    BEGIN Definition
+        Object		 Satellite/Satellite2/Transmitter/Transmitter2
+        Object		 Satellite/Satellite3/Transmitter/Transmitter3
+        Object		 Satellite/Satellite4/Transmitter/Transmitter4
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        UseRoutingRulesFile		 No
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation

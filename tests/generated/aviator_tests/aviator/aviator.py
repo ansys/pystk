@@ -1111,8 +1111,6 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             extEphem.ephemeris_file = TestBase.GetScenarioFile("Aircraft1.ac")
 
-        # System.Windows.Forms.MessageBox.Show("after set ephem file");
-
         extEphem.flight_mode = EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB
         Assert.assertEqual(EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CLIMB, extEphem.flight_mode)
         extEphem.flight_mode = EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_FORWARD_FLIGHT_CRUISE
@@ -1169,20 +1167,54 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            extEphem.shift_rotate_set(22)
+            extEphem.shift_rotate_set()
 
         extEphem.use_shift_rotate = True
         Assert.assertTrue(extEphem.use_shift_rotate)
 
-        extEphem.shift_time = 10
+        holdSmallTimeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("SmallTimeUnit")
+        holdLatitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("LatitudeUnit")
+        holdLongitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("LongitudeUnit")
+        holdFlightAltitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv(
+            "AviatorAltitudeUnit"
+        )
+        holdAviatorBearingAngleUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv(
+            "AviatorBearingAngleUnit"
+        )
 
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "rad")
+        TestBase.Application.unit_preferences.set_current_unit("SmallTimeUnit", "msec")
         TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", "rad")
-        extEphem.latitude = 20  # TODO - verify properties use UnitPreferences - AIR-10324
+        TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", "rad")
+        TestBase.Application.unit_preferences.set_current_unit("AviatorAltitudeUnit", "m")
+        TestBase.Application.unit_preferences.set_current_unit("AviatorBearingAngleUnit", "rad")
 
+        extEphem.shift_time = 10
+        Assert.assertEqual(10, extEphem.shift_time)
+        extEphem.latitude = 20
+        Assert.assertEqual(20, extEphem.latitude)
         extEphem.longitude = 30
+        Assert.assertAlmostEqual(30, extEphem.longitude, delta=0.001)
         extEphem.altitude = 40
+        Assert.assertEqual(40, extEphem.altitude)
         extEphem.course = 50
+        Assert.assertEqual(50, extEphem.course)
+
+        TestBase.Application.unit_preferences.set_current_unit("SmallTimeUnit", holdSmallTimeUnit)
+        TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", holdLatitudeUnit)
+        TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", holdLongitudeUnit)
+        TestBase.Application.unit_preferences.set_current_unit("AviatorAltitudeUnit", holdFlightAltitudeUnit)
+        TestBase.Application.unit_preferences.set_current_unit("AviatorBearingAngleUnit", holdAviatorBearingAngleUnit)
+
+        extEphem.shift_time = 10
+        Assert.assertEqual(10, extEphem.shift_time)
+        extEphem.latitude = 20
+        Assert.assertEqual(20, extEphem.latitude)
+        extEphem.longitude = 30
+        Assert.assertAlmostEqual(30, extEphem.longitude, delta=0.001)
+        extEphem.altitude = 40
+        Assert.assertEqual(40, extEphem.altitude)
+        extEphem.course = 50
+        Assert.assertEqual(50, extEphem.course)
 
         extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL, extEphem.altitude_mode)
@@ -1198,13 +1230,15 @@ class EarlyBoundTests(TestBase):
         extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL, extEphem.course_mode)
 
-        extEphem.shift_rotate_set(10)
+        extEphem.shift_rotate_set()  # Does what the "Set..." button does on the GUI.
 
-        # TODO - verify values - AIR-10323
-
-        extEphem.shift_rotate_set(30)
-
-        # TODO - verify values - AIR-10323
+        Assert.assertEqual(10, extEphem.shift_time)
+        Assert.assertAlmostEqual(34.8957, extEphem.latitude, delta=0.0001)
+        Assert.assertAlmostEqual(-117.903, extEphem.longitude, delta=0.001)
+        Assert.assertAlmostEqual(2303, extEphem.altitude, delta=0.001)
+        Assert.assertEqual(50, extEphem.course)
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL, extEphem.altitude_mode)
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL, extEphem.course_mode)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(extEphem, IProcedure))
 
