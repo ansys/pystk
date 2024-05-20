@@ -1,7 +1,9 @@
 import * as fs from "fs";
 
 import { ConsoleInterface } from "pyright-internal/common/console";
+import { Uri } from "pyright-internal/common/uri/uri";
 
+import { ServiceProvider } from "pyright-internal/common/extensibility";
 import { getPathRelativeToRoot } from "./fileUtilities";
 
 export class CodeEdit {
@@ -18,7 +20,10 @@ export class CodeEditor {
   replacements: { [file: string]: CodeEdit[] } = {};
   numberOfEdits: number = 0;
 
-  constructor(private output: ConsoleInterface) {}
+  constructor(
+    private readonly serviceProvider: ServiceProvider,
+    private output: ConsoleInterface
+  ) {}
 
   recordEdits(edits: CodeEdit[]) {
     for (const edit of edits) {
@@ -70,7 +75,7 @@ export class CodeEditor {
         const lineno = textEdit.line;
         const line = lines[lineno];
         this.output.log(
-          `${getPathRelativeToRoot(filePath)}:${
+          `${getPathRelativeToRoot(Uri.file(filePath, this.serviceProvider))}:${
             textEdit.line + 1
           } Replacing "${line.substring(
             textEdit.startPosition,

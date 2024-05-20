@@ -9,10 +9,7 @@ import {
   convertLogLevel,
 } from "pyright-internal/common/console";
 import { combinePaths, normalizePath } from "pyright-internal/common/pathUtils";
-import {
-  PythonVersion,
-  versionFromString,
-} from "pyright-internal/common/pythonVersion";
+import { PythonVersion } from "pyright-internal/common/pythonVersion";
 
 const toolName = "api_migration_tool";
 
@@ -164,7 +161,7 @@ export function processArgs(): Args {
   }
 
   if (args.pythonversion) {
-    const version = versionFromString(args.pythonversion);
+    const version = PythonVersion.fromString(args.pythonversion);
     if (version) {
       options.pythonVersion = version;
     } else {

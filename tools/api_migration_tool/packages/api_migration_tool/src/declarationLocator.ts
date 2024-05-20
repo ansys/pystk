@@ -1,6 +1,10 @@
-import { ProgramView } from "pyright-internal/common/extensibility";
+import {
+  ProgramView,
+  ReferenceUseCase,
+  ServiceProvider,
+} from "pyright-internal/common/extensibility";
 import { Position } from "pyright-internal/common/textRange";
-import { DocumentSymbolCollectorUseCase } from "pyright-internal/languageService/documentSymbolCollector";
+import { Uri } from "pyright-internal/common/uri/uri";
 import { DocumentSymbolProvider } from "pyright-internal/languageService/documentSymbolProvider";
 import {
   ReferencesProvider,
@@ -28,12 +32,14 @@ export class DeclarationLocator {
   constructor(
     private filePath: string,
     private program: ProgramView,
+    private readonly serviceProvider: ServiceProvider,
     private cancellationTokenSource: CancellationTokenSource
   ) {
     const documentSymbolProvider = new DocumentSymbolProvider(
       program,
-      filePath,
+      Uri.file(filePath, serviceProvider),
       true, // hasHierarchicalDocumentSymbolCapability
+      { includeAliases: false },
       cancellationTokenSource.token
     );
 
@@ -47,7 +53,8 @@ export class DeclarationLocator {
   public findDeclaration(
     symbolName: string,
     parentScope: string,
-    category: string
+    category: string,
+    serviceProvider: ServiceProvider
   ): ReferencesResult | undefined {
     const symbol = DeclarationLocator.findSymbol(
       this.flatDocumentSymbols,
@@ -59,10 +66,10 @@ export class DeclarationLocator {
     if (symbol) {
       const referencesResult = ReferencesProvider.getDeclarationForPosition(
         this.program,
-        this.filePath,
+        Uri.file(this.filePath, serviceProvider),
         symbol.location,
         /* reporter */ undefined,
-        DocumentSymbolCollectorUseCase.Rename,
+        ReferenceUseCase.Rename,
         this.cancellationTokenSource.token
       );
 

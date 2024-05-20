@@ -1,26 +1,31 @@
 import Path from "path";
 import { ConsoleInterface } from "pyright-internal/common/console";
+import { ServiceProvider } from "pyright-internal/common/extensibility";
 import { FileSystem } from "pyright-internal/common/fileSystem";
+import { Uri } from "pyright-internal/common/uri/uri";
 import xml2js from "xml2js";
 
 export function findFiles(
   fs: FileSystem,
-  directory: string,
+  directory: Uri,
   extension: string,
-  output: ConsoleInterface
-): string[] {
+  output: ConsoleInterface,
+  serviceProvider: ServiceProvider
+): Uri[] {
   output.log(
     `Scanning ${getPathRelativeToRoot(
       directory
     )} for files with "${extension}" extension`
   );
-  let result: string[] = [];
+  let result: Uri[] = [];
   fs.readdirSync(directory).forEach((entry) => {
-    const absolutePath = Path.join(directory, entry);
+    const absolutePath = directory.combinePaths(entry);
     output.log(getPathRelativeToRoot(absolutePath));
     if (fs.statSync(absolutePath).isDirectory()) {
-      result.push(...findFiles(fs, absolutePath, extension, output));
-    } else if (Path.extname(absolutePath) == extension) {
+      result.push(
+        ...findFiles(fs, absolutePath, extension, output, serviceProvider)
+      );
+    } else if (absolutePath.hasExtension(extension)) {
       result.push(absolutePath);
     }
   });
@@ -37,21 +42,23 @@ class Mapping {
 }
 
 export function readMappingFileDirectory(
-  xmlMappingsDir: string,
+  xmlMappingsDir: Uri,
   fs: FileSystem,
-  rootDirectory: string,
+  rootDirectory: Uri,
   output: ConsoleInterface,
+  serviceProvider: ServiceProvider,
   callback: (pythonFilePath: string, mappings: any) => void
 ) {
-  const xmlMappingFileList: string[] = findFiles(
+  const xmlMappingFileList: Uri[] = findFiles(
     fs,
     xmlMappingsDir,
     ".xml",
-    output
+    output,
+    serviceProvider
   );
 
   for (const xmlMappingFile of xmlMappingFileList) {
-    output.info(`Processing ${xmlMappingFile}`);
+    output.info(`Processing ${xmlMappingFile.fileName}`);
     const xml = fs.readFileSync(xmlMappingFile);
     xml2js.parseString(xml.toString(), (err, result) => {
       const xmlMappings = result["Mappings"]["Mapping"];
@@ -59,8 +66,10 @@ export function readMappingFileDirectory(
       if (xmlMappings) {
         const pythonFilePath =
           Path.join(
-            rootDirectory,
-            Path.basename(xmlMappingFile, ".xml").split(".").join(Path.sep)
+            rootDirectory.getFilePath(),
+            Path.basename(xmlMappingFile.getFilePath(), ".xml")
+              .split(".")
+              .join(Path.sep)
           ) + ".py";
 
         let mappings: Mapping[] = [];
@@ -81,29 +90,20 @@ export function readMappingFileDirectory(
   }
 }
 
-let rootDirectory: string;
+let rootDirectory: Uri;
 
-export function setRootDirectory(path: string) {
+export function setRootDirectory(path: Uri) {
   rootDirectory = path;
 }
 
-export function getPathRelativeToRoot(path: string): string {
-  let result = Path.relative(rootDirectory, path);
+export function getPathRelativeToRoot(path: Uri): string {
+  let result: string | undefined = rootDirectory.getRelativePath(path);
   if (result === undefined) {
-    if (Path.normalize(rootDirectory) === Path.normalize(path)) {
+    if (rootDirectory === path) {
       result = ".";
     } else {
-      result = path;
+      result = path.getFilePath();
     }
   }
   return result;
-}
-
-export function pathIsChild(childPath: string, parentPath: string): boolean {
-  const relative = Path.relative(parentPath, childPath);
-  return (
-    relative !== undefined &&
-    !relative.startsWith("..") &&
-    !Path.isAbsolute(relative)
-  );
 }

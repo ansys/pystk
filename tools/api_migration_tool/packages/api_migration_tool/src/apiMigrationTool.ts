@@ -1,6 +1,13 @@
 import cluster, { Worker } from "cluster";
 
-import { StandardConsole } from "pyright-internal/common/console";
+import { LogLevel, StandardConsole } from "pyright-internal/common/console";
+import { FileSystem } from "pyright-internal/common/fileSystem";
+import {
+  RealTempFile,
+  createFromRealFileSystem,
+} from "pyright-internal/common/realFileSystem";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
+import { createServiceProvider } from "pyright-internal/common/serviceProviderExtensions";
 import { CodeEdit, CodeEditor } from "./codeEditor";
 import { CodeScanner } from "./codeScanner";
 import { CommandLineOptions, CommandLineStatus, processArgs } from "./options";
@@ -20,6 +27,25 @@ interface IWorkerResult {
 // crashes with deep stack traces.
 Error.stackTraceLimit = 64;
 
+function createEnvironment(logLevel: LogLevel) {
+  const output = new StandardConsole(logLevel);
+
+  //const cacheManager: CacheManager = new CacheManager();
+  const tempFile: RealTempFile = new RealTempFile();
+  const fs: FileSystem = createFromRealFileSystem(tempFile);
+
+  const serviceProvider: ServiceProvider = createServiceProvider(
+    fs,
+    output,
+    tempFile
+    //cacheManager
+  );
+
+  //serviceProvider.add(ServiceKeys.caseSensitivityDetector, tempFile);
+
+  return { output, serviceProvider, fs };
+}
+
 export function main() {
   if (process.env.NODE_ENV === "production") {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -36,7 +62,15 @@ export function main() {
       return;
     }
 
-    const output = new StandardConsole(args.commandLineOptions.logLevel);
+    const {
+      output,
+      serviceProvider,
+      fs,
+    }: {
+      output: StandardConsole;
+      serviceProvider: ServiceProvider;
+      fs: FileSystem;
+    } = createEnvironment(args.commandLineOptions.logLevel);
 
     const numJobs = args.commandLineOptions.numberOfJobs;
     if (numJobs != 0) {
@@ -47,14 +81,16 @@ export function main() {
       // Run directly in current process
       let codeScanner: CodeScanner = new CodeScanner(
         args.commandLineOptions,
-        output
+        output,
+        serviceProvider,
+        fs
       );
       codeScanner.prepareScan();
       let codeEdits: CodeEdit[] = codeScanner.scan();
 
       output.info("Creating code edits...");
 
-      const codeEditor = new CodeEditor(output);
+      const codeEditor = new CodeEditor(serviceProvider, output);
       codeEditor.recordEdits(codeEdits);
 
       output.info(`Applying ${codeEditor.getNumberOfEdits()} migrations`);
@@ -65,10 +101,12 @@ export function main() {
 
       let codeScanner: CodeScanner = new CodeScanner(
         args.commandLineOptions,
-        output
+        output,
+        serviceProvider,
+        fs
       );
 
-      const codeEditor = new CodeEditor(output);
+      const codeEditor = new CodeEditor(serviceProvider, output);
 
       let numChunksPerWorker = 128;
       if (args.commandLineOptions.numberOfChunksPerWorker > 0) {
@@ -174,9 +212,20 @@ export function main() {
     let codeScanner: CodeScanner | undefined;
     process.on("message", (msg: IWorkerMessage) => {
       if (msg.cmd === "init") {
-        output = new StandardConsole(msg.commandLineOptions!.logLevel);
+        let serviceProvider: ServiceProvider | undefined;
+        let fs: FileSystem | undefined;
+        ({ output, serviceProvider, fs } = createEnvironment(
+          msg.commandLineOptions!.logLevel
+        ));
+
         output.log(`Worker ${process.pid} started`);
-        codeScanner = new CodeScanner(msg.commandLineOptions!, output!, true);
+        codeScanner = new CodeScanner(
+          msg.commandLineOptions!,
+          output!,
+          serviceProvider,
+          fs,
+          true
+        );
         codeScanner!.prepareScan();
       } else if (msg.cmd === "scan") {
         let codeEdits: CodeEdit[] = codeScanner!.scan(msg.begin!, msg.end);

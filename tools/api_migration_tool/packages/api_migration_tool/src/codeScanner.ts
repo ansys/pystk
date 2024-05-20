@@ -5,17 +5,20 @@ import { ConsoleInterface } from "pyright-internal/common/console";
 import { FileSystem } from "pyright-internal/common/fileSystem";
 import { FullAccessHost } from "pyright-internal/common/fullAccessHost";
 import { getHeapStatistics } from "pyright-internal/common/memUtils";
-import { createFromRealFileSystem } from "pyright-internal/common/realFileSystem";
+import {
+  RealTempFile,
+  createFromRealFileSystem,
+} from "pyright-internal/common/realFileSystem";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 
 import { CancellationTokenSource } from "vscode-jsonrpc";
 
-import Path from "path";
+import { Uri } from "pyright-internal/common/uri/uri";
 import { CodeEdit } from "./codeEditor";
 import { DeclarationLocator } from "./declarationLocator";
 import {
   findFiles,
   getPathRelativeToRoot,
-  pathIsChild,
   readMappingFileDirectory,
   setRootDirectory,
 } from "./fileUtilities";
@@ -24,10 +27,9 @@ import { Reference, ReferenceLocator } from "./referenceLocator";
 import { SymbolRenameRecord } from "./symbolRenameRecord";
 
 export class CodeScanner {
-  private fs: FileSystem;
-  private rootDirectory: string;
-  private pythonFileList: string[];
-  private filesToScan: string[];
+  private rootDirectory: Uri;
+  private pythonFileList: Uri[];
+  private filesToScan: Uri[];
   private cancellationTokenSource: CancellationTokenSource;
   private program: Program | undefined;
   private symbolsToRename: SymbolRenameRecord[] = [];
@@ -35,6 +37,8 @@ export class CodeScanner {
   constructor(
     private options: CommandLineOptions,
     private output: ConsoleInterface,
+    private readonly serviceProvider: ServiceProvider,
+    private readonly fs: FileSystem,
     private silent: boolean = false
   ) {
     if (!silent) {
@@ -43,21 +47,23 @@ export class CodeScanner {
       );
     }
 
-    this.rootDirectory = this.options.rootDirectory!;
+    this.rootDirectory = Uri.file(this.options.rootDirectory!, serviceProvider);
 
     setRootDirectory(this.rootDirectory);
 
     if (!silent) {
-      this.output.info(`Root directory: ${this.rootDirectory}`);
+      this.output.info(`Root directory: ${this.rootDirectory.getFilePath()}`);
     }
 
-    this.fs = createFromRealFileSystem(this.output);
+    const tempFile = new RealTempFile();
+    this.fs = createFromRealFileSystem(tempFile, this.output);
 
     this.pythonFileList = findFiles(
       this.fs,
       this.rootDirectory!,
       ".py",
-      this.output
+      this.output,
+      this.serviceProvider
     );
 
     this.filesToScan = this.pythonFileList.filter(
@@ -84,15 +90,16 @@ export class CodeScanner {
     this.cancellationTokenSource = new CancellationTokenSource();
   }
 
-  public getFilesToScan(): string[] {
+  public getFilesToScan(): Uri[] {
     return this.filesToScan;
   }
 
-  private isFileExcluded(filePath: string): boolean {
-    const isExcluded =
-      this.options.skipDirectories.some((element) =>
-        pathIsChild(filePath, element)
-      ) || !pathIsChild(filePath, this.rootDirectory);
+  private isFileExcluded(filePath: Uri): boolean {
+    const isExcluded = this.options.skipDirectories.some(
+      (element) =>
+        filePath.isChild(Uri.file(element, this.serviceProvider)) ||
+        !filePath.isChild(this.rootDirectory)
+    );
 
     let regex = undefined;
     if (this.options.fileFilter !== undefined) {
@@ -105,8 +112,8 @@ export class CodeScanner {
 
     if (
       isExcluded ||
-      Path.extname(filePath) !== ".py" ||
-      (regex !== undefined && !regex.test(filePath))
+      !filePath.hasExtension(".py") ||
+      (regex !== undefined && !regex.test(filePath.getFilePath()))
     ) {
       return true;
     }
@@ -115,13 +122,17 @@ export class CodeScanner {
   }
 
   public prepareScan() {
-    const xmlMappingsDir = this.options.xmlMappingsDirectory!;
+    const xmlMappingsDir = Uri.file(
+      this.options.xmlMappingsDirectory!,
+      this.serviceProvider
+    );
 
-    const xmlMappingFileList: string[] = findFiles(
+    const xmlMappingFileList: Uri[] = findFiles(
       this.fs,
       xmlMappingsDir,
       ".xml",
-      this.output
+      this.output,
+      this.serviceProvider
     );
 
     if (!this.silent) {
@@ -139,13 +150,26 @@ export class CodeScanner {
     configOptions.defaultPythonPlatform = this.options.pythonPlatform;
 
     const importResolver = new ImportResolver(
-      this.fs,
+      this.serviceProvider,
       configOptions,
-      new FullAccessHost(this.fs)
+      new FullAccessHost(this.serviceProvider)
     );
 
-    this.program = new Program(importResolver, configOptions, this.output);
+    this.program = new Program(
+      importResolver,
+      configOptions,
+      this.serviceProvider
+    );
     this.program.setTrackedFiles(this.pythonFileList);
+    this.program
+      .getSourceFileInfoList()
+      .forEach((fileInfo) =>
+        this.program!.setFileOpened(
+          fileInfo.sourceFile.getUri(),
+          1,
+          fileInfo.sourceFile.getFileContent()!
+        )
+      );
 
     if (!this.silent) {
       this.output.info(
@@ -158,10 +182,12 @@ export class CodeScanner {
       this.fs,
       this.rootDirectory,
       this.output,
+      this.serviceProvider,
       (pythonFilePath: string, mappings: any) => {
         let declarationLocator = new DeclarationLocator(
           pythonFilePath,
           this.program!,
+          this.serviceProvider,
           this.cancellationTokenSource
         );
 
@@ -169,7 +195,8 @@ export class CodeScanner {
           let declaration = declarationLocator.findDeclaration(
             mapping.oldName,
             mapping.parentScope,
-            mapping.category
+            mapping.category,
+            this.serviceProvider
           );
 
           if (declaration) {
@@ -204,7 +231,8 @@ export class CodeScanner {
     let referenceLocator = new ReferenceLocator(
       this.program,
       this.cancellationTokenSource,
-      this.output
+      this.output,
+      this.serviceProvider
     );
 
     const allSymbolReferences: Reference[] = [];
@@ -237,7 +265,7 @@ export class CodeScanner {
       for (const symbolOccurence of symbolReference.occurrences) {
         result.push(
           new CodeEdit(
-            symbolOccurence.path,
+            symbolOccurence.uri.getFilePath(),
             symbolOccurence.range.start.line,
             symbolOccurence.range.start.character,
             symbolOccurence.range.end.character,

@@ -1,9 +1,11 @@
+import { Program } from "pyright-internal/analyzer/program";
 import { ConsoleInterface } from "pyright-internal/common/console";
 import {
-  ProgramView,
+  ServiceProvider,
   SourceFileInfo,
 } from "pyright-internal/common/extensibility";
 import { DocumentRange } from "pyright-internal/common/textRange";
+import { Uri } from "pyright-internal/common/uri/uri";
 import { FindReferencesTreeWalker } from "pyright-internal/languageService/referencesProvider";
 import { CancellationTokenSource } from "vscode-jsonrpc";
 
@@ -19,9 +21,10 @@ export class Reference {
 
 export class ReferenceLocator {
   constructor(
-    private program: ProgramView,
+    private program: Program,
     private cancellationTokenSource: CancellationTokenSource,
-    private output: ConsoleInterface
+    private output: ConsoleInterface,
+    private readonly serviceProvider: ServiceProvider
   ) {}
 
   public getReferences(
@@ -32,6 +35,8 @@ export class ReferenceLocator {
 
     const content = sourceFileInfo.sourceFile.getFileContent() ?? "";
 
+    //this.program.setFileOpened(sourceFileInfo!.sourceFile.getUri(), 1, content);
+
     for (const symbol of symbolRenameRecords) {
       // Make sure searching symbol name exists in the file.
       if (content.indexOf(symbol.oldName) < 0) {
@@ -40,7 +45,10 @@ export class ReferenceLocator {
 
       const refTreeWalker = new FindReferencesTreeWalker(
         this.program,
-        sourceFileInfo.sourceFile.getFilePath(),
+        Uri.file(
+          sourceFileInfo.sourceFile.getUri().getFilePath(),
+          this.serviceProvider
+        ),
         symbol.referencesResult,
         /* includeDeclaration */ true,
         this.cancellationTokenSource.token
@@ -54,6 +62,7 @@ export class ReferenceLocator {
       );
     }
 
+    //this.program.setFileClosed(sourceFileInfo!.sourceFile.getUri());
     return result;
   }
 }
