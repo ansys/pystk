@@ -1018,6 +1018,24 @@ class TestBase(unittest.TestCase):
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProvidersTests")
         TestBase.ModelDirectory = Path.Combine(TestBase.CurrentDirectory, "data", "VO", "Models")
 
+        # Insure consistency of access results independent of _Default.ap settings for Access
+        # NOTE: We report times to millisecondss but only compute accurately to 5 ms.
+        # SO.. anyone with a tighter tolerance in a _Default.ap file would produce different
+        # results if we didn't set the values here explicitly
+        TestBase.root.execute_command("AccessConfig / MaxSamplingStepSize 360.0")
+        TestBase.root.execute_command("AccessConfig / MinSamplingStepSize 0.01")
+        TestBase.root.execute_command("AccessConfig / TimeConvergence 5.0e-03")
+        TestBase.root.execute_command("AccessConfig / AbsValueConvergence 1.0e-14")
+        TestBase.root.execute_command("AccessConfig / RelValueConvergence 1.0e-08")
+        TestBase.root.execute_command("AccessConfig / LightTimeDelayConvergence 5.0e-05")
+        TestBase.root.execute_command("AccessConfig / UseLightTimeDelay Yes")
+        TestBase.root.execute_command("AccessConfig / PreferredTimeSense Transmit")
+        TestBase.root.execute_command("AccessConfig / AberrationType Annual")
+        TestBase.root.execute_command("AccessConfig / EventsBasedOnSamples No")
+        TestBase.root.execute_command("AccessConfig / SaveComputedData Yes")
+        # this controls whether we recompute a saved access containing results
+        TestBase.root.execute_command("AccessConfig / ForceRecomputeOnLoad No")
+
         TestBase.CheckICRFDataFilesVersion()
 
         if EngineLifetimeManager.target in [

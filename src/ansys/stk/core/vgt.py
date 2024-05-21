@@ -2654,7 +2654,7 @@ class IAnalysisWorkbenchComponent(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def context(self) -> "IAnalysisWorkbenchContext":
-        """Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchInstance or IAnalysisWorkbenchComponentTemplate interface."""
+        """Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchInstance or IAnalysisWorkbenchTemplate interface."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_context_metadata)
 
     _get_type_info_metadata = { "offset" : _get_type_info_method_offset,
@@ -5456,8 +5456,8 @@ class ICalculationToolScalarCustomInline(object):
     _set_derivative_function_method_offset = 6
     _get_dimension_method_offset = 7
     _set_dimension_method_offset = 8
-    _get_all_arguements_method_offset = 9
-    _set_all_arguements_method_offset = 10
+    _get_all_arguments_method_offset = 9
+    _set_all_arguments_method_offset = 10
     _metadata = {
         "iid_data" : (4764386451504013000, 3625316982411733925),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -5537,19 +5537,19 @@ class ICalculationToolScalarCustomInline(object):
     def dimension(self, dimension:str) -> None:
         return self._intf.set_property(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._set_dimension_metadata, dimension)
 
-    _get_all_arguements_metadata = { "offset" : _get_all_arguements_method_offset,
+    _get_all_arguments_metadata = { "offset" : _get_all_arguments_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
-    def get_all_arguements(self) -> list:
+    def get_all_arguments(self) -> list:
         """Return the list of arguments."""
-        return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._get_all_arguements_metadata, OutArg())
+        return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._get_all_arguments_metadata, OutArg())
 
-    _set_all_arguements_metadata = { "offset" : _set_all_arguements_method_offset,
+    _set_all_arguments_metadata = { "offset" : _set_all_arguments_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
-    def set_all_arguements(self, calcList:list) -> None:
+    def set_all_arguments(self, calcList:list) -> None:
         """Set the list of arguments."""
-        return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._set_all_arguements_metadata, calcList)
+        return self._intf.invoke(ICalculationToolScalarCustomInline._metadata, ICalculationToolScalarCustomInline._set_all_arguments_metadata, calcList)
 
     _property_names[script_type] = "script_type"
     _property_names[value_function] = "value_function"

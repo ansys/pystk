@@ -2959,6 +2959,7 @@ class EarlyBoundTests(TestBase):
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
 
+        helper = AtmosphereHelper(TestBase.Application)
         supportedAtmosAbsorptionModels = propChan.supported_atmos_absorption_models
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
@@ -2994,8 +2995,22 @@ class EarlyBoundTests(TestBase):
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                helper = AtmosphereHelper(TestBase.Application)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+            elif aaModelName == "Early ITU Foliage Model CSharp Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Early ITU Foliage Model JScript Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Python Plugin":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
+                )
             else:
                 Assert.fail("Unknown model type")
 

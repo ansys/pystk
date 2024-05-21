@@ -1,0 +1,30 @@
+stk.v.12.0
+WrittenBy    STK_v12.9.0
+
+BEGIN Constellation
+
+    Name		 SatRcvrs
+    BEGIN Definition
+        Object		 Satellite/Satellite2/Receiver/Receiver2
+        Object		 Satellite/Satellite3/Receiver/Receiver3
+        Object		 Satellite/Satellite4/Receiver/Receiver4
+        Type		 Constellation
+        FromOperator		 Or
+        FromOrder		 1
+        ToOperator		 Or
+        ToOrder		 1
+        UseRoutingRulesFile		 No
+
+    END Definition
+
+    BEGIN Extensions
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+    END Extensions
+
+END Constellation

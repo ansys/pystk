@@ -31875,11 +31875,11 @@ class IProcedureExtEphem(object):
         return self._intf.set_property(IProcedureExtEphem._metadata, IProcedureExtEphem._set_altitude_mode_metadata, eAltmode)
 
     _shift_rotate_set_metadata = { "offset" : _shift_rotate_set_method_offset,
-            "arg_types" : (agcom.DOUBLE,),
-            "marshallers" : (agmarshall.DoubleArg,) }
-    def shift_rotate_set(self, shiftTime:float) -> None:
-        """Shift rotate set values at time."""
-        return self._intf.invoke(IProcedureExtEphem._metadata, IProcedureExtEphem._shift_rotate_set_metadata, shiftTime)
+            "arg_types" : (),
+            "marshallers" : () }
+    def shift_rotate_set(self) -> None:
+        """Shift rotate set values."""
+        return self._intf.invoke(IProcedureExtEphem._metadata, IProcedureExtEphem._shift_rotate_set_metadata, )
 
     _property_names[ephemeris_file] = "ephemeris_file"
     _property_names[ephemeris_file_duration] = "ephemeris_file_duration"

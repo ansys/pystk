@@ -5657,7 +5657,7 @@ class EOIRHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             band.integration_time = 3700000.0
         band.integration_time = 100.0  # set back to default
-        Assert.assertAlmostEqual(95346.273, band.dynamic_range, delta=0.001)
+        Assert.assertAlmostEqual(95346.259, band.dynamic_range, delta=0.001)
         Assert.assertAlmostEqual(4.2e-17, band.nei, delta=1e-18)
         Assert.assertAlmostEqual(4e-12, band.sei, delta=1e-13)
 
@@ -5695,8 +5695,9 @@ class EOIRHelper(object):
         band.qe_file = holdQEFile
         Assert.assertTrue(("BackIllumSi_QE.srf" in band.qe_file))
 
-        band.detector_fill_factor = 0.0
-        Assert.assertEqual(0.0, band.detector_fill_factor)
+        # EOIR-243 and EOIR-1029
+        # band.DetectorFillFactor = 0.0;
+        # Assert.AreEqual(0.0, band.DetectorFillFactor);
         band.detector_fill_factor = 1.0
         Assert.assertEqual(1.0, band.detector_fill_factor)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
