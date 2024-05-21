@@ -26,46 +26,47 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "CentralBodyEphemerisPlanetary", "CentralBodyGravityModel", "CentralBodyShapeOblateSpheroid", "CentralBodyShapeSphere", 
 "CentralBodyShapeTriaxialEllipsoid", "Cira72Function", "ConstraintCollection", "CustomFunctionScriptEngine", "DERIVE_CALC_METHOD", 
 "DIFFERENCE_ORDER", "DIFFERENTIAL_CORRECTOR_SCALING_METHOD", "DRAG_MODEL_TYPE", "DRAW_PERTURBATION", "DTM2012", "DTM2020", 
-"DensityModelPlugin", "DesignCR3BPObject", "DesignCR3BPObjectCollection", "DesignCR3BPSetup", "DifferentialCorrectorControl", 
-"DifferentialCorrectorControlCollection", "DifferentialCorrectorResult", "DifferentialCorrectorResultCollection", "DisplaySystemGeocentric", 
-"DisplaySystemGeodetic", "DragModelPlugin", "DriverMissionControlSequence", "ECLIPSING_BODIES_SOURCE", "ELEMENT", "ELEMENT_TYPE", 
-"ENGINE_MODEL_FUNCTION", "EOMFuncPluginFunction", "EPHEM_SOURCE", "ERROR_CONTROL", "ElementBPlane", "ElementCartesian", 
-"ElementDelaunay", "ElementEquinoctial", "ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical", "ElementSpherical", 
-"ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", "ElementTargetVectorOutgoingAsymptote", "EngineConstAcc", 
-"EngineConstant", "EngineCustom", "EngineDefinition", "EngineIon", "EngineModelIspCoefficients", "EngineModelPoly", "EngineModelThrustCoefficients", 
-"EnginePlugin", "EngineThrottleTable", "Exponential", "FOLLOW_JOIN", "FOLLOW_SEPARATION", "FOLLOW_SPACECRAFT_AND_FUEL_TANK", 
-"FORMULATION", "FuelTank", "GEO_MAGNETIC_FLUX_SOURCE", "GEO_MAGNETIC_FLUX_UPDATE_RATE", "GEO_STATIONARY_DRIFT_RATE_MODEL", 
-"GEO_STATIONARY_INCLINATION_MAGNITUDE", "GOLDEN_SECTION_DESIRED_OPERATION", "GRAPH_OPTION", "GRAVITATIONAL_PARAMETER_SOURCE", 
-"GRAV_COEFF_COEFFICIENT_TYPE", "GRAV_COEFF_NORMALIZATION_TYPE", "GRAV_PARAM_SOURCE", "GRID_SEARCH_DESIRED_OPERATION", "GaussJacksonIntegrator", 
-"GeneralRelativityFunction", "GoldenSectionControl", "GoldenSectionControlCollection", "GoldenSectionResult", "GoldenSectionResultCollection", 
-"GravityFieldFunction", "GridSearchControl", "GridSearchControlCollection", "GridSearchResult", "GridSearchResultCollection", 
-"HPOPPluginFunction", "HarrisPriester", "IAccessStoppingCondition", "IAsTriggerCondition", "IAstrogatorCentralBody", "IAttitudeControl", 
-"IAttitudeControlFinite", "IAttitudeControlFiniteAntiVelocityVector", "IAttitudeControlFiniteAttitude", "IAttitudeControlFiniteFile", 
-"IAttitudeControlFinitePlugin", "IAttitudeControlFiniteThrustVector", "IAttitudeControlFiniteTimeVarying", "IAttitudeControlFiniteVelocityVector", 
-"IAttitudeControlImpulsive", "IAttitudeControlImpulsiveAntiVelocityVector", "IAttitudeControlImpulsiveAttitude", "IAttitudeControlImpulsiveFile", 
-"IAttitudeControlImpulsiveThrustVector", "IAttitudeControlImpulsiveVelocityVector", "IAttitudeControlOptimalFinite", "IAttitudeControlOptimalFiniteLagrange", 
-"IAutomaticSequence", "IAutomaticSequenceCollection", "IBDotRCalc", "IBDotTCalc", "IBMagnitudeCalc", "IBPlaneCollection", 
-"IBThetaCalc", "IBisectionControl", "IBisectionControlCollection", "IBisectionResult", "IBisectionResultCollection", "IBlendedDensity", 
-"IBulirschStoerIntegrator", "IBurnout", "IBurnoutCBFCartesian", "IBurnoutGeocentric", "IBurnoutGeodetic", "IBurnoutLaunchAzAltitude", 
-"IBurnoutLaunchAzRadius", "IBurnoutVelocity", "ICR3BPFunc", "ICalcObjectCollection", "ICalcObjectLinkEmbedControlCollection", 
-"ICalculationGraphCollection", "ICentralBodyAttitude", "ICentralBodyAttitudeIAU1994", "ICentralBodyAttitudeRotationCoefficientsFile", 
-"ICentralBodyCollection", "ICentralBodyEphemeris", "ICentralBodyEphemerisAnalyticOrbit", "ICentralBodyEphemerisFile", "ICentralBodyEphemerisJPLDesignExplorerOptimizer", 
-"ICentralBodyEphemerisJPLSpice", "ICentralBodyEphemerisPlanetary", "ICentralBodyGravityModel", "ICentralBodyShape", "ICentralBodyShapeOblateSpheroid", 
-"ICentralBodyShapeSphere", "ICentralBodyShapeTriaxialEllipsoid", "ICira72Function", "IConstraintCollection", "ICustomFunctionScriptEngine", 
-"IDEAL_ORBIT_RADIUS", "IDTM2012", "IDTM2020", "IDensityModelPlugin", "IDesignCR3BPObject", "IDesignCR3BPObjectCollection", 
-"IDesignCR3BPSetup", "IDifferentialCorrectorControl", "IDifferentialCorrectorControlCollection", "IDifferentialCorrectorResult", 
-"IDifferentialCorrectorResultCollection", "IDisplaySystem", "IDisplaySystemGeocentric", "IDisplaySystemGeodetic", "IDragModelPlugin", 
-"IDriverMissionControlSequence", "IEOMFuncPluginFunction", "IElement", "IElementBPlane", "IElementCartesian", "IElementDelaunay", 
-"IElementEquinoctial", "IElementGeodetic", "IElementKeplerian", "IElementMixedSpherical", "IElementSpherical", "IElementSphericalRangeRate", 
-"IElementTargetVectorIncomingAsymptote", "IElementTargetVectorOutgoingAsymptote", "IEngineConstAcc", "IEngineConstant", 
-"IEngineCustom", "IEngineDefinition", "IEngineIon", "IEngineModelIspCoefficients", "IEngineModelPoly", "IEngineModelThrustCoefficients", 
-"IEnginePlugin", "IEngineThrottleTable", "IExponential", "IFuelTank", "IGaussJacksonIntegrator", "IGeneralRelativityFunction", 
-"IGoldenSectionControl", "IGoldenSectionControlCollection", "IGoldenSectionResult", "IGoldenSectionResultCollection", "IGravityFieldFunction", 
-"IGridSearchControl", "IGridSearchControlCollection", "IGridSearchResult", "IGridSearchResultCollection", "IHPOPPluginFunction", 
-"IHarrisPriester", "IIPOPTControl", "IIPOPTControlCollection", "IIPOPTResult", "IIPOPTResultCollection", "IJacchiaBowman2008", 
-"IJacchiaRoberts", "IJacchia_1960", "IJacchia_1970", "IJacchia_1971", "ILightingStoppingCondition", "IMP_DELTA_V_REP", "IMSISE_1990", 
-"IMSIS_1986", "IManeuver", "IManeuverFinite", "IManeuverFinitePropagator", "IManeuverImpulsive", "IManeuverOptimalFinite", 
-"IManeuverOptimalFiniteBounds", "IManeuverOptimalFiniteFinalBoundaryConditions", "IManeuverOptimalFiniteInitialBoundaryConditions", 
+"DensityModelPlugin", "DesignCR3BPObject", "DesignCR3BPObjectCollection", "DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection", 
+"DesignER3BPSetup", "DifferentialCorrectorControl", "DifferentialCorrectorControlCollection", "DifferentialCorrectorResult", 
+"DifferentialCorrectorResultCollection", "DisplaySystemGeocentric", "DisplaySystemGeodetic", "DragModelPlugin", "DriverMissionControlSequence", 
+"ECLIPSING_BODIES_SOURCE", "ELEMENT", "ELEMENT_TYPE", "ENGINE_MODEL_FUNCTION", "EOMFuncPluginFunction", "EPHEM_SOURCE", 
+"ER3BPFunc", "ERROR_CONTROL", "ElementBPlane", "ElementCartesian", "ElementDelaunay", "ElementEquinoctial", "ElementGeodetic", 
+"ElementKeplerian", "ElementMixedSpherical", "ElementSpherical", "ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", 
+"ElementTargetVectorOutgoingAsymptote", "EngineConstAcc", "EngineConstant", "EngineCustom", "EngineDefinition", "EngineIon", 
+"EngineModelIspCoefficients", "EngineModelPoly", "EngineModelThrustCoefficients", "EnginePlugin", "EngineThrottleTable", 
+"Exponential", "FOLLOW_JOIN", "FOLLOW_SEPARATION", "FOLLOW_SPACECRAFT_AND_FUEL_TANK", "FORMULATION", "FuelTank", "GEO_MAGNETIC_FLUX_SOURCE", 
+"GEO_MAGNETIC_FLUX_UPDATE_RATE", "GEO_STATIONARY_DRIFT_RATE_MODEL", "GEO_STATIONARY_INCLINATION_MAGNITUDE", "GOLDEN_SECTION_DESIRED_OPERATION", 
+"GRAPH_OPTION", "GRAVITATIONAL_PARAMETER_SOURCE", "GRAV_COEFF_COEFFICIENT_TYPE", "GRAV_COEFF_NORMALIZATION_TYPE", "GRAV_PARAM_SOURCE", 
+"GRID_SEARCH_DESIRED_OPERATION", "GaussJacksonIntegrator", "GeneralRelativityFunction", "GoldenSectionControl", "GoldenSectionControlCollection", 
+"GoldenSectionResult", "GoldenSectionResultCollection", "GravityFieldFunction", "GridSearchControl", "GridSearchControlCollection", 
+"GridSearchResult", "GridSearchResultCollection", "HPOPPluginFunction", "HarrisPriester", "IAccessStoppingCondition", "IAsTriggerCondition", 
+"IAstrogatorCentralBody", "IAttitudeControl", "IAttitudeControlFinite", "IAttitudeControlFiniteAntiVelocityVector", "IAttitudeControlFiniteAttitude", 
+"IAttitudeControlFiniteFile", "IAttitudeControlFinitePlugin", "IAttitudeControlFiniteThrustVector", "IAttitudeControlFiniteTimeVarying", 
+"IAttitudeControlFiniteVelocityVector", "IAttitudeControlImpulsive", "IAttitudeControlImpulsiveAntiVelocityVector", "IAttitudeControlImpulsiveAttitude", 
+"IAttitudeControlImpulsiveFile", "IAttitudeControlImpulsiveThrustVector", "IAttitudeControlImpulsiveVelocityVector", "IAttitudeControlOptimalFinite", 
+"IAttitudeControlOptimalFiniteLagrange", "IAutomaticSequence", "IAutomaticSequenceCollection", "IBDotRCalc", "IBDotTCalc", 
+"IBMagnitudeCalc", "IBPlaneCollection", "IBThetaCalc", "IBisectionControl", "IBisectionControlCollection", "IBisectionResult", 
+"IBisectionResultCollection", "IBlendedDensity", "IBulirschStoerIntegrator", "IBurnout", "IBurnoutCBFCartesian", "IBurnoutGeocentric", 
+"IBurnoutGeodetic", "IBurnoutLaunchAzAltitude", "IBurnoutLaunchAzRadius", "IBurnoutVelocity", "ICR3BPFunc", "ICalcObjectCollection", 
+"ICalcObjectLinkEmbedControlCollection", "ICalculationGraphCollection", "ICentralBodyAttitude", "ICentralBodyAttitudeIAU1994", 
+"ICentralBodyAttitudeRotationCoefficientsFile", "ICentralBodyCollection", "ICentralBodyEphemeris", "ICentralBodyEphemerisAnalyticOrbit", 
+"ICentralBodyEphemerisFile", "ICentralBodyEphemerisJPLDesignExplorerOptimizer", "ICentralBodyEphemerisJPLSpice", "ICentralBodyEphemerisPlanetary", 
+"ICentralBodyGravityModel", "ICentralBodyShape", "ICentralBodyShapeOblateSpheroid", "ICentralBodyShapeSphere", "ICentralBodyShapeTriaxialEllipsoid", 
+"ICira72Function", "IConstraintCollection", "ICustomFunctionScriptEngine", "IDEAL_ORBIT_RADIUS", "IDTM2012", "IDTM2020", 
+"IDensityModelPlugin", "IDesignCR3BPObject", "IDesignCR3BPObjectCollection", "IDesignCR3BPSetup", "IDesignER3BPObject", 
+"IDesignER3BPObjectCollection", "IDesignER3BPSetup", "IDifferentialCorrectorControl", "IDifferentialCorrectorControlCollection", 
+"IDifferentialCorrectorResult", "IDifferentialCorrectorResultCollection", "IDisplaySystem", "IDisplaySystemGeocentric", 
+"IDisplaySystemGeodetic", "IDragModelPlugin", "IDriverMissionControlSequence", "IEOMFuncPluginFunction", "IER3BPFunc", "IElement", 
+"IElementBPlane", "IElementCartesian", "IElementDelaunay", "IElementEquinoctial", "IElementGeodetic", "IElementKeplerian", 
+"IElementMixedSpherical", "IElementSpherical", "IElementSphericalRangeRate", "IElementTargetVectorIncomingAsymptote", "IElementTargetVectorOutgoingAsymptote", 
+"IEngineConstAcc", "IEngineConstant", "IEngineCustom", "IEngineDefinition", "IEngineIon", "IEngineModelIspCoefficients", 
+"IEngineModelPoly", "IEngineModelThrustCoefficients", "IEnginePlugin", "IEngineThrottleTable", "IExponential", "IFuelTank", 
+"IGaussJacksonIntegrator", "IGeneralRelativityFunction", "IGoldenSectionControl", "IGoldenSectionControlCollection", "IGoldenSectionResult", 
+"IGoldenSectionResultCollection", "IGravityFieldFunction", "IGridSearchControl", "IGridSearchControlCollection", "IGridSearchResult", 
+"IGridSearchResultCollection", "IHPOPPluginFunction", "IHarrisPriester", "IIPOPTControl", "IIPOPTControlCollection", "IIPOPTResult", 
+"IIPOPTResultCollection", "IJacchiaBowman2008", "IJacchiaRoberts", "IJacchia_1960", "IJacchia_1970", "IJacchia_1971", "ILightingStoppingCondition", 
+"IMP_DELTA_V_REP", "IMSISE_1990", "IMSIS_1986", "IManeuver", "IManeuverFinite", "IManeuverFinitePropagator", "IManeuverImpulsive", 
+"IManeuverOptimalFinite", "IManeuverOptimalFiniteBounds", "IManeuverOptimalFiniteFinalBoundaryConditions", "IManeuverOptimalFiniteInitialBoundaryConditions", 
 "IManeuverOptimalFinitePathBoundaryConditions", "IManeuverOptimalFiniteSNOPTOptimizer", "IManeuverOptimalFiniteSteeringNodeCollection", 
 "IManeuverOptimalFiniteSteeringNodeElement", "IMarsGRAM2000", "IMarsGRAM2001", "IMarsGRAM2005", "IMarsGRAM2010", "IMarsGRAM37", 
 "IMissionControlSequenceBackwardSequence", "IMissionControlSequenceEnd", "IMissionControlSequenceFollow", "IMissionControlSequenceHold", 
@@ -99,7 +100,7 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "IStateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "IStateCalcGravCoeff", "IStateCalcGravitationalParameter", "IStateCalcHeightAboveTerrain", 
 "IStateCalcImpactFlux", "IStateCalcImpactMassFlux", "IStateCalcInAsympDec", "IStateCalcInAsympRA", "IStateCalcInVelAzAtPeriapsis", 
 "IStateCalcInclination", "IStateCalcInclinationX", "IStateCalcInclinationY", "IStateCalcInertialDeltaVMagnitude", "IStateCalcInertialDeltaVx", 
-"IStateCalcInertialDeltaVy", "IStateCalcInertialDeltaVz", "IStateCalcJacobiConstant", "IStateCalcLocalApparentSolarLon", 
+"IStateCalcInertialDeltaVy", "IStateCalcInertialDeltaVz", "IStateCalcJacobiConstant", "IStateCalcJacobiOsculating", "IStateCalcLocalApparentSolarLon", 
 "IStateCalcLonDriftRate", "IStateCalcLonOfAscNode", "IStateCalcLonOfPeriapsis", "IStateCalcMagnitudeFieldDipoleL", "IStateCalcManeuverSpecificImpulse", 
 "IStateCalcManeuverTotalMassFlowRate", "IStateCalcMass", "IStateCalcMaxValue", "IStateCalcMeanAnomaly", "IStateCalcMeanEarthLon", 
 "IStateCalcMeanMotion", "IStateCalcMeanRightAscension", "IStateCalcMeanValue", "IStateCalcMedianValue", "IStateCalcMinValue", 
@@ -166,15 +167,15 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "StateCalcGeodeticTrueLongitude", "StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", 
 "StateCalcHeightAboveTerrain", "StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", 
 "StateCalcInVelAzAtPeriapsis", "StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", 
-"StateCalcInertialDeltaVx", "StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcLocalApparentSolarLon", 
-"StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMagnitudeFieldDipoleL", "StateCalcManeuverSpecificImpulse", 
-"StateCalcManeuverTotalMassFlowRate", "StateCalcMass", "StateCalcMaxValue", "StateCalcMeanAnomaly", "StateCalcMeanEarthLon", 
-"StateCalcMeanMotion", "StateCalcMeanRightAscension", "StateCalcMeanValue", "StateCalcMedianValue", "StateCalcMinValue", 
-"StateCalcMissionControlSequenceDeltaV", "StateCalcMissionControlSequenceDeltaVSquared", "StateCalcNegative", "StateCalcNumRevs", 
-"StateCalcOnePointAccess", "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod", 
-"StateCalcOrbitSemiLatusRectum", "StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelAzAtPeriapsis", 
-"StateCalcPi", "StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelDifferenceOtherSegment", "StateCalcPower", 
-"StateCalcPressure", "StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", 
+"StateCalcInertialDeltaVx", "StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", 
+"StateCalcLocalApparentSolarLon", "StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMagnitudeFieldDipoleL", 
+"StateCalcManeuverSpecificImpulse", "StateCalcManeuverTotalMassFlowRate", "StateCalcMass", "StateCalcMaxValue", "StateCalcMeanAnomaly", 
+"StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension", "StateCalcMeanValue", "StateCalcMedianValue", 
+"StateCalcMinValue", "StateCalcMissionControlSequenceDeltaV", "StateCalcMissionControlSequenceDeltaVSquared", "StateCalcNegative", 
+"StateCalcNumRevs", "StateCalcOnePointAccess", "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", 
+"StateCalcOrbitPeriod", "StateCalcOrbitSemiLatusRectum", "StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", 
+"StateCalcOutVelAzAtPeriapsis", "StateCalcPi", "StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelDifferenceOtherSegment", 
+"StateCalcPower", "StateCalcPressure", "StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", 
 "StateCalcRadOfPeriapsis", "StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", 
 "StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelAtAOLMaster", "StateCalcRelGroundTrackError", "StateCalcRelMotion", 
 "StateCalcRelPositionDecAngle", "StateCalcRelPositionInPlaneAngle", "StateCalcRelativeInclination", "StateCalcRepeatingGroundTrackErr", 
@@ -24761,6 +24762,71 @@ class IStateCalcJacobiConstant(object):
 agcls.AgClassCatalog.add_catalog_entry((5313931721597877856, 6320025579692878468), IStateCalcJacobiConstant)
 agcls.AgTypeNameMap["IStateCalcJacobiConstant"] = IStateCalcJacobiConstant
 
+class IStateCalcJacobiOsculating(object):
+    """Properties for an osculating Jacobi integral calculation object."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_central_body_name_method_offset = 1
+    _set_central_body_name_method_offset = 2
+    _get_secondary_name_method_offset = 3
+    _set_secondary_name_method_offset = 4
+    _metadata = {
+        "iid_data" : (4962445305111709194, 10572901812271851444),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type IStateCalcJacobiOsculating."""
+        initialize_from_source_object(self, sourceObject, IStateCalcJacobiOsculating)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IStateCalcJacobiOsculating)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IStateCalcJacobiOsculating, None)
+    
+    _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def central_body_name(self) -> str:
+        """Get or set the primary central body of the three-body system."""
+        return self._intf.get_property(IStateCalcJacobiOsculating._metadata, IStateCalcJacobiOsculating._get_central_body_name_metadata)
+
+    _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @central_body_name.setter
+    def central_body_name(self, inVal:str) -> None:
+        return self._intf.set_property(IStateCalcJacobiOsculating._metadata, IStateCalcJacobiOsculating._set_central_body_name_metadata, inVal)
+
+    _get_secondary_name_metadata = { "offset" : _get_secondary_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def secondary_name(self) -> str:
+        """Get or set the secondary central body of the three-body system."""
+        return self._intf.get_property(IStateCalcJacobiOsculating._metadata, IStateCalcJacobiOsculating._get_secondary_name_metadata)
+
+    _set_secondary_name_metadata = { "offset" : _set_secondary_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @secondary_name.setter
+    def secondary_name(self, inVal:str) -> None:
+        return self._intf.set_property(IStateCalcJacobiOsculating._metadata, IStateCalcJacobiOsculating._set_secondary_name_metadata, inVal)
+
+    _property_names[central_body_name] = "central_body_name"
+    _property_names[secondary_name] = "secondary_name"
+
+
+agcls.AgClassCatalog.add_catalog_entry((4962445305111709194, 10572901812271851444), IStateCalcJacobiOsculating)
+agcls.AgTypeNameMap["IStateCalcJacobiOsculating"] = IStateCalcJacobiOsculating
+
 class IStateCalcCartesianElem(object):
     """Properties for a Cartesian Element calculation object."""
 
@@ -36725,10 +36791,17 @@ agcls.AgTypeNameMap["IStateTransformationFunction"] = IStateTransformationFuncti
 class ICR3BPFunc(object):
     """Properties for the CR3BP propagator function."""
 
-    _num_methods = 2
+    _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_secondary_name_method_offset = 1
     _set_secondary_name_method_offset = 2
+    _get_ephemeris_epoch_method_offset = 3
+    _get_eccentricity_method_offset = 4
+    _get_mass_parameter_method_offset = 5
+    _get_characteristic_distance_method_offset = 6
+    _get_characteristic_time_method_offset = 7
+    _get_characteristic_velocity_method_offset = 8
+    _get_characteristic_acceleration_method_offset = 9
     _metadata = {
         "iid_data" : (4788117537309996629, 13768587730296853131),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -36753,7 +36826,7 @@ class ICR3BPFunc(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def secondary_name(self) -> str:
-        """Get or set the secondary body following CR3BP model definitions."""
+        """Get or set the secondary body  which should be consistently defined with CR3BP model definitions."""
         return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_secondary_name_metadata)
 
     _set_secondary_name_metadata = { "offset" : _set_secondary_name_method_offset,
@@ -36763,11 +36836,201 @@ class ICR3BPFunc(object):
     def secondary_name(self, inVal:str) -> None:
         return self._intf.set_property(ICR3BPFunc._metadata, ICR3BPFunc._set_secondary_name_metadata, inVal)
 
+    _get_ephemeris_epoch_metadata = { "offset" : _get_ephemeris_epoch_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def ephemeris_epoch(self) -> typing.Any:
+        """Get the epoch from which the eccentricity value is reported from the secondary."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_ephemeris_epoch_metadata)
+
+    _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def eccentricity(self) -> float:
+        """Get the eccentricity at the reference epoch for the secondary's orbit."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_eccentricity_metadata)
+
+    _get_mass_parameter_metadata = { "offset" : _get_mass_parameter_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mass_parameter(self) -> float:
+        """Get the mass parameter computed from the primary and secondary bodies."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_mass_parameter_metadata)
+
+    _get_characteristic_distance_metadata = { "offset" : _get_characteristic_distance_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_distance(self) -> float:
+        """Get the characteristic distance computed from the primary and secondary bodies."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_characteristic_distance_metadata)
+
+    _get_characteristic_time_metadata = { "offset" : _get_characteristic_time_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_time(self) -> float:
+        """Get the characteristic time computed from the primary and secondary bodies."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_characteristic_time_metadata)
+
+    _get_characteristic_velocity_metadata = { "offset" : _get_characteristic_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_velocity(self) -> float:
+        """Get the characteristic velocity computed from the primary and secondary bodies."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_characteristic_velocity_metadata)
+
+    _get_characteristic_acceleration_metadata = { "offset" : _get_characteristic_acceleration_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_acceleration(self) -> float:
+        """Get the characteristic acceleration computed from the primary and secondary bodies."""
+        return self._intf.get_property(ICR3BPFunc._metadata, ICR3BPFunc._get_characteristic_acceleration_metadata)
+
     _property_names[secondary_name] = "secondary_name"
+    _property_names[ephemeris_epoch] = "ephemeris_epoch"
+    _property_names[eccentricity] = "eccentricity"
+    _property_names[mass_parameter] = "mass_parameter"
+    _property_names[characteristic_distance] = "characteristic_distance"
+    _property_names[characteristic_time] = "characteristic_time"
+    _property_names[characteristic_velocity] = "characteristic_velocity"
+    _property_names[characteristic_acceleration] = "characteristic_acceleration"
 
 
 agcls.AgClassCatalog.add_catalog_entry((4788117537309996629, 13768587730296853131), ICR3BPFunc)
 agcls.AgTypeNameMap["ICR3BPFunc"] = ICR3BPFunc
+
+class IER3BPFunc(object):
+    """Properties for the ER3BP propagator function."""
+
+    _num_methods = 10
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_secondary_name_method_offset = 1
+    _set_secondary_name_method_offset = 2
+    _get_ephemeris_epoch_method_offset = 3
+    _get_true_anomaly_method_offset = 4
+    _get_eccentricity_method_offset = 5
+    _get_mass_parameter_method_offset = 6
+    _get_characteristic_distance_method_offset = 7
+    _get_characteristic_time_method_offset = 8
+    _get_characteristic_velocity_method_offset = 9
+    _get_characteristic_acceleration_method_offset = 10
+    _metadata = {
+        "iid_data" : (4916235884320980959, 14502050449445461892),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type IER3BPFunc."""
+        initialize_from_source_object(self, sourceObject, IER3BPFunc)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IER3BPFunc)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IER3BPFunc, None)
+    
+    _get_secondary_name_metadata = { "offset" : _get_secondary_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def secondary_name(self) -> str:
+        """Get or set the secondary body  which should be consistently defined with ER3BP model definitions."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_secondary_name_metadata)
+
+    _set_secondary_name_metadata = { "offset" : _set_secondary_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @secondary_name.setter
+    def secondary_name(self, inVal:str) -> None:
+        return self._intf.set_property(IER3BPFunc._metadata, IER3BPFunc._set_secondary_name_metadata, inVal)
+
+    _get_ephemeris_epoch_metadata = { "offset" : _get_ephemeris_epoch_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def ephemeris_epoch(self) -> typing.Any:
+        """Get the epoch from which the eccentricity value is reported from the secondary."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_ephemeris_epoch_metadata)
+
+    _get_true_anomaly_metadata = { "offset" : _get_true_anomaly_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def true_anomaly(self) -> typing.Any:
+        """Get the true anomaly used for initializing ideal secondary."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_true_anomaly_metadata)
+
+    _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def eccentricity(self) -> float:
+        """Get the eccentricity at the reference epoch for the secondary's orbit."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_eccentricity_metadata)
+
+    _get_mass_parameter_metadata = { "offset" : _get_mass_parameter_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mass_parameter(self) -> float:
+        """Get the mass parameter computed from the primary and secondary bodies."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_mass_parameter_metadata)
+
+    _get_characteristic_distance_metadata = { "offset" : _get_characteristic_distance_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_distance(self) -> float:
+        """Get the characteristic distance computed from the primary and secondary bodies."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_characteristic_distance_metadata)
+
+    _get_characteristic_time_metadata = { "offset" : _get_characteristic_time_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_time(self) -> float:
+        """Get the characteristic time computed from the primary and secondary bodies."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_characteristic_time_metadata)
+
+    _get_characteristic_velocity_metadata = { "offset" : _get_characteristic_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_velocity(self) -> float:
+        """Get the characteristic velocity computed from the primary and secondary bodies."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_characteristic_velocity_metadata)
+
+    _get_characteristic_acceleration_metadata = { "offset" : _get_characteristic_acceleration_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_acceleration(self) -> float:
+        """Get the characteristic acceleration computed from the primary and secondary bodies."""
+        return self._intf.get_property(IER3BPFunc._metadata, IER3BPFunc._get_characteristic_acceleration_metadata)
+
+    _property_names[secondary_name] = "secondary_name"
+    _property_names[ephemeris_epoch] = "ephemeris_epoch"
+    _property_names[true_anomaly] = "true_anomaly"
+    _property_names[eccentricity] = "eccentricity"
+    _property_names[mass_parameter] = "mass_parameter"
+    _property_names[characteristic_distance] = "characteristic_distance"
+    _property_names[characteristic_time] = "characteristic_time"
+    _property_names[characteristic_velocity] = "characteristic_velocity"
+    _property_names[characteristic_acceleration] = "characteristic_acceleration"
+
+
+agcls.AgClassCatalog.add_catalog_entry((4916235884320980959, 14502050449445461892), IER3BPFunc)
+agcls.AgTypeNameMap["IER3BPFunc"] = IER3BPFunc
 
 class IRadiationPressureFunction(object):
     """Properties for the Radiation Pressure propagator function."""
@@ -47800,10 +48063,100 @@ class IDesignCR3BPObjectCollection(object):
 agcls.AgClassCatalog.add_catalog_entry((5392292082478645264, 18434852992809556111), IDesignCR3BPObjectCollection)
 agcls.AgTypeNameMap["IDesignCR3BPObjectCollection"] = IDesignCR3BPObjectCollection
 
-class IDesignCR3BPSetup(object):
-    """Properties for the CR3BP Setup Tool.."""
+class IDesignER3BPObjectCollection(object):
+    """The list of associated ER3BP objects."""
 
-    _num_methods = 25
+    _num_methods = 5
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get__NewEnum_method_offset = 2
+    _get_count_method_offset = 3
+    _get_item_by_index_method_offset = 4
+    _get_item_by_name_method_offset = 5
+    _metadata = {
+        "iid_data" : (4950524500182993336, 7133458467934249351),
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type IDesignER3BPObjectCollection."""
+        initialize_from_source_object(self, sourceObject, IDesignER3BPObjectCollection)
+        self.__dict__["_enumerator"] = None
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IDesignER3BPObjectCollection)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IDesignER3BPObjectCollection, None)
+    def __iter__(self):
+        """Create an iterator for the IDesignER3BPObjectCollection object."""
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
+        return self
+    def __next__(self) -> "IDesignER3BPObject":
+        """Return the next element in the collection."""
+        if self._enumerator is None:
+            raise StopIteration
+        nextval = self._enumerator.next()
+        if nextval is None:
+            raise StopIteration
+        return nextval
+    
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    def item(self, indexOrName:typing.Any) -> "DesignER3BPObject":
+        """Iterate through the collection."""
+        return self._intf.invoke(IDesignER3BPObjectCollection._metadata, IDesignER3BPObjectCollection._item_metadata, indexOrName, OutArg())
+
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    @property
+    def _NewEnum(self) -> EnumeratorProxy:
+        """A property that allows you to enumerate through the collection."""
+        return self._intf.get_property(IDesignER3BPObjectCollection._metadata, IDesignER3BPObjectCollection._get__NewEnum_metadata)
+
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    @property
+    def count(self) -> int:
+        """Get the number of associated objects in the set."""
+        return self._intf.get_property(IDesignER3BPObjectCollection._metadata, IDesignER3BPObjectCollection._get_count_metadata)
+
+    _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
+            "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_index(self, index:int) -> "DesignER3BPObject":
+        """Retrieve an associated object from the collection by index."""
+        return self._intf.invoke(IDesignER3BPObjectCollection._metadata, IDesignER3BPObjectCollection._get_item_by_index_metadata, index, OutArg())
+
+    _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def get_item_by_name(self, name:str) -> "DesignER3BPObject":
+        """Retrieve an associated object from the collection by name."""
+        return self._intf.invoke(IDesignER3BPObjectCollection._metadata, IDesignER3BPObjectCollection._get_item_by_name_metadata, name, OutArg())
+
+    __getitem__ = item
+
+
+    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[count] = "count"
+
+
+agcls.AgClassCatalog.add_catalog_entry((4950524500182993336, 7133458467934249351), IDesignER3BPObjectCollection)
+agcls.AgTypeNameMap["IDesignER3BPObjectCollection"] = IDesignER3BPObjectCollection
+
+class IDesignCR3BPSetup(object):
+    """Properties for the CR3BP Setup Tool."""
+
+    _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
@@ -47830,6 +48183,10 @@ class IDesignCR3BPSetup(object):
     _create_calculation_objects_method_offset = 23
     _delete_calculation_objects_method_offset = 24
     _get_associated_objects_method_offset = 25
+    _get_include_stm_method_offset = 26
+    _set_include_stm_method_offset = 27
+    _create_propagator_method_offset = 28
+    _delete_propagator_method_offset = 29
     _metadata = {
         "iid_data" : (5264958649687951205, 13543844180411904148),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -48036,6 +48393,35 @@ class IDesignCR3BPSetup(object):
         """Get the list of associated objects."""
         return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_associated_objects_metadata)
 
+    _get_include_stm_metadata = { "offset" : _get_include_stm_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def include_stm(self) -> bool:
+        """Get whether or not the STM propagator function is included on the propagator."""
+        return self._intf.get_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._get_include_stm_metadata)
+
+    _set_include_stm_metadata = { "offset" : _set_include_stm_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @include_stm.setter
+    def include_stm(self, newVal:bool) -> None:
+        return self._intf.set_property(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._set_include_stm_metadata, newVal)
+
+    _create_propagator_metadata = { "offset" : _create_propagator_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def create_propagator(self) -> None:
+        """Create the propagator for the primary-secondary CR3BP formulation."""
+        return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._create_propagator_metadata, )
+
+    _delete_propagator_metadata = { "offset" : _delete_propagator_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def delete_propagator(self) -> None:
+        """Delete the propagator for the primary-secondary CR3BP formulation."""
+        return self._intf.invoke(IDesignCR3BPSetup._metadata, IDesignCR3BPSetup._delete_propagator_metadata, )
+
     _property_names[central_body_name] = "central_body_name"
     _property_names[secondary_body_name] = "secondary_body_name"
     _property_names[initial_epoch] = "initial_epoch"
@@ -48048,6 +48434,7 @@ class IDesignCR3BPSetup(object):
     _property_names[characteristic_acceleration] = "characteristic_acceleration"
     _property_names[rotating_system_choice] = "rotating_system_choice"
     _property_names[associated_objects] = "associated_objects"
+    _property_names[include_stm] = "include_stm"
 
 
 agcls.AgClassCatalog.add_catalog_entry((5264958649687951205, 13543844180411904148), IDesignCR3BPSetup)
@@ -48111,6 +48498,362 @@ class IDesignCR3BPObject(object):
 
 agcls.AgClassCatalog.add_catalog_entry((5592045192875480542, 4785324167736681404), IDesignCR3BPObject)
 agcls.AgTypeNameMap["IDesignCR3BPObject"] = IDesignCR3BPObject
+
+class IDesignER3BPSetup(object):
+    """Properties for the ER3BP Setup Tool."""
+
+    _num_methods = 30
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_central_body_name_method_offset = 1
+    _set_central_body_name_method_offset = 2
+    _get_secondary_body_name_method_offset = 3
+    _set_secondary_body_name_method_offset = 4
+    _get_initial_epoch_method_offset = 5
+    _set_initial_epoch_method_offset = 6
+    _get_true_anomaly_method_offset = 7
+    _set_true_anomaly_method_offset = 8
+    _get_ideal_secondary_name_method_offset = 9
+    _set_ideal_secondary_name_method_offset = 10
+    _get_mass_parameter_method_offset = 11
+    _get_eccentricity_method_offset = 12
+    _get_characteristic_distance_method_offset = 13
+    _get_characteristic_time_method_offset = 14
+    _get_characteristic_velocity_method_offset = 15
+    _get_characteristic_acceleration_method_offset = 16
+    _get_rotating_system_choice_method_offset = 17
+    _set_rotating_system_choice_method_offset = 18
+    _create_ideal_secondary_cb_method_offset = 19
+    _reset_ideal_secondary_cb_method_offset = 20
+    _update_ideal_secondary_cb_method_offset = 21
+    _create_rotating_coordinate_system_method_offset = 22
+    _delete_rotating_coordinate_system_method_offset = 23
+    _create_calculation_objects_method_offset = 24
+    _delete_calculation_objects_method_offset = 25
+    _get_associated_objects_method_offset = 26
+    _get_include_stm_method_offset = 27
+    _set_include_stm_method_offset = 28
+    _create_propagator_method_offset = 29
+    _delete_propagator_method_offset = 30
+    _metadata = {
+        "iid_data" : (5065880826790351987, 2796329394240216450),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type IDesignER3BPSetup."""
+        initialize_from_source_object(self, sourceObject, IDesignER3BPSetup)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IDesignER3BPSetup)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IDesignER3BPSetup, None)
+    
+    _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def central_body_name(self) -> str:
+        """Primary central body for the three-body system."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_central_body_name_metadata)
+
+    _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @central_body_name.setter
+    def central_body_name(self, inVal:str) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_central_body_name_metadata, inVal)
+
+    _get_secondary_body_name_metadata = { "offset" : _get_secondary_body_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def secondary_body_name(self) -> str:
+        """Secondary Body."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_secondary_body_name_metadata)
+
+    _set_secondary_body_name_metadata = { "offset" : _set_secondary_body_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @secondary_body_name.setter
+    def secondary_body_name(self, inVal:str) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_secondary_body_name_metadata, inVal)
+
+    _get_initial_epoch_metadata = { "offset" : _get_initial_epoch_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def initial_epoch(self) -> typing.Any:
+        """Date and time for system construction."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_initial_epoch_metadata)
+
+    _set_initial_epoch_metadata = { "offset" : _set_initial_epoch_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @initial_epoch.setter
+    def initial_epoch(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_initial_epoch_metadata, newVal)
+
+    _get_true_anomaly_metadata = { "offset" : _get_true_anomaly_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def true_anomaly(self) -> typing.Any:
+        """True anomaly for initializing ideal secondary."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_true_anomaly_metadata)
+
+    _set_true_anomaly_metadata = { "offset" : _set_true_anomaly_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @true_anomaly.setter
+    def true_anomaly(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_true_anomaly_metadata, newVal)
+
+    _get_ideal_secondary_name_metadata = { "offset" : _get_ideal_secondary_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def ideal_secondary_name(self) -> str:
+        """Name to be used for the idealized secondary."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_ideal_secondary_name_metadata)
+
+    _set_ideal_secondary_name_metadata = { "offset" : _set_ideal_secondary_name_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @ideal_secondary_name.setter
+    def ideal_secondary_name(self, inVal:str) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_ideal_secondary_name_metadata, inVal)
+
+    _get_mass_parameter_metadata = { "offset" : _get_mass_parameter_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mass_parameter(self) -> float:
+        """Get the mass parameter computed from the primary and secondary bodies."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_mass_parameter_metadata)
+
+    _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def eccentricity(self) -> float:
+        """Get the eccentricity at epoch to be used for constructing the orbit of the secondary body."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_eccentricity_metadata)
+
+    _get_characteristic_distance_metadata = { "offset" : _get_characteristic_distance_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_distance(self) -> float:
+        """Get the characteristic distance computed from the primary and secondary bodies."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_characteristic_distance_metadata)
+
+    _get_characteristic_time_metadata = { "offset" : _get_characteristic_time_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_time(self) -> float:
+        """Get the characteristic time computed from the primary and secondary bodies."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_characteristic_time_metadata)
+
+    _get_characteristic_velocity_metadata = { "offset" : _get_characteristic_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_velocity(self) -> float:
+        """Get the characteristic velocity computed from the primary and secondary bodies."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_characteristic_velocity_metadata)
+
+    _get_characteristic_acceleration_metadata = { "offset" : _get_characteristic_acceleration_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def characteristic_acceleration(self) -> float:
+        """Get the characteristic acceleration computed from the primary and secondary bodies."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_characteristic_acceleration_metadata)
+
+    _get_rotating_system_choice_metadata = { "offset" : _get_rotating_system_choice_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ROTATING_COORDINATE_SYSTEM),) }
+    @property
+    def rotating_system_choice(self) -> "ROTATING_COORDINATE_SYSTEM":
+        """Get the rotating coordinate system and associated calculation objects to interact with."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_rotating_system_choice_metadata)
+
+    _set_rotating_system_choice_metadata = { "offset" : _set_rotating_system_choice_method_offset,
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ROTATING_COORDINATE_SYSTEM),) }
+    @rotating_system_choice.setter
+    def rotating_system_choice(self, inVal:"ROTATING_COORDINATE_SYSTEM") -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_rotating_system_choice_metadata, inVal)
+
+    _create_ideal_secondary_cb_metadata = { "offset" : _create_ideal_secondary_cb_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def create_ideal_secondary_cb(self) -> None:
+        """Construct the idealized secondary for the three-body system."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._create_ideal_secondary_cb_metadata, )
+
+    _reset_ideal_secondary_cb_metadata = { "offset" : _reset_ideal_secondary_cb_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reset_ideal_secondary_cb(self) -> None:
+        """Reset the idealized secondary for the three-body system."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._reset_ideal_secondary_cb_metadata, )
+
+    _update_ideal_secondary_cb_metadata = { "offset" : _update_ideal_secondary_cb_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def update_ideal_secondary_cb(self) -> None:
+        """Update the idealized secondary for the three-body system."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._update_ideal_secondary_cb_metadata, )
+
+    _create_rotating_coordinate_system_metadata = { "offset" : _create_rotating_coordinate_system_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def create_rotating_coordinate_system(self) -> None:
+        """Create the coordinate system for the RotatingSystemChoice selection."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._create_rotating_coordinate_system_metadata, )
+
+    _delete_rotating_coordinate_system_metadata = { "offset" : _delete_rotating_coordinate_system_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def delete_rotating_coordinate_system(self) -> None:
+        """Delete the coordinate system for the RotatingSystemChoice selection."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._delete_rotating_coordinate_system_metadata, )
+
+    _create_calculation_objects_metadata = { "offset" : _create_calculation_objects_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def create_calculation_objects(self) -> None:
+        """Create the calculation objects for the selected coordinate system."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._create_calculation_objects_metadata, )
+
+    _delete_calculation_objects_metadata = { "offset" : _delete_calculation_objects_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def delete_calculation_objects(self) -> None:
+        """Delete the calculation objects for the selected coordinate system."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._delete_calculation_objects_metadata, )
+
+    _get_associated_objects_metadata = { "offset" : _get_associated_objects_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def associated_objects(self) -> "DesignER3BPObjectCollection":
+        """Get the list of associated objects."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_associated_objects_metadata)
+
+    _get_include_stm_metadata = { "offset" : _get_include_stm_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def include_stm(self) -> bool:
+        """Get whether or not the STM propagator function is included on the propagator."""
+        return self._intf.get_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._get_include_stm_metadata)
+
+    _set_include_stm_metadata = { "offset" : _set_include_stm_method_offset,
+            "arg_types" : (agcom.VARIANT_BOOL,),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @include_stm.setter
+    def include_stm(self, newVal:bool) -> None:
+        return self._intf.set_property(IDesignER3BPSetup._metadata, IDesignER3BPSetup._set_include_stm_metadata, newVal)
+
+    _create_propagator_metadata = { "offset" : _create_propagator_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def create_propagator(self) -> None:
+        """Create the propagator for the primary-secondary ER3BP formulation."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._create_propagator_metadata, )
+
+    _delete_propagator_metadata = { "offset" : _delete_propagator_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def delete_propagator(self) -> None:
+        """Delete the propagator for the primary-secondary ER3BP formulation."""
+        return self._intf.invoke(IDesignER3BPSetup._metadata, IDesignER3BPSetup._delete_propagator_metadata, )
+
+    _property_names[central_body_name] = "central_body_name"
+    _property_names[secondary_body_name] = "secondary_body_name"
+    _property_names[initial_epoch] = "initial_epoch"
+    _property_names[true_anomaly] = "true_anomaly"
+    _property_names[ideal_secondary_name] = "ideal_secondary_name"
+    _property_names[mass_parameter] = "mass_parameter"
+    _property_names[eccentricity] = "eccentricity"
+    _property_names[characteristic_distance] = "characteristic_distance"
+    _property_names[characteristic_time] = "characteristic_time"
+    _property_names[characteristic_velocity] = "characteristic_velocity"
+    _property_names[characteristic_acceleration] = "characteristic_acceleration"
+    _property_names[rotating_system_choice] = "rotating_system_choice"
+    _property_names[associated_objects] = "associated_objects"
+    _property_names[include_stm] = "include_stm"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5065880826790351987, 2796329394240216450), IDesignER3BPSetup)
+agcls.AgTypeNameMap["IDesignER3BPSetup"] = IDesignER3BPSetup
+
+class IDesignER3BPObject(object):
+    """Properties for individual associated ER3BP object."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_object_name_method_offset = 1
+    _get_object_type_method_offset = 2
+    _get_object_depends_on_method_offset = 3
+    _metadata = {
+        "iid_data" : (5302017474501657583, 7831999212900136352),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type IDesignER3BPObject."""
+        initialize_from_source_object(self, sourceObject, IDesignER3BPObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, IDesignER3BPObject)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, IDesignER3BPObject, None)
+    
+    _get_object_name_metadata = { "offset" : _get_object_name_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def object_name(self) -> str:
+        """Get the associated object name."""
+        return self._intf.get_property(IDesignER3BPObject._metadata, IDesignER3BPObject._get_object_name_metadata)
+
+    _get_object_type_metadata = { "offset" : _get_object_type_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def object_type(self) -> str:
+        """Get the associated object type."""
+        return self._intf.get_property(IDesignER3BPObject._metadata, IDesignER3BPObject._get_object_type_metadata)
+
+    _get_object_depends_on_metadata = { "offset" : _get_object_depends_on_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def object_depends_on(self) -> str:
+        """Get the associated object depends on."""
+        return self._intf.get_property(IDesignER3BPObject._metadata, IDesignER3BPObject._get_object_depends_on_metadata)
+
+    _property_names[object_name] = "object_name"
+    _property_names[object_type] = "object_type"
+    _property_names[object_depends_on] = "object_depends_on"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5302017474501657583, 7831999212900136352), IDesignER3BPObject)
+agcls.AgTypeNameMap["IDesignER3BPObject"] = IDesignER3BPObject
 
 class IThruster(object):
     """Properties for individual thrusters."""
@@ -53102,6 +53845,30 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, IStateCalcJacobiConsta
 agcls.AgClassCatalog.add_catalog_entry((4926408186651605609, 4266894203843328418), StateCalcJacobiConstant)
 agcls.AgTypeNameMap["StateCalcJacobiConstant"] = StateCalcJacobiConstant
 
+class StateCalcJacobiOsculating(IComponentInfo, ICloneable, IStateCalcJacobiOsculating, SupportsDeleteCallback):
+    """Osculating Jacobi Integral Calc objects."""
+
+    def __init__(self, sourceObject=None):
+        """Construct an object of type StateCalcJacobiOsculating."""
+        SupportsDeleteCallback.__init__(self)
+        IComponentInfo.__init__(self, sourceObject)
+        ICloneable.__init__(self, sourceObject)
+        IStateCalcJacobiOsculating.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+        IStateCalcJacobiOsculating._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, StateCalcJacobiOsculating, [IComponentInfo, ICloneable, IStateCalcJacobiOsculating])
+
+agcls.AgClassCatalog.add_catalog_entry((4893148544095721651, 9245737750026533311), StateCalcJacobiOsculating)
+agcls.AgTypeNameMap["StateCalcJacobiOsculating"] = StateCalcJacobiOsculating
+
 class StateCalcCartesianElem(IComponentInfo, ICloneable, IStateCalcCartesianElem, SupportsDeleteCallback):
     """Cartesian Elements Calc objects."""
 
@@ -57336,6 +58103,30 @@ class CR3BPFunc(ICR3BPFunc, IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4941304847140255314, 46803675568969603), CR3BPFunc)
 agcls.AgTypeNameMap["CR3BPFunc"] = CR3BPFunc
 
+class ER3BPFunc(IER3BPFunc, IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """ER3BP Function."""
+
+    def __init__(self, sourceObject=None):
+        """Construct an object of type ER3BPFunc."""
+        SupportsDeleteCallback.__init__(self)
+        IER3BPFunc.__init__(self, sourceObject)
+        IComponentInfo.__init__(self, sourceObject)
+        ICloneable.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IER3BPFunc._private_init(self, intf)
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, ER3BPFunc, [IER3BPFunc, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((5726653626339621242, 11951515174846408075), ER3BPFunc)
+agcls.AgTypeNameMap["ER3BPFunc"] = ER3BPFunc
+
 class RadiationPressureFunction(IRadiationPressureFunction, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Radiation Pressure Propagator Function."""
 
@@ -58635,6 +59426,70 @@ class DesignCR3BPObjectCollection(IDesignCR3BPObjectCollection, SupportsDeleteCa
 
 agcls.AgClassCatalog.add_catalog_entry((4944643529672307384, 4598384306676136330), DesignCR3BPObjectCollection)
 agcls.AgTypeNameMap["DesignCR3BPObjectCollection"] = DesignCR3BPObjectCollection
+
+class DesignER3BPSetup(IDesignER3BPSetup, IComponentInfo, ICloneable, SupportsDeleteCallback):
+    """ER3BP Setup Tool."""
+
+    def __init__(self, sourceObject=None):
+        """Construct an object of type DesignER3BPSetup."""
+        SupportsDeleteCallback.__init__(self)
+        IDesignER3BPSetup.__init__(self, sourceObject)
+        IComponentInfo.__init__(self, sourceObject)
+        ICloneable.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IDesignER3BPSetup._private_init(self, intf)
+        IComponentInfo._private_init(self, intf)
+        ICloneable._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, DesignER3BPSetup, [IDesignER3BPSetup, IComponentInfo, ICloneable])
+
+agcls.AgClassCatalog.add_catalog_entry((4729659118460925408, 15947058378431851408), DesignER3BPSetup)
+agcls.AgTypeNameMap["DesignER3BPSetup"] = DesignER3BPSetup
+
+class DesignER3BPObject(IDesignER3BPObject, SupportsDeleteCallback):
+    """ER3BP associated object definition."""
+
+    def __init__(self, sourceObject=None):
+        """Construct an object of type DesignER3BPObject."""
+        SupportsDeleteCallback.__init__(self)
+        IDesignER3BPObject.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IDesignER3BPObject._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, DesignER3BPObject, [IDesignER3BPObject])
+
+agcls.AgClassCatalog.add_catalog_entry((4634948133649418552, 5142846314822857399), DesignER3BPObject)
+agcls.AgTypeNameMap["DesignER3BPObject"] = DesignER3BPObject
+
+class DesignER3BPObjectCollection(IDesignER3BPObjectCollection, SupportsDeleteCallback):
+    """ER3BP associated object Collection."""
+
+    def __init__(self, sourceObject=None):
+        """Construct an object of type DesignER3BPObjectCollection."""
+        SupportsDeleteCallback.__init__(self)
+        IDesignER3BPObjectCollection.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IDesignER3BPObjectCollection._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, DesignER3BPObjectCollection, [IDesignER3BPObjectCollection])
+
+agcls.AgClassCatalog.add_catalog_entry((5559032907505982605, 14965528908650146187), DesignER3BPObjectCollection)
+agcls.AgTypeNameMap["DesignER3BPObjectCollection"] = DesignER3BPObjectCollection
 
 class Thruster(IThruster, SupportsDeleteCallback):
     """Thruster definition."""

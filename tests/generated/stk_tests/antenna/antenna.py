@@ -234,161 +234,169 @@ class EarlyBoundTests(TestBase):
                                                                                                                                                                                                                         (
                                                                                                                                                                                                                             (
                                                                                                                                                                                                                                 (
-                                                                                                                                                                                                                                    sModelName
-                                                                                                                                                                                                                                    == "ANSYS ffd Format"
+                                                                                                                                                                                                                                    (
+                                                                                                                                                                                                                                        sModelName
+                                                                                                                                                                                                                                        == "ANSYS ffd Format"
+                                                                                                                                                                                                                                    )
+                                                                                                                                                                                                                                )
+                                                                                                                                                                                                                                or (
+                                                                                                                                                                                                                                    (
+                                                                                                                                                                                                                                        sModelName
+                                                                                                                                                                                                                                        == "Antenna Script"
+                                                                                                                                                                                                                                    )
                                                                                                                                                                                                                                 )
                                                                                                                                                                                                                             )
                                                                                                                                                                                                                             or (
                                                                                                                                                                                                                                 (
                                                                                                                                                                                                                                     sModelName
-                                                                                                                                                                                                                                    == "Antenna Script"
+                                                                                                                                                                                                                                    == "Bessel Aperture Circular"
                                                                                                                                                                                                                                 )
                                                                                                                                                                                                                             )
                                                                                                                                                                                                                         )
                                                                                                                                                                                                                         or (
                                                                                                                                                                                                                             (
                                                                                                                                                                                                                                 sModelName
-                                                                                                                                                                                                                                == "Bessel Aperture Circular"
+                                                                                                                                                                                                                                == "Bessel Envelope Aperture Circular"
                                                                                                                                                                                                                             )
                                                                                                                                                                                                                         )
                                                                                                                                                                                                                     )
                                                                                                                                                                                                                     or (
                                                                                                                                                                                                                         (
                                                                                                                                                                                                                             sModelName
-                                                                                                                                                                                                                            == "Bessel Envelope Aperture Circular"
+                                                                                                                                                                                                                            == "Cosecant Squared"
                                                                                                                                                                                                                         )
                                                                                                                                                                                                                     )
                                                                                                                                                                                                                 )
                                                                                                                                                                                                                 or (
                                                                                                                                                                                                                     (
                                                                                                                                                                                                                         sModelName
-                                                                                                                                                                                                                        == "Cosecant Squared"
+                                                                                                                                                                                                                        == "Cosine Aperture Circular"
                                                                                                                                                                                                                     )
                                                                                                                                                                                                                 )
                                                                                                                                                                                                             )
                                                                                                                                                                                                             or (
                                                                                                                                                                                                                 (
                                                                                                                                                                                                                     sModelName
-                                                                                                                                                                                                                    == "Cosine Aperture Circular"
+                                                                                                                                                                                                                    == "Cosine Aperture Rectangular"
                                                                                                                                                                                                                 )
                                                                                                                                                                                                             )
                                                                                                                                                                                                         )
                                                                                                                                                                                                         or (
                                                                                                                                                                                                             (
                                                                                                                                                                                                                 sModelName
-                                                                                                                                                                                                                == "Cosine Aperture Rectangular"
+                                                                                                                                                                                                                == "Cosine Pedestal Aperture Circular"
                                                                                                                                                                                                             )
                                                                                                                                                                                                         )
                                                                                                                                                                                                     )
                                                                                                                                                                                                     or (
                                                                                                                                                                                                         (
                                                                                                                                                                                                             sModelName
-                                                                                                                                                                                                            == "Cosine Pedestal Aperture Circular"
+                                                                                                                                                                                                            == "Cosine Pedestal Aperture Rectangular"
                                                                                                                                                                                                         )
                                                                                                                                                                                                     )
                                                                                                                                                                                                 )
                                                                                                                                                                                                 or (
                                                                                                                                                                                                     (
                                                                                                                                                                                                         sModelName
-                                                                                                                                                                                                        == "Cosine Pedestal Aperture Rectangular"
+                                                                                                                                                                                                        == "Cosine Squared Aperture Circular"
                                                                                                                                                                                                     )
                                                                                                                                                                                                 )
                                                                                                                                                                                             )
                                                                                                                                                                                             or (
                                                                                                                                                                                                 (
                                                                                                                                                                                                     sModelName
-                                                                                                                                                                                                    == "Cosine Squared Aperture Circular"
+                                                                                                                                                                                                    == "Cosine Squared Aperture Rectangular"
                                                                                                                                                                                                 )
                                                                                                                                                                                             )
                                                                                                                                                                                         )
                                                                                                                                                                                         or (
                                                                                                                                                                                             (
                                                                                                                                                                                                 sModelName
-                                                                                                                                                                                                == "Cosine Squared Aperture Rectangular"
+                                                                                                                                                                                                == "Cosine Squared Pedestal Aperture Circular"
                                                                                                                                                                                             )
                                                                                                                                                                                         )
                                                                                                                                                                                     )
                                                                                                                                                                                     or (
                                                                                                                                                                                         (
                                                                                                                                                                                             sModelName
-                                                                                                                                                                                            == "Cosine Squared Pedestal Aperture Circular"
+                                                                                                                                                                                            == "Cosine Squared Pedestal Aperture Rectangular"
                                                                                                                                                                                         )
                                                                                                                                                                                     )
                                                                                                                                                                                 )
                                                                                                                                                                                 or (
                                                                                                                                                                                     (
                                                                                                                                                                                         sModelName
-                                                                                                                                                                                        == "Cosine Squared Pedestal Aperture Rectangular"
+                                                                                                                                                                                        == "Dipole"
                                                                                                                                                                                     )
                                                                                                                                                                                 )
                                                                                                                                                                             )
                                                                                                                                                                             or (
                                                                                                                                                                                 (
                                                                                                                                                                                     sModelName
-                                                                                                                                                                                    == "Dipole"
+                                                                                                                                                                                    == "Elevation Azimuth Cuts"
                                                                                                                                                                                 )
                                                                                                                                                                             )
                                                                                                                                                                         )
                                                                                                                                                                         or (
                                                                                                                                                                             (
                                                                                                                                                                                 sModelName
-                                                                                                                                                                                == "Elevation Azimuth Cuts"
+                                                                                                                                                                                == "External Antenna Pattern"
                                                                                                                                                                             )
                                                                                                                                                                         )
                                                                                                                                                                     )
                                                                                                                                                                     or (
                                                                                                                                                                         (
                                                                                                                                                                             sModelName
-                                                                                                                                                                            == "External Antenna Pattern"
+                                                                                                                                                                            == "Gaussian"
                                                                                                                                                                         )
                                                                                                                                                                     )
                                                                                                                                                                 )
                                                                                                                                                                 or (
                                                                                                                                                                     (
                                                                                                                                                                         sModelName
-                                                                                                                                                                        == "Gaussian"
+                                                                                                                                                                        == "Gaussian Optical"
                                                                                                                                                                     )
                                                                                                                                                                 )
                                                                                                                                                             )
                                                                                                                                                             or (
                                                                                                                                                                 (
                                                                                                                                                                     sModelName
-                                                                                                                                                                    == "Gaussian Optical"
+                                                                                                                                                                    == "GIMROC Antenna Pattern"
                                                                                                                                                                 )
                                                                                                                                                             )
                                                                                                                                                         )
                                                                                                                                                         or (
                                                                                                                                                             (
                                                                                                                                                                 sModelName
-                                                                                                                                                                == "GIMROC Antenna Pattern"
+                                                                                                                                                                == "GPS FRPA"
                                                                                                                                                             )
                                                                                                                                                         )
                                                                                                                                                     )
                                                                                                                                                     or (
                                                                                                                                                         (
                                                                                                                                                             sModelName
-                                                                                                                                                            == "GPS FRPA"
+                                                                                                                                                            == "GPS Global"
                                                                                                                                                         )
                                                                                                                                                     )
                                                                                                                                                 )
                                                                                                                                                 or (
                                                                                                                                                     (
                                                                                                                                                         sModelName
-                                                                                                                                                        == "GPS Global"
+                                                                                                                                                        == "Helix"
                                                                                                                                                     )
                                                                                                                                                 )
                                                                                                                                             )
                                                                                                                                             or (
                                                                                                                                                 (
                                                                                                                                                     sModelName
-                                                                                                                                                    == "Helix"
+                                                                                                                                                    == "Hemispherical"
                                                                                                                                                 )
                                                                                                                                             )
                                                                                                                                         )
                                                                                                                                         or (
                                                                                                                                             (
                                                                                                                                                 sModelName
-                                                                                                                                                == "Hemispherical"
+                                                                                                                                                == "HFSS EEP Array"
                                                                                                                                             )
                                                                                                                                         )
                                                                                                                                     )
@@ -521,7 +529,7 @@ class EarlyBoundTests(TestBase):
             else:
                 Assert.fail(("Unknown or untested Antenna Model: " + sModelName))
 
-        Assert.assertEqual(54, len(arModels))
+        Assert.assertEqual(55, len(arModels))
 
     # endregion
 
@@ -551,6 +559,7 @@ class EarlyBoundTests(TestBase):
             ("GPS Global",),
             ("Helix",),
             ("Hemispherical",),
+            ("HFSS EEP Array",),
             ("IEEE 1979",),
             ("IntelSat Antenna Pattern",),
             ("Isotropic",),

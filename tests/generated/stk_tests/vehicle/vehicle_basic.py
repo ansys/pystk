@@ -6858,10 +6858,16 @@ class BasicAttitudeStandardHelper(object):
         if oProfile.type == "Aligned and Constrained":
             oAAC: "VehicleProfileAlignedAndConstrained" = VehicleProfileAlignedAndConstrained(oProfile)
             Assert.assertIsNotNone(oAAC)
+
             # AlignedVector
             self.Vector(oAAC.aligned_vector)
+            Assert.assertEqual(DIRECTION_TYPE.XYZ, oAAC.displayed_aligned_vector_type)  # See PLTFA-1812, PLTFA-40045
+
             # ConstrainedVector
             self.Vector(oAAC.constrained_vector)
+            Assert.assertEqual(
+                DIRECTION_TYPE.XYZ, oAAC.displayed_constrained_vector_type
+            )  # See PLTFA-1812, PLTFA-40045
 
         if oProfile.type == "Coordinated Turn":
             oCTurn: "VehicleProfileCoordinatedTurn" = VehicleProfileCoordinatedTurn(oProfile)
@@ -9680,6 +9686,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
 
+        helper = AtmosphereHelper(self._root)
         supportedAtmosAbsorptionModels = propChan.supported_atmos_absorption_models
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
@@ -9715,8 +9722,22 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                helper = AtmosphereHelper(self._root)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+            elif aaModelName == "Early ITU Foliage Model CSharp Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Early ITU Foliage Model JScript Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Python Plugin":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
+                )
             else:
                 Assert.fail("Unknown model type")
 
