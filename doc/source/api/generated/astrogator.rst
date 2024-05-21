@@ -170,6 +170,7 @@ Interfaces
     IStateCalcOrbitDelaunayL
     IStateCalcOrbitSemiLatusRectum
     IStateCalcJacobiConstant
+    IStateCalcJacobiOsculating
     IStateCalcCartesianElem
     IStateCalcCartSTMElem
     IStateCalcSTMEigenval
@@ -351,6 +352,7 @@ Interfaces
     IGeneralRelativityFunction
     IStateTransformationFunction
     ICR3BPFunc
+    IER3BPFunc
     IRadiationPressureFunction
     IYarkovskyFunc
     IBlendedDensity
@@ -404,8 +406,11 @@ Interfaces
     IEnginePlugin
     IEngineModelPoly
     IDesignCR3BPObjectCollection
+    IDesignER3BPObjectCollection
     IDesignCR3BPSetup
     IDesignCR3BPObject
+    IDesignER3BPSetup
+    IDesignER3BPObject
     IThruster
     IThrusterSetCollection
     IThrusterSet
@@ -670,6 +675,7 @@ Classes
     StateCalcSEETVehTemp
     StateCalcEpoch
     StateCalcJacobiConstant
+    StateCalcJacobiOsculating
     StateCalcCartesianElem
     StateCalcCartSTMElem
     StateCalcSTMEigenval
@@ -848,6 +854,7 @@ Classes
     GeneralRelativityFunction
     StateTransformationFunction
     CR3BPFunc
+    ER3BPFunc
     RadiationPressureFunction
     YarkovskyFunc
     BlendedDensity
@@ -903,6 +910,9 @@ Classes
     DesignCR3BPSetup
     DesignCR3BPObject
     DesignCR3BPObjectCollection
+    DesignER3BPSetup
+    DesignER3BPObject
+    DesignER3BPObjectCollection
     Thruster
     ThrusterSetCollection
     ThrusterSet
@@ -1462,6 +1472,9 @@ Interfaces
 .. autoclass:: IStateCalcJacobiConstant
     :members:
     :exclude-members: __init__
+.. autoclass:: IStateCalcJacobiOsculating
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IStateCalcCartesianElem
     :members:
     :exclude-members: __init__
@@ -2005,6 +2018,9 @@ Interfaces
 .. autoclass:: ICR3BPFunc
     :members:
     :exclude-members: __init__
+.. autoclass:: IER3BPFunc
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IRadiationPressureFunction
     :members:
     :exclude-members: __init__
@@ -2164,10 +2180,19 @@ Interfaces
 .. autoclass:: IDesignCR3BPObjectCollection
     :members:
     :exclude-members: __init__
+.. autoclass:: IDesignER3BPObjectCollection
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IDesignCR3BPSetup
     :members:
     :exclude-members: __init__
 .. autoclass:: IDesignCR3BPObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IDesignER3BPSetup
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IDesignER3BPObject
     :members:
     :exclude-members: __init__
 .. autoclass:: IThruster
@@ -2795,6 +2820,9 @@ Classes
 .. autoclass:: StateCalcJacobiConstant
     :members:
     :exclude-members: __init__
+.. autoclass:: StateCalcJacobiOsculating
+    :members:
+    :exclude-members: __init__
 .. autoclass:: StateCalcCartesianElem
     :members:
     :exclude-members: __init__
@@ -3329,6 +3357,9 @@ Classes
 .. autoclass:: CR3BPFunc
     :members:
     :exclude-members: __init__
+.. autoclass:: ER3BPFunc
+    :members:
+    :exclude-members: __init__
 .. autoclass:: RadiationPressureFunction
     :members:
     :exclude-members: __init__
@@ -3492,6 +3523,15 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: DesignCR3BPObjectCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: DesignER3BPSetup
+    :members:
+    :exclude-members: __init__
+.. autoclass:: DesignER3BPObject
+    :members:
+    :exclude-members: __init__
+.. autoclass:: DesignER3BPObjectCollection
     :members:
     :exclude-members: __init__
 .. autoclass:: Thruster

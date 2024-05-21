@@ -3657,21 +3657,21 @@ class IQuantity(object):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def add(self, quantity:"IQuantity") -> "Quantity":
-        """Add the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Add the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._add_metadata, quantity, OutArg())
 
     _subtract_metadata = { "offset" : _subtract_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def subtract(self, quantity:"IQuantity") -> "Quantity":
-        """Subtracts the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Subtracts the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._subtract_metadata, quantity, OutArg())
 
     _multiply_qty_metadata = { "offset" : _multiply_qty_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IQuantity"), agmarshall.InterfaceOutArg,) }
     def multiply_qty(self, quantity:"IQuantity") -> "Quantity":
-        """Multiplies the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
+        """Multiplies the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
         return self._intf.invoke(IQuantity._metadata, IQuantity._multiply_qty_metadata, quantity, OutArg())
 
     _divide_qty_metadata = { "offset" : _divide_qty_method_offset,
