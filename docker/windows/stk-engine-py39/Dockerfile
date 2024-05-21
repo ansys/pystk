@@ -5,12 +5,12 @@ FROM ${basePythonImage} as builder
 
 USER ContainerAdministrator
 
-# Install Python
-RUN curl -o "C:\dist\python-3.9.13-amd64.exe" "https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe"
-
 COPY scripts C:/dist/
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+# Install Python
+RUN Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe" -OutFile C:\dist\python-3.9.13-amd64.exe
 
 RUN C:\dist\install.ps1
 
