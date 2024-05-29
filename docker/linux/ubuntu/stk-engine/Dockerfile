@@ -16,7 +16,7 @@ RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
 # Reduce image size by removing unnecessary components 
 #
 # Keep Intro_STK_Aircraft_Systems.vdf as it is required to
-# run sone of the tests
+# run some of the tests
 # If this VDF is not needed in your use case, replace the
 # find command with:
 #     rm -rf /stk/Data/ExampleScenarios/
