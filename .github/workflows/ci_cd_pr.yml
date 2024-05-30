@@ -132,7 +132,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -143,7 +143,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc-links,doc-html"
 
       - name: "Build docs excluding 'API' and 'Examples' sections"
         id: build-doc-minimum
@@ -154,7 +154,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc-links,doc-html"
 
       - name: "Build docs including 'API' and 'Examples' sections"
         id: build-doc-full
@@ -165,7 +165,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
