@@ -193,6 +193,7 @@ class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GlobeControl."""
+        UiAxGraphics3DCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
@@ -207,6 +208,7 @@ class MapControl(UiAx2DCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type MapControl."""
+        UiAx2DCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
@@ -221,6 +223,7 @@ class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GfxAnalysisControl."""
+        UiAxGraphics2DAnalysisCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):

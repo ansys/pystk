@@ -378,11 +378,22 @@ Interfaces
     IElementConfigurationCircular
     IElementConfigurationLinear
     IElementConfigurationAsciiFile
+    IElementConfigurationHfssEepFile
     IElementConfigurationPolygon
     IBeamformer
     IBeamformerMvdr
+    IBeamformerUniform
     IBeamformerAsciiFile
     IBeamformerScript
+    IBeamformerBlackmanHarris
+    IBeamformerCosine
+    IBeamformerCosineX
+    IBeamformerCustomTaperFile
+    IBeamformerDolphChebyshev
+    IBeamformerHamming
+    IBeamformerHann
+    IBeamformerRaisedCosine
+    IBeamformerRaisedCosineSquared
     IDirectionProvider
     IDirectionProviderAsciiFile
     IDirectionProviderObject
@@ -391,6 +402,7 @@ Interfaces
     IElement
     IElementCollection
     IAntennaModelPhasedArray
+    IAntennaModelHfssEepArray
     IAntennaModelIsotropic
     IAntennaModelIntelSat
     IAntennaModelOpticalSimple
@@ -617,6 +629,7 @@ Interfaces
     IAtmosphericAbsorptionModelVoacap
     IAtmosphericAbsorptionModelSimpleSatcom
     IAtmosphericAbsorptionModelScriptPlugin
+    IAtmosphericAbsorptionModelCOMPlugin
     ICustomPropagationModel
     IPropagationChannel
     IBeerBouguerLambertLawLayer
@@ -1018,9 +1031,12 @@ Interfaces
     IChainGraphics3D
     IAccessEventDetection
     IAccessSampling
+    IChainConnectionCollection
     IChainTimePeriodBase
     IChainUserSpecifiedTimePeriod
     IChainConstraints
+    IChainConnection
+    IChainOptimalStrandOpts
     IChain
     ICoverageGraphics2DStatic
     ICoverageGraphics2DAnimation
@@ -1316,6 +1332,11 @@ Enumerations
     CHAIN_TIME_PERIOD_TYPE
     CHAIN_CONST_CONSTRAINTS_MODE
     CHAIN_COV_ASSET_MODE
+    CHAIN_PARENT_PLATFORM_RESTRICTION
+    CHAIN_OPTIMAL_STRAND_METRIC_TYPE
+    CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE
+    CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE
+    CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
     DATA_SAVE_MODE
     COVERAGE_BOUNDS
     COVERAGE_POINT_LOC_METHOD
@@ -2022,6 +2043,9 @@ Classes
     ChainUserSpecifiedTimePeriod
     ChainConstraints
     Chain
+    ChainConnection
+    ChainConnectionCollection
+    ChainOptimalStrandOpts
     ChainGraphics2DStatic
     ChainGraphics2DAnimation
     ChainGraphics
@@ -2276,6 +2300,7 @@ Classes
     AntennaModelHemispherical
     AntennaModelPencilBeam
     AntennaModelPhasedArray
+    AntennaModelHfssEepArray
     AntennaModelIsotropic
     AntennaModelIntelSat
     AntennaModelGpsGlobal
@@ -2478,6 +2503,7 @@ Classes
     AtmosphericAbsorptionModelTirem550
     AtmosphericAbsorptionModelSimpleSatcom
     AtmosphericAbsorptionModelScriptPlugin
+    AtmosphericAbsorptionModelCOMPlugin
     ScatteringPointModel
     ScatteringPointModelPlugin
     ScatteringPointModelConstantCoefficient
@@ -2645,6 +2671,7 @@ Classes
     ElementConfigurationCircular
     ElementConfigurationLinear
     ElementConfigurationAsciiFile
+    ElementConfigurationHfssEepFile
     ElementConfigurationPolygon
     ElementConfigurationHexagon
     SolarActivityConfiguration
@@ -2653,6 +2680,16 @@ Classes
     Beamformer
     BeamformerAsciiFile
     BeamformerMvdr
+    BeamformerUniform
+    BeamformerBlackmanHarris
+    BeamformerCosine
+    BeamformerCosineX
+    BeamformerCustomTaperFile
+    BeamformerDolphChebyshev
+    BeamformerHamming
+    BeamformerHann
+    BeamformerRaisedCosine
+    BeamformerRaisedCosineSquared
     BeamformerScript
     DirectionProvider
     DirectionProviderAsciiFile
@@ -3826,6 +3863,9 @@ Interfaces
 .. autoclass:: IElementConfigurationAsciiFile
     :members:
     :exclude-members: __init__
+.. autoclass:: IElementConfigurationHfssEepFile
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IElementConfigurationPolygon
     :members:
     :exclude-members: __init__
@@ -3835,10 +3875,40 @@ Interfaces
 .. autoclass:: IBeamformerMvdr
     :members:
     :exclude-members: __init__
+.. autoclass:: IBeamformerUniform
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IBeamformerAsciiFile
     :members:
     :exclude-members: __init__
 .. autoclass:: IBeamformerScript
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerBlackmanHarris
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerCosine
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerCosineX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerCustomTaperFile
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerDolphChebyshev
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerHamming
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerHann
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerRaisedCosine
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IBeamformerRaisedCosineSquared
     :members:
     :exclude-members: __init__
 .. autoclass:: IDirectionProvider
@@ -3863,6 +3933,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAntennaModelPhasedArray
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAntennaModelHfssEepArray
     :members:
     :exclude-members: __init__
 .. autoclass:: IAntennaModelIsotropic
@@ -4541,6 +4614,9 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IAtmosphericAbsorptionModelScriptPlugin
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IAtmosphericAbsorptionModelCOMPlugin
     :members:
     :exclude-members: __init__
 .. autoclass:: ICustomPropagationModel
@@ -5746,6 +5822,9 @@ Interfaces
 .. autoclass:: IAccessSampling
     :members:
     :exclude-members: __init__
+.. autoclass:: IChainConnectionCollection
+    :members:
+    :exclude-members: __init__
 .. autoclass:: IChainTimePeriodBase
     :members:
     :exclude-members: __init__
@@ -5753,6 +5832,12 @@ Interfaces
     :members:
     :exclude-members: __init__
 .. autoclass:: IChainConstraints
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IChainConnection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: IChainOptimalStrandOpts
     :members:
     :exclude-members: __init__
 .. autoclass:: IChain
@@ -6498,6 +6583,16 @@ Enumerations
 .. autoenum:: CHAIN_CONST_CONSTRAINTS_MODE
     :members:
 .. autoenum:: CHAIN_COV_ASSET_MODE
+    :members:
+.. autoenum:: CHAIN_PARENT_PLATFORM_RESTRICTION
+    :members:
+.. autoenum:: CHAIN_OPTIMAL_STRAND_METRIC_TYPE
+    :members:
+.. autoenum:: CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE
+    :members:
+.. autoenum:: CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE
+    :members:
+.. autoenum:: CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
     :members:
 .. autoenum:: DATA_SAVE_MODE
     :members:
@@ -8372,6 +8467,15 @@ Classes
 .. autoclass:: Chain
     :members:
     :exclude-members: __init__
+.. autoclass:: ChainConnection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ChainConnectionCollection
+    :members:
+    :exclude-members: __init__
+.. autoclass:: ChainOptimalStrandOpts
+    :members:
+    :exclude-members: __init__
 .. autoclass:: ChainGraphics2DStatic
     :members:
     :exclude-members: __init__
@@ -9134,6 +9238,9 @@ Classes
 .. autoclass:: AntennaModelPhasedArray
     :members:
     :exclude-members: __init__
+.. autoclass:: AntennaModelHfssEepArray
+    :members:
+    :exclude-members: __init__
 .. autoclass:: AntennaModelIsotropic
     :members:
     :exclude-members: __init__
@@ -9740,6 +9847,9 @@ Classes
 .. autoclass:: AtmosphericAbsorptionModelScriptPlugin
     :members:
     :exclude-members: __init__
+.. autoclass:: AtmosphericAbsorptionModelCOMPlugin
+    :members:
+    :exclude-members: __init__
 .. autoclass:: ScatteringPointModel
     :members:
     :exclude-members: __init__
@@ -10241,6 +10351,9 @@ Classes
 .. autoclass:: ElementConfigurationAsciiFile
     :members:
     :exclude-members: __init__
+.. autoclass:: ElementConfigurationHfssEepFile
+    :members:
+    :exclude-members: __init__
 .. autoclass:: ElementConfigurationPolygon
     :members:
     :exclude-members: __init__
@@ -10263,6 +10376,36 @@ Classes
     :members:
     :exclude-members: __init__
 .. autoclass:: BeamformerMvdr
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerUniform
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerBlackmanHarris
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerCosine
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerCosineX
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerCustomTaperFile
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerDolphChebyshev
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerHamming
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerHann
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerRaisedCosine
+    :members:
+    :exclude-members: __init__
+.. autoclass:: BeamformerRaisedCosineSquared
     :members:
     :exclude-members: __init__
 .. autoclass:: BeamformerScript

@@ -37,8 +37,6 @@ tox list
 
 ## Building the STK container images with Tox
 
-You can build all the Docker images for STK. Currently only Linux containers are implemented. Support for Windows containers will come later. 
-
 Use the following commands to build the images for your target distribution:
 - **centos**
     ```console
@@ -74,6 +72,24 @@ Use the following commands to build the images for your target distribution:
     ansys/stk    dev-ubuntu22.04              4fa0a28358bd   7 minutes ago    3.13GB
     ubuntu       22.04                        1c6025966a65   8 minutes ago    133MB
     ```
+- **Windows**
+    ```console
+    tox -e docker-build-windows_images -- agreeToLicense=yes
+    ```
+    This will result in the following images:
+
+    ```bash
+    ~$ docker images
+
+    REPOSITORY                                         TAG                                         IMAGE ID       CREATED        SIZE
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.10   8399f5359163   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.9    12ed5235a1e4   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-python3.8    0e5d12988064   2 hours ago   20.9GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019-pybase       00868a57cc61   3 hours ago   20.7GB
+    ansys/stk                                          dev-windowsservercore-ltsc2019              a8e6508529ba   3 hours ago   20.7GB
+    mcr.microsoft.com/dotnet/framework/runtime         4.8-windowsservercore-ltsc2019              6b8d98588f15   4 weeks ago   6.91GB
+    ```
+
 
 ## Running an STK container with Tox
 
@@ -83,20 +99,23 @@ Once the images are built, you can create a new container targeting a specific P
 >Make sure that the ANSYSLMD_LICENSE_FILE environment variable is properly configured before starting the container.
 
 ```console
-tox -f docker-run-{centos,ubuntu}_container-{py38,py39,py310}
+tox -f docker-run-{centos,ubuntu,windows}_container-{py38,py39,py310}
 ```
 
 This will start a new virtual environment inside the container and install all the dependencies required to run the tests and generate the project documentation. This will also install Jupyter Lab and its dependencies in that virtual environment.
 
 In the previous command, you need to select the Python version you want to
-use, for instance `tox -f docker-run-centos_container-py310` will start a CentOS container configured with Python 3.10, and `tox -f docker-run-ubuntu_container-py310` will start a Ubuntu container configured with Python 3.10.
+use, for instance:
+- `tox -f docker-run-centos_container-py38` will start a CentOS container configured with Python 3.8.
+- `tox -f docker-run-ubuntu_container-py39` will start a Ubuntu container configured with Python 3.9.
+- `tox -f docker-run-windows_container-py310` will start a Windows container configured with Python 3.10.
 
 ## Executing a command inside an STK container with Tox
 
 After building the images and running a container, you can execute a command inside the container using:
 
 ```console
-tox -f docker-exec-{centos,ubuntu}_container-{py38,py39,py310} -- {command}
+tox -f docker-exec-{centos,ubuntu,windows}_container-{py38,py39,py310} -- {command}
 ```
 
 For instance, to run `ls -la` inside a previously started CentOS Python 3.10 container, use:
@@ -106,7 +125,7 @@ tox -f docker-exec-centos_container-py310 -- ls -la
 ```
 
 Here are a few additional examples:
-
+### centOS
 - Starting a interactive shell inside the container:
     ```console
     tox -f docker-exec-centos_container-py310 -- /bin/bash
@@ -135,13 +154,71 @@ Here are a few additional examples:
     ```console
     tox -f docker-exec-centos_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
     ```
+### ubuntu
+- Starting a interactive shell inside the container:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- /bin/bash
+    ```
+- Running the Aviator tests in no graphics mode inside the container:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the Aviator tests with graphics:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
+- Running the VGT tests in no graphics mode:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the VGT tests with graphics:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```console
+- Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
+    ```
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    ```
+- Running the STK tests with graphics:
+    ```console
+    tox -f docker-exec-ubuntu_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude ExcludeOnLinux --exclude SEET --exclude PluginTests -vv
+    ```
+### Windows
+- Starting a interactive shell inside the container:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- cmd
+    ```
+- Running the Aviator tests in no graphics mode inside the container:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkXNoGfx --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the Aviator tests with graphics:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/aviator_tests --target StkX --exclude PluginTests -vv
+    ```
+- Running the VGT tests in no graphics mode:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkXNoGfx --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv
+    ```
+- Running the VGT tests with graphics:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/vgt_tests --target StkX --exclude PluginTests -vv
+    ```
+- Running the STK Vehicle tests in no graphics mode excluding (*deselecting* in pytest terminology) one test:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests/vehicle --target StkXNoGfx --deselect=vehicle/satellite/astrogator/astrogator.py::EarlyBoundTests::test_CompBrowsCutCopyPaste --exclude PluginTests --exclude "Graphics Tests" --exclude "VO Tests" -vv 
+    ```
+- Running the STK tests with graphics:
+    ```console
+    tox -f docker-exec-windows_container-py310 -- pytest pystk/tests/generated/stk_tests --target StkX --exclude PluginTests -vv
+    ```
 
 ## Launching Jupyter Lab with Tox
 
 After building the images and running a container, you can also start Jupyter Lab inside the container using:
 
 ```console
-tox -f docker-lab-{centos,ubuntu}_container-{py38,py39,py310}
+tox -f docker-lab-{centos,ubuntu,windows}_container-{py38,py39,py310}
 ```
 
 In the previous command, you need to select the Python version you want to
@@ -168,7 +245,7 @@ In addition to running the UI, this configuration also enables `sudo` for the st
 You can stop a running container using:
 
 ```console
-tox -f docker-stop-{centos,ubuntu}_container-{py38,py39,py310}
+tox -f docker-stop-{centos,ubuntu,windows}_container-{py38,py39,py310}
 ```
 
 ## Removing an STK container with Tox
@@ -176,7 +253,7 @@ tox -f docker-stop-{centos,ubuntu}_container-{py38,py39,py310}
 You can remove a container using:
 
 ```console
-tox -f docker-rm-{centos,ubuntu}_container-{py38,py39,py310}
+tox -f docker-rm-{centos,ubuntu,windows}_container-{py38,py39,py310}
 ```
 
 ## Additional documentation
