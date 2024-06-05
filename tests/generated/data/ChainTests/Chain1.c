@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 
 BEGIN Chain
 
@@ -35,12 +35,15 @@ BEGIN Chain
         UseLoadIntervalFile		 No
         AllowSameInstInStrands		 No
         KeepStrandsWithNoIntvls		 No
+        CovAssetMode		 Append
         ComputeOptimalPath		 No
         OptimalPathSampleTime		  1.0000000000000000e+01
         OptimalPathIncludeAccessEdgeTimesInSamples		 Yes
+        OptimalPathNumBestStrandsToStore		 1
         OptimalPathMetric		 Distance
         OptimalPathLinkCompare		 Min
         OptimalPathStrandCompare		 Min
+        OptimalPathCalcScalarIgnoreCommonParentLinks		 Yes
         SaveMode		 1
 
     END Definition
@@ -65,7 +68,8 @@ BEGIN Chain
 
                 StaticColor		 #0000ff
                 AnimationColor		 #ffff00
-                OptStrandsColor		 #ff0000
+                OptStrandsRampStartColor		 #ff0000
+                OptStrandsRampEndColor		 #ff0000
                 AnimationLineWidth		 2
                 StaticLineWidth		 3
                 OptStrandsLineWidth		 5
@@ -79,8 +83,10 @@ BEGIN Chain
                 ShowAnimationHighlight		 On
                 ShowAnimationLine		 On
                 ShowLinkDirection		 Off
+                ShowOptStrands		 On
                 UseHideAnimGfxIfMoreThanNStrands		 On
                 HideAnimGfxIfMoreThanNStrandsNum		 100000
+                NumOptStrandsToDisplay		 1
             END Graphics
         END Graphics
 

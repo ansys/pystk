@@ -82,7 +82,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Upload combined artifacts"
         uses: actions/upload-artifact@v4

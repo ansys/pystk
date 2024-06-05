@@ -25,6 +25,9 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      github.event.type != 'labeled'
     steps:
      - uses: actions/checkout@v4
 
@@ -41,6 +44,9 @@ jobs:
   branch-name-style:
     name: "Branch style checks"
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
       - uses: ansys/actions/branch-name-style@v6
@@ -48,6 +54,9 @@ jobs:
   code-style:
     name: "Code style checks"
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
       - uses: ansys/actions/code-style@v6
@@ -57,6 +66,9 @@ jobs:
   doc-style:
     name: "Doc style checks"
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
       - uses: ansys/actions/doc-style@v6
@@ -66,6 +78,9 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     needs: doc-style
     timeout-minutes: 30
     steps:
@@ -117,7 +132,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -128,7 +143,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc-links,doc-html"
 
       - name: "Build docs excluding 'API' and 'Examples' sections"
         id: build-doc-minimum
@@ -139,7 +154,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc-links,doc-html"
 
       - name: "Build docs including 'API' and 'Examples' sections"
         id: build-doc-full
@@ -150,7 +165,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
@@ -197,6 +212,9 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -306,6 +324,8 @@ jobs:
   build-library:
     name: "Build library"
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v6

@@ -1,5 +1,6 @@
 import pytest
 from test_util import *
+from app_provider import *
 from assertion_harness import *
 from display_times_helper import *
 from math2 import *
@@ -120,6 +121,8 @@ class AntennaHelper(object):
             return "Uniform Aperture Circular"
         elif antennaModelType == ANTENNA_MODEL_TYPE.APERTURE_RECTANGULAR_UNIFORM:
             return "Uniform Aperture Rectangular"
+        elif antennaModelType == ANTENNA_MODEL_TYPE.HFSS_EEP_ARRAY:
+            return "HFSS EEP Array"
         else:
             return "UNKNOWN"
 
@@ -238,6 +241,9 @@ class AntennaHelper(object):
         elif antennaModelName == "Hemispherical":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.HEMISPHERICAL, antennaModel.type)
             self.Test_IAgAntennaModelHemispherical(clr.CastAs(antennaModel, AntennaModelHemispherical))
+        elif antennaModelName == "HFSS EEP Array":
+            Assert.assertEqual(ANTENNA_MODEL_TYPE.HFSS_EEP_ARRAY, antennaModel.type)
+            self.Test_IAgAntennaModelHfssEepArray(clr.CastAs(antennaModel, AntennaModelHfssEepArray))
         elif antennaModelName == "IEEE 1979":
             Assert.assertEqual(ANTENNA_MODEL_TYPE.IEEE1979, antennaModel.type)
             self.Test_IAgAntennaModelIeee1979(clr.CastAs(antennaModel, AntennaModelIeee1979))
@@ -2557,6 +2563,8 @@ class AntennaHelper(object):
         parabolic.use_backlobe_as_mainlobe_atten = False
         Assert.assertFalse(parabolic.use_backlobe_as_mainlobe_atten)
 
+    # /////////////////////////////////////////////////////////////////////////////////////
+
     # Used by Phased Array test
     def Test_IAgDirectionProviderAsciiFile(self, asciiFile: "DirectionProviderAsciiFile", IsBeamDirection: bool):
         asciiFile.enabled = False
@@ -2592,14 +2600,75 @@ class AntennaHelper(object):
         objectx.enabled = False
         Assert.assertFalse(objectx.enabled)
 
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            objectx.azimuth_steering_limit_a = 90
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            objectx.azimuth_steering_limit_b = 90
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            objectx.elevation_steering_limit_a = 90
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            objectx.elevation_steering_limit_b = 90
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
+            objectx.limits_exceeded_behavior_type = LIMITS_EXCEEDED_BEHAVIOR_TYPE.CLAMP_TO_LIMIT
+
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot generate")):
             objectx.directions.add("bogus")
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            objectx.use_default_direction = True
 
         objectx.enabled = True
         Assert.assertTrue(objectx.enabled)
 
+        objectx.azimuth_steering_limit_a = -90
+        Assert.assertEqual(-90, objectx.azimuth_steering_limit_a)
+        objectx.azimuth_steering_limit_a = 86
+        Assert.assertEqual(86, objectx.azimuth_steering_limit_a)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.azimuth_steering_limit_a = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.azimuth_steering_limit_a = 91
+
+        objectx.azimuth_steering_limit_b = -90
+        Assert.assertEqual(-90, objectx.azimuth_steering_limit_b)
+        objectx.azimuth_steering_limit_b = 87
+        Assert.assertEqual(87, objectx.azimuth_steering_limit_b)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.azimuth_steering_limit_b = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.azimuth_steering_limit_b = 91
+
+        objectx.elevation_steering_limit_a = -90
+        Assert.assertEqual(-90, objectx.elevation_steering_limit_a)
+        objectx.elevation_steering_limit_a = 88
+        Assert.assertEqual(88, objectx.elevation_steering_limit_a)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.elevation_steering_limit_a = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.elevation_steering_limit_a = 91
+
+        objectx.elevation_steering_limit_b = -90
+        Assert.assertEqual(-90, objectx.elevation_steering_limit_b)
+        objectx.elevation_steering_limit_b = 89
+        Assert.assertEqual(89, objectx.elevation_steering_limit_b)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.elevation_steering_limit_b = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            objectx.elevation_steering_limit_b = 91
+
+        objectx.limits_exceeded_behavior_type = LIMITS_EXCEEDED_BEHAVIOR_TYPE.CLAMP_TO_LIMIT
+        Assert.assertEqual(LIMITS_EXCEEDED_BEHAVIOR_TYPE.CLAMP_TO_LIMIT, objectx.limits_exceeded_behavior_type)
+        objectx.limits_exceeded_behavior_type = LIMITS_EXCEEDED_BEHAVIOR_TYPE.IGNORE_OBJECT
+        Assert.assertEqual(LIMITS_EXCEEDED_BEHAVIOR_TYPE.IGNORE_OBJECT, objectx.limits_exceeded_behavior_type)
+
         oOLCHelper = ObjectLinkCollectionHelper(False, bRestrictToOneElement)
         oOLCHelper.Run(objectx.directions, self.m_root)
+
+        objectx.use_default_direction = False
+        Assert.assertFalse(objectx.use_default_direction)
+        objectx.use_default_direction = True
+        Assert.assertTrue(objectx.use_default_direction)
 
     # Used by Phased Array test
     def Test_IAgDirectionProviderScript(self, script: "DirectionProviderScript", filename: str):
@@ -2614,6 +2683,51 @@ class AntennaHelper(object):
 
             oOLCHelper = ObjectLinkCollectionHelper()
             oOLCHelper.Run(script.members, self.m_root)
+
+    # Used by Phased Array test
+    def Test_IAgDirectionProviderLink(self, link: "DirectionProviderLink"):
+        link.azimuth_steering_limit_a = -90
+        Assert.assertEqual(-90, link.azimuth_steering_limit_a)
+        link.azimuth_steering_limit_a = 86
+        Assert.assertEqual(86, link.azimuth_steering_limit_a)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.azimuth_steering_limit_a = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.azimuth_steering_limit_a = 91
+
+        link.azimuth_steering_limit_b = -90
+        Assert.assertEqual(-90, link.azimuth_steering_limit_b)
+        link.azimuth_steering_limit_b = 87
+        Assert.assertEqual(87, link.azimuth_steering_limit_b)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.azimuth_steering_limit_b = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.azimuth_steering_limit_b = 91
+
+        link.elevation_steering_limit_a = -90
+        Assert.assertEqual(-90, link.elevation_steering_limit_a)
+        link.elevation_steering_limit_a = 88
+        Assert.assertEqual(88, link.elevation_steering_limit_a)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.elevation_steering_limit_a = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.elevation_steering_limit_a = 91
+
+        link.elevation_steering_limit_b = -90
+        Assert.assertEqual(-90, link.elevation_steering_limit_b)
+        link.elevation_steering_limit_b = 89
+        Assert.assertEqual(89, link.elevation_steering_limit_b)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.elevation_steering_limit_b = -91
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            link.elevation_steering_limit_b = 91
+
+        link.limits_exceeded_behavior_type = LIMITS_EXCEEDED_BEHAVIOR_TYPE.CLAMP_TO_LIMIT
+        Assert.assertEqual(LIMITS_EXCEEDED_BEHAVIOR_TYPE.CLAMP_TO_LIMIT, link.limits_exceeded_behavior_type)
+        link.limits_exceeded_behavior_type = LIMITS_EXCEEDED_BEHAVIOR_TYPE.IGNORE_OBJECT
+        Assert.assertEqual(LIMITS_EXCEEDED_BEHAVIOR_TYPE.IGNORE_OBJECT, link.limits_exceeded_behavior_type)
+
+    # /////////////////////////////////////////////////////////////////////////////////////
 
     # Used by Phased Array test
     def Test_IAgElementConfigurationAsciiFile(self, asciiFile: "ElementConfigurationAsciiFile"):
@@ -2931,6 +3045,9 @@ class AntennaHelper(object):
                 self.Test_IAgElementConfigurationPolygon(
                     clr.CastAs(phasedArray.element_configuration, IElementConfigurationPolygon), False
                 )
+            elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE:
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
+                    phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE
             elif elementConfigurationType == ELEMENT_CONFIGURATION_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.element_configuration_type = ELEMENT_CONFIGURATION_TYPE.UNKNOWN
@@ -2960,6 +3077,9 @@ class AntennaHelper(object):
             ) == DIRECTION_PROVIDER_TYPE.LINK:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.LINK, phasedArray.beam_direction_provider_type)
+                self.Test_IAgDirectionProviderLink(
+                    clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderLink)
+                )
             elif (
                 DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
                 if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
@@ -3080,6 +3200,191 @@ class AntennaHelper(object):
             # script plugins don't work on linux
             script.filename = TestBase.GetScenarioFile("CommRad", "VB_Beamformer.vbs")
             Assert.assertEqual(r"CommRad\VB_Beamformer.vbs", script.filename)
+
+    def Test_IAgAntennaModelHfssEepArray(self, hfssEepArray: "AntennaModelHfssEepArray"):
+        # System.Windows.Forms.MessageBox.Show("HFSS start");
+
+        # COMMRAD-3556
+
+        # Assert.AreEqual(7, hfssEepArray.NumberOfElements);         // read only
+
+        # if ((hfssEepArray as IAntennaModel).DesignFrequency == 1.0)
+        # {
+        #    Assert.AreEqual(0.45, (double)hfssEepArray.Width, 0.01);   // read only - depends on Design Frequency
+        #    Assert.AreEqual(0.39, (double)hfssEepArray.Height, 0.01);  // read only - depends on Design Frequency
+        # }
+        # else
+        # {
+        #    //TODO Assert.AreEqual(0.15, (double)phasedArray.Width, 0.01);   // read only - depends on Design Frequency
+        #    //TODO Assert.AreEqual(0.13, (double)phasedArray.Height, 0.01);  // read only - depends on Design Frequency
+        # }
+
+        # TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { hfssEepArray.BeamformerType = BEAMFORMER_TYPE.UNKNOWN; });
+
+        # // Element Configuration sub-tab
+
+        # ElementCollection eleColl = hfssEepArray.Elements;
+
+        # for (int i = 0; i < eleColl.Count; i++)
+        # {
+        #    Element e = eleColl[i];
+        #    Console.WriteLine(i.ToString() + "  " + e.X + "  " + e.Y + "  " + e.Enabled + "  " + e.Id);
+        # }
+
+        # Assert.AreEqual(eleColl[0].X, -1.25, 0.01); Assert.AreEqual(eleColl[0].Y, -0.43, 0.01);
+        # Assert.AreEqual(eleColl[1].X, -1.25, 0.01); Assert.AreEqual(eleColl[1].Y, 0.43, 0.01);
+        # Assert.AreEqual(eleColl[2].X, -1.00, 0.01); Assert.AreEqual(eleColl[2].Y, 0.00, 0.01);
+        # Assert.AreEqual(eleColl[3].X, -0.75, 0.01); Assert.AreEqual(eleColl[3].Y, -0.43, 0.01);
+        # Assert.AreEqual(eleColl[4].X, -0.75, 0.01); Assert.AreEqual(eleColl[4].Y, 0.43, 0.01);
+        # Assert.AreEqual(eleColl[5].X, -0.50, 0.01); Assert.AreEqual(eleColl[5].Y, 0.00, 0.01);
+        # Assert.AreEqual(eleColl[6].X, -0.25, 0.01); Assert.AreEqual(eleColl[6].Y, -0.43, 0.01);
+        # Assert.AreEqual(eleColl[7].X, -0.25, 0.01); Assert.AreEqual(eleColl[7].Y, 0.43, 0.01);
+        # Assert.AreEqual(eleColl[8].X, 0.00, 0.01); Assert.AreEqual(eleColl[8].Y, 0.00, 0.01);
+        # Assert.AreEqual(eleColl[9].X, 0.25, 0.01); Assert.AreEqual(eleColl[9].Y, -0.43, 0.01);
+        # Assert.AreEqual(eleColl[10].X, 0.25, 0.01); Assert.AreEqual(eleColl[10].Y, 0.43, 0.01);
+        # Assert.AreEqual(eleColl[11].X, 0.50, 0.01); Assert.AreEqual(eleColl[11].Y, 0.00, 0.01);
+        # Assert.AreEqual(eleColl[12].X, 0.75, 0.01); Assert.AreEqual(eleColl[12].Y, -0.43, 0.01);
+        # Assert.AreEqual(eleColl[13].X, 0.75, 0.01); Assert.AreEqual(eleColl[13].Y, 0.43, 0.01);
+        # Assert.AreEqual(eleColl[14].X, 1.00, 0.01); Assert.AreEqual(eleColl[14].Y, 0.00, 0.01);
+
+        # Assert.AreEqual(eleColl[0].Enabled, false); Assert.AreEqual(eleColl[0].Id, 0);
+        # Assert.AreEqual(eleColl[1].Enabled, false); Assert.AreEqual(eleColl[1].Id, 1);
+        # Assert.AreEqual(eleColl[2].Enabled, false); Assert.AreEqual(eleColl[2].Id, 2);
+        # Assert.AreEqual(eleColl[3].Enabled, false); Assert.AreEqual(eleColl[3].Id, 3);
+        # Assert.AreEqual(eleColl[4].Enabled, false); Assert.AreEqual(eleColl[4].Id, 4);
+        # Assert.AreEqual(eleColl[5].Enabled, true); Assert.AreEqual(eleColl[5].Id, 5);
+        # Assert.AreEqual(eleColl[6].Enabled, true); Assert.AreEqual(eleColl[6].Id, 6);
+        # Assert.AreEqual(eleColl[7].Enabled, true); Assert.AreEqual(eleColl[7].Id, 7);
+        # Assert.AreEqual(eleColl[8].Enabled, true); Assert.AreEqual(eleColl[8].Id, 8);
+        # Assert.AreEqual(eleColl[9].Enabled, true); Assert.AreEqual(eleColl[9].Id, 9);
+        # Assert.AreEqual(eleColl[10].Enabled, true); Assert.AreEqual(eleColl[10].Id, 10);
+        # Assert.AreEqual(eleColl[11].Enabled, true); Assert.AreEqual(eleColl[11].Id, 11);
+        # Assert.AreEqual(eleColl[12].Enabled, false); Assert.AreEqual(eleColl[12].Id, 12);
+        # Assert.AreEqual(eleColl[13].Enabled, false); Assert.AreEqual(eleColl[13].Id, 13);
+        # Assert.AreEqual(eleColl[14].Enabled, false); Assert.AreEqual(eleColl[14].Id, 14);
+
+        # foreach (Element ele in eleColl)
+        # {
+        #    Assert.IsNotNull(ele);
+        #    ele.Enabled = true;
+        #    Assert.IsTrue(ele.Enabled);
+        # }
+        # for (int i = 0; i < eleColl.Count; i++)
+        # {
+        #    Element ele2 = eleColl[i];
+        #    Assert.AreEqual(i, ele2.Id);
+
+        #    if (i == eleColl.Count - 1)
+        #    {
+        #        TryCatchAssertBlock.ExpectedException("Cannot disable the last element", delegate () { ele2.Enabled = false; });
+        #    }
+        #    else
+        #    {
+        #        ele2.Enabled = false;
+        #        Assert.IsFalse(ele2.Enabled);
+        #    }
+        # }
+
+        # foreach (ELEMENT_CONFIGURATION_TYPE elementConfigurationType in Enum.GetValues(typeof(ELEMENT_CONFIGURATION_TYPE)))
+        # {
+        #    switch (elementConfigurationType)
+        #    {
+        #        case ELEMENT_CONFIGURATION_TYPE.ASCII_FILE:
+        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.ASCII_FILE;
+        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.ASCII_FILE, phasedArray.ElementConfigurationType);
+        #            Test_IAgElementConfigurationAsciiFile(phasedArray.ElementConfiguration as ElementConfigurationAsciiFile);
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.CIRCULAR:
+        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.CIRCULAR;
+        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.CIRCULAR, phasedArray.ElementConfigurationType);
+        #            Test_IAgElementConfigurationCircular(phasedArray.ElementConfiguration as ElementConfigurationCircular);
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.HEXAGON:
+        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.HEXAGON;
+        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.HEXAGON, phasedArray.ElementConfigurationType);
+        #            Test_IAgElementConfigurationPolygon(phasedArray.ElementConfiguration as IElementConfigurationPolygon, true);
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.LINEAR:
+        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.LINEAR;
+        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.LINEAR, phasedArray.ElementConfigurationType);
+        #            Test_IAgElementConfigurationLinear(phasedArray.ElementConfiguration as ElementConfigurationLinear);
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.POLYGON:
+        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.POLYGON;
+        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.POLYGON, phasedArray.ElementConfigurationType);
+        #            Test_IAgElementConfigurationPolygon(phasedArray.ElementConfiguration as IElementConfigurationPolygon, false);
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE:  // not supported for Phased Array
+        #            TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE; });
+        #            break;
+        #        case ELEMENT_CONFIGURATION_TYPE.UNKNOWN:
+        #            TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.UNKNOWN; });
+        #            break;
+        #        default:
+        #            Assert.Fail("Untested ELEMENT_CONFIGURATION_TYPE");
+        #            break;
+        #    }
+        # }
+
+        # Beam Direction Provider sub-tab
+
+        supportedTypes = hfssEepArray.supported_beam_direction_provider_types
+        Assert.assertEqual(4, len(supportedTypes))
+
+        i: int = 0
+        while i < len(supportedTypes):
+            if (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+                hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
+                Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, hfssEepArray.beam_direction_provider_type)
+                self.Test_IAgDirectionProviderAsciiFile(
+                    clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderAsciiFile), True
+                )
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.LINK:
+                hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
+                Assert.assertEqual(DIRECTION_PROVIDER_TYPE.LINK, hfssEepArray.beam_direction_provider_type)
+                self.Test_IAgDirectionProviderLink(
+                    clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderLink)
+                )
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
+                hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
+                Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, hfssEepArray.beam_direction_provider_type)
+                self.Test_IAgDirectionProviderObject(
+                    clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderObject), False
+                )
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+                hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
+                Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, hfssEepArray.beam_direction_provider_type)
+                filename: str = r"CommRad\VB_BeamDirectionProvider.vbs"
+                self.Test_IAgDirectionProviderScript(
+                    clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderScript), filename
+                )
+            elif (
+                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
+                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
+                else int(supportedTypes[i])
+            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
+                    hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
+            else:
+                Assert.fail("Untested DIRECTION_PROVIDER_TYPE for Beam DP")
+
+            i += 1
 
     def Test_IAgAntennaModelPencilBeam(self, pencilBeam: "AntennaModelPencilBeam"):
         Assert.assertAlmostEqual(1.62, float(pencilBeam.beamwidth), delta=0.01)  # read only
@@ -4334,7 +4639,7 @@ class AntennaControlHelper(object):
         antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
         Assert.assertEqual(ANTENNA_CONTROL_REFERENCE_TYPE.EMBED, antennaControl.reference_type)
 
-        numExpectedSupportedEmbeddedModels: int = 52
+        numExpectedSupportedEmbeddedModels: int = 53
 
         arSupportedEmbeddedModels = antennaControl.supported_embedded_models
         Assert.assertEqual(numExpectedSupportedEmbeddedModels, len(arSupportedEmbeddedModels))
@@ -4383,15 +4688,18 @@ class AntennaControlHelper(object):
                 (
                     (
                         (
-                            (ANTENNA_MODEL_TYPE.UNKNOWN != antennaModelType)
-                            and (ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE != antennaModelType)
+                            (
+                                (ANTENNA_MODEL_TYPE.UNKNOWN != antennaModelType)
+                                and (ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE != antennaModelType)
+                            )
+                            and (ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN != antennaModelType)
                         )
-                        and (ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN != antennaModelType)
+                        and (ANTENNA_MODEL_TYPE.REMCOM_UAN_FORMAT != antennaModelType)
                     )
-                    and (ANTENNA_MODEL_TYPE.REMCOM_UAN_FORMAT != antennaModelType)
+                    and (ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT != antennaModelType)
                 )
-                and (ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT != antennaModelType)
-            ) and (ANTENNA_MODEL_TYPE.TICRA_GRASP_FORMAT != antennaModelType):
+                and (ANTENNA_MODEL_TYPE.TICRA_GRASP_FORMAT != antennaModelType)
+            ) and (ANTENNA_MODEL_TYPE.HFSS_EEP_ARRAY != antennaModelType):
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 Console.WriteLine(antennaModelType)
                 antennaControl.set_embedded_model(antennaModelName)
@@ -5072,15 +5380,18 @@ class AntennaBeamHelper(object):
                 (
                     (
                         (
-                            (ANTENNA_MODEL_TYPE.UNKNOWN != antennaModelType)
-                            and (ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE != antennaModelType)
+                            (
+                                (ANTENNA_MODEL_TYPE.UNKNOWN != antennaModelType)
+                                and (ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE != antennaModelType)
+                            )
+                            and (ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN != antennaModelType)
                         )
-                        and (ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN != antennaModelType)
+                        and (ANTENNA_MODEL_TYPE.REMCOM_UAN_FORMAT != antennaModelType)
                     )
-                    and (ANTENNA_MODEL_TYPE.REMCOM_UAN_FORMAT != antennaModelType)
+                    and (ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT != antennaModelType)
                 )
-                and (ANTENNA_MODEL_TYPE.ANSY_SFFD_FORMAT != antennaModelType)
-            ) and (ANTENNA_MODEL_TYPE.TICRA_GRASP_FORMAT != antennaModelType):
+                and (ANTENNA_MODEL_TYPE.TICRA_GRASP_FORMAT != antennaModelType)
+            ) and (ANTENNA_MODEL_TYPE.HFSS_EEP_ARRAY != antennaModelType):
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
                 beam.antenna_model_name = antennaModelName
                 antennaHelper.Run(beam.antenna_model, antennaModelName, True)
@@ -5873,6 +6184,21 @@ class AtmosphereHelper(object):
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+            elif aaModelName == "Early ITU Foliage Model CSharp Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Early ITU Foliage Model JScript Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Python Plugin":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                self.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
+                )
             else:
                 Assert.fail(String.Format("Unknown model type ({0})", aaModelName))
 
@@ -5988,6 +6314,29 @@ class AtmosphereHelper(object):
             tirem.terrain_sample_resolution = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.terrain_sample_resolution = 11
+
+    def Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+        self, plugin: "AtmosphericAbsorptionModelCOMPlugin", isPython: bool
+    ):
+        rawPluginObject: typing.Any = plugin.raw_plugin_object
+        if (
+            (EngineLifetimeManager.target != TestTarget.eStkGrpc)
+            and (EngineLifetimeManager.target != TestTarget.eStkRuntime)
+        ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
+            Assert.assertIsNotNone(rawPluginObject)
+
+        pluginConfigPy: "CRPluginConfiguration" = plugin.plugin_configuration
+        arPropsPy = pluginConfigPy.available_properties
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            pluginConfigPy.set_property("BogusProperty", 123)
+        if isPython:
+            return
+
+        Assert.assertEqual(1, Array.Length(arPropsPy))
+        pluginConfigPy.set_property("MaxFoliageDepth", 900)
+        Assert.assertEqual(900, float(pluginConfigPy.get_property("MaxFoliageDepth")))
+        return
 
     def Test_IAgAtmosphericAbsorptionModelVoacap(self, voacap: "AtmosphericAbsorptionModelVoacap"):
         with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
@@ -6749,7 +7098,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
-
+        helper = AtmosphereHelper(self._root)
         supportedAtmosAbsorptionModels = propChan.supported_atmos_absorption_models
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
@@ -6785,8 +7134,22 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                helper = AtmosphereHelper(self._root)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+            elif aaModelName == "Early ITU Foliage Model CSharp Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Early ITU Foliage Model JScript Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Python Plugin":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
+                )
             else:
                 Assert.fail("Unknown model type")
 

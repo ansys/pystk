@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  stk-python3.10:
+    image: ansys/stk:dev-windowsservercore-ltsc2019-python3.10
+    container_name: stk-python3.10
+    build: 
+      context: .
+      args:
+        baseImage: ansys/stk:dev-windowsservercore-ltsc2019
+        basePythonImage: ansys/stk:dev-windowsservercore-ltsc2019-pybase
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

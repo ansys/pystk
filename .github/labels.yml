@@ -11,6 +11,38 @@
   description:  Pull requests related to resolving problems or errors
   color: d42a34
 
+# -- Style labels ------------------------------------------------------------
+
+- name: 'style'
+  description: Improvements related to general project style
+  color: dcbeff
+
+- name: 'style:code'
+  description: Improvements related to code style
+  color: dcbeff
+
+- name: 'style:docs'
+  description: Improvements related to doc style
+  color: dcbeff
+
+- name: 'style:branch-name'
+  description: Verifies branch name is compliant with PyAnsys guidelines
+  color: dcbeff
+
+- name: 'style:skip'
+  description: Skip style runs in CI/CD
+  color: dcbeff
+
+# -- Tests labels ------------------------------------------------------------
+
+- name: 'tests'
+  description: Related with improvements of the test suite
+  color: ffd8b1
+
+- name: 'tests:skip'
+  description: Skip tests runs in CI/CD
+  color: ffd8b1
+
 # -- Documentation labels ----------------------------------------------------
 
 - name: 'docs'
@@ -23,6 +55,10 @@
 
 - name: 'docs:examples'
   description: Related to documentation examples
+  color: 0677ba
+
+- name: 'docs:skip'
+  description: Skip documentation runs in CI/CD
   color: 0677ba
 
 # -- Dependencies labels -----------------------------------------------------
@@ -39,6 +75,16 @@
   description: Related with pipelines dependencies
   color: fabed4
 
+# -- CI/CD labels ------------------------------------------------------------
+
+- name: 'ci'
+  description: Pipelines maintenance related
+  color: a9a9a9
+
+- name: 'ci:skip'
+  description: Skip CI/CD runs
+  color: a9a9a9
+
 # -- Other labels ------------------------------------------------------------
 
 - name: 'release'
@@ -53,23 +99,10 @@
   description: General improvements to existing features
   color: ffd827
 
-- name: 'code-style'
-  description: Improvements related to code style
-  color: dcbeff
-
 - name: 'maintenance'
   description: Generic maintenance related
   color: f78c37
 
-- name: 'ci'
-  description: Pipelines maintenance related
-  color: a9a9a9
-
 - name: 'docker'
   description: Docker maintenance related
   color: 000075
-
-- name: 'tests'
-  description: Related with improvements of the test suite
-  color: ffd8b1
-
