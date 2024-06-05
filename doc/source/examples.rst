@@ -9,4 +9,5 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
 .. nbgallery::
 
     examples/hohmann-transfer
+    examples/bielliptic-transfer
     examples/lambert-transfer
