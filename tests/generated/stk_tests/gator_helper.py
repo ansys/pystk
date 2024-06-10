@@ -6883,7 +6883,7 @@ class GatorHelper(object):
             # Enable a Control param and add a Result for use below
             man1: "MissionControlSequenceManeuver" = clr.CastAs(ts.segments["TMan"], MissionControlSequenceManeuver)
             man1.enable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.add("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.add("Epoch")
 
             Assert.assertEqual(iAgVAProfile.type, PROFILE.GRID_SEARCH)
             profGridSearch: "ProfileGridSearch" = ProfileGridSearch(iAgVAProfile)
@@ -6970,7 +6970,7 @@ class GatorHelper(object):
                 GridSearchResult.custom_display_unit = "Bogus"
 
             # Cleanup
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.remove("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.remove("Epoch")
             man1.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
 
     @staticmethod

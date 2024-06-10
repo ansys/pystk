@@ -2489,14 +2489,12 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("BUG68304")
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        scenarioObj: "IStkObject" = TestBase.Application.current_scenario
         scenario.set_time_period("7 Sep 2012 16:00:00.000", "8 Sep 2012 16:00:00.000")
 
-        sat: "Satellite" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite
-        )
+        sat: "Satellite" = clr.CastAs(scenarioObj.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite)
         covdef: "CoverageDefinition" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"),
-            CoverageDefinition,
+            scenarioObj.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"), CoverageDefinition
         )
 
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)

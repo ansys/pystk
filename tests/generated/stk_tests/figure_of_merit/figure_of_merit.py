@@ -23,10 +23,9 @@ class EarlyBoundTests(TestBase):
                     STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
                 )
             )
+            covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
             EarlyBoundTests.AG_FOM = FigureOfMerit(
-                (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
-                    STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-                )
+                covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1")
             )
 
         except Exception as e:
@@ -666,11 +665,8 @@ class EarlyBoundTests(TestBase):
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
             )
         )
-        EarlyBoundTests.AG_FOM = FigureOfMerit(
-            (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
-                STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-            )
-        )
+        covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  NON LINEAR CONTOUR LEVELS ----- END -----")
 
     # endregion
@@ -832,11 +828,8 @@ class EarlyBoundTests(TestBase):
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
             )
         )
-        EarlyBoundTests.AG_FOM = FigureOfMerit(
-            (clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)).children.new(
-                STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"
-            )
-        )
+        covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
+        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  ACCESS CONSTRAINT DEFINITION ----- END -----")
 
     # endregion

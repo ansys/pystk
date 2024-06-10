@@ -278,7 +278,7 @@ class EarlyBoundTests(TestBase):
             ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "prop1", "-"), MissionControlSequencePropagate
         )
         prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        (clr.CastAs(prop1, IMissionControlSequenceSegment)).results.add("Epoch")
+        (IMissionControlSequenceSegment(prop1)).results.add("Epoch")
         dc: "ProfileDifferentialCorrector" = clr.CastAs(ts.profiles[0], ProfileDifferentialCorrector)
         self.TestTargeterGraphsControlDisabled(dc.targeter_graphs, True)
         dc.control_parameters[0].enable = True

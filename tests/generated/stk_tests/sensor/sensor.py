@@ -198,9 +198,7 @@ class BugFixes(TestBase):
     # region TestSetUp
     def setUp(self):
         BugFixes._sat = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
-        BugFixes._sensor = clr.CastAs(
-            (clr.CastAs(BugFixes._sat, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Bug66700Sensor"), Sensor
-        )
+        BugFixes._sensor = Sensor((IStkObject(BugFixes._sat)).children.new(STK_OBJECT_TYPE.SENSOR, "Bug66700Sensor"))
 
     # endregion
 

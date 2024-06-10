@@ -65,11 +65,10 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.radar = clr.CastAs(EarlyBoundTests.oRadar, Radar)
             EarlyBoundTests.radar.set_model("Bistatic Receiver")  # Because some properties cannot be set on Monostatic
 
-            spplColl: "ComponentInfoCollection" = (
-                (clr.CastAs(TestBase.Application.current_scenario, Scenario))
-                .component_directory.get_components(COMPONENT.RADAR)
-                .get_folder("Scattering Point Provider List")
-            )
+            scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+            spplColl: "ComponentInfoCollection" = scenario.component_directory.get_components(
+                COMPONENT.RADAR
+            ).get_folder("Scattering Point Provider List")
             spplColl.duplicate_component("Scattering Point Provider List", "Scattering Point Provider List Dup")
             if not TestBase.NoGraphicsMode:
                 # 2D
@@ -2566,7 +2565,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, compLinkEmbedControl.reference_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            (clr.CastAs(compLinkEmbedControl.component, ScatteringPointProviderList)).point_providers.add()
+            readOnlyscatteringPointProviderList: "ScatteringPointProviderList" = clr.CastAs(
+                compLinkEmbedControl.component, ScatteringPointProviderList
+            )
+            readOnlyscatteringPointProviderList.point_providers.add()
 
         compLinkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, compLinkEmbedControl.reference_type)
