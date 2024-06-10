@@ -37,23 +37,20 @@ class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):
         pass
 
     def HookupEvents(self):
+        scenario: "Scenario" = clr.CastAs(self._root.current_scenario, Scenario)
         if String.Compare(self._root.unit_preferences.get_current_unit_abbrv("DateFormat"), "EpSec", True) != 0:
             self._stopTime = float(
                 self._root.conversion_utility.convert_date(
-                    "DateFormat",
-                    "EpSec",
-                    str((clr.CastAs(self._root.current_scenario, Scenario)).animation.anim_cycle_time),
+                    "DateFormat", "EpSec", str(scenario.animation.anim_cycle_time)
                 )
             )
             self._startTime = float(
-                self._root.conversion_utility.convert_date(
-                    "DateFormat", "EpSec", str((clr.CastAs(self._root.current_scenario, Scenario)).animation.start_time)
-                )
+                self._root.conversion_utility.convert_date("DateFormat", "EpSec", str(scenario.animation.start_time))
             )
 
         else:
-            self._stopTime = float(str((clr.CastAs(self._root.current_scenario, Scenario)).animation.anim_cycle_time))
-            self._startTime = float(str((clr.CastAs(self._root.current_scenario, Scenario)).animation.start_time))
+            self._stopTime = float(str(scenario.animation.anim_cycle_time))
+            self._startTime = float(str(scenario.animation.start_time))
 
         self.csToPy_OnAnimUpdateSubscription = (self._root).Subscribe()
         self.csToPy_OnAnimUpdateSubscription.on_anim_update += IAgStkObjectRootEvents_OnAnimUpdateEventHandler(

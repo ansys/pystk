@@ -247,7 +247,7 @@ class STKDesktop(object):
                 from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
-            client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
                 pAppImpl = client.get_stk_application_interface()
                 app = STKDesktopApplication()
