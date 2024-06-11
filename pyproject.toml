@@ -56,7 +56,7 @@ visualization = [
     "numpy==1.24.4; python_version<'3.9'",
     "numpy==1.26.4; python_version>='3.9'",
     "jupyter-rfb==0.3.3; python_version<'3.9'",
-    "jupyter-rfb==0.4.4; python_version>='3.9'"
+    "jupyter-rfb==0.4.4; python_version>='3.9'",
     "Pillow==10.3.0",
     "simplejpeg==1.7.2",
     "sidecar==0.7.0"
