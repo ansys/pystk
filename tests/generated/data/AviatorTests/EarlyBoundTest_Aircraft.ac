@@ -3,7 +3,7 @@ WrittenBy    STK_v12.0.0
 
 BEGIN Aircraft
 
-    Name		 NUNIT_CSharp_Test
+    Name		 EarlyBoundTest_Aircraft
 
     BEGIN VehiclePath
         CentralBody		 Earth
