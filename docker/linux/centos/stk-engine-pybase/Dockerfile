@@ -24,9 +24,9 @@ RUN set -e; \
 
 # Install OpenSSL 1.1
 RUN set -e; \
-   wget --no-check-certificate https://ftp.openssl.org/source/openssl-1.1.1k.tar.gz; \
-   tar -xzvf openssl-1.1.1k.tar.gz; \
-   cd openssl-1.1.1k; \
+   wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1w.tar.gz; \
+   tar -xzvf openssl-1.1.1w.tar.gz; \
+   cd openssl-1.1.1w; \
    ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib no-shared zlib-dynamic; \
    make && make install; \
    echo "export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/lib64:${LD_LIBRARY_PATH}" > /etc/profile.d/openssl.sh; \
