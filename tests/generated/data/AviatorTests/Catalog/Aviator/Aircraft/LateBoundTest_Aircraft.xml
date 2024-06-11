@@ -69,7 +69,7 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{BAEB7C68-6634-43BB-B4E3-B397F2F32F73}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{FA17C1AA-F3F7-46CD-9952-06A5F6F936D0}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInAccel>
         <BuiltInClimb VarType = "VT_UNKNOWN">
@@ -89,7 +89,7 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{C53DB844-6594-4B1D-BB17-47DB7DD6F1AF}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{DB83178B-374A-4534-B5D2-8669AB70A1BC}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInClimb>
         <BuiltInCruise VarType = "VT_UNKNOWN">
@@ -115,7 +115,7 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{9DC60820-CFD3-4CEE-B355-A9F61C78CA62}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{2F79CBFB-3035-4601-999F-EC230A72E132}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInCruise>
         <BuiltInDescent VarType = "VT_UNKNOWN">
@@ -135,7 +135,7 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{4EA990ED-E3D2-4FE9-A74C-640ED710F801}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{CBDE080C-D354-4BB0-BEAE-9F143D88BB82}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInDescent>
         <BuiltInLanding VarType = "VT_UNKNOWN">
@@ -154,7 +154,7 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{9C92B2D4-29AE-4344-8841-C45FAFE620EE}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{EE22FD4C-3BE5-4F4B-9C3E-A5CF9919BC05}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInLanding>
         <BuiltInTakeoff VarType = "VT_UNKNOWN">
@@ -176,10 +176,10 @@
                         <PropertyCount Value = "0" VarType = "VT_I4" />
                     </Object>
                 </UserProperties>
-                <_BSTRUniqueID Value = "{53C3FBBE-DCB3-4F04-951F-08A21585490A}" VarType = "VT_BSTR" />
+                <_BSTRUniqueID Value = "{FC6E6FB5-5552-4200-96E3-D13AC98DC418}" VarType = "VT_BSTR" />
             </Object>
         </BuiltInTakeoff>
-        <DisplayName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+        <DisplayName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
         <Model3D Value = "Air\fighter.mdl" VarType = "VT_BSTR" />
         <Icon Value = "" VarType = "VT_BSTR" />
         <DefaultModels VarType = "VT_ARRAY">
@@ -210,7 +210,7 @@
         </DefaultModels>
         <DefaultConfiguration VarType = "VT_UNKNOWN">
             <Object clsid = "{961ED659-F7CD-43CD-8042-13754AEE715D}">
-                <GUID Value = "{2425FB6F-4A95-4F38-9F87-13DEA3DD0288}" VarType = "VT_BSTR" />
+                <GUID Value = "{9F85B2E7-5EE6-41F3-9875-2A32E0F05C7F}" VarType = "VT_BSTR" />
                 <DisplayName Value = "Default Configuration" VarType = "VT_BSTR" />
                 <EmptyWeight Value = "4.5359237000000003e+03" VarType = "VT_R8" />
                 <BaseDrag Value = "0.0000000000000000e+00" VarType = "VT_R8" />
@@ -231,67 +231,5 @@
                 </UserProperties>
             </Object>
         </DefaultConfiguration>
-        <AdvPerfFixedWing VarType = "VT_UNKNOWN">
-            <Object clsid = "{D02AD4A8-2D8E-4255-9CB0-D83B2CBE112E}">
-                <DesignWeight Value = "4.5359237000000003e+03" VarType = "VT_R8" />
-                <WingArea Value = "9.2903040000000008e+00" VarType = "VT_R8" />
-                <FlapsArea Value = "1.8580608000000001e+00" VarType = "VT_R8" />
-                <SpeedBrakeArea Value = "3.7161216000000002e-01" VarType = "VT_R8" />
-                <MaxAltitudeLimit Value = "1.5240000000000000e+04" VarType = "VT_R8" />
-                <MaxMach Value = "9.4999999999999996e-01" VarType = "VT_R8" />
-                <MaxEAS Value = "2.3150000000000003e+02" VarType = "VT_R8" />
-                <MinLoadFactor Value = "-2.0000000000000000e+00" VarType = "VT_R8" />
-                <MaxLoadFactor Value = "6.0000000000000000e+00" VarType = "VT_R8" />
-                <Powerplant VarType = "VT_UNKNOWN">
-                    <Object clsid = "{C5115602-CFA8-40a0-9F24-D2FD844A70F6}">
-                        <MaxDrySLSThrust Value = "2.2241108076302498e+04" VarType = "VT_R8" />
-                        <DesignPointAlt Value = "1.0058400000000000e+04" VarType = "VT_R8" />
-                        <DesignPointMachNumber Value = "8.0000000000000004e-01" VarType = "VT_R8" />
-                        <FuelFlowCalibration Value = "1.0000000000000000e+00" VarType = "VT_R8" />
-                        <FlightFuelCalibrationMode Value = "0" VarType = "VT_I4" />
-                        <FuelCalibrationTSFC Value = "2.8325449783956120e-05" VarType = "VT_R8" />
-                        <FuelCalibrationFuelFlowAtAlt Value = "6.2998940277777782e-01" VarType = "VT_R8" />
-                        <FuelCalibrationAlt Value = "1.0058400000000000e+04" VarType = "VT_R8" />
-                        <FuelCalibrationWeight Value = "2.7215542200000000e+04" VarType = "VT_R8" />
-                        <FuelCalibrationAirspeed Value = "1.2861111111111111e+02" VarType = "VT_R8" />
-                        <FuelCalibrationAirspeedType Value = "1" VarType = "VT_I4" />
-                        <ThrustWizardAlt Value = "1.0058400000000000e+04" VarType = "VT_R8" />
-                        <ThrustWizardWeight Value = "2.7215542200000000e+04" VarType = "VT_R8" />
-                        <ThrustWizardAirspeed Value = "1.2861111111111111e+02" VarType = "VT_R8" />
-                        <ThrustWizardAirspeedType Value = "1" VarType = "VT_I4" />
-                        <ThrustWizardPs Value = "5.0800000000000001e-01" VarType = "VT_R8" />
-                    </Object>
-                </Powerplant>
-                <Aerodynamics VarType = "VT_UNKNOWN">
-                    <Object clsid = "{B135559D-62EE-4cac-A161-E6D6C6796557}">
-                        <WingGeometry VarType = "VT_UNKNOWN">
-                            <Object clsid = "{7CE1937D-597E-478f-840D-6C205F39CAE8}">
-                                <AspectRatio Value = "9.0000000000000000e+00" VarType = "VT_R8" />
-                                <WingSweep Value = "4.3633231299858238e-01" VarType = "VT_R8" />
-                                <ARMode Value = "1" VarType = "VT_I4" />
-                            </Object>
-                        </WingGeometry>
-                        <MaxAOA Value = "3.4906585039886590e-01" VarType = "VT_R8" />
-                        <CD0 Value = "2.0000000000000000e-02" VarType = "VT_R8" />
-                        <MachDivergence Value = "8.0000000000000004e-01" VarType = "VT_R8" />
-                        <TransonicMachDragFactor Value = "1.0000000000000000e+01" VarType = "VT_R8" />
-                        <DragAlt Value = "3.0480000000000000e+03" VarType = "VT_R8" />
-                        <DragWeight Value = "4.5359237000000003e+03" VarType = "VT_R8" />
-                        <DragSpeedMode Value = "0" VarType = "VT_I4" />
-                        <DragAirspeed Value = "1.2861111111111111e+02" VarType = "VT_R8" />
-                        <DragAirspeedType Value = "1" VarType = "VT_I4" />
-                    </Object>
-                </Aerodynamics>
-                <AeroExtDataFile Value = "" VarType = "VT_BSTR" />
-                <PropExtDataFileUID Value = "" VarType = "VT_BSTR" />
-                <PerfFolderPath Value = "Aircraft\NUNIT CSharp Test" VarType = "VT_BSTR" />
-                <AnalysisAlt Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                <AnalysisMach Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                <CacheFuelFlow Value = "1" VarType = "VT_I1" />
-                <CacheAero Value = "1" VarType = "VT_I1" />
-                <UseMaxTemp Value = "0" VarType = "VT_I1" />
-                <MaxTemp Value = "1.0000000000000000e+03" VarType = "VT_R8" />
-            </Object>
-        </AdvPerfFixedWing>
     </Object>
 </AgXMLPropertyBagData>

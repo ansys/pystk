@@ -3,7 +3,7 @@ WrittenBy    STK_v12.0.0
 
 BEGIN Aircraft
 
-    Name		 NUNIT_VBS_Test
+    Name		 LateBoundTest_Aircraft
 
     BEGIN VehiclePath
         CentralBody		 Earth

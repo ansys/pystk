@@ -3,7 +3,7 @@
     <Object clsid = "{D90CCC89-BE3E-4AC2-A8FF-09BE38631C44}">
         <Aircraft VarType = "VT_UNKNOWN">
             <Object clsid = "{8D417B57-6B39-4467-B8A4-8911F412ABBB}">
-                <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                 <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
             </Object>
         </Aircraft>
@@ -19,67 +19,7 @@
                                 <ProcedureCollection VarType = "VT_UNKNOWN">
                                     <Object clsid = "{F0BA2E47-4AF3-4804-A190-DEC8B7FE3859}">
                                         <GUID Value = "{1ED53AE2-3A5F-4FA6-B0E0-A72FEEC2A4B7}" VarType = "VT_BSTR" />
-                                        <ProcedureVec VarType = "VT_ARRAY">
-                                            <Dimension>
-                                                <ArrayData VarType = "VT_UNKNOWN">
-                                                    <Object clsid = "{B6AFD6EB-B1AD-4322-8519-33D01141AA12}">
-                                                        <DisplayName Value = "Takeoff" VarType = "VT_BSTR" />
-                                                        <Site VarType = "VT_UNKNOWN">
-                                                            <Object clsid = "{9A865D35-04E9-4AAB-9AE5-E20FBCED269E}">
-                                                                <DisplayName Value = "Runway" VarType = "VT_BSTR" />
-                                                                <Length Value = "2.4384000000000001e+03" VarType = "VT_R8" />
-                                                                <Latitude Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                                <Longitude Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                                <Altitude Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                                <AltitudeMode Value = "1" VarType = "VT_I4" />
-                                                                <LowEndHeading Value = "1.5707963267948966e+00" VarType = "VT_R8" />
-                                                                <MagneticHeading Value = "1" VarType = "VT_I1" />
-                                                                <UserProperties VarType = "VT_UNKNOWN">
-                                                                    <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
-                                                                        <PropertyCount Value = "0" VarType = "VT_I4" />
-                                                                    </Object>
-                                                                </UserProperties>
-                                                                <_BSTRUniqueID Value = "{47FB29C0-418E-4408-BF01-A5A8503DA9BC}" VarType = "VT_BSTR" />
-                                                            </Object>
-                                                        </Site>
-                                                        <UiTime VarType = "VT_UNKNOWN">
-                                                            <Object clsid = "{B5ECEFA5-F533-4168-9DBD-7BCD96E27781}">
-                                                                <UTC Value = "1" VarType = "VT_I1" />
-                                                                <WholeDays Value = "2451361" VarType = "VT_I4" />
-                                                                <SecIntoDay Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                                <TimeComponentState Value = "1" VarType = "VT_I4" />
-                                                                <TimeComponent Value = "" VarType = "VT_BSTR" />
-                                                                <SecondsAdded Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                            </Object>
-                                                        </UiTime>
-                                                        <UserTime Value = "0" VarType = "VT_I1" />
-                                                        <RwyHighLowEnd Value = "1" VarType = "VT_I4" />
-                                                        <DepartureAlt Value = "1.5240000000000001e+02" VarType = "VT_R8" />
-                                                        <DeparturePointRange Value = "5.5560000000000000e+03" VarType = "VT_R8" />
-                                                        <UseRwyTerrain Value = "0" VarType = "VT_I1" />
-                                                        <RunwayAltOffset Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                        <HoldOnDeck Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                        <RwyTerrainAltCorrection Value = "0.0000000000000000e+00" VarType = "VT_R8" />
-                                                        <TakeoffMode Value = "0" VarType = "VT_I4" />
-                                                        <TimeMode Value = "0" VarType = "VT_I4" />
-                                                        <WindModelSource Value = "1" VarType = "VT_I4" />
-                                                        <AtmosCalcDataSource Value = "1" VarType = "VT_I4" />
-                                                        <UserProperties VarType = "VT_UNKNOWN">
-                                                            <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
-                                                                <PropertyCount Value = "0" VarType = "VT_I4" />
-                                                            </Object>
-                                                        </UserProperties>
-                                                        <StateCacheTimeInterval Value = "1.0000000000000000e+00" VarType = "VT_R8" />
-                                                        <MaxRelMotionFactor Value = "1.0000000000000000e+00" VarType = "VT_R8" />
-                                                        <ConvergeTimeTolerance Value = "1.0000000000000000e-03" VarType = "VT_R8" />
-                                                        <MaxCalcIterations Value = "50" VarType = "VT_I4" />
-                                                        <MaxCalcBadSteps Value = "3" VarType = "VT_I4" />
-                                                        <TakeoffClimbAngle Value = "5.2359877559829890e-02" VarType = "VT_R8" />
-                                                        <_BSTRUniqueID Value = "{7D480588-1DDB-4A86-A5B3-0E5EB07AB489}" VarType = "VT_BSTR" />
-                                                    </Object>
-                                                </ArrayData>
-                                            </Dimension>
-                                        </ProcedureVec>
+                                        <ProcedureVec VarType = "VT_ARRAY" />
                                         <UserProperties VarType = "VT_UNKNOWN">
                                             <Object clsid = "{21306355-2B56-47BA-AB2F-72F8DF5B6B9E}">
                                                 <PropertyCount Value = "0" VarType = "VT_I4" />
@@ -95,7 +35,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Acceleration" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -106,7 +46,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Climb" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -117,7 +57,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Cruise" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -128,7 +68,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Descent" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -139,7 +79,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Landing" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -150,7 +90,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "Built-In Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "Takeoff" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -161,7 +101,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "AGI TerrainFollow Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "TerrainFollow" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -172,7 +112,7 @@
                                                     <Object clsid = "{45E3C4C6-5746-4F71-97D2-F9133353B4E9}">
                                                         <PerfModelName Value = "AGI VTOL Model" VarType = "VT_BSTR" />
                                                         <PerfModelType Value = "VTOL" VarType = "VT_BSTR" />
-                                                        <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                        <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                         <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                                         <HolderType Value = "Link to Catalog" VarType = "VT_BSTR" />
                                                     </Object>
@@ -181,7 +121,7 @@
                                         </PerfModelData>
                                         <Aircraft VarType = "VT_UNKNOWN">
                                             <Object clsid = "{8D417B57-6B39-4467-B8A4-8911F412ABBB}">
-                                                <AircraftName Value = "NUNIT CSharp Test" VarType = "VT_BSTR" />
+                                                <AircraftName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
                                                 <AircraftSourceCLSID Value = "{28B6EE51-8EA3-4E9F-B3F8-03BD1FE715B4}" VarType = "VT_BSTR" />
                                             </Object>
                                         </Aircraft>
@@ -204,7 +144,7 @@
                 </PhaseVec>
             </Object>
         </PhaseCollection>
-        <DisplayName Value = "NUNIT_CSharp_Test" VarType = "VT_BSTR" />
+        <DisplayName Value = "LateBoundTest_Aircraft" VarType = "VT_BSTR" />
         <XAxisMode Value = "1" VarType = "VT_I4" />
         <XAxisOverrideCount Value = "300" VarType = "VT_I4" />
         <XAxisResample Value = "1" VarType = "VT_I1" />
@@ -220,7 +160,7 @@
         </Version>
         <Configuration VarType = "VT_UNKNOWN">
             <Object clsid = "{961ED659-F7CD-43CD-8042-13754AEE715D}">
-                <GUID Value = "{2425FB6F-4A95-4F38-9F87-13DEA3DD0288}" VarType = "VT_BSTR" />
+                <GUID Value = "{9F85B2E7-5EE6-41F3-9875-2A32E0F05C7F}" VarType = "VT_BSTR" />
                 <DisplayName Value = "Default Configuration" VarType = "VT_BSTR" />
                 <EmptyWeight Value = "4.5359237000000003e+03" VarType = "VT_R8" />
                 <BaseDrag Value = "0.0000000000000000e+00" VarType = "VT_R8" />
@@ -248,7 +188,7 @@
                 <SecIntoDay Value = "0.0000000000000000e+00" VarType = "VT_R8" />
             </Object>
         </SavedEpoch>
-        <GUID Value = "{378DF343-457D-4A24-998D-C50243A0FB50}" VarType = "VT_BSTR" />
+        <GUID Value = "{905FF80E-7688-4723-9E86-60F6A6343CAF}" VarType = "VT_BSTR" />
         <TerrainSet VarType = "VT_UNKNOWN">
             <Object clsid = "{3CD176DA-A749-4029-A000-D9352FFC07F1}">
                 <DisplayName Value = "New Terrain Set" VarType = "VT_BSTR" />
