@@ -852,14 +852,19 @@ class EarlyBoundTests(TestBase):
             STK_OBJECT_TYPE.SATELLITE, "SatelliteOnEarth"
         )
 
-        (clr.CastAs((clr.CastAs(oMoonSat, Satellite)).propagator, VehiclePropagatorTwoBody)).propagate()
-        (clr.CastAs((clr.CastAs(oEarthSat, Satellite)).propagator, VehiclePropagatorTwoBody)).propagate()
+        moonSat: "Satellite" = clr.CastAs(oMoonSat, Satellite)
+        earthSat: "Satellite" = clr.CastAs(oEarthSat, Satellite)
+
+        moonSatPropagator: "VehiclePropagatorTwoBody" = clr.CastAs(moonSat.propagator, VehiclePropagatorTwoBody)
+        earthSatPropagator: "VehiclePropagatorTwoBody" = clr.CastAs(earthSat.propagator, VehiclePropagatorTwoBody)
+
+        moonSatPropagator.propagate()
+        earthSatPropagator.propagate()
 
         cart = OrbitStateCartesian(
-            (
-                clr.CastAs((clr.CastAs(oMoonSat, Satellite)).propagator, VehiclePropagatorTwoBody)
-            ).initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            moonSatPropagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
+
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
         moonCoordTypes = cart.supported_coordinate_system_types
@@ -879,9 +884,7 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         cart = OrbitStateCartesian(
-            (
-                clr.CastAs((clr.CastAs(oEarthSat, Satellite)).propagator, VehiclePropagatorTwoBody)
-            ).initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            earthSatPropagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
@@ -3342,7 +3345,8 @@ class EarlyBoundTests(TestBase):
         hpop.propagate()
 
         # *** AzEl
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_AzEl"))
+        ers1Obj: "IStkObject" = clr.CastAs(ers1, IStkObject)
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_AzEl"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         azel: "IOrientationAzEl" = IOrientationAzEl(fixed.orientation.convert_to(ORIENTATION_TYPE.AZ_EL))
@@ -3350,7 +3354,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(azel)
 
         # *** Euler
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Euler"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Euler"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
@@ -3360,7 +3364,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(euler)
 
         # *** Quaternion
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Quaternion"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Quaternion"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         quat: "IOrientationQuaternion" = IOrientationQuaternion(
@@ -3369,7 +3373,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(quat)
 
         # *** Quaternion
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_YPR"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_YPR"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         ypr: "IOrientationYPRAngles" = IOrientationYPRAngles(fixed.orientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
@@ -3917,8 +3921,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(pb)
         if not TestBase.NoGraphicsMode:
             sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
-            (clr.CastAs(sat.graphics.attributes, VehicleGraphics2DAttributesRealtime)).history.is_visible = True
-            (clr.CastAs(sat.graphics.attributes, VehicleGraphics2DAttributesRealtime)).spline.is_visible = True
+            gfxAttributesRealtime: "VehicleGraphics2DAttributesRealtime" = VehicleGraphics2DAttributesRealtime(
+                sat.graphics.attributes
+            )
+            gfxAttributesRealtime.history.is_visible = True
+            gfxAttributesRealtime.spline.is_visible = True
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
