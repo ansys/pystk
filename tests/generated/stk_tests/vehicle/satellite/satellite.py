@@ -205,11 +205,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = (
-                VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ATTITUDE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_SAT.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -660,11 +656,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             geo.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(geo)
             hpop.propagate()
@@ -701,11 +693,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             cart.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(cart)
             hpop.propagate()
@@ -742,11 +730,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             sph.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(sph)
             hpop.propagate()
@@ -794,11 +778,7 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", supportedCoordTypes[i][0], supportedCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(supportedCoordTypes[i][0]))
-                if (int(supportedCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(supportedCoordTypes[i][0]))
 
             i += 1
 
@@ -875,11 +855,7 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", moonCoordTypes[i][0], moonCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(moonCoordTypes[i][0]))
-                if (int(moonCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(moonCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(moonCoordTypes[i][0]))
 
             i += 1
 
@@ -896,11 +872,7 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", earthCoordTypes[i][0], earthCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(earthCoordTypes[i][0]))
-                if (int(earthCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(earthCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(earthCoordTypes[i][0]))
 
             i += 1
 
@@ -1228,11 +1200,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ATTRIBUTES])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1480,11 +1448,7 @@ class EarlyBoundTests(TestBase):
                 "\tPass type {0}: {1} ({2})",
                 i,
                 arSupportedTypes[i][1],
-                (
-                    VEHICLE_GRAPHICS_2D_PASS(int(arSupportedTypes[i][0]))
-                    if (int(arSupportedTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_PASS])
-                    else int(arSupportedTypes[i][0])
-                ),
+                VEHICLE_GRAPHICS_2D_PASS(int(arSupportedTypes[i][0])),
             )
 
             i += 1
@@ -2784,11 +2748,6 @@ class EarlyBoundTests(TestBase):
             while iIndex < len(arTypes):
                 ePosition: "VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION" = (
                     VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION(int(arTypes[iIndex][0]))
-                    if (
-                        int(arTypes[iIndex][0])
-                        in [item.value for item in VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION]
-                    )
-                    else int(arTypes[iIndex][0])
                 )
                 TestBase.logger.WriteLine7("\t\t\tType {0}: {1}", iIndex, ePosition)
                 if not oPoint.is_position_type_supported(ePosition):

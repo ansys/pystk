@@ -449,11 +449,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
-            eComputeType: "FIGURE_OF_MERIT_COMPUTE" = (
-                FIGURE_OF_MERIT_COMPUTE(int(arTypes[iIndex]))
-                if (int(arTypes[iIndex]) in [item.value for item in FIGURE_OF_MERIT_COMPUTE])
-                else int(arTypes[iIndex])
-            )
+            eComputeType: "FIGURE_OF_MERIT_COMPUTE" = FIGURE_OF_MERIT_COMPUTE(int(arTypes[iIndex]))
             if not oCompute.is_compute_type_supported(eComputeType):
                 Assert.fail("The {0} Compute Type should be supported!", eComputeType)
 
@@ -782,11 +778,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arMethods):
-            eMethod: "FIGURE_OF_MERIT_METHOD" = (
-                FIGURE_OF_MERIT_METHOD(int(arMethods[iIndex]))
-                if (int(arMethods[iIndex]) in [item.value for item in FIGURE_OF_MERIT_METHOD])
-                else int(arMethods[iIndex])
-            )
+            eMethod: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(arMethods[iIndex]))
             if not oDOP.is_method_supported(eMethod):
                 Assert.fail("The {0} Method should be supported!", eMethod)
 
@@ -805,11 +797,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
-            eType: "FIGURE_OF_MERIT_COMPUTE_TYPE" = (
-                FIGURE_OF_MERIT_COMPUTE_TYPE(int(arTypes[iIndex]))
-                if (int(arTypes[iIndex]) in [item.value for item in FIGURE_OF_MERIT_COMPUTE_TYPE])
-                else int(arTypes[iIndex])
-            )
+            eType: "FIGURE_OF_MERIT_COMPUTE_TYPE" = FIGURE_OF_MERIT_COMPUTE_TYPE(int(arTypes[iIndex]))
             if not oDOP.is_type_supported(eType):
                 Assert.fail("The {0} Type should be supported!", eType)
 
@@ -837,11 +825,7 @@ class FOMHelper(object):
                 supportedTypes = oBest4.best4_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
-                    method: "FIGURE_OF_MERIT_METHOD" = (
-                        FIGURE_OF_MERIT_METHOD(int(omethod))
-                        if (int(omethod) in [item.value for item in FIGURE_OF_MERIT_METHOD])
-                        else int(omethod)
-                    )
+                    method: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(omethod))
                     Assert.assertTrue(oBest4.is_best4_metric_supported(method))
                     oBest4.best4_metric = method
                     Assert.assertEqual(method, oBest4.best4_metric)
@@ -866,11 +850,7 @@ class FOMHelper(object):
                 supportedTypes = oBestN.best_n_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
-                    method: "FIGURE_OF_MERIT_METHOD" = (
-                        FIGURE_OF_MERIT_METHOD(int(omethod))
-                        if (int(omethod) in [item.value for item in FIGURE_OF_MERIT_METHOD])
-                        else int(omethod)
-                    )
+                    method: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(omethod))
                     Assert.assertTrue(oBestN.is_best_n_metric_supported(method))
                     oBestN.best_n_metric = method
                     Assert.assertEqual(method, oBestN.best_n_metric)

@@ -527,9 +527,7 @@ class EarlyBoundTests(TestBase):
 
         # cannot cast to -1 in Java
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.start_time.type = (
-                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
-            )
+            tp.start_time.type = -1
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             tp.start_time.value = ""
 
@@ -555,9 +553,7 @@ class EarlyBoundTests(TestBase):
 
         # cannot cast to -1 in Java
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.stop_time.type = (
-                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
-            )
+            tp.stop_time.type = -1
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             tp.stop_time.value = ""
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):

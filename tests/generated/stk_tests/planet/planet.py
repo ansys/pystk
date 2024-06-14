@@ -90,11 +90,7 @@ class EarlyBoundTests(TestBase):
                 "\t\t\tThe {0} supports {1} EphemSourceTypes", oBody.central_body, Array.Length(arEphem)
             )
             if Array.Length(arEphem) > 0:
-                eType: "EPHEM_SOURCE_TYPE" = (
-                    EPHEM_SOURCE_TYPE(int(arEphem[0]))
-                    if (int(arEphem[0]) in [item.value for item in EPHEM_SOURCE_TYPE])
-                    else int(arEphem[0])
-                )
+                eType: "EPHEM_SOURCE_TYPE" = EPHEM_SOURCE_TYPE(int(arEphem[0]))
                 TestBase.logger.WriteLine7("\t\t\t\tAvailable Type {0}: {1}", 0, eType)
                 oBody.ephem_source = eType
                 TestBase.logger.WriteLine6("\t\t\t\t\tThe new EphemSourceType is: {0}", oBody.ephem_source)
@@ -201,9 +197,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH4, gfx.line_width)
         with pytest.raises(Exception):
-            gfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            gfx.line_width = -1
         with pytest.raises(Exception):
-            gfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            gfx.line_width = 11
 
         # Inherit from 2D
         TestBase.logger.WriteLine4("The current Inherit is: {0}", gfx.inherit)

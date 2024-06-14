@@ -497,11 +497,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
-            eAccessConstraint: "ACCESS_CONSTRAINTS" = (
-                ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
-                if (int(arAvailable[i][1]) in [item.value for item in ACCESS_CONSTRAINTS])
-                else int(arAvailable[i][1])
-            )
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
             Console.WriteLine("\tConstraint {0}: {1} ({2})", i, availName, eAccessConstraint)
 
             i += 1
