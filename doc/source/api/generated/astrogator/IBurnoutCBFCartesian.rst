@@ -1,0 +1,78 @@
+IBurnoutCBFCartesian
+====================
+
+.. py:class:: IBurnoutCBFCartesian
+
+   IBurnout
+   
+   Properties for a Cartesian CBF burnout state definition.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~cartesian_burnout_x`
+            * - :py:meth:`~cartesian_burnout_y`
+            * - :py:meth:`~cartesian_burnout_z`
+            * - :py:meth:`~cartesian_burnout_vx`
+            * - :py:meth:`~cartesian_burnout_vy`
+            * - :py:meth:`~cartesian_burnout_vz`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IBurnoutCBFCartesian
+
+
+Property detail
+---------------
+
+.. py:property:: cartesian_burnout_x
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_x
+    :type: float
+
+    The CBF x component of the spacecraft burnout location. Uses Distance Dimension.
+
+.. py:property:: cartesian_burnout_y
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_y
+    :type: float
+
+    The CBF y component of the spacecraft burnout location. Uses Distance Dimension.
+
+.. py:property:: cartesian_burnout_z
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_z
+    :type: float
+
+    The CBF z component of the spacecraft burnout location. Uses Distance Dimension.
+
+.. py:property:: cartesian_burnout_vx
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vx
+    :type: float
+
+    The CBF x component of the spacecraft burnout velocity. Uses Rate Dimension.
+
+.. py:property:: cartesian_burnout_vy
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vy
+    :type: float
+
+    The CBF y component of the spacecraft burnout velocity. Uses Rate Dimension.
+
+.. py:property:: cartesian_burnout_vz
+    :canonical: ansys.stk.core.stkobjects.astrogator.IBurnoutCBFCartesian.cartesian_burnout_vz
+    :type: float
+
+    The CBF z component of the spacecraft burnout velocity. Uses Rate Dimension.
+
+

@@ -1,0 +1,74 @@
+ICalculationToolScalarCustom
+============================
+
+.. py:class:: ICalculationToolScalarCustom
+
+   object
+   
+   A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~reload`
+              - Reload the file specified with Filename property.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~filename`
+            * - :py:meth:`~invalidate_on_exec_error`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import ICalculationToolScalarCustom
+
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarCustom.filename
+    :type: str
+
+    A path to MATLAB (.m or .dll), Perl or VBScript file.
+
+.. py:property:: invalidate_on_exec_error
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalarCustom.invalidate_on_exec_error
+    :type: bool
+
+    Specifies InvalidOnExecError flag for a custom scalar.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: reload(self) -> None
+
+    Reload the file specified with Filename property.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+

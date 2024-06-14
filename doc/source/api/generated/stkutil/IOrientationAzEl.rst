@@ -1,0 +1,57 @@
+IOrientationAzEl
+================
+
+.. py:class:: IOrientationAzEl
+
+   IOrientation
+   
+   Interface for AzEl orientation method.
+
+.. py:currentmodule:: ansys.stk.core.stkutil
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~azimuth`
+            * - :py:meth:`~elevation`
+            * - :py:meth:`~about_boresight`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import IOrientationAzEl
+
+
+Property detail
+---------------
+
+.. py:property:: azimuth
+    :canonical: ansys.stk.core.stkutil.IOrientationAzEl.azimuth
+    :type: typing.Any
+
+    Measured in the XY plane of the parent reference frame about its Z axis in the right-handed sense for both vehicle-based sensors and facility-based sensors. Uses Angle Dimension.
+
+.. py:property:: elevation
+    :canonical: ansys.stk.core.stkutil.IOrientationAzEl.elevation
+    :type: typing.Any
+
+    Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension.
+
+.. py:property:: about_boresight
+    :canonical: ansys.stk.core.stkutil.IOrientationAzEl.about_boresight
+    :type: "AZ_EL_ABOUT_BORESIGHT"
+
+    Determines orientation of the X and Y axes with respect to the parent's reference frame.
+
+

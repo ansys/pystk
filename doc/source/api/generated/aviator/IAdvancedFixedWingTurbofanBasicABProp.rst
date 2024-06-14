@@ -1,0 +1,141 @@
+IAdvancedFixedWingTurbofanBasicABProp
+=====================================
+
+.. py:class:: IAdvancedFixedWingTurbofanBasicABProp
+
+   object
+   
+   Interface used to access the options for the Turbofan - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~can_use_afterburner`
+            * - :py:meth:`~design_altitude`
+            * - :py:meth:`~design_mach`
+            * - :py:meth:`~design_thrust`
+            * - :py:meth:`~afterburner_on`
+            * - :py:meth:`~max_compression_temp`
+            * - :py:meth:`~max_burner_temp`
+            * - :py:meth:`~max_afterburner_temp`
+            * - :py:meth:`~hpc_pressure_ratio`
+            * - :py:meth:`~lpc_pressure_ratio`
+            * - :py:meth:`~fan_pressure_ratio`
+            * - :py:meth:`~efficiencies_and_losses`
+            * - :py:meth:`~fuel_type`
+            * - :py:meth:`~fuel_mode_as_afprop`
+            * - :py:meth:`~fuel_mode_as_cea`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import IAdvancedFixedWingTurbofanBasicABProp
+
+
+Property detail
+---------------
+
+.. py:property:: can_use_afterburner
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.can_use_afterburner
+    :type: bool
+
+    Opt whether the engine has an afterburner.
+
+.. py:property:: design_altitude
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.design_altitude
+    :type: float
+
+    Gets or sets the altitude design point of the engine.
+
+.. py:property:: design_mach
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.design_mach
+    :type: float
+
+    Gets or sets the mach number design point of the engine.
+
+.. py:property:: design_thrust
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.design_thrust
+    :type: float
+
+    Gets or sets the thrust design point of the engine.
+
+.. py:property:: afterburner_on
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.afterburner_on
+    :type: bool
+
+    Opt whether to specify the design point with the afterburner on.
+
+.. py:property:: max_compression_temp
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.max_compression_temp
+    :type: float
+
+    Gets or sets the maximum temperature at the compressor stage.
+
+.. py:property:: max_burner_temp
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.max_burner_temp
+    :type: float
+
+    Gets or sets the maximum temperature at the combustion stage.
+
+.. py:property:: max_afterburner_temp
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.max_afterburner_temp
+    :type: float
+
+    Gets or sets the maximum temperature at the afterburner.
+
+.. py:property:: hpc_pressure_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.hpc_pressure_ratio
+    :type: float
+
+    Gets or sets the pressure ratio of the high-pressure compressor.
+
+.. py:property:: lpc_pressure_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.lpc_pressure_ratio
+    :type: float
+
+    Gets or sets the pressure ratio of the low-pressure compressor.
+
+.. py:property:: fan_pressure_ratio
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.fan_pressure_ratio
+    :type: float
+
+    Gets or sets the pressure ratio of the fan.
+
+.. py:property:: efficiencies_and_losses
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.efficiencies_and_losses
+    :type: "IAgAvtrPropulsionEfficiencies"
+
+    Get the jet engine's propulsion efficiencies and losses.
+
+.. py:property:: fuel_type
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.fuel_type
+    :type: "JET_FUEL_TYPE"
+
+    Gets or sets the jet engine's fuel type.
+
+.. py:property:: fuel_mode_as_afprop
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.fuel_mode_as_afprop
+    :type: "IAgAvtrFuelModelKeroseneAFPROP"
+
+    Get the interface for a Kerosene - AFPROP fuel mode.
+
+.. py:property:: fuel_mode_as_cea
+    :canonical: ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbofanBasicABProp.fuel_mode_as_cea
+    :type: "IAgAvtrFuelModelKeroseneCEA"
+
+    Get the interface for a Kerosene - CEA fuel mode.
+
+

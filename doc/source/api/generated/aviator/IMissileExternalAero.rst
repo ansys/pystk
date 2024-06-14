@@ -1,0 +1,103 @@
+IMissileExternalAero
+====================
+
+.. py:class:: IMissileExternalAero
+
+   object
+   
+   Interface used to access the External aerodynamics options for a missile.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_filepath`
+              - Set the filepath for the external aero file.
+            * - :py:meth:`~reload`
+              - Reload the external aero file.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~filepath`
+            * - :py:meth:`~reference_area`
+            * - :py:meth:`~can_set_reference_area`
+            * - :py:meth:`~is_valid`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import IMissileExternalAero
+
+
+Property detail
+---------------
+
+.. py:property:: filepath
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.filepath
+    :type: str
+
+    Get the filepath for the external aero file.
+
+.. py:property:: reference_area
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.reference_area
+    :type: float
+
+    Gets or sets the area of the lifting surface of the missile.
+
+.. py:property:: can_set_reference_area
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.can_set_reference_area
+    :type: bool
+
+    Check whether you can set the reference area or whether it is specified in the file.
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.stkobjects.aviator.IMissileExternalAero.is_valid
+    :type: bool
+
+    Check whether the filepath is valid.
+
+
+Method detail
+-------------
+
+
+.. py:method:: set_filepath(self, filepath:str) -> str
+
+    Set the filepath for the external aero file.
+
+    :Parameters:
+
+    **filepath** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~str`
+
+.. py:method:: reload(self) -> str
+
+    Reload the external aero file.
+
+    :Returns:
+
+        :obj:`~str`
+
+
+
+
+

@@ -1,0 +1,79 @@
+IScenSpaceEnvironment
+=====================
+
+.. py:class:: IScenSpaceEnvironment
+
+   object
+   
+   no helpstring provided.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~compute_saa_flux_intensity`
+              - Compute SAA flux intensity at the specified Earth location. Uses Angle, Longitude, Distance, and FluxIntensity Dimensions.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~radiation_environment`
+            * - :py:meth:`~graphics_3d`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IScenSpaceEnvironment
+
+
+Property detail
+---------------
+
+.. py:property:: radiation_environment
+    :canonical: ansys.stk.core.stkobjects.IScenSpaceEnvironment.radiation_environment
+    :type: "IAgSpEnvRadiationEnvironment"
+
+    Gets the radiation environment settings.
+
+.. py:property:: graphics_3d
+    :canonical: ansys.stk.core.stkobjects.IScenSpaceEnvironment.graphics_3d
+    :type: "IAgSpEnvScenExtVO"
+
+    Gets the 3D Graphics settings.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: compute_saa_flux_intensity(self, channel:"SPACE_ENVIRONMENT_SAA_CHANNEL", lat:float, lon:float, alt:float) -> float
+
+    Compute SAA flux intensity at the specified Earth location. Uses Angle, Longitude, Distance, and FluxIntensity Dimensions.
+
+    :Parameters:
+
+    **channel** : :obj:`~"SPACE_ENVIRONMENT_SAA_CHANNEL"`
+    **lat** : :obj:`~float`
+    **lon** : :obj:`~float`
+    **alt** : :obj:`~float`
+
+    :Returns:
+
+        :obj:`~float`
+

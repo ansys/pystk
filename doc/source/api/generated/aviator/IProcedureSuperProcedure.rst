@@ -1,0 +1,70 @@
+IProcedureSuperProcedure
+========================
+
+.. py:class:: IProcedureSuperProcedure
+
+   object
+   
+   Interface used to access the options for a super procedure.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~get_as_procedure`
+              - Get the procedure interface.
+            * - :py:meth:`~load_procedures_from_clipboard`
+              - Load procedures from the clipboard.
+            * - :py:meth:`~load_procedures_from_file`
+              - Load procedures from a file.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import IProcedureSuperProcedure
+
+
+
+Method detail
+-------------
+
+.. py:method:: get_as_procedure(self) -> "IProcedure"
+
+    Get the procedure interface.
+
+    :Returns:
+
+        :obj:`~"IProcedure"`
+
+.. py:method:: load_procedures_from_clipboard(self) -> None
+
+    Load procedures from the clipboard.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: load_procedures_from_file(self, filepath:str) -> None
+
+    Load procedures from a file.
+
+    :Parameters:
+
+    **filepath** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+

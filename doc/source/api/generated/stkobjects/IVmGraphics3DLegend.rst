@@ -1,0 +1,120 @@
+IVmGraphics3DLegend
+===================
+
+.. py:class:: IVmGraphics3DLegend
+
+   object
+   
+   IAgVmVOLegend Interface for defining boundary/fill legend for volumetric object.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~position_x`
+            * - :py:meth:`~position_y`
+            * - :py:meth:`~translucency`
+            * - :py:meth:`~background_color`
+            * - :py:meth:`~title`
+            * - :py:meth:`~decimal_digits`
+            * - :py:meth:`~notation`
+            * - :py:meth:`~text_color`
+            * - :py:meth:`~level_order`
+            * - :py:meth:`~max_color_squares`
+            * - :py:meth:`~color_square_width`
+            * - :py:meth:`~color_square_height`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IVmGraphics3DLegend
+
+
+Property detail
+---------------
+
+.. py:property:: position_x
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_x
+    :type: int
+
+    Set the x value for the pixel location for the upper left corner of the legend.
+
+.. py:property:: position_y
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.position_y
+    :type: int
+
+    Set the y value for the pixel location for the upper left corner of the legend.
+
+.. py:property:: translucency
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.translucency
+    :type: float
+
+    Set the percent Translucency for the legend.
+
+.. py:property:: background_color
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.background_color
+    :type: agcolor.Color
+
+    Set the color of the legend background.
+
+.. py:property:: title
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.title
+    :type: str
+
+    Set the text to appear at the top of the legend.
+
+.. py:property:: decimal_digits
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.decimal_digits
+    :type: int
+
+    Set the precision, or number of digits that should display to the right of the decimal point, with which real numbers should display.
+
+.. py:property:: notation
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.notation
+    :type: "VM_LEGEND_NUMERIC_NOTATION"
+
+    Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
+
+.. py:property:: text_color
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.text_color
+    :type: agcolor.Color
+
+    Set the color of the legend text.
+
+.. py:property:: level_order
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.level_order
+    :type: "VM_LEVEL_ORDER"
+
+    Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
+
+.. py:property:: max_color_squares
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.max_color_squares
+    :type: int
+
+    Set the number of colors per row or column depending on the selected LevelOrder. Number between 1 and 1000.
+
+.. py:property:: color_square_width
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_width
+    :type: int
+
+    Set the width of the individual color band. Number between 1 and 100.
+
+.. py:property:: color_square_height
+    :canonical: ansys.stk.core.stkobjects.IVmGraphics3DLegend.color_square_height
+    :type: int
+
+    Set the height of the individual color band. Number between 1 and 100.
+
+

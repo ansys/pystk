@@ -1,0 +1,78 @@
+IAdvCATAvailableObjectCollection
+================================
+
+.. py:class:: IAdvCATAvailableObjectCollection
+
+   object
+   
+   IAgAdvCATAvailableObjectCollection represents available objects.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~get_available_object`
+              - Return name, date and type times of the interval at a given index.
+            * - :py:meth:`~to_array`
+              - Return a two-dimensional array of objects.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~count`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IAdvCATAvailableObjectCollection
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.IAdvCATAvailableObjectCollection.count
+    :type: int
+
+    Number of items in the collection.
+
+
+Method detail
+-------------
+
+
+.. py:method:: get_available_object(self, index:int) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+
+    Return name, date and type times of the interval at a given index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~typing.Tuple[typing.Any, typing.Any, typing.Any]`
+
+.. py:method:: to_array(self) -> list
+
+    Return a two-dimensional array of objects.
+
+    :Returns:
+
+        :obj:`~list`
+

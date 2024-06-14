@@ -1,0 +1,104 @@
+IUserVariableUpdateCollection
+=============================
+
+.. py:class:: IUserVariableUpdateCollection
+
+   object
+   
+   The list of User Variables accessed through an Update segment.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~item`
+              - Allow you to iterate through the collection.
+            * - :py:meth:`~get_item_by_index`
+              - Retrieve a user variable update in the collection by index.
+            * - :py:meth:`~get_item_by_name`
+              - Retrieve a user variable update in the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~_NewEnum`
+            * - :py:meth:`~count`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IUserVariableUpdateCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.IUserVariableUpdateCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, indexOrName:typing.Any) -> "IUserVariableUpdate"
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"IUserVariableUpdate"`
+
+
+
+.. py:method:: get_item_by_index(self, index:int) -> "IUserVariableUpdate"
+
+    Retrieve a user variable update in the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IUserVariableUpdate"`
+
+.. py:method:: get_item_by_name(self, name:str) -> "IUserVariableUpdate"
+
+    Retrieve a user variable update in the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IUserVariableUpdate"`
+

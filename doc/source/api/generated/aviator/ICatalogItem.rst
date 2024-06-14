@@ -1,0 +1,174 @@
+ICatalogItem
+============
+
+.. py:class:: ICatalogItem
+
+   object
+   
+   Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~duplicate`
+              - Duplicates the catalog item.
+            * - :py:meth:`~remove`
+              - Remove the catalog item.
+            * - :py:meth:`~save`
+              - Save the catalog item.
+            * - :py:meth:`~get_child_item_by_name`
+              - Get the child of the catalog item with the given name.
+            * - :py:meth:`~add_default_child`
+              - Create a new child with the given name and default type.
+            * - :py:meth:`~add_child_of_type`
+              - Create a new child with the given name and specified type.
+            * - :py:meth:`~contains_child_item`
+              - Get whether the catalog item is contains the given child item.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~name`
+            * - :py:meth:`~description`
+            * - :py:meth:`~is_read_only`
+            * - :py:meth:`~child_names`
+            * - :py:meth:`~child_types`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import ICatalogItem
+
+
+Property detail
+---------------
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.name
+    :type: str
+
+    Gets or sets the name of the catalog item.
+
+.. py:property:: description
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.description
+    :type: str
+
+    Get the description of the catalog item.
+
+.. py:property:: is_read_only
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.is_read_only
+    :type: bool
+
+    Get whether the catalog item is read only.
+
+.. py:property:: child_names
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.child_names
+    :type: list
+
+    Get the child names of the catalog item.
+
+.. py:property:: child_types
+    :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.child_types
+    :type: list
+
+    Get the child types.
+
+
+Method detail
+-------------
+
+
+
+
+.. py:method:: duplicate(self) -> "ICatalogItem"
+
+    Duplicates the catalog item.
+
+    :Returns:
+
+        :obj:`~"ICatalogItem"`
+
+.. py:method:: remove(self) -> None
+
+    Remove the catalog item.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: save(self) -> None
+
+    Save the catalog item.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: get_child_item_by_name(self, childName:str) -> "ICatalogItem"
+
+    Get the child of the catalog item with the given name.
+
+    :Parameters:
+
+    **childName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"ICatalogItem"`
+
+
+.. py:method:: add_default_child(self, childName:str) -> "ICatalogItem"
+
+    Create a new child with the given name and default type.
+
+    :Parameters:
+
+    **childName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"ICatalogItem"`
+
+.. py:method:: add_child_of_type(self, childType:str, childName:str) -> "ICatalogItem"
+
+    Create a new child with the given name and specified type.
+
+    :Parameters:
+
+    **childType** : :obj:`~str`
+    **childName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"ICatalogItem"`
+
+.. py:method:: contains_child_item(self, childItem:str) -> bool
+
+    Get whether the catalog item is contains the given child item.
+
+    :Parameters:
+
+    **childItem** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~bool`
+

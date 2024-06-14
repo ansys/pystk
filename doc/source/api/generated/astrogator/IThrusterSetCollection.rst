@@ -1,0 +1,180 @@
+IThrusterSetCollection
+======================
+
+.. py:class:: IThrusterSetCollection
+
+   object
+   
+   The list of thrusters in a thruster set.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~item`
+              - Iterate through the collection.
+            * - :py:meth:`~add`
+              - Add a new thruster.
+            * - :py:meth:`~remove`
+              - Remove a specified thruster.
+            * - :py:meth:`~remove_all`
+              - Remove all thrusters.
+            * - :py:meth:`~cut`
+              - Copy a thruster to the clipboard and removes the thruster from the list.
+            * - :py:meth:`~paste`
+              - Pastes a thruster from the clipboard into the list.
+            * - :py:meth:`~insert_copy`
+              - Copy a thruster and inserts the copy into the list.
+            * - :py:meth:`~get_item_by_index`
+              - Retrieve a thruster from the collection by index.
+            * - :py:meth:`~get_item_by_name`
+              - Retrieve a thruster from the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~_NewEnum`
+            * - :py:meth:`~count`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IThrusterSetCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection._NewEnum
+    :type: EnumeratorProxy
+
+    A property that allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection.count
+    :type: int
+
+    Get the number of thrusters in the set.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, indexOrName:typing.Any) -> "IThruster"
+
+    Iterate through the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+
+
+
+.. py:method:: add(self, thrusterName:str) -> "IThruster"
+
+    Add a new thruster.
+
+    :Parameters:
+
+    **thrusterName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+
+.. py:method:: remove(self, indexOrName:typing.Any) -> None
+
+    Remove a specified thruster.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+
+    Remove all thrusters.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: cut(self, indexOrName:typing.Any) -> None
+
+    Copy a thruster to the clipboard and removes the thruster from the list.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: paste(self) -> "IThruster"
+
+    Pastes a thruster from the clipboard into the list.
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+
+.. py:method:: insert_copy(self, thruster:"IThruster") -> "IThruster"
+
+    Copy a thruster and inserts the copy into the list.
+
+    :Parameters:
+
+    **thruster** : :obj:`~"IThruster"`
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+
+.. py:method:: get_item_by_index(self, index:int) -> "IThruster"
+
+    Retrieve a thruster from the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+
+.. py:method:: get_item_by_name(self, name:str) -> "IThruster"
+
+    Retrieve a thruster from the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IThruster"`
+

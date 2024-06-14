@@ -1,0 +1,68 @@
+ITimeToolEventArrayFixedTimes
+=============================
+
+.. py:class:: ITimeToolEventArrayFixedTimes
+
+   object
+   
+   Array defined by time ordered instants each explicitly specified.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_array_times`
+              - Set array of times.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~array_times`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import ITimeToolEventArrayFixedTimes
+
+
+Property detail
+---------------
+
+.. py:property:: array_times
+    :canonical: ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes.array_times
+    :type: list
+
+    The array of times.
+
+
+Method detail
+-------------
+
+
+.. py:method:: set_array_times(self, times:list) -> None
+
+    Set array of times.
+
+    :Parameters:
+
+    **times** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~None`
+

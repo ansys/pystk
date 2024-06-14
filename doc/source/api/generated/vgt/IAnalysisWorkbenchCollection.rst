@@ -1,0 +1,118 @@
+IAnalysisWorkbenchCollection
+============================
+
+.. py:class:: IAnalysisWorkbenchCollection
+
+   object
+   
+   A collection of VGT objects.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~contains`
+              - Search for a an element with a given name. Returns false if the specified element does not exist.
+            * - :py:meth:`~item`
+              - Retrieve an element of the collection using the name of the element or a position in the collection.
+            * - :py:meth:`~get_item_by_index`
+              - Retrieve an item from the crdn collection by index.
+            * - :py:meth:`~get_item_by_name`
+              - Retrieve an item from the crdn collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~count`
+            * - :py:meth:`~_NewEnum`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import IAnalysisWorkbenchCollection
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection.count
+    :type: int
+
+    Returns a number of elements in the collection.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Returns a COM enumerator.
+
+
+Method detail
+-------------
+
+.. py:method:: contains(self, name:str) -> bool
+
+    Search for a an element with a given name. Returns false if the specified element does not exist.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: item(self, indexOrName:typing.Any) -> "IAnalysisWorkbenchComponent"
+
+    Retrieve an element of the collection using the name of the element or a position in the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"IAnalysisWorkbenchComponent"`
+
+
+.. py:method:: get_item_by_index(self, index:int) -> "IAnalysisWorkbenchComponent"
+
+    Retrieve an item from the crdn collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IAnalysisWorkbenchComponent"`
+
+.. py:method:: get_item_by_name(self, name:str) -> "IAnalysisWorkbenchComponent"
+
+    Retrieve an item from the crdn collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IAnalysisWorkbenchComponent"`
+

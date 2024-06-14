@@ -1,0 +1,324 @@
+ISensor
+=======
+
+.. py:class:: ISensor
+
+   object
+   
+   Provide access to the properties and methods used in defining a sensor object.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_pattern_type`
+              - Set the pattern type.
+            * - :py:meth:`~set_pointing_type`
+              - Set the sensor's pointing type, using the AgESnPointing enumeration.
+            * - :py:meth:`~set_pointing_external_file`
+              - Set the external pointing type.
+            * - :py:meth:`~reset_az_el_mask`
+              - Reset the az-el mask.
+            * - :py:meth:`~set_az_el_mask`
+              - Set the az-el mask type, using the AgEAzElMaskType enumeration.
+            * - :py:meth:`~set_az_el_mask_file`
+              - Path and file name of az-el mask file.
+            * - :py:meth:`~set_location_type`
+              - Set the sensor's location type, a member of the AgESnLocation enumeration.
+            * - :py:meth:`~is_refraction_type_supported`
+              - Get a value indicating whether the specified type can be used.
+            * - :py:meth:`~get_stars_in_fov`
+              - Return celestial bodies within the sensor's field of view.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~pattern_type`
+            * - :py:meth:`~pattern`
+            * - :py:meth:`~pointing_type`
+            * - :py:meth:`~pointing`
+            * - :py:meth:`~az_el_mask`
+            * - :py:meth:`~az_el_mask_data`
+            * - :py:meth:`~focal_length`
+            * - :py:meth:`~detector_pitch`
+            * - :py:meth:`~refraction`
+            * - :py:meth:`~graphics`
+            * - :py:meth:`~graphics_3d`
+            * - :py:meth:`~location_type`
+            * - :py:meth:`~location_data`
+            * - :py:meth:`~access_constraints`
+            * - :py:meth:`~swath`
+            * - :py:meth:`~refraction_supported_types`
+            * - :py:meth:`~refraction_model`
+            * - :py:meth:`~use_refraction_in_access`
+            * - :py:meth:`~common_tasks`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ISensor
+
+
+Property detail
+---------------
+
+.. py:property:: pattern_type
+    :canonical: ansys.stk.core.stkobjects.ISensor.pattern_type
+    :type: "SENSOR_PATTERN"
+
+    Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
+
+.. py:property:: pattern
+    :canonical: ansys.stk.core.stkobjects.ISensor.pattern
+    :type: "IAgSnPattern"
+
+    Get data defining the sensor pattern.
+
+.. py:property:: pointing_type
+    :canonical: ansys.stk.core.stkobjects.ISensor.pointing_type
+    :type: "SENSOR_POINTING"
+
+    The sensor's pointing type. A member of the AgESnPointing enumeration.
+
+.. py:property:: pointing
+    :canonical: ansys.stk.core.stkobjects.ISensor.pointing
+    :type: "IAgSnPointing"
+
+    Get pointing data for the sensor.
+
+.. py:property:: az_el_mask
+    :canonical: ansys.stk.core.stkobjects.ISensor.az_el_mask
+    :type: "AZ_EL_MASK_TYPE"
+
+    Get the az-el mask.
+
+.. py:property:: az_el_mask_data
+    :canonical: ansys.stk.core.stkobjects.ISensor.az_el_mask_data
+    :type: "IAgAzElMaskData"
+
+    Get az-el mask data for the sensor.
+
+.. py:property:: focal_length
+    :canonical: ansys.stk.core.stkobjects.ISensor.focal_length
+    :type: float
+
+    Focal length used in defining sensor resolution. Uses SmallDistanceUnit Dimension.
+
+.. py:property:: detector_pitch
+    :canonical: ansys.stk.core.stkobjects.ISensor.detector_pitch
+    :type: float
+
+    Detector pitch used in defining senor resolution. Uses SmallDistanceUnit Dimension.
+
+.. py:property:: refraction
+    :canonical: ansys.stk.core.stkobjects.ISensor.refraction
+    :type: "SENSOR_REFRACTION_TYPE"
+
+    Refraction method, a member of the AgESnRefractionType enumeration.
+
+.. py:property:: graphics
+    :canonical: ansys.stk.core.stkobjects.ISensor.graphics
+    :type: "IAgSnGraphics"
+
+    Get the 2D Graphics properties for the sensor.
+
+.. py:property:: graphics_3d
+    :canonical: ansys.stk.core.stkobjects.ISensor.graphics_3d
+    :type: "IAgSnVO"
+
+    Get the 3D Graphics properties for the sensor.
+
+.. py:property:: location_type
+    :canonical: ansys.stk.core.stkobjects.ISensor.location_type
+    :type: "SENSOR_LOCATION"
+
+    The location type being used by the sensor.
+
+.. py:property:: location_data
+    :canonical: ansys.stk.core.stkobjects.ISensor.location_data
+    :type: "IAgLocationData"
+
+    Get location data for the sensor. The sensor's center point is invalid; all other points are valid choices for the location data.
+
+.. py:property:: access_constraints
+    :canonical: ansys.stk.core.stkobjects.ISensor.access_constraints
+    :type: "IAgAccessConstraintCollection"
+
+    Get constraints imposed on the sensor.
+
+.. py:property:: swath
+    :canonical: ansys.stk.core.stkobjects.ISensor.swath
+    :type: "IAgSwath"
+
+    Get the sensor's swath.
+
+.. py:property:: refraction_supported_types
+    :canonical: ansys.stk.core.stkobjects.ISensor.refraction_supported_types
+    :type: list
+
+    Returns an array of valid choices.
+
+.. py:property:: refraction_model
+    :canonical: ansys.stk.core.stkobjects.ISensor.refraction_model
+    :type: "IAgRfModelBase"
+
+    Gets a refraction model.
+
+.. py:property:: use_refraction_in_access
+    :canonical: ansys.stk.core.stkobjects.ISensor.use_refraction_in_access
+    :type: bool
+
+    Flag controls whether refraction is applied when computing relative position in Access.
+
+.. py:property:: common_tasks
+    :canonical: ansys.stk.core.stkobjects.ISensor.common_tasks
+    :type: "IAgSnCommonTasks"
+
+    Returns an interface that exposes common tasks.
+
+
+Method detail
+-------------
+
+
+.. py:method:: set_pattern_type(self, patternType:"SENSOR_PATTERN") -> None
+
+    Set the pattern type.
+
+    :Parameters:
+
+    **patternType** : :obj:`~"SENSOR_PATTERN"`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: set_pointing_type(self, pointingType:"SENSOR_POINTING") -> None
+
+    Set the sensor's pointing type, using the AgESnPointing enumeration.
+
+    :Parameters:
+
+    **pointingType** : :obj:`~"SENSOR_POINTING"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_pointing_external_file(self, sensorPointingFile:str) -> None
+
+    Set the external pointing type.
+
+    :Parameters:
+
+    **sensorPointingFile** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: reset_az_el_mask(self) -> None
+
+    Reset the az-el mask.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: set_az_el_mask(self, azElMaskType:"AZ_EL_MASK_TYPE") -> None
+
+    Set the az-el mask type, using the AgEAzElMaskType enumeration.
+
+    :Parameters:
+
+    **azElMaskType** : :obj:`~"AZ_EL_MASK_TYPE"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_az_el_mask_file(self, filename:str) -> None
+
+    Path and file name of az-el mask file.
+
+    :Parameters:
+
+    **filename** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_location_type(self, locationType:"SENSOR_LOCATION") -> None
+
+    Set the sensor's location type, a member of the AgESnLocation enumeration.
+
+    :Parameters:
+
+    **locationType** : :obj:`~"SENSOR_LOCATION"`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+.. py:method:: is_refraction_type_supported(self, model:"SENSOR_REFRACTION_TYPE") -> bool
+
+    Get a value indicating whether the specified type can be used.
+
+    :Parameters:
+
+    **model** : :obj:`~"SENSOR_REFRACTION_TYPE"`
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+
+
+
+
+.. py:method:: get_stars_in_fov(self, epoch:typing.Any) -> "ICelestialBodyCollection"
+
+    Return celestial bodies within the sensor's field of view.
+
+    :Parameters:
+
+    **epoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"ICelestialBodyCollection"`
+

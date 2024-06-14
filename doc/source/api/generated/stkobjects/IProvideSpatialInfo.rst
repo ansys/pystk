@@ -1,0 +1,50 @@
+IProvideSpatialInfo
+===================
+
+.. py:class:: IProvideSpatialInfo
+
+   object
+   
+   Provide methods for accessing spatial information for an object.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~get_spatial_info`
+              - Return the spatial information for an object.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IProvideSpatialInfo
+
+
+
+Method detail
+-------------
+
+.. py:method:: get_spatial_info(self, recycle:bool) -> "IVehicleSpatialInfo"
+
+    Return the spatial information for an object.
+
+    :Parameters:
+
+    **recycle** : :obj:`~bool`
+
+    :Returns:
+
+        :obj:`~"IVehicleSpatialInfo"`
+

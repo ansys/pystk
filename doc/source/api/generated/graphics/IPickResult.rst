@@ -1,0 +1,57 @@
+IPickResult
+===========
+
+.. py:class:: IPickResult
+
+   object
+   
+   A single result from Pick.
+
+.. py:currentmodule:: ansys.stk.core.graphics
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~objects`
+            * - :py:meth:`~depth`
+            * - :py:meth:`~position`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import IPickResult
+
+
+Property detail
+---------------
+
+.. py:property:: objects
+    :canonical: ansys.stk.core.graphics.IPickResult.objects
+    :type: "IAgStkGraphicsObjectCollection"
+
+    Gets a collection of objects that were on the pick stack for the picked object.
+
+.. py:property:: depth
+    :canonical: ansys.stk.core.graphics.IPickResult.depth
+    :type: float
+
+    Gets the depth of the picked location in the 3D scene.
+
+.. py:property:: position
+    :canonical: ansys.stk.core.graphics.IPickResult.position
+    :type: list
+
+    Gets the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
+
+

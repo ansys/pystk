@@ -1,0 +1,192 @@
+IObjectLinkCollection
+=====================
+
+.. py:class:: IObjectLinkCollection
+
+   object
+   
+   IAgObjectLinkCollection represents a collection of names of STK objects that are available in the current scenario.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~item`
+              - Given an index, returns an element in the collection.
+            * - :py:meth:`~add`
+              - Add to the collection a link to an STK object with the given object path and name.
+            * - :py:meth:`~remove`
+              - Remove from the collection a link to the STK object with the given index.
+            * - :py:meth:`~remove_all`
+              - Remove all links from the collection.
+            * - :py:meth:`~remove_name`
+              - Remove from the collection a link to an STK object with the given object path and name.
+            * - :py:meth:`~add_object`
+              - Add to the collection a link to the given STK object.
+            * - :py:meth:`~remove_object`
+              - Remove from the collection a link to the given STK object.
+            * - :py:meth:`~contains`
+              - Determine whether the object with the given name is in the collection.
+            * - :py:meth:`~index_of`
+              - Search the collection for the specified object and returns a zero-based index of the first occurrence within the collection, if found; otherwise, -1.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~count`
+            * - :py:meth:`~_NewEnum`
+            * - :py:meth:`~available_objects`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IObjectLinkCollection
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.count
+    :type: int
+
+    Returns the number of elements in a collection.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an enumerator that can iterate through the collection.
+
+.. py:property:: available_objects
+    :canonical: ansys.stk.core.stkobjects.IObjectLinkCollection.available_objects
+    :type: list
+
+    Returns an array of valid objects.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: item(self, index:int) -> "IObjectLink"
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IObjectLink"`
+
+.. py:method:: add(self, name:str) -> None
+
+    Add to the collection a link to an STK object with the given object path and name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove(self, index:int) -> None
+
+    Remove from the collection a link to the STK object with the given index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+
+    Remove all links from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_name(self, name:str) -> None
+
+    Remove from the collection a link to an STK object with the given object path and name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+.. py:method:: add_object(self, pObject:"IStkObject") -> None
+
+    Add to the collection a link to the given STK object.
+
+    :Parameters:
+
+    **pObject** : :obj:`~"IStkObject"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_object(self, pObject:"IStkObject") -> None
+
+    Remove from the collection a link to the given STK object.
+
+    :Parameters:
+
+    **pObject** : :obj:`~"IStkObject"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: contains(self, name:str) -> bool
+
+    Determine whether the object with the given name is in the collection.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: index_of(self, name:str) -> int
+
+    Search the collection for the specified object and returns a zero-based index of the first occurrence within the collection, if found; otherwise, -1.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~int`
+

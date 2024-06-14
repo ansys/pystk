@@ -1,0 +1,57 @@
+IRadarActivityTimeIntervalListElement
+=====================================
+
+.. py:class:: IRadarActivityTimeIntervalListElement
+
+   object
+   
+   Provide access to the properties and methods defining an entry in the time interval activity list.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~active`
+            * - :py:meth:`~start`
+            * - :py:meth:`~stop`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IRadarActivityTimeIntervalListElement
+
+
+Property detail
+---------------
+
+.. py:property:: active
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.active
+    :type: bool
+
+    Gets or sets whether or not the time component is active.
+
+.. py:property:: start
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.start
+    :type: typing.Any
+
+    Gets or sets the interval start time.
+
+.. py:property:: stop
+    :canonical: ansys.stk.core.stkobjects.IRadarActivityTimeIntervalListElement.stop
+    :type: typing.Any
+
+    Gets or sets the interval start time.
+
+

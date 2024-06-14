@@ -1,0 +1,154 @@
+IVehicleGraphics3DLeadTrailData
+===============================
+
+.. py:class:: IVehicleGraphics3DLeadTrailData
+
+   object
+   
+   Interface for vehicle's lead/trail data.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_lead_data_type`
+              - Set the display option for the leading portion of the vehicle's tracks.
+            * - :py:meth:`~set_trail_data_type`
+              - Set the display option for the trailng portion of the vehicle's tracks.
+            * - :py:meth:`~is_data_type_supported`
+              - Get a value indicating whether the specified type can be used.
+            * - :py:meth:`~set_trail_same_as_lead`
+              - Set the trailing display option (and value, if applicable) to be the same as for the leading portion.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~lead_data_type`
+            * - :py:meth:`~trail_data_type`
+            * - :py:meth:`~lead_data`
+            * - :py:meth:`~trail_data`
+            * - :py:meth:`~has_lead_data`
+            * - :py:meth:`~has_trail_data`
+            * - :py:meth:`~supported_data_types`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IVehicleGraphics3DLeadTrailData
+
+
+Property detail
+---------------
+
+.. py:property:: lead_data_type
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data_type
+    :type: "LEAD_TRAIL_DATA"
+
+    Get display option for the leading portion of the vehicle's tracks.
+
+.. py:property:: trail_data_type
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data_type
+    :type: "LEAD_TRAIL_DATA"
+
+    Get display option for the trailing portion of the vehicle's tracks.
+
+.. py:property:: lead_data
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.lead_data
+    :type: "IAgVeLeadTrailData"
+
+    Get the display value (time or percent) for the leading portion of the vehicle's tracks.
+
+.. py:property:: trail_data
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.trail_data
+    :type: "IAgVeLeadTrailData"
+
+    Get the display value (time or percent) for the trailing portion of the vehicle's tracks.
+
+.. py:property:: has_lead_data
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_lead_data
+    :type: bool
+
+    Determine whether the leading display option has value data.
+
+.. py:property:: has_trail_data
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.has_trail_data
+    :type: bool
+
+    Determine whether the trailing display option has value data.
+
+.. py:property:: supported_data_types
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DLeadTrailData.supported_data_types
+    :type: list
+
+    Returns an array of valid choices.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: set_lead_data_type(self, eLeadData:"LEAD_TRAIL_DATA") -> None
+
+    Set the display option for the leading portion of the vehicle's tracks.
+
+    :Parameters:
+
+    **eLeadData** : :obj:`~"LEAD_TRAIL_DATA"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_trail_data_type(self, eTrailData:"LEAD_TRAIL_DATA") -> None
+
+    Set the display option for the trailng portion of the vehicle's tracks.
+
+    :Parameters:
+
+    **eTrailData** : :obj:`~"LEAD_TRAIL_DATA"`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+.. py:method:: is_data_type_supported(self, eData:"LEAD_TRAIL_DATA") -> bool
+
+    Get a value indicating whether the specified type can be used.
+
+    :Parameters:
+
+    **eData** : :obj:`~"LEAD_TRAIL_DATA"`
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: set_trail_same_as_lead(self) -> None
+
+    Set the trailing display option (and value, if applicable) to be the same as for the leading portion.
+
+    :Returns:
+
+        :obj:`~None`
+

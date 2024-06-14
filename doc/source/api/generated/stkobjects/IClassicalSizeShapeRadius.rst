@@ -1,0 +1,79 @@
+IClassicalSizeShapeRadius
+=========================
+
+.. py:class:: IClassicalSizeShapeRadius
+
+   IClassicalSizeShape
+   
+   Interface for specifying orbit size and shape using Radius.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_size_shape_radius`
+              - Set both the Apogee Radius and the Perigee Radius. Displays an error message if the value for PerigeeRadius exceeds that for ApogeeRadius. ApogeeRadius/PerigeeRadius use Distance Dimension.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~apogee_radius`
+            * - :py:meth:`~perigee_radius`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IClassicalSizeShapeRadius
+
+
+Property detail
+---------------
+
+.. py:property:: apogee_radius
+    :canonical: ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.apogee_radius
+    :type: float
+
+    Measured from the center of the Earth to the point of maximum radius in the orbit. You can set it together with PerigeeRadius using the SetSizeShapeRadius(ApogeeRadius, PerigeeRadius) method. Uses Distance Dimension.
+
+.. py:property:: perigee_radius
+    :canonical: ansys.stk.core.stkobjects.IClassicalSizeShapeRadius.perigee_radius
+    :type: float
+
+    Measured from the center of the Earth to the point of minimum radius in the orbit. You can set it together with ApogeeRadius using the SetSizeShapeRadius(ApogeeRadius, PerigeeRadius) method. Uses Distance Dimension.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: set_size_shape_radius(self, apogeeRadius:float, perigeeRadius:float) -> None
+
+    Set both the Apogee Radius and the Perigee Radius. Displays an error message if the value for PerigeeRadius exceeds that for ApogeeRadius. ApogeeRadius/PerigeeRadius use Distance Dimension.
+
+    :Parameters:
+
+    **apogeeRadius** : :obj:`~float`
+    **perigeeRadius** : :obj:`~float`
+
+    :Returns:
+
+        :obj:`~None`
+

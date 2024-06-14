@@ -1,0 +1,113 @@
+ISNOPTResult
+============
+
+.. py:class:: ISNOPTResult
+
+   object
+   
+   Properties for objecvtive and constraints of a SNOPT profile.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~enable`
+            * - :py:meth:`~name`
+            * - :py:meth:`~current_value`
+            * - :py:meth:`~parent_name`
+            * - :py:meth:`~lower_bound`
+            * - :py:meth:`~upper_bound`
+            * - :py:meth:`~scaling_value`
+            * - :py:meth:`~weight`
+            * - :py:meth:`~goal`
+            * - :py:meth:`~use_custom_display_unit`
+            * - :py:meth:`~custom_display_unit`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import ISNOPTResult
+
+
+Property detail
+---------------
+
+.. py:property:: enable
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.enable
+    :type: bool
+
+    If true, the variable is being used.
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.name
+    :type: str
+
+    Get the name of the parameter.
+
+.. py:property:: current_value
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.current_value
+    :type: typing.Any
+
+    Get the value achieved for this dependent variable in the last targeter run. Dimension depends on context.
+
+.. py:property:: parent_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.parent_name
+    :type: str
+
+    Object - the name of the segment to which the parameter belongs.
+
+.. py:property:: lower_bound
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.lower_bound
+    :type: typing.Any
+
+    Gets or sets the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+
+.. py:property:: upper_bound
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.upper_bound
+    :type: typing.Any
+
+    Gets or sets the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+
+.. py:property:: scaling_value
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.scaling_value
+    :type: typing.Any
+
+    Applies to the Specified Value scaling method. Dimension depends on context.
+
+.. py:property:: weight
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.weight
+    :type: float
+
+    Gets or sets the factor by which the constraint error is to be multiplied.
+
+.. py:property:: goal
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.goal
+    :type: "SNOPT_GOAL"
+
+    Gets or sets the purpose of the element in the problem.
+
+.. py:property:: use_custom_display_unit
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.use_custom_display_unit
+    :type: bool
+
+    If true, allows display of values in another unit.
+
+.. py:property:: custom_display_unit
+    :canonical: ansys.stk.core.stkobjects.astrogator.ISNOPTResult.custom_display_unit
+    :type: str
+
+    Gets or sets the unit in which the value will be displayed in the GUI.
+
+

@@ -1,0 +1,88 @@
+IVectorGeometryToolVectorRefTo
+==============================
+
+.. py:class:: IVectorGeometryToolVectorRefTo
+
+   object
+   
+   Represents a reference to a VGT vector.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~set_path`
+              - Set a new vector.
+            * - :py:meth:`~set_vector`
+              - Set a new vector.
+            * - :py:meth:`~get_vector`
+              - Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+            * - :py:meth:`~has_cyclic_dependency`
+              - Test whether the input component and the target component form a cyclic dependency.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import IVectorGeometryToolVectorRefTo
+
+
+
+Method detail
+-------------
+
+.. py:method:: set_path(self, path:str) -> None
+
+    Set a new vector.
+
+    :Parameters:
+
+    **path** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_vector(self, vector:"IVectorGeometryToolVector") -> None
+
+    Set a new vector.
+
+    :Parameters:
+
+    **vector** : :obj:`~"IVectorGeometryToolVector"`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: get_vector(self) -> "IVectorGeometryToolVector"
+
+    Return the actual vector object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+
+    :Returns:
+
+        :obj:`~"IVectorGeometryToolVector"`
+
+.. py:method:: has_cyclic_dependency(self, vector:"IVectorGeometryToolVector") -> bool
+
+    Test whether the input component and the target component form a cyclic dependency.
+
+    :Parameters:
+
+    **vector** : :obj:`~"IVectorGeometryToolVector"`
+
+    :Returns:
+
+        :obj:`~bool`
+

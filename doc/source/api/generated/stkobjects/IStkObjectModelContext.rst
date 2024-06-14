@@ -1,0 +1,56 @@
+IStkObjectModelContext
+======================
+
+.. py:class:: IStkObjectModelContext
+
+   object
+   
+   Represents a factory class to create instances of the AgStkObjectRoot class.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~create`
+              - Create a non-restrictive root object.
+            * - :py:meth:`~create_restrictive`
+              - Create a restrictive root object.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IStkObjectModelContext
+
+
+
+Method detail
+-------------
+
+.. py:method:: create(self) -> "IStkObjectRoot"
+
+    Create a non-restrictive root object.
+
+    :Returns:
+
+        :obj:`~"IStkObjectRoot"`
+
+.. py:method:: create_restrictive(self) -> "IStkObjectRoot"
+
+    Create a restrictive root object.
+
+    :Returns:
+
+        :obj:`~"IStkObjectRoot"`
+

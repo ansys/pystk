@@ -1,0 +1,171 @@
+ICalcObjectLinkEmbedControlCollection
+=====================================
+
+.. py:class:: ICalcObjectLinkEmbedControlCollection
+
+   object
+   
+   Collection of link/embed calculation objects.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~add`
+              - Add a link/embed calc object to the collection.
+            * - :py:meth:`~item`
+              - Return a link/embed calc object.
+            * - :py:meth:`~remove`
+              - Remove a link/embed calc object from the collection.
+            * - :py:meth:`~cut`
+              - Copy a link/embed calc object to the clipboard and removes the calc object from the list.
+            * - :py:meth:`~paste`
+              - Pastes a link/embed calc object from the clipboard into the list.
+            * - :py:meth:`~insert_copy`
+              - Copy a link/embed calc object and inserts the copy into the list.
+            * - :py:meth:`~get_item_by_index`
+              - Retrieve a link/embed calc object found by the index.
+            * - :py:meth:`~get_item_by_name`
+              - Retrieve a link/embed calc object found by the name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~_NewEnum`
+            * - :py:meth:`~count`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import ICalcObjectLinkEmbedControlCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.ICalcObjectLinkEmbedControlCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: add(self, name:str, refType:"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE") -> "IComponentLinkEmbedControl"
+
+    Add a link/embed calc object to the collection.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+    **refType** : :obj:`~"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE"`
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+
+.. py:method:: item(self, indexOrName:typing.Any) -> "IComponentLinkEmbedControl"
+
+    Return a link/embed calc object.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+
+.. py:method:: remove(self, indexOrName:typing.Any) -> None
+
+    Remove a link/embed calc object from the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: cut(self, indexOrName:typing.Any) -> None
+
+    Copy a link/embed calc object to the clipboard and removes the calc object from the list.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: paste(self) -> "IComponentLinkEmbedControl"
+
+    Pastes a link/embed calc object from the clipboard into the list.
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+
+.. py:method:: insert_copy(self, calcObj:"IComponentLinkEmbedControl") -> "IComponentLinkEmbedControl"
+
+    Copy a link/embed calc object and inserts the copy into the list.
+
+    :Parameters:
+
+    **calcObj** : :obj:`~"IComponentLinkEmbedControl"`
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+
+.. py:method:: get_item_by_index(self, index:int) -> "IComponentLinkEmbedControl"
+
+    Retrieve a link/embed calc object found by the index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+
+.. py:method:: get_item_by_name(self, name:str) -> "IComponentLinkEmbedControl"
+
+    Retrieve a link/embed calc object found by the name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IComponentLinkEmbedControl"`
+

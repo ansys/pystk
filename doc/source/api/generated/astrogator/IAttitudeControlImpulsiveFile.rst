@@ -1,0 +1,64 @@
+IAttitudeControlImpulsiveFile
+=============================
+
+.. py:class:: IAttitudeControlImpulsiveFile
+
+   IAttitudeControlImpulsive
+   
+   Properties for the File attitude control for an Impulsive Maneuver.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~delta_v_magnitude`
+            * - :py:meth:`~filename`
+            * - :py:meth:`~file_time_offset`
+            * - :py:meth:`~full_filename`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IAttitudeControlImpulsiveFile
+
+
+Property detail
+---------------
+
+.. py:property:: delta_v_magnitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.delta_v_magnitude
+    :type: float
+
+    Gets or sets the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.filename
+    :type: str
+
+    Gets or sets the attitude file to use.
+
+.. py:property:: file_time_offset
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.file_time_offset
+    :type: float
+
+    Gets or sets the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
+
+.. py:property:: full_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControlImpulsiveFile.full_filename
+    :type: str
+
+    Get the full path and name of the attitude file to use.
+
+

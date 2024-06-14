@@ -1,0 +1,184 @@
+ICalculationToolScalar
+======================
+
+.. py:class:: ICalculationToolScalar
+
+   object
+   
+   Any scalar calculation that is not constant by construction.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~evaluate`
+              - Evaluate the scalar calculation at the specified time instant.
+            * - :py:meth:`~quick_evaluate`
+              - Evaluate the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing...
+            * - :py:meth:`~evaluate_with_rate`
+              - Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change.
+            * - :py:meth:`~quick_evaluate_with_rate`
+              - Evaluate the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep...
+            * - :py:meth:`~get_availability`
+              - Return a list of availability intervals.
+            * - :py:meth:`~quick_evaluate_array`
+              - Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times...
+            * - :py:meth:`~quick_evaluate_with_rate_array`
+              - Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+            * - :py:meth:`~quick_evaluate_event_array`
+              - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+            * - :py:meth:`~quick_evaluate_with_rate_event_array`
+              - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~type`
+            * - :py:meth:`~unit_of_measure`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import ICalculationToolScalar
+
+
+Property detail
+---------------
+
+.. py:property:: type
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.type
+    :type: "CRDN_CALC_SCALAR_TYPE"
+
+    Returns the scalar calculation type.
+
+.. py:property:: unit_of_measure
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure
+    :type: str
+
+    Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+
+
+Method detail
+-------------
+
+
+.. py:method:: evaluate(self, epoch:typing.Any) -> "ICalculationToolEvaluateResult"
+
+    Evaluate the scalar calculation at the specified time instant.
+
+    :Parameters:
+
+    **epoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"ICalculationToolEvaluateResult"`
+
+.. py:method:: quick_evaluate(self, epoch:typing.Any) -> list
+
+    Evaluate the scalar calculation at the specified time instant and returns the results as an array with two elements, the first element being of boolean type indicating whether the computation succeeded, followed by a double-precision value representing...
+
+    :Parameters:
+
+    **epoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: evaluate_with_rate(self, epoch:typing.Any) -> "ICalculationToolEvaluateWithRateResult"
+
+    Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change.
+
+    :Parameters:
+
+    **epoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~"ICalculationToolEvaluateWithRateResult"`
+
+.. py:method:: quick_evaluate_with_rate(self, epoch:typing.Any) -> list
+
+    Evaluate the scalar calculation at the specified time instant and returns the results as an array with three elements, the first element being of boolean type indicating whether the computation succeeded, followed by two double-precision values one rep...
+
+    :Parameters:
+
+    **epoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: get_availability(self) -> "ITimeToolIntervalCollection"
+
+    Return a list of availability intervals.
+
+    :Returns:
+
+        :obj:`~"ITimeToolIntervalCollection"`
+
+
+.. py:method:: quick_evaluate_array(self, times:list) -> list
+
+    Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times...
+
+    :Parameters:
+
+    **times** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: quick_evaluate_with_rate_array(self, times:list) -> list
+
+    Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+
+    :Parameters:
+
+    **times** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: quick_evaluate_event_array(self, refArray:"ITimeToolEventArray") -> list
+
+    Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+
+    :Parameters:
+
+    **refArray** : :obj:`~"ITimeToolEventArray"`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: quick_evaluate_with_rate_event_array(self, refArray:"ITimeToolEventArray") -> list
+
+    Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
+
+    :Parameters:
+
+    **refArray** : :obj:`~"ITimeToolEventArray"`
+
+    :Returns:
+
+        :obj:`~list`
+

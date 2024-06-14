@@ -1,0 +1,24 @@
+StateCalcUnitAngularMomentumY
+=============================
+
+.. py:class:: StateCalcUnitAngularMomentumY
+
+   IComponentInfo, ICloneable, IStateCalcUnitAngularMomentumY, SupportsDeleteCallback
+
+   UnitAngularMomentumY Calc objects.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import StateCalcUnitAngularMomentumY
+
+
+

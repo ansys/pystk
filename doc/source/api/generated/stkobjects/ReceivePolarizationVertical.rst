@@ -1,0 +1,24 @@
+ReceivePolarizationVertical
+===========================
+
+.. py:class:: ReceivePolarizationVertical
+
+   IPolarizationVertical, IPolarization, IPolarizationCrossPolLeakage, SupportsDeleteCallback
+
+   Class defining a receive vertical polarization.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ReceivePolarizationVertical
+
+
+

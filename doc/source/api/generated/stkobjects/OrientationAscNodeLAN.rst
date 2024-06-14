@@ -1,0 +1,24 @@
+OrientationAscNodeLAN
+=====================
+
+.. py:class:: OrientationAscNodeLAN
+
+   IOrientationAscNodeLAN, IOrientationAscNode, SupportsDeleteCallback
+
+   Earth-fixed longitude where the satellite crosses the inertial equator from south to north.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import OrientationAscNodeLAN
+
+
+

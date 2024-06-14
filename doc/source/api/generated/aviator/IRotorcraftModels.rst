@@ -1,0 +1,74 @@
+IRotorcraftModels
+=================
+
+.. py:class:: IRotorcraftModels
+
+   object
+   
+   Interface for the User Rotorcraft Models in the Aviator Catalog.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.aviator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~get_rotorcraft`
+              - Get the rotorcraft with the given name.
+            * - :py:meth:`~add_rotorcraft`
+              - Create a new rotorcraft with the given name.
+            * - :py:meth:`~get_as_catalog_source`
+              - Get the catalog source interface for this object.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import IRotorcraftModels
+
+
+
+Method detail
+-------------
+
+.. py:method:: get_rotorcraft(self, name:str) -> "IRotorcraftModel"
+
+    Get the rotorcraft with the given name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IRotorcraftModel"`
+
+.. py:method:: add_rotorcraft(self, name:str) -> "IRotorcraftModel"
+
+    Create a new rotorcraft with the given name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IRotorcraftModel"`
+
+.. py:method:: get_as_catalog_source(self) -> "ICatalogSource"
+
+    Get the catalog source interface for this object.
+
+    :Returns:
+
+        :obj:`~"ICatalogSource"`
+

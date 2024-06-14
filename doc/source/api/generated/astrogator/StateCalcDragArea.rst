@@ -1,0 +1,24 @@
+StateCalcDragArea
+=================
+
+.. py:class:: StateCalcDragArea
+
+   IComponentInfo, ICloneable, IStateCalcDragArea, SupportsDeleteCallback
+
+   DragArea Calc objects.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import StateCalcDragArea
+
+
+

@@ -1,0 +1,79 @@
+IStdMilitary2525bSymbols
+========================
+
+.. py:class:: IStdMilitary2525bSymbols
+
+   object
+   
+   Represents the automation interface to generate 2525b symbology markers (military standard).
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~create_symbol`
+              - Generate a 2525b symbol. Image will be saved to the file specified by SaveImageFilePath.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~fill_enabled`
+            * - :py:meth:`~symbol_image_size`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IStdMilitary2525bSymbols
+
+
+Property detail
+---------------
+
+.. py:property:: fill_enabled
+    :canonical: ansys.stk.core.stkobjects.IStdMilitary2525bSymbols.fill_enabled
+    :type: bool
+
+    Turn on or off the fill for symbol id.
+
+.. py:property:: symbol_image_size
+    :canonical: ansys.stk.core.stkobjects.IStdMilitary2525bSymbols.symbol_image_size
+    :type: int
+
+    Gets or sets the size for the symbol id. Dimensionless.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: create_symbol(self, symbolID:str, saveImageFilePath:str) -> None
+
+    Generate a 2525b symbol. Image will be saved to the file specified by SaveImageFilePath.
+
+    :Parameters:
+
+    **symbolID** : :obj:`~str`
+    **saveImageFilePath** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+

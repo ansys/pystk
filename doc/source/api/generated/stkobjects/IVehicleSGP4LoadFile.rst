@@ -1,0 +1,93 @@
+IVehicleSGP4LoadFile
+====================
+
+.. py:class:: IVehicleSGP4LoadFile
+
+   IVehicleSGP4LoadData
+   
+   Interface for SGP4 propagator.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~get_ssc_nums_from_file`
+              - Return an array of SSC Numbers from the file selected.
+            * - :py:meth:`~get_segs_from_file`
+              - Return an array of available segments from a file using the specified SSC Number.
+            * - :py:meth:`~add_segs_from_file`
+              - Add multiple segments from the array returned in GetSegsFromFile.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~file`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IVehicleSGP4LoadFile
+
+
+Property detail
+---------------
+
+.. py:property:: file
+    :canonical: ansys.stk.core.stkobjects.IVehicleSGP4LoadFile.file
+    :type: str
+
+    File name.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: get_ssc_nums_from_file(self) -> list
+
+    Return an array of SSC Numbers from the file selected.
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: get_segs_from_file(self, SSCNum:str) -> list
+
+    Return an array of available segments from a file using the specified SSC Number.
+
+    :Parameters:
+
+    **SSCNum** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: add_segs_from_file(self, segments:list) -> None
+
+    Add multiple segments from the array returned in GetSegsFromFile.
+
+    :Parameters:
+
+    **segments** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~None`
+

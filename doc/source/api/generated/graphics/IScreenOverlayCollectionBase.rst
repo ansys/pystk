@@ -1,0 +1,136 @@
+IScreenOverlayCollectionBase
+============================
+
+.. py:class:: IScreenOverlayCollectionBase
+
+   object
+   
+   The common base class for collections of overlays held by screen overlay and by screen overlay manager.
+
+.. py:currentmodule:: ansys.stk.core.graphics
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~item`
+              - Get the overlay at the specified index.
+            * - :py:meth:`~contains`
+              - Determine whether the collection contains a specific overlay.
+            * - :py:meth:`~remove`
+              - Remove the first occurrence of a specific overlay from the collection.
+            * - :py:meth:`~clear`
+              - Remove all overlays from the collection.
+            * - :py:meth:`~add`
+              - Add an overlay to the collection.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~count`
+            * - :py:meth:`~is_read_only`
+            * - :py:meth:`~_NewEnum`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import IScreenOverlayCollectionBase
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.count
+    :type: int
+
+    Gets the number of screen overlays in the collection.
+
+.. py:property:: is_read_only
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only
+    :type: bool
+
+    Gets a value indicating whether the collection is read-only.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an enumerator that iterates through the collection.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: item(self, index:int) -> "IScreenOverlay"
+
+    Get the overlay at the specified index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~"IScreenOverlay"`
+
+
+.. py:method:: contains(self, item:"IScreenOverlay") -> bool
+
+    Determine whether the collection contains a specific overlay.
+
+    :Parameters:
+
+    **item** : :obj:`~"IScreenOverlay"`
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: remove(self, item:"IScreenOverlay") -> bool
+
+    Remove the first occurrence of a specific overlay from the collection.
+
+    :Parameters:
+
+    **item** : :obj:`~"IScreenOverlay"`
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: clear(self) -> None
+
+    Remove all overlays from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: add(self, item:"IScreenOverlay") -> None
+
+    Add an overlay to the collection.
+
+    :Parameters:
+
+    **item** : :obj:`~"IScreenOverlay"`
+
+    :Returns:
+
+        :obj:`~None`
+

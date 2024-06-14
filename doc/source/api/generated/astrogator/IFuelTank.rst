@@ -1,0 +1,78 @@
+IFuelTank
+=========
+
+.. py:class:: IFuelTank
+
+   object
+   
+   Properties for fuel tank configuration.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects.astrogator
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~tank_pressure`
+            * - :py:meth:`~tank_volume`
+            * - :py:meth:`~tank_temperature`
+            * - :py:meth:`~fuel_density`
+            * - :py:meth:`~fuel_mass`
+            * - :py:meth:`~maximum_fuel_mass`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IFuelTank
+
+
+Property detail
+---------------
+
+.. py:property:: tank_pressure
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_pressure
+    :type: float
+
+    Gets or sets the fuel tank pressure. Uses Pressure Dimension.
+
+.. py:property:: tank_volume
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_volume
+    :type: float
+
+    Gets or sets the volume of the fuel tank. Uses SmallVolume Dimension.
+
+.. py:property:: tank_temperature
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.tank_temperature
+    :type: float
+
+    Gets or sets the temperature of the fuel tank. Uses Temperature Dimension.
+
+.. py:property:: fuel_density
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_density
+    :type: float
+
+    Gets or sets the density of the fuel. Uses SmallDensity Dimension.
+
+.. py:property:: fuel_mass
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.fuel_mass
+    :type: float
+
+    Gets or sets the mass of the spacecraft propellant. Uses Mass Dimension.
+
+.. py:property:: maximum_fuel_mass
+    :canonical: ansys.stk.core.stkobjects.astrogator.IFuelTank.maximum_fuel_mass
+    :type: float
+
+    Gets or sets the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Uses Mass Dimension.
+
+

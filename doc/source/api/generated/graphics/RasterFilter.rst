@@ -1,0 +1,24 @@
+RasterFilter
+============
+
+.. py:class:: RasterFilter
+
+   IRasterFilter, SupportsDeleteCallback
+
+   A filter for processing raster datasets. RasterFilter is the base class for all raster filters...
+
+.. py:currentmodule:: ansys.stk.core.graphics
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import RasterFilter
+
+
+

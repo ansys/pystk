@@ -1,0 +1,24 @@
+AccessConstraintCentralBodyObstruction
+======================================
+
+.. py:class:: AccessConstraintCentralBodyObstruction
+
+   IAccessConstraintCentralBodyObstruction, IAccessConstraint, SupportsDeleteCallback
+
+   Class defining constraints in terms of obstruction by a specified central body.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import AccessConstraintCentralBodyObstruction
+
+
+

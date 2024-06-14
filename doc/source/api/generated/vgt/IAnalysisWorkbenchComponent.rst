@@ -1,0 +1,219 @@
+IAnalysisWorkbenchComponent
+===========================
+
+.. py:class:: IAnalysisWorkbenchComponent
+
+   object
+   
+   A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component.
+
+.. py:currentmodule:: ansys.stk.core.vgt
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~duplicate`
+              - Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
+            * - :py:meth:`~anonymous_duplicate`
+              - Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded.
+            * - :py:meth:`~depends_on`
+              - Test if the instance depends on another component.
+            * - :py:meth:`~export`
+              - Export the component to a file.
+            * - :py:meth:`~rename`
+              - Rename the component.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:meth:`~kind`
+            * - :py:meth:`~category`
+            * - :py:meth:`~name`
+            * - :py:meth:`~description`
+            * - :py:meth:`~path`
+            * - :py:meth:`~is_duplicable`
+            * - :py:meth:`~context`
+            * - :py:meth:`~type_info`
+            * - :py:meth:`~qualified_path`
+            * - :py:meth:`~is_valid`
+            * - :py:meth:`~is_ready`
+            * - :py:meth:`~is_read_only`
+            * - :py:meth:`~embedded_components`
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import IAnalysisWorkbenchComponent
+
+
+Property detail
+---------------
+
+.. py:property:: kind
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind
+    :type: "CRDN_KIND"
+
+    Returns the component kind.
+
+.. py:property:: category
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.category
+    :type: str
+
+    Allows the user to access or change the component category (Folder).
+
+.. py:property:: name
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.name
+    :type: str
+
+    Returns the component name.
+
+.. py:property:: description
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.description
+    :type: str
+
+    Returns the component description.
+
+.. py:property:: path
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.path
+    :type: str
+
+    Returns the component's fully qualified path (ie. \"CentralBody/Earth Body\", etc.).
+
+.. py:property:: is_duplicable
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable
+    :type: bool
+
+    Returns whether the VGT component can be duplicated.
+
+.. py:property:: context
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context
+    :type: "IAgCrdnContext"
+
+    Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
+
+.. py:property:: type_info
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info
+    :type: "IAgCrdnTypeInfo"
+
+    Returns the component type information.
+
+.. py:property:: qualified_path
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path
+    :type: str
+
+    An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. \"CentralBody/Earth Body Vector\", etc.).
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_valid
+    :type: bool
+
+    Returns whether the component is valid.
+
+.. py:property:: is_ready
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_ready
+    :type: bool
+
+    Returns whether the component is ready. The component is ready if it's been fully initialized.
+
+.. py:property:: is_read_only
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_read_only
+    :type: bool
+
+    Returns whether the component is modifiable.
+
+.. py:property:: embedded_components
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components
+    :type: "IAgCrdnCollection"
+
+    Returns a collection of embedded components.
+
+
+Method detail
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: duplicate(self, newName:str, description:str) -> "IAnalysisWorkbenchComponent"
+
+    Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
+
+    :Parameters:
+
+    **newName** : :obj:`~str`
+    **description** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~"IAnalysisWorkbenchComponent"`
+
+.. py:method:: anonymous_duplicate(self) -> "IAnalysisWorkbenchComponent"
+
+    Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded.
+
+    :Returns:
+
+        :obj:`~"IAnalysisWorkbenchComponent"`
+
+.. py:method:: depends_on(self, component:"IAnalysisWorkbenchComponent") -> bool
+
+    Test if the instance depends on another component.
+
+    :Parameters:
+
+    **component** : :obj:`~"IAnalysisWorkbenchComponent"`
+
+    :Returns:
+
+        :obj:`~bool`
+
+
+.. py:method:: export(self, filename:str, comments:str) -> None
+
+    Export the component to a file.
+
+    :Parameters:
+
+    **filename** : :obj:`~str`
+    **comments** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: rename(self, newName:str) -> None
+
+    Rename the component.
+
+    :Parameters:
+
+    **newName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+

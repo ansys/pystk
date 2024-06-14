@@ -1,0 +1,24 @@
+Waveform
+========
+
+.. py:class:: Waveform
+
+   IWaveform, IComponentInfo, ICloneable, SupportsDeleteCallback
+
+   Class defining a waveform.
+
+.. py:currentmodule:: ansys.stk.core.stkobjects
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import Waveform
+
+
+
