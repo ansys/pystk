@@ -62,7 +62,7 @@ visualization = [
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
-    "bandit==1.7.8",
+    "bandit==1.7.9",
     "safety==3.2.3",
 ]
 
