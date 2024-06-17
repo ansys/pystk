@@ -1,16 +1,17 @@
 # # STK Object Model Tutorial (PySTK)
 
-# This tutorial demonstrates how to build six different application types using PySTK. It corresponds to [this tutorial](https://help.agi.com/stkdevkit/index.htm#stkObjects/ObjectModelTutorial.html).
+# This tutorial demonstrates some STK object model functions using PySTK. It corresponds to [this tutorial](https://help.agi.com/stkdevkit/index.htm#stkObjects/ObjectModelTutorial.html).
 
 # ## Start STK
 
-# First, start STK. For this example, we start STK through STK desktop. We then get the STK Root object.
+# Start by launching a new STK instance. In this example, STKEngine is used. We then get the STK Root object.
 
 # +
-from ansys.stk.core.stkdesktop import STKDesktop
+from ansys.stk.core.stkengine import STKEngine
 
-stk = STKDesktop.start_application(visible=True)
-root = stk.root
+stk = STKEngine.start_application(noGraphics=False)
+print(f"Using {stk.version}")
+root = stk.new_object_root()
 # -
 
 # ## Scenario
@@ -19,9 +20,18 @@ root = stk.root
 
 # **Note:** There can be only one scenario open at a time.
 
-root.new_scenario("MyFacility")
+root.new_scenario("MyScenario")
 
 # The usual workflow of the STK Object Model applications is to set up the STK objects, establish a relationship between objects, perform analysis, and get results of the analysis.
+
+# Once the scenario is created, it is possible to show a 3D graphics window by running:
+
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+plotter = GlobeWidget(root, 640, 480)
+plotter.show()
+# -
 
 # ## STK Objects
 
@@ -142,6 +152,11 @@ waypoint3.altitude = 10
 
 great_arc_propagator.propagate()
 
+# We can zoom to the aircraft to visualize its path.
+
+plotter.camera.position = [2200, 4940, 4500]
+plotter.show()
+
 # ### Create a vehicle (satellite) using the SPG4 propagator (if you have internet access) or the Two-Body propagator otherwise
 
 # **Note:** This portion requires internet access. We provide alternate code using the Two-Body propagator if you do not have internet access. 
@@ -162,6 +177,11 @@ satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySat
 satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
 propagator = satellite.propagator
 propagator.propagate()
+
+# We can visualize the satellite's orbit.
+
+plotter.camera.position = [7850, 17600, 16040]
+plotter.show()
 
 # #### Adding access constraints to the satellite
 
@@ -184,7 +204,7 @@ access.compute_access()
 
 # ### Get AER (azimuth, elevation, range) access results from the data provider
 
-# The first thing that you need to determine is the time frame for the analysis. In most cases, the time frame will be equivalant to the scenario interval. In this case, we only care about data during the access periods. The computed access intervals property contains a list of the access periods.
+# The first thing that you need to determine is the time frame for the analysis. In most cases, the time frame will be equivalent to the scenario interval. In this case, we only care about data during the access periods. The computed access intervals property contains a list of the access periods.
 
 access_intervals = access.computed_access_interval_times
 
@@ -212,11 +232,11 @@ for i in range(0, access_intervals.count):
 
 data_provider_result.data_sets.to_pandas_dataframe()
 
-data_provider_result.data_sets.to_numpy_array()
+data_provider_result.data_sets.to_numpy_array()[:10]
 
 # ## Analysis Workbench
 
-# ### Create a vector between the aircraft and facility objects.
+# ### Create a vector between the satellite and facility objects.
 
 # AGI introduced the Vector Geometry Tool (VGT) with STK 9. In STK 10, VGT became part of the Analysis Workbench that also includes the Time Tool and Calculation Tool. To keep the interface clean and to maintain backward compatibility, all Analysis Workbench functionality is located in the VGT property of the IStkObject interface.
 

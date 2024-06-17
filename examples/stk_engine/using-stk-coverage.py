@@ -12,20 +12,38 @@
 #
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, STKDesktop is used.
+# Start by launching a new STK instance. In this example, STKEngine is used.
 
 # +
-from ansys.stk.core.stkdesktop import STKDesktop
+from ansys.stk.core.stkengine import STKEngine
 
-stk = STKDesktop.start_application(visible=True)
-root = stk.root
+stk = STKEngine.start_application(noGraphics=False)
+print(f"Using {stk.version}")
 # -
 # ## Create a new scenario
 #
 # Create a new scenario in STK by running:
 
-root = stk.root
+root = stk.new_object_root()
 root.new_scenario("Coverage")
+
+# Once the scenario is created, it is possible to show a 3D graphics window by running:
+
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+plotter3d = GlobeWidget(root, 640, 480)
+plotter3d.show()
+# -
+
+# We can also show a 2d graphics window by running:
+
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import MapWidget
+
+plotter2d = MapWidget(root, 640, 480)
+plotter2d.show()
+# -
 
 # ## Set the scenario time period
 
@@ -73,6 +91,12 @@ shuttle_propagator.initial_state.representation.assign_cartesian(ORBIT_STATE_TYP
 polar_sat_propagator.propagate()
 shuttle_propagator.propagate()
 
+# We can view their paths in 2D or 3D using the graphics widgets.
+
+plotter2d.show()
+
+plotter3d.show()
+
 # ## Create a coverage definition
 
 # Insert a coverage definition named Tropics:
@@ -96,7 +120,7 @@ tropics.grid.resolution.lat_lon = 3
 tropics.asset_list.add("Satellite/PolarSat")
 tropics.asset_list.add("Satellite/Shuttle")
 
-# ### Set the 2D Graphics Attibutes
+# ### Set the 2D Graphics Attributes
 
 # We can use the coverage definition's static property (which holds a ICoverageGraphics2DStatic object), to set the Show Regions, Show Region Labels, Show Points, and Points - Fill graphics properties.
 
@@ -112,6 +136,10 @@ tropics.graphics.progress.is_visible = True
 # We need an ICoverageGraphics2DAnimation to set the satisfaction visibility. This object is accessible through the ICoverageGraphics object's animation property. 
 
 tropics.graphics.animation.is_satisfaction_visible = False
+
+# We can now view the coverage definition's graphics using the 2D graphics window:
+
+plotter2d.show()
 
 # ## Compute coverage and create reports
 
@@ -194,11 +222,9 @@ two_eyes.graphics.static.is_visible = True
 two_eyes.graphics.static.fill_points = False
 two_eyes.graphics.static.marker_style = "Circle"
 
-# ### Animate the Scenario
+# We can view the figure of merit using the 3d graphics window:
 
-root.play_forward()
-
-# The points that are highlighted with stars at any time during the animation are the points that have access to either or both of the satellites at that time. The points marked by circles have access to at least one satellite at some point during the scenario analysis period.
+plotter3d.show()
 
 # ### Define the Coverage for the Figure of Merit
 
@@ -209,7 +235,7 @@ two_eyes.definition.satisfaction.enable_satisfaction = True
 two_eyes.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
 two_eyes.definition.satisfaction.satisfaction_threshold = 2
 
-# The 2D Graphics window will immediately reflect the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion. Animate the scenario, and note that points are highlighted only where the coverage of the two satellites overlaps.
+# The 3D Graphics window will immediately reflect the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion.
 
 # ### Set the Animation Graphics
 
@@ -221,13 +247,16 @@ two_eyes.graphics.static.is_visible = False
 two_eyes.graphics.animation.contours.is_visible = True
 two_eyes.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 level1 = two_eyes.graphics.animation.contours.level_attributes.add_level(1)
-level1.color = Color.from_rgb(91, 145, 245)
+level1.color = Color.from_rgb(250, 7, 214)
 level2 = two_eyes.graphics.animation.contours.level_attributes.add_level(2)
-level2.color = Color.from_rgb(252, 159, 206)
+level2.color = Color.from_rgb(45, 250, 195)
 
 # ### Animate the Scenario
 
+plotter3d.show()
+
 root.rewind()
+
 root.play_forward()
 
 # Note that points are highlighted in pink when they are covered by only one satellite, and in blue when covered by both satellites.
