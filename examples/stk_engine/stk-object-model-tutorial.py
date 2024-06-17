@@ -175,10 +175,12 @@ propagator.propagate()
 
 # Alternately, if you do not have internet access, you an add a satellite using a Two-Body propagator.
 
-satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-propagator = satellite.propagator
-propagator.propagate()
+# +
+# satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
+# satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+# propagator = satellite.propagator
+# propagator.propagate()
+# -
 
 # We can visualize the satellite's orbit.
 
