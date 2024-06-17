@@ -51,6 +51,7 @@ doc = [
     "sphinx-design==0.6.0; python_version>='3.9'",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
+    "pandas==2.2.2"
 ]
 visualization = [
     "numpy==1.24.4; python_version<'3.9'",
