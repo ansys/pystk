@@ -61,11 +61,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = (
-                FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in FIGURE_OF_MERIT_DEFINITION_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
             if not EarlyBoundTests.AG_FOM.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
