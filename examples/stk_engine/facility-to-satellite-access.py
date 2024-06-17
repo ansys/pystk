@@ -1,6 +1,6 @@
-# # STK Object Model Tutorial (PySTK)
+# # Facility and Satellite Access
 
-# This tutorial demonstrates some STK object model functions using PySTK. It corresponds to [this tutorial](https://help.agi.com/stkdevkit/index.htm#stkObjects/ObjectModelTutorial.html).
+# This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by [this tutorial](https://help.agi.com/stkdevkit/index.htm#stkObjects/ObjectModelTutorial.html).
 
 # ## Start STK
 
@@ -76,11 +76,7 @@ print(f"Latitude:{lat}\nLongitude:{lon}\nAltitude:{alt}")
 
 # The STK Object Model follows the logic of the STK desktop application. For example, if you want to change the label for facility, the IFacility interface contains the graphics property, which in turn contains the label_name property.
 
-# +
-# facility.graphics.label_name = "My Facility"
-# -
-
-# If you try to run the cell above, you will get an error that the LabelName is a read only property. To change the label, you must first disable the “Use Instance Name as Label” property. Since the object model follows the same logic as the user interface, the correct code is:
+# If you try to change the label name without setting the use_inst_name_label on the graphics to False, you will get an error that the LabelName is a read only property. To change the label, you must first disable the “Use Instance Name as Label” property. Since the object model follows the same logic as the user interface, the correct code is:
 
 facility.graphics.use_inst_name_label = False
 facility.graphics.label_name = "My Facility"
@@ -120,66 +116,37 @@ access_constraint = sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.
 access_constraint.enable_max = True
 access_constraint.max = 40
 
-# ### Create a vehicle (aircraft) using GreatArc propagator
-
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
-aircraft = root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "MyAircraft")
-aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-great_arc_propagator = aircraft.route
-
-# **Note:** The Aircraft object propagator is named “Route”, the satellite object propagator is named “Propagator”, and the missile object propagator is named “Trajectory”.
-
-# #### Adding waypoints
-
-# The next step is to add the waypoints. We will add waypoints (39,-79), (40,-80), and (41,-81).
-
-# +
-waypoint1 = great_arc_propagator.waypoints.add()
-waypoint1.latitude = 39
-waypoint1.longitude = -79
-waypoint1.altitude = 10
-
-waypoint2 = great_arc_propagator.waypoints.add()
-waypoint2.latitude = 40
-waypoint2.longitude = -80
-waypoint2.altitude = 10
-
-waypoint3 = great_arc_propagator.waypoints.add()
-waypoint3.latitude = 41
-waypoint3.longitude = -81
-waypoint3.altitude = 10
-# -
-
-# We can then propagate the aircraft.
-
-great_arc_propagator.propagate()
-
-# We can zoom to the aircraft to visualize its path.
-
-plotter.camera.position = [2200, 4940, 4500]
-plotter.show()
-
 # ### Create a vehicle (satellite) using the SPG4 propagator (if you have internet access) or the Two-Body propagator otherwise
 
 # **Note:** This portion requires internet access. We provide alternate code using the Two-Body propagator if you do not have internet access. 
 
 # First, create the satellite using online data for the International Space Station (SSN number 25544).
 
-satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
-propagator = satellite.propagator
-propagator.common_tasks.add_segs_from_online_source("25544")
-propagator.propagate()
+internet_access = True
+
+# +
+from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+
+if internet_access:
+    satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
+    satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+    propagator = satellite.propagator
+    propagator.common_tasks.add_segs_from_online_source("25544")
+    propagator.propagate()
+# -
 
 # The propagator property of the satellite returns an IVehiclePropagatorSGP4 object, which has a common_tasks property. Through this property, we can access IVehiclePropagatorSGP4CommonTasks, which holds helper methods for this propagator type. We can then use the add_segs_from_online_source helper method to add the satellite from the AGI server.
 
 # Alternately, if you do not have internet access, you an add a satellite using a Two-Body propagator.
 
 # +
-# satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
-# satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-# propagator = satellite.propagator
-# propagator.propagate()
+from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+
+if not internet_access:
+    satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
+    satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
+    propagator = satellite.propagator
+    propagator.propagate()
 # -
 
 # We can visualize the satellite's orbit.

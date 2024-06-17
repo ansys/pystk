@@ -253,9 +253,10 @@ level2.color = Color.from_rgb(45, 250, 195)
 
 # ### Animate the Scenario
 
-plotter3d.show()
-
 root.rewind()
+
+plotter3d.camera.position = [-10290, 33525, 780]
+plotter3d.show()
 
 root.play_forward()
 

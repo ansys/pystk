@@ -10,3 +10,5 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
 
     examples/hohmann-transfer
     examples/lambert-transfer
+    examples/using-stk-coverage
+    examples/facility-to-satellite-access
