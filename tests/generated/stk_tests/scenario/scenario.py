@@ -2092,9 +2092,9 @@ class EarlyBoundTests(TestBase):
         magFieldGfx.line_width = LINE_WIDTH.WIDTH3
         Assert.assertEqual(LINE_WIDTH.WIDTH3, magFieldGfx.line_width)
         with pytest.raises(Exception):
-            magFieldGfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            magFieldGfx.line_width = -1
         with pytest.raises(Exception):
-            magFieldGfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            magFieldGfx.line_width = 11
 
         magFieldGfx.max_translucency = 55
         Assert.assertAlmostEqual(55, magFieldGfx.max_translucency, delta=Math2.Epsilon12)
