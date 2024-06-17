@@ -76,9 +76,11 @@ print(f"Latitude:{lat}\nLongitude:{lon}\nAltitude:{alt}")
 
 # The STK Object Model follows the logic of the STK desktop application. For example, if you want to change the label for facility, the IFacility interface contains the graphics property, which in turn contains the label_name property.
 
-facility.graphics.label_name = "My Facility"
+# +
+# facility.graphics.label_name = "My Facility"
+# -
 
-# You will get an error that the LabelName is a read only property. To change the label, you must first disable the “Use Instance Name as Label” property. Since the object model follows the same logic as the user interface, the correct code is:
+# If you try to run the cell above, you will get an error that the LabelName is a read only property. To change the label, you must first disable the “Use Instance Name as Label” property. Since the object model follows the same logic as the user interface, the correct code is:
 
 facility.graphics.use_inst_name_label = False
 facility.graphics.label_name = "My Facility"
