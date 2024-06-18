@@ -31,13 +31,40 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
   doc-style:
-    name: "Doc style checks"
+    name: "Doc style ${{ matrix.folder.name }}"
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        folder:
+          - {name: "doc", flags: "--glob='*.{md,rst}'"}
+          - {name: "examples", flags: ""}
+      fail-fast: false
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
+    needs: branch-name-style
     steps:
-      - name: "Run code style checks"
-        uses: ansys/actions/doc-style@v6
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # TODO: restore once ansys/actions allows for checking for custom
+      # directories with a certain glob pattern
+      #
+      # - uses: ansys/actions/doc-style@v6
+      #   with: 
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Run Vale in ${{ matrix.folder.name }}/ dir"
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: ${{ matrix.folder.name }}
+          reporter: github-pr-check
+          level: error
+          filter_mode: nofilter
+          fail_on_error: true
+          vale_flags: "--config=doc/.vale.ini ${{ matrix.folder.flags }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   doc-build:
     name: "Doc build"
