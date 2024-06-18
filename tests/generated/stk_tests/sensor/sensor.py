@@ -1980,9 +1980,9 @@ class SensorHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oGraphics.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH1, oGraphics.line_width)
         with pytest.raises(Exception):
-            oGraphics.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            oGraphics.line_width = -1
         with pytest.raises(Exception):
-            oGraphics.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            oGraphics.line_width = 11
 
         # InheritFromScenario (true)
         self.m_logger.WriteLine4("\tThe current InheritFromScenario flag is: {0}", oGraphics.inherit_from_scenario)
@@ -3302,11 +3302,7 @@ class SensorHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "SENSOR_REFRACTION_TYPE" = (
-                SENSOR_REFRACTION_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "SENSOR_REFRACTION_TYPE" = SENSOR_REFRACTION_TYPE(int(arTypes[iIndex][0]))
             if not self.m_oSensor.is_refraction_type_supported(eType):
                 Assert.fail("The Refraction Type {0} should be supported!", eType)
 

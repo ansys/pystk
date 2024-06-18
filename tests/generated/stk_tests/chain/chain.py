@@ -636,9 +636,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", oStatic.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH3, oStatic.line_width)
         with pytest.raises(Exception):
-            oStatic.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            oStatic.line_width = -1
         with pytest.raises(Exception):
-            oStatic.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            oStatic.line_width = 11
 
         # Animation
         oAnimation: "ChainGraphics2DAnimation" = EarlyBoundTests.AG_CH.graphics.animation
@@ -731,21 +731,17 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", oAnimation.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH2, oAnimation.line_width)
         with pytest.raises(Exception):
-            oAnimation.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            oAnimation.line_width = -1
         with pytest.raises(Exception):
-            oAnimation.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            oAnimation.line_width = 11
         TestBase.logger.WriteLine6("\tThe current OptimalPathLineWidth is: {0}", oAnimation.optimal_path_line_width)
         oAnimation.optimal_path_line_width = LINE_WIDTH.WIDTH2
         TestBase.logger.WriteLine6("\tThe new OptimalPathLineWidth is: {0}", oAnimation.optimal_path_line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH2, oAnimation.optimal_path_line_width)
         with pytest.raises(Exception):
-            oAnimation.optimal_path_line_width = (
-                LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
-            )
+            oAnimation.optimal_path_line_width = -1
         with pytest.raises(Exception):
-            oAnimation.optimal_path_line_width = (
-                LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
-            )
+            oAnimation.optimal_path_line_width = 11
 
         # IsDirectionVisible
         TestBase.logger.WriteLine4("\tThe current IsDirectionVisible is: {0}", oAnimation.is_direction_visible)

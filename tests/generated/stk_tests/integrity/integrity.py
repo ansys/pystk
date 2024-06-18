@@ -9548,11 +9548,7 @@ class Definition(TestBase):
             visibility.are_tracks_visible(MTO_TRACK_EVAL.ALL, tracksOfInterest, "23 Bad 2009 17:09:00.000")
 
         with pytest.raises(Exception):
-            visibility.are_tracks_visible(
-                (MTO_TRACK_EVAL((-1)) if ((-1) in [item.value for item in MTO_TRACK_EVAL]) else (-1)),
-                tracksOfInterest,
-                "23 Feb 2009 17:09:00.000",
-            )
+            visibility.are_tracks_visible(-1, tracksOfInterest, "23 Feb 2009 17:09:00.000")
 
         tracksOfInterest2 = [-2, -3]
 
