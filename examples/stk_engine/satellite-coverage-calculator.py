@@ -8,7 +8,7 @@
 #
 # ## Problem statement
 #
-# Two satellites present circular orbits. The first satellite has an inclination of 97.3&deg; and an altitude of 400 km. The second satellite has a RAAN of 340&deg;. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of -23.5&deg; and 23.5&deg;. Use a point resolution of 3.0&deg;. Determine which satellite achieves higher coverage of the tropics region and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.
+# Two satellites present circular orbits. The first satellite has an inclination of $97.3^\circ$ and an altitude of 400 km. The second satellite has a RAAN of $340^\circ$. Calculate the coverage these satellites provide over the tropics region of the Earth, defined as the area between the latitudes of $-23.5^\circ$ and $23.5^\circ$. Use a point resolution of $3.0^\circ$. Determine which satellite achieves higher coverage of the tropics region and if coverage is better or worse near the Equator. Finally, determine which areas of the tropics region receive coverage from both satellites at the same time.
 #
 # ## Launch a new STK instance
 #
@@ -56,9 +56,9 @@ scenario = root.current_scenario
 scenario.set_time_period("1 Jul 2016", "2 Jul 2016")
 root.rewind()
 
-# ## Create 2 satellites
+# ## Add the satellites to the scenario
 
-# First insert a satellite named PolarSat:
+# First, add a satellite in a polar orbit:
 
 # +
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
@@ -70,16 +70,25 @@ polar_sat = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Polar
 # Then, set the satellite's propagator to J4Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE, COORDINATE_SYSTEM, ORBIT_STATE_TYPE
+from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
 
 
 polar_sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
 # -
 
-# The satellite should have a circular orbit with an inclination of 97.3&deg; and an altitude of 400 km, which translates to an initial state of X = -6374.8, Y = -2303.27, Z = -0.0000357827, X Velocity = -0.499065, Y Velocity = 1.38127, and Z Velocity = 7.6064 in a Cartesian coordinate system:
+# The satellite should have a circular orbit with an inclination of $97.3^\circ$ and an altitude of 400 km, which translates to an initial state of X = -6374.8, Y = -2303.27, Z = -0.0000357827, X Velocity = -0.499065, Y Velocity = 1.38127, and Z Velocity = 7.6064 in a Cartesian coordinate system:
+
+# +
+from ansys.stk.core.stkobjects import COORDINATE_SYSTEM
+
 
 polar_sat_propagator = polar_sat.propagator
-polar_sat_propagator.initial_state.representation.assign_cartesian(ORBIT_STATE_TYPE.CARTESIAN, -6374.8, -2303.27, -0.0000357827, -0.499065, 1.38127, 7.6064)
+r_vec = [-6374.8, -2303.27, -0.0000357827]
+v_vec = [-0.499065, 1.38127, 7.6064]
+polar_sat_propagator.initial_state.representation.assign_cartesian(
+    COORDINATE_SYSTEM.J2000, *r_vec, *v_vec
+)
+# -
 
 # Then, insert a satellite named Shuttle:
 
@@ -89,10 +98,14 @@ shuttle = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle
 
 shuttle.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
 
-# The satellite should have a circular orbit with a RAAN of 340&deg;, which translates to an initial state of X = -6878.12, Y = -16.3051, Z = 0.00199559, X Velocity = -0.0115701, Y Velocity = -4.88136, and Z Velocity = 5.38292 in a Cartesian coordinate system:
+# The satellite should have a circular orbit with a RAAN of $340^\circ$, which translates to an initial state of X = -6878.12, Y = -16.3051, Z = 0.00199559, X Velocity = -0.0115701, Y Velocity = -4.88136, and Z Velocity = 5.38292 in a Cartesian coordinate system:
 
 shuttle_propagator = shuttle.propagator
-shuttle_propagator.initial_state.representation.assign_cartesian(ORBIT_STATE_TYPE.CARTESIAN, -6878.12, -16.3051, 0.00199559, -0.0115701, -4.88136, 5.38292)
+r_vec = [-6878.12, -16.3051, 0.00199559]
+v_vec = [-0.0115701, -4.88136, 5.38292]
+shuttle_propagator.initial_state.representation.assign_cartesian(
+    COORDINATE_SYSTEM.J2000, *r_vec, *v_vec
+)
 
 # Finally, propagate both satellites:
 
@@ -111,7 +124,7 @@ globe_plotter.show()
 
 tropics = root.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics")
 
-# Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of -23.5&deg;, a maximum latitude of 23.5&deg;, and point granularity of 3.0&deg; lat/lon:
+# Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of $-23.5^\circ$, a maximum latitude of $23.5^\circ$, and point granularity of $3.0^\circ$ lat/lon:
 
 # +
 from ansys.stk.core.stkobjects import COVERAGE_BOUNDS
@@ -190,7 +203,7 @@ latitude_data_provider_results.data_sets.to_pandas_dataframe()
 
 # ### Set the graphics
 
-# The Figure of Merit object has its own graphics which the Coverage Definition graphics will interfere with. So, disable the Show Regions and Show Points options of the Coverage Definition:
+# The Figure of Merit object has its own graphics which the Coverage Definition graphics interferes with. So, disable the Show Regions and Show Points options of the Coverage Definition:
 
 tropics.graphics.static.is_region_visible = False
 tropics.graphics.static.is_points_visible = False
@@ -260,7 +273,7 @@ two_eyes.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTIO
 two_eyes.definition.satisfaction.satisfaction_threshold = 2
 # -
 
-# The 3D Graphics window will immediately reflect the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion.
+# The 3D Graphics window immediately reflects the reduction in the amount of the coverage region that satisfies the 'at least 2' criterion.
 
 # ### Configure the animation graphics
 

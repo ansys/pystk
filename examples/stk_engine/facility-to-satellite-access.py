@@ -8,7 +8,7 @@
 
 # ## Problem statement
 
-# A facility is located at latitude 40&deg; and longitude -80&deg;. The facility includes a sensor with a pattern type of complex conic, with an inner cone half angle of 50&deg;, an outer cone half angle of 90&deg;, a minimum clock angle of 0&deg;, and a maximum clock angle of 90&deg;. The sensor has a maximum range of 40 km. The sensor interacts with the International Space Station (SSN number 25544), which has an SPG4 propagator. This satellite can also only be seen if it is directly illuminated by the Sun.
+# A facility is located at latitude $40^\circ$ and longitude $-80^\circ$. The facility includes a sensor with a pattern type of complex conic, with an inner cone half angle of $50^\circ$, an outer cone half angle of $90^\circ$, a minimum clock angle of $0^\circ$, and a maximum clock angle of $90^\circ$. The sensor has a maximum range of 40 km. The sensor interacts with the International Space Station (SSN number 25544), which has an SPG4 propagator. This satellite can also only be seen if it is directly illuminated by the Sun.
 #
 # Calculate the time periods during which the sensor can communicate with the satellite. Find the azimuth, elevation, and range of the satellite during these access periods. Finally, create a vector between the facility and satellite, and, for each access interval, determine at what time this vector was at a minimum magnitude.
 
@@ -65,7 +65,7 @@ facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacil
 root.unit_preferences.item("LatitudeUnit").set_current_unit("deg")
 root.unit_preferences.item("LongitudeUnit").set_current_unit("deg")
 
-# Change the position of the facility to latitude 40 and longitude -80:
+# Change the position of the facility to latitude $40^\circ$ and longitude $-80^\circ$:
 
 facility.position.assign_planetodetic(40, -80, 0)
 
@@ -127,7 +127,7 @@ access_constraint = sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.
 access_constraint.enable_max = True
 access_constraint.max = 40
 
-# ### Create a satellite using the SPG4 propagator
+# ### Add a satellite using the SPG4 propagator
 
 # **Note:** This portion requires internet access.
 
