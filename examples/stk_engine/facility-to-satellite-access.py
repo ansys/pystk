@@ -1,6 +1,6 @@
 # # Access between facility and satellite calculator
 
-# This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by [this tutorial](https://help.agi.com/stkdevkit/index.htm#stkObjects/ObjectModelTutorial.html).
+# This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by [this tutorial](https://help.agi.com/stkdevkit/Content/stkObjects/ObjectModelTutorial.html).
 
 # ## What is access?
 
