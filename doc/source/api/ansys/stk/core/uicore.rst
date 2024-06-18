@@ -1,87 +1,87 @@
 
-The ``AgUiCoreLib`` module
-==========================
+The ``uicore`` module
+=====================
 
 
-.. py::module:: ansys.stk.core.uicore
+.. py:module:: ansys.stk.core.uicore
 
 
 Summary
 -------
 
 .. tab-set::
-    .. tab-items:: Interfaces
+    .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~IUiToolbar`
+            * - :py:class:`~IUiToolbar`
               - Provide methods and properties to control a toolbar.
 
-            * - :pyclass:`~IUiToolbarCollection`
+            * - :py:class:`~IUiToolbarCollection`
               - Provide methods and properties to obtain a window's toolbars.
 
-            * - :pyclass:`~IUiWindow`
+            * - :py:class:`~IUiWindow`
               - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-            * - :pyclass:`~IUiWindowsCollection`
+            * - :py:class:`~IUiWindowsCollection`
               - Provide methods and properties to manage the application's windows.
 
-            * - :pyclass:`~IUiWindowMapObject`
+            * - :py:class:`~IUiWindowMapObject`
               - Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
 
-            * - :pyclass:`~IUiWindowGlobeObject`
+            * - :py:class:`~IUiWindowGlobeObject`
               - Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
 
     
-    .. tab-items:: Classes
+    .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~UiWindowsCollection`
+            * - :py:class:`~UiWindowsCollection`
               - Provide methods and properties to manage the windows.
 
-            * - :pyclass:`~UiWindow`
+            * - :py:class:`~UiWindow`
               - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-            * - :pyclass:`~UiToolbar`
+            * - :py:class:`~UiToolbar`
               - Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
 
-            * - :pyclass:`~UiToolbarCollection`
+            * - :py:class:`~UiToolbarCollection`
               - Provide methods and properties to manage the toolbars.
 
-            * - :pyclass:`~UiWindowMapObject`
+            * - :py:class:`~UiWindowMapObject`
               - Provide methods and properties to manipulate the 2D map.
 
-            * - :pyclass:`~UiWindowGlobeObject`
+            * - :py:class:`~UiWindowGlobeObject`
               - Provide methods and properties to manipulate the 3D globe.
 
 
-    .. tab-items:: Enums
+    .. tab-item:: Enums
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~WINDOW_SERVICE`
+            * - :py:class:`~WINDOW_SERVICE`
               - Well-known types of services.
 
-            * - :pyclass:`~WINDOW_STATE`
+            * - :py:class:`~WINDOW_STATE`
               - Window states.
 
-            * - :pyclass:`~ARRANGE_STYLE`
+            * - :py:class:`~ARRANGE_STYLE`
               - Window layout styles.
 
-            * - :pyclass:`~DOCK_STYLE`
+            * - :py:class:`~DOCK_STYLE`
               - Window docking styles.
 
-            * - :pyclass:`~FLOAT_STATE`
+            * - :py:class:`~FLOAT_STATE`
               - Floating state.
 
 
@@ -104,33 +104,33 @@ Detail
     :maxdepth: 1
     :hidden:
 
-    --> IUiToolbar<IUiToolbar>
-    --> IUiToolbarCollection<IUiToolbarCollection>
-    --> IUiWindow<IUiWindow>
-    --> IUiWindowsCollection<IUiWindowsCollection>
-    --> IUiWindowMapObject<IUiWindowMapObject>
-    --> IUiWindowGlobeObject<IUiWindowGlobeObject>
+     IUiToolbar<uicore\IUiToolbar>
+     IUiToolbarCollection<uicore\IUiToolbarCollection>
+     IUiWindow<uicore\IUiWindow>
+     IUiWindowsCollection<uicore\IUiWindowsCollection>
+     IUiWindowMapObject<uicore\IUiWindowMapObject>
+     IUiWindowGlobeObject<uicore\IUiWindowGlobeObject>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    --> UiWindowsCollection<>
-    --> UiWindow<>
-    --> UiToolbar<>
-    --> UiToolbarCollection<>
-    --> UiWindowMapObject<>
-    --> UiWindowGlobeObject<>
+     UiWindowsCollection<uicore\UiWindowsCollection>
+     UiWindow<uicore\UiWindow>
+     UiToolbar<uicore\UiToolbar>
+     UiToolbarCollection<uicore\UiToolbarCollection>
+     UiWindowMapObject<uicore\UiWindowMapObject>
+     UiWindowGlobeObject<uicore\UiWindowGlobeObject>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ WINDOW_SERVICE<WINDOW_SERVICE>
-    ≔ WINDOW_STATE<WINDOW_STATE>
-    ≔ ARRANGE_STYLE<ARRANGE_STYLE>
-    ≔ DOCK_STYLE<DOCK_STYLE>
-    ≔ FLOAT_STATE<FLOAT_STATE>
+    ≔ WINDOW_SERVICE<uicore\WINDOW_SERVICE>
+    ≔ WINDOW_STATE<uicore\WINDOW_STATE>
+    ≔ ARRANGE_STYLE<uicore\ARRANGE_STYLE>
+    ≔ DOCK_STYLE<uicore\DOCK_STYLE>
+    ≔ FLOAT_STATE<uicore\FLOAT_STATE>
 

@@ -1,335 +1,335 @@
 
-The ``STKXLib`` module
-======================
+The ``stkx`` module
+===================
 
 
-.. py::module:: ansys.stk.core.stkx
+.. py:module:: ansys.stk.core.stkx
 
 
 Summary
 -------
 
 .. tab-set::
-    .. tab-items:: Interfaces
+    .. tab-item:: Interfaces
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~ISTKXSSLCertificateErrorEventArgs`
+            * - :py:class:`~ISTKXSSLCertificateErrorEventArgs`
               - Provide information about an SSL certificate that is expired or invalid.
 
-            * - :pyclass:`~ISTKXConControlQuitReceivedEventArgs`
+            * - :py:class:`~ISTKXConControlQuitReceivedEventArgs`
               - Arguments for the OnConControlQuitReceived event.
 
-            * - :pyclass:`~IPickInfoData`
+            * - :py:class:`~IPickInfoData`
               - Mouse pick details.
 
-            * - :pyclass:`~IRubberBandPickInfoData`
+            * - :py:class:`~IRubberBandPickInfoData`
               - Rubber-band mouse pick result.
 
-            * - :pyclass:`~ISTKXApplication`
+            * - :py:class:`~ISTKXApplication`
               - STK X Application object.
 
-            * - :pyclass:`~IDataObject`
+            * - :py:class:`~IDataObject`
               - IAgDataObject is used for OLE drag and drop operations.
 
-            * - :pyclass:`~IObjPathCollection`
+            * - :py:class:`~IObjPathCollection`
               - Collection of object paths.
 
-            * - :pyclass:`~IDrawElem`
+            * - :py:class:`~IDrawElem`
               - Draw element.
 
-            * - :pyclass:`~IDrawElemRect`
+            * - :py:class:`~IDrawElemRect`
               - Define a rectangle in control coordinates.
 
-            * - :pyclass:`~IDrawElemCollection`
+            * - :py:class:`~IDrawElemCollection`
               - Collection of elements to draw on the control.
 
-            * - :pyclass:`~IWinProjectionPosition`
+            * - :py:class:`~IWinProjectionPosition`
               - Projected window position detail.
 
-            * - :pyclass:`~IDrawElemLine`
+            * - :py:class:`~IDrawElemLine`
               - Define a line in control coordinates.
 
-            * - :pyclass:`~IExecCmdResult`
+            * - :py:class:`~IExecCmdResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :pyclass:`~IExecMultiCmdResult`
+            * - :py:class:`~IExecMultiCmdResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
-            * - :pyclass:`~IUiAxGraphics3DCntrl`
+            * - :py:class:`~IUiAxGraphics3DCntrl`
               - AGI Globe control.
 
-            * - :pyclass:`~IUiAx2DCntrl`
+            * - :py:class:`~IUiAx2DCntrl`
               - AGI Map control.
 
-            * - :pyclass:`~ISTKXApplicationPartnerAccess`
+            * - :py:class:`~ISTKXApplicationPartnerAccess`
               - Access to the application object model for business partners.
 
-            * - :pyclass:`~IDataObjectFiles`
+            * - :py:class:`~IDataObjectFiles`
               - Collection of file names.
 
-            * - :pyclass:`~IUiAxGraphics2DAnalysisCntrl`
+            * - :py:class:`~IUiAxGraphics2DAnalysisCntrl`
               - AGI Gfx Analysis control.
 
     
-    .. tab-items:: Classes
+    .. tab-item:: Classes
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~ExecCmdResult`
+            * - :py:class:`~ExecCmdResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :pyclass:`~ExecMultiCmdResult`
+            * - :py:class:`~ExecMultiCmdResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
-            * - :pyclass:`~UiAxGraphics3DCntrl`
+            * - :py:class:`~UiAxGraphics3DCntrl`
               - AGI Globe control.
 
-            * - :pyclass:`~UiAx2DCntrl`
+            * - :py:class:`~UiAx2DCntrl`
               - AGI Map control.
 
-            * - :pyclass:`~PickInfoData`
+            * - :py:class:`~PickInfoData`
               - Single mouse pick result.
 
-            * - :pyclass:`~STKXApplication`
+            * - :py:class:`~STKXApplication`
               - STK X Application object.
 
-            * - :pyclass:`~STKXApplicationPartnerAccess`
+            * - :py:class:`~STKXApplicationPartnerAccess`
               - STK X Application Partner Access object.
 
-            * - :pyclass:`~DataObject`
+            * - :py:class:`~DataObject`
               - Data Object for OLE drag & drop operations.
 
-            * - :pyclass:`~DataObjectFiles`
+            * - :py:class:`~DataObjectFiles`
               - Collection of files for OLE drag & drop operations.
 
-            * - :pyclass:`~RubberBandPickInfoData`
+            * - :py:class:`~RubberBandPickInfoData`
               - Rubber-band mouse pick result.
 
-            * - :pyclass:`~ObjPathCollection`
+            * - :py:class:`~ObjPathCollection`
               - Collection of object paths.
 
-            * - :pyclass:`~DrawElemRect`
+            * - :py:class:`~DrawElemRect`
               - Define a rectangle in window coordinates.
 
-            * - :pyclass:`~DrawElemCollection`
+            * - :py:class:`~DrawElemCollection`
               - Collection of elements to draw on the control.
 
-            * - :pyclass:`~Draw2DElemRect`
+            * - :py:class:`~Draw2DElemRect`
               - Define a rectangle in window coordinates for map control.
 
-            * - :pyclass:`~Draw2DElemCollection`
+            * - :py:class:`~Draw2DElemCollection`
               - Collection of elements to draw on map control.
 
-            * - :pyclass:`~UiAxGraphics2DAnalysisCntrl`
+            * - :py:class:`~UiAxGraphics2DAnalysisCntrl`
               - AGI Graphics Analysis Control.
 
-            * - :pyclass:`~WinProjectionPosition`
+            * - :py:class:`~WinProjectionPosition`
               - Projected window position result.
 
-            * - :pyclass:`~DrawElemLine`
+            * - :py:class:`~DrawElemLine`
               - Define a line in window coordinates.
 
-            * - :pyclass:`~STKXSSLCertificateErrorEventArgs`
+            * - :py:class:`~STKXSSLCertificateErrorEventArgs`
               - Provide information about an SSL certificate that is expired or invalid.
 
-            * - :pyclass:`~STKXConControlQuitReceivedEventArgs`
+            * - :py:class:`~STKXConControlQuitReceivedEventArgs`
               - Arguments for the OnConControlQuitReceived event.
 
 
-    .. tab-items:: Enums
+    .. tab-item:: Enums
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~LOG_MSG_TYPE`
+            * - :py:class:`~LOG_MSG_TYPE`
               - Log message types.
 
-            * - :pyclass:`~LOG_MSG_DISP_ID`
+            * - :py:class:`~LOG_MSG_DISP_ID`
               - Log message destination options.
 
-            * - :pyclass:`~LINE_STYLE`
+            * - :py:class:`~LINE_STYLE`
               - Line Style.
 
-            * - :pyclass:`~EXEC_MULTI_CMD_RESULT_ACTION`
+            * - :py:class:`~EXEC_MULTI_CMD_RESULT_ACTION`
               - Enumeration defines a set of actions when an error occurs while executing a command batch.
 
-            * - :pyclass:`~SHIFT_VALUES`
+            * - :py:class:`~SHIFT_VALUES`
               - State of the Shift/Ctrl/Alt keys.
 
-            * - :pyclass:`~BUTTON_VALUES`
+            * - :py:class:`~BUTTON_VALUES`
               - Numeric value of the mouse button pressed.
 
-            * - :pyclass:`~OLE_DROP_MODE`
+            * - :py:class:`~OLE_DROP_MODE`
               - Specify how to handle OLE drop operations.
 
-            * - :pyclass:`~MOUSE_MODE`
+            * - :py:class:`~MOUSE_MODE`
               - Mouse modes.
 
-            * - :pyclass:`~LOGGING_MODE`
+            * - :py:class:`~LOGGING_MODE`
               - Specify the state of the log file.
 
-            * - :pyclass:`~GRAPHICS_2D_ANALYSIS_MODE`
+            * - :py:class:`~GRAPHICS_2D_ANALYSIS_MODE`
               - Specify the mode of Gfx Analysis Control.
 
-            * - :pyclass:`~GRAPHICS_2D_DRAW_COORDS`
+            * - :py:class:`~GRAPHICS_2D_DRAW_COORDS`
               - Specify the draw coordinates for Map Control.
 
-            * - :pyclass:`~SHOW_PROGRESS_IMAGE`
+            * - :py:class:`~SHOW_PROGRESS_IMAGE`
               - Specify to show progress image.
 
-            * - :pyclass:`~FEATURE_CODES`
+            * - :py:class:`~FEATURE_CODES`
               - The enumeration values are used to check availability of a given feature.
 
-            * - :pyclass:`~PROGRESS_IMAGE_X_ORIGIN`
+            * - :py:class:`~PROGRESS_IMAGE_X_ORIGIN`
               - Specify to align progress image X origin.
 
-            * - :pyclass:`~PROGRESS_IMAGE_Y_ORIGIN`
+            * - :py:class:`~PROGRESS_IMAGE_Y_ORIGIN`
               - Specify to align progress image Y origin.
 
 
-    .. tab-items:: Constants
+    .. tab-item:: Constants
 
         .. list-table::
             :header-rows: 0
             :widths: auto
         
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
-            * - :pyclass:`~constant`
+            * - :py:class:`~constant`
               - 
 
 
@@ -601,70 +601,70 @@ Detail
     :maxdepth: 1
     :hidden:
 
-    --> ISTKXSSLCertificateErrorEventArgs<ISTKXSSLCertificateErrorEventArgs>
-    --> ISTKXConControlQuitReceivedEventArgs<ISTKXConControlQuitReceivedEventArgs>
-    --> IPickInfoData<IPickInfoData>
-    --> IRubberBandPickInfoData<IRubberBandPickInfoData>
-    --> ISTKXApplication<ISTKXApplication>
-    --> IDataObject<IDataObject>
-    --> IObjPathCollection<IObjPathCollection>
-    --> IDrawElem<IDrawElem>
-    --> IDrawElemRect<IDrawElemRect>
-    --> IDrawElemCollection<IDrawElemCollection>
-    --> IWinProjectionPosition<IWinProjectionPosition>
-    --> IDrawElemLine<IDrawElemLine>
-    --> IExecCmdResult<IExecCmdResult>
-    --> IExecMultiCmdResult<IExecMultiCmdResult>
-    --> IUiAxGraphics3DCntrl<IUiAxGraphics3DCntrl>
-    --> IUiAx2DCntrl<IUiAx2DCntrl>
-    --> ISTKXApplicationPartnerAccess<ISTKXApplicationPartnerAccess>
-    --> IDataObjectFiles<IDataObjectFiles>
-    --> IUiAxGraphics2DAnalysisCntrl<IUiAxGraphics2DAnalysisCntrl>
+     ISTKXSSLCertificateErrorEventArgs<stkx\ISTKXSSLCertificateErrorEventArgs>
+     ISTKXConControlQuitReceivedEventArgs<stkx\ISTKXConControlQuitReceivedEventArgs>
+     IPickInfoData<stkx\IPickInfoData>
+     IRubberBandPickInfoData<stkx\IRubberBandPickInfoData>
+     ISTKXApplication<stkx\ISTKXApplication>
+     IDataObject<stkx\IDataObject>
+     IObjPathCollection<stkx\IObjPathCollection>
+     IDrawElem<stkx\IDrawElem>
+     IDrawElemRect<stkx\IDrawElemRect>
+     IDrawElemCollection<stkx\IDrawElemCollection>
+     IWinProjectionPosition<stkx\IWinProjectionPosition>
+     IDrawElemLine<stkx\IDrawElemLine>
+     IExecCmdResult<stkx\IExecCmdResult>
+     IExecMultiCmdResult<stkx\IExecMultiCmdResult>
+     IUiAxGraphics3DCntrl<stkx\IUiAxGraphics3DCntrl>
+     IUiAx2DCntrl<stkx\IUiAx2DCntrl>
+     ISTKXApplicationPartnerAccess<stkx\ISTKXApplicationPartnerAccess>
+     IDataObjectFiles<stkx\IDataObjectFiles>
+     IUiAxGraphics2DAnalysisCntrl<stkx\IUiAxGraphics2DAnalysisCntrl>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    --> ExecCmdResult<>
-    --> ExecMultiCmdResult<>
-    --> UiAxGraphics3DCntrl<>
-    --> UiAx2DCntrl<>
-    --> PickInfoData<>
-    --> STKXApplication<>
-    --> STKXApplicationPartnerAccess<>
-    --> DataObject<>
-    --> DataObjectFiles<>
-    --> RubberBandPickInfoData<>
-    --> ObjPathCollection<>
-    --> DrawElemRect<>
-    --> DrawElemCollection<>
-    --> Draw2DElemRect<>
-    --> Draw2DElemCollection<>
-    --> UiAxGraphics2DAnalysisCntrl<>
-    --> WinProjectionPosition<>
-    --> DrawElemLine<>
-    --> STKXSSLCertificateErrorEventArgs<>
-    --> STKXConControlQuitReceivedEventArgs<>
+     ExecCmdResult<stkx\ExecCmdResult>
+     ExecMultiCmdResult<stkx\ExecMultiCmdResult>
+     UiAxGraphics3DCntrl<stkx\UiAxGraphics3DCntrl>
+     UiAx2DCntrl<stkx\UiAx2DCntrl>
+     PickInfoData<stkx\PickInfoData>
+     STKXApplication<stkx\STKXApplication>
+     STKXApplicationPartnerAccess<stkx\STKXApplicationPartnerAccess>
+     DataObject<stkx\DataObject>
+     DataObjectFiles<stkx\DataObjectFiles>
+     RubberBandPickInfoData<stkx\RubberBandPickInfoData>
+     ObjPathCollection<stkx\ObjPathCollection>
+     DrawElemRect<stkx\DrawElemRect>
+     DrawElemCollection<stkx\DrawElemCollection>
+     Draw2DElemRect<stkx\Draw2DElemRect>
+     Draw2DElemCollection<stkx\Draw2DElemCollection>
+     UiAxGraphics2DAnalysisCntrl<stkx\UiAxGraphics2DAnalysisCntrl>
+     WinProjectionPosition<stkx\WinProjectionPosition>
+     DrawElemLine<stkx\DrawElemLine>
+     STKXSSLCertificateErrorEventArgs<stkx\STKXSSLCertificateErrorEventArgs>
+     STKXConControlQuitReceivedEventArgs<stkx\STKXConControlQuitReceivedEventArgs>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ LOG_MSG_TYPE<LOG_MSG_TYPE>
-    ≔ LOG_MSG_DISP_ID<LOG_MSG_DISP_ID>
-    ≔ LINE_STYLE<LINE_STYLE>
-    ≔ EXEC_MULTI_CMD_RESULT_ACTION<EXEC_MULTI_CMD_RESULT_ACTION>
-    ≔ SHIFT_VALUES<SHIFT_VALUES>
-    ≔ BUTTON_VALUES<BUTTON_VALUES>
-    ≔ OLE_DROP_MODE<OLE_DROP_MODE>
-    ≔ MOUSE_MODE<MOUSE_MODE>
-    ≔ LOGGING_MODE<LOGGING_MODE>
-    ≔ GRAPHICS_2D_ANALYSIS_MODE<GRAPHICS_2D_ANALYSIS_MODE>
-    ≔ GRAPHICS_2D_DRAW_COORDS<GRAPHICS_2D_DRAW_COORDS>
-    ≔ SHOW_PROGRESS_IMAGE<SHOW_PROGRESS_IMAGE>
-    ≔ FEATURE_CODES<FEATURE_CODES>
-    ≔ PROGRESS_IMAGE_X_ORIGIN<PROGRESS_IMAGE_X_ORIGIN>
-    ≔ PROGRESS_IMAGE_Y_ORIGIN<PROGRESS_IMAGE_Y_ORIGIN>
+    ≔ LOG_MSG_TYPE<stkx\LOG_MSG_TYPE>
+    ≔ LOG_MSG_DISP_ID<stkx\LOG_MSG_DISP_ID>
+    ≔ LINE_STYLE<stkx\LINE_STYLE>
+    ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkx\EXEC_MULTI_CMD_RESULT_ACTION>
+    ≔ SHIFT_VALUES<stkx\SHIFT_VALUES>
+    ≔ BUTTON_VALUES<stkx\BUTTON_VALUES>
+    ≔ OLE_DROP_MODE<stkx\OLE_DROP_MODE>
+    ≔ MOUSE_MODE<stkx\MOUSE_MODE>
+    ≔ LOGGING_MODE<stkx\LOGGING_MODE>
+    ≔ GRAPHICS_2D_ANALYSIS_MODE<stkx\GRAPHICS_2D_ANALYSIS_MODE>
+    ≔ GRAPHICS_2D_DRAW_COORDS<stkx\GRAPHICS_2D_DRAW_COORDS>
+    ≔ SHOW_PROGRESS_IMAGE<stkx\SHOW_PROGRESS_IMAGE>
+    ≔ FEATURE_CODES<stkx\FEATURE_CODES>
+    ≔ PROGRESS_IMAGE_X_ORIGIN<stkx\PROGRESS_IMAGE_X_ORIGIN>
+    ≔ PROGRESS_IMAGE_Y_ORIGIN<stkx\PROGRESS_IMAGE_Y_ORIGIN>
 
