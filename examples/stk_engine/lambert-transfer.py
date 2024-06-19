@@ -21,7 +21,7 @@
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, STKEngine is used with graphics (noGraphics mode set to False). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new STK instance. In this example, STKEngine is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
@@ -83,7 +83,7 @@ for planet_name, color in planet_names_and_colors.items():
     planet.graphics.color = color
 # -
 
-# Retrieve the instances created for each planet. These will be used later for finding the start and final state vectors at the desired epoch:
+# Retrieve the instances created for each planet. These are used later for finding the start and final state vectors at the desired epoch:
 
 earth, mars = [scenario.children[planet] for planet in planet_names_and_colors]
 
