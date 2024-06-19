@@ -215,6 +215,7 @@ latitude_line.get_legend().remove()
 latitude_line.set_title('Coverage by Latitude')
 latitude_line.grid(visible=True, which='both')
 plt.ylabel('percent time covered')
+
 plt.show()
 # -
 
@@ -349,6 +350,8 @@ plt.ylabel('percent satisfied')
 plt.title('Satisfaction over Time')
 satisfaction_plot.set_facecolor('#f7f7f7')
 satisfaction_plot.grid(visible=True, which='both')
+
+plt.show()
 # -
 
 
