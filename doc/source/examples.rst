@@ -12,7 +12,7 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
     examples/lambert-transfer
 
 Basic examples
-=================
+=============
 
 This series of tutorials explains basic examples involving STK objects using Python and PySTK.
 

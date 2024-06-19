@@ -76,7 +76,7 @@ from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
 polar_sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
 # -
 
-# The satellite should have a circular orbit with an inclination of $97.3^\circ$ and an altitude of 400 km, which translates to an initial state of X = -6374.8, Y = -2303.27, Z = -0.0000357827, X Velocity = -0.499065, Y Velocity = 1.38127, and Z Velocity = 7.6064 in a Cartesian coordinate system:
+# The satellite should have a circular orbit with an inclination of $97.3^\circ$ and an altitude of $400$ km, which translates to an initial state of $r_x = -6374.80$ km, $r_y = -2303.27$ km, $r_z = -0.0000357827$ km, $v_x = -0.499065$ km/s, $v_y = 1.38127$ km/s, and $v_z = 7.6064$ km/s given with respect to J2000 frame:
 
 # +
 from ansys.stk.core.stkobjects import COORDINATE_SYSTEM
@@ -98,7 +98,7 @@ shuttle = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle
 
 shuttle.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
 
-# The satellite should have a circular orbit with a RAAN of $340^\circ$, which translates to an initial state of X = -6878.12, Y = -16.3051, Z = 0.00199559, X Velocity = -0.0115701, Y Velocity = -4.88136, and Z Velocity = 5.38292 in a Cartesian coordinate system:
+# The satellite should have a circular orbit with a RAAN of $340^\circ$, which translates to an initial state of $r_x = -6878.12$ km, $r_y = -16.3051$ km, $r_z = 0.00199559$ km, $v_x = -0.0115701$ km/s, $v_y = -4.88136$ km/s, and $v_z = 5.38292$ km/s with respect to the J2000 frame:
 
 shuttle_propagator = shuttle.propagator
 r_vec = [-6878.12, -16.3051, 0.00199559]
@@ -187,7 +187,7 @@ latitude_data_provider_results = access_by_latitude.exec()
 
 asset_data_provider_results.data_sets.to_pandas_dataframe()
 
-# **Answer:** PolarSat achieved higher average coverage of the tropics region with an average % coverage of 2.704572194409824.
+# **Answer:** PolarSat achieved higher average coverage of the tropics region with an average coverage percentage of 2.704572194409824.
 
 # Or, convert to a numpy array:
 
@@ -199,7 +199,7 @@ latitude_data_provider_results.data_sets.to_pandas_dataframe()
 
 # **Answer:** Coverage was worse near the equator.
 
-# ## Assess the quality of coverage with a Figure of Merit
+# ## Assess the quality of coverage
 
 # ### Set the graphics
 
